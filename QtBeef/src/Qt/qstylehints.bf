@@ -463,6 +463,16 @@ class QStyleHints : IQStyleHints, IQObject
 		CQt.QStyleHints_Connect_MouseQuickSelectionThresholdChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_MouseQuickSelectionThresholdChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QStyleHints_OnMetaObject(obj.ObjectPtr,  => QtBeef_QStyleHints_OnMetaObject);
+		CQt.QStyleHints_OnMetacast(obj.ObjectPtr,  => QtBeef_QStyleHints_OnMetacast);
+		CQt.QStyleHints_OnMetacall(obj.ObjectPtr,  => QtBeef_QStyleHints_OnMetacall);
+		CQt.QStyleHints_OnEvent(obj.ObjectPtr,  => QtBeef_QStyleHints_OnEvent);
+		CQt.QStyleHints_OnEventFilter(obj.ObjectPtr,  => QtBeef_QStyleHints_OnEventFilter);
+		CQt.QStyleHints_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QStyleHints_OnTimerEvent);
+		CQt.QStyleHints_OnChildEvent(obj.ObjectPtr,  => QtBeef_QStyleHints_OnChildEvent);
+		CQt.QStyleHints_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QStyleHints_OnCustomEvent);
+		CQt.QStyleHints_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QStyleHints_OnConnectNotify);
+		CQt.QStyleHints_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QStyleHints_OnDisconnectNotify);
 	}
 	public Event<delegate void(c_int cursorFlashTime)> OnCursorFlashTimeChanged = .() ~ _.Dispose();
 	public Event<delegate void(c_int keyboardInputInterval)> OnKeyboardInputIntervalChanged = .() ~ _.Dispose();
@@ -541,6 +551,56 @@ class QStyleHints : IQStyleHints, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QStyleHints_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QStyleHints_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QStyleHints_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QStyleHints_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QStyleHints_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QStyleHints_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QStyleHints_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QStyleHints_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QStyleHints_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QStyleHints_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QStyleHints_Ptr ptr)
 	{
@@ -988,18 +1048,27 @@ extension CQt
 	public function void QStyleHints_OnMetaObject_action(void* self);
 	[LinkName("QStyleHints_OnMetaObject")]
 	public static extern void** QStyleHints_OnMetaObject(void* self, QStyleHints_OnMetaObject_action _action);
+	
+	[LinkName("QStyleHints_SuperMetaObject")]
+	public static extern void** QStyleHints_SuperMetaObject(void* self);
 	[LinkName("QStyleHints_Qt_Metacast")]
 	public static extern void* QStyleHints_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QStyleHints_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QStyleHints_OnMetacast")]
 	public static extern void* QStyleHints_OnMetacast(void* self, QStyleHints_OnMetacast_action _action);
+	
+	[LinkName("QStyleHints_SuperMetacast")]
+	public static extern void* QStyleHints_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QStyleHints_Qt_Metacall")]
 	public static extern c_int QStyleHints_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QStyleHints_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStyleHints_OnMetacall")]
 	public static extern c_int QStyleHints_OnMetacall(void* self, QStyleHints_OnMetacall_action _action);
+	
+	[LinkName("QStyleHints_SuperMetacall")]
+	public static extern c_int QStyleHints_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStyleHints_Tr")]
 	public static extern libqt_string QStyleHints_Tr(c_char* s);
 	[LinkName("QStyleHints_SetMouseDoubleClickInterval")]
@@ -1146,40 +1215,61 @@ extension CQt
 	public function void QStyleHints_OnEvent_action(void* self, void** event);
 	[LinkName("QStyleHints_OnEvent")]
 	public static extern bool QStyleHints_OnEvent(void* self, QStyleHints_OnEvent_action _action);
+	
+	[LinkName("QStyleHints_SuperEvent")]
+	public static extern bool QStyleHints_SuperEvent(void* self, void** event);
 	[LinkName("QStyleHints_EventFilter")]
 	public static extern bool QStyleHints_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QStyleHints_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QStyleHints_OnEventFilter")]
 	public static extern bool QStyleHints_OnEventFilter(void* self, QStyleHints_OnEventFilter_action _action);
+	
+	[LinkName("QStyleHints_SuperEventFilter")]
+	public static extern bool QStyleHints_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QStyleHints_TimerEvent")]
 	public static extern void QStyleHints_TimerEvent(void* self, void** event);
 	
 	public function void QStyleHints_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QStyleHints_OnTimerEvent")]
 	public static extern void QStyleHints_OnTimerEvent(void* self, QStyleHints_OnTimerEvent_action _action);
+	
+	[LinkName("QStyleHints_SuperTimerEvent")]
+	public static extern void QStyleHints_SuperTimerEvent(void* self, void** event);
 	[LinkName("QStyleHints_ChildEvent")]
 	public static extern void QStyleHints_ChildEvent(void* self, void** event);
 	
 	public function void QStyleHints_OnChildEvent_action(void* self, void** event);
 	[LinkName("QStyleHints_OnChildEvent")]
 	public static extern void QStyleHints_OnChildEvent(void* self, QStyleHints_OnChildEvent_action _action);
+	
+	[LinkName("QStyleHints_SuperChildEvent")]
+	public static extern void QStyleHints_SuperChildEvent(void* self, void** event);
 	[LinkName("QStyleHints_CustomEvent")]
 	public static extern void QStyleHints_CustomEvent(void* self, void** event);
 	
 	public function void QStyleHints_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QStyleHints_OnCustomEvent")]
 	public static extern void QStyleHints_OnCustomEvent(void* self, QStyleHints_OnCustomEvent_action _action);
+	
+	[LinkName("QStyleHints_SuperCustomEvent")]
+	public static extern void QStyleHints_SuperCustomEvent(void* self, void** event);
 	[LinkName("QStyleHints_ConnectNotify")]
 	public static extern void QStyleHints_ConnectNotify(void* self, void** signal);
 	
 	public function void QStyleHints_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QStyleHints_OnConnectNotify")]
 	public static extern void QStyleHints_OnConnectNotify(void* self, QStyleHints_OnConnectNotify_action _action);
+	
+	[LinkName("QStyleHints_SuperConnectNotify")]
+	public static extern void QStyleHints_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QStyleHints_DisconnectNotify")]
 	public static extern void QStyleHints_DisconnectNotify(void* self, void** signal);
 	
 	public function void QStyleHints_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QStyleHints_OnDisconnectNotify")]
 	public static extern void QStyleHints_OnDisconnectNotify(void* self, QStyleHints_OnDisconnectNotify_action _action);
+	
+	[LinkName("QStyleHints_SuperDisconnectNotify")]
+	public static extern void QStyleHints_SuperDisconnectNotify(void* self, void** signal);
 }

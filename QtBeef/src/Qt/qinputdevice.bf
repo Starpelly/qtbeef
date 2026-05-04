@@ -321,6 +321,16 @@ class QInputDevice : IQInputDevice, IQObject
 		CQt.QInputDevice_Connect_AvailableVirtualGeometryChanged(obj.ObjectPtr,  => QtBeef_QInputDevice_Connect_AvailableVirtualGeometryChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QInputDevice_OnMetaObject(obj.ObjectPtr,  => QtBeef_QInputDevice_OnMetaObject);
+		CQt.QInputDevice_OnMetacast(obj.ObjectPtr,  => QtBeef_QInputDevice_OnMetacast);
+		CQt.QInputDevice_OnMetacall(obj.ObjectPtr,  => QtBeef_QInputDevice_OnMetacall);
+		CQt.QInputDevice_OnEvent(obj.ObjectPtr,  => QtBeef_QInputDevice_OnEvent);
+		CQt.QInputDevice_OnEventFilter(obj.ObjectPtr,  => QtBeef_QInputDevice_OnEventFilter);
+		CQt.QInputDevice_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QInputDevice_OnTimerEvent);
+		CQt.QInputDevice_OnChildEvent(obj.ObjectPtr,  => QtBeef_QInputDevice_OnChildEvent);
+		CQt.QInputDevice_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QInputDevice_OnCustomEvent);
+		CQt.QInputDevice_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QInputDevice_OnConnectNotify);
+		CQt.QInputDevice_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QInputDevice_OnDisconnectNotify);
 	}
 	public Event<delegate void(void* area)> OnAvailableVirtualGeometryChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -339,6 +349,56 @@ class QInputDevice : IQInputDevice, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QInputDevice_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QInputDevice_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QInputDevice_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QInputDevice_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QInputDevice_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QInputDevice_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QInputDevice_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QInputDevice_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QInputDevice_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QInputDevice_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QInputDevice_Ptr ptr)
 	{
@@ -689,18 +749,27 @@ extension CQt
 	public function void QInputDevice_OnMetaObject_action(void* self);
 	[LinkName("QInputDevice_OnMetaObject")]
 	public static extern void** QInputDevice_OnMetaObject(void* self, QInputDevice_OnMetaObject_action _action);
+	
+	[LinkName("QInputDevice_SuperMetaObject")]
+	public static extern void** QInputDevice_SuperMetaObject(void* self);
 	[LinkName("QInputDevice_Qt_Metacast")]
 	public static extern void* QInputDevice_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QInputDevice_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QInputDevice_OnMetacast")]
 	public static extern void* QInputDevice_OnMetacast(void* self, QInputDevice_OnMetacast_action _action);
+	
+	[LinkName("QInputDevice_SuperMetacast")]
+	public static extern void* QInputDevice_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QInputDevice_Qt_Metacall")]
 	public static extern c_int QInputDevice_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QInputDevice_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QInputDevice_OnMetacall")]
 	public static extern c_int QInputDevice_OnMetacall(void* self, QInputDevice_OnMetacall_action _action);
+	
+	[LinkName("QInputDevice_SuperMetacall")]
+	public static extern c_int QInputDevice_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QInputDevice_Tr")]
 	public static extern libqt_string QInputDevice_Tr(c_char* s);
 	[LinkName("QInputDevice_Name")]
@@ -743,42 +812,63 @@ extension CQt
 	public function void QInputDevice_OnEvent_action(void* self, void** event);
 	[LinkName("QInputDevice_OnEvent")]
 	public static extern bool QInputDevice_OnEvent(void* self, QInputDevice_OnEvent_action _action);
+	
+	[LinkName("QInputDevice_SuperEvent")]
+	public static extern bool QInputDevice_SuperEvent(void* self, void** event);
 	[LinkName("QInputDevice_EventFilter")]
 	public static extern bool QInputDevice_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QInputDevice_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QInputDevice_OnEventFilter")]
 	public static extern bool QInputDevice_OnEventFilter(void* self, QInputDevice_OnEventFilter_action _action);
+	
+	[LinkName("QInputDevice_SuperEventFilter")]
+	public static extern bool QInputDevice_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QInputDevice_TimerEvent")]
 	public static extern void QInputDevice_TimerEvent(void* self, void** event);
 	
 	public function void QInputDevice_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QInputDevice_OnTimerEvent")]
 	public static extern void QInputDevice_OnTimerEvent(void* self, QInputDevice_OnTimerEvent_action _action);
+	
+	[LinkName("QInputDevice_SuperTimerEvent")]
+	public static extern void QInputDevice_SuperTimerEvent(void* self, void** event);
 	[LinkName("QInputDevice_ChildEvent")]
 	public static extern void QInputDevice_ChildEvent(void* self, void** event);
 	
 	public function void QInputDevice_OnChildEvent_action(void* self, void** event);
 	[LinkName("QInputDevice_OnChildEvent")]
 	public static extern void QInputDevice_OnChildEvent(void* self, QInputDevice_OnChildEvent_action _action);
+	
+	[LinkName("QInputDevice_SuperChildEvent")]
+	public static extern void QInputDevice_SuperChildEvent(void* self, void** event);
 	[LinkName("QInputDevice_CustomEvent")]
 	public static extern void QInputDevice_CustomEvent(void* self, void** event);
 	
 	public function void QInputDevice_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QInputDevice_OnCustomEvent")]
 	public static extern void QInputDevice_OnCustomEvent(void* self, QInputDevice_OnCustomEvent_action _action);
+	
+	[LinkName("QInputDevice_SuperCustomEvent")]
+	public static extern void QInputDevice_SuperCustomEvent(void* self, void** event);
 	[LinkName("QInputDevice_ConnectNotify")]
 	public static extern void QInputDevice_ConnectNotify(void* self, void** signal);
 	
 	public function void QInputDevice_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QInputDevice_OnConnectNotify")]
 	public static extern void QInputDevice_OnConnectNotify(void* self, QInputDevice_OnConnectNotify_action _action);
+	
+	[LinkName("QInputDevice_SuperConnectNotify")]
+	public static extern void QInputDevice_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QInputDevice_DisconnectNotify")]
 	public static extern void QInputDevice_DisconnectNotify(void* self, void** signal);
 	
 	public function void QInputDevice_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QInputDevice_OnDisconnectNotify")]
 	public static extern void QInputDevice_OnDisconnectNotify(void* self, QInputDevice_OnDisconnectNotify_action _action);
+	
+	[LinkName("QInputDevice_SuperDisconnectNotify")]
+	public static extern void QInputDevice_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QInputDevice_DeviceType

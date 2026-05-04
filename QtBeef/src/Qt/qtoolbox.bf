@@ -1745,6 +1745,59 @@ class QToolBox : IQToolBox, IQFrame, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QToolBox_OnMetaObject(obj.ObjectPtr,  => QtBeef_QToolBox_OnMetaObject);
+		CQt.QToolBox_OnMetacast(obj.ObjectPtr,  => QtBeef_QToolBox_OnMetacast);
+		CQt.QToolBox_OnMetacall(obj.ObjectPtr,  => QtBeef_QToolBox_OnMetacall);
+		CQt.QToolBox_OnEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnEvent);
+		CQt.QToolBox_OnItemInserted(obj.ObjectPtr,  => QtBeef_QToolBox_OnItemInserted);
+		CQt.QToolBox_OnItemRemoved(obj.ObjectPtr,  => QtBeef_QToolBox_OnItemRemoved);
+		CQt.QToolBox_OnShowEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnShowEvent);
+		CQt.QToolBox_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnChangeEvent);
+		CQt.QToolBox_OnEventFilter(obj.ObjectPtr,  => QtBeef_QToolBox_OnEventFilter);
+		CQt.QToolBox_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnTimerEvent);
+		CQt.QToolBox_OnChildEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnChildEvent);
+		CQt.QToolBox_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnCustomEvent);
+		CQt.QToolBox_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QToolBox_OnConnectNotify);
+		CQt.QToolBox_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QToolBox_OnDisconnectNotify);
+		CQt.QToolBox_OnDevType(obj.ObjectPtr,  => QtBeef_QToolBox_OnDevType);
+		CQt.QToolBox_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QToolBox_OnPaintEngine);
+		CQt.QToolBox_OnMetric(obj.ObjectPtr,  => QtBeef_QToolBox_OnMetric);
+		CQt.QToolBox_OnInitPainter(obj.ObjectPtr,  => QtBeef_QToolBox_OnInitPainter);
+		CQt.QToolBox_OnRedirected(obj.ObjectPtr,  => QtBeef_QToolBox_OnRedirected);
+		CQt.QToolBox_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QToolBox_OnSharedPainter);
+		CQt.QToolBox_OnSetVisible(obj.ObjectPtr,  => QtBeef_QToolBox_OnSetVisible);
+		CQt.QToolBox_OnSizeHint(obj.ObjectPtr,  => QtBeef_QToolBox_OnSizeHint);
+		CQt.QToolBox_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QToolBox_OnMinimumSizeHint);
+		CQt.QToolBox_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QToolBox_OnHeightForWidth);
+		CQt.QToolBox_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QToolBox_OnHasHeightForWidth);
+		CQt.QToolBox_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnMousePressEvent);
+		CQt.QToolBox_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnMouseReleaseEvent);
+		CQt.QToolBox_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnMouseDoubleClickEvent);
+		CQt.QToolBox_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnMouseMoveEvent);
+		CQt.QToolBox_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnWheelEvent);
+		CQt.QToolBox_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnKeyPressEvent);
+		CQt.QToolBox_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnKeyReleaseEvent);
+		CQt.QToolBox_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnFocusInEvent);
+		CQt.QToolBox_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnFocusOutEvent);
+		CQt.QToolBox_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnEnterEvent);
+		CQt.QToolBox_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnLeaveEvent);
+		CQt.QToolBox_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnPaintEvent);
+		CQt.QToolBox_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnMoveEvent);
+		CQt.QToolBox_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnResizeEvent);
+		CQt.QToolBox_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnCloseEvent);
+		CQt.QToolBox_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnContextMenuEvent);
+		CQt.QToolBox_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnTabletEvent);
+		CQt.QToolBox_OnActionEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnActionEvent);
+		CQt.QToolBox_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnDragEnterEvent);
+		CQt.QToolBox_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnDragMoveEvent);
+		CQt.QToolBox_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnDragLeaveEvent);
+		CQt.QToolBox_OnDropEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnDropEvent);
+		CQt.QToolBox_OnHideEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnHideEvent);
+		CQt.QToolBox_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnNativeEvent);
+		CQt.QToolBox_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QToolBox_OnInputMethodEvent);
+		CQt.QToolBox_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QToolBox_OnInputMethodQuery);
+		CQt.QToolBox_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QToolBox_OnFocusNextPrevChild);
+		CQt.QToolBox_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QToolBox_OnInitStyleOption);
 	}
 	public Event<delegate void(c_int index)> OnCurrentChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1787,6 +1840,271 @@ class QToolBox : IQToolBox, IQFrame, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QToolBox_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QToolBox_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QToolBox_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QToolBox_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QToolBox_OnItemInserted(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemInserted(index);
+	}
+	static void QtBeef_QToolBox_OnItemRemoved(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemRemoved(index);
+	}
+	static void QtBeef_QToolBox_OnShowEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(e);
+	}
+	static void QtBeef_QToolBox_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QToolBox_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QToolBox_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QToolBox_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QToolBox_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QToolBox_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QToolBox_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QToolBox_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QToolBox_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QToolBox_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QToolBox_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QToolBox_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QToolBox_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QToolBox_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QToolBox_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QToolBox_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QToolBox_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QToolBox_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QToolBox_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QToolBox_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QToolBox_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QToolBox_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QToolBox_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QToolBox_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QToolBox_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QToolBox_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QToolBox_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QToolBox_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QToolBox_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QToolBox_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QToolBox_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QToolBox_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QToolBox_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QToolBox_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QToolBox_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QToolBox_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QToolBox_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QToolBox_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QToolBox_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QToolBox_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QToolBox_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QToolBox_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QToolBox_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QToolBox_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QToolBox_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QToolBox_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
 	}
 	public this(QToolBox_Ptr ptr)
 	{
@@ -3512,18 +3830,27 @@ extension CQt
 	public function void QToolBox_OnMetaObject_action(void* self);
 	[LinkName("QToolBox_OnMetaObject")]
 	public static extern void** QToolBox_OnMetaObject(void* self, QToolBox_OnMetaObject_action _action);
+	
+	[LinkName("QToolBox_SuperMetaObject")]
+	public static extern void** QToolBox_SuperMetaObject(void* self);
 	[LinkName("QToolBox_Qt_Metacast")]
 	public static extern void* QToolBox_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QToolBox_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QToolBox_OnMetacast")]
 	public static extern void* QToolBox_OnMetacast(void* self, QToolBox_OnMetacast_action _action);
+	
+	[LinkName("QToolBox_SuperMetacast")]
+	public static extern void* QToolBox_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QToolBox_Qt_Metacall")]
 	public static extern c_int QToolBox_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QToolBox_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QToolBox_OnMetacall")]
 	public static extern c_int QToolBox_OnMetacall(void* self, QToolBox_OnMetacall_action _action);
+	
+	[LinkName("QToolBox_SuperMetacall")]
+	public static extern c_int QToolBox_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QToolBox_Tr")]
 	public static extern libqt_string QToolBox_Tr(c_char* s);
 	[LinkName("QToolBox_AddItem")]
@@ -3578,30 +3905,45 @@ extension CQt
 	public function void QToolBox_OnEvent_action(void* self, void** e);
 	[LinkName("QToolBox_OnEvent")]
 	public static extern bool QToolBox_OnEvent(void* self, QToolBox_OnEvent_action _action);
+	
+	[LinkName("QToolBox_SuperEvent")]
+	public static extern bool QToolBox_SuperEvent(void* self, void** e);
 	[LinkName("QToolBox_ItemInserted")]
 	public static extern void QToolBox_ItemInserted(void* self, c_int index);
 	
 	public function void QToolBox_OnItemInserted_action(void* self, c_int index);
 	[LinkName("QToolBox_OnItemInserted")]
 	public static extern void QToolBox_OnItemInserted(void* self, QToolBox_OnItemInserted_action _action);
+	
+	[LinkName("QToolBox_SuperItemInserted")]
+	public static extern void QToolBox_SuperItemInserted(void* self, c_int index);
 	[LinkName("QToolBox_ItemRemoved")]
 	public static extern void QToolBox_ItemRemoved(void* self, c_int index);
 	
 	public function void QToolBox_OnItemRemoved_action(void* self, c_int index);
 	[LinkName("QToolBox_OnItemRemoved")]
 	public static extern void QToolBox_OnItemRemoved(void* self, QToolBox_OnItemRemoved_action _action);
+	
+	[LinkName("QToolBox_SuperItemRemoved")]
+	public static extern void QToolBox_SuperItemRemoved(void* self, c_int index);
 	[LinkName("QToolBox_ShowEvent")]
 	public static extern void QToolBox_ShowEvent(void* self, void** e);
 	
 	public function void QToolBox_OnShowEvent_action(void* self, void** e);
 	[LinkName("QToolBox_OnShowEvent")]
 	public static extern void QToolBox_OnShowEvent(void* self, QToolBox_OnShowEvent_action _action);
+	
+	[LinkName("QToolBox_SuperShowEvent")]
+	public static extern void QToolBox_SuperShowEvent(void* self, void** e);
 	[LinkName("QToolBox_ChangeEvent")]
 	public static extern void QToolBox_ChangeEvent(void* self, void** param1);
 	
 	public function void QToolBox_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QToolBox_OnChangeEvent")]
 	public static extern void QToolBox_OnChangeEvent(void* self, QToolBox_OnChangeEvent_action _action);
+	
+	[LinkName("QToolBox_SuperChangeEvent")]
+	public static extern void QToolBox_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QToolBox_Tr2")]
 	public static extern libqt_string QToolBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QToolBox_Tr3")]
@@ -3612,268 +3954,403 @@ extension CQt
 	public function void QToolBox_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QToolBox_OnEventFilter")]
 	public static extern bool QToolBox_OnEventFilter(void* self, QToolBox_OnEventFilter_action _action);
+	
+	[LinkName("QToolBox_SuperEventFilter")]
+	public static extern bool QToolBox_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QToolBox_TimerEvent")]
 	public static extern void QToolBox_TimerEvent(void* self, void** event);
 	
 	public function void QToolBox_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnTimerEvent")]
 	public static extern void QToolBox_OnTimerEvent(void* self, QToolBox_OnTimerEvent_action _action);
+	
+	[LinkName("QToolBox_SuperTimerEvent")]
+	public static extern void QToolBox_SuperTimerEvent(void* self, void** event);
 	[LinkName("QToolBox_ChildEvent")]
 	public static extern void QToolBox_ChildEvent(void* self, void** event);
 	
 	public function void QToolBox_OnChildEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnChildEvent")]
 	public static extern void QToolBox_OnChildEvent(void* self, QToolBox_OnChildEvent_action _action);
+	
+	[LinkName("QToolBox_SuperChildEvent")]
+	public static extern void QToolBox_SuperChildEvent(void* self, void** event);
 	[LinkName("QToolBox_CustomEvent")]
 	public static extern void QToolBox_CustomEvent(void* self, void** event);
 	
 	public function void QToolBox_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnCustomEvent")]
 	public static extern void QToolBox_OnCustomEvent(void* self, QToolBox_OnCustomEvent_action _action);
+	
+	[LinkName("QToolBox_SuperCustomEvent")]
+	public static extern void QToolBox_SuperCustomEvent(void* self, void** event);
 	[LinkName("QToolBox_ConnectNotify")]
 	public static extern void QToolBox_ConnectNotify(void* self, void** signal);
 	
 	public function void QToolBox_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QToolBox_OnConnectNotify")]
 	public static extern void QToolBox_OnConnectNotify(void* self, QToolBox_OnConnectNotify_action _action);
+	
+	[LinkName("QToolBox_SuperConnectNotify")]
+	public static extern void QToolBox_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QToolBox_DisconnectNotify")]
 	public static extern void QToolBox_DisconnectNotify(void* self, void** signal);
 	
 	public function void QToolBox_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QToolBox_OnDisconnectNotify")]
 	public static extern void QToolBox_OnDisconnectNotify(void* self, QToolBox_OnDisconnectNotify_action _action);
+	
+	[LinkName("QToolBox_SuperDisconnectNotify")]
+	public static extern void QToolBox_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QToolBox_DevType")]
 	public static extern c_int QToolBox_DevType(void* self);
 	
 	public function void QToolBox_OnDevType_action(void* self);
 	[LinkName("QToolBox_OnDevType")]
 	public static extern c_int QToolBox_OnDevType(void* self, QToolBox_OnDevType_action _action);
+	
+	[LinkName("QToolBox_SuperDevType")]
+	public static extern c_int QToolBox_SuperDevType(void* self);
 	[LinkName("QToolBox_PaintEngine")]
 	public static extern void** QToolBox_PaintEngine(void* self);
 	
 	public function void QToolBox_OnPaintEngine_action(void* self);
 	[LinkName("QToolBox_OnPaintEngine")]
 	public static extern void** QToolBox_OnPaintEngine(void* self, QToolBox_OnPaintEngine_action _action);
+	
+	[LinkName("QToolBox_SuperPaintEngine")]
+	public static extern void** QToolBox_SuperPaintEngine(void* self);
 	[LinkName("QToolBox_Metric")]
 	public static extern c_int QToolBox_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QToolBox_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QToolBox_OnMetric")]
 	public static extern c_int QToolBox_OnMetric(void* self, QToolBox_OnMetric_action _action);
+	
+	[LinkName("QToolBox_SuperMetric")]
+	public static extern c_int QToolBox_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QToolBox_InitPainter")]
 	public static extern void QToolBox_InitPainter(void* self, void** painter);
 	
 	public function void QToolBox_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QToolBox_OnInitPainter")]
 	public static extern void QToolBox_OnInitPainter(void* self, QToolBox_OnInitPainter_action _action);
+	
+	[LinkName("QToolBox_SuperInitPainter")]
+	public static extern void QToolBox_SuperInitPainter(void* self, void** painter);
 	[LinkName("QToolBox_Redirected")]
 	public static extern void** QToolBox_Redirected(void* self, void** offset);
 	
 	public function void QToolBox_OnRedirected_action(void* self, void** offset);
 	[LinkName("QToolBox_OnRedirected")]
 	public static extern void** QToolBox_OnRedirected(void* self, QToolBox_OnRedirected_action _action);
+	
+	[LinkName("QToolBox_SuperRedirected")]
+	public static extern void** QToolBox_SuperRedirected(void* self, void** offset);
 	[LinkName("QToolBox_SharedPainter")]
 	public static extern void** QToolBox_SharedPainter(void* self);
 	
 	public function void QToolBox_OnSharedPainter_action(void* self);
 	[LinkName("QToolBox_OnSharedPainter")]
 	public static extern void** QToolBox_OnSharedPainter(void* self, QToolBox_OnSharedPainter_action _action);
+	
+	[LinkName("QToolBox_SuperSharedPainter")]
+	public static extern void** QToolBox_SuperSharedPainter(void* self);
 	[LinkName("QToolBox_SetVisible")]
 	public static extern void QToolBox_SetVisible(void* self, bool visible);
 	
 	public function void QToolBox_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QToolBox_OnSetVisible")]
 	public static extern void QToolBox_OnSetVisible(void* self, QToolBox_OnSetVisible_action _action);
+	
+	[LinkName("QToolBox_SuperSetVisible")]
+	public static extern void QToolBox_SuperSetVisible(void* self, bool visible);
 	[LinkName("QToolBox_SizeHint")]
 	public static extern void* QToolBox_SizeHint(void* self);
 	
 	public function void QToolBox_OnSizeHint_action(void* self);
 	[LinkName("QToolBox_OnSizeHint")]
 	public static extern void* QToolBox_OnSizeHint(void* self, QToolBox_OnSizeHint_action _action);
+	
+	[LinkName("QToolBox_SuperSizeHint")]
+	public static extern void* QToolBox_SuperSizeHint(void* self);
 	[LinkName("QToolBox_MinimumSizeHint")]
 	public static extern void* QToolBox_MinimumSizeHint(void* self);
 	
 	public function void QToolBox_OnMinimumSizeHint_action(void* self);
 	[LinkName("QToolBox_OnMinimumSizeHint")]
 	public static extern void* QToolBox_OnMinimumSizeHint(void* self, QToolBox_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QToolBox_SuperMinimumSizeHint")]
+	public static extern void* QToolBox_SuperMinimumSizeHint(void* self);
 	[LinkName("QToolBox_HeightForWidth")]
 	public static extern c_int QToolBox_HeightForWidth(void* self, c_int param1);
 	
 	public function void QToolBox_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QToolBox_OnHeightForWidth")]
 	public static extern c_int QToolBox_OnHeightForWidth(void* self, QToolBox_OnHeightForWidth_action _action);
+	
+	[LinkName("QToolBox_SuperHeightForWidth")]
+	public static extern c_int QToolBox_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QToolBox_HasHeightForWidth")]
 	public static extern bool QToolBox_HasHeightForWidth(void* self);
 	
 	public function void QToolBox_OnHasHeightForWidth_action(void* self);
 	[LinkName("QToolBox_OnHasHeightForWidth")]
 	public static extern bool QToolBox_OnHasHeightForWidth(void* self, QToolBox_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QToolBox_SuperHasHeightForWidth")]
+	public static extern bool QToolBox_SuperHasHeightForWidth(void* self);
 	[LinkName("QToolBox_MousePressEvent")]
 	public static extern void QToolBox_MousePressEvent(void* self, void** event);
 	
 	public function void QToolBox_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnMousePressEvent")]
 	public static extern void QToolBox_OnMousePressEvent(void* self, QToolBox_OnMousePressEvent_action _action);
+	
+	[LinkName("QToolBox_SuperMousePressEvent")]
+	public static extern void QToolBox_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QToolBox_MouseReleaseEvent")]
 	public static extern void QToolBox_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QToolBox_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnMouseReleaseEvent")]
 	public static extern void QToolBox_OnMouseReleaseEvent(void* self, QToolBox_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QToolBox_SuperMouseReleaseEvent")]
+	public static extern void QToolBox_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QToolBox_MouseDoubleClickEvent")]
 	public static extern void QToolBox_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QToolBox_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnMouseDoubleClickEvent")]
 	public static extern void QToolBox_OnMouseDoubleClickEvent(void* self, QToolBox_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QToolBox_SuperMouseDoubleClickEvent")]
+	public static extern void QToolBox_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QToolBox_MouseMoveEvent")]
 	public static extern void QToolBox_MouseMoveEvent(void* self, void** event);
 	
 	public function void QToolBox_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnMouseMoveEvent")]
 	public static extern void QToolBox_OnMouseMoveEvent(void* self, QToolBox_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QToolBox_SuperMouseMoveEvent")]
+	public static extern void QToolBox_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QToolBox_WheelEvent")]
 	public static extern void QToolBox_WheelEvent(void* self, void** event);
 	
 	public function void QToolBox_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnWheelEvent")]
 	public static extern void QToolBox_OnWheelEvent(void* self, QToolBox_OnWheelEvent_action _action);
+	
+	[LinkName("QToolBox_SuperWheelEvent")]
+	public static extern void QToolBox_SuperWheelEvent(void* self, void** event);
 	[LinkName("QToolBox_KeyPressEvent")]
 	public static extern void QToolBox_KeyPressEvent(void* self, void** event);
 	
 	public function void QToolBox_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnKeyPressEvent")]
 	public static extern void QToolBox_OnKeyPressEvent(void* self, QToolBox_OnKeyPressEvent_action _action);
+	
+	[LinkName("QToolBox_SuperKeyPressEvent")]
+	public static extern void QToolBox_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QToolBox_KeyReleaseEvent")]
 	public static extern void QToolBox_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QToolBox_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnKeyReleaseEvent")]
 	public static extern void QToolBox_OnKeyReleaseEvent(void* self, QToolBox_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QToolBox_SuperKeyReleaseEvent")]
+	public static extern void QToolBox_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QToolBox_FocusInEvent")]
 	public static extern void QToolBox_FocusInEvent(void* self, void** event);
 	
 	public function void QToolBox_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnFocusInEvent")]
 	public static extern void QToolBox_OnFocusInEvent(void* self, QToolBox_OnFocusInEvent_action _action);
+	
+	[LinkName("QToolBox_SuperFocusInEvent")]
+	public static extern void QToolBox_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QToolBox_FocusOutEvent")]
 	public static extern void QToolBox_FocusOutEvent(void* self, void** event);
 	
 	public function void QToolBox_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnFocusOutEvent")]
 	public static extern void QToolBox_OnFocusOutEvent(void* self, QToolBox_OnFocusOutEvent_action _action);
+	
+	[LinkName("QToolBox_SuperFocusOutEvent")]
+	public static extern void QToolBox_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QToolBox_EnterEvent")]
 	public static extern void QToolBox_EnterEvent(void* self, void** event);
 	
 	public function void QToolBox_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnEnterEvent")]
 	public static extern void QToolBox_OnEnterEvent(void* self, QToolBox_OnEnterEvent_action _action);
+	
+	[LinkName("QToolBox_SuperEnterEvent")]
+	public static extern void QToolBox_SuperEnterEvent(void* self, void** event);
 	[LinkName("QToolBox_LeaveEvent")]
 	public static extern void QToolBox_LeaveEvent(void* self, void** event);
 	
 	public function void QToolBox_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnLeaveEvent")]
 	public static extern void QToolBox_OnLeaveEvent(void* self, QToolBox_OnLeaveEvent_action _action);
+	
+	[LinkName("QToolBox_SuperLeaveEvent")]
+	public static extern void QToolBox_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QToolBox_PaintEvent")]
 	public static extern void QToolBox_PaintEvent(void* self, void** event);
 	
 	public function void QToolBox_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnPaintEvent")]
 	public static extern void QToolBox_OnPaintEvent(void* self, QToolBox_OnPaintEvent_action _action);
+	
+	[LinkName("QToolBox_SuperPaintEvent")]
+	public static extern void QToolBox_SuperPaintEvent(void* self, void** event);
 	[LinkName("QToolBox_MoveEvent")]
 	public static extern void QToolBox_MoveEvent(void* self, void** event);
 	
 	public function void QToolBox_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnMoveEvent")]
 	public static extern void QToolBox_OnMoveEvent(void* self, QToolBox_OnMoveEvent_action _action);
+	
+	[LinkName("QToolBox_SuperMoveEvent")]
+	public static extern void QToolBox_SuperMoveEvent(void* self, void** event);
 	[LinkName("QToolBox_ResizeEvent")]
 	public static extern void QToolBox_ResizeEvent(void* self, void** event);
 	
 	public function void QToolBox_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnResizeEvent")]
 	public static extern void QToolBox_OnResizeEvent(void* self, QToolBox_OnResizeEvent_action _action);
+	
+	[LinkName("QToolBox_SuperResizeEvent")]
+	public static extern void QToolBox_SuperResizeEvent(void* self, void** event);
 	[LinkName("QToolBox_CloseEvent")]
 	public static extern void QToolBox_CloseEvent(void* self, void** event);
 	
 	public function void QToolBox_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnCloseEvent")]
 	public static extern void QToolBox_OnCloseEvent(void* self, QToolBox_OnCloseEvent_action _action);
+	
+	[LinkName("QToolBox_SuperCloseEvent")]
+	public static extern void QToolBox_SuperCloseEvent(void* self, void** event);
 	[LinkName("QToolBox_ContextMenuEvent")]
 	public static extern void QToolBox_ContextMenuEvent(void* self, void** event);
 	
 	public function void QToolBox_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnContextMenuEvent")]
 	public static extern void QToolBox_OnContextMenuEvent(void* self, QToolBox_OnContextMenuEvent_action _action);
+	
+	[LinkName("QToolBox_SuperContextMenuEvent")]
+	public static extern void QToolBox_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QToolBox_TabletEvent")]
 	public static extern void QToolBox_TabletEvent(void* self, void** event);
 	
 	public function void QToolBox_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnTabletEvent")]
 	public static extern void QToolBox_OnTabletEvent(void* self, QToolBox_OnTabletEvent_action _action);
+	
+	[LinkName("QToolBox_SuperTabletEvent")]
+	public static extern void QToolBox_SuperTabletEvent(void* self, void** event);
 	[LinkName("QToolBox_ActionEvent")]
 	public static extern void QToolBox_ActionEvent(void* self, void** event);
 	
 	public function void QToolBox_OnActionEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnActionEvent")]
 	public static extern void QToolBox_OnActionEvent(void* self, QToolBox_OnActionEvent_action _action);
+	
+	[LinkName("QToolBox_SuperActionEvent")]
+	public static extern void QToolBox_SuperActionEvent(void* self, void** event);
 	[LinkName("QToolBox_DragEnterEvent")]
 	public static extern void QToolBox_DragEnterEvent(void* self, void** event);
 	
 	public function void QToolBox_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnDragEnterEvent")]
 	public static extern void QToolBox_OnDragEnterEvent(void* self, QToolBox_OnDragEnterEvent_action _action);
+	
+	[LinkName("QToolBox_SuperDragEnterEvent")]
+	public static extern void QToolBox_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QToolBox_DragMoveEvent")]
 	public static extern void QToolBox_DragMoveEvent(void* self, void** event);
 	
 	public function void QToolBox_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnDragMoveEvent")]
 	public static extern void QToolBox_OnDragMoveEvent(void* self, QToolBox_OnDragMoveEvent_action _action);
+	
+	[LinkName("QToolBox_SuperDragMoveEvent")]
+	public static extern void QToolBox_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QToolBox_DragLeaveEvent")]
 	public static extern void QToolBox_DragLeaveEvent(void* self, void** event);
 	
 	public function void QToolBox_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnDragLeaveEvent")]
 	public static extern void QToolBox_OnDragLeaveEvent(void* self, QToolBox_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QToolBox_SuperDragLeaveEvent")]
+	public static extern void QToolBox_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QToolBox_DropEvent")]
 	public static extern void QToolBox_DropEvent(void* self, void** event);
 	
 	public function void QToolBox_OnDropEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnDropEvent")]
 	public static extern void QToolBox_OnDropEvent(void* self, QToolBox_OnDropEvent_action _action);
+	
+	[LinkName("QToolBox_SuperDropEvent")]
+	public static extern void QToolBox_SuperDropEvent(void* self, void** event);
 	[LinkName("QToolBox_HideEvent")]
 	public static extern void QToolBox_HideEvent(void* self, void** event);
 	
 	public function void QToolBox_OnHideEvent_action(void* self, void** event);
 	[LinkName("QToolBox_OnHideEvent")]
 	public static extern void QToolBox_OnHideEvent(void* self, QToolBox_OnHideEvent_action _action);
+	
+	[LinkName("QToolBox_SuperHideEvent")]
+	public static extern void QToolBox_SuperHideEvent(void* self, void** event);
 	[LinkName("QToolBox_NativeEvent")]
 	public static extern bool QToolBox_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QToolBox_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QToolBox_OnNativeEvent")]
 	public static extern bool QToolBox_OnNativeEvent(void* self, QToolBox_OnNativeEvent_action _action);
+	
+	[LinkName("QToolBox_SuperNativeEvent")]
+	public static extern bool QToolBox_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QToolBox_InputMethodEvent")]
 	public static extern void QToolBox_InputMethodEvent(void* self, void** param1);
 	
 	public function void QToolBox_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QToolBox_OnInputMethodEvent")]
 	public static extern void QToolBox_OnInputMethodEvent(void* self, QToolBox_OnInputMethodEvent_action _action);
+	
+	[LinkName("QToolBox_SuperInputMethodEvent")]
+	public static extern void QToolBox_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QToolBox_InputMethodQuery")]
 	public static extern void* QToolBox_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QToolBox_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QToolBox_OnInputMethodQuery")]
 	public static extern void* QToolBox_OnInputMethodQuery(void* self, QToolBox_OnInputMethodQuery_action _action);
+	
+	[LinkName("QToolBox_SuperInputMethodQuery")]
+	public static extern void* QToolBox_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QToolBox_FocusNextPrevChild")]
 	public static extern bool QToolBox_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QToolBox_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QToolBox_OnFocusNextPrevChild")]
 	public static extern bool QToolBox_OnFocusNextPrevChild(void* self, QToolBox_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QToolBox_SuperFocusNextPrevChild")]
+	public static extern bool QToolBox_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QToolBox_InitStyleOption")]
 	public static extern void QToolBox_InitStyleOption(void* self, void** option);
 	
 	public function void QToolBox_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QToolBox_OnInitStyleOption")]
 	public static extern void QToolBox_OnInitStyleOption(void* self, QToolBox_OnInitStyleOption_action _action);
+	
+	[LinkName("QToolBox_SuperInitStyleOption")]
+	public static extern void QToolBox_SuperInitStyleOption(void* self, void** option);
 }

@@ -30,6 +30,18 @@ class QAbstractUndoItem : IQAbstractUndoItem
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractUndoItem_OnUndo(obj.ObjectPtr,  => QtBeef_QAbstractUndoItem_OnUndo);
+		CQt.QAbstractUndoItem_OnRedo(obj.ObjectPtr,  => QtBeef_QAbstractUndoItem_OnRedo);
+	}
+	static void QtBeef_QAbstractUndoItem_OnUndo(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUndo();
+	}
+	static void QtBeef_QAbstractUndoItem_OnRedo(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedo();
 	}
 	public this(QAbstractUndoItem_Ptr ptr)
 	{
@@ -60,12 +72,18 @@ extension CQt
 	public function void QAbstractUndoItem_OnUndo_action(void* self);
 	[LinkName("QAbstractUndoItem_OnUndo")]
 	public static extern void QAbstractUndoItem_OnUndo(void* self, QAbstractUndoItem_OnUndo_action _action);
+	
+	[LinkName("QAbstractUndoItem_SuperUndo")]
+	public static extern void QAbstractUndoItem_SuperUndo(void* self);
 	[LinkName("QAbstractUndoItem_Redo")]
 	public static extern void QAbstractUndoItem_Redo(void* self);
 	
 	public function void QAbstractUndoItem_OnRedo_action(void* self);
 	[LinkName("QAbstractUndoItem_OnRedo")]
 	public static extern void QAbstractUndoItem_OnRedo(void* self, QAbstractUndoItem_OnRedo_action _action);
+	
+	[LinkName("QAbstractUndoItem_SuperRedo")]
+	public static extern void QAbstractUndoItem_SuperRedo(void* self);
 	[LinkName("QAbstractUndoItem_OperatorAssign")]
 	public static extern void QAbstractUndoItem_OperatorAssign(void* self, void** param1);
 }
@@ -804,6 +822,19 @@ class QTextDocument : IQTextDocument, IQObject
 		CQt.QTextDocument_Connect_DocumentLayoutChanged(obj.ObjectPtr,  => QtBeef_QTextDocument_Connect_DocumentLayoutChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QTextDocument_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTextDocument_OnMetaObject);
+		CQt.QTextDocument_OnMetacast(obj.ObjectPtr,  => QtBeef_QTextDocument_OnMetacast);
+		CQt.QTextDocument_OnMetacall(obj.ObjectPtr,  => QtBeef_QTextDocument_OnMetacall);
+		CQt.QTextDocument_OnClear(obj.ObjectPtr,  => QtBeef_QTextDocument_OnClear);
+		CQt.QTextDocument_OnCreateObject(obj.ObjectPtr,  => QtBeef_QTextDocument_OnCreateObject);
+		CQt.QTextDocument_OnLoadResource(obj.ObjectPtr,  => QtBeef_QTextDocument_OnLoadResource);
+		CQt.QTextDocument_OnEvent(obj.ObjectPtr,  => QtBeef_QTextDocument_OnEvent);
+		CQt.QTextDocument_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTextDocument_OnEventFilter);
+		CQt.QTextDocument_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTextDocument_OnTimerEvent);
+		CQt.QTextDocument_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTextDocument_OnChildEvent);
+		CQt.QTextDocument_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTextDocument_OnCustomEvent);
+		CQt.QTextDocument_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTextDocument_OnConnectNotify);
+		CQt.QTextDocument_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTextDocument_OnDisconnectNotify);
 	}
 	public Event<delegate void(c_int from, c_int charsRemoved, c_int charsAdded)> OnContentsChange = .() ~ _.Dispose();
 	public Event<delegate void()> OnContentsChanged = .() ~ _.Dispose();
@@ -876,6 +907,71 @@ class QTextDocument : IQTextDocument, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QTextDocument_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTextDocument_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTextDocument_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTextDocument_OnClear(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClear();
+	}
+	static void QtBeef_QTextDocument_OnCreateObject(void* ptr, void** f)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreateObject(f);
+	}
+	static void QtBeef_QTextDocument_OnLoadResource(void* ptr, c_int type, void** name)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLoadResource(type, name);
+	}
+	static void QtBeef_QTextDocument_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTextDocument_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTextDocument_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTextDocument_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTextDocument_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTextDocument_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTextDocument_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QTextDocument_Ptr ptr)
 	{
@@ -1626,18 +1722,27 @@ extension CQt
 	public function void QTextDocument_OnMetaObject_action(void* self);
 	[LinkName("QTextDocument_OnMetaObject")]
 	public static extern void** QTextDocument_OnMetaObject(void* self, QTextDocument_OnMetaObject_action _action);
+	
+	[LinkName("QTextDocument_SuperMetaObject")]
+	public static extern void** QTextDocument_SuperMetaObject(void* self);
 	[LinkName("QTextDocument_Qt_Metacast")]
 	public static extern void* QTextDocument_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTextDocument_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTextDocument_OnMetacast")]
 	public static extern void* QTextDocument_OnMetacast(void* self, QTextDocument_OnMetacast_action _action);
+	
+	[LinkName("QTextDocument_SuperMetacast")]
+	public static extern void* QTextDocument_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTextDocument_Qt_Metacall")]
 	public static extern c_int QTextDocument_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTextDocument_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTextDocument_OnMetacall")]
 	public static extern c_int QTextDocument_OnMetacall(void* self, QTextDocument_OnMetacall_action _action);
+	
+	[LinkName("QTextDocument_SuperMetacall")]
+	public static extern c_int QTextDocument_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTextDocument_Tr")]
 	public static extern libqt_string QTextDocument_Tr(c_char* s);
 	[LinkName("QTextDocument_Clone")]
@@ -1650,6 +1755,9 @@ extension CQt
 	public function void QTextDocument_OnClear_action(void* self);
 	[LinkName("QTextDocument_OnClear")]
 	public static extern void QTextDocument_OnClear(void* self, QTextDocument_OnClear_action _action);
+	
+	[LinkName("QTextDocument_SuperClear")]
+	public static extern void QTextDocument_SuperClear(void* self);
 	[LinkName("QTextDocument_SetUndoRedoEnabled")]
 	public static extern void QTextDocument_SetUndoRedoEnabled(void* self, bool enable);
 	[LinkName("QTextDocument_IsUndoRedoEnabled")]
@@ -1890,12 +1998,18 @@ extension CQt
 	public function void QTextDocument_OnCreateObject_action(void* self, void** f);
 	[LinkName("QTextDocument_OnCreateObject")]
 	public static extern void** QTextDocument_OnCreateObject(void* self, QTextDocument_OnCreateObject_action _action);
+	
+	[LinkName("QTextDocument_SuperCreateObject")]
+	public static extern void** QTextDocument_SuperCreateObject(void* self, void** f);
 	[LinkName("QTextDocument_LoadResource")]
 	public static extern void* QTextDocument_LoadResource(void* self, c_int type, void** name);
 	
 	public function void QTextDocument_OnLoadResource_action(void* self, c_int type, void** name);
 	[LinkName("QTextDocument_OnLoadResource")]
 	public static extern void* QTextDocument_OnLoadResource(void* self, QTextDocument_OnLoadResource_action _action);
+	
+	[LinkName("QTextDocument_SuperLoadResource")]
+	public static extern void* QTextDocument_SuperLoadResource(void* self, c_int type, void** name);
 	[LinkName("QTextDocument_Tr2")]
 	public static extern libqt_string QTextDocument_Tr2(c_char* s, c_char* c);
 	[LinkName("QTextDocument_Tr3")]
@@ -1930,42 +2044,63 @@ extension CQt
 	public function void QTextDocument_OnEvent_action(void* self, void** event);
 	[LinkName("QTextDocument_OnEvent")]
 	public static extern bool QTextDocument_OnEvent(void* self, QTextDocument_OnEvent_action _action);
+	
+	[LinkName("QTextDocument_SuperEvent")]
+	public static extern bool QTextDocument_SuperEvent(void* self, void** event);
 	[LinkName("QTextDocument_EventFilter")]
 	public static extern bool QTextDocument_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTextDocument_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTextDocument_OnEventFilter")]
 	public static extern bool QTextDocument_OnEventFilter(void* self, QTextDocument_OnEventFilter_action _action);
+	
+	[LinkName("QTextDocument_SuperEventFilter")]
+	public static extern bool QTextDocument_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTextDocument_TimerEvent")]
 	public static extern void QTextDocument_TimerEvent(void* self, void** event);
 	
 	public function void QTextDocument_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTextDocument_OnTimerEvent")]
 	public static extern void QTextDocument_OnTimerEvent(void* self, QTextDocument_OnTimerEvent_action _action);
+	
+	[LinkName("QTextDocument_SuperTimerEvent")]
+	public static extern void QTextDocument_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTextDocument_ChildEvent")]
 	public static extern void QTextDocument_ChildEvent(void* self, void** event);
 	
 	public function void QTextDocument_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTextDocument_OnChildEvent")]
 	public static extern void QTextDocument_OnChildEvent(void* self, QTextDocument_OnChildEvent_action _action);
+	
+	[LinkName("QTextDocument_SuperChildEvent")]
+	public static extern void QTextDocument_SuperChildEvent(void* self, void** event);
 	[LinkName("QTextDocument_CustomEvent")]
 	public static extern void QTextDocument_CustomEvent(void* self, void** event);
 	
 	public function void QTextDocument_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTextDocument_OnCustomEvent")]
 	public static extern void QTextDocument_OnCustomEvent(void* self, QTextDocument_OnCustomEvent_action _action);
+	
+	[LinkName("QTextDocument_SuperCustomEvent")]
+	public static extern void QTextDocument_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTextDocument_ConnectNotify")]
 	public static extern void QTextDocument_ConnectNotify(void* self, void** signal);
 	
 	public function void QTextDocument_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTextDocument_OnConnectNotify")]
 	public static extern void QTextDocument_OnConnectNotify(void* self, QTextDocument_OnConnectNotify_action _action);
+	
+	[LinkName("QTextDocument_SuperConnectNotify")]
+	public static extern void QTextDocument_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTextDocument_DisconnectNotify")]
 	public static extern void QTextDocument_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTextDocument_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTextDocument_OnDisconnectNotify")]
 	public static extern void QTextDocument_OnDisconnectNotify(void* self, QTextDocument_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTextDocument_SuperDisconnectNotify")]
+	public static extern void QTextDocument_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QTextDocument_MetaInformation

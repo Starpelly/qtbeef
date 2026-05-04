@@ -633,6 +633,58 @@ class QIdentityProxyModel : IQIdentityProxyModel, IQAbstractProxyModel, IQAbstra
 		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged2);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2);
+		CQt.QIdentityProxyModel_OnMetaObject(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMetaObject);
+		CQt.QIdentityProxyModel_OnMetacast(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMetacast);
+		CQt.QIdentityProxyModel_OnMetacall(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMetacall);
+		CQt.QIdentityProxyModel_OnColumnCount(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnColumnCount);
+		CQt.QIdentityProxyModel_OnIndex(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnIndex);
+		CQt.QIdentityProxyModel_OnMapFromSource(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMapFromSource);
+		CQt.QIdentityProxyModel_OnMapToSource(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMapToSource);
+		CQt.QIdentityProxyModel_OnParent(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnParent);
+		CQt.QIdentityProxyModel_OnRowCount(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnRowCount);
+		CQt.QIdentityProxyModel_OnHeaderData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnHeaderData);
+		CQt.QIdentityProxyModel_OnDropMimeData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnDropMimeData);
+		CQt.QIdentityProxyModel_OnSibling(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSibling);
+		CQt.QIdentityProxyModel_OnMapSelectionFromSource(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMapSelectionFromSource);
+		CQt.QIdentityProxyModel_OnMapSelectionToSource(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMapSelectionToSource);
+		CQt.QIdentityProxyModel_OnMatch(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMatch);
+		CQt.QIdentityProxyModel_OnSetSourceModel(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSetSourceModel);
+		CQt.QIdentityProxyModel_OnInsertColumns(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnInsertColumns);
+		CQt.QIdentityProxyModel_OnInsertRows(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnInsertRows);
+		CQt.QIdentityProxyModel_OnRemoveColumns(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnRemoveColumns);
+		CQt.QIdentityProxyModel_OnRemoveRows(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnRemoveRows);
+		CQt.QIdentityProxyModel_OnMoveRows(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMoveRows);
+		CQt.QIdentityProxyModel_OnMoveColumns(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMoveColumns);
+		CQt.QIdentityProxyModel_OnEvent(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnEvent);
+		CQt.QIdentityProxyModel_OnEventFilter(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnEventFilter);
+		CQt.QIdentityProxyModel_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnTimerEvent);
+		CQt.QIdentityProxyModel_OnChildEvent(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnChildEvent);
+		CQt.QIdentityProxyModel_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnCustomEvent);
+		CQt.QIdentityProxyModel_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnConnectNotify);
+		CQt.QIdentityProxyModel_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnDisconnectNotify);
+		CQt.QIdentityProxyModel_OnHasChildren(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnHasChildren);
+		CQt.QIdentityProxyModel_OnData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnData);
+		CQt.QIdentityProxyModel_OnSetData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSetData);
+		CQt.QIdentityProxyModel_OnSetHeaderData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSetHeaderData);
+		CQt.QIdentityProxyModel_OnItemData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnItemData);
+		CQt.QIdentityProxyModel_OnSetItemData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSetItemData);
+		CQt.QIdentityProxyModel_OnClearItemData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnClearItemData);
+		CQt.QIdentityProxyModel_OnMimeTypes(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMimeTypes);
+		CQt.QIdentityProxyModel_OnMimeData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMimeData);
+		CQt.QIdentityProxyModel_OnCanDropMimeData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnCanDropMimeData);
+		CQt.QIdentityProxyModel_OnSupportedDropActions(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSupportedDropActions);
+		CQt.QIdentityProxyModel_OnSupportedDragActions(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSupportedDragActions);
+		CQt.QIdentityProxyModel_OnFetchMore(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnFetchMore);
+		CQt.QIdentityProxyModel_OnCanFetchMore(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnCanFetchMore);
+		CQt.QIdentityProxyModel_OnFlags(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnFlags);
+		CQt.QIdentityProxyModel_OnSort(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSort);
+		CQt.QIdentityProxyModel_OnBuddy(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnBuddy);
+		CQt.QIdentityProxyModel_OnSpan(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSpan);
+		CQt.QIdentityProxyModel_OnRoleNames(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnRoleNames);
+		CQt.QIdentityProxyModel_OnMultiData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnMultiData);
+		CQt.QIdentityProxyModel_OnSubmit(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnSubmit);
+		CQt.QIdentityProxyModel_OnRevert(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnRevert);
+		CQt.QIdentityProxyModel_OnResetInternalData(obj.ObjectPtr,  => QtBeef_QIdentityProxyModel_OnResetInternalData);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -699,6 +751,266 @@ class QIdentityProxyModel : IQIdentityProxyModel, IQAbstractProxyModel, IQAbstra
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QIdentityProxyModel_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QIdentityProxyModel_OnColumnCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnCount(parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnIndex(void* ptr, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndex(row, column, parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMapFromSource(void* ptr, void** sourceIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapFromSource(sourceIndex);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMapToSource(void* ptr, void** proxyIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapToSource(proxyIndex);
+	}
+	static void QtBeef_QIdentityProxyModel_OnParent(void* ptr, void** child)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParent(child);
+	}
+	static void QtBeef_QIdentityProxyModel_OnRowCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowCount(parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnHeaderData(void* ptr, c_int section, Qt_Orientation orientation, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderData(section, orientation, role);
+	}
+	static void QtBeef_QIdentityProxyModel_OnDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnSibling(void* ptr, c_int row, c_int column, void** idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSibling(row, column, idx);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMapSelectionFromSource(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapSelectionFromSource(selection);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMapSelectionToSource(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapSelectionToSource(selection);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMatch(void* ptr, void** start, c_int role, void** value, c_int hits, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMatch(start, role, value, hits, flags);
+	}
+	static void QtBeef_QIdentityProxyModel_OnSetSourceModel(void* ptr, void** sourceModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSourceModel(sourceModel);
+	}
+	static void QtBeef_QIdentityProxyModel_OnInsertColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertColumns(column, count, parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnInsertRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertRows(row, count, parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnRemoveColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveColumns(column, count, parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnRemoveRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveRows(row, count, parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMoveRows(void* ptr, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMoveColumns(void* ptr, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QIdentityProxyModel_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QIdentityProxyModel_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QIdentityProxyModel_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QIdentityProxyModel_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QIdentityProxyModel_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QIdentityProxyModel_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QIdentityProxyModel_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QIdentityProxyModel_OnHasChildren(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasChildren(parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnData(void* ptr, void** index, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(index, role);
+	}
+	static void QtBeef_QIdentityProxyModel_OnSetData(void* ptr, void** index, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(index, value, role);
+	}
+	static void QtBeef_QIdentityProxyModel_OnSetHeaderData(void* ptr, c_int section, Qt_Orientation orientation, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetHeaderData(section, orientation, value, role);
+	}
+	static void QtBeef_QIdentityProxyModel_OnItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemData(index);
+	}
+	static void QtBeef_QIdentityProxyModel_OnSetItemData(void* ptr, void** index, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetItemData(index, roles);
+	}
+	static void QtBeef_QIdentityProxyModel_OnClearItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClearItemData(index);
+	}
+	static void QtBeef_QIdentityProxyModel_OnMimeTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeTypes();
+	}
+	static void QtBeef_QIdentityProxyModel_OnMimeData(void* ptr, void** indexes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeData(indexes);
+	}
+	static void QtBeef_QIdentityProxyModel_OnCanDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnSupportedDropActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDropActions();
+	}
+	static void QtBeef_QIdentityProxyModel_OnSupportedDragActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDragActions();
+	}
+	static void QtBeef_QIdentityProxyModel_OnFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFetchMore(parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnCanFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanFetchMore(parent);
+	}
+	static void QtBeef_QIdentityProxyModel_OnFlags(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFlags(index);
+	}
+	static void QtBeef_QIdentityProxyModel_OnSort(void* ptr, c_int column, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSort(column, order);
+	}
+	static void QtBeef_QIdentityProxyModel_OnBuddy(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBuddy(index);
+	}
+	static void QtBeef_QIdentityProxyModel_OnSpan(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpan(index);
+	}
+	static void QtBeef_QIdentityProxyModel_OnRoleNames(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRoleNames();
+	}
+	static void QtBeef_QIdentityProxyModel_OnMultiData(void* ptr, void** index, void* roleDataSpan)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMultiData(index, roleDataSpan);
+	}
+	static void QtBeef_QIdentityProxyModel_OnSubmit(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSubmit();
+	}
+	static void QtBeef_QIdentityProxyModel_OnRevert(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRevert();
+	}
+	static void QtBeef_QIdentityProxyModel_OnResetInternalData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResetInternalData();
 	}
 	public this(QIdentityProxyModel_Ptr ptr)
 	{
@@ -1326,18 +1638,27 @@ extension CQt
 	public function void QIdentityProxyModel_OnMetaObject_action(void* self);
 	[LinkName("QIdentityProxyModel_OnMetaObject")]
 	public static extern void** QIdentityProxyModel_OnMetaObject(void* self, QIdentityProxyModel_OnMetaObject_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMetaObject")]
+	public static extern void** QIdentityProxyModel_SuperMetaObject(void* self);
 	[LinkName("QIdentityProxyModel_Qt_Metacast")]
 	public static extern void* QIdentityProxyModel_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QIdentityProxyModel_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QIdentityProxyModel_OnMetacast")]
 	public static extern void* QIdentityProxyModel_OnMetacast(void* self, QIdentityProxyModel_OnMetacast_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMetacast")]
+	public static extern void* QIdentityProxyModel_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QIdentityProxyModel_Qt_Metacall")]
 	public static extern c_int QIdentityProxyModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QIdentityProxyModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QIdentityProxyModel_OnMetacall")]
 	public static extern c_int QIdentityProxyModel_OnMetacall(void* self, QIdentityProxyModel_OnMetacall_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMetacall")]
+	public static extern c_int QIdentityProxyModel_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QIdentityProxyModel_Tr")]
 	public static extern libqt_string QIdentityProxyModel_Tr(c_char* s);
 	[LinkName("QIdentityProxyModel_ColumnCount")]
@@ -1346,114 +1667,171 @@ extension CQt
 	public function void QIdentityProxyModel_OnColumnCount_action(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_OnColumnCount")]
 	public static extern c_int QIdentityProxyModel_OnColumnCount(void* self, QIdentityProxyModel_OnColumnCount_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperColumnCount")]
+	public static extern c_int QIdentityProxyModel_SuperColumnCount(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_Index")]
 	public static extern void* QIdentityProxyModel_Index(void* self, c_int row, c_int column, void** parent);
 	
 	public function void QIdentityProxyModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QIdentityProxyModel_OnIndex")]
 	public static extern void* QIdentityProxyModel_OnIndex(void* self, QIdentityProxyModel_OnIndex_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperIndex")]
+	public static extern void* QIdentityProxyModel_SuperIndex(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QIdentityProxyModel_MapFromSource")]
 	public static extern void* QIdentityProxyModel_MapFromSource(void* self, void** sourceIndex);
 	
 	public function void QIdentityProxyModel_OnMapFromSource_action(void* self, void** sourceIndex);
 	[LinkName("QIdentityProxyModel_OnMapFromSource")]
 	public static extern void* QIdentityProxyModel_OnMapFromSource(void* self, QIdentityProxyModel_OnMapFromSource_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMapFromSource")]
+	public static extern void* QIdentityProxyModel_SuperMapFromSource(void* self, void** sourceIndex);
 	[LinkName("QIdentityProxyModel_MapToSource")]
 	public static extern void* QIdentityProxyModel_MapToSource(void* self, void** proxyIndex);
 	
 	public function void QIdentityProxyModel_OnMapToSource_action(void* self, void** proxyIndex);
 	[LinkName("QIdentityProxyModel_OnMapToSource")]
 	public static extern void* QIdentityProxyModel_OnMapToSource(void* self, QIdentityProxyModel_OnMapToSource_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMapToSource")]
+	public static extern void* QIdentityProxyModel_SuperMapToSource(void* self, void** proxyIndex);
 	[LinkName("QIdentityProxyModel_Parent")]
 	public static extern void* QIdentityProxyModel_Parent(void* self, void** child);
 	
 	public function void QIdentityProxyModel_OnParent_action(void* self, void** child);
 	[LinkName("QIdentityProxyModel_OnParent")]
 	public static extern void* QIdentityProxyModel_OnParent(void* self, QIdentityProxyModel_OnParent_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperParent")]
+	public static extern void* QIdentityProxyModel_SuperParent(void* self, void** child);
 	[LinkName("QIdentityProxyModel_RowCount")]
 	public static extern c_int QIdentityProxyModel_RowCount(void* self, void** parent);
 	
 	public function void QIdentityProxyModel_OnRowCount_action(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_OnRowCount")]
 	public static extern c_int QIdentityProxyModel_OnRowCount(void* self, QIdentityProxyModel_OnRowCount_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperRowCount")]
+	public static extern c_int QIdentityProxyModel_SuperRowCount(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_HeaderData")]
 	public static extern void* QIdentityProxyModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	
 	public function void QIdentityProxyModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QIdentityProxyModel_OnHeaderData")]
 	public static extern void* QIdentityProxyModel_OnHeaderData(void* self, QIdentityProxyModel_OnHeaderData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperHeaderData")]
+	public static extern void* QIdentityProxyModel_SuperHeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QIdentityProxyModel_DropMimeData")]
 	public static extern bool QIdentityProxyModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QIdentityProxyModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QIdentityProxyModel_OnDropMimeData")]
 	public static extern bool QIdentityProxyModel_OnDropMimeData(void* self, QIdentityProxyModel_OnDropMimeData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperDropMimeData")]
+	public static extern bool QIdentityProxyModel_SuperDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QIdentityProxyModel_Sibling")]
 	public static extern void* QIdentityProxyModel_Sibling(void* self, c_int row, c_int column, void** idx);
 	
 	public function void QIdentityProxyModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QIdentityProxyModel_OnSibling")]
 	public static extern void* QIdentityProxyModel_OnSibling(void* self, QIdentityProxyModel_OnSibling_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSibling")]
+	public static extern void* QIdentityProxyModel_SuperSibling(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QIdentityProxyModel_MapSelectionFromSource")]
 	public static extern void* QIdentityProxyModel_MapSelectionFromSource(void* self, void** selection);
 	
 	public function void QIdentityProxyModel_OnMapSelectionFromSource_action(void* self, void** selection);
 	[LinkName("QIdentityProxyModel_OnMapSelectionFromSource")]
 	public static extern void* QIdentityProxyModel_OnMapSelectionFromSource(void* self, QIdentityProxyModel_OnMapSelectionFromSource_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMapSelectionFromSource")]
+	public static extern void* QIdentityProxyModel_SuperMapSelectionFromSource(void* self, void** selection);
 	[LinkName("QIdentityProxyModel_MapSelectionToSource")]
 	public static extern void* QIdentityProxyModel_MapSelectionToSource(void* self, void** selection);
 	
 	public function void QIdentityProxyModel_OnMapSelectionToSource_action(void* self, void** selection);
 	[LinkName("QIdentityProxyModel_OnMapSelectionToSource")]
 	public static extern void* QIdentityProxyModel_OnMapSelectionToSource(void* self, QIdentityProxyModel_OnMapSelectionToSource_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMapSelectionToSource")]
+	public static extern void* QIdentityProxyModel_SuperMapSelectionToSource(void* self, void** selection);
 	[LinkName("QIdentityProxyModel_Match")]
 	public static extern void* QIdentityProxyModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	
 	public function void QIdentityProxyModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QIdentityProxyModel_OnMatch")]
 	public static extern void* QIdentityProxyModel_OnMatch(void* self, QIdentityProxyModel_OnMatch_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMatch")]
+	public static extern void* QIdentityProxyModel_SuperMatch(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QIdentityProxyModel_SetSourceModel")]
 	public static extern void QIdentityProxyModel_SetSourceModel(void* self, void** sourceModel);
 	
 	public function void QIdentityProxyModel_OnSetSourceModel_action(void* self, void** sourceModel);
 	[LinkName("QIdentityProxyModel_OnSetSourceModel")]
 	public static extern void QIdentityProxyModel_OnSetSourceModel(void* self, QIdentityProxyModel_OnSetSourceModel_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSetSourceModel")]
+	public static extern void QIdentityProxyModel_SuperSetSourceModel(void* self, void** sourceModel);
 	[LinkName("QIdentityProxyModel_InsertColumns")]
 	public static extern bool QIdentityProxyModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QIdentityProxyModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QIdentityProxyModel_OnInsertColumns")]
 	public static extern bool QIdentityProxyModel_OnInsertColumns(void* self, QIdentityProxyModel_OnInsertColumns_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperInsertColumns")]
+	public static extern bool QIdentityProxyModel_SuperInsertColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QIdentityProxyModel_InsertRows")]
 	public static extern bool QIdentityProxyModel_InsertRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QIdentityProxyModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QIdentityProxyModel_OnInsertRows")]
 	public static extern bool QIdentityProxyModel_OnInsertRows(void* self, QIdentityProxyModel_OnInsertRows_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperInsertRows")]
+	public static extern bool QIdentityProxyModel_SuperInsertRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QIdentityProxyModel_RemoveColumns")]
 	public static extern bool QIdentityProxyModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QIdentityProxyModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QIdentityProxyModel_OnRemoveColumns")]
 	public static extern bool QIdentityProxyModel_OnRemoveColumns(void* self, QIdentityProxyModel_OnRemoveColumns_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperRemoveColumns")]
+	public static extern bool QIdentityProxyModel_SuperRemoveColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QIdentityProxyModel_RemoveRows")]
 	public static extern bool QIdentityProxyModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QIdentityProxyModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QIdentityProxyModel_OnRemoveRows")]
 	public static extern bool QIdentityProxyModel_OnRemoveRows(void* self, QIdentityProxyModel_OnRemoveRows_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperRemoveRows")]
+	public static extern bool QIdentityProxyModel_SuperRemoveRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QIdentityProxyModel_MoveRows")]
 	public static extern bool QIdentityProxyModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QIdentityProxyModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QIdentityProxyModel_OnMoveRows")]
 	public static extern bool QIdentityProxyModel_OnMoveRows(void* self, QIdentityProxyModel_OnMoveRows_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMoveRows")]
+	public static extern bool QIdentityProxyModel_SuperMoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QIdentityProxyModel_MoveColumns")]
 	public static extern bool QIdentityProxyModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QIdentityProxyModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QIdentityProxyModel_OnMoveColumns")]
 	public static extern bool QIdentityProxyModel_OnMoveColumns(void* self, QIdentityProxyModel_OnMoveColumns_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMoveColumns")]
+	public static extern bool QIdentityProxyModel_SuperMoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QIdentityProxyModel_Tr2")]
 	public static extern libqt_string QIdentityProxyModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QIdentityProxyModel_Tr3")]
@@ -1464,178 +1842,268 @@ extension CQt
 	public function void QIdentityProxyModel_OnEvent_action(void* self, void** event);
 	[LinkName("QIdentityProxyModel_OnEvent")]
 	public static extern bool QIdentityProxyModel_OnEvent(void* self, QIdentityProxyModel_OnEvent_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperEvent")]
+	public static extern bool QIdentityProxyModel_SuperEvent(void* self, void** event);
 	[LinkName("QIdentityProxyModel_EventFilter")]
 	public static extern bool QIdentityProxyModel_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QIdentityProxyModel_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QIdentityProxyModel_OnEventFilter")]
 	public static extern bool QIdentityProxyModel_OnEventFilter(void* self, QIdentityProxyModel_OnEventFilter_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperEventFilter")]
+	public static extern bool QIdentityProxyModel_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QIdentityProxyModel_TimerEvent")]
 	public static extern void QIdentityProxyModel_TimerEvent(void* self, void** event);
 	
 	public function void QIdentityProxyModel_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QIdentityProxyModel_OnTimerEvent")]
 	public static extern void QIdentityProxyModel_OnTimerEvent(void* self, QIdentityProxyModel_OnTimerEvent_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperTimerEvent")]
+	public static extern void QIdentityProxyModel_SuperTimerEvent(void* self, void** event);
 	[LinkName("QIdentityProxyModel_ChildEvent")]
 	public static extern void QIdentityProxyModel_ChildEvent(void* self, void** event);
 	
 	public function void QIdentityProxyModel_OnChildEvent_action(void* self, void** event);
 	[LinkName("QIdentityProxyModel_OnChildEvent")]
 	public static extern void QIdentityProxyModel_OnChildEvent(void* self, QIdentityProxyModel_OnChildEvent_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperChildEvent")]
+	public static extern void QIdentityProxyModel_SuperChildEvent(void* self, void** event);
 	[LinkName("QIdentityProxyModel_CustomEvent")]
 	public static extern void QIdentityProxyModel_CustomEvent(void* self, void** event);
 	
 	public function void QIdentityProxyModel_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QIdentityProxyModel_OnCustomEvent")]
 	public static extern void QIdentityProxyModel_OnCustomEvent(void* self, QIdentityProxyModel_OnCustomEvent_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperCustomEvent")]
+	public static extern void QIdentityProxyModel_SuperCustomEvent(void* self, void** event);
 	[LinkName("QIdentityProxyModel_ConnectNotify")]
 	public static extern void QIdentityProxyModel_ConnectNotify(void* self, void** signal);
 	
 	public function void QIdentityProxyModel_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QIdentityProxyModel_OnConnectNotify")]
 	public static extern void QIdentityProxyModel_OnConnectNotify(void* self, QIdentityProxyModel_OnConnectNotify_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperConnectNotify")]
+	public static extern void QIdentityProxyModel_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QIdentityProxyModel_DisconnectNotify")]
 	public static extern void QIdentityProxyModel_DisconnectNotify(void* self, void** signal);
 	
 	public function void QIdentityProxyModel_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QIdentityProxyModel_OnDisconnectNotify")]
 	public static extern void QIdentityProxyModel_OnDisconnectNotify(void* self, QIdentityProxyModel_OnDisconnectNotify_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperDisconnectNotify")]
+	public static extern void QIdentityProxyModel_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QIdentityProxyModel_HasChildren")]
 	public static extern bool QIdentityProxyModel_HasChildren(void* self, void** parent);
 	
 	public function void QIdentityProxyModel_OnHasChildren_action(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_OnHasChildren")]
 	public static extern bool QIdentityProxyModel_OnHasChildren(void* self, QIdentityProxyModel_OnHasChildren_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperHasChildren")]
+	public static extern bool QIdentityProxyModel_SuperHasChildren(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_Data")]
 	public static extern void* QIdentityProxyModel_Data(void* self, void** index, c_int role);
 	
 	public function void QIdentityProxyModel_OnData_action(void* self, void** index, c_int role);
 	[LinkName("QIdentityProxyModel_OnData")]
 	public static extern void* QIdentityProxyModel_OnData(void* self, QIdentityProxyModel_OnData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperData")]
+	public static extern void* QIdentityProxyModel_SuperData(void* self, void** index, c_int role);
 	[LinkName("QIdentityProxyModel_SetData")]
 	public static extern bool QIdentityProxyModel_SetData(void* self, void** index, void** value, c_int role);
 	
 	public function void QIdentityProxyModel_OnSetData_action(void* self, void** index, void** value, c_int role);
 	[LinkName("QIdentityProxyModel_OnSetData")]
 	public static extern bool QIdentityProxyModel_OnSetData(void* self, QIdentityProxyModel_OnSetData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSetData")]
+	public static extern bool QIdentityProxyModel_SuperSetData(void* self, void** index, void** value, c_int role);
 	[LinkName("QIdentityProxyModel_SetHeaderData")]
 	public static extern bool QIdentityProxyModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	
 	public function void QIdentityProxyModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QIdentityProxyModel_OnSetHeaderData")]
 	public static extern bool QIdentityProxyModel_OnSetHeaderData(void* self, QIdentityProxyModel_OnSetHeaderData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSetHeaderData")]
+	public static extern bool QIdentityProxyModel_SuperSetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QIdentityProxyModel_ItemData")]
 	public static extern void* QIdentityProxyModel_ItemData(void* self, void** index);
 	
 	public function void QIdentityProxyModel_OnItemData_action(void* self, void** index);
 	[LinkName("QIdentityProxyModel_OnItemData")]
 	public static extern void* QIdentityProxyModel_OnItemData(void* self, QIdentityProxyModel_OnItemData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperItemData")]
+	public static extern void* QIdentityProxyModel_SuperItemData(void* self, void** index);
 	[LinkName("QIdentityProxyModel_SetItemData")]
 	public static extern bool QIdentityProxyModel_SetItemData(void* self, void** index, void** roles);
 	
 	public function void QIdentityProxyModel_OnSetItemData_action(void* self, void** index, void** roles);
 	[LinkName("QIdentityProxyModel_OnSetItemData")]
 	public static extern bool QIdentityProxyModel_OnSetItemData(void* self, QIdentityProxyModel_OnSetItemData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSetItemData")]
+	public static extern bool QIdentityProxyModel_SuperSetItemData(void* self, void** index, void** roles);
 	[LinkName("QIdentityProxyModel_ClearItemData")]
 	public static extern bool QIdentityProxyModel_ClearItemData(void* self, void** index);
 	
 	public function void QIdentityProxyModel_OnClearItemData_action(void* self, void** index);
 	[LinkName("QIdentityProxyModel_OnClearItemData")]
 	public static extern bool QIdentityProxyModel_OnClearItemData(void* self, QIdentityProxyModel_OnClearItemData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperClearItemData")]
+	public static extern bool QIdentityProxyModel_SuperClearItemData(void* self, void** index);
 	[LinkName("QIdentityProxyModel_MimeTypes")]
 	public static extern void* QIdentityProxyModel_MimeTypes(void* self);
 	
 	public function void QIdentityProxyModel_OnMimeTypes_action(void* self);
 	[LinkName("QIdentityProxyModel_OnMimeTypes")]
 	public static extern void* QIdentityProxyModel_OnMimeTypes(void* self, QIdentityProxyModel_OnMimeTypes_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMimeTypes")]
+	public static extern void* QIdentityProxyModel_SuperMimeTypes(void* self);
 	[LinkName("QIdentityProxyModel_MimeData")]
 	public static extern void** QIdentityProxyModel_MimeData(void* self, void** indexes);
 	
 	public function void QIdentityProxyModel_OnMimeData_action(void* self, void** indexes);
 	[LinkName("QIdentityProxyModel_OnMimeData")]
 	public static extern void** QIdentityProxyModel_OnMimeData(void* self, QIdentityProxyModel_OnMimeData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMimeData")]
+	public static extern void** QIdentityProxyModel_SuperMimeData(void* self, void** indexes);
 	[LinkName("QIdentityProxyModel_CanDropMimeData")]
 	public static extern bool QIdentityProxyModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QIdentityProxyModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QIdentityProxyModel_OnCanDropMimeData")]
 	public static extern bool QIdentityProxyModel_OnCanDropMimeData(void* self, QIdentityProxyModel_OnCanDropMimeData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperCanDropMimeData")]
+	public static extern bool QIdentityProxyModel_SuperCanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QIdentityProxyModel_SupportedDropActions")]
 	public static extern void* QIdentityProxyModel_SupportedDropActions(void* self);
 	
 	public function void QIdentityProxyModel_OnSupportedDropActions_action(void* self);
 	[LinkName("QIdentityProxyModel_OnSupportedDropActions")]
 	public static extern void* QIdentityProxyModel_OnSupportedDropActions(void* self, QIdentityProxyModel_OnSupportedDropActions_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSupportedDropActions")]
+	public static extern void* QIdentityProxyModel_SuperSupportedDropActions(void* self);
 	[LinkName("QIdentityProxyModel_SupportedDragActions")]
 	public static extern void* QIdentityProxyModel_SupportedDragActions(void* self);
 	
 	public function void QIdentityProxyModel_OnSupportedDragActions_action(void* self);
 	[LinkName("QIdentityProxyModel_OnSupportedDragActions")]
 	public static extern void* QIdentityProxyModel_OnSupportedDragActions(void* self, QIdentityProxyModel_OnSupportedDragActions_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSupportedDragActions")]
+	public static extern void* QIdentityProxyModel_SuperSupportedDragActions(void* self);
 	[LinkName("QIdentityProxyModel_FetchMore")]
 	public static extern void QIdentityProxyModel_FetchMore(void* self, void** parent);
 	
 	public function void QIdentityProxyModel_OnFetchMore_action(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_OnFetchMore")]
 	public static extern void QIdentityProxyModel_OnFetchMore(void* self, QIdentityProxyModel_OnFetchMore_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperFetchMore")]
+	public static extern void QIdentityProxyModel_SuperFetchMore(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_CanFetchMore")]
 	public static extern bool QIdentityProxyModel_CanFetchMore(void* self, void** parent);
 	
 	public function void QIdentityProxyModel_OnCanFetchMore_action(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_OnCanFetchMore")]
 	public static extern bool QIdentityProxyModel_OnCanFetchMore(void* self, QIdentityProxyModel_OnCanFetchMore_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperCanFetchMore")]
+	public static extern bool QIdentityProxyModel_SuperCanFetchMore(void* self, void** parent);
 	[LinkName("QIdentityProxyModel_Flags")]
 	public static extern void* QIdentityProxyModel_Flags(void* self, void** index);
 	
 	public function void QIdentityProxyModel_OnFlags_action(void* self, void** index);
 	[LinkName("QIdentityProxyModel_OnFlags")]
 	public static extern void* QIdentityProxyModel_OnFlags(void* self, QIdentityProxyModel_OnFlags_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperFlags")]
+	public static extern void* QIdentityProxyModel_SuperFlags(void* self, void** index);
 	[LinkName("QIdentityProxyModel_Sort")]
 	public static extern void QIdentityProxyModel_Sort(void* self, c_int column, Qt_SortOrder order);
 	
 	public function void QIdentityProxyModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QIdentityProxyModel_OnSort")]
 	public static extern void QIdentityProxyModel_OnSort(void* self, QIdentityProxyModel_OnSort_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSort")]
+	public static extern void QIdentityProxyModel_SuperSort(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QIdentityProxyModel_Buddy")]
 	public static extern void* QIdentityProxyModel_Buddy(void* self, void** index);
 	
 	public function void QIdentityProxyModel_OnBuddy_action(void* self, void** index);
 	[LinkName("QIdentityProxyModel_OnBuddy")]
 	public static extern void* QIdentityProxyModel_OnBuddy(void* self, QIdentityProxyModel_OnBuddy_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperBuddy")]
+	public static extern void* QIdentityProxyModel_SuperBuddy(void* self, void** index);
 	[LinkName("QIdentityProxyModel_Span")]
 	public static extern void* QIdentityProxyModel_Span(void* self, void** index);
 	
 	public function void QIdentityProxyModel_OnSpan_action(void* self, void** index);
 	[LinkName("QIdentityProxyModel_OnSpan")]
 	public static extern void* QIdentityProxyModel_OnSpan(void* self, QIdentityProxyModel_OnSpan_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSpan")]
+	public static extern void* QIdentityProxyModel_SuperSpan(void* self, void** index);
 	[LinkName("QIdentityProxyModel_RoleNames")]
 	public static extern void* QIdentityProxyModel_RoleNames(void* self);
 	
 	public function void QIdentityProxyModel_OnRoleNames_action(void* self);
 	[LinkName("QIdentityProxyModel_OnRoleNames")]
 	public static extern void* QIdentityProxyModel_OnRoleNames(void* self, QIdentityProxyModel_OnRoleNames_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperRoleNames")]
+	public static extern void* QIdentityProxyModel_SuperRoleNames(void* self);
 	[LinkName("QIdentityProxyModel_MultiData")]
 	public static extern void QIdentityProxyModel_MultiData(void* self, void** index, void* roleDataSpan);
 	
 	public function void QIdentityProxyModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
 	[LinkName("QIdentityProxyModel_OnMultiData")]
 	public static extern void QIdentityProxyModel_OnMultiData(void* self, QIdentityProxyModel_OnMultiData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperMultiData")]
+	public static extern void QIdentityProxyModel_SuperMultiData(void* self, void** index, void* roleDataSpan);
 	[LinkName("QIdentityProxyModel_Submit")]
 	public static extern bool QIdentityProxyModel_Submit(void* self);
 	
 	public function void QIdentityProxyModel_OnSubmit_action(void* self);
 	[LinkName("QIdentityProxyModel_OnSubmit")]
 	public static extern bool QIdentityProxyModel_OnSubmit(void* self, QIdentityProxyModel_OnSubmit_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperSubmit")]
+	public static extern bool QIdentityProxyModel_SuperSubmit(void* self);
 	[LinkName("QIdentityProxyModel_Revert")]
 	public static extern void QIdentityProxyModel_Revert(void* self);
 	
 	public function void QIdentityProxyModel_OnRevert_action(void* self);
 	[LinkName("QIdentityProxyModel_OnRevert")]
 	public static extern void QIdentityProxyModel_OnRevert(void* self, QIdentityProxyModel_OnRevert_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperRevert")]
+	public static extern void QIdentityProxyModel_SuperRevert(void* self);
 	[LinkName("QIdentityProxyModel_ResetInternalData")]
 	public static extern void QIdentityProxyModel_ResetInternalData(void* self);
 	
 	public function void QIdentityProxyModel_OnResetInternalData_action(void* self);
 	[LinkName("QIdentityProxyModel_OnResetInternalData")]
 	public static extern void QIdentityProxyModel_OnResetInternalData(void* self, QIdentityProxyModel_OnResetInternalData_action _action);
+	
+	[LinkName("QIdentityProxyModel_SuperResetInternalData")]
+	public static extern void QIdentityProxyModel_SuperResetInternalData(void* self);
 }

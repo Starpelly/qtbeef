@@ -598,6 +598,16 @@ class QTextTable : IQTextTable, IQTextFrame, IQTextObject, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QTextTable_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTextTable_OnMetaObject);
+		CQt.QTextTable_OnMetacast(obj.ObjectPtr,  => QtBeef_QTextTable_OnMetacast);
+		CQt.QTextTable_OnMetacall(obj.ObjectPtr,  => QtBeef_QTextTable_OnMetacall);
+		CQt.QTextTable_OnEvent(obj.ObjectPtr,  => QtBeef_QTextTable_OnEvent);
+		CQt.QTextTable_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTextTable_OnEventFilter);
+		CQt.QTextTable_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTextTable_OnTimerEvent);
+		CQt.QTextTable_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTextTable_OnChildEvent);
+		CQt.QTextTable_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTextTable_OnCustomEvent);
+		CQt.QTextTable_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTextTable_OnConnectNotify);
+		CQt.QTextTable_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTextTable_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -610,6 +620,56 @@ class QTextTable : IQTextTable, IQTextFrame, IQTextObject, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QTextTable_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTextTable_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTextTable_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTextTable_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTextTable_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTextTable_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTextTable_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTextTable_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTextTable_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTextTable_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QTextTable_Ptr ptr)
 	{
@@ -1012,18 +1072,27 @@ extension CQt
 	public function void QTextTable_OnMetaObject_action(void* self);
 	[LinkName("QTextTable_OnMetaObject")]
 	public static extern void** QTextTable_OnMetaObject(void* self, QTextTable_OnMetaObject_action _action);
+	
+	[LinkName("QTextTable_SuperMetaObject")]
+	public static extern void** QTextTable_SuperMetaObject(void* self);
 	[LinkName("QTextTable_Qt_Metacast")]
 	public static extern void* QTextTable_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTextTable_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTextTable_OnMetacast")]
 	public static extern void* QTextTable_OnMetacast(void* self, QTextTable_OnMetacast_action _action);
+	
+	[LinkName("QTextTable_SuperMetacast")]
+	public static extern void* QTextTable_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTextTable_Qt_Metacall")]
 	public static extern c_int QTextTable_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTextTable_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTextTable_OnMetacall")]
 	public static extern c_int QTextTable_OnMetacall(void* self, QTextTable_OnMetacall_action _action);
+	
+	[LinkName("QTextTable_SuperMetacall")]
+	public static extern c_int QTextTable_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTextTable_Tr")]
 	public static extern libqt_string QTextTable_Tr(c_char* s);
 	[LinkName("QTextTable_Resize")]
@@ -1074,40 +1143,61 @@ extension CQt
 	public function void QTextTable_OnEvent_action(void* self, void** event);
 	[LinkName("QTextTable_OnEvent")]
 	public static extern bool QTextTable_OnEvent(void* self, QTextTable_OnEvent_action _action);
+	
+	[LinkName("QTextTable_SuperEvent")]
+	public static extern bool QTextTable_SuperEvent(void* self, void** event);
 	[LinkName("QTextTable_EventFilter")]
 	public static extern bool QTextTable_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTextTable_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTextTable_OnEventFilter")]
 	public static extern bool QTextTable_OnEventFilter(void* self, QTextTable_OnEventFilter_action _action);
+	
+	[LinkName("QTextTable_SuperEventFilter")]
+	public static extern bool QTextTable_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTextTable_TimerEvent")]
 	public static extern void QTextTable_TimerEvent(void* self, void** event);
 	
 	public function void QTextTable_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTextTable_OnTimerEvent")]
 	public static extern void QTextTable_OnTimerEvent(void* self, QTextTable_OnTimerEvent_action _action);
+	
+	[LinkName("QTextTable_SuperTimerEvent")]
+	public static extern void QTextTable_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTextTable_ChildEvent")]
 	public static extern void QTextTable_ChildEvent(void* self, void** event);
 	
 	public function void QTextTable_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTextTable_OnChildEvent")]
 	public static extern void QTextTable_OnChildEvent(void* self, QTextTable_OnChildEvent_action _action);
+	
+	[LinkName("QTextTable_SuperChildEvent")]
+	public static extern void QTextTable_SuperChildEvent(void* self, void** event);
 	[LinkName("QTextTable_CustomEvent")]
 	public static extern void QTextTable_CustomEvent(void* self, void** event);
 	
 	public function void QTextTable_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTextTable_OnCustomEvent")]
 	public static extern void QTextTable_OnCustomEvent(void* self, QTextTable_OnCustomEvent_action _action);
+	
+	[LinkName("QTextTable_SuperCustomEvent")]
+	public static extern void QTextTable_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTextTable_ConnectNotify")]
 	public static extern void QTextTable_ConnectNotify(void* self, void** signal);
 	
 	public function void QTextTable_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTextTable_OnConnectNotify")]
 	public static extern void QTextTable_OnConnectNotify(void* self, QTextTable_OnConnectNotify_action _action);
+	
+	[LinkName("QTextTable_SuperConnectNotify")]
+	public static extern void QTextTable_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTextTable_DisconnectNotify")]
 	public static extern void QTextTable_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTextTable_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTextTable_OnDisconnectNotify")]
 	public static extern void QTextTable_OnDisconnectNotify(void* self, QTextTable_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTextTable_SuperDisconnectNotify")]
+	public static extern void QTextTable_SuperDisconnectNotify(void* self, void** signal);
 }

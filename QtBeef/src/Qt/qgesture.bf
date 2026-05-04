@@ -304,6 +304,16 @@ class QGesture : IQGesture, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGesture_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGesture_OnMetaObject);
+		CQt.QGesture_OnMetacast(obj.ObjectPtr,  => QtBeef_QGesture_OnMetacast);
+		CQt.QGesture_OnMetacall(obj.ObjectPtr,  => QtBeef_QGesture_OnMetacall);
+		CQt.QGesture_OnEvent(obj.ObjectPtr,  => QtBeef_QGesture_OnEvent);
+		CQt.QGesture_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGesture_OnEventFilter);
+		CQt.QGesture_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGesture_OnTimerEvent);
+		CQt.QGesture_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGesture_OnChildEvent);
+		CQt.QGesture_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGesture_OnCustomEvent);
+		CQt.QGesture_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGesture_OnConnectNotify);
+		CQt.QGesture_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGesture_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -316,6 +326,56 @@ class QGesture : IQGesture, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGesture_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGesture_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGesture_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGesture_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGesture_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGesture_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGesture_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGesture_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGesture_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGesture_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QGesture_Ptr ptr)
 	{
@@ -629,18 +689,27 @@ extension CQt
 	public function void QGesture_OnMetaObject_action(void* self);
 	[LinkName("QGesture_OnMetaObject")]
 	public static extern void** QGesture_OnMetaObject(void* self, QGesture_OnMetaObject_action _action);
+	
+	[LinkName("QGesture_SuperMetaObject")]
+	public static extern void** QGesture_SuperMetaObject(void* self);
 	[LinkName("QGesture_Qt_Metacast")]
 	public static extern void* QGesture_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGesture_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGesture_OnMetacast")]
 	public static extern void* QGesture_OnMetacast(void* self, QGesture_OnMetacast_action _action);
+	
+	[LinkName("QGesture_SuperMetacast")]
+	public static extern void* QGesture_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGesture_Qt_Metacall")]
 	public static extern c_int QGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGesture_OnMetacall")]
 	public static extern c_int QGesture_OnMetacall(void* self, QGesture_OnMetacall_action _action);
+	
+	[LinkName("QGesture_SuperMetacall")]
+	public static extern c_int QGesture_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGesture_Tr")]
 	public static extern libqt_string QGesture_Tr(c_char* s);
 	[LinkName("QGesture_GestureType")]
@@ -669,42 +738,63 @@ extension CQt
 	public function void QGesture_OnEvent_action(void* self, void** event);
 	[LinkName("QGesture_OnEvent")]
 	public static extern bool QGesture_OnEvent(void* self, QGesture_OnEvent_action _action);
+	
+	[LinkName("QGesture_SuperEvent")]
+	public static extern bool QGesture_SuperEvent(void* self, void** event);
 	[LinkName("QGesture_EventFilter")]
 	public static extern bool QGesture_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGesture_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGesture_OnEventFilter")]
 	public static extern bool QGesture_OnEventFilter(void* self, QGesture_OnEventFilter_action _action);
+	
+	[LinkName("QGesture_SuperEventFilter")]
+	public static extern bool QGesture_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGesture_TimerEvent")]
 	public static extern void QGesture_TimerEvent(void* self, void** event);
 	
 	public function void QGesture_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGesture_OnTimerEvent")]
 	public static extern void QGesture_OnTimerEvent(void* self, QGesture_OnTimerEvent_action _action);
+	
+	[LinkName("QGesture_SuperTimerEvent")]
+	public static extern void QGesture_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGesture_ChildEvent")]
 	public static extern void QGesture_ChildEvent(void* self, void** event);
 	
 	public function void QGesture_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGesture_OnChildEvent")]
 	public static extern void QGesture_OnChildEvent(void* self, QGesture_OnChildEvent_action _action);
+	
+	[LinkName("QGesture_SuperChildEvent")]
+	public static extern void QGesture_SuperChildEvent(void* self, void** event);
 	[LinkName("QGesture_CustomEvent")]
 	public static extern void QGesture_CustomEvent(void* self, void** event);
 	
 	public function void QGesture_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGesture_OnCustomEvent")]
 	public static extern void QGesture_OnCustomEvent(void* self, QGesture_OnCustomEvent_action _action);
+	
+	[LinkName("QGesture_SuperCustomEvent")]
+	public static extern void QGesture_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGesture_ConnectNotify")]
 	public static extern void QGesture_ConnectNotify(void* self, void** signal);
 	
 	public function void QGesture_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGesture_OnConnectNotify")]
 	public static extern void QGesture_OnConnectNotify(void* self, QGesture_OnConnectNotify_action _action);
+	
+	[LinkName("QGesture_SuperConnectNotify")]
+	public static extern void QGesture_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGesture_DisconnectNotify")]
 	public static extern void QGesture_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGesture_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGesture_OnDisconnectNotify")]
 	public static extern void QGesture_OnDisconnectNotify(void* self, QGesture_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGesture_SuperDisconnectNotify")]
+	public static extern void QGesture_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QPanGesture
@@ -1035,6 +1125,16 @@ class QPanGesture : IQPanGesture, IQGesture, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QPanGesture_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPanGesture_OnMetaObject);
+		CQt.QPanGesture_OnMetacast(obj.ObjectPtr,  => QtBeef_QPanGesture_OnMetacast);
+		CQt.QPanGesture_OnMetacall(obj.ObjectPtr,  => QtBeef_QPanGesture_OnMetacall);
+		CQt.QPanGesture_OnEvent(obj.ObjectPtr,  => QtBeef_QPanGesture_OnEvent);
+		CQt.QPanGesture_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPanGesture_OnEventFilter);
+		CQt.QPanGesture_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPanGesture_OnTimerEvent);
+		CQt.QPanGesture_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPanGesture_OnChildEvent);
+		CQt.QPanGesture_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPanGesture_OnCustomEvent);
+		CQt.QPanGesture_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPanGesture_OnConnectNotify);
+		CQt.QPanGesture_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPanGesture_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1047,6 +1147,56 @@ class QPanGesture : IQPanGesture, IQGesture, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QPanGesture_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPanGesture_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPanGesture_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPanGesture_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QPanGesture_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPanGesture_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QPanGesture_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPanGesture_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPanGesture_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPanGesture_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QPanGesture_Ptr ptr)
 	{
@@ -1388,18 +1538,27 @@ extension CQt
 	public function void QPanGesture_OnMetaObject_action(void* self);
 	[LinkName("QPanGesture_OnMetaObject")]
 	public static extern void** QPanGesture_OnMetaObject(void* self, QPanGesture_OnMetaObject_action _action);
+	
+	[LinkName("QPanGesture_SuperMetaObject")]
+	public static extern void** QPanGesture_SuperMetaObject(void* self);
 	[LinkName("QPanGesture_Qt_Metacast")]
 	public static extern void* QPanGesture_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPanGesture_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPanGesture_OnMetacast")]
 	public static extern void* QPanGesture_OnMetacast(void* self, QPanGesture_OnMetacast_action _action);
+	
+	[LinkName("QPanGesture_SuperMetacast")]
+	public static extern void* QPanGesture_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPanGesture_Qt_Metacall")]
 	public static extern c_int QPanGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPanGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPanGesture_OnMetacall")]
 	public static extern c_int QPanGesture_OnMetacall(void* self, QPanGesture_OnMetacall_action _action);
+	
+	[LinkName("QPanGesture_SuperMetacall")]
+	public static extern c_int QPanGesture_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPanGesture_Tr")]
 	public static extern libqt_string QPanGesture_Tr(c_char* s);
 	[LinkName("QPanGesture_LastOffset")]
@@ -1426,42 +1585,63 @@ extension CQt
 	public function void QPanGesture_OnEvent_action(void* self, void** event);
 	[LinkName("QPanGesture_OnEvent")]
 	public static extern bool QPanGesture_OnEvent(void* self, QPanGesture_OnEvent_action _action);
+	
+	[LinkName("QPanGesture_SuperEvent")]
+	public static extern bool QPanGesture_SuperEvent(void* self, void** event);
 	[LinkName("QPanGesture_EventFilter")]
 	public static extern bool QPanGesture_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QPanGesture_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPanGesture_OnEventFilter")]
 	public static extern bool QPanGesture_OnEventFilter(void* self, QPanGesture_OnEventFilter_action _action);
+	
+	[LinkName("QPanGesture_SuperEventFilter")]
+	public static extern bool QPanGesture_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPanGesture_TimerEvent")]
 	public static extern void QPanGesture_TimerEvent(void* self, void** event);
 	
 	public function void QPanGesture_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QPanGesture_OnTimerEvent")]
 	public static extern void QPanGesture_OnTimerEvent(void* self, QPanGesture_OnTimerEvent_action _action);
+	
+	[LinkName("QPanGesture_SuperTimerEvent")]
+	public static extern void QPanGesture_SuperTimerEvent(void* self, void** event);
 	[LinkName("QPanGesture_ChildEvent")]
 	public static extern void QPanGesture_ChildEvent(void* self, void** event);
 	
 	public function void QPanGesture_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPanGesture_OnChildEvent")]
 	public static extern void QPanGesture_OnChildEvent(void* self, QPanGesture_OnChildEvent_action _action);
+	
+	[LinkName("QPanGesture_SuperChildEvent")]
+	public static extern void QPanGesture_SuperChildEvent(void* self, void** event);
 	[LinkName("QPanGesture_CustomEvent")]
 	public static extern void QPanGesture_CustomEvent(void* self, void** event);
 	
 	public function void QPanGesture_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPanGesture_OnCustomEvent")]
 	public static extern void QPanGesture_OnCustomEvent(void* self, QPanGesture_OnCustomEvent_action _action);
+	
+	[LinkName("QPanGesture_SuperCustomEvent")]
+	public static extern void QPanGesture_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPanGesture_ConnectNotify")]
 	public static extern void QPanGesture_ConnectNotify(void* self, void** signal);
 	
 	public function void QPanGesture_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPanGesture_OnConnectNotify")]
 	public static extern void QPanGesture_OnConnectNotify(void* self, QPanGesture_OnConnectNotify_action _action);
+	
+	[LinkName("QPanGesture_SuperConnectNotify")]
+	public static extern void QPanGesture_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPanGesture_DisconnectNotify")]
 	public static extern void QPanGesture_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPanGesture_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPanGesture_OnDisconnectNotify")]
 	public static extern void QPanGesture_OnDisconnectNotify(void* self, QPanGesture_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPanGesture_SuperDisconnectNotify")]
+	public static extern void QPanGesture_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QPinchGesture
@@ -1852,6 +2032,16 @@ class QPinchGesture : IQPinchGesture, IQGesture, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QPinchGesture_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnMetaObject);
+		CQt.QPinchGesture_OnMetacast(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnMetacast);
+		CQt.QPinchGesture_OnMetacall(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnMetacall);
+		CQt.QPinchGesture_OnEvent(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnEvent);
+		CQt.QPinchGesture_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnEventFilter);
+		CQt.QPinchGesture_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnTimerEvent);
+		CQt.QPinchGesture_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnChildEvent);
+		CQt.QPinchGesture_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnCustomEvent);
+		CQt.QPinchGesture_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnConnectNotify);
+		CQt.QPinchGesture_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPinchGesture_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1864,6 +2054,56 @@ class QPinchGesture : IQPinchGesture, IQGesture, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QPinchGesture_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPinchGesture_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPinchGesture_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPinchGesture_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QPinchGesture_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPinchGesture_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QPinchGesture_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPinchGesture_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPinchGesture_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPinchGesture_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QPinchGesture_Ptr ptr)
 	{
@@ -2265,18 +2505,27 @@ extension CQt
 	public function void QPinchGesture_OnMetaObject_action(void* self);
 	[LinkName("QPinchGesture_OnMetaObject")]
 	public static extern void** QPinchGesture_OnMetaObject(void* self, QPinchGesture_OnMetaObject_action _action);
+	
+	[LinkName("QPinchGesture_SuperMetaObject")]
+	public static extern void** QPinchGesture_SuperMetaObject(void* self);
 	[LinkName("QPinchGesture_Qt_Metacast")]
 	public static extern void* QPinchGesture_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPinchGesture_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPinchGesture_OnMetacast")]
 	public static extern void* QPinchGesture_OnMetacast(void* self, QPinchGesture_OnMetacast_action _action);
+	
+	[LinkName("QPinchGesture_SuperMetacast")]
+	public static extern void* QPinchGesture_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPinchGesture_Qt_Metacall")]
 	public static extern c_int QPinchGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPinchGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPinchGesture_OnMetacall")]
 	public static extern c_int QPinchGesture_OnMetacall(void* self, QPinchGesture_OnMetacall_action _action);
+	
+	[LinkName("QPinchGesture_SuperMetacall")]
+	public static extern c_int QPinchGesture_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPinchGesture_Tr")]
 	public static extern libqt_string QPinchGesture_Tr(c_char* s);
 	[LinkName("QPinchGesture_TotalChangeFlags")]
@@ -2333,42 +2582,63 @@ extension CQt
 	public function void QPinchGesture_OnEvent_action(void* self, void** event);
 	[LinkName("QPinchGesture_OnEvent")]
 	public static extern bool QPinchGesture_OnEvent(void* self, QPinchGesture_OnEvent_action _action);
+	
+	[LinkName("QPinchGesture_SuperEvent")]
+	public static extern bool QPinchGesture_SuperEvent(void* self, void** event);
 	[LinkName("QPinchGesture_EventFilter")]
 	public static extern bool QPinchGesture_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QPinchGesture_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPinchGesture_OnEventFilter")]
 	public static extern bool QPinchGesture_OnEventFilter(void* self, QPinchGesture_OnEventFilter_action _action);
+	
+	[LinkName("QPinchGesture_SuperEventFilter")]
+	public static extern bool QPinchGesture_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPinchGesture_TimerEvent")]
 	public static extern void QPinchGesture_TimerEvent(void* self, void** event);
 	
 	public function void QPinchGesture_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QPinchGesture_OnTimerEvent")]
 	public static extern void QPinchGesture_OnTimerEvent(void* self, QPinchGesture_OnTimerEvent_action _action);
+	
+	[LinkName("QPinchGesture_SuperTimerEvent")]
+	public static extern void QPinchGesture_SuperTimerEvent(void* self, void** event);
 	[LinkName("QPinchGesture_ChildEvent")]
 	public static extern void QPinchGesture_ChildEvent(void* self, void** event);
 	
 	public function void QPinchGesture_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPinchGesture_OnChildEvent")]
 	public static extern void QPinchGesture_OnChildEvent(void* self, QPinchGesture_OnChildEvent_action _action);
+	
+	[LinkName("QPinchGesture_SuperChildEvent")]
+	public static extern void QPinchGesture_SuperChildEvent(void* self, void** event);
 	[LinkName("QPinchGesture_CustomEvent")]
 	public static extern void QPinchGesture_CustomEvent(void* self, void** event);
 	
 	public function void QPinchGesture_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPinchGesture_OnCustomEvent")]
 	public static extern void QPinchGesture_OnCustomEvent(void* self, QPinchGesture_OnCustomEvent_action _action);
+	
+	[LinkName("QPinchGesture_SuperCustomEvent")]
+	public static extern void QPinchGesture_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPinchGesture_ConnectNotify")]
 	public static extern void QPinchGesture_ConnectNotify(void* self, void** signal);
 	
 	public function void QPinchGesture_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPinchGesture_OnConnectNotify")]
 	public static extern void QPinchGesture_OnConnectNotify(void* self, QPinchGesture_OnConnectNotify_action _action);
+	
+	[LinkName("QPinchGesture_SuperConnectNotify")]
+	public static extern void QPinchGesture_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPinchGesture_DisconnectNotify")]
 	public static extern void QPinchGesture_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPinchGesture_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPinchGesture_OnDisconnectNotify")]
 	public static extern void QPinchGesture_OnDisconnectNotify(void* self, QPinchGesture_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPinchGesture_SuperDisconnectNotify")]
+	public static extern void QPinchGesture_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QSwipeGesture
@@ -2687,6 +2957,16 @@ class QSwipeGesture : IQSwipeGesture, IQGesture, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QSwipeGesture_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnMetaObject);
+		CQt.QSwipeGesture_OnMetacast(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnMetacast);
+		CQt.QSwipeGesture_OnMetacall(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnMetacall);
+		CQt.QSwipeGesture_OnEvent(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnEvent);
+		CQt.QSwipeGesture_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnEventFilter);
+		CQt.QSwipeGesture_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnTimerEvent);
+		CQt.QSwipeGesture_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnChildEvent);
+		CQt.QSwipeGesture_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnCustomEvent);
+		CQt.QSwipeGesture_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnConnectNotify);
+		CQt.QSwipeGesture_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSwipeGesture_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -2699,6 +2979,56 @@ class QSwipeGesture : IQSwipeGesture, IQGesture, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QSwipeGesture_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSwipeGesture_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSwipeGesture_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSwipeGesture_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSwipeGesture_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSwipeGesture_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSwipeGesture_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSwipeGesture_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSwipeGesture_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSwipeGesture_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QSwipeGesture_Ptr ptr)
 	{
@@ -3028,18 +3358,27 @@ extension CQt
 	public function void QSwipeGesture_OnMetaObject_action(void* self);
 	[LinkName("QSwipeGesture_OnMetaObject")]
 	public static extern void** QSwipeGesture_OnMetaObject(void* self, QSwipeGesture_OnMetaObject_action _action);
+	
+	[LinkName("QSwipeGesture_SuperMetaObject")]
+	public static extern void** QSwipeGesture_SuperMetaObject(void* self);
 	[LinkName("QSwipeGesture_Qt_Metacast")]
 	public static extern void* QSwipeGesture_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSwipeGesture_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSwipeGesture_OnMetacast")]
 	public static extern void* QSwipeGesture_OnMetacast(void* self, QSwipeGesture_OnMetacast_action _action);
+	
+	[LinkName("QSwipeGesture_SuperMetacast")]
+	public static extern void* QSwipeGesture_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSwipeGesture_Qt_Metacall")]
 	public static extern c_int QSwipeGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSwipeGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSwipeGesture_OnMetacall")]
 	public static extern c_int QSwipeGesture_OnMetacall(void* self, QSwipeGesture_OnMetacall_action _action);
+	
+	[LinkName("QSwipeGesture_SuperMetacall")]
+	public static extern c_int QSwipeGesture_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSwipeGesture_Tr")]
 	public static extern libqt_string QSwipeGesture_Tr(c_char* s);
 	[LinkName("QSwipeGesture_HorizontalDirection")]
@@ -3060,42 +3399,63 @@ extension CQt
 	public function void QSwipeGesture_OnEvent_action(void* self, void** event);
 	[LinkName("QSwipeGesture_OnEvent")]
 	public static extern bool QSwipeGesture_OnEvent(void* self, QSwipeGesture_OnEvent_action _action);
+	
+	[LinkName("QSwipeGesture_SuperEvent")]
+	public static extern bool QSwipeGesture_SuperEvent(void* self, void** event);
 	[LinkName("QSwipeGesture_EventFilter")]
 	public static extern bool QSwipeGesture_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QSwipeGesture_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSwipeGesture_OnEventFilter")]
 	public static extern bool QSwipeGesture_OnEventFilter(void* self, QSwipeGesture_OnEventFilter_action _action);
+	
+	[LinkName("QSwipeGesture_SuperEventFilter")]
+	public static extern bool QSwipeGesture_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSwipeGesture_TimerEvent")]
 	public static extern void QSwipeGesture_TimerEvent(void* self, void** event);
 	
 	public function void QSwipeGesture_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSwipeGesture_OnTimerEvent")]
 	public static extern void QSwipeGesture_OnTimerEvent(void* self, QSwipeGesture_OnTimerEvent_action _action);
+	
+	[LinkName("QSwipeGesture_SuperTimerEvent")]
+	public static extern void QSwipeGesture_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSwipeGesture_ChildEvent")]
 	public static extern void QSwipeGesture_ChildEvent(void* self, void** event);
 	
 	public function void QSwipeGesture_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSwipeGesture_OnChildEvent")]
 	public static extern void QSwipeGesture_OnChildEvent(void* self, QSwipeGesture_OnChildEvent_action _action);
+	
+	[LinkName("QSwipeGesture_SuperChildEvent")]
+	public static extern void QSwipeGesture_SuperChildEvent(void* self, void** event);
 	[LinkName("QSwipeGesture_CustomEvent")]
 	public static extern void QSwipeGesture_CustomEvent(void* self, void** event);
 	
 	public function void QSwipeGesture_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSwipeGesture_OnCustomEvent")]
 	public static extern void QSwipeGesture_OnCustomEvent(void* self, QSwipeGesture_OnCustomEvent_action _action);
+	
+	[LinkName("QSwipeGesture_SuperCustomEvent")]
+	public static extern void QSwipeGesture_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSwipeGesture_ConnectNotify")]
 	public static extern void QSwipeGesture_ConnectNotify(void* self, void** signal);
 	
 	public function void QSwipeGesture_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSwipeGesture_OnConnectNotify")]
 	public static extern void QSwipeGesture_OnConnectNotify(void* self, QSwipeGesture_OnConnectNotify_action _action);
+	
+	[LinkName("QSwipeGesture_SuperConnectNotify")]
+	public static extern void QSwipeGesture_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSwipeGesture_DisconnectNotify")]
 	public static extern void QSwipeGesture_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSwipeGesture_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSwipeGesture_OnDisconnectNotify")]
 	public static extern void QSwipeGesture_OnDisconnectNotify(void* self, QSwipeGesture_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSwipeGesture_SuperDisconnectNotify")]
+	public static extern void QSwipeGesture_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QTapGesture
@@ -3406,6 +3766,16 @@ class QTapGesture : IQTapGesture, IQGesture, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QTapGesture_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTapGesture_OnMetaObject);
+		CQt.QTapGesture_OnMetacast(obj.ObjectPtr,  => QtBeef_QTapGesture_OnMetacast);
+		CQt.QTapGesture_OnMetacall(obj.ObjectPtr,  => QtBeef_QTapGesture_OnMetacall);
+		CQt.QTapGesture_OnEvent(obj.ObjectPtr,  => QtBeef_QTapGesture_OnEvent);
+		CQt.QTapGesture_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTapGesture_OnEventFilter);
+		CQt.QTapGesture_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTapGesture_OnTimerEvent);
+		CQt.QTapGesture_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTapGesture_OnChildEvent);
+		CQt.QTapGesture_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTapGesture_OnCustomEvent);
+		CQt.QTapGesture_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTapGesture_OnConnectNotify);
+		CQt.QTapGesture_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTapGesture_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -3418,6 +3788,56 @@ class QTapGesture : IQTapGesture, IQGesture, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QTapGesture_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTapGesture_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTapGesture_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTapGesture_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTapGesture_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTapGesture_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTapGesture_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTapGesture_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTapGesture_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTapGesture_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QTapGesture_Ptr ptr)
 	{
@@ -3739,18 +4159,27 @@ extension CQt
 	public function void QTapGesture_OnMetaObject_action(void* self);
 	[LinkName("QTapGesture_OnMetaObject")]
 	public static extern void** QTapGesture_OnMetaObject(void* self, QTapGesture_OnMetaObject_action _action);
+	
+	[LinkName("QTapGesture_SuperMetaObject")]
+	public static extern void** QTapGesture_SuperMetaObject(void* self);
 	[LinkName("QTapGesture_Qt_Metacast")]
 	public static extern void* QTapGesture_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTapGesture_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTapGesture_OnMetacast")]
 	public static extern void* QTapGesture_OnMetacast(void* self, QTapGesture_OnMetacast_action _action);
+	
+	[LinkName("QTapGesture_SuperMetacast")]
+	public static extern void* QTapGesture_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTapGesture_Qt_Metacall")]
 	public static extern c_int QTapGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTapGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTapGesture_OnMetacall")]
 	public static extern c_int QTapGesture_OnMetacall(void* self, QTapGesture_OnMetacall_action _action);
+	
+	[LinkName("QTapGesture_SuperMetacall")]
+	public static extern c_int QTapGesture_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTapGesture_Tr")]
 	public static extern libqt_string QTapGesture_Tr(c_char* s);
 	[LinkName("QTapGesture_Position")]
@@ -3767,42 +4196,63 @@ extension CQt
 	public function void QTapGesture_OnEvent_action(void* self, void** event);
 	[LinkName("QTapGesture_OnEvent")]
 	public static extern bool QTapGesture_OnEvent(void* self, QTapGesture_OnEvent_action _action);
+	
+	[LinkName("QTapGesture_SuperEvent")]
+	public static extern bool QTapGesture_SuperEvent(void* self, void** event);
 	[LinkName("QTapGesture_EventFilter")]
 	public static extern bool QTapGesture_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTapGesture_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTapGesture_OnEventFilter")]
 	public static extern bool QTapGesture_OnEventFilter(void* self, QTapGesture_OnEventFilter_action _action);
+	
+	[LinkName("QTapGesture_SuperEventFilter")]
+	public static extern bool QTapGesture_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTapGesture_TimerEvent")]
 	public static extern void QTapGesture_TimerEvent(void* self, void** event);
 	
 	public function void QTapGesture_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTapGesture_OnTimerEvent")]
 	public static extern void QTapGesture_OnTimerEvent(void* self, QTapGesture_OnTimerEvent_action _action);
+	
+	[LinkName("QTapGesture_SuperTimerEvent")]
+	public static extern void QTapGesture_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTapGesture_ChildEvent")]
 	public static extern void QTapGesture_ChildEvent(void* self, void** event);
 	
 	public function void QTapGesture_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTapGesture_OnChildEvent")]
 	public static extern void QTapGesture_OnChildEvent(void* self, QTapGesture_OnChildEvent_action _action);
+	
+	[LinkName("QTapGesture_SuperChildEvent")]
+	public static extern void QTapGesture_SuperChildEvent(void* self, void** event);
 	[LinkName("QTapGesture_CustomEvent")]
 	public static extern void QTapGesture_CustomEvent(void* self, void** event);
 	
 	public function void QTapGesture_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTapGesture_OnCustomEvent")]
 	public static extern void QTapGesture_OnCustomEvent(void* self, QTapGesture_OnCustomEvent_action _action);
+	
+	[LinkName("QTapGesture_SuperCustomEvent")]
+	public static extern void QTapGesture_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTapGesture_ConnectNotify")]
 	public static extern void QTapGesture_ConnectNotify(void* self, void** signal);
 	
 	public function void QTapGesture_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTapGesture_OnConnectNotify")]
 	public static extern void QTapGesture_OnConnectNotify(void* self, QTapGesture_OnConnectNotify_action _action);
+	
+	[LinkName("QTapGesture_SuperConnectNotify")]
+	public static extern void QTapGesture_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTapGesture_DisconnectNotify")]
 	public static extern void QTapGesture_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTapGesture_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTapGesture_OnDisconnectNotify")]
 	public static extern void QTapGesture_OnDisconnectNotify(void* self, QTapGesture_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTapGesture_SuperDisconnectNotify")]
+	public static extern void QTapGesture_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QTapAndHoldGesture
@@ -4121,6 +4571,16 @@ class QTapAndHoldGesture : IQTapAndHoldGesture, IQGesture, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QTapAndHoldGesture_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnMetaObject);
+		CQt.QTapAndHoldGesture_OnMetacast(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnMetacast);
+		CQt.QTapAndHoldGesture_OnMetacall(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnMetacall);
+		CQt.QTapAndHoldGesture_OnEvent(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnEvent);
+		CQt.QTapAndHoldGesture_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnEventFilter);
+		CQt.QTapAndHoldGesture_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnTimerEvent);
+		CQt.QTapAndHoldGesture_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnChildEvent);
+		CQt.QTapAndHoldGesture_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnCustomEvent);
+		CQt.QTapAndHoldGesture_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnConnectNotify);
+		CQt.QTapAndHoldGesture_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTapAndHoldGesture_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -4133,6 +4593,56 @@ class QTapAndHoldGesture : IQTapAndHoldGesture, IQGesture, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QTapAndHoldGesture_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTapAndHoldGesture_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTapAndHoldGesture_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTapAndHoldGesture_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTapAndHoldGesture_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTapAndHoldGesture_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTapAndHoldGesture_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTapAndHoldGesture_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTapAndHoldGesture_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTapAndHoldGesture_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QTapAndHoldGesture_Ptr ptr)
 	{
@@ -4462,18 +4972,27 @@ extension CQt
 	public function void QTapAndHoldGesture_OnMetaObject_action(void* self);
 	[LinkName("QTapAndHoldGesture_OnMetaObject")]
 	public static extern void** QTapAndHoldGesture_OnMetaObject(void* self, QTapAndHoldGesture_OnMetaObject_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperMetaObject")]
+	public static extern void** QTapAndHoldGesture_SuperMetaObject(void* self);
 	[LinkName("QTapAndHoldGesture_Qt_Metacast")]
 	public static extern void* QTapAndHoldGesture_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTapAndHoldGesture_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTapAndHoldGesture_OnMetacast")]
 	public static extern void* QTapAndHoldGesture_OnMetacast(void* self, QTapAndHoldGesture_OnMetacast_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperMetacast")]
+	public static extern void* QTapAndHoldGesture_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTapAndHoldGesture_Qt_Metacall")]
 	public static extern c_int QTapAndHoldGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTapAndHoldGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTapAndHoldGesture_OnMetacall")]
 	public static extern c_int QTapAndHoldGesture_OnMetacall(void* self, QTapAndHoldGesture_OnMetacall_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperMetacall")]
+	public static extern c_int QTapAndHoldGesture_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTapAndHoldGesture_Tr")]
 	public static extern libqt_string QTapAndHoldGesture_Tr(c_char* s);
 	[LinkName("QTapAndHoldGesture_Position")]
@@ -4494,42 +5013,63 @@ extension CQt
 	public function void QTapAndHoldGesture_OnEvent_action(void* self, void** event);
 	[LinkName("QTapAndHoldGesture_OnEvent")]
 	public static extern bool QTapAndHoldGesture_OnEvent(void* self, QTapAndHoldGesture_OnEvent_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperEvent")]
+	public static extern bool QTapAndHoldGesture_SuperEvent(void* self, void** event);
 	[LinkName("QTapAndHoldGesture_EventFilter")]
 	public static extern bool QTapAndHoldGesture_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTapAndHoldGesture_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTapAndHoldGesture_OnEventFilter")]
 	public static extern bool QTapAndHoldGesture_OnEventFilter(void* self, QTapAndHoldGesture_OnEventFilter_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperEventFilter")]
+	public static extern bool QTapAndHoldGesture_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTapAndHoldGesture_TimerEvent")]
 	public static extern void QTapAndHoldGesture_TimerEvent(void* self, void** event);
 	
 	public function void QTapAndHoldGesture_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTapAndHoldGesture_OnTimerEvent")]
 	public static extern void QTapAndHoldGesture_OnTimerEvent(void* self, QTapAndHoldGesture_OnTimerEvent_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperTimerEvent")]
+	public static extern void QTapAndHoldGesture_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTapAndHoldGesture_ChildEvent")]
 	public static extern void QTapAndHoldGesture_ChildEvent(void* self, void** event);
 	
 	public function void QTapAndHoldGesture_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTapAndHoldGesture_OnChildEvent")]
 	public static extern void QTapAndHoldGesture_OnChildEvent(void* self, QTapAndHoldGesture_OnChildEvent_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperChildEvent")]
+	public static extern void QTapAndHoldGesture_SuperChildEvent(void* self, void** event);
 	[LinkName("QTapAndHoldGesture_CustomEvent")]
 	public static extern void QTapAndHoldGesture_CustomEvent(void* self, void** event);
 	
 	public function void QTapAndHoldGesture_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTapAndHoldGesture_OnCustomEvent")]
 	public static extern void QTapAndHoldGesture_OnCustomEvent(void* self, QTapAndHoldGesture_OnCustomEvent_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperCustomEvent")]
+	public static extern void QTapAndHoldGesture_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTapAndHoldGesture_ConnectNotify")]
 	public static extern void QTapAndHoldGesture_ConnectNotify(void* self, void** signal);
 	
 	public function void QTapAndHoldGesture_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTapAndHoldGesture_OnConnectNotify")]
 	public static extern void QTapAndHoldGesture_OnConnectNotify(void* self, QTapAndHoldGesture_OnConnectNotify_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperConnectNotify")]
+	public static extern void QTapAndHoldGesture_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTapAndHoldGesture_DisconnectNotify")]
 	public static extern void QTapAndHoldGesture_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTapAndHoldGesture_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTapAndHoldGesture_OnDisconnectNotify")]
 	public static extern void QTapAndHoldGesture_OnDisconnectNotify(void* self, QTapAndHoldGesture_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTapAndHoldGesture_SuperDisconnectNotify")]
+	public static extern void QTapAndHoldGesture_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QGestureEvent
@@ -4642,6 +5182,12 @@ class QGestureEvent : IQGestureEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGestureEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGestureEvent_OnClone);
+	}
+	static void QtBeef_QGestureEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGestureEvent_Ptr ptr)
 	{
@@ -4802,6 +5348,9 @@ extension CQt
 	public function void QGestureEvent_OnClone_action(void* self);
 	[LinkName("QGestureEvent_OnClone")]
 	public static extern void** QGestureEvent_OnClone(void* self, QGestureEvent_OnClone_action _action);
+	
+	[LinkName("QGestureEvent_SuperClone")]
+	public static extern void** QGestureEvent_SuperClone(void* self);
 }
 [AllowDuplicates]
 enum QGesture_GestureCancelPolicy

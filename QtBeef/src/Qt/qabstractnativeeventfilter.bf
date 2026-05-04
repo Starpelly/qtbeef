@@ -26,6 +26,12 @@ class QAbstractNativeEventFilter : IQAbstractNativeEventFilter
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractNativeEventFilter_OnNativeEventFilter(obj.ObjectPtr,  => QtBeef_QAbstractNativeEventFilter_OnNativeEventFilter);
+	}
+	static void QtBeef_QAbstractNativeEventFilter_OnNativeEventFilter(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEventFilter(eventType, message, result);
 	}
 	public this(QAbstractNativeEventFilter_Ptr ptr)
 	{
@@ -61,4 +67,7 @@ extension CQt
 	public function void QAbstractNativeEventFilter_OnNativeEventFilter_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractNativeEventFilter_OnNativeEventFilter")]
 	public static extern bool QAbstractNativeEventFilter_OnNativeEventFilter(void* self, QAbstractNativeEventFilter_OnNativeEventFilter_action _action);
+	
+	[LinkName("QAbstractNativeEventFilter_SuperNativeEventFilter")]
+	public static extern bool QAbstractNativeEventFilter_SuperNativeEventFilter(void* self, void** eventType, void* message, void** result);
 }

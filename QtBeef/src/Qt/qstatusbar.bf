@@ -1665,6 +1665,56 @@ class QStatusBar : IQStatusBar, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QStatusBar_OnMetaObject(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMetaObject);
+		CQt.QStatusBar_OnMetacast(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMetacast);
+		CQt.QStatusBar_OnMetacall(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMetacall);
+		CQt.QStatusBar_OnShowEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnShowEvent);
+		CQt.QStatusBar_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnPaintEvent);
+		CQt.QStatusBar_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnResizeEvent);
+		CQt.QStatusBar_OnEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnEvent);
+		CQt.QStatusBar_OnEventFilter(obj.ObjectPtr,  => QtBeef_QStatusBar_OnEventFilter);
+		CQt.QStatusBar_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnTimerEvent);
+		CQt.QStatusBar_OnChildEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnChildEvent);
+		CQt.QStatusBar_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnCustomEvent);
+		CQt.QStatusBar_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QStatusBar_OnConnectNotify);
+		CQt.QStatusBar_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QStatusBar_OnDisconnectNotify);
+		CQt.QStatusBar_OnDevType(obj.ObjectPtr,  => QtBeef_QStatusBar_OnDevType);
+		CQt.QStatusBar_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QStatusBar_OnPaintEngine);
+		CQt.QStatusBar_OnMetric(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMetric);
+		CQt.QStatusBar_OnInitPainter(obj.ObjectPtr,  => QtBeef_QStatusBar_OnInitPainter);
+		CQt.QStatusBar_OnRedirected(obj.ObjectPtr,  => QtBeef_QStatusBar_OnRedirected);
+		CQt.QStatusBar_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QStatusBar_OnSharedPainter);
+		CQt.QStatusBar_OnSetVisible(obj.ObjectPtr,  => QtBeef_QStatusBar_OnSetVisible);
+		CQt.QStatusBar_OnSizeHint(obj.ObjectPtr,  => QtBeef_QStatusBar_OnSizeHint);
+		CQt.QStatusBar_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMinimumSizeHint);
+		CQt.QStatusBar_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QStatusBar_OnHeightForWidth);
+		CQt.QStatusBar_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QStatusBar_OnHasHeightForWidth);
+		CQt.QStatusBar_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMousePressEvent);
+		CQt.QStatusBar_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMouseReleaseEvent);
+		CQt.QStatusBar_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMouseDoubleClickEvent);
+		CQt.QStatusBar_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMouseMoveEvent);
+		CQt.QStatusBar_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnWheelEvent);
+		CQt.QStatusBar_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnKeyPressEvent);
+		CQt.QStatusBar_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnKeyReleaseEvent);
+		CQt.QStatusBar_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnFocusInEvent);
+		CQt.QStatusBar_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnFocusOutEvent);
+		CQt.QStatusBar_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnEnterEvent);
+		CQt.QStatusBar_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnLeaveEvent);
+		CQt.QStatusBar_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnMoveEvent);
+		CQt.QStatusBar_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnCloseEvent);
+		CQt.QStatusBar_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnContextMenuEvent);
+		CQt.QStatusBar_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnTabletEvent);
+		CQt.QStatusBar_OnActionEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnActionEvent);
+		CQt.QStatusBar_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnDragEnterEvent);
+		CQt.QStatusBar_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnDragMoveEvent);
+		CQt.QStatusBar_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnDragLeaveEvent);
+		CQt.QStatusBar_OnDropEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnDropEvent);
+		CQt.QStatusBar_OnHideEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnHideEvent);
+		CQt.QStatusBar_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnNativeEvent);
+		CQt.QStatusBar_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnChangeEvent);
+		CQt.QStatusBar_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QStatusBar_OnInputMethodEvent);
+		CQt.QStatusBar_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QStatusBar_OnInputMethodQuery);
+		CQt.QStatusBar_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QStatusBar_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(libqt_string text)> OnMessageChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1707,6 +1757,256 @@ class QStatusBar : IQStatusBar, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QStatusBar_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QStatusBar_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QStatusBar_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QStatusBar_OnShowEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(param1);
+	}
+	static void QtBeef_QStatusBar_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QStatusBar_OnResizeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(param1);
+	}
+	static void QtBeef_QStatusBar_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QStatusBar_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QStatusBar_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QStatusBar_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QStatusBar_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QStatusBar_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QStatusBar_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QStatusBar_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QStatusBar_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QStatusBar_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QStatusBar_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QStatusBar_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QStatusBar_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QStatusBar_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QStatusBar_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QStatusBar_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QStatusBar_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QStatusBar_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QStatusBar_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QStatusBar_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QStatusBar_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QStatusBar_Ptr ptr)
 	{
@@ -3348,18 +3648,27 @@ extension CQt
 	public function void QStatusBar_OnMetaObject_action(void* self);
 	[LinkName("QStatusBar_OnMetaObject")]
 	public static extern void** QStatusBar_OnMetaObject(void* self, QStatusBar_OnMetaObject_action _action);
+	
+	[LinkName("QStatusBar_SuperMetaObject")]
+	public static extern void** QStatusBar_SuperMetaObject(void* self);
 	[LinkName("QStatusBar_Qt_Metacast")]
 	public static extern void* QStatusBar_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QStatusBar_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QStatusBar_OnMetacast")]
 	public static extern void* QStatusBar_OnMetacast(void* self, QStatusBar_OnMetacast_action _action);
+	
+	[LinkName("QStatusBar_SuperMetacast")]
+	public static extern void* QStatusBar_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QStatusBar_Qt_Metacall")]
 	public static extern c_int QStatusBar_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QStatusBar_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStatusBar_OnMetacall")]
 	public static extern c_int QStatusBar_OnMetacall(void* self, QStatusBar_OnMetacall_action _action);
+	
+	[LinkName("QStatusBar_SuperMetacall")]
+	public static extern c_int QStatusBar_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStatusBar_Tr")]
 	public static extern libqt_string QStatusBar_Tr(c_char* s);
 	[LinkName("QStatusBar_AddWidget")]
@@ -3394,18 +3703,27 @@ extension CQt
 	public function void QStatusBar_OnShowEvent_action(void* self, void** param1);
 	[LinkName("QStatusBar_OnShowEvent")]
 	public static extern void QStatusBar_OnShowEvent(void* self, QStatusBar_OnShowEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperShowEvent")]
+	public static extern void QStatusBar_SuperShowEvent(void* self, void** param1);
 	[LinkName("QStatusBar_PaintEvent")]
 	public static extern void QStatusBar_PaintEvent(void* self, void** param1);
 	
 	public function void QStatusBar_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QStatusBar_OnPaintEvent")]
 	public static extern void QStatusBar_OnPaintEvent(void* self, QStatusBar_OnPaintEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperPaintEvent")]
+	public static extern void QStatusBar_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QStatusBar_ResizeEvent")]
 	public static extern void QStatusBar_ResizeEvent(void* self, void** param1);
 	
 	public function void QStatusBar_OnResizeEvent_action(void* self, void** param1);
 	[LinkName("QStatusBar_OnResizeEvent")]
 	public static extern void QStatusBar_OnResizeEvent(void* self, QStatusBar_OnResizeEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperResizeEvent")]
+	public static extern void QStatusBar_SuperResizeEvent(void* self, void** param1);
 	[LinkName("QStatusBar_Reformat")]
 	public static extern void QStatusBar_Reformat(void* self);
 	[LinkName("QStatusBar_HideOrShow")]
@@ -3416,6 +3734,9 @@ extension CQt
 	public function void QStatusBar_OnEvent_action(void* self, void** param1);
 	[LinkName("QStatusBar_OnEvent")]
 	public static extern bool QStatusBar_OnEvent(void* self, QStatusBar_OnEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperEvent")]
+	public static extern bool QStatusBar_SuperEvent(void* self, void** param1);
 	[LinkName("QStatusBar_Tr2")]
 	public static extern libqt_string QStatusBar_Tr2(c_char* s, c_char* c);
 	[LinkName("QStatusBar_Tr3")]
@@ -3436,256 +3757,385 @@ extension CQt
 	public function void QStatusBar_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QStatusBar_OnEventFilter")]
 	public static extern bool QStatusBar_OnEventFilter(void* self, QStatusBar_OnEventFilter_action _action);
+	
+	[LinkName("QStatusBar_SuperEventFilter")]
+	public static extern bool QStatusBar_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QStatusBar_TimerEvent")]
 	public static extern void QStatusBar_TimerEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnTimerEvent")]
 	public static extern void QStatusBar_OnTimerEvent(void* self, QStatusBar_OnTimerEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperTimerEvent")]
+	public static extern void QStatusBar_SuperTimerEvent(void* self, void** event);
 	[LinkName("QStatusBar_ChildEvent")]
 	public static extern void QStatusBar_ChildEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnChildEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnChildEvent")]
 	public static extern void QStatusBar_OnChildEvent(void* self, QStatusBar_OnChildEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperChildEvent")]
+	public static extern void QStatusBar_SuperChildEvent(void* self, void** event);
 	[LinkName("QStatusBar_CustomEvent")]
 	public static extern void QStatusBar_CustomEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnCustomEvent")]
 	public static extern void QStatusBar_OnCustomEvent(void* self, QStatusBar_OnCustomEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperCustomEvent")]
+	public static extern void QStatusBar_SuperCustomEvent(void* self, void** event);
 	[LinkName("QStatusBar_ConnectNotify")]
 	public static extern void QStatusBar_ConnectNotify(void* self, void** signal);
 	
 	public function void QStatusBar_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QStatusBar_OnConnectNotify")]
 	public static extern void QStatusBar_OnConnectNotify(void* self, QStatusBar_OnConnectNotify_action _action);
+	
+	[LinkName("QStatusBar_SuperConnectNotify")]
+	public static extern void QStatusBar_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QStatusBar_DisconnectNotify")]
 	public static extern void QStatusBar_DisconnectNotify(void* self, void** signal);
 	
 	public function void QStatusBar_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QStatusBar_OnDisconnectNotify")]
 	public static extern void QStatusBar_OnDisconnectNotify(void* self, QStatusBar_OnDisconnectNotify_action _action);
+	
+	[LinkName("QStatusBar_SuperDisconnectNotify")]
+	public static extern void QStatusBar_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QStatusBar_DevType")]
 	public static extern c_int QStatusBar_DevType(void* self);
 	
 	public function void QStatusBar_OnDevType_action(void* self);
 	[LinkName("QStatusBar_OnDevType")]
 	public static extern c_int QStatusBar_OnDevType(void* self, QStatusBar_OnDevType_action _action);
+	
+	[LinkName("QStatusBar_SuperDevType")]
+	public static extern c_int QStatusBar_SuperDevType(void* self);
 	[LinkName("QStatusBar_PaintEngine")]
 	public static extern void** QStatusBar_PaintEngine(void* self);
 	
 	public function void QStatusBar_OnPaintEngine_action(void* self);
 	[LinkName("QStatusBar_OnPaintEngine")]
 	public static extern void** QStatusBar_OnPaintEngine(void* self, QStatusBar_OnPaintEngine_action _action);
+	
+	[LinkName("QStatusBar_SuperPaintEngine")]
+	public static extern void** QStatusBar_SuperPaintEngine(void* self);
 	[LinkName("QStatusBar_Metric")]
 	public static extern c_int QStatusBar_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QStatusBar_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QStatusBar_OnMetric")]
 	public static extern c_int QStatusBar_OnMetric(void* self, QStatusBar_OnMetric_action _action);
+	
+	[LinkName("QStatusBar_SuperMetric")]
+	public static extern c_int QStatusBar_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QStatusBar_InitPainter")]
 	public static extern void QStatusBar_InitPainter(void* self, void** painter);
 	
 	public function void QStatusBar_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QStatusBar_OnInitPainter")]
 	public static extern void QStatusBar_OnInitPainter(void* self, QStatusBar_OnInitPainter_action _action);
+	
+	[LinkName("QStatusBar_SuperInitPainter")]
+	public static extern void QStatusBar_SuperInitPainter(void* self, void** painter);
 	[LinkName("QStatusBar_Redirected")]
 	public static extern void** QStatusBar_Redirected(void* self, void** offset);
 	
 	public function void QStatusBar_OnRedirected_action(void* self, void** offset);
 	[LinkName("QStatusBar_OnRedirected")]
 	public static extern void** QStatusBar_OnRedirected(void* self, QStatusBar_OnRedirected_action _action);
+	
+	[LinkName("QStatusBar_SuperRedirected")]
+	public static extern void** QStatusBar_SuperRedirected(void* self, void** offset);
 	[LinkName("QStatusBar_SharedPainter")]
 	public static extern void** QStatusBar_SharedPainter(void* self);
 	
 	public function void QStatusBar_OnSharedPainter_action(void* self);
 	[LinkName("QStatusBar_OnSharedPainter")]
 	public static extern void** QStatusBar_OnSharedPainter(void* self, QStatusBar_OnSharedPainter_action _action);
+	
+	[LinkName("QStatusBar_SuperSharedPainter")]
+	public static extern void** QStatusBar_SuperSharedPainter(void* self);
 	[LinkName("QStatusBar_SetVisible")]
 	public static extern void QStatusBar_SetVisible(void* self, bool visible);
 	
 	public function void QStatusBar_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QStatusBar_OnSetVisible")]
 	public static extern void QStatusBar_OnSetVisible(void* self, QStatusBar_OnSetVisible_action _action);
+	
+	[LinkName("QStatusBar_SuperSetVisible")]
+	public static extern void QStatusBar_SuperSetVisible(void* self, bool visible);
 	[LinkName("QStatusBar_SizeHint")]
 	public static extern void* QStatusBar_SizeHint(void* self);
 	
 	public function void QStatusBar_OnSizeHint_action(void* self);
 	[LinkName("QStatusBar_OnSizeHint")]
 	public static extern void* QStatusBar_OnSizeHint(void* self, QStatusBar_OnSizeHint_action _action);
+	
+	[LinkName("QStatusBar_SuperSizeHint")]
+	public static extern void* QStatusBar_SuperSizeHint(void* self);
 	[LinkName("QStatusBar_MinimumSizeHint")]
 	public static extern void* QStatusBar_MinimumSizeHint(void* self);
 	
 	public function void QStatusBar_OnMinimumSizeHint_action(void* self);
 	[LinkName("QStatusBar_OnMinimumSizeHint")]
 	public static extern void* QStatusBar_OnMinimumSizeHint(void* self, QStatusBar_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QStatusBar_SuperMinimumSizeHint")]
+	public static extern void* QStatusBar_SuperMinimumSizeHint(void* self);
 	[LinkName("QStatusBar_HeightForWidth")]
 	public static extern c_int QStatusBar_HeightForWidth(void* self, c_int param1);
 	
 	public function void QStatusBar_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QStatusBar_OnHeightForWidth")]
 	public static extern c_int QStatusBar_OnHeightForWidth(void* self, QStatusBar_OnHeightForWidth_action _action);
+	
+	[LinkName("QStatusBar_SuperHeightForWidth")]
+	public static extern c_int QStatusBar_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QStatusBar_HasHeightForWidth")]
 	public static extern bool QStatusBar_HasHeightForWidth(void* self);
 	
 	public function void QStatusBar_OnHasHeightForWidth_action(void* self);
 	[LinkName("QStatusBar_OnHasHeightForWidth")]
 	public static extern bool QStatusBar_OnHasHeightForWidth(void* self, QStatusBar_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QStatusBar_SuperHasHeightForWidth")]
+	public static extern bool QStatusBar_SuperHasHeightForWidth(void* self);
 	[LinkName("QStatusBar_MousePressEvent")]
 	public static extern void QStatusBar_MousePressEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnMousePressEvent")]
 	public static extern void QStatusBar_OnMousePressEvent(void* self, QStatusBar_OnMousePressEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperMousePressEvent")]
+	public static extern void QStatusBar_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QStatusBar_MouseReleaseEvent")]
 	public static extern void QStatusBar_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnMouseReleaseEvent")]
 	public static extern void QStatusBar_OnMouseReleaseEvent(void* self, QStatusBar_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperMouseReleaseEvent")]
+	public static extern void QStatusBar_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QStatusBar_MouseDoubleClickEvent")]
 	public static extern void QStatusBar_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnMouseDoubleClickEvent")]
 	public static extern void QStatusBar_OnMouseDoubleClickEvent(void* self, QStatusBar_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperMouseDoubleClickEvent")]
+	public static extern void QStatusBar_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QStatusBar_MouseMoveEvent")]
 	public static extern void QStatusBar_MouseMoveEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnMouseMoveEvent")]
 	public static extern void QStatusBar_OnMouseMoveEvent(void* self, QStatusBar_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperMouseMoveEvent")]
+	public static extern void QStatusBar_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QStatusBar_WheelEvent")]
 	public static extern void QStatusBar_WheelEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnWheelEvent")]
 	public static extern void QStatusBar_OnWheelEvent(void* self, QStatusBar_OnWheelEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperWheelEvent")]
+	public static extern void QStatusBar_SuperWheelEvent(void* self, void** event);
 	[LinkName("QStatusBar_KeyPressEvent")]
 	public static extern void QStatusBar_KeyPressEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnKeyPressEvent")]
 	public static extern void QStatusBar_OnKeyPressEvent(void* self, QStatusBar_OnKeyPressEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperKeyPressEvent")]
+	public static extern void QStatusBar_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QStatusBar_KeyReleaseEvent")]
 	public static extern void QStatusBar_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnKeyReleaseEvent")]
 	public static extern void QStatusBar_OnKeyReleaseEvent(void* self, QStatusBar_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperKeyReleaseEvent")]
+	public static extern void QStatusBar_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QStatusBar_FocusInEvent")]
 	public static extern void QStatusBar_FocusInEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnFocusInEvent")]
 	public static extern void QStatusBar_OnFocusInEvent(void* self, QStatusBar_OnFocusInEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperFocusInEvent")]
+	public static extern void QStatusBar_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QStatusBar_FocusOutEvent")]
 	public static extern void QStatusBar_FocusOutEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnFocusOutEvent")]
 	public static extern void QStatusBar_OnFocusOutEvent(void* self, QStatusBar_OnFocusOutEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperFocusOutEvent")]
+	public static extern void QStatusBar_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QStatusBar_EnterEvent")]
 	public static extern void QStatusBar_EnterEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnEnterEvent")]
 	public static extern void QStatusBar_OnEnterEvent(void* self, QStatusBar_OnEnterEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperEnterEvent")]
+	public static extern void QStatusBar_SuperEnterEvent(void* self, void** event);
 	[LinkName("QStatusBar_LeaveEvent")]
 	public static extern void QStatusBar_LeaveEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnLeaveEvent")]
 	public static extern void QStatusBar_OnLeaveEvent(void* self, QStatusBar_OnLeaveEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperLeaveEvent")]
+	public static extern void QStatusBar_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QStatusBar_MoveEvent")]
 	public static extern void QStatusBar_MoveEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnMoveEvent")]
 	public static extern void QStatusBar_OnMoveEvent(void* self, QStatusBar_OnMoveEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperMoveEvent")]
+	public static extern void QStatusBar_SuperMoveEvent(void* self, void** event);
 	[LinkName("QStatusBar_CloseEvent")]
 	public static extern void QStatusBar_CloseEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnCloseEvent")]
 	public static extern void QStatusBar_OnCloseEvent(void* self, QStatusBar_OnCloseEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperCloseEvent")]
+	public static extern void QStatusBar_SuperCloseEvent(void* self, void** event);
 	[LinkName("QStatusBar_ContextMenuEvent")]
 	public static extern void QStatusBar_ContextMenuEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnContextMenuEvent")]
 	public static extern void QStatusBar_OnContextMenuEvent(void* self, QStatusBar_OnContextMenuEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperContextMenuEvent")]
+	public static extern void QStatusBar_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QStatusBar_TabletEvent")]
 	public static extern void QStatusBar_TabletEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnTabletEvent")]
 	public static extern void QStatusBar_OnTabletEvent(void* self, QStatusBar_OnTabletEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperTabletEvent")]
+	public static extern void QStatusBar_SuperTabletEvent(void* self, void** event);
 	[LinkName("QStatusBar_ActionEvent")]
 	public static extern void QStatusBar_ActionEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnActionEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnActionEvent")]
 	public static extern void QStatusBar_OnActionEvent(void* self, QStatusBar_OnActionEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperActionEvent")]
+	public static extern void QStatusBar_SuperActionEvent(void* self, void** event);
 	[LinkName("QStatusBar_DragEnterEvent")]
 	public static extern void QStatusBar_DragEnterEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnDragEnterEvent")]
 	public static extern void QStatusBar_OnDragEnterEvent(void* self, QStatusBar_OnDragEnterEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperDragEnterEvent")]
+	public static extern void QStatusBar_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QStatusBar_DragMoveEvent")]
 	public static extern void QStatusBar_DragMoveEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnDragMoveEvent")]
 	public static extern void QStatusBar_OnDragMoveEvent(void* self, QStatusBar_OnDragMoveEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperDragMoveEvent")]
+	public static extern void QStatusBar_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QStatusBar_DragLeaveEvent")]
 	public static extern void QStatusBar_DragLeaveEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnDragLeaveEvent")]
 	public static extern void QStatusBar_OnDragLeaveEvent(void* self, QStatusBar_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperDragLeaveEvent")]
+	public static extern void QStatusBar_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QStatusBar_DropEvent")]
 	public static extern void QStatusBar_DropEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnDropEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnDropEvent")]
 	public static extern void QStatusBar_OnDropEvent(void* self, QStatusBar_OnDropEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperDropEvent")]
+	public static extern void QStatusBar_SuperDropEvent(void* self, void** event);
 	[LinkName("QStatusBar_HideEvent")]
 	public static extern void QStatusBar_HideEvent(void* self, void** event);
 	
 	public function void QStatusBar_OnHideEvent_action(void* self, void** event);
 	[LinkName("QStatusBar_OnHideEvent")]
 	public static extern void QStatusBar_OnHideEvent(void* self, QStatusBar_OnHideEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperHideEvent")]
+	public static extern void QStatusBar_SuperHideEvent(void* self, void** event);
 	[LinkName("QStatusBar_NativeEvent")]
 	public static extern bool QStatusBar_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QStatusBar_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QStatusBar_OnNativeEvent")]
 	public static extern bool QStatusBar_OnNativeEvent(void* self, QStatusBar_OnNativeEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperNativeEvent")]
+	public static extern bool QStatusBar_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QStatusBar_ChangeEvent")]
 	public static extern void QStatusBar_ChangeEvent(void* self, void** param1);
 	
 	public function void QStatusBar_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QStatusBar_OnChangeEvent")]
 	public static extern void QStatusBar_OnChangeEvent(void* self, QStatusBar_OnChangeEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperChangeEvent")]
+	public static extern void QStatusBar_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QStatusBar_InputMethodEvent")]
 	public static extern void QStatusBar_InputMethodEvent(void* self, void** param1);
 	
 	public function void QStatusBar_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QStatusBar_OnInputMethodEvent")]
 	public static extern void QStatusBar_OnInputMethodEvent(void* self, QStatusBar_OnInputMethodEvent_action _action);
+	
+	[LinkName("QStatusBar_SuperInputMethodEvent")]
+	public static extern void QStatusBar_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QStatusBar_InputMethodQuery")]
 	public static extern void* QStatusBar_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QStatusBar_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QStatusBar_OnInputMethodQuery")]
 	public static extern void* QStatusBar_OnInputMethodQuery(void* self, QStatusBar_OnInputMethodQuery_action _action);
+	
+	[LinkName("QStatusBar_SuperInputMethodQuery")]
+	public static extern void* QStatusBar_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QStatusBar_FocusNextPrevChild")]
 	public static extern bool QStatusBar_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QStatusBar_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QStatusBar_OnFocusNextPrevChild")]
 	public static extern bool QStatusBar_OnFocusNextPrevChild(void* self, QStatusBar_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QStatusBar_SuperFocusNextPrevChild")]
+	public static extern bool QStatusBar_SuperFocusNextPrevChild(void* self, bool next);
 }

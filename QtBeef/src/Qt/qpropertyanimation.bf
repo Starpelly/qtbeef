@@ -453,6 +453,22 @@ class QPropertyAnimation : IQPropertyAnimation, IQVariantAnimation, IQAbstractAn
 		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_CurrentLoopChanged);
 		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_DirectionChanged);
 		CQt.QVariantAnimation_Connect_ValueChanged(obj.ObjectPtr,  => QtBeef_QVariantAnimation_Connect_ValueChanged);
+		CQt.QPropertyAnimation_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnMetaObject);
+		CQt.QPropertyAnimation_OnMetacast(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnMetacast);
+		CQt.QPropertyAnimation_OnMetacall(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnMetacall);
+		CQt.QPropertyAnimation_OnEvent(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnEvent);
+		CQt.QPropertyAnimation_OnUpdateCurrentValue(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnUpdateCurrentValue);
+		CQt.QPropertyAnimation_OnUpdateState(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnUpdateState);
+		CQt.QPropertyAnimation_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnEventFilter);
+		CQt.QPropertyAnimation_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnTimerEvent);
+		CQt.QPropertyAnimation_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnChildEvent);
+		CQt.QPropertyAnimation_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnCustomEvent);
+		CQt.QPropertyAnimation_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnConnectNotify);
+		CQt.QPropertyAnimation_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnDisconnectNotify);
+		CQt.QPropertyAnimation_OnDuration(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnDuration);
+		CQt.QPropertyAnimation_OnUpdateCurrentTime(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnUpdateCurrentTime);
+		CQt.QPropertyAnimation_OnUpdateDirection(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnUpdateDirection);
+		CQt.QPropertyAnimation_OnInterpolated(obj.ObjectPtr,  => QtBeef_QPropertyAnimation_OnInterpolated);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -495,6 +511,86 @@ class QPropertyAnimation : IQPropertyAnimation, IQVariantAnimation, IQAbstractAn
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnValueChanged.Invoke(value);
+	}
+	static void QtBeef_QPropertyAnimation_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPropertyAnimation_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPropertyAnimation_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPropertyAnimation_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QPropertyAnimation_OnUpdateCurrentValue(void* ptr, void** value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateCurrentValue(value);
+	}
+	static void QtBeef_QPropertyAnimation_OnUpdateState(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateState(newState, oldState);
+	}
+	static void QtBeef_QPropertyAnimation_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPropertyAnimation_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QPropertyAnimation_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPropertyAnimation_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPropertyAnimation_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPropertyAnimation_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QPropertyAnimation_OnDuration(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDuration();
+	}
+	static void QtBeef_QPropertyAnimation_OnUpdateCurrentTime(void* ptr, c_int currentTime)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateCurrentTime(currentTime);
+	}
+	static void QtBeef_QPropertyAnimation_OnUpdateDirection(void* ptr, QAbstractAnimation_Direction direction)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateDirection(direction);
+	}
+	static void QtBeef_QPropertyAnimation_OnInterpolated(void* ptr, void** from, void** to, double progress)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInterpolated(from, to, progress);
 	}
 	public this(QPropertyAnimation_Ptr ptr)
 	{
@@ -962,18 +1058,27 @@ extension CQt
 	public function void QPropertyAnimation_OnMetaObject_action(void* self);
 	[LinkName("QPropertyAnimation_OnMetaObject")]
 	public static extern void** QPropertyAnimation_OnMetaObject(void* self, QPropertyAnimation_OnMetaObject_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperMetaObject")]
+	public static extern void** QPropertyAnimation_SuperMetaObject(void* self);
 	[LinkName("QPropertyAnimation_Qt_Metacast")]
 	public static extern void* QPropertyAnimation_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPropertyAnimation_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPropertyAnimation_OnMetacast")]
 	public static extern void* QPropertyAnimation_OnMetacast(void* self, QPropertyAnimation_OnMetacast_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperMetacast")]
+	public static extern void* QPropertyAnimation_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPropertyAnimation_Qt_Metacall")]
 	public static extern c_int QPropertyAnimation_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPropertyAnimation_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPropertyAnimation_OnMetacall")]
 	public static extern c_int QPropertyAnimation_OnMetacall(void* self, QPropertyAnimation_OnMetacall_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperMetacall")]
+	public static extern c_int QPropertyAnimation_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPropertyAnimation_Tr")]
 	public static extern libqt_string QPropertyAnimation_Tr(c_char* s);
 	[LinkName("QPropertyAnimation_TargetObject")]
@@ -990,18 +1095,27 @@ extension CQt
 	public function void QPropertyAnimation_OnEvent_action(void* self, void** event);
 	[LinkName("QPropertyAnimation_OnEvent")]
 	public static extern bool QPropertyAnimation_OnEvent(void* self, QPropertyAnimation_OnEvent_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperEvent")]
+	public static extern bool QPropertyAnimation_SuperEvent(void* self, void** event);
 	[LinkName("QPropertyAnimation_UpdateCurrentValue")]
 	public static extern void QPropertyAnimation_UpdateCurrentValue(void* self, void** value);
 	
 	public function void QPropertyAnimation_OnUpdateCurrentValue_action(void* self, void** value);
 	[LinkName("QPropertyAnimation_OnUpdateCurrentValue")]
 	public static extern void QPropertyAnimation_OnUpdateCurrentValue(void* self, QPropertyAnimation_OnUpdateCurrentValue_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperUpdateCurrentValue")]
+	public static extern void QPropertyAnimation_SuperUpdateCurrentValue(void* self, void** value);
 	[LinkName("QPropertyAnimation_UpdateState")]
 	public static extern void QPropertyAnimation_UpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	
 	public function void QPropertyAnimation_OnUpdateState_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QPropertyAnimation_OnUpdateState")]
 	public static extern void QPropertyAnimation_OnUpdateState(void* self, QPropertyAnimation_OnUpdateState_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperUpdateState")]
+	public static extern void QPropertyAnimation_SuperUpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QPropertyAnimation_Tr2")]
 	public static extern libqt_string QPropertyAnimation_Tr2(c_char* s, c_char* c);
 	[LinkName("QPropertyAnimation_Tr3")]
@@ -1012,58 +1126,88 @@ extension CQt
 	public function void QPropertyAnimation_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPropertyAnimation_OnEventFilter")]
 	public static extern bool QPropertyAnimation_OnEventFilter(void* self, QPropertyAnimation_OnEventFilter_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperEventFilter")]
+	public static extern bool QPropertyAnimation_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPropertyAnimation_TimerEvent")]
 	public static extern void QPropertyAnimation_TimerEvent(void* self, void** event);
 	
 	public function void QPropertyAnimation_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QPropertyAnimation_OnTimerEvent")]
 	public static extern void QPropertyAnimation_OnTimerEvent(void* self, QPropertyAnimation_OnTimerEvent_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperTimerEvent")]
+	public static extern void QPropertyAnimation_SuperTimerEvent(void* self, void** event);
 	[LinkName("QPropertyAnimation_ChildEvent")]
 	public static extern void QPropertyAnimation_ChildEvent(void* self, void** event);
 	
 	public function void QPropertyAnimation_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPropertyAnimation_OnChildEvent")]
 	public static extern void QPropertyAnimation_OnChildEvent(void* self, QPropertyAnimation_OnChildEvent_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperChildEvent")]
+	public static extern void QPropertyAnimation_SuperChildEvent(void* self, void** event);
 	[LinkName("QPropertyAnimation_CustomEvent")]
 	public static extern void QPropertyAnimation_CustomEvent(void* self, void** event);
 	
 	public function void QPropertyAnimation_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPropertyAnimation_OnCustomEvent")]
 	public static extern void QPropertyAnimation_OnCustomEvent(void* self, QPropertyAnimation_OnCustomEvent_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperCustomEvent")]
+	public static extern void QPropertyAnimation_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPropertyAnimation_ConnectNotify")]
 	public static extern void QPropertyAnimation_ConnectNotify(void* self, void** signal);
 	
 	public function void QPropertyAnimation_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPropertyAnimation_OnConnectNotify")]
 	public static extern void QPropertyAnimation_OnConnectNotify(void* self, QPropertyAnimation_OnConnectNotify_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperConnectNotify")]
+	public static extern void QPropertyAnimation_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPropertyAnimation_DisconnectNotify")]
 	public static extern void QPropertyAnimation_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPropertyAnimation_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPropertyAnimation_OnDisconnectNotify")]
 	public static extern void QPropertyAnimation_OnDisconnectNotify(void* self, QPropertyAnimation_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperDisconnectNotify")]
+	public static extern void QPropertyAnimation_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QPropertyAnimation_Duration")]
 	public static extern c_int QPropertyAnimation_Duration(void* self);
 	
 	public function void QPropertyAnimation_OnDuration_action(void* self);
 	[LinkName("QPropertyAnimation_OnDuration")]
 	public static extern c_int QPropertyAnimation_OnDuration(void* self, QPropertyAnimation_OnDuration_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperDuration")]
+	public static extern c_int QPropertyAnimation_SuperDuration(void* self);
 	[LinkName("QPropertyAnimation_UpdateCurrentTime")]
 	public static extern void QPropertyAnimation_UpdateCurrentTime(void* self, c_int currentTime);
 	
 	public function void QPropertyAnimation_OnUpdateCurrentTime_action(void* self, c_int currentTime);
 	[LinkName("QPropertyAnimation_OnUpdateCurrentTime")]
 	public static extern void QPropertyAnimation_OnUpdateCurrentTime(void* self, QPropertyAnimation_OnUpdateCurrentTime_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperUpdateCurrentTime")]
+	public static extern void QPropertyAnimation_SuperUpdateCurrentTime(void* self, c_int currentTime);
 	[LinkName("QPropertyAnimation_UpdateDirection")]
 	public static extern void QPropertyAnimation_UpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	
 	public function void QPropertyAnimation_OnUpdateDirection_action(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QPropertyAnimation_OnUpdateDirection")]
 	public static extern void QPropertyAnimation_OnUpdateDirection(void* self, QPropertyAnimation_OnUpdateDirection_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperUpdateDirection")]
+	public static extern void QPropertyAnimation_SuperUpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QPropertyAnimation_Interpolated")]
 	public static extern void* QPropertyAnimation_Interpolated(void* self, void** from, void** to, double progress);
 	
 	public function void QPropertyAnimation_OnInterpolated_action(void* self, void** from, void** to, double progress);
 	[LinkName("QPropertyAnimation_OnInterpolated")]
 	public static extern void* QPropertyAnimation_OnInterpolated(void* self, QPropertyAnimation_OnInterpolated_action _action);
+	
+	[LinkName("QPropertyAnimation_SuperInterpolated")]
+	public static extern void* QPropertyAnimation_SuperInterpolated(void* self, void** from, void** to, double progress);
 }

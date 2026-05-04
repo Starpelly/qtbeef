@@ -320,6 +320,16 @@ class QPluginLoader : IQPluginLoader, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QPluginLoader_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnMetaObject);
+		CQt.QPluginLoader_OnMetacast(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnMetacast);
+		CQt.QPluginLoader_OnMetacall(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnMetacall);
+		CQt.QPluginLoader_OnEvent(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnEvent);
+		CQt.QPluginLoader_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnEventFilter);
+		CQt.QPluginLoader_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnTimerEvent);
+		CQt.QPluginLoader_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnChildEvent);
+		CQt.QPluginLoader_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnCustomEvent);
+		CQt.QPluginLoader_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnConnectNotify);
+		CQt.QPluginLoader_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPluginLoader_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -332,6 +342,56 @@ class QPluginLoader : IQPluginLoader, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QPluginLoader_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPluginLoader_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPluginLoader_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPluginLoader_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QPluginLoader_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPluginLoader_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QPluginLoader_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPluginLoader_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPluginLoader_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPluginLoader_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QPluginLoader_Ptr ptr)
 	{
@@ -675,18 +735,27 @@ extension CQt
 	public function void QPluginLoader_OnMetaObject_action(void* self);
 	[LinkName("QPluginLoader_OnMetaObject")]
 	public static extern void** QPluginLoader_OnMetaObject(void* self, QPluginLoader_OnMetaObject_action _action);
+	
+	[LinkName("QPluginLoader_SuperMetaObject")]
+	public static extern void** QPluginLoader_SuperMetaObject(void* self);
 	[LinkName("QPluginLoader_Qt_Metacast")]
 	public static extern void* QPluginLoader_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPluginLoader_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPluginLoader_OnMetacast")]
 	public static extern void* QPluginLoader_OnMetacast(void* self, QPluginLoader_OnMetacast_action _action);
+	
+	[LinkName("QPluginLoader_SuperMetacast")]
+	public static extern void* QPluginLoader_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPluginLoader_Qt_Metacall")]
 	public static extern c_int QPluginLoader_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPluginLoader_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPluginLoader_OnMetacall")]
 	public static extern c_int QPluginLoader_OnMetacall(void* self, QPluginLoader_OnMetacall_action _action);
+	
+	[LinkName("QPluginLoader_SuperMetacall")]
+	public static extern c_int QPluginLoader_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPluginLoader_Tr")]
 	public static extern libqt_string QPluginLoader_Tr(c_char* s);
 	[LinkName("QPluginLoader_Instance")]
@@ -723,40 +792,61 @@ extension CQt
 	public function void QPluginLoader_OnEvent_action(void* self, void** event);
 	[LinkName("QPluginLoader_OnEvent")]
 	public static extern bool QPluginLoader_OnEvent(void* self, QPluginLoader_OnEvent_action _action);
+	
+	[LinkName("QPluginLoader_SuperEvent")]
+	public static extern bool QPluginLoader_SuperEvent(void* self, void** event);
 	[LinkName("QPluginLoader_EventFilter")]
 	public static extern bool QPluginLoader_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QPluginLoader_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPluginLoader_OnEventFilter")]
 	public static extern bool QPluginLoader_OnEventFilter(void* self, QPluginLoader_OnEventFilter_action _action);
+	
+	[LinkName("QPluginLoader_SuperEventFilter")]
+	public static extern bool QPluginLoader_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPluginLoader_TimerEvent")]
 	public static extern void QPluginLoader_TimerEvent(void* self, void** event);
 	
 	public function void QPluginLoader_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QPluginLoader_OnTimerEvent")]
 	public static extern void QPluginLoader_OnTimerEvent(void* self, QPluginLoader_OnTimerEvent_action _action);
+	
+	[LinkName("QPluginLoader_SuperTimerEvent")]
+	public static extern void QPluginLoader_SuperTimerEvent(void* self, void** event);
 	[LinkName("QPluginLoader_ChildEvent")]
 	public static extern void QPluginLoader_ChildEvent(void* self, void** event);
 	
 	public function void QPluginLoader_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPluginLoader_OnChildEvent")]
 	public static extern void QPluginLoader_OnChildEvent(void* self, QPluginLoader_OnChildEvent_action _action);
+	
+	[LinkName("QPluginLoader_SuperChildEvent")]
+	public static extern void QPluginLoader_SuperChildEvent(void* self, void** event);
 	[LinkName("QPluginLoader_CustomEvent")]
 	public static extern void QPluginLoader_CustomEvent(void* self, void** event);
 	
 	public function void QPluginLoader_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPluginLoader_OnCustomEvent")]
 	public static extern void QPluginLoader_OnCustomEvent(void* self, QPluginLoader_OnCustomEvent_action _action);
+	
+	[LinkName("QPluginLoader_SuperCustomEvent")]
+	public static extern void QPluginLoader_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPluginLoader_ConnectNotify")]
 	public static extern void QPluginLoader_ConnectNotify(void* self, void** signal);
 	
 	public function void QPluginLoader_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPluginLoader_OnConnectNotify")]
 	public static extern void QPluginLoader_OnConnectNotify(void* self, QPluginLoader_OnConnectNotify_action _action);
+	
+	[LinkName("QPluginLoader_SuperConnectNotify")]
+	public static extern void QPluginLoader_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPluginLoader_DisconnectNotify")]
 	public static extern void QPluginLoader_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPluginLoader_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPluginLoader_OnDisconnectNotify")]
 	public static extern void QPluginLoader_OnDisconnectNotify(void* self, QPluginLoader_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPluginLoader_SuperDisconnectNotify")]
+	public static extern void QPluginLoader_SuperDisconnectNotify(void* self, void** signal);
 }

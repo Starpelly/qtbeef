@@ -1773,6 +1773,58 @@ class QSplitter : IQSplitter, IQFrame, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QSplitter_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSplitter_OnMetaObject);
+		CQt.QSplitter_OnMetacast(obj.ObjectPtr,  => QtBeef_QSplitter_OnMetacast);
+		CQt.QSplitter_OnMetacall(obj.ObjectPtr,  => QtBeef_QSplitter_OnMetacall);
+		CQt.QSplitter_OnSizeHint(obj.ObjectPtr,  => QtBeef_QSplitter_OnSizeHint);
+		CQt.QSplitter_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QSplitter_OnMinimumSizeHint);
+		CQt.QSplitter_OnCreateHandle(obj.ObjectPtr,  => QtBeef_QSplitter_OnCreateHandle);
+		CQt.QSplitter_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnChildEvent);
+		CQt.QSplitter_OnEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnEvent);
+		CQt.QSplitter_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnResizeEvent);
+		CQt.QSplitter_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnChangeEvent);
+		CQt.QSplitter_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSplitter_OnEventFilter);
+		CQt.QSplitter_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnTimerEvent);
+		CQt.QSplitter_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnCustomEvent);
+		CQt.QSplitter_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSplitter_OnConnectNotify);
+		CQt.QSplitter_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSplitter_OnDisconnectNotify);
+		CQt.QSplitter_OnDevType(obj.ObjectPtr,  => QtBeef_QSplitter_OnDevType);
+		CQt.QSplitter_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QSplitter_OnPaintEngine);
+		CQt.QSplitter_OnMetric(obj.ObjectPtr,  => QtBeef_QSplitter_OnMetric);
+		CQt.QSplitter_OnInitPainter(obj.ObjectPtr,  => QtBeef_QSplitter_OnInitPainter);
+		CQt.QSplitter_OnRedirected(obj.ObjectPtr,  => QtBeef_QSplitter_OnRedirected);
+		CQt.QSplitter_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QSplitter_OnSharedPainter);
+		CQt.QSplitter_OnSetVisible(obj.ObjectPtr,  => QtBeef_QSplitter_OnSetVisible);
+		CQt.QSplitter_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QSplitter_OnHeightForWidth);
+		CQt.QSplitter_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QSplitter_OnHasHeightForWidth);
+		CQt.QSplitter_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnMousePressEvent);
+		CQt.QSplitter_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnMouseReleaseEvent);
+		CQt.QSplitter_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnMouseDoubleClickEvent);
+		CQt.QSplitter_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnMouseMoveEvent);
+		CQt.QSplitter_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnWheelEvent);
+		CQt.QSplitter_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnKeyPressEvent);
+		CQt.QSplitter_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnKeyReleaseEvent);
+		CQt.QSplitter_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnFocusInEvent);
+		CQt.QSplitter_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnFocusOutEvent);
+		CQt.QSplitter_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnEnterEvent);
+		CQt.QSplitter_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnLeaveEvent);
+		CQt.QSplitter_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnPaintEvent);
+		CQt.QSplitter_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnMoveEvent);
+		CQt.QSplitter_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnCloseEvent);
+		CQt.QSplitter_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnContextMenuEvent);
+		CQt.QSplitter_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnTabletEvent);
+		CQt.QSplitter_OnActionEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnActionEvent);
+		CQt.QSplitter_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnDragEnterEvent);
+		CQt.QSplitter_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnDragMoveEvent);
+		CQt.QSplitter_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnDragLeaveEvent);
+		CQt.QSplitter_OnDropEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnDropEvent);
+		CQt.QSplitter_OnShowEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnShowEvent);
+		CQt.QSplitter_OnHideEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnHideEvent);
+		CQt.QSplitter_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnNativeEvent);
+		CQt.QSplitter_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QSplitter_OnInputMethodEvent);
+		CQt.QSplitter_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QSplitter_OnInputMethodQuery);
+		CQt.QSplitter_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QSplitter_OnFocusNextPrevChild);
+		CQt.QSplitter_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QSplitter_OnInitStyleOption);
 	}
 	public Event<delegate void(c_int pos, c_int index)> OnSplitterMoved = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1815,6 +1867,266 @@ class QSplitter : IQSplitter, IQFrame, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QSplitter_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSplitter_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSplitter_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSplitter_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QSplitter_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QSplitter_OnCreateHandle(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreateHandle();
+	}
+	static void QtBeef_QSplitter_OnChildEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(param1);
+	}
+	static void QtBeef_QSplitter_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QSplitter_OnResizeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(param1);
+	}
+	static void QtBeef_QSplitter_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QSplitter_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSplitter_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSplitter_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSplitter_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSplitter_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QSplitter_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QSplitter_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QSplitter_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QSplitter_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QSplitter_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QSplitter_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QSplitter_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QSplitter_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QSplitter_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QSplitter_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QSplitter_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QSplitter_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QSplitter_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QSplitter_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QSplitter_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QSplitter_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QSplitter_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QSplitter_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QSplitter_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QSplitter_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QSplitter_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QSplitter_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QSplitter_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QSplitter_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QSplitter_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QSplitter_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QSplitter_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QSplitter_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QSplitter_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QSplitter_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QSplitter_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QSplitter_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QSplitter_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QSplitter_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QSplitter_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QSplitter_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QSplitter_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
 	}
 	public this(QSplitter_Ptr ptr)
 	{
@@ -3577,18 +3889,27 @@ extension CQt
 	public function void QSplitter_OnMetaObject_action(void* self);
 	[LinkName("QSplitter_OnMetaObject")]
 	public static extern void** QSplitter_OnMetaObject(void* self, QSplitter_OnMetaObject_action _action);
+	
+	[LinkName("QSplitter_SuperMetaObject")]
+	public static extern void** QSplitter_SuperMetaObject(void* self);
 	[LinkName("QSplitter_Qt_Metacast")]
 	public static extern void* QSplitter_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSplitter_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSplitter_OnMetacast")]
 	public static extern void* QSplitter_OnMetacast(void* self, QSplitter_OnMetacast_action _action);
+	
+	[LinkName("QSplitter_SuperMetacast")]
+	public static extern void* QSplitter_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSplitter_Qt_Metacall")]
 	public static extern c_int QSplitter_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSplitter_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSplitter_OnMetacall")]
 	public static extern c_int QSplitter_OnMetacall(void* self, QSplitter_OnMetacall_action _action);
+	
+	[LinkName("QSplitter_SuperMetacall")]
+	public static extern c_int QSplitter_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSplitter_Tr")]
 	public static extern libqt_string QSplitter_Tr(c_char* s);
 	[LinkName("QSplitter_AddWidget")]
@@ -3621,12 +3942,18 @@ extension CQt
 	public function void QSplitter_OnSizeHint_action(void* self);
 	[LinkName("QSplitter_OnSizeHint")]
 	public static extern void* QSplitter_OnSizeHint(void* self, QSplitter_OnSizeHint_action _action);
+	
+	[LinkName("QSplitter_SuperSizeHint")]
+	public static extern void* QSplitter_SuperSizeHint(void* self);
 	[LinkName("QSplitter_MinimumSizeHint")]
 	public static extern void* QSplitter_MinimumSizeHint(void* self);
 	
 	public function void QSplitter_OnMinimumSizeHint_action(void* self);
 	[LinkName("QSplitter_OnMinimumSizeHint")]
 	public static extern void* QSplitter_OnMinimumSizeHint(void* self, QSplitter_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QSplitter_SuperMinimumSizeHint")]
+	public static extern void* QSplitter_SuperMinimumSizeHint(void* self);
 	[LinkName("QSplitter_Sizes")]
 	public static extern void* QSplitter_Sizes(void* self);
 	[LinkName("QSplitter_SetSizes")]
@@ -3663,30 +3990,45 @@ extension CQt
 	public function void QSplitter_OnCreateHandle_action(void* self);
 	[LinkName("QSplitter_OnCreateHandle")]
 	public static extern void** QSplitter_OnCreateHandle(void* self, QSplitter_OnCreateHandle_action _action);
+	
+	[LinkName("QSplitter_SuperCreateHandle")]
+	public static extern void** QSplitter_SuperCreateHandle(void* self);
 	[LinkName("QSplitter_ChildEvent")]
 	public static extern void QSplitter_ChildEvent(void* self, void** param1);
 	
 	public function void QSplitter_OnChildEvent_action(void* self, void** param1);
 	[LinkName("QSplitter_OnChildEvent")]
 	public static extern void QSplitter_OnChildEvent(void* self, QSplitter_OnChildEvent_action _action);
+	
+	[LinkName("QSplitter_SuperChildEvent")]
+	public static extern void QSplitter_SuperChildEvent(void* self, void** param1);
 	[LinkName("QSplitter_Event")]
 	public static extern bool QSplitter_Event(void* self, void** param1);
 	
 	public function void QSplitter_OnEvent_action(void* self, void** param1);
 	[LinkName("QSplitter_OnEvent")]
 	public static extern bool QSplitter_OnEvent(void* self, QSplitter_OnEvent_action _action);
+	
+	[LinkName("QSplitter_SuperEvent")]
+	public static extern bool QSplitter_SuperEvent(void* self, void** param1);
 	[LinkName("QSplitter_ResizeEvent")]
 	public static extern void QSplitter_ResizeEvent(void* self, void** param1);
 	
 	public function void QSplitter_OnResizeEvent_action(void* self, void** param1);
 	[LinkName("QSplitter_OnResizeEvent")]
 	public static extern void QSplitter_OnResizeEvent(void* self, QSplitter_OnResizeEvent_action _action);
+	
+	[LinkName("QSplitter_SuperResizeEvent")]
+	public static extern void QSplitter_SuperResizeEvent(void* self, void** param1);
 	[LinkName("QSplitter_ChangeEvent")]
 	public static extern void QSplitter_ChangeEvent(void* self, void** param1);
 	
 	public function void QSplitter_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QSplitter_OnChangeEvent")]
 	public static extern void QSplitter_OnChangeEvent(void* self, QSplitter_OnChangeEvent_action _action);
+	
+	[LinkName("QSplitter_SuperChangeEvent")]
+	public static extern void QSplitter_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QSplitter_MoveSplitter")]
 	public static extern void QSplitter_MoveSplitter(void* self, c_int pos, c_int index);
 	[LinkName("QSplitter_SetRubberBand")]
@@ -3705,252 +4047,378 @@ extension CQt
 	public function void QSplitter_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSplitter_OnEventFilter")]
 	public static extern bool QSplitter_OnEventFilter(void* self, QSplitter_OnEventFilter_action _action);
+	
+	[LinkName("QSplitter_SuperEventFilter")]
+	public static extern bool QSplitter_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSplitter_TimerEvent")]
 	public static extern void QSplitter_TimerEvent(void* self, void** event);
 	
 	public function void QSplitter_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnTimerEvent")]
 	public static extern void QSplitter_OnTimerEvent(void* self, QSplitter_OnTimerEvent_action _action);
+	
+	[LinkName("QSplitter_SuperTimerEvent")]
+	public static extern void QSplitter_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSplitter_CustomEvent")]
 	public static extern void QSplitter_CustomEvent(void* self, void** event);
 	
 	public function void QSplitter_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnCustomEvent")]
 	public static extern void QSplitter_OnCustomEvent(void* self, QSplitter_OnCustomEvent_action _action);
+	
+	[LinkName("QSplitter_SuperCustomEvent")]
+	public static extern void QSplitter_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSplitter_ConnectNotify")]
 	public static extern void QSplitter_ConnectNotify(void* self, void** signal);
 	
 	public function void QSplitter_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSplitter_OnConnectNotify")]
 	public static extern void QSplitter_OnConnectNotify(void* self, QSplitter_OnConnectNotify_action _action);
+	
+	[LinkName("QSplitter_SuperConnectNotify")]
+	public static extern void QSplitter_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSplitter_DisconnectNotify")]
 	public static extern void QSplitter_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSplitter_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSplitter_OnDisconnectNotify")]
 	public static extern void QSplitter_OnDisconnectNotify(void* self, QSplitter_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSplitter_SuperDisconnectNotify")]
+	public static extern void QSplitter_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QSplitter_DevType")]
 	public static extern c_int QSplitter_DevType(void* self);
 	
 	public function void QSplitter_OnDevType_action(void* self);
 	[LinkName("QSplitter_OnDevType")]
 	public static extern c_int QSplitter_OnDevType(void* self, QSplitter_OnDevType_action _action);
+	
+	[LinkName("QSplitter_SuperDevType")]
+	public static extern c_int QSplitter_SuperDevType(void* self);
 	[LinkName("QSplitter_PaintEngine")]
 	public static extern void** QSplitter_PaintEngine(void* self);
 	
 	public function void QSplitter_OnPaintEngine_action(void* self);
 	[LinkName("QSplitter_OnPaintEngine")]
 	public static extern void** QSplitter_OnPaintEngine(void* self, QSplitter_OnPaintEngine_action _action);
+	
+	[LinkName("QSplitter_SuperPaintEngine")]
+	public static extern void** QSplitter_SuperPaintEngine(void* self);
 	[LinkName("QSplitter_Metric")]
 	public static extern c_int QSplitter_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QSplitter_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSplitter_OnMetric")]
 	public static extern c_int QSplitter_OnMetric(void* self, QSplitter_OnMetric_action _action);
+	
+	[LinkName("QSplitter_SuperMetric")]
+	public static extern c_int QSplitter_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSplitter_InitPainter")]
 	public static extern void QSplitter_InitPainter(void* self, void** painter);
 	
 	public function void QSplitter_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QSplitter_OnInitPainter")]
 	public static extern void QSplitter_OnInitPainter(void* self, QSplitter_OnInitPainter_action _action);
+	
+	[LinkName("QSplitter_SuperInitPainter")]
+	public static extern void QSplitter_SuperInitPainter(void* self, void** painter);
 	[LinkName("QSplitter_Redirected")]
 	public static extern void** QSplitter_Redirected(void* self, void** offset);
 	
 	public function void QSplitter_OnRedirected_action(void* self, void** offset);
 	[LinkName("QSplitter_OnRedirected")]
 	public static extern void** QSplitter_OnRedirected(void* self, QSplitter_OnRedirected_action _action);
+	
+	[LinkName("QSplitter_SuperRedirected")]
+	public static extern void** QSplitter_SuperRedirected(void* self, void** offset);
 	[LinkName("QSplitter_SharedPainter")]
 	public static extern void** QSplitter_SharedPainter(void* self);
 	
 	public function void QSplitter_OnSharedPainter_action(void* self);
 	[LinkName("QSplitter_OnSharedPainter")]
 	public static extern void** QSplitter_OnSharedPainter(void* self, QSplitter_OnSharedPainter_action _action);
+	
+	[LinkName("QSplitter_SuperSharedPainter")]
+	public static extern void** QSplitter_SuperSharedPainter(void* self);
 	[LinkName("QSplitter_SetVisible")]
 	public static extern void QSplitter_SetVisible(void* self, bool visible);
 	
 	public function void QSplitter_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QSplitter_OnSetVisible")]
 	public static extern void QSplitter_OnSetVisible(void* self, QSplitter_OnSetVisible_action _action);
+	
+	[LinkName("QSplitter_SuperSetVisible")]
+	public static extern void QSplitter_SuperSetVisible(void* self, bool visible);
 	[LinkName("QSplitter_HeightForWidth")]
 	public static extern c_int QSplitter_HeightForWidth(void* self, c_int param1);
 	
 	public function void QSplitter_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QSplitter_OnHeightForWidth")]
 	public static extern c_int QSplitter_OnHeightForWidth(void* self, QSplitter_OnHeightForWidth_action _action);
+	
+	[LinkName("QSplitter_SuperHeightForWidth")]
+	public static extern c_int QSplitter_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QSplitter_HasHeightForWidth")]
 	public static extern bool QSplitter_HasHeightForWidth(void* self);
 	
 	public function void QSplitter_OnHasHeightForWidth_action(void* self);
 	[LinkName("QSplitter_OnHasHeightForWidth")]
 	public static extern bool QSplitter_OnHasHeightForWidth(void* self, QSplitter_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QSplitter_SuperHasHeightForWidth")]
+	public static extern bool QSplitter_SuperHasHeightForWidth(void* self);
 	[LinkName("QSplitter_MousePressEvent")]
 	public static extern void QSplitter_MousePressEvent(void* self, void** event);
 	
 	public function void QSplitter_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnMousePressEvent")]
 	public static extern void QSplitter_OnMousePressEvent(void* self, QSplitter_OnMousePressEvent_action _action);
+	
+	[LinkName("QSplitter_SuperMousePressEvent")]
+	public static extern void QSplitter_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QSplitter_MouseReleaseEvent")]
 	public static extern void QSplitter_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QSplitter_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnMouseReleaseEvent")]
 	public static extern void QSplitter_OnMouseReleaseEvent(void* self, QSplitter_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QSplitter_SuperMouseReleaseEvent")]
+	public static extern void QSplitter_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QSplitter_MouseDoubleClickEvent")]
 	public static extern void QSplitter_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QSplitter_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnMouseDoubleClickEvent")]
 	public static extern void QSplitter_OnMouseDoubleClickEvent(void* self, QSplitter_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QSplitter_SuperMouseDoubleClickEvent")]
+	public static extern void QSplitter_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QSplitter_MouseMoveEvent")]
 	public static extern void QSplitter_MouseMoveEvent(void* self, void** event);
 	
 	public function void QSplitter_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnMouseMoveEvent")]
 	public static extern void QSplitter_OnMouseMoveEvent(void* self, QSplitter_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QSplitter_SuperMouseMoveEvent")]
+	public static extern void QSplitter_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QSplitter_WheelEvent")]
 	public static extern void QSplitter_WheelEvent(void* self, void** event);
 	
 	public function void QSplitter_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnWheelEvent")]
 	public static extern void QSplitter_OnWheelEvent(void* self, QSplitter_OnWheelEvent_action _action);
+	
+	[LinkName("QSplitter_SuperWheelEvent")]
+	public static extern void QSplitter_SuperWheelEvent(void* self, void** event);
 	[LinkName("QSplitter_KeyPressEvent")]
 	public static extern void QSplitter_KeyPressEvent(void* self, void** event);
 	
 	public function void QSplitter_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnKeyPressEvent")]
 	public static extern void QSplitter_OnKeyPressEvent(void* self, QSplitter_OnKeyPressEvent_action _action);
+	
+	[LinkName("QSplitter_SuperKeyPressEvent")]
+	public static extern void QSplitter_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QSplitter_KeyReleaseEvent")]
 	public static extern void QSplitter_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QSplitter_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnKeyReleaseEvent")]
 	public static extern void QSplitter_OnKeyReleaseEvent(void* self, QSplitter_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QSplitter_SuperKeyReleaseEvent")]
+	public static extern void QSplitter_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QSplitter_FocusInEvent")]
 	public static extern void QSplitter_FocusInEvent(void* self, void** event);
 	
 	public function void QSplitter_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnFocusInEvent")]
 	public static extern void QSplitter_OnFocusInEvent(void* self, QSplitter_OnFocusInEvent_action _action);
+	
+	[LinkName("QSplitter_SuperFocusInEvent")]
+	public static extern void QSplitter_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QSplitter_FocusOutEvent")]
 	public static extern void QSplitter_FocusOutEvent(void* self, void** event);
 	
 	public function void QSplitter_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnFocusOutEvent")]
 	public static extern void QSplitter_OnFocusOutEvent(void* self, QSplitter_OnFocusOutEvent_action _action);
+	
+	[LinkName("QSplitter_SuperFocusOutEvent")]
+	public static extern void QSplitter_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QSplitter_EnterEvent")]
 	public static extern void QSplitter_EnterEvent(void* self, void** event);
 	
 	public function void QSplitter_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnEnterEvent")]
 	public static extern void QSplitter_OnEnterEvent(void* self, QSplitter_OnEnterEvent_action _action);
+	
+	[LinkName("QSplitter_SuperEnterEvent")]
+	public static extern void QSplitter_SuperEnterEvent(void* self, void** event);
 	[LinkName("QSplitter_LeaveEvent")]
 	public static extern void QSplitter_LeaveEvent(void* self, void** event);
 	
 	public function void QSplitter_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnLeaveEvent")]
 	public static extern void QSplitter_OnLeaveEvent(void* self, QSplitter_OnLeaveEvent_action _action);
+	
+	[LinkName("QSplitter_SuperLeaveEvent")]
+	public static extern void QSplitter_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QSplitter_PaintEvent")]
 	public static extern void QSplitter_PaintEvent(void* self, void** event);
 	
 	public function void QSplitter_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnPaintEvent")]
 	public static extern void QSplitter_OnPaintEvent(void* self, QSplitter_OnPaintEvent_action _action);
+	
+	[LinkName("QSplitter_SuperPaintEvent")]
+	public static extern void QSplitter_SuperPaintEvent(void* self, void** event);
 	[LinkName("QSplitter_MoveEvent")]
 	public static extern void QSplitter_MoveEvent(void* self, void** event);
 	
 	public function void QSplitter_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnMoveEvent")]
 	public static extern void QSplitter_OnMoveEvent(void* self, QSplitter_OnMoveEvent_action _action);
+	
+	[LinkName("QSplitter_SuperMoveEvent")]
+	public static extern void QSplitter_SuperMoveEvent(void* self, void** event);
 	[LinkName("QSplitter_CloseEvent")]
 	public static extern void QSplitter_CloseEvent(void* self, void** event);
 	
 	public function void QSplitter_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnCloseEvent")]
 	public static extern void QSplitter_OnCloseEvent(void* self, QSplitter_OnCloseEvent_action _action);
+	
+	[LinkName("QSplitter_SuperCloseEvent")]
+	public static extern void QSplitter_SuperCloseEvent(void* self, void** event);
 	[LinkName("QSplitter_ContextMenuEvent")]
 	public static extern void QSplitter_ContextMenuEvent(void* self, void** event);
 	
 	public function void QSplitter_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnContextMenuEvent")]
 	public static extern void QSplitter_OnContextMenuEvent(void* self, QSplitter_OnContextMenuEvent_action _action);
+	
+	[LinkName("QSplitter_SuperContextMenuEvent")]
+	public static extern void QSplitter_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QSplitter_TabletEvent")]
 	public static extern void QSplitter_TabletEvent(void* self, void** event);
 	
 	public function void QSplitter_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnTabletEvent")]
 	public static extern void QSplitter_OnTabletEvent(void* self, QSplitter_OnTabletEvent_action _action);
+	
+	[LinkName("QSplitter_SuperTabletEvent")]
+	public static extern void QSplitter_SuperTabletEvent(void* self, void** event);
 	[LinkName("QSplitter_ActionEvent")]
 	public static extern void QSplitter_ActionEvent(void* self, void** event);
 	
 	public function void QSplitter_OnActionEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnActionEvent")]
 	public static extern void QSplitter_OnActionEvent(void* self, QSplitter_OnActionEvent_action _action);
+	
+	[LinkName("QSplitter_SuperActionEvent")]
+	public static extern void QSplitter_SuperActionEvent(void* self, void** event);
 	[LinkName("QSplitter_DragEnterEvent")]
 	public static extern void QSplitter_DragEnterEvent(void* self, void** event);
 	
 	public function void QSplitter_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnDragEnterEvent")]
 	public static extern void QSplitter_OnDragEnterEvent(void* self, QSplitter_OnDragEnterEvent_action _action);
+	
+	[LinkName("QSplitter_SuperDragEnterEvent")]
+	public static extern void QSplitter_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QSplitter_DragMoveEvent")]
 	public static extern void QSplitter_DragMoveEvent(void* self, void** event);
 	
 	public function void QSplitter_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnDragMoveEvent")]
 	public static extern void QSplitter_OnDragMoveEvent(void* self, QSplitter_OnDragMoveEvent_action _action);
+	
+	[LinkName("QSplitter_SuperDragMoveEvent")]
+	public static extern void QSplitter_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QSplitter_DragLeaveEvent")]
 	public static extern void QSplitter_DragLeaveEvent(void* self, void** event);
 	
 	public function void QSplitter_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnDragLeaveEvent")]
 	public static extern void QSplitter_OnDragLeaveEvent(void* self, QSplitter_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QSplitter_SuperDragLeaveEvent")]
+	public static extern void QSplitter_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QSplitter_DropEvent")]
 	public static extern void QSplitter_DropEvent(void* self, void** event);
 	
 	public function void QSplitter_OnDropEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnDropEvent")]
 	public static extern void QSplitter_OnDropEvent(void* self, QSplitter_OnDropEvent_action _action);
+	
+	[LinkName("QSplitter_SuperDropEvent")]
+	public static extern void QSplitter_SuperDropEvent(void* self, void** event);
 	[LinkName("QSplitter_ShowEvent")]
 	public static extern void QSplitter_ShowEvent(void* self, void** event);
 	
 	public function void QSplitter_OnShowEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnShowEvent")]
 	public static extern void QSplitter_OnShowEvent(void* self, QSplitter_OnShowEvent_action _action);
+	
+	[LinkName("QSplitter_SuperShowEvent")]
+	public static extern void QSplitter_SuperShowEvent(void* self, void** event);
 	[LinkName("QSplitter_HideEvent")]
 	public static extern void QSplitter_HideEvent(void* self, void** event);
 	
 	public function void QSplitter_OnHideEvent_action(void* self, void** event);
 	[LinkName("QSplitter_OnHideEvent")]
 	public static extern void QSplitter_OnHideEvent(void* self, QSplitter_OnHideEvent_action _action);
+	
+	[LinkName("QSplitter_SuperHideEvent")]
+	public static extern void QSplitter_SuperHideEvent(void* self, void** event);
 	[LinkName("QSplitter_NativeEvent")]
 	public static extern bool QSplitter_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QSplitter_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSplitter_OnNativeEvent")]
 	public static extern bool QSplitter_OnNativeEvent(void* self, QSplitter_OnNativeEvent_action _action);
+	
+	[LinkName("QSplitter_SuperNativeEvent")]
+	public static extern bool QSplitter_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSplitter_InputMethodEvent")]
 	public static extern void QSplitter_InputMethodEvent(void* self, void** param1);
 	
 	public function void QSplitter_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QSplitter_OnInputMethodEvent")]
 	public static extern void QSplitter_OnInputMethodEvent(void* self, QSplitter_OnInputMethodEvent_action _action);
+	
+	[LinkName("QSplitter_SuperInputMethodEvent")]
+	public static extern void QSplitter_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QSplitter_InputMethodQuery")]
 	public static extern void* QSplitter_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QSplitter_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSplitter_OnInputMethodQuery")]
 	public static extern void* QSplitter_OnInputMethodQuery(void* self, QSplitter_OnInputMethodQuery_action _action);
+	
+	[LinkName("QSplitter_SuperInputMethodQuery")]
+	public static extern void* QSplitter_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSplitter_FocusNextPrevChild")]
 	public static extern bool QSplitter_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QSplitter_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QSplitter_OnFocusNextPrevChild")]
 	public static extern bool QSplitter_OnFocusNextPrevChild(void* self, QSplitter_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QSplitter_SuperFocusNextPrevChild")]
+	public static extern bool QSplitter_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QSplitter_InitStyleOption")]
 	public static extern void QSplitter_InitStyleOption(void* self, void** option);
 	
 	public function void QSplitter_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QSplitter_OnInitStyleOption")]
 	public static extern void QSplitter_OnInitStyleOption(void* self, QSplitter_OnInitStyleOption_action _action);
+	
+	[LinkName("QSplitter_SuperInitStyleOption")]
+	public static extern void QSplitter_SuperInitStyleOption(void* self, void** option);
 }
 // --------------------------------------------------------------
 // QSplitterHandle
@@ -5565,6 +6033,56 @@ class QSplitterHandle : IQSplitterHandle, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QSplitterHandle_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMetaObject);
+		CQt.QSplitterHandle_OnMetacast(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMetacast);
+		CQt.QSplitterHandle_OnMetacall(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMetacall);
+		CQt.QSplitterHandle_OnSizeHint(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnSizeHint);
+		CQt.QSplitterHandle_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnPaintEvent);
+		CQt.QSplitterHandle_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMouseMoveEvent);
+		CQt.QSplitterHandle_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMousePressEvent);
+		CQt.QSplitterHandle_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMouseReleaseEvent);
+		CQt.QSplitterHandle_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnResizeEvent);
+		CQt.QSplitterHandle_OnEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnEvent);
+		CQt.QSplitterHandle_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnEventFilter);
+		CQt.QSplitterHandle_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnTimerEvent);
+		CQt.QSplitterHandle_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnChildEvent);
+		CQt.QSplitterHandle_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnCustomEvent);
+		CQt.QSplitterHandle_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnConnectNotify);
+		CQt.QSplitterHandle_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnDisconnectNotify);
+		CQt.QSplitterHandle_OnDevType(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnDevType);
+		CQt.QSplitterHandle_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnPaintEngine);
+		CQt.QSplitterHandle_OnMetric(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMetric);
+		CQt.QSplitterHandle_OnInitPainter(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnInitPainter);
+		CQt.QSplitterHandle_OnRedirected(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnRedirected);
+		CQt.QSplitterHandle_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnSharedPainter);
+		CQt.QSplitterHandle_OnSetVisible(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnSetVisible);
+		CQt.QSplitterHandle_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMinimumSizeHint);
+		CQt.QSplitterHandle_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnHeightForWidth);
+		CQt.QSplitterHandle_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnHasHeightForWidth);
+		CQt.QSplitterHandle_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMouseDoubleClickEvent);
+		CQt.QSplitterHandle_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnWheelEvent);
+		CQt.QSplitterHandle_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnKeyPressEvent);
+		CQt.QSplitterHandle_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnKeyReleaseEvent);
+		CQt.QSplitterHandle_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnFocusInEvent);
+		CQt.QSplitterHandle_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnFocusOutEvent);
+		CQt.QSplitterHandle_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnEnterEvent);
+		CQt.QSplitterHandle_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnLeaveEvent);
+		CQt.QSplitterHandle_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnMoveEvent);
+		CQt.QSplitterHandle_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnCloseEvent);
+		CQt.QSplitterHandle_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnContextMenuEvent);
+		CQt.QSplitterHandle_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnTabletEvent);
+		CQt.QSplitterHandle_OnActionEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnActionEvent);
+		CQt.QSplitterHandle_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnDragEnterEvent);
+		CQt.QSplitterHandle_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnDragMoveEvent);
+		CQt.QSplitterHandle_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnDragLeaveEvent);
+		CQt.QSplitterHandle_OnDropEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnDropEvent);
+		CQt.QSplitterHandle_OnShowEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnShowEvent);
+		CQt.QSplitterHandle_OnHideEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnHideEvent);
+		CQt.QSplitterHandle_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnNativeEvent);
+		CQt.QSplitterHandle_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnChangeEvent);
+		CQt.QSplitterHandle_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnInputMethodEvent);
+		CQt.QSplitterHandle_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnInputMethodQuery);
+		CQt.QSplitterHandle_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QSplitterHandle_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -5601,6 +6119,256 @@ class QSplitterHandle : IQSplitterHandle, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QSplitterHandle_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSplitterHandle_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSplitterHandle_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QSplitterHandle_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnMouseReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnResizeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSplitterHandle_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSplitterHandle_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QSplitterHandle_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QSplitterHandle_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QSplitterHandle_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QSplitterHandle_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QSplitterHandle_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QSplitterHandle_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QSplitterHandle_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QSplitterHandle_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QSplitterHandle_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QSplitterHandle_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QSplitterHandle_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QSplitterHandle_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QSplitterHandle_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QSplitterHandle_Ptr ptr)
 	{
@@ -7187,18 +7955,27 @@ extension CQt
 	public function void QSplitterHandle_OnMetaObject_action(void* self);
 	[LinkName("QSplitterHandle_OnMetaObject")]
 	public static extern void** QSplitterHandle_OnMetaObject(void* self, QSplitterHandle_OnMetaObject_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMetaObject")]
+	public static extern void** QSplitterHandle_SuperMetaObject(void* self);
 	[LinkName("QSplitterHandle_Qt_Metacast")]
 	public static extern void* QSplitterHandle_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSplitterHandle_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSplitterHandle_OnMetacast")]
 	public static extern void* QSplitterHandle_OnMetacast(void* self, QSplitterHandle_OnMetacast_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMetacast")]
+	public static extern void* QSplitterHandle_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSplitterHandle_Qt_Metacall")]
 	public static extern c_int QSplitterHandle_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSplitterHandle_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSplitterHandle_OnMetacall")]
 	public static extern c_int QSplitterHandle_OnMetacall(void* self, QSplitterHandle_OnMetacall_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMetacall")]
+	public static extern c_int QSplitterHandle_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSplitterHandle_Tr")]
 	public static extern libqt_string QSplitterHandle_Tr(c_char* s);
 	[LinkName("QSplitterHandle_SetOrientation")]
@@ -7215,42 +7992,63 @@ extension CQt
 	public function void QSplitterHandle_OnSizeHint_action(void* self);
 	[LinkName("QSplitterHandle_OnSizeHint")]
 	public static extern void* QSplitterHandle_OnSizeHint(void* self, QSplitterHandle_OnSizeHint_action _action);
+	
+	[LinkName("QSplitterHandle_SuperSizeHint")]
+	public static extern void* QSplitterHandle_SuperSizeHint(void* self);
 	[LinkName("QSplitterHandle_PaintEvent")]
 	public static extern void QSplitterHandle_PaintEvent(void* self, void** param1);
 	
 	public function void QSplitterHandle_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QSplitterHandle_OnPaintEvent")]
 	public static extern void QSplitterHandle_OnPaintEvent(void* self, QSplitterHandle_OnPaintEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperPaintEvent")]
+	public static extern void QSplitterHandle_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QSplitterHandle_MouseMoveEvent")]
 	public static extern void QSplitterHandle_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QSplitterHandle_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QSplitterHandle_OnMouseMoveEvent")]
 	public static extern void QSplitterHandle_OnMouseMoveEvent(void* self, QSplitterHandle_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMouseMoveEvent")]
+	public static extern void QSplitterHandle_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QSplitterHandle_MousePressEvent")]
 	public static extern void QSplitterHandle_MousePressEvent(void* self, void** param1);
 	
 	public function void QSplitterHandle_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QSplitterHandle_OnMousePressEvent")]
 	public static extern void QSplitterHandle_OnMousePressEvent(void* self, QSplitterHandle_OnMousePressEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMousePressEvent")]
+	public static extern void QSplitterHandle_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QSplitterHandle_MouseReleaseEvent")]
 	public static extern void QSplitterHandle_MouseReleaseEvent(void* self, void** param1);
 	
 	public function void QSplitterHandle_OnMouseReleaseEvent_action(void* self, void** param1);
 	[LinkName("QSplitterHandle_OnMouseReleaseEvent")]
 	public static extern void QSplitterHandle_OnMouseReleaseEvent(void* self, QSplitterHandle_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMouseReleaseEvent")]
+	public static extern void QSplitterHandle_SuperMouseReleaseEvent(void* self, void** param1);
 	[LinkName("QSplitterHandle_ResizeEvent")]
 	public static extern void QSplitterHandle_ResizeEvent(void* self, void** param1);
 	
 	public function void QSplitterHandle_OnResizeEvent_action(void* self, void** param1);
 	[LinkName("QSplitterHandle_OnResizeEvent")]
 	public static extern void QSplitterHandle_OnResizeEvent(void* self, QSplitterHandle_OnResizeEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperResizeEvent")]
+	public static extern void QSplitterHandle_SuperResizeEvent(void* self, void** param1);
 	[LinkName("QSplitterHandle_Event")]
 	public static extern bool QSplitterHandle_Event(void* self, void** param1);
 	
 	public function void QSplitterHandle_OnEvent_action(void* self, void** param1);
 	[LinkName("QSplitterHandle_OnEvent")]
 	public static extern bool QSplitterHandle_OnEvent(void* self, QSplitterHandle_OnEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperEvent")]
+	public static extern bool QSplitterHandle_SuperEvent(void* self, void** param1);
 	[LinkName("QSplitterHandle_MoveSplitter")]
 	public static extern void QSplitterHandle_MoveSplitter(void* self, c_int p);
 	[LinkName("QSplitterHandle_ClosestLegalPosition")]
@@ -7265,238 +8063,358 @@ extension CQt
 	public function void QSplitterHandle_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSplitterHandle_OnEventFilter")]
 	public static extern bool QSplitterHandle_OnEventFilter(void* self, QSplitterHandle_OnEventFilter_action _action);
+	
+	[LinkName("QSplitterHandle_SuperEventFilter")]
+	public static extern bool QSplitterHandle_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSplitterHandle_TimerEvent")]
 	public static extern void QSplitterHandle_TimerEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnTimerEvent")]
 	public static extern void QSplitterHandle_OnTimerEvent(void* self, QSplitterHandle_OnTimerEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperTimerEvent")]
+	public static extern void QSplitterHandle_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_ChildEvent")]
 	public static extern void QSplitterHandle_ChildEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnChildEvent")]
 	public static extern void QSplitterHandle_OnChildEvent(void* self, QSplitterHandle_OnChildEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperChildEvent")]
+	public static extern void QSplitterHandle_SuperChildEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_CustomEvent")]
 	public static extern void QSplitterHandle_CustomEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnCustomEvent")]
 	public static extern void QSplitterHandle_OnCustomEvent(void* self, QSplitterHandle_OnCustomEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperCustomEvent")]
+	public static extern void QSplitterHandle_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_ConnectNotify")]
 	public static extern void QSplitterHandle_ConnectNotify(void* self, void** signal);
 	
 	public function void QSplitterHandle_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSplitterHandle_OnConnectNotify")]
 	public static extern void QSplitterHandle_OnConnectNotify(void* self, QSplitterHandle_OnConnectNotify_action _action);
+	
+	[LinkName("QSplitterHandle_SuperConnectNotify")]
+	public static extern void QSplitterHandle_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSplitterHandle_DisconnectNotify")]
 	public static extern void QSplitterHandle_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSplitterHandle_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSplitterHandle_OnDisconnectNotify")]
 	public static extern void QSplitterHandle_OnDisconnectNotify(void* self, QSplitterHandle_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSplitterHandle_SuperDisconnectNotify")]
+	public static extern void QSplitterHandle_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QSplitterHandle_DevType")]
 	public static extern c_int QSplitterHandle_DevType(void* self);
 	
 	public function void QSplitterHandle_OnDevType_action(void* self);
 	[LinkName("QSplitterHandle_OnDevType")]
 	public static extern c_int QSplitterHandle_OnDevType(void* self, QSplitterHandle_OnDevType_action _action);
+	
+	[LinkName("QSplitterHandle_SuperDevType")]
+	public static extern c_int QSplitterHandle_SuperDevType(void* self);
 	[LinkName("QSplitterHandle_PaintEngine")]
 	public static extern void** QSplitterHandle_PaintEngine(void* self);
 	
 	public function void QSplitterHandle_OnPaintEngine_action(void* self);
 	[LinkName("QSplitterHandle_OnPaintEngine")]
 	public static extern void** QSplitterHandle_OnPaintEngine(void* self, QSplitterHandle_OnPaintEngine_action _action);
+	
+	[LinkName("QSplitterHandle_SuperPaintEngine")]
+	public static extern void** QSplitterHandle_SuperPaintEngine(void* self);
 	[LinkName("QSplitterHandle_Metric")]
 	public static extern c_int QSplitterHandle_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QSplitterHandle_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSplitterHandle_OnMetric")]
 	public static extern c_int QSplitterHandle_OnMetric(void* self, QSplitterHandle_OnMetric_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMetric")]
+	public static extern c_int QSplitterHandle_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSplitterHandle_InitPainter")]
 	public static extern void QSplitterHandle_InitPainter(void* self, void** painter);
 	
 	public function void QSplitterHandle_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QSplitterHandle_OnInitPainter")]
 	public static extern void QSplitterHandle_OnInitPainter(void* self, QSplitterHandle_OnInitPainter_action _action);
+	
+	[LinkName("QSplitterHandle_SuperInitPainter")]
+	public static extern void QSplitterHandle_SuperInitPainter(void* self, void** painter);
 	[LinkName("QSplitterHandle_Redirected")]
 	public static extern void** QSplitterHandle_Redirected(void* self, void** offset);
 	
 	public function void QSplitterHandle_OnRedirected_action(void* self, void** offset);
 	[LinkName("QSplitterHandle_OnRedirected")]
 	public static extern void** QSplitterHandle_OnRedirected(void* self, QSplitterHandle_OnRedirected_action _action);
+	
+	[LinkName("QSplitterHandle_SuperRedirected")]
+	public static extern void** QSplitterHandle_SuperRedirected(void* self, void** offset);
 	[LinkName("QSplitterHandle_SharedPainter")]
 	public static extern void** QSplitterHandle_SharedPainter(void* self);
 	
 	public function void QSplitterHandle_OnSharedPainter_action(void* self);
 	[LinkName("QSplitterHandle_OnSharedPainter")]
 	public static extern void** QSplitterHandle_OnSharedPainter(void* self, QSplitterHandle_OnSharedPainter_action _action);
+	
+	[LinkName("QSplitterHandle_SuperSharedPainter")]
+	public static extern void** QSplitterHandle_SuperSharedPainter(void* self);
 	[LinkName("QSplitterHandle_SetVisible")]
 	public static extern void QSplitterHandle_SetVisible(void* self, bool visible);
 	
 	public function void QSplitterHandle_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QSplitterHandle_OnSetVisible")]
 	public static extern void QSplitterHandle_OnSetVisible(void* self, QSplitterHandle_OnSetVisible_action _action);
+	
+	[LinkName("QSplitterHandle_SuperSetVisible")]
+	public static extern void QSplitterHandle_SuperSetVisible(void* self, bool visible);
 	[LinkName("QSplitterHandle_MinimumSizeHint")]
 	public static extern void* QSplitterHandle_MinimumSizeHint(void* self);
 	
 	public function void QSplitterHandle_OnMinimumSizeHint_action(void* self);
 	[LinkName("QSplitterHandle_OnMinimumSizeHint")]
 	public static extern void* QSplitterHandle_OnMinimumSizeHint(void* self, QSplitterHandle_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMinimumSizeHint")]
+	public static extern void* QSplitterHandle_SuperMinimumSizeHint(void* self);
 	[LinkName("QSplitterHandle_HeightForWidth")]
 	public static extern c_int QSplitterHandle_HeightForWidth(void* self, c_int param1);
 	
 	public function void QSplitterHandle_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QSplitterHandle_OnHeightForWidth")]
 	public static extern c_int QSplitterHandle_OnHeightForWidth(void* self, QSplitterHandle_OnHeightForWidth_action _action);
+	
+	[LinkName("QSplitterHandle_SuperHeightForWidth")]
+	public static extern c_int QSplitterHandle_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QSplitterHandle_HasHeightForWidth")]
 	public static extern bool QSplitterHandle_HasHeightForWidth(void* self);
 	
 	public function void QSplitterHandle_OnHasHeightForWidth_action(void* self);
 	[LinkName("QSplitterHandle_OnHasHeightForWidth")]
 	public static extern bool QSplitterHandle_OnHasHeightForWidth(void* self, QSplitterHandle_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QSplitterHandle_SuperHasHeightForWidth")]
+	public static extern bool QSplitterHandle_SuperHasHeightForWidth(void* self);
 	[LinkName("QSplitterHandle_MouseDoubleClickEvent")]
 	public static extern void QSplitterHandle_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnMouseDoubleClickEvent")]
 	public static extern void QSplitterHandle_OnMouseDoubleClickEvent(void* self, QSplitterHandle_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMouseDoubleClickEvent")]
+	public static extern void QSplitterHandle_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_WheelEvent")]
 	public static extern void QSplitterHandle_WheelEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnWheelEvent")]
 	public static extern void QSplitterHandle_OnWheelEvent(void* self, QSplitterHandle_OnWheelEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperWheelEvent")]
+	public static extern void QSplitterHandle_SuperWheelEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_KeyPressEvent")]
 	public static extern void QSplitterHandle_KeyPressEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnKeyPressEvent")]
 	public static extern void QSplitterHandle_OnKeyPressEvent(void* self, QSplitterHandle_OnKeyPressEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperKeyPressEvent")]
+	public static extern void QSplitterHandle_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_KeyReleaseEvent")]
 	public static extern void QSplitterHandle_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnKeyReleaseEvent")]
 	public static extern void QSplitterHandle_OnKeyReleaseEvent(void* self, QSplitterHandle_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperKeyReleaseEvent")]
+	public static extern void QSplitterHandle_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_FocusInEvent")]
 	public static extern void QSplitterHandle_FocusInEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnFocusInEvent")]
 	public static extern void QSplitterHandle_OnFocusInEvent(void* self, QSplitterHandle_OnFocusInEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperFocusInEvent")]
+	public static extern void QSplitterHandle_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_FocusOutEvent")]
 	public static extern void QSplitterHandle_FocusOutEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnFocusOutEvent")]
 	public static extern void QSplitterHandle_OnFocusOutEvent(void* self, QSplitterHandle_OnFocusOutEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperFocusOutEvent")]
+	public static extern void QSplitterHandle_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_EnterEvent")]
 	public static extern void QSplitterHandle_EnterEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnEnterEvent")]
 	public static extern void QSplitterHandle_OnEnterEvent(void* self, QSplitterHandle_OnEnterEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperEnterEvent")]
+	public static extern void QSplitterHandle_SuperEnterEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_LeaveEvent")]
 	public static extern void QSplitterHandle_LeaveEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnLeaveEvent")]
 	public static extern void QSplitterHandle_OnLeaveEvent(void* self, QSplitterHandle_OnLeaveEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperLeaveEvent")]
+	public static extern void QSplitterHandle_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_MoveEvent")]
 	public static extern void QSplitterHandle_MoveEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnMoveEvent")]
 	public static extern void QSplitterHandle_OnMoveEvent(void* self, QSplitterHandle_OnMoveEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperMoveEvent")]
+	public static extern void QSplitterHandle_SuperMoveEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_CloseEvent")]
 	public static extern void QSplitterHandle_CloseEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnCloseEvent")]
 	public static extern void QSplitterHandle_OnCloseEvent(void* self, QSplitterHandle_OnCloseEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperCloseEvent")]
+	public static extern void QSplitterHandle_SuperCloseEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_ContextMenuEvent")]
 	public static extern void QSplitterHandle_ContextMenuEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnContextMenuEvent")]
 	public static extern void QSplitterHandle_OnContextMenuEvent(void* self, QSplitterHandle_OnContextMenuEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperContextMenuEvent")]
+	public static extern void QSplitterHandle_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_TabletEvent")]
 	public static extern void QSplitterHandle_TabletEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnTabletEvent")]
 	public static extern void QSplitterHandle_OnTabletEvent(void* self, QSplitterHandle_OnTabletEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperTabletEvent")]
+	public static extern void QSplitterHandle_SuperTabletEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_ActionEvent")]
 	public static extern void QSplitterHandle_ActionEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnActionEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnActionEvent")]
 	public static extern void QSplitterHandle_OnActionEvent(void* self, QSplitterHandle_OnActionEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperActionEvent")]
+	public static extern void QSplitterHandle_SuperActionEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_DragEnterEvent")]
 	public static extern void QSplitterHandle_DragEnterEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnDragEnterEvent")]
 	public static extern void QSplitterHandle_OnDragEnterEvent(void* self, QSplitterHandle_OnDragEnterEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperDragEnterEvent")]
+	public static extern void QSplitterHandle_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_DragMoveEvent")]
 	public static extern void QSplitterHandle_DragMoveEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnDragMoveEvent")]
 	public static extern void QSplitterHandle_OnDragMoveEvent(void* self, QSplitterHandle_OnDragMoveEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperDragMoveEvent")]
+	public static extern void QSplitterHandle_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_DragLeaveEvent")]
 	public static extern void QSplitterHandle_DragLeaveEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnDragLeaveEvent")]
 	public static extern void QSplitterHandle_OnDragLeaveEvent(void* self, QSplitterHandle_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperDragLeaveEvent")]
+	public static extern void QSplitterHandle_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_DropEvent")]
 	public static extern void QSplitterHandle_DropEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnDropEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnDropEvent")]
 	public static extern void QSplitterHandle_OnDropEvent(void* self, QSplitterHandle_OnDropEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperDropEvent")]
+	public static extern void QSplitterHandle_SuperDropEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_ShowEvent")]
 	public static extern void QSplitterHandle_ShowEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnShowEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnShowEvent")]
 	public static extern void QSplitterHandle_OnShowEvent(void* self, QSplitterHandle_OnShowEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperShowEvent")]
+	public static extern void QSplitterHandle_SuperShowEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_HideEvent")]
 	public static extern void QSplitterHandle_HideEvent(void* self, void** event);
 	
 	public function void QSplitterHandle_OnHideEvent_action(void* self, void** event);
 	[LinkName("QSplitterHandle_OnHideEvent")]
 	public static extern void QSplitterHandle_OnHideEvent(void* self, QSplitterHandle_OnHideEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperHideEvent")]
+	public static extern void QSplitterHandle_SuperHideEvent(void* self, void** event);
 	[LinkName("QSplitterHandle_NativeEvent")]
 	public static extern bool QSplitterHandle_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QSplitterHandle_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSplitterHandle_OnNativeEvent")]
 	public static extern bool QSplitterHandle_OnNativeEvent(void* self, QSplitterHandle_OnNativeEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperNativeEvent")]
+	public static extern bool QSplitterHandle_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSplitterHandle_ChangeEvent")]
 	public static extern void QSplitterHandle_ChangeEvent(void* self, void** param1);
 	
 	public function void QSplitterHandle_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QSplitterHandle_OnChangeEvent")]
 	public static extern void QSplitterHandle_OnChangeEvent(void* self, QSplitterHandle_OnChangeEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperChangeEvent")]
+	public static extern void QSplitterHandle_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QSplitterHandle_InputMethodEvent")]
 	public static extern void QSplitterHandle_InputMethodEvent(void* self, void** param1);
 	
 	public function void QSplitterHandle_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QSplitterHandle_OnInputMethodEvent")]
 	public static extern void QSplitterHandle_OnInputMethodEvent(void* self, QSplitterHandle_OnInputMethodEvent_action _action);
+	
+	[LinkName("QSplitterHandle_SuperInputMethodEvent")]
+	public static extern void QSplitterHandle_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QSplitterHandle_InputMethodQuery")]
 	public static extern void* QSplitterHandle_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QSplitterHandle_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSplitterHandle_OnInputMethodQuery")]
 	public static extern void* QSplitterHandle_OnInputMethodQuery(void* self, QSplitterHandle_OnInputMethodQuery_action _action);
+	
+	[LinkName("QSplitterHandle_SuperInputMethodQuery")]
+	public static extern void* QSplitterHandle_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSplitterHandle_FocusNextPrevChild")]
 	public static extern bool QSplitterHandle_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QSplitterHandle_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QSplitterHandle_OnFocusNextPrevChild")]
 	public static extern bool QSplitterHandle_OnFocusNextPrevChild(void* self, QSplitterHandle_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QSplitterHandle_SuperFocusNextPrevChild")]
+	public static extern bool QSplitterHandle_SuperFocusNextPrevChild(void* self, bool next);
 }

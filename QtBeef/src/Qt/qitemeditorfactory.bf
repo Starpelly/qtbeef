@@ -30,6 +30,18 @@ class QItemEditorCreatorBase : IQItemEditorCreatorBase
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QItemEditorCreatorBase_OnCreateWidget(obj.ObjectPtr,  => QtBeef_QItemEditorCreatorBase_OnCreateWidget);
+		CQt.QItemEditorCreatorBase_OnValuePropertyName(obj.ObjectPtr,  => QtBeef_QItemEditorCreatorBase_OnValuePropertyName);
+	}
+	static void QtBeef_QItemEditorCreatorBase_OnCreateWidget(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreateWidget(parent);
+	}
+	static void QtBeef_QItemEditorCreatorBase_OnValuePropertyName(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValuePropertyName();
 	}
 	public this(QItemEditorCreatorBase_Ptr ptr)
 	{
@@ -62,12 +74,18 @@ extension CQt
 	public function void QItemEditorCreatorBase_OnCreateWidget_action(void* self, void** parent);
 	[LinkName("QItemEditorCreatorBase_OnCreateWidget")]
 	public static extern void** QItemEditorCreatorBase_OnCreateWidget(void* self, QItemEditorCreatorBase_OnCreateWidget_action _action);
+	
+	[LinkName("QItemEditorCreatorBase_SuperCreateWidget")]
+	public static extern void** QItemEditorCreatorBase_SuperCreateWidget(void* self, void** parent);
 	[LinkName("QItemEditorCreatorBase_ValuePropertyName")]
 	public static extern void* QItemEditorCreatorBase_ValuePropertyName(void* self);
 	
 	public function void QItemEditorCreatorBase_OnValuePropertyName_action(void* self);
 	[LinkName("QItemEditorCreatorBase_OnValuePropertyName")]
 	public static extern void* QItemEditorCreatorBase_OnValuePropertyName(void* self, QItemEditorCreatorBase_OnValuePropertyName_action _action);
+	
+	[LinkName("QItemEditorCreatorBase_SuperValuePropertyName")]
+	public static extern void* QItemEditorCreatorBase_SuperValuePropertyName(void* self);
 	[LinkName("QItemEditorCreatorBase_OperatorAssign")]
 	public static extern void QItemEditorCreatorBase_OperatorAssign(void* self, void** param1);
 }
@@ -110,6 +128,18 @@ class QItemEditorFactory : IQItemEditorFactory
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QItemEditorFactory_OnCreateEditor(obj.ObjectPtr,  => QtBeef_QItemEditorFactory_OnCreateEditor);
+		CQt.QItemEditorFactory_OnValuePropertyName(obj.ObjectPtr,  => QtBeef_QItemEditorFactory_OnValuePropertyName);
+	}
+	static void QtBeef_QItemEditorFactory_OnCreateEditor(void* ptr, c_int userType, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreateEditor(userType, parent);
+	}
+	static void QtBeef_QItemEditorFactory_OnValuePropertyName(void* ptr, c_int userType)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValuePropertyName(userType);
 	}
 	public this(QItemEditorFactory_Ptr ptr)
 	{
@@ -168,12 +198,18 @@ extension CQt
 	public function void QItemEditorFactory_OnCreateEditor_action(void* self, c_int userType, void** parent);
 	[LinkName("QItemEditorFactory_OnCreateEditor")]
 	public static extern void** QItemEditorFactory_OnCreateEditor(void* self, QItemEditorFactory_OnCreateEditor_action _action);
+	
+	[LinkName("QItemEditorFactory_SuperCreateEditor")]
+	public static extern void** QItemEditorFactory_SuperCreateEditor(void* self, c_int userType, void** parent);
 	[LinkName("QItemEditorFactory_ValuePropertyName")]
 	public static extern void* QItemEditorFactory_ValuePropertyName(void* self, c_int userType);
 	
 	public function void QItemEditorFactory_OnValuePropertyName_action(void* self, c_int userType);
 	[LinkName("QItemEditorFactory_OnValuePropertyName")]
 	public static extern void* QItemEditorFactory_OnValuePropertyName(void* self, QItemEditorFactory_OnValuePropertyName_action _action);
+	
+	[LinkName("QItemEditorFactory_SuperValuePropertyName")]
+	public static extern void* QItemEditorFactory_SuperValuePropertyName(void* self, c_int userType);
 	[LinkName("QItemEditorFactory_RegisterEditor")]
 	public static extern void QItemEditorFactory_RegisterEditor(void* self, c_int userType, void** creator);
 	[LinkName("QItemEditorFactory_DefaultFactory")]

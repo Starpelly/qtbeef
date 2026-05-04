@@ -678,6 +678,37 @@ class QTemporaryFile : IQTemporaryFile, IQFile, IQFileDevice, IQIODevice, IQObje
 		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ChannelBytesWritten);
 		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_AboutToClose);
 		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ReadChannelFinished);
+		CQt.QTemporaryFile_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnMetaObject);
+		CQt.QTemporaryFile_OnMetacast(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnMetacast);
+		CQt.QTemporaryFile_OnMetacall(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnMetacall);
+		CQt.QTemporaryFile_OnFileName(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnFileName);
+		CQt.QTemporaryFile_OnOpen2(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnOpen2);
+		CQt.QTemporaryFile_OnEvent(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnEvent);
+		CQt.QTemporaryFile_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnEventFilter);
+		CQt.QTemporaryFile_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnTimerEvent);
+		CQt.QTemporaryFile_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnChildEvent);
+		CQt.QTemporaryFile_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnCustomEvent);
+		CQt.QTemporaryFile_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnConnectNotify);
+		CQt.QTemporaryFile_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnDisconnectNotify);
+		CQt.QTemporaryFile_OnIsSequential(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnIsSequential);
+		CQt.QTemporaryFile_OnClose(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnClose);
+		CQt.QTemporaryFile_OnPos(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnPos);
+		CQt.QTemporaryFile_OnSize(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnSize);
+		CQt.QTemporaryFile_OnSeek(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnSeek);
+		CQt.QTemporaryFile_OnAtEnd(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnAtEnd);
+		CQt.QTemporaryFile_OnReset(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnReset);
+		CQt.QTemporaryFile_OnBytesAvailable(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnBytesAvailable);
+		CQt.QTemporaryFile_OnBytesToWrite(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnBytesToWrite);
+		CQt.QTemporaryFile_OnCanReadLine(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnCanReadLine);
+		CQt.QTemporaryFile_OnWaitForReadyRead(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnWaitForReadyRead);
+		CQt.QTemporaryFile_OnWaitForBytesWritten(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnWaitForBytesWritten);
+		CQt.QTemporaryFile_OnReadData(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnReadData);
+		CQt.QTemporaryFile_OnReadLineData(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnReadLineData);
+		CQt.QTemporaryFile_OnSkipData(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnSkipData);
+		CQt.QTemporaryFile_OnWriteData(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnWriteData);
+		CQt.QTemporaryFile_OnResize(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnResize);
+		CQt.QTemporaryFile_OnPermissions(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnPermissions);
+		CQt.QTemporaryFile_OnSetPermissions(obj.ObjectPtr,  => QtBeef_QTemporaryFile_OnSetPermissions);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -726,6 +757,161 @@ class QTemporaryFile : IQTemporaryFile, IQFile, IQFileDevice, IQIODevice, IQObje
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnReadChannelFinished.Invoke();
+	}
+	static void QtBeef_QTemporaryFile_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTemporaryFile_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTemporaryFile_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTemporaryFile_OnFileName(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFileName(scope .());
+	}
+	static void QtBeef_QTemporaryFile_OnOpen2(void* ptr, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen2(flags);
+	}
+	static void QtBeef_QTemporaryFile_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTemporaryFile_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTemporaryFile_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTemporaryFile_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTemporaryFile_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTemporaryFile_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTemporaryFile_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QTemporaryFile_OnIsSequential(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsSequential();
+	}
+	static void QtBeef_QTemporaryFile_OnClose(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClose();
+	}
+	static void QtBeef_QTemporaryFile_OnPos(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPos();
+	}
+	static void QtBeef_QTemporaryFile_OnSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSize();
+	}
+	static void QtBeef_QTemporaryFile_OnSeek(void* ptr, c_longlong pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSeek(pos);
+	}
+	static void QtBeef_QTemporaryFile_OnAtEnd(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAtEnd();
+	}
+	static void QtBeef_QTemporaryFile_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QTemporaryFile_OnBytesAvailable(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesAvailable();
+	}
+	static void QtBeef_QTemporaryFile_OnBytesToWrite(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesToWrite();
+	}
+	static void QtBeef_QTemporaryFile_OnCanReadLine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanReadLine();
+	}
+	static void QtBeef_QTemporaryFile_OnWaitForReadyRead(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForReadyRead(msecs);
+	}
+	static void QtBeef_QTemporaryFile_OnWaitForBytesWritten(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForBytesWritten(msecs);
+	}
+	static void QtBeef_QTemporaryFile_OnReadData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadData(data, maxlen);
+	}
+	static void QtBeef_QTemporaryFile_OnReadLineData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadLineData(data, maxlen);
+	}
+	static void QtBeef_QTemporaryFile_OnSkipData(void* ptr, c_longlong maxSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSkipData(maxSize);
+	}
+	static void QtBeef_QTemporaryFile_OnWriteData(void* ptr, c_char* data, c_longlong lenVal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWriteData(data, lenVal);
+	}
+	static void QtBeef_QTemporaryFile_OnResize(void* ptr, c_longlong sz)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResize(sz);
+	}
+	static void QtBeef_QTemporaryFile_OnPermissions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPermissions();
+	}
+	static void QtBeef_QTemporaryFile_OnSetPermissions(void* ptr, void* permissionSpec)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetPermissions(permissionSpec);
 	}
 	public this(QTemporaryFile_Ptr ptr)
 	{
@@ -1419,18 +1605,27 @@ extension CQt
 	public function void QTemporaryFile_OnMetaObject_action(void* self);
 	[LinkName("QTemporaryFile_OnMetaObject")]
 	public static extern void** QTemporaryFile_OnMetaObject(void* self, QTemporaryFile_OnMetaObject_action _action);
+	
+	[LinkName("QTemporaryFile_SuperMetaObject")]
+	public static extern void** QTemporaryFile_SuperMetaObject(void* self);
 	[LinkName("QTemporaryFile_Qt_Metacast")]
 	public static extern void* QTemporaryFile_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTemporaryFile_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTemporaryFile_OnMetacast")]
 	public static extern void* QTemporaryFile_OnMetacast(void* self, QTemporaryFile_OnMetacast_action _action);
+	
+	[LinkName("QTemporaryFile_SuperMetacast")]
+	public static extern void* QTemporaryFile_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTemporaryFile_Qt_Metacall")]
 	public static extern c_int QTemporaryFile_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTemporaryFile_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTemporaryFile_OnMetacall")]
 	public static extern c_int QTemporaryFile_OnMetacall(void* self, QTemporaryFile_OnMetacall_action _action);
+	
+	[LinkName("QTemporaryFile_SuperMetacall")]
+	public static extern c_int QTemporaryFile_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTemporaryFile_Tr")]
 	public static extern libqt_string QTemporaryFile_Tr(c_char* s);
 	[LinkName("QTemporaryFile_AutoRemove")]
@@ -1445,6 +1640,9 @@ extension CQt
 	public function void QTemporaryFile_OnFileName_action(void* self);
 	[LinkName("QTemporaryFile_OnFileName")]
 	public static extern libqt_string QTemporaryFile_OnFileName(void* self, QTemporaryFile_OnFileName_action _action);
+	
+	[LinkName("QTemporaryFile_SuperFileName")]
+	public static extern libqt_string QTemporaryFile_SuperFileName(void* self);
 	[LinkName("QTemporaryFile_FileTemplate")]
 	public static extern libqt_string QTemporaryFile_FileTemplate(void* self);
 	[LinkName("QTemporaryFile_SetFileTemplate")]
@@ -1461,6 +1659,9 @@ extension CQt
 	public function void QTemporaryFile_OnOpen2_action(void* self, void* flags);
 	[LinkName("QTemporaryFile_OnOpen2")]
 	public static extern bool QTemporaryFile_OnOpen2(void* self, QTemporaryFile_OnOpen2_action _action);
+	
+	[LinkName("QTemporaryFile_SuperOpen2")]
+	public static extern bool QTemporaryFile_SuperOpen2(void* self, void* flags);
 	[LinkName("QTemporaryFile_Tr2")]
 	public static extern libqt_string QTemporaryFile_Tr2(c_char* s, c_char* c);
 	[LinkName("QTemporaryFile_Tr3")]
@@ -1471,154 +1672,232 @@ extension CQt
 	public function void QTemporaryFile_OnEvent_action(void* self, void** event);
 	[LinkName("QTemporaryFile_OnEvent")]
 	public static extern bool QTemporaryFile_OnEvent(void* self, QTemporaryFile_OnEvent_action _action);
+	
+	[LinkName("QTemporaryFile_SuperEvent")]
+	public static extern bool QTemporaryFile_SuperEvent(void* self, void** event);
 	[LinkName("QTemporaryFile_EventFilter")]
 	public static extern bool QTemporaryFile_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTemporaryFile_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTemporaryFile_OnEventFilter")]
 	public static extern bool QTemporaryFile_OnEventFilter(void* self, QTemporaryFile_OnEventFilter_action _action);
+	
+	[LinkName("QTemporaryFile_SuperEventFilter")]
+	public static extern bool QTemporaryFile_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTemporaryFile_TimerEvent")]
 	public static extern void QTemporaryFile_TimerEvent(void* self, void** event);
 	
 	public function void QTemporaryFile_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTemporaryFile_OnTimerEvent")]
 	public static extern void QTemporaryFile_OnTimerEvent(void* self, QTemporaryFile_OnTimerEvent_action _action);
+	
+	[LinkName("QTemporaryFile_SuperTimerEvent")]
+	public static extern void QTemporaryFile_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTemporaryFile_ChildEvent")]
 	public static extern void QTemporaryFile_ChildEvent(void* self, void** event);
 	
 	public function void QTemporaryFile_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTemporaryFile_OnChildEvent")]
 	public static extern void QTemporaryFile_OnChildEvent(void* self, QTemporaryFile_OnChildEvent_action _action);
+	
+	[LinkName("QTemporaryFile_SuperChildEvent")]
+	public static extern void QTemporaryFile_SuperChildEvent(void* self, void** event);
 	[LinkName("QTemporaryFile_CustomEvent")]
 	public static extern void QTemporaryFile_CustomEvent(void* self, void** event);
 	
 	public function void QTemporaryFile_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTemporaryFile_OnCustomEvent")]
 	public static extern void QTemporaryFile_OnCustomEvent(void* self, QTemporaryFile_OnCustomEvent_action _action);
+	
+	[LinkName("QTemporaryFile_SuperCustomEvent")]
+	public static extern void QTemporaryFile_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTemporaryFile_ConnectNotify")]
 	public static extern void QTemporaryFile_ConnectNotify(void* self, void** signal);
 	
 	public function void QTemporaryFile_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTemporaryFile_OnConnectNotify")]
 	public static extern void QTemporaryFile_OnConnectNotify(void* self, QTemporaryFile_OnConnectNotify_action _action);
+	
+	[LinkName("QTemporaryFile_SuperConnectNotify")]
+	public static extern void QTemporaryFile_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTemporaryFile_DisconnectNotify")]
 	public static extern void QTemporaryFile_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTemporaryFile_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTemporaryFile_OnDisconnectNotify")]
 	public static extern void QTemporaryFile_OnDisconnectNotify(void* self, QTemporaryFile_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTemporaryFile_SuperDisconnectNotify")]
+	public static extern void QTemporaryFile_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QTemporaryFile_IsSequential")]
 	public static extern bool QTemporaryFile_IsSequential(void* self);
 	
 	public function void QTemporaryFile_OnIsSequential_action(void* self);
 	[LinkName("QTemporaryFile_OnIsSequential")]
 	public static extern bool QTemporaryFile_OnIsSequential(void* self, QTemporaryFile_OnIsSequential_action _action);
+	
+	[LinkName("QTemporaryFile_SuperIsSequential")]
+	public static extern bool QTemporaryFile_SuperIsSequential(void* self);
 	[LinkName("QTemporaryFile_Close")]
 	public static extern void QTemporaryFile_Close(void* self);
 	
 	public function void QTemporaryFile_OnClose_action(void* self);
 	[LinkName("QTemporaryFile_OnClose")]
 	public static extern void QTemporaryFile_OnClose(void* self, QTemporaryFile_OnClose_action _action);
+	
+	[LinkName("QTemporaryFile_SuperClose")]
+	public static extern void QTemporaryFile_SuperClose(void* self);
 	[LinkName("QTemporaryFile_Pos")]
 	public static extern c_longlong QTemporaryFile_Pos(void* self);
 	
 	public function void QTemporaryFile_OnPos_action(void* self);
 	[LinkName("QTemporaryFile_OnPos")]
 	public static extern c_longlong QTemporaryFile_OnPos(void* self, QTemporaryFile_OnPos_action _action);
+	
+	[LinkName("QTemporaryFile_SuperPos")]
+	public static extern c_longlong QTemporaryFile_SuperPos(void* self);
 	[LinkName("QTemporaryFile_Size")]
 	public static extern c_longlong QTemporaryFile_Size(void* self);
 	
 	public function void QTemporaryFile_OnSize_action(void* self);
 	[LinkName("QTemporaryFile_OnSize")]
 	public static extern c_longlong QTemporaryFile_OnSize(void* self, QTemporaryFile_OnSize_action _action);
+	
+	[LinkName("QTemporaryFile_SuperSize")]
+	public static extern c_longlong QTemporaryFile_SuperSize(void* self);
 	[LinkName("QTemporaryFile_Seek")]
 	public static extern bool QTemporaryFile_Seek(void* self, c_longlong pos);
 	
 	public function void QTemporaryFile_OnSeek_action(void* self, c_longlong pos);
 	[LinkName("QTemporaryFile_OnSeek")]
 	public static extern bool QTemporaryFile_OnSeek(void* self, QTemporaryFile_OnSeek_action _action);
+	
+	[LinkName("QTemporaryFile_SuperSeek")]
+	public static extern bool QTemporaryFile_SuperSeek(void* self, c_longlong pos);
 	[LinkName("QTemporaryFile_AtEnd")]
 	public static extern bool QTemporaryFile_AtEnd(void* self);
 	
 	public function void QTemporaryFile_OnAtEnd_action(void* self);
 	[LinkName("QTemporaryFile_OnAtEnd")]
 	public static extern bool QTemporaryFile_OnAtEnd(void* self, QTemporaryFile_OnAtEnd_action _action);
+	
+	[LinkName("QTemporaryFile_SuperAtEnd")]
+	public static extern bool QTemporaryFile_SuperAtEnd(void* self);
 	[LinkName("QTemporaryFile_Reset")]
 	public static extern bool QTemporaryFile_Reset(void* self);
 	
 	public function void QTemporaryFile_OnReset_action(void* self);
 	[LinkName("QTemporaryFile_OnReset")]
 	public static extern bool QTemporaryFile_OnReset(void* self, QTemporaryFile_OnReset_action _action);
+	
+	[LinkName("QTemporaryFile_SuperReset")]
+	public static extern bool QTemporaryFile_SuperReset(void* self);
 	[LinkName("QTemporaryFile_BytesAvailable")]
 	public static extern c_longlong QTemporaryFile_BytesAvailable(void* self);
 	
 	public function void QTemporaryFile_OnBytesAvailable_action(void* self);
 	[LinkName("QTemporaryFile_OnBytesAvailable")]
 	public static extern c_longlong QTemporaryFile_OnBytesAvailable(void* self, QTemporaryFile_OnBytesAvailable_action _action);
+	
+	[LinkName("QTemporaryFile_SuperBytesAvailable")]
+	public static extern c_longlong QTemporaryFile_SuperBytesAvailable(void* self);
 	[LinkName("QTemporaryFile_BytesToWrite")]
 	public static extern c_longlong QTemporaryFile_BytesToWrite(void* self);
 	
 	public function void QTemporaryFile_OnBytesToWrite_action(void* self);
 	[LinkName("QTemporaryFile_OnBytesToWrite")]
 	public static extern c_longlong QTemporaryFile_OnBytesToWrite(void* self, QTemporaryFile_OnBytesToWrite_action _action);
+	
+	[LinkName("QTemporaryFile_SuperBytesToWrite")]
+	public static extern c_longlong QTemporaryFile_SuperBytesToWrite(void* self);
 	[LinkName("QTemporaryFile_CanReadLine")]
 	public static extern bool QTemporaryFile_CanReadLine(void* self);
 	
 	public function void QTemporaryFile_OnCanReadLine_action(void* self);
 	[LinkName("QTemporaryFile_OnCanReadLine")]
 	public static extern bool QTemporaryFile_OnCanReadLine(void* self, QTemporaryFile_OnCanReadLine_action _action);
+	
+	[LinkName("QTemporaryFile_SuperCanReadLine")]
+	public static extern bool QTemporaryFile_SuperCanReadLine(void* self);
 	[LinkName("QTemporaryFile_WaitForReadyRead")]
 	public static extern bool QTemporaryFile_WaitForReadyRead(void* self, c_int msecs);
 	
 	public function void QTemporaryFile_OnWaitForReadyRead_action(void* self, c_int msecs);
 	[LinkName("QTemporaryFile_OnWaitForReadyRead")]
 	public static extern bool QTemporaryFile_OnWaitForReadyRead(void* self, QTemporaryFile_OnWaitForReadyRead_action _action);
+	
+	[LinkName("QTemporaryFile_SuperWaitForReadyRead")]
+	public static extern bool QTemporaryFile_SuperWaitForReadyRead(void* self, c_int msecs);
 	[LinkName("QTemporaryFile_WaitForBytesWritten")]
 	public static extern bool QTemporaryFile_WaitForBytesWritten(void* self, c_int msecs);
 	
 	public function void QTemporaryFile_OnWaitForBytesWritten_action(void* self, c_int msecs);
 	[LinkName("QTemporaryFile_OnWaitForBytesWritten")]
 	public static extern bool QTemporaryFile_OnWaitForBytesWritten(void* self, QTemporaryFile_OnWaitForBytesWritten_action _action);
+	
+	[LinkName("QTemporaryFile_SuperWaitForBytesWritten")]
+	public static extern bool QTemporaryFile_SuperWaitForBytesWritten(void* self, c_int msecs);
 	[LinkName("QTemporaryFile_ReadData")]
 	public static extern c_longlong QTemporaryFile_ReadData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QTemporaryFile_OnReadData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QTemporaryFile_OnReadData")]
 	public static extern c_longlong QTemporaryFile_OnReadData(void* self, QTemporaryFile_OnReadData_action _action);
+	
+	[LinkName("QTemporaryFile_SuperReadData")]
+	public static extern c_longlong QTemporaryFile_SuperReadData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QTemporaryFile_ReadLineData")]
 	public static extern c_longlong QTemporaryFile_ReadLineData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QTemporaryFile_OnReadLineData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QTemporaryFile_OnReadLineData")]
 	public static extern c_longlong QTemporaryFile_OnReadLineData(void* self, QTemporaryFile_OnReadLineData_action _action);
+	
+	[LinkName("QTemporaryFile_SuperReadLineData")]
+	public static extern c_longlong QTemporaryFile_SuperReadLineData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QTemporaryFile_SkipData")]
 	public static extern c_longlong QTemporaryFile_SkipData(void* self, c_longlong maxSize);
 	
 	public function void QTemporaryFile_OnSkipData_action(void* self, c_longlong maxSize);
 	[LinkName("QTemporaryFile_OnSkipData")]
 	public static extern c_longlong QTemporaryFile_OnSkipData(void* self, QTemporaryFile_OnSkipData_action _action);
+	
+	[LinkName("QTemporaryFile_SuperSkipData")]
+	public static extern c_longlong QTemporaryFile_SuperSkipData(void* self, c_longlong maxSize);
 	[LinkName("QTemporaryFile_WriteData")]
 	public static extern c_longlong QTemporaryFile_WriteData(void* self, c_char* data, c_longlong lenVal);
 	
 	public function void QTemporaryFile_OnWriteData_action(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QTemporaryFile_OnWriteData")]
 	public static extern c_longlong QTemporaryFile_OnWriteData(void* self, QTemporaryFile_OnWriteData_action _action);
+	
+	[LinkName("QTemporaryFile_SuperWriteData")]
+	public static extern c_longlong QTemporaryFile_SuperWriteData(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QTemporaryFile_Resize")]
 	public static extern bool QTemporaryFile_Resize(void* self, c_longlong sz);
 	
 	public function void QTemporaryFile_OnResize_action(void* self, c_longlong sz);
 	[LinkName("QTemporaryFile_OnResize")]
 	public static extern bool QTemporaryFile_OnResize(void* self, QTemporaryFile_OnResize_action _action);
+	
+	[LinkName("QTemporaryFile_SuperResize")]
+	public static extern bool QTemporaryFile_SuperResize(void* self, c_longlong sz);
 	[LinkName("QTemporaryFile_Permissions")]
 	public static extern void* QTemporaryFile_Permissions(void* self);
 	
 	public function void QTemporaryFile_OnPermissions_action(void* self);
 	[LinkName("QTemporaryFile_OnPermissions")]
 	public static extern void* QTemporaryFile_OnPermissions(void* self, QTemporaryFile_OnPermissions_action _action);
+	
+	[LinkName("QTemporaryFile_SuperPermissions")]
+	public static extern void* QTemporaryFile_SuperPermissions(void* self);
 	[LinkName("QTemporaryFile_SetPermissions")]
 	public static extern bool QTemporaryFile_SetPermissions(void* self, void* permissionSpec);
 	
 	public function void QTemporaryFile_OnSetPermissions_action(void* self, void* permissionSpec);
 	[LinkName("QTemporaryFile_OnSetPermissions")]
 	public static extern bool QTemporaryFile_OnSetPermissions(void* self, QTemporaryFile_OnSetPermissions_action _action);
+	
+	[LinkName("QTemporaryFile_SuperSetPermissions")]
+	public static extern bool QTemporaryFile_SuperSetPermissions(void* self, void* permissionSpec);
 }

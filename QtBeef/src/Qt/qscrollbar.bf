@@ -1742,6 +1742,58 @@ class QScrollBar : IQScrollBar, IQAbstractSlider, IQWidget, IQObject, IQPaintDev
 		CQt.QAbstractSlider_Connect_SliderReleased(obj.ObjectPtr,  => QtBeef_QAbstractSlider_Connect_SliderReleased);
 		CQt.QAbstractSlider_Connect_RangeChanged(obj.ObjectPtr,  => QtBeef_QAbstractSlider_Connect_RangeChanged);
 		CQt.QAbstractSlider_Connect_ActionTriggered(obj.ObjectPtr,  => QtBeef_QAbstractSlider_Connect_ActionTriggered);
+		CQt.QScrollBar_OnMetaObject(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMetaObject);
+		CQt.QScrollBar_OnMetacast(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMetacast);
+		CQt.QScrollBar_OnMetacall(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMetacall);
+		CQt.QScrollBar_OnSizeHint(obj.ObjectPtr,  => QtBeef_QScrollBar_OnSizeHint);
+		CQt.QScrollBar_OnEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnEvent);
+		CQt.QScrollBar_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnWheelEvent);
+		CQt.QScrollBar_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnPaintEvent);
+		CQt.QScrollBar_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMousePressEvent);
+		CQt.QScrollBar_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMouseReleaseEvent);
+		CQt.QScrollBar_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMouseMoveEvent);
+		CQt.QScrollBar_OnHideEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnHideEvent);
+		CQt.QScrollBar_OnSliderChange(obj.ObjectPtr,  => QtBeef_QScrollBar_OnSliderChange);
+		CQt.QScrollBar_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnContextMenuEvent);
+		CQt.QScrollBar_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QScrollBar_OnInitStyleOption);
+		CQt.QScrollBar_OnEventFilter(obj.ObjectPtr,  => QtBeef_QScrollBar_OnEventFilter);
+		CQt.QScrollBar_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnTimerEvent);
+		CQt.QScrollBar_OnChildEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnChildEvent);
+		CQt.QScrollBar_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnCustomEvent);
+		CQt.QScrollBar_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QScrollBar_OnConnectNotify);
+		CQt.QScrollBar_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QScrollBar_OnDisconnectNotify);
+		CQt.QScrollBar_OnDevType(obj.ObjectPtr,  => QtBeef_QScrollBar_OnDevType);
+		CQt.QScrollBar_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QScrollBar_OnPaintEngine);
+		CQt.QScrollBar_OnMetric(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMetric);
+		CQt.QScrollBar_OnInitPainter(obj.ObjectPtr,  => QtBeef_QScrollBar_OnInitPainter);
+		CQt.QScrollBar_OnRedirected(obj.ObjectPtr,  => QtBeef_QScrollBar_OnRedirected);
+		CQt.QScrollBar_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QScrollBar_OnSharedPainter);
+		CQt.QScrollBar_OnSetVisible(obj.ObjectPtr,  => QtBeef_QScrollBar_OnSetVisible);
+		CQt.QScrollBar_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMinimumSizeHint);
+		CQt.QScrollBar_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QScrollBar_OnHeightForWidth);
+		CQt.QScrollBar_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QScrollBar_OnHasHeightForWidth);
+		CQt.QScrollBar_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMouseDoubleClickEvent);
+		CQt.QScrollBar_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnKeyPressEvent);
+		CQt.QScrollBar_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnKeyReleaseEvent);
+		CQt.QScrollBar_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnFocusInEvent);
+		CQt.QScrollBar_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnFocusOutEvent);
+		CQt.QScrollBar_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnEnterEvent);
+		CQt.QScrollBar_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnLeaveEvent);
+		CQt.QScrollBar_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnMoveEvent);
+		CQt.QScrollBar_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnResizeEvent);
+		CQt.QScrollBar_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnCloseEvent);
+		CQt.QScrollBar_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnTabletEvent);
+		CQt.QScrollBar_OnActionEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnActionEvent);
+		CQt.QScrollBar_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnDragEnterEvent);
+		CQt.QScrollBar_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnDragMoveEvent);
+		CQt.QScrollBar_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnDragLeaveEvent);
+		CQt.QScrollBar_OnDropEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnDropEvent);
+		CQt.QScrollBar_OnShowEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnShowEvent);
+		CQt.QScrollBar_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnNativeEvent);
+		CQt.QScrollBar_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnChangeEvent);
+		CQt.QScrollBar_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QScrollBar_OnInputMethodEvent);
+		CQt.QScrollBar_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QScrollBar_OnInputMethodQuery);
+		CQt.QScrollBar_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QScrollBar_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1814,6 +1866,266 @@ class QScrollBar : IQScrollBar, IQAbstractSlider, IQWidget, IQObject, IQPaintDev
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnActionTriggered.Invoke(action);
+	}
+	static void QtBeef_QScrollBar_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QScrollBar_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QScrollBar_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QScrollBar_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QScrollBar_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnWheelEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(param1);
+	}
+	static void QtBeef_QScrollBar_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QScrollBar_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QScrollBar_OnMouseReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(param1);
+	}
+	static void QtBeef_QScrollBar_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QScrollBar_OnHideEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(param1);
+	}
+	static void QtBeef_QScrollBar_OnSliderChange(void* ptr, QAbstractSlider_SliderChange change)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSliderChange(change);
+	}
+	static void QtBeef_QScrollBar_OnContextMenuEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(param1);
+	}
+	static void QtBeef_QScrollBar_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QScrollBar_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QScrollBar_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QScrollBar_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QScrollBar_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QScrollBar_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QScrollBar_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QScrollBar_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QScrollBar_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QScrollBar_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QScrollBar_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QScrollBar_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QScrollBar_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QScrollBar_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QScrollBar_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QScrollBar_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QScrollBar_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QScrollBar_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QScrollBar_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QScrollBar_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QScrollBar_Ptr ptr)
 	{
@@ -3539,18 +3851,27 @@ extension CQt
 	public function void QScrollBar_OnMetaObject_action(void* self);
 	[LinkName("QScrollBar_OnMetaObject")]
 	public static extern void** QScrollBar_OnMetaObject(void* self, QScrollBar_OnMetaObject_action _action);
+	
+	[LinkName("QScrollBar_SuperMetaObject")]
+	public static extern void** QScrollBar_SuperMetaObject(void* self);
 	[LinkName("QScrollBar_Qt_Metacast")]
 	public static extern void* QScrollBar_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QScrollBar_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QScrollBar_OnMetacast")]
 	public static extern void* QScrollBar_OnMetacast(void* self, QScrollBar_OnMetacast_action _action);
+	
+	[LinkName("QScrollBar_SuperMetacast")]
+	public static extern void* QScrollBar_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QScrollBar_Qt_Metacall")]
 	public static extern c_int QScrollBar_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QScrollBar_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QScrollBar_OnMetacall")]
 	public static extern c_int QScrollBar_OnMetacall(void* self, QScrollBar_OnMetacall_action _action);
+	
+	[LinkName("QScrollBar_SuperMetacall")]
+	public static extern c_int QScrollBar_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QScrollBar_Tr")]
 	public static extern libqt_string QScrollBar_Tr(c_char* s);
 	[LinkName("QScrollBar_SizeHint")]
@@ -3559,66 +3880,99 @@ extension CQt
 	public function void QScrollBar_OnSizeHint_action(void* self);
 	[LinkName("QScrollBar_OnSizeHint")]
 	public static extern void* QScrollBar_OnSizeHint(void* self, QScrollBar_OnSizeHint_action _action);
+	
+	[LinkName("QScrollBar_SuperSizeHint")]
+	public static extern void* QScrollBar_SuperSizeHint(void* self);
 	[LinkName("QScrollBar_Event")]
 	public static extern bool QScrollBar_Event(void* self, void** event);
 	
 	public function void QScrollBar_OnEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnEvent")]
 	public static extern bool QScrollBar_OnEvent(void* self, QScrollBar_OnEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperEvent")]
+	public static extern bool QScrollBar_SuperEvent(void* self, void** event);
 	[LinkName("QScrollBar_WheelEvent")]
 	public static extern void QScrollBar_WheelEvent(void* self, void** param1);
 	
 	public function void QScrollBar_OnWheelEvent_action(void* self, void** param1);
 	[LinkName("QScrollBar_OnWheelEvent")]
 	public static extern void QScrollBar_OnWheelEvent(void* self, QScrollBar_OnWheelEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperWheelEvent")]
+	public static extern void QScrollBar_SuperWheelEvent(void* self, void** param1);
 	[LinkName("QScrollBar_PaintEvent")]
 	public static extern void QScrollBar_PaintEvent(void* self, void** param1);
 	
 	public function void QScrollBar_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QScrollBar_OnPaintEvent")]
 	public static extern void QScrollBar_OnPaintEvent(void* self, QScrollBar_OnPaintEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperPaintEvent")]
+	public static extern void QScrollBar_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QScrollBar_MousePressEvent")]
 	public static extern void QScrollBar_MousePressEvent(void* self, void** param1);
 	
 	public function void QScrollBar_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QScrollBar_OnMousePressEvent")]
 	public static extern void QScrollBar_OnMousePressEvent(void* self, QScrollBar_OnMousePressEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperMousePressEvent")]
+	public static extern void QScrollBar_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QScrollBar_MouseReleaseEvent")]
 	public static extern void QScrollBar_MouseReleaseEvent(void* self, void** param1);
 	
 	public function void QScrollBar_OnMouseReleaseEvent_action(void* self, void** param1);
 	[LinkName("QScrollBar_OnMouseReleaseEvent")]
 	public static extern void QScrollBar_OnMouseReleaseEvent(void* self, QScrollBar_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperMouseReleaseEvent")]
+	public static extern void QScrollBar_SuperMouseReleaseEvent(void* self, void** param1);
 	[LinkName("QScrollBar_MouseMoveEvent")]
 	public static extern void QScrollBar_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QScrollBar_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QScrollBar_OnMouseMoveEvent")]
 	public static extern void QScrollBar_OnMouseMoveEvent(void* self, QScrollBar_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperMouseMoveEvent")]
+	public static extern void QScrollBar_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QScrollBar_HideEvent")]
 	public static extern void QScrollBar_HideEvent(void* self, void** param1);
 	
 	public function void QScrollBar_OnHideEvent_action(void* self, void** param1);
 	[LinkName("QScrollBar_OnHideEvent")]
 	public static extern void QScrollBar_OnHideEvent(void* self, QScrollBar_OnHideEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperHideEvent")]
+	public static extern void QScrollBar_SuperHideEvent(void* self, void** param1);
 	[LinkName("QScrollBar_SliderChange")]
 	public static extern void QScrollBar_SliderChange(void* self, QAbstractSlider_SliderChange change);
 	
 	public function void QScrollBar_OnSliderChange_action(void* self, QAbstractSlider_SliderChange change);
 	[LinkName("QScrollBar_OnSliderChange")]
 	public static extern void QScrollBar_OnSliderChange(void* self, QScrollBar_OnSliderChange_action _action);
+	
+	[LinkName("QScrollBar_SuperSliderChange")]
+	public static extern void QScrollBar_SuperSliderChange(void* self, QAbstractSlider_SliderChange change);
 	[LinkName("QScrollBar_ContextMenuEvent")]
 	public static extern void QScrollBar_ContextMenuEvent(void* self, void** param1);
 	
 	public function void QScrollBar_OnContextMenuEvent_action(void* self, void** param1);
 	[LinkName("QScrollBar_OnContextMenuEvent")]
 	public static extern void QScrollBar_OnContextMenuEvent(void* self, QScrollBar_OnContextMenuEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperContextMenuEvent")]
+	public static extern void QScrollBar_SuperContextMenuEvent(void* self, void** param1);
 	[LinkName("QScrollBar_InitStyleOption")]
 	public static extern void QScrollBar_InitStyleOption(void* self, void** option);
 	
 	public function void QScrollBar_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QScrollBar_OnInitStyleOption")]
 	public static extern void QScrollBar_OnInitStyleOption(void* self, QScrollBar_OnInitStyleOption_action _action);
+	
+	[LinkName("QScrollBar_SuperInitStyleOption")]
+	public static extern void QScrollBar_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QScrollBar_Tr2")]
 	public static extern libqt_string QScrollBar_Tr2(c_char* s, c_char* c);
 	[LinkName("QScrollBar_Tr3")]
@@ -3629,226 +3983,340 @@ extension CQt
 	public function void QScrollBar_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QScrollBar_OnEventFilter")]
 	public static extern bool QScrollBar_OnEventFilter(void* self, QScrollBar_OnEventFilter_action _action);
+	
+	[LinkName("QScrollBar_SuperEventFilter")]
+	public static extern bool QScrollBar_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QScrollBar_TimerEvent")]
 	public static extern void QScrollBar_TimerEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnTimerEvent")]
 	public static extern void QScrollBar_OnTimerEvent(void* self, QScrollBar_OnTimerEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperTimerEvent")]
+	public static extern void QScrollBar_SuperTimerEvent(void* self, void** event);
 	[LinkName("QScrollBar_ChildEvent")]
 	public static extern void QScrollBar_ChildEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnChildEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnChildEvent")]
 	public static extern void QScrollBar_OnChildEvent(void* self, QScrollBar_OnChildEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperChildEvent")]
+	public static extern void QScrollBar_SuperChildEvent(void* self, void** event);
 	[LinkName("QScrollBar_CustomEvent")]
 	public static extern void QScrollBar_CustomEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnCustomEvent")]
 	public static extern void QScrollBar_OnCustomEvent(void* self, QScrollBar_OnCustomEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperCustomEvent")]
+	public static extern void QScrollBar_SuperCustomEvent(void* self, void** event);
 	[LinkName("QScrollBar_ConnectNotify")]
 	public static extern void QScrollBar_ConnectNotify(void* self, void** signal);
 	
 	public function void QScrollBar_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QScrollBar_OnConnectNotify")]
 	public static extern void QScrollBar_OnConnectNotify(void* self, QScrollBar_OnConnectNotify_action _action);
+	
+	[LinkName("QScrollBar_SuperConnectNotify")]
+	public static extern void QScrollBar_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QScrollBar_DisconnectNotify")]
 	public static extern void QScrollBar_DisconnectNotify(void* self, void** signal);
 	
 	public function void QScrollBar_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QScrollBar_OnDisconnectNotify")]
 	public static extern void QScrollBar_OnDisconnectNotify(void* self, QScrollBar_OnDisconnectNotify_action _action);
+	
+	[LinkName("QScrollBar_SuperDisconnectNotify")]
+	public static extern void QScrollBar_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QScrollBar_DevType")]
 	public static extern c_int QScrollBar_DevType(void* self);
 	
 	public function void QScrollBar_OnDevType_action(void* self);
 	[LinkName("QScrollBar_OnDevType")]
 	public static extern c_int QScrollBar_OnDevType(void* self, QScrollBar_OnDevType_action _action);
+	
+	[LinkName("QScrollBar_SuperDevType")]
+	public static extern c_int QScrollBar_SuperDevType(void* self);
 	[LinkName("QScrollBar_PaintEngine")]
 	public static extern void** QScrollBar_PaintEngine(void* self);
 	
 	public function void QScrollBar_OnPaintEngine_action(void* self);
 	[LinkName("QScrollBar_OnPaintEngine")]
 	public static extern void** QScrollBar_OnPaintEngine(void* self, QScrollBar_OnPaintEngine_action _action);
+	
+	[LinkName("QScrollBar_SuperPaintEngine")]
+	public static extern void** QScrollBar_SuperPaintEngine(void* self);
 	[LinkName("QScrollBar_Metric")]
 	public static extern c_int QScrollBar_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QScrollBar_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QScrollBar_OnMetric")]
 	public static extern c_int QScrollBar_OnMetric(void* self, QScrollBar_OnMetric_action _action);
+	
+	[LinkName("QScrollBar_SuperMetric")]
+	public static extern c_int QScrollBar_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QScrollBar_InitPainter")]
 	public static extern void QScrollBar_InitPainter(void* self, void** painter);
 	
 	public function void QScrollBar_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QScrollBar_OnInitPainter")]
 	public static extern void QScrollBar_OnInitPainter(void* self, QScrollBar_OnInitPainter_action _action);
+	
+	[LinkName("QScrollBar_SuperInitPainter")]
+	public static extern void QScrollBar_SuperInitPainter(void* self, void** painter);
 	[LinkName("QScrollBar_Redirected")]
 	public static extern void** QScrollBar_Redirected(void* self, void** offset);
 	
 	public function void QScrollBar_OnRedirected_action(void* self, void** offset);
 	[LinkName("QScrollBar_OnRedirected")]
 	public static extern void** QScrollBar_OnRedirected(void* self, QScrollBar_OnRedirected_action _action);
+	
+	[LinkName("QScrollBar_SuperRedirected")]
+	public static extern void** QScrollBar_SuperRedirected(void* self, void** offset);
 	[LinkName("QScrollBar_SharedPainter")]
 	public static extern void** QScrollBar_SharedPainter(void* self);
 	
 	public function void QScrollBar_OnSharedPainter_action(void* self);
 	[LinkName("QScrollBar_OnSharedPainter")]
 	public static extern void** QScrollBar_OnSharedPainter(void* self, QScrollBar_OnSharedPainter_action _action);
+	
+	[LinkName("QScrollBar_SuperSharedPainter")]
+	public static extern void** QScrollBar_SuperSharedPainter(void* self);
 	[LinkName("QScrollBar_SetVisible")]
 	public static extern void QScrollBar_SetVisible(void* self, bool visible);
 	
 	public function void QScrollBar_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QScrollBar_OnSetVisible")]
 	public static extern void QScrollBar_OnSetVisible(void* self, QScrollBar_OnSetVisible_action _action);
+	
+	[LinkName("QScrollBar_SuperSetVisible")]
+	public static extern void QScrollBar_SuperSetVisible(void* self, bool visible);
 	[LinkName("QScrollBar_MinimumSizeHint")]
 	public static extern void* QScrollBar_MinimumSizeHint(void* self);
 	
 	public function void QScrollBar_OnMinimumSizeHint_action(void* self);
 	[LinkName("QScrollBar_OnMinimumSizeHint")]
 	public static extern void* QScrollBar_OnMinimumSizeHint(void* self, QScrollBar_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QScrollBar_SuperMinimumSizeHint")]
+	public static extern void* QScrollBar_SuperMinimumSizeHint(void* self);
 	[LinkName("QScrollBar_HeightForWidth")]
 	public static extern c_int QScrollBar_HeightForWidth(void* self, c_int param1);
 	
 	public function void QScrollBar_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QScrollBar_OnHeightForWidth")]
 	public static extern c_int QScrollBar_OnHeightForWidth(void* self, QScrollBar_OnHeightForWidth_action _action);
+	
+	[LinkName("QScrollBar_SuperHeightForWidth")]
+	public static extern c_int QScrollBar_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QScrollBar_HasHeightForWidth")]
 	public static extern bool QScrollBar_HasHeightForWidth(void* self);
 	
 	public function void QScrollBar_OnHasHeightForWidth_action(void* self);
 	[LinkName("QScrollBar_OnHasHeightForWidth")]
 	public static extern bool QScrollBar_OnHasHeightForWidth(void* self, QScrollBar_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QScrollBar_SuperHasHeightForWidth")]
+	public static extern bool QScrollBar_SuperHasHeightForWidth(void* self);
 	[LinkName("QScrollBar_MouseDoubleClickEvent")]
 	public static extern void QScrollBar_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnMouseDoubleClickEvent")]
 	public static extern void QScrollBar_OnMouseDoubleClickEvent(void* self, QScrollBar_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperMouseDoubleClickEvent")]
+	public static extern void QScrollBar_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QScrollBar_KeyPressEvent")]
 	public static extern void QScrollBar_KeyPressEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnKeyPressEvent")]
 	public static extern void QScrollBar_OnKeyPressEvent(void* self, QScrollBar_OnKeyPressEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperKeyPressEvent")]
+	public static extern void QScrollBar_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QScrollBar_KeyReleaseEvent")]
 	public static extern void QScrollBar_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnKeyReleaseEvent")]
 	public static extern void QScrollBar_OnKeyReleaseEvent(void* self, QScrollBar_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperKeyReleaseEvent")]
+	public static extern void QScrollBar_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QScrollBar_FocusInEvent")]
 	public static extern void QScrollBar_FocusInEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnFocusInEvent")]
 	public static extern void QScrollBar_OnFocusInEvent(void* self, QScrollBar_OnFocusInEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperFocusInEvent")]
+	public static extern void QScrollBar_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QScrollBar_FocusOutEvent")]
 	public static extern void QScrollBar_FocusOutEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnFocusOutEvent")]
 	public static extern void QScrollBar_OnFocusOutEvent(void* self, QScrollBar_OnFocusOutEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperFocusOutEvent")]
+	public static extern void QScrollBar_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QScrollBar_EnterEvent")]
 	public static extern void QScrollBar_EnterEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnEnterEvent")]
 	public static extern void QScrollBar_OnEnterEvent(void* self, QScrollBar_OnEnterEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperEnterEvent")]
+	public static extern void QScrollBar_SuperEnterEvent(void* self, void** event);
 	[LinkName("QScrollBar_LeaveEvent")]
 	public static extern void QScrollBar_LeaveEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnLeaveEvent")]
 	public static extern void QScrollBar_OnLeaveEvent(void* self, QScrollBar_OnLeaveEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperLeaveEvent")]
+	public static extern void QScrollBar_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QScrollBar_MoveEvent")]
 	public static extern void QScrollBar_MoveEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnMoveEvent")]
 	public static extern void QScrollBar_OnMoveEvent(void* self, QScrollBar_OnMoveEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperMoveEvent")]
+	public static extern void QScrollBar_SuperMoveEvent(void* self, void** event);
 	[LinkName("QScrollBar_ResizeEvent")]
 	public static extern void QScrollBar_ResizeEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnResizeEvent")]
 	public static extern void QScrollBar_OnResizeEvent(void* self, QScrollBar_OnResizeEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperResizeEvent")]
+	public static extern void QScrollBar_SuperResizeEvent(void* self, void** event);
 	[LinkName("QScrollBar_CloseEvent")]
 	public static extern void QScrollBar_CloseEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnCloseEvent")]
 	public static extern void QScrollBar_OnCloseEvent(void* self, QScrollBar_OnCloseEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperCloseEvent")]
+	public static extern void QScrollBar_SuperCloseEvent(void* self, void** event);
 	[LinkName("QScrollBar_TabletEvent")]
 	public static extern void QScrollBar_TabletEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnTabletEvent")]
 	public static extern void QScrollBar_OnTabletEvent(void* self, QScrollBar_OnTabletEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperTabletEvent")]
+	public static extern void QScrollBar_SuperTabletEvent(void* self, void** event);
 	[LinkName("QScrollBar_ActionEvent")]
 	public static extern void QScrollBar_ActionEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnActionEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnActionEvent")]
 	public static extern void QScrollBar_OnActionEvent(void* self, QScrollBar_OnActionEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperActionEvent")]
+	public static extern void QScrollBar_SuperActionEvent(void* self, void** event);
 	[LinkName("QScrollBar_DragEnterEvent")]
 	public static extern void QScrollBar_DragEnterEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnDragEnterEvent")]
 	public static extern void QScrollBar_OnDragEnterEvent(void* self, QScrollBar_OnDragEnterEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperDragEnterEvent")]
+	public static extern void QScrollBar_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QScrollBar_DragMoveEvent")]
 	public static extern void QScrollBar_DragMoveEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnDragMoveEvent")]
 	public static extern void QScrollBar_OnDragMoveEvent(void* self, QScrollBar_OnDragMoveEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperDragMoveEvent")]
+	public static extern void QScrollBar_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QScrollBar_DragLeaveEvent")]
 	public static extern void QScrollBar_DragLeaveEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnDragLeaveEvent")]
 	public static extern void QScrollBar_OnDragLeaveEvent(void* self, QScrollBar_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperDragLeaveEvent")]
+	public static extern void QScrollBar_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QScrollBar_DropEvent")]
 	public static extern void QScrollBar_DropEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnDropEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnDropEvent")]
 	public static extern void QScrollBar_OnDropEvent(void* self, QScrollBar_OnDropEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperDropEvent")]
+	public static extern void QScrollBar_SuperDropEvent(void* self, void** event);
 	[LinkName("QScrollBar_ShowEvent")]
 	public static extern void QScrollBar_ShowEvent(void* self, void** event);
 	
 	public function void QScrollBar_OnShowEvent_action(void* self, void** event);
 	[LinkName("QScrollBar_OnShowEvent")]
 	public static extern void QScrollBar_OnShowEvent(void* self, QScrollBar_OnShowEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperShowEvent")]
+	public static extern void QScrollBar_SuperShowEvent(void* self, void** event);
 	[LinkName("QScrollBar_NativeEvent")]
 	public static extern bool QScrollBar_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QScrollBar_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QScrollBar_OnNativeEvent")]
 	public static extern bool QScrollBar_OnNativeEvent(void* self, QScrollBar_OnNativeEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperNativeEvent")]
+	public static extern bool QScrollBar_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QScrollBar_ChangeEvent")]
 	public static extern void QScrollBar_ChangeEvent(void* self, void** param1);
 	
 	public function void QScrollBar_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QScrollBar_OnChangeEvent")]
 	public static extern void QScrollBar_OnChangeEvent(void* self, QScrollBar_OnChangeEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperChangeEvent")]
+	public static extern void QScrollBar_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QScrollBar_InputMethodEvent")]
 	public static extern void QScrollBar_InputMethodEvent(void* self, void** param1);
 	
 	public function void QScrollBar_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QScrollBar_OnInputMethodEvent")]
 	public static extern void QScrollBar_OnInputMethodEvent(void* self, QScrollBar_OnInputMethodEvent_action _action);
+	
+	[LinkName("QScrollBar_SuperInputMethodEvent")]
+	public static extern void QScrollBar_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QScrollBar_InputMethodQuery")]
 	public static extern void* QScrollBar_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QScrollBar_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QScrollBar_OnInputMethodQuery")]
 	public static extern void* QScrollBar_OnInputMethodQuery(void* self, QScrollBar_OnInputMethodQuery_action _action);
+	
+	[LinkName("QScrollBar_SuperInputMethodQuery")]
+	public static extern void* QScrollBar_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QScrollBar_FocusNextPrevChild")]
 	public static extern bool QScrollBar_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QScrollBar_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QScrollBar_OnFocusNextPrevChild")]
 	public static extern bool QScrollBar_OnFocusNextPrevChild(void* self, QScrollBar_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QScrollBar_SuperFocusNextPrevChild")]
+	public static extern bool QScrollBar_SuperFocusNextPrevChild(void* self, bool next);
 }

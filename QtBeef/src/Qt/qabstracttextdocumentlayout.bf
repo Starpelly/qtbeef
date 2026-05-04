@@ -389,6 +389,26 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 		CQt.QAbstractTextDocumentLayout_Connect_Update1(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_Connect_Update1);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QAbstractTextDocumentLayout_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnMetaObject);
+		CQt.QAbstractTextDocumentLayout_OnMetacast(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnMetacast);
+		CQt.QAbstractTextDocumentLayout_OnMetacall(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnMetacall);
+		CQt.QAbstractTextDocumentLayout_OnDraw(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnDraw);
+		CQt.QAbstractTextDocumentLayout_OnHitTest(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnHitTest);
+		CQt.QAbstractTextDocumentLayout_OnPageCount(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnPageCount);
+		CQt.QAbstractTextDocumentLayout_OnDocumentSize(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnDocumentSize);
+		CQt.QAbstractTextDocumentLayout_OnFrameBoundingRect(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnFrameBoundingRect);
+		CQt.QAbstractTextDocumentLayout_OnBlockBoundingRect(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnBlockBoundingRect);
+		CQt.QAbstractTextDocumentLayout_OnDocumentChanged(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnDocumentChanged);
+		CQt.QAbstractTextDocumentLayout_OnResizeInlineObject(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnResizeInlineObject);
+		CQt.QAbstractTextDocumentLayout_OnPositionInlineObject(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnPositionInlineObject);
+		CQt.QAbstractTextDocumentLayout_OnDrawInlineObject(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnDrawInlineObject);
+		CQt.QAbstractTextDocumentLayout_OnEvent(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnEvent);
+		CQt.QAbstractTextDocumentLayout_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnEventFilter);
+		CQt.QAbstractTextDocumentLayout_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnTimerEvent);
+		CQt.QAbstractTextDocumentLayout_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnChildEvent);
+		CQt.QAbstractTextDocumentLayout_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnCustomEvent);
+		CQt.QAbstractTextDocumentLayout_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnConnectNotify);
+		CQt.QAbstractTextDocumentLayout_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnUpdate = .() ~ _.Dispose();
 	public Event<delegate void(void** block)> OnUpdateBlock = .() ~ _.Dispose();
@@ -431,6 +451,106 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnDraw(void* ptr, void** painter, void** context)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDraw(painter, context);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnHitTest(void* ptr, void** point, Qt_HitTestAccuracy accuracy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHitTest(point, accuracy);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnPageCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPageCount();
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnDocumentSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDocumentSize();
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnFrameBoundingRect(void* ptr, void** frame)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFrameBoundingRect(frame);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnBlockBoundingRect(void* ptr, void** block)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlockBoundingRect(block);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnDocumentChanged(void* ptr, c_int from, c_int charsRemoved, c_int charsAdded)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDocumentChanged(from, charsRemoved, charsAdded);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnResizeInlineObject(void* ptr, void* item, c_int posInDocument, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeInlineObject(item, posInDocument, format);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnPositionInlineObject(void* ptr, void* item, c_int posInDocument, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPositionInlineObject(item, posInDocument, format);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnDrawInlineObject(void* ptr, void** painter, void** rect, void* object, c_int posInDocument, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDrawInlineObject(painter, rect, object, posInDocument, format);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QAbstractTextDocumentLayout_Ptr ptr)
 	{
@@ -812,18 +932,27 @@ extension CQt
 	public function void QAbstractTextDocumentLayout_OnMetaObject_action(void* self);
 	[LinkName("QAbstractTextDocumentLayout_OnMetaObject")]
 	public static extern void** QAbstractTextDocumentLayout_OnMetaObject(void* self, QAbstractTextDocumentLayout_OnMetaObject_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperMetaObject")]
+	public static extern void** QAbstractTextDocumentLayout_SuperMetaObject(void* self);
 	[LinkName("QAbstractTextDocumentLayout_Qt_Metacast")]
 	public static extern void* QAbstractTextDocumentLayout_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAbstractTextDocumentLayout_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAbstractTextDocumentLayout_OnMetacast")]
 	public static extern void* QAbstractTextDocumentLayout_OnMetacast(void* self, QAbstractTextDocumentLayout_OnMetacast_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperMetacast")]
+	public static extern void* QAbstractTextDocumentLayout_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAbstractTextDocumentLayout_Qt_Metacall")]
 	public static extern c_int QAbstractTextDocumentLayout_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAbstractTextDocumentLayout_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractTextDocumentLayout_OnMetacall")]
 	public static extern c_int QAbstractTextDocumentLayout_OnMetacall(void* self, QAbstractTextDocumentLayout_OnMetacall_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperMetacall")]
+	public static extern c_int QAbstractTextDocumentLayout_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractTextDocumentLayout_Tr")]
 	public static extern libqt_string QAbstractTextDocumentLayout_Tr(c_char* s);
 	[LinkName("QAbstractTextDocumentLayout_Draw")]
@@ -832,12 +961,18 @@ extension CQt
 	public function void QAbstractTextDocumentLayout_OnDraw_action(void* self, void** painter, void** context);
 	[LinkName("QAbstractTextDocumentLayout_OnDraw")]
 	public static extern void QAbstractTextDocumentLayout_OnDraw(void* self, QAbstractTextDocumentLayout_OnDraw_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperDraw")]
+	public static extern void QAbstractTextDocumentLayout_SuperDraw(void* self, void** painter, void** context);
 	[LinkName("QAbstractTextDocumentLayout_HitTest")]
 	public static extern c_int QAbstractTextDocumentLayout_HitTest(void* self, void** point, Qt_HitTestAccuracy accuracy);
 	
 	public function void QAbstractTextDocumentLayout_OnHitTest_action(void* self, void** point, Qt_HitTestAccuracy accuracy);
 	[LinkName("QAbstractTextDocumentLayout_OnHitTest")]
 	public static extern c_int QAbstractTextDocumentLayout_OnHitTest(void* self, QAbstractTextDocumentLayout_OnHitTest_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperHitTest")]
+	public static extern c_int QAbstractTextDocumentLayout_SuperHitTest(void* self, void** point, Qt_HitTestAccuracy accuracy);
 	[LinkName("QAbstractTextDocumentLayout_AnchorAt")]
 	public static extern libqt_string QAbstractTextDocumentLayout_AnchorAt(void* self, void** pos);
 	[LinkName("QAbstractTextDocumentLayout_ImageAt")]
@@ -852,24 +987,36 @@ extension CQt
 	public function void QAbstractTextDocumentLayout_OnPageCount_action(void* self);
 	[LinkName("QAbstractTextDocumentLayout_OnPageCount")]
 	public static extern c_int QAbstractTextDocumentLayout_OnPageCount(void* self, QAbstractTextDocumentLayout_OnPageCount_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperPageCount")]
+	public static extern c_int QAbstractTextDocumentLayout_SuperPageCount(void* self);
 	[LinkName("QAbstractTextDocumentLayout_DocumentSize")]
 	public static extern void* QAbstractTextDocumentLayout_DocumentSize(void* self);
 	
 	public function void QAbstractTextDocumentLayout_OnDocumentSize_action(void* self);
 	[LinkName("QAbstractTextDocumentLayout_OnDocumentSize")]
 	public static extern void* QAbstractTextDocumentLayout_OnDocumentSize(void* self, QAbstractTextDocumentLayout_OnDocumentSize_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperDocumentSize")]
+	public static extern void* QAbstractTextDocumentLayout_SuperDocumentSize(void* self);
 	[LinkName("QAbstractTextDocumentLayout_FrameBoundingRect")]
 	public static extern void* QAbstractTextDocumentLayout_FrameBoundingRect(void* self, void** frame);
 	
 	public function void QAbstractTextDocumentLayout_OnFrameBoundingRect_action(void* self, void** frame);
 	[LinkName("QAbstractTextDocumentLayout_OnFrameBoundingRect")]
 	public static extern void* QAbstractTextDocumentLayout_OnFrameBoundingRect(void* self, QAbstractTextDocumentLayout_OnFrameBoundingRect_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperFrameBoundingRect")]
+	public static extern void* QAbstractTextDocumentLayout_SuperFrameBoundingRect(void* self, void** frame);
 	[LinkName("QAbstractTextDocumentLayout_BlockBoundingRect")]
 	public static extern void* QAbstractTextDocumentLayout_BlockBoundingRect(void* self, void** block);
 	
 	public function void QAbstractTextDocumentLayout_OnBlockBoundingRect_action(void* self, void** block);
 	[LinkName("QAbstractTextDocumentLayout_OnBlockBoundingRect")]
 	public static extern void* QAbstractTextDocumentLayout_OnBlockBoundingRect(void* self, QAbstractTextDocumentLayout_OnBlockBoundingRect_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperBlockBoundingRect")]
+	public static extern void* QAbstractTextDocumentLayout_SuperBlockBoundingRect(void* self, void** block);
 	[LinkName("QAbstractTextDocumentLayout_SetPaintDevice")]
 	public static extern void QAbstractTextDocumentLayout_SetPaintDevice(void* self, void** device);
 	[LinkName("QAbstractTextDocumentLayout_PaintDevice")]
@@ -912,24 +1059,36 @@ extension CQt
 	public function void QAbstractTextDocumentLayout_OnDocumentChanged_action(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
 	[LinkName("QAbstractTextDocumentLayout_OnDocumentChanged")]
 	public static extern void QAbstractTextDocumentLayout_OnDocumentChanged(void* self, QAbstractTextDocumentLayout_OnDocumentChanged_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperDocumentChanged")]
+	public static extern void QAbstractTextDocumentLayout_SuperDocumentChanged(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
 	[LinkName("QAbstractTextDocumentLayout_ResizeInlineObject")]
 	public static extern void QAbstractTextDocumentLayout_ResizeInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	
 	public function void QAbstractTextDocumentLayout_OnResizeInlineObject_action(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QAbstractTextDocumentLayout_OnResizeInlineObject")]
 	public static extern void QAbstractTextDocumentLayout_OnResizeInlineObject(void* self, QAbstractTextDocumentLayout_OnResizeInlineObject_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperResizeInlineObject")]
+	public static extern void QAbstractTextDocumentLayout_SuperResizeInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QAbstractTextDocumentLayout_PositionInlineObject")]
 	public static extern void QAbstractTextDocumentLayout_PositionInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	
 	public function void QAbstractTextDocumentLayout_OnPositionInlineObject_action(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QAbstractTextDocumentLayout_OnPositionInlineObject")]
 	public static extern void QAbstractTextDocumentLayout_OnPositionInlineObject(void* self, QAbstractTextDocumentLayout_OnPositionInlineObject_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperPositionInlineObject")]
+	public static extern void QAbstractTextDocumentLayout_SuperPositionInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QAbstractTextDocumentLayout_DrawInlineObject")]
 	public static extern void QAbstractTextDocumentLayout_DrawInlineObject(void* self, void** painter, void** rect, void* object, c_int posInDocument, void** format);
 	
 	public function void QAbstractTextDocumentLayout_OnDrawInlineObject_action(void* self, void** painter, void** rect, void* object, c_int posInDocument, void** format);
 	[LinkName("QAbstractTextDocumentLayout_OnDrawInlineObject")]
 	public static extern void QAbstractTextDocumentLayout_OnDrawInlineObject(void* self, QAbstractTextDocumentLayout_OnDrawInlineObject_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperDrawInlineObject")]
+	public static extern void QAbstractTextDocumentLayout_SuperDrawInlineObject(void* self, void** painter, void** rect, void* object, c_int posInDocument, void** format);
 	[LinkName("QAbstractTextDocumentLayout_FormatIndex")]
 	public static extern c_int QAbstractTextDocumentLayout_FormatIndex(void* self, c_int pos);
 	[LinkName("QAbstractTextDocumentLayout_Format")]
@@ -952,42 +1111,63 @@ extension CQt
 	public function void QAbstractTextDocumentLayout_OnEvent_action(void* self, void** event);
 	[LinkName("QAbstractTextDocumentLayout_OnEvent")]
 	public static extern bool QAbstractTextDocumentLayout_OnEvent(void* self, QAbstractTextDocumentLayout_OnEvent_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperEvent")]
+	public static extern bool QAbstractTextDocumentLayout_SuperEvent(void* self, void** event);
 	[LinkName("QAbstractTextDocumentLayout_EventFilter")]
 	public static extern bool QAbstractTextDocumentLayout_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QAbstractTextDocumentLayout_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QAbstractTextDocumentLayout_OnEventFilter")]
 	public static extern bool QAbstractTextDocumentLayout_OnEventFilter(void* self, QAbstractTextDocumentLayout_OnEventFilter_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperEventFilter")]
+	public static extern bool QAbstractTextDocumentLayout_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QAbstractTextDocumentLayout_TimerEvent")]
 	public static extern void QAbstractTextDocumentLayout_TimerEvent(void* self, void** event);
 	
 	public function void QAbstractTextDocumentLayout_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QAbstractTextDocumentLayout_OnTimerEvent")]
 	public static extern void QAbstractTextDocumentLayout_OnTimerEvent(void* self, QAbstractTextDocumentLayout_OnTimerEvent_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperTimerEvent")]
+	public static extern void QAbstractTextDocumentLayout_SuperTimerEvent(void* self, void** event);
 	[LinkName("QAbstractTextDocumentLayout_ChildEvent")]
 	public static extern void QAbstractTextDocumentLayout_ChildEvent(void* self, void** event);
 	
 	public function void QAbstractTextDocumentLayout_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAbstractTextDocumentLayout_OnChildEvent")]
 	public static extern void QAbstractTextDocumentLayout_OnChildEvent(void* self, QAbstractTextDocumentLayout_OnChildEvent_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperChildEvent")]
+	public static extern void QAbstractTextDocumentLayout_SuperChildEvent(void* self, void** event);
 	[LinkName("QAbstractTextDocumentLayout_CustomEvent")]
 	public static extern void QAbstractTextDocumentLayout_CustomEvent(void* self, void** event);
 	
 	public function void QAbstractTextDocumentLayout_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAbstractTextDocumentLayout_OnCustomEvent")]
 	public static extern void QAbstractTextDocumentLayout_OnCustomEvent(void* self, QAbstractTextDocumentLayout_OnCustomEvent_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperCustomEvent")]
+	public static extern void QAbstractTextDocumentLayout_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAbstractTextDocumentLayout_ConnectNotify")]
 	public static extern void QAbstractTextDocumentLayout_ConnectNotify(void* self, void** signal);
 	
 	public function void QAbstractTextDocumentLayout_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractTextDocumentLayout_OnConnectNotify")]
 	public static extern void QAbstractTextDocumentLayout_OnConnectNotify(void* self, QAbstractTextDocumentLayout_OnConnectNotify_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperConnectNotify")]
+	public static extern void QAbstractTextDocumentLayout_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAbstractTextDocumentLayout_DisconnectNotify")]
 	public static extern void QAbstractTextDocumentLayout_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAbstractTextDocumentLayout_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractTextDocumentLayout_OnDisconnectNotify")]
 	public static extern void QAbstractTextDocumentLayout_OnDisconnectNotify(void* self, QAbstractTextDocumentLayout_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAbstractTextDocumentLayout_SuperDisconnectNotify")]
+	public static extern void QAbstractTextDocumentLayout_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QTextObjectInterface
@@ -1016,6 +1196,18 @@ class QTextObjectInterface : IQTextObjectInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTextObjectInterface_OnIntrinsicSize(obj.ObjectPtr,  => QtBeef_QTextObjectInterface_OnIntrinsicSize);
+		CQt.QTextObjectInterface_OnDrawObject(obj.ObjectPtr,  => QtBeef_QTextObjectInterface_OnDrawObject);
+	}
+	static void QtBeef_QTextObjectInterface_OnIntrinsicSize(void* ptr, void** doc, c_int posInDocument, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIntrinsicSize(doc, posInDocument, format);
+	}
+	static void QtBeef_QTextObjectInterface_OnDrawObject(void* ptr, void** painter, void** rect, void** doc, c_int posInDocument, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDrawObject(painter, rect, doc, posInDocument, format);
 	}
 	public this(QTextObjectInterface_Ptr ptr)
 	{
@@ -1047,12 +1239,18 @@ extension CQt
 	public function void QTextObjectInterface_OnIntrinsicSize_action(void* self, void** doc, c_int posInDocument, void** format);
 	[LinkName("QTextObjectInterface_OnIntrinsicSize")]
 	public static extern void* QTextObjectInterface_OnIntrinsicSize(void* self, QTextObjectInterface_OnIntrinsicSize_action _action);
+	
+	[LinkName("QTextObjectInterface_SuperIntrinsicSize")]
+	public static extern void* QTextObjectInterface_SuperIntrinsicSize(void* self, void** doc, c_int posInDocument, void** format);
 	[LinkName("QTextObjectInterface_DrawObject")]
 	public static extern void QTextObjectInterface_DrawObject(void* self, void** painter, void** rect, void** doc, c_int posInDocument, void** format);
 	
 	public function void QTextObjectInterface_OnDrawObject_action(void* self, void** painter, void** rect, void** doc, c_int posInDocument, void** format);
 	[LinkName("QTextObjectInterface_OnDrawObject")]
 	public static extern void QTextObjectInterface_OnDrawObject(void* self, QTextObjectInterface_OnDrawObject_action _action);
+	
+	[LinkName("QTextObjectInterface_SuperDrawObject")]
+	public static extern void QTextObjectInterface_SuperDrawObject(void* self, void** painter, void** rect, void** doc, c_int posInDocument, void** format);
 	[LinkName("QTextObjectInterface_OperatorAssign")]
 	public static extern void QTextObjectInterface_OperatorAssign(void* self, void** param1);
 }

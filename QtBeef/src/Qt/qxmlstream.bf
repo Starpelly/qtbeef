@@ -351,6 +351,18 @@ class QXmlStreamEntityResolver : IQXmlStreamEntityResolver
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QXmlStreamEntityResolver_OnResolveEntity(obj.ObjectPtr,  => QtBeef_QXmlStreamEntityResolver_OnResolveEntity);
+		CQt.QXmlStreamEntityResolver_OnResolveUndeclaredEntity(obj.ObjectPtr,  => QtBeef_QXmlStreamEntityResolver_OnResolveUndeclaredEntity);
+	}
+	static void QtBeef_QXmlStreamEntityResolver_OnResolveEntity(void* ptr, libqt_string publicId, libqt_string systemId)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResolveEntity(scope .(), publicId, systemId);
+	}
+	static void QtBeef_QXmlStreamEntityResolver_OnResolveUndeclaredEntity(void* ptr, libqt_string name)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResolveUndeclaredEntity(scope .(), name);
 	}
 	public this(QXmlStreamEntityResolver_Ptr ptr)
 	{
@@ -381,12 +393,18 @@ extension CQt
 	public function void QXmlStreamEntityResolver_OnResolveEntity_action(void* self, libqt_string publicId, libqt_string systemId);
 	[LinkName("QXmlStreamEntityResolver_OnResolveEntity")]
 	public static extern libqt_string QXmlStreamEntityResolver_OnResolveEntity(void* self, QXmlStreamEntityResolver_OnResolveEntity_action _action);
+	
+	[LinkName("QXmlStreamEntityResolver_SuperResolveEntity")]
+	public static extern libqt_string QXmlStreamEntityResolver_SuperResolveEntity(void* self, libqt_string publicId, libqt_string systemId);
 	[LinkName("QXmlStreamEntityResolver_ResolveUndeclaredEntity")]
 	public static extern libqt_string QXmlStreamEntityResolver_ResolveUndeclaredEntity(void* self, libqt_string name);
 	
 	public function void QXmlStreamEntityResolver_OnResolveUndeclaredEntity_action(void* self, libqt_string name);
 	[LinkName("QXmlStreamEntityResolver_OnResolveUndeclaredEntity")]
 	public static extern libqt_string QXmlStreamEntityResolver_OnResolveUndeclaredEntity(void* self, QXmlStreamEntityResolver_OnResolveUndeclaredEntity_action _action);
+	
+	[LinkName("QXmlStreamEntityResolver_SuperResolveUndeclaredEntity")]
+	public static extern libqt_string QXmlStreamEntityResolver_SuperResolveUndeclaredEntity(void* self, libqt_string name);
 	[LinkName("QXmlStreamEntityResolver_OperatorAssign")]
 	public static extern void QXmlStreamEntityResolver_OperatorAssign(void* self, void** param1);
 }

@@ -390,6 +390,16 @@ class QScroller : IQScroller, IQObject
 		CQt.QScroller_Connect_ScrollerPropertiesChanged(obj.ObjectPtr,  => QtBeef_QScroller_Connect_ScrollerPropertiesChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QScroller_OnMetaObject(obj.ObjectPtr,  => QtBeef_QScroller_OnMetaObject);
+		CQt.QScroller_OnMetacast(obj.ObjectPtr,  => QtBeef_QScroller_OnMetacast);
+		CQt.QScroller_OnMetacall(obj.ObjectPtr,  => QtBeef_QScroller_OnMetacall);
+		CQt.QScroller_OnEvent(obj.ObjectPtr,  => QtBeef_QScroller_OnEvent);
+		CQt.QScroller_OnEventFilter(obj.ObjectPtr,  => QtBeef_QScroller_OnEventFilter);
+		CQt.QScroller_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QScroller_OnTimerEvent);
+		CQt.QScroller_OnChildEvent(obj.ObjectPtr,  => QtBeef_QScroller_OnChildEvent);
+		CQt.QScroller_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QScroller_OnCustomEvent);
+		CQt.QScroller_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QScroller_OnConnectNotify);
+		CQt.QScroller_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QScroller_OnDisconnectNotify);
 	}
 	public Event<delegate void(QScroller_State newstate)> OnStateChanged = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnScrollerPropertiesChanged = .() ~ _.Dispose();
@@ -414,6 +424,56 @@ class QScroller : IQScroller, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QScroller_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QScroller_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QScroller_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QScroller_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QScroller_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QScroller_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QScroller_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QScroller_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QScroller_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QScroller_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QScroller_Ptr ptr)
 	{
@@ -791,18 +851,27 @@ extension CQt
 	public function void QScroller_OnMetaObject_action(void* self);
 	[LinkName("QScroller_OnMetaObject")]
 	public static extern void** QScroller_OnMetaObject(void* self, QScroller_OnMetaObject_action _action);
+	
+	[LinkName("QScroller_SuperMetaObject")]
+	public static extern void** QScroller_SuperMetaObject(void* self);
 	[LinkName("QScroller_Qt_Metacast")]
 	public static extern void* QScroller_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QScroller_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QScroller_OnMetacast")]
 	public static extern void* QScroller_OnMetacast(void* self, QScroller_OnMetacast_action _action);
+	
+	[LinkName("QScroller_SuperMetacast")]
+	public static extern void* QScroller_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QScroller_Qt_Metacall")]
 	public static extern c_int QScroller_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QScroller_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QScroller_OnMetacall")]
 	public static extern c_int QScroller_OnMetacall(void* self, QScroller_OnMetacall_action _action);
+	
+	[LinkName("QScroller_SuperMetacall")]
+	public static extern c_int QScroller_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QScroller_Tr")]
 	public static extern libqt_string QScroller_Tr(c_char* s);
 	[LinkName("QScroller_HasScroller")]
@@ -881,42 +950,63 @@ extension CQt
 	public function void QScroller_OnEvent_action(void* self, void** event);
 	[LinkName("QScroller_OnEvent")]
 	public static extern bool QScroller_OnEvent(void* self, QScroller_OnEvent_action _action);
+	
+	[LinkName("QScroller_SuperEvent")]
+	public static extern bool QScroller_SuperEvent(void* self, void** event);
 	[LinkName("QScroller_EventFilter")]
 	public static extern bool QScroller_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QScroller_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QScroller_OnEventFilter")]
 	public static extern bool QScroller_OnEventFilter(void* self, QScroller_OnEventFilter_action _action);
+	
+	[LinkName("QScroller_SuperEventFilter")]
+	public static extern bool QScroller_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QScroller_TimerEvent")]
 	public static extern void QScroller_TimerEvent(void* self, void** event);
 	
 	public function void QScroller_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QScroller_OnTimerEvent")]
 	public static extern void QScroller_OnTimerEvent(void* self, QScroller_OnTimerEvent_action _action);
+	
+	[LinkName("QScroller_SuperTimerEvent")]
+	public static extern void QScroller_SuperTimerEvent(void* self, void** event);
 	[LinkName("QScroller_ChildEvent")]
 	public static extern void QScroller_ChildEvent(void* self, void** event);
 	
 	public function void QScroller_OnChildEvent_action(void* self, void** event);
 	[LinkName("QScroller_OnChildEvent")]
 	public static extern void QScroller_OnChildEvent(void* self, QScroller_OnChildEvent_action _action);
+	
+	[LinkName("QScroller_SuperChildEvent")]
+	public static extern void QScroller_SuperChildEvent(void* self, void** event);
 	[LinkName("QScroller_CustomEvent")]
 	public static extern void QScroller_CustomEvent(void* self, void** event);
 	
 	public function void QScroller_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QScroller_OnCustomEvent")]
 	public static extern void QScroller_OnCustomEvent(void* self, QScroller_OnCustomEvent_action _action);
+	
+	[LinkName("QScroller_SuperCustomEvent")]
+	public static extern void QScroller_SuperCustomEvent(void* self, void** event);
 	[LinkName("QScroller_ConnectNotify")]
 	public static extern void QScroller_ConnectNotify(void* self, void** signal);
 	
 	public function void QScroller_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QScroller_OnConnectNotify")]
 	public static extern void QScroller_OnConnectNotify(void* self, QScroller_OnConnectNotify_action _action);
+	
+	[LinkName("QScroller_SuperConnectNotify")]
+	public static extern void QScroller_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QScroller_DisconnectNotify")]
 	public static extern void QScroller_DisconnectNotify(void* self, void** signal);
 	
 	public function void QScroller_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QScroller_OnDisconnectNotify")]
 	public static extern void QScroller_OnDisconnectNotify(void* self, QScroller_OnDisconnectNotify_action _action);
+	
+	[LinkName("QScroller_SuperDisconnectNotify")]
+	public static extern void QScroller_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QScroller_State

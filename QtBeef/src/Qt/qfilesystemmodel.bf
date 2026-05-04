@@ -764,6 +764,53 @@ class QFileSystemModel : IQFileSystemModel, IQAbstractItemModel, IQObject
 		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged2);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2);
+		CQt.QFileSystemModel_OnMetaObject(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnMetaObject);
+		CQt.QFileSystemModel_OnMetacast(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnMetacast);
+		CQt.QFileSystemModel_OnMetacall(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnMetacall);
+		CQt.QFileSystemModel_OnIndex(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnIndex);
+		CQt.QFileSystemModel_OnParent(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnParent);
+		CQt.QFileSystemModel_OnSibling(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnSibling);
+		CQt.QFileSystemModel_OnHasChildren(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnHasChildren);
+		CQt.QFileSystemModel_OnCanFetchMore(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnCanFetchMore);
+		CQt.QFileSystemModel_OnFetchMore(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnFetchMore);
+		CQt.QFileSystemModel_OnRowCount(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnRowCount);
+		CQt.QFileSystemModel_OnColumnCount(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnColumnCount);
+		CQt.QFileSystemModel_OnData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnData);
+		CQt.QFileSystemModel_OnSetData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnSetData);
+		CQt.QFileSystemModel_OnHeaderData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnHeaderData);
+		CQt.QFileSystemModel_OnFlags(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnFlags);
+		CQt.QFileSystemModel_OnSort(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnSort);
+		CQt.QFileSystemModel_OnMimeTypes(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnMimeTypes);
+		CQt.QFileSystemModel_OnMimeData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnMimeData);
+		CQt.QFileSystemModel_OnDropMimeData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnDropMimeData);
+		CQt.QFileSystemModel_OnSupportedDropActions(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnSupportedDropActions);
+		CQt.QFileSystemModel_OnRoleNames(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnRoleNames);
+		CQt.QFileSystemModel_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnTimerEvent);
+		CQt.QFileSystemModel_OnEvent(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnEvent);
+		CQt.QFileSystemModel_OnEventFilter(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnEventFilter);
+		CQt.QFileSystemModel_OnChildEvent(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnChildEvent);
+		CQt.QFileSystemModel_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnCustomEvent);
+		CQt.QFileSystemModel_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnConnectNotify);
+		CQt.QFileSystemModel_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnDisconnectNotify);
+		CQt.QFileSystemModel_OnSetHeaderData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnSetHeaderData);
+		CQt.QFileSystemModel_OnItemData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnItemData);
+		CQt.QFileSystemModel_OnSetItemData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnSetItemData);
+		CQt.QFileSystemModel_OnClearItemData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnClearItemData);
+		CQt.QFileSystemModel_OnCanDropMimeData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnCanDropMimeData);
+		CQt.QFileSystemModel_OnSupportedDragActions(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnSupportedDragActions);
+		CQt.QFileSystemModel_OnInsertRows(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnInsertRows);
+		CQt.QFileSystemModel_OnInsertColumns(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnInsertColumns);
+		CQt.QFileSystemModel_OnRemoveRows(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnRemoveRows);
+		CQt.QFileSystemModel_OnRemoveColumns(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnRemoveColumns);
+		CQt.QFileSystemModel_OnMoveRows(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnMoveRows);
+		CQt.QFileSystemModel_OnMoveColumns(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnMoveColumns);
+		CQt.QFileSystemModel_OnBuddy(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnBuddy);
+		CQt.QFileSystemModel_OnMatch(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnMatch);
+		CQt.QFileSystemModel_OnSpan(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnSpan);
+		CQt.QFileSystemModel_OnMultiData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnMultiData);
+		CQt.QFileSystemModel_OnSubmit(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnSubmit);
+		CQt.QFileSystemModel_OnRevert(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnRevert);
+		CQt.QFileSystemModel_OnResetInternalData(obj.ObjectPtr,  => QtBeef_QFileSystemModel_OnResetInternalData);
 	}
 	public Event<delegate void(libqt_string newPath)> OnRootPathChanged = .() ~ _.Dispose();
 	public Event<delegate void(libqt_string path, libqt_string oldName, libqt_string newName)> OnFileRenamed = .() ~ _.Dispose();
@@ -848,6 +895,241 @@ class QFileSystemModel : IQFileSystemModel, IQAbstractItemModel, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QFileSystemModel_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QFileSystemModel_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QFileSystemModel_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QFileSystemModel_OnIndex(void* ptr, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndex(row, column, parent);
+	}
+	static void QtBeef_QFileSystemModel_OnParent(void* ptr, void** child)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParent(child);
+	}
+	static void QtBeef_QFileSystemModel_OnSibling(void* ptr, c_int row, c_int column, void** idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSibling(row, column, idx);
+	}
+	static void QtBeef_QFileSystemModel_OnHasChildren(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasChildren(parent);
+	}
+	static void QtBeef_QFileSystemModel_OnCanFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanFetchMore(parent);
+	}
+	static void QtBeef_QFileSystemModel_OnFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFetchMore(parent);
+	}
+	static void QtBeef_QFileSystemModel_OnRowCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowCount(parent);
+	}
+	static void QtBeef_QFileSystemModel_OnColumnCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnCount(parent);
+	}
+	static void QtBeef_QFileSystemModel_OnData(void* ptr, void** index, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(index, role);
+	}
+	static void QtBeef_QFileSystemModel_OnSetData(void* ptr, void** index, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(index, value, role);
+	}
+	static void QtBeef_QFileSystemModel_OnHeaderData(void* ptr, c_int section, Qt_Orientation orientation, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderData(section, orientation, role);
+	}
+	static void QtBeef_QFileSystemModel_OnFlags(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFlags(index);
+	}
+	static void QtBeef_QFileSystemModel_OnSort(void* ptr, c_int column, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSort(column, order);
+	}
+	static void QtBeef_QFileSystemModel_OnMimeTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeTypes();
+	}
+	static void QtBeef_QFileSystemModel_OnMimeData(void* ptr, void** indexes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeData(indexes);
+	}
+	static void QtBeef_QFileSystemModel_OnDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QFileSystemModel_OnSupportedDropActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDropActions();
+	}
+	static void QtBeef_QFileSystemModel_OnRoleNames(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRoleNames();
+	}
+	static void QtBeef_QFileSystemModel_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QFileSystemModel_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QFileSystemModel_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QFileSystemModel_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QFileSystemModel_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QFileSystemModel_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QFileSystemModel_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QFileSystemModel_OnSetHeaderData(void* ptr, c_int section, Qt_Orientation orientation, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetHeaderData(section, orientation, value, role);
+	}
+	static void QtBeef_QFileSystemModel_OnItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemData(index);
+	}
+	static void QtBeef_QFileSystemModel_OnSetItemData(void* ptr, void** index, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetItemData(index, roles);
+	}
+	static void QtBeef_QFileSystemModel_OnClearItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClearItemData(index);
+	}
+	static void QtBeef_QFileSystemModel_OnCanDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QFileSystemModel_OnSupportedDragActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDragActions();
+	}
+	static void QtBeef_QFileSystemModel_OnInsertRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertRows(row, count, parent);
+	}
+	static void QtBeef_QFileSystemModel_OnInsertColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertColumns(column, count, parent);
+	}
+	static void QtBeef_QFileSystemModel_OnRemoveRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveRows(row, count, parent);
+	}
+	static void QtBeef_QFileSystemModel_OnRemoveColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveColumns(column, count, parent);
+	}
+	static void QtBeef_QFileSystemModel_OnMoveRows(void* ptr, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QFileSystemModel_OnMoveColumns(void* ptr, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QFileSystemModel_OnBuddy(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBuddy(index);
+	}
+	static void QtBeef_QFileSystemModel_OnMatch(void* ptr, void** start, c_int role, void** value, c_int hits, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMatch(start, role, value, hits, flags);
+	}
+	static void QtBeef_QFileSystemModel_OnSpan(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpan(index);
+	}
+	static void QtBeef_QFileSystemModel_OnMultiData(void* ptr, void** index, void* roleDataSpan)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMultiData(index, roleDataSpan);
+	}
+	static void QtBeef_QFileSystemModel_OnSubmit(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSubmit();
+	}
+	static void QtBeef_QFileSystemModel_OnRevert(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRevert();
+	}
+	static void QtBeef_QFileSystemModel_OnResetInternalData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResetInternalData();
 	}
 	public this(QFileSystemModel_Ptr ptr)
 	{
@@ -1604,18 +1886,27 @@ extension CQt
 	public function void QFileSystemModel_OnMetaObject_action(void* self);
 	[LinkName("QFileSystemModel_OnMetaObject")]
 	public static extern void** QFileSystemModel_OnMetaObject(void* self, QFileSystemModel_OnMetaObject_action _action);
+	
+	[LinkName("QFileSystemModel_SuperMetaObject")]
+	public static extern void** QFileSystemModel_SuperMetaObject(void* self);
 	[LinkName("QFileSystemModel_Qt_Metacast")]
 	public static extern void* QFileSystemModel_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QFileSystemModel_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QFileSystemModel_OnMetacast")]
 	public static extern void* QFileSystemModel_OnMetacast(void* self, QFileSystemModel_OnMetacast_action _action);
+	
+	[LinkName("QFileSystemModel_SuperMetacast")]
+	public static extern void* QFileSystemModel_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QFileSystemModel_Qt_Metacall")]
 	public static extern c_int QFileSystemModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QFileSystemModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFileSystemModel_OnMetacall")]
 	public static extern c_int QFileSystemModel_OnMetacall(void* self, QFileSystemModel_OnMetacall_action _action);
+	
+	[LinkName("QFileSystemModel_SuperMetacall")]
+	public static extern c_int QFileSystemModel_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFileSystemModel_Tr")]
 	public static extern libqt_string QFileSystemModel_Tr(c_char* s);
 	[LinkName("QFileSystemModel_RootPathChanged")]
@@ -1642,6 +1933,9 @@ extension CQt
 	public function void QFileSystemModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QFileSystemModel_OnIndex")]
 	public static extern void* QFileSystemModel_OnIndex(void* self, QFileSystemModel_OnIndex_action _action);
+	
+	[LinkName("QFileSystemModel_SuperIndex")]
+	public static extern void* QFileSystemModel_SuperIndex(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QFileSystemModel_Index2")]
 	public static extern void* QFileSystemModel_Index2(void* self, libqt_string path);
 	[LinkName("QFileSystemModel_Parent")]
@@ -1650,42 +1944,63 @@ extension CQt
 	public function void QFileSystemModel_OnParent_action(void* self, void** child);
 	[LinkName("QFileSystemModel_OnParent")]
 	public static extern void* QFileSystemModel_OnParent(void* self, QFileSystemModel_OnParent_action _action);
+	
+	[LinkName("QFileSystemModel_SuperParent")]
+	public static extern void* QFileSystemModel_SuperParent(void* self, void** child);
 	[LinkName("QFileSystemModel_Sibling")]
 	public static extern void* QFileSystemModel_Sibling(void* self, c_int row, c_int column, void** idx);
 	
 	public function void QFileSystemModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QFileSystemModel_OnSibling")]
 	public static extern void* QFileSystemModel_OnSibling(void* self, QFileSystemModel_OnSibling_action _action);
+	
+	[LinkName("QFileSystemModel_SuperSibling")]
+	public static extern void* QFileSystemModel_SuperSibling(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QFileSystemModel_HasChildren")]
 	public static extern bool QFileSystemModel_HasChildren(void* self, void** parent);
 	
 	public function void QFileSystemModel_OnHasChildren_action(void* self, void** parent);
 	[LinkName("QFileSystemModel_OnHasChildren")]
 	public static extern bool QFileSystemModel_OnHasChildren(void* self, QFileSystemModel_OnHasChildren_action _action);
+	
+	[LinkName("QFileSystemModel_SuperHasChildren")]
+	public static extern bool QFileSystemModel_SuperHasChildren(void* self, void** parent);
 	[LinkName("QFileSystemModel_CanFetchMore")]
 	public static extern bool QFileSystemModel_CanFetchMore(void* self, void** parent);
 	
 	public function void QFileSystemModel_OnCanFetchMore_action(void* self, void** parent);
 	[LinkName("QFileSystemModel_OnCanFetchMore")]
 	public static extern bool QFileSystemModel_OnCanFetchMore(void* self, QFileSystemModel_OnCanFetchMore_action _action);
+	
+	[LinkName("QFileSystemModel_SuperCanFetchMore")]
+	public static extern bool QFileSystemModel_SuperCanFetchMore(void* self, void** parent);
 	[LinkName("QFileSystemModel_FetchMore")]
 	public static extern void QFileSystemModel_FetchMore(void* self, void** parent);
 	
 	public function void QFileSystemModel_OnFetchMore_action(void* self, void** parent);
 	[LinkName("QFileSystemModel_OnFetchMore")]
 	public static extern void QFileSystemModel_OnFetchMore(void* self, QFileSystemModel_OnFetchMore_action _action);
+	
+	[LinkName("QFileSystemModel_SuperFetchMore")]
+	public static extern void QFileSystemModel_SuperFetchMore(void* self, void** parent);
 	[LinkName("QFileSystemModel_RowCount")]
 	public static extern c_int QFileSystemModel_RowCount(void* self, void** parent);
 	
 	public function void QFileSystemModel_OnRowCount_action(void* self, void** parent);
 	[LinkName("QFileSystemModel_OnRowCount")]
 	public static extern c_int QFileSystemModel_OnRowCount(void* self, QFileSystemModel_OnRowCount_action _action);
+	
+	[LinkName("QFileSystemModel_SuperRowCount")]
+	public static extern c_int QFileSystemModel_SuperRowCount(void* self, void** parent);
 	[LinkName("QFileSystemModel_ColumnCount")]
 	public static extern c_int QFileSystemModel_ColumnCount(void* self, void** parent);
 	
 	public function void QFileSystemModel_OnColumnCount_action(void* self, void** parent);
 	[LinkName("QFileSystemModel_OnColumnCount")]
 	public static extern c_int QFileSystemModel_OnColumnCount(void* self, QFileSystemModel_OnColumnCount_action _action);
+	
+	[LinkName("QFileSystemModel_SuperColumnCount")]
+	public static extern c_int QFileSystemModel_SuperColumnCount(void* self, void** parent);
 	[LinkName("QFileSystemModel_MyComputer")]
 	public static extern void* QFileSystemModel_MyComputer(void* self);
 	[LinkName("QFileSystemModel_Data")]
@@ -1694,60 +2009,90 @@ extension CQt
 	public function void QFileSystemModel_OnData_action(void* self, void** index, c_int role);
 	[LinkName("QFileSystemModel_OnData")]
 	public static extern void* QFileSystemModel_OnData(void* self, QFileSystemModel_OnData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperData")]
+	public static extern void* QFileSystemModel_SuperData(void* self, void** index, c_int role);
 	[LinkName("QFileSystemModel_SetData")]
 	public static extern bool QFileSystemModel_SetData(void* self, void** index, void** value, c_int role);
 	
 	public function void QFileSystemModel_OnSetData_action(void* self, void** index, void** value, c_int role);
 	[LinkName("QFileSystemModel_OnSetData")]
 	public static extern bool QFileSystemModel_OnSetData(void* self, QFileSystemModel_OnSetData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperSetData")]
+	public static extern bool QFileSystemModel_SuperSetData(void* self, void** index, void** value, c_int role);
 	[LinkName("QFileSystemModel_HeaderData")]
 	public static extern void* QFileSystemModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	
 	public function void QFileSystemModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QFileSystemModel_OnHeaderData")]
 	public static extern void* QFileSystemModel_OnHeaderData(void* self, QFileSystemModel_OnHeaderData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperHeaderData")]
+	public static extern void* QFileSystemModel_SuperHeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QFileSystemModel_Flags")]
 	public static extern void* QFileSystemModel_Flags(void* self, void** index);
 	
 	public function void QFileSystemModel_OnFlags_action(void* self, void** index);
 	[LinkName("QFileSystemModel_OnFlags")]
 	public static extern void* QFileSystemModel_OnFlags(void* self, QFileSystemModel_OnFlags_action _action);
+	
+	[LinkName("QFileSystemModel_SuperFlags")]
+	public static extern void* QFileSystemModel_SuperFlags(void* self, void** index);
 	[LinkName("QFileSystemModel_Sort")]
 	public static extern void QFileSystemModel_Sort(void* self, c_int column, Qt_SortOrder order);
 	
 	public function void QFileSystemModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QFileSystemModel_OnSort")]
 	public static extern void QFileSystemModel_OnSort(void* self, QFileSystemModel_OnSort_action _action);
+	
+	[LinkName("QFileSystemModel_SuperSort")]
+	public static extern void QFileSystemModel_SuperSort(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QFileSystemModel_MimeTypes")]
 	public static extern void* QFileSystemModel_MimeTypes(void* self);
 	
 	public function void QFileSystemModel_OnMimeTypes_action(void* self);
 	[LinkName("QFileSystemModel_OnMimeTypes")]
 	public static extern void* QFileSystemModel_OnMimeTypes(void* self, QFileSystemModel_OnMimeTypes_action _action);
+	
+	[LinkName("QFileSystemModel_SuperMimeTypes")]
+	public static extern void* QFileSystemModel_SuperMimeTypes(void* self);
 	[LinkName("QFileSystemModel_MimeData")]
 	public static extern void** QFileSystemModel_MimeData(void* self, void** indexes);
 	
 	public function void QFileSystemModel_OnMimeData_action(void* self, void** indexes);
 	[LinkName("QFileSystemModel_OnMimeData")]
 	public static extern void** QFileSystemModel_OnMimeData(void* self, QFileSystemModel_OnMimeData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperMimeData")]
+	public static extern void** QFileSystemModel_SuperMimeData(void* self, void** indexes);
 	[LinkName("QFileSystemModel_DropMimeData")]
 	public static extern bool QFileSystemModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QFileSystemModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QFileSystemModel_OnDropMimeData")]
 	public static extern bool QFileSystemModel_OnDropMimeData(void* self, QFileSystemModel_OnDropMimeData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperDropMimeData")]
+	public static extern bool QFileSystemModel_SuperDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QFileSystemModel_SupportedDropActions")]
 	public static extern void* QFileSystemModel_SupportedDropActions(void* self);
 	
 	public function void QFileSystemModel_OnSupportedDropActions_action(void* self);
 	[LinkName("QFileSystemModel_OnSupportedDropActions")]
 	public static extern void* QFileSystemModel_OnSupportedDropActions(void* self, QFileSystemModel_OnSupportedDropActions_action _action);
+	
+	[LinkName("QFileSystemModel_SuperSupportedDropActions")]
+	public static extern void* QFileSystemModel_SuperSupportedDropActions(void* self);
 	[LinkName("QFileSystemModel_RoleNames")]
 	public static extern void* QFileSystemModel_RoleNames(void* self);
 	
 	public function void QFileSystemModel_OnRoleNames_action(void* self);
 	[LinkName("QFileSystemModel_OnRoleNames")]
 	public static extern void* QFileSystemModel_OnRoleNames(void* self, QFileSystemModel_OnRoleNames_action _action);
+	
+	[LinkName("QFileSystemModel_SuperRoleNames")]
+	public static extern void* QFileSystemModel_SuperRoleNames(void* self);
 	[LinkName("QFileSystemModel_SetRootPath")]
 	public static extern void* QFileSystemModel_SetRootPath(void* self, libqt_string path);
 	[LinkName("QFileSystemModel_RootPath")]
@@ -1816,12 +2161,18 @@ extension CQt
 	public function void QFileSystemModel_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QFileSystemModel_OnTimerEvent")]
 	public static extern void QFileSystemModel_OnTimerEvent(void* self, QFileSystemModel_OnTimerEvent_action _action);
+	
+	[LinkName("QFileSystemModel_SuperTimerEvent")]
+	public static extern void QFileSystemModel_SuperTimerEvent(void* self, void** event);
 	[LinkName("QFileSystemModel_Event")]
 	public static extern bool QFileSystemModel_Event(void* self, void** event);
 	
 	public function void QFileSystemModel_OnEvent_action(void* self, void** event);
 	[LinkName("QFileSystemModel_OnEvent")]
 	public static extern bool QFileSystemModel_OnEvent(void* self, QFileSystemModel_OnEvent_action _action);
+	
+	[LinkName("QFileSystemModel_SuperEvent")]
+	public static extern bool QFileSystemModel_SuperEvent(void* self, void** event);
 	[LinkName("QFileSystemModel_Tr2")]
 	public static extern libqt_string QFileSystemModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QFileSystemModel_Tr3")]
@@ -1838,144 +2189,216 @@ extension CQt
 	public function void QFileSystemModel_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QFileSystemModel_OnEventFilter")]
 	public static extern bool QFileSystemModel_OnEventFilter(void* self, QFileSystemModel_OnEventFilter_action _action);
+	
+	[LinkName("QFileSystemModel_SuperEventFilter")]
+	public static extern bool QFileSystemModel_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QFileSystemModel_ChildEvent")]
 	public static extern void QFileSystemModel_ChildEvent(void* self, void** event);
 	
 	public function void QFileSystemModel_OnChildEvent_action(void* self, void** event);
 	[LinkName("QFileSystemModel_OnChildEvent")]
 	public static extern void QFileSystemModel_OnChildEvent(void* self, QFileSystemModel_OnChildEvent_action _action);
+	
+	[LinkName("QFileSystemModel_SuperChildEvent")]
+	public static extern void QFileSystemModel_SuperChildEvent(void* self, void** event);
 	[LinkName("QFileSystemModel_CustomEvent")]
 	public static extern void QFileSystemModel_CustomEvent(void* self, void** event);
 	
 	public function void QFileSystemModel_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QFileSystemModel_OnCustomEvent")]
 	public static extern void QFileSystemModel_OnCustomEvent(void* self, QFileSystemModel_OnCustomEvent_action _action);
+	
+	[LinkName("QFileSystemModel_SuperCustomEvent")]
+	public static extern void QFileSystemModel_SuperCustomEvent(void* self, void** event);
 	[LinkName("QFileSystemModel_ConnectNotify")]
 	public static extern void QFileSystemModel_ConnectNotify(void* self, void** signal);
 	
 	public function void QFileSystemModel_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QFileSystemModel_OnConnectNotify")]
 	public static extern void QFileSystemModel_OnConnectNotify(void* self, QFileSystemModel_OnConnectNotify_action _action);
+	
+	[LinkName("QFileSystemModel_SuperConnectNotify")]
+	public static extern void QFileSystemModel_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QFileSystemModel_DisconnectNotify")]
 	public static extern void QFileSystemModel_DisconnectNotify(void* self, void** signal);
 	
 	public function void QFileSystemModel_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QFileSystemModel_OnDisconnectNotify")]
 	public static extern void QFileSystemModel_OnDisconnectNotify(void* self, QFileSystemModel_OnDisconnectNotify_action _action);
+	
+	[LinkName("QFileSystemModel_SuperDisconnectNotify")]
+	public static extern void QFileSystemModel_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QFileSystemModel_SetHeaderData")]
 	public static extern bool QFileSystemModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	
 	public function void QFileSystemModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QFileSystemModel_OnSetHeaderData")]
 	public static extern bool QFileSystemModel_OnSetHeaderData(void* self, QFileSystemModel_OnSetHeaderData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperSetHeaderData")]
+	public static extern bool QFileSystemModel_SuperSetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QFileSystemModel_ItemData")]
 	public static extern void* QFileSystemModel_ItemData(void* self, void** index);
 	
 	public function void QFileSystemModel_OnItemData_action(void* self, void** index);
 	[LinkName("QFileSystemModel_OnItemData")]
 	public static extern void* QFileSystemModel_OnItemData(void* self, QFileSystemModel_OnItemData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperItemData")]
+	public static extern void* QFileSystemModel_SuperItemData(void* self, void** index);
 	[LinkName("QFileSystemModel_SetItemData")]
 	public static extern bool QFileSystemModel_SetItemData(void* self, void** index, void** roles);
 	
 	public function void QFileSystemModel_OnSetItemData_action(void* self, void** index, void** roles);
 	[LinkName("QFileSystemModel_OnSetItemData")]
 	public static extern bool QFileSystemModel_OnSetItemData(void* self, QFileSystemModel_OnSetItemData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperSetItemData")]
+	public static extern bool QFileSystemModel_SuperSetItemData(void* self, void** index, void** roles);
 	[LinkName("QFileSystemModel_ClearItemData")]
 	public static extern bool QFileSystemModel_ClearItemData(void* self, void** index);
 	
 	public function void QFileSystemModel_OnClearItemData_action(void* self, void** index);
 	[LinkName("QFileSystemModel_OnClearItemData")]
 	public static extern bool QFileSystemModel_OnClearItemData(void* self, QFileSystemModel_OnClearItemData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperClearItemData")]
+	public static extern bool QFileSystemModel_SuperClearItemData(void* self, void** index);
 	[LinkName("QFileSystemModel_CanDropMimeData")]
 	public static extern bool QFileSystemModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QFileSystemModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QFileSystemModel_OnCanDropMimeData")]
 	public static extern bool QFileSystemModel_OnCanDropMimeData(void* self, QFileSystemModel_OnCanDropMimeData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperCanDropMimeData")]
+	public static extern bool QFileSystemModel_SuperCanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QFileSystemModel_SupportedDragActions")]
 	public static extern void* QFileSystemModel_SupportedDragActions(void* self);
 	
 	public function void QFileSystemModel_OnSupportedDragActions_action(void* self);
 	[LinkName("QFileSystemModel_OnSupportedDragActions")]
 	public static extern void* QFileSystemModel_OnSupportedDragActions(void* self, QFileSystemModel_OnSupportedDragActions_action _action);
+	
+	[LinkName("QFileSystemModel_SuperSupportedDragActions")]
+	public static extern void* QFileSystemModel_SuperSupportedDragActions(void* self);
 	[LinkName("QFileSystemModel_InsertRows")]
 	public static extern bool QFileSystemModel_InsertRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QFileSystemModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QFileSystemModel_OnInsertRows")]
 	public static extern bool QFileSystemModel_OnInsertRows(void* self, QFileSystemModel_OnInsertRows_action _action);
+	
+	[LinkName("QFileSystemModel_SuperInsertRows")]
+	public static extern bool QFileSystemModel_SuperInsertRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QFileSystemModel_InsertColumns")]
 	public static extern bool QFileSystemModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QFileSystemModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QFileSystemModel_OnInsertColumns")]
 	public static extern bool QFileSystemModel_OnInsertColumns(void* self, QFileSystemModel_OnInsertColumns_action _action);
+	
+	[LinkName("QFileSystemModel_SuperInsertColumns")]
+	public static extern bool QFileSystemModel_SuperInsertColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QFileSystemModel_RemoveRows")]
 	public static extern bool QFileSystemModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QFileSystemModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QFileSystemModel_OnRemoveRows")]
 	public static extern bool QFileSystemModel_OnRemoveRows(void* self, QFileSystemModel_OnRemoveRows_action _action);
+	
+	[LinkName("QFileSystemModel_SuperRemoveRows")]
+	public static extern bool QFileSystemModel_SuperRemoveRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QFileSystemModel_RemoveColumns")]
 	public static extern bool QFileSystemModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QFileSystemModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QFileSystemModel_OnRemoveColumns")]
 	public static extern bool QFileSystemModel_OnRemoveColumns(void* self, QFileSystemModel_OnRemoveColumns_action _action);
+	
+	[LinkName("QFileSystemModel_SuperRemoveColumns")]
+	public static extern bool QFileSystemModel_SuperRemoveColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QFileSystemModel_MoveRows")]
 	public static extern bool QFileSystemModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QFileSystemModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QFileSystemModel_OnMoveRows")]
 	public static extern bool QFileSystemModel_OnMoveRows(void* self, QFileSystemModel_OnMoveRows_action _action);
+	
+	[LinkName("QFileSystemModel_SuperMoveRows")]
+	public static extern bool QFileSystemModel_SuperMoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QFileSystemModel_MoveColumns")]
 	public static extern bool QFileSystemModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QFileSystemModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QFileSystemModel_OnMoveColumns")]
 	public static extern bool QFileSystemModel_OnMoveColumns(void* self, QFileSystemModel_OnMoveColumns_action _action);
+	
+	[LinkName("QFileSystemModel_SuperMoveColumns")]
+	public static extern bool QFileSystemModel_SuperMoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QFileSystemModel_Buddy")]
 	public static extern void* QFileSystemModel_Buddy(void* self, void** index);
 	
 	public function void QFileSystemModel_OnBuddy_action(void* self, void** index);
 	[LinkName("QFileSystemModel_OnBuddy")]
 	public static extern void* QFileSystemModel_OnBuddy(void* self, QFileSystemModel_OnBuddy_action _action);
+	
+	[LinkName("QFileSystemModel_SuperBuddy")]
+	public static extern void* QFileSystemModel_SuperBuddy(void* self, void** index);
 	[LinkName("QFileSystemModel_Match")]
 	public static extern void* QFileSystemModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	
 	public function void QFileSystemModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QFileSystemModel_OnMatch")]
 	public static extern void* QFileSystemModel_OnMatch(void* self, QFileSystemModel_OnMatch_action _action);
+	
+	[LinkName("QFileSystemModel_SuperMatch")]
+	public static extern void* QFileSystemModel_SuperMatch(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QFileSystemModel_Span")]
 	public static extern void* QFileSystemModel_Span(void* self, void** index);
 	
 	public function void QFileSystemModel_OnSpan_action(void* self, void** index);
 	[LinkName("QFileSystemModel_OnSpan")]
 	public static extern void* QFileSystemModel_OnSpan(void* self, QFileSystemModel_OnSpan_action _action);
+	
+	[LinkName("QFileSystemModel_SuperSpan")]
+	public static extern void* QFileSystemModel_SuperSpan(void* self, void** index);
 	[LinkName("QFileSystemModel_MultiData")]
 	public static extern void QFileSystemModel_MultiData(void* self, void** index, void* roleDataSpan);
 	
 	public function void QFileSystemModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
 	[LinkName("QFileSystemModel_OnMultiData")]
 	public static extern void QFileSystemModel_OnMultiData(void* self, QFileSystemModel_OnMultiData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperMultiData")]
+	public static extern void QFileSystemModel_SuperMultiData(void* self, void** index, void* roleDataSpan);
 	[LinkName("QFileSystemModel_Submit")]
 	public static extern bool QFileSystemModel_Submit(void* self);
 	
 	public function void QFileSystemModel_OnSubmit_action(void* self);
 	[LinkName("QFileSystemModel_OnSubmit")]
 	public static extern bool QFileSystemModel_OnSubmit(void* self, QFileSystemModel_OnSubmit_action _action);
+	
+	[LinkName("QFileSystemModel_SuperSubmit")]
+	public static extern bool QFileSystemModel_SuperSubmit(void* self);
 	[LinkName("QFileSystemModel_Revert")]
 	public static extern void QFileSystemModel_Revert(void* self);
 	
 	public function void QFileSystemModel_OnRevert_action(void* self);
 	[LinkName("QFileSystemModel_OnRevert")]
 	public static extern void QFileSystemModel_OnRevert(void* self, QFileSystemModel_OnRevert_action _action);
+	
+	[LinkName("QFileSystemModel_SuperRevert")]
+	public static extern void QFileSystemModel_SuperRevert(void* self);
 	[LinkName("QFileSystemModel_ResetInternalData")]
 	public static extern void QFileSystemModel_ResetInternalData(void* self);
 	
 	public function void QFileSystemModel_OnResetInternalData_action(void* self);
 	[LinkName("QFileSystemModel_OnResetInternalData")]
 	public static extern void QFileSystemModel_OnResetInternalData(void* self, QFileSystemModel_OnResetInternalData_action _action);
+	
+	[LinkName("QFileSystemModel_SuperResetInternalData")]
+	public static extern void QFileSystemModel_SuperResetInternalData(void* self);
 }
 [AllowDuplicates]
 enum QFileSystemModel_Roles

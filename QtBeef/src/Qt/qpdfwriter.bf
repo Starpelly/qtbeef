@@ -432,6 +432,28 @@ class QPdfWriter : IQPdfWriter, IQObject, IQPagedPaintDevice, IQPaintDevice
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QPdfWriter_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnMetaObject);
+		CQt.QPdfWriter_OnMetacast(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnMetacast);
+		CQt.QPdfWriter_OnMetacall(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnMetacall);
+		CQt.QPdfWriter_OnNewPage(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnNewPage);
+		CQt.QPdfWriter_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnPaintEngine);
+		CQt.QPdfWriter_OnMetric(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnMetric);
+		CQt.QPdfWriter_OnEvent(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnEvent);
+		CQt.QPdfWriter_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnEventFilter);
+		CQt.QPdfWriter_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnTimerEvent);
+		CQt.QPdfWriter_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnChildEvent);
+		CQt.QPdfWriter_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnCustomEvent);
+		CQt.QPdfWriter_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnConnectNotify);
+		CQt.QPdfWriter_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnDisconnectNotify);
+		CQt.QPdfWriter_OnDevType(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnDevType);
+		CQt.QPdfWriter_OnInitPainter(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnInitPainter);
+		CQt.QPdfWriter_OnRedirected(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnRedirected);
+		CQt.QPdfWriter_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnSharedPainter);
+		CQt.QPdfWriter_OnSetPageLayout(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnSetPageLayout);
+		CQt.QPdfWriter_OnSetPageSize(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnSetPageSize);
+		CQt.QPdfWriter_OnSetPageOrientation(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnSetPageOrientation);
+		CQt.QPdfWriter_OnSetPageMargins(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnSetPageMargins);
+		CQt.QPdfWriter_OnSetPageRanges(obj.ObjectPtr,  => QtBeef_QPdfWriter_OnSetPageRanges);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -444,6 +466,116 @@ class QPdfWriter : IQPdfWriter, IQObject, IQPagedPaintDevice, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QPdfWriter_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPdfWriter_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPdfWriter_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPdfWriter_OnNewPage(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNewPage();
+	}
+	static void QtBeef_QPdfWriter_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QPdfWriter_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric id)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(id);
+	}
+	static void QtBeef_QPdfWriter_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QPdfWriter_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPdfWriter_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QPdfWriter_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPdfWriter_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPdfWriter_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPdfWriter_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QPdfWriter_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QPdfWriter_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QPdfWriter_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QPdfWriter_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QPdfWriter_OnSetPageLayout(void* ptr, void** pageLayout)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetPageLayout(pageLayout);
+	}
+	static void QtBeef_QPdfWriter_OnSetPageSize(void* ptr, void** pageSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetPageSize(pageSize);
+	}
+	static void QtBeef_QPdfWriter_OnSetPageOrientation(void* ptr, QPageLayout_Orientation orientation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetPageOrientation(orientation);
+	}
+	static void QtBeef_QPdfWriter_OnSetPageMargins(void* ptr, void** margins, QPageLayout_Unit units)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetPageMargins(margins, units);
+	}
+	static void QtBeef_QPdfWriter_OnSetPageRanges(void* ptr, void** ranges)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetPageRanges(ranges);
 	}
 	public this(QPdfWriter_Ptr ptr)
 	{
@@ -883,18 +1015,27 @@ extension CQt
 	public function void QPdfWriter_OnMetaObject_action(void* self);
 	[LinkName("QPdfWriter_OnMetaObject")]
 	public static extern void** QPdfWriter_OnMetaObject(void* self, QPdfWriter_OnMetaObject_action _action);
+	
+	[LinkName("QPdfWriter_SuperMetaObject")]
+	public static extern void** QPdfWriter_SuperMetaObject(void* self);
 	[LinkName("QPdfWriter_Qt_Metacast")]
 	public static extern void* QPdfWriter_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPdfWriter_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPdfWriter_OnMetacast")]
 	public static extern void* QPdfWriter_OnMetacast(void* self, QPdfWriter_OnMetacast_action _action);
+	
+	[LinkName("QPdfWriter_SuperMetacast")]
+	public static extern void* QPdfWriter_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPdfWriter_Qt_Metacall")]
 	public static extern c_int QPdfWriter_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPdfWriter_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPdfWriter_OnMetacall")]
 	public static extern c_int QPdfWriter_OnMetacall(void* self, QPdfWriter_OnMetacall_action _action);
+	
+	[LinkName("QPdfWriter_SuperMetacall")]
+	public static extern c_int QPdfWriter_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPdfWriter_Tr")]
 	public static extern libqt_string QPdfWriter_Tr(c_char* s);
 	[LinkName("QPdfWriter_SetPdfVersion")]
@@ -915,6 +1056,9 @@ extension CQt
 	public function void QPdfWriter_OnNewPage_action(void* self);
 	[LinkName("QPdfWriter_OnNewPage")]
 	public static extern bool QPdfWriter_OnNewPage(void* self, QPdfWriter_OnNewPage_action _action);
+	
+	[LinkName("QPdfWriter_SuperNewPage")]
+	public static extern bool QPdfWriter_SuperNewPage(void* self);
 	[LinkName("QPdfWriter_SetResolution")]
 	public static extern void QPdfWriter_SetResolution(void* self, c_int resolution);
 	[LinkName("QPdfWriter_Resolution")]
@@ -931,12 +1075,18 @@ extension CQt
 	public function void QPdfWriter_OnPaintEngine_action(void* self);
 	[LinkName("QPdfWriter_OnPaintEngine")]
 	public static extern void** QPdfWriter_OnPaintEngine(void* self, QPdfWriter_OnPaintEngine_action _action);
+	
+	[LinkName("QPdfWriter_SuperPaintEngine")]
+	public static extern void** QPdfWriter_SuperPaintEngine(void* self);
 	[LinkName("QPdfWriter_Metric")]
 	public static extern c_int QPdfWriter_Metric(void* self, QPaintDevice_PaintDeviceMetric id);
 	
 	public function void QPdfWriter_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric id);
 	[LinkName("QPdfWriter_OnMetric")]
 	public static extern c_int QPdfWriter_OnMetric(void* self, QPdfWriter_OnMetric_action _action);
+	
+	[LinkName("QPdfWriter_SuperMetric")]
+	public static extern c_int QPdfWriter_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric id);
 	[LinkName("QPdfWriter_Tr2")]
 	public static extern libqt_string QPdfWriter_Tr2(c_char* s, c_char* c);
 	[LinkName("QPdfWriter_Tr3")]
@@ -949,94 +1099,142 @@ extension CQt
 	public function void QPdfWriter_OnEvent_action(void* self, void** event);
 	[LinkName("QPdfWriter_OnEvent")]
 	public static extern bool QPdfWriter_OnEvent(void* self, QPdfWriter_OnEvent_action _action);
+	
+	[LinkName("QPdfWriter_SuperEvent")]
+	public static extern bool QPdfWriter_SuperEvent(void* self, void** event);
 	[LinkName("QPdfWriter_EventFilter")]
 	public static extern bool QPdfWriter_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QPdfWriter_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPdfWriter_OnEventFilter")]
 	public static extern bool QPdfWriter_OnEventFilter(void* self, QPdfWriter_OnEventFilter_action _action);
+	
+	[LinkName("QPdfWriter_SuperEventFilter")]
+	public static extern bool QPdfWriter_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPdfWriter_TimerEvent")]
 	public static extern void QPdfWriter_TimerEvent(void* self, void** event);
 	
 	public function void QPdfWriter_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QPdfWriter_OnTimerEvent")]
 	public static extern void QPdfWriter_OnTimerEvent(void* self, QPdfWriter_OnTimerEvent_action _action);
+	
+	[LinkName("QPdfWriter_SuperTimerEvent")]
+	public static extern void QPdfWriter_SuperTimerEvent(void* self, void** event);
 	[LinkName("QPdfWriter_ChildEvent")]
 	public static extern void QPdfWriter_ChildEvent(void* self, void** event);
 	
 	public function void QPdfWriter_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPdfWriter_OnChildEvent")]
 	public static extern void QPdfWriter_OnChildEvent(void* self, QPdfWriter_OnChildEvent_action _action);
+	
+	[LinkName("QPdfWriter_SuperChildEvent")]
+	public static extern void QPdfWriter_SuperChildEvent(void* self, void** event);
 	[LinkName("QPdfWriter_CustomEvent")]
 	public static extern void QPdfWriter_CustomEvent(void* self, void** event);
 	
 	public function void QPdfWriter_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPdfWriter_OnCustomEvent")]
 	public static extern void QPdfWriter_OnCustomEvent(void* self, QPdfWriter_OnCustomEvent_action _action);
+	
+	[LinkName("QPdfWriter_SuperCustomEvent")]
+	public static extern void QPdfWriter_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPdfWriter_ConnectNotify")]
 	public static extern void QPdfWriter_ConnectNotify(void* self, void** signal);
 	
 	public function void QPdfWriter_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPdfWriter_OnConnectNotify")]
 	public static extern void QPdfWriter_OnConnectNotify(void* self, QPdfWriter_OnConnectNotify_action _action);
+	
+	[LinkName("QPdfWriter_SuperConnectNotify")]
+	public static extern void QPdfWriter_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPdfWriter_DisconnectNotify")]
 	public static extern void QPdfWriter_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPdfWriter_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPdfWriter_OnDisconnectNotify")]
 	public static extern void QPdfWriter_OnDisconnectNotify(void* self, QPdfWriter_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPdfWriter_SuperDisconnectNotify")]
+	public static extern void QPdfWriter_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QPdfWriter_DevType")]
 	public static extern c_int QPdfWriter_DevType(void* self);
 	
 	public function void QPdfWriter_OnDevType_action(void* self);
 	[LinkName("QPdfWriter_OnDevType")]
 	public static extern c_int QPdfWriter_OnDevType(void* self, QPdfWriter_OnDevType_action _action);
+	
+	[LinkName("QPdfWriter_SuperDevType")]
+	public static extern c_int QPdfWriter_SuperDevType(void* self);
 	[LinkName("QPdfWriter_InitPainter")]
 	public static extern void QPdfWriter_InitPainter(void* self, void** painter);
 	
 	public function void QPdfWriter_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QPdfWriter_OnInitPainter")]
 	public static extern void QPdfWriter_OnInitPainter(void* self, QPdfWriter_OnInitPainter_action _action);
+	
+	[LinkName("QPdfWriter_SuperInitPainter")]
+	public static extern void QPdfWriter_SuperInitPainter(void* self, void** painter);
 	[LinkName("QPdfWriter_Redirected")]
 	public static extern void** QPdfWriter_Redirected(void* self, void** offset);
 	
 	public function void QPdfWriter_OnRedirected_action(void* self, void** offset);
 	[LinkName("QPdfWriter_OnRedirected")]
 	public static extern void** QPdfWriter_OnRedirected(void* self, QPdfWriter_OnRedirected_action _action);
+	
+	[LinkName("QPdfWriter_SuperRedirected")]
+	public static extern void** QPdfWriter_SuperRedirected(void* self, void** offset);
 	[LinkName("QPdfWriter_SharedPainter")]
 	public static extern void** QPdfWriter_SharedPainter(void* self);
 	
 	public function void QPdfWriter_OnSharedPainter_action(void* self);
 	[LinkName("QPdfWriter_OnSharedPainter")]
 	public static extern void** QPdfWriter_OnSharedPainter(void* self, QPdfWriter_OnSharedPainter_action _action);
+	
+	[LinkName("QPdfWriter_SuperSharedPainter")]
+	public static extern void** QPdfWriter_SuperSharedPainter(void* self);
 	[LinkName("QPdfWriter_SetPageLayout")]
 	public static extern bool QPdfWriter_SetPageLayout(void* self, void** pageLayout);
 	
 	public function void QPdfWriter_OnSetPageLayout_action(void* self, void** pageLayout);
 	[LinkName("QPdfWriter_OnSetPageLayout")]
 	public static extern bool QPdfWriter_OnSetPageLayout(void* self, QPdfWriter_OnSetPageLayout_action _action);
+	
+	[LinkName("QPdfWriter_SuperSetPageLayout")]
+	public static extern bool QPdfWriter_SuperSetPageLayout(void* self, void** pageLayout);
 	[LinkName("QPdfWriter_SetPageSize")]
 	public static extern bool QPdfWriter_SetPageSize(void* self, void** pageSize);
 	
 	public function void QPdfWriter_OnSetPageSize_action(void* self, void** pageSize);
 	[LinkName("QPdfWriter_OnSetPageSize")]
 	public static extern bool QPdfWriter_OnSetPageSize(void* self, QPdfWriter_OnSetPageSize_action _action);
+	
+	[LinkName("QPdfWriter_SuperSetPageSize")]
+	public static extern bool QPdfWriter_SuperSetPageSize(void* self, void** pageSize);
 	[LinkName("QPdfWriter_SetPageOrientation")]
 	public static extern bool QPdfWriter_SetPageOrientation(void* self, QPageLayout_Orientation orientation);
 	
 	public function void QPdfWriter_OnSetPageOrientation_action(void* self, QPageLayout_Orientation orientation);
 	[LinkName("QPdfWriter_OnSetPageOrientation")]
 	public static extern bool QPdfWriter_OnSetPageOrientation(void* self, QPdfWriter_OnSetPageOrientation_action _action);
+	
+	[LinkName("QPdfWriter_SuperSetPageOrientation")]
+	public static extern bool QPdfWriter_SuperSetPageOrientation(void* self, QPageLayout_Orientation orientation);
 	[LinkName("QPdfWriter_SetPageMargins")]
 	public static extern bool QPdfWriter_SetPageMargins(void* self, void** margins, QPageLayout_Unit units);
 	
 	public function void QPdfWriter_OnSetPageMargins_action(void* self, void** margins, QPageLayout_Unit units);
 	[LinkName("QPdfWriter_OnSetPageMargins")]
 	public static extern bool QPdfWriter_OnSetPageMargins(void* self, QPdfWriter_OnSetPageMargins_action _action);
+	
+	[LinkName("QPdfWriter_SuperSetPageMargins")]
+	public static extern bool QPdfWriter_SuperSetPageMargins(void* self, void** margins, QPageLayout_Unit units);
 	[LinkName("QPdfWriter_SetPageRanges")]
 	public static extern void QPdfWriter_SetPageRanges(void* self, void** ranges);
 	
 	public function void QPdfWriter_OnSetPageRanges_action(void* self, void** ranges);
 	[LinkName("QPdfWriter_OnSetPageRanges")]
 	public static extern void QPdfWriter_OnSetPageRanges(void* self, QPdfWriter_OnSetPageRanges_action _action);
+	
+	[LinkName("QPdfWriter_SuperSetPageRanges")]
+	public static extern void QPdfWriter_SuperSetPageRanges(void* self, void** ranges);
 }

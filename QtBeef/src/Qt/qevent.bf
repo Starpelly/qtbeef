@@ -94,6 +94,24 @@ class QInputEvent : IQInputEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QInputEvent_OnClone(obj.ObjectPtr,  => QtBeef_QInputEvent_OnClone);
+		CQt.QInputEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QInputEvent_OnSetTimestamp);
+		CQt.QInputEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QInputEvent_OnSetAccepted);
+	}
+	static void QtBeef_QInputEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QInputEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
+	}
+	static void QtBeef_QInputEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QInputEvent_Ptr ptr)
 	{
@@ -202,6 +220,9 @@ extension CQt
 	public function void QInputEvent_OnClone_action(void* self);
 	[LinkName("QInputEvent_OnClone")]
 	public static extern void** QInputEvent_OnClone(void* self, QInputEvent_OnClone_action _action);
+	
+	[LinkName("QInputEvent_SuperClone")]
+	public static extern void** QInputEvent_SuperClone(void* self);
 	[LinkName("QInputEvent_Device")]
 	public static extern void** QInputEvent_Device(void* self);
 	[LinkName("QInputEvent_DeviceType")]
@@ -218,12 +239,18 @@ extension CQt
 	public function void QInputEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QInputEvent_OnSetTimestamp")]
 	public static extern void QInputEvent_OnSetTimestamp(void* self, QInputEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QInputEvent_SuperSetTimestamp")]
+	public static extern void QInputEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 	[LinkName("QInputEvent_SetAccepted")]
 	public static extern void QInputEvent_SetAccepted(void* self, bool accepted);
 	
 	public function void QInputEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QInputEvent_OnSetAccepted")]
 	public static extern void QInputEvent_OnSetAccepted(void* self, QInputEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QInputEvent_SuperSetAccepted")]
+	public static extern void QInputEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QPointerEvent
@@ -380,6 +407,42 @@ class QPointerEvent : IQPointerEvent, IQInputEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QPointerEvent_OnClone(obj.ObjectPtr,  => QtBeef_QPointerEvent_OnClone);
+		CQt.QPointerEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QPointerEvent_OnSetTimestamp);
+		CQt.QPointerEvent_OnIsBeginEvent(obj.ObjectPtr,  => QtBeef_QPointerEvent_OnIsBeginEvent);
+		CQt.QPointerEvent_OnIsUpdateEvent(obj.ObjectPtr,  => QtBeef_QPointerEvent_OnIsUpdateEvent);
+		CQt.QPointerEvent_OnIsEndEvent(obj.ObjectPtr,  => QtBeef_QPointerEvent_OnIsEndEvent);
+		CQt.QPointerEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QPointerEvent_OnSetAccepted);
+	}
+	static void QtBeef_QPointerEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QPointerEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
+	}
+	static void QtBeef_QPointerEvent_OnIsBeginEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsBeginEvent();
+	}
+	static void QtBeef_QPointerEvent_OnIsUpdateEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsUpdateEvent();
+	}
+	static void QtBeef_QPointerEvent_OnIsEndEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEndEvent();
+	}
+	static void QtBeef_QPointerEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QPointerEvent_Ptr ptr)
 	{
@@ -559,6 +622,9 @@ extension CQt
 	public function void QPointerEvent_OnClone_action(void* self);
 	[LinkName("QPointerEvent_OnClone")]
 	public static extern void** QPointerEvent_OnClone(void* self, QPointerEvent_OnClone_action _action);
+	
+	[LinkName("QPointerEvent_SuperClone")]
+	public static extern void** QPointerEvent_SuperClone(void* self);
 	[LinkName("QPointerEvent_PointingDevice")]
 	public static extern void** QPointerEvent_PointingDevice(void* self);
 	[LinkName("QPointerEvent_PointerType")]
@@ -569,6 +635,9 @@ extension CQt
 	public function void QPointerEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QPointerEvent_OnSetTimestamp")]
 	public static extern void QPointerEvent_OnSetTimestamp(void* self, QPointerEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QPointerEvent_SuperSetTimestamp")]
+	public static extern void QPointerEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 	[LinkName("QPointerEvent_PointCount")]
 	public static extern void* QPointerEvent_PointCount(void* self);
 	[LinkName("QPointerEvent_Point")]
@@ -585,18 +654,27 @@ extension CQt
 	public function void QPointerEvent_OnIsBeginEvent_action(void* self);
 	[LinkName("QPointerEvent_OnIsBeginEvent")]
 	public static extern bool QPointerEvent_OnIsBeginEvent(void* self, QPointerEvent_OnIsBeginEvent_action _action);
+	
+	[LinkName("QPointerEvent_SuperIsBeginEvent")]
+	public static extern bool QPointerEvent_SuperIsBeginEvent(void* self);
 	[LinkName("QPointerEvent_IsUpdateEvent")]
 	public static extern bool QPointerEvent_IsUpdateEvent(void* self);
 	
 	public function void QPointerEvent_OnIsUpdateEvent_action(void* self);
 	[LinkName("QPointerEvent_OnIsUpdateEvent")]
 	public static extern bool QPointerEvent_OnIsUpdateEvent(void* self, QPointerEvent_OnIsUpdateEvent_action _action);
+	
+	[LinkName("QPointerEvent_SuperIsUpdateEvent")]
+	public static extern bool QPointerEvent_SuperIsUpdateEvent(void* self);
 	[LinkName("QPointerEvent_IsEndEvent")]
 	public static extern bool QPointerEvent_IsEndEvent(void* self);
 	
 	public function void QPointerEvent_OnIsEndEvent_action(void* self);
 	[LinkName("QPointerEvent_OnIsEndEvent")]
 	public static extern bool QPointerEvent_OnIsEndEvent(void* self, QPointerEvent_OnIsEndEvent_action _action);
+	
+	[LinkName("QPointerEvent_SuperIsEndEvent")]
+	public static extern bool QPointerEvent_SuperIsEndEvent(void* self);
 	[LinkName("QPointerEvent_AllPointsAccepted")]
 	public static extern bool QPointerEvent_AllPointsAccepted(void* self);
 	[LinkName("QPointerEvent_SetAccepted")]
@@ -605,6 +683,9 @@ extension CQt
 	public function void QPointerEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QPointerEvent_OnSetAccepted")]
 	public static extern void QPointerEvent_OnSetAccepted(void* self, QPointerEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QPointerEvent_SuperSetAccepted")]
+	public static extern void QPointerEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QPointerEvent_ExclusiveGrabber")]
 	public static extern void** QPointerEvent_ExclusiveGrabber(void* self, void** point);
 	[LinkName("QPointerEvent_SetExclusiveGrabber")]
@@ -799,6 +880,42 @@ class QSinglePointEvent : IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEv
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QSinglePointEvent_OnClone(obj.ObjectPtr,  => QtBeef_QSinglePointEvent_OnClone);
+		CQt.QSinglePointEvent_OnIsBeginEvent(obj.ObjectPtr,  => QtBeef_QSinglePointEvent_OnIsBeginEvent);
+		CQt.QSinglePointEvent_OnIsUpdateEvent(obj.ObjectPtr,  => QtBeef_QSinglePointEvent_OnIsUpdateEvent);
+		CQt.QSinglePointEvent_OnIsEndEvent(obj.ObjectPtr,  => QtBeef_QSinglePointEvent_OnIsEndEvent);
+		CQt.QSinglePointEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QSinglePointEvent_OnSetAccepted);
+		CQt.QSinglePointEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QSinglePointEvent_OnSetTimestamp);
+	}
+	static void QtBeef_QSinglePointEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QSinglePointEvent_OnIsBeginEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsBeginEvent();
+	}
+	static void QtBeef_QSinglePointEvent_OnIsUpdateEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsUpdateEvent();
+	}
+	static void QtBeef_QSinglePointEvent_OnIsEndEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEndEvent();
+	}
+	static void QtBeef_QSinglePointEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QSinglePointEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
 	}
 	public this(QSinglePointEvent_Ptr ptr)
 	{
@@ -985,6 +1102,9 @@ extension CQt
 	public function void QSinglePointEvent_OnClone_action(void* self);
 	[LinkName("QSinglePointEvent_OnClone")]
 	public static extern void** QSinglePointEvent_OnClone(void* self, QSinglePointEvent_OnClone_action _action);
+	
+	[LinkName("QSinglePointEvent_SuperClone")]
+	public static extern void** QSinglePointEvent_SuperClone(void* self);
 	[LinkName("QSinglePointEvent_Button")]
 	public static extern Qt_MouseButton QSinglePointEvent_Button(void* self);
 	[LinkName("QSinglePointEvent_Buttons")]
@@ -1001,18 +1121,27 @@ extension CQt
 	public function void QSinglePointEvent_OnIsBeginEvent_action(void* self);
 	[LinkName("QSinglePointEvent_OnIsBeginEvent")]
 	public static extern bool QSinglePointEvent_OnIsBeginEvent(void* self, QSinglePointEvent_OnIsBeginEvent_action _action);
+	
+	[LinkName("QSinglePointEvent_SuperIsBeginEvent")]
+	public static extern bool QSinglePointEvent_SuperIsBeginEvent(void* self);
 	[LinkName("QSinglePointEvent_IsUpdateEvent")]
 	public static extern bool QSinglePointEvent_IsUpdateEvent(void* self);
 	
 	public function void QSinglePointEvent_OnIsUpdateEvent_action(void* self);
 	[LinkName("QSinglePointEvent_OnIsUpdateEvent")]
 	public static extern bool QSinglePointEvent_OnIsUpdateEvent(void* self, QSinglePointEvent_OnIsUpdateEvent_action _action);
+	
+	[LinkName("QSinglePointEvent_SuperIsUpdateEvent")]
+	public static extern bool QSinglePointEvent_SuperIsUpdateEvent(void* self);
 	[LinkName("QSinglePointEvent_IsEndEvent")]
 	public static extern bool QSinglePointEvent_IsEndEvent(void* self);
 	
 	public function void QSinglePointEvent_OnIsEndEvent_action(void* self);
 	[LinkName("QSinglePointEvent_OnIsEndEvent")]
 	public static extern bool QSinglePointEvent_OnIsEndEvent(void* self, QSinglePointEvent_OnIsEndEvent_action _action);
+	
+	[LinkName("QSinglePointEvent_SuperIsEndEvent")]
+	public static extern bool QSinglePointEvent_SuperIsEndEvent(void* self);
 	[LinkName("QSinglePointEvent_ExclusivePointGrabber")]
 	public static extern void** QSinglePointEvent_ExclusivePointGrabber(void* self);
 	[LinkName("QSinglePointEvent_SetExclusivePointGrabber")]
@@ -1023,12 +1152,18 @@ extension CQt
 	public function void QSinglePointEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QSinglePointEvent_OnSetAccepted")]
 	public static extern void QSinglePointEvent_OnSetAccepted(void* self, QSinglePointEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QSinglePointEvent_SuperSetAccepted")]
+	public static extern void QSinglePointEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QSinglePointEvent_SetTimestamp")]
 	public static extern void QSinglePointEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QSinglePointEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QSinglePointEvent_OnSetTimestamp")]
 	public static extern void QSinglePointEvent_OnSetTimestamp(void* self, QSinglePointEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QSinglePointEvent_SuperSetTimestamp")]
+	public static extern void QSinglePointEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 }
 // --------------------------------------------------------------
 // QEnterEvent
@@ -1249,6 +1384,42 @@ class QEnterEvent : IQEnterEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QEnterEvent_OnClone(obj.ObjectPtr,  => QtBeef_QEnterEvent_OnClone);
+		CQt.QEnterEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QEnterEvent_OnSetAccepted);
+		CQt.QEnterEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QEnterEvent_OnSetTimestamp);
+		CQt.QEnterEvent_OnIsBeginEvent(obj.ObjectPtr,  => QtBeef_QEnterEvent_OnIsBeginEvent);
+		CQt.QEnterEvent_OnIsUpdateEvent(obj.ObjectPtr,  => QtBeef_QEnterEvent_OnIsUpdateEvent);
+		CQt.QEnterEvent_OnIsEndEvent(obj.ObjectPtr,  => QtBeef_QEnterEvent_OnIsEndEvent);
+	}
+	static void QtBeef_QEnterEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QEnterEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QEnterEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
+	}
+	static void QtBeef_QEnterEvent_OnIsBeginEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsBeginEvent();
+	}
+	static void QtBeef_QEnterEvent_OnIsUpdateEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsUpdateEvent();
+	}
+	static void QtBeef_QEnterEvent_OnIsEndEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEndEvent();
 	}
 	public this(QEnterEvent_Ptr ptr)
 	{
@@ -1485,6 +1656,9 @@ extension CQt
 	public function void QEnterEvent_OnClone_action(void* self);
 	[LinkName("QEnterEvent_OnClone")]
 	public static extern void** QEnterEvent_OnClone(void* self, QEnterEvent_OnClone_action _action);
+	
+	[LinkName("QEnterEvent_SuperClone")]
+	public static extern void** QEnterEvent_SuperClone(void* self);
 	[LinkName("QEnterEvent_Pos")]
 	public static extern void* QEnterEvent_Pos(void* self);
 	[LinkName("QEnterEvent_GlobalPos")]
@@ -1509,30 +1683,45 @@ extension CQt
 	public function void QEnterEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QEnterEvent_OnSetAccepted")]
 	public static extern void QEnterEvent_OnSetAccepted(void* self, QEnterEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QEnterEvent_SuperSetAccepted")]
+	public static extern void QEnterEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QEnterEvent_SetTimestamp")]
 	public static extern void QEnterEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QEnterEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QEnterEvent_OnSetTimestamp")]
 	public static extern void QEnterEvent_OnSetTimestamp(void* self, QEnterEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QEnterEvent_SuperSetTimestamp")]
+	public static extern void QEnterEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 	[LinkName("QEnterEvent_IsBeginEvent")]
 	public static extern bool QEnterEvent_IsBeginEvent(void* self);
 	
 	public function void QEnterEvent_OnIsBeginEvent_action(void* self);
 	[LinkName("QEnterEvent_OnIsBeginEvent")]
 	public static extern bool QEnterEvent_OnIsBeginEvent(void* self, QEnterEvent_OnIsBeginEvent_action _action);
+	
+	[LinkName("QEnterEvent_SuperIsBeginEvent")]
+	public static extern bool QEnterEvent_SuperIsBeginEvent(void* self);
 	[LinkName("QEnterEvent_IsUpdateEvent")]
 	public static extern bool QEnterEvent_IsUpdateEvent(void* self);
 	
 	public function void QEnterEvent_OnIsUpdateEvent_action(void* self);
 	[LinkName("QEnterEvent_OnIsUpdateEvent")]
 	public static extern bool QEnterEvent_OnIsUpdateEvent(void* self, QEnterEvent_OnIsUpdateEvent_action _action);
+	
+	[LinkName("QEnterEvent_SuperIsUpdateEvent")]
+	public static extern bool QEnterEvent_SuperIsUpdateEvent(void* self);
 	[LinkName("QEnterEvent_IsEndEvent")]
 	public static extern bool QEnterEvent_IsEndEvent(void* self);
 	
 	public function void QEnterEvent_OnIsEndEvent_action(void* self);
 	[LinkName("QEnterEvent_OnIsEndEvent")]
 	public static extern bool QEnterEvent_OnIsEndEvent(void* self, QEnterEvent_OnIsEndEvent_action _action);
+	
+	[LinkName("QEnterEvent_SuperIsEndEvent")]
+	public static extern bool QEnterEvent_SuperIsEndEvent(void* self);
 }
 // --------------------------------------------------------------
 // QMouseEvent
@@ -1761,6 +1950,42 @@ class QMouseEvent : IQMouseEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QMouseEvent_OnClone(obj.ObjectPtr,  => QtBeef_QMouseEvent_OnClone);
+		CQt.QMouseEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QMouseEvent_OnSetAccepted);
+		CQt.QMouseEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QMouseEvent_OnSetTimestamp);
+		CQt.QMouseEvent_OnIsBeginEvent(obj.ObjectPtr,  => QtBeef_QMouseEvent_OnIsBeginEvent);
+		CQt.QMouseEvent_OnIsUpdateEvent(obj.ObjectPtr,  => QtBeef_QMouseEvent_OnIsUpdateEvent);
+		CQt.QMouseEvent_OnIsEndEvent(obj.ObjectPtr,  => QtBeef_QMouseEvent_OnIsEndEvent);
+	}
+	static void QtBeef_QMouseEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QMouseEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QMouseEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
+	}
+	static void QtBeef_QMouseEvent_OnIsBeginEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsBeginEvent();
+	}
+	static void QtBeef_QMouseEvent_OnIsUpdateEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsUpdateEvent();
+	}
+	static void QtBeef_QMouseEvent_OnIsEndEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEndEvent();
 	}
 	public this(QMouseEvent_Ptr ptr)
 	{
@@ -2047,6 +2272,9 @@ extension CQt
 	public function void QMouseEvent_OnClone_action(void* self);
 	[LinkName("QMouseEvent_OnClone")]
 	public static extern void** QMouseEvent_OnClone(void* self, QMouseEvent_OnClone_action _action);
+	
+	[LinkName("QMouseEvent_SuperClone")]
+	public static extern void** QMouseEvent_SuperClone(void* self);
 	[LinkName("QMouseEvent_Pos")]
 	public static extern void* QMouseEvent_Pos(void* self);
 	[LinkName("QMouseEvent_GlobalPos")]
@@ -2075,30 +2303,45 @@ extension CQt
 	public function void QMouseEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QMouseEvent_OnSetAccepted")]
 	public static extern void QMouseEvent_OnSetAccepted(void* self, QMouseEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QMouseEvent_SuperSetAccepted")]
+	public static extern void QMouseEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QMouseEvent_SetTimestamp")]
 	public static extern void QMouseEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QMouseEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QMouseEvent_OnSetTimestamp")]
 	public static extern void QMouseEvent_OnSetTimestamp(void* self, QMouseEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QMouseEvent_SuperSetTimestamp")]
+	public static extern void QMouseEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 	[LinkName("QMouseEvent_IsBeginEvent")]
 	public static extern bool QMouseEvent_IsBeginEvent(void* self);
 	
 	public function void QMouseEvent_OnIsBeginEvent_action(void* self);
 	[LinkName("QMouseEvent_OnIsBeginEvent")]
 	public static extern bool QMouseEvent_OnIsBeginEvent(void* self, QMouseEvent_OnIsBeginEvent_action _action);
+	
+	[LinkName("QMouseEvent_SuperIsBeginEvent")]
+	public static extern bool QMouseEvent_SuperIsBeginEvent(void* self);
 	[LinkName("QMouseEvent_IsUpdateEvent")]
 	public static extern bool QMouseEvent_IsUpdateEvent(void* self);
 	
 	public function void QMouseEvent_OnIsUpdateEvent_action(void* self);
 	[LinkName("QMouseEvent_OnIsUpdateEvent")]
 	public static extern bool QMouseEvent_OnIsUpdateEvent(void* self, QMouseEvent_OnIsUpdateEvent_action _action);
+	
+	[LinkName("QMouseEvent_SuperIsUpdateEvent")]
+	public static extern bool QMouseEvent_SuperIsUpdateEvent(void* self);
 	[LinkName("QMouseEvent_IsEndEvent")]
 	public static extern bool QMouseEvent_IsEndEvent(void* self);
 	
 	public function void QMouseEvent_OnIsEndEvent_action(void* self);
 	[LinkName("QMouseEvent_OnIsEndEvent")]
 	public static extern bool QMouseEvent_OnIsEndEvent(void* self, QMouseEvent_OnIsEndEvent_action _action);
+	
+	[LinkName("QMouseEvent_SuperIsEndEvent")]
+	public static extern bool QMouseEvent_SuperIsEndEvent(void* self);
 }
 // --------------------------------------------------------------
 // QHoverEvent
@@ -2299,6 +2542,42 @@ class QHoverEvent : IQHoverEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QHoverEvent_OnClone(obj.ObjectPtr,  => QtBeef_QHoverEvent_OnClone);
+		CQt.QHoverEvent_OnIsUpdateEvent(obj.ObjectPtr,  => QtBeef_QHoverEvent_OnIsUpdateEvent);
+		CQt.QHoverEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QHoverEvent_OnSetAccepted);
+		CQt.QHoverEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QHoverEvent_OnSetTimestamp);
+		CQt.QHoverEvent_OnIsBeginEvent(obj.ObjectPtr,  => QtBeef_QHoverEvent_OnIsBeginEvent);
+		CQt.QHoverEvent_OnIsEndEvent(obj.ObjectPtr,  => QtBeef_QHoverEvent_OnIsEndEvent);
+	}
+	static void QtBeef_QHoverEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QHoverEvent_OnIsUpdateEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsUpdateEvent();
+	}
+	static void QtBeef_QHoverEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QHoverEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
+	}
+	static void QtBeef_QHoverEvent_OnIsBeginEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsBeginEvent();
+	}
+	static void QtBeef_QHoverEvent_OnIsEndEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEndEvent();
 	}
 	public this(QHoverEvent_Ptr ptr)
 	{
@@ -2543,6 +2822,9 @@ extension CQt
 	public function void QHoverEvent_OnClone_action(void* self);
 	[LinkName("QHoverEvent_OnClone")]
 	public static extern void** QHoverEvent_OnClone(void* self, QHoverEvent_OnClone_action _action);
+	
+	[LinkName("QHoverEvent_SuperClone")]
+	public static extern void** QHoverEvent_SuperClone(void* self);
 	[LinkName("QHoverEvent_Pos")]
 	public static extern void* QHoverEvent_Pos(void* self);
 	[LinkName("QHoverEvent_PosF")]
@@ -2553,6 +2835,9 @@ extension CQt
 	public function void QHoverEvent_OnIsUpdateEvent_action(void* self);
 	[LinkName("QHoverEvent_OnIsUpdateEvent")]
 	public static extern bool QHoverEvent_OnIsUpdateEvent(void* self, QHoverEvent_OnIsUpdateEvent_action _action);
+	
+	[LinkName("QHoverEvent_SuperIsUpdateEvent")]
+	public static extern bool QHoverEvent_SuperIsUpdateEvent(void* self);
 	[LinkName("QHoverEvent_OldPos")]
 	public static extern void* QHoverEvent_OldPos(void* self);
 	[LinkName("QHoverEvent_OldPosF")]
@@ -2563,24 +2848,36 @@ extension CQt
 	public function void QHoverEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QHoverEvent_OnSetAccepted")]
 	public static extern void QHoverEvent_OnSetAccepted(void* self, QHoverEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QHoverEvent_SuperSetAccepted")]
+	public static extern void QHoverEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QHoverEvent_SetTimestamp")]
 	public static extern void QHoverEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QHoverEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QHoverEvent_OnSetTimestamp")]
 	public static extern void QHoverEvent_OnSetTimestamp(void* self, QHoverEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QHoverEvent_SuperSetTimestamp")]
+	public static extern void QHoverEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 	[LinkName("QHoverEvent_IsBeginEvent")]
 	public static extern bool QHoverEvent_IsBeginEvent(void* self);
 	
 	public function void QHoverEvent_OnIsBeginEvent_action(void* self);
 	[LinkName("QHoverEvent_OnIsBeginEvent")]
 	public static extern bool QHoverEvent_OnIsBeginEvent(void* self, QHoverEvent_OnIsBeginEvent_action _action);
+	
+	[LinkName("QHoverEvent_SuperIsBeginEvent")]
+	public static extern bool QHoverEvent_SuperIsBeginEvent(void* self);
 	[LinkName("QHoverEvent_IsEndEvent")]
 	public static extern bool QHoverEvent_IsEndEvent(void* self);
 	
 	public function void QHoverEvent_OnIsEndEvent_action(void* self);
 	[LinkName("QHoverEvent_OnIsEndEvent")]
 	public static extern bool QHoverEvent_OnIsEndEvent(void* self, QHoverEvent_OnIsEndEvent_action _action);
+	
+	[LinkName("QHoverEvent_SuperIsEndEvent")]
+	public static extern bool QHoverEvent_SuperIsEndEvent(void* self);
 }
 // --------------------------------------------------------------
 // QWheelEvent
@@ -2793,6 +3090,42 @@ class QWheelEvent : IQWheelEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QWheelEvent_OnClone(obj.ObjectPtr,  => QtBeef_QWheelEvent_OnClone);
+		CQt.QWheelEvent_OnIsBeginEvent(obj.ObjectPtr,  => QtBeef_QWheelEvent_OnIsBeginEvent);
+		CQt.QWheelEvent_OnIsUpdateEvent(obj.ObjectPtr,  => QtBeef_QWheelEvent_OnIsUpdateEvent);
+		CQt.QWheelEvent_OnIsEndEvent(obj.ObjectPtr,  => QtBeef_QWheelEvent_OnIsEndEvent);
+		CQt.QWheelEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QWheelEvent_OnSetAccepted);
+		CQt.QWheelEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QWheelEvent_OnSetTimestamp);
+	}
+	static void QtBeef_QWheelEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QWheelEvent_OnIsBeginEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsBeginEvent();
+	}
+	static void QtBeef_QWheelEvent_OnIsUpdateEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsUpdateEvent();
+	}
+	static void QtBeef_QWheelEvent_OnIsEndEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEndEvent();
+	}
+	static void QtBeef_QWheelEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QWheelEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
 	}
 	public this(QWheelEvent_Ptr ptr)
 	{
@@ -3028,6 +3361,9 @@ extension CQt
 	public function void QWheelEvent_OnClone_action(void* self);
 	[LinkName("QWheelEvent_OnClone")]
 	public static extern void** QWheelEvent_OnClone(void* self, QWheelEvent_OnClone_action _action);
+	
+	[LinkName("QWheelEvent_SuperClone")]
+	public static extern void** QWheelEvent_SuperClone(void* self);
 	[LinkName("QWheelEvent_PixelDelta")]
 	public static extern void* QWheelEvent_PixelDelta(void* self);
 	[LinkName("QWheelEvent_AngleDelta")]
@@ -3046,18 +3382,27 @@ extension CQt
 	public function void QWheelEvent_OnIsBeginEvent_action(void* self);
 	[LinkName("QWheelEvent_OnIsBeginEvent")]
 	public static extern bool QWheelEvent_OnIsBeginEvent(void* self, QWheelEvent_OnIsBeginEvent_action _action);
+	
+	[LinkName("QWheelEvent_SuperIsBeginEvent")]
+	public static extern bool QWheelEvent_SuperIsBeginEvent(void* self);
 	[LinkName("QWheelEvent_IsUpdateEvent")]
 	public static extern bool QWheelEvent_IsUpdateEvent(void* self);
 	
 	public function void QWheelEvent_OnIsUpdateEvent_action(void* self);
 	[LinkName("QWheelEvent_OnIsUpdateEvent")]
 	public static extern bool QWheelEvent_OnIsUpdateEvent(void* self, QWheelEvent_OnIsUpdateEvent_action _action);
+	
+	[LinkName("QWheelEvent_SuperIsUpdateEvent")]
+	public static extern bool QWheelEvent_SuperIsUpdateEvent(void* self);
 	[LinkName("QWheelEvent_IsEndEvent")]
 	public static extern bool QWheelEvent_IsEndEvent(void* self);
 	
 	public function void QWheelEvent_OnIsEndEvent_action(void* self);
 	[LinkName("QWheelEvent_OnIsEndEvent")]
 	public static extern bool QWheelEvent_OnIsEndEvent(void* self, QWheelEvent_OnIsEndEvent_action _action);
+	
+	[LinkName("QWheelEvent_SuperIsEndEvent")]
+	public static extern bool QWheelEvent_SuperIsEndEvent(void* self);
 	[LinkName("QWheelEvent_Source")]
 	public static extern Qt_MouseEventSource QWheelEvent_Source(void* self);
 	[LinkName("QWheelEvent_SetAccepted")]
@@ -3066,12 +3411,18 @@ extension CQt
 	public function void QWheelEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QWheelEvent_OnSetAccepted")]
 	public static extern void QWheelEvent_OnSetAccepted(void* self, QWheelEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QWheelEvent_SuperSetAccepted")]
+	public static extern void QWheelEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QWheelEvent_SetTimestamp")]
 	public static extern void QWheelEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QWheelEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QWheelEvent_OnSetTimestamp")]
 	public static extern void QWheelEvent_OnSetTimestamp(void* self, QWheelEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QWheelEvent_SuperSetTimestamp")]
+	public static extern void QWheelEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 }
 // --------------------------------------------------------------
 // QTabletEvent
@@ -3324,6 +3675,42 @@ class QTabletEvent : IQTabletEvent, IQSinglePointEvent, IQPointerEvent, IQInputE
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTabletEvent_OnClone(obj.ObjectPtr,  => QtBeef_QTabletEvent_OnClone);
+		CQt.QTabletEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QTabletEvent_OnSetAccepted);
+		CQt.QTabletEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QTabletEvent_OnSetTimestamp);
+		CQt.QTabletEvent_OnIsBeginEvent(obj.ObjectPtr,  => QtBeef_QTabletEvent_OnIsBeginEvent);
+		CQt.QTabletEvent_OnIsUpdateEvent(obj.ObjectPtr,  => QtBeef_QTabletEvent_OnIsUpdateEvent);
+		CQt.QTabletEvent_OnIsEndEvent(obj.ObjectPtr,  => QtBeef_QTabletEvent_OnIsEndEvent);
+	}
+	static void QtBeef_QTabletEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QTabletEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QTabletEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
+	}
+	static void QtBeef_QTabletEvent_OnIsBeginEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsBeginEvent();
+	}
+	static void QtBeef_QTabletEvent_OnIsUpdateEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsUpdateEvent();
+	}
+	static void QtBeef_QTabletEvent_OnIsEndEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEndEvent();
 	}
 	public this(QTabletEvent_Ptr ptr)
 	{
@@ -3585,6 +3972,9 @@ extension CQt
 	public function void QTabletEvent_OnClone_action(void* self);
 	[LinkName("QTabletEvent_OnClone")]
 	public static extern void** QTabletEvent_OnClone(void* self, QTabletEvent_OnClone_action _action);
+	
+	[LinkName("QTabletEvent_SuperClone")]
+	public static extern void** QTabletEvent_SuperClone(void* self);
 	[LinkName("QTabletEvent_Pos")]
 	public static extern void* QTabletEvent_Pos(void* self);
 	[LinkName("QTabletEvent_GlobalPos")]
@@ -3625,30 +4015,45 @@ extension CQt
 	public function void QTabletEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QTabletEvent_OnSetAccepted")]
 	public static extern void QTabletEvent_OnSetAccepted(void* self, QTabletEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QTabletEvent_SuperSetAccepted")]
+	public static extern void QTabletEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QTabletEvent_SetTimestamp")]
 	public static extern void QTabletEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QTabletEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QTabletEvent_OnSetTimestamp")]
 	public static extern void QTabletEvent_OnSetTimestamp(void* self, QTabletEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QTabletEvent_SuperSetTimestamp")]
+	public static extern void QTabletEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 	[LinkName("QTabletEvent_IsBeginEvent")]
 	public static extern bool QTabletEvent_IsBeginEvent(void* self);
 	
 	public function void QTabletEvent_OnIsBeginEvent_action(void* self);
 	[LinkName("QTabletEvent_OnIsBeginEvent")]
 	public static extern bool QTabletEvent_OnIsBeginEvent(void* self, QTabletEvent_OnIsBeginEvent_action _action);
+	
+	[LinkName("QTabletEvent_SuperIsBeginEvent")]
+	public static extern bool QTabletEvent_SuperIsBeginEvent(void* self);
 	[LinkName("QTabletEvent_IsUpdateEvent")]
 	public static extern bool QTabletEvent_IsUpdateEvent(void* self);
 	
 	public function void QTabletEvent_OnIsUpdateEvent_action(void* self);
 	[LinkName("QTabletEvent_OnIsUpdateEvent")]
 	public static extern bool QTabletEvent_OnIsUpdateEvent(void* self, QTabletEvent_OnIsUpdateEvent_action _action);
+	
+	[LinkName("QTabletEvent_SuperIsUpdateEvent")]
+	public static extern bool QTabletEvent_SuperIsUpdateEvent(void* self);
 	[LinkName("QTabletEvent_IsEndEvent")]
 	public static extern bool QTabletEvent_IsEndEvent(void* self);
 	
 	public function void QTabletEvent_OnIsEndEvent_action(void* self);
 	[LinkName("QTabletEvent_OnIsEndEvent")]
 	public static extern bool QTabletEvent_OnIsEndEvent(void* self, QTabletEvent_OnIsEndEvent_action _action);
+	
+	[LinkName("QTabletEvent_SuperIsEndEvent")]
+	public static extern bool QTabletEvent_SuperIsEndEvent(void* self);
 }
 // --------------------------------------------------------------
 // QNativeGestureEvent
@@ -3869,6 +4274,42 @@ class QNativeGestureEvent : IQNativeGestureEvent, IQSinglePointEvent, IQPointerE
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QNativeGestureEvent_OnClone(obj.ObjectPtr,  => QtBeef_QNativeGestureEvent_OnClone);
+		CQt.QNativeGestureEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QNativeGestureEvent_OnSetAccepted);
+		CQt.QNativeGestureEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QNativeGestureEvent_OnSetTimestamp);
+		CQt.QNativeGestureEvent_OnIsBeginEvent(obj.ObjectPtr,  => QtBeef_QNativeGestureEvent_OnIsBeginEvent);
+		CQt.QNativeGestureEvent_OnIsUpdateEvent(obj.ObjectPtr,  => QtBeef_QNativeGestureEvent_OnIsUpdateEvent);
+		CQt.QNativeGestureEvent_OnIsEndEvent(obj.ObjectPtr,  => QtBeef_QNativeGestureEvent_OnIsEndEvent);
+	}
+	static void QtBeef_QNativeGestureEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QNativeGestureEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QNativeGestureEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
+	}
+	static void QtBeef_QNativeGestureEvent_OnIsBeginEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsBeginEvent();
+	}
+	static void QtBeef_QNativeGestureEvent_OnIsUpdateEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsUpdateEvent();
+	}
+	static void QtBeef_QNativeGestureEvent_OnIsEndEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEndEvent();
 	}
 	public this(QNativeGestureEvent_Ptr ptr)
 	{
@@ -4112,6 +4553,9 @@ extension CQt
 	public function void QNativeGestureEvent_OnClone_action(void* self);
 	[LinkName("QNativeGestureEvent_OnClone")]
 	public static extern void** QNativeGestureEvent_OnClone(void* self, QNativeGestureEvent_OnClone_action _action);
+	
+	[LinkName("QNativeGestureEvent_SuperClone")]
+	public static extern void** QNativeGestureEvent_SuperClone(void* self);
 	[LinkName("QNativeGestureEvent_GestureType")]
 	public static extern Qt_NativeGestureType QNativeGestureEvent_GestureType(void* self);
 	[LinkName("QNativeGestureEvent_FingerCount")]
@@ -4136,30 +4580,45 @@ extension CQt
 	public function void QNativeGestureEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QNativeGestureEvent_OnSetAccepted")]
 	public static extern void QNativeGestureEvent_OnSetAccepted(void* self, QNativeGestureEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QNativeGestureEvent_SuperSetAccepted")]
+	public static extern void QNativeGestureEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QNativeGestureEvent_SetTimestamp")]
 	public static extern void QNativeGestureEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QNativeGestureEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QNativeGestureEvent_OnSetTimestamp")]
 	public static extern void QNativeGestureEvent_OnSetTimestamp(void* self, QNativeGestureEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QNativeGestureEvent_SuperSetTimestamp")]
+	public static extern void QNativeGestureEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 	[LinkName("QNativeGestureEvent_IsBeginEvent")]
 	public static extern bool QNativeGestureEvent_IsBeginEvent(void* self);
 	
 	public function void QNativeGestureEvent_OnIsBeginEvent_action(void* self);
 	[LinkName("QNativeGestureEvent_OnIsBeginEvent")]
 	public static extern bool QNativeGestureEvent_OnIsBeginEvent(void* self, QNativeGestureEvent_OnIsBeginEvent_action _action);
+	
+	[LinkName("QNativeGestureEvent_SuperIsBeginEvent")]
+	public static extern bool QNativeGestureEvent_SuperIsBeginEvent(void* self);
 	[LinkName("QNativeGestureEvent_IsUpdateEvent")]
 	public static extern bool QNativeGestureEvent_IsUpdateEvent(void* self);
 	
 	public function void QNativeGestureEvent_OnIsUpdateEvent_action(void* self);
 	[LinkName("QNativeGestureEvent_OnIsUpdateEvent")]
 	public static extern bool QNativeGestureEvent_OnIsUpdateEvent(void* self, QNativeGestureEvent_OnIsUpdateEvent_action _action);
+	
+	[LinkName("QNativeGestureEvent_SuperIsUpdateEvent")]
+	public static extern bool QNativeGestureEvent_SuperIsUpdateEvent(void* self);
 	[LinkName("QNativeGestureEvent_IsEndEvent")]
 	public static extern bool QNativeGestureEvent_IsEndEvent(void* self);
 	
 	public function void QNativeGestureEvent_OnIsEndEvent_action(void* self);
 	[LinkName("QNativeGestureEvent_OnIsEndEvent")]
 	public static extern bool QNativeGestureEvent_OnIsEndEvent(void* self, QNativeGestureEvent_OnIsEndEvent_action _action);
+	
+	[LinkName("QNativeGestureEvent_SuperIsEndEvent")]
+	public static extern bool QNativeGestureEvent_SuperIsEndEvent(void* self);
 }
 // --------------------------------------------------------------
 // QKeyEvent
@@ -4288,6 +4747,24 @@ class QKeyEvent : IQKeyEvent, IQInputEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QKeyEvent_OnClone(obj.ObjectPtr,  => QtBeef_QKeyEvent_OnClone);
+		CQt.QKeyEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QKeyEvent_OnSetAccepted);
+		CQt.QKeyEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QKeyEvent_OnSetTimestamp);
+	}
+	static void QtBeef_QKeyEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QKeyEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QKeyEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
 	}
 	public this(QKeyEvent_Ptr ptr)
 	{
@@ -4481,6 +4958,9 @@ extension CQt
 	public function void QKeyEvent_OnClone_action(void* self);
 	[LinkName("QKeyEvent_OnClone")]
 	public static extern void** QKeyEvent_OnClone(void* self, QKeyEvent_OnClone_action _action);
+	
+	[LinkName("QKeyEvent_SuperClone")]
+	public static extern void** QKeyEvent_SuperClone(void* self);
 	[LinkName("QKeyEvent_Key")]
 	public static extern c_int QKeyEvent_Key(void* self);
 	[LinkName("QKeyEvent_Matches")]
@@ -4507,12 +4987,18 @@ extension CQt
 	public function void QKeyEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QKeyEvent_OnSetAccepted")]
 	public static extern void QKeyEvent_OnSetAccepted(void* self, QKeyEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QKeyEvent_SuperSetAccepted")]
+	public static extern void QKeyEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QKeyEvent_SetTimestamp")]
 	public static extern void QKeyEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QKeyEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QKeyEvent_OnSetTimestamp")]
 	public static extern void QKeyEvent_OnSetTimestamp(void* self, QKeyEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QKeyEvent_SuperSetTimestamp")]
+	public static extern void QKeyEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 }
 // --------------------------------------------------------------
 // QFocusEvent
@@ -4593,6 +5079,18 @@ class QFocusEvent : IQFocusEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QFocusEvent_OnClone(obj.ObjectPtr,  => QtBeef_QFocusEvent_OnClone);
+		CQt.QFocusEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QFocusEvent_OnSetAccepted);
+	}
+	static void QtBeef_QFocusEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QFocusEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QFocusEvent_Ptr ptr)
 	{
@@ -4690,6 +5188,9 @@ extension CQt
 	public function void QFocusEvent_OnClone_action(void* self);
 	[LinkName("QFocusEvent_OnClone")]
 	public static extern void** QFocusEvent_OnClone(void* self, QFocusEvent_OnClone_action _action);
+	
+	[LinkName("QFocusEvent_SuperClone")]
+	public static extern void** QFocusEvent_SuperClone(void* self);
 	[LinkName("QFocusEvent_GotFocus")]
 	public static extern bool QFocusEvent_GotFocus(void* self);
 	[LinkName("QFocusEvent_LostFocus")]
@@ -4702,6 +5203,9 @@ extension CQt
 	public function void QFocusEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QFocusEvent_OnSetAccepted")]
 	public static extern void QFocusEvent_OnSetAccepted(void* self, QFocusEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QFocusEvent_SuperSetAccepted")]
+	public static extern void QFocusEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QPaintEvent
@@ -4778,6 +5282,18 @@ class QPaintEvent : IQPaintEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QPaintEvent_OnClone(obj.ObjectPtr,  => QtBeef_QPaintEvent_OnClone);
+		CQt.QPaintEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QPaintEvent_OnSetAccepted);
+	}
+	static void QtBeef_QPaintEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QPaintEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QPaintEvent_Ptr ptr)
 	{
@@ -4871,6 +5387,9 @@ extension CQt
 	public function void QPaintEvent_OnClone_action(void* self);
 	[LinkName("QPaintEvent_OnClone")]
 	public static extern void** QPaintEvent_OnClone(void* self, QPaintEvent_OnClone_action _action);
+	
+	[LinkName("QPaintEvent_SuperClone")]
+	public static extern void** QPaintEvent_SuperClone(void* self);
 	[LinkName("QPaintEvent_Rect")]
 	public static extern void** QPaintEvent_Rect(void* self);
 	[LinkName("QPaintEvent_Region")]
@@ -4881,6 +5400,9 @@ extension CQt
 	public function void QPaintEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QPaintEvent_OnSetAccepted")]
 	public static extern void QPaintEvent_OnSetAccepted(void* self, QPaintEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QPaintEvent_SuperSetAccepted")]
+	public static extern void QPaintEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QMoveEvent
@@ -4957,6 +5479,18 @@ class QMoveEvent : IQMoveEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QMoveEvent_OnClone(obj.ObjectPtr,  => QtBeef_QMoveEvent_OnClone);
+		CQt.QMoveEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QMoveEvent_OnSetAccepted);
+	}
+	static void QtBeef_QMoveEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QMoveEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QMoveEvent_Ptr ptr)
 	{
@@ -5043,6 +5577,9 @@ extension CQt
 	public function void QMoveEvent_OnClone_action(void* self);
 	[LinkName("QMoveEvent_OnClone")]
 	public static extern void** QMoveEvent_OnClone(void* self, QMoveEvent_OnClone_action _action);
+	
+	[LinkName("QMoveEvent_SuperClone")]
+	public static extern void** QMoveEvent_SuperClone(void* self);
 	[LinkName("QMoveEvent_Pos")]
 	public static extern void** QMoveEvent_Pos(void* self);
 	[LinkName("QMoveEvent_OldPos")]
@@ -5053,6 +5590,9 @@ extension CQt
 	public function void QMoveEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QMoveEvent_OnSetAccepted")]
 	public static extern void QMoveEvent_OnSetAccepted(void* self, QMoveEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QMoveEvent_SuperSetAccepted")]
+	public static extern void QMoveEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QExposeEvent
@@ -5125,6 +5665,18 @@ class QExposeEvent : IQExposeEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QExposeEvent_OnClone(obj.ObjectPtr,  => QtBeef_QExposeEvent_OnClone);
+		CQt.QExposeEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QExposeEvent_OnSetAccepted);
+	}
+	static void QtBeef_QExposeEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QExposeEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QExposeEvent_Ptr ptr)
 	{
@@ -5207,6 +5759,9 @@ extension CQt
 	public function void QExposeEvent_OnClone_action(void* self);
 	[LinkName("QExposeEvent_OnClone")]
 	public static extern void** QExposeEvent_OnClone(void* self, QExposeEvent_OnClone_action _action);
+	
+	[LinkName("QExposeEvent_SuperClone")]
+	public static extern void** QExposeEvent_SuperClone(void* self);
 	[LinkName("QExposeEvent_Region")]
 	public static extern void** QExposeEvent_Region(void* self);
 	[LinkName("QExposeEvent_SetAccepted")]
@@ -5215,6 +5770,9 @@ extension CQt
 	public function void QExposeEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QExposeEvent_OnSetAccepted")]
 	public static extern void QExposeEvent_OnSetAccepted(void* self, QExposeEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QExposeEvent_SuperSetAccepted")]
+	public static extern void QExposeEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QPlatformSurfaceEvent
@@ -5287,6 +5845,18 @@ class QPlatformSurfaceEvent : IQPlatformSurfaceEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QPlatformSurfaceEvent_OnClone(obj.ObjectPtr,  => QtBeef_QPlatformSurfaceEvent_OnClone);
+		CQt.QPlatformSurfaceEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QPlatformSurfaceEvent_OnSetAccepted);
+	}
+	static void QtBeef_QPlatformSurfaceEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QPlatformSurfaceEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QPlatformSurfaceEvent_Ptr ptr)
 	{
@@ -5369,6 +5939,9 @@ extension CQt
 	public function void QPlatformSurfaceEvent_OnClone_action(void* self);
 	[LinkName("QPlatformSurfaceEvent_OnClone")]
 	public static extern void** QPlatformSurfaceEvent_OnClone(void* self, QPlatformSurfaceEvent_OnClone_action _action);
+	
+	[LinkName("QPlatformSurfaceEvent_SuperClone")]
+	public static extern void** QPlatformSurfaceEvent_SuperClone(void* self);
 	[LinkName("QPlatformSurfaceEvent_SurfaceEventType")]
 	public static extern QPlatformSurfaceEvent_SurfaceEventType QPlatformSurfaceEvent_SurfaceEventType(void* self);
 	[LinkName("QPlatformSurfaceEvent_SetAccepted")]
@@ -5377,6 +5950,9 @@ extension CQt
 	public function void QPlatformSurfaceEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QPlatformSurfaceEvent_OnSetAccepted")]
 	public static extern void QPlatformSurfaceEvent_OnSetAccepted(void* self, QPlatformSurfaceEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QPlatformSurfaceEvent_SuperSetAccepted")]
+	public static extern void QPlatformSurfaceEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QResizeEvent
@@ -5453,6 +6029,18 @@ class QResizeEvent : IQResizeEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QResizeEvent_OnClone(obj.ObjectPtr,  => QtBeef_QResizeEvent_OnClone);
+		CQt.QResizeEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QResizeEvent_OnSetAccepted);
+	}
+	static void QtBeef_QResizeEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QResizeEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QResizeEvent_Ptr ptr)
 	{
@@ -5539,6 +6127,9 @@ extension CQt
 	public function void QResizeEvent_OnClone_action(void* self);
 	[LinkName("QResizeEvent_OnClone")]
 	public static extern void** QResizeEvent_OnClone(void* self, QResizeEvent_OnClone_action _action);
+	
+	[LinkName("QResizeEvent_SuperClone")]
+	public static extern void** QResizeEvent_SuperClone(void* self);
 	[LinkName("QResizeEvent_Size")]
 	public static extern void** QResizeEvent_Size(void* self);
 	[LinkName("QResizeEvent_OldSize")]
@@ -5549,6 +6140,9 @@ extension CQt
 	public function void QResizeEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QResizeEvent_OnSetAccepted")]
 	public static extern void QResizeEvent_OnSetAccepted(void* self, QResizeEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QResizeEvent_SuperSetAccepted")]
+	public static extern void QResizeEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QCloseEvent
@@ -5617,6 +6211,18 @@ class QCloseEvent : IQCloseEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QCloseEvent_OnClone(obj.ObjectPtr,  => QtBeef_QCloseEvent_OnClone);
+		CQt.QCloseEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QCloseEvent_OnSetAccepted);
+	}
+	static void QtBeef_QCloseEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QCloseEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QCloseEvent_Ptr ptr)
 	{
@@ -5695,12 +6301,18 @@ extension CQt
 	public function void QCloseEvent_OnClone_action(void* self);
 	[LinkName("QCloseEvent_OnClone")]
 	public static extern void** QCloseEvent_OnClone(void* self, QCloseEvent_OnClone_action _action);
+	
+	[LinkName("QCloseEvent_SuperClone")]
+	public static extern void** QCloseEvent_SuperClone(void* self);
 	[LinkName("QCloseEvent_SetAccepted")]
 	public static extern void QCloseEvent_SetAccepted(void* self, bool accepted);
 	
 	public function void QCloseEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QCloseEvent_OnSetAccepted")]
 	public static extern void QCloseEvent_OnSetAccepted(void* self, QCloseEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QCloseEvent_SuperSetAccepted")]
+	public static extern void QCloseEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QIconDragEvent
@@ -5769,6 +6381,18 @@ class QIconDragEvent : IQIconDragEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QIconDragEvent_OnClone(obj.ObjectPtr,  => QtBeef_QIconDragEvent_OnClone);
+		CQt.QIconDragEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QIconDragEvent_OnSetAccepted);
+	}
+	static void QtBeef_QIconDragEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QIconDragEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QIconDragEvent_Ptr ptr)
 	{
@@ -5847,12 +6471,18 @@ extension CQt
 	public function void QIconDragEvent_OnClone_action(void* self);
 	[LinkName("QIconDragEvent_OnClone")]
 	public static extern void** QIconDragEvent_OnClone(void* self, QIconDragEvent_OnClone_action _action);
+	
+	[LinkName("QIconDragEvent_SuperClone")]
+	public static extern void** QIconDragEvent_SuperClone(void* self);
 	[LinkName("QIconDragEvent_SetAccepted")]
 	public static extern void QIconDragEvent_SetAccepted(void* self, bool accepted);
 	
 	public function void QIconDragEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QIconDragEvent_OnSetAccepted")]
 	public static extern void QIconDragEvent_OnSetAccepted(void* self, QIconDragEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QIconDragEvent_SuperSetAccepted")]
+	public static extern void QIconDragEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QShowEvent
@@ -5921,6 +6551,18 @@ class QShowEvent : IQShowEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QShowEvent_OnClone(obj.ObjectPtr,  => QtBeef_QShowEvent_OnClone);
+		CQt.QShowEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QShowEvent_OnSetAccepted);
+	}
+	static void QtBeef_QShowEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QShowEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QShowEvent_Ptr ptr)
 	{
@@ -5999,12 +6641,18 @@ extension CQt
 	public function void QShowEvent_OnClone_action(void* self);
 	[LinkName("QShowEvent_OnClone")]
 	public static extern void** QShowEvent_OnClone(void* self, QShowEvent_OnClone_action _action);
+	
+	[LinkName("QShowEvent_SuperClone")]
+	public static extern void** QShowEvent_SuperClone(void* self);
 	[LinkName("QShowEvent_SetAccepted")]
 	public static extern void QShowEvent_SetAccepted(void* self, bool accepted);
 	
 	public function void QShowEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QShowEvent_OnSetAccepted")]
 	public static extern void QShowEvent_OnSetAccepted(void* self, QShowEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QShowEvent_SuperSetAccepted")]
+	public static extern void QShowEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QHideEvent
@@ -6073,6 +6721,18 @@ class QHideEvent : IQHideEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QHideEvent_OnClone(obj.ObjectPtr,  => QtBeef_QHideEvent_OnClone);
+		CQt.QHideEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QHideEvent_OnSetAccepted);
+	}
+	static void QtBeef_QHideEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QHideEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QHideEvent_Ptr ptr)
 	{
@@ -6151,12 +6811,18 @@ extension CQt
 	public function void QHideEvent_OnClone_action(void* self);
 	[LinkName("QHideEvent_OnClone")]
 	public static extern void** QHideEvent_OnClone(void* self, QHideEvent_OnClone_action _action);
+	
+	[LinkName("QHideEvent_SuperClone")]
+	public static extern void** QHideEvent_SuperClone(void* self);
 	[LinkName("QHideEvent_SetAccepted")]
 	public static extern void QHideEvent_SetAccepted(void* self, bool accepted);
 	
 	public function void QHideEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QHideEvent_OnSetAccepted")]
 	public static extern void QHideEvent_OnSetAccepted(void* self, QHideEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QHideEvent_SuperSetAccepted")]
+	public static extern void QHideEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QContextMenuEvent
@@ -6277,6 +6943,24 @@ class QContextMenuEvent : IQContextMenuEvent, IQInputEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QContextMenuEvent_OnClone(obj.ObjectPtr,  => QtBeef_QContextMenuEvent_OnClone);
+		CQt.QContextMenuEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QContextMenuEvent_OnSetAccepted);
+		CQt.QContextMenuEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QContextMenuEvent_OnSetTimestamp);
+	}
+	static void QtBeef_QContextMenuEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QContextMenuEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QContextMenuEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
 	}
 	public this(QContextMenuEvent_Ptr ptr)
 	{
@@ -6420,6 +7104,9 @@ extension CQt
 	public function void QContextMenuEvent_OnClone_action(void* self);
 	[LinkName("QContextMenuEvent_OnClone")]
 	public static extern void** QContextMenuEvent_OnClone(void* self, QContextMenuEvent_OnClone_action _action);
+	
+	[LinkName("QContextMenuEvent_SuperClone")]
+	public static extern void** QContextMenuEvent_SuperClone(void* self);
 	[LinkName("QContextMenuEvent_X")]
 	public static extern c_int QContextMenuEvent_X(void* self);
 	[LinkName("QContextMenuEvent_Y")]
@@ -6440,12 +7127,18 @@ extension CQt
 	public function void QContextMenuEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QContextMenuEvent_OnSetAccepted")]
 	public static extern void QContextMenuEvent_OnSetAccepted(void* self, QContextMenuEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QContextMenuEvent_SuperSetAccepted")]
+	public static extern void QContextMenuEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QContextMenuEvent_SetTimestamp")]
 	public static extern void QContextMenuEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QContextMenuEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QContextMenuEvent_OnSetTimestamp")]
 	public static extern void QContextMenuEvent_OnSetTimestamp(void* self, QContextMenuEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QContextMenuEvent_SuperSetTimestamp")]
+	public static extern void QContextMenuEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 }
 // --------------------------------------------------------------
 // QInputMethodEvent
@@ -6546,6 +7239,18 @@ class QInputMethodEvent : IQInputMethodEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QInputMethodEvent_OnClone(obj.ObjectPtr,  => QtBeef_QInputMethodEvent_OnClone);
+		CQt.QInputMethodEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QInputMethodEvent_OnSetAccepted);
+	}
+	static void QtBeef_QInputMethodEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QInputMethodEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QInputMethodEvent_Ptr ptr)
 	{
@@ -6663,6 +7368,9 @@ extension CQt
 	public function void QInputMethodEvent_OnClone_action(void* self);
 	[LinkName("QInputMethodEvent_OnClone")]
 	public static extern void** QInputMethodEvent_OnClone(void* self, QInputMethodEvent_OnClone_action _action);
+	
+	[LinkName("QInputMethodEvent_SuperClone")]
+	public static extern void** QInputMethodEvent_SuperClone(void* self);
 	[LinkName("QInputMethodEvent_SetCommitString")]
 	public static extern void QInputMethodEvent_SetCommitString(void* self, libqt_string commitString);
 	[LinkName("QInputMethodEvent_Attributes")]
@@ -6685,6 +7393,9 @@ extension CQt
 	public function void QInputMethodEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QInputMethodEvent_OnSetAccepted")]
 	public static extern void QInputMethodEvent_OnSetAccepted(void* self, QInputMethodEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QInputMethodEvent_SuperSetAccepted")]
+	public static extern void QInputMethodEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QInputMethodQueryEvent
@@ -6765,6 +7476,18 @@ class QInputMethodQueryEvent : IQInputMethodQueryEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QInputMethodQueryEvent_OnClone(obj.ObjectPtr,  => QtBeef_QInputMethodQueryEvent_OnClone);
+		CQt.QInputMethodQueryEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QInputMethodQueryEvent_OnSetAccepted);
+	}
+	static void QtBeef_QInputMethodQueryEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QInputMethodQueryEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QInputMethodQueryEvent_Ptr ptr)
 	{
@@ -6855,6 +7578,9 @@ extension CQt
 	public function void QInputMethodQueryEvent_OnClone_action(void* self);
 	[LinkName("QInputMethodQueryEvent_OnClone")]
 	public static extern void** QInputMethodQueryEvent_OnClone(void* self, QInputMethodQueryEvent_OnClone_action _action);
+	
+	[LinkName("QInputMethodQueryEvent_SuperClone")]
+	public static extern void** QInputMethodQueryEvent_SuperClone(void* self);
 	[LinkName("QInputMethodQueryEvent_Queries")]
 	public static extern void* QInputMethodQueryEvent_Queries(void* self);
 	[LinkName("QInputMethodQueryEvent_SetValue")]
@@ -6867,6 +7593,9 @@ extension CQt
 	public function void QInputMethodQueryEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QInputMethodQueryEvent_OnSetAccepted")]
 	public static extern void QInputMethodQueryEvent_OnSetAccepted(void* self, QInputMethodQueryEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QInputMethodQueryEvent_SuperSetAccepted")]
+	public static extern void QInputMethodQueryEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QDropEvent
@@ -6991,6 +7720,18 @@ class QDropEvent : IQDropEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDropEvent_OnClone(obj.ObjectPtr,  => QtBeef_QDropEvent_OnClone);
+		CQt.QDropEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QDropEvent_OnSetAccepted);
+	}
+	static void QtBeef_QDropEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QDropEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QDropEvent_Ptr ptr)
 	{
@@ -7132,6 +7873,9 @@ extension CQt
 	public function void QDropEvent_OnClone_action(void* self);
 	[LinkName("QDropEvent_OnClone")]
 	public static extern void** QDropEvent_OnClone(void* self, QDropEvent_OnClone_action _action);
+	
+	[LinkName("QDropEvent_SuperClone")]
+	public static extern void** QDropEvent_SuperClone(void* self);
 	[LinkName("QDropEvent_Pos")]
 	public static extern void* QDropEvent_Pos(void* self);
 	[LinkName("QDropEvent_PosF")]
@@ -7166,6 +7910,9 @@ extension CQt
 	public function void QDropEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QDropEvent_OnSetAccepted")]
 	public static extern void QDropEvent_OnSetAccepted(void* self, QDropEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QDropEvent_SuperSetAccepted")]
+	public static extern void QDropEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QDragMoveEvent
@@ -7302,6 +8049,18 @@ class QDragMoveEvent : IQDragMoveEvent, IQDropEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDragMoveEvent_OnClone(obj.ObjectPtr,  => QtBeef_QDragMoveEvent_OnClone);
+		CQt.QDragMoveEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QDragMoveEvent_OnSetAccepted);
+	}
+	static void QtBeef_QDragMoveEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QDragMoveEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QDragMoveEvent_Ptr ptr)
 	{
@@ -7455,6 +8214,9 @@ extension CQt
 	public function void QDragMoveEvent_OnClone_action(void* self);
 	[LinkName("QDragMoveEvent_OnClone")]
 	public static extern void** QDragMoveEvent_OnClone(void* self, QDragMoveEvent_OnClone_action _action);
+	
+	[LinkName("QDragMoveEvent_SuperClone")]
+	public static extern void** QDragMoveEvent_SuperClone(void* self);
 	[LinkName("QDragMoveEvent_AnswerRect")]
 	public static extern void* QDragMoveEvent_AnswerRect(void* self);
 	[LinkName("QDragMoveEvent_Accept")]
@@ -7471,6 +8233,9 @@ extension CQt
 	public function void QDragMoveEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QDragMoveEvent_OnSetAccepted")]
 	public static extern void QDragMoveEvent_OnSetAccepted(void* self, QDragMoveEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QDragMoveEvent_SuperSetAccepted")]
+	public static extern void QDragMoveEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QDragEnterEvent
@@ -7607,6 +8372,18 @@ class QDragEnterEvent : IQDragEnterEvent, IQDragMoveEvent, IQDropEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDragEnterEvent_OnClone(obj.ObjectPtr,  => QtBeef_QDragEnterEvent_OnClone);
+		CQt.QDragEnterEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QDragEnterEvent_OnSetAccepted);
+	}
+	static void QtBeef_QDragEnterEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QDragEnterEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QDragEnterEvent_Ptr ptr)
 	{
@@ -7753,12 +8530,18 @@ extension CQt
 	public function void QDragEnterEvent_OnClone_action(void* self);
 	[LinkName("QDragEnterEvent_OnClone")]
 	public static extern void** QDragEnterEvent_OnClone(void* self, QDragEnterEvent_OnClone_action _action);
+	
+	[LinkName("QDragEnterEvent_SuperClone")]
+	public static extern void** QDragEnterEvent_SuperClone(void* self);
 	[LinkName("QDragEnterEvent_SetAccepted")]
 	public static extern void QDragEnterEvent_SetAccepted(void* self, bool accepted);
 	
 	public function void QDragEnterEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QDragEnterEvent_OnSetAccepted")]
 	public static extern void QDragEnterEvent_OnSetAccepted(void* self, QDragEnterEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QDragEnterEvent_SuperSetAccepted")]
+	public static extern void QDragEnterEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QDragLeaveEvent
@@ -7827,6 +8610,18 @@ class QDragLeaveEvent : IQDragLeaveEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDragLeaveEvent_OnClone(obj.ObjectPtr,  => QtBeef_QDragLeaveEvent_OnClone);
+		CQt.QDragLeaveEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QDragLeaveEvent_OnSetAccepted);
+	}
+	static void QtBeef_QDragLeaveEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QDragLeaveEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QDragLeaveEvent_Ptr ptr)
 	{
@@ -7905,12 +8700,18 @@ extension CQt
 	public function void QDragLeaveEvent_OnClone_action(void* self);
 	[LinkName("QDragLeaveEvent_OnClone")]
 	public static extern void** QDragLeaveEvent_OnClone(void* self, QDragLeaveEvent_OnClone_action _action);
+	
+	[LinkName("QDragLeaveEvent_SuperClone")]
+	public static extern void** QDragLeaveEvent_SuperClone(void* self);
 	[LinkName("QDragLeaveEvent_SetAccepted")]
 	public static extern void QDragLeaveEvent_SetAccepted(void* self, bool accepted);
 	
 	public function void QDragLeaveEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QDragLeaveEvent_OnSetAccepted")]
 	public static extern void QDragLeaveEvent_OnSetAccepted(void* self, QDragLeaveEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QDragLeaveEvent_SuperSetAccepted")]
+	public static extern void QDragLeaveEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QHelpEvent
@@ -8003,6 +8804,18 @@ class QHelpEvent : IQHelpEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QHelpEvent_OnClone(obj.ObjectPtr,  => QtBeef_QHelpEvent_OnClone);
+		CQt.QHelpEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QHelpEvent_OnSetAccepted);
+	}
+	static void QtBeef_QHelpEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QHelpEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QHelpEvent_Ptr ptr)
 	{
@@ -8105,6 +8918,9 @@ extension CQt
 	public function void QHelpEvent_OnClone_action(void* self);
 	[LinkName("QHelpEvent_OnClone")]
 	public static extern void** QHelpEvent_OnClone(void* self, QHelpEvent_OnClone_action _action);
+	
+	[LinkName("QHelpEvent_SuperClone")]
+	public static extern void** QHelpEvent_SuperClone(void* self);
 	[LinkName("QHelpEvent_X")]
 	public static extern c_int QHelpEvent_X(void* self);
 	[LinkName("QHelpEvent_Y")]
@@ -8123,6 +8939,9 @@ extension CQt
 	public function void QHelpEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QHelpEvent_OnSetAccepted")]
 	public static extern void QHelpEvent_OnSetAccepted(void* self, QHelpEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QHelpEvent_SuperSetAccepted")]
+	public static extern void QHelpEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QStatusTipEvent
@@ -8195,6 +9014,18 @@ class QStatusTipEvent : IQStatusTipEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QStatusTipEvent_OnClone(obj.ObjectPtr,  => QtBeef_QStatusTipEvent_OnClone);
+		CQt.QStatusTipEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QStatusTipEvent_OnSetAccepted);
+	}
+	static void QtBeef_QStatusTipEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QStatusTipEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QStatusTipEvent_Ptr ptr)
 	{
@@ -8277,6 +9108,9 @@ extension CQt
 	public function void QStatusTipEvent_OnClone_action(void* self);
 	[LinkName("QStatusTipEvent_OnClone")]
 	public static extern void** QStatusTipEvent_OnClone(void* self, QStatusTipEvent_OnClone_action _action);
+	
+	[LinkName("QStatusTipEvent_SuperClone")]
+	public static extern void** QStatusTipEvent_SuperClone(void* self);
 	[LinkName("QStatusTipEvent_Tip")]
 	public static extern libqt_string QStatusTipEvent_Tip(void* self);
 	[LinkName("QStatusTipEvent_SetAccepted")]
@@ -8285,6 +9119,9 @@ extension CQt
 	public function void QStatusTipEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QStatusTipEvent_OnSetAccepted")]
 	public static extern void QStatusTipEvent_OnSetAccepted(void* self, QStatusTipEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QStatusTipEvent_SuperSetAccepted")]
+	public static extern void QStatusTipEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QWhatsThisClickedEvent
@@ -8357,6 +9194,18 @@ class QWhatsThisClickedEvent : IQWhatsThisClickedEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QWhatsThisClickedEvent_OnClone(obj.ObjectPtr,  => QtBeef_QWhatsThisClickedEvent_OnClone);
+		CQt.QWhatsThisClickedEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QWhatsThisClickedEvent_OnSetAccepted);
+	}
+	static void QtBeef_QWhatsThisClickedEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QWhatsThisClickedEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QWhatsThisClickedEvent_Ptr ptr)
 	{
@@ -8439,6 +9288,9 @@ extension CQt
 	public function void QWhatsThisClickedEvent_OnClone_action(void* self);
 	[LinkName("QWhatsThisClickedEvent_OnClone")]
 	public static extern void** QWhatsThisClickedEvent_OnClone(void* self, QWhatsThisClickedEvent_OnClone_action _action);
+	
+	[LinkName("QWhatsThisClickedEvent_SuperClone")]
+	public static extern void** QWhatsThisClickedEvent_SuperClone(void* self);
 	[LinkName("QWhatsThisClickedEvent_Href")]
 	public static extern libqt_string QWhatsThisClickedEvent_Href(void* self);
 	[LinkName("QWhatsThisClickedEvent_SetAccepted")]
@@ -8447,6 +9299,9 @@ extension CQt
 	public function void QWhatsThisClickedEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QWhatsThisClickedEvent_OnSetAccepted")]
 	public static extern void QWhatsThisClickedEvent_OnSetAccepted(void* self, QWhatsThisClickedEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QWhatsThisClickedEvent_SuperSetAccepted")]
+	public static extern void QWhatsThisClickedEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QActionEvent
@@ -8523,6 +9378,18 @@ class QActionEvent : IQActionEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QActionEvent_OnClone(obj.ObjectPtr,  => QtBeef_QActionEvent_OnClone);
+		CQt.QActionEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QActionEvent_OnSetAccepted);
+	}
+	static void QtBeef_QActionEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QActionEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QActionEvent_Ptr ptr)
 	{
@@ -8616,6 +9483,9 @@ extension CQt
 	public function void QActionEvent_OnClone_action(void* self);
 	[LinkName("QActionEvent_OnClone")]
 	public static extern void** QActionEvent_OnClone(void* self, QActionEvent_OnClone_action _action);
+	
+	[LinkName("QActionEvent_SuperClone")]
+	public static extern void** QActionEvent_SuperClone(void* self);
 	[LinkName("QActionEvent_Action")]
 	public static extern void** QActionEvent_Action(void* self);
 	[LinkName("QActionEvent_Before")]
@@ -8626,6 +9496,9 @@ extension CQt
 	public function void QActionEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QActionEvent_OnSetAccepted")]
 	public static extern void QActionEvent_OnSetAccepted(void* self, QActionEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QActionEvent_SuperSetAccepted")]
+	public static extern void QActionEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QFileOpenEvent
@@ -8706,6 +9579,18 @@ class QFileOpenEvent : IQFileOpenEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QFileOpenEvent_OnClone(obj.ObjectPtr,  => QtBeef_QFileOpenEvent_OnClone);
+		CQt.QFileOpenEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QFileOpenEvent_OnSetAccepted);
+	}
+	static void QtBeef_QFileOpenEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QFileOpenEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QFileOpenEvent_Ptr ptr)
 	{
@@ -8803,6 +9688,9 @@ extension CQt
 	public function void QFileOpenEvent_OnClone_action(void* self);
 	[LinkName("QFileOpenEvent_OnClone")]
 	public static extern void** QFileOpenEvent_OnClone(void* self, QFileOpenEvent_OnClone_action _action);
+	
+	[LinkName("QFileOpenEvent_SuperClone")]
+	public static extern void** QFileOpenEvent_SuperClone(void* self);
 	[LinkName("QFileOpenEvent_File")]
 	public static extern libqt_string QFileOpenEvent_File(void* self);
 	[LinkName("QFileOpenEvent_Url")]
@@ -8815,6 +9703,9 @@ extension CQt
 	public function void QFileOpenEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QFileOpenEvent_OnSetAccepted")]
 	public static extern void QFileOpenEvent_OnSetAccepted(void* self, QFileOpenEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QFileOpenEvent_SuperSetAccepted")]
+	public static extern void QFileOpenEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QToolBarChangeEvent
@@ -8887,6 +9778,18 @@ class QToolBarChangeEvent : IQToolBarChangeEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QToolBarChangeEvent_OnClone(obj.ObjectPtr,  => QtBeef_QToolBarChangeEvent_OnClone);
+		CQt.QToolBarChangeEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QToolBarChangeEvent_OnSetAccepted);
+	}
+	static void QtBeef_QToolBarChangeEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QToolBarChangeEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QToolBarChangeEvent_Ptr ptr)
 	{
@@ -8969,6 +9872,9 @@ extension CQt
 	public function void QToolBarChangeEvent_OnClone_action(void* self);
 	[LinkName("QToolBarChangeEvent_OnClone")]
 	public static extern void** QToolBarChangeEvent_OnClone(void* self, QToolBarChangeEvent_OnClone_action _action);
+	
+	[LinkName("QToolBarChangeEvent_SuperClone")]
+	public static extern void** QToolBarChangeEvent_SuperClone(void* self);
 	[LinkName("QToolBarChangeEvent_Toggle")]
 	public static extern bool QToolBarChangeEvent_Toggle(void* self);
 	[LinkName("QToolBarChangeEvent_SetAccepted")]
@@ -8977,6 +9883,9 @@ extension CQt
 	public function void QToolBarChangeEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QToolBarChangeEvent_OnSetAccepted")]
 	public static extern void QToolBarChangeEvent_OnSetAccepted(void* self, QToolBarChangeEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QToolBarChangeEvent_SuperSetAccepted")]
+	public static extern void QToolBarChangeEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QShortcutEvent
@@ -9057,6 +9966,18 @@ class QShortcutEvent : IQShortcutEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QShortcutEvent_OnClone(obj.ObjectPtr,  => QtBeef_QShortcutEvent_OnClone);
+		CQt.QShortcutEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QShortcutEvent_OnSetAccepted);
+	}
+	static void QtBeef_QShortcutEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QShortcutEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QShortcutEvent_Ptr ptr)
 	{
@@ -9154,6 +10075,9 @@ extension CQt
 	public function void QShortcutEvent_OnClone_action(void* self);
 	[LinkName("QShortcutEvent_OnClone")]
 	public static extern void** QShortcutEvent_OnClone(void* self, QShortcutEvent_OnClone_action _action);
+	
+	[LinkName("QShortcutEvent_SuperClone")]
+	public static extern void** QShortcutEvent_SuperClone(void* self);
 	[LinkName("QShortcutEvent_Key")]
 	public static extern void** QShortcutEvent_Key(void* self);
 	[LinkName("QShortcutEvent_ShortcutId")]
@@ -9166,6 +10090,9 @@ extension CQt
 	public function void QShortcutEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QShortcutEvent_OnSetAccepted")]
 	public static extern void QShortcutEvent_OnSetAccepted(void* self, QShortcutEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QShortcutEvent_SuperSetAccepted")]
+	public static extern void QShortcutEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QWindowStateChangeEvent
@@ -9242,6 +10169,18 @@ class QWindowStateChangeEvent : IQWindowStateChangeEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QWindowStateChangeEvent_OnClone(obj.ObjectPtr,  => QtBeef_QWindowStateChangeEvent_OnClone);
+		CQt.QWindowStateChangeEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QWindowStateChangeEvent_OnSetAccepted);
+	}
+	static void QtBeef_QWindowStateChangeEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QWindowStateChangeEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QWindowStateChangeEvent_Ptr ptr)
 	{
@@ -9335,6 +10274,9 @@ extension CQt
 	public function void QWindowStateChangeEvent_OnClone_action(void* self);
 	[LinkName("QWindowStateChangeEvent_OnClone")]
 	public static extern void** QWindowStateChangeEvent_OnClone(void* self, QWindowStateChangeEvent_OnClone_action _action);
+	
+	[LinkName("QWindowStateChangeEvent_SuperClone")]
+	public static extern void** QWindowStateChangeEvent_SuperClone(void* self);
 	[LinkName("QWindowStateChangeEvent_OldState")]
 	public static extern void* QWindowStateChangeEvent_OldState(void* self);
 	[LinkName("QWindowStateChangeEvent_IsOverride")]
@@ -9345,6 +10287,9 @@ extension CQt
 	public function void QWindowStateChangeEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QWindowStateChangeEvent_OnSetAccepted")]
 	public static extern void QWindowStateChangeEvent_OnSetAccepted(void* self, QWindowStateChangeEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QWindowStateChangeEvent_SuperSetAccepted")]
+	public static extern void QWindowStateChangeEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QTouchEvent
@@ -9513,6 +10458,42 @@ class QTouchEvent : IQTouchEvent, IQPointerEvent, IQInputEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTouchEvent_OnClone(obj.ObjectPtr,  => QtBeef_QTouchEvent_OnClone);
+		CQt.QTouchEvent_OnIsBeginEvent(obj.ObjectPtr,  => QtBeef_QTouchEvent_OnIsBeginEvent);
+		CQt.QTouchEvent_OnIsUpdateEvent(obj.ObjectPtr,  => QtBeef_QTouchEvent_OnIsUpdateEvent);
+		CQt.QTouchEvent_OnIsEndEvent(obj.ObjectPtr,  => QtBeef_QTouchEvent_OnIsEndEvent);
+		CQt.QTouchEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QTouchEvent_OnSetAccepted);
+		CQt.QTouchEvent_OnSetTimestamp(obj.ObjectPtr,  => QtBeef_QTouchEvent_OnSetTimestamp);
+	}
+	static void QtBeef_QTouchEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QTouchEvent_OnIsBeginEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsBeginEvent();
+	}
+	static void QtBeef_QTouchEvent_OnIsUpdateEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsUpdateEvent();
+	}
+	static void QtBeef_QTouchEvent_OnIsEndEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEndEvent();
+	}
+	static void QtBeef_QTouchEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QTouchEvent_OnSetTimestamp(void* ptr, c_ulonglong timestamp)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetTimestamp(timestamp);
 	}
 	public this(QTouchEvent_Ptr ptr)
 	{
@@ -9725,6 +10706,9 @@ extension CQt
 	public function void QTouchEvent_OnClone_action(void* self);
 	[LinkName("QTouchEvent_OnClone")]
 	public static extern void** QTouchEvent_OnClone(void* self, QTouchEvent_OnClone_action _action);
+	
+	[LinkName("QTouchEvent_SuperClone")]
+	public static extern void** QTouchEvent_SuperClone(void* self);
 	[LinkName("QTouchEvent_Target")]
 	public static extern void** QTouchEvent_Target(void* self);
 	[LinkName("QTouchEvent_TouchPointStates")]
@@ -9737,30 +10721,45 @@ extension CQt
 	public function void QTouchEvent_OnIsBeginEvent_action(void* self);
 	[LinkName("QTouchEvent_OnIsBeginEvent")]
 	public static extern bool QTouchEvent_OnIsBeginEvent(void* self, QTouchEvent_OnIsBeginEvent_action _action);
+	
+	[LinkName("QTouchEvent_SuperIsBeginEvent")]
+	public static extern bool QTouchEvent_SuperIsBeginEvent(void* self);
 	[LinkName("QTouchEvent_IsUpdateEvent")]
 	public static extern bool QTouchEvent_IsUpdateEvent(void* self);
 	
 	public function void QTouchEvent_OnIsUpdateEvent_action(void* self);
 	[LinkName("QTouchEvent_OnIsUpdateEvent")]
 	public static extern bool QTouchEvent_OnIsUpdateEvent(void* self, QTouchEvent_OnIsUpdateEvent_action _action);
+	
+	[LinkName("QTouchEvent_SuperIsUpdateEvent")]
+	public static extern bool QTouchEvent_SuperIsUpdateEvent(void* self);
 	[LinkName("QTouchEvent_IsEndEvent")]
 	public static extern bool QTouchEvent_IsEndEvent(void* self);
 	
 	public function void QTouchEvent_OnIsEndEvent_action(void* self);
 	[LinkName("QTouchEvent_OnIsEndEvent")]
 	public static extern bool QTouchEvent_OnIsEndEvent(void* self, QTouchEvent_OnIsEndEvent_action _action);
+	
+	[LinkName("QTouchEvent_SuperIsEndEvent")]
+	public static extern bool QTouchEvent_SuperIsEndEvent(void* self);
 	[LinkName("QTouchEvent_SetAccepted")]
 	public static extern void QTouchEvent_SetAccepted(void* self, bool accepted);
 	
 	public function void QTouchEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QTouchEvent_OnSetAccepted")]
 	public static extern void QTouchEvent_OnSetAccepted(void* self, QTouchEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QTouchEvent_SuperSetAccepted")]
+	public static extern void QTouchEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QTouchEvent_SetTimestamp")]
 	public static extern void QTouchEvent_SetTimestamp(void* self, c_ulonglong timestamp);
 	
 	public function void QTouchEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
 	[LinkName("QTouchEvent_OnSetTimestamp")]
 	public static extern void QTouchEvent_OnSetTimestamp(void* self, QTouchEvent_OnSetTimestamp_action _action);
+	
+	[LinkName("QTouchEvent_SuperSetTimestamp")]
+	public static extern void QTouchEvent_SuperSetTimestamp(void* self, c_ulonglong timestamp);
 }
 // --------------------------------------------------------------
 // QScrollPrepareEvent
@@ -9857,6 +10856,18 @@ class QScrollPrepareEvent : IQScrollPrepareEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QScrollPrepareEvent_OnClone(obj.ObjectPtr,  => QtBeef_QScrollPrepareEvent_OnClone);
+		CQt.QScrollPrepareEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QScrollPrepareEvent_OnSetAccepted);
+	}
+	static void QtBeef_QScrollPrepareEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QScrollPrepareEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QScrollPrepareEvent_Ptr ptr)
 	{
@@ -9963,6 +10974,9 @@ extension CQt
 	public function void QScrollPrepareEvent_OnClone_action(void* self);
 	[LinkName("QScrollPrepareEvent_OnClone")]
 	public static extern void** QScrollPrepareEvent_OnClone(void* self, QScrollPrepareEvent_OnClone_action _action);
+	
+	[LinkName("QScrollPrepareEvent_SuperClone")]
+	public static extern void** QScrollPrepareEvent_SuperClone(void* self);
 	[LinkName("QScrollPrepareEvent_StartPos")]
 	public static extern void* QScrollPrepareEvent_StartPos(void* self);
 	[LinkName("QScrollPrepareEvent_ViewportSize")]
@@ -9983,6 +10997,9 @@ extension CQt
 	public function void QScrollPrepareEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QScrollPrepareEvent_OnSetAccepted")]
 	public static extern void QScrollPrepareEvent_OnSetAccepted(void* self, QScrollPrepareEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QScrollPrepareEvent_SuperSetAccepted")]
+	public static extern void QScrollPrepareEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QScrollEvent
@@ -10063,6 +11080,18 @@ class QScrollEvent : IQScrollEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QScrollEvent_OnClone(obj.ObjectPtr,  => QtBeef_QScrollEvent_OnClone);
+		CQt.QScrollEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QScrollEvent_OnSetAccepted);
+	}
+	static void QtBeef_QScrollEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QScrollEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QScrollEvent_Ptr ptr)
 	{
@@ -10153,6 +11182,9 @@ extension CQt
 	public function void QScrollEvent_OnClone_action(void* self);
 	[LinkName("QScrollEvent_OnClone")]
 	public static extern void** QScrollEvent_OnClone(void* self, QScrollEvent_OnClone_action _action);
+	
+	[LinkName("QScrollEvent_SuperClone")]
+	public static extern void** QScrollEvent_SuperClone(void* self);
 	[LinkName("QScrollEvent_ContentPos")]
 	public static extern void* QScrollEvent_ContentPos(void* self);
 	[LinkName("QScrollEvent_OvershootDistance")]
@@ -10165,6 +11197,9 @@ extension CQt
 	public function void QScrollEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QScrollEvent_OnSetAccepted")]
 	public static extern void QScrollEvent_OnSetAccepted(void* self, QScrollEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QScrollEvent_SuperSetAccepted")]
+	public static extern void QScrollEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QScreenOrientationChangeEvent
@@ -10241,6 +11276,18 @@ class QScreenOrientationChangeEvent : IQScreenOrientationChangeEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QScreenOrientationChangeEvent_OnClone(obj.ObjectPtr,  => QtBeef_QScreenOrientationChangeEvent_OnClone);
+		CQt.QScreenOrientationChangeEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QScreenOrientationChangeEvent_OnSetAccepted);
+	}
+	static void QtBeef_QScreenOrientationChangeEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QScreenOrientationChangeEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QScreenOrientationChangeEvent_Ptr ptr)
 	{
@@ -10327,6 +11374,9 @@ extension CQt
 	public function void QScreenOrientationChangeEvent_OnClone_action(void* self);
 	[LinkName("QScreenOrientationChangeEvent_OnClone")]
 	public static extern void** QScreenOrientationChangeEvent_OnClone(void* self, QScreenOrientationChangeEvent_OnClone_action _action);
+	
+	[LinkName("QScreenOrientationChangeEvent_SuperClone")]
+	public static extern void** QScreenOrientationChangeEvent_SuperClone(void* self);
 	[LinkName("QScreenOrientationChangeEvent_Screen")]
 	public static extern void** QScreenOrientationChangeEvent_Screen(void* self);
 	[LinkName("QScreenOrientationChangeEvent_Orientation")]
@@ -10337,6 +11387,9 @@ extension CQt
 	public function void QScreenOrientationChangeEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QScreenOrientationChangeEvent_OnSetAccepted")]
 	public static extern void QScreenOrientationChangeEvent_OnSetAccepted(void* self, QScreenOrientationChangeEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QScreenOrientationChangeEvent_SuperSetAccepted")]
+	public static extern void QScreenOrientationChangeEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QApplicationStateChangeEvent
@@ -10409,6 +11462,18 @@ class QApplicationStateChangeEvent : IQApplicationStateChangeEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QApplicationStateChangeEvent_OnClone(obj.ObjectPtr,  => QtBeef_QApplicationStateChangeEvent_OnClone);
+		CQt.QApplicationStateChangeEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QApplicationStateChangeEvent_OnSetAccepted);
+	}
+	static void QtBeef_QApplicationStateChangeEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QApplicationStateChangeEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
 	}
 	public this(QApplicationStateChangeEvent_Ptr ptr)
 	{
@@ -10491,6 +11556,9 @@ extension CQt
 	public function void QApplicationStateChangeEvent_OnClone_action(void* self);
 	[LinkName("QApplicationStateChangeEvent_OnClone")]
 	public static extern void** QApplicationStateChangeEvent_OnClone(void* self, QApplicationStateChangeEvent_OnClone_action _action);
+	
+	[LinkName("QApplicationStateChangeEvent_SuperClone")]
+	public static extern void** QApplicationStateChangeEvent_SuperClone(void* self);
 	[LinkName("QApplicationStateChangeEvent_ApplicationState")]
 	public static extern Qt_ApplicationState QApplicationStateChangeEvent_ApplicationState(void* self);
 	[LinkName("QApplicationStateChangeEvent_SetAccepted")]
@@ -10499,6 +11567,9 @@ extension CQt
 	public function void QApplicationStateChangeEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QApplicationStateChangeEvent_OnSetAccepted")]
 	public static extern void QApplicationStateChangeEvent_OnSetAccepted(void* self, QApplicationStateChangeEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QApplicationStateChangeEvent_SuperSetAccepted")]
+	public static extern void QApplicationStateChangeEvent_SuperSetAccepted(void* self, bool accepted);
 }
 // --------------------------------------------------------------
 // QInputMethodEvent::Attribute

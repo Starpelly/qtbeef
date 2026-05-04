@@ -1733,6 +1733,59 @@ class QAbstractButton : IQAbstractButton, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QAbstractButton_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMetaObject);
+		CQt.QAbstractButton_OnMetacast(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMetacast);
+		CQt.QAbstractButton_OnMetacall(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMetacall);
+		CQt.QAbstractButton_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnPaintEvent);
+		CQt.QAbstractButton_OnHitButton(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnHitButton);
+		CQt.QAbstractButton_OnCheckStateSet(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnCheckStateSet);
+		CQt.QAbstractButton_OnNextCheckState(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnNextCheckState);
+		CQt.QAbstractButton_OnEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnEvent);
+		CQt.QAbstractButton_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnKeyPressEvent);
+		CQt.QAbstractButton_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnKeyReleaseEvent);
+		CQt.QAbstractButton_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMousePressEvent);
+		CQt.QAbstractButton_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMouseReleaseEvent);
+		CQt.QAbstractButton_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMouseMoveEvent);
+		CQt.QAbstractButton_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnFocusInEvent);
+		CQt.QAbstractButton_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnFocusOutEvent);
+		CQt.QAbstractButton_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnChangeEvent);
+		CQt.QAbstractButton_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnTimerEvent);
+		CQt.QAbstractButton_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnEventFilter);
+		CQt.QAbstractButton_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnChildEvent);
+		CQt.QAbstractButton_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnCustomEvent);
+		CQt.QAbstractButton_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnConnectNotify);
+		CQt.QAbstractButton_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnDisconnectNotify);
+		CQt.QAbstractButton_OnDevType(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnDevType);
+		CQt.QAbstractButton_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnPaintEngine);
+		CQt.QAbstractButton_OnMetric(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMetric);
+		CQt.QAbstractButton_OnInitPainter(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnInitPainter);
+		CQt.QAbstractButton_OnRedirected(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnRedirected);
+		CQt.QAbstractButton_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnSharedPainter);
+		CQt.QAbstractButton_OnSetVisible(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnSetVisible);
+		CQt.QAbstractButton_OnSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnSizeHint);
+		CQt.QAbstractButton_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMinimumSizeHint);
+		CQt.QAbstractButton_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnHeightForWidth);
+		CQt.QAbstractButton_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnHasHeightForWidth);
+		CQt.QAbstractButton_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMouseDoubleClickEvent);
+		CQt.QAbstractButton_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnWheelEvent);
+		CQt.QAbstractButton_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnEnterEvent);
+		CQt.QAbstractButton_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnLeaveEvent);
+		CQt.QAbstractButton_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnMoveEvent);
+		CQt.QAbstractButton_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnResizeEvent);
+		CQt.QAbstractButton_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnCloseEvent);
+		CQt.QAbstractButton_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnContextMenuEvent);
+		CQt.QAbstractButton_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnTabletEvent);
+		CQt.QAbstractButton_OnActionEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnActionEvent);
+		CQt.QAbstractButton_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnDragEnterEvent);
+		CQt.QAbstractButton_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnDragMoveEvent);
+		CQt.QAbstractButton_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnDragLeaveEvent);
+		CQt.QAbstractButton_OnDropEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnDropEvent);
+		CQt.QAbstractButton_OnShowEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnShowEvent);
+		CQt.QAbstractButton_OnHideEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnHideEvent);
+		CQt.QAbstractButton_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnNativeEvent);
+		CQt.QAbstractButton_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnInputMethodEvent);
+		CQt.QAbstractButton_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnInputMethodQuery);
+		CQt.QAbstractButton_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QAbstractButton_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnPressed = .() ~ _.Dispose();
 	public Event<delegate void()> OnReleased = .() ~ _.Dispose();
@@ -1799,6 +1852,271 @@ class QAbstractButton : IQAbstractButton, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QAbstractButton_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAbstractButton_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAbstractButton_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAbstractButton_OnPaintEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnHitButton(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHitButton(pos);
+	}
+	static void QtBeef_QAbstractButton_OnCheckStateSet(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCheckStateSet();
+	}
+	static void QtBeef_QAbstractButton_OnNextCheckState(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNextCheckState();
+	}
+	static void QtBeef_QAbstractButton_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnKeyPressEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnKeyReleaseEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnMousePressEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnMouseReleaseEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnMouseMoveEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnFocusInEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnFocusOutEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnChangeEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnTimerEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(e);
+	}
+	static void QtBeef_QAbstractButton_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QAbstractButton_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAbstractButton_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QAbstractButton_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QAbstractButton_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QAbstractButton_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QAbstractButton_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QAbstractButton_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QAbstractButton_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QAbstractButton_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QAbstractButton_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QAbstractButton_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QAbstractButton_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QAbstractButton_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QAbstractButton_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QAbstractButton_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QAbstractButton_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QAbstractButton_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QAbstractButton_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QAbstractButton_Ptr ptr)
 	{
@@ -3502,18 +3820,27 @@ extension CQt
 	public function void QAbstractButton_OnMetaObject_action(void* self);
 	[LinkName("QAbstractButton_OnMetaObject")]
 	public static extern void** QAbstractButton_OnMetaObject(void* self, QAbstractButton_OnMetaObject_action _action);
+	
+	[LinkName("QAbstractButton_SuperMetaObject")]
+	public static extern void** QAbstractButton_SuperMetaObject(void* self);
 	[LinkName("QAbstractButton_Qt_Metacast")]
 	public static extern void* QAbstractButton_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAbstractButton_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAbstractButton_OnMetacast")]
 	public static extern void* QAbstractButton_OnMetacast(void* self, QAbstractButton_OnMetacast_action _action);
+	
+	[LinkName("QAbstractButton_SuperMetacast")]
+	public static extern void* QAbstractButton_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAbstractButton_Qt_Metacall")]
 	public static extern c_int QAbstractButton_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAbstractButton_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractButton_OnMetacall")]
 	public static extern c_int QAbstractButton_OnMetacall(void* self, QAbstractButton_OnMetacall_action _action);
+	
+	[LinkName("QAbstractButton_SuperMetacall")]
+	public static extern c_int QAbstractButton_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractButton_Tr")]
 	public static extern libqt_string QAbstractButton_Tr(c_char* s);
 	[LinkName("QAbstractButton_SetText")]
@@ -3598,84 +3925,126 @@ extension CQt
 	public function void QAbstractButton_OnPaintEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnPaintEvent")]
 	public static extern void QAbstractButton_OnPaintEvent(void* self, QAbstractButton_OnPaintEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperPaintEvent")]
+	public static extern void QAbstractButton_SuperPaintEvent(void* self, void** e);
 	[LinkName("QAbstractButton_HitButton")]
 	public static extern bool QAbstractButton_HitButton(void* self, void** pos);
 	
 	public function void QAbstractButton_OnHitButton_action(void* self, void** pos);
 	[LinkName("QAbstractButton_OnHitButton")]
 	public static extern bool QAbstractButton_OnHitButton(void* self, QAbstractButton_OnHitButton_action _action);
+	
+	[LinkName("QAbstractButton_SuperHitButton")]
+	public static extern bool QAbstractButton_SuperHitButton(void* self, void** pos);
 	[LinkName("QAbstractButton_CheckStateSet")]
 	public static extern void QAbstractButton_CheckStateSet(void* self);
 	
 	public function void QAbstractButton_OnCheckStateSet_action(void* self);
 	[LinkName("QAbstractButton_OnCheckStateSet")]
 	public static extern void QAbstractButton_OnCheckStateSet(void* self, QAbstractButton_OnCheckStateSet_action _action);
+	
+	[LinkName("QAbstractButton_SuperCheckStateSet")]
+	public static extern void QAbstractButton_SuperCheckStateSet(void* self);
 	[LinkName("QAbstractButton_NextCheckState")]
 	public static extern void QAbstractButton_NextCheckState(void* self);
 	
 	public function void QAbstractButton_OnNextCheckState_action(void* self);
 	[LinkName("QAbstractButton_OnNextCheckState")]
 	public static extern void QAbstractButton_OnNextCheckState(void* self, QAbstractButton_OnNextCheckState_action _action);
+	
+	[LinkName("QAbstractButton_SuperNextCheckState")]
+	public static extern void QAbstractButton_SuperNextCheckState(void* self);
 	[LinkName("QAbstractButton_Event")]
 	public static extern bool QAbstractButton_Event(void* self, void** e);
 	
 	public function void QAbstractButton_OnEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnEvent")]
 	public static extern bool QAbstractButton_OnEvent(void* self, QAbstractButton_OnEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperEvent")]
+	public static extern bool QAbstractButton_SuperEvent(void* self, void** e);
 	[LinkName("QAbstractButton_KeyPressEvent")]
 	public static extern void QAbstractButton_KeyPressEvent(void* self, void** e);
 	
 	public function void QAbstractButton_OnKeyPressEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnKeyPressEvent")]
 	public static extern void QAbstractButton_OnKeyPressEvent(void* self, QAbstractButton_OnKeyPressEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperKeyPressEvent")]
+	public static extern void QAbstractButton_SuperKeyPressEvent(void* self, void** e);
 	[LinkName("QAbstractButton_KeyReleaseEvent")]
 	public static extern void QAbstractButton_KeyReleaseEvent(void* self, void** e);
 	
 	public function void QAbstractButton_OnKeyReleaseEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnKeyReleaseEvent")]
 	public static extern void QAbstractButton_OnKeyReleaseEvent(void* self, QAbstractButton_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperKeyReleaseEvent")]
+	public static extern void QAbstractButton_SuperKeyReleaseEvent(void* self, void** e);
 	[LinkName("QAbstractButton_MousePressEvent")]
 	public static extern void QAbstractButton_MousePressEvent(void* self, void** e);
 	
 	public function void QAbstractButton_OnMousePressEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnMousePressEvent")]
 	public static extern void QAbstractButton_OnMousePressEvent(void* self, QAbstractButton_OnMousePressEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperMousePressEvent")]
+	public static extern void QAbstractButton_SuperMousePressEvent(void* self, void** e);
 	[LinkName("QAbstractButton_MouseReleaseEvent")]
 	public static extern void QAbstractButton_MouseReleaseEvent(void* self, void** e);
 	
 	public function void QAbstractButton_OnMouseReleaseEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnMouseReleaseEvent")]
 	public static extern void QAbstractButton_OnMouseReleaseEvent(void* self, QAbstractButton_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperMouseReleaseEvent")]
+	public static extern void QAbstractButton_SuperMouseReleaseEvent(void* self, void** e);
 	[LinkName("QAbstractButton_MouseMoveEvent")]
 	public static extern void QAbstractButton_MouseMoveEvent(void* self, void** e);
 	
 	public function void QAbstractButton_OnMouseMoveEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnMouseMoveEvent")]
 	public static extern void QAbstractButton_OnMouseMoveEvent(void* self, QAbstractButton_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperMouseMoveEvent")]
+	public static extern void QAbstractButton_SuperMouseMoveEvent(void* self, void** e);
 	[LinkName("QAbstractButton_FocusInEvent")]
 	public static extern void QAbstractButton_FocusInEvent(void* self, void** e);
 	
 	public function void QAbstractButton_OnFocusInEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnFocusInEvent")]
 	public static extern void QAbstractButton_OnFocusInEvent(void* self, QAbstractButton_OnFocusInEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperFocusInEvent")]
+	public static extern void QAbstractButton_SuperFocusInEvent(void* self, void** e);
 	[LinkName("QAbstractButton_FocusOutEvent")]
 	public static extern void QAbstractButton_FocusOutEvent(void* self, void** e);
 	
 	public function void QAbstractButton_OnFocusOutEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnFocusOutEvent")]
 	public static extern void QAbstractButton_OnFocusOutEvent(void* self, QAbstractButton_OnFocusOutEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperFocusOutEvent")]
+	public static extern void QAbstractButton_SuperFocusOutEvent(void* self, void** e);
 	[LinkName("QAbstractButton_ChangeEvent")]
 	public static extern void QAbstractButton_ChangeEvent(void* self, void** e);
 	
 	public function void QAbstractButton_OnChangeEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnChangeEvent")]
 	public static extern void QAbstractButton_OnChangeEvent(void* self, QAbstractButton_OnChangeEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperChangeEvent")]
+	public static extern void QAbstractButton_SuperChangeEvent(void* self, void** e);
 	[LinkName("QAbstractButton_TimerEvent")]
 	public static extern void QAbstractButton_TimerEvent(void* self, void** e);
 	
 	public function void QAbstractButton_OnTimerEvent_action(void* self, void** e);
 	[LinkName("QAbstractButton_OnTimerEvent")]
 	public static extern void QAbstractButton_OnTimerEvent(void* self, QAbstractButton_OnTimerEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperTimerEvent")]
+	public static extern void QAbstractButton_SuperTimerEvent(void* self, void** e);
 	[LinkName("QAbstractButton_Tr2")]
 	public static extern libqt_string QAbstractButton_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractButton_Tr3")]
@@ -3692,214 +4061,322 @@ extension CQt
 	public function void QAbstractButton_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QAbstractButton_OnEventFilter")]
 	public static extern bool QAbstractButton_OnEventFilter(void* self, QAbstractButton_OnEventFilter_action _action);
+	
+	[LinkName("QAbstractButton_SuperEventFilter")]
+	public static extern bool QAbstractButton_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QAbstractButton_ChildEvent")]
 	public static extern void QAbstractButton_ChildEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnChildEvent")]
 	public static extern void QAbstractButton_OnChildEvent(void* self, QAbstractButton_OnChildEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperChildEvent")]
+	public static extern void QAbstractButton_SuperChildEvent(void* self, void** event);
 	[LinkName("QAbstractButton_CustomEvent")]
 	public static extern void QAbstractButton_CustomEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnCustomEvent")]
 	public static extern void QAbstractButton_OnCustomEvent(void* self, QAbstractButton_OnCustomEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperCustomEvent")]
+	public static extern void QAbstractButton_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAbstractButton_ConnectNotify")]
 	public static extern void QAbstractButton_ConnectNotify(void* self, void** signal);
 	
 	public function void QAbstractButton_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractButton_OnConnectNotify")]
 	public static extern void QAbstractButton_OnConnectNotify(void* self, QAbstractButton_OnConnectNotify_action _action);
+	
+	[LinkName("QAbstractButton_SuperConnectNotify")]
+	public static extern void QAbstractButton_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAbstractButton_DisconnectNotify")]
 	public static extern void QAbstractButton_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAbstractButton_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractButton_OnDisconnectNotify")]
 	public static extern void QAbstractButton_OnDisconnectNotify(void* self, QAbstractButton_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAbstractButton_SuperDisconnectNotify")]
+	public static extern void QAbstractButton_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QAbstractButton_DevType")]
 	public static extern c_int QAbstractButton_DevType(void* self);
 	
 	public function void QAbstractButton_OnDevType_action(void* self);
 	[LinkName("QAbstractButton_OnDevType")]
 	public static extern c_int QAbstractButton_OnDevType(void* self, QAbstractButton_OnDevType_action _action);
+	
+	[LinkName("QAbstractButton_SuperDevType")]
+	public static extern c_int QAbstractButton_SuperDevType(void* self);
 	[LinkName("QAbstractButton_PaintEngine")]
 	public static extern void** QAbstractButton_PaintEngine(void* self);
 	
 	public function void QAbstractButton_OnPaintEngine_action(void* self);
 	[LinkName("QAbstractButton_OnPaintEngine")]
 	public static extern void** QAbstractButton_OnPaintEngine(void* self, QAbstractButton_OnPaintEngine_action _action);
+	
+	[LinkName("QAbstractButton_SuperPaintEngine")]
+	public static extern void** QAbstractButton_SuperPaintEngine(void* self);
 	[LinkName("QAbstractButton_Metric")]
 	public static extern c_int QAbstractButton_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QAbstractButton_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QAbstractButton_OnMetric")]
 	public static extern c_int QAbstractButton_OnMetric(void* self, QAbstractButton_OnMetric_action _action);
+	
+	[LinkName("QAbstractButton_SuperMetric")]
+	public static extern c_int QAbstractButton_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QAbstractButton_InitPainter")]
 	public static extern void QAbstractButton_InitPainter(void* self, void** painter);
 	
 	public function void QAbstractButton_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QAbstractButton_OnInitPainter")]
 	public static extern void QAbstractButton_OnInitPainter(void* self, QAbstractButton_OnInitPainter_action _action);
+	
+	[LinkName("QAbstractButton_SuperInitPainter")]
+	public static extern void QAbstractButton_SuperInitPainter(void* self, void** painter);
 	[LinkName("QAbstractButton_Redirected")]
 	public static extern void** QAbstractButton_Redirected(void* self, void** offset);
 	
 	public function void QAbstractButton_OnRedirected_action(void* self, void** offset);
 	[LinkName("QAbstractButton_OnRedirected")]
 	public static extern void** QAbstractButton_OnRedirected(void* self, QAbstractButton_OnRedirected_action _action);
+	
+	[LinkName("QAbstractButton_SuperRedirected")]
+	public static extern void** QAbstractButton_SuperRedirected(void* self, void** offset);
 	[LinkName("QAbstractButton_SharedPainter")]
 	public static extern void** QAbstractButton_SharedPainter(void* self);
 	
 	public function void QAbstractButton_OnSharedPainter_action(void* self);
 	[LinkName("QAbstractButton_OnSharedPainter")]
 	public static extern void** QAbstractButton_OnSharedPainter(void* self, QAbstractButton_OnSharedPainter_action _action);
+	
+	[LinkName("QAbstractButton_SuperSharedPainter")]
+	public static extern void** QAbstractButton_SuperSharedPainter(void* self);
 	[LinkName("QAbstractButton_SetVisible")]
 	public static extern void QAbstractButton_SetVisible(void* self, bool visible);
 	
 	public function void QAbstractButton_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QAbstractButton_OnSetVisible")]
 	public static extern void QAbstractButton_OnSetVisible(void* self, QAbstractButton_OnSetVisible_action _action);
+	
+	[LinkName("QAbstractButton_SuperSetVisible")]
+	public static extern void QAbstractButton_SuperSetVisible(void* self, bool visible);
 	[LinkName("QAbstractButton_SizeHint")]
 	public static extern void* QAbstractButton_SizeHint(void* self);
 	
 	public function void QAbstractButton_OnSizeHint_action(void* self);
 	[LinkName("QAbstractButton_OnSizeHint")]
 	public static extern void* QAbstractButton_OnSizeHint(void* self, QAbstractButton_OnSizeHint_action _action);
+	
+	[LinkName("QAbstractButton_SuperSizeHint")]
+	public static extern void* QAbstractButton_SuperSizeHint(void* self);
 	[LinkName("QAbstractButton_MinimumSizeHint")]
 	public static extern void* QAbstractButton_MinimumSizeHint(void* self);
 	
 	public function void QAbstractButton_OnMinimumSizeHint_action(void* self);
 	[LinkName("QAbstractButton_OnMinimumSizeHint")]
 	public static extern void* QAbstractButton_OnMinimumSizeHint(void* self, QAbstractButton_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QAbstractButton_SuperMinimumSizeHint")]
+	public static extern void* QAbstractButton_SuperMinimumSizeHint(void* self);
 	[LinkName("QAbstractButton_HeightForWidth")]
 	public static extern c_int QAbstractButton_HeightForWidth(void* self, c_int param1);
 	
 	public function void QAbstractButton_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QAbstractButton_OnHeightForWidth")]
 	public static extern c_int QAbstractButton_OnHeightForWidth(void* self, QAbstractButton_OnHeightForWidth_action _action);
+	
+	[LinkName("QAbstractButton_SuperHeightForWidth")]
+	public static extern c_int QAbstractButton_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QAbstractButton_HasHeightForWidth")]
 	public static extern bool QAbstractButton_HasHeightForWidth(void* self);
 	
 	public function void QAbstractButton_OnHasHeightForWidth_action(void* self);
 	[LinkName("QAbstractButton_OnHasHeightForWidth")]
 	public static extern bool QAbstractButton_OnHasHeightForWidth(void* self, QAbstractButton_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QAbstractButton_SuperHasHeightForWidth")]
+	public static extern bool QAbstractButton_SuperHasHeightForWidth(void* self);
 	[LinkName("QAbstractButton_MouseDoubleClickEvent")]
 	public static extern void QAbstractButton_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnMouseDoubleClickEvent")]
 	public static extern void QAbstractButton_OnMouseDoubleClickEvent(void* self, QAbstractButton_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperMouseDoubleClickEvent")]
+	public static extern void QAbstractButton_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QAbstractButton_WheelEvent")]
 	public static extern void QAbstractButton_WheelEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnWheelEvent")]
 	public static extern void QAbstractButton_OnWheelEvent(void* self, QAbstractButton_OnWheelEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperWheelEvent")]
+	public static extern void QAbstractButton_SuperWheelEvent(void* self, void** event);
 	[LinkName("QAbstractButton_EnterEvent")]
 	public static extern void QAbstractButton_EnterEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnEnterEvent")]
 	public static extern void QAbstractButton_OnEnterEvent(void* self, QAbstractButton_OnEnterEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperEnterEvent")]
+	public static extern void QAbstractButton_SuperEnterEvent(void* self, void** event);
 	[LinkName("QAbstractButton_LeaveEvent")]
 	public static extern void QAbstractButton_LeaveEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnLeaveEvent")]
 	public static extern void QAbstractButton_OnLeaveEvent(void* self, QAbstractButton_OnLeaveEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperLeaveEvent")]
+	public static extern void QAbstractButton_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QAbstractButton_MoveEvent")]
 	public static extern void QAbstractButton_MoveEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnMoveEvent")]
 	public static extern void QAbstractButton_OnMoveEvent(void* self, QAbstractButton_OnMoveEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperMoveEvent")]
+	public static extern void QAbstractButton_SuperMoveEvent(void* self, void** event);
 	[LinkName("QAbstractButton_ResizeEvent")]
 	public static extern void QAbstractButton_ResizeEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnResizeEvent")]
 	public static extern void QAbstractButton_OnResizeEvent(void* self, QAbstractButton_OnResizeEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperResizeEvent")]
+	public static extern void QAbstractButton_SuperResizeEvent(void* self, void** event);
 	[LinkName("QAbstractButton_CloseEvent")]
 	public static extern void QAbstractButton_CloseEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnCloseEvent")]
 	public static extern void QAbstractButton_OnCloseEvent(void* self, QAbstractButton_OnCloseEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperCloseEvent")]
+	public static extern void QAbstractButton_SuperCloseEvent(void* self, void** event);
 	[LinkName("QAbstractButton_ContextMenuEvent")]
 	public static extern void QAbstractButton_ContextMenuEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnContextMenuEvent")]
 	public static extern void QAbstractButton_OnContextMenuEvent(void* self, QAbstractButton_OnContextMenuEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperContextMenuEvent")]
+	public static extern void QAbstractButton_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QAbstractButton_TabletEvent")]
 	public static extern void QAbstractButton_TabletEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnTabletEvent")]
 	public static extern void QAbstractButton_OnTabletEvent(void* self, QAbstractButton_OnTabletEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperTabletEvent")]
+	public static extern void QAbstractButton_SuperTabletEvent(void* self, void** event);
 	[LinkName("QAbstractButton_ActionEvent")]
 	public static extern void QAbstractButton_ActionEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnActionEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnActionEvent")]
 	public static extern void QAbstractButton_OnActionEvent(void* self, QAbstractButton_OnActionEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperActionEvent")]
+	public static extern void QAbstractButton_SuperActionEvent(void* self, void** event);
 	[LinkName("QAbstractButton_DragEnterEvent")]
 	public static extern void QAbstractButton_DragEnterEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnDragEnterEvent")]
 	public static extern void QAbstractButton_OnDragEnterEvent(void* self, QAbstractButton_OnDragEnterEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperDragEnterEvent")]
+	public static extern void QAbstractButton_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QAbstractButton_DragMoveEvent")]
 	public static extern void QAbstractButton_DragMoveEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnDragMoveEvent")]
 	public static extern void QAbstractButton_OnDragMoveEvent(void* self, QAbstractButton_OnDragMoveEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperDragMoveEvent")]
+	public static extern void QAbstractButton_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QAbstractButton_DragLeaveEvent")]
 	public static extern void QAbstractButton_DragLeaveEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnDragLeaveEvent")]
 	public static extern void QAbstractButton_OnDragLeaveEvent(void* self, QAbstractButton_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperDragLeaveEvent")]
+	public static extern void QAbstractButton_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QAbstractButton_DropEvent")]
 	public static extern void QAbstractButton_DropEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnDropEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnDropEvent")]
 	public static extern void QAbstractButton_OnDropEvent(void* self, QAbstractButton_OnDropEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperDropEvent")]
+	public static extern void QAbstractButton_SuperDropEvent(void* self, void** event);
 	[LinkName("QAbstractButton_ShowEvent")]
 	public static extern void QAbstractButton_ShowEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnShowEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnShowEvent")]
 	public static extern void QAbstractButton_OnShowEvent(void* self, QAbstractButton_OnShowEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperShowEvent")]
+	public static extern void QAbstractButton_SuperShowEvent(void* self, void** event);
 	[LinkName("QAbstractButton_HideEvent")]
 	public static extern void QAbstractButton_HideEvent(void* self, void** event);
 	
 	public function void QAbstractButton_OnHideEvent_action(void* self, void** event);
 	[LinkName("QAbstractButton_OnHideEvent")]
 	public static extern void QAbstractButton_OnHideEvent(void* self, QAbstractButton_OnHideEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperHideEvent")]
+	public static extern void QAbstractButton_SuperHideEvent(void* self, void** event);
 	[LinkName("QAbstractButton_NativeEvent")]
 	public static extern bool QAbstractButton_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QAbstractButton_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractButton_OnNativeEvent")]
 	public static extern bool QAbstractButton_OnNativeEvent(void* self, QAbstractButton_OnNativeEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperNativeEvent")]
+	public static extern bool QAbstractButton_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractButton_InputMethodEvent")]
 	public static extern void QAbstractButton_InputMethodEvent(void* self, void** param1);
 	
 	public function void QAbstractButton_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QAbstractButton_OnInputMethodEvent")]
 	public static extern void QAbstractButton_OnInputMethodEvent(void* self, QAbstractButton_OnInputMethodEvent_action _action);
+	
+	[LinkName("QAbstractButton_SuperInputMethodEvent")]
+	public static extern void QAbstractButton_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QAbstractButton_InputMethodQuery")]
 	public static extern void* QAbstractButton_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QAbstractButton_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QAbstractButton_OnInputMethodQuery")]
 	public static extern void* QAbstractButton_OnInputMethodQuery(void* self, QAbstractButton_OnInputMethodQuery_action _action);
+	
+	[LinkName("QAbstractButton_SuperInputMethodQuery")]
+	public static extern void* QAbstractButton_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QAbstractButton_FocusNextPrevChild")]
 	public static extern bool QAbstractButton_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QAbstractButton_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QAbstractButton_OnFocusNextPrevChild")]
 	public static extern bool QAbstractButton_OnFocusNextPrevChild(void* self, QAbstractButton_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QAbstractButton_SuperFocusNextPrevChild")]
+	public static extern bool QAbstractButton_SuperFocusNextPrevChild(void* self, bool next);
 }

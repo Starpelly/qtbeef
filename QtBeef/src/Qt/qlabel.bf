@@ -1806,6 +1806,57 @@ class QLabel : IQLabel, IQFrame, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QLabel_OnMetaObject(obj.ObjectPtr,  => QtBeef_QLabel_OnMetaObject);
+		CQt.QLabel_OnMetacast(obj.ObjectPtr,  => QtBeef_QLabel_OnMetacast);
+		CQt.QLabel_OnMetacall(obj.ObjectPtr,  => QtBeef_QLabel_OnMetacall);
+		CQt.QLabel_OnSizeHint(obj.ObjectPtr,  => QtBeef_QLabel_OnSizeHint);
+		CQt.QLabel_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QLabel_OnMinimumSizeHint);
+		CQt.QLabel_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QLabel_OnHeightForWidth);
+		CQt.QLabel_OnEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnEvent);
+		CQt.QLabel_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnKeyPressEvent);
+		CQt.QLabel_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnPaintEvent);
+		CQt.QLabel_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnChangeEvent);
+		CQt.QLabel_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnMousePressEvent);
+		CQt.QLabel_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnMouseMoveEvent);
+		CQt.QLabel_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnMouseReleaseEvent);
+		CQt.QLabel_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnContextMenuEvent);
+		CQt.QLabel_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnFocusInEvent);
+		CQt.QLabel_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnFocusOutEvent);
+		CQt.QLabel_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QLabel_OnFocusNextPrevChild);
+		CQt.QLabel_OnEventFilter(obj.ObjectPtr,  => QtBeef_QLabel_OnEventFilter);
+		CQt.QLabel_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnTimerEvent);
+		CQt.QLabel_OnChildEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnChildEvent);
+		CQt.QLabel_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnCustomEvent);
+		CQt.QLabel_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QLabel_OnConnectNotify);
+		CQt.QLabel_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QLabel_OnDisconnectNotify);
+		CQt.QLabel_OnDevType(obj.ObjectPtr,  => QtBeef_QLabel_OnDevType);
+		CQt.QLabel_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QLabel_OnPaintEngine);
+		CQt.QLabel_OnMetric(obj.ObjectPtr,  => QtBeef_QLabel_OnMetric);
+		CQt.QLabel_OnInitPainter(obj.ObjectPtr,  => QtBeef_QLabel_OnInitPainter);
+		CQt.QLabel_OnRedirected(obj.ObjectPtr,  => QtBeef_QLabel_OnRedirected);
+		CQt.QLabel_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QLabel_OnSharedPainter);
+		CQt.QLabel_OnSetVisible(obj.ObjectPtr,  => QtBeef_QLabel_OnSetVisible);
+		CQt.QLabel_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QLabel_OnHasHeightForWidth);
+		CQt.QLabel_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnMouseDoubleClickEvent);
+		CQt.QLabel_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnWheelEvent);
+		CQt.QLabel_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnKeyReleaseEvent);
+		CQt.QLabel_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnEnterEvent);
+		CQt.QLabel_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnLeaveEvent);
+		CQt.QLabel_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnMoveEvent);
+		CQt.QLabel_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnResizeEvent);
+		CQt.QLabel_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnCloseEvent);
+		CQt.QLabel_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnTabletEvent);
+		CQt.QLabel_OnActionEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnActionEvent);
+		CQt.QLabel_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnDragEnterEvent);
+		CQt.QLabel_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnDragMoveEvent);
+		CQt.QLabel_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnDragLeaveEvent);
+		CQt.QLabel_OnDropEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnDropEvent);
+		CQt.QLabel_OnShowEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnShowEvent);
+		CQt.QLabel_OnHideEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnHideEvent);
+		CQt.QLabel_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnNativeEvent);
+		CQt.QLabel_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QLabel_OnInputMethodEvent);
+		CQt.QLabel_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QLabel_OnInputMethodQuery);
+		CQt.QLabel_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QLabel_OnInitStyleOption);
 	}
 	public Event<delegate void(libqt_string link)> OnLinkActivated = .() ~ _.Dispose();
 	public Event<delegate void(libqt_string link)> OnLinkHovered = .() ~ _.Dispose();
@@ -1854,6 +1905,261 @@ class QLabel : IQLabel, IQFrame, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QLabel_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QLabel_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QLabel_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QLabel_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QLabel_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QLabel_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QLabel_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QLabel_OnKeyPressEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(ev);
+	}
+	static void QtBeef_QLabel_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QLabel_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QLabel_OnMousePressEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(ev);
+	}
+	static void QtBeef_QLabel_OnMouseMoveEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(ev);
+	}
+	static void QtBeef_QLabel_OnMouseReleaseEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(ev);
+	}
+	static void QtBeef_QLabel_OnContextMenuEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(ev);
+	}
+	static void QtBeef_QLabel_OnFocusInEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(ev);
+	}
+	static void QtBeef_QLabel_OnFocusOutEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(ev);
+	}
+	static void QtBeef_QLabel_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QLabel_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QLabel_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QLabel_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QLabel_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QLabel_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QLabel_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QLabel_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QLabel_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QLabel_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QLabel_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QLabel_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QLabel_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QLabel_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QLabel_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QLabel_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QLabel_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QLabel_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QLabel_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QLabel_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QLabel_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QLabel_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QLabel_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QLabel_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QLabel_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QLabel_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QLabel_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QLabel_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QLabel_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QLabel_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QLabel_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QLabel_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QLabel_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QLabel_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QLabel_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
 	}
 	public this(QLabel_Ptr ptr)
 	{
@@ -3662,18 +3968,27 @@ extension CQt
 	public function void QLabel_OnMetaObject_action(void* self);
 	[LinkName("QLabel_OnMetaObject")]
 	public static extern void** QLabel_OnMetaObject(void* self, QLabel_OnMetaObject_action _action);
+	
+	[LinkName("QLabel_SuperMetaObject")]
+	public static extern void** QLabel_SuperMetaObject(void* self);
 	[LinkName("QLabel_Qt_Metacast")]
 	public static extern void* QLabel_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QLabel_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QLabel_OnMetacast")]
 	public static extern void* QLabel_OnMetacast(void* self, QLabel_OnMetacast_action _action);
+	
+	[LinkName("QLabel_SuperMetacast")]
+	public static extern void* QLabel_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QLabel_Qt_Metacall")]
 	public static extern c_int QLabel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QLabel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QLabel_OnMetacall")]
 	public static extern c_int QLabel_OnMetacall(void* self, QLabel_OnMetacall_action _action);
+	
+	[LinkName("QLabel_SuperMetacall")]
+	public static extern c_int QLabel_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QLabel_Tr")]
 	public static extern libqt_string QLabel_Tr(c_char* s);
 	[LinkName("QLabel_Text")]
@@ -3720,12 +4035,18 @@ extension CQt
 	public function void QLabel_OnSizeHint_action(void* self);
 	[LinkName("QLabel_OnSizeHint")]
 	public static extern void* QLabel_OnSizeHint(void* self, QLabel_OnSizeHint_action _action);
+	
+	[LinkName("QLabel_SuperSizeHint")]
+	public static extern void* QLabel_SuperSizeHint(void* self);
 	[LinkName("QLabel_MinimumSizeHint")]
 	public static extern void* QLabel_MinimumSizeHint(void* self);
 	
 	public function void QLabel_OnMinimumSizeHint_action(void* self);
 	[LinkName("QLabel_OnMinimumSizeHint")]
 	public static extern void* QLabel_OnMinimumSizeHint(void* self, QLabel_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QLabel_SuperMinimumSizeHint")]
+	public static extern void* QLabel_SuperMinimumSizeHint(void* self);
 	[LinkName("QLabel_SetBuddy")]
 	public static extern void QLabel_SetBuddy(void* self, void** buddy);
 	[LinkName("QLabel_Buddy")]
@@ -3736,6 +4057,9 @@ extension CQt
 	public function void QLabel_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QLabel_OnHeightForWidth")]
 	public static extern c_int QLabel_OnHeightForWidth(void* self, QLabel_OnHeightForWidth_action _action);
+	
+	[LinkName("QLabel_SuperHeightForWidth")]
+	public static extern c_int QLabel_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QLabel_OpenExternalLinks")]
 	public static extern bool QLabel_OpenExternalLinks(void* self);
 	[LinkName("QLabel_SetOpenExternalLinks")]
@@ -3784,66 +4108,99 @@ extension CQt
 	public function void QLabel_OnEvent_action(void* self, void** e);
 	[LinkName("QLabel_OnEvent")]
 	public static extern bool QLabel_OnEvent(void* self, QLabel_OnEvent_action _action);
+	
+	[LinkName("QLabel_SuperEvent")]
+	public static extern bool QLabel_SuperEvent(void* self, void** e);
 	[LinkName("QLabel_KeyPressEvent")]
 	public static extern void QLabel_KeyPressEvent(void* self, void** ev);
 	
 	public function void QLabel_OnKeyPressEvent_action(void* self, void** ev);
 	[LinkName("QLabel_OnKeyPressEvent")]
 	public static extern void QLabel_OnKeyPressEvent(void* self, QLabel_OnKeyPressEvent_action _action);
+	
+	[LinkName("QLabel_SuperKeyPressEvent")]
+	public static extern void QLabel_SuperKeyPressEvent(void* self, void** ev);
 	[LinkName("QLabel_PaintEvent")]
 	public static extern void QLabel_PaintEvent(void* self, void** param1);
 	
 	public function void QLabel_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QLabel_OnPaintEvent")]
 	public static extern void QLabel_OnPaintEvent(void* self, QLabel_OnPaintEvent_action _action);
+	
+	[LinkName("QLabel_SuperPaintEvent")]
+	public static extern void QLabel_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QLabel_ChangeEvent")]
 	public static extern void QLabel_ChangeEvent(void* self, void** param1);
 	
 	public function void QLabel_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QLabel_OnChangeEvent")]
 	public static extern void QLabel_OnChangeEvent(void* self, QLabel_OnChangeEvent_action _action);
+	
+	[LinkName("QLabel_SuperChangeEvent")]
+	public static extern void QLabel_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QLabel_MousePressEvent")]
 	public static extern void QLabel_MousePressEvent(void* self, void** ev);
 	
 	public function void QLabel_OnMousePressEvent_action(void* self, void** ev);
 	[LinkName("QLabel_OnMousePressEvent")]
 	public static extern void QLabel_OnMousePressEvent(void* self, QLabel_OnMousePressEvent_action _action);
+	
+	[LinkName("QLabel_SuperMousePressEvent")]
+	public static extern void QLabel_SuperMousePressEvent(void* self, void** ev);
 	[LinkName("QLabel_MouseMoveEvent")]
 	public static extern void QLabel_MouseMoveEvent(void* self, void** ev);
 	
 	public function void QLabel_OnMouseMoveEvent_action(void* self, void** ev);
 	[LinkName("QLabel_OnMouseMoveEvent")]
 	public static extern void QLabel_OnMouseMoveEvent(void* self, QLabel_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QLabel_SuperMouseMoveEvent")]
+	public static extern void QLabel_SuperMouseMoveEvent(void* self, void** ev);
 	[LinkName("QLabel_MouseReleaseEvent")]
 	public static extern void QLabel_MouseReleaseEvent(void* self, void** ev);
 	
 	public function void QLabel_OnMouseReleaseEvent_action(void* self, void** ev);
 	[LinkName("QLabel_OnMouseReleaseEvent")]
 	public static extern void QLabel_OnMouseReleaseEvent(void* self, QLabel_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QLabel_SuperMouseReleaseEvent")]
+	public static extern void QLabel_SuperMouseReleaseEvent(void* self, void** ev);
 	[LinkName("QLabel_ContextMenuEvent")]
 	public static extern void QLabel_ContextMenuEvent(void* self, void** ev);
 	
 	public function void QLabel_OnContextMenuEvent_action(void* self, void** ev);
 	[LinkName("QLabel_OnContextMenuEvent")]
 	public static extern void QLabel_OnContextMenuEvent(void* self, QLabel_OnContextMenuEvent_action _action);
+	
+	[LinkName("QLabel_SuperContextMenuEvent")]
+	public static extern void QLabel_SuperContextMenuEvent(void* self, void** ev);
 	[LinkName("QLabel_FocusInEvent")]
 	public static extern void QLabel_FocusInEvent(void* self, void** ev);
 	
 	public function void QLabel_OnFocusInEvent_action(void* self, void** ev);
 	[LinkName("QLabel_OnFocusInEvent")]
 	public static extern void QLabel_OnFocusInEvent(void* self, QLabel_OnFocusInEvent_action _action);
+	
+	[LinkName("QLabel_SuperFocusInEvent")]
+	public static extern void QLabel_SuperFocusInEvent(void* self, void** ev);
 	[LinkName("QLabel_FocusOutEvent")]
 	public static extern void QLabel_FocusOutEvent(void* self, void** ev);
 	
 	public function void QLabel_OnFocusOutEvent_action(void* self, void** ev);
 	[LinkName("QLabel_OnFocusOutEvent")]
 	public static extern void QLabel_OnFocusOutEvent(void* self, QLabel_OnFocusOutEvent_action _action);
+	
+	[LinkName("QLabel_SuperFocusOutEvent")]
+	public static extern void QLabel_SuperFocusOutEvent(void* self, void** ev);
 	[LinkName("QLabel_FocusNextPrevChild")]
 	public static extern bool QLabel_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QLabel_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QLabel_OnFocusNextPrevChild")]
 	public static extern bool QLabel_OnFocusNextPrevChild(void* self, QLabel_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QLabel_SuperFocusNextPrevChild")]
+	public static extern bool QLabel_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QLabel_Tr2")]
 	public static extern libqt_string QLabel_Tr2(c_char* s, c_char* c);
 	[LinkName("QLabel_Tr3")]
@@ -3854,202 +4211,304 @@ extension CQt
 	public function void QLabel_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QLabel_OnEventFilter")]
 	public static extern bool QLabel_OnEventFilter(void* self, QLabel_OnEventFilter_action _action);
+	
+	[LinkName("QLabel_SuperEventFilter")]
+	public static extern bool QLabel_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QLabel_TimerEvent")]
 	public static extern void QLabel_TimerEvent(void* self, void** event);
 	
 	public function void QLabel_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnTimerEvent")]
 	public static extern void QLabel_OnTimerEvent(void* self, QLabel_OnTimerEvent_action _action);
+	
+	[LinkName("QLabel_SuperTimerEvent")]
+	public static extern void QLabel_SuperTimerEvent(void* self, void** event);
 	[LinkName("QLabel_ChildEvent")]
 	public static extern void QLabel_ChildEvent(void* self, void** event);
 	
 	public function void QLabel_OnChildEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnChildEvent")]
 	public static extern void QLabel_OnChildEvent(void* self, QLabel_OnChildEvent_action _action);
+	
+	[LinkName("QLabel_SuperChildEvent")]
+	public static extern void QLabel_SuperChildEvent(void* self, void** event);
 	[LinkName("QLabel_CustomEvent")]
 	public static extern void QLabel_CustomEvent(void* self, void** event);
 	
 	public function void QLabel_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnCustomEvent")]
 	public static extern void QLabel_OnCustomEvent(void* self, QLabel_OnCustomEvent_action _action);
+	
+	[LinkName("QLabel_SuperCustomEvent")]
+	public static extern void QLabel_SuperCustomEvent(void* self, void** event);
 	[LinkName("QLabel_ConnectNotify")]
 	public static extern void QLabel_ConnectNotify(void* self, void** signal);
 	
 	public function void QLabel_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QLabel_OnConnectNotify")]
 	public static extern void QLabel_OnConnectNotify(void* self, QLabel_OnConnectNotify_action _action);
+	
+	[LinkName("QLabel_SuperConnectNotify")]
+	public static extern void QLabel_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QLabel_DisconnectNotify")]
 	public static extern void QLabel_DisconnectNotify(void* self, void** signal);
 	
 	public function void QLabel_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QLabel_OnDisconnectNotify")]
 	public static extern void QLabel_OnDisconnectNotify(void* self, QLabel_OnDisconnectNotify_action _action);
+	
+	[LinkName("QLabel_SuperDisconnectNotify")]
+	public static extern void QLabel_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QLabel_DevType")]
 	public static extern c_int QLabel_DevType(void* self);
 	
 	public function void QLabel_OnDevType_action(void* self);
 	[LinkName("QLabel_OnDevType")]
 	public static extern c_int QLabel_OnDevType(void* self, QLabel_OnDevType_action _action);
+	
+	[LinkName("QLabel_SuperDevType")]
+	public static extern c_int QLabel_SuperDevType(void* self);
 	[LinkName("QLabel_PaintEngine")]
 	public static extern void** QLabel_PaintEngine(void* self);
 	
 	public function void QLabel_OnPaintEngine_action(void* self);
 	[LinkName("QLabel_OnPaintEngine")]
 	public static extern void** QLabel_OnPaintEngine(void* self, QLabel_OnPaintEngine_action _action);
+	
+	[LinkName("QLabel_SuperPaintEngine")]
+	public static extern void** QLabel_SuperPaintEngine(void* self);
 	[LinkName("QLabel_Metric")]
 	public static extern c_int QLabel_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QLabel_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QLabel_OnMetric")]
 	public static extern c_int QLabel_OnMetric(void* self, QLabel_OnMetric_action _action);
+	
+	[LinkName("QLabel_SuperMetric")]
+	public static extern c_int QLabel_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QLabel_InitPainter")]
 	public static extern void QLabel_InitPainter(void* self, void** painter);
 	
 	public function void QLabel_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QLabel_OnInitPainter")]
 	public static extern void QLabel_OnInitPainter(void* self, QLabel_OnInitPainter_action _action);
+	
+	[LinkName("QLabel_SuperInitPainter")]
+	public static extern void QLabel_SuperInitPainter(void* self, void** painter);
 	[LinkName("QLabel_Redirected")]
 	public static extern void** QLabel_Redirected(void* self, void** offset);
 	
 	public function void QLabel_OnRedirected_action(void* self, void** offset);
 	[LinkName("QLabel_OnRedirected")]
 	public static extern void** QLabel_OnRedirected(void* self, QLabel_OnRedirected_action _action);
+	
+	[LinkName("QLabel_SuperRedirected")]
+	public static extern void** QLabel_SuperRedirected(void* self, void** offset);
 	[LinkName("QLabel_SharedPainter")]
 	public static extern void** QLabel_SharedPainter(void* self);
 	
 	public function void QLabel_OnSharedPainter_action(void* self);
 	[LinkName("QLabel_OnSharedPainter")]
 	public static extern void** QLabel_OnSharedPainter(void* self, QLabel_OnSharedPainter_action _action);
+	
+	[LinkName("QLabel_SuperSharedPainter")]
+	public static extern void** QLabel_SuperSharedPainter(void* self);
 	[LinkName("QLabel_SetVisible")]
 	public static extern void QLabel_SetVisible(void* self, bool visible);
 	
 	public function void QLabel_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QLabel_OnSetVisible")]
 	public static extern void QLabel_OnSetVisible(void* self, QLabel_OnSetVisible_action _action);
+	
+	[LinkName("QLabel_SuperSetVisible")]
+	public static extern void QLabel_SuperSetVisible(void* self, bool visible);
 	[LinkName("QLabel_HasHeightForWidth")]
 	public static extern bool QLabel_HasHeightForWidth(void* self);
 	
 	public function void QLabel_OnHasHeightForWidth_action(void* self);
 	[LinkName("QLabel_OnHasHeightForWidth")]
 	public static extern bool QLabel_OnHasHeightForWidth(void* self, QLabel_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QLabel_SuperHasHeightForWidth")]
+	public static extern bool QLabel_SuperHasHeightForWidth(void* self);
 	[LinkName("QLabel_MouseDoubleClickEvent")]
 	public static extern void QLabel_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QLabel_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnMouseDoubleClickEvent")]
 	public static extern void QLabel_OnMouseDoubleClickEvent(void* self, QLabel_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QLabel_SuperMouseDoubleClickEvent")]
+	public static extern void QLabel_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QLabel_WheelEvent")]
 	public static extern void QLabel_WheelEvent(void* self, void** event);
 	
 	public function void QLabel_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnWheelEvent")]
 	public static extern void QLabel_OnWheelEvent(void* self, QLabel_OnWheelEvent_action _action);
+	
+	[LinkName("QLabel_SuperWheelEvent")]
+	public static extern void QLabel_SuperWheelEvent(void* self, void** event);
 	[LinkName("QLabel_KeyReleaseEvent")]
 	public static extern void QLabel_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QLabel_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnKeyReleaseEvent")]
 	public static extern void QLabel_OnKeyReleaseEvent(void* self, QLabel_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QLabel_SuperKeyReleaseEvent")]
+	public static extern void QLabel_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QLabel_EnterEvent")]
 	public static extern void QLabel_EnterEvent(void* self, void** event);
 	
 	public function void QLabel_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnEnterEvent")]
 	public static extern void QLabel_OnEnterEvent(void* self, QLabel_OnEnterEvent_action _action);
+	
+	[LinkName("QLabel_SuperEnterEvent")]
+	public static extern void QLabel_SuperEnterEvent(void* self, void** event);
 	[LinkName("QLabel_LeaveEvent")]
 	public static extern void QLabel_LeaveEvent(void* self, void** event);
 	
 	public function void QLabel_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnLeaveEvent")]
 	public static extern void QLabel_OnLeaveEvent(void* self, QLabel_OnLeaveEvent_action _action);
+	
+	[LinkName("QLabel_SuperLeaveEvent")]
+	public static extern void QLabel_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QLabel_MoveEvent")]
 	public static extern void QLabel_MoveEvent(void* self, void** event);
 	
 	public function void QLabel_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnMoveEvent")]
 	public static extern void QLabel_OnMoveEvent(void* self, QLabel_OnMoveEvent_action _action);
+	
+	[LinkName("QLabel_SuperMoveEvent")]
+	public static extern void QLabel_SuperMoveEvent(void* self, void** event);
 	[LinkName("QLabel_ResizeEvent")]
 	public static extern void QLabel_ResizeEvent(void* self, void** event);
 	
 	public function void QLabel_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnResizeEvent")]
 	public static extern void QLabel_OnResizeEvent(void* self, QLabel_OnResizeEvent_action _action);
+	
+	[LinkName("QLabel_SuperResizeEvent")]
+	public static extern void QLabel_SuperResizeEvent(void* self, void** event);
 	[LinkName("QLabel_CloseEvent")]
 	public static extern void QLabel_CloseEvent(void* self, void** event);
 	
 	public function void QLabel_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnCloseEvent")]
 	public static extern void QLabel_OnCloseEvent(void* self, QLabel_OnCloseEvent_action _action);
+	
+	[LinkName("QLabel_SuperCloseEvent")]
+	public static extern void QLabel_SuperCloseEvent(void* self, void** event);
 	[LinkName("QLabel_TabletEvent")]
 	public static extern void QLabel_TabletEvent(void* self, void** event);
 	
 	public function void QLabel_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnTabletEvent")]
 	public static extern void QLabel_OnTabletEvent(void* self, QLabel_OnTabletEvent_action _action);
+	
+	[LinkName("QLabel_SuperTabletEvent")]
+	public static extern void QLabel_SuperTabletEvent(void* self, void** event);
 	[LinkName("QLabel_ActionEvent")]
 	public static extern void QLabel_ActionEvent(void* self, void** event);
 	
 	public function void QLabel_OnActionEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnActionEvent")]
 	public static extern void QLabel_OnActionEvent(void* self, QLabel_OnActionEvent_action _action);
+	
+	[LinkName("QLabel_SuperActionEvent")]
+	public static extern void QLabel_SuperActionEvent(void* self, void** event);
 	[LinkName("QLabel_DragEnterEvent")]
 	public static extern void QLabel_DragEnterEvent(void* self, void** event);
 	
 	public function void QLabel_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnDragEnterEvent")]
 	public static extern void QLabel_OnDragEnterEvent(void* self, QLabel_OnDragEnterEvent_action _action);
+	
+	[LinkName("QLabel_SuperDragEnterEvent")]
+	public static extern void QLabel_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QLabel_DragMoveEvent")]
 	public static extern void QLabel_DragMoveEvent(void* self, void** event);
 	
 	public function void QLabel_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnDragMoveEvent")]
 	public static extern void QLabel_OnDragMoveEvent(void* self, QLabel_OnDragMoveEvent_action _action);
+	
+	[LinkName("QLabel_SuperDragMoveEvent")]
+	public static extern void QLabel_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QLabel_DragLeaveEvent")]
 	public static extern void QLabel_DragLeaveEvent(void* self, void** event);
 	
 	public function void QLabel_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnDragLeaveEvent")]
 	public static extern void QLabel_OnDragLeaveEvent(void* self, QLabel_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QLabel_SuperDragLeaveEvent")]
+	public static extern void QLabel_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QLabel_DropEvent")]
 	public static extern void QLabel_DropEvent(void* self, void** event);
 	
 	public function void QLabel_OnDropEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnDropEvent")]
 	public static extern void QLabel_OnDropEvent(void* self, QLabel_OnDropEvent_action _action);
+	
+	[LinkName("QLabel_SuperDropEvent")]
+	public static extern void QLabel_SuperDropEvent(void* self, void** event);
 	[LinkName("QLabel_ShowEvent")]
 	public static extern void QLabel_ShowEvent(void* self, void** event);
 	
 	public function void QLabel_OnShowEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnShowEvent")]
 	public static extern void QLabel_OnShowEvent(void* self, QLabel_OnShowEvent_action _action);
+	
+	[LinkName("QLabel_SuperShowEvent")]
+	public static extern void QLabel_SuperShowEvent(void* self, void** event);
 	[LinkName("QLabel_HideEvent")]
 	public static extern void QLabel_HideEvent(void* self, void** event);
 	
 	public function void QLabel_OnHideEvent_action(void* self, void** event);
 	[LinkName("QLabel_OnHideEvent")]
 	public static extern void QLabel_OnHideEvent(void* self, QLabel_OnHideEvent_action _action);
+	
+	[LinkName("QLabel_SuperHideEvent")]
+	public static extern void QLabel_SuperHideEvent(void* self, void** event);
 	[LinkName("QLabel_NativeEvent")]
 	public static extern bool QLabel_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QLabel_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QLabel_OnNativeEvent")]
 	public static extern bool QLabel_OnNativeEvent(void* self, QLabel_OnNativeEvent_action _action);
+	
+	[LinkName("QLabel_SuperNativeEvent")]
+	public static extern bool QLabel_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QLabel_InputMethodEvent")]
 	public static extern void QLabel_InputMethodEvent(void* self, void** param1);
 	
 	public function void QLabel_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QLabel_OnInputMethodEvent")]
 	public static extern void QLabel_OnInputMethodEvent(void* self, QLabel_OnInputMethodEvent_action _action);
+	
+	[LinkName("QLabel_SuperInputMethodEvent")]
+	public static extern void QLabel_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QLabel_InputMethodQuery")]
 	public static extern void* QLabel_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QLabel_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QLabel_OnInputMethodQuery")]
 	public static extern void* QLabel_OnInputMethodQuery(void* self, QLabel_OnInputMethodQuery_action _action);
+	
+	[LinkName("QLabel_SuperInputMethodQuery")]
+	public static extern void* QLabel_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QLabel_InitStyleOption")]
 	public static extern void QLabel_InitStyleOption(void* self, void** option);
 	
 	public function void QLabel_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QLabel_OnInitStyleOption")]
 	public static extern void QLabel_OnInitStyleOption(void* self, QLabel_OnInitStyleOption_action _action);
+	
+	[LinkName("QLabel_SuperInitStyleOption")]
+	public static extern void QLabel_SuperInitStyleOption(void* self, void** option);
 }

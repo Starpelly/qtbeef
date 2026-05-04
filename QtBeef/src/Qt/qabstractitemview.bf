@@ -2207,6 +2207,100 @@ class QAbstractItemView : IQAbstractItemView, IQAbstractScrollArea, IQFrame, IQW
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QAbstractItemView_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMetaObject);
+		CQt.QAbstractItemView_OnMetacast(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMetacast);
+		CQt.QAbstractItemView_OnMetacall(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMetacall);
+		CQt.QAbstractItemView_OnSetModel(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSetModel);
+		CQt.QAbstractItemView_OnSetSelectionModel(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSetSelectionModel);
+		CQt.QAbstractItemView_OnKeyboardSearch(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnKeyboardSearch);
+		CQt.QAbstractItemView_OnVisualRect(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnVisualRect);
+		CQt.QAbstractItemView_OnScrollTo(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnScrollTo);
+		CQt.QAbstractItemView_OnIndexAt(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnIndexAt);
+		CQt.QAbstractItemView_OnSizeHintForRow(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSizeHintForRow);
+		CQt.QAbstractItemView_OnSizeHintForColumn(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSizeHintForColumn);
+		CQt.QAbstractItemView_OnItemDelegateForIndex(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnItemDelegateForIndex);
+		CQt.QAbstractItemView_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnInputMethodQuery);
+		CQt.QAbstractItemView_OnReset(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnReset);
+		CQt.QAbstractItemView_OnSetRootIndex(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSetRootIndex);
+		CQt.QAbstractItemView_OnDoItemsLayout(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnDoItemsLayout);
+		CQt.QAbstractItemView_OnSelectAll(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSelectAll);
+		CQt.QAbstractItemView_OnDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnDataChanged);
+		CQt.QAbstractItemView_OnRowsInserted(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnRowsInserted);
+		CQt.QAbstractItemView_OnRowsAboutToBeRemoved(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnRowsAboutToBeRemoved);
+		CQt.QAbstractItemView_OnSelectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSelectionChanged);
+		CQt.QAbstractItemView_OnCurrentChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnCurrentChanged);
+		CQt.QAbstractItemView_OnUpdateEditorData(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnUpdateEditorData);
+		CQt.QAbstractItemView_OnUpdateEditorGeometries(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnUpdateEditorGeometries);
+		CQt.QAbstractItemView_OnUpdateGeometries(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnUpdateGeometries);
+		CQt.QAbstractItemView_OnVerticalScrollbarAction(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnVerticalScrollbarAction);
+		CQt.QAbstractItemView_OnHorizontalScrollbarAction(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnHorizontalScrollbarAction);
+		CQt.QAbstractItemView_OnVerticalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnVerticalScrollbarValueChanged);
+		CQt.QAbstractItemView_OnHorizontalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnHorizontalScrollbarValueChanged);
+		CQt.QAbstractItemView_OnCloseEditor(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnCloseEditor);
+		CQt.QAbstractItemView_OnCommitData(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnCommitData);
+		CQt.QAbstractItemView_OnEditorDestroyed(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnEditorDestroyed);
+		CQt.QAbstractItemView_OnMoveCursor(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMoveCursor);
+		CQt.QAbstractItemView_OnHorizontalOffset(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnHorizontalOffset);
+		CQt.QAbstractItemView_OnVerticalOffset(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnVerticalOffset);
+		CQt.QAbstractItemView_OnIsIndexHidden(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnIsIndexHidden);
+		CQt.QAbstractItemView_OnSetSelection(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSetSelection);
+		CQt.QAbstractItemView_OnVisualRegionForSelection(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnVisualRegionForSelection);
+		CQt.QAbstractItemView_OnSelectedIndexes(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSelectedIndexes);
+		CQt.QAbstractItemView_OnEdit2(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnEdit2);
+		CQt.QAbstractItemView_OnSelectionCommand(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSelectionCommand);
+		CQt.QAbstractItemView_OnStartDrag(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnStartDrag);
+		CQt.QAbstractItemView_OnInitViewItemOption(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnInitViewItemOption);
+		CQt.QAbstractItemView_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnFocusNextPrevChild);
+		CQt.QAbstractItemView_OnEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnEvent);
+		CQt.QAbstractItemView_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnViewportEvent);
+		CQt.QAbstractItemView_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMousePressEvent);
+		CQt.QAbstractItemView_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMouseMoveEvent);
+		CQt.QAbstractItemView_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMouseReleaseEvent);
+		CQt.QAbstractItemView_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMouseDoubleClickEvent);
+		CQt.QAbstractItemView_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnDragEnterEvent);
+		CQt.QAbstractItemView_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnDragMoveEvent);
+		CQt.QAbstractItemView_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnDragLeaveEvent);
+		CQt.QAbstractItemView_OnDropEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnDropEvent);
+		CQt.QAbstractItemView_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnFocusInEvent);
+		CQt.QAbstractItemView_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnFocusOutEvent);
+		CQt.QAbstractItemView_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnKeyPressEvent);
+		CQt.QAbstractItemView_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnResizeEvent);
+		CQt.QAbstractItemView_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnTimerEvent);
+		CQt.QAbstractItemView_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnInputMethodEvent);
+		CQt.QAbstractItemView_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnEventFilter);
+		CQt.QAbstractItemView_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnViewportSizeHint);
+		CQt.QAbstractItemView_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnChildEvent);
+		CQt.QAbstractItemView_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnCustomEvent);
+		CQt.QAbstractItemView_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnConnectNotify);
+		CQt.QAbstractItemView_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnDisconnectNotify);
+		CQt.QAbstractItemView_OnDevType(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnDevType);
+		CQt.QAbstractItemView_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnPaintEngine);
+		CQt.QAbstractItemView_OnMetric(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMetric);
+		CQt.QAbstractItemView_OnInitPainter(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnInitPainter);
+		CQt.QAbstractItemView_OnRedirected(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnRedirected);
+		CQt.QAbstractItemView_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSharedPainter);
+		CQt.QAbstractItemView_OnSetVisible(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSetVisible);
+		CQt.QAbstractItemView_OnSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSizeHint);
+		CQt.QAbstractItemView_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMinimumSizeHint);
+		CQt.QAbstractItemView_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnHeightForWidth);
+		CQt.QAbstractItemView_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnHasHeightForWidth);
+		CQt.QAbstractItemView_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnWheelEvent);
+		CQt.QAbstractItemView_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnKeyReleaseEvent);
+		CQt.QAbstractItemView_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnEnterEvent);
+		CQt.QAbstractItemView_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnLeaveEvent);
+		CQt.QAbstractItemView_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnPaintEvent);
+		CQt.QAbstractItemView_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnMoveEvent);
+		CQt.QAbstractItemView_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnCloseEvent);
+		CQt.QAbstractItemView_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnContextMenuEvent);
+		CQt.QAbstractItemView_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnTabletEvent);
+		CQt.QAbstractItemView_OnActionEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnActionEvent);
+		CQt.QAbstractItemView_OnShowEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnShowEvent);
+		CQt.QAbstractItemView_OnHideEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnHideEvent);
+		CQt.QAbstractItemView_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnNativeEvent);
+		CQt.QAbstractItemView_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnChangeEvent);
+		CQt.QAbstractItemView_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnInitStyleOption);
+		CQt.QAbstractItemView_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnSetupViewport);
+		CQt.QAbstractItemView_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QAbstractItemView_OnScrollContentsBy);
 	}
 	public Event<delegate void(void** index)> OnPressed = .() ~ _.Dispose();
 	public Event<delegate void(void** index)> OnClicked = .() ~ _.Dispose();
@@ -2285,6 +2379,476 @@ class QAbstractItemView : IQAbstractItemView, IQAbstractScrollArea, IQFrame, IQW
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QAbstractItemView_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAbstractItemView_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAbstractItemView_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAbstractItemView_OnSetModel(void* ptr, void** model)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetModel(model);
+	}
+	static void QtBeef_QAbstractItemView_OnSetSelectionModel(void* ptr, void** selectionModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelectionModel(selectionModel);
+	}
+	static void QtBeef_QAbstractItemView_OnKeyboardSearch(void* ptr, libqt_string search)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyboardSearch(search);
+	}
+	static void QtBeef_QAbstractItemView_OnVisualRect(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRect(index);
+	}
+	static void QtBeef_QAbstractItemView_OnScrollTo(void* ptr, void** index, QAbstractItemView_ScrollHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollTo(index, hint);
+	}
+	static void QtBeef_QAbstractItemView_OnIndexAt(void* ptr, void** point)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexAt(point);
+	}
+	static void QtBeef_QAbstractItemView_OnSizeHintForRow(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForRow(row);
+	}
+	static void QtBeef_QAbstractItemView_OnSizeHintForColumn(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForColumn(column);
+	}
+	static void QtBeef_QAbstractItemView_OnItemDelegateForIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDelegateForIndex(index);
+	}
+	static void QtBeef_QAbstractItemView_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery query)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(query);
+	}
+	static void QtBeef_QAbstractItemView_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QAbstractItemView_OnSetRootIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetRootIndex(index);
+	}
+	static void QtBeef_QAbstractItemView_OnDoItemsLayout(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoItemsLayout();
+	}
+	static void QtBeef_QAbstractItemView_OnSelectAll(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectAll();
+	}
+	static void QtBeef_QAbstractItemView_OnDataChanged(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QAbstractItemView_OnRowsInserted(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsInserted(parent, start, end);
+	}
+	static void QtBeef_QAbstractItemView_OnRowsAboutToBeRemoved(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsAboutToBeRemoved(parent, start, end);
+	}
+	static void QtBeef_QAbstractItemView_OnSelectionChanged(void* ptr, void** selected, void** deselected)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged(selected, deselected);
+	}
+	static void QtBeef_QAbstractItemView_OnCurrentChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged(current, previous);
+	}
+	static void QtBeef_QAbstractItemView_OnUpdateEditorData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorData();
+	}
+	static void QtBeef_QAbstractItemView_OnUpdateEditorGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorGeometries();
+	}
+	static void QtBeef_QAbstractItemView_OnUpdateGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometries();
+	}
+	static void QtBeef_QAbstractItemView_OnVerticalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarAction(action);
+	}
+	static void QtBeef_QAbstractItemView_OnHorizontalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarAction(action);
+	}
+	static void QtBeef_QAbstractItemView_OnVerticalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QAbstractItemView_OnHorizontalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QAbstractItemView_OnCloseEditor(void* ptr, void** editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor(editor, hint);
+	}
+	static void QtBeef_QAbstractItemView_OnCommitData(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommitData(editor);
+	}
+	static void QtBeef_QAbstractItemView_OnEditorDestroyed(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditorDestroyed(editor);
+	}
+	static void QtBeef_QAbstractItemView_OnMoveCursor(void* ptr, QAbstractItemView_CursorAction cursorAction, void* modifiers)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveCursor(cursorAction, modifiers);
+	}
+	static void QtBeef_QAbstractItemView_OnHorizontalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalOffset();
+	}
+	static void QtBeef_QAbstractItemView_OnVerticalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalOffset();
+	}
+	static void QtBeef_QAbstractItemView_OnIsIndexHidden(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsIndexHidden(index);
+	}
+	static void QtBeef_QAbstractItemView_OnSetSelection(void* ptr, void** rect, void* command)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelection(rect, command);
+	}
+	static void QtBeef_QAbstractItemView_OnVisualRegionForSelection(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRegionForSelection(selection);
+	}
+	static void QtBeef_QAbstractItemView_OnSelectedIndexes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedIndexes();
+	}
+	static void QtBeef_QAbstractItemView_OnEdit2(void* ptr, void** index, QAbstractItemView_EditTrigger trigger, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEdit2(index, trigger, event);
+	}
+	static void QtBeef_QAbstractItemView_OnSelectionCommand(void* ptr, void** index, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionCommand(index, event);
+	}
+	static void QtBeef_QAbstractItemView_OnStartDrag(void* ptr, void* supportedActions)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStartDrag(supportedActions);
+	}
+	static void QtBeef_QAbstractItemView_OnInitViewItemOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitViewItemOption(option);
+	}
+	static void QtBeef_QAbstractItemView_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QAbstractItemView_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnViewportEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnInputMethodEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnEventFilter(void* ptr, void** object, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(object, event);
+	}
+	static void QtBeef_QAbstractItemView_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
+	}
+	static void QtBeef_QAbstractItemView_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAbstractItemView_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QAbstractItemView_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QAbstractItemView_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QAbstractItemView_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QAbstractItemView_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QAbstractItemView_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QAbstractItemView_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QAbstractItemView_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QAbstractItemView_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QAbstractItemView_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QAbstractItemView_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QAbstractItemView_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QAbstractItemView_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QAbstractItemView_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QAbstractItemView_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QAbstractItemView_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QAbstractItemView_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QAbstractItemView_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
 	}
 	public this(QAbstractItemView_Ptr ptr)
 	{
@@ -4433,18 +4997,27 @@ extension CQt
 	public function void QAbstractItemView_OnMetaObject_action(void* self);
 	[LinkName("QAbstractItemView_OnMetaObject")]
 	public static extern void** QAbstractItemView_OnMetaObject(void* self, QAbstractItemView_OnMetaObject_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMetaObject")]
+	public static extern void** QAbstractItemView_SuperMetaObject(void* self);
 	[LinkName("QAbstractItemView_Qt_Metacast")]
 	public static extern void* QAbstractItemView_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAbstractItemView_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAbstractItemView_OnMetacast")]
 	public static extern void* QAbstractItemView_OnMetacast(void* self, QAbstractItemView_OnMetacast_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMetacast")]
+	public static extern void* QAbstractItemView_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAbstractItemView_Qt_Metacall")]
 	public static extern c_int QAbstractItemView_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAbstractItemView_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractItemView_OnMetacall")]
 	public static extern c_int QAbstractItemView_OnMetacall(void* self, QAbstractItemView_OnMetacall_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMetacall")]
+	public static extern c_int QAbstractItemView_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractItemView_Tr")]
 	public static extern libqt_string QAbstractItemView_Tr(c_char* s);
 	[LinkName("QAbstractItemView_SetModel")]
@@ -4453,6 +5026,9 @@ extension CQt
 	public function void QAbstractItemView_OnSetModel_action(void* self, void** model);
 	[LinkName("QAbstractItemView_OnSetModel")]
 	public static extern void QAbstractItemView_OnSetModel(void* self, QAbstractItemView_OnSetModel_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSetModel")]
+	public static extern void QAbstractItemView_SuperSetModel(void* self, void** model);
 	[LinkName("QAbstractItemView_Model")]
 	public static extern void** QAbstractItemView_Model(void* self);
 	[LinkName("QAbstractItemView_SetSelectionModel")]
@@ -4461,6 +5037,9 @@ extension CQt
 	public function void QAbstractItemView_OnSetSelectionModel_action(void* self, void** selectionModel);
 	[LinkName("QAbstractItemView_OnSetSelectionModel")]
 	public static extern void QAbstractItemView_OnSetSelectionModel(void* self, QAbstractItemView_OnSetSelectionModel_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSetSelectionModel")]
+	public static extern void QAbstractItemView_SuperSetSelectionModel(void* self, void** selectionModel);
 	[LinkName("QAbstractItemView_SelectionModel")]
 	public static extern void** QAbstractItemView_SelectionModel(void* self);
 	[LinkName("QAbstractItemView_SetItemDelegate")]
@@ -4545,24 +5124,36 @@ extension CQt
 	public function void QAbstractItemView_OnKeyboardSearch_action(void* self, libqt_string search);
 	[LinkName("QAbstractItemView_OnKeyboardSearch")]
 	public static extern void QAbstractItemView_OnKeyboardSearch(void* self, QAbstractItemView_OnKeyboardSearch_action _action);
+	
+	[LinkName("QAbstractItemView_SuperKeyboardSearch")]
+	public static extern void QAbstractItemView_SuperKeyboardSearch(void* self, libqt_string search);
 	[LinkName("QAbstractItemView_VisualRect")]
 	public static extern void* QAbstractItemView_VisualRect(void* self, void** index);
 	
 	public function void QAbstractItemView_OnVisualRect_action(void* self, void** index);
 	[LinkName("QAbstractItemView_OnVisualRect")]
 	public static extern void* QAbstractItemView_OnVisualRect(void* self, QAbstractItemView_OnVisualRect_action _action);
+	
+	[LinkName("QAbstractItemView_SuperVisualRect")]
+	public static extern void* QAbstractItemView_SuperVisualRect(void* self, void** index);
 	[LinkName("QAbstractItemView_ScrollTo")]
 	public static extern void QAbstractItemView_ScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	
 	public function void QAbstractItemView_OnScrollTo_action(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QAbstractItemView_OnScrollTo")]
 	public static extern void QAbstractItemView_OnScrollTo(void* self, QAbstractItemView_OnScrollTo_action _action);
+	
+	[LinkName("QAbstractItemView_SuperScrollTo")]
+	public static extern void QAbstractItemView_SuperScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QAbstractItemView_IndexAt")]
 	public static extern void* QAbstractItemView_IndexAt(void* self, void** point);
 	
 	public function void QAbstractItemView_OnIndexAt_action(void* self, void** point);
 	[LinkName("QAbstractItemView_OnIndexAt")]
 	public static extern void* QAbstractItemView_OnIndexAt(void* self, QAbstractItemView_OnIndexAt_action _action);
+	
+	[LinkName("QAbstractItemView_SuperIndexAt")]
+	public static extern void* QAbstractItemView_SuperIndexAt(void* self, void** point);
 	[LinkName("QAbstractItemView_SizeHintForIndex")]
 	public static extern void* QAbstractItemView_SizeHintForIndex(void* self, void** index);
 	[LinkName("QAbstractItemView_SizeHintForRow")]
@@ -4571,12 +5162,18 @@ extension CQt
 	public function void QAbstractItemView_OnSizeHintForRow_action(void* self, c_int row);
 	[LinkName("QAbstractItemView_OnSizeHintForRow")]
 	public static extern c_int QAbstractItemView_OnSizeHintForRow(void* self, QAbstractItemView_OnSizeHintForRow_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSizeHintForRow")]
+	public static extern c_int QAbstractItemView_SuperSizeHintForRow(void* self, c_int row);
 	[LinkName("QAbstractItemView_SizeHintForColumn")]
 	public static extern c_int QAbstractItemView_SizeHintForColumn(void* self, c_int column);
 	
 	public function void QAbstractItemView_OnSizeHintForColumn_action(void* self, c_int column);
 	[LinkName("QAbstractItemView_OnSizeHintForColumn")]
 	public static extern c_int QAbstractItemView_OnSizeHintForColumn(void* self, QAbstractItemView_OnSizeHintForColumn_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSizeHintForColumn")]
+	public static extern c_int QAbstractItemView_SuperSizeHintForColumn(void* self, c_int column);
 	[LinkName("QAbstractItemView_OpenPersistentEditor")]
 	public static extern void QAbstractItemView_OpenPersistentEditor(void* self, void** index);
 	[LinkName("QAbstractItemView_ClosePersistentEditor")]
@@ -4603,36 +5200,54 @@ extension CQt
 	public function void QAbstractItemView_OnItemDelegateForIndex_action(void* self, void** index);
 	[LinkName("QAbstractItemView_OnItemDelegateForIndex")]
 	public static extern void** QAbstractItemView_OnItemDelegateForIndex(void* self, QAbstractItemView_OnItemDelegateForIndex_action _action);
+	
+	[LinkName("QAbstractItemView_SuperItemDelegateForIndex")]
+	public static extern void** QAbstractItemView_SuperItemDelegateForIndex(void* self, void** index);
 	[LinkName("QAbstractItemView_InputMethodQuery")]
 	public static extern void* QAbstractItemView_InputMethodQuery(void* self, Qt_InputMethodQuery query);
 	
 	public function void QAbstractItemView_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery query);
 	[LinkName("QAbstractItemView_OnInputMethodQuery")]
 	public static extern void* QAbstractItemView_OnInputMethodQuery(void* self, QAbstractItemView_OnInputMethodQuery_action _action);
+	
+	[LinkName("QAbstractItemView_SuperInputMethodQuery")]
+	public static extern void* QAbstractItemView_SuperInputMethodQuery(void* self, Qt_InputMethodQuery query);
 	[LinkName("QAbstractItemView_Reset")]
 	public static extern void QAbstractItemView_Reset(void* self);
 	
 	public function void QAbstractItemView_OnReset_action(void* self);
 	[LinkName("QAbstractItemView_OnReset")]
 	public static extern void QAbstractItemView_OnReset(void* self, QAbstractItemView_OnReset_action _action);
+	
+	[LinkName("QAbstractItemView_SuperReset")]
+	public static extern void QAbstractItemView_SuperReset(void* self);
 	[LinkName("QAbstractItemView_SetRootIndex")]
 	public static extern void QAbstractItemView_SetRootIndex(void* self, void** index);
 	
 	public function void QAbstractItemView_OnSetRootIndex_action(void* self, void** index);
 	[LinkName("QAbstractItemView_OnSetRootIndex")]
 	public static extern void QAbstractItemView_OnSetRootIndex(void* self, QAbstractItemView_OnSetRootIndex_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSetRootIndex")]
+	public static extern void QAbstractItemView_SuperSetRootIndex(void* self, void** index);
 	[LinkName("QAbstractItemView_DoItemsLayout")]
 	public static extern void QAbstractItemView_DoItemsLayout(void* self);
 	
 	public function void QAbstractItemView_OnDoItemsLayout_action(void* self);
 	[LinkName("QAbstractItemView_OnDoItemsLayout")]
 	public static extern void QAbstractItemView_OnDoItemsLayout(void* self, QAbstractItemView_OnDoItemsLayout_action _action);
+	
+	[LinkName("QAbstractItemView_SuperDoItemsLayout")]
+	public static extern void QAbstractItemView_SuperDoItemsLayout(void* self);
 	[LinkName("QAbstractItemView_SelectAll")]
 	public static extern void QAbstractItemView_SelectAll(void* self);
 	
 	public function void QAbstractItemView_OnSelectAll_action(void* self);
 	[LinkName("QAbstractItemView_OnSelectAll")]
 	public static extern void QAbstractItemView_OnSelectAll(void* self, QAbstractItemView_OnSelectAll_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSelectAll")]
+	public static extern void QAbstractItemView_SuperSelectAll(void* self);
 	[LinkName("QAbstractItemView_Edit")]
 	public static extern void QAbstractItemView_Edit(void* self, void** index);
 	[LinkName("QAbstractItemView_ClearSelection")]
@@ -4651,90 +5266,135 @@ extension CQt
 	public function void QAbstractItemView_OnDataChanged_action(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QAbstractItemView_OnDataChanged")]
 	public static extern void QAbstractItemView_OnDataChanged(void* self, QAbstractItemView_OnDataChanged_action _action);
+	
+	[LinkName("QAbstractItemView_SuperDataChanged")]
+	public static extern void QAbstractItemView_SuperDataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QAbstractItemView_RowsInserted")]
 	public static extern void QAbstractItemView_RowsInserted(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QAbstractItemView_OnRowsInserted_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QAbstractItemView_OnRowsInserted")]
 	public static extern void QAbstractItemView_OnRowsInserted(void* self, QAbstractItemView_OnRowsInserted_action _action);
+	
+	[LinkName("QAbstractItemView_SuperRowsInserted")]
+	public static extern void QAbstractItemView_SuperRowsInserted(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QAbstractItemView_RowsAboutToBeRemoved")]
 	public static extern void QAbstractItemView_RowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QAbstractItemView_OnRowsAboutToBeRemoved_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QAbstractItemView_OnRowsAboutToBeRemoved")]
 	public static extern void QAbstractItemView_OnRowsAboutToBeRemoved(void* self, QAbstractItemView_OnRowsAboutToBeRemoved_action _action);
+	
+	[LinkName("QAbstractItemView_SuperRowsAboutToBeRemoved")]
+	public static extern void QAbstractItemView_SuperRowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QAbstractItemView_SelectionChanged")]
 	public static extern void QAbstractItemView_SelectionChanged(void* self, void** selected, void** deselected);
 	
 	public function void QAbstractItemView_OnSelectionChanged_action(void* self, void** selected, void** deselected);
 	[LinkName("QAbstractItemView_OnSelectionChanged")]
 	public static extern void QAbstractItemView_OnSelectionChanged(void* self, QAbstractItemView_OnSelectionChanged_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSelectionChanged")]
+	public static extern void QAbstractItemView_SuperSelectionChanged(void* self, void** selected, void** deselected);
 	[LinkName("QAbstractItemView_CurrentChanged")]
 	public static extern void QAbstractItemView_CurrentChanged(void* self, void** current, void** previous);
 	
 	public function void QAbstractItemView_OnCurrentChanged_action(void* self, void** current, void** previous);
 	[LinkName("QAbstractItemView_OnCurrentChanged")]
 	public static extern void QAbstractItemView_OnCurrentChanged(void* self, QAbstractItemView_OnCurrentChanged_action _action);
+	
+	[LinkName("QAbstractItemView_SuperCurrentChanged")]
+	public static extern void QAbstractItemView_SuperCurrentChanged(void* self, void** current, void** previous);
 	[LinkName("QAbstractItemView_UpdateEditorData")]
 	public static extern void QAbstractItemView_UpdateEditorData(void* self);
 	
 	public function void QAbstractItemView_OnUpdateEditorData_action(void* self);
 	[LinkName("QAbstractItemView_OnUpdateEditorData")]
 	public static extern void QAbstractItemView_OnUpdateEditorData(void* self, QAbstractItemView_OnUpdateEditorData_action _action);
+	
+	[LinkName("QAbstractItemView_SuperUpdateEditorData")]
+	public static extern void QAbstractItemView_SuperUpdateEditorData(void* self);
 	[LinkName("QAbstractItemView_UpdateEditorGeometries")]
 	public static extern void QAbstractItemView_UpdateEditorGeometries(void* self);
 	
 	public function void QAbstractItemView_OnUpdateEditorGeometries_action(void* self);
 	[LinkName("QAbstractItemView_OnUpdateEditorGeometries")]
 	public static extern void QAbstractItemView_OnUpdateEditorGeometries(void* self, QAbstractItemView_OnUpdateEditorGeometries_action _action);
+	
+	[LinkName("QAbstractItemView_SuperUpdateEditorGeometries")]
+	public static extern void QAbstractItemView_SuperUpdateEditorGeometries(void* self);
 	[LinkName("QAbstractItemView_UpdateGeometries")]
 	public static extern void QAbstractItemView_UpdateGeometries(void* self);
 	
 	public function void QAbstractItemView_OnUpdateGeometries_action(void* self);
 	[LinkName("QAbstractItemView_OnUpdateGeometries")]
 	public static extern void QAbstractItemView_OnUpdateGeometries(void* self, QAbstractItemView_OnUpdateGeometries_action _action);
+	
+	[LinkName("QAbstractItemView_SuperUpdateGeometries")]
+	public static extern void QAbstractItemView_SuperUpdateGeometries(void* self);
 	[LinkName("QAbstractItemView_VerticalScrollbarAction")]
 	public static extern void QAbstractItemView_VerticalScrollbarAction(void* self, c_int action);
 	
 	public function void QAbstractItemView_OnVerticalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QAbstractItemView_OnVerticalScrollbarAction")]
 	public static extern void QAbstractItemView_OnVerticalScrollbarAction(void* self, QAbstractItemView_OnVerticalScrollbarAction_action _action);
+	
+	[LinkName("QAbstractItemView_SuperVerticalScrollbarAction")]
+	public static extern void QAbstractItemView_SuperVerticalScrollbarAction(void* self, c_int action);
 	[LinkName("QAbstractItemView_HorizontalScrollbarAction")]
 	public static extern void QAbstractItemView_HorizontalScrollbarAction(void* self, c_int action);
 	
 	public function void QAbstractItemView_OnHorizontalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QAbstractItemView_OnHorizontalScrollbarAction")]
 	public static extern void QAbstractItemView_OnHorizontalScrollbarAction(void* self, QAbstractItemView_OnHorizontalScrollbarAction_action _action);
+	
+	[LinkName("QAbstractItemView_SuperHorizontalScrollbarAction")]
+	public static extern void QAbstractItemView_SuperHorizontalScrollbarAction(void* self, c_int action);
 	[LinkName("QAbstractItemView_VerticalScrollbarValueChanged")]
 	public static extern void QAbstractItemView_VerticalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QAbstractItemView_OnVerticalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QAbstractItemView_OnVerticalScrollbarValueChanged")]
 	public static extern void QAbstractItemView_OnVerticalScrollbarValueChanged(void* self, QAbstractItemView_OnVerticalScrollbarValueChanged_action _action);
+	
+	[LinkName("QAbstractItemView_SuperVerticalScrollbarValueChanged")]
+	public static extern void QAbstractItemView_SuperVerticalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QAbstractItemView_HorizontalScrollbarValueChanged")]
 	public static extern void QAbstractItemView_HorizontalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QAbstractItemView_OnHorizontalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QAbstractItemView_OnHorizontalScrollbarValueChanged")]
 	public static extern void QAbstractItemView_OnHorizontalScrollbarValueChanged(void* self, QAbstractItemView_OnHorizontalScrollbarValueChanged_action _action);
+	
+	[LinkName("QAbstractItemView_SuperHorizontalScrollbarValueChanged")]
+	public static extern void QAbstractItemView_SuperHorizontalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QAbstractItemView_CloseEditor")]
 	public static extern void QAbstractItemView_CloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	
 	public function void QAbstractItemView_OnCloseEditor_action(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QAbstractItemView_OnCloseEditor")]
 	public static extern void QAbstractItemView_OnCloseEditor(void* self, QAbstractItemView_OnCloseEditor_action _action);
+	
+	[LinkName("QAbstractItemView_SuperCloseEditor")]
+	public static extern void QAbstractItemView_SuperCloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QAbstractItemView_CommitData")]
 	public static extern void QAbstractItemView_CommitData(void* self, void** editor);
 	
 	public function void QAbstractItemView_OnCommitData_action(void* self, void** editor);
 	[LinkName("QAbstractItemView_OnCommitData")]
 	public static extern void QAbstractItemView_OnCommitData(void* self, QAbstractItemView_OnCommitData_action _action);
+	
+	[LinkName("QAbstractItemView_SuperCommitData")]
+	public static extern void QAbstractItemView_SuperCommitData(void* self, void** editor);
 	[LinkName("QAbstractItemView_EditorDestroyed")]
 	public static extern void QAbstractItemView_EditorDestroyed(void* self, void** editor);
 	
 	public function void QAbstractItemView_OnEditorDestroyed_action(void* self, void** editor);
 	[LinkName("QAbstractItemView_OnEditorDestroyed")]
 	public static extern void QAbstractItemView_OnEditorDestroyed(void* self, QAbstractItemView_OnEditorDestroyed_action _action);
+	
+	[LinkName("QAbstractItemView_SuperEditorDestroyed")]
+	public static extern void QAbstractItemView_SuperEditorDestroyed(void* self, void** editor);
 	[LinkName("QAbstractItemView_Pressed")]
 	public static extern void QAbstractItemView_Pressed(void* self, void** index);
 	
@@ -4783,66 +5443,99 @@ extension CQt
 	public function void QAbstractItemView_OnMoveCursor_action(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QAbstractItemView_OnMoveCursor")]
 	public static extern void* QAbstractItemView_OnMoveCursor(void* self, QAbstractItemView_OnMoveCursor_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMoveCursor")]
+	public static extern void* QAbstractItemView_SuperMoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QAbstractItemView_HorizontalOffset")]
 	public static extern c_int QAbstractItemView_HorizontalOffset(void* self);
 	
 	public function void QAbstractItemView_OnHorizontalOffset_action(void* self);
 	[LinkName("QAbstractItemView_OnHorizontalOffset")]
 	public static extern c_int QAbstractItemView_OnHorizontalOffset(void* self, QAbstractItemView_OnHorizontalOffset_action _action);
+	
+	[LinkName("QAbstractItemView_SuperHorizontalOffset")]
+	public static extern c_int QAbstractItemView_SuperHorizontalOffset(void* self);
 	[LinkName("QAbstractItemView_VerticalOffset")]
 	public static extern c_int QAbstractItemView_VerticalOffset(void* self);
 	
 	public function void QAbstractItemView_OnVerticalOffset_action(void* self);
 	[LinkName("QAbstractItemView_OnVerticalOffset")]
 	public static extern c_int QAbstractItemView_OnVerticalOffset(void* self, QAbstractItemView_OnVerticalOffset_action _action);
+	
+	[LinkName("QAbstractItemView_SuperVerticalOffset")]
+	public static extern c_int QAbstractItemView_SuperVerticalOffset(void* self);
 	[LinkName("QAbstractItemView_IsIndexHidden")]
 	public static extern bool QAbstractItemView_IsIndexHidden(void* self, void** index);
 	
 	public function void QAbstractItemView_OnIsIndexHidden_action(void* self, void** index);
 	[LinkName("QAbstractItemView_OnIsIndexHidden")]
 	public static extern bool QAbstractItemView_OnIsIndexHidden(void* self, QAbstractItemView_OnIsIndexHidden_action _action);
+	
+	[LinkName("QAbstractItemView_SuperIsIndexHidden")]
+	public static extern bool QAbstractItemView_SuperIsIndexHidden(void* self, void** index);
 	[LinkName("QAbstractItemView_SetSelection")]
 	public static extern void QAbstractItemView_SetSelection(void* self, void** rect, void* command);
 	
 	public function void QAbstractItemView_OnSetSelection_action(void* self, void** rect, void* command);
 	[LinkName("QAbstractItemView_OnSetSelection")]
 	public static extern void QAbstractItemView_OnSetSelection(void* self, QAbstractItemView_OnSetSelection_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSetSelection")]
+	public static extern void QAbstractItemView_SuperSetSelection(void* self, void** rect, void* command);
 	[LinkName("QAbstractItemView_VisualRegionForSelection")]
 	public static extern void* QAbstractItemView_VisualRegionForSelection(void* self, void** selection);
 	
 	public function void QAbstractItemView_OnVisualRegionForSelection_action(void* self, void** selection);
 	[LinkName("QAbstractItemView_OnVisualRegionForSelection")]
 	public static extern void* QAbstractItemView_OnVisualRegionForSelection(void* self, QAbstractItemView_OnVisualRegionForSelection_action _action);
+	
+	[LinkName("QAbstractItemView_SuperVisualRegionForSelection")]
+	public static extern void* QAbstractItemView_SuperVisualRegionForSelection(void* self, void** selection);
 	[LinkName("QAbstractItemView_SelectedIndexes")]
 	public static extern void* QAbstractItemView_SelectedIndexes(void* self);
 	
 	public function void QAbstractItemView_OnSelectedIndexes_action(void* self);
 	[LinkName("QAbstractItemView_OnSelectedIndexes")]
 	public static extern void* QAbstractItemView_OnSelectedIndexes(void* self, QAbstractItemView_OnSelectedIndexes_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSelectedIndexes")]
+	public static extern void* QAbstractItemView_SuperSelectedIndexes(void* self);
 	[LinkName("QAbstractItemView_Edit2")]
 	public static extern bool QAbstractItemView_Edit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	
 	public function void QAbstractItemView_OnEdit2_action(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QAbstractItemView_OnEdit2")]
 	public static extern bool QAbstractItemView_OnEdit2(void* self, QAbstractItemView_OnEdit2_action _action);
+	
+	[LinkName("QAbstractItemView_SuperEdit2")]
+	public static extern bool QAbstractItemView_SuperEdit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QAbstractItemView_SelectionCommand")]
 	public static extern void* QAbstractItemView_SelectionCommand(void* self, void** index, void** event);
 	
 	public function void QAbstractItemView_OnSelectionCommand_action(void* self, void** index, void** event);
 	[LinkName("QAbstractItemView_OnSelectionCommand")]
 	public static extern void* QAbstractItemView_OnSelectionCommand(void* self, QAbstractItemView_OnSelectionCommand_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSelectionCommand")]
+	public static extern void* QAbstractItemView_SuperSelectionCommand(void* self, void** index, void** event);
 	[LinkName("QAbstractItemView_StartDrag")]
 	public static extern void QAbstractItemView_StartDrag(void* self, void* supportedActions);
 	
 	public function void QAbstractItemView_OnStartDrag_action(void* self, void* supportedActions);
 	[LinkName("QAbstractItemView_OnStartDrag")]
 	public static extern void QAbstractItemView_OnStartDrag(void* self, QAbstractItemView_OnStartDrag_action _action);
+	
+	[LinkName("QAbstractItemView_SuperStartDrag")]
+	public static extern void QAbstractItemView_SuperStartDrag(void* self, void* supportedActions);
 	[LinkName("QAbstractItemView_InitViewItemOption")]
 	public static extern void QAbstractItemView_InitViewItemOption(void* self, void** option);
 	
 	public function void QAbstractItemView_OnInitViewItemOption_action(void* self, void** option);
 	[LinkName("QAbstractItemView_OnInitViewItemOption")]
 	public static extern void QAbstractItemView_OnInitViewItemOption(void* self, QAbstractItemView_OnInitViewItemOption_action _action);
+	
+	[LinkName("QAbstractItemView_SuperInitViewItemOption")]
+	public static extern void QAbstractItemView_SuperInitViewItemOption(void* self, void** option);
 	[LinkName("QAbstractItemView_State")]
 	public static extern QAbstractItemView_State QAbstractItemView_State(void* self);
 	[LinkName("QAbstractItemView_SetState")]
@@ -4869,108 +5562,162 @@ extension CQt
 	public function void QAbstractItemView_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QAbstractItemView_OnFocusNextPrevChild")]
 	public static extern bool QAbstractItemView_OnFocusNextPrevChild(void* self, QAbstractItemView_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QAbstractItemView_SuperFocusNextPrevChild")]
+	public static extern bool QAbstractItemView_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QAbstractItemView_Event")]
 	public static extern bool QAbstractItemView_Event(void* self, void** event);
 	
 	public function void QAbstractItemView_OnEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnEvent")]
 	public static extern bool QAbstractItemView_OnEvent(void* self, QAbstractItemView_OnEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperEvent")]
+	public static extern bool QAbstractItemView_SuperEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_ViewportEvent")]
 	public static extern bool QAbstractItemView_ViewportEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnViewportEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnViewportEvent")]
 	public static extern bool QAbstractItemView_OnViewportEvent(void* self, QAbstractItemView_OnViewportEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperViewportEvent")]
+	public static extern bool QAbstractItemView_SuperViewportEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_MousePressEvent")]
 	public static extern void QAbstractItemView_MousePressEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnMousePressEvent")]
 	public static extern void QAbstractItemView_OnMousePressEvent(void* self, QAbstractItemView_OnMousePressEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMousePressEvent")]
+	public static extern void QAbstractItemView_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_MouseMoveEvent")]
 	public static extern void QAbstractItemView_MouseMoveEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnMouseMoveEvent")]
 	public static extern void QAbstractItemView_OnMouseMoveEvent(void* self, QAbstractItemView_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMouseMoveEvent")]
+	public static extern void QAbstractItemView_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_MouseReleaseEvent")]
 	public static extern void QAbstractItemView_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnMouseReleaseEvent")]
 	public static extern void QAbstractItemView_OnMouseReleaseEvent(void* self, QAbstractItemView_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMouseReleaseEvent")]
+	public static extern void QAbstractItemView_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_MouseDoubleClickEvent")]
 	public static extern void QAbstractItemView_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnMouseDoubleClickEvent")]
 	public static extern void QAbstractItemView_OnMouseDoubleClickEvent(void* self, QAbstractItemView_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMouseDoubleClickEvent")]
+	public static extern void QAbstractItemView_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_DragEnterEvent")]
 	public static extern void QAbstractItemView_DragEnterEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnDragEnterEvent")]
 	public static extern void QAbstractItemView_OnDragEnterEvent(void* self, QAbstractItemView_OnDragEnterEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperDragEnterEvent")]
+	public static extern void QAbstractItemView_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_DragMoveEvent")]
 	public static extern void QAbstractItemView_DragMoveEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnDragMoveEvent")]
 	public static extern void QAbstractItemView_OnDragMoveEvent(void* self, QAbstractItemView_OnDragMoveEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperDragMoveEvent")]
+	public static extern void QAbstractItemView_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_DragLeaveEvent")]
 	public static extern void QAbstractItemView_DragLeaveEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnDragLeaveEvent")]
 	public static extern void QAbstractItemView_OnDragLeaveEvent(void* self, QAbstractItemView_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperDragLeaveEvent")]
+	public static extern void QAbstractItemView_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_DropEvent")]
 	public static extern void QAbstractItemView_DropEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnDropEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnDropEvent")]
 	public static extern void QAbstractItemView_OnDropEvent(void* self, QAbstractItemView_OnDropEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperDropEvent")]
+	public static extern void QAbstractItemView_SuperDropEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_FocusInEvent")]
 	public static extern void QAbstractItemView_FocusInEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnFocusInEvent")]
 	public static extern void QAbstractItemView_OnFocusInEvent(void* self, QAbstractItemView_OnFocusInEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperFocusInEvent")]
+	public static extern void QAbstractItemView_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_FocusOutEvent")]
 	public static extern void QAbstractItemView_FocusOutEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnFocusOutEvent")]
 	public static extern void QAbstractItemView_OnFocusOutEvent(void* self, QAbstractItemView_OnFocusOutEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperFocusOutEvent")]
+	public static extern void QAbstractItemView_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_KeyPressEvent")]
 	public static extern void QAbstractItemView_KeyPressEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnKeyPressEvent")]
 	public static extern void QAbstractItemView_OnKeyPressEvent(void* self, QAbstractItemView_OnKeyPressEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperKeyPressEvent")]
+	public static extern void QAbstractItemView_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_ResizeEvent")]
 	public static extern void QAbstractItemView_ResizeEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnResizeEvent")]
 	public static extern void QAbstractItemView_OnResizeEvent(void* self, QAbstractItemView_OnResizeEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperResizeEvent")]
+	public static extern void QAbstractItemView_SuperResizeEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_TimerEvent")]
 	public static extern void QAbstractItemView_TimerEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnTimerEvent")]
 	public static extern void QAbstractItemView_OnTimerEvent(void* self, QAbstractItemView_OnTimerEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperTimerEvent")]
+	public static extern void QAbstractItemView_SuperTimerEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_InputMethodEvent")]
 	public static extern void QAbstractItemView_InputMethodEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnInputMethodEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnInputMethodEvent")]
 	public static extern void QAbstractItemView_OnInputMethodEvent(void* self, QAbstractItemView_OnInputMethodEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperInputMethodEvent")]
+	public static extern void QAbstractItemView_SuperInputMethodEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_EventFilter")]
 	public static extern bool QAbstractItemView_EventFilter(void* self, void** object, void** event);
 	
 	public function void QAbstractItemView_OnEventFilter_action(void* self, void** object, void** event);
 	[LinkName("QAbstractItemView_OnEventFilter")]
 	public static extern bool QAbstractItemView_OnEventFilter(void* self, QAbstractItemView_OnEventFilter_action _action);
+	
+	[LinkName("QAbstractItemView_SuperEventFilter")]
+	public static extern bool QAbstractItemView_SuperEventFilter(void* self, void** object, void** event);
 	[LinkName("QAbstractItemView_DropIndicatorPosition")]
 	public static extern QAbstractItemView_DropIndicatorPosition QAbstractItemView_DropIndicatorPosition(void* self);
 	[LinkName("QAbstractItemView_ViewportSizeHint")]
@@ -4979,6 +5726,9 @@ extension CQt
 	public function void QAbstractItemView_OnViewportSizeHint_action(void* self);
 	[LinkName("QAbstractItemView_OnViewportSizeHint")]
 	public static extern void* QAbstractItemView_OnViewportSizeHint(void* self, QAbstractItemView_OnViewportSizeHint_action _action);
+	
+	[LinkName("QAbstractItemView_SuperViewportSizeHint")]
+	public static extern void* QAbstractItemView_SuperViewportSizeHint(void* self);
 	[LinkName("QAbstractItemView_Tr2")]
 	public static extern libqt_string QAbstractItemView_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractItemView_Tr3")]
@@ -4989,192 +5739,288 @@ extension CQt
 	public function void QAbstractItemView_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnChildEvent")]
 	public static extern void QAbstractItemView_OnChildEvent(void* self, QAbstractItemView_OnChildEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperChildEvent")]
+	public static extern void QAbstractItemView_SuperChildEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_CustomEvent")]
 	public static extern void QAbstractItemView_CustomEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnCustomEvent")]
 	public static extern void QAbstractItemView_OnCustomEvent(void* self, QAbstractItemView_OnCustomEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperCustomEvent")]
+	public static extern void QAbstractItemView_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_ConnectNotify")]
 	public static extern void QAbstractItemView_ConnectNotify(void* self, void** signal);
 	
 	public function void QAbstractItemView_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractItemView_OnConnectNotify")]
 	public static extern void QAbstractItemView_OnConnectNotify(void* self, QAbstractItemView_OnConnectNotify_action _action);
+	
+	[LinkName("QAbstractItemView_SuperConnectNotify")]
+	public static extern void QAbstractItemView_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAbstractItemView_DisconnectNotify")]
 	public static extern void QAbstractItemView_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAbstractItemView_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractItemView_OnDisconnectNotify")]
 	public static extern void QAbstractItemView_OnDisconnectNotify(void* self, QAbstractItemView_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAbstractItemView_SuperDisconnectNotify")]
+	public static extern void QAbstractItemView_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QAbstractItemView_DevType")]
 	public static extern c_int QAbstractItemView_DevType(void* self);
 	
 	public function void QAbstractItemView_OnDevType_action(void* self);
 	[LinkName("QAbstractItemView_OnDevType")]
 	public static extern c_int QAbstractItemView_OnDevType(void* self, QAbstractItemView_OnDevType_action _action);
+	
+	[LinkName("QAbstractItemView_SuperDevType")]
+	public static extern c_int QAbstractItemView_SuperDevType(void* self);
 	[LinkName("QAbstractItemView_PaintEngine")]
 	public static extern void** QAbstractItemView_PaintEngine(void* self);
 	
 	public function void QAbstractItemView_OnPaintEngine_action(void* self);
 	[LinkName("QAbstractItemView_OnPaintEngine")]
 	public static extern void** QAbstractItemView_OnPaintEngine(void* self, QAbstractItemView_OnPaintEngine_action _action);
+	
+	[LinkName("QAbstractItemView_SuperPaintEngine")]
+	public static extern void** QAbstractItemView_SuperPaintEngine(void* self);
 	[LinkName("QAbstractItemView_Metric")]
 	public static extern c_int QAbstractItemView_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QAbstractItemView_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QAbstractItemView_OnMetric")]
 	public static extern c_int QAbstractItemView_OnMetric(void* self, QAbstractItemView_OnMetric_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMetric")]
+	public static extern c_int QAbstractItemView_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QAbstractItemView_InitPainter")]
 	public static extern void QAbstractItemView_InitPainter(void* self, void** painter);
 	
 	public function void QAbstractItemView_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QAbstractItemView_OnInitPainter")]
 	public static extern void QAbstractItemView_OnInitPainter(void* self, QAbstractItemView_OnInitPainter_action _action);
+	
+	[LinkName("QAbstractItemView_SuperInitPainter")]
+	public static extern void QAbstractItemView_SuperInitPainter(void* self, void** painter);
 	[LinkName("QAbstractItemView_Redirected")]
 	public static extern void** QAbstractItemView_Redirected(void* self, void** offset);
 	
 	public function void QAbstractItemView_OnRedirected_action(void* self, void** offset);
 	[LinkName("QAbstractItemView_OnRedirected")]
 	public static extern void** QAbstractItemView_OnRedirected(void* self, QAbstractItemView_OnRedirected_action _action);
+	
+	[LinkName("QAbstractItemView_SuperRedirected")]
+	public static extern void** QAbstractItemView_SuperRedirected(void* self, void** offset);
 	[LinkName("QAbstractItemView_SharedPainter")]
 	public static extern void** QAbstractItemView_SharedPainter(void* self);
 	
 	public function void QAbstractItemView_OnSharedPainter_action(void* self);
 	[LinkName("QAbstractItemView_OnSharedPainter")]
 	public static extern void** QAbstractItemView_OnSharedPainter(void* self, QAbstractItemView_OnSharedPainter_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSharedPainter")]
+	public static extern void** QAbstractItemView_SuperSharedPainter(void* self);
 	[LinkName("QAbstractItemView_SetVisible")]
 	public static extern void QAbstractItemView_SetVisible(void* self, bool visible);
 	
 	public function void QAbstractItemView_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QAbstractItemView_OnSetVisible")]
 	public static extern void QAbstractItemView_OnSetVisible(void* self, QAbstractItemView_OnSetVisible_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSetVisible")]
+	public static extern void QAbstractItemView_SuperSetVisible(void* self, bool visible);
 	[LinkName("QAbstractItemView_SizeHint")]
 	public static extern void* QAbstractItemView_SizeHint(void* self);
 	
 	public function void QAbstractItemView_OnSizeHint_action(void* self);
 	[LinkName("QAbstractItemView_OnSizeHint")]
 	public static extern void* QAbstractItemView_OnSizeHint(void* self, QAbstractItemView_OnSizeHint_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSizeHint")]
+	public static extern void* QAbstractItemView_SuperSizeHint(void* self);
 	[LinkName("QAbstractItemView_MinimumSizeHint")]
 	public static extern void* QAbstractItemView_MinimumSizeHint(void* self);
 	
 	public function void QAbstractItemView_OnMinimumSizeHint_action(void* self);
 	[LinkName("QAbstractItemView_OnMinimumSizeHint")]
 	public static extern void* QAbstractItemView_OnMinimumSizeHint(void* self, QAbstractItemView_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMinimumSizeHint")]
+	public static extern void* QAbstractItemView_SuperMinimumSizeHint(void* self);
 	[LinkName("QAbstractItemView_HeightForWidth")]
 	public static extern c_int QAbstractItemView_HeightForWidth(void* self, c_int param1);
 	
 	public function void QAbstractItemView_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QAbstractItemView_OnHeightForWidth")]
 	public static extern c_int QAbstractItemView_OnHeightForWidth(void* self, QAbstractItemView_OnHeightForWidth_action _action);
+	
+	[LinkName("QAbstractItemView_SuperHeightForWidth")]
+	public static extern c_int QAbstractItemView_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QAbstractItemView_HasHeightForWidth")]
 	public static extern bool QAbstractItemView_HasHeightForWidth(void* self);
 	
 	public function void QAbstractItemView_OnHasHeightForWidth_action(void* self);
 	[LinkName("QAbstractItemView_OnHasHeightForWidth")]
 	public static extern bool QAbstractItemView_OnHasHeightForWidth(void* self, QAbstractItemView_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QAbstractItemView_SuperHasHeightForWidth")]
+	public static extern bool QAbstractItemView_SuperHasHeightForWidth(void* self);
 	[LinkName("QAbstractItemView_WheelEvent")]
 	public static extern void QAbstractItemView_WheelEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnWheelEvent")]
 	public static extern void QAbstractItemView_OnWheelEvent(void* self, QAbstractItemView_OnWheelEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperWheelEvent")]
+	public static extern void QAbstractItemView_SuperWheelEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_KeyReleaseEvent")]
 	public static extern void QAbstractItemView_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnKeyReleaseEvent")]
 	public static extern void QAbstractItemView_OnKeyReleaseEvent(void* self, QAbstractItemView_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperKeyReleaseEvent")]
+	public static extern void QAbstractItemView_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_EnterEvent")]
 	public static extern void QAbstractItemView_EnterEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnEnterEvent")]
 	public static extern void QAbstractItemView_OnEnterEvent(void* self, QAbstractItemView_OnEnterEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperEnterEvent")]
+	public static extern void QAbstractItemView_SuperEnterEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_LeaveEvent")]
 	public static extern void QAbstractItemView_LeaveEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnLeaveEvent")]
 	public static extern void QAbstractItemView_OnLeaveEvent(void* self, QAbstractItemView_OnLeaveEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperLeaveEvent")]
+	public static extern void QAbstractItemView_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_PaintEvent")]
 	public static extern void QAbstractItemView_PaintEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnPaintEvent")]
 	public static extern void QAbstractItemView_OnPaintEvent(void* self, QAbstractItemView_OnPaintEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperPaintEvent")]
+	public static extern void QAbstractItemView_SuperPaintEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_MoveEvent")]
 	public static extern void QAbstractItemView_MoveEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnMoveEvent")]
 	public static extern void QAbstractItemView_OnMoveEvent(void* self, QAbstractItemView_OnMoveEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperMoveEvent")]
+	public static extern void QAbstractItemView_SuperMoveEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_CloseEvent")]
 	public static extern void QAbstractItemView_CloseEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnCloseEvent")]
 	public static extern void QAbstractItemView_OnCloseEvent(void* self, QAbstractItemView_OnCloseEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperCloseEvent")]
+	public static extern void QAbstractItemView_SuperCloseEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_ContextMenuEvent")]
 	public static extern void QAbstractItemView_ContextMenuEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnContextMenuEvent")]
 	public static extern void QAbstractItemView_OnContextMenuEvent(void* self, QAbstractItemView_OnContextMenuEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperContextMenuEvent")]
+	public static extern void QAbstractItemView_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_TabletEvent")]
 	public static extern void QAbstractItemView_TabletEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnTabletEvent")]
 	public static extern void QAbstractItemView_OnTabletEvent(void* self, QAbstractItemView_OnTabletEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperTabletEvent")]
+	public static extern void QAbstractItemView_SuperTabletEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_ActionEvent")]
 	public static extern void QAbstractItemView_ActionEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnActionEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnActionEvent")]
 	public static extern void QAbstractItemView_OnActionEvent(void* self, QAbstractItemView_OnActionEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperActionEvent")]
+	public static extern void QAbstractItemView_SuperActionEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_ShowEvent")]
 	public static extern void QAbstractItemView_ShowEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnShowEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnShowEvent")]
 	public static extern void QAbstractItemView_OnShowEvent(void* self, QAbstractItemView_OnShowEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperShowEvent")]
+	public static extern void QAbstractItemView_SuperShowEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_HideEvent")]
 	public static extern void QAbstractItemView_HideEvent(void* self, void** event);
 	
 	public function void QAbstractItemView_OnHideEvent_action(void* self, void** event);
 	[LinkName("QAbstractItemView_OnHideEvent")]
 	public static extern void QAbstractItemView_OnHideEvent(void* self, QAbstractItemView_OnHideEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperHideEvent")]
+	public static extern void QAbstractItemView_SuperHideEvent(void* self, void** event);
 	[LinkName("QAbstractItemView_NativeEvent")]
 	public static extern bool QAbstractItemView_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QAbstractItemView_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractItemView_OnNativeEvent")]
 	public static extern bool QAbstractItemView_OnNativeEvent(void* self, QAbstractItemView_OnNativeEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperNativeEvent")]
+	public static extern bool QAbstractItemView_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractItemView_ChangeEvent")]
 	public static extern void QAbstractItemView_ChangeEvent(void* self, void** param1);
 	
 	public function void QAbstractItemView_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QAbstractItemView_OnChangeEvent")]
 	public static extern void QAbstractItemView_OnChangeEvent(void* self, QAbstractItemView_OnChangeEvent_action _action);
+	
+	[LinkName("QAbstractItemView_SuperChangeEvent")]
+	public static extern void QAbstractItemView_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QAbstractItemView_InitStyleOption")]
 	public static extern void QAbstractItemView_InitStyleOption(void* self, void** option);
 	
 	public function void QAbstractItemView_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QAbstractItemView_OnInitStyleOption")]
 	public static extern void QAbstractItemView_OnInitStyleOption(void* self, QAbstractItemView_OnInitStyleOption_action _action);
+	
+	[LinkName("QAbstractItemView_SuperInitStyleOption")]
+	public static extern void QAbstractItemView_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QAbstractItemView_SetupViewport")]
 	public static extern void QAbstractItemView_SetupViewport(void* self, void** viewport);
 	
 	public function void QAbstractItemView_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QAbstractItemView_OnSetupViewport")]
 	public static extern void QAbstractItemView_OnSetupViewport(void* self, QAbstractItemView_OnSetupViewport_action _action);
+	
+	[LinkName("QAbstractItemView_SuperSetupViewport")]
+	public static extern void QAbstractItemView_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QAbstractItemView_ScrollContentsBy")]
 	public static extern void QAbstractItemView_ScrollContentsBy(void* self, c_int dx, c_int dy);
 	
 	public function void QAbstractItemView_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QAbstractItemView_OnScrollContentsBy")]
 	public static extern void QAbstractItemView_OnScrollContentsBy(void* self, QAbstractItemView_OnScrollContentsBy_action _action);
+	
+	[LinkName("QAbstractItemView_SuperScrollContentsBy")]
+	public static extern void QAbstractItemView_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 }
 [AllowDuplicates]
 enum QAbstractItemView_SelectionMode

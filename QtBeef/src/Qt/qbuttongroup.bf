@@ -356,6 +356,16 @@ class QButtonGroup : IQButtonGroup, IQObject
 		CQt.QButtonGroup_Connect_IdToggled(obj.ObjectPtr,  => QtBeef_QButtonGroup_Connect_IdToggled);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QButtonGroup_OnMetaObject(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnMetaObject);
+		CQt.QButtonGroup_OnMetacast(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnMetacast);
+		CQt.QButtonGroup_OnMetacall(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnMetacall);
+		CQt.QButtonGroup_OnEvent(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnEvent);
+		CQt.QButtonGroup_OnEventFilter(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnEventFilter);
+		CQt.QButtonGroup_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnTimerEvent);
+		CQt.QButtonGroup_OnChildEvent(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnChildEvent);
+		CQt.QButtonGroup_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnCustomEvent);
+		CQt.QButtonGroup_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnConnectNotify);
+		CQt.QButtonGroup_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QButtonGroup_OnDisconnectNotify);
 	}
 	public Event<delegate void(void** param1)> OnButtonClicked = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnButtonPressed = .() ~ _.Dispose();
@@ -416,6 +426,56 @@ class QButtonGroup : IQButtonGroup, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QButtonGroup_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QButtonGroup_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QButtonGroup_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QButtonGroup_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QButtonGroup_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QButtonGroup_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QButtonGroup_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QButtonGroup_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QButtonGroup_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QButtonGroup_Ptr ptr)
 	{
@@ -773,18 +833,27 @@ extension CQt
 	public function void QButtonGroup_OnMetaObject_action(void* self);
 	[LinkName("QButtonGroup_OnMetaObject")]
 	public static extern void** QButtonGroup_OnMetaObject(void* self, QButtonGroup_OnMetaObject_action _action);
+	
+	[LinkName("QButtonGroup_SuperMetaObject")]
+	public static extern void** QButtonGroup_SuperMetaObject(void* self);
 	[LinkName("QButtonGroup_Qt_Metacast")]
 	public static extern void* QButtonGroup_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QButtonGroup_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QButtonGroup_OnMetacast")]
 	public static extern void* QButtonGroup_OnMetacast(void* self, QButtonGroup_OnMetacast_action _action);
+	
+	[LinkName("QButtonGroup_SuperMetacast")]
+	public static extern void* QButtonGroup_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QButtonGroup_Qt_Metacall")]
 	public static extern c_int QButtonGroup_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QButtonGroup_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QButtonGroup_OnMetacall")]
 	public static extern c_int QButtonGroup_OnMetacall(void* self, QButtonGroup_OnMetacall_action _action);
+	
+	[LinkName("QButtonGroup_SuperMetacall")]
+	public static extern c_int QButtonGroup_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QButtonGroup_Tr")]
 	public static extern libqt_string QButtonGroup_Tr(c_char* s);
 	[LinkName("QButtonGroup_SetExclusive")]
@@ -867,40 +936,61 @@ extension CQt
 	public function void QButtonGroup_OnEvent_action(void* self, void** event);
 	[LinkName("QButtonGroup_OnEvent")]
 	public static extern bool QButtonGroup_OnEvent(void* self, QButtonGroup_OnEvent_action _action);
+	
+	[LinkName("QButtonGroup_SuperEvent")]
+	public static extern bool QButtonGroup_SuperEvent(void* self, void** event);
 	[LinkName("QButtonGroup_EventFilter")]
 	public static extern bool QButtonGroup_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QButtonGroup_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QButtonGroup_OnEventFilter")]
 	public static extern bool QButtonGroup_OnEventFilter(void* self, QButtonGroup_OnEventFilter_action _action);
+	
+	[LinkName("QButtonGroup_SuperEventFilter")]
+	public static extern bool QButtonGroup_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QButtonGroup_TimerEvent")]
 	public static extern void QButtonGroup_TimerEvent(void* self, void** event);
 	
 	public function void QButtonGroup_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QButtonGroup_OnTimerEvent")]
 	public static extern void QButtonGroup_OnTimerEvent(void* self, QButtonGroup_OnTimerEvent_action _action);
+	
+	[LinkName("QButtonGroup_SuperTimerEvent")]
+	public static extern void QButtonGroup_SuperTimerEvent(void* self, void** event);
 	[LinkName("QButtonGroup_ChildEvent")]
 	public static extern void QButtonGroup_ChildEvent(void* self, void** event);
 	
 	public function void QButtonGroup_OnChildEvent_action(void* self, void** event);
 	[LinkName("QButtonGroup_OnChildEvent")]
 	public static extern void QButtonGroup_OnChildEvent(void* self, QButtonGroup_OnChildEvent_action _action);
+	
+	[LinkName("QButtonGroup_SuperChildEvent")]
+	public static extern void QButtonGroup_SuperChildEvent(void* self, void** event);
 	[LinkName("QButtonGroup_CustomEvent")]
 	public static extern void QButtonGroup_CustomEvent(void* self, void** event);
 	
 	public function void QButtonGroup_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QButtonGroup_OnCustomEvent")]
 	public static extern void QButtonGroup_OnCustomEvent(void* self, QButtonGroup_OnCustomEvent_action _action);
+	
+	[LinkName("QButtonGroup_SuperCustomEvent")]
+	public static extern void QButtonGroup_SuperCustomEvent(void* self, void** event);
 	[LinkName("QButtonGroup_ConnectNotify")]
 	public static extern void QButtonGroup_ConnectNotify(void* self, void** signal);
 	
 	public function void QButtonGroup_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QButtonGroup_OnConnectNotify")]
 	public static extern void QButtonGroup_OnConnectNotify(void* self, QButtonGroup_OnConnectNotify_action _action);
+	
+	[LinkName("QButtonGroup_SuperConnectNotify")]
+	public static extern void QButtonGroup_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QButtonGroup_DisconnectNotify")]
 	public static extern void QButtonGroup_DisconnectNotify(void* self, void** signal);
 	
 	public function void QButtonGroup_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QButtonGroup_OnDisconnectNotify")]
 	public static extern void QButtonGroup_OnDisconnectNotify(void* self, QButtonGroup_OnDisconnectNotify_action _action);
+	
+	[LinkName("QButtonGroup_SuperDisconnectNotify")]
+	public static extern void QButtonGroup_SuperDisconnectNotify(void* self, void** signal);
 }

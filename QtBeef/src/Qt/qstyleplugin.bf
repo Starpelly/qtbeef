@@ -276,6 +276,17 @@ class QStylePlugin : IQStylePlugin, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QStylePlugin_OnMetaObject(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnMetaObject);
+		CQt.QStylePlugin_OnMetacast(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnMetacast);
+		CQt.QStylePlugin_OnMetacall(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnMetacall);
+		CQt.QStylePlugin_OnCreate(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnCreate);
+		CQt.QStylePlugin_OnEvent(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnEvent);
+		CQt.QStylePlugin_OnEventFilter(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnEventFilter);
+		CQt.QStylePlugin_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnTimerEvent);
+		CQt.QStylePlugin_OnChildEvent(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnChildEvent);
+		CQt.QStylePlugin_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnCustomEvent);
+		CQt.QStylePlugin_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnConnectNotify);
+		CQt.QStylePlugin_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QStylePlugin_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -288,6 +299,61 @@ class QStylePlugin : IQStylePlugin, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QStylePlugin_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QStylePlugin_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QStylePlugin_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QStylePlugin_OnCreate(void* ptr, libqt_string key)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreate(key);
+	}
+	static void QtBeef_QStylePlugin_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QStylePlugin_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QStylePlugin_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QStylePlugin_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QStylePlugin_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QStylePlugin_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QStylePlugin_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QStylePlugin_Ptr ptr)
 	{
@@ -573,18 +639,27 @@ extension CQt
 	public function void QStylePlugin_OnMetaObject_action(void* self);
 	[LinkName("QStylePlugin_OnMetaObject")]
 	public static extern void** QStylePlugin_OnMetaObject(void* self, QStylePlugin_OnMetaObject_action _action);
+	
+	[LinkName("QStylePlugin_SuperMetaObject")]
+	public static extern void** QStylePlugin_SuperMetaObject(void* self);
 	[LinkName("QStylePlugin_Qt_Metacast")]
 	public static extern void* QStylePlugin_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QStylePlugin_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QStylePlugin_OnMetacast")]
 	public static extern void* QStylePlugin_OnMetacast(void* self, QStylePlugin_OnMetacast_action _action);
+	
+	[LinkName("QStylePlugin_SuperMetacast")]
+	public static extern void* QStylePlugin_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QStylePlugin_Qt_Metacall")]
 	public static extern c_int QStylePlugin_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QStylePlugin_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStylePlugin_OnMetacall")]
 	public static extern c_int QStylePlugin_OnMetacall(void* self, QStylePlugin_OnMetacall_action _action);
+	
+	[LinkName("QStylePlugin_SuperMetacall")]
+	public static extern c_int QStylePlugin_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStylePlugin_Tr")]
 	public static extern libqt_string QStylePlugin_Tr(c_char* s);
 	[LinkName("QStylePlugin_Create")]
@@ -593,6 +668,9 @@ extension CQt
 	public function void QStylePlugin_OnCreate_action(void* self, libqt_string key);
 	[LinkName("QStylePlugin_OnCreate")]
 	public static extern void** QStylePlugin_OnCreate(void* self, QStylePlugin_OnCreate_action _action);
+	
+	[LinkName("QStylePlugin_SuperCreate")]
+	public static extern void** QStylePlugin_SuperCreate(void* self, libqt_string key);
 	[LinkName("QStylePlugin_Tr2")]
 	public static extern libqt_string QStylePlugin_Tr2(c_char* s, c_char* c);
 	[LinkName("QStylePlugin_Tr3")]
@@ -603,40 +681,61 @@ extension CQt
 	public function void QStylePlugin_OnEvent_action(void* self, void** event);
 	[LinkName("QStylePlugin_OnEvent")]
 	public static extern bool QStylePlugin_OnEvent(void* self, QStylePlugin_OnEvent_action _action);
+	
+	[LinkName("QStylePlugin_SuperEvent")]
+	public static extern bool QStylePlugin_SuperEvent(void* self, void** event);
 	[LinkName("QStylePlugin_EventFilter")]
 	public static extern bool QStylePlugin_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QStylePlugin_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QStylePlugin_OnEventFilter")]
 	public static extern bool QStylePlugin_OnEventFilter(void* self, QStylePlugin_OnEventFilter_action _action);
+	
+	[LinkName("QStylePlugin_SuperEventFilter")]
+	public static extern bool QStylePlugin_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QStylePlugin_TimerEvent")]
 	public static extern void QStylePlugin_TimerEvent(void* self, void** event);
 	
 	public function void QStylePlugin_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QStylePlugin_OnTimerEvent")]
 	public static extern void QStylePlugin_OnTimerEvent(void* self, QStylePlugin_OnTimerEvent_action _action);
+	
+	[LinkName("QStylePlugin_SuperTimerEvent")]
+	public static extern void QStylePlugin_SuperTimerEvent(void* self, void** event);
 	[LinkName("QStylePlugin_ChildEvent")]
 	public static extern void QStylePlugin_ChildEvent(void* self, void** event);
 	
 	public function void QStylePlugin_OnChildEvent_action(void* self, void** event);
 	[LinkName("QStylePlugin_OnChildEvent")]
 	public static extern void QStylePlugin_OnChildEvent(void* self, QStylePlugin_OnChildEvent_action _action);
+	
+	[LinkName("QStylePlugin_SuperChildEvent")]
+	public static extern void QStylePlugin_SuperChildEvent(void* self, void** event);
 	[LinkName("QStylePlugin_CustomEvent")]
 	public static extern void QStylePlugin_CustomEvent(void* self, void** event);
 	
 	public function void QStylePlugin_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QStylePlugin_OnCustomEvent")]
 	public static extern void QStylePlugin_OnCustomEvent(void* self, QStylePlugin_OnCustomEvent_action _action);
+	
+	[LinkName("QStylePlugin_SuperCustomEvent")]
+	public static extern void QStylePlugin_SuperCustomEvent(void* self, void** event);
 	[LinkName("QStylePlugin_ConnectNotify")]
 	public static extern void QStylePlugin_ConnectNotify(void* self, void** signal);
 	
 	public function void QStylePlugin_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QStylePlugin_OnConnectNotify")]
 	public static extern void QStylePlugin_OnConnectNotify(void* self, QStylePlugin_OnConnectNotify_action _action);
+	
+	[LinkName("QStylePlugin_SuperConnectNotify")]
+	public static extern void QStylePlugin_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QStylePlugin_DisconnectNotify")]
 	public static extern void QStylePlugin_DisconnectNotify(void* self, void** signal);
 	
 	public function void QStylePlugin_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QStylePlugin_OnDisconnectNotify")]
 	public static extern void QStylePlugin_OnDisconnectNotify(void* self, QStylePlugin_OnDisconnectNotify_action _action);
+	
+	[LinkName("QStylePlugin_SuperDisconnectNotify")]
+	public static extern void QStylePlugin_SuperDisconnectNotify(void* self, void** signal);
 }

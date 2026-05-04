@@ -1792,6 +1792,57 @@ class QMenu : IQMenu, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QMenu_OnMetaObject(obj.ObjectPtr,  => QtBeef_QMenu_OnMetaObject);
+		CQt.QMenu_OnMetacast(obj.ObjectPtr,  => QtBeef_QMenu_OnMetacast);
+		CQt.QMenu_OnMetacall(obj.ObjectPtr,  => QtBeef_QMenu_OnMetacall);
+		CQt.QMenu_OnSizeHint(obj.ObjectPtr,  => QtBeef_QMenu_OnSizeHint);
+		CQt.QMenu_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnChangeEvent);
+		CQt.QMenu_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnKeyPressEvent);
+		CQt.QMenu_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnMouseReleaseEvent);
+		CQt.QMenu_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnMousePressEvent);
+		CQt.QMenu_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnMouseMoveEvent);
+		CQt.QMenu_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnWheelEvent);
+		CQt.QMenu_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnEnterEvent);
+		CQt.QMenu_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnLeaveEvent);
+		CQt.QMenu_OnHideEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnHideEvent);
+		CQt.QMenu_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnPaintEvent);
+		CQt.QMenu_OnActionEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnActionEvent);
+		CQt.QMenu_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnTimerEvent);
+		CQt.QMenu_OnEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnEvent);
+		CQt.QMenu_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QMenu_OnFocusNextPrevChild);
+		CQt.QMenu_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QMenu_OnInitStyleOption);
+		CQt.QMenu_OnEventFilter(obj.ObjectPtr,  => QtBeef_QMenu_OnEventFilter);
+		CQt.QMenu_OnChildEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnChildEvent);
+		CQt.QMenu_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnCustomEvent);
+		CQt.QMenu_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QMenu_OnConnectNotify);
+		CQt.QMenu_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QMenu_OnDisconnectNotify);
+		CQt.QMenu_OnDevType(obj.ObjectPtr,  => QtBeef_QMenu_OnDevType);
+		CQt.QMenu_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QMenu_OnPaintEngine);
+		CQt.QMenu_OnMetric(obj.ObjectPtr,  => QtBeef_QMenu_OnMetric);
+		CQt.QMenu_OnInitPainter(obj.ObjectPtr,  => QtBeef_QMenu_OnInitPainter);
+		CQt.QMenu_OnRedirected(obj.ObjectPtr,  => QtBeef_QMenu_OnRedirected);
+		CQt.QMenu_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QMenu_OnSharedPainter);
+		CQt.QMenu_OnSetVisible(obj.ObjectPtr,  => QtBeef_QMenu_OnSetVisible);
+		CQt.QMenu_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QMenu_OnMinimumSizeHint);
+		CQt.QMenu_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QMenu_OnHeightForWidth);
+		CQt.QMenu_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QMenu_OnHasHeightForWidth);
+		CQt.QMenu_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnMouseDoubleClickEvent);
+		CQt.QMenu_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnKeyReleaseEvent);
+		CQt.QMenu_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnFocusInEvent);
+		CQt.QMenu_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnFocusOutEvent);
+		CQt.QMenu_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnMoveEvent);
+		CQt.QMenu_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnResizeEvent);
+		CQt.QMenu_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnCloseEvent);
+		CQt.QMenu_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnContextMenuEvent);
+		CQt.QMenu_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnTabletEvent);
+		CQt.QMenu_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnDragEnterEvent);
+		CQt.QMenu_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnDragMoveEvent);
+		CQt.QMenu_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnDragLeaveEvent);
+		CQt.QMenu_OnDropEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnDropEvent);
+		CQt.QMenu_OnShowEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnShowEvent);
+		CQt.QMenu_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnNativeEvent);
+		CQt.QMenu_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QMenu_OnInputMethodEvent);
+		CQt.QMenu_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QMenu_OnInputMethodQuery);
 	}
 	public Event<delegate void()> OnAboutToShow = .() ~ _.Dispose();
 	public Event<delegate void()> OnAboutToHide = .() ~ _.Dispose();
@@ -1852,6 +1903,261 @@ class QMenu : IQMenu, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QMenu_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QMenu_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QMenu_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QMenu_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QMenu_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QMenu_OnKeyPressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(param1);
+	}
+	static void QtBeef_QMenu_OnMouseReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(param1);
+	}
+	static void QtBeef_QMenu_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QMenu_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QMenu_OnWheelEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(param1);
+	}
+	static void QtBeef_QMenu_OnEnterEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(param1);
+	}
+	static void QtBeef_QMenu_OnLeaveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(param1);
+	}
+	static void QtBeef_QMenu_OnHideEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(param1);
+	}
+	static void QtBeef_QMenu_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QMenu_OnActionEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(param1);
+	}
+	static void QtBeef_QMenu_OnTimerEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(param1);
+	}
+	static void QtBeef_QMenu_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QMenu_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QMenu_OnInitStyleOption(void* ptr, void** option, void** action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option, action);
+	}
+	static void QtBeef_QMenu_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QMenu_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QMenu_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QMenu_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QMenu_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QMenu_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QMenu_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QMenu_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QMenu_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QMenu_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QMenu_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QMenu_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QMenu_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QMenu_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QMenu_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QMenu_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QMenu_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QMenu_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QMenu_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QMenu_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QMenu_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QMenu_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QMenu_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QMenu_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QMenu_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QMenu_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QMenu_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QMenu_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QMenu_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QMenu_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QMenu_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QMenu_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
 	}
 	public this(QMenu_Ptr ptr)
 	{
@@ -3630,18 +3936,27 @@ extension CQt
 	public function void QMenu_OnMetaObject_action(void* self);
 	[LinkName("QMenu_OnMetaObject")]
 	public static extern void** QMenu_OnMetaObject(void* self, QMenu_OnMetaObject_action _action);
+	
+	[LinkName("QMenu_SuperMetaObject")]
+	public static extern void** QMenu_SuperMetaObject(void* self);
 	[LinkName("QMenu_Qt_Metacast")]
 	public static extern void* QMenu_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QMenu_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QMenu_OnMetacast")]
 	public static extern void* QMenu_OnMetacast(void* self, QMenu_OnMetacast_action _action);
+	
+	[LinkName("QMenu_SuperMetacast")]
+	public static extern void* QMenu_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QMenu_Qt_Metacall")]
 	public static extern c_int QMenu_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QMenu_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QMenu_OnMetacall")]
 	public static extern c_int QMenu_OnMetacall(void* self, QMenu_OnMetacall_action _action);
+	
+	[LinkName("QMenu_SuperMetacall")]
+	public static extern c_int QMenu_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QMenu_Tr")]
 	public static extern libqt_string QMenu_Tr(c_char* s);
 	[LinkName("QMenu_AddMenu")]
@@ -3702,6 +4017,9 @@ extension CQt
 	public function void QMenu_OnSizeHint_action(void* self);
 	[LinkName("QMenu_OnSizeHint")]
 	public static extern void* QMenu_OnSizeHint(void* self, QMenu_OnSizeHint_action _action);
+	
+	[LinkName("QMenu_SuperSizeHint")]
+	public static extern void* QMenu_SuperSizeHint(void* self);
 	[LinkName("QMenu_ActionGeometry")]
 	public static extern void* QMenu_ActionGeometry(void* self, void** param1);
 	[LinkName("QMenu_ActionAt")]
@@ -3760,90 +4078,135 @@ extension CQt
 	public function void QMenu_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnChangeEvent")]
 	public static extern void QMenu_OnChangeEvent(void* self, QMenu_OnChangeEvent_action _action);
+	
+	[LinkName("QMenu_SuperChangeEvent")]
+	public static extern void QMenu_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QMenu_KeyPressEvent")]
 	public static extern void QMenu_KeyPressEvent(void* self, void** param1);
 	
 	public function void QMenu_OnKeyPressEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnKeyPressEvent")]
 	public static extern void QMenu_OnKeyPressEvent(void* self, QMenu_OnKeyPressEvent_action _action);
+	
+	[LinkName("QMenu_SuperKeyPressEvent")]
+	public static extern void QMenu_SuperKeyPressEvent(void* self, void** param1);
 	[LinkName("QMenu_MouseReleaseEvent")]
 	public static extern void QMenu_MouseReleaseEvent(void* self, void** param1);
 	
 	public function void QMenu_OnMouseReleaseEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnMouseReleaseEvent")]
 	public static extern void QMenu_OnMouseReleaseEvent(void* self, QMenu_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QMenu_SuperMouseReleaseEvent")]
+	public static extern void QMenu_SuperMouseReleaseEvent(void* self, void** param1);
 	[LinkName("QMenu_MousePressEvent")]
 	public static extern void QMenu_MousePressEvent(void* self, void** param1);
 	
 	public function void QMenu_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnMousePressEvent")]
 	public static extern void QMenu_OnMousePressEvent(void* self, QMenu_OnMousePressEvent_action _action);
+	
+	[LinkName("QMenu_SuperMousePressEvent")]
+	public static extern void QMenu_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QMenu_MouseMoveEvent")]
 	public static extern void QMenu_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QMenu_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnMouseMoveEvent")]
 	public static extern void QMenu_OnMouseMoveEvent(void* self, QMenu_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QMenu_SuperMouseMoveEvent")]
+	public static extern void QMenu_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QMenu_WheelEvent")]
 	public static extern void QMenu_WheelEvent(void* self, void** param1);
 	
 	public function void QMenu_OnWheelEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnWheelEvent")]
 	public static extern void QMenu_OnWheelEvent(void* self, QMenu_OnWheelEvent_action _action);
+	
+	[LinkName("QMenu_SuperWheelEvent")]
+	public static extern void QMenu_SuperWheelEvent(void* self, void** param1);
 	[LinkName("QMenu_EnterEvent")]
 	public static extern void QMenu_EnterEvent(void* self, void** param1);
 	
 	public function void QMenu_OnEnterEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnEnterEvent")]
 	public static extern void QMenu_OnEnterEvent(void* self, QMenu_OnEnterEvent_action _action);
+	
+	[LinkName("QMenu_SuperEnterEvent")]
+	public static extern void QMenu_SuperEnterEvent(void* self, void** param1);
 	[LinkName("QMenu_LeaveEvent")]
 	public static extern void QMenu_LeaveEvent(void* self, void** param1);
 	
 	public function void QMenu_OnLeaveEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnLeaveEvent")]
 	public static extern void QMenu_OnLeaveEvent(void* self, QMenu_OnLeaveEvent_action _action);
+	
+	[LinkName("QMenu_SuperLeaveEvent")]
+	public static extern void QMenu_SuperLeaveEvent(void* self, void** param1);
 	[LinkName("QMenu_HideEvent")]
 	public static extern void QMenu_HideEvent(void* self, void** param1);
 	
 	public function void QMenu_OnHideEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnHideEvent")]
 	public static extern void QMenu_OnHideEvent(void* self, QMenu_OnHideEvent_action _action);
+	
+	[LinkName("QMenu_SuperHideEvent")]
+	public static extern void QMenu_SuperHideEvent(void* self, void** param1);
 	[LinkName("QMenu_PaintEvent")]
 	public static extern void QMenu_PaintEvent(void* self, void** param1);
 	
 	public function void QMenu_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnPaintEvent")]
 	public static extern void QMenu_OnPaintEvent(void* self, QMenu_OnPaintEvent_action _action);
+	
+	[LinkName("QMenu_SuperPaintEvent")]
+	public static extern void QMenu_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QMenu_ActionEvent")]
 	public static extern void QMenu_ActionEvent(void* self, void** param1);
 	
 	public function void QMenu_OnActionEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnActionEvent")]
 	public static extern void QMenu_OnActionEvent(void* self, QMenu_OnActionEvent_action _action);
+	
+	[LinkName("QMenu_SuperActionEvent")]
+	public static extern void QMenu_SuperActionEvent(void* self, void** param1);
 	[LinkName("QMenu_TimerEvent")]
 	public static extern void QMenu_TimerEvent(void* self, void** param1);
 	
 	public function void QMenu_OnTimerEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnTimerEvent")]
 	public static extern void QMenu_OnTimerEvent(void* self, QMenu_OnTimerEvent_action _action);
+	
+	[LinkName("QMenu_SuperTimerEvent")]
+	public static extern void QMenu_SuperTimerEvent(void* self, void** param1);
 	[LinkName("QMenu_Event")]
 	public static extern bool QMenu_Event(void* self, void** param1);
 	
 	public function void QMenu_OnEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnEvent")]
 	public static extern bool QMenu_OnEvent(void* self, QMenu_OnEvent_action _action);
+	
+	[LinkName("QMenu_SuperEvent")]
+	public static extern bool QMenu_SuperEvent(void* self, void** param1);
 	[LinkName("QMenu_FocusNextPrevChild")]
 	public static extern bool QMenu_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QMenu_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QMenu_OnFocusNextPrevChild")]
 	public static extern bool QMenu_OnFocusNextPrevChild(void* self, QMenu_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QMenu_SuperFocusNextPrevChild")]
+	public static extern bool QMenu_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QMenu_InitStyleOption")]
 	public static extern void QMenu_InitStyleOption(void* self, void** option, void** action);
 	
 	public function void QMenu_OnInitStyleOption_action(void* self, void** option, void** action);
 	[LinkName("QMenu_OnInitStyleOption")]
 	public static extern void QMenu_OnInitStyleOption(void* self, QMenu_OnInitStyleOption_action _action);
+	
+	[LinkName("QMenu_SuperInitStyleOption")]
+	public static extern void QMenu_SuperInitStyleOption(void* self, void** option, void** action);
 	[LinkName("QMenu_Tr2")]
 	public static extern libqt_string QMenu_Tr2(c_char* s, c_char* c);
 	[LinkName("QMenu_Tr3")]
@@ -3862,190 +4225,286 @@ extension CQt
 	public function void QMenu_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QMenu_OnEventFilter")]
 	public static extern bool QMenu_OnEventFilter(void* self, QMenu_OnEventFilter_action _action);
+	
+	[LinkName("QMenu_SuperEventFilter")]
+	public static extern bool QMenu_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QMenu_ChildEvent")]
 	public static extern void QMenu_ChildEvent(void* self, void** event);
 	
 	public function void QMenu_OnChildEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnChildEvent")]
 	public static extern void QMenu_OnChildEvent(void* self, QMenu_OnChildEvent_action _action);
+	
+	[LinkName("QMenu_SuperChildEvent")]
+	public static extern void QMenu_SuperChildEvent(void* self, void** event);
 	[LinkName("QMenu_CustomEvent")]
 	public static extern void QMenu_CustomEvent(void* self, void** event);
 	
 	public function void QMenu_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnCustomEvent")]
 	public static extern void QMenu_OnCustomEvent(void* self, QMenu_OnCustomEvent_action _action);
+	
+	[LinkName("QMenu_SuperCustomEvent")]
+	public static extern void QMenu_SuperCustomEvent(void* self, void** event);
 	[LinkName("QMenu_ConnectNotify")]
 	public static extern void QMenu_ConnectNotify(void* self, void** signal);
 	
 	public function void QMenu_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QMenu_OnConnectNotify")]
 	public static extern void QMenu_OnConnectNotify(void* self, QMenu_OnConnectNotify_action _action);
+	
+	[LinkName("QMenu_SuperConnectNotify")]
+	public static extern void QMenu_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QMenu_DisconnectNotify")]
 	public static extern void QMenu_DisconnectNotify(void* self, void** signal);
 	
 	public function void QMenu_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QMenu_OnDisconnectNotify")]
 	public static extern void QMenu_OnDisconnectNotify(void* self, QMenu_OnDisconnectNotify_action _action);
+	
+	[LinkName("QMenu_SuperDisconnectNotify")]
+	public static extern void QMenu_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QMenu_DevType")]
 	public static extern c_int QMenu_DevType(void* self);
 	
 	public function void QMenu_OnDevType_action(void* self);
 	[LinkName("QMenu_OnDevType")]
 	public static extern c_int QMenu_OnDevType(void* self, QMenu_OnDevType_action _action);
+	
+	[LinkName("QMenu_SuperDevType")]
+	public static extern c_int QMenu_SuperDevType(void* self);
 	[LinkName("QMenu_PaintEngine")]
 	public static extern void** QMenu_PaintEngine(void* self);
 	
 	public function void QMenu_OnPaintEngine_action(void* self);
 	[LinkName("QMenu_OnPaintEngine")]
 	public static extern void** QMenu_OnPaintEngine(void* self, QMenu_OnPaintEngine_action _action);
+	
+	[LinkName("QMenu_SuperPaintEngine")]
+	public static extern void** QMenu_SuperPaintEngine(void* self);
 	[LinkName("QMenu_Metric")]
 	public static extern c_int QMenu_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QMenu_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QMenu_OnMetric")]
 	public static extern c_int QMenu_OnMetric(void* self, QMenu_OnMetric_action _action);
+	
+	[LinkName("QMenu_SuperMetric")]
+	public static extern c_int QMenu_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QMenu_InitPainter")]
 	public static extern void QMenu_InitPainter(void* self, void** painter);
 	
 	public function void QMenu_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QMenu_OnInitPainter")]
 	public static extern void QMenu_OnInitPainter(void* self, QMenu_OnInitPainter_action _action);
+	
+	[LinkName("QMenu_SuperInitPainter")]
+	public static extern void QMenu_SuperInitPainter(void* self, void** painter);
 	[LinkName("QMenu_Redirected")]
 	public static extern void** QMenu_Redirected(void* self, void** offset);
 	
 	public function void QMenu_OnRedirected_action(void* self, void** offset);
 	[LinkName("QMenu_OnRedirected")]
 	public static extern void** QMenu_OnRedirected(void* self, QMenu_OnRedirected_action _action);
+	
+	[LinkName("QMenu_SuperRedirected")]
+	public static extern void** QMenu_SuperRedirected(void* self, void** offset);
 	[LinkName("QMenu_SharedPainter")]
 	public static extern void** QMenu_SharedPainter(void* self);
 	
 	public function void QMenu_OnSharedPainter_action(void* self);
 	[LinkName("QMenu_OnSharedPainter")]
 	public static extern void** QMenu_OnSharedPainter(void* self, QMenu_OnSharedPainter_action _action);
+	
+	[LinkName("QMenu_SuperSharedPainter")]
+	public static extern void** QMenu_SuperSharedPainter(void* self);
 	[LinkName("QMenu_SetVisible")]
 	public static extern void QMenu_SetVisible(void* self, bool visible);
 	
 	public function void QMenu_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QMenu_OnSetVisible")]
 	public static extern void QMenu_OnSetVisible(void* self, QMenu_OnSetVisible_action _action);
+	
+	[LinkName("QMenu_SuperSetVisible")]
+	public static extern void QMenu_SuperSetVisible(void* self, bool visible);
 	[LinkName("QMenu_MinimumSizeHint")]
 	public static extern void* QMenu_MinimumSizeHint(void* self);
 	
 	public function void QMenu_OnMinimumSizeHint_action(void* self);
 	[LinkName("QMenu_OnMinimumSizeHint")]
 	public static extern void* QMenu_OnMinimumSizeHint(void* self, QMenu_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QMenu_SuperMinimumSizeHint")]
+	public static extern void* QMenu_SuperMinimumSizeHint(void* self);
 	[LinkName("QMenu_HeightForWidth")]
 	public static extern c_int QMenu_HeightForWidth(void* self, c_int param1);
 	
 	public function void QMenu_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QMenu_OnHeightForWidth")]
 	public static extern c_int QMenu_OnHeightForWidth(void* self, QMenu_OnHeightForWidth_action _action);
+	
+	[LinkName("QMenu_SuperHeightForWidth")]
+	public static extern c_int QMenu_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QMenu_HasHeightForWidth")]
 	public static extern bool QMenu_HasHeightForWidth(void* self);
 	
 	public function void QMenu_OnHasHeightForWidth_action(void* self);
 	[LinkName("QMenu_OnHasHeightForWidth")]
 	public static extern bool QMenu_OnHasHeightForWidth(void* self, QMenu_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QMenu_SuperHasHeightForWidth")]
+	public static extern bool QMenu_SuperHasHeightForWidth(void* self);
 	[LinkName("QMenu_MouseDoubleClickEvent")]
 	public static extern void QMenu_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QMenu_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnMouseDoubleClickEvent")]
 	public static extern void QMenu_OnMouseDoubleClickEvent(void* self, QMenu_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QMenu_SuperMouseDoubleClickEvent")]
+	public static extern void QMenu_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QMenu_KeyReleaseEvent")]
 	public static extern void QMenu_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QMenu_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnKeyReleaseEvent")]
 	public static extern void QMenu_OnKeyReleaseEvent(void* self, QMenu_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QMenu_SuperKeyReleaseEvent")]
+	public static extern void QMenu_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QMenu_FocusInEvent")]
 	public static extern void QMenu_FocusInEvent(void* self, void** event);
 	
 	public function void QMenu_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnFocusInEvent")]
 	public static extern void QMenu_OnFocusInEvent(void* self, QMenu_OnFocusInEvent_action _action);
+	
+	[LinkName("QMenu_SuperFocusInEvent")]
+	public static extern void QMenu_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QMenu_FocusOutEvent")]
 	public static extern void QMenu_FocusOutEvent(void* self, void** event);
 	
 	public function void QMenu_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnFocusOutEvent")]
 	public static extern void QMenu_OnFocusOutEvent(void* self, QMenu_OnFocusOutEvent_action _action);
+	
+	[LinkName("QMenu_SuperFocusOutEvent")]
+	public static extern void QMenu_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QMenu_MoveEvent")]
 	public static extern void QMenu_MoveEvent(void* self, void** event);
 	
 	public function void QMenu_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnMoveEvent")]
 	public static extern void QMenu_OnMoveEvent(void* self, QMenu_OnMoveEvent_action _action);
+	
+	[LinkName("QMenu_SuperMoveEvent")]
+	public static extern void QMenu_SuperMoveEvent(void* self, void** event);
 	[LinkName("QMenu_ResizeEvent")]
 	public static extern void QMenu_ResizeEvent(void* self, void** event);
 	
 	public function void QMenu_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnResizeEvent")]
 	public static extern void QMenu_OnResizeEvent(void* self, QMenu_OnResizeEvent_action _action);
+	
+	[LinkName("QMenu_SuperResizeEvent")]
+	public static extern void QMenu_SuperResizeEvent(void* self, void** event);
 	[LinkName("QMenu_CloseEvent")]
 	public static extern void QMenu_CloseEvent(void* self, void** event);
 	
 	public function void QMenu_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnCloseEvent")]
 	public static extern void QMenu_OnCloseEvent(void* self, QMenu_OnCloseEvent_action _action);
+	
+	[LinkName("QMenu_SuperCloseEvent")]
+	public static extern void QMenu_SuperCloseEvent(void* self, void** event);
 	[LinkName("QMenu_ContextMenuEvent")]
 	public static extern void QMenu_ContextMenuEvent(void* self, void** event);
 	
 	public function void QMenu_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnContextMenuEvent")]
 	public static extern void QMenu_OnContextMenuEvent(void* self, QMenu_OnContextMenuEvent_action _action);
+	
+	[LinkName("QMenu_SuperContextMenuEvent")]
+	public static extern void QMenu_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QMenu_TabletEvent")]
 	public static extern void QMenu_TabletEvent(void* self, void** event);
 	
 	public function void QMenu_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnTabletEvent")]
 	public static extern void QMenu_OnTabletEvent(void* self, QMenu_OnTabletEvent_action _action);
+	
+	[LinkName("QMenu_SuperTabletEvent")]
+	public static extern void QMenu_SuperTabletEvent(void* self, void** event);
 	[LinkName("QMenu_DragEnterEvent")]
 	public static extern void QMenu_DragEnterEvent(void* self, void** event);
 	
 	public function void QMenu_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnDragEnterEvent")]
 	public static extern void QMenu_OnDragEnterEvent(void* self, QMenu_OnDragEnterEvent_action _action);
+	
+	[LinkName("QMenu_SuperDragEnterEvent")]
+	public static extern void QMenu_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QMenu_DragMoveEvent")]
 	public static extern void QMenu_DragMoveEvent(void* self, void** event);
 	
 	public function void QMenu_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnDragMoveEvent")]
 	public static extern void QMenu_OnDragMoveEvent(void* self, QMenu_OnDragMoveEvent_action _action);
+	
+	[LinkName("QMenu_SuperDragMoveEvent")]
+	public static extern void QMenu_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QMenu_DragLeaveEvent")]
 	public static extern void QMenu_DragLeaveEvent(void* self, void** event);
 	
 	public function void QMenu_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnDragLeaveEvent")]
 	public static extern void QMenu_OnDragLeaveEvent(void* self, QMenu_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QMenu_SuperDragLeaveEvent")]
+	public static extern void QMenu_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QMenu_DropEvent")]
 	public static extern void QMenu_DropEvent(void* self, void** event);
 	
 	public function void QMenu_OnDropEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnDropEvent")]
 	public static extern void QMenu_OnDropEvent(void* self, QMenu_OnDropEvent_action _action);
+	
+	[LinkName("QMenu_SuperDropEvent")]
+	public static extern void QMenu_SuperDropEvent(void* self, void** event);
 	[LinkName("QMenu_ShowEvent")]
 	public static extern void QMenu_ShowEvent(void* self, void** event);
 	
 	public function void QMenu_OnShowEvent_action(void* self, void** event);
 	[LinkName("QMenu_OnShowEvent")]
 	public static extern void QMenu_OnShowEvent(void* self, QMenu_OnShowEvent_action _action);
+	
+	[LinkName("QMenu_SuperShowEvent")]
+	public static extern void QMenu_SuperShowEvent(void* self, void** event);
 	[LinkName("QMenu_NativeEvent")]
 	public static extern bool QMenu_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QMenu_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QMenu_OnNativeEvent")]
 	public static extern bool QMenu_OnNativeEvent(void* self, QMenu_OnNativeEvent_action _action);
+	
+	[LinkName("QMenu_SuperNativeEvent")]
+	public static extern bool QMenu_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QMenu_InputMethodEvent")]
 	public static extern void QMenu_InputMethodEvent(void* self, void** param1);
 	
 	public function void QMenu_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QMenu_OnInputMethodEvent")]
 	public static extern void QMenu_OnInputMethodEvent(void* self, QMenu_OnInputMethodEvent_action _action);
+	
+	[LinkName("QMenu_SuperInputMethodEvent")]
+	public static extern void QMenu_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QMenu_InputMethodQuery")]
 	public static extern void* QMenu_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QMenu_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QMenu_OnInputMethodQuery")]
 	public static extern void* QMenu_OnInputMethodQuery(void* self, QMenu_OnInputMethodQuery_action _action);
+	
+	[LinkName("QMenu_SuperInputMethodQuery")]
+	public static extern void* QMenu_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 }

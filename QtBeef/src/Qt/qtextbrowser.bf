@@ -2297,6 +2297,71 @@ class QTextBrowser : IQTextBrowser, IQTextEdit, IQAbstractScrollArea, IQFrame, I
 		CQt.QTextEdit_Connect_CopyAvailable(obj.ObjectPtr,  => QtBeef_QTextEdit_Connect_CopyAvailable);
 		CQt.QTextEdit_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_Connect_SelectionChanged);
 		CQt.QTextEdit_Connect_CursorPositionChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_Connect_CursorPositionChanged);
+		CQt.QTextBrowser_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMetaObject);
+		CQt.QTextBrowser_OnMetacast(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMetacast);
+		CQt.QTextBrowser_OnMetacall(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMetacall);
+		CQt.QTextBrowser_OnLoadResource(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnLoadResource);
+		CQt.QTextBrowser_OnBackward(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnBackward);
+		CQt.QTextBrowser_OnForward(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnForward);
+		CQt.QTextBrowser_OnHome(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnHome);
+		CQt.QTextBrowser_OnReload(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnReload);
+		CQt.QTextBrowser_OnEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnEvent);
+		CQt.QTextBrowser_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnKeyPressEvent);
+		CQt.QTextBrowser_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMouseMoveEvent);
+		CQt.QTextBrowser_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMousePressEvent);
+		CQt.QTextBrowser_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMouseReleaseEvent);
+		CQt.QTextBrowser_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnFocusOutEvent);
+		CQt.QTextBrowser_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnFocusNextPrevChild);
+		CQt.QTextBrowser_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnPaintEvent);
+		CQt.QTextBrowser_OnDoSetSource(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnDoSetSource);
+		CQt.QTextBrowser_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnEventFilter);
+		CQt.QTextBrowser_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnTimerEvent);
+		CQt.QTextBrowser_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnChildEvent);
+		CQt.QTextBrowser_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnCustomEvent);
+		CQt.QTextBrowser_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnConnectNotify);
+		CQt.QTextBrowser_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnDisconnectNotify);
+		CQt.QTextBrowser_OnDevType(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnDevType);
+		CQt.QTextBrowser_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnPaintEngine);
+		CQt.QTextBrowser_OnMetric(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMetric);
+		CQt.QTextBrowser_OnInitPainter(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnInitPainter);
+		CQt.QTextBrowser_OnRedirected(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnRedirected);
+		CQt.QTextBrowser_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnSharedPainter);
+		CQt.QTextBrowser_OnSetVisible(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnSetVisible);
+		CQt.QTextBrowser_OnSizeHint(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnSizeHint);
+		CQt.QTextBrowser_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMinimumSizeHint);
+		CQt.QTextBrowser_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnHeightForWidth);
+		CQt.QTextBrowser_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnHasHeightForWidth);
+		CQt.QTextBrowser_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMouseDoubleClickEvent);
+		CQt.QTextBrowser_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnWheelEvent);
+		CQt.QTextBrowser_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnKeyReleaseEvent);
+		CQt.QTextBrowser_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnFocusInEvent);
+		CQt.QTextBrowser_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnEnterEvent);
+		CQt.QTextBrowser_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnLeaveEvent);
+		CQt.QTextBrowser_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnMoveEvent);
+		CQt.QTextBrowser_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnResizeEvent);
+		CQt.QTextBrowser_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnCloseEvent);
+		CQt.QTextBrowser_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnContextMenuEvent);
+		CQt.QTextBrowser_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnTabletEvent);
+		CQt.QTextBrowser_OnActionEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnActionEvent);
+		CQt.QTextBrowser_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnDragEnterEvent);
+		CQt.QTextBrowser_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnDragMoveEvent);
+		CQt.QTextBrowser_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnDragLeaveEvent);
+		CQt.QTextBrowser_OnDropEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnDropEvent);
+		CQt.QTextBrowser_OnShowEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnShowEvent);
+		CQt.QTextBrowser_OnHideEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnHideEvent);
+		CQt.QTextBrowser_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnNativeEvent);
+		CQt.QTextBrowser_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnChangeEvent);
+		CQt.QTextBrowser_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnInputMethodEvent);
+		CQt.QTextBrowser_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnInputMethodQuery);
+		CQt.QTextBrowser_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnInitStyleOption);
+		CQt.QTextBrowser_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnSetupViewport);
+		CQt.QTextBrowser_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnViewportEvent);
+		CQt.QTextBrowser_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnScrollContentsBy);
+		CQt.QTextBrowser_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnViewportSizeHint);
+		CQt.QTextBrowser_OnCreateMimeDataFromSelection(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnCreateMimeDataFromSelection);
+		CQt.QTextBrowser_OnCanInsertFromMimeData(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnCanInsertFromMimeData);
+		CQt.QTextBrowser_OnInsertFromMimeData(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnInsertFromMimeData);
+		CQt.QTextBrowser_OnDoSetTextCursor(obj.ObjectPtr,  => QtBeef_QTextBrowser_OnDoSetTextCursor);
 	}
 	public Event<delegate void(bool param1)> OnBackwardAvailable = .() ~ _.Dispose();
 	public Event<delegate void(bool param1)> OnForwardAvailable = .() ~ _.Dispose();
@@ -2411,6 +2476,331 @@ class QTextBrowser : IQTextBrowser, IQTextEdit, IQAbstractScrollArea, IQFrame, I
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCursorPositionChanged.Invoke();
+	}
+	static void QtBeef_QTextBrowser_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTextBrowser_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTextBrowser_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTextBrowser_OnLoadResource(void* ptr, c_int type, void** name)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLoadResource(type, name);
+	}
+	static void QtBeef_QTextBrowser_OnBackward(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBackward();
+	}
+	static void QtBeef_QTextBrowser_OnForward(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnForward();
+	}
+	static void QtBeef_QTextBrowser_OnHome(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHome();
+	}
+	static void QtBeef_QTextBrowser_OnReload(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReload();
+	}
+	static void QtBeef_QTextBrowser_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QTextBrowser_OnKeyPressEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(ev);
+	}
+	static void QtBeef_QTextBrowser_OnMouseMoveEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(ev);
+	}
+	static void QtBeef_QTextBrowser_OnMousePressEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(ev);
+	}
+	static void QtBeef_QTextBrowser_OnMouseReleaseEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(ev);
+	}
+	static void QtBeef_QTextBrowser_OnFocusOutEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(ev);
+	}
+	static void QtBeef_QTextBrowser_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QTextBrowser_OnPaintEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(e);
+	}
+	static void QtBeef_QTextBrowser_OnDoSetSource(void* ptr, void** name, QTextDocument_ResourceType type)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoSetSource(name, type);
+	}
+	static void QtBeef_QTextBrowser_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTextBrowser_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTextBrowser_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QTextBrowser_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QTextBrowser_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QTextBrowser_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QTextBrowser_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QTextBrowser_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QTextBrowser_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QTextBrowser_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QTextBrowser_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QTextBrowser_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QTextBrowser_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QTextBrowser_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QTextBrowser_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QTextBrowser_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QTextBrowser_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QTextBrowser_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QTextBrowser_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QTextBrowser_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QTextBrowser_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QTextBrowser_OnViewportEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(param1);
+	}
+	static void QtBeef_QTextBrowser_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
+	}
+	static void QtBeef_QTextBrowser_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
+	}
+	static void QtBeef_QTextBrowser_OnCreateMimeDataFromSelection(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreateMimeDataFromSelection();
+	}
+	static void QtBeef_QTextBrowser_OnCanInsertFromMimeData(void* ptr, void** source)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanInsertFromMimeData(source);
+	}
+	static void QtBeef_QTextBrowser_OnInsertFromMimeData(void* ptr, void** source)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertFromMimeData(source);
+	}
+	static void QtBeef_QTextBrowser_OnDoSetTextCursor(void* ptr, void** cursor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoSetTextCursor(cursor);
 	}
 	public this(QTextBrowser_Ptr ptr)
 	{
@@ -4662,18 +5052,27 @@ extension CQt
 	public function void QTextBrowser_OnMetaObject_action(void* self);
 	[LinkName("QTextBrowser_OnMetaObject")]
 	public static extern void** QTextBrowser_OnMetaObject(void* self, QTextBrowser_OnMetaObject_action _action);
+	
+	[LinkName("QTextBrowser_SuperMetaObject")]
+	public static extern void** QTextBrowser_SuperMetaObject(void* self);
 	[LinkName("QTextBrowser_Qt_Metacast")]
 	public static extern void* QTextBrowser_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTextBrowser_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTextBrowser_OnMetacast")]
 	public static extern void* QTextBrowser_OnMetacast(void* self, QTextBrowser_OnMetacast_action _action);
+	
+	[LinkName("QTextBrowser_SuperMetacast")]
+	public static extern void* QTextBrowser_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTextBrowser_Qt_Metacall")]
 	public static extern c_int QTextBrowser_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTextBrowser_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTextBrowser_OnMetacall")]
 	public static extern c_int QTextBrowser_OnMetacall(void* self, QTextBrowser_OnMetacall_action _action);
+	
+	[LinkName("QTextBrowser_SuperMetacall")]
+	public static extern c_int QTextBrowser_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTextBrowser_Tr")]
 	public static extern libqt_string QTextBrowser_Tr(c_char* s);
 	[LinkName("QTextBrowser_Source")]
@@ -4690,6 +5089,9 @@ extension CQt
 	public function void QTextBrowser_OnLoadResource_action(void* self, c_int type, void** name);
 	[LinkName("QTextBrowser_OnLoadResource")]
 	public static extern void* QTextBrowser_OnLoadResource(void* self, QTextBrowser_OnLoadResource_action _action);
+	
+	[LinkName("QTextBrowser_SuperLoadResource")]
+	public static extern void* QTextBrowser_SuperLoadResource(void* self, c_int type, void** name);
 	[LinkName("QTextBrowser_IsBackwardAvailable")]
 	public static extern bool QTextBrowser_IsBackwardAvailable(void* self);
 	[LinkName("QTextBrowser_IsForwardAvailable")]
@@ -4720,24 +5122,36 @@ extension CQt
 	public function void QTextBrowser_OnBackward_action(void* self);
 	[LinkName("QTextBrowser_OnBackward")]
 	public static extern void QTextBrowser_OnBackward(void* self, QTextBrowser_OnBackward_action _action);
+	
+	[LinkName("QTextBrowser_SuperBackward")]
+	public static extern void QTextBrowser_SuperBackward(void* self);
 	[LinkName("QTextBrowser_Forward")]
 	public static extern void QTextBrowser_Forward(void* self);
 	
 	public function void QTextBrowser_OnForward_action(void* self);
 	[LinkName("QTextBrowser_OnForward")]
 	public static extern void QTextBrowser_OnForward(void* self, QTextBrowser_OnForward_action _action);
+	
+	[LinkName("QTextBrowser_SuperForward")]
+	public static extern void QTextBrowser_SuperForward(void* self);
 	[LinkName("QTextBrowser_Home")]
 	public static extern void QTextBrowser_Home(void* self);
 	
 	public function void QTextBrowser_OnHome_action(void* self);
 	[LinkName("QTextBrowser_OnHome")]
 	public static extern void QTextBrowser_OnHome(void* self, QTextBrowser_OnHome_action _action);
+	
+	[LinkName("QTextBrowser_SuperHome")]
+	public static extern void QTextBrowser_SuperHome(void* self);
 	[LinkName("QTextBrowser_Reload")]
 	public static extern void QTextBrowser_Reload(void* self);
 	
 	public function void QTextBrowser_OnReload_action(void* self);
 	[LinkName("QTextBrowser_OnReload")]
 	public static extern void QTextBrowser_OnReload(void* self, QTextBrowser_OnReload_action _action);
+	
+	[LinkName("QTextBrowser_SuperReload")]
+	public static extern void QTextBrowser_SuperReload(void* self);
 	[LinkName("QTextBrowser_BackwardAvailable")]
 	public static extern void QTextBrowser_BackwardAvailable(void* self, bool param1);
 	
@@ -4780,54 +5194,81 @@ extension CQt
 	public function void QTextBrowser_OnEvent_action(void* self, void** e);
 	[LinkName("QTextBrowser_OnEvent")]
 	public static extern bool QTextBrowser_OnEvent(void* self, QTextBrowser_OnEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperEvent")]
+	public static extern bool QTextBrowser_SuperEvent(void* self, void** e);
 	[LinkName("QTextBrowser_KeyPressEvent")]
 	public static extern void QTextBrowser_KeyPressEvent(void* self, void** ev);
 	
 	public function void QTextBrowser_OnKeyPressEvent_action(void* self, void** ev);
 	[LinkName("QTextBrowser_OnKeyPressEvent")]
 	public static extern void QTextBrowser_OnKeyPressEvent(void* self, QTextBrowser_OnKeyPressEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperKeyPressEvent")]
+	public static extern void QTextBrowser_SuperKeyPressEvent(void* self, void** ev);
 	[LinkName("QTextBrowser_MouseMoveEvent")]
 	public static extern void QTextBrowser_MouseMoveEvent(void* self, void** ev);
 	
 	public function void QTextBrowser_OnMouseMoveEvent_action(void* self, void** ev);
 	[LinkName("QTextBrowser_OnMouseMoveEvent")]
 	public static extern void QTextBrowser_OnMouseMoveEvent(void* self, QTextBrowser_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperMouseMoveEvent")]
+	public static extern void QTextBrowser_SuperMouseMoveEvent(void* self, void** ev);
 	[LinkName("QTextBrowser_MousePressEvent")]
 	public static extern void QTextBrowser_MousePressEvent(void* self, void** ev);
 	
 	public function void QTextBrowser_OnMousePressEvent_action(void* self, void** ev);
 	[LinkName("QTextBrowser_OnMousePressEvent")]
 	public static extern void QTextBrowser_OnMousePressEvent(void* self, QTextBrowser_OnMousePressEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperMousePressEvent")]
+	public static extern void QTextBrowser_SuperMousePressEvent(void* self, void** ev);
 	[LinkName("QTextBrowser_MouseReleaseEvent")]
 	public static extern void QTextBrowser_MouseReleaseEvent(void* self, void** ev);
 	
 	public function void QTextBrowser_OnMouseReleaseEvent_action(void* self, void** ev);
 	[LinkName("QTextBrowser_OnMouseReleaseEvent")]
 	public static extern void QTextBrowser_OnMouseReleaseEvent(void* self, QTextBrowser_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperMouseReleaseEvent")]
+	public static extern void QTextBrowser_SuperMouseReleaseEvent(void* self, void** ev);
 	[LinkName("QTextBrowser_FocusOutEvent")]
 	public static extern void QTextBrowser_FocusOutEvent(void* self, void** ev);
 	
 	public function void QTextBrowser_OnFocusOutEvent_action(void* self, void** ev);
 	[LinkName("QTextBrowser_OnFocusOutEvent")]
 	public static extern void QTextBrowser_OnFocusOutEvent(void* self, QTextBrowser_OnFocusOutEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperFocusOutEvent")]
+	public static extern void QTextBrowser_SuperFocusOutEvent(void* self, void** ev);
 	[LinkName("QTextBrowser_FocusNextPrevChild")]
 	public static extern bool QTextBrowser_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QTextBrowser_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QTextBrowser_OnFocusNextPrevChild")]
 	public static extern bool QTextBrowser_OnFocusNextPrevChild(void* self, QTextBrowser_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QTextBrowser_SuperFocusNextPrevChild")]
+	public static extern bool QTextBrowser_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QTextBrowser_PaintEvent")]
 	public static extern void QTextBrowser_PaintEvent(void* self, void** e);
 	
 	public function void QTextBrowser_OnPaintEvent_action(void* self, void** e);
 	[LinkName("QTextBrowser_OnPaintEvent")]
 	public static extern void QTextBrowser_OnPaintEvent(void* self, QTextBrowser_OnPaintEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperPaintEvent")]
+	public static extern void QTextBrowser_SuperPaintEvent(void* self, void** e);
 	[LinkName("QTextBrowser_DoSetSource")]
 	public static extern void QTextBrowser_DoSetSource(void* self, void** name, QTextDocument_ResourceType type);
 	
 	public function void QTextBrowser_OnDoSetSource_action(void* self, void** name, QTextDocument_ResourceType type);
 	[LinkName("QTextBrowser_OnDoSetSource")]
 	public static extern void QTextBrowser_OnDoSetSource(void* self, QTextBrowser_OnDoSetSource_action _action);
+	
+	[LinkName("QTextBrowser_SuperDoSetSource")]
+	public static extern void QTextBrowser_SuperDoSetSource(void* self, void** name, QTextDocument_ResourceType type);
 	[LinkName("QTextBrowser_Tr2")]
 	public static extern libqt_string QTextBrowser_Tr2(c_char* s, c_char* c);
 	[LinkName("QTextBrowser_Tr3")]
@@ -4840,286 +5281,430 @@ extension CQt
 	public function void QTextBrowser_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTextBrowser_OnEventFilter")]
 	public static extern bool QTextBrowser_OnEventFilter(void* self, QTextBrowser_OnEventFilter_action _action);
+	
+	[LinkName("QTextBrowser_SuperEventFilter")]
+	public static extern bool QTextBrowser_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTextBrowser_TimerEvent")]
 	public static extern void QTextBrowser_TimerEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnTimerEvent")]
 	public static extern void QTextBrowser_OnTimerEvent(void* self, QTextBrowser_OnTimerEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperTimerEvent")]
+	public static extern void QTextBrowser_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTextBrowser_ChildEvent")]
 	public static extern void QTextBrowser_ChildEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnChildEvent")]
 	public static extern void QTextBrowser_OnChildEvent(void* self, QTextBrowser_OnChildEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperChildEvent")]
+	public static extern void QTextBrowser_SuperChildEvent(void* self, void** event);
 	[LinkName("QTextBrowser_CustomEvent")]
 	public static extern void QTextBrowser_CustomEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnCustomEvent")]
 	public static extern void QTextBrowser_OnCustomEvent(void* self, QTextBrowser_OnCustomEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperCustomEvent")]
+	public static extern void QTextBrowser_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTextBrowser_ConnectNotify")]
 	public static extern void QTextBrowser_ConnectNotify(void* self, void** signal);
 	
 	public function void QTextBrowser_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTextBrowser_OnConnectNotify")]
 	public static extern void QTextBrowser_OnConnectNotify(void* self, QTextBrowser_OnConnectNotify_action _action);
+	
+	[LinkName("QTextBrowser_SuperConnectNotify")]
+	public static extern void QTextBrowser_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTextBrowser_DisconnectNotify")]
 	public static extern void QTextBrowser_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTextBrowser_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTextBrowser_OnDisconnectNotify")]
 	public static extern void QTextBrowser_OnDisconnectNotify(void* self, QTextBrowser_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTextBrowser_SuperDisconnectNotify")]
+	public static extern void QTextBrowser_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QTextBrowser_DevType")]
 	public static extern c_int QTextBrowser_DevType(void* self);
 	
 	public function void QTextBrowser_OnDevType_action(void* self);
 	[LinkName("QTextBrowser_OnDevType")]
 	public static extern c_int QTextBrowser_OnDevType(void* self, QTextBrowser_OnDevType_action _action);
+	
+	[LinkName("QTextBrowser_SuperDevType")]
+	public static extern c_int QTextBrowser_SuperDevType(void* self);
 	[LinkName("QTextBrowser_PaintEngine")]
 	public static extern void** QTextBrowser_PaintEngine(void* self);
 	
 	public function void QTextBrowser_OnPaintEngine_action(void* self);
 	[LinkName("QTextBrowser_OnPaintEngine")]
 	public static extern void** QTextBrowser_OnPaintEngine(void* self, QTextBrowser_OnPaintEngine_action _action);
+	
+	[LinkName("QTextBrowser_SuperPaintEngine")]
+	public static extern void** QTextBrowser_SuperPaintEngine(void* self);
 	[LinkName("QTextBrowser_Metric")]
 	public static extern c_int QTextBrowser_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QTextBrowser_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTextBrowser_OnMetric")]
 	public static extern c_int QTextBrowser_OnMetric(void* self, QTextBrowser_OnMetric_action _action);
+	
+	[LinkName("QTextBrowser_SuperMetric")]
+	public static extern c_int QTextBrowser_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTextBrowser_InitPainter")]
 	public static extern void QTextBrowser_InitPainter(void* self, void** painter);
 	
 	public function void QTextBrowser_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QTextBrowser_OnInitPainter")]
 	public static extern void QTextBrowser_OnInitPainter(void* self, QTextBrowser_OnInitPainter_action _action);
+	
+	[LinkName("QTextBrowser_SuperInitPainter")]
+	public static extern void QTextBrowser_SuperInitPainter(void* self, void** painter);
 	[LinkName("QTextBrowser_Redirected")]
 	public static extern void** QTextBrowser_Redirected(void* self, void** offset);
 	
 	public function void QTextBrowser_OnRedirected_action(void* self, void** offset);
 	[LinkName("QTextBrowser_OnRedirected")]
 	public static extern void** QTextBrowser_OnRedirected(void* self, QTextBrowser_OnRedirected_action _action);
+	
+	[LinkName("QTextBrowser_SuperRedirected")]
+	public static extern void** QTextBrowser_SuperRedirected(void* self, void** offset);
 	[LinkName("QTextBrowser_SharedPainter")]
 	public static extern void** QTextBrowser_SharedPainter(void* self);
 	
 	public function void QTextBrowser_OnSharedPainter_action(void* self);
 	[LinkName("QTextBrowser_OnSharedPainter")]
 	public static extern void** QTextBrowser_OnSharedPainter(void* self, QTextBrowser_OnSharedPainter_action _action);
+	
+	[LinkName("QTextBrowser_SuperSharedPainter")]
+	public static extern void** QTextBrowser_SuperSharedPainter(void* self);
 	[LinkName("QTextBrowser_SetVisible")]
 	public static extern void QTextBrowser_SetVisible(void* self, bool visible);
 	
 	public function void QTextBrowser_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QTextBrowser_OnSetVisible")]
 	public static extern void QTextBrowser_OnSetVisible(void* self, QTextBrowser_OnSetVisible_action _action);
+	
+	[LinkName("QTextBrowser_SuperSetVisible")]
+	public static extern void QTextBrowser_SuperSetVisible(void* self, bool visible);
 	[LinkName("QTextBrowser_SizeHint")]
 	public static extern void* QTextBrowser_SizeHint(void* self);
 	
 	public function void QTextBrowser_OnSizeHint_action(void* self);
 	[LinkName("QTextBrowser_OnSizeHint")]
 	public static extern void* QTextBrowser_OnSizeHint(void* self, QTextBrowser_OnSizeHint_action _action);
+	
+	[LinkName("QTextBrowser_SuperSizeHint")]
+	public static extern void* QTextBrowser_SuperSizeHint(void* self);
 	[LinkName("QTextBrowser_MinimumSizeHint")]
 	public static extern void* QTextBrowser_MinimumSizeHint(void* self);
 	
 	public function void QTextBrowser_OnMinimumSizeHint_action(void* self);
 	[LinkName("QTextBrowser_OnMinimumSizeHint")]
 	public static extern void* QTextBrowser_OnMinimumSizeHint(void* self, QTextBrowser_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QTextBrowser_SuperMinimumSizeHint")]
+	public static extern void* QTextBrowser_SuperMinimumSizeHint(void* self);
 	[LinkName("QTextBrowser_HeightForWidth")]
 	public static extern c_int QTextBrowser_HeightForWidth(void* self, c_int param1);
 	
 	public function void QTextBrowser_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QTextBrowser_OnHeightForWidth")]
 	public static extern c_int QTextBrowser_OnHeightForWidth(void* self, QTextBrowser_OnHeightForWidth_action _action);
+	
+	[LinkName("QTextBrowser_SuperHeightForWidth")]
+	public static extern c_int QTextBrowser_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QTextBrowser_HasHeightForWidth")]
 	public static extern bool QTextBrowser_HasHeightForWidth(void* self);
 	
 	public function void QTextBrowser_OnHasHeightForWidth_action(void* self);
 	[LinkName("QTextBrowser_OnHasHeightForWidth")]
 	public static extern bool QTextBrowser_OnHasHeightForWidth(void* self, QTextBrowser_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QTextBrowser_SuperHasHeightForWidth")]
+	public static extern bool QTextBrowser_SuperHasHeightForWidth(void* self);
 	[LinkName("QTextBrowser_MouseDoubleClickEvent")]
 	public static extern void QTextBrowser_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnMouseDoubleClickEvent")]
 	public static extern void QTextBrowser_OnMouseDoubleClickEvent(void* self, QTextBrowser_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperMouseDoubleClickEvent")]
+	public static extern void QTextBrowser_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QTextBrowser_WheelEvent")]
 	public static extern void QTextBrowser_WheelEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnWheelEvent")]
 	public static extern void QTextBrowser_OnWheelEvent(void* self, QTextBrowser_OnWheelEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperWheelEvent")]
+	public static extern void QTextBrowser_SuperWheelEvent(void* self, void** event);
 	[LinkName("QTextBrowser_KeyReleaseEvent")]
 	public static extern void QTextBrowser_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnKeyReleaseEvent")]
 	public static extern void QTextBrowser_OnKeyReleaseEvent(void* self, QTextBrowser_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperKeyReleaseEvent")]
+	public static extern void QTextBrowser_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QTextBrowser_FocusInEvent")]
 	public static extern void QTextBrowser_FocusInEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnFocusInEvent")]
 	public static extern void QTextBrowser_OnFocusInEvent(void* self, QTextBrowser_OnFocusInEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperFocusInEvent")]
+	public static extern void QTextBrowser_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QTextBrowser_EnterEvent")]
 	public static extern void QTextBrowser_EnterEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnEnterEvent")]
 	public static extern void QTextBrowser_OnEnterEvent(void* self, QTextBrowser_OnEnterEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperEnterEvent")]
+	public static extern void QTextBrowser_SuperEnterEvent(void* self, void** event);
 	[LinkName("QTextBrowser_LeaveEvent")]
 	public static extern void QTextBrowser_LeaveEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnLeaveEvent")]
 	public static extern void QTextBrowser_OnLeaveEvent(void* self, QTextBrowser_OnLeaveEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperLeaveEvent")]
+	public static extern void QTextBrowser_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QTextBrowser_MoveEvent")]
 	public static extern void QTextBrowser_MoveEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnMoveEvent")]
 	public static extern void QTextBrowser_OnMoveEvent(void* self, QTextBrowser_OnMoveEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperMoveEvent")]
+	public static extern void QTextBrowser_SuperMoveEvent(void* self, void** event);
 	[LinkName("QTextBrowser_ResizeEvent")]
 	public static extern void QTextBrowser_ResizeEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnResizeEvent")]
 	public static extern void QTextBrowser_OnResizeEvent(void* self, QTextBrowser_OnResizeEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperResizeEvent")]
+	public static extern void QTextBrowser_SuperResizeEvent(void* self, void** event);
 	[LinkName("QTextBrowser_CloseEvent")]
 	public static extern void QTextBrowser_CloseEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnCloseEvent")]
 	public static extern void QTextBrowser_OnCloseEvent(void* self, QTextBrowser_OnCloseEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperCloseEvent")]
+	public static extern void QTextBrowser_SuperCloseEvent(void* self, void** event);
 	[LinkName("QTextBrowser_ContextMenuEvent")]
 	public static extern void QTextBrowser_ContextMenuEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnContextMenuEvent")]
 	public static extern void QTextBrowser_OnContextMenuEvent(void* self, QTextBrowser_OnContextMenuEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperContextMenuEvent")]
+	public static extern void QTextBrowser_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QTextBrowser_TabletEvent")]
 	public static extern void QTextBrowser_TabletEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnTabletEvent")]
 	public static extern void QTextBrowser_OnTabletEvent(void* self, QTextBrowser_OnTabletEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperTabletEvent")]
+	public static extern void QTextBrowser_SuperTabletEvent(void* self, void** event);
 	[LinkName("QTextBrowser_ActionEvent")]
 	public static extern void QTextBrowser_ActionEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnActionEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnActionEvent")]
 	public static extern void QTextBrowser_OnActionEvent(void* self, QTextBrowser_OnActionEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperActionEvent")]
+	public static extern void QTextBrowser_SuperActionEvent(void* self, void** event);
 	[LinkName("QTextBrowser_DragEnterEvent")]
 	public static extern void QTextBrowser_DragEnterEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnDragEnterEvent")]
 	public static extern void QTextBrowser_OnDragEnterEvent(void* self, QTextBrowser_OnDragEnterEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperDragEnterEvent")]
+	public static extern void QTextBrowser_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QTextBrowser_DragMoveEvent")]
 	public static extern void QTextBrowser_DragMoveEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnDragMoveEvent")]
 	public static extern void QTextBrowser_OnDragMoveEvent(void* self, QTextBrowser_OnDragMoveEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperDragMoveEvent")]
+	public static extern void QTextBrowser_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QTextBrowser_DragLeaveEvent")]
 	public static extern void QTextBrowser_DragLeaveEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnDragLeaveEvent")]
 	public static extern void QTextBrowser_OnDragLeaveEvent(void* self, QTextBrowser_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperDragLeaveEvent")]
+	public static extern void QTextBrowser_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QTextBrowser_DropEvent")]
 	public static extern void QTextBrowser_DropEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnDropEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnDropEvent")]
 	public static extern void QTextBrowser_OnDropEvent(void* self, QTextBrowser_OnDropEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperDropEvent")]
+	public static extern void QTextBrowser_SuperDropEvent(void* self, void** event);
 	[LinkName("QTextBrowser_ShowEvent")]
 	public static extern void QTextBrowser_ShowEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnShowEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnShowEvent")]
 	public static extern void QTextBrowser_OnShowEvent(void* self, QTextBrowser_OnShowEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperShowEvent")]
+	public static extern void QTextBrowser_SuperShowEvent(void* self, void** event);
 	[LinkName("QTextBrowser_HideEvent")]
 	public static extern void QTextBrowser_HideEvent(void* self, void** event);
 	
 	public function void QTextBrowser_OnHideEvent_action(void* self, void** event);
 	[LinkName("QTextBrowser_OnHideEvent")]
 	public static extern void QTextBrowser_OnHideEvent(void* self, QTextBrowser_OnHideEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperHideEvent")]
+	public static extern void QTextBrowser_SuperHideEvent(void* self, void** event);
 	[LinkName("QTextBrowser_NativeEvent")]
 	public static extern bool QTextBrowser_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QTextBrowser_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTextBrowser_OnNativeEvent")]
 	public static extern bool QTextBrowser_OnNativeEvent(void* self, QTextBrowser_OnNativeEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperNativeEvent")]
+	public static extern bool QTextBrowser_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTextBrowser_ChangeEvent")]
 	public static extern void QTextBrowser_ChangeEvent(void* self, void** param1);
 	
 	public function void QTextBrowser_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QTextBrowser_OnChangeEvent")]
 	public static extern void QTextBrowser_OnChangeEvent(void* self, QTextBrowser_OnChangeEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperChangeEvent")]
+	public static extern void QTextBrowser_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QTextBrowser_InputMethodEvent")]
 	public static extern void QTextBrowser_InputMethodEvent(void* self, void** param1);
 	
 	public function void QTextBrowser_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QTextBrowser_OnInputMethodEvent")]
 	public static extern void QTextBrowser_OnInputMethodEvent(void* self, QTextBrowser_OnInputMethodEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperInputMethodEvent")]
+	public static extern void QTextBrowser_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QTextBrowser_InputMethodQuery")]
 	public static extern void* QTextBrowser_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QTextBrowser_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTextBrowser_OnInputMethodQuery")]
 	public static extern void* QTextBrowser_OnInputMethodQuery(void* self, QTextBrowser_OnInputMethodQuery_action _action);
+	
+	[LinkName("QTextBrowser_SuperInputMethodQuery")]
+	public static extern void* QTextBrowser_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTextBrowser_InitStyleOption")]
 	public static extern void QTextBrowser_InitStyleOption(void* self, void** option);
 	
 	public function void QTextBrowser_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QTextBrowser_OnInitStyleOption")]
 	public static extern void QTextBrowser_OnInitStyleOption(void* self, QTextBrowser_OnInitStyleOption_action _action);
+	
+	[LinkName("QTextBrowser_SuperInitStyleOption")]
+	public static extern void QTextBrowser_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QTextBrowser_SetupViewport")]
 	public static extern void QTextBrowser_SetupViewport(void* self, void** viewport);
 	
 	public function void QTextBrowser_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QTextBrowser_OnSetupViewport")]
 	public static extern void QTextBrowser_OnSetupViewport(void* self, QTextBrowser_OnSetupViewport_action _action);
+	
+	[LinkName("QTextBrowser_SuperSetupViewport")]
+	public static extern void QTextBrowser_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QTextBrowser_ViewportEvent")]
 	public static extern bool QTextBrowser_ViewportEvent(void* self, void** param1);
 	
 	public function void QTextBrowser_OnViewportEvent_action(void* self, void** param1);
 	[LinkName("QTextBrowser_OnViewportEvent")]
 	public static extern bool QTextBrowser_OnViewportEvent(void* self, QTextBrowser_OnViewportEvent_action _action);
+	
+	[LinkName("QTextBrowser_SuperViewportEvent")]
+	public static extern bool QTextBrowser_SuperViewportEvent(void* self, void** param1);
 	[LinkName("QTextBrowser_ScrollContentsBy")]
 	public static extern void QTextBrowser_ScrollContentsBy(void* self, c_int dx, c_int dy);
 	
 	public function void QTextBrowser_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QTextBrowser_OnScrollContentsBy")]
 	public static extern void QTextBrowser_OnScrollContentsBy(void* self, QTextBrowser_OnScrollContentsBy_action _action);
+	
+	[LinkName("QTextBrowser_SuperScrollContentsBy")]
+	public static extern void QTextBrowser_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 	[LinkName("QTextBrowser_ViewportSizeHint")]
 	public static extern void* QTextBrowser_ViewportSizeHint(void* self);
 	
 	public function void QTextBrowser_OnViewportSizeHint_action(void* self);
 	[LinkName("QTextBrowser_OnViewportSizeHint")]
 	public static extern void* QTextBrowser_OnViewportSizeHint(void* self, QTextBrowser_OnViewportSizeHint_action _action);
+	
+	[LinkName("QTextBrowser_SuperViewportSizeHint")]
+	public static extern void* QTextBrowser_SuperViewportSizeHint(void* self);
 	[LinkName("QTextBrowser_CreateMimeDataFromSelection")]
 	public static extern void** QTextBrowser_CreateMimeDataFromSelection(void* self);
 	
 	public function void QTextBrowser_OnCreateMimeDataFromSelection_action(void* self);
 	[LinkName("QTextBrowser_OnCreateMimeDataFromSelection")]
 	public static extern void** QTextBrowser_OnCreateMimeDataFromSelection(void* self, QTextBrowser_OnCreateMimeDataFromSelection_action _action);
+	
+	[LinkName("QTextBrowser_SuperCreateMimeDataFromSelection")]
+	public static extern void** QTextBrowser_SuperCreateMimeDataFromSelection(void* self);
 	[LinkName("QTextBrowser_CanInsertFromMimeData")]
 	public static extern bool QTextBrowser_CanInsertFromMimeData(void* self, void** source);
 	
 	public function void QTextBrowser_OnCanInsertFromMimeData_action(void* self, void** source);
 	[LinkName("QTextBrowser_OnCanInsertFromMimeData")]
 	public static extern bool QTextBrowser_OnCanInsertFromMimeData(void* self, QTextBrowser_OnCanInsertFromMimeData_action _action);
+	
+	[LinkName("QTextBrowser_SuperCanInsertFromMimeData")]
+	public static extern bool QTextBrowser_SuperCanInsertFromMimeData(void* self, void** source);
 	[LinkName("QTextBrowser_InsertFromMimeData")]
 	public static extern void QTextBrowser_InsertFromMimeData(void* self, void** source);
 	
 	public function void QTextBrowser_OnInsertFromMimeData_action(void* self, void** source);
 	[LinkName("QTextBrowser_OnInsertFromMimeData")]
 	public static extern void QTextBrowser_OnInsertFromMimeData(void* self, QTextBrowser_OnInsertFromMimeData_action _action);
+	
+	[LinkName("QTextBrowser_SuperInsertFromMimeData")]
+	public static extern void QTextBrowser_SuperInsertFromMimeData(void* self, void** source);
 	[LinkName("QTextBrowser_DoSetTextCursor")]
 	public static extern void QTextBrowser_DoSetTextCursor(void* self, void** cursor);
 	
 	public function void QTextBrowser_OnDoSetTextCursor_action(void* self, void** cursor);
 	[LinkName("QTextBrowser_OnDoSetTextCursor")]
 	public static extern void QTextBrowser_OnDoSetTextCursor(void* self, QTextBrowser_OnDoSetTextCursor_action _action);
+	
+	[LinkName("QTextBrowser_SuperDoSetTextCursor")]
+	public static extern void QTextBrowser_SuperDoSetTextCursor(void* self, void** cursor);
 }

@@ -428,6 +428,16 @@ class QFutureWatcherBase : IQFutureWatcherBase, IQObject
 		CQt.QFutureWatcherBase_Connect_ProgressTextChanged(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_ProgressTextChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QFutureWatcherBase_OnMetaObject(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnMetaObject);
+		CQt.QFutureWatcherBase_OnMetacast(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnMetacast);
+		CQt.QFutureWatcherBase_OnMetacall(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnMetacall);
+		CQt.QFutureWatcherBase_OnEvent(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnEvent);
+		CQt.QFutureWatcherBase_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnConnectNotify);
+		CQt.QFutureWatcherBase_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnDisconnectNotify);
+		CQt.QFutureWatcherBase_OnEventFilter(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnEventFilter);
+		CQt.QFutureWatcherBase_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnTimerEvent);
+		CQt.QFutureWatcherBase_OnChildEvent(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnChildEvent);
+		CQt.QFutureWatcherBase_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_OnCustomEvent);
 	}
 	public Event<delegate void()> OnStarted = .() ~ _.Dispose();
 	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
@@ -512,6 +522,56 @@ class QFutureWatcherBase : IQFutureWatcherBase, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QFutureWatcherBase_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QFutureWatcherBase_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QFutureWatcherBase_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QFutureWatcherBase_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QFutureWatcherBase_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QFutureWatcherBase_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QFutureWatcherBase_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QFutureWatcherBase_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QFutureWatcherBase_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QFutureWatcherBase_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
 	}
 	public this(QFutureWatcherBase_Ptr ptr)
 	{
@@ -923,18 +983,27 @@ extension CQt
 	public function void QFutureWatcherBase_OnMetaObject_action(void* self);
 	[LinkName("QFutureWatcherBase_OnMetaObject")]
 	public static extern void** QFutureWatcherBase_OnMetaObject(void* self, QFutureWatcherBase_OnMetaObject_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperMetaObject")]
+	public static extern void** QFutureWatcherBase_SuperMetaObject(void* self);
 	[LinkName("QFutureWatcherBase_Qt_Metacast")]
 	public static extern void* QFutureWatcherBase_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QFutureWatcherBase_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QFutureWatcherBase_OnMetacast")]
 	public static extern void* QFutureWatcherBase_OnMetacast(void* self, QFutureWatcherBase_OnMetacast_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperMetacast")]
+	public static extern void* QFutureWatcherBase_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QFutureWatcherBase_Qt_Metacall")]
 	public static extern c_int QFutureWatcherBase_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QFutureWatcherBase_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFutureWatcherBase_OnMetacall")]
 	public static extern c_int QFutureWatcherBase_OnMetacall(void* self, QFutureWatcherBase_OnMetacall_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperMetacall")]
+	public static extern c_int QFutureWatcherBase_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFutureWatcherBase_Tr")]
 	public static extern libqt_string QFutureWatcherBase_Tr(c_char* s);
 	[LinkName("QFutureWatcherBase_ProgressValue")]
@@ -969,6 +1038,9 @@ extension CQt
 	public function void QFutureWatcherBase_OnEvent_action(void* self, void** event);
 	[LinkName("QFutureWatcherBase_OnEvent")]
 	public static extern bool QFutureWatcherBase_OnEvent(void* self, QFutureWatcherBase_OnEvent_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperEvent")]
+	public static extern bool QFutureWatcherBase_SuperEvent(void* self, void** event);
 	[LinkName("QFutureWatcherBase_Started")]
 	public static extern void QFutureWatcherBase_Started(void* self);
 	
@@ -1063,12 +1135,18 @@ extension CQt
 	public function void QFutureWatcherBase_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QFutureWatcherBase_OnConnectNotify")]
 	public static extern void QFutureWatcherBase_OnConnectNotify(void* self, QFutureWatcherBase_OnConnectNotify_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperConnectNotify")]
+	public static extern void QFutureWatcherBase_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QFutureWatcherBase_DisconnectNotify")]
 	public static extern void QFutureWatcherBase_DisconnectNotify(void* self, void** signal);
 	
 	public function void QFutureWatcherBase_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QFutureWatcherBase_OnDisconnectNotify")]
 	public static extern void QFutureWatcherBase_OnDisconnectNotify(void* self, QFutureWatcherBase_OnDisconnectNotify_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperDisconnectNotify")]
+	public static extern void QFutureWatcherBase_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QFutureWatcherBase_ConnectOutputInterface")]
 	public static extern void QFutureWatcherBase_ConnectOutputInterface(void* self);
 	[LinkName("QFutureWatcherBase_DisconnectOutputInterface")]
@@ -1085,22 +1163,34 @@ extension CQt
 	public function void QFutureWatcherBase_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QFutureWatcherBase_OnEventFilter")]
 	public static extern bool QFutureWatcherBase_OnEventFilter(void* self, QFutureWatcherBase_OnEventFilter_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperEventFilter")]
+	public static extern bool QFutureWatcherBase_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QFutureWatcherBase_TimerEvent")]
 	public static extern void QFutureWatcherBase_TimerEvent(void* self, void** event);
 	
 	public function void QFutureWatcherBase_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QFutureWatcherBase_OnTimerEvent")]
 	public static extern void QFutureWatcherBase_OnTimerEvent(void* self, QFutureWatcherBase_OnTimerEvent_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperTimerEvent")]
+	public static extern void QFutureWatcherBase_SuperTimerEvent(void* self, void** event);
 	[LinkName("QFutureWatcherBase_ChildEvent")]
 	public static extern void QFutureWatcherBase_ChildEvent(void* self, void** event);
 	
 	public function void QFutureWatcherBase_OnChildEvent_action(void* self, void** event);
 	[LinkName("QFutureWatcherBase_OnChildEvent")]
 	public static extern void QFutureWatcherBase_OnChildEvent(void* self, QFutureWatcherBase_OnChildEvent_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperChildEvent")]
+	public static extern void QFutureWatcherBase_SuperChildEvent(void* self, void** event);
 	[LinkName("QFutureWatcherBase_CustomEvent")]
 	public static extern void QFutureWatcherBase_CustomEvent(void* self, void** event);
 	
 	public function void QFutureWatcherBase_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QFutureWatcherBase_OnCustomEvent")]
 	public static extern void QFutureWatcherBase_OnCustomEvent(void* self, QFutureWatcherBase_OnCustomEvent_action _action);
+	
+	[LinkName("QFutureWatcherBase_SuperCustomEvent")]
+	public static extern void QFutureWatcherBase_SuperCustomEvent(void* self, void** event);
 }

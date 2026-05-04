@@ -388,6 +388,17 @@ class QThread : IQThread, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QThread_OnMetaObject(obj.ObjectPtr,  => QtBeef_QThread_OnMetaObject);
+		CQt.QThread_OnMetacast(obj.ObjectPtr,  => QtBeef_QThread_OnMetacast);
+		CQt.QThread_OnMetacall(obj.ObjectPtr,  => QtBeef_QThread_OnMetacall);
+		CQt.QThread_OnEvent(obj.ObjectPtr,  => QtBeef_QThread_OnEvent);
+		CQt.QThread_OnRun(obj.ObjectPtr,  => QtBeef_QThread_OnRun);
+		CQt.QThread_OnEventFilter(obj.ObjectPtr,  => QtBeef_QThread_OnEventFilter);
+		CQt.QThread_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QThread_OnTimerEvent);
+		CQt.QThread_OnChildEvent(obj.ObjectPtr,  => QtBeef_QThread_OnChildEvent);
+		CQt.QThread_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QThread_OnCustomEvent);
+		CQt.QThread_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QThread_OnConnectNotify);
+		CQt.QThread_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QThread_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -400,6 +411,61 @@ class QThread : IQThread, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QThread_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QThread_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QThread_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QThread_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QThread_OnRun(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRun();
+	}
+	static void QtBeef_QThread_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QThread_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QThread_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QThread_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QThread_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QThread_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QThread_Ptr ptr)
 	{
@@ -796,18 +862,27 @@ extension CQt
 	public function void QThread_OnMetaObject_action(void* self);
 	[LinkName("QThread_OnMetaObject")]
 	public static extern void** QThread_OnMetaObject(void* self, QThread_OnMetaObject_action _action);
+	
+	[LinkName("QThread_SuperMetaObject")]
+	public static extern void** QThread_SuperMetaObject(void* self);
 	[LinkName("QThread_Qt_Metacast")]
 	public static extern void* QThread_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QThread_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QThread_OnMetacast")]
 	public static extern void* QThread_OnMetacast(void* self, QThread_OnMetacast_action _action);
+	
+	[LinkName("QThread_SuperMetacast")]
+	public static extern void* QThread_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QThread_Qt_Metacall")]
 	public static extern c_int QThread_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QThread_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QThread_OnMetacall")]
 	public static extern c_int QThread_OnMetacall(void* self, QThread_OnMetacall_action _action);
+	
+	[LinkName("QThread_SuperMetacall")]
+	public static extern c_int QThread_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QThread_Tr")]
 	public static extern libqt_string QThread_Tr(c_char* s);
 	[LinkName("QThread_CurrentThreadId")]
@@ -844,6 +919,9 @@ extension CQt
 	public function void QThread_OnEvent_action(void* self, void** event);
 	[LinkName("QThread_OnEvent")]
 	public static extern bool QThread_OnEvent(void* self, QThread_OnEvent_action _action);
+	
+	[LinkName("QThread_SuperEvent")]
+	public static extern bool QThread_SuperEvent(void* self, void** event);
 	[LinkName("QThread_LoopLevel")]
 	public static extern c_int QThread_LoopLevel(void* self);
 	[LinkName("QThread_Start")]
@@ -870,6 +948,9 @@ extension CQt
 	public function void QThread_OnRun_action(void* self);
 	[LinkName("QThread_OnRun")]
 	public static extern void QThread_OnRun(void* self, QThread_OnRun_action _action);
+	
+	[LinkName("QThread_SuperRun")]
+	public static extern void QThread_SuperRun(void* self);
 	[LinkName("QThread_Exec")]
 	public static extern c_int QThread_Exec(void* self);
 	[LinkName("QThread_Tr2")]
@@ -888,36 +969,54 @@ extension CQt
 	public function void QThread_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QThread_OnEventFilter")]
 	public static extern bool QThread_OnEventFilter(void* self, QThread_OnEventFilter_action _action);
+	
+	[LinkName("QThread_SuperEventFilter")]
+	public static extern bool QThread_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QThread_TimerEvent")]
 	public static extern void QThread_TimerEvent(void* self, void** event);
 	
 	public function void QThread_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QThread_OnTimerEvent")]
 	public static extern void QThread_OnTimerEvent(void* self, QThread_OnTimerEvent_action _action);
+	
+	[LinkName("QThread_SuperTimerEvent")]
+	public static extern void QThread_SuperTimerEvent(void* self, void** event);
 	[LinkName("QThread_ChildEvent")]
 	public static extern void QThread_ChildEvent(void* self, void** event);
 	
 	public function void QThread_OnChildEvent_action(void* self, void** event);
 	[LinkName("QThread_OnChildEvent")]
 	public static extern void QThread_OnChildEvent(void* self, QThread_OnChildEvent_action _action);
+	
+	[LinkName("QThread_SuperChildEvent")]
+	public static extern void QThread_SuperChildEvent(void* self, void** event);
 	[LinkName("QThread_CustomEvent")]
 	public static extern void QThread_CustomEvent(void* self, void** event);
 	
 	public function void QThread_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QThread_OnCustomEvent")]
 	public static extern void QThread_OnCustomEvent(void* self, QThread_OnCustomEvent_action _action);
+	
+	[LinkName("QThread_SuperCustomEvent")]
+	public static extern void QThread_SuperCustomEvent(void* self, void** event);
 	[LinkName("QThread_ConnectNotify")]
 	public static extern void QThread_ConnectNotify(void* self, void** signal);
 	
 	public function void QThread_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QThread_OnConnectNotify")]
 	public static extern void QThread_OnConnectNotify(void* self, QThread_OnConnectNotify_action _action);
+	
+	[LinkName("QThread_SuperConnectNotify")]
+	public static extern void QThread_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QThread_DisconnectNotify")]
 	public static extern void QThread_DisconnectNotify(void* self, void** signal);
 	
 	public function void QThread_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QThread_OnDisconnectNotify")]
 	public static extern void QThread_OnDisconnectNotify(void* self, QThread_OnDisconnectNotify_action _action);
+	
+	[LinkName("QThread_SuperDisconnectNotify")]
+	public static extern void QThread_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QThread_Priority

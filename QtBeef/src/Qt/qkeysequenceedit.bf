@@ -1622,6 +1622,56 @@ class QKeySequenceEdit : IQKeySequenceEdit, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QKeySequenceEdit_OnMetaObject(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMetaObject);
+		CQt.QKeySequenceEdit_OnMetacast(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMetacast);
+		CQt.QKeySequenceEdit_OnMetacall(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMetacall);
+		CQt.QKeySequenceEdit_OnEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnEvent);
+		CQt.QKeySequenceEdit_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnKeyPressEvent);
+		CQt.QKeySequenceEdit_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnKeyReleaseEvent);
+		CQt.QKeySequenceEdit_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnTimerEvent);
+		CQt.QKeySequenceEdit_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnFocusOutEvent);
+		CQt.QKeySequenceEdit_OnEventFilter(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnEventFilter);
+		CQt.QKeySequenceEdit_OnChildEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnChildEvent);
+		CQt.QKeySequenceEdit_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnCustomEvent);
+		CQt.QKeySequenceEdit_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnConnectNotify);
+		CQt.QKeySequenceEdit_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnDisconnectNotify);
+		CQt.QKeySequenceEdit_OnDevType(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnDevType);
+		CQt.QKeySequenceEdit_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnPaintEngine);
+		CQt.QKeySequenceEdit_OnMetric(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMetric);
+		CQt.QKeySequenceEdit_OnInitPainter(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnInitPainter);
+		CQt.QKeySequenceEdit_OnRedirected(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnRedirected);
+		CQt.QKeySequenceEdit_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnSharedPainter);
+		CQt.QKeySequenceEdit_OnSetVisible(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnSetVisible);
+		CQt.QKeySequenceEdit_OnSizeHint(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnSizeHint);
+		CQt.QKeySequenceEdit_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMinimumSizeHint);
+		CQt.QKeySequenceEdit_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnHeightForWidth);
+		CQt.QKeySequenceEdit_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnHasHeightForWidth);
+		CQt.QKeySequenceEdit_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMousePressEvent);
+		CQt.QKeySequenceEdit_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMouseReleaseEvent);
+		CQt.QKeySequenceEdit_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMouseDoubleClickEvent);
+		CQt.QKeySequenceEdit_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMouseMoveEvent);
+		CQt.QKeySequenceEdit_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnWheelEvent);
+		CQt.QKeySequenceEdit_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnFocusInEvent);
+		CQt.QKeySequenceEdit_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnEnterEvent);
+		CQt.QKeySequenceEdit_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnLeaveEvent);
+		CQt.QKeySequenceEdit_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnPaintEvent);
+		CQt.QKeySequenceEdit_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnMoveEvent);
+		CQt.QKeySequenceEdit_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnResizeEvent);
+		CQt.QKeySequenceEdit_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnCloseEvent);
+		CQt.QKeySequenceEdit_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnContextMenuEvent);
+		CQt.QKeySequenceEdit_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnTabletEvent);
+		CQt.QKeySequenceEdit_OnActionEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnActionEvent);
+		CQt.QKeySequenceEdit_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnDragEnterEvent);
+		CQt.QKeySequenceEdit_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnDragMoveEvent);
+		CQt.QKeySequenceEdit_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnDragLeaveEvent);
+		CQt.QKeySequenceEdit_OnDropEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnDropEvent);
+		CQt.QKeySequenceEdit_OnShowEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnShowEvent);
+		CQt.QKeySequenceEdit_OnHideEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnHideEvent);
+		CQt.QKeySequenceEdit_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnNativeEvent);
+		CQt.QKeySequenceEdit_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnChangeEvent);
+		CQt.QKeySequenceEdit_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnInputMethodEvent);
+		CQt.QKeySequenceEdit_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnInputMethodQuery);
+		CQt.QKeySequenceEdit_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QKeySequenceEdit_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
 	public Event<delegate void(void** keySequence)> OnKeySequenceChanged = .() ~ _.Dispose();
@@ -1670,6 +1720,256 @@ class QKeySequenceEdit : IQKeySequenceEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QKeySequenceEdit_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QKeySequenceEdit_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QKeySequenceEdit_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnKeyPressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnKeyReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnTimerEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnFocusOutEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QKeySequenceEdit_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QKeySequenceEdit_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QKeySequenceEdit_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QKeySequenceEdit_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QKeySequenceEdit_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QKeySequenceEdit_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QKeySequenceEdit_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QKeySequenceEdit_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QKeySequenceEdit_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QKeySequenceEdit_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QKeySequenceEdit_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QKeySequenceEdit_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QKeySequenceEdit_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QKeySequenceEdit_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QKeySequenceEdit_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QKeySequenceEdit_Ptr ptr)
 	{
@@ -3281,18 +3581,27 @@ extension CQt
 	public function void QKeySequenceEdit_OnMetaObject_action(void* self);
 	[LinkName("QKeySequenceEdit_OnMetaObject")]
 	public static extern void** QKeySequenceEdit_OnMetaObject(void* self, QKeySequenceEdit_OnMetaObject_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMetaObject")]
+	public static extern void** QKeySequenceEdit_SuperMetaObject(void* self);
 	[LinkName("QKeySequenceEdit_Qt_Metacast")]
 	public static extern void* QKeySequenceEdit_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QKeySequenceEdit_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QKeySequenceEdit_OnMetacast")]
 	public static extern void* QKeySequenceEdit_OnMetacast(void* self, QKeySequenceEdit_OnMetacast_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMetacast")]
+	public static extern void* QKeySequenceEdit_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QKeySequenceEdit_Qt_Metacall")]
 	public static extern c_int QKeySequenceEdit_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QKeySequenceEdit_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QKeySequenceEdit_OnMetacall")]
 	public static extern c_int QKeySequenceEdit_OnMetacall(void* self, QKeySequenceEdit_OnMetacall_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMetacall")]
+	public static extern c_int QKeySequenceEdit_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QKeySequenceEdit_Tr")]
 	public static extern libqt_string QKeySequenceEdit_Tr(c_char* s);
 	[LinkName("QKeySequenceEdit_KeySequence")]
@@ -3323,30 +3632,45 @@ extension CQt
 	public function void QKeySequenceEdit_OnEvent_action(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_OnEvent")]
 	public static extern bool QKeySequenceEdit_OnEvent(void* self, QKeySequenceEdit_OnEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperEvent")]
+	public static extern bool QKeySequenceEdit_SuperEvent(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_KeyPressEvent")]
 	public static extern void QKeySequenceEdit_KeyPressEvent(void* self, void** param1);
 	
 	public function void QKeySequenceEdit_OnKeyPressEvent_action(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_OnKeyPressEvent")]
 	public static extern void QKeySequenceEdit_OnKeyPressEvent(void* self, QKeySequenceEdit_OnKeyPressEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperKeyPressEvent")]
+	public static extern void QKeySequenceEdit_SuperKeyPressEvent(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_KeyReleaseEvent")]
 	public static extern void QKeySequenceEdit_KeyReleaseEvent(void* self, void** param1);
 	
 	public function void QKeySequenceEdit_OnKeyReleaseEvent_action(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_OnKeyReleaseEvent")]
 	public static extern void QKeySequenceEdit_OnKeyReleaseEvent(void* self, QKeySequenceEdit_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperKeyReleaseEvent")]
+	public static extern void QKeySequenceEdit_SuperKeyReleaseEvent(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_TimerEvent")]
 	public static extern void QKeySequenceEdit_TimerEvent(void* self, void** param1);
 	
 	public function void QKeySequenceEdit_OnTimerEvent_action(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_OnTimerEvent")]
 	public static extern void QKeySequenceEdit_OnTimerEvent(void* self, QKeySequenceEdit_OnTimerEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperTimerEvent")]
+	public static extern void QKeySequenceEdit_SuperTimerEvent(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_FocusOutEvent")]
 	public static extern void QKeySequenceEdit_FocusOutEvent(void* self, void** param1);
 	
 	public function void QKeySequenceEdit_OnFocusOutEvent_action(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_OnFocusOutEvent")]
 	public static extern void QKeySequenceEdit_OnFocusOutEvent(void* self, QKeySequenceEdit_OnFocusOutEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperFocusOutEvent")]
+	public static extern void QKeySequenceEdit_SuperFocusOutEvent(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_Tr2")]
 	public static extern libqt_string QKeySequenceEdit_Tr2(c_char* s, c_char* c);
 	[LinkName("QKeySequenceEdit_Tr3")]
@@ -3357,250 +3681,376 @@ extension CQt
 	public function void QKeySequenceEdit_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QKeySequenceEdit_OnEventFilter")]
 	public static extern bool QKeySequenceEdit_OnEventFilter(void* self, QKeySequenceEdit_OnEventFilter_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperEventFilter")]
+	public static extern bool QKeySequenceEdit_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QKeySequenceEdit_ChildEvent")]
 	public static extern void QKeySequenceEdit_ChildEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnChildEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnChildEvent")]
 	public static extern void QKeySequenceEdit_OnChildEvent(void* self, QKeySequenceEdit_OnChildEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperChildEvent")]
+	public static extern void QKeySequenceEdit_SuperChildEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_CustomEvent")]
 	public static extern void QKeySequenceEdit_CustomEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnCustomEvent")]
 	public static extern void QKeySequenceEdit_OnCustomEvent(void* self, QKeySequenceEdit_OnCustomEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperCustomEvent")]
+	public static extern void QKeySequenceEdit_SuperCustomEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_ConnectNotify")]
 	public static extern void QKeySequenceEdit_ConnectNotify(void* self, void** signal);
 	
 	public function void QKeySequenceEdit_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QKeySequenceEdit_OnConnectNotify")]
 	public static extern void QKeySequenceEdit_OnConnectNotify(void* self, QKeySequenceEdit_OnConnectNotify_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperConnectNotify")]
+	public static extern void QKeySequenceEdit_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QKeySequenceEdit_DisconnectNotify")]
 	public static extern void QKeySequenceEdit_DisconnectNotify(void* self, void** signal);
 	
 	public function void QKeySequenceEdit_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QKeySequenceEdit_OnDisconnectNotify")]
 	public static extern void QKeySequenceEdit_OnDisconnectNotify(void* self, QKeySequenceEdit_OnDisconnectNotify_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperDisconnectNotify")]
+	public static extern void QKeySequenceEdit_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QKeySequenceEdit_DevType")]
 	public static extern c_int QKeySequenceEdit_DevType(void* self);
 	
 	public function void QKeySequenceEdit_OnDevType_action(void* self);
 	[LinkName("QKeySequenceEdit_OnDevType")]
 	public static extern c_int QKeySequenceEdit_OnDevType(void* self, QKeySequenceEdit_OnDevType_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperDevType")]
+	public static extern c_int QKeySequenceEdit_SuperDevType(void* self);
 	[LinkName("QKeySequenceEdit_PaintEngine")]
 	public static extern void** QKeySequenceEdit_PaintEngine(void* self);
 	
 	public function void QKeySequenceEdit_OnPaintEngine_action(void* self);
 	[LinkName("QKeySequenceEdit_OnPaintEngine")]
 	public static extern void** QKeySequenceEdit_OnPaintEngine(void* self, QKeySequenceEdit_OnPaintEngine_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperPaintEngine")]
+	public static extern void** QKeySequenceEdit_SuperPaintEngine(void* self);
 	[LinkName("QKeySequenceEdit_Metric")]
 	public static extern c_int QKeySequenceEdit_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QKeySequenceEdit_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QKeySequenceEdit_OnMetric")]
 	public static extern c_int QKeySequenceEdit_OnMetric(void* self, QKeySequenceEdit_OnMetric_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMetric")]
+	public static extern c_int QKeySequenceEdit_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QKeySequenceEdit_InitPainter")]
 	public static extern void QKeySequenceEdit_InitPainter(void* self, void** painter);
 	
 	public function void QKeySequenceEdit_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QKeySequenceEdit_OnInitPainter")]
 	public static extern void QKeySequenceEdit_OnInitPainter(void* self, QKeySequenceEdit_OnInitPainter_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperInitPainter")]
+	public static extern void QKeySequenceEdit_SuperInitPainter(void* self, void** painter);
 	[LinkName("QKeySequenceEdit_Redirected")]
 	public static extern void** QKeySequenceEdit_Redirected(void* self, void** offset);
 	
 	public function void QKeySequenceEdit_OnRedirected_action(void* self, void** offset);
 	[LinkName("QKeySequenceEdit_OnRedirected")]
 	public static extern void** QKeySequenceEdit_OnRedirected(void* self, QKeySequenceEdit_OnRedirected_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperRedirected")]
+	public static extern void** QKeySequenceEdit_SuperRedirected(void* self, void** offset);
 	[LinkName("QKeySequenceEdit_SharedPainter")]
 	public static extern void** QKeySequenceEdit_SharedPainter(void* self);
 	
 	public function void QKeySequenceEdit_OnSharedPainter_action(void* self);
 	[LinkName("QKeySequenceEdit_OnSharedPainter")]
 	public static extern void** QKeySequenceEdit_OnSharedPainter(void* self, QKeySequenceEdit_OnSharedPainter_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperSharedPainter")]
+	public static extern void** QKeySequenceEdit_SuperSharedPainter(void* self);
 	[LinkName("QKeySequenceEdit_SetVisible")]
 	public static extern void QKeySequenceEdit_SetVisible(void* self, bool visible);
 	
 	public function void QKeySequenceEdit_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QKeySequenceEdit_OnSetVisible")]
 	public static extern void QKeySequenceEdit_OnSetVisible(void* self, QKeySequenceEdit_OnSetVisible_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperSetVisible")]
+	public static extern void QKeySequenceEdit_SuperSetVisible(void* self, bool visible);
 	[LinkName("QKeySequenceEdit_SizeHint")]
 	public static extern void* QKeySequenceEdit_SizeHint(void* self);
 	
 	public function void QKeySequenceEdit_OnSizeHint_action(void* self);
 	[LinkName("QKeySequenceEdit_OnSizeHint")]
 	public static extern void* QKeySequenceEdit_OnSizeHint(void* self, QKeySequenceEdit_OnSizeHint_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperSizeHint")]
+	public static extern void* QKeySequenceEdit_SuperSizeHint(void* self);
 	[LinkName("QKeySequenceEdit_MinimumSizeHint")]
 	public static extern void* QKeySequenceEdit_MinimumSizeHint(void* self);
 	
 	public function void QKeySequenceEdit_OnMinimumSizeHint_action(void* self);
 	[LinkName("QKeySequenceEdit_OnMinimumSizeHint")]
 	public static extern void* QKeySequenceEdit_OnMinimumSizeHint(void* self, QKeySequenceEdit_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMinimumSizeHint")]
+	public static extern void* QKeySequenceEdit_SuperMinimumSizeHint(void* self);
 	[LinkName("QKeySequenceEdit_HeightForWidth")]
 	public static extern c_int QKeySequenceEdit_HeightForWidth(void* self, c_int param1);
 	
 	public function void QKeySequenceEdit_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QKeySequenceEdit_OnHeightForWidth")]
 	public static extern c_int QKeySequenceEdit_OnHeightForWidth(void* self, QKeySequenceEdit_OnHeightForWidth_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperHeightForWidth")]
+	public static extern c_int QKeySequenceEdit_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QKeySequenceEdit_HasHeightForWidth")]
 	public static extern bool QKeySequenceEdit_HasHeightForWidth(void* self);
 	
 	public function void QKeySequenceEdit_OnHasHeightForWidth_action(void* self);
 	[LinkName("QKeySequenceEdit_OnHasHeightForWidth")]
 	public static extern bool QKeySequenceEdit_OnHasHeightForWidth(void* self, QKeySequenceEdit_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperHasHeightForWidth")]
+	public static extern bool QKeySequenceEdit_SuperHasHeightForWidth(void* self);
 	[LinkName("QKeySequenceEdit_MousePressEvent")]
 	public static extern void QKeySequenceEdit_MousePressEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnMousePressEvent")]
 	public static extern void QKeySequenceEdit_OnMousePressEvent(void* self, QKeySequenceEdit_OnMousePressEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMousePressEvent")]
+	public static extern void QKeySequenceEdit_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_MouseReleaseEvent")]
 	public static extern void QKeySequenceEdit_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnMouseReleaseEvent")]
 	public static extern void QKeySequenceEdit_OnMouseReleaseEvent(void* self, QKeySequenceEdit_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMouseReleaseEvent")]
+	public static extern void QKeySequenceEdit_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_MouseDoubleClickEvent")]
 	public static extern void QKeySequenceEdit_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnMouseDoubleClickEvent")]
 	public static extern void QKeySequenceEdit_OnMouseDoubleClickEvent(void* self, QKeySequenceEdit_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMouseDoubleClickEvent")]
+	public static extern void QKeySequenceEdit_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_MouseMoveEvent")]
 	public static extern void QKeySequenceEdit_MouseMoveEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnMouseMoveEvent")]
 	public static extern void QKeySequenceEdit_OnMouseMoveEvent(void* self, QKeySequenceEdit_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMouseMoveEvent")]
+	public static extern void QKeySequenceEdit_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_WheelEvent")]
 	public static extern void QKeySequenceEdit_WheelEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnWheelEvent")]
 	public static extern void QKeySequenceEdit_OnWheelEvent(void* self, QKeySequenceEdit_OnWheelEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperWheelEvent")]
+	public static extern void QKeySequenceEdit_SuperWheelEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_FocusInEvent")]
 	public static extern void QKeySequenceEdit_FocusInEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnFocusInEvent")]
 	public static extern void QKeySequenceEdit_OnFocusInEvent(void* self, QKeySequenceEdit_OnFocusInEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperFocusInEvent")]
+	public static extern void QKeySequenceEdit_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_EnterEvent")]
 	public static extern void QKeySequenceEdit_EnterEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnEnterEvent")]
 	public static extern void QKeySequenceEdit_OnEnterEvent(void* self, QKeySequenceEdit_OnEnterEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperEnterEvent")]
+	public static extern void QKeySequenceEdit_SuperEnterEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_LeaveEvent")]
 	public static extern void QKeySequenceEdit_LeaveEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnLeaveEvent")]
 	public static extern void QKeySequenceEdit_OnLeaveEvent(void* self, QKeySequenceEdit_OnLeaveEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperLeaveEvent")]
+	public static extern void QKeySequenceEdit_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_PaintEvent")]
 	public static extern void QKeySequenceEdit_PaintEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnPaintEvent")]
 	public static extern void QKeySequenceEdit_OnPaintEvent(void* self, QKeySequenceEdit_OnPaintEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperPaintEvent")]
+	public static extern void QKeySequenceEdit_SuperPaintEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_MoveEvent")]
 	public static extern void QKeySequenceEdit_MoveEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnMoveEvent")]
 	public static extern void QKeySequenceEdit_OnMoveEvent(void* self, QKeySequenceEdit_OnMoveEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperMoveEvent")]
+	public static extern void QKeySequenceEdit_SuperMoveEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_ResizeEvent")]
 	public static extern void QKeySequenceEdit_ResizeEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnResizeEvent")]
 	public static extern void QKeySequenceEdit_OnResizeEvent(void* self, QKeySequenceEdit_OnResizeEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperResizeEvent")]
+	public static extern void QKeySequenceEdit_SuperResizeEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_CloseEvent")]
 	public static extern void QKeySequenceEdit_CloseEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnCloseEvent")]
 	public static extern void QKeySequenceEdit_OnCloseEvent(void* self, QKeySequenceEdit_OnCloseEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperCloseEvent")]
+	public static extern void QKeySequenceEdit_SuperCloseEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_ContextMenuEvent")]
 	public static extern void QKeySequenceEdit_ContextMenuEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnContextMenuEvent")]
 	public static extern void QKeySequenceEdit_OnContextMenuEvent(void* self, QKeySequenceEdit_OnContextMenuEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperContextMenuEvent")]
+	public static extern void QKeySequenceEdit_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_TabletEvent")]
 	public static extern void QKeySequenceEdit_TabletEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnTabletEvent")]
 	public static extern void QKeySequenceEdit_OnTabletEvent(void* self, QKeySequenceEdit_OnTabletEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperTabletEvent")]
+	public static extern void QKeySequenceEdit_SuperTabletEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_ActionEvent")]
 	public static extern void QKeySequenceEdit_ActionEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnActionEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnActionEvent")]
 	public static extern void QKeySequenceEdit_OnActionEvent(void* self, QKeySequenceEdit_OnActionEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperActionEvent")]
+	public static extern void QKeySequenceEdit_SuperActionEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_DragEnterEvent")]
 	public static extern void QKeySequenceEdit_DragEnterEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnDragEnterEvent")]
 	public static extern void QKeySequenceEdit_OnDragEnterEvent(void* self, QKeySequenceEdit_OnDragEnterEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperDragEnterEvent")]
+	public static extern void QKeySequenceEdit_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_DragMoveEvent")]
 	public static extern void QKeySequenceEdit_DragMoveEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnDragMoveEvent")]
 	public static extern void QKeySequenceEdit_OnDragMoveEvent(void* self, QKeySequenceEdit_OnDragMoveEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperDragMoveEvent")]
+	public static extern void QKeySequenceEdit_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_DragLeaveEvent")]
 	public static extern void QKeySequenceEdit_DragLeaveEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnDragLeaveEvent")]
 	public static extern void QKeySequenceEdit_OnDragLeaveEvent(void* self, QKeySequenceEdit_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperDragLeaveEvent")]
+	public static extern void QKeySequenceEdit_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_DropEvent")]
 	public static extern void QKeySequenceEdit_DropEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnDropEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnDropEvent")]
 	public static extern void QKeySequenceEdit_OnDropEvent(void* self, QKeySequenceEdit_OnDropEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperDropEvent")]
+	public static extern void QKeySequenceEdit_SuperDropEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_ShowEvent")]
 	public static extern void QKeySequenceEdit_ShowEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnShowEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnShowEvent")]
 	public static extern void QKeySequenceEdit_OnShowEvent(void* self, QKeySequenceEdit_OnShowEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperShowEvent")]
+	public static extern void QKeySequenceEdit_SuperShowEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_HideEvent")]
 	public static extern void QKeySequenceEdit_HideEvent(void* self, void** event);
 	
 	public function void QKeySequenceEdit_OnHideEvent_action(void* self, void** event);
 	[LinkName("QKeySequenceEdit_OnHideEvent")]
 	public static extern void QKeySequenceEdit_OnHideEvent(void* self, QKeySequenceEdit_OnHideEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperHideEvent")]
+	public static extern void QKeySequenceEdit_SuperHideEvent(void* self, void** event);
 	[LinkName("QKeySequenceEdit_NativeEvent")]
 	public static extern bool QKeySequenceEdit_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QKeySequenceEdit_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QKeySequenceEdit_OnNativeEvent")]
 	public static extern bool QKeySequenceEdit_OnNativeEvent(void* self, QKeySequenceEdit_OnNativeEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperNativeEvent")]
+	public static extern bool QKeySequenceEdit_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QKeySequenceEdit_ChangeEvent")]
 	public static extern void QKeySequenceEdit_ChangeEvent(void* self, void** param1);
 	
 	public function void QKeySequenceEdit_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_OnChangeEvent")]
 	public static extern void QKeySequenceEdit_OnChangeEvent(void* self, QKeySequenceEdit_OnChangeEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperChangeEvent")]
+	public static extern void QKeySequenceEdit_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_InputMethodEvent")]
 	public static extern void QKeySequenceEdit_InputMethodEvent(void* self, void** param1);
 	
 	public function void QKeySequenceEdit_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_OnInputMethodEvent")]
 	public static extern void QKeySequenceEdit_OnInputMethodEvent(void* self, QKeySequenceEdit_OnInputMethodEvent_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperInputMethodEvent")]
+	public static extern void QKeySequenceEdit_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_InputMethodQuery")]
 	public static extern void* QKeySequenceEdit_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QKeySequenceEdit_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QKeySequenceEdit_OnInputMethodQuery")]
 	public static extern void* QKeySequenceEdit_OnInputMethodQuery(void* self, QKeySequenceEdit_OnInputMethodQuery_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperInputMethodQuery")]
+	public static extern void* QKeySequenceEdit_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QKeySequenceEdit_FocusNextPrevChild")]
 	public static extern bool QKeySequenceEdit_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QKeySequenceEdit_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QKeySequenceEdit_OnFocusNextPrevChild")]
 	public static extern bool QKeySequenceEdit_OnFocusNextPrevChild(void* self, QKeySequenceEdit_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QKeySequenceEdit_SuperFocusNextPrevChild")]
+	public static extern bool QKeySequenceEdit_SuperFocusNextPrevChild(void* self, bool next);
 }

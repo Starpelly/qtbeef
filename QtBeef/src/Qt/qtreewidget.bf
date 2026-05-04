@@ -258,6 +258,36 @@ class QTreeWidgetItem : IQTreeWidgetItem
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTreeWidgetItem_OnClone(obj.ObjectPtr,  => QtBeef_QTreeWidgetItem_OnClone);
+		CQt.QTreeWidgetItem_OnData(obj.ObjectPtr,  => QtBeef_QTreeWidgetItem_OnData);
+		CQt.QTreeWidgetItem_OnSetData(obj.ObjectPtr,  => QtBeef_QTreeWidgetItem_OnSetData);
+		CQt.QTreeWidgetItem_OnRead(obj.ObjectPtr,  => QtBeef_QTreeWidgetItem_OnRead);
+		CQt.QTreeWidgetItem_OnWrite(obj.ObjectPtr,  => QtBeef_QTreeWidgetItem_OnWrite);
+	}
+	static void QtBeef_QTreeWidgetItem_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QTreeWidgetItem_OnData(void* ptr, c_int column, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(column, role);
+	}
+	static void QtBeef_QTreeWidgetItem_OnSetData(void* ptr, c_int column, c_int role, void** value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(column, role, value);
+	}
+	static void QtBeef_QTreeWidgetItem_OnRead(void* ptr, void** _in)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRead(_in);
+	}
+	static void QtBeef_QTreeWidgetItem_OnWrite(void* ptr, void** _out)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWrite(_out);
 	}
 	public this(QTreeWidgetItem_Ptr ptr)
 	{
@@ -629,6 +659,9 @@ extension CQt
 	public function void QTreeWidgetItem_OnClone_action(void* self);
 	[LinkName("QTreeWidgetItem_OnClone")]
 	public static extern void** QTreeWidgetItem_OnClone(void* self, QTreeWidgetItem_OnClone_action _action);
+	
+	[LinkName("QTreeWidgetItem_SuperClone")]
+	public static extern void** QTreeWidgetItem_SuperClone(void* self);
 	[LinkName("QTreeWidgetItem_TreeWidget")]
 	public static extern void** QTreeWidgetItem_TreeWidget(void* self);
 	[LinkName("QTreeWidgetItem_SetSelected")]
@@ -713,30 +746,45 @@ extension CQt
 	public function void QTreeWidgetItem_OnData_action(void* self, c_int column, c_int role);
 	[LinkName("QTreeWidgetItem_OnData")]
 	public static extern void* QTreeWidgetItem_OnData(void* self, QTreeWidgetItem_OnData_action _action);
+	
+	[LinkName("QTreeWidgetItem_SuperData")]
+	public static extern void* QTreeWidgetItem_SuperData(void* self, c_int column, c_int role);
 	[LinkName("QTreeWidgetItem_SetData")]
 	public static extern void QTreeWidgetItem_SetData(void* self, c_int column, c_int role, void** value);
 	
 	public function void QTreeWidgetItem_OnSetData_action(void* self, c_int column, c_int role, void** value);
 	[LinkName("QTreeWidgetItem_OnSetData")]
 	public static extern void QTreeWidgetItem_OnSetData(void* self, QTreeWidgetItem_OnSetData_action _action);
+	
+	[LinkName("QTreeWidgetItem_SuperSetData")]
+	public static extern void QTreeWidgetItem_SuperSetData(void* self, c_int column, c_int role, void** value);
 	[LinkName("QTreeWidgetItem_OperatorLesser")]
 	public static extern bool QTreeWidgetItem_OperatorLesser(void* self, void** other);
 	
 	public function void QTreeWidgetItem_OnOperatorLesser_action(void* self, void** other);
 	[LinkName("QTreeWidgetItem_OnOperatorLesser")]
 	public static extern bool QTreeWidgetItem_OnOperatorLesser(void* self, QTreeWidgetItem_OnOperatorLesser_action _action);
+	
+	[LinkName("QTreeWidgetItem_SuperOperatorLesser")]
+	public static extern bool QTreeWidgetItem_SuperOperatorLesser(void* self, void** other);
 	[LinkName("QTreeWidgetItem_Read")]
 	public static extern void QTreeWidgetItem_Read(void* self, void** _in);
 	
 	public function void QTreeWidgetItem_OnRead_action(void* self, void** _in);
 	[LinkName("QTreeWidgetItem_OnRead")]
 	public static extern void QTreeWidgetItem_OnRead(void* self, QTreeWidgetItem_OnRead_action _action);
+	
+	[LinkName("QTreeWidgetItem_SuperRead")]
+	public static extern void QTreeWidgetItem_SuperRead(void* self, void** _in);
 	[LinkName("QTreeWidgetItem_Write")]
 	public static extern void QTreeWidgetItem_Write(void* self, void** _out);
 	
 	public function void QTreeWidgetItem_OnWrite_action(void* self, void** _out);
 	[LinkName("QTreeWidgetItem_OnWrite")]
 	public static extern void QTreeWidgetItem_OnWrite(void* self, QTreeWidgetItem_OnWrite_action _action);
+	
+	[LinkName("QTreeWidgetItem_SuperWrite")]
+	public static extern void QTreeWidgetItem_SuperWrite(void* self, void** _out);
 	[LinkName("QTreeWidgetItem_OperatorAssign")]
 	public static extern void QTreeWidgetItem_OperatorAssign(void* self, void** other);
 	[LinkName("QTreeWidgetItem_Parent")]
@@ -3482,6 +3530,106 @@ class QTreeWidget : IQTreeWidget, IQTreeView, IQAbstractItemView, IQAbstractScro
 		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_IconSizeChanged);
 		CQt.QTreeView_Connect_Expanded(obj.ObjectPtr,  => QtBeef_QTreeView_Connect_Expanded);
 		CQt.QTreeView_Connect_Collapsed(obj.ObjectPtr,  => QtBeef_QTreeView_Connect_Collapsed);
+		CQt.QTreeWidget_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMetaObject);
+		CQt.QTreeWidget_OnMetacast(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMetacast);
+		CQt.QTreeWidget_OnMetacall(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMetacall);
+		CQt.QTreeWidget_OnSetSelectionModel(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSetSelectionModel);
+		CQt.QTreeWidget_OnEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnEvent);
+		CQt.QTreeWidget_OnMimeTypes(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMimeTypes);
+		CQt.QTreeWidget_OnMimeData(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMimeData);
+		CQt.QTreeWidget_OnDropMimeData(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDropMimeData);
+		CQt.QTreeWidget_OnSupportedDropActions(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSupportedDropActions);
+		CQt.QTreeWidget_OnDropEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDropEvent);
+		CQt.QTreeWidget_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnEventFilter);
+		CQt.QTreeWidget_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnTimerEvent);
+		CQt.QTreeWidget_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnChildEvent);
+		CQt.QTreeWidget_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnCustomEvent);
+		CQt.QTreeWidget_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnConnectNotify);
+		CQt.QTreeWidget_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDisconnectNotify);
+		CQt.QTreeWidget_OnDevType(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDevType);
+		CQt.QTreeWidget_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnPaintEngine);
+		CQt.QTreeWidget_OnMetric(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMetric);
+		CQt.QTreeWidget_OnInitPainter(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnInitPainter);
+		CQt.QTreeWidget_OnRedirected(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnRedirected);
+		CQt.QTreeWidget_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSharedPainter);
+		CQt.QTreeWidget_OnSetVisible(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSetVisible);
+		CQt.QTreeWidget_OnSizeHint(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSizeHint);
+		CQt.QTreeWidget_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMinimumSizeHint);
+		CQt.QTreeWidget_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnHeightForWidth);
+		CQt.QTreeWidget_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnHasHeightForWidth);
+		CQt.QTreeWidget_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMousePressEvent);
+		CQt.QTreeWidget_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMouseReleaseEvent);
+		CQt.QTreeWidget_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMouseDoubleClickEvent);
+		CQt.QTreeWidget_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMouseMoveEvent);
+		CQt.QTreeWidget_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnWheelEvent);
+		CQt.QTreeWidget_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnKeyPressEvent);
+		CQt.QTreeWidget_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnKeyReleaseEvent);
+		CQt.QTreeWidget_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnFocusInEvent);
+		CQt.QTreeWidget_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnFocusOutEvent);
+		CQt.QTreeWidget_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnEnterEvent);
+		CQt.QTreeWidget_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnLeaveEvent);
+		CQt.QTreeWidget_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnPaintEvent);
+		CQt.QTreeWidget_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMoveEvent);
+		CQt.QTreeWidget_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnResizeEvent);
+		CQt.QTreeWidget_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnCloseEvent);
+		CQt.QTreeWidget_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnContextMenuEvent);
+		CQt.QTreeWidget_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnTabletEvent);
+		CQt.QTreeWidget_OnActionEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnActionEvent);
+		CQt.QTreeWidget_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDragEnterEvent);
+		CQt.QTreeWidget_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDragMoveEvent);
+		CQt.QTreeWidget_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDragLeaveEvent);
+		CQt.QTreeWidget_OnShowEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnShowEvent);
+		CQt.QTreeWidget_OnHideEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnHideEvent);
+		CQt.QTreeWidget_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnNativeEvent);
+		CQt.QTreeWidget_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnChangeEvent);
+		CQt.QTreeWidget_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnInputMethodEvent);
+		CQt.QTreeWidget_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnInputMethodQuery);
+		CQt.QTreeWidget_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnFocusNextPrevChild);
+		CQt.QTreeWidget_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnInitStyleOption);
+		CQt.QTreeWidget_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSetupViewport);
+		CQt.QTreeWidget_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnViewportEvent);
+		CQt.QTreeWidget_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnScrollContentsBy);
+		CQt.QTreeWidget_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnViewportSizeHint);
+		CQt.QTreeWidget_OnSetModel(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSetModel);
+		CQt.QTreeWidget_OnKeyboardSearch(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnKeyboardSearch);
+		CQt.QTreeWidget_OnVisualRect(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnVisualRect);
+		CQt.QTreeWidget_OnScrollTo(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnScrollTo);
+		CQt.QTreeWidget_OnIndexAt(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnIndexAt);
+		CQt.QTreeWidget_OnSizeHintForRow(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSizeHintForRow);
+		CQt.QTreeWidget_OnSizeHintForColumn(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSizeHintForColumn);
+		CQt.QTreeWidget_OnItemDelegateForIndex(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnItemDelegateForIndex);
+		CQt.QTreeWidget_OnReset(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnReset);
+		CQt.QTreeWidget_OnSetRootIndex(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSetRootIndex);
+		CQt.QTreeWidget_OnDoItemsLayout(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDoItemsLayout);
+		CQt.QTreeWidget_OnSelectAll(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSelectAll);
+		CQt.QTreeWidget_OnDataChanged(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDataChanged);
+		CQt.QTreeWidget_OnRowsInserted(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnRowsInserted);
+		CQt.QTreeWidget_OnRowsAboutToBeRemoved(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnRowsAboutToBeRemoved);
+		CQt.QTreeWidget_OnSelectionChanged(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSelectionChanged);
+		CQt.QTreeWidget_OnCurrentChanged(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnCurrentChanged);
+		CQt.QTreeWidget_OnUpdateEditorData(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnUpdateEditorData);
+		CQt.QTreeWidget_OnUpdateEditorGeometries(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnUpdateEditorGeometries);
+		CQt.QTreeWidget_OnUpdateGeometries(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnUpdateGeometries);
+		CQt.QTreeWidget_OnVerticalScrollbarAction(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnVerticalScrollbarAction);
+		CQt.QTreeWidget_OnHorizontalScrollbarAction(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnHorizontalScrollbarAction);
+		CQt.QTreeWidget_OnVerticalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnVerticalScrollbarValueChanged);
+		CQt.QTreeWidget_OnHorizontalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnHorizontalScrollbarValueChanged);
+		CQt.QTreeWidget_OnCloseEditor(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnCloseEditor);
+		CQt.QTreeWidget_OnCommitData(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnCommitData);
+		CQt.QTreeWidget_OnEditorDestroyed(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnEditorDestroyed);
+		CQt.QTreeWidget_OnMoveCursor(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnMoveCursor);
+		CQt.QTreeWidget_OnHorizontalOffset(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnHorizontalOffset);
+		CQt.QTreeWidget_OnVerticalOffset(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnVerticalOffset);
+		CQt.QTreeWidget_OnIsIndexHidden(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnIsIndexHidden);
+		CQt.QTreeWidget_OnSetSelection(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSetSelection);
+		CQt.QTreeWidget_OnVisualRegionForSelection(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnVisualRegionForSelection);
+		CQt.QTreeWidget_OnSelectedIndexes(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSelectedIndexes);
+		CQt.QTreeWidget_OnEdit2(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnEdit2);
+		CQt.QTreeWidget_OnSelectionCommand(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnSelectionCommand);
+		CQt.QTreeWidget_OnStartDrag(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnStartDrag);
+		CQt.QTreeWidget_OnInitViewItemOption(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnInitViewItemOption);
+		CQt.QTreeWidget_OnDrawRow(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDrawRow);
+		CQt.QTreeWidget_OnDrawBranches(obj.ObjectPtr,  => QtBeef_QTreeWidget_OnDrawBranches);
 	}
 	public Event<delegate void(void** item, c_int column)> OnItemPressed = .() ~ _.Dispose();
 	public Event<delegate void(void** item, c_int column)> OnItemClicked = .() ~ _.Dispose();
@@ -3632,6 +3780,506 @@ class QTreeWidget : IQTreeWidget, IQTreeView, IQAbstractItemView, IQAbstractScro
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCollapsed.Invoke(index);
+	}
+	static void QtBeef_QTreeWidget_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTreeWidget_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTreeWidget_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTreeWidget_OnSetSelectionModel(void* ptr, void** selectionModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelectionModel(selectionModel);
+	}
+	static void QtBeef_QTreeWidget_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QTreeWidget_OnMimeTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeTypes();
+	}
+	static void QtBeef_QTreeWidget_OnMimeData(void* ptr, void** items)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeData(items);
+	}
+	static void QtBeef_QTreeWidget_OnDropMimeData(void* ptr, void** parent, c_int index, void** data, Qt_DropAction action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropMimeData(parent, index, data, action);
+	}
+	static void QtBeef_QTreeWidget_OnSupportedDropActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDropActions();
+	}
+	static void QtBeef_QTreeWidget_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTreeWidget_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTreeWidget_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QTreeWidget_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QTreeWidget_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QTreeWidget_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QTreeWidget_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QTreeWidget_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QTreeWidget_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QTreeWidget_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QTreeWidget_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QTreeWidget_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QTreeWidget_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QTreeWidget_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QTreeWidget_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QTreeWidget_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QTreeWidget_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QTreeWidget_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QTreeWidget_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QTreeWidget_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QTreeWidget_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QTreeWidget_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QTreeWidget_OnViewportEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(param1);
+	}
+	static void QtBeef_QTreeWidget_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
+	}
+	static void QtBeef_QTreeWidget_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
+	}
+	static void QtBeef_QTreeWidget_OnSetModel(void* ptr, void** model)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetModel(model);
+	}
+	static void QtBeef_QTreeWidget_OnKeyboardSearch(void* ptr, libqt_string search)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyboardSearch(search);
+	}
+	static void QtBeef_QTreeWidget_OnVisualRect(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRect(index);
+	}
+	static void QtBeef_QTreeWidget_OnScrollTo(void* ptr, void** index, QAbstractItemView_ScrollHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollTo(index, hint);
+	}
+	static void QtBeef_QTreeWidget_OnIndexAt(void* ptr, void** point)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexAt(point);
+	}
+	static void QtBeef_QTreeWidget_OnSizeHintForRow(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForRow(row);
+	}
+	static void QtBeef_QTreeWidget_OnSizeHintForColumn(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForColumn(column);
+	}
+	static void QtBeef_QTreeWidget_OnItemDelegateForIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDelegateForIndex(index);
+	}
+	static void QtBeef_QTreeWidget_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QTreeWidget_OnSetRootIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetRootIndex(index);
+	}
+	static void QtBeef_QTreeWidget_OnDoItemsLayout(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoItemsLayout();
+	}
+	static void QtBeef_QTreeWidget_OnSelectAll(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectAll();
+	}
+	static void QtBeef_QTreeWidget_OnDataChanged(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QTreeWidget_OnRowsInserted(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsInserted(parent, start, end);
+	}
+	static void QtBeef_QTreeWidget_OnRowsAboutToBeRemoved(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsAboutToBeRemoved(parent, start, end);
+	}
+	static void QtBeef_QTreeWidget_OnSelectionChanged(void* ptr, void** selected, void** deselected)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged(selected, deselected);
+	}
+	static void QtBeef_QTreeWidget_OnCurrentChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged(current, previous);
+	}
+	static void QtBeef_QTreeWidget_OnUpdateEditorData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorData();
+	}
+	static void QtBeef_QTreeWidget_OnUpdateEditorGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorGeometries();
+	}
+	static void QtBeef_QTreeWidget_OnUpdateGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometries();
+	}
+	static void QtBeef_QTreeWidget_OnVerticalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarAction(action);
+	}
+	static void QtBeef_QTreeWidget_OnHorizontalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarAction(action);
+	}
+	static void QtBeef_QTreeWidget_OnVerticalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QTreeWidget_OnHorizontalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QTreeWidget_OnCloseEditor(void* ptr, void** editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor(editor, hint);
+	}
+	static void QtBeef_QTreeWidget_OnCommitData(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommitData(editor);
+	}
+	static void QtBeef_QTreeWidget_OnEditorDestroyed(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditorDestroyed(editor);
+	}
+	static void QtBeef_QTreeWidget_OnMoveCursor(void* ptr, QAbstractItemView_CursorAction cursorAction, void* modifiers)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveCursor(cursorAction, modifiers);
+	}
+	static void QtBeef_QTreeWidget_OnHorizontalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalOffset();
+	}
+	static void QtBeef_QTreeWidget_OnVerticalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalOffset();
+	}
+	static void QtBeef_QTreeWidget_OnIsIndexHidden(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsIndexHidden(index);
+	}
+	static void QtBeef_QTreeWidget_OnSetSelection(void* ptr, void** rect, void* command)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelection(rect, command);
+	}
+	static void QtBeef_QTreeWidget_OnVisualRegionForSelection(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRegionForSelection(selection);
+	}
+	static void QtBeef_QTreeWidget_OnSelectedIndexes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedIndexes();
+	}
+	static void QtBeef_QTreeWidget_OnEdit2(void* ptr, void** index, QAbstractItemView_EditTrigger trigger, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEdit2(index, trigger, event);
+	}
+	static void QtBeef_QTreeWidget_OnSelectionCommand(void* ptr, void** index, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionCommand(index, event);
+	}
+	static void QtBeef_QTreeWidget_OnStartDrag(void* ptr, void* supportedActions)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStartDrag(supportedActions);
+	}
+	static void QtBeef_QTreeWidget_OnInitViewItemOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitViewItemOption(option);
+	}
+	static void QtBeef_QTreeWidget_OnDrawRow(void* ptr, void** painter, void** options, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDrawRow(painter, options, index);
+	}
+	static void QtBeef_QTreeWidget_OnDrawBranches(void* ptr, void** painter, void** rect, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDrawBranches(painter, rect, index);
 	}
 	public this(QTreeWidget_Ptr ptr)
 	{
@@ -6274,18 +6922,27 @@ extension CQt
 	public function void QTreeWidget_OnMetaObject_action(void* self);
 	[LinkName("QTreeWidget_OnMetaObject")]
 	public static extern void** QTreeWidget_OnMetaObject(void* self, QTreeWidget_OnMetaObject_action _action);
+	
+	[LinkName("QTreeWidget_SuperMetaObject")]
+	public static extern void** QTreeWidget_SuperMetaObject(void* self);
 	[LinkName("QTreeWidget_Qt_Metacast")]
 	public static extern void* QTreeWidget_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTreeWidget_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTreeWidget_OnMetacast")]
 	public static extern void* QTreeWidget_OnMetacast(void* self, QTreeWidget_OnMetacast_action _action);
+	
+	[LinkName("QTreeWidget_SuperMetacast")]
+	public static extern void* QTreeWidget_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTreeWidget_Qt_Metacall")]
 	public static extern c_int QTreeWidget_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTreeWidget_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTreeWidget_OnMetacall")]
 	public static extern c_int QTreeWidget_OnMetacall(void* self, QTreeWidget_OnMetacall_action _action);
+	
+	[LinkName("QTreeWidget_SuperMetacall")]
+	public static extern c_int QTreeWidget_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTreeWidget_Tr")]
 	public static extern libqt_string QTreeWidget_Tr(c_char* s);
 	[LinkName("QTreeWidget_ColumnCount")]
@@ -6370,6 +7027,9 @@ extension CQt
 	public function void QTreeWidget_OnSetSelectionModel_action(void* self, void** selectionModel);
 	[LinkName("QTreeWidget_OnSetSelectionModel")]
 	public static extern void QTreeWidget_OnSetSelectionModel(void* self, QTreeWidget_OnSetSelectionModel_action _action);
+	
+	[LinkName("QTreeWidget_SuperSetSelectionModel")]
+	public static extern void QTreeWidget_SuperSetSelectionModel(void* self, void** selectionModel);
 	[LinkName("QTreeWidget_ScrollToItem")]
 	public static extern void QTreeWidget_ScrollToItem(void* self, void** item);
 	[LinkName("QTreeWidget_ExpandItem")]
@@ -6444,36 +7104,54 @@ extension CQt
 	public function void QTreeWidget_OnEvent_action(void* self, void** e);
 	[LinkName("QTreeWidget_OnEvent")]
 	public static extern bool QTreeWidget_OnEvent(void* self, QTreeWidget_OnEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperEvent")]
+	public static extern bool QTreeWidget_SuperEvent(void* self, void** e);
 	[LinkName("QTreeWidget_MimeTypes")]
 	public static extern void* QTreeWidget_MimeTypes(void* self);
 	
 	public function void QTreeWidget_OnMimeTypes_action(void* self);
 	[LinkName("QTreeWidget_OnMimeTypes")]
 	public static extern void* QTreeWidget_OnMimeTypes(void* self, QTreeWidget_OnMimeTypes_action _action);
+	
+	[LinkName("QTreeWidget_SuperMimeTypes")]
+	public static extern void* QTreeWidget_SuperMimeTypes(void* self);
 	[LinkName("QTreeWidget_MimeData")]
 	public static extern void** QTreeWidget_MimeData(void* self, void** items);
 	
 	public function void QTreeWidget_OnMimeData_action(void* self, void** items);
 	[LinkName("QTreeWidget_OnMimeData")]
 	public static extern void** QTreeWidget_OnMimeData(void* self, QTreeWidget_OnMimeData_action _action);
+	
+	[LinkName("QTreeWidget_SuperMimeData")]
+	public static extern void** QTreeWidget_SuperMimeData(void* self, void** items);
 	[LinkName("QTreeWidget_DropMimeData")]
 	public static extern bool QTreeWidget_DropMimeData(void* self, void** parent, c_int index, void** data, Qt_DropAction action);
 	
 	public function void QTreeWidget_OnDropMimeData_action(void* self, void** parent, c_int index, void** data, Qt_DropAction action);
 	[LinkName("QTreeWidget_OnDropMimeData")]
 	public static extern bool QTreeWidget_OnDropMimeData(void* self, QTreeWidget_OnDropMimeData_action _action);
+	
+	[LinkName("QTreeWidget_SuperDropMimeData")]
+	public static extern bool QTreeWidget_SuperDropMimeData(void* self, void** parent, c_int index, void** data, Qt_DropAction action);
 	[LinkName("QTreeWidget_SupportedDropActions")]
 	public static extern void* QTreeWidget_SupportedDropActions(void* self);
 	
 	public function void QTreeWidget_OnSupportedDropActions_action(void* self);
 	[LinkName("QTreeWidget_OnSupportedDropActions")]
 	public static extern void* QTreeWidget_OnSupportedDropActions(void* self, QTreeWidget_OnSupportedDropActions_action _action);
+	
+	[LinkName("QTreeWidget_SuperSupportedDropActions")]
+	public static extern void* QTreeWidget_SuperSupportedDropActions(void* self);
 	[LinkName("QTreeWidget_DropEvent")]
 	public static extern void QTreeWidget_DropEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnDropEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnDropEvent")]
 	public static extern void QTreeWidget_OnDropEvent(void* self, QTreeWidget_OnDropEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperDropEvent")]
+	public static extern void QTreeWidget_SuperDropEvent(void* self, void** event);
 	[LinkName("QTreeWidget_Tr2")]
 	public static extern libqt_string QTreeWidget_Tr2(c_char* s, c_char* c);
 	[LinkName("QTreeWidget_Tr3")]
@@ -6498,540 +7176,810 @@ extension CQt
 	public function void QTreeWidget_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTreeWidget_OnEventFilter")]
 	public static extern bool QTreeWidget_OnEventFilter(void* self, QTreeWidget_OnEventFilter_action _action);
+	
+	[LinkName("QTreeWidget_SuperEventFilter")]
+	public static extern bool QTreeWidget_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTreeWidget_TimerEvent")]
 	public static extern void QTreeWidget_TimerEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnTimerEvent")]
 	public static extern void QTreeWidget_OnTimerEvent(void* self, QTreeWidget_OnTimerEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperTimerEvent")]
+	public static extern void QTreeWidget_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTreeWidget_ChildEvent")]
 	public static extern void QTreeWidget_ChildEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnChildEvent")]
 	public static extern void QTreeWidget_OnChildEvent(void* self, QTreeWidget_OnChildEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperChildEvent")]
+	public static extern void QTreeWidget_SuperChildEvent(void* self, void** event);
 	[LinkName("QTreeWidget_CustomEvent")]
 	public static extern void QTreeWidget_CustomEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnCustomEvent")]
 	public static extern void QTreeWidget_OnCustomEvent(void* self, QTreeWidget_OnCustomEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperCustomEvent")]
+	public static extern void QTreeWidget_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTreeWidget_ConnectNotify")]
 	public static extern void QTreeWidget_ConnectNotify(void* self, void** signal);
 	
 	public function void QTreeWidget_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTreeWidget_OnConnectNotify")]
 	public static extern void QTreeWidget_OnConnectNotify(void* self, QTreeWidget_OnConnectNotify_action _action);
+	
+	[LinkName("QTreeWidget_SuperConnectNotify")]
+	public static extern void QTreeWidget_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTreeWidget_DisconnectNotify")]
 	public static extern void QTreeWidget_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTreeWidget_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTreeWidget_OnDisconnectNotify")]
 	public static extern void QTreeWidget_OnDisconnectNotify(void* self, QTreeWidget_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTreeWidget_SuperDisconnectNotify")]
+	public static extern void QTreeWidget_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QTreeWidget_DevType")]
 	public static extern c_int QTreeWidget_DevType(void* self);
 	
 	public function void QTreeWidget_OnDevType_action(void* self);
 	[LinkName("QTreeWidget_OnDevType")]
 	public static extern c_int QTreeWidget_OnDevType(void* self, QTreeWidget_OnDevType_action _action);
+	
+	[LinkName("QTreeWidget_SuperDevType")]
+	public static extern c_int QTreeWidget_SuperDevType(void* self);
 	[LinkName("QTreeWidget_PaintEngine")]
 	public static extern void** QTreeWidget_PaintEngine(void* self);
 	
 	public function void QTreeWidget_OnPaintEngine_action(void* self);
 	[LinkName("QTreeWidget_OnPaintEngine")]
 	public static extern void** QTreeWidget_OnPaintEngine(void* self, QTreeWidget_OnPaintEngine_action _action);
+	
+	[LinkName("QTreeWidget_SuperPaintEngine")]
+	public static extern void** QTreeWidget_SuperPaintEngine(void* self);
 	[LinkName("QTreeWidget_Metric")]
 	public static extern c_int QTreeWidget_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QTreeWidget_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTreeWidget_OnMetric")]
 	public static extern c_int QTreeWidget_OnMetric(void* self, QTreeWidget_OnMetric_action _action);
+	
+	[LinkName("QTreeWidget_SuperMetric")]
+	public static extern c_int QTreeWidget_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTreeWidget_InitPainter")]
 	public static extern void QTreeWidget_InitPainter(void* self, void** painter);
 	
 	public function void QTreeWidget_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QTreeWidget_OnInitPainter")]
 	public static extern void QTreeWidget_OnInitPainter(void* self, QTreeWidget_OnInitPainter_action _action);
+	
+	[LinkName("QTreeWidget_SuperInitPainter")]
+	public static extern void QTreeWidget_SuperInitPainter(void* self, void** painter);
 	[LinkName("QTreeWidget_Redirected")]
 	public static extern void** QTreeWidget_Redirected(void* self, void** offset);
 	
 	public function void QTreeWidget_OnRedirected_action(void* self, void** offset);
 	[LinkName("QTreeWidget_OnRedirected")]
 	public static extern void** QTreeWidget_OnRedirected(void* self, QTreeWidget_OnRedirected_action _action);
+	
+	[LinkName("QTreeWidget_SuperRedirected")]
+	public static extern void** QTreeWidget_SuperRedirected(void* self, void** offset);
 	[LinkName("QTreeWidget_SharedPainter")]
 	public static extern void** QTreeWidget_SharedPainter(void* self);
 	
 	public function void QTreeWidget_OnSharedPainter_action(void* self);
 	[LinkName("QTreeWidget_OnSharedPainter")]
 	public static extern void** QTreeWidget_OnSharedPainter(void* self, QTreeWidget_OnSharedPainter_action _action);
+	
+	[LinkName("QTreeWidget_SuperSharedPainter")]
+	public static extern void** QTreeWidget_SuperSharedPainter(void* self);
 	[LinkName("QTreeWidget_SetVisible")]
 	public static extern void QTreeWidget_SetVisible(void* self, bool visible);
 	
 	public function void QTreeWidget_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QTreeWidget_OnSetVisible")]
 	public static extern void QTreeWidget_OnSetVisible(void* self, QTreeWidget_OnSetVisible_action _action);
+	
+	[LinkName("QTreeWidget_SuperSetVisible")]
+	public static extern void QTreeWidget_SuperSetVisible(void* self, bool visible);
 	[LinkName("QTreeWidget_SizeHint")]
 	public static extern void* QTreeWidget_SizeHint(void* self);
 	
 	public function void QTreeWidget_OnSizeHint_action(void* self);
 	[LinkName("QTreeWidget_OnSizeHint")]
 	public static extern void* QTreeWidget_OnSizeHint(void* self, QTreeWidget_OnSizeHint_action _action);
+	
+	[LinkName("QTreeWidget_SuperSizeHint")]
+	public static extern void* QTreeWidget_SuperSizeHint(void* self);
 	[LinkName("QTreeWidget_MinimumSizeHint")]
 	public static extern void* QTreeWidget_MinimumSizeHint(void* self);
 	
 	public function void QTreeWidget_OnMinimumSizeHint_action(void* self);
 	[LinkName("QTreeWidget_OnMinimumSizeHint")]
 	public static extern void* QTreeWidget_OnMinimumSizeHint(void* self, QTreeWidget_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QTreeWidget_SuperMinimumSizeHint")]
+	public static extern void* QTreeWidget_SuperMinimumSizeHint(void* self);
 	[LinkName("QTreeWidget_HeightForWidth")]
 	public static extern c_int QTreeWidget_HeightForWidth(void* self, c_int param1);
 	
 	public function void QTreeWidget_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QTreeWidget_OnHeightForWidth")]
 	public static extern c_int QTreeWidget_OnHeightForWidth(void* self, QTreeWidget_OnHeightForWidth_action _action);
+	
+	[LinkName("QTreeWidget_SuperHeightForWidth")]
+	public static extern c_int QTreeWidget_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QTreeWidget_HasHeightForWidth")]
 	public static extern bool QTreeWidget_HasHeightForWidth(void* self);
 	
 	public function void QTreeWidget_OnHasHeightForWidth_action(void* self);
 	[LinkName("QTreeWidget_OnHasHeightForWidth")]
 	public static extern bool QTreeWidget_OnHasHeightForWidth(void* self, QTreeWidget_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QTreeWidget_SuperHasHeightForWidth")]
+	public static extern bool QTreeWidget_SuperHasHeightForWidth(void* self);
 	[LinkName("QTreeWidget_MousePressEvent")]
 	public static extern void QTreeWidget_MousePressEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnMousePressEvent")]
 	public static extern void QTreeWidget_OnMousePressEvent(void* self, QTreeWidget_OnMousePressEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperMousePressEvent")]
+	public static extern void QTreeWidget_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QTreeWidget_MouseReleaseEvent")]
 	public static extern void QTreeWidget_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnMouseReleaseEvent")]
 	public static extern void QTreeWidget_OnMouseReleaseEvent(void* self, QTreeWidget_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperMouseReleaseEvent")]
+	public static extern void QTreeWidget_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QTreeWidget_MouseDoubleClickEvent")]
 	public static extern void QTreeWidget_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnMouseDoubleClickEvent")]
 	public static extern void QTreeWidget_OnMouseDoubleClickEvent(void* self, QTreeWidget_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperMouseDoubleClickEvent")]
+	public static extern void QTreeWidget_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QTreeWidget_MouseMoveEvent")]
 	public static extern void QTreeWidget_MouseMoveEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnMouseMoveEvent")]
 	public static extern void QTreeWidget_OnMouseMoveEvent(void* self, QTreeWidget_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperMouseMoveEvent")]
+	public static extern void QTreeWidget_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QTreeWidget_WheelEvent")]
 	public static extern void QTreeWidget_WheelEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnWheelEvent")]
 	public static extern void QTreeWidget_OnWheelEvent(void* self, QTreeWidget_OnWheelEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperWheelEvent")]
+	public static extern void QTreeWidget_SuperWheelEvent(void* self, void** event);
 	[LinkName("QTreeWidget_KeyPressEvent")]
 	public static extern void QTreeWidget_KeyPressEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnKeyPressEvent")]
 	public static extern void QTreeWidget_OnKeyPressEvent(void* self, QTreeWidget_OnKeyPressEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperKeyPressEvent")]
+	public static extern void QTreeWidget_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QTreeWidget_KeyReleaseEvent")]
 	public static extern void QTreeWidget_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnKeyReleaseEvent")]
 	public static extern void QTreeWidget_OnKeyReleaseEvent(void* self, QTreeWidget_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperKeyReleaseEvent")]
+	public static extern void QTreeWidget_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QTreeWidget_FocusInEvent")]
 	public static extern void QTreeWidget_FocusInEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnFocusInEvent")]
 	public static extern void QTreeWidget_OnFocusInEvent(void* self, QTreeWidget_OnFocusInEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperFocusInEvent")]
+	public static extern void QTreeWidget_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QTreeWidget_FocusOutEvent")]
 	public static extern void QTreeWidget_FocusOutEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnFocusOutEvent")]
 	public static extern void QTreeWidget_OnFocusOutEvent(void* self, QTreeWidget_OnFocusOutEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperFocusOutEvent")]
+	public static extern void QTreeWidget_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QTreeWidget_EnterEvent")]
 	public static extern void QTreeWidget_EnterEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnEnterEvent")]
 	public static extern void QTreeWidget_OnEnterEvent(void* self, QTreeWidget_OnEnterEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperEnterEvent")]
+	public static extern void QTreeWidget_SuperEnterEvent(void* self, void** event);
 	[LinkName("QTreeWidget_LeaveEvent")]
 	public static extern void QTreeWidget_LeaveEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnLeaveEvent")]
 	public static extern void QTreeWidget_OnLeaveEvent(void* self, QTreeWidget_OnLeaveEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperLeaveEvent")]
+	public static extern void QTreeWidget_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QTreeWidget_PaintEvent")]
 	public static extern void QTreeWidget_PaintEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnPaintEvent")]
 	public static extern void QTreeWidget_OnPaintEvent(void* self, QTreeWidget_OnPaintEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperPaintEvent")]
+	public static extern void QTreeWidget_SuperPaintEvent(void* self, void** event);
 	[LinkName("QTreeWidget_MoveEvent")]
 	public static extern void QTreeWidget_MoveEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnMoveEvent")]
 	public static extern void QTreeWidget_OnMoveEvent(void* self, QTreeWidget_OnMoveEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperMoveEvent")]
+	public static extern void QTreeWidget_SuperMoveEvent(void* self, void** event);
 	[LinkName("QTreeWidget_ResizeEvent")]
 	public static extern void QTreeWidget_ResizeEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnResizeEvent")]
 	public static extern void QTreeWidget_OnResizeEvent(void* self, QTreeWidget_OnResizeEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperResizeEvent")]
+	public static extern void QTreeWidget_SuperResizeEvent(void* self, void** event);
 	[LinkName("QTreeWidget_CloseEvent")]
 	public static extern void QTreeWidget_CloseEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnCloseEvent")]
 	public static extern void QTreeWidget_OnCloseEvent(void* self, QTreeWidget_OnCloseEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperCloseEvent")]
+	public static extern void QTreeWidget_SuperCloseEvent(void* self, void** event);
 	[LinkName("QTreeWidget_ContextMenuEvent")]
 	public static extern void QTreeWidget_ContextMenuEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnContextMenuEvent")]
 	public static extern void QTreeWidget_OnContextMenuEvent(void* self, QTreeWidget_OnContextMenuEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperContextMenuEvent")]
+	public static extern void QTreeWidget_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QTreeWidget_TabletEvent")]
 	public static extern void QTreeWidget_TabletEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnTabletEvent")]
 	public static extern void QTreeWidget_OnTabletEvent(void* self, QTreeWidget_OnTabletEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperTabletEvent")]
+	public static extern void QTreeWidget_SuperTabletEvent(void* self, void** event);
 	[LinkName("QTreeWidget_ActionEvent")]
 	public static extern void QTreeWidget_ActionEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnActionEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnActionEvent")]
 	public static extern void QTreeWidget_OnActionEvent(void* self, QTreeWidget_OnActionEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperActionEvent")]
+	public static extern void QTreeWidget_SuperActionEvent(void* self, void** event);
 	[LinkName("QTreeWidget_DragEnterEvent")]
 	public static extern void QTreeWidget_DragEnterEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnDragEnterEvent")]
 	public static extern void QTreeWidget_OnDragEnterEvent(void* self, QTreeWidget_OnDragEnterEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperDragEnterEvent")]
+	public static extern void QTreeWidget_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QTreeWidget_DragMoveEvent")]
 	public static extern void QTreeWidget_DragMoveEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnDragMoveEvent")]
 	public static extern void QTreeWidget_OnDragMoveEvent(void* self, QTreeWidget_OnDragMoveEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperDragMoveEvent")]
+	public static extern void QTreeWidget_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QTreeWidget_DragLeaveEvent")]
 	public static extern void QTreeWidget_DragLeaveEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnDragLeaveEvent")]
 	public static extern void QTreeWidget_OnDragLeaveEvent(void* self, QTreeWidget_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperDragLeaveEvent")]
+	public static extern void QTreeWidget_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QTreeWidget_ShowEvent")]
 	public static extern void QTreeWidget_ShowEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnShowEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnShowEvent")]
 	public static extern void QTreeWidget_OnShowEvent(void* self, QTreeWidget_OnShowEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperShowEvent")]
+	public static extern void QTreeWidget_SuperShowEvent(void* self, void** event);
 	[LinkName("QTreeWidget_HideEvent")]
 	public static extern void QTreeWidget_HideEvent(void* self, void** event);
 	
 	public function void QTreeWidget_OnHideEvent_action(void* self, void** event);
 	[LinkName("QTreeWidget_OnHideEvent")]
 	public static extern void QTreeWidget_OnHideEvent(void* self, QTreeWidget_OnHideEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperHideEvent")]
+	public static extern void QTreeWidget_SuperHideEvent(void* self, void** event);
 	[LinkName("QTreeWidget_NativeEvent")]
 	public static extern bool QTreeWidget_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QTreeWidget_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTreeWidget_OnNativeEvent")]
 	public static extern bool QTreeWidget_OnNativeEvent(void* self, QTreeWidget_OnNativeEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperNativeEvent")]
+	public static extern bool QTreeWidget_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTreeWidget_ChangeEvent")]
 	public static extern void QTreeWidget_ChangeEvent(void* self, void** param1);
 	
 	public function void QTreeWidget_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QTreeWidget_OnChangeEvent")]
 	public static extern void QTreeWidget_OnChangeEvent(void* self, QTreeWidget_OnChangeEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperChangeEvent")]
+	public static extern void QTreeWidget_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QTreeWidget_InputMethodEvent")]
 	public static extern void QTreeWidget_InputMethodEvent(void* self, void** param1);
 	
 	public function void QTreeWidget_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QTreeWidget_OnInputMethodEvent")]
 	public static extern void QTreeWidget_OnInputMethodEvent(void* self, QTreeWidget_OnInputMethodEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperInputMethodEvent")]
+	public static extern void QTreeWidget_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QTreeWidget_InputMethodQuery")]
 	public static extern void* QTreeWidget_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QTreeWidget_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTreeWidget_OnInputMethodQuery")]
 	public static extern void* QTreeWidget_OnInputMethodQuery(void* self, QTreeWidget_OnInputMethodQuery_action _action);
+	
+	[LinkName("QTreeWidget_SuperInputMethodQuery")]
+	public static extern void* QTreeWidget_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTreeWidget_FocusNextPrevChild")]
 	public static extern bool QTreeWidget_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QTreeWidget_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QTreeWidget_OnFocusNextPrevChild")]
 	public static extern bool QTreeWidget_OnFocusNextPrevChild(void* self, QTreeWidget_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QTreeWidget_SuperFocusNextPrevChild")]
+	public static extern bool QTreeWidget_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QTreeWidget_InitStyleOption")]
 	public static extern void QTreeWidget_InitStyleOption(void* self, void** option);
 	
 	public function void QTreeWidget_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QTreeWidget_OnInitStyleOption")]
 	public static extern void QTreeWidget_OnInitStyleOption(void* self, QTreeWidget_OnInitStyleOption_action _action);
+	
+	[LinkName("QTreeWidget_SuperInitStyleOption")]
+	public static extern void QTreeWidget_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QTreeWidget_SetupViewport")]
 	public static extern void QTreeWidget_SetupViewport(void* self, void** viewport);
 	
 	public function void QTreeWidget_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QTreeWidget_OnSetupViewport")]
 	public static extern void QTreeWidget_OnSetupViewport(void* self, QTreeWidget_OnSetupViewport_action _action);
+	
+	[LinkName("QTreeWidget_SuperSetupViewport")]
+	public static extern void QTreeWidget_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QTreeWidget_ViewportEvent")]
 	public static extern bool QTreeWidget_ViewportEvent(void* self, void** param1);
 	
 	public function void QTreeWidget_OnViewportEvent_action(void* self, void** param1);
 	[LinkName("QTreeWidget_OnViewportEvent")]
 	public static extern bool QTreeWidget_OnViewportEvent(void* self, QTreeWidget_OnViewportEvent_action _action);
+	
+	[LinkName("QTreeWidget_SuperViewportEvent")]
+	public static extern bool QTreeWidget_SuperViewportEvent(void* self, void** param1);
 	[LinkName("QTreeWidget_ScrollContentsBy")]
 	public static extern void QTreeWidget_ScrollContentsBy(void* self, c_int dx, c_int dy);
 	
 	public function void QTreeWidget_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QTreeWidget_OnScrollContentsBy")]
 	public static extern void QTreeWidget_OnScrollContentsBy(void* self, QTreeWidget_OnScrollContentsBy_action _action);
+	
+	[LinkName("QTreeWidget_SuperScrollContentsBy")]
+	public static extern void QTreeWidget_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 	[LinkName("QTreeWidget_ViewportSizeHint")]
 	public static extern void* QTreeWidget_ViewportSizeHint(void* self);
 	
 	public function void QTreeWidget_OnViewportSizeHint_action(void* self);
 	[LinkName("QTreeWidget_OnViewportSizeHint")]
 	public static extern void* QTreeWidget_OnViewportSizeHint(void* self, QTreeWidget_OnViewportSizeHint_action _action);
+	
+	[LinkName("QTreeWidget_SuperViewportSizeHint")]
+	public static extern void* QTreeWidget_SuperViewportSizeHint(void* self);
 	[LinkName("QTreeWidget_SetModel")]
 	public static extern void QTreeWidget_SetModel(void* self, void** model);
 	
 	public function void QTreeWidget_OnSetModel_action(void* self, void** model);
 	[LinkName("QTreeWidget_OnSetModel")]
 	public static extern void QTreeWidget_OnSetModel(void* self, QTreeWidget_OnSetModel_action _action);
+	
+	[LinkName("QTreeWidget_SuperSetModel")]
+	public static extern void QTreeWidget_SuperSetModel(void* self, void** model);
 	[LinkName("QTreeWidget_KeyboardSearch")]
 	public static extern void QTreeWidget_KeyboardSearch(void* self, libqt_string search);
 	
 	public function void QTreeWidget_OnKeyboardSearch_action(void* self, libqt_string search);
 	[LinkName("QTreeWidget_OnKeyboardSearch")]
 	public static extern void QTreeWidget_OnKeyboardSearch(void* self, QTreeWidget_OnKeyboardSearch_action _action);
+	
+	[LinkName("QTreeWidget_SuperKeyboardSearch")]
+	public static extern void QTreeWidget_SuperKeyboardSearch(void* self, libqt_string search);
 	[LinkName("QTreeWidget_VisualRect")]
 	public static extern void* QTreeWidget_VisualRect(void* self, void** index);
 	
 	public function void QTreeWidget_OnVisualRect_action(void* self, void** index);
 	[LinkName("QTreeWidget_OnVisualRect")]
 	public static extern void* QTreeWidget_OnVisualRect(void* self, QTreeWidget_OnVisualRect_action _action);
+	
+	[LinkName("QTreeWidget_SuperVisualRect")]
+	public static extern void* QTreeWidget_SuperVisualRect(void* self, void** index);
 	[LinkName("QTreeWidget_ScrollTo")]
 	public static extern void QTreeWidget_ScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	
 	public function void QTreeWidget_OnScrollTo_action(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QTreeWidget_OnScrollTo")]
 	public static extern void QTreeWidget_OnScrollTo(void* self, QTreeWidget_OnScrollTo_action _action);
+	
+	[LinkName("QTreeWidget_SuperScrollTo")]
+	public static extern void QTreeWidget_SuperScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QTreeWidget_IndexAt")]
 	public static extern void* QTreeWidget_IndexAt(void* self, void** point);
 	
 	public function void QTreeWidget_OnIndexAt_action(void* self, void** point);
 	[LinkName("QTreeWidget_OnIndexAt")]
 	public static extern void* QTreeWidget_OnIndexAt(void* self, QTreeWidget_OnIndexAt_action _action);
+	
+	[LinkName("QTreeWidget_SuperIndexAt")]
+	public static extern void* QTreeWidget_SuperIndexAt(void* self, void** point);
 	[LinkName("QTreeWidget_SizeHintForRow")]
 	public static extern c_int QTreeWidget_SizeHintForRow(void* self, c_int row);
 	
 	public function void QTreeWidget_OnSizeHintForRow_action(void* self, c_int row);
 	[LinkName("QTreeWidget_OnSizeHintForRow")]
 	public static extern c_int QTreeWidget_OnSizeHintForRow(void* self, QTreeWidget_OnSizeHintForRow_action _action);
+	
+	[LinkName("QTreeWidget_SuperSizeHintForRow")]
+	public static extern c_int QTreeWidget_SuperSizeHintForRow(void* self, c_int row);
 	[LinkName("QTreeWidget_SizeHintForColumn")]
 	public static extern c_int QTreeWidget_SizeHintForColumn(void* self, c_int column);
 	
 	public function void QTreeWidget_OnSizeHintForColumn_action(void* self, c_int column);
 	[LinkName("QTreeWidget_OnSizeHintForColumn")]
 	public static extern c_int QTreeWidget_OnSizeHintForColumn(void* self, QTreeWidget_OnSizeHintForColumn_action _action);
+	
+	[LinkName("QTreeWidget_SuperSizeHintForColumn")]
+	public static extern c_int QTreeWidget_SuperSizeHintForColumn(void* self, c_int column);
 	[LinkName("QTreeWidget_ItemDelegateForIndex")]
 	public static extern void** QTreeWidget_ItemDelegateForIndex(void* self, void** index);
 	
 	public function void QTreeWidget_OnItemDelegateForIndex_action(void* self, void** index);
 	[LinkName("QTreeWidget_OnItemDelegateForIndex")]
 	public static extern void** QTreeWidget_OnItemDelegateForIndex(void* self, QTreeWidget_OnItemDelegateForIndex_action _action);
+	
+	[LinkName("QTreeWidget_SuperItemDelegateForIndex")]
+	public static extern void** QTreeWidget_SuperItemDelegateForIndex(void* self, void** index);
 	[LinkName("QTreeWidget_Reset")]
 	public static extern void QTreeWidget_Reset(void* self);
 	
 	public function void QTreeWidget_OnReset_action(void* self);
 	[LinkName("QTreeWidget_OnReset")]
 	public static extern void QTreeWidget_OnReset(void* self, QTreeWidget_OnReset_action _action);
+	
+	[LinkName("QTreeWidget_SuperReset")]
+	public static extern void QTreeWidget_SuperReset(void* self);
 	[LinkName("QTreeWidget_SetRootIndex")]
 	public static extern void QTreeWidget_SetRootIndex(void* self, void** index);
 	
 	public function void QTreeWidget_OnSetRootIndex_action(void* self, void** index);
 	[LinkName("QTreeWidget_OnSetRootIndex")]
 	public static extern void QTreeWidget_OnSetRootIndex(void* self, QTreeWidget_OnSetRootIndex_action _action);
+	
+	[LinkName("QTreeWidget_SuperSetRootIndex")]
+	public static extern void QTreeWidget_SuperSetRootIndex(void* self, void** index);
 	[LinkName("QTreeWidget_DoItemsLayout")]
 	public static extern void QTreeWidget_DoItemsLayout(void* self);
 	
 	public function void QTreeWidget_OnDoItemsLayout_action(void* self);
 	[LinkName("QTreeWidget_OnDoItemsLayout")]
 	public static extern void QTreeWidget_OnDoItemsLayout(void* self, QTreeWidget_OnDoItemsLayout_action _action);
+	
+	[LinkName("QTreeWidget_SuperDoItemsLayout")]
+	public static extern void QTreeWidget_SuperDoItemsLayout(void* self);
 	[LinkName("QTreeWidget_SelectAll")]
 	public static extern void QTreeWidget_SelectAll(void* self);
 	
 	public function void QTreeWidget_OnSelectAll_action(void* self);
 	[LinkName("QTreeWidget_OnSelectAll")]
 	public static extern void QTreeWidget_OnSelectAll(void* self, QTreeWidget_OnSelectAll_action _action);
+	
+	[LinkName("QTreeWidget_SuperSelectAll")]
+	public static extern void QTreeWidget_SuperSelectAll(void* self);
 	[LinkName("QTreeWidget_DataChanged")]
 	public static extern void QTreeWidget_DataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	
 	public function void QTreeWidget_OnDataChanged_action(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QTreeWidget_OnDataChanged")]
 	public static extern void QTreeWidget_OnDataChanged(void* self, QTreeWidget_OnDataChanged_action _action);
+	
+	[LinkName("QTreeWidget_SuperDataChanged")]
+	public static extern void QTreeWidget_SuperDataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QTreeWidget_RowsInserted")]
 	public static extern void QTreeWidget_RowsInserted(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QTreeWidget_OnRowsInserted_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QTreeWidget_OnRowsInserted")]
 	public static extern void QTreeWidget_OnRowsInserted(void* self, QTreeWidget_OnRowsInserted_action _action);
+	
+	[LinkName("QTreeWidget_SuperRowsInserted")]
+	public static extern void QTreeWidget_SuperRowsInserted(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QTreeWidget_RowsAboutToBeRemoved")]
 	public static extern void QTreeWidget_RowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QTreeWidget_OnRowsAboutToBeRemoved_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QTreeWidget_OnRowsAboutToBeRemoved")]
 	public static extern void QTreeWidget_OnRowsAboutToBeRemoved(void* self, QTreeWidget_OnRowsAboutToBeRemoved_action _action);
+	
+	[LinkName("QTreeWidget_SuperRowsAboutToBeRemoved")]
+	public static extern void QTreeWidget_SuperRowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QTreeWidget_SelectionChanged")]
 	public static extern void QTreeWidget_SelectionChanged(void* self, void** selected, void** deselected);
 	
 	public function void QTreeWidget_OnSelectionChanged_action(void* self, void** selected, void** deselected);
 	[LinkName("QTreeWidget_OnSelectionChanged")]
 	public static extern void QTreeWidget_OnSelectionChanged(void* self, QTreeWidget_OnSelectionChanged_action _action);
+	
+	[LinkName("QTreeWidget_SuperSelectionChanged")]
+	public static extern void QTreeWidget_SuperSelectionChanged(void* self, void** selected, void** deselected);
 	[LinkName("QTreeWidget_CurrentChanged")]
 	public static extern void QTreeWidget_CurrentChanged(void* self, void** current, void** previous);
 	
 	public function void QTreeWidget_OnCurrentChanged_action(void* self, void** current, void** previous);
 	[LinkName("QTreeWidget_OnCurrentChanged")]
 	public static extern void QTreeWidget_OnCurrentChanged(void* self, QTreeWidget_OnCurrentChanged_action _action);
+	
+	[LinkName("QTreeWidget_SuperCurrentChanged")]
+	public static extern void QTreeWidget_SuperCurrentChanged(void* self, void** current, void** previous);
 	[LinkName("QTreeWidget_UpdateEditorData")]
 	public static extern void QTreeWidget_UpdateEditorData(void* self);
 	
 	public function void QTreeWidget_OnUpdateEditorData_action(void* self);
 	[LinkName("QTreeWidget_OnUpdateEditorData")]
 	public static extern void QTreeWidget_OnUpdateEditorData(void* self, QTreeWidget_OnUpdateEditorData_action _action);
+	
+	[LinkName("QTreeWidget_SuperUpdateEditorData")]
+	public static extern void QTreeWidget_SuperUpdateEditorData(void* self);
 	[LinkName("QTreeWidget_UpdateEditorGeometries")]
 	public static extern void QTreeWidget_UpdateEditorGeometries(void* self);
 	
 	public function void QTreeWidget_OnUpdateEditorGeometries_action(void* self);
 	[LinkName("QTreeWidget_OnUpdateEditorGeometries")]
 	public static extern void QTreeWidget_OnUpdateEditorGeometries(void* self, QTreeWidget_OnUpdateEditorGeometries_action _action);
+	
+	[LinkName("QTreeWidget_SuperUpdateEditorGeometries")]
+	public static extern void QTreeWidget_SuperUpdateEditorGeometries(void* self);
 	[LinkName("QTreeWidget_UpdateGeometries")]
 	public static extern void QTreeWidget_UpdateGeometries(void* self);
 	
 	public function void QTreeWidget_OnUpdateGeometries_action(void* self);
 	[LinkName("QTreeWidget_OnUpdateGeometries")]
 	public static extern void QTreeWidget_OnUpdateGeometries(void* self, QTreeWidget_OnUpdateGeometries_action _action);
+	
+	[LinkName("QTreeWidget_SuperUpdateGeometries")]
+	public static extern void QTreeWidget_SuperUpdateGeometries(void* self);
 	[LinkName("QTreeWidget_VerticalScrollbarAction")]
 	public static extern void QTreeWidget_VerticalScrollbarAction(void* self, c_int action);
 	
 	public function void QTreeWidget_OnVerticalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QTreeWidget_OnVerticalScrollbarAction")]
 	public static extern void QTreeWidget_OnVerticalScrollbarAction(void* self, QTreeWidget_OnVerticalScrollbarAction_action _action);
+	
+	[LinkName("QTreeWidget_SuperVerticalScrollbarAction")]
+	public static extern void QTreeWidget_SuperVerticalScrollbarAction(void* self, c_int action);
 	[LinkName("QTreeWidget_HorizontalScrollbarAction")]
 	public static extern void QTreeWidget_HorizontalScrollbarAction(void* self, c_int action);
 	
 	public function void QTreeWidget_OnHorizontalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QTreeWidget_OnHorizontalScrollbarAction")]
 	public static extern void QTreeWidget_OnHorizontalScrollbarAction(void* self, QTreeWidget_OnHorizontalScrollbarAction_action _action);
+	
+	[LinkName("QTreeWidget_SuperHorizontalScrollbarAction")]
+	public static extern void QTreeWidget_SuperHorizontalScrollbarAction(void* self, c_int action);
 	[LinkName("QTreeWidget_VerticalScrollbarValueChanged")]
 	public static extern void QTreeWidget_VerticalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QTreeWidget_OnVerticalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QTreeWidget_OnVerticalScrollbarValueChanged")]
 	public static extern void QTreeWidget_OnVerticalScrollbarValueChanged(void* self, QTreeWidget_OnVerticalScrollbarValueChanged_action _action);
+	
+	[LinkName("QTreeWidget_SuperVerticalScrollbarValueChanged")]
+	public static extern void QTreeWidget_SuperVerticalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QTreeWidget_HorizontalScrollbarValueChanged")]
 	public static extern void QTreeWidget_HorizontalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QTreeWidget_OnHorizontalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QTreeWidget_OnHorizontalScrollbarValueChanged")]
 	public static extern void QTreeWidget_OnHorizontalScrollbarValueChanged(void* self, QTreeWidget_OnHorizontalScrollbarValueChanged_action _action);
+	
+	[LinkName("QTreeWidget_SuperHorizontalScrollbarValueChanged")]
+	public static extern void QTreeWidget_SuperHorizontalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QTreeWidget_CloseEditor")]
 	public static extern void QTreeWidget_CloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	
 	public function void QTreeWidget_OnCloseEditor_action(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QTreeWidget_OnCloseEditor")]
 	public static extern void QTreeWidget_OnCloseEditor(void* self, QTreeWidget_OnCloseEditor_action _action);
+	
+	[LinkName("QTreeWidget_SuperCloseEditor")]
+	public static extern void QTreeWidget_SuperCloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QTreeWidget_CommitData")]
 	public static extern void QTreeWidget_CommitData(void* self, void** editor);
 	
 	public function void QTreeWidget_OnCommitData_action(void* self, void** editor);
 	[LinkName("QTreeWidget_OnCommitData")]
 	public static extern void QTreeWidget_OnCommitData(void* self, QTreeWidget_OnCommitData_action _action);
+	
+	[LinkName("QTreeWidget_SuperCommitData")]
+	public static extern void QTreeWidget_SuperCommitData(void* self, void** editor);
 	[LinkName("QTreeWidget_EditorDestroyed")]
 	public static extern void QTreeWidget_EditorDestroyed(void* self, void** editor);
 	
 	public function void QTreeWidget_OnEditorDestroyed_action(void* self, void** editor);
 	[LinkName("QTreeWidget_OnEditorDestroyed")]
 	public static extern void QTreeWidget_OnEditorDestroyed(void* self, QTreeWidget_OnEditorDestroyed_action _action);
+	
+	[LinkName("QTreeWidget_SuperEditorDestroyed")]
+	public static extern void QTreeWidget_SuperEditorDestroyed(void* self, void** editor);
 	[LinkName("QTreeWidget_MoveCursor")]
 	public static extern void* QTreeWidget_MoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	
 	public function void QTreeWidget_OnMoveCursor_action(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QTreeWidget_OnMoveCursor")]
 	public static extern void* QTreeWidget_OnMoveCursor(void* self, QTreeWidget_OnMoveCursor_action _action);
+	
+	[LinkName("QTreeWidget_SuperMoveCursor")]
+	public static extern void* QTreeWidget_SuperMoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QTreeWidget_HorizontalOffset")]
 	public static extern c_int QTreeWidget_HorizontalOffset(void* self);
 	
 	public function void QTreeWidget_OnHorizontalOffset_action(void* self);
 	[LinkName("QTreeWidget_OnHorizontalOffset")]
 	public static extern c_int QTreeWidget_OnHorizontalOffset(void* self, QTreeWidget_OnHorizontalOffset_action _action);
+	
+	[LinkName("QTreeWidget_SuperHorizontalOffset")]
+	public static extern c_int QTreeWidget_SuperHorizontalOffset(void* self);
 	[LinkName("QTreeWidget_VerticalOffset")]
 	public static extern c_int QTreeWidget_VerticalOffset(void* self);
 	
 	public function void QTreeWidget_OnVerticalOffset_action(void* self);
 	[LinkName("QTreeWidget_OnVerticalOffset")]
 	public static extern c_int QTreeWidget_OnVerticalOffset(void* self, QTreeWidget_OnVerticalOffset_action _action);
+	
+	[LinkName("QTreeWidget_SuperVerticalOffset")]
+	public static extern c_int QTreeWidget_SuperVerticalOffset(void* self);
 	[LinkName("QTreeWidget_IsIndexHidden")]
 	public static extern bool QTreeWidget_IsIndexHidden(void* self, void** index);
 	
 	public function void QTreeWidget_OnIsIndexHidden_action(void* self, void** index);
 	[LinkName("QTreeWidget_OnIsIndexHidden")]
 	public static extern bool QTreeWidget_OnIsIndexHidden(void* self, QTreeWidget_OnIsIndexHidden_action _action);
+	
+	[LinkName("QTreeWidget_SuperIsIndexHidden")]
+	public static extern bool QTreeWidget_SuperIsIndexHidden(void* self, void** index);
 	[LinkName("QTreeWidget_SetSelection")]
 	public static extern void QTreeWidget_SetSelection(void* self, void** rect, void* command);
 	
 	public function void QTreeWidget_OnSetSelection_action(void* self, void** rect, void* command);
 	[LinkName("QTreeWidget_OnSetSelection")]
 	public static extern void QTreeWidget_OnSetSelection(void* self, QTreeWidget_OnSetSelection_action _action);
+	
+	[LinkName("QTreeWidget_SuperSetSelection")]
+	public static extern void QTreeWidget_SuperSetSelection(void* self, void** rect, void* command);
 	[LinkName("QTreeWidget_VisualRegionForSelection")]
 	public static extern void* QTreeWidget_VisualRegionForSelection(void* self, void** selection);
 	
 	public function void QTreeWidget_OnVisualRegionForSelection_action(void* self, void** selection);
 	[LinkName("QTreeWidget_OnVisualRegionForSelection")]
 	public static extern void* QTreeWidget_OnVisualRegionForSelection(void* self, QTreeWidget_OnVisualRegionForSelection_action _action);
+	
+	[LinkName("QTreeWidget_SuperVisualRegionForSelection")]
+	public static extern void* QTreeWidget_SuperVisualRegionForSelection(void* self, void** selection);
 	[LinkName("QTreeWidget_SelectedIndexes")]
 	public static extern void* QTreeWidget_SelectedIndexes(void* self);
 	
 	public function void QTreeWidget_OnSelectedIndexes_action(void* self);
 	[LinkName("QTreeWidget_OnSelectedIndexes")]
 	public static extern void* QTreeWidget_OnSelectedIndexes(void* self, QTreeWidget_OnSelectedIndexes_action _action);
+	
+	[LinkName("QTreeWidget_SuperSelectedIndexes")]
+	public static extern void* QTreeWidget_SuperSelectedIndexes(void* self);
 	[LinkName("QTreeWidget_Edit2")]
 	public static extern bool QTreeWidget_Edit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	
 	public function void QTreeWidget_OnEdit2_action(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QTreeWidget_OnEdit2")]
 	public static extern bool QTreeWidget_OnEdit2(void* self, QTreeWidget_OnEdit2_action _action);
+	
+	[LinkName("QTreeWidget_SuperEdit2")]
+	public static extern bool QTreeWidget_SuperEdit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QTreeWidget_SelectionCommand")]
 	public static extern void* QTreeWidget_SelectionCommand(void* self, void** index, void** event);
 	
 	public function void QTreeWidget_OnSelectionCommand_action(void* self, void** index, void** event);
 	[LinkName("QTreeWidget_OnSelectionCommand")]
 	public static extern void* QTreeWidget_OnSelectionCommand(void* self, QTreeWidget_OnSelectionCommand_action _action);
+	
+	[LinkName("QTreeWidget_SuperSelectionCommand")]
+	public static extern void* QTreeWidget_SuperSelectionCommand(void* self, void** index, void** event);
 	[LinkName("QTreeWidget_StartDrag")]
 	public static extern void QTreeWidget_StartDrag(void* self, void* supportedActions);
 	
 	public function void QTreeWidget_OnStartDrag_action(void* self, void* supportedActions);
 	[LinkName("QTreeWidget_OnStartDrag")]
 	public static extern void QTreeWidget_OnStartDrag(void* self, QTreeWidget_OnStartDrag_action _action);
+	
+	[LinkName("QTreeWidget_SuperStartDrag")]
+	public static extern void QTreeWidget_SuperStartDrag(void* self, void* supportedActions);
 	[LinkName("QTreeWidget_InitViewItemOption")]
 	public static extern void QTreeWidget_InitViewItemOption(void* self, void** option);
 	
 	public function void QTreeWidget_OnInitViewItemOption_action(void* self, void** option);
 	[LinkName("QTreeWidget_OnInitViewItemOption")]
 	public static extern void QTreeWidget_OnInitViewItemOption(void* self, QTreeWidget_OnInitViewItemOption_action _action);
+	
+	[LinkName("QTreeWidget_SuperInitViewItemOption")]
+	public static extern void QTreeWidget_SuperInitViewItemOption(void* self, void** option);
 	[LinkName("QTreeWidget_DrawRow")]
 	public static extern void QTreeWidget_DrawRow(void* self, void** painter, void** options, void** index);
 	
 	public function void QTreeWidget_OnDrawRow_action(void* self, void** painter, void** options, void** index);
 	[LinkName("QTreeWidget_OnDrawRow")]
 	public static extern void QTreeWidget_OnDrawRow(void* self, QTreeWidget_OnDrawRow_action _action);
+	
+	[LinkName("QTreeWidget_SuperDrawRow")]
+	public static extern void QTreeWidget_SuperDrawRow(void* self, void** painter, void** options, void** index);
 	[LinkName("QTreeWidget_DrawBranches")]
 	public static extern void QTreeWidget_DrawBranches(void* self, void** painter, void** rect, void** index);
 	
 	public function void QTreeWidget_OnDrawBranches_action(void* self, void** painter, void** rect, void** index);
 	[LinkName("QTreeWidget_OnDrawBranches")]
 	public static extern void QTreeWidget_OnDrawBranches(void* self, QTreeWidget_OnDrawBranches_action _action);
+	
+	[LinkName("QTreeWidget_SuperDrawBranches")]
+	public static extern void QTreeWidget_SuperDrawBranches(void* self, void** painter, void** rect, void** index);
 }
 [AllowDuplicates]
 enum QTreeWidgetItem_ItemType

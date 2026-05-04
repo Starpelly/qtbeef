@@ -381,6 +381,17 @@ class QDataWidgetMapper : IQDataWidgetMapper, IQObject
 		CQt.QDataWidgetMapper_Connect_CurrentIndexChanged(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_Connect_CurrentIndexChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QDataWidgetMapper_OnMetaObject(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnMetaObject);
+		CQt.QDataWidgetMapper_OnMetacast(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnMetacast);
+		CQt.QDataWidgetMapper_OnMetacall(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnMetacall);
+		CQt.QDataWidgetMapper_OnSetCurrentIndex(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnSetCurrentIndex);
+		CQt.QDataWidgetMapper_OnEvent(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnEvent);
+		CQt.QDataWidgetMapper_OnEventFilter(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnEventFilter);
+		CQt.QDataWidgetMapper_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnTimerEvent);
+		CQt.QDataWidgetMapper_OnChildEvent(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnChildEvent);
+		CQt.QDataWidgetMapper_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnCustomEvent);
+		CQt.QDataWidgetMapper_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnConnectNotify);
+		CQt.QDataWidgetMapper_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_OnDisconnectNotify);
 	}
 	public Event<delegate void(c_int index)> OnCurrentIndexChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -399,6 +410,61 @@ class QDataWidgetMapper : IQDataWidgetMapper, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QDataWidgetMapper_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QDataWidgetMapper_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QDataWidgetMapper_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QDataWidgetMapper_OnSetCurrentIndex(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetCurrentIndex(index);
+	}
+	static void QtBeef_QDataWidgetMapper_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QDataWidgetMapper_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QDataWidgetMapper_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QDataWidgetMapper_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QDataWidgetMapper_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QDataWidgetMapper_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QDataWidgetMapper_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QDataWidgetMapper_Ptr ptr)
 	{
@@ -787,18 +853,27 @@ extension CQt
 	public function void QDataWidgetMapper_OnMetaObject_action(void* self);
 	[LinkName("QDataWidgetMapper_OnMetaObject")]
 	public static extern void** QDataWidgetMapper_OnMetaObject(void* self, QDataWidgetMapper_OnMetaObject_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperMetaObject")]
+	public static extern void** QDataWidgetMapper_SuperMetaObject(void* self);
 	[LinkName("QDataWidgetMapper_Qt_Metacast")]
 	public static extern void* QDataWidgetMapper_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QDataWidgetMapper_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QDataWidgetMapper_OnMetacast")]
 	public static extern void* QDataWidgetMapper_OnMetacast(void* self, QDataWidgetMapper_OnMetacast_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperMetacast")]
+	public static extern void* QDataWidgetMapper_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QDataWidgetMapper_Qt_Metacall")]
 	public static extern c_int QDataWidgetMapper_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QDataWidgetMapper_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDataWidgetMapper_OnMetacall")]
 	public static extern c_int QDataWidgetMapper_OnMetacall(void* self, QDataWidgetMapper_OnMetacall_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperMetacall")]
+	public static extern c_int QDataWidgetMapper_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDataWidgetMapper_Tr")]
 	public static extern libqt_string QDataWidgetMapper_Tr(c_char* s);
 	[LinkName("QDataWidgetMapper_SetModel")]
@@ -855,6 +930,9 @@ extension CQt
 	public function void QDataWidgetMapper_OnSetCurrentIndex_action(void* self, c_int index);
 	[LinkName("QDataWidgetMapper_OnSetCurrentIndex")]
 	public static extern void QDataWidgetMapper_OnSetCurrentIndex(void* self, QDataWidgetMapper_OnSetCurrentIndex_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperSetCurrentIndex")]
+	public static extern void QDataWidgetMapper_SuperSetCurrentIndex(void* self, c_int index);
 	[LinkName("QDataWidgetMapper_SetCurrentModelIndex")]
 	public static extern void QDataWidgetMapper_SetCurrentModelIndex(void* self, void** index);
 	[LinkName("QDataWidgetMapper_CurrentIndexChanged")]
@@ -873,42 +951,63 @@ extension CQt
 	public function void QDataWidgetMapper_OnEvent_action(void* self, void** event);
 	[LinkName("QDataWidgetMapper_OnEvent")]
 	public static extern bool QDataWidgetMapper_OnEvent(void* self, QDataWidgetMapper_OnEvent_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperEvent")]
+	public static extern bool QDataWidgetMapper_SuperEvent(void* self, void** event);
 	[LinkName("QDataWidgetMapper_EventFilter")]
 	public static extern bool QDataWidgetMapper_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QDataWidgetMapper_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QDataWidgetMapper_OnEventFilter")]
 	public static extern bool QDataWidgetMapper_OnEventFilter(void* self, QDataWidgetMapper_OnEventFilter_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperEventFilter")]
+	public static extern bool QDataWidgetMapper_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QDataWidgetMapper_TimerEvent")]
 	public static extern void QDataWidgetMapper_TimerEvent(void* self, void** event);
 	
 	public function void QDataWidgetMapper_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QDataWidgetMapper_OnTimerEvent")]
 	public static extern void QDataWidgetMapper_OnTimerEvent(void* self, QDataWidgetMapper_OnTimerEvent_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperTimerEvent")]
+	public static extern void QDataWidgetMapper_SuperTimerEvent(void* self, void** event);
 	[LinkName("QDataWidgetMapper_ChildEvent")]
 	public static extern void QDataWidgetMapper_ChildEvent(void* self, void** event);
 	
 	public function void QDataWidgetMapper_OnChildEvent_action(void* self, void** event);
 	[LinkName("QDataWidgetMapper_OnChildEvent")]
 	public static extern void QDataWidgetMapper_OnChildEvent(void* self, QDataWidgetMapper_OnChildEvent_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperChildEvent")]
+	public static extern void QDataWidgetMapper_SuperChildEvent(void* self, void** event);
 	[LinkName("QDataWidgetMapper_CustomEvent")]
 	public static extern void QDataWidgetMapper_CustomEvent(void* self, void** event);
 	
 	public function void QDataWidgetMapper_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QDataWidgetMapper_OnCustomEvent")]
 	public static extern void QDataWidgetMapper_OnCustomEvent(void* self, QDataWidgetMapper_OnCustomEvent_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperCustomEvent")]
+	public static extern void QDataWidgetMapper_SuperCustomEvent(void* self, void** event);
 	[LinkName("QDataWidgetMapper_ConnectNotify")]
 	public static extern void QDataWidgetMapper_ConnectNotify(void* self, void** signal);
 	
 	public function void QDataWidgetMapper_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QDataWidgetMapper_OnConnectNotify")]
 	public static extern void QDataWidgetMapper_OnConnectNotify(void* self, QDataWidgetMapper_OnConnectNotify_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperConnectNotify")]
+	public static extern void QDataWidgetMapper_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QDataWidgetMapper_DisconnectNotify")]
 	public static extern void QDataWidgetMapper_DisconnectNotify(void* self, void** signal);
 	
 	public function void QDataWidgetMapper_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QDataWidgetMapper_OnDisconnectNotify")]
 	public static extern void QDataWidgetMapper_OnDisconnectNotify(void* self, QDataWidgetMapper_OnDisconnectNotify_action _action);
+	
+	[LinkName("QDataWidgetMapper_SuperDisconnectNotify")]
+	public static extern void QDataWidgetMapper_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QDataWidgetMapper_SubmitPolicy

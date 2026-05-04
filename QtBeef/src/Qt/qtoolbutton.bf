@@ -1794,6 +1794,60 @@ class QToolButton : IQToolButton, IQAbstractButton, IQWidget, IQObject, IQPaintD
 		CQt.QAbstractButton_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Clicked);
 		CQt.QAbstractButton_Connect_Toggled(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Toggled);
 		CQt.QAbstractButton_Connect_Clicked1(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Clicked1);
+		CQt.QToolButton_OnMetaObject(obj.ObjectPtr,  => QtBeef_QToolButton_OnMetaObject);
+		CQt.QToolButton_OnMetacast(obj.ObjectPtr,  => QtBeef_QToolButton_OnMetacast);
+		CQt.QToolButton_OnMetacall(obj.ObjectPtr,  => QtBeef_QToolButton_OnMetacall);
+		CQt.QToolButton_OnSizeHint(obj.ObjectPtr,  => QtBeef_QToolButton_OnSizeHint);
+		CQt.QToolButton_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QToolButton_OnMinimumSizeHint);
+		CQt.QToolButton_OnEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnEvent);
+		CQt.QToolButton_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnMousePressEvent);
+		CQt.QToolButton_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnMouseReleaseEvent);
+		CQt.QToolButton_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnPaintEvent);
+		CQt.QToolButton_OnActionEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnActionEvent);
+		CQt.QToolButton_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnEnterEvent);
+		CQt.QToolButton_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnLeaveEvent);
+		CQt.QToolButton_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnTimerEvent);
+		CQt.QToolButton_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnChangeEvent);
+		CQt.QToolButton_OnHitButton(obj.ObjectPtr,  => QtBeef_QToolButton_OnHitButton);
+		CQt.QToolButton_OnCheckStateSet(obj.ObjectPtr,  => QtBeef_QToolButton_OnCheckStateSet);
+		CQt.QToolButton_OnNextCheckState(obj.ObjectPtr,  => QtBeef_QToolButton_OnNextCheckState);
+		CQt.QToolButton_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QToolButton_OnInitStyleOption);
+		CQt.QToolButton_OnEventFilter(obj.ObjectPtr,  => QtBeef_QToolButton_OnEventFilter);
+		CQt.QToolButton_OnChildEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnChildEvent);
+		CQt.QToolButton_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnCustomEvent);
+		CQt.QToolButton_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QToolButton_OnConnectNotify);
+		CQt.QToolButton_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QToolButton_OnDisconnectNotify);
+		CQt.QToolButton_OnDevType(obj.ObjectPtr,  => QtBeef_QToolButton_OnDevType);
+		CQt.QToolButton_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QToolButton_OnPaintEngine);
+		CQt.QToolButton_OnMetric(obj.ObjectPtr,  => QtBeef_QToolButton_OnMetric);
+		CQt.QToolButton_OnInitPainter(obj.ObjectPtr,  => QtBeef_QToolButton_OnInitPainter);
+		CQt.QToolButton_OnRedirected(obj.ObjectPtr,  => QtBeef_QToolButton_OnRedirected);
+		CQt.QToolButton_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QToolButton_OnSharedPainter);
+		CQt.QToolButton_OnSetVisible(obj.ObjectPtr,  => QtBeef_QToolButton_OnSetVisible);
+		CQt.QToolButton_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QToolButton_OnHeightForWidth);
+		CQt.QToolButton_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QToolButton_OnHasHeightForWidth);
+		CQt.QToolButton_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnMouseDoubleClickEvent);
+		CQt.QToolButton_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnMouseMoveEvent);
+		CQt.QToolButton_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnWheelEvent);
+		CQt.QToolButton_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnKeyPressEvent);
+		CQt.QToolButton_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnKeyReleaseEvent);
+		CQt.QToolButton_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnFocusInEvent);
+		CQt.QToolButton_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnFocusOutEvent);
+		CQt.QToolButton_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnMoveEvent);
+		CQt.QToolButton_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnResizeEvent);
+		CQt.QToolButton_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnCloseEvent);
+		CQt.QToolButton_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnContextMenuEvent);
+		CQt.QToolButton_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnTabletEvent);
+		CQt.QToolButton_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnDragEnterEvent);
+		CQt.QToolButton_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnDragMoveEvent);
+		CQt.QToolButton_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnDragLeaveEvent);
+		CQt.QToolButton_OnDropEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnDropEvent);
+		CQt.QToolButton_OnShowEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnShowEvent);
+		CQt.QToolButton_OnHideEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnHideEvent);
+		CQt.QToolButton_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnNativeEvent);
+		CQt.QToolButton_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QToolButton_OnInputMethodEvent);
+		CQt.QToolButton_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QToolButton_OnInputMethodQuery);
+		CQt.QToolButton_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QToolButton_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(void** param1)> OnTriggered = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1866,6 +1920,276 @@ class QToolButton : IQToolButton, IQAbstractButton, IQWidget, IQObject, IQPaintD
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnClicked1.Invoke(_checked);
+	}
+	static void QtBeef_QToolButton_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QToolButton_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QToolButton_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QToolButton_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QToolButton_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QToolButton_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QToolButton_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QToolButton_OnMouseReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(param1);
+	}
+	static void QtBeef_QToolButton_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QToolButton_OnActionEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(param1);
+	}
+	static void QtBeef_QToolButton_OnEnterEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(param1);
+	}
+	static void QtBeef_QToolButton_OnLeaveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(param1);
+	}
+	static void QtBeef_QToolButton_OnTimerEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(param1);
+	}
+	static void QtBeef_QToolButton_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QToolButton_OnHitButton(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHitButton(pos);
+	}
+	static void QtBeef_QToolButton_OnCheckStateSet(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCheckStateSet();
+	}
+	static void QtBeef_QToolButton_OnNextCheckState(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNextCheckState();
+	}
+	static void QtBeef_QToolButton_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QToolButton_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QToolButton_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QToolButton_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QToolButton_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QToolButton_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QToolButton_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QToolButton_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QToolButton_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QToolButton_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QToolButton_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QToolButton_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QToolButton_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QToolButton_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QToolButton_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QToolButton_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QToolButton_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QToolButton_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QToolButton_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QToolButton_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QToolButton_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QToolButton_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QToolButton_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QToolButton_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QToolButton_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QToolButton_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QToolButton_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QToolButton_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QToolButton_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QToolButton_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QToolButton_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QToolButton_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QToolButton_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QToolButton_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QToolButton_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QToolButton_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QToolButton_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QToolButton_Ptr ptr)
 	{
@@ -3628,18 +3952,27 @@ extension CQt
 	public function void QToolButton_OnMetaObject_action(void* self);
 	[LinkName("QToolButton_OnMetaObject")]
 	public static extern void** QToolButton_OnMetaObject(void* self, QToolButton_OnMetaObject_action _action);
+	
+	[LinkName("QToolButton_SuperMetaObject")]
+	public static extern void** QToolButton_SuperMetaObject(void* self);
 	[LinkName("QToolButton_Qt_Metacast")]
 	public static extern void* QToolButton_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QToolButton_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QToolButton_OnMetacast")]
 	public static extern void* QToolButton_OnMetacast(void* self, QToolButton_OnMetacast_action _action);
+	
+	[LinkName("QToolButton_SuperMetacast")]
+	public static extern void* QToolButton_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QToolButton_Qt_Metacall")]
 	public static extern c_int QToolButton_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QToolButton_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QToolButton_OnMetacall")]
 	public static extern c_int QToolButton_OnMetacall(void* self, QToolButton_OnMetacall_action _action);
+	
+	[LinkName("QToolButton_SuperMetacall")]
+	public static extern c_int QToolButton_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QToolButton_Tr")]
 	public static extern libqt_string QToolButton_Tr(c_char* s);
 	[LinkName("QToolButton_SizeHint")]
@@ -3648,12 +3981,18 @@ extension CQt
 	public function void QToolButton_OnSizeHint_action(void* self);
 	[LinkName("QToolButton_OnSizeHint")]
 	public static extern void* QToolButton_OnSizeHint(void* self, QToolButton_OnSizeHint_action _action);
+	
+	[LinkName("QToolButton_SuperSizeHint")]
+	public static extern void* QToolButton_SuperSizeHint(void* self);
 	[LinkName("QToolButton_MinimumSizeHint")]
 	public static extern void* QToolButton_MinimumSizeHint(void* self);
 	
 	public function void QToolButton_OnMinimumSizeHint_action(void* self);
 	[LinkName("QToolButton_OnMinimumSizeHint")]
 	public static extern void* QToolButton_OnMinimumSizeHint(void* self, QToolButton_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QToolButton_SuperMinimumSizeHint")]
+	public static extern void* QToolButton_SuperMinimumSizeHint(void* self);
 	[LinkName("QToolButton_ToolButtonStyle")]
 	public static extern Qt_ToolButtonStyle QToolButton_ToolButtonStyle(void* self);
 	[LinkName("QToolButton_ArrowType")]
@@ -3692,78 +4031,117 @@ extension CQt
 	public function void QToolButton_OnEvent_action(void* self, void** e);
 	[LinkName("QToolButton_OnEvent")]
 	public static extern bool QToolButton_OnEvent(void* self, QToolButton_OnEvent_action _action);
+	
+	[LinkName("QToolButton_SuperEvent")]
+	public static extern bool QToolButton_SuperEvent(void* self, void** e);
 	[LinkName("QToolButton_MousePressEvent")]
 	public static extern void QToolButton_MousePressEvent(void* self, void** param1);
 	
 	public function void QToolButton_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QToolButton_OnMousePressEvent")]
 	public static extern void QToolButton_OnMousePressEvent(void* self, QToolButton_OnMousePressEvent_action _action);
+	
+	[LinkName("QToolButton_SuperMousePressEvent")]
+	public static extern void QToolButton_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QToolButton_MouseReleaseEvent")]
 	public static extern void QToolButton_MouseReleaseEvent(void* self, void** param1);
 	
 	public function void QToolButton_OnMouseReleaseEvent_action(void* self, void** param1);
 	[LinkName("QToolButton_OnMouseReleaseEvent")]
 	public static extern void QToolButton_OnMouseReleaseEvent(void* self, QToolButton_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QToolButton_SuperMouseReleaseEvent")]
+	public static extern void QToolButton_SuperMouseReleaseEvent(void* self, void** param1);
 	[LinkName("QToolButton_PaintEvent")]
 	public static extern void QToolButton_PaintEvent(void* self, void** param1);
 	
 	public function void QToolButton_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QToolButton_OnPaintEvent")]
 	public static extern void QToolButton_OnPaintEvent(void* self, QToolButton_OnPaintEvent_action _action);
+	
+	[LinkName("QToolButton_SuperPaintEvent")]
+	public static extern void QToolButton_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QToolButton_ActionEvent")]
 	public static extern void QToolButton_ActionEvent(void* self, void** param1);
 	
 	public function void QToolButton_OnActionEvent_action(void* self, void** param1);
 	[LinkName("QToolButton_OnActionEvent")]
 	public static extern void QToolButton_OnActionEvent(void* self, QToolButton_OnActionEvent_action _action);
+	
+	[LinkName("QToolButton_SuperActionEvent")]
+	public static extern void QToolButton_SuperActionEvent(void* self, void** param1);
 	[LinkName("QToolButton_EnterEvent")]
 	public static extern void QToolButton_EnterEvent(void* self, void** param1);
 	
 	public function void QToolButton_OnEnterEvent_action(void* self, void** param1);
 	[LinkName("QToolButton_OnEnterEvent")]
 	public static extern void QToolButton_OnEnterEvent(void* self, QToolButton_OnEnterEvent_action _action);
+	
+	[LinkName("QToolButton_SuperEnterEvent")]
+	public static extern void QToolButton_SuperEnterEvent(void* self, void** param1);
 	[LinkName("QToolButton_LeaveEvent")]
 	public static extern void QToolButton_LeaveEvent(void* self, void** param1);
 	
 	public function void QToolButton_OnLeaveEvent_action(void* self, void** param1);
 	[LinkName("QToolButton_OnLeaveEvent")]
 	public static extern void QToolButton_OnLeaveEvent(void* self, QToolButton_OnLeaveEvent_action _action);
+	
+	[LinkName("QToolButton_SuperLeaveEvent")]
+	public static extern void QToolButton_SuperLeaveEvent(void* self, void** param1);
 	[LinkName("QToolButton_TimerEvent")]
 	public static extern void QToolButton_TimerEvent(void* self, void** param1);
 	
 	public function void QToolButton_OnTimerEvent_action(void* self, void** param1);
 	[LinkName("QToolButton_OnTimerEvent")]
 	public static extern void QToolButton_OnTimerEvent(void* self, QToolButton_OnTimerEvent_action _action);
+	
+	[LinkName("QToolButton_SuperTimerEvent")]
+	public static extern void QToolButton_SuperTimerEvent(void* self, void** param1);
 	[LinkName("QToolButton_ChangeEvent")]
 	public static extern void QToolButton_ChangeEvent(void* self, void** param1);
 	
 	public function void QToolButton_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QToolButton_OnChangeEvent")]
 	public static extern void QToolButton_OnChangeEvent(void* self, QToolButton_OnChangeEvent_action _action);
+	
+	[LinkName("QToolButton_SuperChangeEvent")]
+	public static extern void QToolButton_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QToolButton_HitButton")]
 	public static extern bool QToolButton_HitButton(void* self, void** pos);
 	
 	public function void QToolButton_OnHitButton_action(void* self, void** pos);
 	[LinkName("QToolButton_OnHitButton")]
 	public static extern bool QToolButton_OnHitButton(void* self, QToolButton_OnHitButton_action _action);
+	
+	[LinkName("QToolButton_SuperHitButton")]
+	public static extern bool QToolButton_SuperHitButton(void* self, void** pos);
 	[LinkName("QToolButton_CheckStateSet")]
 	public static extern void QToolButton_CheckStateSet(void* self);
 	
 	public function void QToolButton_OnCheckStateSet_action(void* self);
 	[LinkName("QToolButton_OnCheckStateSet")]
 	public static extern void QToolButton_OnCheckStateSet(void* self, QToolButton_OnCheckStateSet_action _action);
+	
+	[LinkName("QToolButton_SuperCheckStateSet")]
+	public static extern void QToolButton_SuperCheckStateSet(void* self);
 	[LinkName("QToolButton_NextCheckState")]
 	public static extern void QToolButton_NextCheckState(void* self);
 	
 	public function void QToolButton_OnNextCheckState_action(void* self);
 	[LinkName("QToolButton_OnNextCheckState")]
 	public static extern void QToolButton_OnNextCheckState(void* self, QToolButton_OnNextCheckState_action _action);
+	
+	[LinkName("QToolButton_SuperNextCheckState")]
+	public static extern void QToolButton_SuperNextCheckState(void* self);
 	[LinkName("QToolButton_InitStyleOption")]
 	public static extern void QToolButton_InitStyleOption(void* self, void** option);
 	
 	public function void QToolButton_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QToolButton_OnInitStyleOption")]
 	public static extern void QToolButton_OnInitStyleOption(void* self, QToolButton_OnInitStyleOption_action _action);
+	
+	[LinkName("QToolButton_SuperInitStyleOption")]
+	public static extern void QToolButton_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QToolButton_Tr2")]
 	public static extern libqt_string QToolButton_Tr2(c_char* s, c_char* c);
 	[LinkName("QToolButton_Tr3")]
@@ -3774,216 +4152,324 @@ extension CQt
 	public function void QToolButton_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QToolButton_OnEventFilter")]
 	public static extern bool QToolButton_OnEventFilter(void* self, QToolButton_OnEventFilter_action _action);
+	
+	[LinkName("QToolButton_SuperEventFilter")]
+	public static extern bool QToolButton_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QToolButton_ChildEvent")]
 	public static extern void QToolButton_ChildEvent(void* self, void** event);
 	
 	public function void QToolButton_OnChildEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnChildEvent")]
 	public static extern void QToolButton_OnChildEvent(void* self, QToolButton_OnChildEvent_action _action);
+	
+	[LinkName("QToolButton_SuperChildEvent")]
+	public static extern void QToolButton_SuperChildEvent(void* self, void** event);
 	[LinkName("QToolButton_CustomEvent")]
 	public static extern void QToolButton_CustomEvent(void* self, void** event);
 	
 	public function void QToolButton_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnCustomEvent")]
 	public static extern void QToolButton_OnCustomEvent(void* self, QToolButton_OnCustomEvent_action _action);
+	
+	[LinkName("QToolButton_SuperCustomEvent")]
+	public static extern void QToolButton_SuperCustomEvent(void* self, void** event);
 	[LinkName("QToolButton_ConnectNotify")]
 	public static extern void QToolButton_ConnectNotify(void* self, void** signal);
 	
 	public function void QToolButton_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QToolButton_OnConnectNotify")]
 	public static extern void QToolButton_OnConnectNotify(void* self, QToolButton_OnConnectNotify_action _action);
+	
+	[LinkName("QToolButton_SuperConnectNotify")]
+	public static extern void QToolButton_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QToolButton_DisconnectNotify")]
 	public static extern void QToolButton_DisconnectNotify(void* self, void** signal);
 	
 	public function void QToolButton_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QToolButton_OnDisconnectNotify")]
 	public static extern void QToolButton_OnDisconnectNotify(void* self, QToolButton_OnDisconnectNotify_action _action);
+	
+	[LinkName("QToolButton_SuperDisconnectNotify")]
+	public static extern void QToolButton_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QToolButton_DevType")]
 	public static extern c_int QToolButton_DevType(void* self);
 	
 	public function void QToolButton_OnDevType_action(void* self);
 	[LinkName("QToolButton_OnDevType")]
 	public static extern c_int QToolButton_OnDevType(void* self, QToolButton_OnDevType_action _action);
+	
+	[LinkName("QToolButton_SuperDevType")]
+	public static extern c_int QToolButton_SuperDevType(void* self);
 	[LinkName("QToolButton_PaintEngine")]
 	public static extern void** QToolButton_PaintEngine(void* self);
 	
 	public function void QToolButton_OnPaintEngine_action(void* self);
 	[LinkName("QToolButton_OnPaintEngine")]
 	public static extern void** QToolButton_OnPaintEngine(void* self, QToolButton_OnPaintEngine_action _action);
+	
+	[LinkName("QToolButton_SuperPaintEngine")]
+	public static extern void** QToolButton_SuperPaintEngine(void* self);
 	[LinkName("QToolButton_Metric")]
 	public static extern c_int QToolButton_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QToolButton_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QToolButton_OnMetric")]
 	public static extern c_int QToolButton_OnMetric(void* self, QToolButton_OnMetric_action _action);
+	
+	[LinkName("QToolButton_SuperMetric")]
+	public static extern c_int QToolButton_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QToolButton_InitPainter")]
 	public static extern void QToolButton_InitPainter(void* self, void** painter);
 	
 	public function void QToolButton_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QToolButton_OnInitPainter")]
 	public static extern void QToolButton_OnInitPainter(void* self, QToolButton_OnInitPainter_action _action);
+	
+	[LinkName("QToolButton_SuperInitPainter")]
+	public static extern void QToolButton_SuperInitPainter(void* self, void** painter);
 	[LinkName("QToolButton_Redirected")]
 	public static extern void** QToolButton_Redirected(void* self, void** offset);
 	
 	public function void QToolButton_OnRedirected_action(void* self, void** offset);
 	[LinkName("QToolButton_OnRedirected")]
 	public static extern void** QToolButton_OnRedirected(void* self, QToolButton_OnRedirected_action _action);
+	
+	[LinkName("QToolButton_SuperRedirected")]
+	public static extern void** QToolButton_SuperRedirected(void* self, void** offset);
 	[LinkName("QToolButton_SharedPainter")]
 	public static extern void** QToolButton_SharedPainter(void* self);
 	
 	public function void QToolButton_OnSharedPainter_action(void* self);
 	[LinkName("QToolButton_OnSharedPainter")]
 	public static extern void** QToolButton_OnSharedPainter(void* self, QToolButton_OnSharedPainter_action _action);
+	
+	[LinkName("QToolButton_SuperSharedPainter")]
+	public static extern void** QToolButton_SuperSharedPainter(void* self);
 	[LinkName("QToolButton_SetVisible")]
 	public static extern void QToolButton_SetVisible(void* self, bool visible);
 	
 	public function void QToolButton_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QToolButton_OnSetVisible")]
 	public static extern void QToolButton_OnSetVisible(void* self, QToolButton_OnSetVisible_action _action);
+	
+	[LinkName("QToolButton_SuperSetVisible")]
+	public static extern void QToolButton_SuperSetVisible(void* self, bool visible);
 	[LinkName("QToolButton_HeightForWidth")]
 	public static extern c_int QToolButton_HeightForWidth(void* self, c_int param1);
 	
 	public function void QToolButton_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QToolButton_OnHeightForWidth")]
 	public static extern c_int QToolButton_OnHeightForWidth(void* self, QToolButton_OnHeightForWidth_action _action);
+	
+	[LinkName("QToolButton_SuperHeightForWidth")]
+	public static extern c_int QToolButton_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QToolButton_HasHeightForWidth")]
 	public static extern bool QToolButton_HasHeightForWidth(void* self);
 	
 	public function void QToolButton_OnHasHeightForWidth_action(void* self);
 	[LinkName("QToolButton_OnHasHeightForWidth")]
 	public static extern bool QToolButton_OnHasHeightForWidth(void* self, QToolButton_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QToolButton_SuperHasHeightForWidth")]
+	public static extern bool QToolButton_SuperHasHeightForWidth(void* self);
 	[LinkName("QToolButton_MouseDoubleClickEvent")]
 	public static extern void QToolButton_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QToolButton_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnMouseDoubleClickEvent")]
 	public static extern void QToolButton_OnMouseDoubleClickEvent(void* self, QToolButton_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QToolButton_SuperMouseDoubleClickEvent")]
+	public static extern void QToolButton_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QToolButton_MouseMoveEvent")]
 	public static extern void QToolButton_MouseMoveEvent(void* self, void** event);
 	
 	public function void QToolButton_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnMouseMoveEvent")]
 	public static extern void QToolButton_OnMouseMoveEvent(void* self, QToolButton_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QToolButton_SuperMouseMoveEvent")]
+	public static extern void QToolButton_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QToolButton_WheelEvent")]
 	public static extern void QToolButton_WheelEvent(void* self, void** event);
 	
 	public function void QToolButton_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnWheelEvent")]
 	public static extern void QToolButton_OnWheelEvent(void* self, QToolButton_OnWheelEvent_action _action);
+	
+	[LinkName("QToolButton_SuperWheelEvent")]
+	public static extern void QToolButton_SuperWheelEvent(void* self, void** event);
 	[LinkName("QToolButton_KeyPressEvent")]
 	public static extern void QToolButton_KeyPressEvent(void* self, void** event);
 	
 	public function void QToolButton_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnKeyPressEvent")]
 	public static extern void QToolButton_OnKeyPressEvent(void* self, QToolButton_OnKeyPressEvent_action _action);
+	
+	[LinkName("QToolButton_SuperKeyPressEvent")]
+	public static extern void QToolButton_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QToolButton_KeyReleaseEvent")]
 	public static extern void QToolButton_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QToolButton_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnKeyReleaseEvent")]
 	public static extern void QToolButton_OnKeyReleaseEvent(void* self, QToolButton_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QToolButton_SuperKeyReleaseEvent")]
+	public static extern void QToolButton_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QToolButton_FocusInEvent")]
 	public static extern void QToolButton_FocusInEvent(void* self, void** event);
 	
 	public function void QToolButton_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnFocusInEvent")]
 	public static extern void QToolButton_OnFocusInEvent(void* self, QToolButton_OnFocusInEvent_action _action);
+	
+	[LinkName("QToolButton_SuperFocusInEvent")]
+	public static extern void QToolButton_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QToolButton_FocusOutEvent")]
 	public static extern void QToolButton_FocusOutEvent(void* self, void** event);
 	
 	public function void QToolButton_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnFocusOutEvent")]
 	public static extern void QToolButton_OnFocusOutEvent(void* self, QToolButton_OnFocusOutEvent_action _action);
+	
+	[LinkName("QToolButton_SuperFocusOutEvent")]
+	public static extern void QToolButton_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QToolButton_MoveEvent")]
 	public static extern void QToolButton_MoveEvent(void* self, void** event);
 	
 	public function void QToolButton_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnMoveEvent")]
 	public static extern void QToolButton_OnMoveEvent(void* self, QToolButton_OnMoveEvent_action _action);
+	
+	[LinkName("QToolButton_SuperMoveEvent")]
+	public static extern void QToolButton_SuperMoveEvent(void* self, void** event);
 	[LinkName("QToolButton_ResizeEvent")]
 	public static extern void QToolButton_ResizeEvent(void* self, void** event);
 	
 	public function void QToolButton_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnResizeEvent")]
 	public static extern void QToolButton_OnResizeEvent(void* self, QToolButton_OnResizeEvent_action _action);
+	
+	[LinkName("QToolButton_SuperResizeEvent")]
+	public static extern void QToolButton_SuperResizeEvent(void* self, void** event);
 	[LinkName("QToolButton_CloseEvent")]
 	public static extern void QToolButton_CloseEvent(void* self, void** event);
 	
 	public function void QToolButton_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnCloseEvent")]
 	public static extern void QToolButton_OnCloseEvent(void* self, QToolButton_OnCloseEvent_action _action);
+	
+	[LinkName("QToolButton_SuperCloseEvent")]
+	public static extern void QToolButton_SuperCloseEvent(void* self, void** event);
 	[LinkName("QToolButton_ContextMenuEvent")]
 	public static extern void QToolButton_ContextMenuEvent(void* self, void** event);
 	
 	public function void QToolButton_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnContextMenuEvent")]
 	public static extern void QToolButton_OnContextMenuEvent(void* self, QToolButton_OnContextMenuEvent_action _action);
+	
+	[LinkName("QToolButton_SuperContextMenuEvent")]
+	public static extern void QToolButton_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QToolButton_TabletEvent")]
 	public static extern void QToolButton_TabletEvent(void* self, void** event);
 	
 	public function void QToolButton_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnTabletEvent")]
 	public static extern void QToolButton_OnTabletEvent(void* self, QToolButton_OnTabletEvent_action _action);
+	
+	[LinkName("QToolButton_SuperTabletEvent")]
+	public static extern void QToolButton_SuperTabletEvent(void* self, void** event);
 	[LinkName("QToolButton_DragEnterEvent")]
 	public static extern void QToolButton_DragEnterEvent(void* self, void** event);
 	
 	public function void QToolButton_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnDragEnterEvent")]
 	public static extern void QToolButton_OnDragEnterEvent(void* self, QToolButton_OnDragEnterEvent_action _action);
+	
+	[LinkName("QToolButton_SuperDragEnterEvent")]
+	public static extern void QToolButton_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QToolButton_DragMoveEvent")]
 	public static extern void QToolButton_DragMoveEvent(void* self, void** event);
 	
 	public function void QToolButton_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnDragMoveEvent")]
 	public static extern void QToolButton_OnDragMoveEvent(void* self, QToolButton_OnDragMoveEvent_action _action);
+	
+	[LinkName("QToolButton_SuperDragMoveEvent")]
+	public static extern void QToolButton_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QToolButton_DragLeaveEvent")]
 	public static extern void QToolButton_DragLeaveEvent(void* self, void** event);
 	
 	public function void QToolButton_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnDragLeaveEvent")]
 	public static extern void QToolButton_OnDragLeaveEvent(void* self, QToolButton_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QToolButton_SuperDragLeaveEvent")]
+	public static extern void QToolButton_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QToolButton_DropEvent")]
 	public static extern void QToolButton_DropEvent(void* self, void** event);
 	
 	public function void QToolButton_OnDropEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnDropEvent")]
 	public static extern void QToolButton_OnDropEvent(void* self, QToolButton_OnDropEvent_action _action);
+	
+	[LinkName("QToolButton_SuperDropEvent")]
+	public static extern void QToolButton_SuperDropEvent(void* self, void** event);
 	[LinkName("QToolButton_ShowEvent")]
 	public static extern void QToolButton_ShowEvent(void* self, void** event);
 	
 	public function void QToolButton_OnShowEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnShowEvent")]
 	public static extern void QToolButton_OnShowEvent(void* self, QToolButton_OnShowEvent_action _action);
+	
+	[LinkName("QToolButton_SuperShowEvent")]
+	public static extern void QToolButton_SuperShowEvent(void* self, void** event);
 	[LinkName("QToolButton_HideEvent")]
 	public static extern void QToolButton_HideEvent(void* self, void** event);
 	
 	public function void QToolButton_OnHideEvent_action(void* self, void** event);
 	[LinkName("QToolButton_OnHideEvent")]
 	public static extern void QToolButton_OnHideEvent(void* self, QToolButton_OnHideEvent_action _action);
+	
+	[LinkName("QToolButton_SuperHideEvent")]
+	public static extern void QToolButton_SuperHideEvent(void* self, void** event);
 	[LinkName("QToolButton_NativeEvent")]
 	public static extern bool QToolButton_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QToolButton_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QToolButton_OnNativeEvent")]
 	public static extern bool QToolButton_OnNativeEvent(void* self, QToolButton_OnNativeEvent_action _action);
+	
+	[LinkName("QToolButton_SuperNativeEvent")]
+	public static extern bool QToolButton_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QToolButton_InputMethodEvent")]
 	public static extern void QToolButton_InputMethodEvent(void* self, void** param1);
 	
 	public function void QToolButton_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QToolButton_OnInputMethodEvent")]
 	public static extern void QToolButton_OnInputMethodEvent(void* self, QToolButton_OnInputMethodEvent_action _action);
+	
+	[LinkName("QToolButton_SuperInputMethodEvent")]
+	public static extern void QToolButton_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QToolButton_InputMethodQuery")]
 	public static extern void* QToolButton_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QToolButton_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QToolButton_OnInputMethodQuery")]
 	public static extern void* QToolButton_OnInputMethodQuery(void* self, QToolButton_OnInputMethodQuery_action _action);
+	
+	[LinkName("QToolButton_SuperInputMethodQuery")]
+	public static extern void* QToolButton_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QToolButton_FocusNextPrevChild")]
 	public static extern bool QToolButton_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QToolButton_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QToolButton_OnFocusNextPrevChild")]
 	public static extern bool QToolButton_OnFocusNextPrevChild(void* self, QToolButton_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QToolButton_SuperFocusNextPrevChild")]
+	public static extern bool QToolButton_SuperFocusNextPrevChild(void* self, bool next);
 }
 [AllowDuplicates]
 enum QToolButton_ToolButtonPopupMode

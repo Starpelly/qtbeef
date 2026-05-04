@@ -1885,6 +1885,61 @@ class QMdiArea : IQMdiArea, IQAbstractScrollArea, IQFrame, IQWidget, IQObject, I
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QMdiArea_OnMetaObject(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMetaObject);
+		CQt.QMdiArea_OnMetacast(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMetacast);
+		CQt.QMdiArea_OnMetacall(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMetacall);
+		CQt.QMdiArea_OnSizeHint(obj.ObjectPtr,  => QtBeef_QMdiArea_OnSizeHint);
+		CQt.QMdiArea_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMinimumSizeHint);
+		CQt.QMdiArea_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QMdiArea_OnSetupViewport);
+		CQt.QMdiArea_OnEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnEvent);
+		CQt.QMdiArea_OnEventFilter(obj.ObjectPtr,  => QtBeef_QMdiArea_OnEventFilter);
+		CQt.QMdiArea_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnPaintEvent);
+		CQt.QMdiArea_OnChildEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnChildEvent);
+		CQt.QMdiArea_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnResizeEvent);
+		CQt.QMdiArea_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnTimerEvent);
+		CQt.QMdiArea_OnShowEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnShowEvent);
+		CQt.QMdiArea_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnViewportEvent);
+		CQt.QMdiArea_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QMdiArea_OnScrollContentsBy);
+		CQt.QMdiArea_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnCustomEvent);
+		CQt.QMdiArea_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QMdiArea_OnConnectNotify);
+		CQt.QMdiArea_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QMdiArea_OnDisconnectNotify);
+		CQt.QMdiArea_OnDevType(obj.ObjectPtr,  => QtBeef_QMdiArea_OnDevType);
+		CQt.QMdiArea_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QMdiArea_OnPaintEngine);
+		CQt.QMdiArea_OnMetric(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMetric);
+		CQt.QMdiArea_OnInitPainter(obj.ObjectPtr,  => QtBeef_QMdiArea_OnInitPainter);
+		CQt.QMdiArea_OnRedirected(obj.ObjectPtr,  => QtBeef_QMdiArea_OnRedirected);
+		CQt.QMdiArea_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QMdiArea_OnSharedPainter);
+		CQt.QMdiArea_OnSetVisible(obj.ObjectPtr,  => QtBeef_QMdiArea_OnSetVisible);
+		CQt.QMdiArea_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QMdiArea_OnHeightForWidth);
+		CQt.QMdiArea_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QMdiArea_OnHasHeightForWidth);
+		CQt.QMdiArea_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMousePressEvent);
+		CQt.QMdiArea_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMouseReleaseEvent);
+		CQt.QMdiArea_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMouseDoubleClickEvent);
+		CQt.QMdiArea_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMouseMoveEvent);
+		CQt.QMdiArea_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnWheelEvent);
+		CQt.QMdiArea_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnKeyPressEvent);
+		CQt.QMdiArea_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnKeyReleaseEvent);
+		CQt.QMdiArea_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnFocusInEvent);
+		CQt.QMdiArea_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnFocusOutEvent);
+		CQt.QMdiArea_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnEnterEvent);
+		CQt.QMdiArea_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnLeaveEvent);
+		CQt.QMdiArea_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnMoveEvent);
+		CQt.QMdiArea_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnCloseEvent);
+		CQt.QMdiArea_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnContextMenuEvent);
+		CQt.QMdiArea_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnTabletEvent);
+		CQt.QMdiArea_OnActionEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnActionEvent);
+		CQt.QMdiArea_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnDragEnterEvent);
+		CQt.QMdiArea_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnDragMoveEvent);
+		CQt.QMdiArea_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnDragLeaveEvent);
+		CQt.QMdiArea_OnDropEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnDropEvent);
+		CQt.QMdiArea_OnHideEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnHideEvent);
+		CQt.QMdiArea_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnNativeEvent);
+		CQt.QMdiArea_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnChangeEvent);
+		CQt.QMdiArea_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QMdiArea_OnInputMethodEvent);
+		CQt.QMdiArea_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QMdiArea_OnInputMethodQuery);
+		CQt.QMdiArea_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QMdiArea_OnFocusNextPrevChild);
+		CQt.QMdiArea_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QMdiArea_OnInitStyleOption);
+		CQt.QMdiArea_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QMdiArea_OnViewportSizeHint);
 	}
 	public Event<delegate void(void** param1)> OnSubWindowActivated = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1927,6 +1982,281 @@ class QMdiArea : IQMdiArea, IQAbstractScrollArea, IQFrame, IQWidget, IQObject, I
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QMdiArea_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QMdiArea_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QMdiArea_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QMdiArea_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QMdiArea_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QMdiArea_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QMdiArea_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnEventFilter(void* ptr, void** object, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(object, event);
+	}
+	static void QtBeef_QMdiArea_OnPaintEvent(void* ptr, void** paintEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(paintEvent);
+	}
+	static void QtBeef_QMdiArea_OnChildEvent(void* ptr, void** childEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(childEvent);
+	}
+	static void QtBeef_QMdiArea_OnResizeEvent(void* ptr, void** resizeEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(resizeEvent);
+	}
+	static void QtBeef_QMdiArea_OnTimerEvent(void* ptr, void** timerEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(timerEvent);
+	}
+	static void QtBeef_QMdiArea_OnShowEvent(void* ptr, void** showEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(showEvent);
+	}
+	static void QtBeef_QMdiArea_OnViewportEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
+	}
+	static void QtBeef_QMdiArea_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QMdiArea_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QMdiArea_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QMdiArea_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QMdiArea_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QMdiArea_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QMdiArea_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QMdiArea_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QMdiArea_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QMdiArea_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QMdiArea_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QMdiArea_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QMdiArea_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QMdiArea_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QMdiArea_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QMdiArea_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QMdiArea_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QMdiArea_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QMdiArea_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
 	}
 	public this(QMdiArea_Ptr ptr)
 	{
@@ -3785,18 +4115,27 @@ extension CQt
 	public function void QMdiArea_OnMetaObject_action(void* self);
 	[LinkName("QMdiArea_OnMetaObject")]
 	public static extern void** QMdiArea_OnMetaObject(void* self, QMdiArea_OnMetaObject_action _action);
+	
+	[LinkName("QMdiArea_SuperMetaObject")]
+	public static extern void** QMdiArea_SuperMetaObject(void* self);
 	[LinkName("QMdiArea_Qt_Metacast")]
 	public static extern void* QMdiArea_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QMdiArea_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QMdiArea_OnMetacast")]
 	public static extern void* QMdiArea_OnMetacast(void* self, QMdiArea_OnMetacast_action _action);
+	
+	[LinkName("QMdiArea_SuperMetacast")]
+	public static extern void* QMdiArea_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QMdiArea_Qt_Metacall")]
 	public static extern c_int QMdiArea_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QMdiArea_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QMdiArea_OnMetacall")]
 	public static extern c_int QMdiArea_OnMetacall(void* self, QMdiArea_OnMetacall_action _action);
+	
+	[LinkName("QMdiArea_SuperMetacall")]
+	public static extern c_int QMdiArea_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QMdiArea_Tr")]
 	public static extern libqt_string QMdiArea_Tr(c_char* s);
 	[LinkName("QMdiArea_SizeHint")]
@@ -3805,12 +4144,18 @@ extension CQt
 	public function void QMdiArea_OnSizeHint_action(void* self);
 	[LinkName("QMdiArea_OnSizeHint")]
 	public static extern void* QMdiArea_OnSizeHint(void* self, QMdiArea_OnSizeHint_action _action);
+	
+	[LinkName("QMdiArea_SuperSizeHint")]
+	public static extern void* QMdiArea_SuperSizeHint(void* self);
 	[LinkName("QMdiArea_MinimumSizeHint")]
 	public static extern void* QMdiArea_MinimumSizeHint(void* self);
 	
 	public function void QMdiArea_OnMinimumSizeHint_action(void* self);
 	[LinkName("QMdiArea_OnMinimumSizeHint")]
 	public static extern void* QMdiArea_OnMinimumSizeHint(void* self, QMdiArea_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QMdiArea_SuperMinimumSizeHint")]
+	public static extern void* QMdiArea_SuperMinimumSizeHint(void* self);
 	[LinkName("QMdiArea_CurrentSubWindow")]
 	public static extern void** QMdiArea_CurrentSubWindow(void* self);
 	[LinkName("QMdiArea_ActiveSubWindow")]
@@ -3883,60 +4228,90 @@ extension CQt
 	public function void QMdiArea_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QMdiArea_OnSetupViewport")]
 	public static extern void QMdiArea_OnSetupViewport(void* self, QMdiArea_OnSetupViewport_action _action);
+	
+	[LinkName("QMdiArea_SuperSetupViewport")]
+	public static extern void QMdiArea_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QMdiArea_Event")]
 	public static extern bool QMdiArea_Event(void* self, void** event);
 	
 	public function void QMdiArea_OnEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnEvent")]
 	public static extern bool QMdiArea_OnEvent(void* self, QMdiArea_OnEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperEvent")]
+	public static extern bool QMdiArea_SuperEvent(void* self, void** event);
 	[LinkName("QMdiArea_EventFilter")]
 	public static extern bool QMdiArea_EventFilter(void* self, void** object, void** event);
 	
 	public function void QMdiArea_OnEventFilter_action(void* self, void** object, void** event);
 	[LinkName("QMdiArea_OnEventFilter")]
 	public static extern bool QMdiArea_OnEventFilter(void* self, QMdiArea_OnEventFilter_action _action);
+	
+	[LinkName("QMdiArea_SuperEventFilter")]
+	public static extern bool QMdiArea_SuperEventFilter(void* self, void** object, void** event);
 	[LinkName("QMdiArea_PaintEvent")]
 	public static extern void QMdiArea_PaintEvent(void* self, void** paintEvent);
 	
 	public function void QMdiArea_OnPaintEvent_action(void* self, void** paintEvent);
 	[LinkName("QMdiArea_OnPaintEvent")]
 	public static extern void QMdiArea_OnPaintEvent(void* self, QMdiArea_OnPaintEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperPaintEvent")]
+	public static extern void QMdiArea_SuperPaintEvent(void* self, void** paintEvent);
 	[LinkName("QMdiArea_ChildEvent")]
 	public static extern void QMdiArea_ChildEvent(void* self, void** childEvent);
 	
 	public function void QMdiArea_OnChildEvent_action(void* self, void** childEvent);
 	[LinkName("QMdiArea_OnChildEvent")]
 	public static extern void QMdiArea_OnChildEvent(void* self, QMdiArea_OnChildEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperChildEvent")]
+	public static extern void QMdiArea_SuperChildEvent(void* self, void** childEvent);
 	[LinkName("QMdiArea_ResizeEvent")]
 	public static extern void QMdiArea_ResizeEvent(void* self, void** resizeEvent);
 	
 	public function void QMdiArea_OnResizeEvent_action(void* self, void** resizeEvent);
 	[LinkName("QMdiArea_OnResizeEvent")]
 	public static extern void QMdiArea_OnResizeEvent(void* self, QMdiArea_OnResizeEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperResizeEvent")]
+	public static extern void QMdiArea_SuperResizeEvent(void* self, void** resizeEvent);
 	[LinkName("QMdiArea_TimerEvent")]
 	public static extern void QMdiArea_TimerEvent(void* self, void** timerEvent);
 	
 	public function void QMdiArea_OnTimerEvent_action(void* self, void** timerEvent);
 	[LinkName("QMdiArea_OnTimerEvent")]
 	public static extern void QMdiArea_OnTimerEvent(void* self, QMdiArea_OnTimerEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperTimerEvent")]
+	public static extern void QMdiArea_SuperTimerEvent(void* self, void** timerEvent);
 	[LinkName("QMdiArea_ShowEvent")]
 	public static extern void QMdiArea_ShowEvent(void* self, void** showEvent);
 	
 	public function void QMdiArea_OnShowEvent_action(void* self, void** showEvent);
 	[LinkName("QMdiArea_OnShowEvent")]
 	public static extern void QMdiArea_OnShowEvent(void* self, QMdiArea_OnShowEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperShowEvent")]
+	public static extern void QMdiArea_SuperShowEvent(void* self, void** showEvent);
 	[LinkName("QMdiArea_ViewportEvent")]
 	public static extern bool QMdiArea_ViewportEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnViewportEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnViewportEvent")]
 	public static extern bool QMdiArea_OnViewportEvent(void* self, QMdiArea_OnViewportEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperViewportEvent")]
+	public static extern bool QMdiArea_SuperViewportEvent(void* self, void** event);
 	[LinkName("QMdiArea_ScrollContentsBy")]
 	public static extern void QMdiArea_ScrollContentsBy(void* self, c_int dx, c_int dy);
 	
 	public function void QMdiArea_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QMdiArea_OnScrollContentsBy")]
 	public static extern void QMdiArea_OnScrollContentsBy(void* self, QMdiArea_OnScrollContentsBy_action _action);
+	
+	[LinkName("QMdiArea_SuperScrollContentsBy")]
+	public static extern void QMdiArea_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 	[LinkName("QMdiArea_Tr2")]
 	public static extern libqt_string QMdiArea_Tr2(c_char* s, c_char* c);
 	[LinkName("QMdiArea_Tr3")]
@@ -3953,240 +4328,360 @@ extension CQt
 	public function void QMdiArea_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnCustomEvent")]
 	public static extern void QMdiArea_OnCustomEvent(void* self, QMdiArea_OnCustomEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperCustomEvent")]
+	public static extern void QMdiArea_SuperCustomEvent(void* self, void** event);
 	[LinkName("QMdiArea_ConnectNotify")]
 	public static extern void QMdiArea_ConnectNotify(void* self, void** signal);
 	
 	public function void QMdiArea_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QMdiArea_OnConnectNotify")]
 	public static extern void QMdiArea_OnConnectNotify(void* self, QMdiArea_OnConnectNotify_action _action);
+	
+	[LinkName("QMdiArea_SuperConnectNotify")]
+	public static extern void QMdiArea_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QMdiArea_DisconnectNotify")]
 	public static extern void QMdiArea_DisconnectNotify(void* self, void** signal);
 	
 	public function void QMdiArea_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QMdiArea_OnDisconnectNotify")]
 	public static extern void QMdiArea_OnDisconnectNotify(void* self, QMdiArea_OnDisconnectNotify_action _action);
+	
+	[LinkName("QMdiArea_SuperDisconnectNotify")]
+	public static extern void QMdiArea_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QMdiArea_DevType")]
 	public static extern c_int QMdiArea_DevType(void* self);
 	
 	public function void QMdiArea_OnDevType_action(void* self);
 	[LinkName("QMdiArea_OnDevType")]
 	public static extern c_int QMdiArea_OnDevType(void* self, QMdiArea_OnDevType_action _action);
+	
+	[LinkName("QMdiArea_SuperDevType")]
+	public static extern c_int QMdiArea_SuperDevType(void* self);
 	[LinkName("QMdiArea_PaintEngine")]
 	public static extern void** QMdiArea_PaintEngine(void* self);
 	
 	public function void QMdiArea_OnPaintEngine_action(void* self);
 	[LinkName("QMdiArea_OnPaintEngine")]
 	public static extern void** QMdiArea_OnPaintEngine(void* self, QMdiArea_OnPaintEngine_action _action);
+	
+	[LinkName("QMdiArea_SuperPaintEngine")]
+	public static extern void** QMdiArea_SuperPaintEngine(void* self);
 	[LinkName("QMdiArea_Metric")]
 	public static extern c_int QMdiArea_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QMdiArea_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QMdiArea_OnMetric")]
 	public static extern c_int QMdiArea_OnMetric(void* self, QMdiArea_OnMetric_action _action);
+	
+	[LinkName("QMdiArea_SuperMetric")]
+	public static extern c_int QMdiArea_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QMdiArea_InitPainter")]
 	public static extern void QMdiArea_InitPainter(void* self, void** painter);
 	
 	public function void QMdiArea_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QMdiArea_OnInitPainter")]
 	public static extern void QMdiArea_OnInitPainter(void* self, QMdiArea_OnInitPainter_action _action);
+	
+	[LinkName("QMdiArea_SuperInitPainter")]
+	public static extern void QMdiArea_SuperInitPainter(void* self, void** painter);
 	[LinkName("QMdiArea_Redirected")]
 	public static extern void** QMdiArea_Redirected(void* self, void** offset);
 	
 	public function void QMdiArea_OnRedirected_action(void* self, void** offset);
 	[LinkName("QMdiArea_OnRedirected")]
 	public static extern void** QMdiArea_OnRedirected(void* self, QMdiArea_OnRedirected_action _action);
+	
+	[LinkName("QMdiArea_SuperRedirected")]
+	public static extern void** QMdiArea_SuperRedirected(void* self, void** offset);
 	[LinkName("QMdiArea_SharedPainter")]
 	public static extern void** QMdiArea_SharedPainter(void* self);
 	
 	public function void QMdiArea_OnSharedPainter_action(void* self);
 	[LinkName("QMdiArea_OnSharedPainter")]
 	public static extern void** QMdiArea_OnSharedPainter(void* self, QMdiArea_OnSharedPainter_action _action);
+	
+	[LinkName("QMdiArea_SuperSharedPainter")]
+	public static extern void** QMdiArea_SuperSharedPainter(void* self);
 	[LinkName("QMdiArea_SetVisible")]
 	public static extern void QMdiArea_SetVisible(void* self, bool visible);
 	
 	public function void QMdiArea_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QMdiArea_OnSetVisible")]
 	public static extern void QMdiArea_OnSetVisible(void* self, QMdiArea_OnSetVisible_action _action);
+	
+	[LinkName("QMdiArea_SuperSetVisible")]
+	public static extern void QMdiArea_SuperSetVisible(void* self, bool visible);
 	[LinkName("QMdiArea_HeightForWidth")]
 	public static extern c_int QMdiArea_HeightForWidth(void* self, c_int param1);
 	
 	public function void QMdiArea_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QMdiArea_OnHeightForWidth")]
 	public static extern c_int QMdiArea_OnHeightForWidth(void* self, QMdiArea_OnHeightForWidth_action _action);
+	
+	[LinkName("QMdiArea_SuperHeightForWidth")]
+	public static extern c_int QMdiArea_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QMdiArea_HasHeightForWidth")]
 	public static extern bool QMdiArea_HasHeightForWidth(void* self);
 	
 	public function void QMdiArea_OnHasHeightForWidth_action(void* self);
 	[LinkName("QMdiArea_OnHasHeightForWidth")]
 	public static extern bool QMdiArea_OnHasHeightForWidth(void* self, QMdiArea_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QMdiArea_SuperHasHeightForWidth")]
+	public static extern bool QMdiArea_SuperHasHeightForWidth(void* self);
 	[LinkName("QMdiArea_MousePressEvent")]
 	public static extern void QMdiArea_MousePressEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnMousePressEvent")]
 	public static extern void QMdiArea_OnMousePressEvent(void* self, QMdiArea_OnMousePressEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperMousePressEvent")]
+	public static extern void QMdiArea_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QMdiArea_MouseReleaseEvent")]
 	public static extern void QMdiArea_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnMouseReleaseEvent")]
 	public static extern void QMdiArea_OnMouseReleaseEvent(void* self, QMdiArea_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperMouseReleaseEvent")]
+	public static extern void QMdiArea_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QMdiArea_MouseDoubleClickEvent")]
 	public static extern void QMdiArea_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnMouseDoubleClickEvent")]
 	public static extern void QMdiArea_OnMouseDoubleClickEvent(void* self, QMdiArea_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperMouseDoubleClickEvent")]
+	public static extern void QMdiArea_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QMdiArea_MouseMoveEvent")]
 	public static extern void QMdiArea_MouseMoveEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnMouseMoveEvent")]
 	public static extern void QMdiArea_OnMouseMoveEvent(void* self, QMdiArea_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperMouseMoveEvent")]
+	public static extern void QMdiArea_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QMdiArea_WheelEvent")]
 	public static extern void QMdiArea_WheelEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnWheelEvent")]
 	public static extern void QMdiArea_OnWheelEvent(void* self, QMdiArea_OnWheelEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperWheelEvent")]
+	public static extern void QMdiArea_SuperWheelEvent(void* self, void** event);
 	[LinkName("QMdiArea_KeyPressEvent")]
 	public static extern void QMdiArea_KeyPressEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnKeyPressEvent")]
 	public static extern void QMdiArea_OnKeyPressEvent(void* self, QMdiArea_OnKeyPressEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperKeyPressEvent")]
+	public static extern void QMdiArea_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QMdiArea_KeyReleaseEvent")]
 	public static extern void QMdiArea_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnKeyReleaseEvent")]
 	public static extern void QMdiArea_OnKeyReleaseEvent(void* self, QMdiArea_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperKeyReleaseEvent")]
+	public static extern void QMdiArea_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QMdiArea_FocusInEvent")]
 	public static extern void QMdiArea_FocusInEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnFocusInEvent")]
 	public static extern void QMdiArea_OnFocusInEvent(void* self, QMdiArea_OnFocusInEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperFocusInEvent")]
+	public static extern void QMdiArea_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QMdiArea_FocusOutEvent")]
 	public static extern void QMdiArea_FocusOutEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnFocusOutEvent")]
 	public static extern void QMdiArea_OnFocusOutEvent(void* self, QMdiArea_OnFocusOutEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperFocusOutEvent")]
+	public static extern void QMdiArea_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QMdiArea_EnterEvent")]
 	public static extern void QMdiArea_EnterEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnEnterEvent")]
 	public static extern void QMdiArea_OnEnterEvent(void* self, QMdiArea_OnEnterEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperEnterEvent")]
+	public static extern void QMdiArea_SuperEnterEvent(void* self, void** event);
 	[LinkName("QMdiArea_LeaveEvent")]
 	public static extern void QMdiArea_LeaveEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnLeaveEvent")]
 	public static extern void QMdiArea_OnLeaveEvent(void* self, QMdiArea_OnLeaveEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperLeaveEvent")]
+	public static extern void QMdiArea_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QMdiArea_MoveEvent")]
 	public static extern void QMdiArea_MoveEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnMoveEvent")]
 	public static extern void QMdiArea_OnMoveEvent(void* self, QMdiArea_OnMoveEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperMoveEvent")]
+	public static extern void QMdiArea_SuperMoveEvent(void* self, void** event);
 	[LinkName("QMdiArea_CloseEvent")]
 	public static extern void QMdiArea_CloseEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnCloseEvent")]
 	public static extern void QMdiArea_OnCloseEvent(void* self, QMdiArea_OnCloseEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperCloseEvent")]
+	public static extern void QMdiArea_SuperCloseEvent(void* self, void** event);
 	[LinkName("QMdiArea_ContextMenuEvent")]
 	public static extern void QMdiArea_ContextMenuEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnContextMenuEvent")]
 	public static extern void QMdiArea_OnContextMenuEvent(void* self, QMdiArea_OnContextMenuEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperContextMenuEvent")]
+	public static extern void QMdiArea_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QMdiArea_TabletEvent")]
 	public static extern void QMdiArea_TabletEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnTabletEvent")]
 	public static extern void QMdiArea_OnTabletEvent(void* self, QMdiArea_OnTabletEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperTabletEvent")]
+	public static extern void QMdiArea_SuperTabletEvent(void* self, void** event);
 	[LinkName("QMdiArea_ActionEvent")]
 	public static extern void QMdiArea_ActionEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnActionEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnActionEvent")]
 	public static extern void QMdiArea_OnActionEvent(void* self, QMdiArea_OnActionEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperActionEvent")]
+	public static extern void QMdiArea_SuperActionEvent(void* self, void** event);
 	[LinkName("QMdiArea_DragEnterEvent")]
 	public static extern void QMdiArea_DragEnterEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnDragEnterEvent")]
 	public static extern void QMdiArea_OnDragEnterEvent(void* self, QMdiArea_OnDragEnterEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperDragEnterEvent")]
+	public static extern void QMdiArea_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QMdiArea_DragMoveEvent")]
 	public static extern void QMdiArea_DragMoveEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnDragMoveEvent")]
 	public static extern void QMdiArea_OnDragMoveEvent(void* self, QMdiArea_OnDragMoveEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperDragMoveEvent")]
+	public static extern void QMdiArea_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QMdiArea_DragLeaveEvent")]
 	public static extern void QMdiArea_DragLeaveEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnDragLeaveEvent")]
 	public static extern void QMdiArea_OnDragLeaveEvent(void* self, QMdiArea_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperDragLeaveEvent")]
+	public static extern void QMdiArea_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QMdiArea_DropEvent")]
 	public static extern void QMdiArea_DropEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnDropEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnDropEvent")]
 	public static extern void QMdiArea_OnDropEvent(void* self, QMdiArea_OnDropEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperDropEvent")]
+	public static extern void QMdiArea_SuperDropEvent(void* self, void** event);
 	[LinkName("QMdiArea_HideEvent")]
 	public static extern void QMdiArea_HideEvent(void* self, void** event);
 	
 	public function void QMdiArea_OnHideEvent_action(void* self, void** event);
 	[LinkName("QMdiArea_OnHideEvent")]
 	public static extern void QMdiArea_OnHideEvent(void* self, QMdiArea_OnHideEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperHideEvent")]
+	public static extern void QMdiArea_SuperHideEvent(void* self, void** event);
 	[LinkName("QMdiArea_NativeEvent")]
 	public static extern bool QMdiArea_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QMdiArea_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QMdiArea_OnNativeEvent")]
 	public static extern bool QMdiArea_OnNativeEvent(void* self, QMdiArea_OnNativeEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperNativeEvent")]
+	public static extern bool QMdiArea_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QMdiArea_ChangeEvent")]
 	public static extern void QMdiArea_ChangeEvent(void* self, void** param1);
 	
 	public function void QMdiArea_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QMdiArea_OnChangeEvent")]
 	public static extern void QMdiArea_OnChangeEvent(void* self, QMdiArea_OnChangeEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperChangeEvent")]
+	public static extern void QMdiArea_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QMdiArea_InputMethodEvent")]
 	public static extern void QMdiArea_InputMethodEvent(void* self, void** param1);
 	
 	public function void QMdiArea_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QMdiArea_OnInputMethodEvent")]
 	public static extern void QMdiArea_OnInputMethodEvent(void* self, QMdiArea_OnInputMethodEvent_action _action);
+	
+	[LinkName("QMdiArea_SuperInputMethodEvent")]
+	public static extern void QMdiArea_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QMdiArea_InputMethodQuery")]
 	public static extern void* QMdiArea_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QMdiArea_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QMdiArea_OnInputMethodQuery")]
 	public static extern void* QMdiArea_OnInputMethodQuery(void* self, QMdiArea_OnInputMethodQuery_action _action);
+	
+	[LinkName("QMdiArea_SuperInputMethodQuery")]
+	public static extern void* QMdiArea_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QMdiArea_FocusNextPrevChild")]
 	public static extern bool QMdiArea_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QMdiArea_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QMdiArea_OnFocusNextPrevChild")]
 	public static extern bool QMdiArea_OnFocusNextPrevChild(void* self, QMdiArea_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QMdiArea_SuperFocusNextPrevChild")]
+	public static extern bool QMdiArea_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QMdiArea_InitStyleOption")]
 	public static extern void QMdiArea_InitStyleOption(void* self, void** option);
 	
 	public function void QMdiArea_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QMdiArea_OnInitStyleOption")]
 	public static extern void QMdiArea_OnInitStyleOption(void* self, QMdiArea_OnInitStyleOption_action _action);
+	
+	[LinkName("QMdiArea_SuperInitStyleOption")]
+	public static extern void QMdiArea_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QMdiArea_ViewportSizeHint")]
 	public static extern void* QMdiArea_ViewportSizeHint(void* self);
 	
 	public function void QMdiArea_OnViewportSizeHint_action(void* self);
 	[LinkName("QMdiArea_OnViewportSizeHint")]
 	public static extern void* QMdiArea_OnViewportSizeHint(void* self, QMdiArea_OnViewportSizeHint_action _action);
+	
+	[LinkName("QMdiArea_SuperViewportSizeHint")]
+	public static extern void* QMdiArea_SuperViewportSizeHint(void* self);
 }
 [AllowDuplicates]
 enum QMdiArea_AreaOption

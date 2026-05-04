@@ -1980,6 +1980,60 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 		CQt.QComboBox_Connect_TextHighlighted(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_TextHighlighted);
 		CQt.QComboBox_Connect_CurrentIndexChanged(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_CurrentIndexChanged);
 		CQt.QComboBox_Connect_CurrentTextChanged(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_CurrentTextChanged);
+		CQt.QFontComboBox_OnMetaObject(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMetaObject);
+		CQt.QFontComboBox_OnMetacast(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMetacast);
+		CQt.QFontComboBox_OnMetacall(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMetacall);
+		CQt.QFontComboBox_OnSizeHint(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnSizeHint);
+		CQt.QFontComboBox_OnEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnEvent);
+		CQt.QFontComboBox_OnEventFilter(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnEventFilter);
+		CQt.QFontComboBox_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnTimerEvent);
+		CQt.QFontComboBox_OnChildEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnChildEvent);
+		CQt.QFontComboBox_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnCustomEvent);
+		CQt.QFontComboBox_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnConnectNotify);
+		CQt.QFontComboBox_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnDisconnectNotify);
+		CQt.QFontComboBox_OnDevType(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnDevType);
+		CQt.QFontComboBox_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnPaintEngine);
+		CQt.QFontComboBox_OnMetric(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMetric);
+		CQt.QFontComboBox_OnInitPainter(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnInitPainter);
+		CQt.QFontComboBox_OnRedirected(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnRedirected);
+		CQt.QFontComboBox_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnSharedPainter);
+		CQt.QFontComboBox_OnSetVisible(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnSetVisible);
+		CQt.QFontComboBox_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMinimumSizeHint);
+		CQt.QFontComboBox_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnHeightForWidth);
+		CQt.QFontComboBox_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnHasHeightForWidth);
+		CQt.QFontComboBox_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMousePressEvent);
+		CQt.QFontComboBox_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMouseReleaseEvent);
+		CQt.QFontComboBox_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMouseDoubleClickEvent);
+		CQt.QFontComboBox_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMouseMoveEvent);
+		CQt.QFontComboBox_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnWheelEvent);
+		CQt.QFontComboBox_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnKeyPressEvent);
+		CQt.QFontComboBox_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnKeyReleaseEvent);
+		CQt.QFontComboBox_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnFocusInEvent);
+		CQt.QFontComboBox_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnFocusOutEvent);
+		CQt.QFontComboBox_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnEnterEvent);
+		CQt.QFontComboBox_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnLeaveEvent);
+		CQt.QFontComboBox_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnPaintEvent);
+		CQt.QFontComboBox_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnMoveEvent);
+		CQt.QFontComboBox_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnResizeEvent);
+		CQt.QFontComboBox_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnCloseEvent);
+		CQt.QFontComboBox_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnContextMenuEvent);
+		CQt.QFontComboBox_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnTabletEvent);
+		CQt.QFontComboBox_OnActionEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnActionEvent);
+		CQt.QFontComboBox_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnDragEnterEvent);
+		CQt.QFontComboBox_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnDragMoveEvent);
+		CQt.QFontComboBox_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnDragLeaveEvent);
+		CQt.QFontComboBox_OnDropEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnDropEvent);
+		CQt.QFontComboBox_OnShowEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnShowEvent);
+		CQt.QFontComboBox_OnHideEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnHideEvent);
+		CQt.QFontComboBox_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnNativeEvent);
+		CQt.QFontComboBox_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnChangeEvent);
+		CQt.QFontComboBox_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnInputMethodEvent);
+		CQt.QFontComboBox_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnInputMethodQuery);
+		CQt.QFontComboBox_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnFocusNextPrevChild);
+		CQt.QFontComboBox_OnSetModel(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnSetModel);
+		CQt.QFontComboBox_OnShowPopup(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnShowPopup);
+		CQt.QFontComboBox_OnHidePopup(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnHidePopup);
+		CQt.QFontComboBox_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QFontComboBox_OnInitStyleOption);
 	}
 	public Event<delegate void(void** f)> OnCurrentFontChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -2064,6 +2118,276 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCurrentTextChanged.Invoke(param1);
+	}
+	static void QtBeef_QFontComboBox_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QFontComboBox_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QFontComboBox_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QFontComboBox_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QFontComboBox_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QFontComboBox_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QFontComboBox_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QFontComboBox_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QFontComboBox_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QFontComboBox_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QFontComboBox_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QFontComboBox_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QFontComboBox_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QFontComboBox_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QFontComboBox_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QFontComboBox_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QFontComboBox_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QFontComboBox_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QFontComboBox_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QFontComboBox_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QFontComboBox_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QFontComboBox_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QFontComboBox_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QFontComboBox_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QFontComboBox_OnSetModel(void* ptr, void** model)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetModel(model);
+	}
+	static void QtBeef_QFontComboBox_OnShowPopup(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowPopup();
+	}
+	static void QtBeef_QFontComboBox_OnHidePopup(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHidePopup();
+	}
+	static void QtBeef_QFontComboBox_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
 	}
 	public this(QFontComboBox_Ptr ptr)
 	{
@@ -4009,18 +4333,27 @@ extension CQt
 	public function void QFontComboBox_OnMetaObject_action(void* self);
 	[LinkName("QFontComboBox_OnMetaObject")]
 	public static extern void** QFontComboBox_OnMetaObject(void* self, QFontComboBox_OnMetaObject_action _action);
+	
+	[LinkName("QFontComboBox_SuperMetaObject")]
+	public static extern void** QFontComboBox_SuperMetaObject(void* self);
 	[LinkName("QFontComboBox_Qt_Metacast")]
 	public static extern void* QFontComboBox_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QFontComboBox_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QFontComboBox_OnMetacast")]
 	public static extern void* QFontComboBox_OnMetacast(void* self, QFontComboBox_OnMetacast_action _action);
+	
+	[LinkName("QFontComboBox_SuperMetacast")]
+	public static extern void* QFontComboBox_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QFontComboBox_Qt_Metacall")]
 	public static extern c_int QFontComboBox_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QFontComboBox_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFontComboBox_OnMetacall")]
 	public static extern c_int QFontComboBox_OnMetacall(void* self, QFontComboBox_OnMetacall_action _action);
+	
+	[LinkName("QFontComboBox_SuperMetacall")]
+	public static extern c_int QFontComboBox_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFontComboBox_Tr")]
 	public static extern libqt_string QFontComboBox_Tr(c_char* s);
 	[LinkName("QFontComboBox_SetWritingSystem")]
@@ -4039,6 +4372,9 @@ extension CQt
 	public function void QFontComboBox_OnSizeHint_action(void* self);
 	[LinkName("QFontComboBox_OnSizeHint")]
 	public static extern void* QFontComboBox_OnSizeHint(void* self, QFontComboBox_OnSizeHint_action _action);
+	
+	[LinkName("QFontComboBox_SuperSizeHint")]
+	public static extern void* QFontComboBox_SuperSizeHint(void* self);
 	[LinkName("QFontComboBox_SetSampleTextForSystem")]
 	public static extern void QFontComboBox_SetSampleTextForSystem(void* self, QFontDatabase_WritingSystem writingSystem, libqt_string sampleText);
 	[LinkName("QFontComboBox_SampleTextForSystem")]
@@ -4065,6 +4401,9 @@ extension CQt
 	public function void QFontComboBox_OnEvent_action(void* self, void** e);
 	[LinkName("QFontComboBox_OnEvent")]
 	public static extern bool QFontComboBox_OnEvent(void* self, QFontComboBox_OnEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperEvent")]
+	public static extern bool QFontComboBox_SuperEvent(void* self, void** e);
 	[LinkName("QFontComboBox_Tr2")]
 	public static extern libqt_string QFontComboBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QFontComboBox_Tr3")]
@@ -4075,294 +4414,441 @@ extension CQt
 	public function void QFontComboBox_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QFontComboBox_OnEventFilter")]
 	public static extern bool QFontComboBox_OnEventFilter(void* self, QFontComboBox_OnEventFilter_action _action);
+	
+	[LinkName("QFontComboBox_SuperEventFilter")]
+	public static extern bool QFontComboBox_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QFontComboBox_TimerEvent")]
 	public static extern void QFontComboBox_TimerEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnTimerEvent")]
 	public static extern void QFontComboBox_OnTimerEvent(void* self, QFontComboBox_OnTimerEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperTimerEvent")]
+	public static extern void QFontComboBox_SuperTimerEvent(void* self, void** event);
 	[LinkName("QFontComboBox_ChildEvent")]
 	public static extern void QFontComboBox_ChildEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnChildEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnChildEvent")]
 	public static extern void QFontComboBox_OnChildEvent(void* self, QFontComboBox_OnChildEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperChildEvent")]
+	public static extern void QFontComboBox_SuperChildEvent(void* self, void** event);
 	[LinkName("QFontComboBox_CustomEvent")]
 	public static extern void QFontComboBox_CustomEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnCustomEvent")]
 	public static extern void QFontComboBox_OnCustomEvent(void* self, QFontComboBox_OnCustomEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperCustomEvent")]
+	public static extern void QFontComboBox_SuperCustomEvent(void* self, void** event);
 	[LinkName("QFontComboBox_ConnectNotify")]
 	public static extern void QFontComboBox_ConnectNotify(void* self, void** signal);
 	
 	public function void QFontComboBox_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QFontComboBox_OnConnectNotify")]
 	public static extern void QFontComboBox_OnConnectNotify(void* self, QFontComboBox_OnConnectNotify_action _action);
+	
+	[LinkName("QFontComboBox_SuperConnectNotify")]
+	public static extern void QFontComboBox_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QFontComboBox_DisconnectNotify")]
 	public static extern void QFontComboBox_DisconnectNotify(void* self, void** signal);
 	
 	public function void QFontComboBox_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QFontComboBox_OnDisconnectNotify")]
 	public static extern void QFontComboBox_OnDisconnectNotify(void* self, QFontComboBox_OnDisconnectNotify_action _action);
+	
+	[LinkName("QFontComboBox_SuperDisconnectNotify")]
+	public static extern void QFontComboBox_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QFontComboBox_DevType")]
 	public static extern c_int QFontComboBox_DevType(void* self);
 	
 	public function void QFontComboBox_OnDevType_action(void* self);
 	[LinkName("QFontComboBox_OnDevType")]
 	public static extern c_int QFontComboBox_OnDevType(void* self, QFontComboBox_OnDevType_action _action);
+	
+	[LinkName("QFontComboBox_SuperDevType")]
+	public static extern c_int QFontComboBox_SuperDevType(void* self);
 	[LinkName("QFontComboBox_PaintEngine")]
 	public static extern void** QFontComboBox_PaintEngine(void* self);
 	
 	public function void QFontComboBox_OnPaintEngine_action(void* self);
 	[LinkName("QFontComboBox_OnPaintEngine")]
 	public static extern void** QFontComboBox_OnPaintEngine(void* self, QFontComboBox_OnPaintEngine_action _action);
+	
+	[LinkName("QFontComboBox_SuperPaintEngine")]
+	public static extern void** QFontComboBox_SuperPaintEngine(void* self);
 	[LinkName("QFontComboBox_Metric")]
 	public static extern c_int QFontComboBox_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QFontComboBox_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QFontComboBox_OnMetric")]
 	public static extern c_int QFontComboBox_OnMetric(void* self, QFontComboBox_OnMetric_action _action);
+	
+	[LinkName("QFontComboBox_SuperMetric")]
+	public static extern c_int QFontComboBox_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QFontComboBox_InitPainter")]
 	public static extern void QFontComboBox_InitPainter(void* self, void** painter);
 	
 	public function void QFontComboBox_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QFontComboBox_OnInitPainter")]
 	public static extern void QFontComboBox_OnInitPainter(void* self, QFontComboBox_OnInitPainter_action _action);
+	
+	[LinkName("QFontComboBox_SuperInitPainter")]
+	public static extern void QFontComboBox_SuperInitPainter(void* self, void** painter);
 	[LinkName("QFontComboBox_Redirected")]
 	public static extern void** QFontComboBox_Redirected(void* self, void** offset);
 	
 	public function void QFontComboBox_OnRedirected_action(void* self, void** offset);
 	[LinkName("QFontComboBox_OnRedirected")]
 	public static extern void** QFontComboBox_OnRedirected(void* self, QFontComboBox_OnRedirected_action _action);
+	
+	[LinkName("QFontComboBox_SuperRedirected")]
+	public static extern void** QFontComboBox_SuperRedirected(void* self, void** offset);
 	[LinkName("QFontComboBox_SharedPainter")]
 	public static extern void** QFontComboBox_SharedPainter(void* self);
 	
 	public function void QFontComboBox_OnSharedPainter_action(void* self);
 	[LinkName("QFontComboBox_OnSharedPainter")]
 	public static extern void** QFontComboBox_OnSharedPainter(void* self, QFontComboBox_OnSharedPainter_action _action);
+	
+	[LinkName("QFontComboBox_SuperSharedPainter")]
+	public static extern void** QFontComboBox_SuperSharedPainter(void* self);
 	[LinkName("QFontComboBox_SetVisible")]
 	public static extern void QFontComboBox_SetVisible(void* self, bool visible);
 	
 	public function void QFontComboBox_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QFontComboBox_OnSetVisible")]
 	public static extern void QFontComboBox_OnSetVisible(void* self, QFontComboBox_OnSetVisible_action _action);
+	
+	[LinkName("QFontComboBox_SuperSetVisible")]
+	public static extern void QFontComboBox_SuperSetVisible(void* self, bool visible);
 	[LinkName("QFontComboBox_MinimumSizeHint")]
 	public static extern void* QFontComboBox_MinimumSizeHint(void* self);
 	
 	public function void QFontComboBox_OnMinimumSizeHint_action(void* self);
 	[LinkName("QFontComboBox_OnMinimumSizeHint")]
 	public static extern void* QFontComboBox_OnMinimumSizeHint(void* self, QFontComboBox_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QFontComboBox_SuperMinimumSizeHint")]
+	public static extern void* QFontComboBox_SuperMinimumSizeHint(void* self);
 	[LinkName("QFontComboBox_HeightForWidth")]
 	public static extern c_int QFontComboBox_HeightForWidth(void* self, c_int param1);
 	
 	public function void QFontComboBox_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QFontComboBox_OnHeightForWidth")]
 	public static extern c_int QFontComboBox_OnHeightForWidth(void* self, QFontComboBox_OnHeightForWidth_action _action);
+	
+	[LinkName("QFontComboBox_SuperHeightForWidth")]
+	public static extern c_int QFontComboBox_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QFontComboBox_HasHeightForWidth")]
 	public static extern bool QFontComboBox_HasHeightForWidth(void* self);
 	
 	public function void QFontComboBox_OnHasHeightForWidth_action(void* self);
 	[LinkName("QFontComboBox_OnHasHeightForWidth")]
 	public static extern bool QFontComboBox_OnHasHeightForWidth(void* self, QFontComboBox_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QFontComboBox_SuperHasHeightForWidth")]
+	public static extern bool QFontComboBox_SuperHasHeightForWidth(void* self);
 	[LinkName("QFontComboBox_MousePressEvent")]
 	public static extern void QFontComboBox_MousePressEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnMousePressEvent")]
 	public static extern void QFontComboBox_OnMousePressEvent(void* self, QFontComboBox_OnMousePressEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperMousePressEvent")]
+	public static extern void QFontComboBox_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QFontComboBox_MouseReleaseEvent")]
 	public static extern void QFontComboBox_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnMouseReleaseEvent")]
 	public static extern void QFontComboBox_OnMouseReleaseEvent(void* self, QFontComboBox_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperMouseReleaseEvent")]
+	public static extern void QFontComboBox_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QFontComboBox_MouseDoubleClickEvent")]
 	public static extern void QFontComboBox_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnMouseDoubleClickEvent")]
 	public static extern void QFontComboBox_OnMouseDoubleClickEvent(void* self, QFontComboBox_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperMouseDoubleClickEvent")]
+	public static extern void QFontComboBox_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QFontComboBox_MouseMoveEvent")]
 	public static extern void QFontComboBox_MouseMoveEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnMouseMoveEvent")]
 	public static extern void QFontComboBox_OnMouseMoveEvent(void* self, QFontComboBox_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperMouseMoveEvent")]
+	public static extern void QFontComboBox_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QFontComboBox_WheelEvent")]
 	public static extern void QFontComboBox_WheelEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnWheelEvent")]
 	public static extern void QFontComboBox_OnWheelEvent(void* self, QFontComboBox_OnWheelEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperWheelEvent")]
+	public static extern void QFontComboBox_SuperWheelEvent(void* self, void** event);
 	[LinkName("QFontComboBox_KeyPressEvent")]
 	public static extern void QFontComboBox_KeyPressEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnKeyPressEvent")]
 	public static extern void QFontComboBox_OnKeyPressEvent(void* self, QFontComboBox_OnKeyPressEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperKeyPressEvent")]
+	public static extern void QFontComboBox_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QFontComboBox_KeyReleaseEvent")]
 	public static extern void QFontComboBox_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnKeyReleaseEvent")]
 	public static extern void QFontComboBox_OnKeyReleaseEvent(void* self, QFontComboBox_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperKeyReleaseEvent")]
+	public static extern void QFontComboBox_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QFontComboBox_FocusInEvent")]
 	public static extern void QFontComboBox_FocusInEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnFocusInEvent")]
 	public static extern void QFontComboBox_OnFocusInEvent(void* self, QFontComboBox_OnFocusInEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperFocusInEvent")]
+	public static extern void QFontComboBox_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QFontComboBox_FocusOutEvent")]
 	public static extern void QFontComboBox_FocusOutEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnFocusOutEvent")]
 	public static extern void QFontComboBox_OnFocusOutEvent(void* self, QFontComboBox_OnFocusOutEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperFocusOutEvent")]
+	public static extern void QFontComboBox_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QFontComboBox_EnterEvent")]
 	public static extern void QFontComboBox_EnterEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnEnterEvent")]
 	public static extern void QFontComboBox_OnEnterEvent(void* self, QFontComboBox_OnEnterEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperEnterEvent")]
+	public static extern void QFontComboBox_SuperEnterEvent(void* self, void** event);
 	[LinkName("QFontComboBox_LeaveEvent")]
 	public static extern void QFontComboBox_LeaveEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnLeaveEvent")]
 	public static extern void QFontComboBox_OnLeaveEvent(void* self, QFontComboBox_OnLeaveEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperLeaveEvent")]
+	public static extern void QFontComboBox_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QFontComboBox_PaintEvent")]
 	public static extern void QFontComboBox_PaintEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnPaintEvent")]
 	public static extern void QFontComboBox_OnPaintEvent(void* self, QFontComboBox_OnPaintEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperPaintEvent")]
+	public static extern void QFontComboBox_SuperPaintEvent(void* self, void** event);
 	[LinkName("QFontComboBox_MoveEvent")]
 	public static extern void QFontComboBox_MoveEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnMoveEvent")]
 	public static extern void QFontComboBox_OnMoveEvent(void* self, QFontComboBox_OnMoveEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperMoveEvent")]
+	public static extern void QFontComboBox_SuperMoveEvent(void* self, void** event);
 	[LinkName("QFontComboBox_ResizeEvent")]
 	public static extern void QFontComboBox_ResizeEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnResizeEvent")]
 	public static extern void QFontComboBox_OnResizeEvent(void* self, QFontComboBox_OnResizeEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperResizeEvent")]
+	public static extern void QFontComboBox_SuperResizeEvent(void* self, void** event);
 	[LinkName("QFontComboBox_CloseEvent")]
 	public static extern void QFontComboBox_CloseEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnCloseEvent")]
 	public static extern void QFontComboBox_OnCloseEvent(void* self, QFontComboBox_OnCloseEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperCloseEvent")]
+	public static extern void QFontComboBox_SuperCloseEvent(void* self, void** event);
 	[LinkName("QFontComboBox_ContextMenuEvent")]
 	public static extern void QFontComboBox_ContextMenuEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnContextMenuEvent")]
 	public static extern void QFontComboBox_OnContextMenuEvent(void* self, QFontComboBox_OnContextMenuEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperContextMenuEvent")]
+	public static extern void QFontComboBox_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QFontComboBox_TabletEvent")]
 	public static extern void QFontComboBox_TabletEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnTabletEvent")]
 	public static extern void QFontComboBox_OnTabletEvent(void* self, QFontComboBox_OnTabletEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperTabletEvent")]
+	public static extern void QFontComboBox_SuperTabletEvent(void* self, void** event);
 	[LinkName("QFontComboBox_ActionEvent")]
 	public static extern void QFontComboBox_ActionEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnActionEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnActionEvent")]
 	public static extern void QFontComboBox_OnActionEvent(void* self, QFontComboBox_OnActionEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperActionEvent")]
+	public static extern void QFontComboBox_SuperActionEvent(void* self, void** event);
 	[LinkName("QFontComboBox_DragEnterEvent")]
 	public static extern void QFontComboBox_DragEnterEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnDragEnterEvent")]
 	public static extern void QFontComboBox_OnDragEnterEvent(void* self, QFontComboBox_OnDragEnterEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperDragEnterEvent")]
+	public static extern void QFontComboBox_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QFontComboBox_DragMoveEvent")]
 	public static extern void QFontComboBox_DragMoveEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnDragMoveEvent")]
 	public static extern void QFontComboBox_OnDragMoveEvent(void* self, QFontComboBox_OnDragMoveEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperDragMoveEvent")]
+	public static extern void QFontComboBox_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QFontComboBox_DragLeaveEvent")]
 	public static extern void QFontComboBox_DragLeaveEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnDragLeaveEvent")]
 	public static extern void QFontComboBox_OnDragLeaveEvent(void* self, QFontComboBox_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperDragLeaveEvent")]
+	public static extern void QFontComboBox_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QFontComboBox_DropEvent")]
 	public static extern void QFontComboBox_DropEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnDropEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnDropEvent")]
 	public static extern void QFontComboBox_OnDropEvent(void* self, QFontComboBox_OnDropEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperDropEvent")]
+	public static extern void QFontComboBox_SuperDropEvent(void* self, void** event);
 	[LinkName("QFontComboBox_ShowEvent")]
 	public static extern void QFontComboBox_ShowEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnShowEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnShowEvent")]
 	public static extern void QFontComboBox_OnShowEvent(void* self, QFontComboBox_OnShowEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperShowEvent")]
+	public static extern void QFontComboBox_SuperShowEvent(void* self, void** event);
 	[LinkName("QFontComboBox_HideEvent")]
 	public static extern void QFontComboBox_HideEvent(void* self, void** event);
 	
 	public function void QFontComboBox_OnHideEvent_action(void* self, void** event);
 	[LinkName("QFontComboBox_OnHideEvent")]
 	public static extern void QFontComboBox_OnHideEvent(void* self, QFontComboBox_OnHideEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperHideEvent")]
+	public static extern void QFontComboBox_SuperHideEvent(void* self, void** event);
 	[LinkName("QFontComboBox_NativeEvent")]
 	public static extern bool QFontComboBox_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QFontComboBox_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QFontComboBox_OnNativeEvent")]
 	public static extern bool QFontComboBox_OnNativeEvent(void* self, QFontComboBox_OnNativeEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperNativeEvent")]
+	public static extern bool QFontComboBox_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QFontComboBox_ChangeEvent")]
 	public static extern void QFontComboBox_ChangeEvent(void* self, void** param1);
 	
 	public function void QFontComboBox_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QFontComboBox_OnChangeEvent")]
 	public static extern void QFontComboBox_OnChangeEvent(void* self, QFontComboBox_OnChangeEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperChangeEvent")]
+	public static extern void QFontComboBox_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QFontComboBox_InputMethodEvent")]
 	public static extern void QFontComboBox_InputMethodEvent(void* self, void** param1);
 	
 	public function void QFontComboBox_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QFontComboBox_OnInputMethodEvent")]
 	public static extern void QFontComboBox_OnInputMethodEvent(void* self, QFontComboBox_OnInputMethodEvent_action _action);
+	
+	[LinkName("QFontComboBox_SuperInputMethodEvent")]
+	public static extern void QFontComboBox_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QFontComboBox_InputMethodQuery")]
 	public static extern void* QFontComboBox_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QFontComboBox_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QFontComboBox_OnInputMethodQuery")]
 	public static extern void* QFontComboBox_OnInputMethodQuery(void* self, QFontComboBox_OnInputMethodQuery_action _action);
+	
+	[LinkName("QFontComboBox_SuperInputMethodQuery")]
+	public static extern void* QFontComboBox_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QFontComboBox_FocusNextPrevChild")]
 	public static extern bool QFontComboBox_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QFontComboBox_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QFontComboBox_OnFocusNextPrevChild")]
 	public static extern bool QFontComboBox_OnFocusNextPrevChild(void* self, QFontComboBox_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QFontComboBox_SuperFocusNextPrevChild")]
+	public static extern bool QFontComboBox_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QFontComboBox_SetModel")]
 	public static extern void QFontComboBox_SetModel(void* self, void** model);
 	
 	public function void QFontComboBox_OnSetModel_action(void* self, void** model);
 	[LinkName("QFontComboBox_OnSetModel")]
 	public static extern void QFontComboBox_OnSetModel(void* self, QFontComboBox_OnSetModel_action _action);
+	
+	[LinkName("QFontComboBox_SuperSetModel")]
+	public static extern void QFontComboBox_SuperSetModel(void* self, void** model);
 	[LinkName("QFontComboBox_ShowPopup")]
 	public static extern void QFontComboBox_ShowPopup(void* self);
 	
 	public function void QFontComboBox_OnShowPopup_action(void* self);
 	[LinkName("QFontComboBox_OnShowPopup")]
 	public static extern void QFontComboBox_OnShowPopup(void* self, QFontComboBox_OnShowPopup_action _action);
+	
+	[LinkName("QFontComboBox_SuperShowPopup")]
+	public static extern void QFontComboBox_SuperShowPopup(void* self);
 	[LinkName("QFontComboBox_HidePopup")]
 	public static extern void QFontComboBox_HidePopup(void* self);
 	
 	public function void QFontComboBox_OnHidePopup_action(void* self);
 	[LinkName("QFontComboBox_OnHidePopup")]
 	public static extern void QFontComboBox_OnHidePopup(void* self, QFontComboBox_OnHidePopup_action _action);
+	
+	[LinkName("QFontComboBox_SuperHidePopup")]
+	public static extern void QFontComboBox_SuperHidePopup(void* self);
 	[LinkName("QFontComboBox_InitStyleOption")]
 	public static extern void QFontComboBox_InitStyleOption(void* self, void** option);
 	
 	public function void QFontComboBox_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QFontComboBox_OnInitStyleOption")]
 	public static extern void QFontComboBox_OnInitStyleOption(void* self, QFontComboBox_OnInitStyleOption_action _action);
+	
+	[LinkName("QFontComboBox_SuperInitStyleOption")]
+	public static extern void QFontComboBox_SuperInitStyleOption(void* self, void** option);
 }
 [AllowDuplicates]
 enum QFontComboBox_FontFilter

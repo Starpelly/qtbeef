@@ -336,6 +336,16 @@ class QSessionManager : IQSessionManager, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QSessionManager_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSessionManager_OnMetaObject);
+		CQt.QSessionManager_OnMetacast(obj.ObjectPtr,  => QtBeef_QSessionManager_OnMetacast);
+		CQt.QSessionManager_OnMetacall(obj.ObjectPtr,  => QtBeef_QSessionManager_OnMetacall);
+		CQt.QSessionManager_OnEvent(obj.ObjectPtr,  => QtBeef_QSessionManager_OnEvent);
+		CQt.QSessionManager_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSessionManager_OnEventFilter);
+		CQt.QSessionManager_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSessionManager_OnTimerEvent);
+		CQt.QSessionManager_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSessionManager_OnChildEvent);
+		CQt.QSessionManager_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSessionManager_OnCustomEvent);
+		CQt.QSessionManager_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSessionManager_OnConnectNotify);
+		CQt.QSessionManager_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSessionManager_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -348,6 +358,56 @@ class QSessionManager : IQSessionManager, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QSessionManager_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSessionManager_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSessionManager_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSessionManager_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSessionManager_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSessionManager_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSessionManager_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSessionManager_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSessionManager_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSessionManager_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QSessionManager_Ptr ptr)
 	{
@@ -673,18 +733,27 @@ extension CQt
 	public function void QSessionManager_OnMetaObject_action(void* self);
 	[LinkName("QSessionManager_OnMetaObject")]
 	public static extern void** QSessionManager_OnMetaObject(void* self, QSessionManager_OnMetaObject_action _action);
+	
+	[LinkName("QSessionManager_SuperMetaObject")]
+	public static extern void** QSessionManager_SuperMetaObject(void* self);
 	[LinkName("QSessionManager_Qt_Metacast")]
 	public static extern void* QSessionManager_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSessionManager_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSessionManager_OnMetacast")]
 	public static extern void* QSessionManager_OnMetacast(void* self, QSessionManager_OnMetacast_action _action);
+	
+	[LinkName("QSessionManager_SuperMetacast")]
+	public static extern void* QSessionManager_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSessionManager_Qt_Metacall")]
 	public static extern c_int QSessionManager_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSessionManager_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSessionManager_OnMetacall")]
 	public static extern c_int QSessionManager_OnMetacall(void* self, QSessionManager_OnMetacall_action _action);
+	
+	[LinkName("QSessionManager_SuperMetacall")]
+	public static extern c_int QSessionManager_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSessionManager_Tr")]
 	public static extern libqt_string QSessionManager_Tr(c_char* s);
 	[LinkName("QSessionManager_SessionId")]
@@ -729,42 +798,63 @@ extension CQt
 	public function void QSessionManager_OnEvent_action(void* self, void** event);
 	[LinkName("QSessionManager_OnEvent")]
 	public static extern bool QSessionManager_OnEvent(void* self, QSessionManager_OnEvent_action _action);
+	
+	[LinkName("QSessionManager_SuperEvent")]
+	public static extern bool QSessionManager_SuperEvent(void* self, void** event);
 	[LinkName("QSessionManager_EventFilter")]
 	public static extern bool QSessionManager_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QSessionManager_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSessionManager_OnEventFilter")]
 	public static extern bool QSessionManager_OnEventFilter(void* self, QSessionManager_OnEventFilter_action _action);
+	
+	[LinkName("QSessionManager_SuperEventFilter")]
+	public static extern bool QSessionManager_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSessionManager_TimerEvent")]
 	public static extern void QSessionManager_TimerEvent(void* self, void** event);
 	
 	public function void QSessionManager_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSessionManager_OnTimerEvent")]
 	public static extern void QSessionManager_OnTimerEvent(void* self, QSessionManager_OnTimerEvent_action _action);
+	
+	[LinkName("QSessionManager_SuperTimerEvent")]
+	public static extern void QSessionManager_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSessionManager_ChildEvent")]
 	public static extern void QSessionManager_ChildEvent(void* self, void** event);
 	
 	public function void QSessionManager_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSessionManager_OnChildEvent")]
 	public static extern void QSessionManager_OnChildEvent(void* self, QSessionManager_OnChildEvent_action _action);
+	
+	[LinkName("QSessionManager_SuperChildEvent")]
+	public static extern void QSessionManager_SuperChildEvent(void* self, void** event);
 	[LinkName("QSessionManager_CustomEvent")]
 	public static extern void QSessionManager_CustomEvent(void* self, void** event);
 	
 	public function void QSessionManager_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSessionManager_OnCustomEvent")]
 	public static extern void QSessionManager_OnCustomEvent(void* self, QSessionManager_OnCustomEvent_action _action);
+	
+	[LinkName("QSessionManager_SuperCustomEvent")]
+	public static extern void QSessionManager_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSessionManager_ConnectNotify")]
 	public static extern void QSessionManager_ConnectNotify(void* self, void** signal);
 	
 	public function void QSessionManager_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSessionManager_OnConnectNotify")]
 	public static extern void QSessionManager_OnConnectNotify(void* self, QSessionManager_OnConnectNotify_action _action);
+	
+	[LinkName("QSessionManager_SuperConnectNotify")]
+	public static extern void QSessionManager_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSessionManager_DisconnectNotify")]
 	public static extern void QSessionManager_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSessionManager_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSessionManager_OnDisconnectNotify")]
 	public static extern void QSessionManager_OnDisconnectNotify(void* self, QSessionManager_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSessionManager_SuperDisconnectNotify")]
+	public static extern void QSessionManager_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QSessionManager_RestartHint

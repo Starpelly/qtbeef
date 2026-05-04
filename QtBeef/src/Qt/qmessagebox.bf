@@ -2000,6 +2000,61 @@ class QMessageBox : IQMessageBox, IQDialog, IQWidget, IQObject, IQPaintDevice
 		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Finished);
 		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Accepted);
 		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Rejected);
+		CQt.QMessageBox_OnMetaObject(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMetaObject);
+		CQt.QMessageBox_OnMetacast(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMetacast);
+		CQt.QMessageBox_OnMetacall(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMetacall);
+		CQt.QMessageBox_OnEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnEvent);
+		CQt.QMessageBox_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnResizeEvent);
+		CQt.QMessageBox_OnShowEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnShowEvent);
+		CQt.QMessageBox_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnCloseEvent);
+		CQt.QMessageBox_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnKeyPressEvent);
+		CQt.QMessageBox_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnChangeEvent);
+		CQt.QMessageBox_OnEventFilter(obj.ObjectPtr,  => QtBeef_QMessageBox_OnEventFilter);
+		CQt.QMessageBox_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnTimerEvent);
+		CQt.QMessageBox_OnChildEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnChildEvent);
+		CQt.QMessageBox_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnCustomEvent);
+		CQt.QMessageBox_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QMessageBox_OnConnectNotify);
+		CQt.QMessageBox_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QMessageBox_OnDisconnectNotify);
+		CQt.QMessageBox_OnDevType(obj.ObjectPtr,  => QtBeef_QMessageBox_OnDevType);
+		CQt.QMessageBox_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QMessageBox_OnPaintEngine);
+		CQt.QMessageBox_OnMetric(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMetric);
+		CQt.QMessageBox_OnInitPainter(obj.ObjectPtr,  => QtBeef_QMessageBox_OnInitPainter);
+		CQt.QMessageBox_OnRedirected(obj.ObjectPtr,  => QtBeef_QMessageBox_OnRedirected);
+		CQt.QMessageBox_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QMessageBox_OnSharedPainter);
+		CQt.QMessageBox_OnSetVisible(obj.ObjectPtr,  => QtBeef_QMessageBox_OnSetVisible);
+		CQt.QMessageBox_OnSizeHint(obj.ObjectPtr,  => QtBeef_QMessageBox_OnSizeHint);
+		CQt.QMessageBox_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMinimumSizeHint);
+		CQt.QMessageBox_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QMessageBox_OnHeightForWidth);
+		CQt.QMessageBox_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QMessageBox_OnHasHeightForWidth);
+		CQt.QMessageBox_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMousePressEvent);
+		CQt.QMessageBox_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMouseReleaseEvent);
+		CQt.QMessageBox_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMouseDoubleClickEvent);
+		CQt.QMessageBox_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMouseMoveEvent);
+		CQt.QMessageBox_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnWheelEvent);
+		CQt.QMessageBox_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnKeyReleaseEvent);
+		CQt.QMessageBox_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnFocusInEvent);
+		CQt.QMessageBox_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnFocusOutEvent);
+		CQt.QMessageBox_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnEnterEvent);
+		CQt.QMessageBox_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnLeaveEvent);
+		CQt.QMessageBox_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnPaintEvent);
+		CQt.QMessageBox_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnMoveEvent);
+		CQt.QMessageBox_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnContextMenuEvent);
+		CQt.QMessageBox_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnTabletEvent);
+		CQt.QMessageBox_OnActionEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnActionEvent);
+		CQt.QMessageBox_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnDragEnterEvent);
+		CQt.QMessageBox_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnDragMoveEvent);
+		CQt.QMessageBox_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnDragLeaveEvent);
+		CQt.QMessageBox_OnDropEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnDropEvent);
+		CQt.QMessageBox_OnHideEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnHideEvent);
+		CQt.QMessageBox_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnNativeEvent);
+		CQt.QMessageBox_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QMessageBox_OnInputMethodEvent);
+		CQt.QMessageBox_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QMessageBox_OnInputMethodQuery);
+		CQt.QMessageBox_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QMessageBox_OnFocusNextPrevChild);
+		CQt.QMessageBox_OnOpen(obj.ObjectPtr,  => QtBeef_QMessageBox_OnOpen);
+		CQt.QMessageBox_OnExec(obj.ObjectPtr,  => QtBeef_QMessageBox_OnExec);
+		CQt.QMessageBox_OnDone(obj.ObjectPtr,  => QtBeef_QMessageBox_OnDone);
+		CQt.QMessageBox_OnAccept(obj.ObjectPtr,  => QtBeef_QMessageBox_OnAccept);
+		CQt.QMessageBox_OnReject(obj.ObjectPtr,  => QtBeef_QMessageBox_OnReject);
 	}
 	public Event<delegate void(void** button)> OnButtonClicked = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -2060,6 +2115,281 @@ class QMessageBox : IQMessageBox, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnRejected.Invoke();
+	}
+	static void QtBeef_QMessageBox_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QMessageBox_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QMessageBox_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QMessageBox_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QMessageBox_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnChangeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QMessageBox_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QMessageBox_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QMessageBox_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QMessageBox_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QMessageBox_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QMessageBox_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QMessageBox_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QMessageBox_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QMessageBox_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QMessageBox_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QMessageBox_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QMessageBox_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QMessageBox_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QMessageBox_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QMessageBox_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QMessageBox_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QMessageBox_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QMessageBox_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QMessageBox_OnOpen(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen();
+	}
+	static void QtBeef_QMessageBox_OnExec(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExec();
+	}
+	static void QtBeef_QMessageBox_OnDone(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDone(param1);
+	}
+	static void QtBeef_QMessageBox_OnAccept(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccept();
+	}
+	static void QtBeef_QMessageBox_OnReject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReject();
 	}
 	public this(QMessageBox_Ptr ptr)
 	{
@@ -4078,18 +4408,27 @@ extension CQt
 	public function void QMessageBox_OnMetaObject_action(void* self);
 	[LinkName("QMessageBox_OnMetaObject")]
 	public static extern void** QMessageBox_OnMetaObject(void* self, QMessageBox_OnMetaObject_action _action);
+	
+	[LinkName("QMessageBox_SuperMetaObject")]
+	public static extern void** QMessageBox_SuperMetaObject(void* self);
 	[LinkName("QMessageBox_Qt_Metacast")]
 	public static extern void* QMessageBox_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QMessageBox_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QMessageBox_OnMetacast")]
 	public static extern void* QMessageBox_OnMetacast(void* self, QMessageBox_OnMetacast_action _action);
+	
+	[LinkName("QMessageBox_SuperMetacast")]
+	public static extern void* QMessageBox_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QMessageBox_Qt_Metacall")]
 	public static extern c_int QMessageBox_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QMessageBox_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QMessageBox_OnMetacall")]
 	public static extern c_int QMessageBox_OnMetacall(void* self, QMessageBox_OnMetacall_action _action);
+	
+	[LinkName("QMessageBox_SuperMetacall")]
+	public static extern c_int QMessageBox_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QMessageBox_Tr")]
 	public static extern libqt_string QMessageBox_Tr(c_char* s);
 	[LinkName("QMessageBox_AddButton")]
@@ -4216,36 +4555,54 @@ extension CQt
 	public function void QMessageBox_OnEvent_action(void* self, void** e);
 	[LinkName("QMessageBox_OnEvent")]
 	public static extern bool QMessageBox_OnEvent(void* self, QMessageBox_OnEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperEvent")]
+	public static extern bool QMessageBox_SuperEvent(void* self, void** e);
 	[LinkName("QMessageBox_ResizeEvent")]
 	public static extern void QMessageBox_ResizeEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnResizeEvent")]
 	public static extern void QMessageBox_OnResizeEvent(void* self, QMessageBox_OnResizeEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperResizeEvent")]
+	public static extern void QMessageBox_SuperResizeEvent(void* self, void** event);
 	[LinkName("QMessageBox_ShowEvent")]
 	public static extern void QMessageBox_ShowEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnShowEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnShowEvent")]
 	public static extern void QMessageBox_OnShowEvent(void* self, QMessageBox_OnShowEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperShowEvent")]
+	public static extern void QMessageBox_SuperShowEvent(void* self, void** event);
 	[LinkName("QMessageBox_CloseEvent")]
 	public static extern void QMessageBox_CloseEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnCloseEvent")]
 	public static extern void QMessageBox_OnCloseEvent(void* self, QMessageBox_OnCloseEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperCloseEvent")]
+	public static extern void QMessageBox_SuperCloseEvent(void* self, void** event);
 	[LinkName("QMessageBox_KeyPressEvent")]
 	public static extern void QMessageBox_KeyPressEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnKeyPressEvent")]
 	public static extern void QMessageBox_OnKeyPressEvent(void* self, QMessageBox_OnKeyPressEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperKeyPressEvent")]
+	public static extern void QMessageBox_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QMessageBox_ChangeEvent")]
 	public static extern void QMessageBox_ChangeEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnChangeEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnChangeEvent")]
 	public static extern void QMessageBox_OnChangeEvent(void* self, QMessageBox_OnChangeEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperChangeEvent")]
+	public static extern void QMessageBox_SuperChangeEvent(void* self, void** event);
 	[LinkName("QMessageBox_Tr2")]
 	public static extern libqt_string QMessageBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QMessageBox_Tr3")]
@@ -4320,276 +4677,414 @@ extension CQt
 	public function void QMessageBox_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QMessageBox_OnEventFilter")]
 	public static extern bool QMessageBox_OnEventFilter(void* self, QMessageBox_OnEventFilter_action _action);
+	
+	[LinkName("QMessageBox_SuperEventFilter")]
+	public static extern bool QMessageBox_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QMessageBox_TimerEvent")]
 	public static extern void QMessageBox_TimerEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnTimerEvent")]
 	public static extern void QMessageBox_OnTimerEvent(void* self, QMessageBox_OnTimerEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperTimerEvent")]
+	public static extern void QMessageBox_SuperTimerEvent(void* self, void** event);
 	[LinkName("QMessageBox_ChildEvent")]
 	public static extern void QMessageBox_ChildEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnChildEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnChildEvent")]
 	public static extern void QMessageBox_OnChildEvent(void* self, QMessageBox_OnChildEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperChildEvent")]
+	public static extern void QMessageBox_SuperChildEvent(void* self, void** event);
 	[LinkName("QMessageBox_CustomEvent")]
 	public static extern void QMessageBox_CustomEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnCustomEvent")]
 	public static extern void QMessageBox_OnCustomEvent(void* self, QMessageBox_OnCustomEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperCustomEvent")]
+	public static extern void QMessageBox_SuperCustomEvent(void* self, void** event);
 	[LinkName("QMessageBox_ConnectNotify")]
 	public static extern void QMessageBox_ConnectNotify(void* self, void** signal);
 	
 	public function void QMessageBox_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QMessageBox_OnConnectNotify")]
 	public static extern void QMessageBox_OnConnectNotify(void* self, QMessageBox_OnConnectNotify_action _action);
+	
+	[LinkName("QMessageBox_SuperConnectNotify")]
+	public static extern void QMessageBox_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QMessageBox_DisconnectNotify")]
 	public static extern void QMessageBox_DisconnectNotify(void* self, void** signal);
 	
 	public function void QMessageBox_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QMessageBox_OnDisconnectNotify")]
 	public static extern void QMessageBox_OnDisconnectNotify(void* self, QMessageBox_OnDisconnectNotify_action _action);
+	
+	[LinkName("QMessageBox_SuperDisconnectNotify")]
+	public static extern void QMessageBox_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QMessageBox_DevType")]
 	public static extern c_int QMessageBox_DevType(void* self);
 	
 	public function void QMessageBox_OnDevType_action(void* self);
 	[LinkName("QMessageBox_OnDevType")]
 	public static extern c_int QMessageBox_OnDevType(void* self, QMessageBox_OnDevType_action _action);
+	
+	[LinkName("QMessageBox_SuperDevType")]
+	public static extern c_int QMessageBox_SuperDevType(void* self);
 	[LinkName("QMessageBox_PaintEngine")]
 	public static extern void** QMessageBox_PaintEngine(void* self);
 	
 	public function void QMessageBox_OnPaintEngine_action(void* self);
 	[LinkName("QMessageBox_OnPaintEngine")]
 	public static extern void** QMessageBox_OnPaintEngine(void* self, QMessageBox_OnPaintEngine_action _action);
+	
+	[LinkName("QMessageBox_SuperPaintEngine")]
+	public static extern void** QMessageBox_SuperPaintEngine(void* self);
 	[LinkName("QMessageBox_Metric")]
 	public static extern c_int QMessageBox_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QMessageBox_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QMessageBox_OnMetric")]
 	public static extern c_int QMessageBox_OnMetric(void* self, QMessageBox_OnMetric_action _action);
+	
+	[LinkName("QMessageBox_SuperMetric")]
+	public static extern c_int QMessageBox_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QMessageBox_InitPainter")]
 	public static extern void QMessageBox_InitPainter(void* self, void** painter);
 	
 	public function void QMessageBox_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QMessageBox_OnInitPainter")]
 	public static extern void QMessageBox_OnInitPainter(void* self, QMessageBox_OnInitPainter_action _action);
+	
+	[LinkName("QMessageBox_SuperInitPainter")]
+	public static extern void QMessageBox_SuperInitPainter(void* self, void** painter);
 	[LinkName("QMessageBox_Redirected")]
 	public static extern void** QMessageBox_Redirected(void* self, void** offset);
 	
 	public function void QMessageBox_OnRedirected_action(void* self, void** offset);
 	[LinkName("QMessageBox_OnRedirected")]
 	public static extern void** QMessageBox_OnRedirected(void* self, QMessageBox_OnRedirected_action _action);
+	
+	[LinkName("QMessageBox_SuperRedirected")]
+	public static extern void** QMessageBox_SuperRedirected(void* self, void** offset);
 	[LinkName("QMessageBox_SharedPainter")]
 	public static extern void** QMessageBox_SharedPainter(void* self);
 	
 	public function void QMessageBox_OnSharedPainter_action(void* self);
 	[LinkName("QMessageBox_OnSharedPainter")]
 	public static extern void** QMessageBox_OnSharedPainter(void* self, QMessageBox_OnSharedPainter_action _action);
+	
+	[LinkName("QMessageBox_SuperSharedPainter")]
+	public static extern void** QMessageBox_SuperSharedPainter(void* self);
 	[LinkName("QMessageBox_SetVisible")]
 	public static extern void QMessageBox_SetVisible(void* self, bool visible);
 	
 	public function void QMessageBox_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QMessageBox_OnSetVisible")]
 	public static extern void QMessageBox_OnSetVisible(void* self, QMessageBox_OnSetVisible_action _action);
+	
+	[LinkName("QMessageBox_SuperSetVisible")]
+	public static extern void QMessageBox_SuperSetVisible(void* self, bool visible);
 	[LinkName("QMessageBox_SizeHint")]
 	public static extern void* QMessageBox_SizeHint(void* self);
 	
 	public function void QMessageBox_OnSizeHint_action(void* self);
 	[LinkName("QMessageBox_OnSizeHint")]
 	public static extern void* QMessageBox_OnSizeHint(void* self, QMessageBox_OnSizeHint_action _action);
+	
+	[LinkName("QMessageBox_SuperSizeHint")]
+	public static extern void* QMessageBox_SuperSizeHint(void* self);
 	[LinkName("QMessageBox_MinimumSizeHint")]
 	public static extern void* QMessageBox_MinimumSizeHint(void* self);
 	
 	public function void QMessageBox_OnMinimumSizeHint_action(void* self);
 	[LinkName("QMessageBox_OnMinimumSizeHint")]
 	public static extern void* QMessageBox_OnMinimumSizeHint(void* self, QMessageBox_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QMessageBox_SuperMinimumSizeHint")]
+	public static extern void* QMessageBox_SuperMinimumSizeHint(void* self);
 	[LinkName("QMessageBox_HeightForWidth")]
 	public static extern c_int QMessageBox_HeightForWidth(void* self, c_int param1);
 	
 	public function void QMessageBox_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QMessageBox_OnHeightForWidth")]
 	public static extern c_int QMessageBox_OnHeightForWidth(void* self, QMessageBox_OnHeightForWidth_action _action);
+	
+	[LinkName("QMessageBox_SuperHeightForWidth")]
+	public static extern c_int QMessageBox_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QMessageBox_HasHeightForWidth")]
 	public static extern bool QMessageBox_HasHeightForWidth(void* self);
 	
 	public function void QMessageBox_OnHasHeightForWidth_action(void* self);
 	[LinkName("QMessageBox_OnHasHeightForWidth")]
 	public static extern bool QMessageBox_OnHasHeightForWidth(void* self, QMessageBox_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QMessageBox_SuperHasHeightForWidth")]
+	public static extern bool QMessageBox_SuperHasHeightForWidth(void* self);
 	[LinkName("QMessageBox_MousePressEvent")]
 	public static extern void QMessageBox_MousePressEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnMousePressEvent")]
 	public static extern void QMessageBox_OnMousePressEvent(void* self, QMessageBox_OnMousePressEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperMousePressEvent")]
+	public static extern void QMessageBox_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QMessageBox_MouseReleaseEvent")]
 	public static extern void QMessageBox_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnMouseReleaseEvent")]
 	public static extern void QMessageBox_OnMouseReleaseEvent(void* self, QMessageBox_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperMouseReleaseEvent")]
+	public static extern void QMessageBox_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QMessageBox_MouseDoubleClickEvent")]
 	public static extern void QMessageBox_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnMouseDoubleClickEvent")]
 	public static extern void QMessageBox_OnMouseDoubleClickEvent(void* self, QMessageBox_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperMouseDoubleClickEvent")]
+	public static extern void QMessageBox_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QMessageBox_MouseMoveEvent")]
 	public static extern void QMessageBox_MouseMoveEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnMouseMoveEvent")]
 	public static extern void QMessageBox_OnMouseMoveEvent(void* self, QMessageBox_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperMouseMoveEvent")]
+	public static extern void QMessageBox_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QMessageBox_WheelEvent")]
 	public static extern void QMessageBox_WheelEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnWheelEvent")]
 	public static extern void QMessageBox_OnWheelEvent(void* self, QMessageBox_OnWheelEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperWheelEvent")]
+	public static extern void QMessageBox_SuperWheelEvent(void* self, void** event);
 	[LinkName("QMessageBox_KeyReleaseEvent")]
 	public static extern void QMessageBox_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnKeyReleaseEvent")]
 	public static extern void QMessageBox_OnKeyReleaseEvent(void* self, QMessageBox_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperKeyReleaseEvent")]
+	public static extern void QMessageBox_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QMessageBox_FocusInEvent")]
 	public static extern void QMessageBox_FocusInEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnFocusInEvent")]
 	public static extern void QMessageBox_OnFocusInEvent(void* self, QMessageBox_OnFocusInEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperFocusInEvent")]
+	public static extern void QMessageBox_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QMessageBox_FocusOutEvent")]
 	public static extern void QMessageBox_FocusOutEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnFocusOutEvent")]
 	public static extern void QMessageBox_OnFocusOutEvent(void* self, QMessageBox_OnFocusOutEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperFocusOutEvent")]
+	public static extern void QMessageBox_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QMessageBox_EnterEvent")]
 	public static extern void QMessageBox_EnterEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnEnterEvent")]
 	public static extern void QMessageBox_OnEnterEvent(void* self, QMessageBox_OnEnterEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperEnterEvent")]
+	public static extern void QMessageBox_SuperEnterEvent(void* self, void** event);
 	[LinkName("QMessageBox_LeaveEvent")]
 	public static extern void QMessageBox_LeaveEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnLeaveEvent")]
 	public static extern void QMessageBox_OnLeaveEvent(void* self, QMessageBox_OnLeaveEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperLeaveEvent")]
+	public static extern void QMessageBox_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QMessageBox_PaintEvent")]
 	public static extern void QMessageBox_PaintEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnPaintEvent")]
 	public static extern void QMessageBox_OnPaintEvent(void* self, QMessageBox_OnPaintEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperPaintEvent")]
+	public static extern void QMessageBox_SuperPaintEvent(void* self, void** event);
 	[LinkName("QMessageBox_MoveEvent")]
 	public static extern void QMessageBox_MoveEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnMoveEvent")]
 	public static extern void QMessageBox_OnMoveEvent(void* self, QMessageBox_OnMoveEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperMoveEvent")]
+	public static extern void QMessageBox_SuperMoveEvent(void* self, void** event);
 	[LinkName("QMessageBox_ContextMenuEvent")]
 	public static extern void QMessageBox_ContextMenuEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnContextMenuEvent")]
 	public static extern void QMessageBox_OnContextMenuEvent(void* self, QMessageBox_OnContextMenuEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperContextMenuEvent")]
+	public static extern void QMessageBox_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QMessageBox_TabletEvent")]
 	public static extern void QMessageBox_TabletEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnTabletEvent")]
 	public static extern void QMessageBox_OnTabletEvent(void* self, QMessageBox_OnTabletEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperTabletEvent")]
+	public static extern void QMessageBox_SuperTabletEvent(void* self, void** event);
 	[LinkName("QMessageBox_ActionEvent")]
 	public static extern void QMessageBox_ActionEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnActionEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnActionEvent")]
 	public static extern void QMessageBox_OnActionEvent(void* self, QMessageBox_OnActionEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperActionEvent")]
+	public static extern void QMessageBox_SuperActionEvent(void* self, void** event);
 	[LinkName("QMessageBox_DragEnterEvent")]
 	public static extern void QMessageBox_DragEnterEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnDragEnterEvent")]
 	public static extern void QMessageBox_OnDragEnterEvent(void* self, QMessageBox_OnDragEnterEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperDragEnterEvent")]
+	public static extern void QMessageBox_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QMessageBox_DragMoveEvent")]
 	public static extern void QMessageBox_DragMoveEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnDragMoveEvent")]
 	public static extern void QMessageBox_OnDragMoveEvent(void* self, QMessageBox_OnDragMoveEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperDragMoveEvent")]
+	public static extern void QMessageBox_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QMessageBox_DragLeaveEvent")]
 	public static extern void QMessageBox_DragLeaveEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnDragLeaveEvent")]
 	public static extern void QMessageBox_OnDragLeaveEvent(void* self, QMessageBox_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperDragLeaveEvent")]
+	public static extern void QMessageBox_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QMessageBox_DropEvent")]
 	public static extern void QMessageBox_DropEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnDropEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnDropEvent")]
 	public static extern void QMessageBox_OnDropEvent(void* self, QMessageBox_OnDropEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperDropEvent")]
+	public static extern void QMessageBox_SuperDropEvent(void* self, void** event);
 	[LinkName("QMessageBox_HideEvent")]
 	public static extern void QMessageBox_HideEvent(void* self, void** event);
 	
 	public function void QMessageBox_OnHideEvent_action(void* self, void** event);
 	[LinkName("QMessageBox_OnHideEvent")]
 	public static extern void QMessageBox_OnHideEvent(void* self, QMessageBox_OnHideEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperHideEvent")]
+	public static extern void QMessageBox_SuperHideEvent(void* self, void** event);
 	[LinkName("QMessageBox_NativeEvent")]
 	public static extern bool QMessageBox_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QMessageBox_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QMessageBox_OnNativeEvent")]
 	public static extern bool QMessageBox_OnNativeEvent(void* self, QMessageBox_OnNativeEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperNativeEvent")]
+	public static extern bool QMessageBox_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QMessageBox_InputMethodEvent")]
 	public static extern void QMessageBox_InputMethodEvent(void* self, void** param1);
 	
 	public function void QMessageBox_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QMessageBox_OnInputMethodEvent")]
 	public static extern void QMessageBox_OnInputMethodEvent(void* self, QMessageBox_OnInputMethodEvent_action _action);
+	
+	[LinkName("QMessageBox_SuperInputMethodEvent")]
+	public static extern void QMessageBox_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QMessageBox_InputMethodQuery")]
 	public static extern void* QMessageBox_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QMessageBox_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QMessageBox_OnInputMethodQuery")]
 	public static extern void* QMessageBox_OnInputMethodQuery(void* self, QMessageBox_OnInputMethodQuery_action _action);
+	
+	[LinkName("QMessageBox_SuperInputMethodQuery")]
+	public static extern void* QMessageBox_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QMessageBox_FocusNextPrevChild")]
 	public static extern bool QMessageBox_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QMessageBox_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QMessageBox_OnFocusNextPrevChild")]
 	public static extern bool QMessageBox_OnFocusNextPrevChild(void* self, QMessageBox_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QMessageBox_SuperFocusNextPrevChild")]
+	public static extern bool QMessageBox_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QMessageBox_Open")]
 	public static extern void QMessageBox_Open(void* self);
 	
 	public function void QMessageBox_OnOpen_action(void* self);
 	[LinkName("QMessageBox_OnOpen")]
 	public static extern void QMessageBox_OnOpen(void* self, QMessageBox_OnOpen_action _action);
+	
+	[LinkName("QMessageBox_SuperOpen")]
+	public static extern void QMessageBox_SuperOpen(void* self);
 	[LinkName("QMessageBox_Exec")]
 	public static extern c_int QMessageBox_Exec(void* self);
 	
 	public function void QMessageBox_OnExec_action(void* self);
 	[LinkName("QMessageBox_OnExec")]
 	public static extern c_int QMessageBox_OnExec(void* self, QMessageBox_OnExec_action _action);
+	
+	[LinkName("QMessageBox_SuperExec")]
+	public static extern c_int QMessageBox_SuperExec(void* self);
 	[LinkName("QMessageBox_Done")]
 	public static extern void QMessageBox_Done(void* self, c_int param1);
 	
 	public function void QMessageBox_OnDone_action(void* self, c_int param1);
 	[LinkName("QMessageBox_OnDone")]
 	public static extern void QMessageBox_OnDone(void* self, QMessageBox_OnDone_action _action);
+	
+	[LinkName("QMessageBox_SuperDone")]
+	public static extern void QMessageBox_SuperDone(void* self, c_int param1);
 	[LinkName("QMessageBox_Accept")]
 	public static extern void QMessageBox_Accept(void* self);
 	
 	public function void QMessageBox_OnAccept_action(void* self);
 	[LinkName("QMessageBox_OnAccept")]
 	public static extern void QMessageBox_OnAccept(void* self, QMessageBox_OnAccept_action _action);
+	
+	[LinkName("QMessageBox_SuperAccept")]
+	public static extern void QMessageBox_SuperAccept(void* self);
 	[LinkName("QMessageBox_Reject")]
 	public static extern void QMessageBox_Reject(void* self);
 	
 	public function void QMessageBox_OnReject_action(void* self);
 	[LinkName("QMessageBox_OnReject")]
 	public static extern void QMessageBox_OnReject(void* self, QMessageBox_OnReject_action _action);
+	
+	[LinkName("QMessageBox_SuperReject")]
+	public static extern void QMessageBox_SuperReject(void* self);
 }
 [AllowDuplicates]
 enum QMessageBox_Icon

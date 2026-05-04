@@ -341,6 +341,19 @@ class QGraphicsEffect : IQGraphicsEffect, IQObject
 		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_Connect_EnabledChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGraphicsEffect_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnMetaObject);
+		CQt.QGraphicsEffect_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnMetacast);
+		CQt.QGraphicsEffect_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnMetacall);
+		CQt.QGraphicsEffect_OnBoundingRectFor(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnBoundingRectFor);
+		CQt.QGraphicsEffect_OnDraw(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnDraw);
+		CQt.QGraphicsEffect_OnSourceChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnSourceChanged);
+		CQt.QGraphicsEffect_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnEvent);
+		CQt.QGraphicsEffect_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnEventFilter);
+		CQt.QGraphicsEffect_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnTimerEvent);
+		CQt.QGraphicsEffect_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnChildEvent);
+		CQt.QGraphicsEffect_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnCustomEvent);
+		CQt.QGraphicsEffect_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnConnectNotify);
+		CQt.QGraphicsEffect_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_OnDisconnectNotify);
 	}
 	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -359,6 +372,71 @@ class QGraphicsEffect : IQGraphicsEffect, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGraphicsEffect_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsEffect_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsEffect_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsEffect_OnBoundingRectFor(void* ptr, void** sourceRect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBoundingRectFor(sourceRect);
+	}
+	static void QtBeef_QGraphicsEffect_OnDraw(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDraw(painter);
+	}
+	static void QtBeef_QGraphicsEffect_OnSourceChanged(void* ptr, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSourceChanged(flags);
+	}
+	static void QtBeef_QGraphicsEffect_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsEffect_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsEffect_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsEffect_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsEffect_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsEffect_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsEffect_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QGraphicsEffect_Ptr ptr)
 	{
@@ -706,18 +784,27 @@ extension CQt
 	public function void QGraphicsEffect_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsEffect_OnMetaObject")]
 	public static extern void** QGraphicsEffect_OnMetaObject(void* self, QGraphicsEffect_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperMetaObject")]
+	public static extern void** QGraphicsEffect_SuperMetaObject(void* self);
 	[LinkName("QGraphicsEffect_Qt_Metacast")]
 	public static extern void* QGraphicsEffect_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsEffect_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsEffect_OnMetacast")]
 	public static extern void* QGraphicsEffect_OnMetacast(void* self, QGraphicsEffect_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperMetacast")]
+	public static extern void* QGraphicsEffect_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsEffect_OnMetacall")]
 	public static extern c_int QGraphicsEffect_OnMetacall(void* self, QGraphicsEffect_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperMetacall")]
+	public static extern c_int QGraphicsEffect_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsEffect_Tr")]
 	public static extern libqt_string QGraphicsEffect_Tr(c_char* s);
 	[LinkName("QGraphicsEffect_BoundingRectFor")]
@@ -726,6 +813,9 @@ extension CQt
 	public function void QGraphicsEffect_OnBoundingRectFor_action(void* self, void** sourceRect);
 	[LinkName("QGraphicsEffect_OnBoundingRectFor")]
 	public static extern void* QGraphicsEffect_OnBoundingRectFor(void* self, QGraphicsEffect_OnBoundingRectFor_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperBoundingRectFor")]
+	public static extern void* QGraphicsEffect_SuperBoundingRectFor(void* self, void** sourceRect);
 	[LinkName("QGraphicsEffect_BoundingRect")]
 	public static extern void* QGraphicsEffect_BoundingRect(void* self);
 	[LinkName("QGraphicsEffect_IsEnabled")]
@@ -746,12 +836,18 @@ extension CQt
 	public function void QGraphicsEffect_OnDraw_action(void* self, void** painter);
 	[LinkName("QGraphicsEffect_OnDraw")]
 	public static extern void QGraphicsEffect_OnDraw(void* self, QGraphicsEffect_OnDraw_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperDraw")]
+	public static extern void QGraphicsEffect_SuperDraw(void* self, void** painter);
 	[LinkName("QGraphicsEffect_SourceChanged")]
 	public static extern void QGraphicsEffect_SourceChanged(void* self, void* flags);
 	
 	public function void QGraphicsEffect_OnSourceChanged_action(void* self, void* flags);
 	[LinkName("QGraphicsEffect_OnSourceChanged")]
 	public static extern void QGraphicsEffect_OnSourceChanged(void* self, QGraphicsEffect_OnSourceChanged_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperSourceChanged")]
+	public static extern void QGraphicsEffect_SuperSourceChanged(void* self, void* flags);
 	[LinkName("QGraphicsEffect_UpdateBoundingRect")]
 	public static extern void QGraphicsEffect_UpdateBoundingRect(void* self);
 	[LinkName("QGraphicsEffect_SourceIsPixmap")]
@@ -780,42 +876,63 @@ extension CQt
 	public function void QGraphicsEffect_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsEffect_OnEvent")]
 	public static extern bool QGraphicsEffect_OnEvent(void* self, QGraphicsEffect_OnEvent_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperEvent")]
+	public static extern bool QGraphicsEffect_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsEffect_EventFilter")]
 	public static extern bool QGraphicsEffect_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsEffect_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsEffect_OnEventFilter")]
 	public static extern bool QGraphicsEffect_OnEventFilter(void* self, QGraphicsEffect_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperEventFilter")]
+	public static extern bool QGraphicsEffect_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsEffect_TimerEvent")]
 	public static extern void QGraphicsEffect_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsEffect_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsEffect_OnTimerEvent")]
 	public static extern void QGraphicsEffect_OnTimerEvent(void* self, QGraphicsEffect_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperTimerEvent")]
+	public static extern void QGraphicsEffect_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsEffect_ChildEvent")]
 	public static extern void QGraphicsEffect_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsEffect_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsEffect_OnChildEvent")]
 	public static extern void QGraphicsEffect_OnChildEvent(void* self, QGraphicsEffect_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperChildEvent")]
+	public static extern void QGraphicsEffect_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsEffect_CustomEvent")]
 	public static extern void QGraphicsEffect_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsEffect_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsEffect_OnCustomEvent")]
 	public static extern void QGraphicsEffect_OnCustomEvent(void* self, QGraphicsEffect_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperCustomEvent")]
+	public static extern void QGraphicsEffect_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsEffect_ConnectNotify")]
 	public static extern void QGraphicsEffect_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsEffect_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsEffect_OnConnectNotify")]
 	public static extern void QGraphicsEffect_OnConnectNotify(void* self, QGraphicsEffect_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperConnectNotify")]
+	public static extern void QGraphicsEffect_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsEffect_DisconnectNotify")]
 	public static extern void QGraphicsEffect_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsEffect_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsEffect_OnDisconnectNotify")]
 	public static extern void QGraphicsEffect_OnDisconnectNotify(void* self, QGraphicsEffect_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsEffect_SuperDisconnectNotify")]
+	public static extern void QGraphicsEffect_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QGraphicsColorizeEffect
@@ -1181,6 +1298,19 @@ class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQOb
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
 		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_Connect_EnabledChanged);
+		CQt.QGraphicsColorizeEffect_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnMetaObject);
+		CQt.QGraphicsColorizeEffect_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnMetacast);
+		CQt.QGraphicsColorizeEffect_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnMetacall);
+		CQt.QGraphicsColorizeEffect_OnDraw(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnDraw);
+		CQt.QGraphicsColorizeEffect_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnEvent);
+		CQt.QGraphicsColorizeEffect_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnEventFilter);
+		CQt.QGraphicsColorizeEffect_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnTimerEvent);
+		CQt.QGraphicsColorizeEffect_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnChildEvent);
+		CQt.QGraphicsColorizeEffect_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnCustomEvent);
+		CQt.QGraphicsColorizeEffect_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnConnectNotify);
+		CQt.QGraphicsColorizeEffect_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnDisconnectNotify);
+		CQt.QGraphicsColorizeEffect_OnBoundingRectFor(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnBoundingRectFor);
+		CQt.QGraphicsColorizeEffect_OnSourceChanged(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_OnSourceChanged);
 	}
 	public Event<delegate void(void** color)> OnColorChanged = .() ~ _.Dispose();
 	public Event<delegate void(double strength)> OnStrengthChanged = .() ~ _.Dispose();
@@ -1211,6 +1341,71 @@ class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQOb
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnDraw(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDraw(painter);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnBoundingRectFor(void* ptr, void** sourceRect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBoundingRectFor(sourceRect);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_OnSourceChanged(void* ptr, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSourceChanged(flags);
 	}
 	public this(QGraphicsColorizeEffect_Ptr ptr)
 	{
@@ -1582,18 +1777,27 @@ extension CQt
 	public function void QGraphicsColorizeEffect_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsColorizeEffect_OnMetaObject")]
 	public static extern void** QGraphicsColorizeEffect_OnMetaObject(void* self, QGraphicsColorizeEffect_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperMetaObject")]
+	public static extern void** QGraphicsColorizeEffect_SuperMetaObject(void* self);
 	[LinkName("QGraphicsColorizeEffect_Qt_Metacast")]
 	public static extern void* QGraphicsColorizeEffect_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsColorizeEffect_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsColorizeEffect_OnMetacast")]
 	public static extern void* QGraphicsColorizeEffect_OnMetacast(void* self, QGraphicsColorizeEffect_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperMetacast")]
+	public static extern void* QGraphicsColorizeEffect_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsColorizeEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsColorizeEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsColorizeEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsColorizeEffect_OnMetacall")]
 	public static extern c_int QGraphicsColorizeEffect_OnMetacall(void* self, QGraphicsColorizeEffect_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperMetacall")]
+	public static extern c_int QGraphicsColorizeEffect_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsColorizeEffect_Tr")]
 	public static extern libqt_string QGraphicsColorizeEffect_Tr(c_char* s);
 	[LinkName("QGraphicsColorizeEffect_Color")]
@@ -1622,6 +1826,9 @@ extension CQt
 	public function void QGraphicsColorizeEffect_OnDraw_action(void* self, void** painter);
 	[LinkName("QGraphicsColorizeEffect_OnDraw")]
 	public static extern void QGraphicsColorizeEffect_OnDraw(void* self, QGraphicsColorizeEffect_OnDraw_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperDraw")]
+	public static extern void QGraphicsColorizeEffect_SuperDraw(void* self, void** painter);
 	[LinkName("QGraphicsColorizeEffect_Tr2")]
 	public static extern libqt_string QGraphicsColorizeEffect_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsColorizeEffect_Tr3")]
@@ -1632,54 +1839,81 @@ extension CQt
 	public function void QGraphicsColorizeEffect_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsColorizeEffect_OnEvent")]
 	public static extern bool QGraphicsColorizeEffect_OnEvent(void* self, QGraphicsColorizeEffect_OnEvent_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperEvent")]
+	public static extern bool QGraphicsColorizeEffect_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsColorizeEffect_EventFilter")]
 	public static extern bool QGraphicsColorizeEffect_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsColorizeEffect_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsColorizeEffect_OnEventFilter")]
 	public static extern bool QGraphicsColorizeEffect_OnEventFilter(void* self, QGraphicsColorizeEffect_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperEventFilter")]
+	public static extern bool QGraphicsColorizeEffect_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsColorizeEffect_TimerEvent")]
 	public static extern void QGraphicsColorizeEffect_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsColorizeEffect_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsColorizeEffect_OnTimerEvent")]
 	public static extern void QGraphicsColorizeEffect_OnTimerEvent(void* self, QGraphicsColorizeEffect_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperTimerEvent")]
+	public static extern void QGraphicsColorizeEffect_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsColorizeEffect_ChildEvent")]
 	public static extern void QGraphicsColorizeEffect_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsColorizeEffect_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsColorizeEffect_OnChildEvent")]
 	public static extern void QGraphicsColorizeEffect_OnChildEvent(void* self, QGraphicsColorizeEffect_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperChildEvent")]
+	public static extern void QGraphicsColorizeEffect_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsColorizeEffect_CustomEvent")]
 	public static extern void QGraphicsColorizeEffect_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsColorizeEffect_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsColorizeEffect_OnCustomEvent")]
 	public static extern void QGraphicsColorizeEffect_OnCustomEvent(void* self, QGraphicsColorizeEffect_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperCustomEvent")]
+	public static extern void QGraphicsColorizeEffect_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsColorizeEffect_ConnectNotify")]
 	public static extern void QGraphicsColorizeEffect_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsColorizeEffect_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsColorizeEffect_OnConnectNotify")]
 	public static extern void QGraphicsColorizeEffect_OnConnectNotify(void* self, QGraphicsColorizeEffect_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperConnectNotify")]
+	public static extern void QGraphicsColorizeEffect_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsColorizeEffect_DisconnectNotify")]
 	public static extern void QGraphicsColorizeEffect_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsColorizeEffect_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsColorizeEffect_OnDisconnectNotify")]
 	public static extern void QGraphicsColorizeEffect_OnDisconnectNotify(void* self, QGraphicsColorizeEffect_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperDisconnectNotify")]
+	public static extern void QGraphicsColorizeEffect_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsColorizeEffect_BoundingRectFor")]
 	public static extern void* QGraphicsColorizeEffect_BoundingRectFor(void* self, void** sourceRect);
 	
 	public function void QGraphicsColorizeEffect_OnBoundingRectFor_action(void* self, void** sourceRect);
 	[LinkName("QGraphicsColorizeEffect_OnBoundingRectFor")]
 	public static extern void* QGraphicsColorizeEffect_OnBoundingRectFor(void* self, QGraphicsColorizeEffect_OnBoundingRectFor_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperBoundingRectFor")]
+	public static extern void* QGraphicsColorizeEffect_SuperBoundingRectFor(void* self, void** sourceRect);
 	[LinkName("QGraphicsColorizeEffect_SourceChanged")]
 	public static extern void QGraphicsColorizeEffect_SourceChanged(void* self, void* flags);
 	
 	public function void QGraphicsColorizeEffect_OnSourceChanged_action(void* self, void* flags);
 	[LinkName("QGraphicsColorizeEffect_OnSourceChanged")]
 	public static extern void QGraphicsColorizeEffect_OnSourceChanged(void* self, QGraphicsColorizeEffect_OnSourceChanged_action _action);
+	
+	[LinkName("QGraphicsColorizeEffect_SuperSourceChanged")]
+	public static extern void QGraphicsColorizeEffect_SuperSourceChanged(void* self, void* flags);
 }
 // --------------------------------------------------------------
 // QGraphicsBlurEffect
@@ -2045,6 +2279,19 @@ class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
 		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_Connect_EnabledChanged);
+		CQt.QGraphicsBlurEffect_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnMetaObject);
+		CQt.QGraphicsBlurEffect_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnMetacast);
+		CQt.QGraphicsBlurEffect_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnMetacall);
+		CQt.QGraphicsBlurEffect_OnBoundingRectFor(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnBoundingRectFor);
+		CQt.QGraphicsBlurEffect_OnDraw(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnDraw);
+		CQt.QGraphicsBlurEffect_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnEvent);
+		CQt.QGraphicsBlurEffect_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnEventFilter);
+		CQt.QGraphicsBlurEffect_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnTimerEvent);
+		CQt.QGraphicsBlurEffect_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnChildEvent);
+		CQt.QGraphicsBlurEffect_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnCustomEvent);
+		CQt.QGraphicsBlurEffect_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnConnectNotify);
+		CQt.QGraphicsBlurEffect_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnDisconnectNotify);
+		CQt.QGraphicsBlurEffect_OnSourceChanged(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_OnSourceChanged);
 	}
 	public Event<delegate void(double blurRadius)> OnBlurRadiusChanged = .() ~ _.Dispose();
 	public Event<delegate void(void* hints)> OnBlurHintsChanged = .() ~ _.Dispose();
@@ -2075,6 +2322,71 @@ class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnBoundingRectFor(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBoundingRectFor(rect);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnDraw(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDraw(painter);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsBlurEffect_OnSourceChanged(void* ptr, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSourceChanged(flags);
 	}
 	public this(QGraphicsBlurEffect_Ptr ptr)
 	{
@@ -2446,18 +2758,27 @@ extension CQt
 	public function void QGraphicsBlurEffect_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsBlurEffect_OnMetaObject")]
 	public static extern void** QGraphicsBlurEffect_OnMetaObject(void* self, QGraphicsBlurEffect_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperMetaObject")]
+	public static extern void** QGraphicsBlurEffect_SuperMetaObject(void* self);
 	[LinkName("QGraphicsBlurEffect_Qt_Metacast")]
 	public static extern void* QGraphicsBlurEffect_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsBlurEffect_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsBlurEffect_OnMetacast")]
 	public static extern void* QGraphicsBlurEffect_OnMetacast(void* self, QGraphicsBlurEffect_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperMetacast")]
+	public static extern void* QGraphicsBlurEffect_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsBlurEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsBlurEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsBlurEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsBlurEffect_OnMetacall")]
 	public static extern c_int QGraphicsBlurEffect_OnMetacall(void* self, QGraphicsBlurEffect_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperMetacall")]
+	public static extern c_int QGraphicsBlurEffect_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsBlurEffect_Tr")]
 	public static extern libqt_string QGraphicsBlurEffect_Tr(c_char* s);
 	[LinkName("QGraphicsBlurEffect_BoundingRectFor")]
@@ -2466,6 +2787,9 @@ extension CQt
 	public function void QGraphicsBlurEffect_OnBoundingRectFor_action(void* self, void** rect);
 	[LinkName("QGraphicsBlurEffect_OnBoundingRectFor")]
 	public static extern void* QGraphicsBlurEffect_OnBoundingRectFor(void* self, QGraphicsBlurEffect_OnBoundingRectFor_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperBoundingRectFor")]
+	public static extern void* QGraphicsBlurEffect_SuperBoundingRectFor(void* self, void** rect);
 	[LinkName("QGraphicsBlurEffect_BlurRadius")]
 	public static extern double QGraphicsBlurEffect_BlurRadius(void* self);
 	[LinkName("QGraphicsBlurEffect_BlurHints")]
@@ -2492,6 +2816,9 @@ extension CQt
 	public function void QGraphicsBlurEffect_OnDraw_action(void* self, void** painter);
 	[LinkName("QGraphicsBlurEffect_OnDraw")]
 	public static extern void QGraphicsBlurEffect_OnDraw(void* self, QGraphicsBlurEffect_OnDraw_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperDraw")]
+	public static extern void QGraphicsBlurEffect_SuperDraw(void* self, void** painter);
 	[LinkName("QGraphicsBlurEffect_Tr2")]
 	public static extern libqt_string QGraphicsBlurEffect_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsBlurEffect_Tr3")]
@@ -2502,48 +2829,72 @@ extension CQt
 	public function void QGraphicsBlurEffect_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsBlurEffect_OnEvent")]
 	public static extern bool QGraphicsBlurEffect_OnEvent(void* self, QGraphicsBlurEffect_OnEvent_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperEvent")]
+	public static extern bool QGraphicsBlurEffect_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsBlurEffect_EventFilter")]
 	public static extern bool QGraphicsBlurEffect_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsBlurEffect_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsBlurEffect_OnEventFilter")]
 	public static extern bool QGraphicsBlurEffect_OnEventFilter(void* self, QGraphicsBlurEffect_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperEventFilter")]
+	public static extern bool QGraphicsBlurEffect_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsBlurEffect_TimerEvent")]
 	public static extern void QGraphicsBlurEffect_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsBlurEffect_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsBlurEffect_OnTimerEvent")]
 	public static extern void QGraphicsBlurEffect_OnTimerEvent(void* self, QGraphicsBlurEffect_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperTimerEvent")]
+	public static extern void QGraphicsBlurEffect_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsBlurEffect_ChildEvent")]
 	public static extern void QGraphicsBlurEffect_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsBlurEffect_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsBlurEffect_OnChildEvent")]
 	public static extern void QGraphicsBlurEffect_OnChildEvent(void* self, QGraphicsBlurEffect_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperChildEvent")]
+	public static extern void QGraphicsBlurEffect_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsBlurEffect_CustomEvent")]
 	public static extern void QGraphicsBlurEffect_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsBlurEffect_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsBlurEffect_OnCustomEvent")]
 	public static extern void QGraphicsBlurEffect_OnCustomEvent(void* self, QGraphicsBlurEffect_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperCustomEvent")]
+	public static extern void QGraphicsBlurEffect_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsBlurEffect_ConnectNotify")]
 	public static extern void QGraphicsBlurEffect_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsBlurEffect_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsBlurEffect_OnConnectNotify")]
 	public static extern void QGraphicsBlurEffect_OnConnectNotify(void* self, QGraphicsBlurEffect_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperConnectNotify")]
+	public static extern void QGraphicsBlurEffect_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsBlurEffect_DisconnectNotify")]
 	public static extern void QGraphicsBlurEffect_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsBlurEffect_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsBlurEffect_OnDisconnectNotify")]
 	public static extern void QGraphicsBlurEffect_OnDisconnectNotify(void* self, QGraphicsBlurEffect_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperDisconnectNotify")]
+	public static extern void QGraphicsBlurEffect_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsBlurEffect_SourceChanged")]
 	public static extern void QGraphicsBlurEffect_SourceChanged(void* self, void* flags);
 	
 	public function void QGraphicsBlurEffect_OnSourceChanged_action(void* self, void* flags);
 	[LinkName("QGraphicsBlurEffect_OnSourceChanged")]
 	public static extern void QGraphicsBlurEffect_OnSourceChanged(void* self, QGraphicsBlurEffect_OnSourceChanged_action _action);
+	
+	[LinkName("QGraphicsBlurEffect_SuperSourceChanged")]
+	public static extern void QGraphicsBlurEffect_SuperSourceChanged(void* self, void* flags);
 }
 // --------------------------------------------------------------
 // QGraphicsDropShadowEffect
@@ -2946,6 +3297,19 @@ class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, 
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
 		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_Connect_EnabledChanged);
+		CQt.QGraphicsDropShadowEffect_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnMetaObject);
+		CQt.QGraphicsDropShadowEffect_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnMetacast);
+		CQt.QGraphicsDropShadowEffect_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnMetacall);
+		CQt.QGraphicsDropShadowEffect_OnBoundingRectFor(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnBoundingRectFor);
+		CQt.QGraphicsDropShadowEffect_OnDraw(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnDraw);
+		CQt.QGraphicsDropShadowEffect_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnEvent);
+		CQt.QGraphicsDropShadowEffect_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnEventFilter);
+		CQt.QGraphicsDropShadowEffect_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnTimerEvent);
+		CQt.QGraphicsDropShadowEffect_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnChildEvent);
+		CQt.QGraphicsDropShadowEffect_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnCustomEvent);
+		CQt.QGraphicsDropShadowEffect_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnConnectNotify);
+		CQt.QGraphicsDropShadowEffect_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnDisconnectNotify);
+		CQt.QGraphicsDropShadowEffect_OnSourceChanged(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_OnSourceChanged);
 	}
 	public Event<delegate void(void** offset)> OnOffsetChanged = .() ~ _.Dispose();
 	public Event<delegate void(double blurRadius)> OnBlurRadiusChanged = .() ~ _.Dispose();
@@ -2982,6 +3346,71 @@ class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, 
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnBoundingRectFor(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBoundingRectFor(rect);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnDraw(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDraw(painter);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_OnSourceChanged(void* ptr, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSourceChanged(flags);
 	}
 	public this(QGraphicsDropShadowEffect_Ptr ptr)
 	{
@@ -3389,18 +3818,27 @@ extension CQt
 	public function void QGraphicsDropShadowEffect_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsDropShadowEffect_OnMetaObject")]
 	public static extern void** QGraphicsDropShadowEffect_OnMetaObject(void* self, QGraphicsDropShadowEffect_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperMetaObject")]
+	public static extern void** QGraphicsDropShadowEffect_SuperMetaObject(void* self);
 	[LinkName("QGraphicsDropShadowEffect_Qt_Metacast")]
 	public static extern void* QGraphicsDropShadowEffect_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsDropShadowEffect_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsDropShadowEffect_OnMetacast")]
 	public static extern void* QGraphicsDropShadowEffect_OnMetacast(void* self, QGraphicsDropShadowEffect_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperMetacast")]
+	public static extern void* QGraphicsDropShadowEffect_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsDropShadowEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsDropShadowEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsDropShadowEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsDropShadowEffect_OnMetacall")]
 	public static extern c_int QGraphicsDropShadowEffect_OnMetacall(void* self, QGraphicsDropShadowEffect_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperMetacall")]
+	public static extern c_int QGraphicsDropShadowEffect_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsDropShadowEffect_Tr")]
 	public static extern libqt_string QGraphicsDropShadowEffect_Tr(c_char* s);
 	[LinkName("QGraphicsDropShadowEffect_BoundingRectFor")]
@@ -3409,6 +3847,9 @@ extension CQt
 	public function void QGraphicsDropShadowEffect_OnBoundingRectFor_action(void* self, void** rect);
 	[LinkName("QGraphicsDropShadowEffect_OnBoundingRectFor")]
 	public static extern void* QGraphicsDropShadowEffect_OnBoundingRectFor(void* self, QGraphicsDropShadowEffect_OnBoundingRectFor_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperBoundingRectFor")]
+	public static extern void* QGraphicsDropShadowEffect_SuperBoundingRectFor(void* self, void** rect);
 	[LinkName("QGraphicsDropShadowEffect_Offset")]
 	public static extern void* QGraphicsDropShadowEffect_Offset(void* self);
 	[LinkName("QGraphicsDropShadowEffect_XOffset")]
@@ -3457,6 +3898,9 @@ extension CQt
 	public function void QGraphicsDropShadowEffect_OnDraw_action(void* self, void** painter);
 	[LinkName("QGraphicsDropShadowEffect_OnDraw")]
 	public static extern void QGraphicsDropShadowEffect_OnDraw(void* self, QGraphicsDropShadowEffect_OnDraw_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperDraw")]
+	public static extern void QGraphicsDropShadowEffect_SuperDraw(void* self, void** painter);
 	[LinkName("QGraphicsDropShadowEffect_Tr2")]
 	public static extern libqt_string QGraphicsDropShadowEffect_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsDropShadowEffect_Tr3")]
@@ -3467,48 +3911,72 @@ extension CQt
 	public function void QGraphicsDropShadowEffect_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsDropShadowEffect_OnEvent")]
 	public static extern bool QGraphicsDropShadowEffect_OnEvent(void* self, QGraphicsDropShadowEffect_OnEvent_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperEvent")]
+	public static extern bool QGraphicsDropShadowEffect_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsDropShadowEffect_EventFilter")]
 	public static extern bool QGraphicsDropShadowEffect_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsDropShadowEffect_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsDropShadowEffect_OnEventFilter")]
 	public static extern bool QGraphicsDropShadowEffect_OnEventFilter(void* self, QGraphicsDropShadowEffect_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperEventFilter")]
+	public static extern bool QGraphicsDropShadowEffect_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsDropShadowEffect_TimerEvent")]
 	public static extern void QGraphicsDropShadowEffect_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsDropShadowEffect_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsDropShadowEffect_OnTimerEvent")]
 	public static extern void QGraphicsDropShadowEffect_OnTimerEvent(void* self, QGraphicsDropShadowEffect_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperTimerEvent")]
+	public static extern void QGraphicsDropShadowEffect_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsDropShadowEffect_ChildEvent")]
 	public static extern void QGraphicsDropShadowEffect_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsDropShadowEffect_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsDropShadowEffect_OnChildEvent")]
 	public static extern void QGraphicsDropShadowEffect_OnChildEvent(void* self, QGraphicsDropShadowEffect_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperChildEvent")]
+	public static extern void QGraphicsDropShadowEffect_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsDropShadowEffect_CustomEvent")]
 	public static extern void QGraphicsDropShadowEffect_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsDropShadowEffect_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsDropShadowEffect_OnCustomEvent")]
 	public static extern void QGraphicsDropShadowEffect_OnCustomEvent(void* self, QGraphicsDropShadowEffect_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperCustomEvent")]
+	public static extern void QGraphicsDropShadowEffect_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsDropShadowEffect_ConnectNotify")]
 	public static extern void QGraphicsDropShadowEffect_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsDropShadowEffect_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsDropShadowEffect_OnConnectNotify")]
 	public static extern void QGraphicsDropShadowEffect_OnConnectNotify(void* self, QGraphicsDropShadowEffect_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperConnectNotify")]
+	public static extern void QGraphicsDropShadowEffect_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsDropShadowEffect_DisconnectNotify")]
 	public static extern void QGraphicsDropShadowEffect_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsDropShadowEffect_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsDropShadowEffect_OnDisconnectNotify")]
 	public static extern void QGraphicsDropShadowEffect_OnDisconnectNotify(void* self, QGraphicsDropShadowEffect_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperDisconnectNotify")]
+	public static extern void QGraphicsDropShadowEffect_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsDropShadowEffect_SourceChanged")]
 	public static extern void QGraphicsDropShadowEffect_SourceChanged(void* self, void* flags);
 	
 	public function void QGraphicsDropShadowEffect_OnSourceChanged_action(void* self, void* flags);
 	[LinkName("QGraphicsDropShadowEffect_OnSourceChanged")]
 	public static extern void QGraphicsDropShadowEffect_OnSourceChanged(void* self, QGraphicsDropShadowEffect_OnSourceChanged_action _action);
+	
+	[LinkName("QGraphicsDropShadowEffect_SuperSourceChanged")]
+	public static extern void QGraphicsDropShadowEffect_SuperSourceChanged(void* self, void* flags);
 }
 // --------------------------------------------------------------
 // QGraphicsOpacityEffect
@@ -3874,6 +4342,19 @@ class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObje
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
 		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_Connect_EnabledChanged);
+		CQt.QGraphicsOpacityEffect_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnMetaObject);
+		CQt.QGraphicsOpacityEffect_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnMetacast);
+		CQt.QGraphicsOpacityEffect_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnMetacall);
+		CQt.QGraphicsOpacityEffect_OnDraw(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnDraw);
+		CQt.QGraphicsOpacityEffect_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnEvent);
+		CQt.QGraphicsOpacityEffect_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnEventFilter);
+		CQt.QGraphicsOpacityEffect_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnTimerEvent);
+		CQt.QGraphicsOpacityEffect_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnChildEvent);
+		CQt.QGraphicsOpacityEffect_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnCustomEvent);
+		CQt.QGraphicsOpacityEffect_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnConnectNotify);
+		CQt.QGraphicsOpacityEffect_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnDisconnectNotify);
+		CQt.QGraphicsOpacityEffect_OnBoundingRectFor(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnBoundingRectFor);
+		CQt.QGraphicsOpacityEffect_OnSourceChanged(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_OnSourceChanged);
 	}
 	public Event<delegate void(double opacity)> OnOpacityChanged = .() ~ _.Dispose();
 	public Event<delegate void(void** mask)> OnOpacityMaskChanged = .() ~ _.Dispose();
@@ -3904,6 +4385,71 @@ class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObje
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnDraw(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDraw(painter);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnBoundingRectFor(void* ptr, void** sourceRect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBoundingRectFor(sourceRect);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_OnSourceChanged(void* ptr, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSourceChanged(flags);
 	}
 	public this(QGraphicsOpacityEffect_Ptr ptr)
 	{
@@ -4275,18 +4821,27 @@ extension CQt
 	public function void QGraphicsOpacityEffect_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsOpacityEffect_OnMetaObject")]
 	public static extern void** QGraphicsOpacityEffect_OnMetaObject(void* self, QGraphicsOpacityEffect_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperMetaObject")]
+	public static extern void** QGraphicsOpacityEffect_SuperMetaObject(void* self);
 	[LinkName("QGraphicsOpacityEffect_Qt_Metacast")]
 	public static extern void* QGraphicsOpacityEffect_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsOpacityEffect_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsOpacityEffect_OnMetacast")]
 	public static extern void* QGraphicsOpacityEffect_OnMetacast(void* self, QGraphicsOpacityEffect_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperMetacast")]
+	public static extern void* QGraphicsOpacityEffect_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsOpacityEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsOpacityEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsOpacityEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsOpacityEffect_OnMetacall")]
 	public static extern c_int QGraphicsOpacityEffect_OnMetacall(void* self, QGraphicsOpacityEffect_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperMetacall")]
+	public static extern c_int QGraphicsOpacityEffect_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsOpacityEffect_Tr")]
 	public static extern libqt_string QGraphicsOpacityEffect_Tr(c_char* s);
 	[LinkName("QGraphicsOpacityEffect_Opacity")]
@@ -4315,6 +4870,9 @@ extension CQt
 	public function void QGraphicsOpacityEffect_OnDraw_action(void* self, void** painter);
 	[LinkName("QGraphicsOpacityEffect_OnDraw")]
 	public static extern void QGraphicsOpacityEffect_OnDraw(void* self, QGraphicsOpacityEffect_OnDraw_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperDraw")]
+	public static extern void QGraphicsOpacityEffect_SuperDraw(void* self, void** painter);
 	[LinkName("QGraphicsOpacityEffect_Tr2")]
 	public static extern libqt_string QGraphicsOpacityEffect_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsOpacityEffect_Tr3")]
@@ -4325,54 +4883,81 @@ extension CQt
 	public function void QGraphicsOpacityEffect_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsOpacityEffect_OnEvent")]
 	public static extern bool QGraphicsOpacityEffect_OnEvent(void* self, QGraphicsOpacityEffect_OnEvent_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperEvent")]
+	public static extern bool QGraphicsOpacityEffect_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsOpacityEffect_EventFilter")]
 	public static extern bool QGraphicsOpacityEffect_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsOpacityEffect_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsOpacityEffect_OnEventFilter")]
 	public static extern bool QGraphicsOpacityEffect_OnEventFilter(void* self, QGraphicsOpacityEffect_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperEventFilter")]
+	public static extern bool QGraphicsOpacityEffect_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsOpacityEffect_TimerEvent")]
 	public static extern void QGraphicsOpacityEffect_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsOpacityEffect_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsOpacityEffect_OnTimerEvent")]
 	public static extern void QGraphicsOpacityEffect_OnTimerEvent(void* self, QGraphicsOpacityEffect_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperTimerEvent")]
+	public static extern void QGraphicsOpacityEffect_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsOpacityEffect_ChildEvent")]
 	public static extern void QGraphicsOpacityEffect_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsOpacityEffect_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsOpacityEffect_OnChildEvent")]
 	public static extern void QGraphicsOpacityEffect_OnChildEvent(void* self, QGraphicsOpacityEffect_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperChildEvent")]
+	public static extern void QGraphicsOpacityEffect_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsOpacityEffect_CustomEvent")]
 	public static extern void QGraphicsOpacityEffect_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsOpacityEffect_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsOpacityEffect_OnCustomEvent")]
 	public static extern void QGraphicsOpacityEffect_OnCustomEvent(void* self, QGraphicsOpacityEffect_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperCustomEvent")]
+	public static extern void QGraphicsOpacityEffect_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsOpacityEffect_ConnectNotify")]
 	public static extern void QGraphicsOpacityEffect_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsOpacityEffect_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsOpacityEffect_OnConnectNotify")]
 	public static extern void QGraphicsOpacityEffect_OnConnectNotify(void* self, QGraphicsOpacityEffect_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperConnectNotify")]
+	public static extern void QGraphicsOpacityEffect_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsOpacityEffect_DisconnectNotify")]
 	public static extern void QGraphicsOpacityEffect_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsOpacityEffect_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsOpacityEffect_OnDisconnectNotify")]
 	public static extern void QGraphicsOpacityEffect_OnDisconnectNotify(void* self, QGraphicsOpacityEffect_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperDisconnectNotify")]
+	public static extern void QGraphicsOpacityEffect_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsOpacityEffect_BoundingRectFor")]
 	public static extern void* QGraphicsOpacityEffect_BoundingRectFor(void* self, void** sourceRect);
 	
 	public function void QGraphicsOpacityEffect_OnBoundingRectFor_action(void* self, void** sourceRect);
 	[LinkName("QGraphicsOpacityEffect_OnBoundingRectFor")]
 	public static extern void* QGraphicsOpacityEffect_OnBoundingRectFor(void* self, QGraphicsOpacityEffect_OnBoundingRectFor_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperBoundingRectFor")]
+	public static extern void* QGraphicsOpacityEffect_SuperBoundingRectFor(void* self, void** sourceRect);
 	[LinkName("QGraphicsOpacityEffect_SourceChanged")]
 	public static extern void QGraphicsOpacityEffect_SourceChanged(void* self, void* flags);
 	
 	public function void QGraphicsOpacityEffect_OnSourceChanged_action(void* self, void* flags);
 	[LinkName("QGraphicsOpacityEffect_OnSourceChanged")]
 	public static extern void QGraphicsOpacityEffect_OnSourceChanged(void* self, QGraphicsOpacityEffect_OnSourceChanged_action _action);
+	
+	[LinkName("QGraphicsOpacityEffect_SuperSourceChanged")]
+	public static extern void QGraphicsOpacityEffect_SuperSourceChanged(void* self, void* flags);
 }
 [AllowDuplicates]
 enum QGraphicsEffect_ChangeFlag

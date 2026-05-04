@@ -1788,6 +1788,57 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QCalendarWidget_OnMetaObject(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMetaObject);
+		CQt.QCalendarWidget_OnMetacast(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMetacast);
+		CQt.QCalendarWidget_OnMetacall(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMetacall);
+		CQt.QCalendarWidget_OnSizeHint(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnSizeHint);
+		CQt.QCalendarWidget_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMinimumSizeHint);
+		CQt.QCalendarWidget_OnEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnEvent);
+		CQt.QCalendarWidget_OnEventFilter(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnEventFilter);
+		CQt.QCalendarWidget_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMousePressEvent);
+		CQt.QCalendarWidget_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnResizeEvent);
+		CQt.QCalendarWidget_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnKeyPressEvent);
+		CQt.QCalendarWidget_OnPaintCell(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnPaintCell);
+		CQt.QCalendarWidget_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnTimerEvent);
+		CQt.QCalendarWidget_OnChildEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnChildEvent);
+		CQt.QCalendarWidget_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnCustomEvent);
+		CQt.QCalendarWidget_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnConnectNotify);
+		CQt.QCalendarWidget_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnDisconnectNotify);
+		CQt.QCalendarWidget_OnDevType(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnDevType);
+		CQt.QCalendarWidget_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnPaintEngine);
+		CQt.QCalendarWidget_OnMetric(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMetric);
+		CQt.QCalendarWidget_OnInitPainter(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnInitPainter);
+		CQt.QCalendarWidget_OnRedirected(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnRedirected);
+		CQt.QCalendarWidget_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnSharedPainter);
+		CQt.QCalendarWidget_OnSetVisible(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnSetVisible);
+		CQt.QCalendarWidget_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnHeightForWidth);
+		CQt.QCalendarWidget_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnHasHeightForWidth);
+		CQt.QCalendarWidget_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMouseReleaseEvent);
+		CQt.QCalendarWidget_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMouseDoubleClickEvent);
+		CQt.QCalendarWidget_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMouseMoveEvent);
+		CQt.QCalendarWidget_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnWheelEvent);
+		CQt.QCalendarWidget_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnKeyReleaseEvent);
+		CQt.QCalendarWidget_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnFocusInEvent);
+		CQt.QCalendarWidget_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnFocusOutEvent);
+		CQt.QCalendarWidget_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnEnterEvent);
+		CQt.QCalendarWidget_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnLeaveEvent);
+		CQt.QCalendarWidget_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnPaintEvent);
+		CQt.QCalendarWidget_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnMoveEvent);
+		CQt.QCalendarWidget_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnCloseEvent);
+		CQt.QCalendarWidget_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnContextMenuEvent);
+		CQt.QCalendarWidget_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnTabletEvent);
+		CQt.QCalendarWidget_OnActionEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnActionEvent);
+		CQt.QCalendarWidget_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnDragEnterEvent);
+		CQt.QCalendarWidget_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnDragMoveEvent);
+		CQt.QCalendarWidget_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnDragLeaveEvent);
+		CQt.QCalendarWidget_OnDropEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnDropEvent);
+		CQt.QCalendarWidget_OnShowEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnShowEvent);
+		CQt.QCalendarWidget_OnHideEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnHideEvent);
+		CQt.QCalendarWidget_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnNativeEvent);
+		CQt.QCalendarWidget_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnChangeEvent);
+		CQt.QCalendarWidget_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnInputMethodEvent);
+		CQt.QCalendarWidget_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnInputMethodQuery);
+		CQt.QCalendarWidget_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QCalendarWidget_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
 	public Event<delegate void(void* date)> OnClicked = .() ~ _.Dispose();
@@ -1848,6 +1899,261 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QCalendarWidget_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QCalendarWidget_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QCalendarWidget_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QCalendarWidget_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QCalendarWidget_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QCalendarWidget_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QCalendarWidget_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnPaintCell(void* ptr, void** painter, void** rect, void* date)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintCell(painter, rect, date);
+	}
+	static void QtBeef_QCalendarWidget_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QCalendarWidget_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QCalendarWidget_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QCalendarWidget_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QCalendarWidget_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QCalendarWidget_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QCalendarWidget_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QCalendarWidget_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QCalendarWidget_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QCalendarWidget_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QCalendarWidget_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QCalendarWidget_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QCalendarWidget_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QCalendarWidget_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QCalendarWidget_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QCalendarWidget_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QCalendarWidget_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QCalendarWidget_Ptr ptr)
 	{
@@ -3608,18 +3914,27 @@ extension CQt
 	public function void QCalendarWidget_OnMetaObject_action(void* self);
 	[LinkName("QCalendarWidget_OnMetaObject")]
 	public static extern void** QCalendarWidget_OnMetaObject(void* self, QCalendarWidget_OnMetaObject_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMetaObject")]
+	public static extern void** QCalendarWidget_SuperMetaObject(void* self);
 	[LinkName("QCalendarWidget_Qt_Metacast")]
 	public static extern void* QCalendarWidget_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QCalendarWidget_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QCalendarWidget_OnMetacast")]
 	public static extern void* QCalendarWidget_OnMetacast(void* self, QCalendarWidget_OnMetacast_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMetacast")]
+	public static extern void* QCalendarWidget_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QCalendarWidget_Qt_Metacall")]
 	public static extern c_int QCalendarWidget_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QCalendarWidget_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCalendarWidget_OnMetacall")]
 	public static extern c_int QCalendarWidget_OnMetacall(void* self, QCalendarWidget_OnMetacall_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMetacall")]
+	public static extern c_int QCalendarWidget_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCalendarWidget_Tr")]
 	public static extern libqt_string QCalendarWidget_Tr(c_char* s);
 	[LinkName("QCalendarWidget_SizeHint")]
@@ -3628,12 +3943,18 @@ extension CQt
 	public function void QCalendarWidget_OnSizeHint_action(void* self);
 	[LinkName("QCalendarWidget_OnSizeHint")]
 	public static extern void* QCalendarWidget_OnSizeHint(void* self, QCalendarWidget_OnSizeHint_action _action);
+	
+	[LinkName("QCalendarWidget_SuperSizeHint")]
+	public static extern void* QCalendarWidget_SuperSizeHint(void* self);
 	[LinkName("QCalendarWidget_MinimumSizeHint")]
 	public static extern void* QCalendarWidget_MinimumSizeHint(void* self);
 	
 	public function void QCalendarWidget_OnMinimumSizeHint_action(void* self);
 	[LinkName("QCalendarWidget_OnMinimumSizeHint")]
 	public static extern void* QCalendarWidget_OnMinimumSizeHint(void* self, QCalendarWidget_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMinimumSizeHint")]
+	public static extern void* QCalendarWidget_SuperMinimumSizeHint(void* self);
 	[LinkName("QCalendarWidget_SelectedDate")]
 	public static extern void* QCalendarWidget_SelectedDate(void* self);
 	[LinkName("QCalendarWidget_YearShown")]
@@ -3700,36 +4021,54 @@ extension CQt
 	public function void QCalendarWidget_OnEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnEvent")]
 	public static extern bool QCalendarWidget_OnEvent(void* self, QCalendarWidget_OnEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperEvent")]
+	public static extern bool QCalendarWidget_SuperEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_EventFilter")]
 	public static extern bool QCalendarWidget_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QCalendarWidget_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QCalendarWidget_OnEventFilter")]
 	public static extern bool QCalendarWidget_OnEventFilter(void* self, QCalendarWidget_OnEventFilter_action _action);
+	
+	[LinkName("QCalendarWidget_SuperEventFilter")]
+	public static extern bool QCalendarWidget_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QCalendarWidget_MousePressEvent")]
 	public static extern void QCalendarWidget_MousePressEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnMousePressEvent")]
 	public static extern void QCalendarWidget_OnMousePressEvent(void* self, QCalendarWidget_OnMousePressEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMousePressEvent")]
+	public static extern void QCalendarWidget_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_ResizeEvent")]
 	public static extern void QCalendarWidget_ResizeEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnResizeEvent")]
 	public static extern void QCalendarWidget_OnResizeEvent(void* self, QCalendarWidget_OnResizeEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperResizeEvent")]
+	public static extern void QCalendarWidget_SuperResizeEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_KeyPressEvent")]
 	public static extern void QCalendarWidget_KeyPressEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnKeyPressEvent")]
 	public static extern void QCalendarWidget_OnKeyPressEvent(void* self, QCalendarWidget_OnKeyPressEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperKeyPressEvent")]
+	public static extern void QCalendarWidget_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_PaintCell")]
 	public static extern void QCalendarWidget_PaintCell(void* self, void** painter, void** rect, void* date);
 	
 	public function void QCalendarWidget_OnPaintCell_action(void* self, void** painter, void** rect, void* date);
 	[LinkName("QCalendarWidget_OnPaintCell")]
 	public static extern void QCalendarWidget_OnPaintCell(void* self, QCalendarWidget_OnPaintCell_action _action);
+	
+	[LinkName("QCalendarWidget_SuperPaintCell")]
+	public static extern void QCalendarWidget_SuperPaintCell(void* self, void** painter, void** rect, void* date);
 	[LinkName("QCalendarWidget_UpdateCell")]
 	public static extern void QCalendarWidget_UpdateCell(void* self, void* date);
 	[LinkName("QCalendarWidget_UpdateCells")]
@@ -3790,240 +4129,360 @@ extension CQt
 	public function void QCalendarWidget_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnTimerEvent")]
 	public static extern void QCalendarWidget_OnTimerEvent(void* self, QCalendarWidget_OnTimerEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperTimerEvent")]
+	public static extern void QCalendarWidget_SuperTimerEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_ChildEvent")]
 	public static extern void QCalendarWidget_ChildEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnChildEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnChildEvent")]
 	public static extern void QCalendarWidget_OnChildEvent(void* self, QCalendarWidget_OnChildEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperChildEvent")]
+	public static extern void QCalendarWidget_SuperChildEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_CustomEvent")]
 	public static extern void QCalendarWidget_CustomEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnCustomEvent")]
 	public static extern void QCalendarWidget_OnCustomEvent(void* self, QCalendarWidget_OnCustomEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperCustomEvent")]
+	public static extern void QCalendarWidget_SuperCustomEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_ConnectNotify")]
 	public static extern void QCalendarWidget_ConnectNotify(void* self, void** signal);
 	
 	public function void QCalendarWidget_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QCalendarWidget_OnConnectNotify")]
 	public static extern void QCalendarWidget_OnConnectNotify(void* self, QCalendarWidget_OnConnectNotify_action _action);
+	
+	[LinkName("QCalendarWidget_SuperConnectNotify")]
+	public static extern void QCalendarWidget_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QCalendarWidget_DisconnectNotify")]
 	public static extern void QCalendarWidget_DisconnectNotify(void* self, void** signal);
 	
 	public function void QCalendarWidget_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QCalendarWidget_OnDisconnectNotify")]
 	public static extern void QCalendarWidget_OnDisconnectNotify(void* self, QCalendarWidget_OnDisconnectNotify_action _action);
+	
+	[LinkName("QCalendarWidget_SuperDisconnectNotify")]
+	public static extern void QCalendarWidget_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QCalendarWidget_DevType")]
 	public static extern c_int QCalendarWidget_DevType(void* self);
 	
 	public function void QCalendarWidget_OnDevType_action(void* self);
 	[LinkName("QCalendarWidget_OnDevType")]
 	public static extern c_int QCalendarWidget_OnDevType(void* self, QCalendarWidget_OnDevType_action _action);
+	
+	[LinkName("QCalendarWidget_SuperDevType")]
+	public static extern c_int QCalendarWidget_SuperDevType(void* self);
 	[LinkName("QCalendarWidget_PaintEngine")]
 	public static extern void** QCalendarWidget_PaintEngine(void* self);
 	
 	public function void QCalendarWidget_OnPaintEngine_action(void* self);
 	[LinkName("QCalendarWidget_OnPaintEngine")]
 	public static extern void** QCalendarWidget_OnPaintEngine(void* self, QCalendarWidget_OnPaintEngine_action _action);
+	
+	[LinkName("QCalendarWidget_SuperPaintEngine")]
+	public static extern void** QCalendarWidget_SuperPaintEngine(void* self);
 	[LinkName("QCalendarWidget_Metric")]
 	public static extern c_int QCalendarWidget_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QCalendarWidget_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QCalendarWidget_OnMetric")]
 	public static extern c_int QCalendarWidget_OnMetric(void* self, QCalendarWidget_OnMetric_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMetric")]
+	public static extern c_int QCalendarWidget_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QCalendarWidget_InitPainter")]
 	public static extern void QCalendarWidget_InitPainter(void* self, void** painter);
 	
 	public function void QCalendarWidget_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QCalendarWidget_OnInitPainter")]
 	public static extern void QCalendarWidget_OnInitPainter(void* self, QCalendarWidget_OnInitPainter_action _action);
+	
+	[LinkName("QCalendarWidget_SuperInitPainter")]
+	public static extern void QCalendarWidget_SuperInitPainter(void* self, void** painter);
 	[LinkName("QCalendarWidget_Redirected")]
 	public static extern void** QCalendarWidget_Redirected(void* self, void** offset);
 	
 	public function void QCalendarWidget_OnRedirected_action(void* self, void** offset);
 	[LinkName("QCalendarWidget_OnRedirected")]
 	public static extern void** QCalendarWidget_OnRedirected(void* self, QCalendarWidget_OnRedirected_action _action);
+	
+	[LinkName("QCalendarWidget_SuperRedirected")]
+	public static extern void** QCalendarWidget_SuperRedirected(void* self, void** offset);
 	[LinkName("QCalendarWidget_SharedPainter")]
 	public static extern void** QCalendarWidget_SharedPainter(void* self);
 	
 	public function void QCalendarWidget_OnSharedPainter_action(void* self);
 	[LinkName("QCalendarWidget_OnSharedPainter")]
 	public static extern void** QCalendarWidget_OnSharedPainter(void* self, QCalendarWidget_OnSharedPainter_action _action);
+	
+	[LinkName("QCalendarWidget_SuperSharedPainter")]
+	public static extern void** QCalendarWidget_SuperSharedPainter(void* self);
 	[LinkName("QCalendarWidget_SetVisible")]
 	public static extern void QCalendarWidget_SetVisible(void* self, bool visible);
 	
 	public function void QCalendarWidget_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QCalendarWidget_OnSetVisible")]
 	public static extern void QCalendarWidget_OnSetVisible(void* self, QCalendarWidget_OnSetVisible_action _action);
+	
+	[LinkName("QCalendarWidget_SuperSetVisible")]
+	public static extern void QCalendarWidget_SuperSetVisible(void* self, bool visible);
 	[LinkName("QCalendarWidget_HeightForWidth")]
 	public static extern c_int QCalendarWidget_HeightForWidth(void* self, c_int param1);
 	
 	public function void QCalendarWidget_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QCalendarWidget_OnHeightForWidth")]
 	public static extern c_int QCalendarWidget_OnHeightForWidth(void* self, QCalendarWidget_OnHeightForWidth_action _action);
+	
+	[LinkName("QCalendarWidget_SuperHeightForWidth")]
+	public static extern c_int QCalendarWidget_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QCalendarWidget_HasHeightForWidth")]
 	public static extern bool QCalendarWidget_HasHeightForWidth(void* self);
 	
 	public function void QCalendarWidget_OnHasHeightForWidth_action(void* self);
 	[LinkName("QCalendarWidget_OnHasHeightForWidth")]
 	public static extern bool QCalendarWidget_OnHasHeightForWidth(void* self, QCalendarWidget_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QCalendarWidget_SuperHasHeightForWidth")]
+	public static extern bool QCalendarWidget_SuperHasHeightForWidth(void* self);
 	[LinkName("QCalendarWidget_MouseReleaseEvent")]
 	public static extern void QCalendarWidget_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnMouseReleaseEvent")]
 	public static extern void QCalendarWidget_OnMouseReleaseEvent(void* self, QCalendarWidget_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMouseReleaseEvent")]
+	public static extern void QCalendarWidget_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_MouseDoubleClickEvent")]
 	public static extern void QCalendarWidget_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnMouseDoubleClickEvent")]
 	public static extern void QCalendarWidget_OnMouseDoubleClickEvent(void* self, QCalendarWidget_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMouseDoubleClickEvent")]
+	public static extern void QCalendarWidget_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_MouseMoveEvent")]
 	public static extern void QCalendarWidget_MouseMoveEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnMouseMoveEvent")]
 	public static extern void QCalendarWidget_OnMouseMoveEvent(void* self, QCalendarWidget_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMouseMoveEvent")]
+	public static extern void QCalendarWidget_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_WheelEvent")]
 	public static extern void QCalendarWidget_WheelEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnWheelEvent")]
 	public static extern void QCalendarWidget_OnWheelEvent(void* self, QCalendarWidget_OnWheelEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperWheelEvent")]
+	public static extern void QCalendarWidget_SuperWheelEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_KeyReleaseEvent")]
 	public static extern void QCalendarWidget_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnKeyReleaseEvent")]
 	public static extern void QCalendarWidget_OnKeyReleaseEvent(void* self, QCalendarWidget_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperKeyReleaseEvent")]
+	public static extern void QCalendarWidget_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_FocusInEvent")]
 	public static extern void QCalendarWidget_FocusInEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnFocusInEvent")]
 	public static extern void QCalendarWidget_OnFocusInEvent(void* self, QCalendarWidget_OnFocusInEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperFocusInEvent")]
+	public static extern void QCalendarWidget_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_FocusOutEvent")]
 	public static extern void QCalendarWidget_FocusOutEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnFocusOutEvent")]
 	public static extern void QCalendarWidget_OnFocusOutEvent(void* self, QCalendarWidget_OnFocusOutEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperFocusOutEvent")]
+	public static extern void QCalendarWidget_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_EnterEvent")]
 	public static extern void QCalendarWidget_EnterEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnEnterEvent")]
 	public static extern void QCalendarWidget_OnEnterEvent(void* self, QCalendarWidget_OnEnterEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperEnterEvent")]
+	public static extern void QCalendarWidget_SuperEnterEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_LeaveEvent")]
 	public static extern void QCalendarWidget_LeaveEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnLeaveEvent")]
 	public static extern void QCalendarWidget_OnLeaveEvent(void* self, QCalendarWidget_OnLeaveEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperLeaveEvent")]
+	public static extern void QCalendarWidget_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_PaintEvent")]
 	public static extern void QCalendarWidget_PaintEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnPaintEvent")]
 	public static extern void QCalendarWidget_OnPaintEvent(void* self, QCalendarWidget_OnPaintEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperPaintEvent")]
+	public static extern void QCalendarWidget_SuperPaintEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_MoveEvent")]
 	public static extern void QCalendarWidget_MoveEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnMoveEvent")]
 	public static extern void QCalendarWidget_OnMoveEvent(void* self, QCalendarWidget_OnMoveEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperMoveEvent")]
+	public static extern void QCalendarWidget_SuperMoveEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_CloseEvent")]
 	public static extern void QCalendarWidget_CloseEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnCloseEvent")]
 	public static extern void QCalendarWidget_OnCloseEvent(void* self, QCalendarWidget_OnCloseEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperCloseEvent")]
+	public static extern void QCalendarWidget_SuperCloseEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_ContextMenuEvent")]
 	public static extern void QCalendarWidget_ContextMenuEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnContextMenuEvent")]
 	public static extern void QCalendarWidget_OnContextMenuEvent(void* self, QCalendarWidget_OnContextMenuEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperContextMenuEvent")]
+	public static extern void QCalendarWidget_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_TabletEvent")]
 	public static extern void QCalendarWidget_TabletEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnTabletEvent")]
 	public static extern void QCalendarWidget_OnTabletEvent(void* self, QCalendarWidget_OnTabletEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperTabletEvent")]
+	public static extern void QCalendarWidget_SuperTabletEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_ActionEvent")]
 	public static extern void QCalendarWidget_ActionEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnActionEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnActionEvent")]
 	public static extern void QCalendarWidget_OnActionEvent(void* self, QCalendarWidget_OnActionEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperActionEvent")]
+	public static extern void QCalendarWidget_SuperActionEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_DragEnterEvent")]
 	public static extern void QCalendarWidget_DragEnterEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnDragEnterEvent")]
 	public static extern void QCalendarWidget_OnDragEnterEvent(void* self, QCalendarWidget_OnDragEnterEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperDragEnterEvent")]
+	public static extern void QCalendarWidget_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_DragMoveEvent")]
 	public static extern void QCalendarWidget_DragMoveEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnDragMoveEvent")]
 	public static extern void QCalendarWidget_OnDragMoveEvent(void* self, QCalendarWidget_OnDragMoveEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperDragMoveEvent")]
+	public static extern void QCalendarWidget_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_DragLeaveEvent")]
 	public static extern void QCalendarWidget_DragLeaveEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnDragLeaveEvent")]
 	public static extern void QCalendarWidget_OnDragLeaveEvent(void* self, QCalendarWidget_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperDragLeaveEvent")]
+	public static extern void QCalendarWidget_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_DropEvent")]
 	public static extern void QCalendarWidget_DropEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnDropEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnDropEvent")]
 	public static extern void QCalendarWidget_OnDropEvent(void* self, QCalendarWidget_OnDropEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperDropEvent")]
+	public static extern void QCalendarWidget_SuperDropEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_ShowEvent")]
 	public static extern void QCalendarWidget_ShowEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnShowEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnShowEvent")]
 	public static extern void QCalendarWidget_OnShowEvent(void* self, QCalendarWidget_OnShowEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperShowEvent")]
+	public static extern void QCalendarWidget_SuperShowEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_HideEvent")]
 	public static extern void QCalendarWidget_HideEvent(void* self, void** event);
 	
 	public function void QCalendarWidget_OnHideEvent_action(void* self, void** event);
 	[LinkName("QCalendarWidget_OnHideEvent")]
 	public static extern void QCalendarWidget_OnHideEvent(void* self, QCalendarWidget_OnHideEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperHideEvent")]
+	public static extern void QCalendarWidget_SuperHideEvent(void* self, void** event);
 	[LinkName("QCalendarWidget_NativeEvent")]
 	public static extern bool QCalendarWidget_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QCalendarWidget_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QCalendarWidget_OnNativeEvent")]
 	public static extern bool QCalendarWidget_OnNativeEvent(void* self, QCalendarWidget_OnNativeEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperNativeEvent")]
+	public static extern bool QCalendarWidget_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QCalendarWidget_ChangeEvent")]
 	public static extern void QCalendarWidget_ChangeEvent(void* self, void** param1);
 	
 	public function void QCalendarWidget_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QCalendarWidget_OnChangeEvent")]
 	public static extern void QCalendarWidget_OnChangeEvent(void* self, QCalendarWidget_OnChangeEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperChangeEvent")]
+	public static extern void QCalendarWidget_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QCalendarWidget_InputMethodEvent")]
 	public static extern void QCalendarWidget_InputMethodEvent(void* self, void** param1);
 	
 	public function void QCalendarWidget_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QCalendarWidget_OnInputMethodEvent")]
 	public static extern void QCalendarWidget_OnInputMethodEvent(void* self, QCalendarWidget_OnInputMethodEvent_action _action);
+	
+	[LinkName("QCalendarWidget_SuperInputMethodEvent")]
+	public static extern void QCalendarWidget_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QCalendarWidget_InputMethodQuery")]
 	public static extern void* QCalendarWidget_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QCalendarWidget_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QCalendarWidget_OnInputMethodQuery")]
 	public static extern void* QCalendarWidget_OnInputMethodQuery(void* self, QCalendarWidget_OnInputMethodQuery_action _action);
+	
+	[LinkName("QCalendarWidget_SuperInputMethodQuery")]
+	public static extern void* QCalendarWidget_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QCalendarWidget_FocusNextPrevChild")]
 	public static extern bool QCalendarWidget_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QCalendarWidget_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QCalendarWidget_OnFocusNextPrevChild")]
 	public static extern bool QCalendarWidget_OnFocusNextPrevChild(void* self, QCalendarWidget_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QCalendarWidget_SuperFocusNextPrevChild")]
+	public static extern bool QCalendarWidget_SuperFocusNextPrevChild(void* self, bool next);
 }
 [AllowDuplicates]
 enum QCalendarWidget_HorizontalHeaderFormat

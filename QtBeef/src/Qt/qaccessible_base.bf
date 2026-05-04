@@ -1017,6 +1017,12 @@ class QAccessible_ActivationObserver : IQAccessible_ActivationObserver
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessible_ActivationObserver_OnAccessibilityActiveChanged(obj.ObjectPtr,  => QtBeef_QAccessible_ActivationObserver_OnAccessibilityActiveChanged);
+	}
+	static void QtBeef_QAccessible_ActivationObserver_OnAccessibilityActiveChanged(void* ptr, bool active)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibilityActiveChanged(active);
 	}
 	public this(QAccessible_ActivationObserver_Ptr ptr)
 	{
@@ -1044,6 +1050,9 @@ extension CQt
 	public function void QAccessible_ActivationObserver_OnAccessibilityActiveChanged_action(void* self, bool active);
 	[LinkName("QAccessible_ActivationObserver_OnAccessibilityActiveChanged")]
 	public static extern void QAccessible_ActivationObserver_OnAccessibilityActiveChanged(void* self, QAccessible_ActivationObserver_OnAccessibilityActiveChanged_action _action);
+	
+	[LinkName("QAccessible_ActivationObserver_SuperAccessibilityActiveChanged")]
+	public static extern void QAccessible_ActivationObserver_SuperAccessibilityActiveChanged(void* self, bool active);
 	[LinkName("QAccessible_ActivationObserver_OperatorAssign")]
 	public static extern void QAccessible_ActivationObserver_OperatorAssign(void* self, void** param1);
 }

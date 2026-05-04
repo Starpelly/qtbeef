@@ -1861,6 +1861,62 @@ class QTabBar : IQTabBar, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QTabBar_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTabBar_OnMetaObject);
+		CQt.QTabBar_OnMetacast(obj.ObjectPtr,  => QtBeef_QTabBar_OnMetacast);
+		CQt.QTabBar_OnMetacall(obj.ObjectPtr,  => QtBeef_QTabBar_OnMetacall);
+		CQt.QTabBar_OnSizeHint(obj.ObjectPtr,  => QtBeef_QTabBar_OnSizeHint);
+		CQt.QTabBar_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QTabBar_OnMinimumSizeHint);
+		CQt.QTabBar_OnTabSizeHint(obj.ObjectPtr,  => QtBeef_QTabBar_OnTabSizeHint);
+		CQt.QTabBar_OnMinimumTabSizeHint(obj.ObjectPtr,  => QtBeef_QTabBar_OnMinimumTabSizeHint);
+		CQt.QTabBar_OnTabInserted(obj.ObjectPtr,  => QtBeef_QTabBar_OnTabInserted);
+		CQt.QTabBar_OnTabRemoved(obj.ObjectPtr,  => QtBeef_QTabBar_OnTabRemoved);
+		CQt.QTabBar_OnTabLayoutChange(obj.ObjectPtr,  => QtBeef_QTabBar_OnTabLayoutChange);
+		CQt.QTabBar_OnEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnEvent);
+		CQt.QTabBar_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnResizeEvent);
+		CQt.QTabBar_OnShowEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnShowEvent);
+		CQt.QTabBar_OnHideEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnHideEvent);
+		CQt.QTabBar_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnPaintEvent);
+		CQt.QTabBar_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnMousePressEvent);
+		CQt.QTabBar_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnMouseMoveEvent);
+		CQt.QTabBar_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnMouseReleaseEvent);
+		CQt.QTabBar_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnMouseDoubleClickEvent);
+		CQt.QTabBar_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnWheelEvent);
+		CQt.QTabBar_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnKeyPressEvent);
+		CQt.QTabBar_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnChangeEvent);
+		CQt.QTabBar_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnTimerEvent);
+		CQt.QTabBar_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QTabBar_OnInitStyleOption);
+		CQt.QTabBar_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTabBar_OnEventFilter);
+		CQt.QTabBar_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnChildEvent);
+		CQt.QTabBar_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnCustomEvent);
+		CQt.QTabBar_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTabBar_OnConnectNotify);
+		CQt.QTabBar_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTabBar_OnDisconnectNotify);
+		CQt.QTabBar_OnDevType(obj.ObjectPtr,  => QtBeef_QTabBar_OnDevType);
+		CQt.QTabBar_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QTabBar_OnPaintEngine);
+		CQt.QTabBar_OnMetric(obj.ObjectPtr,  => QtBeef_QTabBar_OnMetric);
+		CQt.QTabBar_OnInitPainter(obj.ObjectPtr,  => QtBeef_QTabBar_OnInitPainter);
+		CQt.QTabBar_OnRedirected(obj.ObjectPtr,  => QtBeef_QTabBar_OnRedirected);
+		CQt.QTabBar_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QTabBar_OnSharedPainter);
+		CQt.QTabBar_OnSetVisible(obj.ObjectPtr,  => QtBeef_QTabBar_OnSetVisible);
+		CQt.QTabBar_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QTabBar_OnHeightForWidth);
+		CQt.QTabBar_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QTabBar_OnHasHeightForWidth);
+		CQt.QTabBar_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnKeyReleaseEvent);
+		CQt.QTabBar_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnFocusInEvent);
+		CQt.QTabBar_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnFocusOutEvent);
+		CQt.QTabBar_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnEnterEvent);
+		CQt.QTabBar_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnLeaveEvent);
+		CQt.QTabBar_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnMoveEvent);
+		CQt.QTabBar_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnCloseEvent);
+		CQt.QTabBar_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnContextMenuEvent);
+		CQt.QTabBar_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnTabletEvent);
+		CQt.QTabBar_OnActionEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnActionEvent);
+		CQt.QTabBar_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnDragEnterEvent);
+		CQt.QTabBar_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnDragMoveEvent);
+		CQt.QTabBar_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnDragLeaveEvent);
+		CQt.QTabBar_OnDropEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnDropEvent);
+		CQt.QTabBar_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnNativeEvent);
+		CQt.QTabBar_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QTabBar_OnInputMethodEvent);
+		CQt.QTabBar_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QTabBar_OnInputMethodQuery);
+		CQt.QTabBar_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QTabBar_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(c_int index)> OnCurrentChanged = .() ~ _.Dispose();
 	public Event<delegate void(c_int index)> OnTabCloseRequested = .() ~ _.Dispose();
@@ -1927,6 +1983,286 @@ class QTabBar : IQTabBar, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QTabBar_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTabBar_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTabBar_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTabBar_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QTabBar_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QTabBar_OnTabSizeHint(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabSizeHint(index);
+	}
+	static void QtBeef_QTabBar_OnMinimumTabSizeHint(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumTabSizeHint(index);
+	}
+	static void QtBeef_QTabBar_OnTabInserted(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabInserted(index);
+	}
+	static void QtBeef_QTabBar_OnTabRemoved(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabRemoved(index);
+	}
+	static void QtBeef_QTabBar_OnTabLayoutChange(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabLayoutChange();
+	}
+	static void QtBeef_QTabBar_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnResizeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnShowEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnHideEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnMouseReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnMouseDoubleClickEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QTabBar_OnKeyPressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTabBar_OnInitStyleOption(void* ptr, void** option, c_int tabIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option, tabIndex);
+	}
+	static void QtBeef_QTabBar_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTabBar_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTabBar_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTabBar_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTabBar_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QTabBar_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QTabBar_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QTabBar_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QTabBar_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QTabBar_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QTabBar_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QTabBar_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QTabBar_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QTabBar_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QTabBar_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QTabBar_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QTabBar_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QTabBar_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QTabBar_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QTabBar_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QTabBar_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QTabBar_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QTabBar_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QTabBar_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QTabBar_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QTabBar_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QTabBar_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QTabBar_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QTabBar_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QTabBar_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QTabBar_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QTabBar_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QTabBar_Ptr ptr)
 	{
@@ -3756,18 +4092,27 @@ extension CQt
 	public function void QTabBar_OnMetaObject_action(void* self);
 	[LinkName("QTabBar_OnMetaObject")]
 	public static extern void** QTabBar_OnMetaObject(void* self, QTabBar_OnMetaObject_action _action);
+	
+	[LinkName("QTabBar_SuperMetaObject")]
+	public static extern void** QTabBar_SuperMetaObject(void* self);
 	[LinkName("QTabBar_Qt_Metacast")]
 	public static extern void* QTabBar_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTabBar_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTabBar_OnMetacast")]
 	public static extern void* QTabBar_OnMetacast(void* self, QTabBar_OnMetacast_action _action);
+	
+	[LinkName("QTabBar_SuperMetacast")]
+	public static extern void* QTabBar_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTabBar_Qt_Metacall")]
 	public static extern c_int QTabBar_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTabBar_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTabBar_OnMetacall")]
 	public static extern c_int QTabBar_OnMetacall(void* self, QTabBar_OnMetacall_action _action);
+	
+	[LinkName("QTabBar_SuperMetacall")]
+	public static extern c_int QTabBar_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTabBar_Tr")]
 	public static extern libqt_string QTabBar_Tr(c_char* s);
 	[LinkName("QTabBar_Shape")]
@@ -3836,12 +4181,18 @@ extension CQt
 	public function void QTabBar_OnSizeHint_action(void* self);
 	[LinkName("QTabBar_OnSizeHint")]
 	public static extern void* QTabBar_OnSizeHint(void* self, QTabBar_OnSizeHint_action _action);
+	
+	[LinkName("QTabBar_SuperSizeHint")]
+	public static extern void* QTabBar_SuperSizeHint(void* self);
 	[LinkName("QTabBar_MinimumSizeHint")]
 	public static extern void* QTabBar_MinimumSizeHint(void* self);
 	
 	public function void QTabBar_OnMinimumSizeHint_action(void* self);
 	[LinkName("QTabBar_OnMinimumSizeHint")]
 	public static extern void* QTabBar_OnMinimumSizeHint(void* self, QTabBar_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QTabBar_SuperMinimumSizeHint")]
+	public static extern void* QTabBar_SuperMinimumSizeHint(void* self);
 	[LinkName("QTabBar_SetDrawBase")]
 	public static extern void QTabBar_SetDrawBase(void* self, bool drawTheBase);
 	[LinkName("QTabBar_DrawBase")]
@@ -3928,114 +4279,171 @@ extension CQt
 	public function void QTabBar_OnTabSizeHint_action(void* self, c_int index);
 	[LinkName("QTabBar_OnTabSizeHint")]
 	public static extern void* QTabBar_OnTabSizeHint(void* self, QTabBar_OnTabSizeHint_action _action);
+	
+	[LinkName("QTabBar_SuperTabSizeHint")]
+	public static extern void* QTabBar_SuperTabSizeHint(void* self, c_int index);
 	[LinkName("QTabBar_MinimumTabSizeHint")]
 	public static extern void* QTabBar_MinimumTabSizeHint(void* self, c_int index);
 	
 	public function void QTabBar_OnMinimumTabSizeHint_action(void* self, c_int index);
 	[LinkName("QTabBar_OnMinimumTabSizeHint")]
 	public static extern void* QTabBar_OnMinimumTabSizeHint(void* self, QTabBar_OnMinimumTabSizeHint_action _action);
+	
+	[LinkName("QTabBar_SuperMinimumTabSizeHint")]
+	public static extern void* QTabBar_SuperMinimumTabSizeHint(void* self, c_int index);
 	[LinkName("QTabBar_TabInserted")]
 	public static extern void QTabBar_TabInserted(void* self, c_int index);
 	
 	public function void QTabBar_OnTabInserted_action(void* self, c_int index);
 	[LinkName("QTabBar_OnTabInserted")]
 	public static extern void QTabBar_OnTabInserted(void* self, QTabBar_OnTabInserted_action _action);
+	
+	[LinkName("QTabBar_SuperTabInserted")]
+	public static extern void QTabBar_SuperTabInserted(void* self, c_int index);
 	[LinkName("QTabBar_TabRemoved")]
 	public static extern void QTabBar_TabRemoved(void* self, c_int index);
 	
 	public function void QTabBar_OnTabRemoved_action(void* self, c_int index);
 	[LinkName("QTabBar_OnTabRemoved")]
 	public static extern void QTabBar_OnTabRemoved(void* self, QTabBar_OnTabRemoved_action _action);
+	
+	[LinkName("QTabBar_SuperTabRemoved")]
+	public static extern void QTabBar_SuperTabRemoved(void* self, c_int index);
 	[LinkName("QTabBar_TabLayoutChange")]
 	public static extern void QTabBar_TabLayoutChange(void* self);
 	
 	public function void QTabBar_OnTabLayoutChange_action(void* self);
 	[LinkName("QTabBar_OnTabLayoutChange")]
 	public static extern void QTabBar_OnTabLayoutChange(void* self, QTabBar_OnTabLayoutChange_action _action);
+	
+	[LinkName("QTabBar_SuperTabLayoutChange")]
+	public static extern void QTabBar_SuperTabLayoutChange(void* self);
 	[LinkName("QTabBar_Event")]
 	public static extern bool QTabBar_Event(void* self, void** param1);
 	
 	public function void QTabBar_OnEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnEvent")]
 	public static extern bool QTabBar_OnEvent(void* self, QTabBar_OnEvent_action _action);
+	
+	[LinkName("QTabBar_SuperEvent")]
+	public static extern bool QTabBar_SuperEvent(void* self, void** param1);
 	[LinkName("QTabBar_ResizeEvent")]
 	public static extern void QTabBar_ResizeEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnResizeEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnResizeEvent")]
 	public static extern void QTabBar_OnResizeEvent(void* self, QTabBar_OnResizeEvent_action _action);
+	
+	[LinkName("QTabBar_SuperResizeEvent")]
+	public static extern void QTabBar_SuperResizeEvent(void* self, void** param1);
 	[LinkName("QTabBar_ShowEvent")]
 	public static extern void QTabBar_ShowEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnShowEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnShowEvent")]
 	public static extern void QTabBar_OnShowEvent(void* self, QTabBar_OnShowEvent_action _action);
+	
+	[LinkName("QTabBar_SuperShowEvent")]
+	public static extern void QTabBar_SuperShowEvent(void* self, void** param1);
 	[LinkName("QTabBar_HideEvent")]
 	public static extern void QTabBar_HideEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnHideEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnHideEvent")]
 	public static extern void QTabBar_OnHideEvent(void* self, QTabBar_OnHideEvent_action _action);
+	
+	[LinkName("QTabBar_SuperHideEvent")]
+	public static extern void QTabBar_SuperHideEvent(void* self, void** param1);
 	[LinkName("QTabBar_PaintEvent")]
 	public static extern void QTabBar_PaintEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnPaintEvent")]
 	public static extern void QTabBar_OnPaintEvent(void* self, QTabBar_OnPaintEvent_action _action);
+	
+	[LinkName("QTabBar_SuperPaintEvent")]
+	public static extern void QTabBar_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QTabBar_MousePressEvent")]
 	public static extern void QTabBar_MousePressEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnMousePressEvent")]
 	public static extern void QTabBar_OnMousePressEvent(void* self, QTabBar_OnMousePressEvent_action _action);
+	
+	[LinkName("QTabBar_SuperMousePressEvent")]
+	public static extern void QTabBar_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QTabBar_MouseMoveEvent")]
 	public static extern void QTabBar_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnMouseMoveEvent")]
 	public static extern void QTabBar_OnMouseMoveEvent(void* self, QTabBar_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QTabBar_SuperMouseMoveEvent")]
+	public static extern void QTabBar_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QTabBar_MouseReleaseEvent")]
 	public static extern void QTabBar_MouseReleaseEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnMouseReleaseEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnMouseReleaseEvent")]
 	public static extern void QTabBar_OnMouseReleaseEvent(void* self, QTabBar_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QTabBar_SuperMouseReleaseEvent")]
+	public static extern void QTabBar_SuperMouseReleaseEvent(void* self, void** param1);
 	[LinkName("QTabBar_MouseDoubleClickEvent")]
 	public static extern void QTabBar_MouseDoubleClickEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnMouseDoubleClickEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnMouseDoubleClickEvent")]
 	public static extern void QTabBar_OnMouseDoubleClickEvent(void* self, QTabBar_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QTabBar_SuperMouseDoubleClickEvent")]
+	public static extern void QTabBar_SuperMouseDoubleClickEvent(void* self, void** param1);
 	[LinkName("QTabBar_WheelEvent")]
 	public static extern void QTabBar_WheelEvent(void* self, void** event);
 	
 	public function void QTabBar_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnWheelEvent")]
 	public static extern void QTabBar_OnWheelEvent(void* self, QTabBar_OnWheelEvent_action _action);
+	
+	[LinkName("QTabBar_SuperWheelEvent")]
+	public static extern void QTabBar_SuperWheelEvent(void* self, void** event);
 	[LinkName("QTabBar_KeyPressEvent")]
 	public static extern void QTabBar_KeyPressEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnKeyPressEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnKeyPressEvent")]
 	public static extern void QTabBar_OnKeyPressEvent(void* self, QTabBar_OnKeyPressEvent_action _action);
+	
+	[LinkName("QTabBar_SuperKeyPressEvent")]
+	public static extern void QTabBar_SuperKeyPressEvent(void* self, void** param1);
 	[LinkName("QTabBar_ChangeEvent")]
 	public static extern void QTabBar_ChangeEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnChangeEvent")]
 	public static extern void QTabBar_OnChangeEvent(void* self, QTabBar_OnChangeEvent_action _action);
+	
+	[LinkName("QTabBar_SuperChangeEvent")]
+	public static extern void QTabBar_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QTabBar_TimerEvent")]
 	public static extern void QTabBar_TimerEvent(void* self, void** event);
 	
 	public function void QTabBar_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnTimerEvent")]
 	public static extern void QTabBar_OnTimerEvent(void* self, QTabBar_OnTimerEvent_action _action);
+	
+	[LinkName("QTabBar_SuperTimerEvent")]
+	public static extern void QTabBar_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTabBar_InitStyleOption")]
 	public static extern void QTabBar_InitStyleOption(void* self, void** option, c_int tabIndex);
 	
 	public function void QTabBar_OnInitStyleOption_action(void* self, void** option, c_int tabIndex);
 	[LinkName("QTabBar_OnInitStyleOption")]
 	public static extern void QTabBar_OnInitStyleOption(void* self, QTabBar_OnInitStyleOption_action _action);
+	
+	[LinkName("QTabBar_SuperInitStyleOption")]
+	public static extern void QTabBar_SuperInitStyleOption(void* self, void** option, c_int tabIndex);
 	[LinkName("QTabBar_Tr2")]
 	public static extern libqt_string QTabBar_Tr2(c_char* s, c_char* c);
 	[LinkName("QTabBar_Tr3")]
@@ -4046,192 +4454,288 @@ extension CQt
 	public function void QTabBar_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTabBar_OnEventFilter")]
 	public static extern bool QTabBar_OnEventFilter(void* self, QTabBar_OnEventFilter_action _action);
+	
+	[LinkName("QTabBar_SuperEventFilter")]
+	public static extern bool QTabBar_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTabBar_ChildEvent")]
 	public static extern void QTabBar_ChildEvent(void* self, void** event);
 	
 	public function void QTabBar_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnChildEvent")]
 	public static extern void QTabBar_OnChildEvent(void* self, QTabBar_OnChildEvent_action _action);
+	
+	[LinkName("QTabBar_SuperChildEvent")]
+	public static extern void QTabBar_SuperChildEvent(void* self, void** event);
 	[LinkName("QTabBar_CustomEvent")]
 	public static extern void QTabBar_CustomEvent(void* self, void** event);
 	
 	public function void QTabBar_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnCustomEvent")]
 	public static extern void QTabBar_OnCustomEvent(void* self, QTabBar_OnCustomEvent_action _action);
+	
+	[LinkName("QTabBar_SuperCustomEvent")]
+	public static extern void QTabBar_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTabBar_ConnectNotify")]
 	public static extern void QTabBar_ConnectNotify(void* self, void** signal);
 	
 	public function void QTabBar_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTabBar_OnConnectNotify")]
 	public static extern void QTabBar_OnConnectNotify(void* self, QTabBar_OnConnectNotify_action _action);
+	
+	[LinkName("QTabBar_SuperConnectNotify")]
+	public static extern void QTabBar_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTabBar_DisconnectNotify")]
 	public static extern void QTabBar_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTabBar_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTabBar_OnDisconnectNotify")]
 	public static extern void QTabBar_OnDisconnectNotify(void* self, QTabBar_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTabBar_SuperDisconnectNotify")]
+	public static extern void QTabBar_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QTabBar_DevType")]
 	public static extern c_int QTabBar_DevType(void* self);
 	
 	public function void QTabBar_OnDevType_action(void* self);
 	[LinkName("QTabBar_OnDevType")]
 	public static extern c_int QTabBar_OnDevType(void* self, QTabBar_OnDevType_action _action);
+	
+	[LinkName("QTabBar_SuperDevType")]
+	public static extern c_int QTabBar_SuperDevType(void* self);
 	[LinkName("QTabBar_PaintEngine")]
 	public static extern void** QTabBar_PaintEngine(void* self);
 	
 	public function void QTabBar_OnPaintEngine_action(void* self);
 	[LinkName("QTabBar_OnPaintEngine")]
 	public static extern void** QTabBar_OnPaintEngine(void* self, QTabBar_OnPaintEngine_action _action);
+	
+	[LinkName("QTabBar_SuperPaintEngine")]
+	public static extern void** QTabBar_SuperPaintEngine(void* self);
 	[LinkName("QTabBar_Metric")]
 	public static extern c_int QTabBar_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QTabBar_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTabBar_OnMetric")]
 	public static extern c_int QTabBar_OnMetric(void* self, QTabBar_OnMetric_action _action);
+	
+	[LinkName("QTabBar_SuperMetric")]
+	public static extern c_int QTabBar_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTabBar_InitPainter")]
 	public static extern void QTabBar_InitPainter(void* self, void** painter);
 	
 	public function void QTabBar_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QTabBar_OnInitPainter")]
 	public static extern void QTabBar_OnInitPainter(void* self, QTabBar_OnInitPainter_action _action);
+	
+	[LinkName("QTabBar_SuperInitPainter")]
+	public static extern void QTabBar_SuperInitPainter(void* self, void** painter);
 	[LinkName("QTabBar_Redirected")]
 	public static extern void** QTabBar_Redirected(void* self, void** offset);
 	
 	public function void QTabBar_OnRedirected_action(void* self, void** offset);
 	[LinkName("QTabBar_OnRedirected")]
 	public static extern void** QTabBar_OnRedirected(void* self, QTabBar_OnRedirected_action _action);
+	
+	[LinkName("QTabBar_SuperRedirected")]
+	public static extern void** QTabBar_SuperRedirected(void* self, void** offset);
 	[LinkName("QTabBar_SharedPainter")]
 	public static extern void** QTabBar_SharedPainter(void* self);
 	
 	public function void QTabBar_OnSharedPainter_action(void* self);
 	[LinkName("QTabBar_OnSharedPainter")]
 	public static extern void** QTabBar_OnSharedPainter(void* self, QTabBar_OnSharedPainter_action _action);
+	
+	[LinkName("QTabBar_SuperSharedPainter")]
+	public static extern void** QTabBar_SuperSharedPainter(void* self);
 	[LinkName("QTabBar_SetVisible")]
 	public static extern void QTabBar_SetVisible(void* self, bool visible);
 	
 	public function void QTabBar_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QTabBar_OnSetVisible")]
 	public static extern void QTabBar_OnSetVisible(void* self, QTabBar_OnSetVisible_action _action);
+	
+	[LinkName("QTabBar_SuperSetVisible")]
+	public static extern void QTabBar_SuperSetVisible(void* self, bool visible);
 	[LinkName("QTabBar_HeightForWidth")]
 	public static extern c_int QTabBar_HeightForWidth(void* self, c_int param1);
 	
 	public function void QTabBar_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QTabBar_OnHeightForWidth")]
 	public static extern c_int QTabBar_OnHeightForWidth(void* self, QTabBar_OnHeightForWidth_action _action);
+	
+	[LinkName("QTabBar_SuperHeightForWidth")]
+	public static extern c_int QTabBar_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QTabBar_HasHeightForWidth")]
 	public static extern bool QTabBar_HasHeightForWidth(void* self);
 	
 	public function void QTabBar_OnHasHeightForWidth_action(void* self);
 	[LinkName("QTabBar_OnHasHeightForWidth")]
 	public static extern bool QTabBar_OnHasHeightForWidth(void* self, QTabBar_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QTabBar_SuperHasHeightForWidth")]
+	public static extern bool QTabBar_SuperHasHeightForWidth(void* self);
 	[LinkName("QTabBar_KeyReleaseEvent")]
 	public static extern void QTabBar_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QTabBar_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnKeyReleaseEvent")]
 	public static extern void QTabBar_OnKeyReleaseEvent(void* self, QTabBar_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QTabBar_SuperKeyReleaseEvent")]
+	public static extern void QTabBar_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QTabBar_FocusInEvent")]
 	public static extern void QTabBar_FocusInEvent(void* self, void** event);
 	
 	public function void QTabBar_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnFocusInEvent")]
 	public static extern void QTabBar_OnFocusInEvent(void* self, QTabBar_OnFocusInEvent_action _action);
+	
+	[LinkName("QTabBar_SuperFocusInEvent")]
+	public static extern void QTabBar_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QTabBar_FocusOutEvent")]
 	public static extern void QTabBar_FocusOutEvent(void* self, void** event);
 	
 	public function void QTabBar_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnFocusOutEvent")]
 	public static extern void QTabBar_OnFocusOutEvent(void* self, QTabBar_OnFocusOutEvent_action _action);
+	
+	[LinkName("QTabBar_SuperFocusOutEvent")]
+	public static extern void QTabBar_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QTabBar_EnterEvent")]
 	public static extern void QTabBar_EnterEvent(void* self, void** event);
 	
 	public function void QTabBar_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnEnterEvent")]
 	public static extern void QTabBar_OnEnterEvent(void* self, QTabBar_OnEnterEvent_action _action);
+	
+	[LinkName("QTabBar_SuperEnterEvent")]
+	public static extern void QTabBar_SuperEnterEvent(void* self, void** event);
 	[LinkName("QTabBar_LeaveEvent")]
 	public static extern void QTabBar_LeaveEvent(void* self, void** event);
 	
 	public function void QTabBar_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnLeaveEvent")]
 	public static extern void QTabBar_OnLeaveEvent(void* self, QTabBar_OnLeaveEvent_action _action);
+	
+	[LinkName("QTabBar_SuperLeaveEvent")]
+	public static extern void QTabBar_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QTabBar_MoveEvent")]
 	public static extern void QTabBar_MoveEvent(void* self, void** event);
 	
 	public function void QTabBar_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnMoveEvent")]
 	public static extern void QTabBar_OnMoveEvent(void* self, QTabBar_OnMoveEvent_action _action);
+	
+	[LinkName("QTabBar_SuperMoveEvent")]
+	public static extern void QTabBar_SuperMoveEvent(void* self, void** event);
 	[LinkName("QTabBar_CloseEvent")]
 	public static extern void QTabBar_CloseEvent(void* self, void** event);
 	
 	public function void QTabBar_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnCloseEvent")]
 	public static extern void QTabBar_OnCloseEvent(void* self, QTabBar_OnCloseEvent_action _action);
+	
+	[LinkName("QTabBar_SuperCloseEvent")]
+	public static extern void QTabBar_SuperCloseEvent(void* self, void** event);
 	[LinkName("QTabBar_ContextMenuEvent")]
 	public static extern void QTabBar_ContextMenuEvent(void* self, void** event);
 	
 	public function void QTabBar_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnContextMenuEvent")]
 	public static extern void QTabBar_OnContextMenuEvent(void* self, QTabBar_OnContextMenuEvent_action _action);
+	
+	[LinkName("QTabBar_SuperContextMenuEvent")]
+	public static extern void QTabBar_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QTabBar_TabletEvent")]
 	public static extern void QTabBar_TabletEvent(void* self, void** event);
 	
 	public function void QTabBar_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnTabletEvent")]
 	public static extern void QTabBar_OnTabletEvent(void* self, QTabBar_OnTabletEvent_action _action);
+	
+	[LinkName("QTabBar_SuperTabletEvent")]
+	public static extern void QTabBar_SuperTabletEvent(void* self, void** event);
 	[LinkName("QTabBar_ActionEvent")]
 	public static extern void QTabBar_ActionEvent(void* self, void** event);
 	
 	public function void QTabBar_OnActionEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnActionEvent")]
 	public static extern void QTabBar_OnActionEvent(void* self, QTabBar_OnActionEvent_action _action);
+	
+	[LinkName("QTabBar_SuperActionEvent")]
+	public static extern void QTabBar_SuperActionEvent(void* self, void** event);
 	[LinkName("QTabBar_DragEnterEvent")]
 	public static extern void QTabBar_DragEnterEvent(void* self, void** event);
 	
 	public function void QTabBar_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnDragEnterEvent")]
 	public static extern void QTabBar_OnDragEnterEvent(void* self, QTabBar_OnDragEnterEvent_action _action);
+	
+	[LinkName("QTabBar_SuperDragEnterEvent")]
+	public static extern void QTabBar_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QTabBar_DragMoveEvent")]
 	public static extern void QTabBar_DragMoveEvent(void* self, void** event);
 	
 	public function void QTabBar_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnDragMoveEvent")]
 	public static extern void QTabBar_OnDragMoveEvent(void* self, QTabBar_OnDragMoveEvent_action _action);
+	
+	[LinkName("QTabBar_SuperDragMoveEvent")]
+	public static extern void QTabBar_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QTabBar_DragLeaveEvent")]
 	public static extern void QTabBar_DragLeaveEvent(void* self, void** event);
 	
 	public function void QTabBar_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnDragLeaveEvent")]
 	public static extern void QTabBar_OnDragLeaveEvent(void* self, QTabBar_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QTabBar_SuperDragLeaveEvent")]
+	public static extern void QTabBar_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QTabBar_DropEvent")]
 	public static extern void QTabBar_DropEvent(void* self, void** event);
 	
 	public function void QTabBar_OnDropEvent_action(void* self, void** event);
 	[LinkName("QTabBar_OnDropEvent")]
 	public static extern void QTabBar_OnDropEvent(void* self, QTabBar_OnDropEvent_action _action);
+	
+	[LinkName("QTabBar_SuperDropEvent")]
+	public static extern void QTabBar_SuperDropEvent(void* self, void** event);
 	[LinkName("QTabBar_NativeEvent")]
 	public static extern bool QTabBar_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QTabBar_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTabBar_OnNativeEvent")]
 	public static extern bool QTabBar_OnNativeEvent(void* self, QTabBar_OnNativeEvent_action _action);
+	
+	[LinkName("QTabBar_SuperNativeEvent")]
+	public static extern bool QTabBar_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTabBar_InputMethodEvent")]
 	public static extern void QTabBar_InputMethodEvent(void* self, void** param1);
 	
 	public function void QTabBar_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QTabBar_OnInputMethodEvent")]
 	public static extern void QTabBar_OnInputMethodEvent(void* self, QTabBar_OnInputMethodEvent_action _action);
+	
+	[LinkName("QTabBar_SuperInputMethodEvent")]
+	public static extern void QTabBar_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QTabBar_InputMethodQuery")]
 	public static extern void* QTabBar_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QTabBar_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTabBar_OnInputMethodQuery")]
 	public static extern void* QTabBar_OnInputMethodQuery(void* self, QTabBar_OnInputMethodQuery_action _action);
+	
+	[LinkName("QTabBar_SuperInputMethodQuery")]
+	public static extern void* QTabBar_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTabBar_FocusNextPrevChild")]
 	public static extern bool QTabBar_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QTabBar_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QTabBar_OnFocusNextPrevChild")]
 	public static extern bool QTabBar_OnFocusNextPrevChild(void* self, QTabBar_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QTabBar_SuperFocusNextPrevChild")]
+	public static extern bool QTabBar_SuperFocusNextPrevChild(void* self, bool next);
 }
 [AllowDuplicates]
 enum QTabBar_Shape

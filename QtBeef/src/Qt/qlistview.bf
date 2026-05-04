@@ -2352,6 +2352,100 @@ class QListView : IQListView, IQAbstractItemView, IQAbstractScrollArea, IQFrame,
 		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Entered);
 		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_ViewportEntered);
 		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_IconSizeChanged);
+		CQt.QListView_OnMetaObject(obj.ObjectPtr,  => QtBeef_QListView_OnMetaObject);
+		CQt.QListView_OnMetacast(obj.ObjectPtr,  => QtBeef_QListView_OnMetacast);
+		CQt.QListView_OnMetacall(obj.ObjectPtr,  => QtBeef_QListView_OnMetacall);
+		CQt.QListView_OnVisualRect(obj.ObjectPtr,  => QtBeef_QListView_OnVisualRect);
+		CQt.QListView_OnScrollTo(obj.ObjectPtr,  => QtBeef_QListView_OnScrollTo);
+		CQt.QListView_OnIndexAt(obj.ObjectPtr,  => QtBeef_QListView_OnIndexAt);
+		CQt.QListView_OnDoItemsLayout(obj.ObjectPtr,  => QtBeef_QListView_OnDoItemsLayout);
+		CQt.QListView_OnReset(obj.ObjectPtr,  => QtBeef_QListView_OnReset);
+		CQt.QListView_OnSetRootIndex(obj.ObjectPtr,  => QtBeef_QListView_OnSetRootIndex);
+		CQt.QListView_OnEvent(obj.ObjectPtr,  => QtBeef_QListView_OnEvent);
+		CQt.QListView_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QListView_OnScrollContentsBy);
+		CQt.QListView_OnDataChanged(obj.ObjectPtr,  => QtBeef_QListView_OnDataChanged);
+		CQt.QListView_OnRowsInserted(obj.ObjectPtr,  => QtBeef_QListView_OnRowsInserted);
+		CQt.QListView_OnRowsAboutToBeRemoved(obj.ObjectPtr,  => QtBeef_QListView_OnRowsAboutToBeRemoved);
+		CQt.QListView_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QListView_OnMouseMoveEvent);
+		CQt.QListView_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QListView_OnMouseReleaseEvent);
+		CQt.QListView_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QListView_OnWheelEvent);
+		CQt.QListView_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QListView_OnTimerEvent);
+		CQt.QListView_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QListView_OnResizeEvent);
+		CQt.QListView_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QListView_OnDragMoveEvent);
+		CQt.QListView_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QListView_OnDragLeaveEvent);
+		CQt.QListView_OnDropEvent(obj.ObjectPtr,  => QtBeef_QListView_OnDropEvent);
+		CQt.QListView_OnStartDrag(obj.ObjectPtr,  => QtBeef_QListView_OnStartDrag);
+		CQt.QListView_OnInitViewItemOption(obj.ObjectPtr,  => QtBeef_QListView_OnInitViewItemOption);
+		CQt.QListView_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QListView_OnPaintEvent);
+		CQt.QListView_OnHorizontalOffset(obj.ObjectPtr,  => QtBeef_QListView_OnHorizontalOffset);
+		CQt.QListView_OnVerticalOffset(obj.ObjectPtr,  => QtBeef_QListView_OnVerticalOffset);
+		CQt.QListView_OnMoveCursor(obj.ObjectPtr,  => QtBeef_QListView_OnMoveCursor);
+		CQt.QListView_OnSetSelection(obj.ObjectPtr,  => QtBeef_QListView_OnSetSelection);
+		CQt.QListView_OnVisualRegionForSelection(obj.ObjectPtr,  => QtBeef_QListView_OnVisualRegionForSelection);
+		CQt.QListView_OnSelectedIndexes(obj.ObjectPtr,  => QtBeef_QListView_OnSelectedIndexes);
+		CQt.QListView_OnUpdateGeometries(obj.ObjectPtr,  => QtBeef_QListView_OnUpdateGeometries);
+		CQt.QListView_OnIsIndexHidden(obj.ObjectPtr,  => QtBeef_QListView_OnIsIndexHidden);
+		CQt.QListView_OnSelectionChanged(obj.ObjectPtr,  => QtBeef_QListView_OnSelectionChanged);
+		CQt.QListView_OnCurrentChanged(obj.ObjectPtr,  => QtBeef_QListView_OnCurrentChanged);
+		CQt.QListView_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QListView_OnViewportSizeHint);
+		CQt.QListView_OnEventFilter(obj.ObjectPtr,  => QtBeef_QListView_OnEventFilter);
+		CQt.QListView_OnChildEvent(obj.ObjectPtr,  => QtBeef_QListView_OnChildEvent);
+		CQt.QListView_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QListView_OnCustomEvent);
+		CQt.QListView_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QListView_OnConnectNotify);
+		CQt.QListView_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QListView_OnDisconnectNotify);
+		CQt.QListView_OnDevType(obj.ObjectPtr,  => QtBeef_QListView_OnDevType);
+		CQt.QListView_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QListView_OnPaintEngine);
+		CQt.QListView_OnMetric(obj.ObjectPtr,  => QtBeef_QListView_OnMetric);
+		CQt.QListView_OnInitPainter(obj.ObjectPtr,  => QtBeef_QListView_OnInitPainter);
+		CQt.QListView_OnRedirected(obj.ObjectPtr,  => QtBeef_QListView_OnRedirected);
+		CQt.QListView_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QListView_OnSharedPainter);
+		CQt.QListView_OnSetVisible(obj.ObjectPtr,  => QtBeef_QListView_OnSetVisible);
+		CQt.QListView_OnSizeHint(obj.ObjectPtr,  => QtBeef_QListView_OnSizeHint);
+		CQt.QListView_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QListView_OnMinimumSizeHint);
+		CQt.QListView_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QListView_OnHeightForWidth);
+		CQt.QListView_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QListView_OnHasHeightForWidth);
+		CQt.QListView_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QListView_OnMousePressEvent);
+		CQt.QListView_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QListView_OnMouseDoubleClickEvent);
+		CQt.QListView_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QListView_OnKeyPressEvent);
+		CQt.QListView_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QListView_OnKeyReleaseEvent);
+		CQt.QListView_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QListView_OnFocusInEvent);
+		CQt.QListView_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QListView_OnFocusOutEvent);
+		CQt.QListView_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QListView_OnEnterEvent);
+		CQt.QListView_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QListView_OnLeaveEvent);
+		CQt.QListView_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QListView_OnMoveEvent);
+		CQt.QListView_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QListView_OnCloseEvent);
+		CQt.QListView_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QListView_OnContextMenuEvent);
+		CQt.QListView_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QListView_OnTabletEvent);
+		CQt.QListView_OnActionEvent(obj.ObjectPtr,  => QtBeef_QListView_OnActionEvent);
+		CQt.QListView_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QListView_OnDragEnterEvent);
+		CQt.QListView_OnShowEvent(obj.ObjectPtr,  => QtBeef_QListView_OnShowEvent);
+		CQt.QListView_OnHideEvent(obj.ObjectPtr,  => QtBeef_QListView_OnHideEvent);
+		CQt.QListView_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QListView_OnNativeEvent);
+		CQt.QListView_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QListView_OnChangeEvent);
+		CQt.QListView_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QListView_OnInputMethodEvent);
+		CQt.QListView_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QListView_OnInputMethodQuery);
+		CQt.QListView_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QListView_OnFocusNextPrevChild);
+		CQt.QListView_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QListView_OnInitStyleOption);
+		CQt.QListView_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QListView_OnSetupViewport);
+		CQt.QListView_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QListView_OnViewportEvent);
+		CQt.QListView_OnSetModel(obj.ObjectPtr,  => QtBeef_QListView_OnSetModel);
+		CQt.QListView_OnSetSelectionModel(obj.ObjectPtr,  => QtBeef_QListView_OnSetSelectionModel);
+		CQt.QListView_OnKeyboardSearch(obj.ObjectPtr,  => QtBeef_QListView_OnKeyboardSearch);
+		CQt.QListView_OnSizeHintForRow(obj.ObjectPtr,  => QtBeef_QListView_OnSizeHintForRow);
+		CQt.QListView_OnSizeHintForColumn(obj.ObjectPtr,  => QtBeef_QListView_OnSizeHintForColumn);
+		CQt.QListView_OnItemDelegateForIndex(obj.ObjectPtr,  => QtBeef_QListView_OnItemDelegateForIndex);
+		CQt.QListView_OnSelectAll(obj.ObjectPtr,  => QtBeef_QListView_OnSelectAll);
+		CQt.QListView_OnUpdateEditorData(obj.ObjectPtr,  => QtBeef_QListView_OnUpdateEditorData);
+		CQt.QListView_OnUpdateEditorGeometries(obj.ObjectPtr,  => QtBeef_QListView_OnUpdateEditorGeometries);
+		CQt.QListView_OnVerticalScrollbarAction(obj.ObjectPtr,  => QtBeef_QListView_OnVerticalScrollbarAction);
+		CQt.QListView_OnHorizontalScrollbarAction(obj.ObjectPtr,  => QtBeef_QListView_OnHorizontalScrollbarAction);
+		CQt.QListView_OnVerticalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QListView_OnVerticalScrollbarValueChanged);
+		CQt.QListView_OnHorizontalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QListView_OnHorizontalScrollbarValueChanged);
+		CQt.QListView_OnCloseEditor(obj.ObjectPtr,  => QtBeef_QListView_OnCloseEditor);
+		CQt.QListView_OnCommitData(obj.ObjectPtr,  => QtBeef_QListView_OnCommitData);
+		CQt.QListView_OnEditorDestroyed(obj.ObjectPtr,  => QtBeef_QListView_OnEditorDestroyed);
+		CQt.QListView_OnEdit2(obj.ObjectPtr,  => QtBeef_QListView_OnEdit2);
+		CQt.QListView_OnSelectionCommand(obj.ObjectPtr,  => QtBeef_QListView_OnSelectionCommand);
 	}
 	public Event<delegate void(void** indexes)> OnIndexesMoved = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -2436,6 +2530,476 @@ class QListView : IQListView, IQAbstractItemView, IQAbstractScrollArea, IQFrame,
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnIconSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QListView_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QListView_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QListView_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QListView_OnVisualRect(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRect(index);
+	}
+	static void QtBeef_QListView_OnScrollTo(void* ptr, void** index, QAbstractItemView_ScrollHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollTo(index, hint);
+	}
+	static void QtBeef_QListView_OnIndexAt(void* ptr, void** p)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexAt(p);
+	}
+	static void QtBeef_QListView_OnDoItemsLayout(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoItemsLayout();
+	}
+	static void QtBeef_QListView_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QListView_OnSetRootIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetRootIndex(index);
+	}
+	static void QtBeef_QListView_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QListView_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
+	}
+	static void QtBeef_QListView_OnDataChanged(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QListView_OnRowsInserted(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsInserted(parent, start, end);
+	}
+	static void QtBeef_QListView_OnRowsAboutToBeRemoved(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsAboutToBeRemoved(parent, start, end);
+	}
+	static void QtBeef_QListView_OnMouseMoveEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(e);
+	}
+	static void QtBeef_QListView_OnMouseReleaseEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(e);
+	}
+	static void QtBeef_QListView_OnWheelEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(e);
+	}
+	static void QtBeef_QListView_OnTimerEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(e);
+	}
+	static void QtBeef_QListView_OnResizeEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(e);
+	}
+	static void QtBeef_QListView_OnDragMoveEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(e);
+	}
+	static void QtBeef_QListView_OnDragLeaveEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(e);
+	}
+	static void QtBeef_QListView_OnDropEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(e);
+	}
+	static void QtBeef_QListView_OnStartDrag(void* ptr, void* supportedActions)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStartDrag(supportedActions);
+	}
+	static void QtBeef_QListView_OnInitViewItemOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitViewItemOption(option);
+	}
+	static void QtBeef_QListView_OnPaintEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(e);
+	}
+	static void QtBeef_QListView_OnHorizontalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalOffset();
+	}
+	static void QtBeef_QListView_OnVerticalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalOffset();
+	}
+	static void QtBeef_QListView_OnMoveCursor(void* ptr, QAbstractItemView_CursorAction cursorAction, void* modifiers)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveCursor(cursorAction, modifiers);
+	}
+	static void QtBeef_QListView_OnSetSelection(void* ptr, void** rect, void* command)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelection(rect, command);
+	}
+	static void QtBeef_QListView_OnVisualRegionForSelection(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRegionForSelection(selection);
+	}
+	static void QtBeef_QListView_OnSelectedIndexes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedIndexes();
+	}
+	static void QtBeef_QListView_OnUpdateGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometries();
+	}
+	static void QtBeef_QListView_OnIsIndexHidden(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsIndexHidden(index);
+	}
+	static void QtBeef_QListView_OnSelectionChanged(void* ptr, void** selected, void** deselected)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged(selected, deselected);
+	}
+	static void QtBeef_QListView_OnCurrentChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged(current, previous);
+	}
+	static void QtBeef_QListView_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
+	}
+	static void QtBeef_QListView_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QListView_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QListView_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QListView_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QListView_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QListView_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QListView_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QListView_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QListView_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QListView_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QListView_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QListView_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QListView_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QListView_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QListView_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QListView_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QListView_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QListView_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QListView_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QListView_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QListView_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QListView_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QListView_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QListView_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QListView_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QListView_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QListView_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QListView_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QListView_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QListView_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QListView_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QListView_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QListView_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QListView_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QListView_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QListView_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QListView_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QListView_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QListView_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QListView_OnViewportEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(param1);
+	}
+	static void QtBeef_QListView_OnSetModel(void* ptr, void** model)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetModel(model);
+	}
+	static void QtBeef_QListView_OnSetSelectionModel(void* ptr, void** selectionModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelectionModel(selectionModel);
+	}
+	static void QtBeef_QListView_OnKeyboardSearch(void* ptr, libqt_string search)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyboardSearch(search);
+	}
+	static void QtBeef_QListView_OnSizeHintForRow(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForRow(row);
+	}
+	static void QtBeef_QListView_OnSizeHintForColumn(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForColumn(column);
+	}
+	static void QtBeef_QListView_OnItemDelegateForIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDelegateForIndex(index);
+	}
+	static void QtBeef_QListView_OnSelectAll(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectAll();
+	}
+	static void QtBeef_QListView_OnUpdateEditorData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorData();
+	}
+	static void QtBeef_QListView_OnUpdateEditorGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorGeometries();
+	}
+	static void QtBeef_QListView_OnVerticalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarAction(action);
+	}
+	static void QtBeef_QListView_OnHorizontalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarAction(action);
+	}
+	static void QtBeef_QListView_OnVerticalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QListView_OnHorizontalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QListView_OnCloseEditor(void* ptr, void** editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor(editor, hint);
+	}
+	static void QtBeef_QListView_OnCommitData(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommitData(editor);
+	}
+	static void QtBeef_QListView_OnEditorDestroyed(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditorDestroyed(editor);
+	}
+	static void QtBeef_QListView_OnEdit2(void* ptr, void** index, QAbstractItemView_EditTrigger trigger, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEdit2(index, trigger, event);
+	}
+	static void QtBeef_QListView_OnSelectionCommand(void* ptr, void** index, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionCommand(index, event);
 	}
 	public this(QListView_Ptr ptr)
 	{
@@ -4728,18 +5292,27 @@ extension CQt
 	public function void QListView_OnMetaObject_action(void* self);
 	[LinkName("QListView_OnMetaObject")]
 	public static extern void** QListView_OnMetaObject(void* self, QListView_OnMetaObject_action _action);
+	
+	[LinkName("QListView_SuperMetaObject")]
+	public static extern void** QListView_SuperMetaObject(void* self);
 	[LinkName("QListView_Qt_Metacast")]
 	public static extern void* QListView_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QListView_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QListView_OnMetacast")]
 	public static extern void* QListView_OnMetacast(void* self, QListView_OnMetacast_action _action);
+	
+	[LinkName("QListView_SuperMetacast")]
+	public static extern void* QListView_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QListView_Qt_Metacall")]
 	public static extern c_int QListView_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QListView_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QListView_OnMetacall")]
 	public static extern c_int QListView_OnMetacall(void* self, QListView_OnMetacall_action _action);
+	
+	[LinkName("QListView_SuperMetacall")]
+	public static extern c_int QListView_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QListView_Tr")]
 	public static extern libqt_string QListView_Tr(c_char* s);
 	[LinkName("QListView_SetMovement")]
@@ -4810,36 +5383,54 @@ extension CQt
 	public function void QListView_OnVisualRect_action(void* self, void** index);
 	[LinkName("QListView_OnVisualRect")]
 	public static extern void* QListView_OnVisualRect(void* self, QListView_OnVisualRect_action _action);
+	
+	[LinkName("QListView_SuperVisualRect")]
+	public static extern void* QListView_SuperVisualRect(void* self, void** index);
 	[LinkName("QListView_ScrollTo")]
 	public static extern void QListView_ScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	
 	public function void QListView_OnScrollTo_action(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QListView_OnScrollTo")]
 	public static extern void QListView_OnScrollTo(void* self, QListView_OnScrollTo_action _action);
+	
+	[LinkName("QListView_SuperScrollTo")]
+	public static extern void QListView_SuperScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QListView_IndexAt")]
 	public static extern void* QListView_IndexAt(void* self, void** p);
 	
 	public function void QListView_OnIndexAt_action(void* self, void** p);
 	[LinkName("QListView_OnIndexAt")]
 	public static extern void* QListView_OnIndexAt(void* self, QListView_OnIndexAt_action _action);
+	
+	[LinkName("QListView_SuperIndexAt")]
+	public static extern void* QListView_SuperIndexAt(void* self, void** p);
 	[LinkName("QListView_DoItemsLayout")]
 	public static extern void QListView_DoItemsLayout(void* self);
 	
 	public function void QListView_OnDoItemsLayout_action(void* self);
 	[LinkName("QListView_OnDoItemsLayout")]
 	public static extern void QListView_OnDoItemsLayout(void* self, QListView_OnDoItemsLayout_action _action);
+	
+	[LinkName("QListView_SuperDoItemsLayout")]
+	public static extern void QListView_SuperDoItemsLayout(void* self);
 	[LinkName("QListView_Reset")]
 	public static extern void QListView_Reset(void* self);
 	
 	public function void QListView_OnReset_action(void* self);
 	[LinkName("QListView_OnReset")]
 	public static extern void QListView_OnReset(void* self, QListView_OnReset_action _action);
+	
+	[LinkName("QListView_SuperReset")]
+	public static extern void QListView_SuperReset(void* self);
 	[LinkName("QListView_SetRootIndex")]
 	public static extern void QListView_SetRootIndex(void* self, void** index);
 	
 	public function void QListView_OnSetRootIndex_action(void* self, void** index);
 	[LinkName("QListView_OnSetRootIndex")]
 	public static extern void QListView_OnSetRootIndex(void* self, QListView_OnSetRootIndex_action _action);
+	
+	[LinkName("QListView_SuperSetRootIndex")]
+	public static extern void QListView_SuperSetRootIndex(void* self, void** index);
 	[LinkName("QListView_IndexesMoved")]
 	public static extern void QListView_IndexesMoved(void* self, void** indexes);
 	
@@ -4852,12 +5443,18 @@ extension CQt
 	public function void QListView_OnEvent_action(void* self, void** e);
 	[LinkName("QListView_OnEvent")]
 	public static extern bool QListView_OnEvent(void* self, QListView_OnEvent_action _action);
+	
+	[LinkName("QListView_SuperEvent")]
+	public static extern bool QListView_SuperEvent(void* self, void** e);
 	[LinkName("QListView_ScrollContentsBy")]
 	public static extern void QListView_ScrollContentsBy(void* self, c_int dx, c_int dy);
 	
 	public function void QListView_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QListView_OnScrollContentsBy")]
 	public static extern void QListView_OnScrollContentsBy(void* self, QListView_OnScrollContentsBy_action _action);
+	
+	[LinkName("QListView_SuperScrollContentsBy")]
+	public static extern void QListView_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 	[LinkName("QListView_ResizeContents")]
 	public static extern void QListView_ResizeContents(void* self, c_int width, c_int height);
 	[LinkName("QListView_ContentsSize")]
@@ -4868,102 +5465,153 @@ extension CQt
 	public function void QListView_OnDataChanged_action(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QListView_OnDataChanged")]
 	public static extern void QListView_OnDataChanged(void* self, QListView_OnDataChanged_action _action);
+	
+	[LinkName("QListView_SuperDataChanged")]
+	public static extern void QListView_SuperDataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QListView_RowsInserted")]
 	public static extern void QListView_RowsInserted(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QListView_OnRowsInserted_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QListView_OnRowsInserted")]
 	public static extern void QListView_OnRowsInserted(void* self, QListView_OnRowsInserted_action _action);
+	
+	[LinkName("QListView_SuperRowsInserted")]
+	public static extern void QListView_SuperRowsInserted(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QListView_RowsAboutToBeRemoved")]
 	public static extern void QListView_RowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QListView_OnRowsAboutToBeRemoved_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QListView_OnRowsAboutToBeRemoved")]
 	public static extern void QListView_OnRowsAboutToBeRemoved(void* self, QListView_OnRowsAboutToBeRemoved_action _action);
+	
+	[LinkName("QListView_SuperRowsAboutToBeRemoved")]
+	public static extern void QListView_SuperRowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QListView_MouseMoveEvent")]
 	public static extern void QListView_MouseMoveEvent(void* self, void** e);
 	
 	public function void QListView_OnMouseMoveEvent_action(void* self, void** e);
 	[LinkName("QListView_OnMouseMoveEvent")]
 	public static extern void QListView_OnMouseMoveEvent(void* self, QListView_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QListView_SuperMouseMoveEvent")]
+	public static extern void QListView_SuperMouseMoveEvent(void* self, void** e);
 	[LinkName("QListView_MouseReleaseEvent")]
 	public static extern void QListView_MouseReleaseEvent(void* self, void** e);
 	
 	public function void QListView_OnMouseReleaseEvent_action(void* self, void** e);
 	[LinkName("QListView_OnMouseReleaseEvent")]
 	public static extern void QListView_OnMouseReleaseEvent(void* self, QListView_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QListView_SuperMouseReleaseEvent")]
+	public static extern void QListView_SuperMouseReleaseEvent(void* self, void** e);
 	[LinkName("QListView_WheelEvent")]
 	public static extern void QListView_WheelEvent(void* self, void** e);
 	
 	public function void QListView_OnWheelEvent_action(void* self, void** e);
 	[LinkName("QListView_OnWheelEvent")]
 	public static extern void QListView_OnWheelEvent(void* self, QListView_OnWheelEvent_action _action);
+	
+	[LinkName("QListView_SuperWheelEvent")]
+	public static extern void QListView_SuperWheelEvent(void* self, void** e);
 	[LinkName("QListView_TimerEvent")]
 	public static extern void QListView_TimerEvent(void* self, void** e);
 	
 	public function void QListView_OnTimerEvent_action(void* self, void** e);
 	[LinkName("QListView_OnTimerEvent")]
 	public static extern void QListView_OnTimerEvent(void* self, QListView_OnTimerEvent_action _action);
+	
+	[LinkName("QListView_SuperTimerEvent")]
+	public static extern void QListView_SuperTimerEvent(void* self, void** e);
 	[LinkName("QListView_ResizeEvent")]
 	public static extern void QListView_ResizeEvent(void* self, void** e);
 	
 	public function void QListView_OnResizeEvent_action(void* self, void** e);
 	[LinkName("QListView_OnResizeEvent")]
 	public static extern void QListView_OnResizeEvent(void* self, QListView_OnResizeEvent_action _action);
+	
+	[LinkName("QListView_SuperResizeEvent")]
+	public static extern void QListView_SuperResizeEvent(void* self, void** e);
 	[LinkName("QListView_DragMoveEvent")]
 	public static extern void QListView_DragMoveEvent(void* self, void** e);
 	
 	public function void QListView_OnDragMoveEvent_action(void* self, void** e);
 	[LinkName("QListView_OnDragMoveEvent")]
 	public static extern void QListView_OnDragMoveEvent(void* self, QListView_OnDragMoveEvent_action _action);
+	
+	[LinkName("QListView_SuperDragMoveEvent")]
+	public static extern void QListView_SuperDragMoveEvent(void* self, void** e);
 	[LinkName("QListView_DragLeaveEvent")]
 	public static extern void QListView_DragLeaveEvent(void* self, void** e);
 	
 	public function void QListView_OnDragLeaveEvent_action(void* self, void** e);
 	[LinkName("QListView_OnDragLeaveEvent")]
 	public static extern void QListView_OnDragLeaveEvent(void* self, QListView_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QListView_SuperDragLeaveEvent")]
+	public static extern void QListView_SuperDragLeaveEvent(void* self, void** e);
 	[LinkName("QListView_DropEvent")]
 	public static extern void QListView_DropEvent(void* self, void** e);
 	
 	public function void QListView_OnDropEvent_action(void* self, void** e);
 	[LinkName("QListView_OnDropEvent")]
 	public static extern void QListView_OnDropEvent(void* self, QListView_OnDropEvent_action _action);
+	
+	[LinkName("QListView_SuperDropEvent")]
+	public static extern void QListView_SuperDropEvent(void* self, void** e);
 	[LinkName("QListView_StartDrag")]
 	public static extern void QListView_StartDrag(void* self, void* supportedActions);
 	
 	public function void QListView_OnStartDrag_action(void* self, void* supportedActions);
 	[LinkName("QListView_OnStartDrag")]
 	public static extern void QListView_OnStartDrag(void* self, QListView_OnStartDrag_action _action);
+	
+	[LinkName("QListView_SuperStartDrag")]
+	public static extern void QListView_SuperStartDrag(void* self, void* supportedActions);
 	[LinkName("QListView_InitViewItemOption")]
 	public static extern void QListView_InitViewItemOption(void* self, void** option);
 	
 	public function void QListView_OnInitViewItemOption_action(void* self, void** option);
 	[LinkName("QListView_OnInitViewItemOption")]
 	public static extern void QListView_OnInitViewItemOption(void* self, QListView_OnInitViewItemOption_action _action);
+	
+	[LinkName("QListView_SuperInitViewItemOption")]
+	public static extern void QListView_SuperInitViewItemOption(void* self, void** option);
 	[LinkName("QListView_PaintEvent")]
 	public static extern void QListView_PaintEvent(void* self, void** e);
 	
 	public function void QListView_OnPaintEvent_action(void* self, void** e);
 	[LinkName("QListView_OnPaintEvent")]
 	public static extern void QListView_OnPaintEvent(void* self, QListView_OnPaintEvent_action _action);
+	
+	[LinkName("QListView_SuperPaintEvent")]
+	public static extern void QListView_SuperPaintEvent(void* self, void** e);
 	[LinkName("QListView_HorizontalOffset")]
 	public static extern c_int QListView_HorizontalOffset(void* self);
 	
 	public function void QListView_OnHorizontalOffset_action(void* self);
 	[LinkName("QListView_OnHorizontalOffset")]
 	public static extern c_int QListView_OnHorizontalOffset(void* self, QListView_OnHorizontalOffset_action _action);
+	
+	[LinkName("QListView_SuperHorizontalOffset")]
+	public static extern c_int QListView_SuperHorizontalOffset(void* self);
 	[LinkName("QListView_VerticalOffset")]
 	public static extern c_int QListView_VerticalOffset(void* self);
 	
 	public function void QListView_OnVerticalOffset_action(void* self);
 	[LinkName("QListView_OnVerticalOffset")]
 	public static extern c_int QListView_OnVerticalOffset(void* self, QListView_OnVerticalOffset_action _action);
+	
+	[LinkName("QListView_SuperVerticalOffset")]
+	public static extern c_int QListView_SuperVerticalOffset(void* self);
 	[LinkName("QListView_MoveCursor")]
 	public static extern void* QListView_MoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	
 	public function void QListView_OnMoveCursor_action(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QListView_OnMoveCursor")]
 	public static extern void* QListView_OnMoveCursor(void* self, QListView_OnMoveCursor_action _action);
+	
+	[LinkName("QListView_SuperMoveCursor")]
+	public static extern void* QListView_SuperMoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QListView_RectForIndex")]
 	public static extern void* QListView_RectForIndex(void* self, void** index);
 	[LinkName("QListView_SetPositionForIndex")]
@@ -4974,48 +5622,72 @@ extension CQt
 	public function void QListView_OnSetSelection_action(void* self, void** rect, void* command);
 	[LinkName("QListView_OnSetSelection")]
 	public static extern void QListView_OnSetSelection(void* self, QListView_OnSetSelection_action _action);
+	
+	[LinkName("QListView_SuperSetSelection")]
+	public static extern void QListView_SuperSetSelection(void* self, void** rect, void* command);
 	[LinkName("QListView_VisualRegionForSelection")]
 	public static extern void* QListView_VisualRegionForSelection(void* self, void** selection);
 	
 	public function void QListView_OnVisualRegionForSelection_action(void* self, void** selection);
 	[LinkName("QListView_OnVisualRegionForSelection")]
 	public static extern void* QListView_OnVisualRegionForSelection(void* self, QListView_OnVisualRegionForSelection_action _action);
+	
+	[LinkName("QListView_SuperVisualRegionForSelection")]
+	public static extern void* QListView_SuperVisualRegionForSelection(void* self, void** selection);
 	[LinkName("QListView_SelectedIndexes")]
 	public static extern void* QListView_SelectedIndexes(void* self);
 	
 	public function void QListView_OnSelectedIndexes_action(void* self);
 	[LinkName("QListView_OnSelectedIndexes")]
 	public static extern void* QListView_OnSelectedIndexes(void* self, QListView_OnSelectedIndexes_action _action);
+	
+	[LinkName("QListView_SuperSelectedIndexes")]
+	public static extern void* QListView_SuperSelectedIndexes(void* self);
 	[LinkName("QListView_UpdateGeometries")]
 	public static extern void QListView_UpdateGeometries(void* self);
 	
 	public function void QListView_OnUpdateGeometries_action(void* self);
 	[LinkName("QListView_OnUpdateGeometries")]
 	public static extern void QListView_OnUpdateGeometries(void* self, QListView_OnUpdateGeometries_action _action);
+	
+	[LinkName("QListView_SuperUpdateGeometries")]
+	public static extern void QListView_SuperUpdateGeometries(void* self);
 	[LinkName("QListView_IsIndexHidden")]
 	public static extern bool QListView_IsIndexHidden(void* self, void** index);
 	
 	public function void QListView_OnIsIndexHidden_action(void* self, void** index);
 	[LinkName("QListView_OnIsIndexHidden")]
 	public static extern bool QListView_OnIsIndexHidden(void* self, QListView_OnIsIndexHidden_action _action);
+	
+	[LinkName("QListView_SuperIsIndexHidden")]
+	public static extern bool QListView_SuperIsIndexHidden(void* self, void** index);
 	[LinkName("QListView_SelectionChanged")]
 	public static extern void QListView_SelectionChanged(void* self, void** selected, void** deselected);
 	
 	public function void QListView_OnSelectionChanged_action(void* self, void** selected, void** deselected);
 	[LinkName("QListView_OnSelectionChanged")]
 	public static extern void QListView_OnSelectionChanged(void* self, QListView_OnSelectionChanged_action _action);
+	
+	[LinkName("QListView_SuperSelectionChanged")]
+	public static extern void QListView_SuperSelectionChanged(void* self, void** selected, void** deselected);
 	[LinkName("QListView_CurrentChanged")]
 	public static extern void QListView_CurrentChanged(void* self, void** current, void** previous);
 	
 	public function void QListView_OnCurrentChanged_action(void* self, void** current, void** previous);
 	[LinkName("QListView_OnCurrentChanged")]
 	public static extern void QListView_OnCurrentChanged(void* self, QListView_OnCurrentChanged_action _action);
+	
+	[LinkName("QListView_SuperCurrentChanged")]
+	public static extern void QListView_SuperCurrentChanged(void* self, void** current, void** previous);
 	[LinkName("QListView_ViewportSizeHint")]
 	public static extern void* QListView_ViewportSizeHint(void* self);
 	
 	public function void QListView_OnViewportSizeHint_action(void* self);
 	[LinkName("QListView_OnViewportSizeHint")]
 	public static extern void* QListView_OnViewportSizeHint(void* self, QListView_OnViewportSizeHint_action _action);
+	
+	[LinkName("QListView_SuperViewportSizeHint")]
+	public static extern void* QListView_SuperViewportSizeHint(void* self);
 	[LinkName("QListView_Tr2")]
 	public static extern libqt_string QListView_Tr2(c_char* s, c_char* c);
 	[LinkName("QListView_Tr3")]
@@ -5026,348 +5698,522 @@ extension CQt
 	public function void QListView_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QListView_OnEventFilter")]
 	public static extern bool QListView_OnEventFilter(void* self, QListView_OnEventFilter_action _action);
+	
+	[LinkName("QListView_SuperEventFilter")]
+	public static extern bool QListView_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QListView_ChildEvent")]
 	public static extern void QListView_ChildEvent(void* self, void** event);
 	
 	public function void QListView_OnChildEvent_action(void* self, void** event);
 	[LinkName("QListView_OnChildEvent")]
 	public static extern void QListView_OnChildEvent(void* self, QListView_OnChildEvent_action _action);
+	
+	[LinkName("QListView_SuperChildEvent")]
+	public static extern void QListView_SuperChildEvent(void* self, void** event);
 	[LinkName("QListView_CustomEvent")]
 	public static extern void QListView_CustomEvent(void* self, void** event);
 	
 	public function void QListView_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QListView_OnCustomEvent")]
 	public static extern void QListView_OnCustomEvent(void* self, QListView_OnCustomEvent_action _action);
+	
+	[LinkName("QListView_SuperCustomEvent")]
+	public static extern void QListView_SuperCustomEvent(void* self, void** event);
 	[LinkName("QListView_ConnectNotify")]
 	public static extern void QListView_ConnectNotify(void* self, void** signal);
 	
 	public function void QListView_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QListView_OnConnectNotify")]
 	public static extern void QListView_OnConnectNotify(void* self, QListView_OnConnectNotify_action _action);
+	
+	[LinkName("QListView_SuperConnectNotify")]
+	public static extern void QListView_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QListView_DisconnectNotify")]
 	public static extern void QListView_DisconnectNotify(void* self, void** signal);
 	
 	public function void QListView_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QListView_OnDisconnectNotify")]
 	public static extern void QListView_OnDisconnectNotify(void* self, QListView_OnDisconnectNotify_action _action);
+	
+	[LinkName("QListView_SuperDisconnectNotify")]
+	public static extern void QListView_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QListView_DevType")]
 	public static extern c_int QListView_DevType(void* self);
 	
 	public function void QListView_OnDevType_action(void* self);
 	[LinkName("QListView_OnDevType")]
 	public static extern c_int QListView_OnDevType(void* self, QListView_OnDevType_action _action);
+	
+	[LinkName("QListView_SuperDevType")]
+	public static extern c_int QListView_SuperDevType(void* self);
 	[LinkName("QListView_PaintEngine")]
 	public static extern void** QListView_PaintEngine(void* self);
 	
 	public function void QListView_OnPaintEngine_action(void* self);
 	[LinkName("QListView_OnPaintEngine")]
 	public static extern void** QListView_OnPaintEngine(void* self, QListView_OnPaintEngine_action _action);
+	
+	[LinkName("QListView_SuperPaintEngine")]
+	public static extern void** QListView_SuperPaintEngine(void* self);
 	[LinkName("QListView_Metric")]
 	public static extern c_int QListView_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QListView_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QListView_OnMetric")]
 	public static extern c_int QListView_OnMetric(void* self, QListView_OnMetric_action _action);
+	
+	[LinkName("QListView_SuperMetric")]
+	public static extern c_int QListView_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QListView_InitPainter")]
 	public static extern void QListView_InitPainter(void* self, void** painter);
 	
 	public function void QListView_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QListView_OnInitPainter")]
 	public static extern void QListView_OnInitPainter(void* self, QListView_OnInitPainter_action _action);
+	
+	[LinkName("QListView_SuperInitPainter")]
+	public static extern void QListView_SuperInitPainter(void* self, void** painter);
 	[LinkName("QListView_Redirected")]
 	public static extern void** QListView_Redirected(void* self, void** offset);
 	
 	public function void QListView_OnRedirected_action(void* self, void** offset);
 	[LinkName("QListView_OnRedirected")]
 	public static extern void** QListView_OnRedirected(void* self, QListView_OnRedirected_action _action);
+	
+	[LinkName("QListView_SuperRedirected")]
+	public static extern void** QListView_SuperRedirected(void* self, void** offset);
 	[LinkName("QListView_SharedPainter")]
 	public static extern void** QListView_SharedPainter(void* self);
 	
 	public function void QListView_OnSharedPainter_action(void* self);
 	[LinkName("QListView_OnSharedPainter")]
 	public static extern void** QListView_OnSharedPainter(void* self, QListView_OnSharedPainter_action _action);
+	
+	[LinkName("QListView_SuperSharedPainter")]
+	public static extern void** QListView_SuperSharedPainter(void* self);
 	[LinkName("QListView_SetVisible")]
 	public static extern void QListView_SetVisible(void* self, bool visible);
 	
 	public function void QListView_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QListView_OnSetVisible")]
 	public static extern void QListView_OnSetVisible(void* self, QListView_OnSetVisible_action _action);
+	
+	[LinkName("QListView_SuperSetVisible")]
+	public static extern void QListView_SuperSetVisible(void* self, bool visible);
 	[LinkName("QListView_SizeHint")]
 	public static extern void* QListView_SizeHint(void* self);
 	
 	public function void QListView_OnSizeHint_action(void* self);
 	[LinkName("QListView_OnSizeHint")]
 	public static extern void* QListView_OnSizeHint(void* self, QListView_OnSizeHint_action _action);
+	
+	[LinkName("QListView_SuperSizeHint")]
+	public static extern void* QListView_SuperSizeHint(void* self);
 	[LinkName("QListView_MinimumSizeHint")]
 	public static extern void* QListView_MinimumSizeHint(void* self);
 	
 	public function void QListView_OnMinimumSizeHint_action(void* self);
 	[LinkName("QListView_OnMinimumSizeHint")]
 	public static extern void* QListView_OnMinimumSizeHint(void* self, QListView_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QListView_SuperMinimumSizeHint")]
+	public static extern void* QListView_SuperMinimumSizeHint(void* self);
 	[LinkName("QListView_HeightForWidth")]
 	public static extern c_int QListView_HeightForWidth(void* self, c_int param1);
 	
 	public function void QListView_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QListView_OnHeightForWidth")]
 	public static extern c_int QListView_OnHeightForWidth(void* self, QListView_OnHeightForWidth_action _action);
+	
+	[LinkName("QListView_SuperHeightForWidth")]
+	public static extern c_int QListView_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QListView_HasHeightForWidth")]
 	public static extern bool QListView_HasHeightForWidth(void* self);
 	
 	public function void QListView_OnHasHeightForWidth_action(void* self);
 	[LinkName("QListView_OnHasHeightForWidth")]
 	public static extern bool QListView_OnHasHeightForWidth(void* self, QListView_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QListView_SuperHasHeightForWidth")]
+	public static extern bool QListView_SuperHasHeightForWidth(void* self);
 	[LinkName("QListView_MousePressEvent")]
 	public static extern void QListView_MousePressEvent(void* self, void** event);
 	
 	public function void QListView_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QListView_OnMousePressEvent")]
 	public static extern void QListView_OnMousePressEvent(void* self, QListView_OnMousePressEvent_action _action);
+	
+	[LinkName("QListView_SuperMousePressEvent")]
+	public static extern void QListView_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QListView_MouseDoubleClickEvent")]
 	public static extern void QListView_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QListView_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QListView_OnMouseDoubleClickEvent")]
 	public static extern void QListView_OnMouseDoubleClickEvent(void* self, QListView_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QListView_SuperMouseDoubleClickEvent")]
+	public static extern void QListView_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QListView_KeyPressEvent")]
 	public static extern void QListView_KeyPressEvent(void* self, void** event);
 	
 	public function void QListView_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QListView_OnKeyPressEvent")]
 	public static extern void QListView_OnKeyPressEvent(void* self, QListView_OnKeyPressEvent_action _action);
+	
+	[LinkName("QListView_SuperKeyPressEvent")]
+	public static extern void QListView_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QListView_KeyReleaseEvent")]
 	public static extern void QListView_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QListView_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QListView_OnKeyReleaseEvent")]
 	public static extern void QListView_OnKeyReleaseEvent(void* self, QListView_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QListView_SuperKeyReleaseEvent")]
+	public static extern void QListView_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QListView_FocusInEvent")]
 	public static extern void QListView_FocusInEvent(void* self, void** event);
 	
 	public function void QListView_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QListView_OnFocusInEvent")]
 	public static extern void QListView_OnFocusInEvent(void* self, QListView_OnFocusInEvent_action _action);
+	
+	[LinkName("QListView_SuperFocusInEvent")]
+	public static extern void QListView_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QListView_FocusOutEvent")]
 	public static extern void QListView_FocusOutEvent(void* self, void** event);
 	
 	public function void QListView_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QListView_OnFocusOutEvent")]
 	public static extern void QListView_OnFocusOutEvent(void* self, QListView_OnFocusOutEvent_action _action);
+	
+	[LinkName("QListView_SuperFocusOutEvent")]
+	public static extern void QListView_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QListView_EnterEvent")]
 	public static extern void QListView_EnterEvent(void* self, void** event);
 	
 	public function void QListView_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QListView_OnEnterEvent")]
 	public static extern void QListView_OnEnterEvent(void* self, QListView_OnEnterEvent_action _action);
+	
+	[LinkName("QListView_SuperEnterEvent")]
+	public static extern void QListView_SuperEnterEvent(void* self, void** event);
 	[LinkName("QListView_LeaveEvent")]
 	public static extern void QListView_LeaveEvent(void* self, void** event);
 	
 	public function void QListView_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QListView_OnLeaveEvent")]
 	public static extern void QListView_OnLeaveEvent(void* self, QListView_OnLeaveEvent_action _action);
+	
+	[LinkName("QListView_SuperLeaveEvent")]
+	public static extern void QListView_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QListView_MoveEvent")]
 	public static extern void QListView_MoveEvent(void* self, void** event);
 	
 	public function void QListView_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QListView_OnMoveEvent")]
 	public static extern void QListView_OnMoveEvent(void* self, QListView_OnMoveEvent_action _action);
+	
+	[LinkName("QListView_SuperMoveEvent")]
+	public static extern void QListView_SuperMoveEvent(void* self, void** event);
 	[LinkName("QListView_CloseEvent")]
 	public static extern void QListView_CloseEvent(void* self, void** event);
 	
 	public function void QListView_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QListView_OnCloseEvent")]
 	public static extern void QListView_OnCloseEvent(void* self, QListView_OnCloseEvent_action _action);
+	
+	[LinkName("QListView_SuperCloseEvent")]
+	public static extern void QListView_SuperCloseEvent(void* self, void** event);
 	[LinkName("QListView_ContextMenuEvent")]
 	public static extern void QListView_ContextMenuEvent(void* self, void** event);
 	
 	public function void QListView_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QListView_OnContextMenuEvent")]
 	public static extern void QListView_OnContextMenuEvent(void* self, QListView_OnContextMenuEvent_action _action);
+	
+	[LinkName("QListView_SuperContextMenuEvent")]
+	public static extern void QListView_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QListView_TabletEvent")]
 	public static extern void QListView_TabletEvent(void* self, void** event);
 	
 	public function void QListView_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QListView_OnTabletEvent")]
 	public static extern void QListView_OnTabletEvent(void* self, QListView_OnTabletEvent_action _action);
+	
+	[LinkName("QListView_SuperTabletEvent")]
+	public static extern void QListView_SuperTabletEvent(void* self, void** event);
 	[LinkName("QListView_ActionEvent")]
 	public static extern void QListView_ActionEvent(void* self, void** event);
 	
 	public function void QListView_OnActionEvent_action(void* self, void** event);
 	[LinkName("QListView_OnActionEvent")]
 	public static extern void QListView_OnActionEvent(void* self, QListView_OnActionEvent_action _action);
+	
+	[LinkName("QListView_SuperActionEvent")]
+	public static extern void QListView_SuperActionEvent(void* self, void** event);
 	[LinkName("QListView_DragEnterEvent")]
 	public static extern void QListView_DragEnterEvent(void* self, void** event);
 	
 	public function void QListView_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QListView_OnDragEnterEvent")]
 	public static extern void QListView_OnDragEnterEvent(void* self, QListView_OnDragEnterEvent_action _action);
+	
+	[LinkName("QListView_SuperDragEnterEvent")]
+	public static extern void QListView_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QListView_ShowEvent")]
 	public static extern void QListView_ShowEvent(void* self, void** event);
 	
 	public function void QListView_OnShowEvent_action(void* self, void** event);
 	[LinkName("QListView_OnShowEvent")]
 	public static extern void QListView_OnShowEvent(void* self, QListView_OnShowEvent_action _action);
+	
+	[LinkName("QListView_SuperShowEvent")]
+	public static extern void QListView_SuperShowEvent(void* self, void** event);
 	[LinkName("QListView_HideEvent")]
 	public static extern void QListView_HideEvent(void* self, void** event);
 	
 	public function void QListView_OnHideEvent_action(void* self, void** event);
 	[LinkName("QListView_OnHideEvent")]
 	public static extern void QListView_OnHideEvent(void* self, QListView_OnHideEvent_action _action);
+	
+	[LinkName("QListView_SuperHideEvent")]
+	public static extern void QListView_SuperHideEvent(void* self, void** event);
 	[LinkName("QListView_NativeEvent")]
 	public static extern bool QListView_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QListView_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QListView_OnNativeEvent")]
 	public static extern bool QListView_OnNativeEvent(void* self, QListView_OnNativeEvent_action _action);
+	
+	[LinkName("QListView_SuperNativeEvent")]
+	public static extern bool QListView_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QListView_ChangeEvent")]
 	public static extern void QListView_ChangeEvent(void* self, void** param1);
 	
 	public function void QListView_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QListView_OnChangeEvent")]
 	public static extern void QListView_OnChangeEvent(void* self, QListView_OnChangeEvent_action _action);
+	
+	[LinkName("QListView_SuperChangeEvent")]
+	public static extern void QListView_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QListView_InputMethodEvent")]
 	public static extern void QListView_InputMethodEvent(void* self, void** param1);
 	
 	public function void QListView_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QListView_OnInputMethodEvent")]
 	public static extern void QListView_OnInputMethodEvent(void* self, QListView_OnInputMethodEvent_action _action);
+	
+	[LinkName("QListView_SuperInputMethodEvent")]
+	public static extern void QListView_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QListView_InputMethodQuery")]
 	public static extern void* QListView_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QListView_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QListView_OnInputMethodQuery")]
 	public static extern void* QListView_OnInputMethodQuery(void* self, QListView_OnInputMethodQuery_action _action);
+	
+	[LinkName("QListView_SuperInputMethodQuery")]
+	public static extern void* QListView_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QListView_FocusNextPrevChild")]
 	public static extern bool QListView_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QListView_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QListView_OnFocusNextPrevChild")]
 	public static extern bool QListView_OnFocusNextPrevChild(void* self, QListView_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QListView_SuperFocusNextPrevChild")]
+	public static extern bool QListView_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QListView_InitStyleOption")]
 	public static extern void QListView_InitStyleOption(void* self, void** option);
 	
 	public function void QListView_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QListView_OnInitStyleOption")]
 	public static extern void QListView_OnInitStyleOption(void* self, QListView_OnInitStyleOption_action _action);
+	
+	[LinkName("QListView_SuperInitStyleOption")]
+	public static extern void QListView_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QListView_SetupViewport")]
 	public static extern void QListView_SetupViewport(void* self, void** viewport);
 	
 	public function void QListView_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QListView_OnSetupViewport")]
 	public static extern void QListView_OnSetupViewport(void* self, QListView_OnSetupViewport_action _action);
+	
+	[LinkName("QListView_SuperSetupViewport")]
+	public static extern void QListView_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QListView_ViewportEvent")]
 	public static extern bool QListView_ViewportEvent(void* self, void** param1);
 	
 	public function void QListView_OnViewportEvent_action(void* self, void** param1);
 	[LinkName("QListView_OnViewportEvent")]
 	public static extern bool QListView_OnViewportEvent(void* self, QListView_OnViewportEvent_action _action);
+	
+	[LinkName("QListView_SuperViewportEvent")]
+	public static extern bool QListView_SuperViewportEvent(void* self, void** param1);
 	[LinkName("QListView_SetModel")]
 	public static extern void QListView_SetModel(void* self, void** model);
 	
 	public function void QListView_OnSetModel_action(void* self, void** model);
 	[LinkName("QListView_OnSetModel")]
 	public static extern void QListView_OnSetModel(void* self, QListView_OnSetModel_action _action);
+	
+	[LinkName("QListView_SuperSetModel")]
+	public static extern void QListView_SuperSetModel(void* self, void** model);
 	[LinkName("QListView_SetSelectionModel")]
 	public static extern void QListView_SetSelectionModel(void* self, void** selectionModel);
 	
 	public function void QListView_OnSetSelectionModel_action(void* self, void** selectionModel);
 	[LinkName("QListView_OnSetSelectionModel")]
 	public static extern void QListView_OnSetSelectionModel(void* self, QListView_OnSetSelectionModel_action _action);
+	
+	[LinkName("QListView_SuperSetSelectionModel")]
+	public static extern void QListView_SuperSetSelectionModel(void* self, void** selectionModel);
 	[LinkName("QListView_KeyboardSearch")]
 	public static extern void QListView_KeyboardSearch(void* self, libqt_string search);
 	
 	public function void QListView_OnKeyboardSearch_action(void* self, libqt_string search);
 	[LinkName("QListView_OnKeyboardSearch")]
 	public static extern void QListView_OnKeyboardSearch(void* self, QListView_OnKeyboardSearch_action _action);
+	
+	[LinkName("QListView_SuperKeyboardSearch")]
+	public static extern void QListView_SuperKeyboardSearch(void* self, libqt_string search);
 	[LinkName("QListView_SizeHintForRow")]
 	public static extern c_int QListView_SizeHintForRow(void* self, c_int row);
 	
 	public function void QListView_OnSizeHintForRow_action(void* self, c_int row);
 	[LinkName("QListView_OnSizeHintForRow")]
 	public static extern c_int QListView_OnSizeHintForRow(void* self, QListView_OnSizeHintForRow_action _action);
+	
+	[LinkName("QListView_SuperSizeHintForRow")]
+	public static extern c_int QListView_SuperSizeHintForRow(void* self, c_int row);
 	[LinkName("QListView_SizeHintForColumn")]
 	public static extern c_int QListView_SizeHintForColumn(void* self, c_int column);
 	
 	public function void QListView_OnSizeHintForColumn_action(void* self, c_int column);
 	[LinkName("QListView_OnSizeHintForColumn")]
 	public static extern c_int QListView_OnSizeHintForColumn(void* self, QListView_OnSizeHintForColumn_action _action);
+	
+	[LinkName("QListView_SuperSizeHintForColumn")]
+	public static extern c_int QListView_SuperSizeHintForColumn(void* self, c_int column);
 	[LinkName("QListView_ItemDelegateForIndex")]
 	public static extern void** QListView_ItemDelegateForIndex(void* self, void** index);
 	
 	public function void QListView_OnItemDelegateForIndex_action(void* self, void** index);
 	[LinkName("QListView_OnItemDelegateForIndex")]
 	public static extern void** QListView_OnItemDelegateForIndex(void* self, QListView_OnItemDelegateForIndex_action _action);
+	
+	[LinkName("QListView_SuperItemDelegateForIndex")]
+	public static extern void** QListView_SuperItemDelegateForIndex(void* self, void** index);
 	[LinkName("QListView_SelectAll")]
 	public static extern void QListView_SelectAll(void* self);
 	
 	public function void QListView_OnSelectAll_action(void* self);
 	[LinkName("QListView_OnSelectAll")]
 	public static extern void QListView_OnSelectAll(void* self, QListView_OnSelectAll_action _action);
+	
+	[LinkName("QListView_SuperSelectAll")]
+	public static extern void QListView_SuperSelectAll(void* self);
 	[LinkName("QListView_UpdateEditorData")]
 	public static extern void QListView_UpdateEditorData(void* self);
 	
 	public function void QListView_OnUpdateEditorData_action(void* self);
 	[LinkName("QListView_OnUpdateEditorData")]
 	public static extern void QListView_OnUpdateEditorData(void* self, QListView_OnUpdateEditorData_action _action);
+	
+	[LinkName("QListView_SuperUpdateEditorData")]
+	public static extern void QListView_SuperUpdateEditorData(void* self);
 	[LinkName("QListView_UpdateEditorGeometries")]
 	public static extern void QListView_UpdateEditorGeometries(void* self);
 	
 	public function void QListView_OnUpdateEditorGeometries_action(void* self);
 	[LinkName("QListView_OnUpdateEditorGeometries")]
 	public static extern void QListView_OnUpdateEditorGeometries(void* self, QListView_OnUpdateEditorGeometries_action _action);
+	
+	[LinkName("QListView_SuperUpdateEditorGeometries")]
+	public static extern void QListView_SuperUpdateEditorGeometries(void* self);
 	[LinkName("QListView_VerticalScrollbarAction")]
 	public static extern void QListView_VerticalScrollbarAction(void* self, c_int action);
 	
 	public function void QListView_OnVerticalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QListView_OnVerticalScrollbarAction")]
 	public static extern void QListView_OnVerticalScrollbarAction(void* self, QListView_OnVerticalScrollbarAction_action _action);
+	
+	[LinkName("QListView_SuperVerticalScrollbarAction")]
+	public static extern void QListView_SuperVerticalScrollbarAction(void* self, c_int action);
 	[LinkName("QListView_HorizontalScrollbarAction")]
 	public static extern void QListView_HorizontalScrollbarAction(void* self, c_int action);
 	
 	public function void QListView_OnHorizontalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QListView_OnHorizontalScrollbarAction")]
 	public static extern void QListView_OnHorizontalScrollbarAction(void* self, QListView_OnHorizontalScrollbarAction_action _action);
+	
+	[LinkName("QListView_SuperHorizontalScrollbarAction")]
+	public static extern void QListView_SuperHorizontalScrollbarAction(void* self, c_int action);
 	[LinkName("QListView_VerticalScrollbarValueChanged")]
 	public static extern void QListView_VerticalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QListView_OnVerticalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QListView_OnVerticalScrollbarValueChanged")]
 	public static extern void QListView_OnVerticalScrollbarValueChanged(void* self, QListView_OnVerticalScrollbarValueChanged_action _action);
+	
+	[LinkName("QListView_SuperVerticalScrollbarValueChanged")]
+	public static extern void QListView_SuperVerticalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QListView_HorizontalScrollbarValueChanged")]
 	public static extern void QListView_HorizontalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QListView_OnHorizontalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QListView_OnHorizontalScrollbarValueChanged")]
 	public static extern void QListView_OnHorizontalScrollbarValueChanged(void* self, QListView_OnHorizontalScrollbarValueChanged_action _action);
+	
+	[LinkName("QListView_SuperHorizontalScrollbarValueChanged")]
+	public static extern void QListView_SuperHorizontalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QListView_CloseEditor")]
 	public static extern void QListView_CloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	
 	public function void QListView_OnCloseEditor_action(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QListView_OnCloseEditor")]
 	public static extern void QListView_OnCloseEditor(void* self, QListView_OnCloseEditor_action _action);
+	
+	[LinkName("QListView_SuperCloseEditor")]
+	public static extern void QListView_SuperCloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QListView_CommitData")]
 	public static extern void QListView_CommitData(void* self, void** editor);
 	
 	public function void QListView_OnCommitData_action(void* self, void** editor);
 	[LinkName("QListView_OnCommitData")]
 	public static extern void QListView_OnCommitData(void* self, QListView_OnCommitData_action _action);
+	
+	[LinkName("QListView_SuperCommitData")]
+	public static extern void QListView_SuperCommitData(void* self, void** editor);
 	[LinkName("QListView_EditorDestroyed")]
 	public static extern void QListView_EditorDestroyed(void* self, void** editor);
 	
 	public function void QListView_OnEditorDestroyed_action(void* self, void** editor);
 	[LinkName("QListView_OnEditorDestroyed")]
 	public static extern void QListView_OnEditorDestroyed(void* self, QListView_OnEditorDestroyed_action _action);
+	
+	[LinkName("QListView_SuperEditorDestroyed")]
+	public static extern void QListView_SuperEditorDestroyed(void* self, void** editor);
 	[LinkName("QListView_Edit2")]
 	public static extern bool QListView_Edit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	
 	public function void QListView_OnEdit2_action(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QListView_OnEdit2")]
 	public static extern bool QListView_OnEdit2(void* self, QListView_OnEdit2_action _action);
+	
+	[LinkName("QListView_SuperEdit2")]
+	public static extern bool QListView_SuperEdit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QListView_SelectionCommand")]
 	public static extern void* QListView_SelectionCommand(void* self, void** index, void** event);
 	
 	public function void QListView_OnSelectionCommand_action(void* self, void** index, void** event);
 	[LinkName("QListView_OnSelectionCommand")]
 	public static extern void* QListView_OnSelectionCommand(void* self, QListView_OnSelectionCommand_action _action);
+	
+	[LinkName("QListView_SuperSelectionCommand")]
+	public static extern void* QListView_SuperSelectionCommand(void* self, void** index, void** event);
 }
 [AllowDuplicates]
 enum QListView_Movement

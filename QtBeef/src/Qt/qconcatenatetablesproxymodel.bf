@@ -625,6 +625,53 @@ class QConcatenateTablesProxyModel : IQConcatenateTablesProxyModel, IQAbstractIt
 		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged2);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2);
+		CQt.QConcatenateTablesProxyModel_OnMetaObject(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnMetaObject);
+		CQt.QConcatenateTablesProxyModel_OnMetacast(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnMetacast);
+		CQt.QConcatenateTablesProxyModel_OnMetacall(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnMetacall);
+		CQt.QConcatenateTablesProxyModel_OnData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnData);
+		CQt.QConcatenateTablesProxyModel_OnSetData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnSetData);
+		CQt.QConcatenateTablesProxyModel_OnItemData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnItemData);
+		CQt.QConcatenateTablesProxyModel_OnSetItemData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnSetItemData);
+		CQt.QConcatenateTablesProxyModel_OnFlags(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnFlags);
+		CQt.QConcatenateTablesProxyModel_OnIndex(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnIndex);
+		CQt.QConcatenateTablesProxyModel_OnParent(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnParent);
+		CQt.QConcatenateTablesProxyModel_OnRowCount(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnRowCount);
+		CQt.QConcatenateTablesProxyModel_OnHeaderData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnHeaderData);
+		CQt.QConcatenateTablesProxyModel_OnColumnCount(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnColumnCount);
+		CQt.QConcatenateTablesProxyModel_OnMimeTypes(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnMimeTypes);
+		CQt.QConcatenateTablesProxyModel_OnMimeData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnMimeData);
+		CQt.QConcatenateTablesProxyModel_OnCanDropMimeData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnCanDropMimeData);
+		CQt.QConcatenateTablesProxyModel_OnDropMimeData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnDropMimeData);
+		CQt.QConcatenateTablesProxyModel_OnSpan(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnSpan);
+		CQt.QConcatenateTablesProxyModel_OnEvent(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnEvent);
+		CQt.QConcatenateTablesProxyModel_OnEventFilter(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnEventFilter);
+		CQt.QConcatenateTablesProxyModel_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnTimerEvent);
+		CQt.QConcatenateTablesProxyModel_OnChildEvent(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnChildEvent);
+		CQt.QConcatenateTablesProxyModel_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnCustomEvent);
+		CQt.QConcatenateTablesProxyModel_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnConnectNotify);
+		CQt.QConcatenateTablesProxyModel_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnDisconnectNotify);
+		CQt.QConcatenateTablesProxyModel_OnSibling(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnSibling);
+		CQt.QConcatenateTablesProxyModel_OnHasChildren(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnHasChildren);
+		CQt.QConcatenateTablesProxyModel_OnSetHeaderData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnSetHeaderData);
+		CQt.QConcatenateTablesProxyModel_OnClearItemData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnClearItemData);
+		CQt.QConcatenateTablesProxyModel_OnSupportedDropActions(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnSupportedDropActions);
+		CQt.QConcatenateTablesProxyModel_OnSupportedDragActions(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnSupportedDragActions);
+		CQt.QConcatenateTablesProxyModel_OnInsertRows(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnInsertRows);
+		CQt.QConcatenateTablesProxyModel_OnInsertColumns(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnInsertColumns);
+		CQt.QConcatenateTablesProxyModel_OnRemoveRows(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnRemoveRows);
+		CQt.QConcatenateTablesProxyModel_OnRemoveColumns(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnRemoveColumns);
+		CQt.QConcatenateTablesProxyModel_OnMoveRows(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnMoveRows);
+		CQt.QConcatenateTablesProxyModel_OnMoveColumns(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnMoveColumns);
+		CQt.QConcatenateTablesProxyModel_OnFetchMore(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnFetchMore);
+		CQt.QConcatenateTablesProxyModel_OnCanFetchMore(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnCanFetchMore);
+		CQt.QConcatenateTablesProxyModel_OnSort(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnSort);
+		CQt.QConcatenateTablesProxyModel_OnBuddy(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnBuddy);
+		CQt.QConcatenateTablesProxyModel_OnMatch(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnMatch);
+		CQt.QConcatenateTablesProxyModel_OnRoleNames(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnRoleNames);
+		CQt.QConcatenateTablesProxyModel_OnMultiData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnMultiData);
+		CQt.QConcatenateTablesProxyModel_OnSubmit(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnSubmit);
+		CQt.QConcatenateTablesProxyModel_OnRevert(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnRevert);
+		CQt.QConcatenateTablesProxyModel_OnResetInternalData(obj.ObjectPtr,  => QtBeef_QConcatenateTablesProxyModel_OnResetInternalData);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -691,6 +738,241 @@ class QConcatenateTablesProxyModel : IQConcatenateTablesProxyModel, IQAbstractIt
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnData(void* ptr, void** index, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(index, role);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnSetData(void* ptr, void** index, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(index, value, role);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnItemData(void* ptr, void** proxyIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemData(proxyIndex);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnSetItemData(void* ptr, void** index, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetItemData(index, roles);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnFlags(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFlags(index);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnIndex(void* ptr, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndex(row, column, parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnParent(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParent(index);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnRowCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowCount(parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnHeaderData(void* ptr, c_int section, Qt_Orientation orientation, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderData(section, orientation, role);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnColumnCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnCount(parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnMimeTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeTypes();
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnMimeData(void* ptr, void** indexes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeData(indexes);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnCanDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnSpan(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpan(index);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnSibling(void* ptr, c_int row, c_int column, void** idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSibling(row, column, idx);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnHasChildren(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasChildren(parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnSetHeaderData(void* ptr, c_int section, Qt_Orientation orientation, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetHeaderData(section, orientation, value, role);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnClearItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClearItemData(index);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnSupportedDropActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDropActions();
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnSupportedDragActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDragActions();
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnInsertRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertRows(row, count, parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnInsertColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertColumns(column, count, parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnRemoveRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveRows(row, count, parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnRemoveColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveColumns(column, count, parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnMoveRows(void* ptr, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnMoveColumns(void* ptr, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFetchMore(parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnCanFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanFetchMore(parent);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnSort(void* ptr, c_int column, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSort(column, order);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnBuddy(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBuddy(index);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnMatch(void* ptr, void** start, c_int role, void** value, c_int hits, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMatch(start, role, value, hits, flags);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnRoleNames(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRoleNames();
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnMultiData(void* ptr, void** index, void* roleDataSpan)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMultiData(index, roleDataSpan);
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnSubmit(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSubmit();
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnRevert(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRevert();
+	}
+	static void QtBeef_QConcatenateTablesProxyModel_OnResetInternalData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResetInternalData();
 	}
 	public this(QConcatenateTablesProxyModel_Ptr ptr)
 	{
@@ -1311,18 +1593,27 @@ extension CQt
 	public function void QConcatenateTablesProxyModel_OnMetaObject_action(void* self);
 	[LinkName("QConcatenateTablesProxyModel_OnMetaObject")]
 	public static extern void** QConcatenateTablesProxyModel_OnMetaObject(void* self, QConcatenateTablesProxyModel_OnMetaObject_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperMetaObject")]
+	public static extern void** QConcatenateTablesProxyModel_SuperMetaObject(void* self);
 	[LinkName("QConcatenateTablesProxyModel_Qt_Metacast")]
 	public static extern void* QConcatenateTablesProxyModel_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QConcatenateTablesProxyModel_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QConcatenateTablesProxyModel_OnMetacast")]
 	public static extern void* QConcatenateTablesProxyModel_OnMetacast(void* self, QConcatenateTablesProxyModel_OnMetacast_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperMetacast")]
+	public static extern void* QConcatenateTablesProxyModel_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QConcatenateTablesProxyModel_Qt_Metacall")]
 	public static extern c_int QConcatenateTablesProxyModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QConcatenateTablesProxyModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QConcatenateTablesProxyModel_OnMetacall")]
 	public static extern c_int QConcatenateTablesProxyModel_OnMetacall(void* self, QConcatenateTablesProxyModel_OnMetacall_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperMetacall")]
+	public static extern c_int QConcatenateTablesProxyModel_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QConcatenateTablesProxyModel_Tr")]
 	public static extern libqt_string QConcatenateTablesProxyModel_Tr(c_char* s);
 	[LinkName("QConcatenateTablesProxyModel_SourceModels")]
@@ -1341,90 +1632,135 @@ extension CQt
 	public function void QConcatenateTablesProxyModel_OnData_action(void* self, void** index, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_OnData")]
 	public static extern void* QConcatenateTablesProxyModel_OnData(void* self, QConcatenateTablesProxyModel_OnData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperData")]
+	public static extern void* QConcatenateTablesProxyModel_SuperData(void* self, void** index, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_SetData")]
 	public static extern bool QConcatenateTablesProxyModel_SetData(void* self, void** index, void** value, c_int role);
 	
 	public function void QConcatenateTablesProxyModel_OnSetData_action(void* self, void** index, void** value, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_OnSetData")]
 	public static extern bool QConcatenateTablesProxyModel_OnSetData(void* self, QConcatenateTablesProxyModel_OnSetData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperSetData")]
+	public static extern bool QConcatenateTablesProxyModel_SuperSetData(void* self, void** index, void** value, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_ItemData")]
 	public static extern void* QConcatenateTablesProxyModel_ItemData(void* self, void** proxyIndex);
 	
 	public function void QConcatenateTablesProxyModel_OnItemData_action(void* self, void** proxyIndex);
 	[LinkName("QConcatenateTablesProxyModel_OnItemData")]
 	public static extern void* QConcatenateTablesProxyModel_OnItemData(void* self, QConcatenateTablesProxyModel_OnItemData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperItemData")]
+	public static extern void* QConcatenateTablesProxyModel_SuperItemData(void* self, void** proxyIndex);
 	[LinkName("QConcatenateTablesProxyModel_SetItemData")]
 	public static extern bool QConcatenateTablesProxyModel_SetItemData(void* self, void** index, void** roles);
 	
 	public function void QConcatenateTablesProxyModel_OnSetItemData_action(void* self, void** index, void** roles);
 	[LinkName("QConcatenateTablesProxyModel_OnSetItemData")]
 	public static extern bool QConcatenateTablesProxyModel_OnSetItemData(void* self, QConcatenateTablesProxyModel_OnSetItemData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperSetItemData")]
+	public static extern bool QConcatenateTablesProxyModel_SuperSetItemData(void* self, void** index, void** roles);
 	[LinkName("QConcatenateTablesProxyModel_Flags")]
 	public static extern void* QConcatenateTablesProxyModel_Flags(void* self, void** index);
 	
 	public function void QConcatenateTablesProxyModel_OnFlags_action(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_OnFlags")]
 	public static extern void* QConcatenateTablesProxyModel_OnFlags(void* self, QConcatenateTablesProxyModel_OnFlags_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperFlags")]
+	public static extern void* QConcatenateTablesProxyModel_SuperFlags(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_Index")]
 	public static extern void* QConcatenateTablesProxyModel_Index(void* self, c_int row, c_int column, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnIndex")]
 	public static extern void* QConcatenateTablesProxyModel_OnIndex(void* self, QConcatenateTablesProxyModel_OnIndex_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperIndex")]
+	public static extern void* QConcatenateTablesProxyModel_SuperIndex(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_Parent")]
 	public static extern void* QConcatenateTablesProxyModel_Parent(void* self, void** index);
 	
 	public function void QConcatenateTablesProxyModel_OnParent_action(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_OnParent")]
 	public static extern void* QConcatenateTablesProxyModel_OnParent(void* self, QConcatenateTablesProxyModel_OnParent_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperParent")]
+	public static extern void* QConcatenateTablesProxyModel_SuperParent(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_RowCount")]
 	public static extern c_int QConcatenateTablesProxyModel_RowCount(void* self, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnRowCount_action(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnRowCount")]
 	public static extern c_int QConcatenateTablesProxyModel_OnRowCount(void* self, QConcatenateTablesProxyModel_OnRowCount_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperRowCount")]
+	public static extern c_int QConcatenateTablesProxyModel_SuperRowCount(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_HeaderData")]
 	public static extern void* QConcatenateTablesProxyModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	
 	public function void QConcatenateTablesProxyModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_OnHeaderData")]
 	public static extern void* QConcatenateTablesProxyModel_OnHeaderData(void* self, QConcatenateTablesProxyModel_OnHeaderData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperHeaderData")]
+	public static extern void* QConcatenateTablesProxyModel_SuperHeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_ColumnCount")]
 	public static extern c_int QConcatenateTablesProxyModel_ColumnCount(void* self, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnColumnCount_action(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnColumnCount")]
 	public static extern c_int QConcatenateTablesProxyModel_OnColumnCount(void* self, QConcatenateTablesProxyModel_OnColumnCount_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperColumnCount")]
+	public static extern c_int QConcatenateTablesProxyModel_SuperColumnCount(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_MimeTypes")]
 	public static extern void* QConcatenateTablesProxyModel_MimeTypes(void* self);
 	
 	public function void QConcatenateTablesProxyModel_OnMimeTypes_action(void* self);
 	[LinkName("QConcatenateTablesProxyModel_OnMimeTypes")]
 	public static extern void* QConcatenateTablesProxyModel_OnMimeTypes(void* self, QConcatenateTablesProxyModel_OnMimeTypes_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperMimeTypes")]
+	public static extern void* QConcatenateTablesProxyModel_SuperMimeTypes(void* self);
 	[LinkName("QConcatenateTablesProxyModel_MimeData")]
 	public static extern void** QConcatenateTablesProxyModel_MimeData(void* self, void** indexes);
 	
 	public function void QConcatenateTablesProxyModel_OnMimeData_action(void* self, void** indexes);
 	[LinkName("QConcatenateTablesProxyModel_OnMimeData")]
 	public static extern void** QConcatenateTablesProxyModel_OnMimeData(void* self, QConcatenateTablesProxyModel_OnMimeData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperMimeData")]
+	public static extern void** QConcatenateTablesProxyModel_SuperMimeData(void* self, void** indexes);
 	[LinkName("QConcatenateTablesProxyModel_CanDropMimeData")]
 	public static extern bool QConcatenateTablesProxyModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnCanDropMimeData")]
 	public static extern bool QConcatenateTablesProxyModel_OnCanDropMimeData(void* self, QConcatenateTablesProxyModel_OnCanDropMimeData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperCanDropMimeData")]
+	public static extern bool QConcatenateTablesProxyModel_SuperCanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_DropMimeData")]
 	public static extern bool QConcatenateTablesProxyModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnDropMimeData")]
 	public static extern bool QConcatenateTablesProxyModel_OnDropMimeData(void* self, QConcatenateTablesProxyModel_OnDropMimeData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperDropMimeData")]
+	public static extern bool QConcatenateTablesProxyModel_SuperDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_Span")]
 	public static extern void* QConcatenateTablesProxyModel_Span(void* self, void** index);
 	
 	public function void QConcatenateTablesProxyModel_OnSpan_action(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_OnSpan")]
 	public static extern void* QConcatenateTablesProxyModel_OnSpan(void* self, QConcatenateTablesProxyModel_OnSpan_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperSpan")]
+	public static extern void* QConcatenateTablesProxyModel_SuperSpan(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_Tr2")]
 	public static extern libqt_string QConcatenateTablesProxyModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QConcatenateTablesProxyModel_Tr3")]
@@ -1435,172 +1771,259 @@ extension CQt
 	public function void QConcatenateTablesProxyModel_OnEvent_action(void* self, void** event);
 	[LinkName("QConcatenateTablesProxyModel_OnEvent")]
 	public static extern bool QConcatenateTablesProxyModel_OnEvent(void* self, QConcatenateTablesProxyModel_OnEvent_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperEvent")]
+	public static extern bool QConcatenateTablesProxyModel_SuperEvent(void* self, void** event);
 	[LinkName("QConcatenateTablesProxyModel_EventFilter")]
 	public static extern bool QConcatenateTablesProxyModel_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QConcatenateTablesProxyModel_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QConcatenateTablesProxyModel_OnEventFilter")]
 	public static extern bool QConcatenateTablesProxyModel_OnEventFilter(void* self, QConcatenateTablesProxyModel_OnEventFilter_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperEventFilter")]
+	public static extern bool QConcatenateTablesProxyModel_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QConcatenateTablesProxyModel_TimerEvent")]
 	public static extern void QConcatenateTablesProxyModel_TimerEvent(void* self, void** event);
 	
 	public function void QConcatenateTablesProxyModel_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QConcatenateTablesProxyModel_OnTimerEvent")]
 	public static extern void QConcatenateTablesProxyModel_OnTimerEvent(void* self, QConcatenateTablesProxyModel_OnTimerEvent_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperTimerEvent")]
+	public static extern void QConcatenateTablesProxyModel_SuperTimerEvent(void* self, void** event);
 	[LinkName("QConcatenateTablesProxyModel_ChildEvent")]
 	public static extern void QConcatenateTablesProxyModel_ChildEvent(void* self, void** event);
 	
 	public function void QConcatenateTablesProxyModel_OnChildEvent_action(void* self, void** event);
 	[LinkName("QConcatenateTablesProxyModel_OnChildEvent")]
 	public static extern void QConcatenateTablesProxyModel_OnChildEvent(void* self, QConcatenateTablesProxyModel_OnChildEvent_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperChildEvent")]
+	public static extern void QConcatenateTablesProxyModel_SuperChildEvent(void* self, void** event);
 	[LinkName("QConcatenateTablesProxyModel_CustomEvent")]
 	public static extern void QConcatenateTablesProxyModel_CustomEvent(void* self, void** event);
 	
 	public function void QConcatenateTablesProxyModel_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QConcatenateTablesProxyModel_OnCustomEvent")]
 	public static extern void QConcatenateTablesProxyModel_OnCustomEvent(void* self, QConcatenateTablesProxyModel_OnCustomEvent_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperCustomEvent")]
+	public static extern void QConcatenateTablesProxyModel_SuperCustomEvent(void* self, void** event);
 	[LinkName("QConcatenateTablesProxyModel_ConnectNotify")]
 	public static extern void QConcatenateTablesProxyModel_ConnectNotify(void* self, void** signal);
 	
 	public function void QConcatenateTablesProxyModel_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QConcatenateTablesProxyModel_OnConnectNotify")]
 	public static extern void QConcatenateTablesProxyModel_OnConnectNotify(void* self, QConcatenateTablesProxyModel_OnConnectNotify_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperConnectNotify")]
+	public static extern void QConcatenateTablesProxyModel_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QConcatenateTablesProxyModel_DisconnectNotify")]
 	public static extern void QConcatenateTablesProxyModel_DisconnectNotify(void* self, void** signal);
 	
 	public function void QConcatenateTablesProxyModel_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QConcatenateTablesProxyModel_OnDisconnectNotify")]
 	public static extern void QConcatenateTablesProxyModel_OnDisconnectNotify(void* self, QConcatenateTablesProxyModel_OnDisconnectNotify_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperDisconnectNotify")]
+	public static extern void QConcatenateTablesProxyModel_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QConcatenateTablesProxyModel_Sibling")]
 	public static extern void* QConcatenateTablesProxyModel_Sibling(void* self, c_int row, c_int column, void** idx);
 	
 	public function void QConcatenateTablesProxyModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QConcatenateTablesProxyModel_OnSibling")]
 	public static extern void* QConcatenateTablesProxyModel_OnSibling(void* self, QConcatenateTablesProxyModel_OnSibling_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperSibling")]
+	public static extern void* QConcatenateTablesProxyModel_SuperSibling(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QConcatenateTablesProxyModel_HasChildren")]
 	public static extern bool QConcatenateTablesProxyModel_HasChildren(void* self, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnHasChildren_action(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnHasChildren")]
 	public static extern bool QConcatenateTablesProxyModel_OnHasChildren(void* self, QConcatenateTablesProxyModel_OnHasChildren_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperHasChildren")]
+	public static extern bool QConcatenateTablesProxyModel_SuperHasChildren(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_SetHeaderData")]
 	public static extern bool QConcatenateTablesProxyModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	
 	public function void QConcatenateTablesProxyModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_OnSetHeaderData")]
 	public static extern bool QConcatenateTablesProxyModel_OnSetHeaderData(void* self, QConcatenateTablesProxyModel_OnSetHeaderData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperSetHeaderData")]
+	public static extern bool QConcatenateTablesProxyModel_SuperSetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_ClearItemData")]
 	public static extern bool QConcatenateTablesProxyModel_ClearItemData(void* self, void** index);
 	
 	public function void QConcatenateTablesProxyModel_OnClearItemData_action(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_OnClearItemData")]
 	public static extern bool QConcatenateTablesProxyModel_OnClearItemData(void* self, QConcatenateTablesProxyModel_OnClearItemData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperClearItemData")]
+	public static extern bool QConcatenateTablesProxyModel_SuperClearItemData(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_SupportedDropActions")]
 	public static extern void* QConcatenateTablesProxyModel_SupportedDropActions(void* self);
 	
 	public function void QConcatenateTablesProxyModel_OnSupportedDropActions_action(void* self);
 	[LinkName("QConcatenateTablesProxyModel_OnSupportedDropActions")]
 	public static extern void* QConcatenateTablesProxyModel_OnSupportedDropActions(void* self, QConcatenateTablesProxyModel_OnSupportedDropActions_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperSupportedDropActions")]
+	public static extern void* QConcatenateTablesProxyModel_SuperSupportedDropActions(void* self);
 	[LinkName("QConcatenateTablesProxyModel_SupportedDragActions")]
 	public static extern void* QConcatenateTablesProxyModel_SupportedDragActions(void* self);
 	
 	public function void QConcatenateTablesProxyModel_OnSupportedDragActions_action(void* self);
 	[LinkName("QConcatenateTablesProxyModel_OnSupportedDragActions")]
 	public static extern void* QConcatenateTablesProxyModel_OnSupportedDragActions(void* self, QConcatenateTablesProxyModel_OnSupportedDragActions_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperSupportedDragActions")]
+	public static extern void* QConcatenateTablesProxyModel_SuperSupportedDragActions(void* self);
 	[LinkName("QConcatenateTablesProxyModel_InsertRows")]
 	public static extern bool QConcatenateTablesProxyModel_InsertRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnInsertRows")]
 	public static extern bool QConcatenateTablesProxyModel_OnInsertRows(void* self, QConcatenateTablesProxyModel_OnInsertRows_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperInsertRows")]
+	public static extern bool QConcatenateTablesProxyModel_SuperInsertRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_InsertColumns")]
 	public static extern bool QConcatenateTablesProxyModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnInsertColumns")]
 	public static extern bool QConcatenateTablesProxyModel_OnInsertColumns(void* self, QConcatenateTablesProxyModel_OnInsertColumns_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperInsertColumns")]
+	public static extern bool QConcatenateTablesProxyModel_SuperInsertColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_RemoveRows")]
 	public static extern bool QConcatenateTablesProxyModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnRemoveRows")]
 	public static extern bool QConcatenateTablesProxyModel_OnRemoveRows(void* self, QConcatenateTablesProxyModel_OnRemoveRows_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperRemoveRows")]
+	public static extern bool QConcatenateTablesProxyModel_SuperRemoveRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_RemoveColumns")]
 	public static extern bool QConcatenateTablesProxyModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnRemoveColumns")]
 	public static extern bool QConcatenateTablesProxyModel_OnRemoveColumns(void* self, QConcatenateTablesProxyModel_OnRemoveColumns_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperRemoveColumns")]
+	public static extern bool QConcatenateTablesProxyModel_SuperRemoveColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_MoveRows")]
 	public static extern bool QConcatenateTablesProxyModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QConcatenateTablesProxyModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QConcatenateTablesProxyModel_OnMoveRows")]
 	public static extern bool QConcatenateTablesProxyModel_OnMoveRows(void* self, QConcatenateTablesProxyModel_OnMoveRows_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperMoveRows")]
+	public static extern bool QConcatenateTablesProxyModel_SuperMoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QConcatenateTablesProxyModel_MoveColumns")]
 	public static extern bool QConcatenateTablesProxyModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QConcatenateTablesProxyModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QConcatenateTablesProxyModel_OnMoveColumns")]
 	public static extern bool QConcatenateTablesProxyModel_OnMoveColumns(void* self, QConcatenateTablesProxyModel_OnMoveColumns_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperMoveColumns")]
+	public static extern bool QConcatenateTablesProxyModel_SuperMoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QConcatenateTablesProxyModel_FetchMore")]
 	public static extern void QConcatenateTablesProxyModel_FetchMore(void* self, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnFetchMore_action(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnFetchMore")]
 	public static extern void QConcatenateTablesProxyModel_OnFetchMore(void* self, QConcatenateTablesProxyModel_OnFetchMore_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperFetchMore")]
+	public static extern void QConcatenateTablesProxyModel_SuperFetchMore(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_CanFetchMore")]
 	public static extern bool QConcatenateTablesProxyModel_CanFetchMore(void* self, void** parent);
 	
 	public function void QConcatenateTablesProxyModel_OnCanFetchMore_action(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_OnCanFetchMore")]
 	public static extern bool QConcatenateTablesProxyModel_OnCanFetchMore(void* self, QConcatenateTablesProxyModel_OnCanFetchMore_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperCanFetchMore")]
+	public static extern bool QConcatenateTablesProxyModel_SuperCanFetchMore(void* self, void** parent);
 	[LinkName("QConcatenateTablesProxyModel_Sort")]
 	public static extern void QConcatenateTablesProxyModel_Sort(void* self, c_int column, Qt_SortOrder order);
 	
 	public function void QConcatenateTablesProxyModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QConcatenateTablesProxyModel_OnSort")]
 	public static extern void QConcatenateTablesProxyModel_OnSort(void* self, QConcatenateTablesProxyModel_OnSort_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperSort")]
+	public static extern void QConcatenateTablesProxyModel_SuperSort(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QConcatenateTablesProxyModel_Buddy")]
 	public static extern void* QConcatenateTablesProxyModel_Buddy(void* self, void** index);
 	
 	public function void QConcatenateTablesProxyModel_OnBuddy_action(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_OnBuddy")]
 	public static extern void* QConcatenateTablesProxyModel_OnBuddy(void* self, QConcatenateTablesProxyModel_OnBuddy_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperBuddy")]
+	public static extern void* QConcatenateTablesProxyModel_SuperBuddy(void* self, void** index);
 	[LinkName("QConcatenateTablesProxyModel_Match")]
 	public static extern void* QConcatenateTablesProxyModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	
 	public function void QConcatenateTablesProxyModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QConcatenateTablesProxyModel_OnMatch")]
 	public static extern void* QConcatenateTablesProxyModel_OnMatch(void* self, QConcatenateTablesProxyModel_OnMatch_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperMatch")]
+	public static extern void* QConcatenateTablesProxyModel_SuperMatch(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QConcatenateTablesProxyModel_RoleNames")]
 	public static extern void* QConcatenateTablesProxyModel_RoleNames(void* self);
 	
 	public function void QConcatenateTablesProxyModel_OnRoleNames_action(void* self);
 	[LinkName("QConcatenateTablesProxyModel_OnRoleNames")]
 	public static extern void* QConcatenateTablesProxyModel_OnRoleNames(void* self, QConcatenateTablesProxyModel_OnRoleNames_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperRoleNames")]
+	public static extern void* QConcatenateTablesProxyModel_SuperRoleNames(void* self);
 	[LinkName("QConcatenateTablesProxyModel_MultiData")]
 	public static extern void QConcatenateTablesProxyModel_MultiData(void* self, void** index, void* roleDataSpan);
 	
 	public function void QConcatenateTablesProxyModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
 	[LinkName("QConcatenateTablesProxyModel_OnMultiData")]
 	public static extern void QConcatenateTablesProxyModel_OnMultiData(void* self, QConcatenateTablesProxyModel_OnMultiData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperMultiData")]
+	public static extern void QConcatenateTablesProxyModel_SuperMultiData(void* self, void** index, void* roleDataSpan);
 	[LinkName("QConcatenateTablesProxyModel_Submit")]
 	public static extern bool QConcatenateTablesProxyModel_Submit(void* self);
 	
 	public function void QConcatenateTablesProxyModel_OnSubmit_action(void* self);
 	[LinkName("QConcatenateTablesProxyModel_OnSubmit")]
 	public static extern bool QConcatenateTablesProxyModel_OnSubmit(void* self, QConcatenateTablesProxyModel_OnSubmit_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperSubmit")]
+	public static extern bool QConcatenateTablesProxyModel_SuperSubmit(void* self);
 	[LinkName("QConcatenateTablesProxyModel_Revert")]
 	public static extern void QConcatenateTablesProxyModel_Revert(void* self);
 	
 	public function void QConcatenateTablesProxyModel_OnRevert_action(void* self);
 	[LinkName("QConcatenateTablesProxyModel_OnRevert")]
 	public static extern void QConcatenateTablesProxyModel_OnRevert(void* self, QConcatenateTablesProxyModel_OnRevert_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperRevert")]
+	public static extern void QConcatenateTablesProxyModel_SuperRevert(void* self);
 	[LinkName("QConcatenateTablesProxyModel_ResetInternalData")]
 	public static extern void QConcatenateTablesProxyModel_ResetInternalData(void* self);
 	
 	public function void QConcatenateTablesProxyModel_OnResetInternalData_action(void* self);
 	[LinkName("QConcatenateTablesProxyModel_OnResetInternalData")]
 	public static extern void QConcatenateTablesProxyModel_OnResetInternalData(void* self, QConcatenateTablesProxyModel_OnResetInternalData_action _action);
+	
+	[LinkName("QConcatenateTablesProxyModel_SuperResetInternalData")]
+	public static extern void QConcatenateTablesProxyModel_SuperResetInternalData(void* self);
 }

@@ -1748,6 +1748,61 @@ class QAbstractScrollArea : IQAbstractScrollArea, IQFrame, IQWidget, IQObject, I
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QAbstractScrollArea_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMetaObject);
+		CQt.QAbstractScrollArea_OnMetacast(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMetacast);
+		CQt.QAbstractScrollArea_OnMetacall(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMetacall);
+		CQt.QAbstractScrollArea_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMinimumSizeHint);
+		CQt.QAbstractScrollArea_OnSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnSizeHint);
+		CQt.QAbstractScrollArea_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnSetupViewport);
+		CQt.QAbstractScrollArea_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnEventFilter);
+		CQt.QAbstractScrollArea_OnEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnEvent);
+		CQt.QAbstractScrollArea_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnViewportEvent);
+		CQt.QAbstractScrollArea_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnResizeEvent);
+		CQt.QAbstractScrollArea_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnPaintEvent);
+		CQt.QAbstractScrollArea_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMousePressEvent);
+		CQt.QAbstractScrollArea_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMouseReleaseEvent);
+		CQt.QAbstractScrollArea_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMouseDoubleClickEvent);
+		CQt.QAbstractScrollArea_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMouseMoveEvent);
+		CQt.QAbstractScrollArea_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnWheelEvent);
+		CQt.QAbstractScrollArea_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnContextMenuEvent);
+		CQt.QAbstractScrollArea_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnDragEnterEvent);
+		CQt.QAbstractScrollArea_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnDragMoveEvent);
+		CQt.QAbstractScrollArea_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnDragLeaveEvent);
+		CQt.QAbstractScrollArea_OnDropEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnDropEvent);
+		CQt.QAbstractScrollArea_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnKeyPressEvent);
+		CQt.QAbstractScrollArea_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnScrollContentsBy);
+		CQt.QAbstractScrollArea_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnViewportSizeHint);
+		CQt.QAbstractScrollArea_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnTimerEvent);
+		CQt.QAbstractScrollArea_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnChildEvent);
+		CQt.QAbstractScrollArea_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnCustomEvent);
+		CQt.QAbstractScrollArea_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnConnectNotify);
+		CQt.QAbstractScrollArea_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnDisconnectNotify);
+		CQt.QAbstractScrollArea_OnDevType(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnDevType);
+		CQt.QAbstractScrollArea_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnPaintEngine);
+		CQt.QAbstractScrollArea_OnMetric(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMetric);
+		CQt.QAbstractScrollArea_OnInitPainter(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnInitPainter);
+		CQt.QAbstractScrollArea_OnRedirected(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnRedirected);
+		CQt.QAbstractScrollArea_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnSharedPainter);
+		CQt.QAbstractScrollArea_OnSetVisible(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnSetVisible);
+		CQt.QAbstractScrollArea_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnHeightForWidth);
+		CQt.QAbstractScrollArea_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnHasHeightForWidth);
+		CQt.QAbstractScrollArea_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnKeyReleaseEvent);
+		CQt.QAbstractScrollArea_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnFocusInEvent);
+		CQt.QAbstractScrollArea_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnFocusOutEvent);
+		CQt.QAbstractScrollArea_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnEnterEvent);
+		CQt.QAbstractScrollArea_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnLeaveEvent);
+		CQt.QAbstractScrollArea_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnMoveEvent);
+		CQt.QAbstractScrollArea_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnCloseEvent);
+		CQt.QAbstractScrollArea_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnTabletEvent);
+		CQt.QAbstractScrollArea_OnActionEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnActionEvent);
+		CQt.QAbstractScrollArea_OnShowEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnShowEvent);
+		CQt.QAbstractScrollArea_OnHideEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnHideEvent);
+		CQt.QAbstractScrollArea_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnNativeEvent);
+		CQt.QAbstractScrollArea_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnChangeEvent);
+		CQt.QAbstractScrollArea_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnInputMethodEvent);
+		CQt.QAbstractScrollArea_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnInputMethodQuery);
+		CQt.QAbstractScrollArea_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnFocusNextPrevChild);
+		CQt.QAbstractScrollArea_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QAbstractScrollArea_OnInitStyleOption);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1784,6 +1839,281 @@ class QAbstractScrollArea : IQAbstractScrollArea, IQFrame, IQWidget, IQObject, I
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QAbstractScrollArea_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAbstractScrollArea_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAbstractScrollArea_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QAbstractScrollArea_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QAbstractScrollArea_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QAbstractScrollArea_OnEventFilter(void* ptr, void** param1, void** param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(param1, param2);
+	}
+	static void QtBeef_QAbstractScrollArea_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnViewportEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnResizeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnMouseReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnMouseDoubleClickEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnWheelEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnContextMenuEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnDragEnterEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnDragMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnDragLeaveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnDropEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnKeyPressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
+	}
+	static void QtBeef_QAbstractScrollArea_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
+	}
+	static void QtBeef_QAbstractScrollArea_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAbstractScrollArea_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QAbstractScrollArea_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QAbstractScrollArea_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QAbstractScrollArea_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QAbstractScrollArea_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QAbstractScrollArea_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QAbstractScrollArea_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QAbstractScrollArea_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QAbstractScrollArea_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QAbstractScrollArea_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QAbstractScrollArea_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QAbstractScrollArea_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QAbstractScrollArea_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QAbstractScrollArea_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
 	}
 	public this(QAbstractScrollArea_Ptr ptr)
 	{
@@ -3506,18 +3836,27 @@ extension CQt
 	public function void QAbstractScrollArea_OnMetaObject_action(void* self);
 	[LinkName("QAbstractScrollArea_OnMetaObject")]
 	public static extern void** QAbstractScrollArea_OnMetaObject(void* self, QAbstractScrollArea_OnMetaObject_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMetaObject")]
+	public static extern void** QAbstractScrollArea_SuperMetaObject(void* self);
 	[LinkName("QAbstractScrollArea_Qt_Metacast")]
 	public static extern void* QAbstractScrollArea_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAbstractScrollArea_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAbstractScrollArea_OnMetacast")]
 	public static extern void* QAbstractScrollArea_OnMetacast(void* self, QAbstractScrollArea_OnMetacast_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMetacast")]
+	public static extern void* QAbstractScrollArea_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAbstractScrollArea_Qt_Metacall")]
 	public static extern c_int QAbstractScrollArea_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAbstractScrollArea_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractScrollArea_OnMetacall")]
 	public static extern c_int QAbstractScrollArea_OnMetacall(void* self, QAbstractScrollArea_OnMetacall_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMetacall")]
+	public static extern c_int QAbstractScrollArea_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractScrollArea_Tr")]
 	public static extern libqt_string QAbstractScrollArea_Tr(c_char* s);
 	[LinkName("QAbstractScrollArea_VerticalScrollBarPolicy")]
@@ -3556,18 +3895,27 @@ extension CQt
 	public function void QAbstractScrollArea_OnMinimumSizeHint_action(void* self);
 	[LinkName("QAbstractScrollArea_OnMinimumSizeHint")]
 	public static extern void* QAbstractScrollArea_OnMinimumSizeHint(void* self, QAbstractScrollArea_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMinimumSizeHint")]
+	public static extern void* QAbstractScrollArea_SuperMinimumSizeHint(void* self);
 	[LinkName("QAbstractScrollArea_SizeHint")]
 	public static extern void* QAbstractScrollArea_SizeHint(void* self);
 	
 	public function void QAbstractScrollArea_OnSizeHint_action(void* self);
 	[LinkName("QAbstractScrollArea_OnSizeHint")]
 	public static extern void* QAbstractScrollArea_OnSizeHint(void* self, QAbstractScrollArea_OnSizeHint_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperSizeHint")]
+	public static extern void* QAbstractScrollArea_SuperSizeHint(void* self);
 	[LinkName("QAbstractScrollArea_SetupViewport")]
 	public static extern void QAbstractScrollArea_SetupViewport(void* self, void** viewport);
 	
 	public function void QAbstractScrollArea_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QAbstractScrollArea_OnSetupViewport")]
 	public static extern void QAbstractScrollArea_OnSetupViewport(void* self, QAbstractScrollArea_OnSetupViewport_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperSetupViewport")]
+	public static extern void QAbstractScrollArea_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QAbstractScrollArea_SizeAdjustPolicy")]
 	public static extern QAbstractScrollArea_SizeAdjustPolicy QAbstractScrollArea_SizeAdjustPolicy(void* self);
 	[LinkName("QAbstractScrollArea_SetSizeAdjustPolicy")]
@@ -3584,108 +3932,162 @@ extension CQt
 	public function void QAbstractScrollArea_OnEventFilter_action(void* self, void** param1, void** param2);
 	[LinkName("QAbstractScrollArea_OnEventFilter")]
 	public static extern bool QAbstractScrollArea_OnEventFilter(void* self, QAbstractScrollArea_OnEventFilter_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperEventFilter")]
+	public static extern bool QAbstractScrollArea_SuperEventFilter(void* self, void** param1, void** param2);
 	[LinkName("QAbstractScrollArea_Event")]
 	public static extern bool QAbstractScrollArea_Event(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnEvent")]
 	public static extern bool QAbstractScrollArea_OnEvent(void* self, QAbstractScrollArea_OnEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperEvent")]
+	public static extern bool QAbstractScrollArea_SuperEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_ViewportEvent")]
 	public static extern bool QAbstractScrollArea_ViewportEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnViewportEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnViewportEvent")]
 	public static extern bool QAbstractScrollArea_OnViewportEvent(void* self, QAbstractScrollArea_OnViewportEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperViewportEvent")]
+	public static extern bool QAbstractScrollArea_SuperViewportEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_ResizeEvent")]
 	public static extern void QAbstractScrollArea_ResizeEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnResizeEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnResizeEvent")]
 	public static extern void QAbstractScrollArea_OnResizeEvent(void* self, QAbstractScrollArea_OnResizeEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperResizeEvent")]
+	public static extern void QAbstractScrollArea_SuperResizeEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_PaintEvent")]
 	public static extern void QAbstractScrollArea_PaintEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnPaintEvent")]
 	public static extern void QAbstractScrollArea_OnPaintEvent(void* self, QAbstractScrollArea_OnPaintEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperPaintEvent")]
+	public static extern void QAbstractScrollArea_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_MousePressEvent")]
 	public static extern void QAbstractScrollArea_MousePressEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnMousePressEvent")]
 	public static extern void QAbstractScrollArea_OnMousePressEvent(void* self, QAbstractScrollArea_OnMousePressEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMousePressEvent")]
+	public static extern void QAbstractScrollArea_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_MouseReleaseEvent")]
 	public static extern void QAbstractScrollArea_MouseReleaseEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnMouseReleaseEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnMouseReleaseEvent")]
 	public static extern void QAbstractScrollArea_OnMouseReleaseEvent(void* self, QAbstractScrollArea_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMouseReleaseEvent")]
+	public static extern void QAbstractScrollArea_SuperMouseReleaseEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_MouseDoubleClickEvent")]
 	public static extern void QAbstractScrollArea_MouseDoubleClickEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnMouseDoubleClickEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnMouseDoubleClickEvent")]
 	public static extern void QAbstractScrollArea_OnMouseDoubleClickEvent(void* self, QAbstractScrollArea_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMouseDoubleClickEvent")]
+	public static extern void QAbstractScrollArea_SuperMouseDoubleClickEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_MouseMoveEvent")]
 	public static extern void QAbstractScrollArea_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnMouseMoveEvent")]
 	public static extern void QAbstractScrollArea_OnMouseMoveEvent(void* self, QAbstractScrollArea_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMouseMoveEvent")]
+	public static extern void QAbstractScrollArea_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_WheelEvent")]
 	public static extern void QAbstractScrollArea_WheelEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnWheelEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnWheelEvent")]
 	public static extern void QAbstractScrollArea_OnWheelEvent(void* self, QAbstractScrollArea_OnWheelEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperWheelEvent")]
+	public static extern void QAbstractScrollArea_SuperWheelEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_ContextMenuEvent")]
 	public static extern void QAbstractScrollArea_ContextMenuEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnContextMenuEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnContextMenuEvent")]
 	public static extern void QAbstractScrollArea_OnContextMenuEvent(void* self, QAbstractScrollArea_OnContextMenuEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperContextMenuEvent")]
+	public static extern void QAbstractScrollArea_SuperContextMenuEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_DragEnterEvent")]
 	public static extern void QAbstractScrollArea_DragEnterEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnDragEnterEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnDragEnterEvent")]
 	public static extern void QAbstractScrollArea_OnDragEnterEvent(void* self, QAbstractScrollArea_OnDragEnterEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperDragEnterEvent")]
+	public static extern void QAbstractScrollArea_SuperDragEnterEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_DragMoveEvent")]
 	public static extern void QAbstractScrollArea_DragMoveEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnDragMoveEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnDragMoveEvent")]
 	public static extern void QAbstractScrollArea_OnDragMoveEvent(void* self, QAbstractScrollArea_OnDragMoveEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperDragMoveEvent")]
+	public static extern void QAbstractScrollArea_SuperDragMoveEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_DragLeaveEvent")]
 	public static extern void QAbstractScrollArea_DragLeaveEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnDragLeaveEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnDragLeaveEvent")]
 	public static extern void QAbstractScrollArea_OnDragLeaveEvent(void* self, QAbstractScrollArea_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperDragLeaveEvent")]
+	public static extern void QAbstractScrollArea_SuperDragLeaveEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_DropEvent")]
 	public static extern void QAbstractScrollArea_DropEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnDropEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnDropEvent")]
 	public static extern void QAbstractScrollArea_OnDropEvent(void* self, QAbstractScrollArea_OnDropEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperDropEvent")]
+	public static extern void QAbstractScrollArea_SuperDropEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_KeyPressEvent")]
 	public static extern void QAbstractScrollArea_KeyPressEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnKeyPressEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnKeyPressEvent")]
 	public static extern void QAbstractScrollArea_OnKeyPressEvent(void* self, QAbstractScrollArea_OnKeyPressEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperKeyPressEvent")]
+	public static extern void QAbstractScrollArea_SuperKeyPressEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_ScrollContentsBy")]
 	public static extern void QAbstractScrollArea_ScrollContentsBy(void* self, c_int dx, c_int dy);
 	
 	public function void QAbstractScrollArea_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QAbstractScrollArea_OnScrollContentsBy")]
 	public static extern void QAbstractScrollArea_OnScrollContentsBy(void* self, QAbstractScrollArea_OnScrollContentsBy_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperScrollContentsBy")]
+	public static extern void QAbstractScrollArea_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 	[LinkName("QAbstractScrollArea_ViewportSizeHint")]
 	public static extern void* QAbstractScrollArea_ViewportSizeHint(void* self);
 	
 	public function void QAbstractScrollArea_OnViewportSizeHint_action(void* self);
 	[LinkName("QAbstractScrollArea_OnViewportSizeHint")]
 	public static extern void* QAbstractScrollArea_OnViewportSizeHint(void* self, QAbstractScrollArea_OnViewportSizeHint_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperViewportSizeHint")]
+	public static extern void* QAbstractScrollArea_SuperViewportSizeHint(void* self);
 	[LinkName("QAbstractScrollArea_Tr2")]
 	public static extern libqt_string QAbstractScrollArea_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractScrollArea_Tr3")]
@@ -3696,186 +4098,279 @@ extension CQt
 	public function void QAbstractScrollArea_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnTimerEvent")]
 	public static extern void QAbstractScrollArea_OnTimerEvent(void* self, QAbstractScrollArea_OnTimerEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperTimerEvent")]
+	public static extern void QAbstractScrollArea_SuperTimerEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_ChildEvent")]
 	public static extern void QAbstractScrollArea_ChildEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnChildEvent")]
 	public static extern void QAbstractScrollArea_OnChildEvent(void* self, QAbstractScrollArea_OnChildEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperChildEvent")]
+	public static extern void QAbstractScrollArea_SuperChildEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_CustomEvent")]
 	public static extern void QAbstractScrollArea_CustomEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnCustomEvent")]
 	public static extern void QAbstractScrollArea_OnCustomEvent(void* self, QAbstractScrollArea_OnCustomEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperCustomEvent")]
+	public static extern void QAbstractScrollArea_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_ConnectNotify")]
 	public static extern void QAbstractScrollArea_ConnectNotify(void* self, void** signal);
 	
 	public function void QAbstractScrollArea_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractScrollArea_OnConnectNotify")]
 	public static extern void QAbstractScrollArea_OnConnectNotify(void* self, QAbstractScrollArea_OnConnectNotify_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperConnectNotify")]
+	public static extern void QAbstractScrollArea_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAbstractScrollArea_DisconnectNotify")]
 	public static extern void QAbstractScrollArea_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAbstractScrollArea_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractScrollArea_OnDisconnectNotify")]
 	public static extern void QAbstractScrollArea_OnDisconnectNotify(void* self, QAbstractScrollArea_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperDisconnectNotify")]
+	public static extern void QAbstractScrollArea_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QAbstractScrollArea_DevType")]
 	public static extern c_int QAbstractScrollArea_DevType(void* self);
 	
 	public function void QAbstractScrollArea_OnDevType_action(void* self);
 	[LinkName("QAbstractScrollArea_OnDevType")]
 	public static extern c_int QAbstractScrollArea_OnDevType(void* self, QAbstractScrollArea_OnDevType_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperDevType")]
+	public static extern c_int QAbstractScrollArea_SuperDevType(void* self);
 	[LinkName("QAbstractScrollArea_PaintEngine")]
 	public static extern void** QAbstractScrollArea_PaintEngine(void* self);
 	
 	public function void QAbstractScrollArea_OnPaintEngine_action(void* self);
 	[LinkName("QAbstractScrollArea_OnPaintEngine")]
 	public static extern void** QAbstractScrollArea_OnPaintEngine(void* self, QAbstractScrollArea_OnPaintEngine_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperPaintEngine")]
+	public static extern void** QAbstractScrollArea_SuperPaintEngine(void* self);
 	[LinkName("QAbstractScrollArea_Metric")]
 	public static extern c_int QAbstractScrollArea_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QAbstractScrollArea_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QAbstractScrollArea_OnMetric")]
 	public static extern c_int QAbstractScrollArea_OnMetric(void* self, QAbstractScrollArea_OnMetric_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMetric")]
+	public static extern c_int QAbstractScrollArea_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QAbstractScrollArea_InitPainter")]
 	public static extern void QAbstractScrollArea_InitPainter(void* self, void** painter);
 	
 	public function void QAbstractScrollArea_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QAbstractScrollArea_OnInitPainter")]
 	public static extern void QAbstractScrollArea_OnInitPainter(void* self, QAbstractScrollArea_OnInitPainter_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperInitPainter")]
+	public static extern void QAbstractScrollArea_SuperInitPainter(void* self, void** painter);
 	[LinkName("QAbstractScrollArea_Redirected")]
 	public static extern void** QAbstractScrollArea_Redirected(void* self, void** offset);
 	
 	public function void QAbstractScrollArea_OnRedirected_action(void* self, void** offset);
 	[LinkName("QAbstractScrollArea_OnRedirected")]
 	public static extern void** QAbstractScrollArea_OnRedirected(void* self, QAbstractScrollArea_OnRedirected_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperRedirected")]
+	public static extern void** QAbstractScrollArea_SuperRedirected(void* self, void** offset);
 	[LinkName("QAbstractScrollArea_SharedPainter")]
 	public static extern void** QAbstractScrollArea_SharedPainter(void* self);
 	
 	public function void QAbstractScrollArea_OnSharedPainter_action(void* self);
 	[LinkName("QAbstractScrollArea_OnSharedPainter")]
 	public static extern void** QAbstractScrollArea_OnSharedPainter(void* self, QAbstractScrollArea_OnSharedPainter_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperSharedPainter")]
+	public static extern void** QAbstractScrollArea_SuperSharedPainter(void* self);
 	[LinkName("QAbstractScrollArea_SetVisible")]
 	public static extern void QAbstractScrollArea_SetVisible(void* self, bool visible);
 	
 	public function void QAbstractScrollArea_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QAbstractScrollArea_OnSetVisible")]
 	public static extern void QAbstractScrollArea_OnSetVisible(void* self, QAbstractScrollArea_OnSetVisible_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperSetVisible")]
+	public static extern void QAbstractScrollArea_SuperSetVisible(void* self, bool visible);
 	[LinkName("QAbstractScrollArea_HeightForWidth")]
 	public static extern c_int QAbstractScrollArea_HeightForWidth(void* self, c_int param1);
 	
 	public function void QAbstractScrollArea_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QAbstractScrollArea_OnHeightForWidth")]
 	public static extern c_int QAbstractScrollArea_OnHeightForWidth(void* self, QAbstractScrollArea_OnHeightForWidth_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperHeightForWidth")]
+	public static extern c_int QAbstractScrollArea_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QAbstractScrollArea_HasHeightForWidth")]
 	public static extern bool QAbstractScrollArea_HasHeightForWidth(void* self);
 	
 	public function void QAbstractScrollArea_OnHasHeightForWidth_action(void* self);
 	[LinkName("QAbstractScrollArea_OnHasHeightForWidth")]
 	public static extern bool QAbstractScrollArea_OnHasHeightForWidth(void* self, QAbstractScrollArea_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperHasHeightForWidth")]
+	public static extern bool QAbstractScrollArea_SuperHasHeightForWidth(void* self);
 	[LinkName("QAbstractScrollArea_KeyReleaseEvent")]
 	public static extern void QAbstractScrollArea_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnKeyReleaseEvent")]
 	public static extern void QAbstractScrollArea_OnKeyReleaseEvent(void* self, QAbstractScrollArea_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperKeyReleaseEvent")]
+	public static extern void QAbstractScrollArea_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_FocusInEvent")]
 	public static extern void QAbstractScrollArea_FocusInEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnFocusInEvent")]
 	public static extern void QAbstractScrollArea_OnFocusInEvent(void* self, QAbstractScrollArea_OnFocusInEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperFocusInEvent")]
+	public static extern void QAbstractScrollArea_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_FocusOutEvent")]
 	public static extern void QAbstractScrollArea_FocusOutEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnFocusOutEvent")]
 	public static extern void QAbstractScrollArea_OnFocusOutEvent(void* self, QAbstractScrollArea_OnFocusOutEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperFocusOutEvent")]
+	public static extern void QAbstractScrollArea_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_EnterEvent")]
 	public static extern void QAbstractScrollArea_EnterEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnEnterEvent")]
 	public static extern void QAbstractScrollArea_OnEnterEvent(void* self, QAbstractScrollArea_OnEnterEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperEnterEvent")]
+	public static extern void QAbstractScrollArea_SuperEnterEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_LeaveEvent")]
 	public static extern void QAbstractScrollArea_LeaveEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnLeaveEvent")]
 	public static extern void QAbstractScrollArea_OnLeaveEvent(void* self, QAbstractScrollArea_OnLeaveEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperLeaveEvent")]
+	public static extern void QAbstractScrollArea_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_MoveEvent")]
 	public static extern void QAbstractScrollArea_MoveEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnMoveEvent")]
 	public static extern void QAbstractScrollArea_OnMoveEvent(void* self, QAbstractScrollArea_OnMoveEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperMoveEvent")]
+	public static extern void QAbstractScrollArea_SuperMoveEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_CloseEvent")]
 	public static extern void QAbstractScrollArea_CloseEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnCloseEvent")]
 	public static extern void QAbstractScrollArea_OnCloseEvent(void* self, QAbstractScrollArea_OnCloseEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperCloseEvent")]
+	public static extern void QAbstractScrollArea_SuperCloseEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_TabletEvent")]
 	public static extern void QAbstractScrollArea_TabletEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnTabletEvent")]
 	public static extern void QAbstractScrollArea_OnTabletEvent(void* self, QAbstractScrollArea_OnTabletEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperTabletEvent")]
+	public static extern void QAbstractScrollArea_SuperTabletEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_ActionEvent")]
 	public static extern void QAbstractScrollArea_ActionEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnActionEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnActionEvent")]
 	public static extern void QAbstractScrollArea_OnActionEvent(void* self, QAbstractScrollArea_OnActionEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperActionEvent")]
+	public static extern void QAbstractScrollArea_SuperActionEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_ShowEvent")]
 	public static extern void QAbstractScrollArea_ShowEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnShowEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnShowEvent")]
 	public static extern void QAbstractScrollArea_OnShowEvent(void* self, QAbstractScrollArea_OnShowEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperShowEvent")]
+	public static extern void QAbstractScrollArea_SuperShowEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_HideEvent")]
 	public static extern void QAbstractScrollArea_HideEvent(void* self, void** event);
 	
 	public function void QAbstractScrollArea_OnHideEvent_action(void* self, void** event);
 	[LinkName("QAbstractScrollArea_OnHideEvent")]
 	public static extern void QAbstractScrollArea_OnHideEvent(void* self, QAbstractScrollArea_OnHideEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperHideEvent")]
+	public static extern void QAbstractScrollArea_SuperHideEvent(void* self, void** event);
 	[LinkName("QAbstractScrollArea_NativeEvent")]
 	public static extern bool QAbstractScrollArea_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QAbstractScrollArea_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractScrollArea_OnNativeEvent")]
 	public static extern bool QAbstractScrollArea_OnNativeEvent(void* self, QAbstractScrollArea_OnNativeEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperNativeEvent")]
+	public static extern bool QAbstractScrollArea_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractScrollArea_ChangeEvent")]
 	public static extern void QAbstractScrollArea_ChangeEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnChangeEvent")]
 	public static extern void QAbstractScrollArea_OnChangeEvent(void* self, QAbstractScrollArea_OnChangeEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperChangeEvent")]
+	public static extern void QAbstractScrollArea_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_InputMethodEvent")]
 	public static extern void QAbstractScrollArea_InputMethodEvent(void* self, void** param1);
 	
 	public function void QAbstractScrollArea_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_OnInputMethodEvent")]
 	public static extern void QAbstractScrollArea_OnInputMethodEvent(void* self, QAbstractScrollArea_OnInputMethodEvent_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperInputMethodEvent")]
+	public static extern void QAbstractScrollArea_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QAbstractScrollArea_InputMethodQuery")]
 	public static extern void* QAbstractScrollArea_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QAbstractScrollArea_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QAbstractScrollArea_OnInputMethodQuery")]
 	public static extern void* QAbstractScrollArea_OnInputMethodQuery(void* self, QAbstractScrollArea_OnInputMethodQuery_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperInputMethodQuery")]
+	public static extern void* QAbstractScrollArea_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QAbstractScrollArea_FocusNextPrevChild")]
 	public static extern bool QAbstractScrollArea_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QAbstractScrollArea_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QAbstractScrollArea_OnFocusNextPrevChild")]
 	public static extern bool QAbstractScrollArea_OnFocusNextPrevChild(void* self, QAbstractScrollArea_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperFocusNextPrevChild")]
+	public static extern bool QAbstractScrollArea_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QAbstractScrollArea_InitStyleOption")]
 	public static extern void QAbstractScrollArea_InitStyleOption(void* self, void** option);
 	
 	public function void QAbstractScrollArea_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QAbstractScrollArea_OnInitStyleOption")]
 	public static extern void QAbstractScrollArea_OnInitStyleOption(void* self, QAbstractScrollArea_OnInitStyleOption_action _action);
+	
+	[LinkName("QAbstractScrollArea_SuperInitStyleOption")]
+	public static extern void QAbstractScrollArea_SuperInitStyleOption(void* self, void** option);
 }
 [AllowDuplicates]
 enum QAbstractScrollArea_SizeAdjustPolicy

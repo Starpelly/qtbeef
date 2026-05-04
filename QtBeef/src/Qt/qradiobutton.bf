@@ -1737,6 +1737,60 @@ class QRadioButton : IQRadioButton, IQAbstractButton, IQWidget, IQObject, IQPain
 		CQt.QAbstractButton_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Clicked);
 		CQt.QAbstractButton_Connect_Toggled(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Toggled);
 		CQt.QAbstractButton_Connect_Clicked1(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Clicked1);
+		CQt.QRadioButton_OnMetaObject(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMetaObject);
+		CQt.QRadioButton_OnMetacast(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMetacast);
+		CQt.QRadioButton_OnMetacall(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMetacall);
+		CQt.QRadioButton_OnSizeHint(obj.ObjectPtr,  => QtBeef_QRadioButton_OnSizeHint);
+		CQt.QRadioButton_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMinimumSizeHint);
+		CQt.QRadioButton_OnEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnEvent);
+		CQt.QRadioButton_OnHitButton(obj.ObjectPtr,  => QtBeef_QRadioButton_OnHitButton);
+		CQt.QRadioButton_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnPaintEvent);
+		CQt.QRadioButton_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMouseMoveEvent);
+		CQt.QRadioButton_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QRadioButton_OnInitStyleOption);
+		CQt.QRadioButton_OnEventFilter(obj.ObjectPtr,  => QtBeef_QRadioButton_OnEventFilter);
+		CQt.QRadioButton_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnTimerEvent);
+		CQt.QRadioButton_OnChildEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnChildEvent);
+		CQt.QRadioButton_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnCustomEvent);
+		CQt.QRadioButton_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QRadioButton_OnConnectNotify);
+		CQt.QRadioButton_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QRadioButton_OnDisconnectNotify);
+		CQt.QRadioButton_OnDevType(obj.ObjectPtr,  => QtBeef_QRadioButton_OnDevType);
+		CQt.QRadioButton_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QRadioButton_OnPaintEngine);
+		CQt.QRadioButton_OnMetric(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMetric);
+		CQt.QRadioButton_OnInitPainter(obj.ObjectPtr,  => QtBeef_QRadioButton_OnInitPainter);
+		CQt.QRadioButton_OnRedirected(obj.ObjectPtr,  => QtBeef_QRadioButton_OnRedirected);
+		CQt.QRadioButton_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QRadioButton_OnSharedPainter);
+		CQt.QRadioButton_OnSetVisible(obj.ObjectPtr,  => QtBeef_QRadioButton_OnSetVisible);
+		CQt.QRadioButton_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QRadioButton_OnHeightForWidth);
+		CQt.QRadioButton_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QRadioButton_OnHasHeightForWidth);
+		CQt.QRadioButton_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMousePressEvent);
+		CQt.QRadioButton_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMouseReleaseEvent);
+		CQt.QRadioButton_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMouseDoubleClickEvent);
+		CQt.QRadioButton_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnWheelEvent);
+		CQt.QRadioButton_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnKeyPressEvent);
+		CQt.QRadioButton_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnKeyReleaseEvent);
+		CQt.QRadioButton_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnFocusInEvent);
+		CQt.QRadioButton_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnFocusOutEvent);
+		CQt.QRadioButton_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnEnterEvent);
+		CQt.QRadioButton_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnLeaveEvent);
+		CQt.QRadioButton_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnMoveEvent);
+		CQt.QRadioButton_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnResizeEvent);
+		CQt.QRadioButton_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnCloseEvent);
+		CQt.QRadioButton_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnContextMenuEvent);
+		CQt.QRadioButton_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnTabletEvent);
+		CQt.QRadioButton_OnActionEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnActionEvent);
+		CQt.QRadioButton_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnDragEnterEvent);
+		CQt.QRadioButton_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnDragMoveEvent);
+		CQt.QRadioButton_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnDragLeaveEvent);
+		CQt.QRadioButton_OnDropEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnDropEvent);
+		CQt.QRadioButton_OnShowEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnShowEvent);
+		CQt.QRadioButton_OnHideEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnHideEvent);
+		CQt.QRadioButton_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnNativeEvent);
+		CQt.QRadioButton_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnChangeEvent);
+		CQt.QRadioButton_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QRadioButton_OnInputMethodEvent);
+		CQt.QRadioButton_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QRadioButton_OnInputMethodQuery);
+		CQt.QRadioButton_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QRadioButton_OnFocusNextPrevChild);
+		CQt.QRadioButton_OnCheckStateSet(obj.ObjectPtr,  => QtBeef_QRadioButton_OnCheckStateSet);
+		CQt.QRadioButton_OnNextCheckState(obj.ObjectPtr,  => QtBeef_QRadioButton_OnNextCheckState);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1803,6 +1857,276 @@ class QRadioButton : IQRadioButton, IQAbstractButton, IQWidget, IQObject, IQPain
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnClicked1.Invoke(_checked);
+	}
+	static void QtBeef_QRadioButton_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QRadioButton_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QRadioButton_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QRadioButton_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QRadioButton_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QRadioButton_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QRadioButton_OnHitButton(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHitButton(param1);
+	}
+	static void QtBeef_QRadioButton_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QRadioButton_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QRadioButton_OnInitStyleOption(void* ptr, void** button)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(button);
+	}
+	static void QtBeef_QRadioButton_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QRadioButton_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QRadioButton_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QRadioButton_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QRadioButton_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QRadioButton_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QRadioButton_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QRadioButton_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QRadioButton_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QRadioButton_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QRadioButton_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QRadioButton_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QRadioButton_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QRadioButton_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QRadioButton_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QRadioButton_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QRadioButton_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QRadioButton_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QRadioButton_OnCheckStateSet(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCheckStateSet();
+	}
+	static void QtBeef_QRadioButton_OnNextCheckState(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNextCheckState();
 	}
 	public this(QRadioButton_Ptr ptr)
 	{
@@ -3523,18 +3847,27 @@ extension CQt
 	public function void QRadioButton_OnMetaObject_action(void* self);
 	[LinkName("QRadioButton_OnMetaObject")]
 	public static extern void** QRadioButton_OnMetaObject(void* self, QRadioButton_OnMetaObject_action _action);
+	
+	[LinkName("QRadioButton_SuperMetaObject")]
+	public static extern void** QRadioButton_SuperMetaObject(void* self);
 	[LinkName("QRadioButton_Qt_Metacast")]
 	public static extern void* QRadioButton_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QRadioButton_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QRadioButton_OnMetacast")]
 	public static extern void* QRadioButton_OnMetacast(void* self, QRadioButton_OnMetacast_action _action);
+	
+	[LinkName("QRadioButton_SuperMetacast")]
+	public static extern void* QRadioButton_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QRadioButton_Qt_Metacall")]
 	public static extern c_int QRadioButton_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QRadioButton_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QRadioButton_OnMetacall")]
 	public static extern c_int QRadioButton_OnMetacall(void* self, QRadioButton_OnMetacall_action _action);
+	
+	[LinkName("QRadioButton_SuperMetacall")]
+	public static extern c_int QRadioButton_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QRadioButton_Tr")]
 	public static extern libqt_string QRadioButton_Tr(c_char* s);
 	[LinkName("QRadioButton_SizeHint")]
@@ -3543,42 +3876,63 @@ extension CQt
 	public function void QRadioButton_OnSizeHint_action(void* self);
 	[LinkName("QRadioButton_OnSizeHint")]
 	public static extern void* QRadioButton_OnSizeHint(void* self, QRadioButton_OnSizeHint_action _action);
+	
+	[LinkName("QRadioButton_SuperSizeHint")]
+	public static extern void* QRadioButton_SuperSizeHint(void* self);
 	[LinkName("QRadioButton_MinimumSizeHint")]
 	public static extern void* QRadioButton_MinimumSizeHint(void* self);
 	
 	public function void QRadioButton_OnMinimumSizeHint_action(void* self);
 	[LinkName("QRadioButton_OnMinimumSizeHint")]
 	public static extern void* QRadioButton_OnMinimumSizeHint(void* self, QRadioButton_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QRadioButton_SuperMinimumSizeHint")]
+	public static extern void* QRadioButton_SuperMinimumSizeHint(void* self);
 	[LinkName("QRadioButton_Event")]
 	public static extern bool QRadioButton_Event(void* self, void** e);
 	
 	public function void QRadioButton_OnEvent_action(void* self, void** e);
 	[LinkName("QRadioButton_OnEvent")]
 	public static extern bool QRadioButton_OnEvent(void* self, QRadioButton_OnEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperEvent")]
+	public static extern bool QRadioButton_SuperEvent(void* self, void** e);
 	[LinkName("QRadioButton_HitButton")]
 	public static extern bool QRadioButton_HitButton(void* self, void** param1);
 	
 	public function void QRadioButton_OnHitButton_action(void* self, void** param1);
 	[LinkName("QRadioButton_OnHitButton")]
 	public static extern bool QRadioButton_OnHitButton(void* self, QRadioButton_OnHitButton_action _action);
+	
+	[LinkName("QRadioButton_SuperHitButton")]
+	public static extern bool QRadioButton_SuperHitButton(void* self, void** param1);
 	[LinkName("QRadioButton_PaintEvent")]
 	public static extern void QRadioButton_PaintEvent(void* self, void** param1);
 	
 	public function void QRadioButton_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QRadioButton_OnPaintEvent")]
 	public static extern void QRadioButton_OnPaintEvent(void* self, QRadioButton_OnPaintEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperPaintEvent")]
+	public static extern void QRadioButton_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QRadioButton_MouseMoveEvent")]
 	public static extern void QRadioButton_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QRadioButton_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QRadioButton_OnMouseMoveEvent")]
 	public static extern void QRadioButton_OnMouseMoveEvent(void* self, QRadioButton_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperMouseMoveEvent")]
+	public static extern void QRadioButton_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QRadioButton_InitStyleOption")]
 	public static extern void QRadioButton_InitStyleOption(void* self, void** button);
 	
 	public function void QRadioButton_OnInitStyleOption_action(void* self, void** button);
 	[LinkName("QRadioButton_OnInitStyleOption")]
 	public static extern void QRadioButton_OnInitStyleOption(void* self, QRadioButton_OnInitStyleOption_action _action);
+	
+	[LinkName("QRadioButton_SuperInitStyleOption")]
+	public static extern void QRadioButton_SuperInitStyleOption(void* self, void** button);
 	[LinkName("QRadioButton_Tr2")]
 	public static extern libqt_string QRadioButton_Tr2(c_char* s, c_char* c);
 	[LinkName("QRadioButton_Tr3")]
@@ -3589,262 +3943,394 @@ extension CQt
 	public function void QRadioButton_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QRadioButton_OnEventFilter")]
 	public static extern bool QRadioButton_OnEventFilter(void* self, QRadioButton_OnEventFilter_action _action);
+	
+	[LinkName("QRadioButton_SuperEventFilter")]
+	public static extern bool QRadioButton_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QRadioButton_TimerEvent")]
 	public static extern void QRadioButton_TimerEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnTimerEvent")]
 	public static extern void QRadioButton_OnTimerEvent(void* self, QRadioButton_OnTimerEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperTimerEvent")]
+	public static extern void QRadioButton_SuperTimerEvent(void* self, void** event);
 	[LinkName("QRadioButton_ChildEvent")]
 	public static extern void QRadioButton_ChildEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnChildEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnChildEvent")]
 	public static extern void QRadioButton_OnChildEvent(void* self, QRadioButton_OnChildEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperChildEvent")]
+	public static extern void QRadioButton_SuperChildEvent(void* self, void** event);
 	[LinkName("QRadioButton_CustomEvent")]
 	public static extern void QRadioButton_CustomEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnCustomEvent")]
 	public static extern void QRadioButton_OnCustomEvent(void* self, QRadioButton_OnCustomEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperCustomEvent")]
+	public static extern void QRadioButton_SuperCustomEvent(void* self, void** event);
 	[LinkName("QRadioButton_ConnectNotify")]
 	public static extern void QRadioButton_ConnectNotify(void* self, void** signal);
 	
 	public function void QRadioButton_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QRadioButton_OnConnectNotify")]
 	public static extern void QRadioButton_OnConnectNotify(void* self, QRadioButton_OnConnectNotify_action _action);
+	
+	[LinkName("QRadioButton_SuperConnectNotify")]
+	public static extern void QRadioButton_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QRadioButton_DisconnectNotify")]
 	public static extern void QRadioButton_DisconnectNotify(void* self, void** signal);
 	
 	public function void QRadioButton_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QRadioButton_OnDisconnectNotify")]
 	public static extern void QRadioButton_OnDisconnectNotify(void* self, QRadioButton_OnDisconnectNotify_action _action);
+	
+	[LinkName("QRadioButton_SuperDisconnectNotify")]
+	public static extern void QRadioButton_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QRadioButton_DevType")]
 	public static extern c_int QRadioButton_DevType(void* self);
 	
 	public function void QRadioButton_OnDevType_action(void* self);
 	[LinkName("QRadioButton_OnDevType")]
 	public static extern c_int QRadioButton_OnDevType(void* self, QRadioButton_OnDevType_action _action);
+	
+	[LinkName("QRadioButton_SuperDevType")]
+	public static extern c_int QRadioButton_SuperDevType(void* self);
 	[LinkName("QRadioButton_PaintEngine")]
 	public static extern void** QRadioButton_PaintEngine(void* self);
 	
 	public function void QRadioButton_OnPaintEngine_action(void* self);
 	[LinkName("QRadioButton_OnPaintEngine")]
 	public static extern void** QRadioButton_OnPaintEngine(void* self, QRadioButton_OnPaintEngine_action _action);
+	
+	[LinkName("QRadioButton_SuperPaintEngine")]
+	public static extern void** QRadioButton_SuperPaintEngine(void* self);
 	[LinkName("QRadioButton_Metric")]
 	public static extern c_int QRadioButton_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QRadioButton_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QRadioButton_OnMetric")]
 	public static extern c_int QRadioButton_OnMetric(void* self, QRadioButton_OnMetric_action _action);
+	
+	[LinkName("QRadioButton_SuperMetric")]
+	public static extern c_int QRadioButton_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QRadioButton_InitPainter")]
 	public static extern void QRadioButton_InitPainter(void* self, void** painter);
 	
 	public function void QRadioButton_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QRadioButton_OnInitPainter")]
 	public static extern void QRadioButton_OnInitPainter(void* self, QRadioButton_OnInitPainter_action _action);
+	
+	[LinkName("QRadioButton_SuperInitPainter")]
+	public static extern void QRadioButton_SuperInitPainter(void* self, void** painter);
 	[LinkName("QRadioButton_Redirected")]
 	public static extern void** QRadioButton_Redirected(void* self, void** offset);
 	
 	public function void QRadioButton_OnRedirected_action(void* self, void** offset);
 	[LinkName("QRadioButton_OnRedirected")]
 	public static extern void** QRadioButton_OnRedirected(void* self, QRadioButton_OnRedirected_action _action);
+	
+	[LinkName("QRadioButton_SuperRedirected")]
+	public static extern void** QRadioButton_SuperRedirected(void* self, void** offset);
 	[LinkName("QRadioButton_SharedPainter")]
 	public static extern void** QRadioButton_SharedPainter(void* self);
 	
 	public function void QRadioButton_OnSharedPainter_action(void* self);
 	[LinkName("QRadioButton_OnSharedPainter")]
 	public static extern void** QRadioButton_OnSharedPainter(void* self, QRadioButton_OnSharedPainter_action _action);
+	
+	[LinkName("QRadioButton_SuperSharedPainter")]
+	public static extern void** QRadioButton_SuperSharedPainter(void* self);
 	[LinkName("QRadioButton_SetVisible")]
 	public static extern void QRadioButton_SetVisible(void* self, bool visible);
 	
 	public function void QRadioButton_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QRadioButton_OnSetVisible")]
 	public static extern void QRadioButton_OnSetVisible(void* self, QRadioButton_OnSetVisible_action _action);
+	
+	[LinkName("QRadioButton_SuperSetVisible")]
+	public static extern void QRadioButton_SuperSetVisible(void* self, bool visible);
 	[LinkName("QRadioButton_HeightForWidth")]
 	public static extern c_int QRadioButton_HeightForWidth(void* self, c_int param1);
 	
 	public function void QRadioButton_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QRadioButton_OnHeightForWidth")]
 	public static extern c_int QRadioButton_OnHeightForWidth(void* self, QRadioButton_OnHeightForWidth_action _action);
+	
+	[LinkName("QRadioButton_SuperHeightForWidth")]
+	public static extern c_int QRadioButton_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QRadioButton_HasHeightForWidth")]
 	public static extern bool QRadioButton_HasHeightForWidth(void* self);
 	
 	public function void QRadioButton_OnHasHeightForWidth_action(void* self);
 	[LinkName("QRadioButton_OnHasHeightForWidth")]
 	public static extern bool QRadioButton_OnHasHeightForWidth(void* self, QRadioButton_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QRadioButton_SuperHasHeightForWidth")]
+	public static extern bool QRadioButton_SuperHasHeightForWidth(void* self);
 	[LinkName("QRadioButton_MousePressEvent")]
 	public static extern void QRadioButton_MousePressEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnMousePressEvent")]
 	public static extern void QRadioButton_OnMousePressEvent(void* self, QRadioButton_OnMousePressEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperMousePressEvent")]
+	public static extern void QRadioButton_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QRadioButton_MouseReleaseEvent")]
 	public static extern void QRadioButton_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnMouseReleaseEvent")]
 	public static extern void QRadioButton_OnMouseReleaseEvent(void* self, QRadioButton_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperMouseReleaseEvent")]
+	public static extern void QRadioButton_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QRadioButton_MouseDoubleClickEvent")]
 	public static extern void QRadioButton_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnMouseDoubleClickEvent")]
 	public static extern void QRadioButton_OnMouseDoubleClickEvent(void* self, QRadioButton_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperMouseDoubleClickEvent")]
+	public static extern void QRadioButton_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QRadioButton_WheelEvent")]
 	public static extern void QRadioButton_WheelEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnWheelEvent")]
 	public static extern void QRadioButton_OnWheelEvent(void* self, QRadioButton_OnWheelEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperWheelEvent")]
+	public static extern void QRadioButton_SuperWheelEvent(void* self, void** event);
 	[LinkName("QRadioButton_KeyPressEvent")]
 	public static extern void QRadioButton_KeyPressEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnKeyPressEvent")]
 	public static extern void QRadioButton_OnKeyPressEvent(void* self, QRadioButton_OnKeyPressEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperKeyPressEvent")]
+	public static extern void QRadioButton_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QRadioButton_KeyReleaseEvent")]
 	public static extern void QRadioButton_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnKeyReleaseEvent")]
 	public static extern void QRadioButton_OnKeyReleaseEvent(void* self, QRadioButton_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperKeyReleaseEvent")]
+	public static extern void QRadioButton_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QRadioButton_FocusInEvent")]
 	public static extern void QRadioButton_FocusInEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnFocusInEvent")]
 	public static extern void QRadioButton_OnFocusInEvent(void* self, QRadioButton_OnFocusInEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperFocusInEvent")]
+	public static extern void QRadioButton_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QRadioButton_FocusOutEvent")]
 	public static extern void QRadioButton_FocusOutEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnFocusOutEvent")]
 	public static extern void QRadioButton_OnFocusOutEvent(void* self, QRadioButton_OnFocusOutEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperFocusOutEvent")]
+	public static extern void QRadioButton_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QRadioButton_EnterEvent")]
 	public static extern void QRadioButton_EnterEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnEnterEvent")]
 	public static extern void QRadioButton_OnEnterEvent(void* self, QRadioButton_OnEnterEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperEnterEvent")]
+	public static extern void QRadioButton_SuperEnterEvent(void* self, void** event);
 	[LinkName("QRadioButton_LeaveEvent")]
 	public static extern void QRadioButton_LeaveEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnLeaveEvent")]
 	public static extern void QRadioButton_OnLeaveEvent(void* self, QRadioButton_OnLeaveEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperLeaveEvent")]
+	public static extern void QRadioButton_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QRadioButton_MoveEvent")]
 	public static extern void QRadioButton_MoveEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnMoveEvent")]
 	public static extern void QRadioButton_OnMoveEvent(void* self, QRadioButton_OnMoveEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperMoveEvent")]
+	public static extern void QRadioButton_SuperMoveEvent(void* self, void** event);
 	[LinkName("QRadioButton_ResizeEvent")]
 	public static extern void QRadioButton_ResizeEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnResizeEvent")]
 	public static extern void QRadioButton_OnResizeEvent(void* self, QRadioButton_OnResizeEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperResizeEvent")]
+	public static extern void QRadioButton_SuperResizeEvent(void* self, void** event);
 	[LinkName("QRadioButton_CloseEvent")]
 	public static extern void QRadioButton_CloseEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnCloseEvent")]
 	public static extern void QRadioButton_OnCloseEvent(void* self, QRadioButton_OnCloseEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperCloseEvent")]
+	public static extern void QRadioButton_SuperCloseEvent(void* self, void** event);
 	[LinkName("QRadioButton_ContextMenuEvent")]
 	public static extern void QRadioButton_ContextMenuEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnContextMenuEvent")]
 	public static extern void QRadioButton_OnContextMenuEvent(void* self, QRadioButton_OnContextMenuEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperContextMenuEvent")]
+	public static extern void QRadioButton_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QRadioButton_TabletEvent")]
 	public static extern void QRadioButton_TabletEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnTabletEvent")]
 	public static extern void QRadioButton_OnTabletEvent(void* self, QRadioButton_OnTabletEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperTabletEvent")]
+	public static extern void QRadioButton_SuperTabletEvent(void* self, void** event);
 	[LinkName("QRadioButton_ActionEvent")]
 	public static extern void QRadioButton_ActionEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnActionEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnActionEvent")]
 	public static extern void QRadioButton_OnActionEvent(void* self, QRadioButton_OnActionEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperActionEvent")]
+	public static extern void QRadioButton_SuperActionEvent(void* self, void** event);
 	[LinkName("QRadioButton_DragEnterEvent")]
 	public static extern void QRadioButton_DragEnterEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnDragEnterEvent")]
 	public static extern void QRadioButton_OnDragEnterEvent(void* self, QRadioButton_OnDragEnterEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperDragEnterEvent")]
+	public static extern void QRadioButton_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QRadioButton_DragMoveEvent")]
 	public static extern void QRadioButton_DragMoveEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnDragMoveEvent")]
 	public static extern void QRadioButton_OnDragMoveEvent(void* self, QRadioButton_OnDragMoveEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperDragMoveEvent")]
+	public static extern void QRadioButton_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QRadioButton_DragLeaveEvent")]
 	public static extern void QRadioButton_DragLeaveEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnDragLeaveEvent")]
 	public static extern void QRadioButton_OnDragLeaveEvent(void* self, QRadioButton_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperDragLeaveEvent")]
+	public static extern void QRadioButton_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QRadioButton_DropEvent")]
 	public static extern void QRadioButton_DropEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnDropEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnDropEvent")]
 	public static extern void QRadioButton_OnDropEvent(void* self, QRadioButton_OnDropEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperDropEvent")]
+	public static extern void QRadioButton_SuperDropEvent(void* self, void** event);
 	[LinkName("QRadioButton_ShowEvent")]
 	public static extern void QRadioButton_ShowEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnShowEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnShowEvent")]
 	public static extern void QRadioButton_OnShowEvent(void* self, QRadioButton_OnShowEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperShowEvent")]
+	public static extern void QRadioButton_SuperShowEvent(void* self, void** event);
 	[LinkName("QRadioButton_HideEvent")]
 	public static extern void QRadioButton_HideEvent(void* self, void** event);
 	
 	public function void QRadioButton_OnHideEvent_action(void* self, void** event);
 	[LinkName("QRadioButton_OnHideEvent")]
 	public static extern void QRadioButton_OnHideEvent(void* self, QRadioButton_OnHideEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperHideEvent")]
+	public static extern void QRadioButton_SuperHideEvent(void* self, void** event);
 	[LinkName("QRadioButton_NativeEvent")]
 	public static extern bool QRadioButton_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QRadioButton_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QRadioButton_OnNativeEvent")]
 	public static extern bool QRadioButton_OnNativeEvent(void* self, QRadioButton_OnNativeEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperNativeEvent")]
+	public static extern bool QRadioButton_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QRadioButton_ChangeEvent")]
 	public static extern void QRadioButton_ChangeEvent(void* self, void** param1);
 	
 	public function void QRadioButton_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QRadioButton_OnChangeEvent")]
 	public static extern void QRadioButton_OnChangeEvent(void* self, QRadioButton_OnChangeEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperChangeEvent")]
+	public static extern void QRadioButton_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QRadioButton_InputMethodEvent")]
 	public static extern void QRadioButton_InputMethodEvent(void* self, void** param1);
 	
 	public function void QRadioButton_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QRadioButton_OnInputMethodEvent")]
 	public static extern void QRadioButton_OnInputMethodEvent(void* self, QRadioButton_OnInputMethodEvent_action _action);
+	
+	[LinkName("QRadioButton_SuperInputMethodEvent")]
+	public static extern void QRadioButton_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QRadioButton_InputMethodQuery")]
 	public static extern void* QRadioButton_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QRadioButton_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QRadioButton_OnInputMethodQuery")]
 	public static extern void* QRadioButton_OnInputMethodQuery(void* self, QRadioButton_OnInputMethodQuery_action _action);
+	
+	[LinkName("QRadioButton_SuperInputMethodQuery")]
+	public static extern void* QRadioButton_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QRadioButton_FocusNextPrevChild")]
 	public static extern bool QRadioButton_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QRadioButton_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QRadioButton_OnFocusNextPrevChild")]
 	public static extern bool QRadioButton_OnFocusNextPrevChild(void* self, QRadioButton_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QRadioButton_SuperFocusNextPrevChild")]
+	public static extern bool QRadioButton_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QRadioButton_CheckStateSet")]
 	public static extern void QRadioButton_CheckStateSet(void* self);
 	
 	public function void QRadioButton_OnCheckStateSet_action(void* self);
 	[LinkName("QRadioButton_OnCheckStateSet")]
 	public static extern void QRadioButton_OnCheckStateSet(void* self, QRadioButton_OnCheckStateSet_action _action);
+	
+	[LinkName("QRadioButton_SuperCheckStateSet")]
+	public static extern void QRadioButton_SuperCheckStateSet(void* self);
 	[LinkName("QRadioButton_NextCheckState")]
 	public static extern void QRadioButton_NextCheckState(void* self);
 	
 	public function void QRadioButton_OnNextCheckState_action(void* self);
 	[LinkName("QRadioButton_OnNextCheckState")]
 	public static extern void QRadioButton_OnNextCheckState(void* self, QRadioButton_OnNextCheckState_action _action);
+	
+	[LinkName("QRadioButton_SuperNextCheckState")]
+	public static extern void QRadioButton_SuperNextCheckState(void* self);
 }

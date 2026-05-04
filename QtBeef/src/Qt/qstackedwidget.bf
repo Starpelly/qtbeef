@@ -1702,6 +1702,57 @@ class QStackedWidget : IQStackedWidget, IQFrame, IQWidget, IQObject, IQPaintDevi
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QStackedWidget_OnMetaObject(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMetaObject);
+		CQt.QStackedWidget_OnMetacast(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMetacast);
+		CQt.QStackedWidget_OnMetacall(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMetacall);
+		CQt.QStackedWidget_OnEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnEvent);
+		CQt.QStackedWidget_OnEventFilter(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnEventFilter);
+		CQt.QStackedWidget_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnTimerEvent);
+		CQt.QStackedWidget_OnChildEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnChildEvent);
+		CQt.QStackedWidget_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnCustomEvent);
+		CQt.QStackedWidget_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnConnectNotify);
+		CQt.QStackedWidget_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnDisconnectNotify);
+		CQt.QStackedWidget_OnDevType(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnDevType);
+		CQt.QStackedWidget_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnPaintEngine);
+		CQt.QStackedWidget_OnMetric(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMetric);
+		CQt.QStackedWidget_OnInitPainter(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnInitPainter);
+		CQt.QStackedWidget_OnRedirected(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnRedirected);
+		CQt.QStackedWidget_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnSharedPainter);
+		CQt.QStackedWidget_OnSetVisible(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnSetVisible);
+		CQt.QStackedWidget_OnSizeHint(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnSizeHint);
+		CQt.QStackedWidget_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMinimumSizeHint);
+		CQt.QStackedWidget_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnHeightForWidth);
+		CQt.QStackedWidget_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnHasHeightForWidth);
+		CQt.QStackedWidget_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMousePressEvent);
+		CQt.QStackedWidget_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMouseReleaseEvent);
+		CQt.QStackedWidget_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMouseDoubleClickEvent);
+		CQt.QStackedWidget_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMouseMoveEvent);
+		CQt.QStackedWidget_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnWheelEvent);
+		CQt.QStackedWidget_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnKeyPressEvent);
+		CQt.QStackedWidget_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnKeyReleaseEvent);
+		CQt.QStackedWidget_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnFocusInEvent);
+		CQt.QStackedWidget_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnFocusOutEvent);
+		CQt.QStackedWidget_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnEnterEvent);
+		CQt.QStackedWidget_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnLeaveEvent);
+		CQt.QStackedWidget_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnPaintEvent);
+		CQt.QStackedWidget_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnMoveEvent);
+		CQt.QStackedWidget_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnResizeEvent);
+		CQt.QStackedWidget_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnCloseEvent);
+		CQt.QStackedWidget_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnContextMenuEvent);
+		CQt.QStackedWidget_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnTabletEvent);
+		CQt.QStackedWidget_OnActionEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnActionEvent);
+		CQt.QStackedWidget_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnDragEnterEvent);
+		CQt.QStackedWidget_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnDragMoveEvent);
+		CQt.QStackedWidget_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnDragLeaveEvent);
+		CQt.QStackedWidget_OnDropEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnDropEvent);
+		CQt.QStackedWidget_OnShowEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnShowEvent);
+		CQt.QStackedWidget_OnHideEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnHideEvent);
+		CQt.QStackedWidget_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnNativeEvent);
+		CQt.QStackedWidget_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnChangeEvent);
+		CQt.QStackedWidget_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnInputMethodEvent);
+		CQt.QStackedWidget_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnInputMethodQuery);
+		CQt.QStackedWidget_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnFocusNextPrevChild);
+		CQt.QStackedWidget_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QStackedWidget_OnInitStyleOption);
 	}
 	public Event<delegate void(c_int param1)> OnCurrentChanged = .() ~ _.Dispose();
 	public Event<delegate void(c_int index)> OnWidgetRemoved = .() ~ _.Dispose();
@@ -1750,6 +1801,261 @@ class QStackedWidget : IQStackedWidget, IQFrame, IQWidget, IQObject, IQPaintDevi
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QStackedWidget_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QStackedWidget_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QStackedWidget_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QStackedWidget_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QStackedWidget_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QStackedWidget_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QStackedWidget_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QStackedWidget_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QStackedWidget_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QStackedWidget_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QStackedWidget_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QStackedWidget_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QStackedWidget_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QStackedWidget_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QStackedWidget_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QStackedWidget_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QStackedWidget_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QStackedWidget_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QStackedWidget_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QStackedWidget_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QStackedWidget_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QStackedWidget_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QStackedWidget_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QStackedWidget_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QStackedWidget_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
 	}
 	public this(QStackedWidget_Ptr ptr)
 	{
@@ -3426,18 +3732,27 @@ extension CQt
 	public function void QStackedWidget_OnMetaObject_action(void* self);
 	[LinkName("QStackedWidget_OnMetaObject")]
 	public static extern void** QStackedWidget_OnMetaObject(void* self, QStackedWidget_OnMetaObject_action _action);
+	
+	[LinkName("QStackedWidget_SuperMetaObject")]
+	public static extern void** QStackedWidget_SuperMetaObject(void* self);
 	[LinkName("QStackedWidget_Qt_Metacast")]
 	public static extern void* QStackedWidget_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QStackedWidget_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QStackedWidget_OnMetacast")]
 	public static extern void* QStackedWidget_OnMetacast(void* self, QStackedWidget_OnMetacast_action _action);
+	
+	[LinkName("QStackedWidget_SuperMetacast")]
+	public static extern void* QStackedWidget_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QStackedWidget_Qt_Metacall")]
 	public static extern c_int QStackedWidget_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QStackedWidget_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStackedWidget_OnMetacall")]
 	public static extern c_int QStackedWidget_OnMetacall(void* self, QStackedWidget_OnMetacall_action _action);
+	
+	[LinkName("QStackedWidget_SuperMetacall")]
+	public static extern c_int QStackedWidget_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStackedWidget_Tr")]
 	public static extern libqt_string QStackedWidget_Tr(c_char* s);
 	[LinkName("QStackedWidget_AddWidget")]
@@ -3478,6 +3793,9 @@ extension CQt
 	public function void QStackedWidget_OnEvent_action(void* self, void** e);
 	[LinkName("QStackedWidget_OnEvent")]
 	public static extern bool QStackedWidget_OnEvent(void* self, QStackedWidget_OnEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperEvent")]
+	public static extern bool QStackedWidget_SuperEvent(void* self, void** e);
 	[LinkName("QStackedWidget_Tr2")]
 	public static extern libqt_string QStackedWidget_Tr2(c_char* s, c_char* c);
 	[LinkName("QStackedWidget_Tr3")]
@@ -3488,280 +3806,421 @@ extension CQt
 	public function void QStackedWidget_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QStackedWidget_OnEventFilter")]
 	public static extern bool QStackedWidget_OnEventFilter(void* self, QStackedWidget_OnEventFilter_action _action);
+	
+	[LinkName("QStackedWidget_SuperEventFilter")]
+	public static extern bool QStackedWidget_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QStackedWidget_TimerEvent")]
 	public static extern void QStackedWidget_TimerEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnTimerEvent")]
 	public static extern void QStackedWidget_OnTimerEvent(void* self, QStackedWidget_OnTimerEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperTimerEvent")]
+	public static extern void QStackedWidget_SuperTimerEvent(void* self, void** event);
 	[LinkName("QStackedWidget_ChildEvent")]
 	public static extern void QStackedWidget_ChildEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnChildEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnChildEvent")]
 	public static extern void QStackedWidget_OnChildEvent(void* self, QStackedWidget_OnChildEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperChildEvent")]
+	public static extern void QStackedWidget_SuperChildEvent(void* self, void** event);
 	[LinkName("QStackedWidget_CustomEvent")]
 	public static extern void QStackedWidget_CustomEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnCustomEvent")]
 	public static extern void QStackedWidget_OnCustomEvent(void* self, QStackedWidget_OnCustomEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperCustomEvent")]
+	public static extern void QStackedWidget_SuperCustomEvent(void* self, void** event);
 	[LinkName("QStackedWidget_ConnectNotify")]
 	public static extern void QStackedWidget_ConnectNotify(void* self, void** signal);
 	
 	public function void QStackedWidget_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QStackedWidget_OnConnectNotify")]
 	public static extern void QStackedWidget_OnConnectNotify(void* self, QStackedWidget_OnConnectNotify_action _action);
+	
+	[LinkName("QStackedWidget_SuperConnectNotify")]
+	public static extern void QStackedWidget_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QStackedWidget_DisconnectNotify")]
 	public static extern void QStackedWidget_DisconnectNotify(void* self, void** signal);
 	
 	public function void QStackedWidget_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QStackedWidget_OnDisconnectNotify")]
 	public static extern void QStackedWidget_OnDisconnectNotify(void* self, QStackedWidget_OnDisconnectNotify_action _action);
+	
+	[LinkName("QStackedWidget_SuperDisconnectNotify")]
+	public static extern void QStackedWidget_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QStackedWidget_DevType")]
 	public static extern c_int QStackedWidget_DevType(void* self);
 	
 	public function void QStackedWidget_OnDevType_action(void* self);
 	[LinkName("QStackedWidget_OnDevType")]
 	public static extern c_int QStackedWidget_OnDevType(void* self, QStackedWidget_OnDevType_action _action);
+	
+	[LinkName("QStackedWidget_SuperDevType")]
+	public static extern c_int QStackedWidget_SuperDevType(void* self);
 	[LinkName("QStackedWidget_PaintEngine")]
 	public static extern void** QStackedWidget_PaintEngine(void* self);
 	
 	public function void QStackedWidget_OnPaintEngine_action(void* self);
 	[LinkName("QStackedWidget_OnPaintEngine")]
 	public static extern void** QStackedWidget_OnPaintEngine(void* self, QStackedWidget_OnPaintEngine_action _action);
+	
+	[LinkName("QStackedWidget_SuperPaintEngine")]
+	public static extern void** QStackedWidget_SuperPaintEngine(void* self);
 	[LinkName("QStackedWidget_Metric")]
 	public static extern c_int QStackedWidget_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QStackedWidget_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QStackedWidget_OnMetric")]
 	public static extern c_int QStackedWidget_OnMetric(void* self, QStackedWidget_OnMetric_action _action);
+	
+	[LinkName("QStackedWidget_SuperMetric")]
+	public static extern c_int QStackedWidget_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QStackedWidget_InitPainter")]
 	public static extern void QStackedWidget_InitPainter(void* self, void** painter);
 	
 	public function void QStackedWidget_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QStackedWidget_OnInitPainter")]
 	public static extern void QStackedWidget_OnInitPainter(void* self, QStackedWidget_OnInitPainter_action _action);
+	
+	[LinkName("QStackedWidget_SuperInitPainter")]
+	public static extern void QStackedWidget_SuperInitPainter(void* self, void** painter);
 	[LinkName("QStackedWidget_Redirected")]
 	public static extern void** QStackedWidget_Redirected(void* self, void** offset);
 	
 	public function void QStackedWidget_OnRedirected_action(void* self, void** offset);
 	[LinkName("QStackedWidget_OnRedirected")]
 	public static extern void** QStackedWidget_OnRedirected(void* self, QStackedWidget_OnRedirected_action _action);
+	
+	[LinkName("QStackedWidget_SuperRedirected")]
+	public static extern void** QStackedWidget_SuperRedirected(void* self, void** offset);
 	[LinkName("QStackedWidget_SharedPainter")]
 	public static extern void** QStackedWidget_SharedPainter(void* self);
 	
 	public function void QStackedWidget_OnSharedPainter_action(void* self);
 	[LinkName("QStackedWidget_OnSharedPainter")]
 	public static extern void** QStackedWidget_OnSharedPainter(void* self, QStackedWidget_OnSharedPainter_action _action);
+	
+	[LinkName("QStackedWidget_SuperSharedPainter")]
+	public static extern void** QStackedWidget_SuperSharedPainter(void* self);
 	[LinkName("QStackedWidget_SetVisible")]
 	public static extern void QStackedWidget_SetVisible(void* self, bool visible);
 	
 	public function void QStackedWidget_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QStackedWidget_OnSetVisible")]
 	public static extern void QStackedWidget_OnSetVisible(void* self, QStackedWidget_OnSetVisible_action _action);
+	
+	[LinkName("QStackedWidget_SuperSetVisible")]
+	public static extern void QStackedWidget_SuperSetVisible(void* self, bool visible);
 	[LinkName("QStackedWidget_SizeHint")]
 	public static extern void* QStackedWidget_SizeHint(void* self);
 	
 	public function void QStackedWidget_OnSizeHint_action(void* self);
 	[LinkName("QStackedWidget_OnSizeHint")]
 	public static extern void* QStackedWidget_OnSizeHint(void* self, QStackedWidget_OnSizeHint_action _action);
+	
+	[LinkName("QStackedWidget_SuperSizeHint")]
+	public static extern void* QStackedWidget_SuperSizeHint(void* self);
 	[LinkName("QStackedWidget_MinimumSizeHint")]
 	public static extern void* QStackedWidget_MinimumSizeHint(void* self);
 	
 	public function void QStackedWidget_OnMinimumSizeHint_action(void* self);
 	[LinkName("QStackedWidget_OnMinimumSizeHint")]
 	public static extern void* QStackedWidget_OnMinimumSizeHint(void* self, QStackedWidget_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QStackedWidget_SuperMinimumSizeHint")]
+	public static extern void* QStackedWidget_SuperMinimumSizeHint(void* self);
 	[LinkName("QStackedWidget_HeightForWidth")]
 	public static extern c_int QStackedWidget_HeightForWidth(void* self, c_int param1);
 	
 	public function void QStackedWidget_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QStackedWidget_OnHeightForWidth")]
 	public static extern c_int QStackedWidget_OnHeightForWidth(void* self, QStackedWidget_OnHeightForWidth_action _action);
+	
+	[LinkName("QStackedWidget_SuperHeightForWidth")]
+	public static extern c_int QStackedWidget_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QStackedWidget_HasHeightForWidth")]
 	public static extern bool QStackedWidget_HasHeightForWidth(void* self);
 	
 	public function void QStackedWidget_OnHasHeightForWidth_action(void* self);
 	[LinkName("QStackedWidget_OnHasHeightForWidth")]
 	public static extern bool QStackedWidget_OnHasHeightForWidth(void* self, QStackedWidget_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QStackedWidget_SuperHasHeightForWidth")]
+	public static extern bool QStackedWidget_SuperHasHeightForWidth(void* self);
 	[LinkName("QStackedWidget_MousePressEvent")]
 	public static extern void QStackedWidget_MousePressEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnMousePressEvent")]
 	public static extern void QStackedWidget_OnMousePressEvent(void* self, QStackedWidget_OnMousePressEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperMousePressEvent")]
+	public static extern void QStackedWidget_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QStackedWidget_MouseReleaseEvent")]
 	public static extern void QStackedWidget_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnMouseReleaseEvent")]
 	public static extern void QStackedWidget_OnMouseReleaseEvent(void* self, QStackedWidget_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperMouseReleaseEvent")]
+	public static extern void QStackedWidget_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QStackedWidget_MouseDoubleClickEvent")]
 	public static extern void QStackedWidget_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnMouseDoubleClickEvent")]
 	public static extern void QStackedWidget_OnMouseDoubleClickEvent(void* self, QStackedWidget_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperMouseDoubleClickEvent")]
+	public static extern void QStackedWidget_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QStackedWidget_MouseMoveEvent")]
 	public static extern void QStackedWidget_MouseMoveEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnMouseMoveEvent")]
 	public static extern void QStackedWidget_OnMouseMoveEvent(void* self, QStackedWidget_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperMouseMoveEvent")]
+	public static extern void QStackedWidget_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QStackedWidget_WheelEvent")]
 	public static extern void QStackedWidget_WheelEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnWheelEvent")]
 	public static extern void QStackedWidget_OnWheelEvent(void* self, QStackedWidget_OnWheelEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperWheelEvent")]
+	public static extern void QStackedWidget_SuperWheelEvent(void* self, void** event);
 	[LinkName("QStackedWidget_KeyPressEvent")]
 	public static extern void QStackedWidget_KeyPressEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnKeyPressEvent")]
 	public static extern void QStackedWidget_OnKeyPressEvent(void* self, QStackedWidget_OnKeyPressEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperKeyPressEvent")]
+	public static extern void QStackedWidget_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QStackedWidget_KeyReleaseEvent")]
 	public static extern void QStackedWidget_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnKeyReleaseEvent")]
 	public static extern void QStackedWidget_OnKeyReleaseEvent(void* self, QStackedWidget_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperKeyReleaseEvent")]
+	public static extern void QStackedWidget_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QStackedWidget_FocusInEvent")]
 	public static extern void QStackedWidget_FocusInEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnFocusInEvent")]
 	public static extern void QStackedWidget_OnFocusInEvent(void* self, QStackedWidget_OnFocusInEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperFocusInEvent")]
+	public static extern void QStackedWidget_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QStackedWidget_FocusOutEvent")]
 	public static extern void QStackedWidget_FocusOutEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnFocusOutEvent")]
 	public static extern void QStackedWidget_OnFocusOutEvent(void* self, QStackedWidget_OnFocusOutEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperFocusOutEvent")]
+	public static extern void QStackedWidget_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QStackedWidget_EnterEvent")]
 	public static extern void QStackedWidget_EnterEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnEnterEvent")]
 	public static extern void QStackedWidget_OnEnterEvent(void* self, QStackedWidget_OnEnterEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperEnterEvent")]
+	public static extern void QStackedWidget_SuperEnterEvent(void* self, void** event);
 	[LinkName("QStackedWidget_LeaveEvent")]
 	public static extern void QStackedWidget_LeaveEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnLeaveEvent")]
 	public static extern void QStackedWidget_OnLeaveEvent(void* self, QStackedWidget_OnLeaveEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperLeaveEvent")]
+	public static extern void QStackedWidget_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QStackedWidget_PaintEvent")]
 	public static extern void QStackedWidget_PaintEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnPaintEvent")]
 	public static extern void QStackedWidget_OnPaintEvent(void* self, QStackedWidget_OnPaintEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperPaintEvent")]
+	public static extern void QStackedWidget_SuperPaintEvent(void* self, void** event);
 	[LinkName("QStackedWidget_MoveEvent")]
 	public static extern void QStackedWidget_MoveEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnMoveEvent")]
 	public static extern void QStackedWidget_OnMoveEvent(void* self, QStackedWidget_OnMoveEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperMoveEvent")]
+	public static extern void QStackedWidget_SuperMoveEvent(void* self, void** event);
 	[LinkName("QStackedWidget_ResizeEvent")]
 	public static extern void QStackedWidget_ResizeEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnResizeEvent")]
 	public static extern void QStackedWidget_OnResizeEvent(void* self, QStackedWidget_OnResizeEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperResizeEvent")]
+	public static extern void QStackedWidget_SuperResizeEvent(void* self, void** event);
 	[LinkName("QStackedWidget_CloseEvent")]
 	public static extern void QStackedWidget_CloseEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnCloseEvent")]
 	public static extern void QStackedWidget_OnCloseEvent(void* self, QStackedWidget_OnCloseEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperCloseEvent")]
+	public static extern void QStackedWidget_SuperCloseEvent(void* self, void** event);
 	[LinkName("QStackedWidget_ContextMenuEvent")]
 	public static extern void QStackedWidget_ContextMenuEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnContextMenuEvent")]
 	public static extern void QStackedWidget_OnContextMenuEvent(void* self, QStackedWidget_OnContextMenuEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperContextMenuEvent")]
+	public static extern void QStackedWidget_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QStackedWidget_TabletEvent")]
 	public static extern void QStackedWidget_TabletEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnTabletEvent")]
 	public static extern void QStackedWidget_OnTabletEvent(void* self, QStackedWidget_OnTabletEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperTabletEvent")]
+	public static extern void QStackedWidget_SuperTabletEvent(void* self, void** event);
 	[LinkName("QStackedWidget_ActionEvent")]
 	public static extern void QStackedWidget_ActionEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnActionEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnActionEvent")]
 	public static extern void QStackedWidget_OnActionEvent(void* self, QStackedWidget_OnActionEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperActionEvent")]
+	public static extern void QStackedWidget_SuperActionEvent(void* self, void** event);
 	[LinkName("QStackedWidget_DragEnterEvent")]
 	public static extern void QStackedWidget_DragEnterEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnDragEnterEvent")]
 	public static extern void QStackedWidget_OnDragEnterEvent(void* self, QStackedWidget_OnDragEnterEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperDragEnterEvent")]
+	public static extern void QStackedWidget_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QStackedWidget_DragMoveEvent")]
 	public static extern void QStackedWidget_DragMoveEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnDragMoveEvent")]
 	public static extern void QStackedWidget_OnDragMoveEvent(void* self, QStackedWidget_OnDragMoveEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperDragMoveEvent")]
+	public static extern void QStackedWidget_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QStackedWidget_DragLeaveEvent")]
 	public static extern void QStackedWidget_DragLeaveEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnDragLeaveEvent")]
 	public static extern void QStackedWidget_OnDragLeaveEvent(void* self, QStackedWidget_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperDragLeaveEvent")]
+	public static extern void QStackedWidget_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QStackedWidget_DropEvent")]
 	public static extern void QStackedWidget_DropEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnDropEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnDropEvent")]
 	public static extern void QStackedWidget_OnDropEvent(void* self, QStackedWidget_OnDropEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperDropEvent")]
+	public static extern void QStackedWidget_SuperDropEvent(void* self, void** event);
 	[LinkName("QStackedWidget_ShowEvent")]
 	public static extern void QStackedWidget_ShowEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnShowEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnShowEvent")]
 	public static extern void QStackedWidget_OnShowEvent(void* self, QStackedWidget_OnShowEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperShowEvent")]
+	public static extern void QStackedWidget_SuperShowEvent(void* self, void** event);
 	[LinkName("QStackedWidget_HideEvent")]
 	public static extern void QStackedWidget_HideEvent(void* self, void** event);
 	
 	public function void QStackedWidget_OnHideEvent_action(void* self, void** event);
 	[LinkName("QStackedWidget_OnHideEvent")]
 	public static extern void QStackedWidget_OnHideEvent(void* self, QStackedWidget_OnHideEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperHideEvent")]
+	public static extern void QStackedWidget_SuperHideEvent(void* self, void** event);
 	[LinkName("QStackedWidget_NativeEvent")]
 	public static extern bool QStackedWidget_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QStackedWidget_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QStackedWidget_OnNativeEvent")]
 	public static extern bool QStackedWidget_OnNativeEvent(void* self, QStackedWidget_OnNativeEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperNativeEvent")]
+	public static extern bool QStackedWidget_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QStackedWidget_ChangeEvent")]
 	public static extern void QStackedWidget_ChangeEvent(void* self, void** param1);
 	
 	public function void QStackedWidget_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QStackedWidget_OnChangeEvent")]
 	public static extern void QStackedWidget_OnChangeEvent(void* self, QStackedWidget_OnChangeEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperChangeEvent")]
+	public static extern void QStackedWidget_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QStackedWidget_InputMethodEvent")]
 	public static extern void QStackedWidget_InputMethodEvent(void* self, void** param1);
 	
 	public function void QStackedWidget_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QStackedWidget_OnInputMethodEvent")]
 	public static extern void QStackedWidget_OnInputMethodEvent(void* self, QStackedWidget_OnInputMethodEvent_action _action);
+	
+	[LinkName("QStackedWidget_SuperInputMethodEvent")]
+	public static extern void QStackedWidget_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QStackedWidget_InputMethodQuery")]
 	public static extern void* QStackedWidget_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QStackedWidget_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QStackedWidget_OnInputMethodQuery")]
 	public static extern void* QStackedWidget_OnInputMethodQuery(void* self, QStackedWidget_OnInputMethodQuery_action _action);
+	
+	[LinkName("QStackedWidget_SuperInputMethodQuery")]
+	public static extern void* QStackedWidget_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QStackedWidget_FocusNextPrevChild")]
 	public static extern bool QStackedWidget_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QStackedWidget_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QStackedWidget_OnFocusNextPrevChild")]
 	public static extern bool QStackedWidget_OnFocusNextPrevChild(void* self, QStackedWidget_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QStackedWidget_SuperFocusNextPrevChild")]
+	public static extern bool QStackedWidget_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QStackedWidget_InitStyleOption")]
 	public static extern void QStackedWidget_InitStyleOption(void* self, void** option);
 	
 	public function void QStackedWidget_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QStackedWidget_OnInitStyleOption")]
 	public static extern void QStackedWidget_OnInitStyleOption(void* self, QStackedWidget_OnInitStyleOption_action _action);
+	
+	[LinkName("QStackedWidget_SuperInitStyleOption")]
+	public static extern void QStackedWidget_SuperInitStyleOption(void* self, void** option);
 }

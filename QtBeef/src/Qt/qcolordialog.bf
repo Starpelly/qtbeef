@@ -1733,6 +1733,61 @@ class QColorDialog : IQColorDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Finished);
 		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Accepted);
 		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Rejected);
+		CQt.QColorDialog_OnMetaObject(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMetaObject);
+		CQt.QColorDialog_OnMetacast(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMetacast);
+		CQt.QColorDialog_OnMetacall(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMetacall);
+		CQt.QColorDialog_OnSetVisible(obj.ObjectPtr,  => QtBeef_QColorDialog_OnSetVisible);
+		CQt.QColorDialog_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnChangeEvent);
+		CQt.QColorDialog_OnDone(obj.ObjectPtr,  => QtBeef_QColorDialog_OnDone);
+		CQt.QColorDialog_OnEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnEvent);
+		CQt.QColorDialog_OnEventFilter(obj.ObjectPtr,  => QtBeef_QColorDialog_OnEventFilter);
+		CQt.QColorDialog_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnTimerEvent);
+		CQt.QColorDialog_OnChildEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnChildEvent);
+		CQt.QColorDialog_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnCustomEvent);
+		CQt.QColorDialog_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QColorDialog_OnConnectNotify);
+		CQt.QColorDialog_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QColorDialog_OnDisconnectNotify);
+		CQt.QColorDialog_OnDevType(obj.ObjectPtr,  => QtBeef_QColorDialog_OnDevType);
+		CQt.QColorDialog_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QColorDialog_OnPaintEngine);
+		CQt.QColorDialog_OnMetric(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMetric);
+		CQt.QColorDialog_OnInitPainter(obj.ObjectPtr,  => QtBeef_QColorDialog_OnInitPainter);
+		CQt.QColorDialog_OnRedirected(obj.ObjectPtr,  => QtBeef_QColorDialog_OnRedirected);
+		CQt.QColorDialog_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QColorDialog_OnSharedPainter);
+		CQt.QColorDialog_OnSizeHint(obj.ObjectPtr,  => QtBeef_QColorDialog_OnSizeHint);
+		CQt.QColorDialog_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMinimumSizeHint);
+		CQt.QColorDialog_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QColorDialog_OnHeightForWidth);
+		CQt.QColorDialog_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QColorDialog_OnHasHeightForWidth);
+		CQt.QColorDialog_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMousePressEvent);
+		CQt.QColorDialog_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMouseReleaseEvent);
+		CQt.QColorDialog_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMouseDoubleClickEvent);
+		CQt.QColorDialog_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMouseMoveEvent);
+		CQt.QColorDialog_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnWheelEvent);
+		CQt.QColorDialog_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnKeyPressEvent);
+		CQt.QColorDialog_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnKeyReleaseEvent);
+		CQt.QColorDialog_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnFocusInEvent);
+		CQt.QColorDialog_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnFocusOutEvent);
+		CQt.QColorDialog_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnEnterEvent);
+		CQt.QColorDialog_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnLeaveEvent);
+		CQt.QColorDialog_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnPaintEvent);
+		CQt.QColorDialog_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnMoveEvent);
+		CQt.QColorDialog_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnResizeEvent);
+		CQt.QColorDialog_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnCloseEvent);
+		CQt.QColorDialog_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnContextMenuEvent);
+		CQt.QColorDialog_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnTabletEvent);
+		CQt.QColorDialog_OnActionEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnActionEvent);
+		CQt.QColorDialog_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnDragEnterEvent);
+		CQt.QColorDialog_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnDragMoveEvent);
+		CQt.QColorDialog_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnDragLeaveEvent);
+		CQt.QColorDialog_OnDropEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnDropEvent);
+		CQt.QColorDialog_OnShowEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnShowEvent);
+		CQt.QColorDialog_OnHideEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnHideEvent);
+		CQt.QColorDialog_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnNativeEvent);
+		CQt.QColorDialog_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QColorDialog_OnInputMethodEvent);
+		CQt.QColorDialog_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QColorDialog_OnInputMethodQuery);
+		CQt.QColorDialog_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QColorDialog_OnFocusNextPrevChild);
+		CQt.QColorDialog_OnOpen(obj.ObjectPtr,  => QtBeef_QColorDialog_OnOpen);
+		CQt.QColorDialog_OnExec(obj.ObjectPtr,  => QtBeef_QColorDialog_OnExec);
+		CQt.QColorDialog_OnAccept(obj.ObjectPtr,  => QtBeef_QColorDialog_OnAccept);
+		CQt.QColorDialog_OnReject(obj.ObjectPtr,  => QtBeef_QColorDialog_OnReject);
 	}
 	public Event<delegate void(void** color)> OnCurrentColorChanged = .() ~ _.Dispose();
 	public Event<delegate void(void** color)> OnColorSelected = .() ~ _.Dispose();
@@ -1799,6 +1854,281 @@ class QColorDialog : IQColorDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnRejected.Invoke();
+	}
+	static void QtBeef_QColorDialog_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QColorDialog_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QColorDialog_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QColorDialog_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QColorDialog_OnChangeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnDone(void* ptr, c_int result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDone(result);
+	}
+	static void QtBeef_QColorDialog_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QColorDialog_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QColorDialog_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QColorDialog_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QColorDialog_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QColorDialog_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QColorDialog_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QColorDialog_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QColorDialog_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QColorDialog_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QColorDialog_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QColorDialog_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QColorDialog_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QColorDialog_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QColorDialog_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QColorDialog_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QColorDialog_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QColorDialog_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QColorDialog_OnOpen(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen();
+	}
+	static void QtBeef_QColorDialog_OnExec(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExec();
+	}
+	static void QtBeef_QColorDialog_OnAccept(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccept();
+	}
+	static void QtBeef_QColorDialog_OnReject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReject();
 	}
 	public this(QColorDialog_Ptr ptr)
 	{
@@ -3514,18 +3844,27 @@ extension CQt
 	public function void QColorDialog_OnMetaObject_action(void* self);
 	[LinkName("QColorDialog_OnMetaObject")]
 	public static extern void** QColorDialog_OnMetaObject(void* self, QColorDialog_OnMetaObject_action _action);
+	
+	[LinkName("QColorDialog_SuperMetaObject")]
+	public static extern void** QColorDialog_SuperMetaObject(void* self);
 	[LinkName("QColorDialog_Qt_Metacast")]
 	public static extern void* QColorDialog_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QColorDialog_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QColorDialog_OnMetacast")]
 	public static extern void* QColorDialog_OnMetacast(void* self, QColorDialog_OnMetacast_action _action);
+	
+	[LinkName("QColorDialog_SuperMetacast")]
+	public static extern void* QColorDialog_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QColorDialog_Qt_Metacall")]
 	public static extern c_int QColorDialog_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QColorDialog_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QColorDialog_OnMetacall")]
 	public static extern c_int QColorDialog_OnMetacall(void* self, QColorDialog_OnMetacall_action _action);
+	
+	[LinkName("QColorDialog_SuperMetacall")]
+	public static extern c_int QColorDialog_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QColorDialog_Tr")]
 	public static extern libqt_string QColorDialog_Tr(c_char* s);
 	[LinkName("QColorDialog_SetCurrentColor")]
@@ -3548,6 +3887,9 @@ extension CQt
 	public function void QColorDialog_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QColorDialog_OnSetVisible")]
 	public static extern void QColorDialog_OnSetVisible(void* self, QColorDialog_OnSetVisible_action _action);
+	
+	[LinkName("QColorDialog_SuperSetVisible")]
+	public static extern void QColorDialog_SuperSetVisible(void* self, bool visible);
 	[LinkName("QColorDialog_GetColor")]
 	public static extern void* QColorDialog_GetColor();
 	[LinkName("QColorDialog_CustomCount")]
@@ -3578,12 +3920,18 @@ extension CQt
 	public function void QColorDialog_OnChangeEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnChangeEvent")]
 	public static extern void QColorDialog_OnChangeEvent(void* self, QColorDialog_OnChangeEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperChangeEvent")]
+	public static extern void QColorDialog_SuperChangeEvent(void* self, void** event);
 	[LinkName("QColorDialog_Done")]
 	public static extern void QColorDialog_Done(void* self, c_int result);
 	
 	public function void QColorDialog_OnDone_action(void* self, c_int result);
 	[LinkName("QColorDialog_OnDone")]
 	public static extern void QColorDialog_OnDone(void* self, QColorDialog_OnDone_action _action);
+	
+	[LinkName("QColorDialog_SuperDone")]
+	public static extern void QColorDialog_SuperDone(void* self, c_int result);
 	[LinkName("QColorDialog_Tr2")]
 	public static extern libqt_string QColorDialog_Tr2(c_char* s, c_char* c);
 	[LinkName("QColorDialog_Tr3")]
@@ -3604,294 +3952,441 @@ extension CQt
 	public function void QColorDialog_OnEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnEvent")]
 	public static extern bool QColorDialog_OnEvent(void* self, QColorDialog_OnEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperEvent")]
+	public static extern bool QColorDialog_SuperEvent(void* self, void** event);
 	[LinkName("QColorDialog_EventFilter")]
 	public static extern bool QColorDialog_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QColorDialog_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QColorDialog_OnEventFilter")]
 	public static extern bool QColorDialog_OnEventFilter(void* self, QColorDialog_OnEventFilter_action _action);
+	
+	[LinkName("QColorDialog_SuperEventFilter")]
+	public static extern bool QColorDialog_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QColorDialog_TimerEvent")]
 	public static extern void QColorDialog_TimerEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnTimerEvent")]
 	public static extern void QColorDialog_OnTimerEvent(void* self, QColorDialog_OnTimerEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperTimerEvent")]
+	public static extern void QColorDialog_SuperTimerEvent(void* self, void** event);
 	[LinkName("QColorDialog_ChildEvent")]
 	public static extern void QColorDialog_ChildEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnChildEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnChildEvent")]
 	public static extern void QColorDialog_OnChildEvent(void* self, QColorDialog_OnChildEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperChildEvent")]
+	public static extern void QColorDialog_SuperChildEvent(void* self, void** event);
 	[LinkName("QColorDialog_CustomEvent")]
 	public static extern void QColorDialog_CustomEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnCustomEvent")]
 	public static extern void QColorDialog_OnCustomEvent(void* self, QColorDialog_OnCustomEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperCustomEvent")]
+	public static extern void QColorDialog_SuperCustomEvent(void* self, void** event);
 	[LinkName("QColorDialog_ConnectNotify")]
 	public static extern void QColorDialog_ConnectNotify(void* self, void** signal);
 	
 	public function void QColorDialog_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QColorDialog_OnConnectNotify")]
 	public static extern void QColorDialog_OnConnectNotify(void* self, QColorDialog_OnConnectNotify_action _action);
+	
+	[LinkName("QColorDialog_SuperConnectNotify")]
+	public static extern void QColorDialog_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QColorDialog_DisconnectNotify")]
 	public static extern void QColorDialog_DisconnectNotify(void* self, void** signal);
 	
 	public function void QColorDialog_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QColorDialog_OnDisconnectNotify")]
 	public static extern void QColorDialog_OnDisconnectNotify(void* self, QColorDialog_OnDisconnectNotify_action _action);
+	
+	[LinkName("QColorDialog_SuperDisconnectNotify")]
+	public static extern void QColorDialog_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QColorDialog_DevType")]
 	public static extern c_int QColorDialog_DevType(void* self);
 	
 	public function void QColorDialog_OnDevType_action(void* self);
 	[LinkName("QColorDialog_OnDevType")]
 	public static extern c_int QColorDialog_OnDevType(void* self, QColorDialog_OnDevType_action _action);
+	
+	[LinkName("QColorDialog_SuperDevType")]
+	public static extern c_int QColorDialog_SuperDevType(void* self);
 	[LinkName("QColorDialog_PaintEngine")]
 	public static extern void** QColorDialog_PaintEngine(void* self);
 	
 	public function void QColorDialog_OnPaintEngine_action(void* self);
 	[LinkName("QColorDialog_OnPaintEngine")]
 	public static extern void** QColorDialog_OnPaintEngine(void* self, QColorDialog_OnPaintEngine_action _action);
+	
+	[LinkName("QColorDialog_SuperPaintEngine")]
+	public static extern void** QColorDialog_SuperPaintEngine(void* self);
 	[LinkName("QColorDialog_Metric")]
 	public static extern c_int QColorDialog_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QColorDialog_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QColorDialog_OnMetric")]
 	public static extern c_int QColorDialog_OnMetric(void* self, QColorDialog_OnMetric_action _action);
+	
+	[LinkName("QColorDialog_SuperMetric")]
+	public static extern c_int QColorDialog_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QColorDialog_InitPainter")]
 	public static extern void QColorDialog_InitPainter(void* self, void** painter);
 	
 	public function void QColorDialog_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QColorDialog_OnInitPainter")]
 	public static extern void QColorDialog_OnInitPainter(void* self, QColorDialog_OnInitPainter_action _action);
+	
+	[LinkName("QColorDialog_SuperInitPainter")]
+	public static extern void QColorDialog_SuperInitPainter(void* self, void** painter);
 	[LinkName("QColorDialog_Redirected")]
 	public static extern void** QColorDialog_Redirected(void* self, void** offset);
 	
 	public function void QColorDialog_OnRedirected_action(void* self, void** offset);
 	[LinkName("QColorDialog_OnRedirected")]
 	public static extern void** QColorDialog_OnRedirected(void* self, QColorDialog_OnRedirected_action _action);
+	
+	[LinkName("QColorDialog_SuperRedirected")]
+	public static extern void** QColorDialog_SuperRedirected(void* self, void** offset);
 	[LinkName("QColorDialog_SharedPainter")]
 	public static extern void** QColorDialog_SharedPainter(void* self);
 	
 	public function void QColorDialog_OnSharedPainter_action(void* self);
 	[LinkName("QColorDialog_OnSharedPainter")]
 	public static extern void** QColorDialog_OnSharedPainter(void* self, QColorDialog_OnSharedPainter_action _action);
+	
+	[LinkName("QColorDialog_SuperSharedPainter")]
+	public static extern void** QColorDialog_SuperSharedPainter(void* self);
 	[LinkName("QColorDialog_SizeHint")]
 	public static extern void* QColorDialog_SizeHint(void* self);
 	
 	public function void QColorDialog_OnSizeHint_action(void* self);
 	[LinkName("QColorDialog_OnSizeHint")]
 	public static extern void* QColorDialog_OnSizeHint(void* self, QColorDialog_OnSizeHint_action _action);
+	
+	[LinkName("QColorDialog_SuperSizeHint")]
+	public static extern void* QColorDialog_SuperSizeHint(void* self);
 	[LinkName("QColorDialog_MinimumSizeHint")]
 	public static extern void* QColorDialog_MinimumSizeHint(void* self);
 	
 	public function void QColorDialog_OnMinimumSizeHint_action(void* self);
 	[LinkName("QColorDialog_OnMinimumSizeHint")]
 	public static extern void* QColorDialog_OnMinimumSizeHint(void* self, QColorDialog_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QColorDialog_SuperMinimumSizeHint")]
+	public static extern void* QColorDialog_SuperMinimumSizeHint(void* self);
 	[LinkName("QColorDialog_HeightForWidth")]
 	public static extern c_int QColorDialog_HeightForWidth(void* self, c_int param1);
 	
 	public function void QColorDialog_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QColorDialog_OnHeightForWidth")]
 	public static extern c_int QColorDialog_OnHeightForWidth(void* self, QColorDialog_OnHeightForWidth_action _action);
+	
+	[LinkName("QColorDialog_SuperHeightForWidth")]
+	public static extern c_int QColorDialog_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QColorDialog_HasHeightForWidth")]
 	public static extern bool QColorDialog_HasHeightForWidth(void* self);
 	
 	public function void QColorDialog_OnHasHeightForWidth_action(void* self);
 	[LinkName("QColorDialog_OnHasHeightForWidth")]
 	public static extern bool QColorDialog_OnHasHeightForWidth(void* self, QColorDialog_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QColorDialog_SuperHasHeightForWidth")]
+	public static extern bool QColorDialog_SuperHasHeightForWidth(void* self);
 	[LinkName("QColorDialog_MousePressEvent")]
 	public static extern void QColorDialog_MousePressEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnMousePressEvent")]
 	public static extern void QColorDialog_OnMousePressEvent(void* self, QColorDialog_OnMousePressEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperMousePressEvent")]
+	public static extern void QColorDialog_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QColorDialog_MouseReleaseEvent")]
 	public static extern void QColorDialog_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnMouseReleaseEvent")]
 	public static extern void QColorDialog_OnMouseReleaseEvent(void* self, QColorDialog_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperMouseReleaseEvent")]
+	public static extern void QColorDialog_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QColorDialog_MouseDoubleClickEvent")]
 	public static extern void QColorDialog_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnMouseDoubleClickEvent")]
 	public static extern void QColorDialog_OnMouseDoubleClickEvent(void* self, QColorDialog_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperMouseDoubleClickEvent")]
+	public static extern void QColorDialog_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QColorDialog_MouseMoveEvent")]
 	public static extern void QColorDialog_MouseMoveEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnMouseMoveEvent")]
 	public static extern void QColorDialog_OnMouseMoveEvent(void* self, QColorDialog_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperMouseMoveEvent")]
+	public static extern void QColorDialog_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QColorDialog_WheelEvent")]
 	public static extern void QColorDialog_WheelEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnWheelEvent")]
 	public static extern void QColorDialog_OnWheelEvent(void* self, QColorDialog_OnWheelEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperWheelEvent")]
+	public static extern void QColorDialog_SuperWheelEvent(void* self, void** event);
 	[LinkName("QColorDialog_KeyPressEvent")]
 	public static extern void QColorDialog_KeyPressEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnKeyPressEvent")]
 	public static extern void QColorDialog_OnKeyPressEvent(void* self, QColorDialog_OnKeyPressEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperKeyPressEvent")]
+	public static extern void QColorDialog_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QColorDialog_KeyReleaseEvent")]
 	public static extern void QColorDialog_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnKeyReleaseEvent")]
 	public static extern void QColorDialog_OnKeyReleaseEvent(void* self, QColorDialog_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperKeyReleaseEvent")]
+	public static extern void QColorDialog_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QColorDialog_FocusInEvent")]
 	public static extern void QColorDialog_FocusInEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnFocusInEvent")]
 	public static extern void QColorDialog_OnFocusInEvent(void* self, QColorDialog_OnFocusInEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperFocusInEvent")]
+	public static extern void QColorDialog_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QColorDialog_FocusOutEvent")]
 	public static extern void QColorDialog_FocusOutEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnFocusOutEvent")]
 	public static extern void QColorDialog_OnFocusOutEvent(void* self, QColorDialog_OnFocusOutEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperFocusOutEvent")]
+	public static extern void QColorDialog_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QColorDialog_EnterEvent")]
 	public static extern void QColorDialog_EnterEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnEnterEvent")]
 	public static extern void QColorDialog_OnEnterEvent(void* self, QColorDialog_OnEnterEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperEnterEvent")]
+	public static extern void QColorDialog_SuperEnterEvent(void* self, void** event);
 	[LinkName("QColorDialog_LeaveEvent")]
 	public static extern void QColorDialog_LeaveEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnLeaveEvent")]
 	public static extern void QColorDialog_OnLeaveEvent(void* self, QColorDialog_OnLeaveEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperLeaveEvent")]
+	public static extern void QColorDialog_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QColorDialog_PaintEvent")]
 	public static extern void QColorDialog_PaintEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnPaintEvent")]
 	public static extern void QColorDialog_OnPaintEvent(void* self, QColorDialog_OnPaintEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperPaintEvent")]
+	public static extern void QColorDialog_SuperPaintEvent(void* self, void** event);
 	[LinkName("QColorDialog_MoveEvent")]
 	public static extern void QColorDialog_MoveEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnMoveEvent")]
 	public static extern void QColorDialog_OnMoveEvent(void* self, QColorDialog_OnMoveEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperMoveEvent")]
+	public static extern void QColorDialog_SuperMoveEvent(void* self, void** event);
 	[LinkName("QColorDialog_ResizeEvent")]
 	public static extern void QColorDialog_ResizeEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnResizeEvent")]
 	public static extern void QColorDialog_OnResizeEvent(void* self, QColorDialog_OnResizeEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperResizeEvent")]
+	public static extern void QColorDialog_SuperResizeEvent(void* self, void** event);
 	[LinkName("QColorDialog_CloseEvent")]
 	public static extern void QColorDialog_CloseEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnCloseEvent")]
 	public static extern void QColorDialog_OnCloseEvent(void* self, QColorDialog_OnCloseEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperCloseEvent")]
+	public static extern void QColorDialog_SuperCloseEvent(void* self, void** event);
 	[LinkName("QColorDialog_ContextMenuEvent")]
 	public static extern void QColorDialog_ContextMenuEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnContextMenuEvent")]
 	public static extern void QColorDialog_OnContextMenuEvent(void* self, QColorDialog_OnContextMenuEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperContextMenuEvent")]
+	public static extern void QColorDialog_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QColorDialog_TabletEvent")]
 	public static extern void QColorDialog_TabletEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnTabletEvent")]
 	public static extern void QColorDialog_OnTabletEvent(void* self, QColorDialog_OnTabletEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperTabletEvent")]
+	public static extern void QColorDialog_SuperTabletEvent(void* self, void** event);
 	[LinkName("QColorDialog_ActionEvent")]
 	public static extern void QColorDialog_ActionEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnActionEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnActionEvent")]
 	public static extern void QColorDialog_OnActionEvent(void* self, QColorDialog_OnActionEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperActionEvent")]
+	public static extern void QColorDialog_SuperActionEvent(void* self, void** event);
 	[LinkName("QColorDialog_DragEnterEvent")]
 	public static extern void QColorDialog_DragEnterEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnDragEnterEvent")]
 	public static extern void QColorDialog_OnDragEnterEvent(void* self, QColorDialog_OnDragEnterEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperDragEnterEvent")]
+	public static extern void QColorDialog_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QColorDialog_DragMoveEvent")]
 	public static extern void QColorDialog_DragMoveEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnDragMoveEvent")]
 	public static extern void QColorDialog_OnDragMoveEvent(void* self, QColorDialog_OnDragMoveEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperDragMoveEvent")]
+	public static extern void QColorDialog_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QColorDialog_DragLeaveEvent")]
 	public static extern void QColorDialog_DragLeaveEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnDragLeaveEvent")]
 	public static extern void QColorDialog_OnDragLeaveEvent(void* self, QColorDialog_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperDragLeaveEvent")]
+	public static extern void QColorDialog_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QColorDialog_DropEvent")]
 	public static extern void QColorDialog_DropEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnDropEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnDropEvent")]
 	public static extern void QColorDialog_OnDropEvent(void* self, QColorDialog_OnDropEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperDropEvent")]
+	public static extern void QColorDialog_SuperDropEvent(void* self, void** event);
 	[LinkName("QColorDialog_ShowEvent")]
 	public static extern void QColorDialog_ShowEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnShowEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnShowEvent")]
 	public static extern void QColorDialog_OnShowEvent(void* self, QColorDialog_OnShowEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperShowEvent")]
+	public static extern void QColorDialog_SuperShowEvent(void* self, void** event);
 	[LinkName("QColorDialog_HideEvent")]
 	public static extern void QColorDialog_HideEvent(void* self, void** event);
 	
 	public function void QColorDialog_OnHideEvent_action(void* self, void** event);
 	[LinkName("QColorDialog_OnHideEvent")]
 	public static extern void QColorDialog_OnHideEvent(void* self, QColorDialog_OnHideEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperHideEvent")]
+	public static extern void QColorDialog_SuperHideEvent(void* self, void** event);
 	[LinkName("QColorDialog_NativeEvent")]
 	public static extern bool QColorDialog_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QColorDialog_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QColorDialog_OnNativeEvent")]
 	public static extern bool QColorDialog_OnNativeEvent(void* self, QColorDialog_OnNativeEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperNativeEvent")]
+	public static extern bool QColorDialog_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QColorDialog_InputMethodEvent")]
 	public static extern void QColorDialog_InputMethodEvent(void* self, void** param1);
 	
 	public function void QColorDialog_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QColorDialog_OnInputMethodEvent")]
 	public static extern void QColorDialog_OnInputMethodEvent(void* self, QColorDialog_OnInputMethodEvent_action _action);
+	
+	[LinkName("QColorDialog_SuperInputMethodEvent")]
+	public static extern void QColorDialog_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QColorDialog_InputMethodQuery")]
 	public static extern void* QColorDialog_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QColorDialog_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QColorDialog_OnInputMethodQuery")]
 	public static extern void* QColorDialog_OnInputMethodQuery(void* self, QColorDialog_OnInputMethodQuery_action _action);
+	
+	[LinkName("QColorDialog_SuperInputMethodQuery")]
+	public static extern void* QColorDialog_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QColorDialog_FocusNextPrevChild")]
 	public static extern bool QColorDialog_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QColorDialog_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QColorDialog_OnFocusNextPrevChild")]
 	public static extern bool QColorDialog_OnFocusNextPrevChild(void* self, QColorDialog_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QColorDialog_SuperFocusNextPrevChild")]
+	public static extern bool QColorDialog_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QColorDialog_Open")]
 	public static extern void QColorDialog_Open(void* self);
 	
 	public function void QColorDialog_OnOpen_action(void* self);
 	[LinkName("QColorDialog_OnOpen")]
 	public static extern void QColorDialog_OnOpen(void* self, QColorDialog_OnOpen_action _action);
+	
+	[LinkName("QColorDialog_SuperOpen")]
+	public static extern void QColorDialog_SuperOpen(void* self);
 	[LinkName("QColorDialog_Exec")]
 	public static extern c_int QColorDialog_Exec(void* self);
 	
 	public function void QColorDialog_OnExec_action(void* self);
 	[LinkName("QColorDialog_OnExec")]
 	public static extern c_int QColorDialog_OnExec(void* self, QColorDialog_OnExec_action _action);
+	
+	[LinkName("QColorDialog_SuperExec")]
+	public static extern c_int QColorDialog_SuperExec(void* self);
 	[LinkName("QColorDialog_Accept")]
 	public static extern void QColorDialog_Accept(void* self);
 	
 	public function void QColorDialog_OnAccept_action(void* self);
 	[LinkName("QColorDialog_OnAccept")]
 	public static extern void QColorDialog_OnAccept(void* self, QColorDialog_OnAccept_action _action);
+	
+	[LinkName("QColorDialog_SuperAccept")]
+	public static extern void QColorDialog_SuperAccept(void* self);
 	[LinkName("QColorDialog_Reject")]
 	public static extern void QColorDialog_Reject(void* self);
 	
 	public function void QColorDialog_OnReject_action(void* self);
 	[LinkName("QColorDialog_OnReject")]
 	public static extern void QColorDialog_OnReject(void* self, QColorDialog_OnReject_action _action);
+	
+	[LinkName("QColorDialog_SuperReject")]
+	public static extern void QColorDialog_SuperReject(void* self);
 }
 [AllowDuplicates]
 enum QColorDialog_ColorDialogOption

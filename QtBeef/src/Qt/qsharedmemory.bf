@@ -344,6 +344,16 @@ class QSharedMemory : IQSharedMemory, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QSharedMemory_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnMetaObject);
+		CQt.QSharedMemory_OnMetacast(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnMetacast);
+		CQt.QSharedMemory_OnMetacall(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnMetacall);
+		CQt.QSharedMemory_OnEvent(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnEvent);
+		CQt.QSharedMemory_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnEventFilter);
+		CQt.QSharedMemory_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnTimerEvent);
+		CQt.QSharedMemory_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnChildEvent);
+		CQt.QSharedMemory_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnCustomEvent);
+		CQt.QSharedMemory_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnConnectNotify);
+		CQt.QSharedMemory_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSharedMemory_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -356,6 +366,56 @@ class QSharedMemory : IQSharedMemory, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QSharedMemory_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSharedMemory_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSharedMemory_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSharedMemory_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSharedMemory_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSharedMemory_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSharedMemory_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSharedMemory_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSharedMemory_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSharedMemory_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QSharedMemory_Ptr ptr)
 	{
@@ -723,18 +783,27 @@ extension CQt
 	public function void QSharedMemory_OnMetaObject_action(void* self);
 	[LinkName("QSharedMemory_OnMetaObject")]
 	public static extern void** QSharedMemory_OnMetaObject(void* self, QSharedMemory_OnMetaObject_action _action);
+	
+	[LinkName("QSharedMemory_SuperMetaObject")]
+	public static extern void** QSharedMemory_SuperMetaObject(void* self);
 	[LinkName("QSharedMemory_Qt_Metacast")]
 	public static extern void* QSharedMemory_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSharedMemory_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSharedMemory_OnMetacast")]
 	public static extern void* QSharedMemory_OnMetacast(void* self, QSharedMemory_OnMetacast_action _action);
+	
+	[LinkName("QSharedMemory_SuperMetacast")]
+	public static extern void* QSharedMemory_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSharedMemory_Qt_Metacall")]
 	public static extern c_int QSharedMemory_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSharedMemory_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSharedMemory_OnMetacall")]
 	public static extern c_int QSharedMemory_OnMetacall(void* self, QSharedMemory_OnMetacall_action _action);
+	
+	[LinkName("QSharedMemory_SuperMetacall")]
+	public static extern c_int QSharedMemory_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSharedMemory_Tr")]
 	public static extern libqt_string QSharedMemory_Tr(c_char* s);
 	[LinkName("QSharedMemory_SetKey")]
@@ -783,42 +852,63 @@ extension CQt
 	public function void QSharedMemory_OnEvent_action(void* self, void** event);
 	[LinkName("QSharedMemory_OnEvent")]
 	public static extern bool QSharedMemory_OnEvent(void* self, QSharedMemory_OnEvent_action _action);
+	
+	[LinkName("QSharedMemory_SuperEvent")]
+	public static extern bool QSharedMemory_SuperEvent(void* self, void** event);
 	[LinkName("QSharedMemory_EventFilter")]
 	public static extern bool QSharedMemory_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QSharedMemory_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSharedMemory_OnEventFilter")]
 	public static extern bool QSharedMemory_OnEventFilter(void* self, QSharedMemory_OnEventFilter_action _action);
+	
+	[LinkName("QSharedMemory_SuperEventFilter")]
+	public static extern bool QSharedMemory_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSharedMemory_TimerEvent")]
 	public static extern void QSharedMemory_TimerEvent(void* self, void** event);
 	
 	public function void QSharedMemory_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSharedMemory_OnTimerEvent")]
 	public static extern void QSharedMemory_OnTimerEvent(void* self, QSharedMemory_OnTimerEvent_action _action);
+	
+	[LinkName("QSharedMemory_SuperTimerEvent")]
+	public static extern void QSharedMemory_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSharedMemory_ChildEvent")]
 	public static extern void QSharedMemory_ChildEvent(void* self, void** event);
 	
 	public function void QSharedMemory_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSharedMemory_OnChildEvent")]
 	public static extern void QSharedMemory_OnChildEvent(void* self, QSharedMemory_OnChildEvent_action _action);
+	
+	[LinkName("QSharedMemory_SuperChildEvent")]
+	public static extern void QSharedMemory_SuperChildEvent(void* self, void** event);
 	[LinkName("QSharedMemory_CustomEvent")]
 	public static extern void QSharedMemory_CustomEvent(void* self, void** event);
 	
 	public function void QSharedMemory_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSharedMemory_OnCustomEvent")]
 	public static extern void QSharedMemory_OnCustomEvent(void* self, QSharedMemory_OnCustomEvent_action _action);
+	
+	[LinkName("QSharedMemory_SuperCustomEvent")]
+	public static extern void QSharedMemory_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSharedMemory_ConnectNotify")]
 	public static extern void QSharedMemory_ConnectNotify(void* self, void** signal);
 	
 	public function void QSharedMemory_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSharedMemory_OnConnectNotify")]
 	public static extern void QSharedMemory_OnConnectNotify(void* self, QSharedMemory_OnConnectNotify_action _action);
+	
+	[LinkName("QSharedMemory_SuperConnectNotify")]
+	public static extern void QSharedMemory_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSharedMemory_DisconnectNotify")]
 	public static extern void QSharedMemory_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSharedMemory_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSharedMemory_OnDisconnectNotify")]
 	public static extern void QSharedMemory_OnDisconnectNotify(void* self, QSharedMemory_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSharedMemory_SuperDisconnectNotify")]
+	public static extern void QSharedMemory_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QSharedMemory_AccessMode

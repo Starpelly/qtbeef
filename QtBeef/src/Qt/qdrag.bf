@@ -346,6 +346,16 @@ class QDrag : IQDrag, IQObject
 		CQt.QDrag_Connect_TargetChanged(obj.ObjectPtr,  => QtBeef_QDrag_Connect_TargetChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QDrag_OnMetaObject(obj.ObjectPtr,  => QtBeef_QDrag_OnMetaObject);
+		CQt.QDrag_OnMetacast(obj.ObjectPtr,  => QtBeef_QDrag_OnMetacast);
+		CQt.QDrag_OnMetacall(obj.ObjectPtr,  => QtBeef_QDrag_OnMetacall);
+		CQt.QDrag_OnEvent(obj.ObjectPtr,  => QtBeef_QDrag_OnEvent);
+		CQt.QDrag_OnEventFilter(obj.ObjectPtr,  => QtBeef_QDrag_OnEventFilter);
+		CQt.QDrag_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QDrag_OnTimerEvent);
+		CQt.QDrag_OnChildEvent(obj.ObjectPtr,  => QtBeef_QDrag_OnChildEvent);
+		CQt.QDrag_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QDrag_OnCustomEvent);
+		CQt.QDrag_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QDrag_OnConnectNotify);
+		CQt.QDrag_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QDrag_OnDisconnectNotify);
 	}
 	public Event<delegate void(Qt_DropAction action)> OnActionChanged = .() ~ _.Dispose();
 	public Event<delegate void(void** newTarget)> OnTargetChanged = .() ~ _.Dispose();
@@ -370,6 +380,56 @@ class QDrag : IQDrag, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QDrag_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QDrag_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QDrag_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QDrag_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QDrag_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QDrag_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QDrag_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QDrag_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QDrag_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QDrag_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QDrag_Ptr ptr)
 	{
@@ -716,18 +776,27 @@ extension CQt
 	public function void QDrag_OnMetaObject_action(void* self);
 	[LinkName("QDrag_OnMetaObject")]
 	public static extern void** QDrag_OnMetaObject(void* self, QDrag_OnMetaObject_action _action);
+	
+	[LinkName("QDrag_SuperMetaObject")]
+	public static extern void** QDrag_SuperMetaObject(void* self);
 	[LinkName("QDrag_Qt_Metacast")]
 	public static extern void* QDrag_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QDrag_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QDrag_OnMetacast")]
 	public static extern void* QDrag_OnMetacast(void* self, QDrag_OnMetacast_action _action);
+	
+	[LinkName("QDrag_SuperMetacast")]
+	public static extern void* QDrag_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QDrag_Qt_Metacall")]
 	public static extern c_int QDrag_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QDrag_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDrag_OnMetacall")]
 	public static extern c_int QDrag_OnMetacall(void* self, QDrag_OnMetacall_action _action);
+	
+	[LinkName("QDrag_SuperMetacall")]
+	public static extern c_int QDrag_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDrag_Tr")]
 	public static extern libqt_string QDrag_Tr(c_char* s);
 	[LinkName("QDrag_SetMimeData")]
@@ -784,40 +853,61 @@ extension CQt
 	public function void QDrag_OnEvent_action(void* self, void** event);
 	[LinkName("QDrag_OnEvent")]
 	public static extern bool QDrag_OnEvent(void* self, QDrag_OnEvent_action _action);
+	
+	[LinkName("QDrag_SuperEvent")]
+	public static extern bool QDrag_SuperEvent(void* self, void** event);
 	[LinkName("QDrag_EventFilter")]
 	public static extern bool QDrag_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QDrag_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QDrag_OnEventFilter")]
 	public static extern bool QDrag_OnEventFilter(void* self, QDrag_OnEventFilter_action _action);
+	
+	[LinkName("QDrag_SuperEventFilter")]
+	public static extern bool QDrag_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QDrag_TimerEvent")]
 	public static extern void QDrag_TimerEvent(void* self, void** event);
 	
 	public function void QDrag_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QDrag_OnTimerEvent")]
 	public static extern void QDrag_OnTimerEvent(void* self, QDrag_OnTimerEvent_action _action);
+	
+	[LinkName("QDrag_SuperTimerEvent")]
+	public static extern void QDrag_SuperTimerEvent(void* self, void** event);
 	[LinkName("QDrag_ChildEvent")]
 	public static extern void QDrag_ChildEvent(void* self, void** event);
 	
 	public function void QDrag_OnChildEvent_action(void* self, void** event);
 	[LinkName("QDrag_OnChildEvent")]
 	public static extern void QDrag_OnChildEvent(void* self, QDrag_OnChildEvent_action _action);
+	
+	[LinkName("QDrag_SuperChildEvent")]
+	public static extern void QDrag_SuperChildEvent(void* self, void** event);
 	[LinkName("QDrag_CustomEvent")]
 	public static extern void QDrag_CustomEvent(void* self, void** event);
 	
 	public function void QDrag_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QDrag_OnCustomEvent")]
 	public static extern void QDrag_OnCustomEvent(void* self, QDrag_OnCustomEvent_action _action);
+	
+	[LinkName("QDrag_SuperCustomEvent")]
+	public static extern void QDrag_SuperCustomEvent(void* self, void** event);
 	[LinkName("QDrag_ConnectNotify")]
 	public static extern void QDrag_ConnectNotify(void* self, void** signal);
 	
 	public function void QDrag_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QDrag_OnConnectNotify")]
 	public static extern void QDrag_OnConnectNotify(void* self, QDrag_OnConnectNotify_action _action);
+	
+	[LinkName("QDrag_SuperConnectNotify")]
+	public static extern void QDrag_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QDrag_DisconnectNotify")]
 	public static extern void QDrag_DisconnectNotify(void* self, void** signal);
 	
 	public function void QDrag_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QDrag_OnDisconnectNotify")]
 	public static extern void QDrag_OnDisconnectNotify(void* self, QDrag_OnDisconnectNotify_action _action);
+	
+	[LinkName("QDrag_SuperDisconnectNotify")]
+	public static extern void QDrag_SuperDisconnectNotify(void* self, void** signal);
 }

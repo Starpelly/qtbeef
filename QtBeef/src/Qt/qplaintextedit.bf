@@ -2117,6 +2117,66 @@ class QPlainTextEdit : IQPlainTextEdit, IQAbstractScrollArea, IQFrame, IQWidget,
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QPlainTextEdit_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMetaObject);
+		CQt.QPlainTextEdit_OnMetacast(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMetacast);
+		CQt.QPlainTextEdit_OnMetacall(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMetacall);
+		CQt.QPlainTextEdit_OnLoadResource(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnLoadResource);
+		CQt.QPlainTextEdit_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnInputMethodQuery);
+		CQt.QPlainTextEdit_OnEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnEvent);
+		CQt.QPlainTextEdit_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnTimerEvent);
+		CQt.QPlainTextEdit_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnKeyPressEvent);
+		CQt.QPlainTextEdit_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnKeyReleaseEvent);
+		CQt.QPlainTextEdit_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnResizeEvent);
+		CQt.QPlainTextEdit_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnPaintEvent);
+		CQt.QPlainTextEdit_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMousePressEvent);
+		CQt.QPlainTextEdit_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMouseMoveEvent);
+		CQt.QPlainTextEdit_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMouseReleaseEvent);
+		CQt.QPlainTextEdit_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMouseDoubleClickEvent);
+		CQt.QPlainTextEdit_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnFocusNextPrevChild);
+		CQt.QPlainTextEdit_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnContextMenuEvent);
+		CQt.QPlainTextEdit_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnDragEnterEvent);
+		CQt.QPlainTextEdit_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnDragLeaveEvent);
+		CQt.QPlainTextEdit_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnDragMoveEvent);
+		CQt.QPlainTextEdit_OnDropEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnDropEvent);
+		CQt.QPlainTextEdit_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnFocusInEvent);
+		CQt.QPlainTextEdit_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnFocusOutEvent);
+		CQt.QPlainTextEdit_OnShowEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnShowEvent);
+		CQt.QPlainTextEdit_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnChangeEvent);
+		CQt.QPlainTextEdit_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnWheelEvent);
+		CQt.QPlainTextEdit_OnCreateMimeDataFromSelection(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnCreateMimeDataFromSelection);
+		CQt.QPlainTextEdit_OnCanInsertFromMimeData(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnCanInsertFromMimeData);
+		CQt.QPlainTextEdit_OnInsertFromMimeData(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnInsertFromMimeData);
+		CQt.QPlainTextEdit_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnInputMethodEvent);
+		CQt.QPlainTextEdit_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnScrollContentsBy);
+		CQt.QPlainTextEdit_OnDoSetTextCursor(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnDoSetTextCursor);
+		CQt.QPlainTextEdit_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnEventFilter);
+		CQt.QPlainTextEdit_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnChildEvent);
+		CQt.QPlainTextEdit_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnCustomEvent);
+		CQt.QPlainTextEdit_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnConnectNotify);
+		CQt.QPlainTextEdit_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnDisconnectNotify);
+		CQt.QPlainTextEdit_OnDevType(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnDevType);
+		CQt.QPlainTextEdit_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnPaintEngine);
+		CQt.QPlainTextEdit_OnMetric(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMetric);
+		CQt.QPlainTextEdit_OnInitPainter(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnInitPainter);
+		CQt.QPlainTextEdit_OnRedirected(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnRedirected);
+		CQt.QPlainTextEdit_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnSharedPainter);
+		CQt.QPlainTextEdit_OnSetVisible(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnSetVisible);
+		CQt.QPlainTextEdit_OnSizeHint(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnSizeHint);
+		CQt.QPlainTextEdit_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMinimumSizeHint);
+		CQt.QPlainTextEdit_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnHeightForWidth);
+		CQt.QPlainTextEdit_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnHasHeightForWidth);
+		CQt.QPlainTextEdit_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnEnterEvent);
+		CQt.QPlainTextEdit_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnLeaveEvent);
+		CQt.QPlainTextEdit_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnMoveEvent);
+		CQt.QPlainTextEdit_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnCloseEvent);
+		CQt.QPlainTextEdit_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnTabletEvent);
+		CQt.QPlainTextEdit_OnActionEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnActionEvent);
+		CQt.QPlainTextEdit_OnHideEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnHideEvent);
+		CQt.QPlainTextEdit_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnNativeEvent);
+		CQt.QPlainTextEdit_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnInitStyleOption);
+		CQt.QPlainTextEdit_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnSetupViewport);
+		CQt.QPlainTextEdit_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnViewportEvent);
+		CQt.QPlainTextEdit_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_OnViewportSizeHint);
 	}
 	public Event<delegate void()> OnTextChanged = .() ~ _.Dispose();
 	public Event<delegate void(bool b)> OnUndoAvailable = .() ~ _.Dispose();
@@ -2207,6 +2267,306 @@ class QPlainTextEdit : IQPlainTextEdit, IQAbstractScrollArea, IQFrame, IQWidget,
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QPlainTextEdit_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPlainTextEdit_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPlainTextEdit_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPlainTextEdit_OnLoadResource(void* ptr, c_int type, void** name)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLoadResource(type, name);
+	}
+	static void QtBeef_QPlainTextEdit_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery property)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(property);
+	}
+	static void QtBeef_QPlainTextEdit_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnTimerEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnKeyPressEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnKeyReleaseEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnResizeEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnPaintEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnMousePressEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnMouseMoveEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnMouseReleaseEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnMouseDoubleClickEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QPlainTextEdit_OnContextMenuEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnDragEnterEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnDragLeaveEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnDragMoveEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnDropEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnFocusInEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnFocusOutEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnShowEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(param1);
+	}
+	static void QtBeef_QPlainTextEdit_OnChangeEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnWheelEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(e);
+	}
+	static void QtBeef_QPlainTextEdit_OnCreateMimeDataFromSelection(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreateMimeDataFromSelection();
+	}
+	static void QtBeef_QPlainTextEdit_OnCanInsertFromMimeData(void* ptr, void** source)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanInsertFromMimeData(source);
+	}
+	static void QtBeef_QPlainTextEdit_OnInsertFromMimeData(void* ptr, void** source)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertFromMimeData(source);
+	}
+	static void QtBeef_QPlainTextEdit_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QPlainTextEdit_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
+	}
+	static void QtBeef_QPlainTextEdit_OnDoSetTextCursor(void* ptr, void** cursor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoSetTextCursor(cursor);
+	}
+	static void QtBeef_QPlainTextEdit_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPlainTextEdit_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPlainTextEdit_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPlainTextEdit_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPlainTextEdit_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QPlainTextEdit_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QPlainTextEdit_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QPlainTextEdit_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QPlainTextEdit_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QPlainTextEdit_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QPlainTextEdit_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QPlainTextEdit_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QPlainTextEdit_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QPlainTextEdit_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QPlainTextEdit_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QPlainTextEdit_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QPlainTextEdit_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QPlainTextEdit_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QPlainTextEdit_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QPlainTextEdit_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QPlainTextEdit_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QPlainTextEdit_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QPlainTextEdit_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QPlainTextEdit_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QPlainTextEdit_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QPlainTextEdit_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QPlainTextEdit_OnViewportEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(param1);
+	}
+	static void QtBeef_QPlainTextEdit_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
 	}
 	public this(QPlainTextEdit_Ptr ptr)
 	{
@@ -4301,18 +4661,27 @@ extension CQt
 	public function void QPlainTextEdit_OnMetaObject_action(void* self);
 	[LinkName("QPlainTextEdit_OnMetaObject")]
 	public static extern void** QPlainTextEdit_OnMetaObject(void* self, QPlainTextEdit_OnMetaObject_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMetaObject")]
+	public static extern void** QPlainTextEdit_SuperMetaObject(void* self);
 	[LinkName("QPlainTextEdit_Qt_Metacast")]
 	public static extern void* QPlainTextEdit_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPlainTextEdit_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPlainTextEdit_OnMetacast")]
 	public static extern void* QPlainTextEdit_OnMetacast(void* self, QPlainTextEdit_OnMetacast_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMetacast")]
+	public static extern void* QPlainTextEdit_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPlainTextEdit_Qt_Metacall")]
 	public static extern c_int QPlainTextEdit_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPlainTextEdit_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPlainTextEdit_OnMetacall")]
 	public static extern c_int QPlainTextEdit_OnMetacall(void* self, QPlainTextEdit_OnMetacall_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMetacall")]
+	public static extern c_int QPlainTextEdit_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPlainTextEdit_Tr")]
 	public static extern libqt_string QPlainTextEdit_Tr(c_char* s);
 	[LinkName("QPlainTextEdit_SetDocument")]
@@ -4387,6 +4756,9 @@ extension CQt
 	public function void QPlainTextEdit_OnLoadResource_action(void* self, c_int type, void** name);
 	[LinkName("QPlainTextEdit_OnLoadResource")]
 	public static extern void* QPlainTextEdit_OnLoadResource(void* self, QPlainTextEdit_OnLoadResource_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperLoadResource")]
+	public static extern void* QPlainTextEdit_SuperLoadResource(void* self, c_int type, void** name);
 	[LinkName("QPlainTextEdit_CreateStandardContextMenu")]
 	public static extern void** QPlainTextEdit_CreateStandardContextMenu(void* self);
 	[LinkName("QPlainTextEdit_CreateStandardContextMenu2")]
@@ -4429,6 +4801,9 @@ extension CQt
 	public function void QPlainTextEdit_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery property);
 	[LinkName("QPlainTextEdit_OnInputMethodQuery")]
 	public static extern void* QPlainTextEdit_OnInputMethodQuery(void* self, QPlainTextEdit_OnInputMethodQuery_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperInputMethodQuery")]
+	public static extern void* QPlainTextEdit_SuperInputMethodQuery(void* self, Qt_InputMethodQuery property);
 	[LinkName("QPlainTextEdit_InputMethodQuery2")]
 	public static extern void* QPlainTextEdit_InputMethodQuery2(void* self, Qt_InputMethodQuery query, void* argument);
 	[LinkName("QPlainTextEdit_SetPlainText")]
@@ -4519,162 +4894,243 @@ extension CQt
 	public function void QPlainTextEdit_OnEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnEvent")]
 	public static extern bool QPlainTextEdit_OnEvent(void* self, QPlainTextEdit_OnEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperEvent")]
+	public static extern bool QPlainTextEdit_SuperEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_TimerEvent")]
 	public static extern void QPlainTextEdit_TimerEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnTimerEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnTimerEvent")]
 	public static extern void QPlainTextEdit_OnTimerEvent(void* self, QPlainTextEdit_OnTimerEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperTimerEvent")]
+	public static extern void QPlainTextEdit_SuperTimerEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_KeyPressEvent")]
 	public static extern void QPlainTextEdit_KeyPressEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnKeyPressEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnKeyPressEvent")]
 	public static extern void QPlainTextEdit_OnKeyPressEvent(void* self, QPlainTextEdit_OnKeyPressEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperKeyPressEvent")]
+	public static extern void QPlainTextEdit_SuperKeyPressEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_KeyReleaseEvent")]
 	public static extern void QPlainTextEdit_KeyReleaseEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnKeyReleaseEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnKeyReleaseEvent")]
 	public static extern void QPlainTextEdit_OnKeyReleaseEvent(void* self, QPlainTextEdit_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperKeyReleaseEvent")]
+	public static extern void QPlainTextEdit_SuperKeyReleaseEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_ResizeEvent")]
 	public static extern void QPlainTextEdit_ResizeEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnResizeEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnResizeEvent")]
 	public static extern void QPlainTextEdit_OnResizeEvent(void* self, QPlainTextEdit_OnResizeEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperResizeEvent")]
+	public static extern void QPlainTextEdit_SuperResizeEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_PaintEvent")]
 	public static extern void QPlainTextEdit_PaintEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnPaintEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnPaintEvent")]
 	public static extern void QPlainTextEdit_OnPaintEvent(void* self, QPlainTextEdit_OnPaintEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperPaintEvent")]
+	public static extern void QPlainTextEdit_SuperPaintEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_MousePressEvent")]
 	public static extern void QPlainTextEdit_MousePressEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnMousePressEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnMousePressEvent")]
 	public static extern void QPlainTextEdit_OnMousePressEvent(void* self, QPlainTextEdit_OnMousePressEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMousePressEvent")]
+	public static extern void QPlainTextEdit_SuperMousePressEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_MouseMoveEvent")]
 	public static extern void QPlainTextEdit_MouseMoveEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnMouseMoveEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnMouseMoveEvent")]
 	public static extern void QPlainTextEdit_OnMouseMoveEvent(void* self, QPlainTextEdit_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMouseMoveEvent")]
+	public static extern void QPlainTextEdit_SuperMouseMoveEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_MouseReleaseEvent")]
 	public static extern void QPlainTextEdit_MouseReleaseEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnMouseReleaseEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnMouseReleaseEvent")]
 	public static extern void QPlainTextEdit_OnMouseReleaseEvent(void* self, QPlainTextEdit_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMouseReleaseEvent")]
+	public static extern void QPlainTextEdit_SuperMouseReleaseEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_MouseDoubleClickEvent")]
 	public static extern void QPlainTextEdit_MouseDoubleClickEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnMouseDoubleClickEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnMouseDoubleClickEvent")]
 	public static extern void QPlainTextEdit_OnMouseDoubleClickEvent(void* self, QPlainTextEdit_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMouseDoubleClickEvent")]
+	public static extern void QPlainTextEdit_SuperMouseDoubleClickEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_FocusNextPrevChild")]
 	public static extern bool QPlainTextEdit_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QPlainTextEdit_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QPlainTextEdit_OnFocusNextPrevChild")]
 	public static extern bool QPlainTextEdit_OnFocusNextPrevChild(void* self, QPlainTextEdit_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperFocusNextPrevChild")]
+	public static extern bool QPlainTextEdit_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QPlainTextEdit_ContextMenuEvent")]
 	public static extern void QPlainTextEdit_ContextMenuEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnContextMenuEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnContextMenuEvent")]
 	public static extern void QPlainTextEdit_OnContextMenuEvent(void* self, QPlainTextEdit_OnContextMenuEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperContextMenuEvent")]
+	public static extern void QPlainTextEdit_SuperContextMenuEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_DragEnterEvent")]
 	public static extern void QPlainTextEdit_DragEnterEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnDragEnterEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnDragEnterEvent")]
 	public static extern void QPlainTextEdit_OnDragEnterEvent(void* self, QPlainTextEdit_OnDragEnterEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperDragEnterEvent")]
+	public static extern void QPlainTextEdit_SuperDragEnterEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_DragLeaveEvent")]
 	public static extern void QPlainTextEdit_DragLeaveEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnDragLeaveEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnDragLeaveEvent")]
 	public static extern void QPlainTextEdit_OnDragLeaveEvent(void* self, QPlainTextEdit_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperDragLeaveEvent")]
+	public static extern void QPlainTextEdit_SuperDragLeaveEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_DragMoveEvent")]
 	public static extern void QPlainTextEdit_DragMoveEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnDragMoveEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnDragMoveEvent")]
 	public static extern void QPlainTextEdit_OnDragMoveEvent(void* self, QPlainTextEdit_OnDragMoveEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperDragMoveEvent")]
+	public static extern void QPlainTextEdit_SuperDragMoveEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_DropEvent")]
 	public static extern void QPlainTextEdit_DropEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnDropEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnDropEvent")]
 	public static extern void QPlainTextEdit_OnDropEvent(void* self, QPlainTextEdit_OnDropEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperDropEvent")]
+	public static extern void QPlainTextEdit_SuperDropEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_FocusInEvent")]
 	public static extern void QPlainTextEdit_FocusInEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnFocusInEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnFocusInEvent")]
 	public static extern void QPlainTextEdit_OnFocusInEvent(void* self, QPlainTextEdit_OnFocusInEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperFocusInEvent")]
+	public static extern void QPlainTextEdit_SuperFocusInEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_FocusOutEvent")]
 	public static extern void QPlainTextEdit_FocusOutEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnFocusOutEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnFocusOutEvent")]
 	public static extern void QPlainTextEdit_OnFocusOutEvent(void* self, QPlainTextEdit_OnFocusOutEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperFocusOutEvent")]
+	public static extern void QPlainTextEdit_SuperFocusOutEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_ShowEvent")]
 	public static extern void QPlainTextEdit_ShowEvent(void* self, void** param1);
 	
 	public function void QPlainTextEdit_OnShowEvent_action(void* self, void** param1);
 	[LinkName("QPlainTextEdit_OnShowEvent")]
 	public static extern void QPlainTextEdit_OnShowEvent(void* self, QPlainTextEdit_OnShowEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperShowEvent")]
+	public static extern void QPlainTextEdit_SuperShowEvent(void* self, void** param1);
 	[LinkName("QPlainTextEdit_ChangeEvent")]
 	public static extern void QPlainTextEdit_ChangeEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnChangeEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnChangeEvent")]
 	public static extern void QPlainTextEdit_OnChangeEvent(void* self, QPlainTextEdit_OnChangeEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperChangeEvent")]
+	public static extern void QPlainTextEdit_SuperChangeEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_WheelEvent")]
 	public static extern void QPlainTextEdit_WheelEvent(void* self, void** e);
 	
 	public function void QPlainTextEdit_OnWheelEvent_action(void* self, void** e);
 	[LinkName("QPlainTextEdit_OnWheelEvent")]
 	public static extern void QPlainTextEdit_OnWheelEvent(void* self, QPlainTextEdit_OnWheelEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperWheelEvent")]
+	public static extern void QPlainTextEdit_SuperWheelEvent(void* self, void** e);
 	[LinkName("QPlainTextEdit_CreateMimeDataFromSelection")]
 	public static extern void** QPlainTextEdit_CreateMimeDataFromSelection(void* self);
 	
 	public function void QPlainTextEdit_OnCreateMimeDataFromSelection_action(void* self);
 	[LinkName("QPlainTextEdit_OnCreateMimeDataFromSelection")]
 	public static extern void** QPlainTextEdit_OnCreateMimeDataFromSelection(void* self, QPlainTextEdit_OnCreateMimeDataFromSelection_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperCreateMimeDataFromSelection")]
+	public static extern void** QPlainTextEdit_SuperCreateMimeDataFromSelection(void* self);
 	[LinkName("QPlainTextEdit_CanInsertFromMimeData")]
 	public static extern bool QPlainTextEdit_CanInsertFromMimeData(void* self, void** source);
 	
 	public function void QPlainTextEdit_OnCanInsertFromMimeData_action(void* self, void** source);
 	[LinkName("QPlainTextEdit_OnCanInsertFromMimeData")]
 	public static extern bool QPlainTextEdit_OnCanInsertFromMimeData(void* self, QPlainTextEdit_OnCanInsertFromMimeData_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperCanInsertFromMimeData")]
+	public static extern bool QPlainTextEdit_SuperCanInsertFromMimeData(void* self, void** source);
 	[LinkName("QPlainTextEdit_InsertFromMimeData")]
 	public static extern void QPlainTextEdit_InsertFromMimeData(void* self, void** source);
 	
 	public function void QPlainTextEdit_OnInsertFromMimeData_action(void* self, void** source);
 	[LinkName("QPlainTextEdit_OnInsertFromMimeData")]
 	public static extern void QPlainTextEdit_OnInsertFromMimeData(void* self, QPlainTextEdit_OnInsertFromMimeData_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperInsertFromMimeData")]
+	public static extern void QPlainTextEdit_SuperInsertFromMimeData(void* self, void** source);
 	[LinkName("QPlainTextEdit_InputMethodEvent")]
 	public static extern void QPlainTextEdit_InputMethodEvent(void* self, void** param1);
 	
 	public function void QPlainTextEdit_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QPlainTextEdit_OnInputMethodEvent")]
 	public static extern void QPlainTextEdit_OnInputMethodEvent(void* self, QPlainTextEdit_OnInputMethodEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperInputMethodEvent")]
+	public static extern void QPlainTextEdit_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QPlainTextEdit_ScrollContentsBy")]
 	public static extern void QPlainTextEdit_ScrollContentsBy(void* self, c_int dx, c_int dy);
 	
 	public function void QPlainTextEdit_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QPlainTextEdit_OnScrollContentsBy")]
 	public static extern void QPlainTextEdit_OnScrollContentsBy(void* self, QPlainTextEdit_OnScrollContentsBy_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperScrollContentsBy")]
+	public static extern void QPlainTextEdit_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 	[LinkName("QPlainTextEdit_DoSetTextCursor")]
 	public static extern void QPlainTextEdit_DoSetTextCursor(void* self, void** cursor);
 	
 	public function void QPlainTextEdit_OnDoSetTextCursor_action(void* self, void** cursor);
 	[LinkName("QPlainTextEdit_OnDoSetTextCursor")]
 	public static extern void QPlainTextEdit_OnDoSetTextCursor(void* self, QPlainTextEdit_OnDoSetTextCursor_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperDoSetTextCursor")]
+	public static extern void QPlainTextEdit_SuperDoSetTextCursor(void* self, void** cursor);
 	[LinkName("QPlainTextEdit_FirstVisibleBlock")]
 	public static extern void* QPlainTextEdit_FirstVisibleBlock(void* self);
 	[LinkName("QPlainTextEdit_ContentOffset")]
@@ -4707,168 +5163,252 @@ extension CQt
 	public function void QPlainTextEdit_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPlainTextEdit_OnEventFilter")]
 	public static extern bool QPlainTextEdit_OnEventFilter(void* self, QPlainTextEdit_OnEventFilter_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperEventFilter")]
+	public static extern bool QPlainTextEdit_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPlainTextEdit_ChildEvent")]
 	public static extern void QPlainTextEdit_ChildEvent(void* self, void** event);
 	
 	public function void QPlainTextEdit_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPlainTextEdit_OnChildEvent")]
 	public static extern void QPlainTextEdit_OnChildEvent(void* self, QPlainTextEdit_OnChildEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperChildEvent")]
+	public static extern void QPlainTextEdit_SuperChildEvent(void* self, void** event);
 	[LinkName("QPlainTextEdit_CustomEvent")]
 	public static extern void QPlainTextEdit_CustomEvent(void* self, void** event);
 	
 	public function void QPlainTextEdit_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPlainTextEdit_OnCustomEvent")]
 	public static extern void QPlainTextEdit_OnCustomEvent(void* self, QPlainTextEdit_OnCustomEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperCustomEvent")]
+	public static extern void QPlainTextEdit_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPlainTextEdit_ConnectNotify")]
 	public static extern void QPlainTextEdit_ConnectNotify(void* self, void** signal);
 	
 	public function void QPlainTextEdit_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPlainTextEdit_OnConnectNotify")]
 	public static extern void QPlainTextEdit_OnConnectNotify(void* self, QPlainTextEdit_OnConnectNotify_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperConnectNotify")]
+	public static extern void QPlainTextEdit_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPlainTextEdit_DisconnectNotify")]
 	public static extern void QPlainTextEdit_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPlainTextEdit_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPlainTextEdit_OnDisconnectNotify")]
 	public static extern void QPlainTextEdit_OnDisconnectNotify(void* self, QPlainTextEdit_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperDisconnectNotify")]
+	public static extern void QPlainTextEdit_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QPlainTextEdit_DevType")]
 	public static extern c_int QPlainTextEdit_DevType(void* self);
 	
 	public function void QPlainTextEdit_OnDevType_action(void* self);
 	[LinkName("QPlainTextEdit_OnDevType")]
 	public static extern c_int QPlainTextEdit_OnDevType(void* self, QPlainTextEdit_OnDevType_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperDevType")]
+	public static extern c_int QPlainTextEdit_SuperDevType(void* self);
 	[LinkName("QPlainTextEdit_PaintEngine")]
 	public static extern void** QPlainTextEdit_PaintEngine(void* self);
 	
 	public function void QPlainTextEdit_OnPaintEngine_action(void* self);
 	[LinkName("QPlainTextEdit_OnPaintEngine")]
 	public static extern void** QPlainTextEdit_OnPaintEngine(void* self, QPlainTextEdit_OnPaintEngine_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperPaintEngine")]
+	public static extern void** QPlainTextEdit_SuperPaintEngine(void* self);
 	[LinkName("QPlainTextEdit_Metric")]
 	public static extern c_int QPlainTextEdit_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QPlainTextEdit_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QPlainTextEdit_OnMetric")]
 	public static extern c_int QPlainTextEdit_OnMetric(void* self, QPlainTextEdit_OnMetric_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMetric")]
+	public static extern c_int QPlainTextEdit_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QPlainTextEdit_InitPainter")]
 	public static extern void QPlainTextEdit_InitPainter(void* self, void** painter);
 	
 	public function void QPlainTextEdit_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QPlainTextEdit_OnInitPainter")]
 	public static extern void QPlainTextEdit_OnInitPainter(void* self, QPlainTextEdit_OnInitPainter_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperInitPainter")]
+	public static extern void QPlainTextEdit_SuperInitPainter(void* self, void** painter);
 	[LinkName("QPlainTextEdit_Redirected")]
 	public static extern void** QPlainTextEdit_Redirected(void* self, void** offset);
 	
 	public function void QPlainTextEdit_OnRedirected_action(void* self, void** offset);
 	[LinkName("QPlainTextEdit_OnRedirected")]
 	public static extern void** QPlainTextEdit_OnRedirected(void* self, QPlainTextEdit_OnRedirected_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperRedirected")]
+	public static extern void** QPlainTextEdit_SuperRedirected(void* self, void** offset);
 	[LinkName("QPlainTextEdit_SharedPainter")]
 	public static extern void** QPlainTextEdit_SharedPainter(void* self);
 	
 	public function void QPlainTextEdit_OnSharedPainter_action(void* self);
 	[LinkName("QPlainTextEdit_OnSharedPainter")]
 	public static extern void** QPlainTextEdit_OnSharedPainter(void* self, QPlainTextEdit_OnSharedPainter_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperSharedPainter")]
+	public static extern void** QPlainTextEdit_SuperSharedPainter(void* self);
 	[LinkName("QPlainTextEdit_SetVisible")]
 	public static extern void QPlainTextEdit_SetVisible(void* self, bool visible);
 	
 	public function void QPlainTextEdit_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QPlainTextEdit_OnSetVisible")]
 	public static extern void QPlainTextEdit_OnSetVisible(void* self, QPlainTextEdit_OnSetVisible_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperSetVisible")]
+	public static extern void QPlainTextEdit_SuperSetVisible(void* self, bool visible);
 	[LinkName("QPlainTextEdit_SizeHint")]
 	public static extern void* QPlainTextEdit_SizeHint(void* self);
 	
 	public function void QPlainTextEdit_OnSizeHint_action(void* self);
 	[LinkName("QPlainTextEdit_OnSizeHint")]
 	public static extern void* QPlainTextEdit_OnSizeHint(void* self, QPlainTextEdit_OnSizeHint_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperSizeHint")]
+	public static extern void* QPlainTextEdit_SuperSizeHint(void* self);
 	[LinkName("QPlainTextEdit_MinimumSizeHint")]
 	public static extern void* QPlainTextEdit_MinimumSizeHint(void* self);
 	
 	public function void QPlainTextEdit_OnMinimumSizeHint_action(void* self);
 	[LinkName("QPlainTextEdit_OnMinimumSizeHint")]
 	public static extern void* QPlainTextEdit_OnMinimumSizeHint(void* self, QPlainTextEdit_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMinimumSizeHint")]
+	public static extern void* QPlainTextEdit_SuperMinimumSizeHint(void* self);
 	[LinkName("QPlainTextEdit_HeightForWidth")]
 	public static extern c_int QPlainTextEdit_HeightForWidth(void* self, c_int param1);
 	
 	public function void QPlainTextEdit_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QPlainTextEdit_OnHeightForWidth")]
 	public static extern c_int QPlainTextEdit_OnHeightForWidth(void* self, QPlainTextEdit_OnHeightForWidth_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperHeightForWidth")]
+	public static extern c_int QPlainTextEdit_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QPlainTextEdit_HasHeightForWidth")]
 	public static extern bool QPlainTextEdit_HasHeightForWidth(void* self);
 	
 	public function void QPlainTextEdit_OnHasHeightForWidth_action(void* self);
 	[LinkName("QPlainTextEdit_OnHasHeightForWidth")]
 	public static extern bool QPlainTextEdit_OnHasHeightForWidth(void* self, QPlainTextEdit_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperHasHeightForWidth")]
+	public static extern bool QPlainTextEdit_SuperHasHeightForWidth(void* self);
 	[LinkName("QPlainTextEdit_EnterEvent")]
 	public static extern void QPlainTextEdit_EnterEvent(void* self, void** event);
 	
 	public function void QPlainTextEdit_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QPlainTextEdit_OnEnterEvent")]
 	public static extern void QPlainTextEdit_OnEnterEvent(void* self, QPlainTextEdit_OnEnterEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperEnterEvent")]
+	public static extern void QPlainTextEdit_SuperEnterEvent(void* self, void** event);
 	[LinkName("QPlainTextEdit_LeaveEvent")]
 	public static extern void QPlainTextEdit_LeaveEvent(void* self, void** event);
 	
 	public function void QPlainTextEdit_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QPlainTextEdit_OnLeaveEvent")]
 	public static extern void QPlainTextEdit_OnLeaveEvent(void* self, QPlainTextEdit_OnLeaveEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperLeaveEvent")]
+	public static extern void QPlainTextEdit_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QPlainTextEdit_MoveEvent")]
 	public static extern void QPlainTextEdit_MoveEvent(void* self, void** event);
 	
 	public function void QPlainTextEdit_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QPlainTextEdit_OnMoveEvent")]
 	public static extern void QPlainTextEdit_OnMoveEvent(void* self, QPlainTextEdit_OnMoveEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperMoveEvent")]
+	public static extern void QPlainTextEdit_SuperMoveEvent(void* self, void** event);
 	[LinkName("QPlainTextEdit_CloseEvent")]
 	public static extern void QPlainTextEdit_CloseEvent(void* self, void** event);
 	
 	public function void QPlainTextEdit_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QPlainTextEdit_OnCloseEvent")]
 	public static extern void QPlainTextEdit_OnCloseEvent(void* self, QPlainTextEdit_OnCloseEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperCloseEvent")]
+	public static extern void QPlainTextEdit_SuperCloseEvent(void* self, void** event);
 	[LinkName("QPlainTextEdit_TabletEvent")]
 	public static extern void QPlainTextEdit_TabletEvent(void* self, void** event);
 	
 	public function void QPlainTextEdit_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QPlainTextEdit_OnTabletEvent")]
 	public static extern void QPlainTextEdit_OnTabletEvent(void* self, QPlainTextEdit_OnTabletEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperTabletEvent")]
+	public static extern void QPlainTextEdit_SuperTabletEvent(void* self, void** event);
 	[LinkName("QPlainTextEdit_ActionEvent")]
 	public static extern void QPlainTextEdit_ActionEvent(void* self, void** event);
 	
 	public function void QPlainTextEdit_OnActionEvent_action(void* self, void** event);
 	[LinkName("QPlainTextEdit_OnActionEvent")]
 	public static extern void QPlainTextEdit_OnActionEvent(void* self, QPlainTextEdit_OnActionEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperActionEvent")]
+	public static extern void QPlainTextEdit_SuperActionEvent(void* self, void** event);
 	[LinkName("QPlainTextEdit_HideEvent")]
 	public static extern void QPlainTextEdit_HideEvent(void* self, void** event);
 	
 	public function void QPlainTextEdit_OnHideEvent_action(void* self, void** event);
 	[LinkName("QPlainTextEdit_OnHideEvent")]
 	public static extern void QPlainTextEdit_OnHideEvent(void* self, QPlainTextEdit_OnHideEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperHideEvent")]
+	public static extern void QPlainTextEdit_SuperHideEvent(void* self, void** event);
 	[LinkName("QPlainTextEdit_NativeEvent")]
 	public static extern bool QPlainTextEdit_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QPlainTextEdit_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QPlainTextEdit_OnNativeEvent")]
 	public static extern bool QPlainTextEdit_OnNativeEvent(void* self, QPlainTextEdit_OnNativeEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperNativeEvent")]
+	public static extern bool QPlainTextEdit_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QPlainTextEdit_InitStyleOption")]
 	public static extern void QPlainTextEdit_InitStyleOption(void* self, void** option);
 	
 	public function void QPlainTextEdit_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QPlainTextEdit_OnInitStyleOption")]
 	public static extern void QPlainTextEdit_OnInitStyleOption(void* self, QPlainTextEdit_OnInitStyleOption_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperInitStyleOption")]
+	public static extern void QPlainTextEdit_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QPlainTextEdit_SetupViewport")]
 	public static extern void QPlainTextEdit_SetupViewport(void* self, void** viewport);
 	
 	public function void QPlainTextEdit_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QPlainTextEdit_OnSetupViewport")]
 	public static extern void QPlainTextEdit_OnSetupViewport(void* self, QPlainTextEdit_OnSetupViewport_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperSetupViewport")]
+	public static extern void QPlainTextEdit_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QPlainTextEdit_ViewportEvent")]
 	public static extern bool QPlainTextEdit_ViewportEvent(void* self, void** param1);
 	
 	public function void QPlainTextEdit_OnViewportEvent_action(void* self, void** param1);
 	[LinkName("QPlainTextEdit_OnViewportEvent")]
 	public static extern bool QPlainTextEdit_OnViewportEvent(void* self, QPlainTextEdit_OnViewportEvent_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperViewportEvent")]
+	public static extern bool QPlainTextEdit_SuperViewportEvent(void* self, void** param1);
 	[LinkName("QPlainTextEdit_ViewportSizeHint")]
 	public static extern void* QPlainTextEdit_ViewportSizeHint(void* self);
 	
 	public function void QPlainTextEdit_OnViewportSizeHint_action(void* self);
 	[LinkName("QPlainTextEdit_OnViewportSizeHint")]
 	public static extern void* QPlainTextEdit_OnViewportSizeHint(void* self, QPlainTextEdit_OnViewportSizeHint_action _action);
+	
+	[LinkName("QPlainTextEdit_SuperViewportSizeHint")]
+	public static extern void* QPlainTextEdit_SuperViewportSizeHint(void* self);
 }
 // --------------------------------------------------------------
 // QPlainTextDocumentLayout
@@ -5272,6 +5812,26 @@ class QPlainTextDocumentLayout : IQPlainTextDocumentLayout, IQAbstractTextDocume
 		CQt.QAbstractTextDocumentLayout_Connect_DocumentSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_Connect_DocumentSizeChanged);
 		CQt.QAbstractTextDocumentLayout_Connect_PageCountChanged(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_Connect_PageCountChanged);
 		CQt.QAbstractTextDocumentLayout_Connect_Update1(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_Connect_Update1);
+		CQt.QPlainTextDocumentLayout_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnMetaObject);
+		CQt.QPlainTextDocumentLayout_OnMetacast(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnMetacast);
+		CQt.QPlainTextDocumentLayout_OnMetacall(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnMetacall);
+		CQt.QPlainTextDocumentLayout_OnDraw(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnDraw);
+		CQt.QPlainTextDocumentLayout_OnHitTest(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnHitTest);
+		CQt.QPlainTextDocumentLayout_OnPageCount(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnPageCount);
+		CQt.QPlainTextDocumentLayout_OnDocumentSize(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnDocumentSize);
+		CQt.QPlainTextDocumentLayout_OnFrameBoundingRect(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnFrameBoundingRect);
+		CQt.QPlainTextDocumentLayout_OnBlockBoundingRect(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnBlockBoundingRect);
+		CQt.QPlainTextDocumentLayout_OnDocumentChanged(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnDocumentChanged);
+		CQt.QPlainTextDocumentLayout_OnEvent(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnEvent);
+		CQt.QPlainTextDocumentLayout_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnEventFilter);
+		CQt.QPlainTextDocumentLayout_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnTimerEvent);
+		CQt.QPlainTextDocumentLayout_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnChildEvent);
+		CQt.QPlainTextDocumentLayout_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnCustomEvent);
+		CQt.QPlainTextDocumentLayout_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnConnectNotify);
+		CQt.QPlainTextDocumentLayout_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnDisconnectNotify);
+		CQt.QPlainTextDocumentLayout_OnResizeInlineObject(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnResizeInlineObject);
+		CQt.QPlainTextDocumentLayout_OnPositionInlineObject(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnPositionInlineObject);
+		CQt.QPlainTextDocumentLayout_OnDrawInlineObject(obj.ObjectPtr,  => QtBeef_QPlainTextDocumentLayout_OnDrawInlineObject);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -5314,6 +5874,106 @@ class QPlainTextDocumentLayout : IQPlainTextDocumentLayout, IQAbstractTextDocume
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnUpdate1.Invoke(param1);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnDraw(void* ptr, void** param1, void** param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDraw(param1, param2);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnHitTest(void* ptr, void** param1, Qt_HitTestAccuracy param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHitTest(param1, param2);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnPageCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPageCount();
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnDocumentSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDocumentSize();
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnFrameBoundingRect(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFrameBoundingRect(param1);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnBlockBoundingRect(void* ptr, void** block)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlockBoundingRect(block);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnDocumentChanged(void* ptr, c_int from, c_int param2, c_int charsAdded)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDocumentChanged(from, param2, charsAdded);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnResizeInlineObject(void* ptr, void* item, c_int posInDocument, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeInlineObject(item, posInDocument, format);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnPositionInlineObject(void* ptr, void* item, c_int posInDocument, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPositionInlineObject(item, posInDocument, format);
+	}
+	static void QtBeef_QPlainTextDocumentLayout_OnDrawInlineObject(void* ptr, void** painter, void** rect, void* object, c_int posInDocument, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDrawInlineObject(painter, rect, object, posInDocument, format);
 	}
 	public this(QPlainTextDocumentLayout_Ptr ptr)
 	{
@@ -5711,18 +6371,27 @@ extension CQt
 	public function void QPlainTextDocumentLayout_OnMetaObject_action(void* self);
 	[LinkName("QPlainTextDocumentLayout_OnMetaObject")]
 	public static extern void** QPlainTextDocumentLayout_OnMetaObject(void* self, QPlainTextDocumentLayout_OnMetaObject_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperMetaObject")]
+	public static extern void** QPlainTextDocumentLayout_SuperMetaObject(void* self);
 	[LinkName("QPlainTextDocumentLayout_Qt_Metacast")]
 	public static extern void* QPlainTextDocumentLayout_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPlainTextDocumentLayout_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPlainTextDocumentLayout_OnMetacast")]
 	public static extern void* QPlainTextDocumentLayout_OnMetacast(void* self, QPlainTextDocumentLayout_OnMetacast_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperMetacast")]
+	public static extern void* QPlainTextDocumentLayout_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPlainTextDocumentLayout_Qt_Metacall")]
 	public static extern c_int QPlainTextDocumentLayout_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPlainTextDocumentLayout_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPlainTextDocumentLayout_OnMetacall")]
 	public static extern c_int QPlainTextDocumentLayout_OnMetacall(void* self, QPlainTextDocumentLayout_OnMetacall_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperMetacall")]
+	public static extern c_int QPlainTextDocumentLayout_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPlainTextDocumentLayout_Tr")]
 	public static extern libqt_string QPlainTextDocumentLayout_Tr(c_char* s);
 	[LinkName("QPlainTextDocumentLayout_Draw")]
@@ -5731,36 +6400,54 @@ extension CQt
 	public function void QPlainTextDocumentLayout_OnDraw_action(void* self, void** param1, void** param2);
 	[LinkName("QPlainTextDocumentLayout_OnDraw")]
 	public static extern void QPlainTextDocumentLayout_OnDraw(void* self, QPlainTextDocumentLayout_OnDraw_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperDraw")]
+	public static extern void QPlainTextDocumentLayout_SuperDraw(void* self, void** param1, void** param2);
 	[LinkName("QPlainTextDocumentLayout_HitTest")]
 	public static extern c_int QPlainTextDocumentLayout_HitTest(void* self, void** param1, Qt_HitTestAccuracy param2);
 	
 	public function void QPlainTextDocumentLayout_OnHitTest_action(void* self, void** param1, Qt_HitTestAccuracy param2);
 	[LinkName("QPlainTextDocumentLayout_OnHitTest")]
 	public static extern c_int QPlainTextDocumentLayout_OnHitTest(void* self, QPlainTextDocumentLayout_OnHitTest_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperHitTest")]
+	public static extern c_int QPlainTextDocumentLayout_SuperHitTest(void* self, void** param1, Qt_HitTestAccuracy param2);
 	[LinkName("QPlainTextDocumentLayout_PageCount")]
 	public static extern c_int QPlainTextDocumentLayout_PageCount(void* self);
 	
 	public function void QPlainTextDocumentLayout_OnPageCount_action(void* self);
 	[LinkName("QPlainTextDocumentLayout_OnPageCount")]
 	public static extern c_int QPlainTextDocumentLayout_OnPageCount(void* self, QPlainTextDocumentLayout_OnPageCount_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperPageCount")]
+	public static extern c_int QPlainTextDocumentLayout_SuperPageCount(void* self);
 	[LinkName("QPlainTextDocumentLayout_DocumentSize")]
 	public static extern void* QPlainTextDocumentLayout_DocumentSize(void* self);
 	
 	public function void QPlainTextDocumentLayout_OnDocumentSize_action(void* self);
 	[LinkName("QPlainTextDocumentLayout_OnDocumentSize")]
 	public static extern void* QPlainTextDocumentLayout_OnDocumentSize(void* self, QPlainTextDocumentLayout_OnDocumentSize_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperDocumentSize")]
+	public static extern void* QPlainTextDocumentLayout_SuperDocumentSize(void* self);
 	[LinkName("QPlainTextDocumentLayout_FrameBoundingRect")]
 	public static extern void* QPlainTextDocumentLayout_FrameBoundingRect(void* self, void** param1);
 	
 	public function void QPlainTextDocumentLayout_OnFrameBoundingRect_action(void* self, void** param1);
 	[LinkName("QPlainTextDocumentLayout_OnFrameBoundingRect")]
 	public static extern void* QPlainTextDocumentLayout_OnFrameBoundingRect(void* self, QPlainTextDocumentLayout_OnFrameBoundingRect_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperFrameBoundingRect")]
+	public static extern void* QPlainTextDocumentLayout_SuperFrameBoundingRect(void* self, void** param1);
 	[LinkName("QPlainTextDocumentLayout_BlockBoundingRect")]
 	public static extern void* QPlainTextDocumentLayout_BlockBoundingRect(void* self, void** block);
 	
 	public function void QPlainTextDocumentLayout_OnBlockBoundingRect_action(void* self, void** block);
 	[LinkName("QPlainTextDocumentLayout_OnBlockBoundingRect")]
 	public static extern void* QPlainTextDocumentLayout_OnBlockBoundingRect(void* self, QPlainTextDocumentLayout_OnBlockBoundingRect_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperBlockBoundingRect")]
+	public static extern void* QPlainTextDocumentLayout_SuperBlockBoundingRect(void* self, void** block);
 	[LinkName("QPlainTextDocumentLayout_EnsureBlockLayout")]
 	public static extern void QPlainTextDocumentLayout_EnsureBlockLayout(void* self, void** block);
 	[LinkName("QPlainTextDocumentLayout_SetCursorWidth")]
@@ -5775,6 +6462,9 @@ extension CQt
 	public function void QPlainTextDocumentLayout_OnDocumentChanged_action(void* self, c_int from, c_int param2, c_int charsAdded);
 	[LinkName("QPlainTextDocumentLayout_OnDocumentChanged")]
 	public static extern void QPlainTextDocumentLayout_OnDocumentChanged(void* self, QPlainTextDocumentLayout_OnDocumentChanged_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperDocumentChanged")]
+	public static extern void QPlainTextDocumentLayout_SuperDocumentChanged(void* self, c_int from, c_int param2, c_int charsAdded);
 	[LinkName("QPlainTextDocumentLayout_Tr2")]
 	public static extern libqt_string QPlainTextDocumentLayout_Tr2(c_char* s, c_char* c);
 	[LinkName("QPlainTextDocumentLayout_Tr3")]
@@ -5785,60 +6475,90 @@ extension CQt
 	public function void QPlainTextDocumentLayout_OnEvent_action(void* self, void** event);
 	[LinkName("QPlainTextDocumentLayout_OnEvent")]
 	public static extern bool QPlainTextDocumentLayout_OnEvent(void* self, QPlainTextDocumentLayout_OnEvent_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperEvent")]
+	public static extern bool QPlainTextDocumentLayout_SuperEvent(void* self, void** event);
 	[LinkName("QPlainTextDocumentLayout_EventFilter")]
 	public static extern bool QPlainTextDocumentLayout_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QPlainTextDocumentLayout_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPlainTextDocumentLayout_OnEventFilter")]
 	public static extern bool QPlainTextDocumentLayout_OnEventFilter(void* self, QPlainTextDocumentLayout_OnEventFilter_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperEventFilter")]
+	public static extern bool QPlainTextDocumentLayout_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPlainTextDocumentLayout_TimerEvent")]
 	public static extern void QPlainTextDocumentLayout_TimerEvent(void* self, void** event);
 	
 	public function void QPlainTextDocumentLayout_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QPlainTextDocumentLayout_OnTimerEvent")]
 	public static extern void QPlainTextDocumentLayout_OnTimerEvent(void* self, QPlainTextDocumentLayout_OnTimerEvent_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperTimerEvent")]
+	public static extern void QPlainTextDocumentLayout_SuperTimerEvent(void* self, void** event);
 	[LinkName("QPlainTextDocumentLayout_ChildEvent")]
 	public static extern void QPlainTextDocumentLayout_ChildEvent(void* self, void** event);
 	
 	public function void QPlainTextDocumentLayout_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPlainTextDocumentLayout_OnChildEvent")]
 	public static extern void QPlainTextDocumentLayout_OnChildEvent(void* self, QPlainTextDocumentLayout_OnChildEvent_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperChildEvent")]
+	public static extern void QPlainTextDocumentLayout_SuperChildEvent(void* self, void** event);
 	[LinkName("QPlainTextDocumentLayout_CustomEvent")]
 	public static extern void QPlainTextDocumentLayout_CustomEvent(void* self, void** event);
 	
 	public function void QPlainTextDocumentLayout_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPlainTextDocumentLayout_OnCustomEvent")]
 	public static extern void QPlainTextDocumentLayout_OnCustomEvent(void* self, QPlainTextDocumentLayout_OnCustomEvent_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperCustomEvent")]
+	public static extern void QPlainTextDocumentLayout_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPlainTextDocumentLayout_ConnectNotify")]
 	public static extern void QPlainTextDocumentLayout_ConnectNotify(void* self, void** signal);
 	
 	public function void QPlainTextDocumentLayout_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPlainTextDocumentLayout_OnConnectNotify")]
 	public static extern void QPlainTextDocumentLayout_OnConnectNotify(void* self, QPlainTextDocumentLayout_OnConnectNotify_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperConnectNotify")]
+	public static extern void QPlainTextDocumentLayout_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPlainTextDocumentLayout_DisconnectNotify")]
 	public static extern void QPlainTextDocumentLayout_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPlainTextDocumentLayout_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPlainTextDocumentLayout_OnDisconnectNotify")]
 	public static extern void QPlainTextDocumentLayout_OnDisconnectNotify(void* self, QPlainTextDocumentLayout_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperDisconnectNotify")]
+	public static extern void QPlainTextDocumentLayout_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QPlainTextDocumentLayout_ResizeInlineObject")]
 	public static extern void QPlainTextDocumentLayout_ResizeInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	
 	public function void QPlainTextDocumentLayout_OnResizeInlineObject_action(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QPlainTextDocumentLayout_OnResizeInlineObject")]
 	public static extern void QPlainTextDocumentLayout_OnResizeInlineObject(void* self, QPlainTextDocumentLayout_OnResizeInlineObject_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperResizeInlineObject")]
+	public static extern void QPlainTextDocumentLayout_SuperResizeInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QPlainTextDocumentLayout_PositionInlineObject")]
 	public static extern void QPlainTextDocumentLayout_PositionInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	
 	public function void QPlainTextDocumentLayout_OnPositionInlineObject_action(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QPlainTextDocumentLayout_OnPositionInlineObject")]
 	public static extern void QPlainTextDocumentLayout_OnPositionInlineObject(void* self, QPlainTextDocumentLayout_OnPositionInlineObject_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperPositionInlineObject")]
+	public static extern void QPlainTextDocumentLayout_SuperPositionInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QPlainTextDocumentLayout_DrawInlineObject")]
 	public static extern void QPlainTextDocumentLayout_DrawInlineObject(void* self, void** painter, void** rect, void* object, c_int posInDocument, void** format);
 	
 	public function void QPlainTextDocumentLayout_OnDrawInlineObject_action(void* self, void** painter, void** rect, void* object, c_int posInDocument, void** format);
 	[LinkName("QPlainTextDocumentLayout_OnDrawInlineObject")]
 	public static extern void QPlainTextDocumentLayout_OnDrawInlineObject(void* self, QPlainTextDocumentLayout_OnDrawInlineObject_action _action);
+	
+	[LinkName("QPlainTextDocumentLayout_SuperDrawInlineObject")]
+	public static extern void QPlainTextDocumentLayout_SuperDrawInlineObject(void* self, void** painter, void** rect, void* object, c_int posInDocument, void** format);
 }
 [AllowDuplicates]
 enum QPlainTextEdit_LineWrapMode

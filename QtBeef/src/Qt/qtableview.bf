@@ -2395,6 +2395,100 @@ class QTableView : IQTableView, IQAbstractItemView, IQAbstractScrollArea, IQFram
 		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Entered);
 		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_ViewportEntered);
 		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_IconSizeChanged);
+		CQt.QTableView_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTableView_OnMetaObject);
+		CQt.QTableView_OnMetacast(obj.ObjectPtr,  => QtBeef_QTableView_OnMetacast);
+		CQt.QTableView_OnMetacall(obj.ObjectPtr,  => QtBeef_QTableView_OnMetacall);
+		CQt.QTableView_OnSetModel(obj.ObjectPtr,  => QtBeef_QTableView_OnSetModel);
+		CQt.QTableView_OnSetRootIndex(obj.ObjectPtr,  => QtBeef_QTableView_OnSetRootIndex);
+		CQt.QTableView_OnSetSelectionModel(obj.ObjectPtr,  => QtBeef_QTableView_OnSetSelectionModel);
+		CQt.QTableView_OnDoItemsLayout(obj.ObjectPtr,  => QtBeef_QTableView_OnDoItemsLayout);
+		CQt.QTableView_OnVisualRect(obj.ObjectPtr,  => QtBeef_QTableView_OnVisualRect);
+		CQt.QTableView_OnScrollTo(obj.ObjectPtr,  => QtBeef_QTableView_OnScrollTo);
+		CQt.QTableView_OnIndexAt(obj.ObjectPtr,  => QtBeef_QTableView_OnIndexAt);
+		CQt.QTableView_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QTableView_OnScrollContentsBy);
+		CQt.QTableView_OnInitViewItemOption(obj.ObjectPtr,  => QtBeef_QTableView_OnInitViewItemOption);
+		CQt.QTableView_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnPaintEvent);
+		CQt.QTableView_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnTimerEvent);
+		CQt.QTableView_OnHorizontalOffset(obj.ObjectPtr,  => QtBeef_QTableView_OnHorizontalOffset);
+		CQt.QTableView_OnVerticalOffset(obj.ObjectPtr,  => QtBeef_QTableView_OnVerticalOffset);
+		CQt.QTableView_OnMoveCursor(obj.ObjectPtr,  => QtBeef_QTableView_OnMoveCursor);
+		CQt.QTableView_OnSetSelection(obj.ObjectPtr,  => QtBeef_QTableView_OnSetSelection);
+		CQt.QTableView_OnVisualRegionForSelection(obj.ObjectPtr,  => QtBeef_QTableView_OnVisualRegionForSelection);
+		CQt.QTableView_OnSelectedIndexes(obj.ObjectPtr,  => QtBeef_QTableView_OnSelectedIndexes);
+		CQt.QTableView_OnUpdateGeometries(obj.ObjectPtr,  => QtBeef_QTableView_OnUpdateGeometries);
+		CQt.QTableView_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QTableView_OnViewportSizeHint);
+		CQt.QTableView_OnSizeHintForRow(obj.ObjectPtr,  => QtBeef_QTableView_OnSizeHintForRow);
+		CQt.QTableView_OnSizeHintForColumn(obj.ObjectPtr,  => QtBeef_QTableView_OnSizeHintForColumn);
+		CQt.QTableView_OnVerticalScrollbarAction(obj.ObjectPtr,  => QtBeef_QTableView_OnVerticalScrollbarAction);
+		CQt.QTableView_OnHorizontalScrollbarAction(obj.ObjectPtr,  => QtBeef_QTableView_OnHorizontalScrollbarAction);
+		CQt.QTableView_OnIsIndexHidden(obj.ObjectPtr,  => QtBeef_QTableView_OnIsIndexHidden);
+		CQt.QTableView_OnSelectionChanged(obj.ObjectPtr,  => QtBeef_QTableView_OnSelectionChanged);
+		CQt.QTableView_OnCurrentChanged(obj.ObjectPtr,  => QtBeef_QTableView_OnCurrentChanged);
+		CQt.QTableView_OnEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnEvent);
+		CQt.QTableView_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTableView_OnEventFilter);
+		CQt.QTableView_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnChildEvent);
+		CQt.QTableView_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnCustomEvent);
+		CQt.QTableView_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTableView_OnConnectNotify);
+		CQt.QTableView_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTableView_OnDisconnectNotify);
+		CQt.QTableView_OnDevType(obj.ObjectPtr,  => QtBeef_QTableView_OnDevType);
+		CQt.QTableView_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QTableView_OnPaintEngine);
+		CQt.QTableView_OnMetric(obj.ObjectPtr,  => QtBeef_QTableView_OnMetric);
+		CQt.QTableView_OnInitPainter(obj.ObjectPtr,  => QtBeef_QTableView_OnInitPainter);
+		CQt.QTableView_OnRedirected(obj.ObjectPtr,  => QtBeef_QTableView_OnRedirected);
+		CQt.QTableView_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QTableView_OnSharedPainter);
+		CQt.QTableView_OnSetVisible(obj.ObjectPtr,  => QtBeef_QTableView_OnSetVisible);
+		CQt.QTableView_OnSizeHint(obj.ObjectPtr,  => QtBeef_QTableView_OnSizeHint);
+		CQt.QTableView_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QTableView_OnMinimumSizeHint);
+		CQt.QTableView_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QTableView_OnHeightForWidth);
+		CQt.QTableView_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QTableView_OnHasHeightForWidth);
+		CQt.QTableView_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnMousePressEvent);
+		CQt.QTableView_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnMouseReleaseEvent);
+		CQt.QTableView_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnMouseDoubleClickEvent);
+		CQt.QTableView_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnMouseMoveEvent);
+		CQt.QTableView_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnWheelEvent);
+		CQt.QTableView_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnKeyPressEvent);
+		CQt.QTableView_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnKeyReleaseEvent);
+		CQt.QTableView_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnFocusInEvent);
+		CQt.QTableView_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnFocusOutEvent);
+		CQt.QTableView_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnEnterEvent);
+		CQt.QTableView_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnLeaveEvent);
+		CQt.QTableView_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnMoveEvent);
+		CQt.QTableView_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnResizeEvent);
+		CQt.QTableView_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnCloseEvent);
+		CQt.QTableView_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnContextMenuEvent);
+		CQt.QTableView_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnTabletEvent);
+		CQt.QTableView_OnActionEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnActionEvent);
+		CQt.QTableView_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnDragEnterEvent);
+		CQt.QTableView_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnDragMoveEvent);
+		CQt.QTableView_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnDragLeaveEvent);
+		CQt.QTableView_OnDropEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnDropEvent);
+		CQt.QTableView_OnShowEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnShowEvent);
+		CQt.QTableView_OnHideEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnHideEvent);
+		CQt.QTableView_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnNativeEvent);
+		CQt.QTableView_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnChangeEvent);
+		CQt.QTableView_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnInputMethodEvent);
+		CQt.QTableView_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QTableView_OnInputMethodQuery);
+		CQt.QTableView_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QTableView_OnFocusNextPrevChild);
+		CQt.QTableView_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QTableView_OnInitStyleOption);
+		CQt.QTableView_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QTableView_OnSetupViewport);
+		CQt.QTableView_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QTableView_OnViewportEvent);
+		CQt.QTableView_OnKeyboardSearch(obj.ObjectPtr,  => QtBeef_QTableView_OnKeyboardSearch);
+		CQt.QTableView_OnItemDelegateForIndex(obj.ObjectPtr,  => QtBeef_QTableView_OnItemDelegateForIndex);
+		CQt.QTableView_OnReset(obj.ObjectPtr,  => QtBeef_QTableView_OnReset);
+		CQt.QTableView_OnSelectAll(obj.ObjectPtr,  => QtBeef_QTableView_OnSelectAll);
+		CQt.QTableView_OnDataChanged(obj.ObjectPtr,  => QtBeef_QTableView_OnDataChanged);
+		CQt.QTableView_OnRowsInserted(obj.ObjectPtr,  => QtBeef_QTableView_OnRowsInserted);
+		CQt.QTableView_OnRowsAboutToBeRemoved(obj.ObjectPtr,  => QtBeef_QTableView_OnRowsAboutToBeRemoved);
+		CQt.QTableView_OnUpdateEditorData(obj.ObjectPtr,  => QtBeef_QTableView_OnUpdateEditorData);
+		CQt.QTableView_OnUpdateEditorGeometries(obj.ObjectPtr,  => QtBeef_QTableView_OnUpdateEditorGeometries);
+		CQt.QTableView_OnVerticalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QTableView_OnVerticalScrollbarValueChanged);
+		CQt.QTableView_OnHorizontalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QTableView_OnHorizontalScrollbarValueChanged);
+		CQt.QTableView_OnCloseEditor(obj.ObjectPtr,  => QtBeef_QTableView_OnCloseEditor);
+		CQt.QTableView_OnCommitData(obj.ObjectPtr,  => QtBeef_QTableView_OnCommitData);
+		CQt.QTableView_OnEditorDestroyed(obj.ObjectPtr,  => QtBeef_QTableView_OnEditorDestroyed);
+		CQt.QTableView_OnEdit2(obj.ObjectPtr,  => QtBeef_QTableView_OnEdit2);
+		CQt.QTableView_OnSelectionCommand(obj.ObjectPtr,  => QtBeef_QTableView_OnSelectionCommand);
+		CQt.QTableView_OnStartDrag(obj.ObjectPtr,  => QtBeef_QTableView_OnStartDrag);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -2473,6 +2567,476 @@ class QTableView : IQTableView, IQAbstractItemView, IQAbstractScrollArea, IQFram
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnIconSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QTableView_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTableView_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTableView_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTableView_OnSetModel(void* ptr, void** model)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetModel(model);
+	}
+	static void QtBeef_QTableView_OnSetRootIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetRootIndex(index);
+	}
+	static void QtBeef_QTableView_OnSetSelectionModel(void* ptr, void** selectionModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelectionModel(selectionModel);
+	}
+	static void QtBeef_QTableView_OnDoItemsLayout(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoItemsLayout();
+	}
+	static void QtBeef_QTableView_OnVisualRect(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRect(index);
+	}
+	static void QtBeef_QTableView_OnScrollTo(void* ptr, void** index, QAbstractItemView_ScrollHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollTo(index, hint);
+	}
+	static void QtBeef_QTableView_OnIndexAt(void* ptr, void** p)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexAt(p);
+	}
+	static void QtBeef_QTableView_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
+	}
+	static void QtBeef_QTableView_OnInitViewItemOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitViewItemOption(option);
+	}
+	static void QtBeef_QTableView_OnPaintEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(e);
+	}
+	static void QtBeef_QTableView_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTableView_OnHorizontalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalOffset();
+	}
+	static void QtBeef_QTableView_OnVerticalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalOffset();
+	}
+	static void QtBeef_QTableView_OnMoveCursor(void* ptr, QAbstractItemView_CursorAction cursorAction, void* modifiers)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveCursor(cursorAction, modifiers);
+	}
+	static void QtBeef_QTableView_OnSetSelection(void* ptr, void** rect, void* command)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelection(rect, command);
+	}
+	static void QtBeef_QTableView_OnVisualRegionForSelection(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRegionForSelection(selection);
+	}
+	static void QtBeef_QTableView_OnSelectedIndexes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedIndexes();
+	}
+	static void QtBeef_QTableView_OnUpdateGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometries();
+	}
+	static void QtBeef_QTableView_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
+	}
+	static void QtBeef_QTableView_OnSizeHintForRow(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForRow(row);
+	}
+	static void QtBeef_QTableView_OnSizeHintForColumn(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForColumn(column);
+	}
+	static void QtBeef_QTableView_OnVerticalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarAction(action);
+	}
+	static void QtBeef_QTableView_OnHorizontalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarAction(action);
+	}
+	static void QtBeef_QTableView_OnIsIndexHidden(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsIndexHidden(index);
+	}
+	static void QtBeef_QTableView_OnSelectionChanged(void* ptr, void** selected, void** deselected)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged(selected, deselected);
+	}
+	static void QtBeef_QTableView_OnCurrentChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged(current, previous);
+	}
+	static void QtBeef_QTableView_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTableView_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTableView_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTableView_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTableView_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTableView_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QTableView_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QTableView_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QTableView_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QTableView_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QTableView_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QTableView_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QTableView_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QTableView_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QTableView_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QTableView_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QTableView_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QTableView_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QTableView_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QTableView_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QTableView_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QTableView_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QTableView_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QTableView_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QTableView_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QTableView_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QTableView_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QTableView_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QTableView_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QTableView_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QTableView_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QTableView_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QTableView_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QTableView_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QTableView_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QTableView_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QTableView_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QTableView_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QTableView_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QTableView_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QTableView_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QTableView_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QTableView_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QTableView_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QTableView_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QTableView_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QTableView_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QTableView_OnViewportEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(param1);
+	}
+	static void QtBeef_QTableView_OnKeyboardSearch(void* ptr, libqt_string search)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyboardSearch(search);
+	}
+	static void QtBeef_QTableView_OnItemDelegateForIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDelegateForIndex(index);
+	}
+	static void QtBeef_QTableView_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QTableView_OnSelectAll(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectAll();
+	}
+	static void QtBeef_QTableView_OnDataChanged(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QTableView_OnRowsInserted(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsInserted(parent, start, end);
+	}
+	static void QtBeef_QTableView_OnRowsAboutToBeRemoved(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsAboutToBeRemoved(parent, start, end);
+	}
+	static void QtBeef_QTableView_OnUpdateEditorData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorData();
+	}
+	static void QtBeef_QTableView_OnUpdateEditorGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorGeometries();
+	}
+	static void QtBeef_QTableView_OnVerticalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QTableView_OnHorizontalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QTableView_OnCloseEditor(void* ptr, void** editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor(editor, hint);
+	}
+	static void QtBeef_QTableView_OnCommitData(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommitData(editor);
+	}
+	static void QtBeef_QTableView_OnEditorDestroyed(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditorDestroyed(editor);
+	}
+	static void QtBeef_QTableView_OnEdit2(void* ptr, void** index, QAbstractItemView_EditTrigger trigger, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEdit2(index, trigger, event);
+	}
+	static void QtBeef_QTableView_OnSelectionCommand(void* ptr, void** index, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionCommand(index, event);
+	}
+	static void QtBeef_QTableView_OnStartDrag(void* ptr, void* supportedActions)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStartDrag(supportedActions);
 	}
 	public this(QTableView_Ptr ptr)
 	{
@@ -4809,18 +5373,27 @@ extension CQt
 	public function void QTableView_OnMetaObject_action(void* self);
 	[LinkName("QTableView_OnMetaObject")]
 	public static extern void** QTableView_OnMetaObject(void* self, QTableView_OnMetaObject_action _action);
+	
+	[LinkName("QTableView_SuperMetaObject")]
+	public static extern void** QTableView_SuperMetaObject(void* self);
 	[LinkName("QTableView_Qt_Metacast")]
 	public static extern void* QTableView_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTableView_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTableView_OnMetacast")]
 	public static extern void* QTableView_OnMetacast(void* self, QTableView_OnMetacast_action _action);
+	
+	[LinkName("QTableView_SuperMetacast")]
+	public static extern void* QTableView_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTableView_Qt_Metacall")]
 	public static extern c_int QTableView_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTableView_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTableView_OnMetacall")]
 	public static extern c_int QTableView_OnMetacall(void* self, QTableView_OnMetacall_action _action);
+	
+	[LinkName("QTableView_SuperMetacall")]
+	public static extern c_int QTableView_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTableView_Tr")]
 	public static extern libqt_string QTableView_Tr(c_char* s);
 	[LinkName("QTableView_SetModel")]
@@ -4829,24 +5402,36 @@ extension CQt
 	public function void QTableView_OnSetModel_action(void* self, void** model);
 	[LinkName("QTableView_OnSetModel")]
 	public static extern void QTableView_OnSetModel(void* self, QTableView_OnSetModel_action _action);
+	
+	[LinkName("QTableView_SuperSetModel")]
+	public static extern void QTableView_SuperSetModel(void* self, void** model);
 	[LinkName("QTableView_SetRootIndex")]
 	public static extern void QTableView_SetRootIndex(void* self, void** index);
 	
 	public function void QTableView_OnSetRootIndex_action(void* self, void** index);
 	[LinkName("QTableView_OnSetRootIndex")]
 	public static extern void QTableView_OnSetRootIndex(void* self, QTableView_OnSetRootIndex_action _action);
+	
+	[LinkName("QTableView_SuperSetRootIndex")]
+	public static extern void QTableView_SuperSetRootIndex(void* self, void** index);
 	[LinkName("QTableView_SetSelectionModel")]
 	public static extern void QTableView_SetSelectionModel(void* self, void** selectionModel);
 	
 	public function void QTableView_OnSetSelectionModel_action(void* self, void** selectionModel);
 	[LinkName("QTableView_OnSetSelectionModel")]
 	public static extern void QTableView_OnSetSelectionModel(void* self, QTableView_OnSetSelectionModel_action _action);
+	
+	[LinkName("QTableView_SuperSetSelectionModel")]
+	public static extern void QTableView_SuperSetSelectionModel(void* self, void** selectionModel);
 	[LinkName("QTableView_DoItemsLayout")]
 	public static extern void QTableView_DoItemsLayout(void* self);
 	
 	public function void QTableView_OnDoItemsLayout_action(void* self);
 	[LinkName("QTableView_OnDoItemsLayout")]
 	public static extern void QTableView_OnDoItemsLayout(void* self, QTableView_OnDoItemsLayout_action _action);
+	
+	[LinkName("QTableView_SuperDoItemsLayout")]
+	public static extern void QTableView_SuperDoItemsLayout(void* self);
 	[LinkName("QTableView_HorizontalHeader")]
 	public static extern void** QTableView_HorizontalHeader(void* self);
 	[LinkName("QTableView_VerticalHeader")]
@@ -4903,18 +5488,27 @@ extension CQt
 	public function void QTableView_OnVisualRect_action(void* self, void** index);
 	[LinkName("QTableView_OnVisualRect")]
 	public static extern void* QTableView_OnVisualRect(void* self, QTableView_OnVisualRect_action _action);
+	
+	[LinkName("QTableView_SuperVisualRect")]
+	public static extern void* QTableView_SuperVisualRect(void* self, void** index);
 	[LinkName("QTableView_ScrollTo")]
 	public static extern void QTableView_ScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	
 	public function void QTableView_OnScrollTo_action(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QTableView_OnScrollTo")]
 	public static extern void QTableView_OnScrollTo(void* self, QTableView_OnScrollTo_action _action);
+	
+	[LinkName("QTableView_SuperScrollTo")]
+	public static extern void QTableView_SuperScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QTableView_IndexAt")]
 	public static extern void* QTableView_IndexAt(void* self, void** p);
 	
 	public function void QTableView_OnIndexAt_action(void* self, void** p);
 	[LinkName("QTableView_OnIndexAt")]
 	public static extern void* QTableView_OnIndexAt(void* self, QTableView_OnIndexAt_action _action);
+	
+	[LinkName("QTableView_SuperIndexAt")]
+	public static extern void* QTableView_SuperIndexAt(void* self, void** p);
 	[LinkName("QTableView_SetSpan")]
 	public static extern void QTableView_SetSpan(void* self, c_int row, c_int column, c_int rowSpan, c_int columnSpan);
 	[LinkName("QTableView_RowSpan")]
@@ -4965,114 +5559,171 @@ extension CQt
 	public function void QTableView_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QTableView_OnScrollContentsBy")]
 	public static extern void QTableView_OnScrollContentsBy(void* self, QTableView_OnScrollContentsBy_action _action);
+	
+	[LinkName("QTableView_SuperScrollContentsBy")]
+	public static extern void QTableView_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 	[LinkName("QTableView_InitViewItemOption")]
 	public static extern void QTableView_InitViewItemOption(void* self, void** option);
 	
 	public function void QTableView_OnInitViewItemOption_action(void* self, void** option);
 	[LinkName("QTableView_OnInitViewItemOption")]
 	public static extern void QTableView_OnInitViewItemOption(void* self, QTableView_OnInitViewItemOption_action _action);
+	
+	[LinkName("QTableView_SuperInitViewItemOption")]
+	public static extern void QTableView_SuperInitViewItemOption(void* self, void** option);
 	[LinkName("QTableView_PaintEvent")]
 	public static extern void QTableView_PaintEvent(void* self, void** e);
 	
 	public function void QTableView_OnPaintEvent_action(void* self, void** e);
 	[LinkName("QTableView_OnPaintEvent")]
 	public static extern void QTableView_OnPaintEvent(void* self, QTableView_OnPaintEvent_action _action);
+	
+	[LinkName("QTableView_SuperPaintEvent")]
+	public static extern void QTableView_SuperPaintEvent(void* self, void** e);
 	[LinkName("QTableView_TimerEvent")]
 	public static extern void QTableView_TimerEvent(void* self, void** event);
 	
 	public function void QTableView_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnTimerEvent")]
 	public static extern void QTableView_OnTimerEvent(void* self, QTableView_OnTimerEvent_action _action);
+	
+	[LinkName("QTableView_SuperTimerEvent")]
+	public static extern void QTableView_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTableView_HorizontalOffset")]
 	public static extern c_int QTableView_HorizontalOffset(void* self);
 	
 	public function void QTableView_OnHorizontalOffset_action(void* self);
 	[LinkName("QTableView_OnHorizontalOffset")]
 	public static extern c_int QTableView_OnHorizontalOffset(void* self, QTableView_OnHorizontalOffset_action _action);
+	
+	[LinkName("QTableView_SuperHorizontalOffset")]
+	public static extern c_int QTableView_SuperHorizontalOffset(void* self);
 	[LinkName("QTableView_VerticalOffset")]
 	public static extern c_int QTableView_VerticalOffset(void* self);
 	
 	public function void QTableView_OnVerticalOffset_action(void* self);
 	[LinkName("QTableView_OnVerticalOffset")]
 	public static extern c_int QTableView_OnVerticalOffset(void* self, QTableView_OnVerticalOffset_action _action);
+	
+	[LinkName("QTableView_SuperVerticalOffset")]
+	public static extern c_int QTableView_SuperVerticalOffset(void* self);
 	[LinkName("QTableView_MoveCursor")]
 	public static extern void* QTableView_MoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	
 	public function void QTableView_OnMoveCursor_action(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QTableView_OnMoveCursor")]
 	public static extern void* QTableView_OnMoveCursor(void* self, QTableView_OnMoveCursor_action _action);
+	
+	[LinkName("QTableView_SuperMoveCursor")]
+	public static extern void* QTableView_SuperMoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QTableView_SetSelection")]
 	public static extern void QTableView_SetSelection(void* self, void** rect, void* command);
 	
 	public function void QTableView_OnSetSelection_action(void* self, void** rect, void* command);
 	[LinkName("QTableView_OnSetSelection")]
 	public static extern void QTableView_OnSetSelection(void* self, QTableView_OnSetSelection_action _action);
+	
+	[LinkName("QTableView_SuperSetSelection")]
+	public static extern void QTableView_SuperSetSelection(void* self, void** rect, void* command);
 	[LinkName("QTableView_VisualRegionForSelection")]
 	public static extern void* QTableView_VisualRegionForSelection(void* self, void** selection);
 	
 	public function void QTableView_OnVisualRegionForSelection_action(void* self, void** selection);
 	[LinkName("QTableView_OnVisualRegionForSelection")]
 	public static extern void* QTableView_OnVisualRegionForSelection(void* self, QTableView_OnVisualRegionForSelection_action _action);
+	
+	[LinkName("QTableView_SuperVisualRegionForSelection")]
+	public static extern void* QTableView_SuperVisualRegionForSelection(void* self, void** selection);
 	[LinkName("QTableView_SelectedIndexes")]
 	public static extern void* QTableView_SelectedIndexes(void* self);
 	
 	public function void QTableView_OnSelectedIndexes_action(void* self);
 	[LinkName("QTableView_OnSelectedIndexes")]
 	public static extern void* QTableView_OnSelectedIndexes(void* self, QTableView_OnSelectedIndexes_action _action);
+	
+	[LinkName("QTableView_SuperSelectedIndexes")]
+	public static extern void* QTableView_SuperSelectedIndexes(void* self);
 	[LinkName("QTableView_UpdateGeometries")]
 	public static extern void QTableView_UpdateGeometries(void* self);
 	
 	public function void QTableView_OnUpdateGeometries_action(void* self);
 	[LinkName("QTableView_OnUpdateGeometries")]
 	public static extern void QTableView_OnUpdateGeometries(void* self, QTableView_OnUpdateGeometries_action _action);
+	
+	[LinkName("QTableView_SuperUpdateGeometries")]
+	public static extern void QTableView_SuperUpdateGeometries(void* self);
 	[LinkName("QTableView_ViewportSizeHint")]
 	public static extern void* QTableView_ViewportSizeHint(void* self);
 	
 	public function void QTableView_OnViewportSizeHint_action(void* self);
 	[LinkName("QTableView_OnViewportSizeHint")]
 	public static extern void* QTableView_OnViewportSizeHint(void* self, QTableView_OnViewportSizeHint_action _action);
+	
+	[LinkName("QTableView_SuperViewportSizeHint")]
+	public static extern void* QTableView_SuperViewportSizeHint(void* self);
 	[LinkName("QTableView_SizeHintForRow")]
 	public static extern c_int QTableView_SizeHintForRow(void* self, c_int row);
 	
 	public function void QTableView_OnSizeHintForRow_action(void* self, c_int row);
 	[LinkName("QTableView_OnSizeHintForRow")]
 	public static extern c_int QTableView_OnSizeHintForRow(void* self, QTableView_OnSizeHintForRow_action _action);
+	
+	[LinkName("QTableView_SuperSizeHintForRow")]
+	public static extern c_int QTableView_SuperSizeHintForRow(void* self, c_int row);
 	[LinkName("QTableView_SizeHintForColumn")]
 	public static extern c_int QTableView_SizeHintForColumn(void* self, c_int column);
 	
 	public function void QTableView_OnSizeHintForColumn_action(void* self, c_int column);
 	[LinkName("QTableView_OnSizeHintForColumn")]
 	public static extern c_int QTableView_OnSizeHintForColumn(void* self, QTableView_OnSizeHintForColumn_action _action);
+	
+	[LinkName("QTableView_SuperSizeHintForColumn")]
+	public static extern c_int QTableView_SuperSizeHintForColumn(void* self, c_int column);
 	[LinkName("QTableView_VerticalScrollbarAction")]
 	public static extern void QTableView_VerticalScrollbarAction(void* self, c_int action);
 	
 	public function void QTableView_OnVerticalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QTableView_OnVerticalScrollbarAction")]
 	public static extern void QTableView_OnVerticalScrollbarAction(void* self, QTableView_OnVerticalScrollbarAction_action _action);
+	
+	[LinkName("QTableView_SuperVerticalScrollbarAction")]
+	public static extern void QTableView_SuperVerticalScrollbarAction(void* self, c_int action);
 	[LinkName("QTableView_HorizontalScrollbarAction")]
 	public static extern void QTableView_HorizontalScrollbarAction(void* self, c_int action);
 	
 	public function void QTableView_OnHorizontalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QTableView_OnHorizontalScrollbarAction")]
 	public static extern void QTableView_OnHorizontalScrollbarAction(void* self, QTableView_OnHorizontalScrollbarAction_action _action);
+	
+	[LinkName("QTableView_SuperHorizontalScrollbarAction")]
+	public static extern void QTableView_SuperHorizontalScrollbarAction(void* self, c_int action);
 	[LinkName("QTableView_IsIndexHidden")]
 	public static extern bool QTableView_IsIndexHidden(void* self, void** index);
 	
 	public function void QTableView_OnIsIndexHidden_action(void* self, void** index);
 	[LinkName("QTableView_OnIsIndexHidden")]
 	public static extern bool QTableView_OnIsIndexHidden(void* self, QTableView_OnIsIndexHidden_action _action);
+	
+	[LinkName("QTableView_SuperIsIndexHidden")]
+	public static extern bool QTableView_SuperIsIndexHidden(void* self, void** index);
 	[LinkName("QTableView_SelectionChanged")]
 	public static extern void QTableView_SelectionChanged(void* self, void** selected, void** deselected);
 	
 	public function void QTableView_OnSelectionChanged_action(void* self, void** selected, void** deselected);
 	[LinkName("QTableView_OnSelectionChanged")]
 	public static extern void QTableView_OnSelectionChanged(void* self, QTableView_OnSelectionChanged_action _action);
+	
+	[LinkName("QTableView_SuperSelectionChanged")]
+	public static extern void QTableView_SuperSelectionChanged(void* self, void** selected, void** deselected);
 	[LinkName("QTableView_CurrentChanged")]
 	public static extern void QTableView_CurrentChanged(void* self, void** current, void** previous);
 	
 	public function void QTableView_OnCurrentChanged_action(void* self, void** current, void** previous);
 	[LinkName("QTableView_OnCurrentChanged")]
 	public static extern void QTableView_OnCurrentChanged(void* self, QTableView_OnCurrentChanged_action _action);
+	
+	[LinkName("QTableView_SuperCurrentChanged")]
+	public static extern void QTableView_SuperCurrentChanged(void* self, void** current, void** previous);
 	[LinkName("QTableView_Tr2")]
 	public static extern libqt_string QTableView_Tr2(c_char* s, c_char* c);
 	[LinkName("QTableView_Tr3")]
@@ -5083,388 +5734,583 @@ extension CQt
 	public function void QTableView_OnEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnEvent")]
 	public static extern bool QTableView_OnEvent(void* self, QTableView_OnEvent_action _action);
+	
+	[LinkName("QTableView_SuperEvent")]
+	public static extern bool QTableView_SuperEvent(void* self, void** event);
 	[LinkName("QTableView_EventFilter")]
 	public static extern bool QTableView_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTableView_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTableView_OnEventFilter")]
 	public static extern bool QTableView_OnEventFilter(void* self, QTableView_OnEventFilter_action _action);
+	
+	[LinkName("QTableView_SuperEventFilter")]
+	public static extern bool QTableView_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTableView_ChildEvent")]
 	public static extern void QTableView_ChildEvent(void* self, void** event);
 	
 	public function void QTableView_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnChildEvent")]
 	public static extern void QTableView_OnChildEvent(void* self, QTableView_OnChildEvent_action _action);
+	
+	[LinkName("QTableView_SuperChildEvent")]
+	public static extern void QTableView_SuperChildEvent(void* self, void** event);
 	[LinkName("QTableView_CustomEvent")]
 	public static extern void QTableView_CustomEvent(void* self, void** event);
 	
 	public function void QTableView_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnCustomEvent")]
 	public static extern void QTableView_OnCustomEvent(void* self, QTableView_OnCustomEvent_action _action);
+	
+	[LinkName("QTableView_SuperCustomEvent")]
+	public static extern void QTableView_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTableView_ConnectNotify")]
 	public static extern void QTableView_ConnectNotify(void* self, void** signal);
 	
 	public function void QTableView_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTableView_OnConnectNotify")]
 	public static extern void QTableView_OnConnectNotify(void* self, QTableView_OnConnectNotify_action _action);
+	
+	[LinkName("QTableView_SuperConnectNotify")]
+	public static extern void QTableView_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTableView_DisconnectNotify")]
 	public static extern void QTableView_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTableView_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTableView_OnDisconnectNotify")]
 	public static extern void QTableView_OnDisconnectNotify(void* self, QTableView_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTableView_SuperDisconnectNotify")]
+	public static extern void QTableView_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QTableView_DevType")]
 	public static extern c_int QTableView_DevType(void* self);
 	
 	public function void QTableView_OnDevType_action(void* self);
 	[LinkName("QTableView_OnDevType")]
 	public static extern c_int QTableView_OnDevType(void* self, QTableView_OnDevType_action _action);
+	
+	[LinkName("QTableView_SuperDevType")]
+	public static extern c_int QTableView_SuperDevType(void* self);
 	[LinkName("QTableView_PaintEngine")]
 	public static extern void** QTableView_PaintEngine(void* self);
 	
 	public function void QTableView_OnPaintEngine_action(void* self);
 	[LinkName("QTableView_OnPaintEngine")]
 	public static extern void** QTableView_OnPaintEngine(void* self, QTableView_OnPaintEngine_action _action);
+	
+	[LinkName("QTableView_SuperPaintEngine")]
+	public static extern void** QTableView_SuperPaintEngine(void* self);
 	[LinkName("QTableView_Metric")]
 	public static extern c_int QTableView_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QTableView_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTableView_OnMetric")]
 	public static extern c_int QTableView_OnMetric(void* self, QTableView_OnMetric_action _action);
+	
+	[LinkName("QTableView_SuperMetric")]
+	public static extern c_int QTableView_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTableView_InitPainter")]
 	public static extern void QTableView_InitPainter(void* self, void** painter);
 	
 	public function void QTableView_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QTableView_OnInitPainter")]
 	public static extern void QTableView_OnInitPainter(void* self, QTableView_OnInitPainter_action _action);
+	
+	[LinkName("QTableView_SuperInitPainter")]
+	public static extern void QTableView_SuperInitPainter(void* self, void** painter);
 	[LinkName("QTableView_Redirected")]
 	public static extern void** QTableView_Redirected(void* self, void** offset);
 	
 	public function void QTableView_OnRedirected_action(void* self, void** offset);
 	[LinkName("QTableView_OnRedirected")]
 	public static extern void** QTableView_OnRedirected(void* self, QTableView_OnRedirected_action _action);
+	
+	[LinkName("QTableView_SuperRedirected")]
+	public static extern void** QTableView_SuperRedirected(void* self, void** offset);
 	[LinkName("QTableView_SharedPainter")]
 	public static extern void** QTableView_SharedPainter(void* self);
 	
 	public function void QTableView_OnSharedPainter_action(void* self);
 	[LinkName("QTableView_OnSharedPainter")]
 	public static extern void** QTableView_OnSharedPainter(void* self, QTableView_OnSharedPainter_action _action);
+	
+	[LinkName("QTableView_SuperSharedPainter")]
+	public static extern void** QTableView_SuperSharedPainter(void* self);
 	[LinkName("QTableView_SetVisible")]
 	public static extern void QTableView_SetVisible(void* self, bool visible);
 	
 	public function void QTableView_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QTableView_OnSetVisible")]
 	public static extern void QTableView_OnSetVisible(void* self, QTableView_OnSetVisible_action _action);
+	
+	[LinkName("QTableView_SuperSetVisible")]
+	public static extern void QTableView_SuperSetVisible(void* self, bool visible);
 	[LinkName("QTableView_SizeHint")]
 	public static extern void* QTableView_SizeHint(void* self);
 	
 	public function void QTableView_OnSizeHint_action(void* self);
 	[LinkName("QTableView_OnSizeHint")]
 	public static extern void* QTableView_OnSizeHint(void* self, QTableView_OnSizeHint_action _action);
+	
+	[LinkName("QTableView_SuperSizeHint")]
+	public static extern void* QTableView_SuperSizeHint(void* self);
 	[LinkName("QTableView_MinimumSizeHint")]
 	public static extern void* QTableView_MinimumSizeHint(void* self);
 	
 	public function void QTableView_OnMinimumSizeHint_action(void* self);
 	[LinkName("QTableView_OnMinimumSizeHint")]
 	public static extern void* QTableView_OnMinimumSizeHint(void* self, QTableView_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QTableView_SuperMinimumSizeHint")]
+	public static extern void* QTableView_SuperMinimumSizeHint(void* self);
 	[LinkName("QTableView_HeightForWidth")]
 	public static extern c_int QTableView_HeightForWidth(void* self, c_int param1);
 	
 	public function void QTableView_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QTableView_OnHeightForWidth")]
 	public static extern c_int QTableView_OnHeightForWidth(void* self, QTableView_OnHeightForWidth_action _action);
+	
+	[LinkName("QTableView_SuperHeightForWidth")]
+	public static extern c_int QTableView_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QTableView_HasHeightForWidth")]
 	public static extern bool QTableView_HasHeightForWidth(void* self);
 	
 	public function void QTableView_OnHasHeightForWidth_action(void* self);
 	[LinkName("QTableView_OnHasHeightForWidth")]
 	public static extern bool QTableView_OnHasHeightForWidth(void* self, QTableView_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QTableView_SuperHasHeightForWidth")]
+	public static extern bool QTableView_SuperHasHeightForWidth(void* self);
 	[LinkName("QTableView_MousePressEvent")]
 	public static extern void QTableView_MousePressEvent(void* self, void** event);
 	
 	public function void QTableView_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnMousePressEvent")]
 	public static extern void QTableView_OnMousePressEvent(void* self, QTableView_OnMousePressEvent_action _action);
+	
+	[LinkName("QTableView_SuperMousePressEvent")]
+	public static extern void QTableView_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QTableView_MouseReleaseEvent")]
 	public static extern void QTableView_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QTableView_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnMouseReleaseEvent")]
 	public static extern void QTableView_OnMouseReleaseEvent(void* self, QTableView_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QTableView_SuperMouseReleaseEvent")]
+	public static extern void QTableView_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QTableView_MouseDoubleClickEvent")]
 	public static extern void QTableView_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QTableView_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnMouseDoubleClickEvent")]
 	public static extern void QTableView_OnMouseDoubleClickEvent(void* self, QTableView_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QTableView_SuperMouseDoubleClickEvent")]
+	public static extern void QTableView_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QTableView_MouseMoveEvent")]
 	public static extern void QTableView_MouseMoveEvent(void* self, void** event);
 	
 	public function void QTableView_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnMouseMoveEvent")]
 	public static extern void QTableView_OnMouseMoveEvent(void* self, QTableView_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QTableView_SuperMouseMoveEvent")]
+	public static extern void QTableView_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QTableView_WheelEvent")]
 	public static extern void QTableView_WheelEvent(void* self, void** event);
 	
 	public function void QTableView_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnWheelEvent")]
 	public static extern void QTableView_OnWheelEvent(void* self, QTableView_OnWheelEvent_action _action);
+	
+	[LinkName("QTableView_SuperWheelEvent")]
+	public static extern void QTableView_SuperWheelEvent(void* self, void** event);
 	[LinkName("QTableView_KeyPressEvent")]
 	public static extern void QTableView_KeyPressEvent(void* self, void** event);
 	
 	public function void QTableView_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnKeyPressEvent")]
 	public static extern void QTableView_OnKeyPressEvent(void* self, QTableView_OnKeyPressEvent_action _action);
+	
+	[LinkName("QTableView_SuperKeyPressEvent")]
+	public static extern void QTableView_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QTableView_KeyReleaseEvent")]
 	public static extern void QTableView_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QTableView_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnKeyReleaseEvent")]
 	public static extern void QTableView_OnKeyReleaseEvent(void* self, QTableView_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QTableView_SuperKeyReleaseEvent")]
+	public static extern void QTableView_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QTableView_FocusInEvent")]
 	public static extern void QTableView_FocusInEvent(void* self, void** event);
 	
 	public function void QTableView_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnFocusInEvent")]
 	public static extern void QTableView_OnFocusInEvent(void* self, QTableView_OnFocusInEvent_action _action);
+	
+	[LinkName("QTableView_SuperFocusInEvent")]
+	public static extern void QTableView_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QTableView_FocusOutEvent")]
 	public static extern void QTableView_FocusOutEvent(void* self, void** event);
 	
 	public function void QTableView_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnFocusOutEvent")]
 	public static extern void QTableView_OnFocusOutEvent(void* self, QTableView_OnFocusOutEvent_action _action);
+	
+	[LinkName("QTableView_SuperFocusOutEvent")]
+	public static extern void QTableView_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QTableView_EnterEvent")]
 	public static extern void QTableView_EnterEvent(void* self, void** event);
 	
 	public function void QTableView_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnEnterEvent")]
 	public static extern void QTableView_OnEnterEvent(void* self, QTableView_OnEnterEvent_action _action);
+	
+	[LinkName("QTableView_SuperEnterEvent")]
+	public static extern void QTableView_SuperEnterEvent(void* self, void** event);
 	[LinkName("QTableView_LeaveEvent")]
 	public static extern void QTableView_LeaveEvent(void* self, void** event);
 	
 	public function void QTableView_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnLeaveEvent")]
 	public static extern void QTableView_OnLeaveEvent(void* self, QTableView_OnLeaveEvent_action _action);
+	
+	[LinkName("QTableView_SuperLeaveEvent")]
+	public static extern void QTableView_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QTableView_MoveEvent")]
 	public static extern void QTableView_MoveEvent(void* self, void** event);
 	
 	public function void QTableView_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnMoveEvent")]
 	public static extern void QTableView_OnMoveEvent(void* self, QTableView_OnMoveEvent_action _action);
+	
+	[LinkName("QTableView_SuperMoveEvent")]
+	public static extern void QTableView_SuperMoveEvent(void* self, void** event);
 	[LinkName("QTableView_ResizeEvent")]
 	public static extern void QTableView_ResizeEvent(void* self, void** event);
 	
 	public function void QTableView_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnResizeEvent")]
 	public static extern void QTableView_OnResizeEvent(void* self, QTableView_OnResizeEvent_action _action);
+	
+	[LinkName("QTableView_SuperResizeEvent")]
+	public static extern void QTableView_SuperResizeEvent(void* self, void** event);
 	[LinkName("QTableView_CloseEvent")]
 	public static extern void QTableView_CloseEvent(void* self, void** event);
 	
 	public function void QTableView_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnCloseEvent")]
 	public static extern void QTableView_OnCloseEvent(void* self, QTableView_OnCloseEvent_action _action);
+	
+	[LinkName("QTableView_SuperCloseEvent")]
+	public static extern void QTableView_SuperCloseEvent(void* self, void** event);
 	[LinkName("QTableView_ContextMenuEvent")]
 	public static extern void QTableView_ContextMenuEvent(void* self, void** event);
 	
 	public function void QTableView_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnContextMenuEvent")]
 	public static extern void QTableView_OnContextMenuEvent(void* self, QTableView_OnContextMenuEvent_action _action);
+	
+	[LinkName("QTableView_SuperContextMenuEvent")]
+	public static extern void QTableView_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QTableView_TabletEvent")]
 	public static extern void QTableView_TabletEvent(void* self, void** event);
 	
 	public function void QTableView_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnTabletEvent")]
 	public static extern void QTableView_OnTabletEvent(void* self, QTableView_OnTabletEvent_action _action);
+	
+	[LinkName("QTableView_SuperTabletEvent")]
+	public static extern void QTableView_SuperTabletEvent(void* self, void** event);
 	[LinkName("QTableView_ActionEvent")]
 	public static extern void QTableView_ActionEvent(void* self, void** event);
 	
 	public function void QTableView_OnActionEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnActionEvent")]
 	public static extern void QTableView_OnActionEvent(void* self, QTableView_OnActionEvent_action _action);
+	
+	[LinkName("QTableView_SuperActionEvent")]
+	public static extern void QTableView_SuperActionEvent(void* self, void** event);
 	[LinkName("QTableView_DragEnterEvent")]
 	public static extern void QTableView_DragEnterEvent(void* self, void** event);
 	
 	public function void QTableView_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnDragEnterEvent")]
 	public static extern void QTableView_OnDragEnterEvent(void* self, QTableView_OnDragEnterEvent_action _action);
+	
+	[LinkName("QTableView_SuperDragEnterEvent")]
+	public static extern void QTableView_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QTableView_DragMoveEvent")]
 	public static extern void QTableView_DragMoveEvent(void* self, void** event);
 	
 	public function void QTableView_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnDragMoveEvent")]
 	public static extern void QTableView_OnDragMoveEvent(void* self, QTableView_OnDragMoveEvent_action _action);
+	
+	[LinkName("QTableView_SuperDragMoveEvent")]
+	public static extern void QTableView_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QTableView_DragLeaveEvent")]
 	public static extern void QTableView_DragLeaveEvent(void* self, void** event);
 	
 	public function void QTableView_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnDragLeaveEvent")]
 	public static extern void QTableView_OnDragLeaveEvent(void* self, QTableView_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QTableView_SuperDragLeaveEvent")]
+	public static extern void QTableView_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QTableView_DropEvent")]
 	public static extern void QTableView_DropEvent(void* self, void** event);
 	
 	public function void QTableView_OnDropEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnDropEvent")]
 	public static extern void QTableView_OnDropEvent(void* self, QTableView_OnDropEvent_action _action);
+	
+	[LinkName("QTableView_SuperDropEvent")]
+	public static extern void QTableView_SuperDropEvent(void* self, void** event);
 	[LinkName("QTableView_ShowEvent")]
 	public static extern void QTableView_ShowEvent(void* self, void** event);
 	
 	public function void QTableView_OnShowEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnShowEvent")]
 	public static extern void QTableView_OnShowEvent(void* self, QTableView_OnShowEvent_action _action);
+	
+	[LinkName("QTableView_SuperShowEvent")]
+	public static extern void QTableView_SuperShowEvent(void* self, void** event);
 	[LinkName("QTableView_HideEvent")]
 	public static extern void QTableView_HideEvent(void* self, void** event);
 	
 	public function void QTableView_OnHideEvent_action(void* self, void** event);
 	[LinkName("QTableView_OnHideEvent")]
 	public static extern void QTableView_OnHideEvent(void* self, QTableView_OnHideEvent_action _action);
+	
+	[LinkName("QTableView_SuperHideEvent")]
+	public static extern void QTableView_SuperHideEvent(void* self, void** event);
 	[LinkName("QTableView_NativeEvent")]
 	public static extern bool QTableView_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QTableView_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTableView_OnNativeEvent")]
 	public static extern bool QTableView_OnNativeEvent(void* self, QTableView_OnNativeEvent_action _action);
+	
+	[LinkName("QTableView_SuperNativeEvent")]
+	public static extern bool QTableView_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTableView_ChangeEvent")]
 	public static extern void QTableView_ChangeEvent(void* self, void** param1);
 	
 	public function void QTableView_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QTableView_OnChangeEvent")]
 	public static extern void QTableView_OnChangeEvent(void* self, QTableView_OnChangeEvent_action _action);
+	
+	[LinkName("QTableView_SuperChangeEvent")]
+	public static extern void QTableView_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QTableView_InputMethodEvent")]
 	public static extern void QTableView_InputMethodEvent(void* self, void** param1);
 	
 	public function void QTableView_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QTableView_OnInputMethodEvent")]
 	public static extern void QTableView_OnInputMethodEvent(void* self, QTableView_OnInputMethodEvent_action _action);
+	
+	[LinkName("QTableView_SuperInputMethodEvent")]
+	public static extern void QTableView_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QTableView_InputMethodQuery")]
 	public static extern void* QTableView_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QTableView_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTableView_OnInputMethodQuery")]
 	public static extern void* QTableView_OnInputMethodQuery(void* self, QTableView_OnInputMethodQuery_action _action);
+	
+	[LinkName("QTableView_SuperInputMethodQuery")]
+	public static extern void* QTableView_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTableView_FocusNextPrevChild")]
 	public static extern bool QTableView_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QTableView_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QTableView_OnFocusNextPrevChild")]
 	public static extern bool QTableView_OnFocusNextPrevChild(void* self, QTableView_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QTableView_SuperFocusNextPrevChild")]
+	public static extern bool QTableView_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QTableView_InitStyleOption")]
 	public static extern void QTableView_InitStyleOption(void* self, void** option);
 	
 	public function void QTableView_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QTableView_OnInitStyleOption")]
 	public static extern void QTableView_OnInitStyleOption(void* self, QTableView_OnInitStyleOption_action _action);
+	
+	[LinkName("QTableView_SuperInitStyleOption")]
+	public static extern void QTableView_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QTableView_SetupViewport")]
 	public static extern void QTableView_SetupViewport(void* self, void** viewport);
 	
 	public function void QTableView_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QTableView_OnSetupViewport")]
 	public static extern void QTableView_OnSetupViewport(void* self, QTableView_OnSetupViewport_action _action);
+	
+	[LinkName("QTableView_SuperSetupViewport")]
+	public static extern void QTableView_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QTableView_ViewportEvent")]
 	public static extern bool QTableView_ViewportEvent(void* self, void** param1);
 	
 	public function void QTableView_OnViewportEvent_action(void* self, void** param1);
 	[LinkName("QTableView_OnViewportEvent")]
 	public static extern bool QTableView_OnViewportEvent(void* self, QTableView_OnViewportEvent_action _action);
+	
+	[LinkName("QTableView_SuperViewportEvent")]
+	public static extern bool QTableView_SuperViewportEvent(void* self, void** param1);
 	[LinkName("QTableView_KeyboardSearch")]
 	public static extern void QTableView_KeyboardSearch(void* self, libqt_string search);
 	
 	public function void QTableView_OnKeyboardSearch_action(void* self, libqt_string search);
 	[LinkName("QTableView_OnKeyboardSearch")]
 	public static extern void QTableView_OnKeyboardSearch(void* self, QTableView_OnKeyboardSearch_action _action);
+	
+	[LinkName("QTableView_SuperKeyboardSearch")]
+	public static extern void QTableView_SuperKeyboardSearch(void* self, libqt_string search);
 	[LinkName("QTableView_ItemDelegateForIndex")]
 	public static extern void** QTableView_ItemDelegateForIndex(void* self, void** index);
 	
 	public function void QTableView_OnItemDelegateForIndex_action(void* self, void** index);
 	[LinkName("QTableView_OnItemDelegateForIndex")]
 	public static extern void** QTableView_OnItemDelegateForIndex(void* self, QTableView_OnItemDelegateForIndex_action _action);
+	
+	[LinkName("QTableView_SuperItemDelegateForIndex")]
+	public static extern void** QTableView_SuperItemDelegateForIndex(void* self, void** index);
 	[LinkName("QTableView_Reset")]
 	public static extern void QTableView_Reset(void* self);
 	
 	public function void QTableView_OnReset_action(void* self);
 	[LinkName("QTableView_OnReset")]
 	public static extern void QTableView_OnReset(void* self, QTableView_OnReset_action _action);
+	
+	[LinkName("QTableView_SuperReset")]
+	public static extern void QTableView_SuperReset(void* self);
 	[LinkName("QTableView_SelectAll")]
 	public static extern void QTableView_SelectAll(void* self);
 	
 	public function void QTableView_OnSelectAll_action(void* self);
 	[LinkName("QTableView_OnSelectAll")]
 	public static extern void QTableView_OnSelectAll(void* self, QTableView_OnSelectAll_action _action);
+	
+	[LinkName("QTableView_SuperSelectAll")]
+	public static extern void QTableView_SuperSelectAll(void* self);
 	[LinkName("QTableView_DataChanged")]
 	public static extern void QTableView_DataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	
 	public function void QTableView_OnDataChanged_action(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QTableView_OnDataChanged")]
 	public static extern void QTableView_OnDataChanged(void* self, QTableView_OnDataChanged_action _action);
+	
+	[LinkName("QTableView_SuperDataChanged")]
+	public static extern void QTableView_SuperDataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QTableView_RowsInserted")]
 	public static extern void QTableView_RowsInserted(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QTableView_OnRowsInserted_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QTableView_OnRowsInserted")]
 	public static extern void QTableView_OnRowsInserted(void* self, QTableView_OnRowsInserted_action _action);
+	
+	[LinkName("QTableView_SuperRowsInserted")]
+	public static extern void QTableView_SuperRowsInserted(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QTableView_RowsAboutToBeRemoved")]
 	public static extern void QTableView_RowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QTableView_OnRowsAboutToBeRemoved_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QTableView_OnRowsAboutToBeRemoved")]
 	public static extern void QTableView_OnRowsAboutToBeRemoved(void* self, QTableView_OnRowsAboutToBeRemoved_action _action);
+	
+	[LinkName("QTableView_SuperRowsAboutToBeRemoved")]
+	public static extern void QTableView_SuperRowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QTableView_UpdateEditorData")]
 	public static extern void QTableView_UpdateEditorData(void* self);
 	
 	public function void QTableView_OnUpdateEditorData_action(void* self);
 	[LinkName("QTableView_OnUpdateEditorData")]
 	public static extern void QTableView_OnUpdateEditorData(void* self, QTableView_OnUpdateEditorData_action _action);
+	
+	[LinkName("QTableView_SuperUpdateEditorData")]
+	public static extern void QTableView_SuperUpdateEditorData(void* self);
 	[LinkName("QTableView_UpdateEditorGeometries")]
 	public static extern void QTableView_UpdateEditorGeometries(void* self);
 	
 	public function void QTableView_OnUpdateEditorGeometries_action(void* self);
 	[LinkName("QTableView_OnUpdateEditorGeometries")]
 	public static extern void QTableView_OnUpdateEditorGeometries(void* self, QTableView_OnUpdateEditorGeometries_action _action);
+	
+	[LinkName("QTableView_SuperUpdateEditorGeometries")]
+	public static extern void QTableView_SuperUpdateEditorGeometries(void* self);
 	[LinkName("QTableView_VerticalScrollbarValueChanged")]
 	public static extern void QTableView_VerticalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QTableView_OnVerticalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QTableView_OnVerticalScrollbarValueChanged")]
 	public static extern void QTableView_OnVerticalScrollbarValueChanged(void* self, QTableView_OnVerticalScrollbarValueChanged_action _action);
+	
+	[LinkName("QTableView_SuperVerticalScrollbarValueChanged")]
+	public static extern void QTableView_SuperVerticalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QTableView_HorizontalScrollbarValueChanged")]
 	public static extern void QTableView_HorizontalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QTableView_OnHorizontalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QTableView_OnHorizontalScrollbarValueChanged")]
 	public static extern void QTableView_OnHorizontalScrollbarValueChanged(void* self, QTableView_OnHorizontalScrollbarValueChanged_action _action);
+	
+	[LinkName("QTableView_SuperHorizontalScrollbarValueChanged")]
+	public static extern void QTableView_SuperHorizontalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QTableView_CloseEditor")]
 	public static extern void QTableView_CloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	
 	public function void QTableView_OnCloseEditor_action(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QTableView_OnCloseEditor")]
 	public static extern void QTableView_OnCloseEditor(void* self, QTableView_OnCloseEditor_action _action);
+	
+	[LinkName("QTableView_SuperCloseEditor")]
+	public static extern void QTableView_SuperCloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QTableView_CommitData")]
 	public static extern void QTableView_CommitData(void* self, void** editor);
 	
 	public function void QTableView_OnCommitData_action(void* self, void** editor);
 	[LinkName("QTableView_OnCommitData")]
 	public static extern void QTableView_OnCommitData(void* self, QTableView_OnCommitData_action _action);
+	
+	[LinkName("QTableView_SuperCommitData")]
+	public static extern void QTableView_SuperCommitData(void* self, void** editor);
 	[LinkName("QTableView_EditorDestroyed")]
 	public static extern void QTableView_EditorDestroyed(void* self, void** editor);
 	
 	public function void QTableView_OnEditorDestroyed_action(void* self, void** editor);
 	[LinkName("QTableView_OnEditorDestroyed")]
 	public static extern void QTableView_OnEditorDestroyed(void* self, QTableView_OnEditorDestroyed_action _action);
+	
+	[LinkName("QTableView_SuperEditorDestroyed")]
+	public static extern void QTableView_SuperEditorDestroyed(void* self, void** editor);
 	[LinkName("QTableView_Edit2")]
 	public static extern bool QTableView_Edit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	
 	public function void QTableView_OnEdit2_action(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QTableView_OnEdit2")]
 	public static extern bool QTableView_OnEdit2(void* self, QTableView_OnEdit2_action _action);
+	
+	[LinkName("QTableView_SuperEdit2")]
+	public static extern bool QTableView_SuperEdit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QTableView_SelectionCommand")]
 	public static extern void* QTableView_SelectionCommand(void* self, void** index, void** event);
 	
 	public function void QTableView_OnSelectionCommand_action(void* self, void** index, void** event);
 	[LinkName("QTableView_OnSelectionCommand")]
 	public static extern void* QTableView_OnSelectionCommand(void* self, QTableView_OnSelectionCommand_action _action);
+	
+	[LinkName("QTableView_SuperSelectionCommand")]
+	public static extern void* QTableView_SuperSelectionCommand(void* self, void** index, void** event);
 	[LinkName("QTableView_StartDrag")]
 	public static extern void QTableView_StartDrag(void* self, void* supportedActions);
 	
 	public function void QTableView_OnStartDrag_action(void* self, void* supportedActions);
 	[LinkName("QTableView_OnStartDrag")]
 	public static extern void QTableView_OnStartDrag(void* self, QTableView_OnStartDrag_action _action);
+	
+	[LinkName("QTableView_SuperStartDrag")]
+	public static extern void QTableView_SuperStartDrag(void* self, void* supportedActions);
 }

@@ -332,6 +332,17 @@ class QSyntaxHighlighter : IQSyntaxHighlighter, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QSyntaxHighlighter_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnMetaObject);
+		CQt.QSyntaxHighlighter_OnMetacast(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnMetacast);
+		CQt.QSyntaxHighlighter_OnMetacall(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnMetacall);
+		CQt.QSyntaxHighlighter_OnHighlightBlock(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnHighlightBlock);
+		CQt.QSyntaxHighlighter_OnEvent(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnEvent);
+		CQt.QSyntaxHighlighter_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnEventFilter);
+		CQt.QSyntaxHighlighter_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnTimerEvent);
+		CQt.QSyntaxHighlighter_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnChildEvent);
+		CQt.QSyntaxHighlighter_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnCustomEvent);
+		CQt.QSyntaxHighlighter_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnConnectNotify);
+		CQt.QSyntaxHighlighter_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSyntaxHighlighter_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -344,6 +355,61 @@ class QSyntaxHighlighter : IQSyntaxHighlighter, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSyntaxHighlighter_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnHighlightBlock(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHighlightBlock(text);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSyntaxHighlighter_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QSyntaxHighlighter_Ptr ptr)
 	{
@@ -684,18 +750,27 @@ extension CQt
 	public function void QSyntaxHighlighter_OnMetaObject_action(void* self);
 	[LinkName("QSyntaxHighlighter_OnMetaObject")]
 	public static extern void** QSyntaxHighlighter_OnMetaObject(void* self, QSyntaxHighlighter_OnMetaObject_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperMetaObject")]
+	public static extern void** QSyntaxHighlighter_SuperMetaObject(void* self);
 	[LinkName("QSyntaxHighlighter_Qt_Metacast")]
 	public static extern void* QSyntaxHighlighter_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSyntaxHighlighter_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSyntaxHighlighter_OnMetacast")]
 	public static extern void* QSyntaxHighlighter_OnMetacast(void* self, QSyntaxHighlighter_OnMetacast_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperMetacast")]
+	public static extern void* QSyntaxHighlighter_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSyntaxHighlighter_Qt_Metacall")]
 	public static extern c_int QSyntaxHighlighter_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSyntaxHighlighter_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSyntaxHighlighter_OnMetacall")]
 	public static extern c_int QSyntaxHighlighter_OnMetacall(void* self, QSyntaxHighlighter_OnMetacall_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperMetacall")]
+	public static extern c_int QSyntaxHighlighter_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSyntaxHighlighter_Tr")]
 	public static extern libqt_string QSyntaxHighlighter_Tr(c_char* s);
 	[LinkName("QSyntaxHighlighter_SetDocument")]
@@ -712,6 +787,9 @@ extension CQt
 	public function void QSyntaxHighlighter_OnHighlightBlock_action(void* self, libqt_string text);
 	[LinkName("QSyntaxHighlighter_OnHighlightBlock")]
 	public static extern void QSyntaxHighlighter_OnHighlightBlock(void* self, QSyntaxHighlighter_OnHighlightBlock_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperHighlightBlock")]
+	public static extern void QSyntaxHighlighter_SuperHighlightBlock(void* self, libqt_string text);
 	[LinkName("QSyntaxHighlighter_SetFormat")]
 	public static extern void QSyntaxHighlighter_SetFormat(void* self, c_int start, c_int count, void** format);
 	[LinkName("QSyntaxHighlighter_SetFormat2")]
@@ -742,40 +820,61 @@ extension CQt
 	public function void QSyntaxHighlighter_OnEvent_action(void* self, void** event);
 	[LinkName("QSyntaxHighlighter_OnEvent")]
 	public static extern bool QSyntaxHighlighter_OnEvent(void* self, QSyntaxHighlighter_OnEvent_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperEvent")]
+	public static extern bool QSyntaxHighlighter_SuperEvent(void* self, void** event);
 	[LinkName("QSyntaxHighlighter_EventFilter")]
 	public static extern bool QSyntaxHighlighter_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QSyntaxHighlighter_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSyntaxHighlighter_OnEventFilter")]
 	public static extern bool QSyntaxHighlighter_OnEventFilter(void* self, QSyntaxHighlighter_OnEventFilter_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperEventFilter")]
+	public static extern bool QSyntaxHighlighter_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSyntaxHighlighter_TimerEvent")]
 	public static extern void QSyntaxHighlighter_TimerEvent(void* self, void** event);
 	
 	public function void QSyntaxHighlighter_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSyntaxHighlighter_OnTimerEvent")]
 	public static extern void QSyntaxHighlighter_OnTimerEvent(void* self, QSyntaxHighlighter_OnTimerEvent_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperTimerEvent")]
+	public static extern void QSyntaxHighlighter_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSyntaxHighlighter_ChildEvent")]
 	public static extern void QSyntaxHighlighter_ChildEvent(void* self, void** event);
 	
 	public function void QSyntaxHighlighter_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSyntaxHighlighter_OnChildEvent")]
 	public static extern void QSyntaxHighlighter_OnChildEvent(void* self, QSyntaxHighlighter_OnChildEvent_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperChildEvent")]
+	public static extern void QSyntaxHighlighter_SuperChildEvent(void* self, void** event);
 	[LinkName("QSyntaxHighlighter_CustomEvent")]
 	public static extern void QSyntaxHighlighter_CustomEvent(void* self, void** event);
 	
 	public function void QSyntaxHighlighter_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSyntaxHighlighter_OnCustomEvent")]
 	public static extern void QSyntaxHighlighter_OnCustomEvent(void* self, QSyntaxHighlighter_OnCustomEvent_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperCustomEvent")]
+	public static extern void QSyntaxHighlighter_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSyntaxHighlighter_ConnectNotify")]
 	public static extern void QSyntaxHighlighter_ConnectNotify(void* self, void** signal);
 	
 	public function void QSyntaxHighlighter_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSyntaxHighlighter_OnConnectNotify")]
 	public static extern void QSyntaxHighlighter_OnConnectNotify(void* self, QSyntaxHighlighter_OnConnectNotify_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperConnectNotify")]
+	public static extern void QSyntaxHighlighter_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSyntaxHighlighter_DisconnectNotify")]
 	public static extern void QSyntaxHighlighter_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSyntaxHighlighter_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSyntaxHighlighter_OnDisconnectNotify")]
 	public static extern void QSyntaxHighlighter_OnDisconnectNotify(void* self, QSyntaxHighlighter_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSyntaxHighlighter_SuperDisconnectNotify")]
+	public static extern void QSyntaxHighlighter_SuperDisconnectNotify(void* self, void** signal);
 }

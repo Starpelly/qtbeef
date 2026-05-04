@@ -296,6 +296,16 @@ class QSocketNotifier : IQSocketNotifier, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QSocketNotifier_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnMetaObject);
+		CQt.QSocketNotifier_OnMetacast(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnMetacast);
+		CQt.QSocketNotifier_OnMetacall(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnMetacall);
+		CQt.QSocketNotifier_OnEvent(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnEvent);
+		CQt.QSocketNotifier_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnEventFilter);
+		CQt.QSocketNotifier_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnTimerEvent);
+		CQt.QSocketNotifier_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnChildEvent);
+		CQt.QSocketNotifier_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnCustomEvent);
+		CQt.QSocketNotifier_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnConnectNotify);
+		CQt.QSocketNotifier_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSocketNotifier_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -308,6 +318,56 @@ class QSocketNotifier : IQSocketNotifier, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QSocketNotifier_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSocketNotifier_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSocketNotifier_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSocketNotifier_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QSocketNotifier_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSocketNotifier_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSocketNotifier_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSocketNotifier_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSocketNotifier_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSocketNotifier_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QSocketNotifier_Ptr ptr)
 	{
@@ -627,18 +687,27 @@ extension CQt
 	public function void QSocketNotifier_OnMetaObject_action(void* self);
 	[LinkName("QSocketNotifier_OnMetaObject")]
 	public static extern void** QSocketNotifier_OnMetaObject(void* self, QSocketNotifier_OnMetaObject_action _action);
+	
+	[LinkName("QSocketNotifier_SuperMetaObject")]
+	public static extern void** QSocketNotifier_SuperMetaObject(void* self);
 	[LinkName("QSocketNotifier_Qt_Metacast")]
 	public static extern void* QSocketNotifier_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSocketNotifier_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSocketNotifier_OnMetacast")]
 	public static extern void* QSocketNotifier_OnMetacast(void* self, QSocketNotifier_OnMetacast_action _action);
+	
+	[LinkName("QSocketNotifier_SuperMetacast")]
+	public static extern void* QSocketNotifier_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSocketNotifier_Qt_Metacall")]
 	public static extern c_int QSocketNotifier_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSocketNotifier_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSocketNotifier_OnMetacall")]
 	public static extern c_int QSocketNotifier_OnMetacall(void* self, QSocketNotifier_OnMetacall_action _action);
+	
+	[LinkName("QSocketNotifier_SuperMetacall")]
+	public static extern c_int QSocketNotifier_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSocketNotifier_Tr")]
 	public static extern libqt_string QSocketNotifier_Tr(c_char* s);
 	[LinkName("QSocketNotifier_SetSocket")]
@@ -659,6 +728,9 @@ extension CQt
 	public function void QSocketNotifier_OnEvent_action(void* self, void** param1);
 	[LinkName("QSocketNotifier_OnEvent")]
 	public static extern bool QSocketNotifier_OnEvent(void* self, QSocketNotifier_OnEvent_action _action);
+	
+	[LinkName("QSocketNotifier_SuperEvent")]
+	public static extern bool QSocketNotifier_SuperEvent(void* self, void** param1);
 	[LinkName("QSocketNotifier_Tr2")]
 	public static extern libqt_string QSocketNotifier_Tr2(c_char* s, c_char* c);
 	[LinkName("QSocketNotifier_Tr3")]
@@ -669,36 +741,54 @@ extension CQt
 	public function void QSocketNotifier_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSocketNotifier_OnEventFilter")]
 	public static extern bool QSocketNotifier_OnEventFilter(void* self, QSocketNotifier_OnEventFilter_action _action);
+	
+	[LinkName("QSocketNotifier_SuperEventFilter")]
+	public static extern bool QSocketNotifier_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSocketNotifier_TimerEvent")]
 	public static extern void QSocketNotifier_TimerEvent(void* self, void** event);
 	
 	public function void QSocketNotifier_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSocketNotifier_OnTimerEvent")]
 	public static extern void QSocketNotifier_OnTimerEvent(void* self, QSocketNotifier_OnTimerEvent_action _action);
+	
+	[LinkName("QSocketNotifier_SuperTimerEvent")]
+	public static extern void QSocketNotifier_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSocketNotifier_ChildEvent")]
 	public static extern void QSocketNotifier_ChildEvent(void* self, void** event);
 	
 	public function void QSocketNotifier_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSocketNotifier_OnChildEvent")]
 	public static extern void QSocketNotifier_OnChildEvent(void* self, QSocketNotifier_OnChildEvent_action _action);
+	
+	[LinkName("QSocketNotifier_SuperChildEvent")]
+	public static extern void QSocketNotifier_SuperChildEvent(void* self, void** event);
 	[LinkName("QSocketNotifier_CustomEvent")]
 	public static extern void QSocketNotifier_CustomEvent(void* self, void** event);
 	
 	public function void QSocketNotifier_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSocketNotifier_OnCustomEvent")]
 	public static extern void QSocketNotifier_OnCustomEvent(void* self, QSocketNotifier_OnCustomEvent_action _action);
+	
+	[LinkName("QSocketNotifier_SuperCustomEvent")]
+	public static extern void QSocketNotifier_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSocketNotifier_ConnectNotify")]
 	public static extern void QSocketNotifier_ConnectNotify(void* self, void** signal);
 	
 	public function void QSocketNotifier_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSocketNotifier_OnConnectNotify")]
 	public static extern void QSocketNotifier_OnConnectNotify(void* self, QSocketNotifier_OnConnectNotify_action _action);
+	
+	[LinkName("QSocketNotifier_SuperConnectNotify")]
+	public static extern void QSocketNotifier_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSocketNotifier_DisconnectNotify")]
 	public static extern void QSocketNotifier_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSocketNotifier_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSocketNotifier_OnDisconnectNotify")]
 	public static extern void QSocketNotifier_OnDisconnectNotify(void* self, QSocketNotifier_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSocketNotifier_SuperDisconnectNotify")]
+	public static extern void QSocketNotifier_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QSocketDescriptor

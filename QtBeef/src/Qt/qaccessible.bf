@@ -130,6 +130,120 @@ class QAccessibleInterface : IQAccessibleInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleInterface_OnIsValid(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnIsValid);
+		CQt.QAccessibleInterface_OnObject(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnObject);
+		CQt.QAccessibleInterface_OnWindow(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnWindow);
+		CQt.QAccessibleInterface_OnRelations(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnRelations);
+		CQt.QAccessibleInterface_OnFocusChild(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnFocusChild);
+		CQt.QAccessibleInterface_OnChildAt(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnChildAt);
+		CQt.QAccessibleInterface_OnParent(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnParent);
+		CQt.QAccessibleInterface_OnChild(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnChild);
+		CQt.QAccessibleInterface_OnChildCount(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnChildCount);
+		CQt.QAccessibleInterface_OnIndexOfChild(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnIndexOfChild);
+		CQt.QAccessibleInterface_OnText(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnText);
+		CQt.QAccessibleInterface_OnSetText(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnSetText);
+		CQt.QAccessibleInterface_OnRect(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnRect);
+		CQt.QAccessibleInterface_OnRole(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnRole);
+		CQt.QAccessibleInterface_OnState(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnState);
+		CQt.QAccessibleInterface_OnForegroundColor(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnForegroundColor);
+		CQt.QAccessibleInterface_OnBackgroundColor(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnBackgroundColor);
+		CQt.QAccessibleInterface_OnVirtual_Hook(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnVirtual_Hook);
+		CQt.QAccessibleInterface_OnInterface_Cast(obj.ObjectPtr,  => QtBeef_QAccessibleInterface_OnInterface_Cast);
+	}
+	static void QtBeef_QAccessibleInterface_OnIsValid(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsValid();
+	}
+	static void QtBeef_QAccessibleInterface_OnObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnObject();
+	}
+	static void QtBeef_QAccessibleInterface_OnWindow(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindow();
+	}
+	static void QtBeef_QAccessibleInterface_OnRelations(void* ptr, void* match)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRelations(match);
+	}
+	static void QtBeef_QAccessibleInterface_OnFocusChild(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusChild();
+	}
+	static void QtBeef_QAccessibleInterface_OnChildAt(void* ptr, c_int x, c_int y)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildAt(x, y);
+	}
+	static void QtBeef_QAccessibleInterface_OnParent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParent();
+	}
+	static void QtBeef_QAccessibleInterface_OnChild(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChild(index);
+	}
+	static void QtBeef_QAccessibleInterface_OnChildCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildCount();
+	}
+	static void QtBeef_QAccessibleInterface_OnIndexOfChild(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexOfChild(param1);
+	}
+	static void QtBeef_QAccessibleInterface_OnText(void* ptr, QAccessible_Text t)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnText(scope .(), t);
+	}
+	static void QtBeef_QAccessibleInterface_OnSetText(void* ptr, QAccessible_Text t, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetText(t, text);
+	}
+	static void QtBeef_QAccessibleInterface_OnRect(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRect();
+	}
+	static void QtBeef_QAccessibleInterface_OnRole(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRole();
+	}
+	static void QtBeef_QAccessibleInterface_OnState(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnState();
+	}
+	static void QtBeef_QAccessibleInterface_OnForegroundColor(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnForegroundColor();
+	}
+	static void QtBeef_QAccessibleInterface_OnBackgroundColor(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBackgroundColor();
+	}
+	static void QtBeef_QAccessibleInterface_OnVirtual_Hook(void* ptr, c_int id, void* data)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVirtual_hook(id, data);
+	}
+	static void QtBeef_QAccessibleInterface_OnInterface_Cast(void* ptr, QAccessible_InterfaceType param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInterface_cast(param1);
 	}
 	public this(QAccessibleInterface_Ptr ptr)
 	{
@@ -253,102 +367,153 @@ extension CQt
 	public function void QAccessibleInterface_OnIsValid_action(void* self);
 	[LinkName("QAccessibleInterface_OnIsValid")]
 	public static extern bool QAccessibleInterface_OnIsValid(void* self, QAccessibleInterface_OnIsValid_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperIsValid")]
+	public static extern bool QAccessibleInterface_SuperIsValid(void* self);
 	[LinkName("QAccessibleInterface_Object")]
 	public static extern void** QAccessibleInterface_Object(void* self);
 	
 	public function void QAccessibleInterface_OnObject_action(void* self);
 	[LinkName("QAccessibleInterface_OnObject")]
 	public static extern void** QAccessibleInterface_OnObject(void* self, QAccessibleInterface_OnObject_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperObject")]
+	public static extern void** QAccessibleInterface_SuperObject(void* self);
 	[LinkName("QAccessibleInterface_Window")]
 	public static extern void** QAccessibleInterface_Window(void* self);
 	
 	public function void QAccessibleInterface_OnWindow_action(void* self);
 	[LinkName("QAccessibleInterface_OnWindow")]
 	public static extern void** QAccessibleInterface_OnWindow(void* self, QAccessibleInterface_OnWindow_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperWindow")]
+	public static extern void** QAccessibleInterface_SuperWindow(void* self);
 	[LinkName("QAccessibleInterface_Relations")]
 	public static extern void* QAccessibleInterface_Relations(void* self, void* match);
 	
 	public function void QAccessibleInterface_OnRelations_action(void* self, void* match);
 	[LinkName("QAccessibleInterface_OnRelations")]
 	public static extern void* QAccessibleInterface_OnRelations(void* self, QAccessibleInterface_OnRelations_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperRelations")]
+	public static extern void* QAccessibleInterface_SuperRelations(void* self, void* match);
 	[LinkName("QAccessibleInterface_FocusChild")]
 	public static extern void** QAccessibleInterface_FocusChild(void* self);
 	
 	public function void QAccessibleInterface_OnFocusChild_action(void* self);
 	[LinkName("QAccessibleInterface_OnFocusChild")]
 	public static extern void** QAccessibleInterface_OnFocusChild(void* self, QAccessibleInterface_OnFocusChild_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperFocusChild")]
+	public static extern void** QAccessibleInterface_SuperFocusChild(void* self);
 	[LinkName("QAccessibleInterface_ChildAt")]
 	public static extern void** QAccessibleInterface_ChildAt(void* self, c_int x, c_int y);
 	
 	public function void QAccessibleInterface_OnChildAt_action(void* self, c_int x, c_int y);
 	[LinkName("QAccessibleInterface_OnChildAt")]
 	public static extern void** QAccessibleInterface_OnChildAt(void* self, QAccessibleInterface_OnChildAt_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperChildAt")]
+	public static extern void** QAccessibleInterface_SuperChildAt(void* self, c_int x, c_int y);
 	[LinkName("QAccessibleInterface_Parent")]
 	public static extern void** QAccessibleInterface_Parent(void* self);
 	
 	public function void QAccessibleInterface_OnParent_action(void* self);
 	[LinkName("QAccessibleInterface_OnParent")]
 	public static extern void** QAccessibleInterface_OnParent(void* self, QAccessibleInterface_OnParent_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperParent")]
+	public static extern void** QAccessibleInterface_SuperParent(void* self);
 	[LinkName("QAccessibleInterface_Child")]
 	public static extern void** QAccessibleInterface_Child(void* self, c_int index);
 	
 	public function void QAccessibleInterface_OnChild_action(void* self, c_int index);
 	[LinkName("QAccessibleInterface_OnChild")]
 	public static extern void** QAccessibleInterface_OnChild(void* self, QAccessibleInterface_OnChild_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperChild")]
+	public static extern void** QAccessibleInterface_SuperChild(void* self, c_int index);
 	[LinkName("QAccessibleInterface_ChildCount")]
 	public static extern c_int QAccessibleInterface_ChildCount(void* self);
 	
 	public function void QAccessibleInterface_OnChildCount_action(void* self);
 	[LinkName("QAccessibleInterface_OnChildCount")]
 	public static extern c_int QAccessibleInterface_OnChildCount(void* self, QAccessibleInterface_OnChildCount_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperChildCount")]
+	public static extern c_int QAccessibleInterface_SuperChildCount(void* self);
 	[LinkName("QAccessibleInterface_IndexOfChild")]
 	public static extern c_int QAccessibleInterface_IndexOfChild(void* self, void** param1);
 	
 	public function void QAccessibleInterface_OnIndexOfChild_action(void* self, void** param1);
 	[LinkName("QAccessibleInterface_OnIndexOfChild")]
 	public static extern c_int QAccessibleInterface_OnIndexOfChild(void* self, QAccessibleInterface_OnIndexOfChild_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperIndexOfChild")]
+	public static extern c_int QAccessibleInterface_SuperIndexOfChild(void* self, void** param1);
 	[LinkName("QAccessibleInterface_Text")]
 	public static extern libqt_string QAccessibleInterface_Text(void* self, QAccessible_Text t);
 	
 	public function void QAccessibleInterface_OnText_action(void* self, QAccessible_Text t);
 	[LinkName("QAccessibleInterface_OnText")]
 	public static extern libqt_string QAccessibleInterface_OnText(void* self, QAccessibleInterface_OnText_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperText")]
+	public static extern libqt_string QAccessibleInterface_SuperText(void* self, QAccessible_Text t);
 	[LinkName("QAccessibleInterface_SetText")]
 	public static extern void QAccessibleInterface_SetText(void* self, QAccessible_Text t, libqt_string text);
 	
 	public function void QAccessibleInterface_OnSetText_action(void* self, QAccessible_Text t, libqt_string text);
 	[LinkName("QAccessibleInterface_OnSetText")]
 	public static extern void QAccessibleInterface_OnSetText(void* self, QAccessibleInterface_OnSetText_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperSetText")]
+	public static extern void QAccessibleInterface_SuperSetText(void* self, QAccessible_Text t, libqt_string text);
 	[LinkName("QAccessibleInterface_Rect")]
 	public static extern void* QAccessibleInterface_Rect(void* self);
 	
 	public function void QAccessibleInterface_OnRect_action(void* self);
 	[LinkName("QAccessibleInterface_OnRect")]
 	public static extern void* QAccessibleInterface_OnRect(void* self, QAccessibleInterface_OnRect_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperRect")]
+	public static extern void* QAccessibleInterface_SuperRect(void* self);
 	[LinkName("QAccessibleInterface_Role")]
 	public static extern QAccessible_Role QAccessibleInterface_Role(void* self);
 	
 	public function void QAccessibleInterface_OnRole_action(void* self);
 	[LinkName("QAccessibleInterface_OnRole")]
 	public static extern QAccessible_Role QAccessibleInterface_OnRole(void* self, QAccessibleInterface_OnRole_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperRole")]
+	public static extern QAccessible_Role QAccessibleInterface_SuperRole(void* self);
 	[LinkName("QAccessibleInterface_State")]
 	public static extern void* QAccessibleInterface_State(void* self);
 	
 	public function void QAccessibleInterface_OnState_action(void* self);
 	[LinkName("QAccessibleInterface_OnState")]
 	public static extern void* QAccessibleInterface_OnState(void* self, QAccessibleInterface_OnState_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperState")]
+	public static extern void* QAccessibleInterface_SuperState(void* self);
 	[LinkName("QAccessibleInterface_ForegroundColor")]
 	public static extern void* QAccessibleInterface_ForegroundColor(void* self);
 	
 	public function void QAccessibleInterface_OnForegroundColor_action(void* self);
 	[LinkName("QAccessibleInterface_OnForegroundColor")]
 	public static extern void* QAccessibleInterface_OnForegroundColor(void* self, QAccessibleInterface_OnForegroundColor_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperForegroundColor")]
+	public static extern void* QAccessibleInterface_SuperForegroundColor(void* self);
 	[LinkName("QAccessibleInterface_BackgroundColor")]
 	public static extern void* QAccessibleInterface_BackgroundColor(void* self);
 	
 	public function void QAccessibleInterface_OnBackgroundColor_action(void* self);
 	[LinkName("QAccessibleInterface_OnBackgroundColor")]
 	public static extern void* QAccessibleInterface_OnBackgroundColor(void* self, QAccessibleInterface_OnBackgroundColor_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperBackgroundColor")]
+	public static extern void* QAccessibleInterface_SuperBackgroundColor(void* self);
 	[LinkName("QAccessibleInterface_TextInterface")]
 	public static extern void** QAccessibleInterface_TextInterface(void* self);
 	[LinkName("QAccessibleInterface_EditableTextInterface")]
@@ -371,12 +536,18 @@ extension CQt
 	public function void QAccessibleInterface_OnVirtual_Hook_action(void* self, c_int id, void* data);
 	[LinkName("QAccessibleInterface_OnVirtual_Hook")]
 	public static extern void QAccessibleInterface_OnVirtual_Hook(void* self, QAccessibleInterface_OnVirtual_Hook_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperVirtual_Hook")]
+	public static extern void QAccessibleInterface_SuperVirtual_Hook(void* self, c_int id, void* data);
 	[LinkName("QAccessibleInterface_Interface_Cast")]
 	public static extern void* QAccessibleInterface_Interface_Cast(void* self, QAccessible_InterfaceType param1);
 	
 	public function void QAccessibleInterface_OnInterface_Cast_action(void* self, QAccessible_InterfaceType param1);
 	[LinkName("QAccessibleInterface_OnInterface_Cast")]
 	public static extern void* QAccessibleInterface_OnInterface_Cast(void* self, QAccessibleInterface_OnInterface_Cast_action _action);
+	
+	[LinkName("QAccessibleInterface_SuperInterface_Cast")]
+	public static extern void* QAccessibleInterface_SuperInterface_Cast(void* self, QAccessible_InterfaceType param1);
 	[LinkName("QAccessibleInterface_OperatorAssign")]
 	public static extern void QAccessibleInterface_OperatorAssign(void* self, void** param1);
 }
@@ -463,6 +634,102 @@ class QAccessibleTextInterface : IQAccessibleTextInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleTextInterface_OnSelection(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnSelection);
+		CQt.QAccessibleTextInterface_OnSelectionCount(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnSelectionCount);
+		CQt.QAccessibleTextInterface_OnAddSelection(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnAddSelection);
+		CQt.QAccessibleTextInterface_OnRemoveSelection(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnRemoveSelection);
+		CQt.QAccessibleTextInterface_OnSetSelection(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnSetSelection);
+		CQt.QAccessibleTextInterface_OnCursorPosition(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnCursorPosition);
+		CQt.QAccessibleTextInterface_OnSetCursorPosition(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnSetCursorPosition);
+		CQt.QAccessibleTextInterface_OnText(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnText);
+		CQt.QAccessibleTextInterface_OnTextBeforeOffset(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnTextBeforeOffset);
+		CQt.QAccessibleTextInterface_OnTextAfterOffset(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnTextAfterOffset);
+		CQt.QAccessibleTextInterface_OnTextAtOffset(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnTextAtOffset);
+		CQt.QAccessibleTextInterface_OnCharacterCount(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnCharacterCount);
+		CQt.QAccessibleTextInterface_OnCharacterRect(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnCharacterRect);
+		CQt.QAccessibleTextInterface_OnOffsetAtPoint(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnOffsetAtPoint);
+		CQt.QAccessibleTextInterface_OnScrollToSubstring(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnScrollToSubstring);
+		CQt.QAccessibleTextInterface_OnAttributes(obj.ObjectPtr,  => QtBeef_QAccessibleTextInterface_OnAttributes);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnSelection(void* ptr, c_int selectionIndex, c_int* startOffset, c_int* endOffset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelection(selectionIndex, startOffset, endOffset);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnSelectionCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionCount();
+	}
+	static void QtBeef_QAccessibleTextInterface_OnAddSelection(void* ptr, c_int startOffset, c_int endOffset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAddSelection(startOffset, endOffset);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnRemoveSelection(void* ptr, c_int selectionIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveSelection(selectionIndex);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnSetSelection(void* ptr, c_int selectionIndex, c_int startOffset, c_int endOffset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelection(selectionIndex, startOffset, endOffset);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnCursorPosition(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCursorPosition();
+	}
+	static void QtBeef_QAccessibleTextInterface_OnSetCursorPosition(void* ptr, c_int position)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetCursorPosition(position);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnText(void* ptr, c_int startOffset, c_int endOffset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnText(scope .(), startOffset, endOffset);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnTextBeforeOffset(void* ptr, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextBeforeOffset(scope .(), offset, boundaryType, startOffset, endOffset);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnTextAfterOffset(void* ptr, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextAfterOffset(scope .(), offset, boundaryType, startOffset, endOffset);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnTextAtOffset(void* ptr, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextAtOffset(scope .(), offset, boundaryType, startOffset, endOffset);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnCharacterCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCharacterCount();
+	}
+	static void QtBeef_QAccessibleTextInterface_OnCharacterRect(void* ptr, c_int offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCharacterRect(offset);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnOffsetAtPoint(void* ptr, void** point)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOffsetAtPoint(point);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnScrollToSubstring(void* ptr, c_int startIndex, c_int endIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollToSubstring(startIndex, endIndex);
+	}
+	static void QtBeef_QAccessibleTextInterface_OnAttributes(void* ptr, c_int offset, c_int* startOffset, c_int* endOffset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAttributes(scope .(), offset, startOffset, endOffset);
 	}
 	public this(QAccessibleTextInterface_Ptr ptr)
 	{
@@ -540,96 +807,144 @@ extension CQt
 	public function void QAccessibleTextInterface_OnSelection_action(void* self, c_int selectionIndex, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_OnSelection")]
 	public static extern void QAccessibleTextInterface_OnSelection(void* self, QAccessibleTextInterface_OnSelection_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperSelection")]
+	public static extern void QAccessibleTextInterface_SuperSelection(void* self, c_int selectionIndex, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_SelectionCount")]
 	public static extern c_int QAccessibleTextInterface_SelectionCount(void* self);
 	
 	public function void QAccessibleTextInterface_OnSelectionCount_action(void* self);
 	[LinkName("QAccessibleTextInterface_OnSelectionCount")]
 	public static extern c_int QAccessibleTextInterface_OnSelectionCount(void* self, QAccessibleTextInterface_OnSelectionCount_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperSelectionCount")]
+	public static extern c_int QAccessibleTextInterface_SuperSelectionCount(void* self);
 	[LinkName("QAccessibleTextInterface_AddSelection")]
 	public static extern void QAccessibleTextInterface_AddSelection(void* self, c_int startOffset, c_int endOffset);
 	
 	public function void QAccessibleTextInterface_OnAddSelection_action(void* self, c_int startOffset, c_int endOffset);
 	[LinkName("QAccessibleTextInterface_OnAddSelection")]
 	public static extern void QAccessibleTextInterface_OnAddSelection(void* self, QAccessibleTextInterface_OnAddSelection_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperAddSelection")]
+	public static extern void QAccessibleTextInterface_SuperAddSelection(void* self, c_int startOffset, c_int endOffset);
 	[LinkName("QAccessibleTextInterface_RemoveSelection")]
 	public static extern void QAccessibleTextInterface_RemoveSelection(void* self, c_int selectionIndex);
 	
 	public function void QAccessibleTextInterface_OnRemoveSelection_action(void* self, c_int selectionIndex);
 	[LinkName("QAccessibleTextInterface_OnRemoveSelection")]
 	public static extern void QAccessibleTextInterface_OnRemoveSelection(void* self, QAccessibleTextInterface_OnRemoveSelection_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperRemoveSelection")]
+	public static extern void QAccessibleTextInterface_SuperRemoveSelection(void* self, c_int selectionIndex);
 	[LinkName("QAccessibleTextInterface_SetSelection")]
 	public static extern void QAccessibleTextInterface_SetSelection(void* self, c_int selectionIndex, c_int startOffset, c_int endOffset);
 	
 	public function void QAccessibleTextInterface_OnSetSelection_action(void* self, c_int selectionIndex, c_int startOffset, c_int endOffset);
 	[LinkName("QAccessibleTextInterface_OnSetSelection")]
 	public static extern void QAccessibleTextInterface_OnSetSelection(void* self, QAccessibleTextInterface_OnSetSelection_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperSetSelection")]
+	public static extern void QAccessibleTextInterface_SuperSetSelection(void* self, c_int selectionIndex, c_int startOffset, c_int endOffset);
 	[LinkName("QAccessibleTextInterface_CursorPosition")]
 	public static extern c_int QAccessibleTextInterface_CursorPosition(void* self);
 	
 	public function void QAccessibleTextInterface_OnCursorPosition_action(void* self);
 	[LinkName("QAccessibleTextInterface_OnCursorPosition")]
 	public static extern c_int QAccessibleTextInterface_OnCursorPosition(void* self, QAccessibleTextInterface_OnCursorPosition_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperCursorPosition")]
+	public static extern c_int QAccessibleTextInterface_SuperCursorPosition(void* self);
 	[LinkName("QAccessibleTextInterface_SetCursorPosition")]
 	public static extern void QAccessibleTextInterface_SetCursorPosition(void* self, c_int position);
 	
 	public function void QAccessibleTextInterface_OnSetCursorPosition_action(void* self, c_int position);
 	[LinkName("QAccessibleTextInterface_OnSetCursorPosition")]
 	public static extern void QAccessibleTextInterface_OnSetCursorPosition(void* self, QAccessibleTextInterface_OnSetCursorPosition_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperSetCursorPosition")]
+	public static extern void QAccessibleTextInterface_SuperSetCursorPosition(void* self, c_int position);
 	[LinkName("QAccessibleTextInterface_Text")]
 	public static extern libqt_string QAccessibleTextInterface_Text(void* self, c_int startOffset, c_int endOffset);
 	
 	public function void QAccessibleTextInterface_OnText_action(void* self, c_int startOffset, c_int endOffset);
 	[LinkName("QAccessibleTextInterface_OnText")]
 	public static extern libqt_string QAccessibleTextInterface_OnText(void* self, QAccessibleTextInterface_OnText_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperText")]
+	public static extern libqt_string QAccessibleTextInterface_SuperText(void* self, c_int startOffset, c_int endOffset);
 	[LinkName("QAccessibleTextInterface_TextBeforeOffset")]
 	public static extern libqt_string QAccessibleTextInterface_TextBeforeOffset(void* self, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset);
 	
 	public function void QAccessibleTextInterface_OnTextBeforeOffset_action(void* self, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_OnTextBeforeOffset")]
 	public static extern libqt_string QAccessibleTextInterface_OnTextBeforeOffset(void* self, QAccessibleTextInterface_OnTextBeforeOffset_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperTextBeforeOffset")]
+	public static extern libqt_string QAccessibleTextInterface_SuperTextBeforeOffset(void* self, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_TextAfterOffset")]
 	public static extern libqt_string QAccessibleTextInterface_TextAfterOffset(void* self, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset);
 	
 	public function void QAccessibleTextInterface_OnTextAfterOffset_action(void* self, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_OnTextAfterOffset")]
 	public static extern libqt_string QAccessibleTextInterface_OnTextAfterOffset(void* self, QAccessibleTextInterface_OnTextAfterOffset_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperTextAfterOffset")]
+	public static extern libqt_string QAccessibleTextInterface_SuperTextAfterOffset(void* self, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_TextAtOffset")]
 	public static extern libqt_string QAccessibleTextInterface_TextAtOffset(void* self, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset);
 	
 	public function void QAccessibleTextInterface_OnTextAtOffset_action(void* self, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_OnTextAtOffset")]
 	public static extern libqt_string QAccessibleTextInterface_OnTextAtOffset(void* self, QAccessibleTextInterface_OnTextAtOffset_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperTextAtOffset")]
+	public static extern libqt_string QAccessibleTextInterface_SuperTextAtOffset(void* self, c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_CharacterCount")]
 	public static extern c_int QAccessibleTextInterface_CharacterCount(void* self);
 	
 	public function void QAccessibleTextInterface_OnCharacterCount_action(void* self);
 	[LinkName("QAccessibleTextInterface_OnCharacterCount")]
 	public static extern c_int QAccessibleTextInterface_OnCharacterCount(void* self, QAccessibleTextInterface_OnCharacterCount_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperCharacterCount")]
+	public static extern c_int QAccessibleTextInterface_SuperCharacterCount(void* self);
 	[LinkName("QAccessibleTextInterface_CharacterRect")]
 	public static extern void* QAccessibleTextInterface_CharacterRect(void* self, c_int offset);
 	
 	public function void QAccessibleTextInterface_OnCharacterRect_action(void* self, c_int offset);
 	[LinkName("QAccessibleTextInterface_OnCharacterRect")]
 	public static extern void* QAccessibleTextInterface_OnCharacterRect(void* self, QAccessibleTextInterface_OnCharacterRect_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperCharacterRect")]
+	public static extern void* QAccessibleTextInterface_SuperCharacterRect(void* self, c_int offset);
 	[LinkName("QAccessibleTextInterface_OffsetAtPoint")]
 	public static extern c_int QAccessibleTextInterface_OffsetAtPoint(void* self, void** point);
 	
 	public function void QAccessibleTextInterface_OnOffsetAtPoint_action(void* self, void** point);
 	[LinkName("QAccessibleTextInterface_OnOffsetAtPoint")]
 	public static extern c_int QAccessibleTextInterface_OnOffsetAtPoint(void* self, QAccessibleTextInterface_OnOffsetAtPoint_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperOffsetAtPoint")]
+	public static extern c_int QAccessibleTextInterface_SuperOffsetAtPoint(void* self, void** point);
 	[LinkName("QAccessibleTextInterface_ScrollToSubstring")]
 	public static extern void QAccessibleTextInterface_ScrollToSubstring(void* self, c_int startIndex, c_int endIndex);
 	
 	public function void QAccessibleTextInterface_OnScrollToSubstring_action(void* self, c_int startIndex, c_int endIndex);
 	[LinkName("QAccessibleTextInterface_OnScrollToSubstring")]
 	public static extern void QAccessibleTextInterface_OnScrollToSubstring(void* self, QAccessibleTextInterface_OnScrollToSubstring_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperScrollToSubstring")]
+	public static extern void QAccessibleTextInterface_SuperScrollToSubstring(void* self, c_int startIndex, c_int endIndex);
 	[LinkName("QAccessibleTextInterface_Attributes")]
 	public static extern libqt_string QAccessibleTextInterface_Attributes(void* self, c_int offset, c_int* startOffset, c_int* endOffset);
 	
 	public function void QAccessibleTextInterface_OnAttributes_action(void* self, c_int offset, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_OnAttributes")]
 	public static extern libqt_string QAccessibleTextInterface_OnAttributes(void* self, QAccessibleTextInterface_OnAttributes_action _action);
+	
+	[LinkName("QAccessibleTextInterface_SuperAttributes")]
+	public static extern libqt_string QAccessibleTextInterface_SuperAttributes(void* self, c_int offset, c_int* startOffset, c_int* endOffset);
 	[LinkName("QAccessibleTextInterface_OperatorAssign")]
 	public static extern void QAccessibleTextInterface_OperatorAssign(void* self, void** param1);
 }
@@ -664,6 +979,24 @@ class QAccessibleEditableTextInterface : IQAccessibleEditableTextInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleEditableTextInterface_OnDeleteText(obj.ObjectPtr,  => QtBeef_QAccessibleEditableTextInterface_OnDeleteText);
+		CQt.QAccessibleEditableTextInterface_OnInsertText(obj.ObjectPtr,  => QtBeef_QAccessibleEditableTextInterface_OnInsertText);
+		CQt.QAccessibleEditableTextInterface_OnReplaceText(obj.ObjectPtr,  => QtBeef_QAccessibleEditableTextInterface_OnReplaceText);
+	}
+	static void QtBeef_QAccessibleEditableTextInterface_OnDeleteText(void* ptr, c_int startOffset, c_int endOffset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDeleteText(startOffset, endOffset);
+	}
+	static void QtBeef_QAccessibleEditableTextInterface_OnInsertText(void* ptr, c_int offset, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertText(offset, text);
+	}
+	static void QtBeef_QAccessibleEditableTextInterface_OnReplaceText(void* ptr, c_int startOffset, c_int endOffset, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReplaceText(startOffset, endOffset, text);
 	}
 	public this(QAccessibleEditableTextInterface_Ptr ptr)
 	{
@@ -697,18 +1030,27 @@ extension CQt
 	public function void QAccessibleEditableTextInterface_OnDeleteText_action(void* self, c_int startOffset, c_int endOffset);
 	[LinkName("QAccessibleEditableTextInterface_OnDeleteText")]
 	public static extern void QAccessibleEditableTextInterface_OnDeleteText(void* self, QAccessibleEditableTextInterface_OnDeleteText_action _action);
+	
+	[LinkName("QAccessibleEditableTextInterface_SuperDeleteText")]
+	public static extern void QAccessibleEditableTextInterface_SuperDeleteText(void* self, c_int startOffset, c_int endOffset);
 	[LinkName("QAccessibleEditableTextInterface_InsertText")]
 	public static extern void QAccessibleEditableTextInterface_InsertText(void* self, c_int offset, libqt_string text);
 	
 	public function void QAccessibleEditableTextInterface_OnInsertText_action(void* self, c_int offset, libqt_string text);
 	[LinkName("QAccessibleEditableTextInterface_OnInsertText")]
 	public static extern void QAccessibleEditableTextInterface_OnInsertText(void* self, QAccessibleEditableTextInterface_OnInsertText_action _action);
+	
+	[LinkName("QAccessibleEditableTextInterface_SuperInsertText")]
+	public static extern void QAccessibleEditableTextInterface_SuperInsertText(void* self, c_int offset, libqt_string text);
 	[LinkName("QAccessibleEditableTextInterface_ReplaceText")]
 	public static extern void QAccessibleEditableTextInterface_ReplaceText(void* self, c_int startOffset, c_int endOffset, libqt_string text);
 	
 	public function void QAccessibleEditableTextInterface_OnReplaceText_action(void* self, c_int startOffset, c_int endOffset, libqt_string text);
 	[LinkName("QAccessibleEditableTextInterface_OnReplaceText")]
 	public static extern void QAccessibleEditableTextInterface_OnReplaceText(void* self, QAccessibleEditableTextInterface_OnReplaceText_action _action);
+	
+	[LinkName("QAccessibleEditableTextInterface_SuperReplaceText")]
+	public static extern void QAccessibleEditableTextInterface_SuperReplaceText(void* self, c_int startOffset, c_int endOffset, libqt_string text);
 	[LinkName("QAccessibleEditableTextInterface_OperatorAssign")]
 	public static extern void QAccessibleEditableTextInterface_OperatorAssign(void* self, void** param1);
 }
@@ -751,6 +1093,36 @@ class QAccessibleValueInterface : IQAccessibleValueInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleValueInterface_OnCurrentValue(obj.ObjectPtr,  => QtBeef_QAccessibleValueInterface_OnCurrentValue);
+		CQt.QAccessibleValueInterface_OnSetCurrentValue(obj.ObjectPtr,  => QtBeef_QAccessibleValueInterface_OnSetCurrentValue);
+		CQt.QAccessibleValueInterface_OnMaximumValue(obj.ObjectPtr,  => QtBeef_QAccessibleValueInterface_OnMaximumValue);
+		CQt.QAccessibleValueInterface_OnMinimumValue(obj.ObjectPtr,  => QtBeef_QAccessibleValueInterface_OnMinimumValue);
+		CQt.QAccessibleValueInterface_OnMinimumStepSize(obj.ObjectPtr,  => QtBeef_QAccessibleValueInterface_OnMinimumStepSize);
+	}
+	static void QtBeef_QAccessibleValueInterface_OnCurrentValue(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentValue();
+	}
+	static void QtBeef_QAccessibleValueInterface_OnSetCurrentValue(void* ptr, void** value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetCurrentValue(value);
+	}
+	static void QtBeef_QAccessibleValueInterface_OnMaximumValue(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMaximumValue();
+	}
+	static void QtBeef_QAccessibleValueInterface_OnMinimumValue(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumValue();
+	}
+	static void QtBeef_QAccessibleValueInterface_OnMinimumStepSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumStepSize();
 	}
 	public this(QAccessibleValueInterface_Ptr ptr)
 	{
@@ -794,30 +1166,45 @@ extension CQt
 	public function void QAccessibleValueInterface_OnCurrentValue_action(void* self);
 	[LinkName("QAccessibleValueInterface_OnCurrentValue")]
 	public static extern void* QAccessibleValueInterface_OnCurrentValue(void* self, QAccessibleValueInterface_OnCurrentValue_action _action);
+	
+	[LinkName("QAccessibleValueInterface_SuperCurrentValue")]
+	public static extern void* QAccessibleValueInterface_SuperCurrentValue(void* self);
 	[LinkName("QAccessibleValueInterface_SetCurrentValue")]
 	public static extern void QAccessibleValueInterface_SetCurrentValue(void* self, void** value);
 	
 	public function void QAccessibleValueInterface_OnSetCurrentValue_action(void* self, void** value);
 	[LinkName("QAccessibleValueInterface_OnSetCurrentValue")]
 	public static extern void QAccessibleValueInterface_OnSetCurrentValue(void* self, QAccessibleValueInterface_OnSetCurrentValue_action _action);
+	
+	[LinkName("QAccessibleValueInterface_SuperSetCurrentValue")]
+	public static extern void QAccessibleValueInterface_SuperSetCurrentValue(void* self, void** value);
 	[LinkName("QAccessibleValueInterface_MaximumValue")]
 	public static extern void* QAccessibleValueInterface_MaximumValue(void* self);
 	
 	public function void QAccessibleValueInterface_OnMaximumValue_action(void* self);
 	[LinkName("QAccessibleValueInterface_OnMaximumValue")]
 	public static extern void* QAccessibleValueInterface_OnMaximumValue(void* self, QAccessibleValueInterface_OnMaximumValue_action _action);
+	
+	[LinkName("QAccessibleValueInterface_SuperMaximumValue")]
+	public static extern void* QAccessibleValueInterface_SuperMaximumValue(void* self);
 	[LinkName("QAccessibleValueInterface_MinimumValue")]
 	public static extern void* QAccessibleValueInterface_MinimumValue(void* self);
 	
 	public function void QAccessibleValueInterface_OnMinimumValue_action(void* self);
 	[LinkName("QAccessibleValueInterface_OnMinimumValue")]
 	public static extern void* QAccessibleValueInterface_OnMinimumValue(void* self, QAccessibleValueInterface_OnMinimumValue_action _action);
+	
+	[LinkName("QAccessibleValueInterface_SuperMinimumValue")]
+	public static extern void* QAccessibleValueInterface_SuperMinimumValue(void* self);
 	[LinkName("QAccessibleValueInterface_MinimumStepSize")]
 	public static extern void* QAccessibleValueInterface_MinimumStepSize(void* self);
 	
 	public function void QAccessibleValueInterface_OnMinimumStepSize_action(void* self);
 	[LinkName("QAccessibleValueInterface_OnMinimumStepSize")]
 	public static extern void* QAccessibleValueInterface_OnMinimumStepSize(void* self, QAccessibleValueInterface_OnMinimumStepSize_action _action);
+	
+	[LinkName("QAccessibleValueInterface_SuperMinimumStepSize")]
+	public static extern void* QAccessibleValueInterface_SuperMinimumStepSize(void* self);
 	[LinkName("QAccessibleValueInterface_OperatorAssign")]
 	public static extern void QAccessibleValueInterface_OperatorAssign(void* self, void** param1);
 }
@@ -872,6 +1259,54 @@ class QAccessibleTableCellInterface : IQAccessibleTableCellInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleTableCellInterface_OnIsSelected(obj.ObjectPtr,  => QtBeef_QAccessibleTableCellInterface_OnIsSelected);
+		CQt.QAccessibleTableCellInterface_OnColumnHeaderCells(obj.ObjectPtr,  => QtBeef_QAccessibleTableCellInterface_OnColumnHeaderCells);
+		CQt.QAccessibleTableCellInterface_OnRowHeaderCells(obj.ObjectPtr,  => QtBeef_QAccessibleTableCellInterface_OnRowHeaderCells);
+		CQt.QAccessibleTableCellInterface_OnColumnIndex(obj.ObjectPtr,  => QtBeef_QAccessibleTableCellInterface_OnColumnIndex);
+		CQt.QAccessibleTableCellInterface_OnRowIndex(obj.ObjectPtr,  => QtBeef_QAccessibleTableCellInterface_OnRowIndex);
+		CQt.QAccessibleTableCellInterface_OnColumnExtent(obj.ObjectPtr,  => QtBeef_QAccessibleTableCellInterface_OnColumnExtent);
+		CQt.QAccessibleTableCellInterface_OnRowExtent(obj.ObjectPtr,  => QtBeef_QAccessibleTableCellInterface_OnRowExtent);
+		CQt.QAccessibleTableCellInterface_OnTable(obj.ObjectPtr,  => QtBeef_QAccessibleTableCellInterface_OnTable);
+	}
+	static void QtBeef_QAccessibleTableCellInterface_OnIsSelected(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsSelected();
+	}
+	static void QtBeef_QAccessibleTableCellInterface_OnColumnHeaderCells(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnHeaderCells();
+	}
+	static void QtBeef_QAccessibleTableCellInterface_OnRowHeaderCells(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowHeaderCells();
+	}
+	static void QtBeef_QAccessibleTableCellInterface_OnColumnIndex(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnIndex();
+	}
+	static void QtBeef_QAccessibleTableCellInterface_OnRowIndex(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowIndex();
+	}
+	static void QtBeef_QAccessibleTableCellInterface_OnColumnExtent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnExtent();
+	}
+	static void QtBeef_QAccessibleTableCellInterface_OnRowExtent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowExtent();
+	}
+	static void QtBeef_QAccessibleTableCellInterface_OnTable(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTable();
 	}
 	public this(QAccessibleTableCellInterface_Ptr ptr)
 	{
@@ -928,48 +1363,72 @@ extension CQt
 	public function void QAccessibleTableCellInterface_OnIsSelected_action(void* self);
 	[LinkName("QAccessibleTableCellInterface_OnIsSelected")]
 	public static extern bool QAccessibleTableCellInterface_OnIsSelected(void* self, QAccessibleTableCellInterface_OnIsSelected_action _action);
+	
+	[LinkName("QAccessibleTableCellInterface_SuperIsSelected")]
+	public static extern bool QAccessibleTableCellInterface_SuperIsSelected(void* self);
 	[LinkName("QAccessibleTableCellInterface_ColumnHeaderCells")]
 	public static extern void* QAccessibleTableCellInterface_ColumnHeaderCells(void* self);
 	
 	public function void QAccessibleTableCellInterface_OnColumnHeaderCells_action(void* self);
 	[LinkName("QAccessibleTableCellInterface_OnColumnHeaderCells")]
 	public static extern void* QAccessibleTableCellInterface_OnColumnHeaderCells(void* self, QAccessibleTableCellInterface_OnColumnHeaderCells_action _action);
+	
+	[LinkName("QAccessibleTableCellInterface_SuperColumnHeaderCells")]
+	public static extern void* QAccessibleTableCellInterface_SuperColumnHeaderCells(void* self);
 	[LinkName("QAccessibleTableCellInterface_RowHeaderCells")]
 	public static extern void* QAccessibleTableCellInterface_RowHeaderCells(void* self);
 	
 	public function void QAccessibleTableCellInterface_OnRowHeaderCells_action(void* self);
 	[LinkName("QAccessibleTableCellInterface_OnRowHeaderCells")]
 	public static extern void* QAccessibleTableCellInterface_OnRowHeaderCells(void* self, QAccessibleTableCellInterface_OnRowHeaderCells_action _action);
+	
+	[LinkName("QAccessibleTableCellInterface_SuperRowHeaderCells")]
+	public static extern void* QAccessibleTableCellInterface_SuperRowHeaderCells(void* self);
 	[LinkName("QAccessibleTableCellInterface_ColumnIndex")]
 	public static extern c_int QAccessibleTableCellInterface_ColumnIndex(void* self);
 	
 	public function void QAccessibleTableCellInterface_OnColumnIndex_action(void* self);
 	[LinkName("QAccessibleTableCellInterface_OnColumnIndex")]
 	public static extern c_int QAccessibleTableCellInterface_OnColumnIndex(void* self, QAccessibleTableCellInterface_OnColumnIndex_action _action);
+	
+	[LinkName("QAccessibleTableCellInterface_SuperColumnIndex")]
+	public static extern c_int QAccessibleTableCellInterface_SuperColumnIndex(void* self);
 	[LinkName("QAccessibleTableCellInterface_RowIndex")]
 	public static extern c_int QAccessibleTableCellInterface_RowIndex(void* self);
 	
 	public function void QAccessibleTableCellInterface_OnRowIndex_action(void* self);
 	[LinkName("QAccessibleTableCellInterface_OnRowIndex")]
 	public static extern c_int QAccessibleTableCellInterface_OnRowIndex(void* self, QAccessibleTableCellInterface_OnRowIndex_action _action);
+	
+	[LinkName("QAccessibleTableCellInterface_SuperRowIndex")]
+	public static extern c_int QAccessibleTableCellInterface_SuperRowIndex(void* self);
 	[LinkName("QAccessibleTableCellInterface_ColumnExtent")]
 	public static extern c_int QAccessibleTableCellInterface_ColumnExtent(void* self);
 	
 	public function void QAccessibleTableCellInterface_OnColumnExtent_action(void* self);
 	[LinkName("QAccessibleTableCellInterface_OnColumnExtent")]
 	public static extern c_int QAccessibleTableCellInterface_OnColumnExtent(void* self, QAccessibleTableCellInterface_OnColumnExtent_action _action);
+	
+	[LinkName("QAccessibleTableCellInterface_SuperColumnExtent")]
+	public static extern c_int QAccessibleTableCellInterface_SuperColumnExtent(void* self);
 	[LinkName("QAccessibleTableCellInterface_RowExtent")]
 	public static extern c_int QAccessibleTableCellInterface_RowExtent(void* self);
 	
 	public function void QAccessibleTableCellInterface_OnRowExtent_action(void* self);
 	[LinkName("QAccessibleTableCellInterface_OnRowExtent")]
 	public static extern c_int QAccessibleTableCellInterface_OnRowExtent(void* self, QAccessibleTableCellInterface_OnRowExtent_action _action);
+	
+	[LinkName("QAccessibleTableCellInterface_SuperRowExtent")]
+	public static extern c_int QAccessibleTableCellInterface_SuperRowExtent(void* self);
 	[LinkName("QAccessibleTableCellInterface_Table")]
 	public static extern void** QAccessibleTableCellInterface_Table(void* self);
 	
 	public function void QAccessibleTableCellInterface_OnTable_action(void* self);
 	[LinkName("QAccessibleTableCellInterface_OnTable")]
 	public static extern void** QAccessibleTableCellInterface_OnTable(void* self, QAccessibleTableCellInterface_OnTable_action _action);
+	
+	[LinkName("QAccessibleTableCellInterface_SuperTable")]
+	public static extern void** QAccessibleTableCellInterface_SuperTable(void* self);
 	[LinkName("QAccessibleTableCellInterface_OperatorAssign")]
 	public static extern void QAccessibleTableCellInterface_OperatorAssign(void* self, void** param1);
 }
@@ -1072,6 +1531,126 @@ class QAccessibleTableInterface : IQAccessibleTableInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleTableInterface_OnCaption(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnCaption);
+		CQt.QAccessibleTableInterface_OnSummary(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnSummary);
+		CQt.QAccessibleTableInterface_OnCellAt(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnCellAt);
+		CQt.QAccessibleTableInterface_OnSelectedCellCount(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnSelectedCellCount);
+		CQt.QAccessibleTableInterface_OnSelectedCells(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnSelectedCells);
+		CQt.QAccessibleTableInterface_OnColumnDescription(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnColumnDescription);
+		CQt.QAccessibleTableInterface_OnRowDescription(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnRowDescription);
+		CQt.QAccessibleTableInterface_OnSelectedColumnCount(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnSelectedColumnCount);
+		CQt.QAccessibleTableInterface_OnSelectedRowCount(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnSelectedRowCount);
+		CQt.QAccessibleTableInterface_OnColumnCount(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnColumnCount);
+		CQt.QAccessibleTableInterface_OnRowCount(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnRowCount);
+		CQt.QAccessibleTableInterface_OnSelectedColumns(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnSelectedColumns);
+		CQt.QAccessibleTableInterface_OnSelectedRows(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnSelectedRows);
+		CQt.QAccessibleTableInterface_OnIsColumnSelected(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnIsColumnSelected);
+		CQt.QAccessibleTableInterface_OnIsRowSelected(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnIsRowSelected);
+		CQt.QAccessibleTableInterface_OnSelectRow(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnSelectRow);
+		CQt.QAccessibleTableInterface_OnSelectColumn(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnSelectColumn);
+		CQt.QAccessibleTableInterface_OnUnselectRow(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnUnselectRow);
+		CQt.QAccessibleTableInterface_OnUnselectColumn(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnUnselectColumn);
+		CQt.QAccessibleTableInterface_OnModelChange(obj.ObjectPtr,  => QtBeef_QAccessibleTableInterface_OnModelChange);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnCaption(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCaption();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnSummary(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSummary();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnCellAt(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellAt(row, column);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnSelectedCellCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedCellCount();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnSelectedCells(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedCells();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnColumnDescription(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnDescription(scope .(), column);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnRowDescription(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowDescription(scope .(), row);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnSelectedColumnCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedColumnCount();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnSelectedRowCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedRowCount();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnColumnCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnCount();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnRowCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowCount();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnSelectedColumns(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedColumns();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnSelectedRows(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedRows();
+	}
+	static void QtBeef_QAccessibleTableInterface_OnIsColumnSelected(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsColumnSelected(column);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnIsRowSelected(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsRowSelected(row);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnSelectRow(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectRow(row);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnSelectColumn(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectColumn(column);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnUnselectRow(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUnselectRow(row);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnUnselectColumn(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUnselectColumn(column);
+	}
+	static void QtBeef_QAccessibleTableInterface_OnModelChange(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnModelChange(event);
 	}
 	public this(QAccessibleTableInterface_Ptr ptr)
 	{
@@ -1173,120 +1752,180 @@ extension CQt
 	public function void QAccessibleTableInterface_OnCaption_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnCaption")]
 	public static extern void** QAccessibleTableInterface_OnCaption(void* self, QAccessibleTableInterface_OnCaption_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperCaption")]
+	public static extern void** QAccessibleTableInterface_SuperCaption(void* self);
 	[LinkName("QAccessibleTableInterface_Summary")]
 	public static extern void** QAccessibleTableInterface_Summary(void* self);
 	
 	public function void QAccessibleTableInterface_OnSummary_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnSummary")]
 	public static extern void** QAccessibleTableInterface_OnSummary(void* self, QAccessibleTableInterface_OnSummary_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperSummary")]
+	public static extern void** QAccessibleTableInterface_SuperSummary(void* self);
 	[LinkName("QAccessibleTableInterface_CellAt")]
 	public static extern void** QAccessibleTableInterface_CellAt(void* self, c_int row, c_int column);
 	
 	public function void QAccessibleTableInterface_OnCellAt_action(void* self, c_int row, c_int column);
 	[LinkName("QAccessibleTableInterface_OnCellAt")]
 	public static extern void** QAccessibleTableInterface_OnCellAt(void* self, QAccessibleTableInterface_OnCellAt_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperCellAt")]
+	public static extern void** QAccessibleTableInterface_SuperCellAt(void* self, c_int row, c_int column);
 	[LinkName("QAccessibleTableInterface_SelectedCellCount")]
 	public static extern c_int QAccessibleTableInterface_SelectedCellCount(void* self);
 	
 	public function void QAccessibleTableInterface_OnSelectedCellCount_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnSelectedCellCount")]
 	public static extern c_int QAccessibleTableInterface_OnSelectedCellCount(void* self, QAccessibleTableInterface_OnSelectedCellCount_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperSelectedCellCount")]
+	public static extern c_int QAccessibleTableInterface_SuperSelectedCellCount(void* self);
 	[LinkName("QAccessibleTableInterface_SelectedCells")]
 	public static extern void* QAccessibleTableInterface_SelectedCells(void* self);
 	
 	public function void QAccessibleTableInterface_OnSelectedCells_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnSelectedCells")]
 	public static extern void* QAccessibleTableInterface_OnSelectedCells(void* self, QAccessibleTableInterface_OnSelectedCells_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperSelectedCells")]
+	public static extern void* QAccessibleTableInterface_SuperSelectedCells(void* self);
 	[LinkName("QAccessibleTableInterface_ColumnDescription")]
 	public static extern libqt_string QAccessibleTableInterface_ColumnDescription(void* self, c_int column);
 	
 	public function void QAccessibleTableInterface_OnColumnDescription_action(void* self, c_int column);
 	[LinkName("QAccessibleTableInterface_OnColumnDescription")]
 	public static extern libqt_string QAccessibleTableInterface_OnColumnDescription(void* self, QAccessibleTableInterface_OnColumnDescription_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperColumnDescription")]
+	public static extern libqt_string QAccessibleTableInterface_SuperColumnDescription(void* self, c_int column);
 	[LinkName("QAccessibleTableInterface_RowDescription")]
 	public static extern libqt_string QAccessibleTableInterface_RowDescription(void* self, c_int row);
 	
 	public function void QAccessibleTableInterface_OnRowDescription_action(void* self, c_int row);
 	[LinkName("QAccessibleTableInterface_OnRowDescription")]
 	public static extern libqt_string QAccessibleTableInterface_OnRowDescription(void* self, QAccessibleTableInterface_OnRowDescription_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperRowDescription")]
+	public static extern libqt_string QAccessibleTableInterface_SuperRowDescription(void* self, c_int row);
 	[LinkName("QAccessibleTableInterface_SelectedColumnCount")]
 	public static extern c_int QAccessibleTableInterface_SelectedColumnCount(void* self);
 	
 	public function void QAccessibleTableInterface_OnSelectedColumnCount_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnSelectedColumnCount")]
 	public static extern c_int QAccessibleTableInterface_OnSelectedColumnCount(void* self, QAccessibleTableInterface_OnSelectedColumnCount_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperSelectedColumnCount")]
+	public static extern c_int QAccessibleTableInterface_SuperSelectedColumnCount(void* self);
 	[LinkName("QAccessibleTableInterface_SelectedRowCount")]
 	public static extern c_int QAccessibleTableInterface_SelectedRowCount(void* self);
 	
 	public function void QAccessibleTableInterface_OnSelectedRowCount_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnSelectedRowCount")]
 	public static extern c_int QAccessibleTableInterface_OnSelectedRowCount(void* self, QAccessibleTableInterface_OnSelectedRowCount_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperSelectedRowCount")]
+	public static extern c_int QAccessibleTableInterface_SuperSelectedRowCount(void* self);
 	[LinkName("QAccessibleTableInterface_ColumnCount")]
 	public static extern c_int QAccessibleTableInterface_ColumnCount(void* self);
 	
 	public function void QAccessibleTableInterface_OnColumnCount_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnColumnCount")]
 	public static extern c_int QAccessibleTableInterface_OnColumnCount(void* self, QAccessibleTableInterface_OnColumnCount_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperColumnCount")]
+	public static extern c_int QAccessibleTableInterface_SuperColumnCount(void* self);
 	[LinkName("QAccessibleTableInterface_RowCount")]
 	public static extern c_int QAccessibleTableInterface_RowCount(void* self);
 	
 	public function void QAccessibleTableInterface_OnRowCount_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnRowCount")]
 	public static extern c_int QAccessibleTableInterface_OnRowCount(void* self, QAccessibleTableInterface_OnRowCount_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperRowCount")]
+	public static extern c_int QAccessibleTableInterface_SuperRowCount(void* self);
 	[LinkName("QAccessibleTableInterface_SelectedColumns")]
 	public static extern void* QAccessibleTableInterface_SelectedColumns(void* self);
 	
 	public function void QAccessibleTableInterface_OnSelectedColumns_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnSelectedColumns")]
 	public static extern void* QAccessibleTableInterface_OnSelectedColumns(void* self, QAccessibleTableInterface_OnSelectedColumns_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperSelectedColumns")]
+	public static extern void* QAccessibleTableInterface_SuperSelectedColumns(void* self);
 	[LinkName("QAccessibleTableInterface_SelectedRows")]
 	public static extern void* QAccessibleTableInterface_SelectedRows(void* self);
 	
 	public function void QAccessibleTableInterface_OnSelectedRows_action(void* self);
 	[LinkName("QAccessibleTableInterface_OnSelectedRows")]
 	public static extern void* QAccessibleTableInterface_OnSelectedRows(void* self, QAccessibleTableInterface_OnSelectedRows_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperSelectedRows")]
+	public static extern void* QAccessibleTableInterface_SuperSelectedRows(void* self);
 	[LinkName("QAccessibleTableInterface_IsColumnSelected")]
 	public static extern bool QAccessibleTableInterface_IsColumnSelected(void* self, c_int column);
 	
 	public function void QAccessibleTableInterface_OnIsColumnSelected_action(void* self, c_int column);
 	[LinkName("QAccessibleTableInterface_OnIsColumnSelected")]
 	public static extern bool QAccessibleTableInterface_OnIsColumnSelected(void* self, QAccessibleTableInterface_OnIsColumnSelected_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperIsColumnSelected")]
+	public static extern bool QAccessibleTableInterface_SuperIsColumnSelected(void* self, c_int column);
 	[LinkName("QAccessibleTableInterface_IsRowSelected")]
 	public static extern bool QAccessibleTableInterface_IsRowSelected(void* self, c_int row);
 	
 	public function void QAccessibleTableInterface_OnIsRowSelected_action(void* self, c_int row);
 	[LinkName("QAccessibleTableInterface_OnIsRowSelected")]
 	public static extern bool QAccessibleTableInterface_OnIsRowSelected(void* self, QAccessibleTableInterface_OnIsRowSelected_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperIsRowSelected")]
+	public static extern bool QAccessibleTableInterface_SuperIsRowSelected(void* self, c_int row);
 	[LinkName("QAccessibleTableInterface_SelectRow")]
 	public static extern bool QAccessibleTableInterface_SelectRow(void* self, c_int row);
 	
 	public function void QAccessibleTableInterface_OnSelectRow_action(void* self, c_int row);
 	[LinkName("QAccessibleTableInterface_OnSelectRow")]
 	public static extern bool QAccessibleTableInterface_OnSelectRow(void* self, QAccessibleTableInterface_OnSelectRow_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperSelectRow")]
+	public static extern bool QAccessibleTableInterface_SuperSelectRow(void* self, c_int row);
 	[LinkName("QAccessibleTableInterface_SelectColumn")]
 	public static extern bool QAccessibleTableInterface_SelectColumn(void* self, c_int column);
 	
 	public function void QAccessibleTableInterface_OnSelectColumn_action(void* self, c_int column);
 	[LinkName("QAccessibleTableInterface_OnSelectColumn")]
 	public static extern bool QAccessibleTableInterface_OnSelectColumn(void* self, QAccessibleTableInterface_OnSelectColumn_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperSelectColumn")]
+	public static extern bool QAccessibleTableInterface_SuperSelectColumn(void* self, c_int column);
 	[LinkName("QAccessibleTableInterface_UnselectRow")]
 	public static extern bool QAccessibleTableInterface_UnselectRow(void* self, c_int row);
 	
 	public function void QAccessibleTableInterface_OnUnselectRow_action(void* self, c_int row);
 	[LinkName("QAccessibleTableInterface_OnUnselectRow")]
 	public static extern bool QAccessibleTableInterface_OnUnselectRow(void* self, QAccessibleTableInterface_OnUnselectRow_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperUnselectRow")]
+	public static extern bool QAccessibleTableInterface_SuperUnselectRow(void* self, c_int row);
 	[LinkName("QAccessibleTableInterface_UnselectColumn")]
 	public static extern bool QAccessibleTableInterface_UnselectColumn(void* self, c_int column);
 	
 	public function void QAccessibleTableInterface_OnUnselectColumn_action(void* self, c_int column);
 	[LinkName("QAccessibleTableInterface_OnUnselectColumn")]
 	public static extern bool QAccessibleTableInterface_OnUnselectColumn(void* self, QAccessibleTableInterface_OnUnselectColumn_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperUnselectColumn")]
+	public static extern bool QAccessibleTableInterface_SuperUnselectColumn(void* self, c_int column);
 	[LinkName("QAccessibleTableInterface_ModelChange")]
 	public static extern void QAccessibleTableInterface_ModelChange(void* self, void** event);
 	
 	public function void QAccessibleTableInterface_OnModelChange_action(void* self, void** event);
 	[LinkName("QAccessibleTableInterface_OnModelChange")]
 	public static extern void QAccessibleTableInterface_OnModelChange(void* self, QAccessibleTableInterface_OnModelChange_action _action);
+	
+	[LinkName("QAccessibleTableInterface_SuperModelChange")]
+	public static extern void QAccessibleTableInterface_SuperModelChange(void* self, void** event);
 	[LinkName("QAccessibleTableInterface_OperatorAssign")]
 	public static extern void QAccessibleTableInterface_OperatorAssign(void* self, void** param1);
 }
@@ -1389,6 +2028,36 @@ class QAccessibleActionInterface : IQAccessibleActionInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleActionInterface_OnActionNames(obj.ObjectPtr,  => QtBeef_QAccessibleActionInterface_OnActionNames);
+		CQt.QAccessibleActionInterface_OnLocalizedActionName(obj.ObjectPtr,  => QtBeef_QAccessibleActionInterface_OnLocalizedActionName);
+		CQt.QAccessibleActionInterface_OnLocalizedActionDescription(obj.ObjectPtr,  => QtBeef_QAccessibleActionInterface_OnLocalizedActionDescription);
+		CQt.QAccessibleActionInterface_OnDoAction(obj.ObjectPtr,  => QtBeef_QAccessibleActionInterface_OnDoAction);
+		CQt.QAccessibleActionInterface_OnKeyBindingsForAction(obj.ObjectPtr,  => QtBeef_QAccessibleActionInterface_OnKeyBindingsForAction);
+	}
+	static void QtBeef_QAccessibleActionInterface_OnActionNames(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionNames();
+	}
+	static void QtBeef_QAccessibleActionInterface_OnLocalizedActionName(void* ptr, libqt_string name)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLocalizedActionName(scope .(), name);
+	}
+	static void QtBeef_QAccessibleActionInterface_OnLocalizedActionDescription(void* ptr, libqt_string name)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLocalizedActionDescription(scope .(), name);
+	}
+	static void QtBeef_QAccessibleActionInterface_OnDoAction(void* ptr, libqt_string actionName)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoAction(actionName);
+	}
+	static void QtBeef_QAccessibleActionInterface_OnKeyBindingsForAction(void* ptr, libqt_string actionName)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyBindingsForAction(actionName);
 	}
 	public this(QAccessibleActionInterface_Ptr ptr)
 	{
@@ -1492,30 +2161,45 @@ extension CQt
 	public function void QAccessibleActionInterface_OnActionNames_action(void* self);
 	[LinkName("QAccessibleActionInterface_OnActionNames")]
 	public static extern void* QAccessibleActionInterface_OnActionNames(void* self, QAccessibleActionInterface_OnActionNames_action _action);
+	
+	[LinkName("QAccessibleActionInterface_SuperActionNames")]
+	public static extern void* QAccessibleActionInterface_SuperActionNames(void* self);
 	[LinkName("QAccessibleActionInterface_LocalizedActionName")]
 	public static extern libqt_string QAccessibleActionInterface_LocalizedActionName(void* self, libqt_string name);
 	
 	public function void QAccessibleActionInterface_OnLocalizedActionName_action(void* self, libqt_string name);
 	[LinkName("QAccessibleActionInterface_OnLocalizedActionName")]
 	public static extern libqt_string QAccessibleActionInterface_OnLocalizedActionName(void* self, QAccessibleActionInterface_OnLocalizedActionName_action _action);
+	
+	[LinkName("QAccessibleActionInterface_SuperLocalizedActionName")]
+	public static extern libqt_string QAccessibleActionInterface_SuperLocalizedActionName(void* self, libqt_string name);
 	[LinkName("QAccessibleActionInterface_LocalizedActionDescription")]
 	public static extern libqt_string QAccessibleActionInterface_LocalizedActionDescription(void* self, libqt_string name);
 	
 	public function void QAccessibleActionInterface_OnLocalizedActionDescription_action(void* self, libqt_string name);
 	[LinkName("QAccessibleActionInterface_OnLocalizedActionDescription")]
 	public static extern libqt_string QAccessibleActionInterface_OnLocalizedActionDescription(void* self, QAccessibleActionInterface_OnLocalizedActionDescription_action _action);
+	
+	[LinkName("QAccessibleActionInterface_SuperLocalizedActionDescription")]
+	public static extern libqt_string QAccessibleActionInterface_SuperLocalizedActionDescription(void* self, libqt_string name);
 	[LinkName("QAccessibleActionInterface_DoAction")]
 	public static extern void QAccessibleActionInterface_DoAction(void* self, libqt_string actionName);
 	
 	public function void QAccessibleActionInterface_OnDoAction_action(void* self, libqt_string actionName);
 	[LinkName("QAccessibleActionInterface_OnDoAction")]
 	public static extern void QAccessibleActionInterface_OnDoAction(void* self, QAccessibleActionInterface_OnDoAction_action _action);
+	
+	[LinkName("QAccessibleActionInterface_SuperDoAction")]
+	public static extern void QAccessibleActionInterface_SuperDoAction(void* self, libqt_string actionName);
 	[LinkName("QAccessibleActionInterface_KeyBindingsForAction")]
 	public static extern void* QAccessibleActionInterface_KeyBindingsForAction(void* self, libqt_string actionName);
 	
 	public function void QAccessibleActionInterface_OnKeyBindingsForAction_action(void* self, libqt_string actionName);
 	[LinkName("QAccessibleActionInterface_OnKeyBindingsForAction")]
 	public static extern void* QAccessibleActionInterface_OnKeyBindingsForAction(void* self, QAccessibleActionInterface_OnKeyBindingsForAction_action _action);
+	
+	[LinkName("QAccessibleActionInterface_SuperKeyBindingsForAction")]
+	public static extern void* QAccessibleActionInterface_SuperKeyBindingsForAction(void* self, libqt_string actionName);
 	[LinkName("QAccessibleActionInterface_PressAction")]
 	public static extern libqt_string QAccessibleActionInterface_PressAction();
 	[LinkName("QAccessibleActionInterface_IncreaseAction")]
@@ -1578,6 +2262,24 @@ class QAccessibleImageInterface : IQAccessibleImageInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleImageInterface_OnImageDescription(obj.ObjectPtr,  => QtBeef_QAccessibleImageInterface_OnImageDescription);
+		CQt.QAccessibleImageInterface_OnImageSize(obj.ObjectPtr,  => QtBeef_QAccessibleImageInterface_OnImageSize);
+		CQt.QAccessibleImageInterface_OnImagePosition(obj.ObjectPtr,  => QtBeef_QAccessibleImageInterface_OnImagePosition);
+	}
+	static void QtBeef_QAccessibleImageInterface_OnImageDescription(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnImageDescription(scope .());
+	}
+	static void QtBeef_QAccessibleImageInterface_OnImageSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnImageSize();
+	}
+	static void QtBeef_QAccessibleImageInterface_OnImagePosition(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnImagePosition();
 	}
 	public this(QAccessibleImageInterface_Ptr ptr)
 	{
@@ -1613,18 +2315,27 @@ extension CQt
 	public function void QAccessibleImageInterface_OnImageDescription_action(void* self);
 	[LinkName("QAccessibleImageInterface_OnImageDescription")]
 	public static extern libqt_string QAccessibleImageInterface_OnImageDescription(void* self, QAccessibleImageInterface_OnImageDescription_action _action);
+	
+	[LinkName("QAccessibleImageInterface_SuperImageDescription")]
+	public static extern libqt_string QAccessibleImageInterface_SuperImageDescription(void* self);
 	[LinkName("QAccessibleImageInterface_ImageSize")]
 	public static extern void* QAccessibleImageInterface_ImageSize(void* self);
 	
 	public function void QAccessibleImageInterface_OnImageSize_action(void* self);
 	[LinkName("QAccessibleImageInterface_OnImageSize")]
 	public static extern void* QAccessibleImageInterface_OnImageSize(void* self, QAccessibleImageInterface_OnImageSize_action _action);
+	
+	[LinkName("QAccessibleImageInterface_SuperImageSize")]
+	public static extern void* QAccessibleImageInterface_SuperImageSize(void* self);
 	[LinkName("QAccessibleImageInterface_ImagePosition")]
 	public static extern void* QAccessibleImageInterface_ImagePosition(void* self);
 	
 	public function void QAccessibleImageInterface_OnImagePosition_action(void* self);
 	[LinkName("QAccessibleImageInterface_OnImagePosition")]
 	public static extern void* QAccessibleImageInterface_OnImagePosition(void* self, QAccessibleImageInterface_OnImagePosition_action _action);
+	
+	[LinkName("QAccessibleImageInterface_SuperImagePosition")]
+	public static extern void* QAccessibleImageInterface_SuperImagePosition(void* self);
 	[LinkName("QAccessibleImageInterface_OperatorAssign")]
 	public static extern void QAccessibleImageInterface_OperatorAssign(void* self, void** param1);
 }
@@ -1667,6 +2378,36 @@ class QAccessibleHyperlinkInterface : IQAccessibleHyperlinkInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleHyperlinkInterface_OnAnchor(obj.ObjectPtr,  => QtBeef_QAccessibleHyperlinkInterface_OnAnchor);
+		CQt.QAccessibleHyperlinkInterface_OnAnchorTarget(obj.ObjectPtr,  => QtBeef_QAccessibleHyperlinkInterface_OnAnchorTarget);
+		CQt.QAccessibleHyperlinkInterface_OnStartIndex(obj.ObjectPtr,  => QtBeef_QAccessibleHyperlinkInterface_OnStartIndex);
+		CQt.QAccessibleHyperlinkInterface_OnEndIndex(obj.ObjectPtr,  => QtBeef_QAccessibleHyperlinkInterface_OnEndIndex);
+		CQt.QAccessibleHyperlinkInterface_OnIsValid(obj.ObjectPtr,  => QtBeef_QAccessibleHyperlinkInterface_OnIsValid);
+	}
+	static void QtBeef_QAccessibleHyperlinkInterface_OnAnchor(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAnchor(scope .());
+	}
+	static void QtBeef_QAccessibleHyperlinkInterface_OnAnchorTarget(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAnchorTarget(scope .());
+	}
+	static void QtBeef_QAccessibleHyperlinkInterface_OnStartIndex(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStartIndex();
+	}
+	static void QtBeef_QAccessibleHyperlinkInterface_OnEndIndex(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEndIndex();
+	}
+	static void QtBeef_QAccessibleHyperlinkInterface_OnIsValid(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsValid();
 	}
 	public this(QAccessibleHyperlinkInterface_Ptr ptr)
 	{
@@ -1709,30 +2450,45 @@ extension CQt
 	public function void QAccessibleHyperlinkInterface_OnAnchor_action(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_OnAnchor")]
 	public static extern libqt_string QAccessibleHyperlinkInterface_OnAnchor(void* self, QAccessibleHyperlinkInterface_OnAnchor_action _action);
+	
+	[LinkName("QAccessibleHyperlinkInterface_SuperAnchor")]
+	public static extern libqt_string QAccessibleHyperlinkInterface_SuperAnchor(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_AnchorTarget")]
 	public static extern libqt_string QAccessibleHyperlinkInterface_AnchorTarget(void* self);
 	
 	public function void QAccessibleHyperlinkInterface_OnAnchorTarget_action(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_OnAnchorTarget")]
 	public static extern libqt_string QAccessibleHyperlinkInterface_OnAnchorTarget(void* self, QAccessibleHyperlinkInterface_OnAnchorTarget_action _action);
+	
+	[LinkName("QAccessibleHyperlinkInterface_SuperAnchorTarget")]
+	public static extern libqt_string QAccessibleHyperlinkInterface_SuperAnchorTarget(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_StartIndex")]
 	public static extern c_int QAccessibleHyperlinkInterface_StartIndex(void* self);
 	
 	public function void QAccessibleHyperlinkInterface_OnStartIndex_action(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_OnStartIndex")]
 	public static extern c_int QAccessibleHyperlinkInterface_OnStartIndex(void* self, QAccessibleHyperlinkInterface_OnStartIndex_action _action);
+	
+	[LinkName("QAccessibleHyperlinkInterface_SuperStartIndex")]
+	public static extern c_int QAccessibleHyperlinkInterface_SuperStartIndex(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_EndIndex")]
 	public static extern c_int QAccessibleHyperlinkInterface_EndIndex(void* self);
 	
 	public function void QAccessibleHyperlinkInterface_OnEndIndex_action(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_OnEndIndex")]
 	public static extern c_int QAccessibleHyperlinkInterface_OnEndIndex(void* self, QAccessibleHyperlinkInterface_OnEndIndex_action _action);
+	
+	[LinkName("QAccessibleHyperlinkInterface_SuperEndIndex")]
+	public static extern c_int QAccessibleHyperlinkInterface_SuperEndIndex(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_IsValid")]
 	public static extern bool QAccessibleHyperlinkInterface_IsValid(void* self);
 	
 	public function void QAccessibleHyperlinkInterface_OnIsValid_action(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_OnIsValid")]
 	public static extern bool QAccessibleHyperlinkInterface_OnIsValid(void* self, QAccessibleHyperlinkInterface_OnIsValid_action _action);
+	
+	[LinkName("QAccessibleHyperlinkInterface_SuperIsValid")]
+	public static extern bool QAccessibleHyperlinkInterface_SuperIsValid(void* self);
 	[LinkName("QAccessibleHyperlinkInterface_OperatorAssign")]
 	public static extern void QAccessibleHyperlinkInterface_OperatorAssign(void* self, void** param1);
 }
@@ -1779,6 +2535,12 @@ class QAccessibleEvent : IQAccessibleEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleEvent_OnAccessibleInterface(obj.ObjectPtr,  => QtBeef_QAccessibleEvent_OnAccessibleInterface);
+	}
+	static void QtBeef_QAccessibleEvent_OnAccessibleInterface(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleInterface();
 	}
 	public this(QAccessibleEvent_Ptr ptr)
 	{
@@ -1851,6 +2613,9 @@ extension CQt
 	public function void QAccessibleEvent_OnAccessibleInterface_action(void* self);
 	[LinkName("QAccessibleEvent_OnAccessibleInterface")]
 	public static extern void** QAccessibleEvent_OnAccessibleInterface(void* self, QAccessibleEvent_OnAccessibleInterface_action _action);
+	
+	[LinkName("QAccessibleEvent_SuperAccessibleInterface")]
+	public static extern void** QAccessibleEvent_SuperAccessibleInterface(void* self);
 }
 // --------------------------------------------------------------
 // QAccessibleStateChangeEvent
@@ -1899,6 +2664,12 @@ class QAccessibleStateChangeEvent : IQAccessibleStateChangeEvent, IQAccessibleEv
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleStateChangeEvent_OnAccessibleInterface(obj.ObjectPtr,  => QtBeef_QAccessibleStateChangeEvent_OnAccessibleInterface);
+	}
+	static void QtBeef_QAccessibleStateChangeEvent_OnAccessibleInterface(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleInterface();
 	}
 	public this(QAccessibleStateChangeEvent_Ptr ptr)
 	{
@@ -1967,6 +2738,9 @@ extension CQt
 	public function void QAccessibleStateChangeEvent_OnAccessibleInterface_action(void* self);
 	[LinkName("QAccessibleStateChangeEvent_OnAccessibleInterface")]
 	public static extern void** QAccessibleStateChangeEvent_OnAccessibleInterface(void* self, QAccessibleStateChangeEvent_OnAccessibleInterface_action _action);
+	
+	[LinkName("QAccessibleStateChangeEvent_SuperAccessibleInterface")]
+	public static extern void** QAccessibleStateChangeEvent_SuperAccessibleInterface(void* self);
 }
 // --------------------------------------------------------------
 // QAccessibleTextCursorEvent
@@ -2019,6 +2793,12 @@ class QAccessibleTextCursorEvent : IQAccessibleTextCursorEvent, IQAccessibleEven
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleTextCursorEvent_OnAccessibleInterface(obj.ObjectPtr,  => QtBeef_QAccessibleTextCursorEvent_OnAccessibleInterface);
+	}
+	static void QtBeef_QAccessibleTextCursorEvent_OnAccessibleInterface(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleInterface();
 	}
 	public this(QAccessibleTextCursorEvent_Ptr ptr)
 	{
@@ -2093,6 +2873,9 @@ extension CQt
 	public function void QAccessibleTextCursorEvent_OnAccessibleInterface_action(void* self);
 	[LinkName("QAccessibleTextCursorEvent_OnAccessibleInterface")]
 	public static extern void** QAccessibleTextCursorEvent_OnAccessibleInterface(void* self, QAccessibleTextCursorEvent_OnAccessibleInterface_action _action);
+	
+	[LinkName("QAccessibleTextCursorEvent_SuperAccessibleInterface")]
+	public static extern void** QAccessibleTextCursorEvent_SuperAccessibleInterface(void* self);
 }
 // --------------------------------------------------------------
 // QAccessibleTextSelectionEvent
@@ -2157,6 +2940,12 @@ class QAccessibleTextSelectionEvent : IQAccessibleTextSelectionEvent, IQAccessib
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleTextSelectionEvent_OnAccessibleInterface(obj.ObjectPtr,  => QtBeef_QAccessibleTextSelectionEvent_OnAccessibleInterface);
+	}
+	static void QtBeef_QAccessibleTextSelectionEvent_OnAccessibleInterface(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleInterface();
 	}
 	public this(QAccessibleTextSelectionEvent_Ptr ptr)
 	{
@@ -2245,6 +3034,9 @@ extension CQt
 	public function void QAccessibleTextSelectionEvent_OnAccessibleInterface_action(void* self);
 	[LinkName("QAccessibleTextSelectionEvent_OnAccessibleInterface")]
 	public static extern void** QAccessibleTextSelectionEvent_OnAccessibleInterface(void* self, QAccessibleTextSelectionEvent_OnAccessibleInterface_action _action);
+	
+	[LinkName("QAccessibleTextSelectionEvent_SuperAccessibleInterface")]
+	public static extern void** QAccessibleTextSelectionEvent_SuperAccessibleInterface(void* self);
 }
 // --------------------------------------------------------------
 // QAccessibleTextInsertEvent
@@ -2305,6 +3097,12 @@ class QAccessibleTextInsertEvent : IQAccessibleTextInsertEvent, IQAccessibleText
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleTextInsertEvent_OnAccessibleInterface(obj.ObjectPtr,  => QtBeef_QAccessibleTextInsertEvent_OnAccessibleInterface);
+	}
+	static void QtBeef_QAccessibleTextInsertEvent_OnAccessibleInterface(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleInterface();
 	}
 	public this(QAccessibleTextInsertEvent_Ptr ptr)
 	{
@@ -2387,6 +3185,9 @@ extension CQt
 	public function void QAccessibleTextInsertEvent_OnAccessibleInterface_action(void* self);
 	[LinkName("QAccessibleTextInsertEvent_OnAccessibleInterface")]
 	public static extern void** QAccessibleTextInsertEvent_OnAccessibleInterface(void* self, QAccessibleTextInsertEvent_OnAccessibleInterface_action _action);
+	
+	[LinkName("QAccessibleTextInsertEvent_SuperAccessibleInterface")]
+	public static extern void** QAccessibleTextInsertEvent_SuperAccessibleInterface(void* self);
 }
 // --------------------------------------------------------------
 // QAccessibleTextRemoveEvent
@@ -2447,6 +3248,12 @@ class QAccessibleTextRemoveEvent : IQAccessibleTextRemoveEvent, IQAccessibleText
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleTextRemoveEvent_OnAccessibleInterface(obj.ObjectPtr,  => QtBeef_QAccessibleTextRemoveEvent_OnAccessibleInterface);
+	}
+	static void QtBeef_QAccessibleTextRemoveEvent_OnAccessibleInterface(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleInterface();
 	}
 	public this(QAccessibleTextRemoveEvent_Ptr ptr)
 	{
@@ -2529,6 +3336,9 @@ extension CQt
 	public function void QAccessibleTextRemoveEvent_OnAccessibleInterface_action(void* self);
 	[LinkName("QAccessibleTextRemoveEvent_OnAccessibleInterface")]
 	public static extern void** QAccessibleTextRemoveEvent_OnAccessibleInterface(void* self, QAccessibleTextRemoveEvent_OnAccessibleInterface_action _action);
+	
+	[LinkName("QAccessibleTextRemoveEvent_SuperAccessibleInterface")]
+	public static extern void** QAccessibleTextRemoveEvent_SuperAccessibleInterface(void* self);
 }
 // --------------------------------------------------------------
 // QAccessibleTextUpdateEvent
@@ -2593,6 +3403,12 @@ class QAccessibleTextUpdateEvent : IQAccessibleTextUpdateEvent, IQAccessibleText
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleTextUpdateEvent_OnAccessibleInterface(obj.ObjectPtr,  => QtBeef_QAccessibleTextUpdateEvent_OnAccessibleInterface);
+	}
+	static void QtBeef_QAccessibleTextUpdateEvent_OnAccessibleInterface(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleInterface();
 	}
 	public this(QAccessibleTextUpdateEvent_Ptr ptr)
 	{
@@ -2681,6 +3497,9 @@ extension CQt
 	public function void QAccessibleTextUpdateEvent_OnAccessibleInterface_action(void* self);
 	[LinkName("QAccessibleTextUpdateEvent_OnAccessibleInterface")]
 	public static extern void** QAccessibleTextUpdateEvent_OnAccessibleInterface(void* self, QAccessibleTextUpdateEvent_OnAccessibleInterface_action _action);
+	
+	[LinkName("QAccessibleTextUpdateEvent_SuperAccessibleInterface")]
+	public static extern void** QAccessibleTextUpdateEvent_SuperAccessibleInterface(void* self);
 }
 // --------------------------------------------------------------
 // QAccessibleValueChangeEvent
@@ -2733,6 +3552,12 @@ class QAccessibleValueChangeEvent : IQAccessibleValueChangeEvent, IQAccessibleEv
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleValueChangeEvent_OnAccessibleInterface(obj.ObjectPtr,  => QtBeef_QAccessibleValueChangeEvent_OnAccessibleInterface);
+	}
+	static void QtBeef_QAccessibleValueChangeEvent_OnAccessibleInterface(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleInterface();
 	}
 	public this(QAccessibleValueChangeEvent_Ptr ptr)
 	{
@@ -2807,6 +3632,9 @@ extension CQt
 	public function void QAccessibleValueChangeEvent_OnAccessibleInterface_action(void* self);
 	[LinkName("QAccessibleValueChangeEvent_OnAccessibleInterface")]
 	public static extern void** QAccessibleValueChangeEvent_OnAccessibleInterface(void* self, QAccessibleValueChangeEvent_OnAccessibleInterface_action _action);
+	
+	[LinkName("QAccessibleValueChangeEvent_SuperAccessibleInterface")]
+	public static extern void** QAccessibleValueChangeEvent_SuperAccessibleInterface(void* self);
 }
 // --------------------------------------------------------------
 // QAccessibleTableModelChangeEvent
@@ -2891,6 +3719,12 @@ class QAccessibleTableModelChangeEvent : IQAccessibleTableModelChangeEvent, IQAc
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleTableModelChangeEvent_OnAccessibleInterface(obj.ObjectPtr,  => QtBeef_QAccessibleTableModelChangeEvent_OnAccessibleInterface);
+	}
+	static void QtBeef_QAccessibleTableModelChangeEvent_OnAccessibleInterface(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleInterface();
 	}
 	public this(QAccessibleTableModelChangeEvent_Ptr ptr)
 	{
@@ -3013,6 +3847,9 @@ extension CQt
 	public function void QAccessibleTableModelChangeEvent_OnAccessibleInterface_action(void* self);
 	[LinkName("QAccessibleTableModelChangeEvent_OnAccessibleInterface")]
 	public static extern void** QAccessibleTableModelChangeEvent_OnAccessibleInterface(void* self, QAccessibleTableModelChangeEvent_OnAccessibleInterface_action _action);
+	
+	[LinkName("QAccessibleTableModelChangeEvent_SuperAccessibleInterface")]
+	public static extern void** QAccessibleTableModelChangeEvent_SuperAccessibleInterface(void* self);
 }
 [AllowDuplicates]
 enum QAccessibleTableModelChangeEvent_ModelChangeType

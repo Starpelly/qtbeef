@@ -2068,6 +2068,61 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Finished);
 		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Accepted);
 		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Rejected);
+		CQt.QFileDialog_OnMetaObject(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMetaObject);
+		CQt.QFileDialog_OnMetacast(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMetacast);
+		CQt.QFileDialog_OnMetacall(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMetacall);
+		CQt.QFileDialog_OnSetVisible(obj.ObjectPtr,  => QtBeef_QFileDialog_OnSetVisible);
+		CQt.QFileDialog_OnDone(obj.ObjectPtr,  => QtBeef_QFileDialog_OnDone);
+		CQt.QFileDialog_OnAccept(obj.ObjectPtr,  => QtBeef_QFileDialog_OnAccept);
+		CQt.QFileDialog_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnChangeEvent);
+		CQt.QFileDialog_OnEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnEvent);
+		CQt.QFileDialog_OnEventFilter(obj.ObjectPtr,  => QtBeef_QFileDialog_OnEventFilter);
+		CQt.QFileDialog_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnTimerEvent);
+		CQt.QFileDialog_OnChildEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnChildEvent);
+		CQt.QFileDialog_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnCustomEvent);
+		CQt.QFileDialog_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QFileDialog_OnConnectNotify);
+		CQt.QFileDialog_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QFileDialog_OnDisconnectNotify);
+		CQt.QFileDialog_OnDevType(obj.ObjectPtr,  => QtBeef_QFileDialog_OnDevType);
+		CQt.QFileDialog_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QFileDialog_OnPaintEngine);
+		CQt.QFileDialog_OnMetric(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMetric);
+		CQt.QFileDialog_OnInitPainter(obj.ObjectPtr,  => QtBeef_QFileDialog_OnInitPainter);
+		CQt.QFileDialog_OnRedirected(obj.ObjectPtr,  => QtBeef_QFileDialog_OnRedirected);
+		CQt.QFileDialog_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QFileDialog_OnSharedPainter);
+		CQt.QFileDialog_OnSizeHint(obj.ObjectPtr,  => QtBeef_QFileDialog_OnSizeHint);
+		CQt.QFileDialog_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMinimumSizeHint);
+		CQt.QFileDialog_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QFileDialog_OnHeightForWidth);
+		CQt.QFileDialog_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QFileDialog_OnHasHeightForWidth);
+		CQt.QFileDialog_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMousePressEvent);
+		CQt.QFileDialog_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMouseReleaseEvent);
+		CQt.QFileDialog_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMouseDoubleClickEvent);
+		CQt.QFileDialog_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMouseMoveEvent);
+		CQt.QFileDialog_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnWheelEvent);
+		CQt.QFileDialog_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnKeyPressEvent);
+		CQt.QFileDialog_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnKeyReleaseEvent);
+		CQt.QFileDialog_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnFocusInEvent);
+		CQt.QFileDialog_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnFocusOutEvent);
+		CQt.QFileDialog_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnEnterEvent);
+		CQt.QFileDialog_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnLeaveEvent);
+		CQt.QFileDialog_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnPaintEvent);
+		CQt.QFileDialog_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnMoveEvent);
+		CQt.QFileDialog_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnResizeEvent);
+		CQt.QFileDialog_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnCloseEvent);
+		CQt.QFileDialog_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnContextMenuEvent);
+		CQt.QFileDialog_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnTabletEvent);
+		CQt.QFileDialog_OnActionEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnActionEvent);
+		CQt.QFileDialog_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnDragEnterEvent);
+		CQt.QFileDialog_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnDragMoveEvent);
+		CQt.QFileDialog_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnDragLeaveEvent);
+		CQt.QFileDialog_OnDropEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnDropEvent);
+		CQt.QFileDialog_OnShowEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnShowEvent);
+		CQt.QFileDialog_OnHideEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnHideEvent);
+		CQt.QFileDialog_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnNativeEvent);
+		CQt.QFileDialog_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QFileDialog_OnInputMethodEvent);
+		CQt.QFileDialog_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QFileDialog_OnInputMethodQuery);
+		CQt.QFileDialog_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QFileDialog_OnFocusNextPrevChild);
+		CQt.QFileDialog_OnOpen(obj.ObjectPtr,  => QtBeef_QFileDialog_OnOpen);
+		CQt.QFileDialog_OnExec(obj.ObjectPtr,  => QtBeef_QFileDialog_OnExec);
+		CQt.QFileDialog_OnReject(obj.ObjectPtr,  => QtBeef_QFileDialog_OnReject);
 	}
 	public Event<delegate void(libqt_string file)> OnFileSelected = .() ~ _.Dispose();
 	public Event<delegate void(void** files)> OnFilesSelected = .() ~ _.Dispose();
@@ -2176,6 +2231,281 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnRejected.Invoke();
+	}
+	static void QtBeef_QFileDialog_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QFileDialog_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QFileDialog_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QFileDialog_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QFileDialog_OnDone(void* ptr, c_int result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDone(result);
+	}
+	static void QtBeef_QFileDialog_OnAccept(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccept();
+	}
+	static void QtBeef_QFileDialog_OnChangeEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(e);
+	}
+	static void QtBeef_QFileDialog_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QFileDialog_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QFileDialog_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QFileDialog_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QFileDialog_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QFileDialog_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QFileDialog_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QFileDialog_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QFileDialog_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QFileDialog_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QFileDialog_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QFileDialog_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QFileDialog_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QFileDialog_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QFileDialog_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QFileDialog_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QFileDialog_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QFileDialog_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QFileDialog_OnOpen(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen();
+	}
+	static void QtBeef_QFileDialog_OnExec(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExec();
+	}
+	static void QtBeef_QFileDialog_OnReject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReject();
 	}
 	public this(QFileDialog_Ptr ptr)
 	{
@@ -4233,18 +4563,27 @@ extension CQt
 	public function void QFileDialog_OnMetaObject_action(void* self);
 	[LinkName("QFileDialog_OnMetaObject")]
 	public static extern void** QFileDialog_OnMetaObject(void* self, QFileDialog_OnMetaObject_action _action);
+	
+	[LinkName("QFileDialog_SuperMetaObject")]
+	public static extern void** QFileDialog_SuperMetaObject(void* self);
 	[LinkName("QFileDialog_Qt_Metacast")]
 	public static extern void* QFileDialog_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QFileDialog_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QFileDialog_OnMetacast")]
 	public static extern void* QFileDialog_OnMetacast(void* self, QFileDialog_OnMetacast_action _action);
+	
+	[LinkName("QFileDialog_SuperMetacast")]
+	public static extern void* QFileDialog_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QFileDialog_Qt_Metacall")]
 	public static extern c_int QFileDialog_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QFileDialog_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFileDialog_OnMetacall")]
 	public static extern c_int QFileDialog_OnMetacall(void* self, QFileDialog_OnMetacall_action _action);
+	
+	[LinkName("QFileDialog_SuperMetacall")]
+	public static extern c_int QFileDialog_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFileDialog_Tr")]
 	public static extern libqt_string QFileDialog_Tr(c_char* s);
 	[LinkName("QFileDialog_SetDirectory")]
@@ -4349,6 +4688,9 @@ extension CQt
 	public function void QFileDialog_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QFileDialog_OnSetVisible")]
 	public static extern void QFileDialog_OnSetVisible(void* self, QFileDialog_OnSetVisible_action _action);
+	
+	[LinkName("QFileDialog_SuperSetVisible")]
+	public static extern void QFileDialog_SuperSetVisible(void* self, bool visible);
 	[LinkName("QFileDialog_FileSelected")]
 	public static extern void QFileDialog_FileSelected(void* self, libqt_string file);
 	
@@ -4429,18 +4771,27 @@ extension CQt
 	public function void QFileDialog_OnDone_action(void* self, c_int result);
 	[LinkName("QFileDialog_OnDone")]
 	public static extern void QFileDialog_OnDone(void* self, QFileDialog_OnDone_action _action);
+	
+	[LinkName("QFileDialog_SuperDone")]
+	public static extern void QFileDialog_SuperDone(void* self, c_int result);
 	[LinkName("QFileDialog_Accept")]
 	public static extern void QFileDialog_Accept(void* self);
 	
 	public function void QFileDialog_OnAccept_action(void* self);
 	[LinkName("QFileDialog_OnAccept")]
 	public static extern void QFileDialog_OnAccept(void* self, QFileDialog_OnAccept_action _action);
+	
+	[LinkName("QFileDialog_SuperAccept")]
+	public static extern void QFileDialog_SuperAccept(void* self);
 	[LinkName("QFileDialog_ChangeEvent")]
 	public static extern void QFileDialog_ChangeEvent(void* self, void** e);
 	
 	public function void QFileDialog_OnChangeEvent_action(void* self, void** e);
 	[LinkName("QFileDialog_OnChangeEvent")]
 	public static extern void QFileDialog_OnChangeEvent(void* self, QFileDialog_OnChangeEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperChangeEvent")]
+	public static extern void QFileDialog_SuperChangeEvent(void* self, void** e);
 	[LinkName("QFileDialog_Tr2")]
 	public static extern libqt_string QFileDialog_Tr2(c_char* s, c_char* c);
 	[LinkName("QFileDialog_Tr3")]
@@ -4521,288 +4872,432 @@ extension CQt
 	public function void QFileDialog_OnEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnEvent")]
 	public static extern bool QFileDialog_OnEvent(void* self, QFileDialog_OnEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperEvent")]
+	public static extern bool QFileDialog_SuperEvent(void* self, void** event);
 	[LinkName("QFileDialog_EventFilter")]
 	public static extern bool QFileDialog_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QFileDialog_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QFileDialog_OnEventFilter")]
 	public static extern bool QFileDialog_OnEventFilter(void* self, QFileDialog_OnEventFilter_action _action);
+	
+	[LinkName("QFileDialog_SuperEventFilter")]
+	public static extern bool QFileDialog_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QFileDialog_TimerEvent")]
 	public static extern void QFileDialog_TimerEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnTimerEvent")]
 	public static extern void QFileDialog_OnTimerEvent(void* self, QFileDialog_OnTimerEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperTimerEvent")]
+	public static extern void QFileDialog_SuperTimerEvent(void* self, void** event);
 	[LinkName("QFileDialog_ChildEvent")]
 	public static extern void QFileDialog_ChildEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnChildEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnChildEvent")]
 	public static extern void QFileDialog_OnChildEvent(void* self, QFileDialog_OnChildEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperChildEvent")]
+	public static extern void QFileDialog_SuperChildEvent(void* self, void** event);
 	[LinkName("QFileDialog_CustomEvent")]
 	public static extern void QFileDialog_CustomEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnCustomEvent")]
 	public static extern void QFileDialog_OnCustomEvent(void* self, QFileDialog_OnCustomEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperCustomEvent")]
+	public static extern void QFileDialog_SuperCustomEvent(void* self, void** event);
 	[LinkName("QFileDialog_ConnectNotify")]
 	public static extern void QFileDialog_ConnectNotify(void* self, void** signal);
 	
 	public function void QFileDialog_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QFileDialog_OnConnectNotify")]
 	public static extern void QFileDialog_OnConnectNotify(void* self, QFileDialog_OnConnectNotify_action _action);
+	
+	[LinkName("QFileDialog_SuperConnectNotify")]
+	public static extern void QFileDialog_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QFileDialog_DisconnectNotify")]
 	public static extern void QFileDialog_DisconnectNotify(void* self, void** signal);
 	
 	public function void QFileDialog_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QFileDialog_OnDisconnectNotify")]
 	public static extern void QFileDialog_OnDisconnectNotify(void* self, QFileDialog_OnDisconnectNotify_action _action);
+	
+	[LinkName("QFileDialog_SuperDisconnectNotify")]
+	public static extern void QFileDialog_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QFileDialog_DevType")]
 	public static extern c_int QFileDialog_DevType(void* self);
 	
 	public function void QFileDialog_OnDevType_action(void* self);
 	[LinkName("QFileDialog_OnDevType")]
 	public static extern c_int QFileDialog_OnDevType(void* self, QFileDialog_OnDevType_action _action);
+	
+	[LinkName("QFileDialog_SuperDevType")]
+	public static extern c_int QFileDialog_SuperDevType(void* self);
 	[LinkName("QFileDialog_PaintEngine")]
 	public static extern void** QFileDialog_PaintEngine(void* self);
 	
 	public function void QFileDialog_OnPaintEngine_action(void* self);
 	[LinkName("QFileDialog_OnPaintEngine")]
 	public static extern void** QFileDialog_OnPaintEngine(void* self, QFileDialog_OnPaintEngine_action _action);
+	
+	[LinkName("QFileDialog_SuperPaintEngine")]
+	public static extern void** QFileDialog_SuperPaintEngine(void* self);
 	[LinkName("QFileDialog_Metric")]
 	public static extern c_int QFileDialog_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QFileDialog_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QFileDialog_OnMetric")]
 	public static extern c_int QFileDialog_OnMetric(void* self, QFileDialog_OnMetric_action _action);
+	
+	[LinkName("QFileDialog_SuperMetric")]
+	public static extern c_int QFileDialog_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QFileDialog_InitPainter")]
 	public static extern void QFileDialog_InitPainter(void* self, void** painter);
 	
 	public function void QFileDialog_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QFileDialog_OnInitPainter")]
 	public static extern void QFileDialog_OnInitPainter(void* self, QFileDialog_OnInitPainter_action _action);
+	
+	[LinkName("QFileDialog_SuperInitPainter")]
+	public static extern void QFileDialog_SuperInitPainter(void* self, void** painter);
 	[LinkName("QFileDialog_Redirected")]
 	public static extern void** QFileDialog_Redirected(void* self, void** offset);
 	
 	public function void QFileDialog_OnRedirected_action(void* self, void** offset);
 	[LinkName("QFileDialog_OnRedirected")]
 	public static extern void** QFileDialog_OnRedirected(void* self, QFileDialog_OnRedirected_action _action);
+	
+	[LinkName("QFileDialog_SuperRedirected")]
+	public static extern void** QFileDialog_SuperRedirected(void* self, void** offset);
 	[LinkName("QFileDialog_SharedPainter")]
 	public static extern void** QFileDialog_SharedPainter(void* self);
 	
 	public function void QFileDialog_OnSharedPainter_action(void* self);
 	[LinkName("QFileDialog_OnSharedPainter")]
 	public static extern void** QFileDialog_OnSharedPainter(void* self, QFileDialog_OnSharedPainter_action _action);
+	
+	[LinkName("QFileDialog_SuperSharedPainter")]
+	public static extern void** QFileDialog_SuperSharedPainter(void* self);
 	[LinkName("QFileDialog_SizeHint")]
 	public static extern void* QFileDialog_SizeHint(void* self);
 	
 	public function void QFileDialog_OnSizeHint_action(void* self);
 	[LinkName("QFileDialog_OnSizeHint")]
 	public static extern void* QFileDialog_OnSizeHint(void* self, QFileDialog_OnSizeHint_action _action);
+	
+	[LinkName("QFileDialog_SuperSizeHint")]
+	public static extern void* QFileDialog_SuperSizeHint(void* self);
 	[LinkName("QFileDialog_MinimumSizeHint")]
 	public static extern void* QFileDialog_MinimumSizeHint(void* self);
 	
 	public function void QFileDialog_OnMinimumSizeHint_action(void* self);
 	[LinkName("QFileDialog_OnMinimumSizeHint")]
 	public static extern void* QFileDialog_OnMinimumSizeHint(void* self, QFileDialog_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QFileDialog_SuperMinimumSizeHint")]
+	public static extern void* QFileDialog_SuperMinimumSizeHint(void* self);
 	[LinkName("QFileDialog_HeightForWidth")]
 	public static extern c_int QFileDialog_HeightForWidth(void* self, c_int param1);
 	
 	public function void QFileDialog_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QFileDialog_OnHeightForWidth")]
 	public static extern c_int QFileDialog_OnHeightForWidth(void* self, QFileDialog_OnHeightForWidth_action _action);
+	
+	[LinkName("QFileDialog_SuperHeightForWidth")]
+	public static extern c_int QFileDialog_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QFileDialog_HasHeightForWidth")]
 	public static extern bool QFileDialog_HasHeightForWidth(void* self);
 	
 	public function void QFileDialog_OnHasHeightForWidth_action(void* self);
 	[LinkName("QFileDialog_OnHasHeightForWidth")]
 	public static extern bool QFileDialog_OnHasHeightForWidth(void* self, QFileDialog_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QFileDialog_SuperHasHeightForWidth")]
+	public static extern bool QFileDialog_SuperHasHeightForWidth(void* self);
 	[LinkName("QFileDialog_MousePressEvent")]
 	public static extern void QFileDialog_MousePressEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnMousePressEvent")]
 	public static extern void QFileDialog_OnMousePressEvent(void* self, QFileDialog_OnMousePressEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperMousePressEvent")]
+	public static extern void QFileDialog_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QFileDialog_MouseReleaseEvent")]
 	public static extern void QFileDialog_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnMouseReleaseEvent")]
 	public static extern void QFileDialog_OnMouseReleaseEvent(void* self, QFileDialog_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperMouseReleaseEvent")]
+	public static extern void QFileDialog_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QFileDialog_MouseDoubleClickEvent")]
 	public static extern void QFileDialog_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnMouseDoubleClickEvent")]
 	public static extern void QFileDialog_OnMouseDoubleClickEvent(void* self, QFileDialog_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperMouseDoubleClickEvent")]
+	public static extern void QFileDialog_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QFileDialog_MouseMoveEvent")]
 	public static extern void QFileDialog_MouseMoveEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnMouseMoveEvent")]
 	public static extern void QFileDialog_OnMouseMoveEvent(void* self, QFileDialog_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperMouseMoveEvent")]
+	public static extern void QFileDialog_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QFileDialog_WheelEvent")]
 	public static extern void QFileDialog_WheelEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnWheelEvent")]
 	public static extern void QFileDialog_OnWheelEvent(void* self, QFileDialog_OnWheelEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperWheelEvent")]
+	public static extern void QFileDialog_SuperWheelEvent(void* self, void** event);
 	[LinkName("QFileDialog_KeyPressEvent")]
 	public static extern void QFileDialog_KeyPressEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnKeyPressEvent")]
 	public static extern void QFileDialog_OnKeyPressEvent(void* self, QFileDialog_OnKeyPressEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperKeyPressEvent")]
+	public static extern void QFileDialog_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QFileDialog_KeyReleaseEvent")]
 	public static extern void QFileDialog_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnKeyReleaseEvent")]
 	public static extern void QFileDialog_OnKeyReleaseEvent(void* self, QFileDialog_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperKeyReleaseEvent")]
+	public static extern void QFileDialog_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QFileDialog_FocusInEvent")]
 	public static extern void QFileDialog_FocusInEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnFocusInEvent")]
 	public static extern void QFileDialog_OnFocusInEvent(void* self, QFileDialog_OnFocusInEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperFocusInEvent")]
+	public static extern void QFileDialog_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QFileDialog_FocusOutEvent")]
 	public static extern void QFileDialog_FocusOutEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnFocusOutEvent")]
 	public static extern void QFileDialog_OnFocusOutEvent(void* self, QFileDialog_OnFocusOutEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperFocusOutEvent")]
+	public static extern void QFileDialog_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QFileDialog_EnterEvent")]
 	public static extern void QFileDialog_EnterEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnEnterEvent")]
 	public static extern void QFileDialog_OnEnterEvent(void* self, QFileDialog_OnEnterEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperEnterEvent")]
+	public static extern void QFileDialog_SuperEnterEvent(void* self, void** event);
 	[LinkName("QFileDialog_LeaveEvent")]
 	public static extern void QFileDialog_LeaveEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnLeaveEvent")]
 	public static extern void QFileDialog_OnLeaveEvent(void* self, QFileDialog_OnLeaveEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperLeaveEvent")]
+	public static extern void QFileDialog_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QFileDialog_PaintEvent")]
 	public static extern void QFileDialog_PaintEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnPaintEvent")]
 	public static extern void QFileDialog_OnPaintEvent(void* self, QFileDialog_OnPaintEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperPaintEvent")]
+	public static extern void QFileDialog_SuperPaintEvent(void* self, void** event);
 	[LinkName("QFileDialog_MoveEvent")]
 	public static extern void QFileDialog_MoveEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnMoveEvent")]
 	public static extern void QFileDialog_OnMoveEvent(void* self, QFileDialog_OnMoveEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperMoveEvent")]
+	public static extern void QFileDialog_SuperMoveEvent(void* self, void** event);
 	[LinkName("QFileDialog_ResizeEvent")]
 	public static extern void QFileDialog_ResizeEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnResizeEvent")]
 	public static extern void QFileDialog_OnResizeEvent(void* self, QFileDialog_OnResizeEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperResizeEvent")]
+	public static extern void QFileDialog_SuperResizeEvent(void* self, void** event);
 	[LinkName("QFileDialog_CloseEvent")]
 	public static extern void QFileDialog_CloseEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnCloseEvent")]
 	public static extern void QFileDialog_OnCloseEvent(void* self, QFileDialog_OnCloseEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperCloseEvent")]
+	public static extern void QFileDialog_SuperCloseEvent(void* self, void** event);
 	[LinkName("QFileDialog_ContextMenuEvent")]
 	public static extern void QFileDialog_ContextMenuEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnContextMenuEvent")]
 	public static extern void QFileDialog_OnContextMenuEvent(void* self, QFileDialog_OnContextMenuEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperContextMenuEvent")]
+	public static extern void QFileDialog_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QFileDialog_TabletEvent")]
 	public static extern void QFileDialog_TabletEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnTabletEvent")]
 	public static extern void QFileDialog_OnTabletEvent(void* self, QFileDialog_OnTabletEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperTabletEvent")]
+	public static extern void QFileDialog_SuperTabletEvent(void* self, void** event);
 	[LinkName("QFileDialog_ActionEvent")]
 	public static extern void QFileDialog_ActionEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnActionEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnActionEvent")]
 	public static extern void QFileDialog_OnActionEvent(void* self, QFileDialog_OnActionEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperActionEvent")]
+	public static extern void QFileDialog_SuperActionEvent(void* self, void** event);
 	[LinkName("QFileDialog_DragEnterEvent")]
 	public static extern void QFileDialog_DragEnterEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnDragEnterEvent")]
 	public static extern void QFileDialog_OnDragEnterEvent(void* self, QFileDialog_OnDragEnterEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperDragEnterEvent")]
+	public static extern void QFileDialog_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QFileDialog_DragMoveEvent")]
 	public static extern void QFileDialog_DragMoveEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnDragMoveEvent")]
 	public static extern void QFileDialog_OnDragMoveEvent(void* self, QFileDialog_OnDragMoveEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperDragMoveEvent")]
+	public static extern void QFileDialog_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QFileDialog_DragLeaveEvent")]
 	public static extern void QFileDialog_DragLeaveEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnDragLeaveEvent")]
 	public static extern void QFileDialog_OnDragLeaveEvent(void* self, QFileDialog_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperDragLeaveEvent")]
+	public static extern void QFileDialog_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QFileDialog_DropEvent")]
 	public static extern void QFileDialog_DropEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnDropEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnDropEvent")]
 	public static extern void QFileDialog_OnDropEvent(void* self, QFileDialog_OnDropEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperDropEvent")]
+	public static extern void QFileDialog_SuperDropEvent(void* self, void** event);
 	[LinkName("QFileDialog_ShowEvent")]
 	public static extern void QFileDialog_ShowEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnShowEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnShowEvent")]
 	public static extern void QFileDialog_OnShowEvent(void* self, QFileDialog_OnShowEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperShowEvent")]
+	public static extern void QFileDialog_SuperShowEvent(void* self, void** event);
 	[LinkName("QFileDialog_HideEvent")]
 	public static extern void QFileDialog_HideEvent(void* self, void** event);
 	
 	public function void QFileDialog_OnHideEvent_action(void* self, void** event);
 	[LinkName("QFileDialog_OnHideEvent")]
 	public static extern void QFileDialog_OnHideEvent(void* self, QFileDialog_OnHideEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperHideEvent")]
+	public static extern void QFileDialog_SuperHideEvent(void* self, void** event);
 	[LinkName("QFileDialog_NativeEvent")]
 	public static extern bool QFileDialog_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QFileDialog_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QFileDialog_OnNativeEvent")]
 	public static extern bool QFileDialog_OnNativeEvent(void* self, QFileDialog_OnNativeEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperNativeEvent")]
+	public static extern bool QFileDialog_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QFileDialog_InputMethodEvent")]
 	public static extern void QFileDialog_InputMethodEvent(void* self, void** param1);
 	
 	public function void QFileDialog_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QFileDialog_OnInputMethodEvent")]
 	public static extern void QFileDialog_OnInputMethodEvent(void* self, QFileDialog_OnInputMethodEvent_action _action);
+	
+	[LinkName("QFileDialog_SuperInputMethodEvent")]
+	public static extern void QFileDialog_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QFileDialog_InputMethodQuery")]
 	public static extern void* QFileDialog_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QFileDialog_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QFileDialog_OnInputMethodQuery")]
 	public static extern void* QFileDialog_OnInputMethodQuery(void* self, QFileDialog_OnInputMethodQuery_action _action);
+	
+	[LinkName("QFileDialog_SuperInputMethodQuery")]
+	public static extern void* QFileDialog_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QFileDialog_FocusNextPrevChild")]
 	public static extern bool QFileDialog_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QFileDialog_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QFileDialog_OnFocusNextPrevChild")]
 	public static extern bool QFileDialog_OnFocusNextPrevChild(void* self, QFileDialog_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QFileDialog_SuperFocusNextPrevChild")]
+	public static extern bool QFileDialog_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QFileDialog_Open")]
 	public static extern void QFileDialog_Open(void* self);
 	
 	public function void QFileDialog_OnOpen_action(void* self);
 	[LinkName("QFileDialog_OnOpen")]
 	public static extern void QFileDialog_OnOpen(void* self, QFileDialog_OnOpen_action _action);
+	
+	[LinkName("QFileDialog_SuperOpen")]
+	public static extern void QFileDialog_SuperOpen(void* self);
 	[LinkName("QFileDialog_Exec")]
 	public static extern c_int QFileDialog_Exec(void* self);
 	
 	public function void QFileDialog_OnExec_action(void* self);
 	[LinkName("QFileDialog_OnExec")]
 	public static extern c_int QFileDialog_OnExec(void* self, QFileDialog_OnExec_action _action);
+	
+	[LinkName("QFileDialog_SuperExec")]
+	public static extern c_int QFileDialog_SuperExec(void* self);
 	[LinkName("QFileDialog_Reject")]
 	public static extern void QFileDialog_Reject(void* self);
 	
 	public function void QFileDialog_OnReject_action(void* self);
 	[LinkName("QFileDialog_OnReject")]
 	public static extern void QFileDialog_OnReject(void* self, QFileDialog_OnReject_action _action);
+	
+	[LinkName("QFileDialog_SuperReject")]
+	public static extern void QFileDialog_SuperReject(void* self);
 }
 [AllowDuplicates]
 enum QFileDialog_ViewMode

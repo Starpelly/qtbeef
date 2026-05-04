@@ -329,6 +329,19 @@ class QOffscreenSurface : IQOffscreenSurface, IQObject, IQSurface
 		CQt.QOffscreenSurface_Connect_ScreenChanged(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_Connect_ScreenChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QOffscreenSurface_OnMetaObject(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnMetaObject);
+		CQt.QOffscreenSurface_OnMetacast(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnMetacast);
+		CQt.QOffscreenSurface_OnMetacall(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnMetacall);
+		CQt.QOffscreenSurface_OnSurfaceType(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnSurfaceType);
+		CQt.QOffscreenSurface_OnFormat(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnFormat);
+		CQt.QOffscreenSurface_OnSize(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnSize);
+		CQt.QOffscreenSurface_OnEvent(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnEvent);
+		CQt.QOffscreenSurface_OnEventFilter(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnEventFilter);
+		CQt.QOffscreenSurface_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnTimerEvent);
+		CQt.QOffscreenSurface_OnChildEvent(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnChildEvent);
+		CQt.QOffscreenSurface_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnCustomEvent);
+		CQt.QOffscreenSurface_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnConnectNotify);
+		CQt.QOffscreenSurface_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_OnDisconnectNotify);
 	}
 	public Event<delegate void(void** screen)> OnScreenChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -347,6 +360,71 @@ class QOffscreenSurface : IQOffscreenSurface, IQObject, IQSurface
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QOffscreenSurface_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QOffscreenSurface_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QOffscreenSurface_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QOffscreenSurface_OnSurfaceType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSurfaceType();
+	}
+	static void QtBeef_QOffscreenSurface_OnFormat(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFormat();
+	}
+	static void QtBeef_QOffscreenSurface_OnSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSize();
+	}
+	static void QtBeef_QOffscreenSurface_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QOffscreenSurface_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QOffscreenSurface_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QOffscreenSurface_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QOffscreenSurface_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QOffscreenSurface_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QOffscreenSurface_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QOffscreenSurface_Ptr ptr)
 	{
@@ -691,18 +769,27 @@ extension CQt
 	public function void QOffscreenSurface_OnMetaObject_action(void* self);
 	[LinkName("QOffscreenSurface_OnMetaObject")]
 	public static extern void** QOffscreenSurface_OnMetaObject(void* self, QOffscreenSurface_OnMetaObject_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperMetaObject")]
+	public static extern void** QOffscreenSurface_SuperMetaObject(void* self);
 	[LinkName("QOffscreenSurface_Qt_Metacast")]
 	public static extern void* QOffscreenSurface_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QOffscreenSurface_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QOffscreenSurface_OnMetacast")]
 	public static extern void* QOffscreenSurface_OnMetacast(void* self, QOffscreenSurface_OnMetacast_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperMetacast")]
+	public static extern void* QOffscreenSurface_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QOffscreenSurface_Qt_Metacall")]
 	public static extern c_int QOffscreenSurface_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QOffscreenSurface_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QOffscreenSurface_OnMetacall")]
 	public static extern c_int QOffscreenSurface_OnMetacall(void* self, QOffscreenSurface_OnMetacall_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperMetacall")]
+	public static extern c_int QOffscreenSurface_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QOffscreenSurface_Tr")]
 	public static extern libqt_string QOffscreenSurface_Tr(c_char* s);
 	[LinkName("QOffscreenSurface_SurfaceType")]
@@ -711,6 +798,9 @@ extension CQt
 	public function void QOffscreenSurface_OnSurfaceType_action(void* self);
 	[LinkName("QOffscreenSurface_OnSurfaceType")]
 	public static extern QSurface_SurfaceType QOffscreenSurface_OnSurfaceType(void* self, QOffscreenSurface_OnSurfaceType_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperSurfaceType")]
+	public static extern QSurface_SurfaceType QOffscreenSurface_SuperSurfaceType(void* self);
 	[LinkName("QOffscreenSurface_Create")]
 	public static extern void QOffscreenSurface_Create(void* self);
 	[LinkName("QOffscreenSurface_Destroy")]
@@ -725,6 +815,9 @@ extension CQt
 	public function void QOffscreenSurface_OnFormat_action(void* self);
 	[LinkName("QOffscreenSurface_OnFormat")]
 	public static extern void* QOffscreenSurface_OnFormat(void* self, QOffscreenSurface_OnFormat_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperFormat")]
+	public static extern void* QOffscreenSurface_SuperFormat(void* self);
 	[LinkName("QOffscreenSurface_RequestedFormat")]
 	public static extern void* QOffscreenSurface_RequestedFormat(void* self);
 	[LinkName("QOffscreenSurface_Size")]
@@ -733,6 +826,9 @@ extension CQt
 	public function void QOffscreenSurface_OnSize_action(void* self);
 	[LinkName("QOffscreenSurface_OnSize")]
 	public static extern void* QOffscreenSurface_OnSize(void* self, QOffscreenSurface_OnSize_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperSize")]
+	public static extern void* QOffscreenSurface_SuperSize(void* self);
 	[LinkName("QOffscreenSurface_Screen")]
 	public static extern void** QOffscreenSurface_Screen(void* self);
 	[LinkName("QOffscreenSurface_SetScreen")]
@@ -755,40 +851,61 @@ extension CQt
 	public function void QOffscreenSurface_OnEvent_action(void* self, void** event);
 	[LinkName("QOffscreenSurface_OnEvent")]
 	public static extern bool QOffscreenSurface_OnEvent(void* self, QOffscreenSurface_OnEvent_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperEvent")]
+	public static extern bool QOffscreenSurface_SuperEvent(void* self, void** event);
 	[LinkName("QOffscreenSurface_EventFilter")]
 	public static extern bool QOffscreenSurface_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QOffscreenSurface_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QOffscreenSurface_OnEventFilter")]
 	public static extern bool QOffscreenSurface_OnEventFilter(void* self, QOffscreenSurface_OnEventFilter_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperEventFilter")]
+	public static extern bool QOffscreenSurface_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QOffscreenSurface_TimerEvent")]
 	public static extern void QOffscreenSurface_TimerEvent(void* self, void** event);
 	
 	public function void QOffscreenSurface_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QOffscreenSurface_OnTimerEvent")]
 	public static extern void QOffscreenSurface_OnTimerEvent(void* self, QOffscreenSurface_OnTimerEvent_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperTimerEvent")]
+	public static extern void QOffscreenSurface_SuperTimerEvent(void* self, void** event);
 	[LinkName("QOffscreenSurface_ChildEvent")]
 	public static extern void QOffscreenSurface_ChildEvent(void* self, void** event);
 	
 	public function void QOffscreenSurface_OnChildEvent_action(void* self, void** event);
 	[LinkName("QOffscreenSurface_OnChildEvent")]
 	public static extern void QOffscreenSurface_OnChildEvent(void* self, QOffscreenSurface_OnChildEvent_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperChildEvent")]
+	public static extern void QOffscreenSurface_SuperChildEvent(void* self, void** event);
 	[LinkName("QOffscreenSurface_CustomEvent")]
 	public static extern void QOffscreenSurface_CustomEvent(void* self, void** event);
 	
 	public function void QOffscreenSurface_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QOffscreenSurface_OnCustomEvent")]
 	public static extern void QOffscreenSurface_OnCustomEvent(void* self, QOffscreenSurface_OnCustomEvent_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperCustomEvent")]
+	public static extern void QOffscreenSurface_SuperCustomEvent(void* self, void** event);
 	[LinkName("QOffscreenSurface_ConnectNotify")]
 	public static extern void QOffscreenSurface_ConnectNotify(void* self, void** signal);
 	
 	public function void QOffscreenSurface_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QOffscreenSurface_OnConnectNotify")]
 	public static extern void QOffscreenSurface_OnConnectNotify(void* self, QOffscreenSurface_OnConnectNotify_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperConnectNotify")]
+	public static extern void QOffscreenSurface_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QOffscreenSurface_DisconnectNotify")]
 	public static extern void QOffscreenSurface_DisconnectNotify(void* self, void** signal);
 	
 	public function void QOffscreenSurface_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QOffscreenSurface_OnDisconnectNotify")]
 	public static extern void QOffscreenSurface_OnDisconnectNotify(void* self, QOffscreenSurface_OnDisconnectNotify_action _action);
+	
+	[LinkName("QOffscreenSurface_SuperDisconnectNotify")]
+	public static extern void QOffscreenSurface_SuperDisconnectNotify(void* self, void** signal);
 }

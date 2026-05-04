@@ -26,6 +26,12 @@ class QFactoryInterface : IQFactoryInterface
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QFactoryInterface_OnKeys(obj.ObjectPtr,  => QtBeef_QFactoryInterface_OnKeys);
+	}
+	static void QtBeef_QFactoryInterface_OnKeys(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeys();
 	}
 	public this(QFactoryInterface_Ptr ptr)
 	{
@@ -54,4 +60,7 @@ extension CQt
 	public function void QFactoryInterface_OnKeys_action(void* self);
 	[LinkName("QFactoryInterface_OnKeys")]
 	public static extern void* QFactoryInterface_OnKeys(void* self, QFactoryInterface_OnKeys_action _action);
+	
+	[LinkName("QFactoryInterface_SuperKeys")]
+	public static extern void* QFactoryInterface_SuperKeys(void* self);
 }

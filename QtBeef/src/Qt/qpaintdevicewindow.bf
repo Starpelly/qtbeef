@@ -975,6 +975,46 @@ class QPaintDeviceWindow : IQPaintDeviceWindow, IQWindow, IQObject, IQSurface, I
 		CQt.QWindow_Connect_FocusObjectChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_FocusObjectChanged);
 		CQt.QWindow_Connect_OpacityChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_OpacityChanged);
 		CQt.QWindow_Connect_TransientParentChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_TransientParentChanged);
+		CQt.QPaintDeviceWindow_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnMetaObject);
+		CQt.QPaintDeviceWindow_OnMetacast(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnMetacast);
+		CQt.QPaintDeviceWindow_OnMetacall(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnMetacall);
+		CQt.QPaintDeviceWindow_OnExposeEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnExposeEvent);
+		CQt.QPaintDeviceWindow_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnPaintEvent);
+		CQt.QPaintDeviceWindow_OnMetric(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnMetric);
+		CQt.QPaintDeviceWindow_OnEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnEvent);
+		CQt.QPaintDeviceWindow_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnEventFilter);
+		CQt.QPaintDeviceWindow_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnTimerEvent);
+		CQt.QPaintDeviceWindow_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnChildEvent);
+		CQt.QPaintDeviceWindow_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnCustomEvent);
+		CQt.QPaintDeviceWindow_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnConnectNotify);
+		CQt.QPaintDeviceWindow_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnDisconnectNotify);
+		CQt.QPaintDeviceWindow_OnFormat(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnFormat);
+		CQt.QPaintDeviceWindow_OnSurfaceType(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnSurfaceType);
+		CQt.QPaintDeviceWindow_OnSize(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnSize);
+		CQt.QPaintDeviceWindow_OnAccessibleRoot(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnAccessibleRoot);
+		CQt.QPaintDeviceWindow_OnFocusObject(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnFocusObject);
+		CQt.QPaintDeviceWindow_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnResizeEvent);
+		CQt.QPaintDeviceWindow_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnMoveEvent);
+		CQt.QPaintDeviceWindow_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnFocusInEvent);
+		CQt.QPaintDeviceWindow_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnFocusOutEvent);
+		CQt.QPaintDeviceWindow_OnShowEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnShowEvent);
+		CQt.QPaintDeviceWindow_OnHideEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnHideEvent);
+		CQt.QPaintDeviceWindow_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnCloseEvent);
+		CQt.QPaintDeviceWindow_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnKeyPressEvent);
+		CQt.QPaintDeviceWindow_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnKeyReleaseEvent);
+		CQt.QPaintDeviceWindow_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnMousePressEvent);
+		CQt.QPaintDeviceWindow_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnMouseReleaseEvent);
+		CQt.QPaintDeviceWindow_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnMouseDoubleClickEvent);
+		CQt.QPaintDeviceWindow_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnMouseMoveEvent);
+		CQt.QPaintDeviceWindow_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnWheelEvent);
+		CQt.QPaintDeviceWindow_OnTouchEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnTouchEvent);
+		CQt.QPaintDeviceWindow_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnTabletEvent);
+		CQt.QPaintDeviceWindow_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnNativeEvent);
+		CQt.QPaintDeviceWindow_OnDevType(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnDevType);
+		CQt.QPaintDeviceWindow_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnPaintEngine);
+		CQt.QPaintDeviceWindow_OnInitPainter(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnInitPainter);
+		CQt.QPaintDeviceWindow_OnRedirected(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnRedirected);
+		CQt.QPaintDeviceWindow_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QPaintDeviceWindow_OnSharedPainter);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1101,6 +1141,206 @@ class QPaintDeviceWindow : IQPaintDeviceWindow, IQWindow, IQObject, IQSurface, I
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnTransientParentChanged.Invoke(transientParent);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPaintDeviceWindow_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnExposeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExposeEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnFormat(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFormat();
+	}
+	static void QtBeef_QPaintDeviceWindow_OnSurfaceType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSurfaceType();
+	}
+	static void QtBeef_QPaintDeviceWindow_OnSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSize();
+	}
+	static void QtBeef_QPaintDeviceWindow_OnAccessibleRoot(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleRoot();
+	}
+	static void QtBeef_QPaintDeviceWindow_OnFocusObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusObject();
+	}
+	static void QtBeef_QPaintDeviceWindow_OnResizeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnFocusInEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnFocusOutEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnShowEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnHideEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnCloseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnKeyPressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnKeyReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnMouseReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnMouseDoubleClickEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnWheelEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnTouchEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTouchEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnTabletEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(param1);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QPaintDeviceWindow_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QPaintDeviceWindow_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QPaintDeviceWindow_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
 	}
 	public this(QPaintDeviceWindow_Ptr ptr)
 	{
@@ -2033,18 +2273,27 @@ extension CQt
 	public function void QPaintDeviceWindow_OnMetaObject_action(void* self);
 	[LinkName("QPaintDeviceWindow_OnMetaObject")]
 	public static extern void** QPaintDeviceWindow_OnMetaObject(void* self, QPaintDeviceWindow_OnMetaObject_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperMetaObject")]
+	public static extern void** QPaintDeviceWindow_SuperMetaObject(void* self);
 	[LinkName("QPaintDeviceWindow_Qt_Metacast")]
 	public static extern void* QPaintDeviceWindow_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPaintDeviceWindow_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPaintDeviceWindow_OnMetacast")]
 	public static extern void* QPaintDeviceWindow_OnMetacast(void* self, QPaintDeviceWindow_OnMetacast_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperMetacast")]
+	public static extern void* QPaintDeviceWindow_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPaintDeviceWindow_Qt_Metacall")]
 	public static extern c_int QPaintDeviceWindow_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPaintDeviceWindow_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPaintDeviceWindow_OnMetacall")]
 	public static extern c_int QPaintDeviceWindow_OnMetacall(void* self, QPaintDeviceWindow_OnMetacall_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperMetacall")]
+	public static extern c_int QPaintDeviceWindow_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPaintDeviceWindow_Tr")]
 	public static extern libqt_string QPaintDeviceWindow_Tr(c_char* s);
 	[LinkName("QPaintDeviceWindow_Update")]
@@ -2059,24 +2308,36 @@ extension CQt
 	public function void QPaintDeviceWindow_OnExposeEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnExposeEvent")]
 	public static extern void QPaintDeviceWindow_OnExposeEvent(void* self, QPaintDeviceWindow_OnExposeEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperExposeEvent")]
+	public static extern void QPaintDeviceWindow_SuperExposeEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_PaintEvent")]
 	public static extern void QPaintDeviceWindow_PaintEvent(void* self, void** event);
 	
 	public function void QPaintDeviceWindow_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_OnPaintEvent")]
 	public static extern void QPaintDeviceWindow_OnPaintEvent(void* self, QPaintDeviceWindow_OnPaintEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperPaintEvent")]
+	public static extern void QPaintDeviceWindow_SuperPaintEvent(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_Metric")]
 	public static extern c_int QPaintDeviceWindow_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QPaintDeviceWindow_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QPaintDeviceWindow_OnMetric")]
 	public static extern c_int QPaintDeviceWindow_OnMetric(void* self, QPaintDeviceWindow_OnMetric_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperMetric")]
+	public static extern c_int QPaintDeviceWindow_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QPaintDeviceWindow_Event")]
 	public static extern bool QPaintDeviceWindow_Event(void* self, void** event);
 	
 	public function void QPaintDeviceWindow_OnEvent_action(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_OnEvent")]
 	public static extern bool QPaintDeviceWindow_OnEvent(void* self, QPaintDeviceWindow_OnEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperEvent")]
+	public static extern bool QPaintDeviceWindow_SuperEvent(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_Tr2")]
 	public static extern libqt_string QPaintDeviceWindow_Tr2(c_char* s, c_char* c);
 	[LinkName("QPaintDeviceWindow_Tr3")]
@@ -2087,196 +2348,295 @@ extension CQt
 	public function void QPaintDeviceWindow_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPaintDeviceWindow_OnEventFilter")]
 	public static extern bool QPaintDeviceWindow_OnEventFilter(void* self, QPaintDeviceWindow_OnEventFilter_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperEventFilter")]
+	public static extern bool QPaintDeviceWindow_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPaintDeviceWindow_TimerEvent")]
 	public static extern void QPaintDeviceWindow_TimerEvent(void* self, void** event);
 	
 	public function void QPaintDeviceWindow_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_OnTimerEvent")]
 	public static extern void QPaintDeviceWindow_OnTimerEvent(void* self, QPaintDeviceWindow_OnTimerEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperTimerEvent")]
+	public static extern void QPaintDeviceWindow_SuperTimerEvent(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_ChildEvent")]
 	public static extern void QPaintDeviceWindow_ChildEvent(void* self, void** event);
 	
 	public function void QPaintDeviceWindow_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_OnChildEvent")]
 	public static extern void QPaintDeviceWindow_OnChildEvent(void* self, QPaintDeviceWindow_OnChildEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperChildEvent")]
+	public static extern void QPaintDeviceWindow_SuperChildEvent(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_CustomEvent")]
 	public static extern void QPaintDeviceWindow_CustomEvent(void* self, void** event);
 	
 	public function void QPaintDeviceWindow_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_OnCustomEvent")]
 	public static extern void QPaintDeviceWindow_OnCustomEvent(void* self, QPaintDeviceWindow_OnCustomEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperCustomEvent")]
+	public static extern void QPaintDeviceWindow_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPaintDeviceWindow_ConnectNotify")]
 	public static extern void QPaintDeviceWindow_ConnectNotify(void* self, void** signal);
 	
 	public function void QPaintDeviceWindow_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPaintDeviceWindow_OnConnectNotify")]
 	public static extern void QPaintDeviceWindow_OnConnectNotify(void* self, QPaintDeviceWindow_OnConnectNotify_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperConnectNotify")]
+	public static extern void QPaintDeviceWindow_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPaintDeviceWindow_DisconnectNotify")]
 	public static extern void QPaintDeviceWindow_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPaintDeviceWindow_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPaintDeviceWindow_OnDisconnectNotify")]
 	public static extern void QPaintDeviceWindow_OnDisconnectNotify(void* self, QPaintDeviceWindow_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperDisconnectNotify")]
+	public static extern void QPaintDeviceWindow_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QPaintDeviceWindow_Format")]
 	public static extern void* QPaintDeviceWindow_Format(void* self);
 	
 	public function void QPaintDeviceWindow_OnFormat_action(void* self);
 	[LinkName("QPaintDeviceWindow_OnFormat")]
 	public static extern void* QPaintDeviceWindow_OnFormat(void* self, QPaintDeviceWindow_OnFormat_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperFormat")]
+	public static extern void* QPaintDeviceWindow_SuperFormat(void* self);
 	[LinkName("QPaintDeviceWindow_SurfaceType")]
 	public static extern QSurface_SurfaceType QPaintDeviceWindow_SurfaceType(void* self);
 	
 	public function void QPaintDeviceWindow_OnSurfaceType_action(void* self);
 	[LinkName("QPaintDeviceWindow_OnSurfaceType")]
 	public static extern QSurface_SurfaceType QPaintDeviceWindow_OnSurfaceType(void* self, QPaintDeviceWindow_OnSurfaceType_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperSurfaceType")]
+	public static extern QSurface_SurfaceType QPaintDeviceWindow_SuperSurfaceType(void* self);
 	[LinkName("QPaintDeviceWindow_Size")]
 	public static extern void* QPaintDeviceWindow_Size(void* self);
 	
 	public function void QPaintDeviceWindow_OnSize_action(void* self);
 	[LinkName("QPaintDeviceWindow_OnSize")]
 	public static extern void* QPaintDeviceWindow_OnSize(void* self, QPaintDeviceWindow_OnSize_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperSize")]
+	public static extern void* QPaintDeviceWindow_SuperSize(void* self);
 	[LinkName("QPaintDeviceWindow_AccessibleRoot")]
 	public static extern void** QPaintDeviceWindow_AccessibleRoot(void* self);
 	
 	public function void QPaintDeviceWindow_OnAccessibleRoot_action(void* self);
 	[LinkName("QPaintDeviceWindow_OnAccessibleRoot")]
 	public static extern void** QPaintDeviceWindow_OnAccessibleRoot(void* self, QPaintDeviceWindow_OnAccessibleRoot_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperAccessibleRoot")]
+	public static extern void** QPaintDeviceWindow_SuperAccessibleRoot(void* self);
 	[LinkName("QPaintDeviceWindow_FocusObject")]
 	public static extern void** QPaintDeviceWindow_FocusObject(void* self);
 	
 	public function void QPaintDeviceWindow_OnFocusObject_action(void* self);
 	[LinkName("QPaintDeviceWindow_OnFocusObject")]
 	public static extern void** QPaintDeviceWindow_OnFocusObject(void* self, QPaintDeviceWindow_OnFocusObject_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperFocusObject")]
+	public static extern void** QPaintDeviceWindow_SuperFocusObject(void* self);
 	[LinkName("QPaintDeviceWindow_ResizeEvent")]
 	public static extern void QPaintDeviceWindow_ResizeEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnResizeEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnResizeEvent")]
 	public static extern void QPaintDeviceWindow_OnResizeEvent(void* self, QPaintDeviceWindow_OnResizeEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperResizeEvent")]
+	public static extern void QPaintDeviceWindow_SuperResizeEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_MoveEvent")]
 	public static extern void QPaintDeviceWindow_MoveEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnMoveEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnMoveEvent")]
 	public static extern void QPaintDeviceWindow_OnMoveEvent(void* self, QPaintDeviceWindow_OnMoveEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperMoveEvent")]
+	public static extern void QPaintDeviceWindow_SuperMoveEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_FocusInEvent")]
 	public static extern void QPaintDeviceWindow_FocusInEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnFocusInEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnFocusInEvent")]
 	public static extern void QPaintDeviceWindow_OnFocusInEvent(void* self, QPaintDeviceWindow_OnFocusInEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperFocusInEvent")]
+	public static extern void QPaintDeviceWindow_SuperFocusInEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_FocusOutEvent")]
 	public static extern void QPaintDeviceWindow_FocusOutEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnFocusOutEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnFocusOutEvent")]
 	public static extern void QPaintDeviceWindow_OnFocusOutEvent(void* self, QPaintDeviceWindow_OnFocusOutEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperFocusOutEvent")]
+	public static extern void QPaintDeviceWindow_SuperFocusOutEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_ShowEvent")]
 	public static extern void QPaintDeviceWindow_ShowEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnShowEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnShowEvent")]
 	public static extern void QPaintDeviceWindow_OnShowEvent(void* self, QPaintDeviceWindow_OnShowEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperShowEvent")]
+	public static extern void QPaintDeviceWindow_SuperShowEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_HideEvent")]
 	public static extern void QPaintDeviceWindow_HideEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnHideEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnHideEvent")]
 	public static extern void QPaintDeviceWindow_OnHideEvent(void* self, QPaintDeviceWindow_OnHideEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperHideEvent")]
+	public static extern void QPaintDeviceWindow_SuperHideEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_CloseEvent")]
 	public static extern void QPaintDeviceWindow_CloseEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnCloseEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnCloseEvent")]
 	public static extern void QPaintDeviceWindow_OnCloseEvent(void* self, QPaintDeviceWindow_OnCloseEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperCloseEvent")]
+	public static extern void QPaintDeviceWindow_SuperCloseEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_KeyPressEvent")]
 	public static extern void QPaintDeviceWindow_KeyPressEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnKeyPressEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnKeyPressEvent")]
 	public static extern void QPaintDeviceWindow_OnKeyPressEvent(void* self, QPaintDeviceWindow_OnKeyPressEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperKeyPressEvent")]
+	public static extern void QPaintDeviceWindow_SuperKeyPressEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_KeyReleaseEvent")]
 	public static extern void QPaintDeviceWindow_KeyReleaseEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnKeyReleaseEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnKeyReleaseEvent")]
 	public static extern void QPaintDeviceWindow_OnKeyReleaseEvent(void* self, QPaintDeviceWindow_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperKeyReleaseEvent")]
+	public static extern void QPaintDeviceWindow_SuperKeyReleaseEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_MousePressEvent")]
 	public static extern void QPaintDeviceWindow_MousePressEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnMousePressEvent")]
 	public static extern void QPaintDeviceWindow_OnMousePressEvent(void* self, QPaintDeviceWindow_OnMousePressEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperMousePressEvent")]
+	public static extern void QPaintDeviceWindow_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_MouseReleaseEvent")]
 	public static extern void QPaintDeviceWindow_MouseReleaseEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnMouseReleaseEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnMouseReleaseEvent")]
 	public static extern void QPaintDeviceWindow_OnMouseReleaseEvent(void* self, QPaintDeviceWindow_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperMouseReleaseEvent")]
+	public static extern void QPaintDeviceWindow_SuperMouseReleaseEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_MouseDoubleClickEvent")]
 	public static extern void QPaintDeviceWindow_MouseDoubleClickEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnMouseDoubleClickEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnMouseDoubleClickEvent")]
 	public static extern void QPaintDeviceWindow_OnMouseDoubleClickEvent(void* self, QPaintDeviceWindow_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperMouseDoubleClickEvent")]
+	public static extern void QPaintDeviceWindow_SuperMouseDoubleClickEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_MouseMoveEvent")]
 	public static extern void QPaintDeviceWindow_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnMouseMoveEvent")]
 	public static extern void QPaintDeviceWindow_OnMouseMoveEvent(void* self, QPaintDeviceWindow_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperMouseMoveEvent")]
+	public static extern void QPaintDeviceWindow_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_WheelEvent")]
 	public static extern void QPaintDeviceWindow_WheelEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnWheelEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnWheelEvent")]
 	public static extern void QPaintDeviceWindow_OnWheelEvent(void* self, QPaintDeviceWindow_OnWheelEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperWheelEvent")]
+	public static extern void QPaintDeviceWindow_SuperWheelEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_TouchEvent")]
 	public static extern void QPaintDeviceWindow_TouchEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnTouchEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnTouchEvent")]
 	public static extern void QPaintDeviceWindow_OnTouchEvent(void* self, QPaintDeviceWindow_OnTouchEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperTouchEvent")]
+	public static extern void QPaintDeviceWindow_SuperTouchEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_TabletEvent")]
 	public static extern void QPaintDeviceWindow_TabletEvent(void* self, void** param1);
 	
 	public function void QPaintDeviceWindow_OnTabletEvent_action(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_OnTabletEvent")]
 	public static extern void QPaintDeviceWindow_OnTabletEvent(void* self, QPaintDeviceWindow_OnTabletEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperTabletEvent")]
+	public static extern void QPaintDeviceWindow_SuperTabletEvent(void* self, void** param1);
 	[LinkName("QPaintDeviceWindow_NativeEvent")]
 	public static extern bool QPaintDeviceWindow_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QPaintDeviceWindow_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QPaintDeviceWindow_OnNativeEvent")]
 	public static extern bool QPaintDeviceWindow_OnNativeEvent(void* self, QPaintDeviceWindow_OnNativeEvent_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperNativeEvent")]
+	public static extern bool QPaintDeviceWindow_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QPaintDeviceWindow_DevType")]
 	public static extern c_int QPaintDeviceWindow_DevType(void* self);
 	
 	public function void QPaintDeviceWindow_OnDevType_action(void* self);
 	[LinkName("QPaintDeviceWindow_OnDevType")]
 	public static extern c_int QPaintDeviceWindow_OnDevType(void* self, QPaintDeviceWindow_OnDevType_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperDevType")]
+	public static extern c_int QPaintDeviceWindow_SuperDevType(void* self);
 	[LinkName("QPaintDeviceWindow_PaintEngine")]
 	public static extern void** QPaintDeviceWindow_PaintEngine(void* self);
 	
 	public function void QPaintDeviceWindow_OnPaintEngine_action(void* self);
 	[LinkName("QPaintDeviceWindow_OnPaintEngine")]
 	public static extern void** QPaintDeviceWindow_OnPaintEngine(void* self, QPaintDeviceWindow_OnPaintEngine_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperPaintEngine")]
+	public static extern void** QPaintDeviceWindow_SuperPaintEngine(void* self);
 	[LinkName("QPaintDeviceWindow_InitPainter")]
 	public static extern void QPaintDeviceWindow_InitPainter(void* self, void** painter);
 	
 	public function void QPaintDeviceWindow_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QPaintDeviceWindow_OnInitPainter")]
 	public static extern void QPaintDeviceWindow_OnInitPainter(void* self, QPaintDeviceWindow_OnInitPainter_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperInitPainter")]
+	public static extern void QPaintDeviceWindow_SuperInitPainter(void* self, void** painter);
 	[LinkName("QPaintDeviceWindow_Redirected")]
 	public static extern void** QPaintDeviceWindow_Redirected(void* self, void** offset);
 	
 	public function void QPaintDeviceWindow_OnRedirected_action(void* self, void** offset);
 	[LinkName("QPaintDeviceWindow_OnRedirected")]
 	public static extern void** QPaintDeviceWindow_OnRedirected(void* self, QPaintDeviceWindow_OnRedirected_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperRedirected")]
+	public static extern void** QPaintDeviceWindow_SuperRedirected(void* self, void** offset);
 	[LinkName("QPaintDeviceWindow_SharedPainter")]
 	public static extern void** QPaintDeviceWindow_SharedPainter(void* self);
 	
 	public function void QPaintDeviceWindow_OnSharedPainter_action(void* self);
 	[LinkName("QPaintDeviceWindow_OnSharedPainter")]
 	public static extern void** QPaintDeviceWindow_OnSharedPainter(void* self, QPaintDeviceWindow_OnSharedPainter_action _action);
+	
+	[LinkName("QPaintDeviceWindow_SuperSharedPainter")]
+	public static extern void** QPaintDeviceWindow_SuperSharedPainter(void* self);
 }

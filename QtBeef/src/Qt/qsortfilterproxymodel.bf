@@ -801,6 +801,61 @@ class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAb
 		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged2);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2);
+		CQt.QSortFilterProxyModel_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMetaObject);
+		CQt.QSortFilterProxyModel_OnMetacast(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMetacast);
+		CQt.QSortFilterProxyModel_OnMetacall(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMetacall);
+		CQt.QSortFilterProxyModel_OnSetSourceModel(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSetSourceModel);
+		CQt.QSortFilterProxyModel_OnMapToSource(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMapToSource);
+		CQt.QSortFilterProxyModel_OnMapFromSource(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMapFromSource);
+		CQt.QSortFilterProxyModel_OnMapSelectionToSource(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMapSelectionToSource);
+		CQt.QSortFilterProxyModel_OnMapSelectionFromSource(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMapSelectionFromSource);
+		CQt.QSortFilterProxyModel_OnFilterAcceptsRow(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnFilterAcceptsRow);
+		CQt.QSortFilterProxyModel_OnFilterAcceptsColumn(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnFilterAcceptsColumn);
+		CQt.QSortFilterProxyModel_OnLessThan(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnLessThan);
+		CQt.QSortFilterProxyModel_OnIndex(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnIndex);
+		CQt.QSortFilterProxyModel_OnParent(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnParent);
+		CQt.QSortFilterProxyModel_OnSibling(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSibling);
+		CQt.QSortFilterProxyModel_OnRowCount(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnRowCount);
+		CQt.QSortFilterProxyModel_OnColumnCount(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnColumnCount);
+		CQt.QSortFilterProxyModel_OnHasChildren(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnHasChildren);
+		CQt.QSortFilterProxyModel_OnData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnData);
+		CQt.QSortFilterProxyModel_OnSetData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSetData);
+		CQt.QSortFilterProxyModel_OnHeaderData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnHeaderData);
+		CQt.QSortFilterProxyModel_OnSetHeaderData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSetHeaderData);
+		CQt.QSortFilterProxyModel_OnMimeData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMimeData);
+		CQt.QSortFilterProxyModel_OnDropMimeData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnDropMimeData);
+		CQt.QSortFilterProxyModel_OnInsertRows(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnInsertRows);
+		CQt.QSortFilterProxyModel_OnInsertColumns(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnInsertColumns);
+		CQt.QSortFilterProxyModel_OnRemoveRows(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnRemoveRows);
+		CQt.QSortFilterProxyModel_OnRemoveColumns(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnRemoveColumns);
+		CQt.QSortFilterProxyModel_OnFetchMore(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnFetchMore);
+		CQt.QSortFilterProxyModel_OnCanFetchMore(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnCanFetchMore);
+		CQt.QSortFilterProxyModel_OnFlags(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnFlags);
+		CQt.QSortFilterProxyModel_OnBuddy(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnBuddy);
+		CQt.QSortFilterProxyModel_OnMatch(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMatch);
+		CQt.QSortFilterProxyModel_OnSpan(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSpan);
+		CQt.QSortFilterProxyModel_OnSort(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSort);
+		CQt.QSortFilterProxyModel_OnMimeTypes(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMimeTypes);
+		CQt.QSortFilterProxyModel_OnSupportedDropActions(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSupportedDropActions);
+		CQt.QSortFilterProxyModel_OnEvent(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnEvent);
+		CQt.QSortFilterProxyModel_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnEventFilter);
+		CQt.QSortFilterProxyModel_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnTimerEvent);
+		CQt.QSortFilterProxyModel_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnChildEvent);
+		CQt.QSortFilterProxyModel_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnCustomEvent);
+		CQt.QSortFilterProxyModel_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnConnectNotify);
+		CQt.QSortFilterProxyModel_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnDisconnectNotify);
+		CQt.QSortFilterProxyModel_OnItemData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnItemData);
+		CQt.QSortFilterProxyModel_OnSetItemData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSetItemData);
+		CQt.QSortFilterProxyModel_OnClearItemData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnClearItemData);
+		CQt.QSortFilterProxyModel_OnCanDropMimeData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnCanDropMimeData);
+		CQt.QSortFilterProxyModel_OnSupportedDragActions(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSupportedDragActions);
+		CQt.QSortFilterProxyModel_OnMoveRows(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMoveRows);
+		CQt.QSortFilterProxyModel_OnMoveColumns(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMoveColumns);
+		CQt.QSortFilterProxyModel_OnRoleNames(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnRoleNames);
+		CQt.QSortFilterProxyModel_OnMultiData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnMultiData);
+		CQt.QSortFilterProxyModel_OnSubmit(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnSubmit);
+		CQt.QSortFilterProxyModel_OnRevert(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnRevert);
+		CQt.QSortFilterProxyModel_OnResetInternalData(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_OnResetInternalData);
 	}
 	public Event<delegate void(bool dynamicSortFilter)> OnDynamicSortFilterChanged = .() ~ _.Dispose();
 	public Event<delegate void(Qt_CaseSensitivity filterCaseSensitivity)> OnFilterCaseSensitivityChanged = .() ~ _.Dispose();
@@ -915,6 +970,281 @@ class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAb
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSetSourceModel(void* ptr, void** sourceModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSourceModel(sourceModel);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMapToSource(void* ptr, void** proxyIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapToSource(proxyIndex);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMapFromSource(void* ptr, void** sourceIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapFromSource(sourceIndex);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMapSelectionToSource(void* ptr, void** proxySelection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapSelectionToSource(proxySelection);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMapSelectionFromSource(void* ptr, void** sourceSelection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapSelectionFromSource(sourceSelection);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnFilterAcceptsRow(void* ptr, c_int source_row, void** source_parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFilterAcceptsRow(source_row, source_parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnFilterAcceptsColumn(void* ptr, c_int source_column, void** source_parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFilterAcceptsColumn(source_column, source_parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnLessThan(void* ptr, void** source_left, void** source_right)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLessThan(source_left, source_right);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnIndex(void* ptr, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndex(row, column, parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnParent(void* ptr, void** child)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParent(child);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSibling(void* ptr, c_int row, c_int column, void** idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSibling(row, column, idx);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnRowCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowCount(parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnColumnCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnCount(parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnHasChildren(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasChildren(parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnData(void* ptr, void** index, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(index, role);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSetData(void* ptr, void** index, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(index, value, role);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnHeaderData(void* ptr, c_int section, Qt_Orientation orientation, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderData(section, orientation, role);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSetHeaderData(void* ptr, c_int section, Qt_Orientation orientation, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetHeaderData(section, orientation, value, role);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMimeData(void* ptr, void** indexes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeData(indexes);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnInsertRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertRows(row, count, parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnInsertColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertColumns(column, count, parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnRemoveRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveRows(row, count, parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnRemoveColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveColumns(column, count, parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFetchMore(parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnCanFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanFetchMore(parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnFlags(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFlags(index);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnBuddy(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBuddy(index);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMatch(void* ptr, void** start, c_int role, void** value, c_int hits, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMatch(start, role, value, hits, flags);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSpan(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpan(index);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSort(void* ptr, c_int column, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSort(column, order);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMimeTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeTypes();
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSupportedDropActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDropActions();
+	}
+	static void QtBeef_QSortFilterProxyModel_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemData(index);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSetItemData(void* ptr, void** index, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetItemData(index, roles);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnClearItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClearItemData(index);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnCanDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSupportedDragActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDragActions();
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMoveRows(void* ptr, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMoveColumns(void* ptr, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnRoleNames(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRoleNames();
+	}
+	static void QtBeef_QSortFilterProxyModel_OnMultiData(void* ptr, void** index, void* roleDataSpan)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMultiData(index, roleDataSpan);
+	}
+	static void QtBeef_QSortFilterProxyModel_OnSubmit(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSubmit();
+	}
+	static void QtBeef_QSortFilterProxyModel_OnRevert(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRevert();
+	}
+	static void QtBeef_QSortFilterProxyModel_OnResetInternalData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResetInternalData();
 	}
 	public this(QSortFilterProxyModel_Ptr ptr)
 	{
@@ -1702,18 +2032,27 @@ extension CQt
 	public function void QSortFilterProxyModel_OnMetaObject_action(void* self);
 	[LinkName("QSortFilterProxyModel_OnMetaObject")]
 	public static extern void** QSortFilterProxyModel_OnMetaObject(void* self, QSortFilterProxyModel_OnMetaObject_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMetaObject")]
+	public static extern void** QSortFilterProxyModel_SuperMetaObject(void* self);
 	[LinkName("QSortFilterProxyModel_Qt_Metacast")]
 	public static extern void* QSortFilterProxyModel_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSortFilterProxyModel_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSortFilterProxyModel_OnMetacast")]
 	public static extern void* QSortFilterProxyModel_OnMetacast(void* self, QSortFilterProxyModel_OnMetacast_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMetacast")]
+	public static extern void* QSortFilterProxyModel_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSortFilterProxyModel_Qt_Metacall")]
 	public static extern c_int QSortFilterProxyModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSortFilterProxyModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSortFilterProxyModel_OnMetacall")]
 	public static extern c_int QSortFilterProxyModel_OnMetacall(void* self, QSortFilterProxyModel_OnMetacall_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMetacall")]
+	public static extern c_int QSortFilterProxyModel_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSortFilterProxyModel_Tr")]
 	public static extern libqt_string QSortFilterProxyModel_Tr(c_char* s);
 	[LinkName("QSortFilterProxyModel_SetSourceModel")]
@@ -1722,30 +2061,45 @@ extension CQt
 	public function void QSortFilterProxyModel_OnSetSourceModel_action(void* self, void** sourceModel);
 	[LinkName("QSortFilterProxyModel_OnSetSourceModel")]
 	public static extern void QSortFilterProxyModel_OnSetSourceModel(void* self, QSortFilterProxyModel_OnSetSourceModel_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSetSourceModel")]
+	public static extern void QSortFilterProxyModel_SuperSetSourceModel(void* self, void** sourceModel);
 	[LinkName("QSortFilterProxyModel_MapToSource")]
 	public static extern void* QSortFilterProxyModel_MapToSource(void* self, void** proxyIndex);
 	
 	public function void QSortFilterProxyModel_OnMapToSource_action(void* self, void** proxyIndex);
 	[LinkName("QSortFilterProxyModel_OnMapToSource")]
 	public static extern void* QSortFilterProxyModel_OnMapToSource(void* self, QSortFilterProxyModel_OnMapToSource_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMapToSource")]
+	public static extern void* QSortFilterProxyModel_SuperMapToSource(void* self, void** proxyIndex);
 	[LinkName("QSortFilterProxyModel_MapFromSource")]
 	public static extern void* QSortFilterProxyModel_MapFromSource(void* self, void** sourceIndex);
 	
 	public function void QSortFilterProxyModel_OnMapFromSource_action(void* self, void** sourceIndex);
 	[LinkName("QSortFilterProxyModel_OnMapFromSource")]
 	public static extern void* QSortFilterProxyModel_OnMapFromSource(void* self, QSortFilterProxyModel_OnMapFromSource_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMapFromSource")]
+	public static extern void* QSortFilterProxyModel_SuperMapFromSource(void* self, void** sourceIndex);
 	[LinkName("QSortFilterProxyModel_MapSelectionToSource")]
 	public static extern void* QSortFilterProxyModel_MapSelectionToSource(void* self, void** proxySelection);
 	
 	public function void QSortFilterProxyModel_OnMapSelectionToSource_action(void* self, void** proxySelection);
 	[LinkName("QSortFilterProxyModel_OnMapSelectionToSource")]
 	public static extern void* QSortFilterProxyModel_OnMapSelectionToSource(void* self, QSortFilterProxyModel_OnMapSelectionToSource_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMapSelectionToSource")]
+	public static extern void* QSortFilterProxyModel_SuperMapSelectionToSource(void* self, void** proxySelection);
 	[LinkName("QSortFilterProxyModel_MapSelectionFromSource")]
 	public static extern void* QSortFilterProxyModel_MapSelectionFromSource(void* self, void** sourceSelection);
 	
 	public function void QSortFilterProxyModel_OnMapSelectionFromSource_action(void* self, void** sourceSelection);
 	[LinkName("QSortFilterProxyModel_OnMapSelectionFromSource")]
 	public static extern void* QSortFilterProxyModel_OnMapSelectionFromSource(void* self, QSortFilterProxyModel_OnMapSelectionFromSource_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMapSelectionFromSource")]
+	public static extern void* QSortFilterProxyModel_SuperMapSelectionFromSource(void* self, void** sourceSelection);
 	[LinkName("QSortFilterProxyModel_FilterRegularExpression")]
 	public static extern void* QSortFilterProxyModel_FilterRegularExpression(void* self);
 	[LinkName("QSortFilterProxyModel_FilterKeyColumn")]
@@ -1804,18 +2158,27 @@ extension CQt
 	public function void QSortFilterProxyModel_OnFilterAcceptsRow_action(void* self, c_int source_row, void** source_parent);
 	[LinkName("QSortFilterProxyModel_OnFilterAcceptsRow")]
 	public static extern bool QSortFilterProxyModel_OnFilterAcceptsRow(void* self, QSortFilterProxyModel_OnFilterAcceptsRow_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperFilterAcceptsRow")]
+	public static extern bool QSortFilterProxyModel_SuperFilterAcceptsRow(void* self, c_int source_row, void** source_parent);
 	[LinkName("QSortFilterProxyModel_FilterAcceptsColumn")]
 	public static extern bool QSortFilterProxyModel_FilterAcceptsColumn(void* self, c_int source_column, void** source_parent);
 	
 	public function void QSortFilterProxyModel_OnFilterAcceptsColumn_action(void* self, c_int source_column, void** source_parent);
 	[LinkName("QSortFilterProxyModel_OnFilterAcceptsColumn")]
 	public static extern bool QSortFilterProxyModel_OnFilterAcceptsColumn(void* self, QSortFilterProxyModel_OnFilterAcceptsColumn_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperFilterAcceptsColumn")]
+	public static extern bool QSortFilterProxyModel_SuperFilterAcceptsColumn(void* self, c_int source_column, void** source_parent);
 	[LinkName("QSortFilterProxyModel_LessThan")]
 	public static extern bool QSortFilterProxyModel_LessThan(void* self, void** source_left, void** source_right);
 	
 	public function void QSortFilterProxyModel_OnLessThan_action(void* self, void** source_left, void** source_right);
 	[LinkName("QSortFilterProxyModel_OnLessThan")]
 	public static extern bool QSortFilterProxyModel_OnLessThan(void* self, QSortFilterProxyModel_OnLessThan_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperLessThan")]
+	public static extern bool QSortFilterProxyModel_SuperLessThan(void* self, void** source_left, void** source_right);
 	[LinkName("QSortFilterProxyModel_InvalidateFilter")]
 	public static extern void QSortFilterProxyModel_InvalidateFilter(void* self);
 	[LinkName("QSortFilterProxyModel_InvalidateRowsFilter")]
@@ -1828,150 +2191,225 @@ extension CQt
 	public function void QSortFilterProxyModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QSortFilterProxyModel_OnIndex")]
 	public static extern void* QSortFilterProxyModel_OnIndex(void* self, QSortFilterProxyModel_OnIndex_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperIndex")]
+	public static extern void* QSortFilterProxyModel_SuperIndex(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QSortFilterProxyModel_Parent")]
 	public static extern void* QSortFilterProxyModel_Parent(void* self, void** child);
 	
 	public function void QSortFilterProxyModel_OnParent_action(void* self, void** child);
 	[LinkName("QSortFilterProxyModel_OnParent")]
 	public static extern void* QSortFilterProxyModel_OnParent(void* self, QSortFilterProxyModel_OnParent_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperParent")]
+	public static extern void* QSortFilterProxyModel_SuperParent(void* self, void** child);
 	[LinkName("QSortFilterProxyModel_Sibling")]
 	public static extern void* QSortFilterProxyModel_Sibling(void* self, c_int row, c_int column, void** idx);
 	
 	public function void QSortFilterProxyModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QSortFilterProxyModel_OnSibling")]
 	public static extern void* QSortFilterProxyModel_OnSibling(void* self, QSortFilterProxyModel_OnSibling_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSibling")]
+	public static extern void* QSortFilterProxyModel_SuperSibling(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QSortFilterProxyModel_RowCount")]
 	public static extern c_int QSortFilterProxyModel_RowCount(void* self, void** parent);
 	
 	public function void QSortFilterProxyModel_OnRowCount_action(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_OnRowCount")]
 	public static extern c_int QSortFilterProxyModel_OnRowCount(void* self, QSortFilterProxyModel_OnRowCount_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperRowCount")]
+	public static extern c_int QSortFilterProxyModel_SuperRowCount(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_ColumnCount")]
 	public static extern c_int QSortFilterProxyModel_ColumnCount(void* self, void** parent);
 	
 	public function void QSortFilterProxyModel_OnColumnCount_action(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_OnColumnCount")]
 	public static extern c_int QSortFilterProxyModel_OnColumnCount(void* self, QSortFilterProxyModel_OnColumnCount_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperColumnCount")]
+	public static extern c_int QSortFilterProxyModel_SuperColumnCount(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_HasChildren")]
 	public static extern bool QSortFilterProxyModel_HasChildren(void* self, void** parent);
 	
 	public function void QSortFilterProxyModel_OnHasChildren_action(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_OnHasChildren")]
 	public static extern bool QSortFilterProxyModel_OnHasChildren(void* self, QSortFilterProxyModel_OnHasChildren_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperHasChildren")]
+	public static extern bool QSortFilterProxyModel_SuperHasChildren(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_Data")]
 	public static extern void* QSortFilterProxyModel_Data(void* self, void** index, c_int role);
 	
 	public function void QSortFilterProxyModel_OnData_action(void* self, void** index, c_int role);
 	[LinkName("QSortFilterProxyModel_OnData")]
 	public static extern void* QSortFilterProxyModel_OnData(void* self, QSortFilterProxyModel_OnData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperData")]
+	public static extern void* QSortFilterProxyModel_SuperData(void* self, void** index, c_int role);
 	[LinkName("QSortFilterProxyModel_SetData")]
 	public static extern bool QSortFilterProxyModel_SetData(void* self, void** index, void** value, c_int role);
 	
 	public function void QSortFilterProxyModel_OnSetData_action(void* self, void** index, void** value, c_int role);
 	[LinkName("QSortFilterProxyModel_OnSetData")]
 	public static extern bool QSortFilterProxyModel_OnSetData(void* self, QSortFilterProxyModel_OnSetData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSetData")]
+	public static extern bool QSortFilterProxyModel_SuperSetData(void* self, void** index, void** value, c_int role);
 	[LinkName("QSortFilterProxyModel_HeaderData")]
 	public static extern void* QSortFilterProxyModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	
 	public function void QSortFilterProxyModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QSortFilterProxyModel_OnHeaderData")]
 	public static extern void* QSortFilterProxyModel_OnHeaderData(void* self, QSortFilterProxyModel_OnHeaderData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperHeaderData")]
+	public static extern void* QSortFilterProxyModel_SuperHeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QSortFilterProxyModel_SetHeaderData")]
 	public static extern bool QSortFilterProxyModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	
 	public function void QSortFilterProxyModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QSortFilterProxyModel_OnSetHeaderData")]
 	public static extern bool QSortFilterProxyModel_OnSetHeaderData(void* self, QSortFilterProxyModel_OnSetHeaderData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSetHeaderData")]
+	public static extern bool QSortFilterProxyModel_SuperSetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QSortFilterProxyModel_MimeData")]
 	public static extern void** QSortFilterProxyModel_MimeData(void* self, void** indexes);
 	
 	public function void QSortFilterProxyModel_OnMimeData_action(void* self, void** indexes);
 	[LinkName("QSortFilterProxyModel_OnMimeData")]
 	public static extern void** QSortFilterProxyModel_OnMimeData(void* self, QSortFilterProxyModel_OnMimeData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMimeData")]
+	public static extern void** QSortFilterProxyModel_SuperMimeData(void* self, void** indexes);
 	[LinkName("QSortFilterProxyModel_DropMimeData")]
 	public static extern bool QSortFilterProxyModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QSortFilterProxyModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QSortFilterProxyModel_OnDropMimeData")]
 	public static extern bool QSortFilterProxyModel_OnDropMimeData(void* self, QSortFilterProxyModel_OnDropMimeData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperDropMimeData")]
+	public static extern bool QSortFilterProxyModel_SuperDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QSortFilterProxyModel_InsertRows")]
 	public static extern bool QSortFilterProxyModel_InsertRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QSortFilterProxyModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QSortFilterProxyModel_OnInsertRows")]
 	public static extern bool QSortFilterProxyModel_OnInsertRows(void* self, QSortFilterProxyModel_OnInsertRows_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperInsertRows")]
+	public static extern bool QSortFilterProxyModel_SuperInsertRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QSortFilterProxyModel_InsertColumns")]
 	public static extern bool QSortFilterProxyModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QSortFilterProxyModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QSortFilterProxyModel_OnInsertColumns")]
 	public static extern bool QSortFilterProxyModel_OnInsertColumns(void* self, QSortFilterProxyModel_OnInsertColumns_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperInsertColumns")]
+	public static extern bool QSortFilterProxyModel_SuperInsertColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QSortFilterProxyModel_RemoveRows")]
 	public static extern bool QSortFilterProxyModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QSortFilterProxyModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QSortFilterProxyModel_OnRemoveRows")]
 	public static extern bool QSortFilterProxyModel_OnRemoveRows(void* self, QSortFilterProxyModel_OnRemoveRows_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperRemoveRows")]
+	public static extern bool QSortFilterProxyModel_SuperRemoveRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QSortFilterProxyModel_RemoveColumns")]
 	public static extern bool QSortFilterProxyModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QSortFilterProxyModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QSortFilterProxyModel_OnRemoveColumns")]
 	public static extern bool QSortFilterProxyModel_OnRemoveColumns(void* self, QSortFilterProxyModel_OnRemoveColumns_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperRemoveColumns")]
+	public static extern bool QSortFilterProxyModel_SuperRemoveColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QSortFilterProxyModel_FetchMore")]
 	public static extern void QSortFilterProxyModel_FetchMore(void* self, void** parent);
 	
 	public function void QSortFilterProxyModel_OnFetchMore_action(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_OnFetchMore")]
 	public static extern void QSortFilterProxyModel_OnFetchMore(void* self, QSortFilterProxyModel_OnFetchMore_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperFetchMore")]
+	public static extern void QSortFilterProxyModel_SuperFetchMore(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_CanFetchMore")]
 	public static extern bool QSortFilterProxyModel_CanFetchMore(void* self, void** parent);
 	
 	public function void QSortFilterProxyModel_OnCanFetchMore_action(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_OnCanFetchMore")]
 	public static extern bool QSortFilterProxyModel_OnCanFetchMore(void* self, QSortFilterProxyModel_OnCanFetchMore_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperCanFetchMore")]
+	public static extern bool QSortFilterProxyModel_SuperCanFetchMore(void* self, void** parent);
 	[LinkName("QSortFilterProxyModel_Flags")]
 	public static extern void* QSortFilterProxyModel_Flags(void* self, void** index);
 	
 	public function void QSortFilterProxyModel_OnFlags_action(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_OnFlags")]
 	public static extern void* QSortFilterProxyModel_OnFlags(void* self, QSortFilterProxyModel_OnFlags_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperFlags")]
+	public static extern void* QSortFilterProxyModel_SuperFlags(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_Buddy")]
 	public static extern void* QSortFilterProxyModel_Buddy(void* self, void** index);
 	
 	public function void QSortFilterProxyModel_OnBuddy_action(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_OnBuddy")]
 	public static extern void* QSortFilterProxyModel_OnBuddy(void* self, QSortFilterProxyModel_OnBuddy_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperBuddy")]
+	public static extern void* QSortFilterProxyModel_SuperBuddy(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_Match")]
 	public static extern void* QSortFilterProxyModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	
 	public function void QSortFilterProxyModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QSortFilterProxyModel_OnMatch")]
 	public static extern void* QSortFilterProxyModel_OnMatch(void* self, QSortFilterProxyModel_OnMatch_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMatch")]
+	public static extern void* QSortFilterProxyModel_SuperMatch(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QSortFilterProxyModel_Span")]
 	public static extern void* QSortFilterProxyModel_Span(void* self, void** index);
 	
 	public function void QSortFilterProxyModel_OnSpan_action(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_OnSpan")]
 	public static extern void* QSortFilterProxyModel_OnSpan(void* self, QSortFilterProxyModel_OnSpan_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSpan")]
+	public static extern void* QSortFilterProxyModel_SuperSpan(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_Sort")]
 	public static extern void QSortFilterProxyModel_Sort(void* self, c_int column, Qt_SortOrder order);
 	
 	public function void QSortFilterProxyModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QSortFilterProxyModel_OnSort")]
 	public static extern void QSortFilterProxyModel_OnSort(void* self, QSortFilterProxyModel_OnSort_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSort")]
+	public static extern void QSortFilterProxyModel_SuperSort(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QSortFilterProxyModel_MimeTypes")]
 	public static extern void* QSortFilterProxyModel_MimeTypes(void* self);
 	
 	public function void QSortFilterProxyModel_OnMimeTypes_action(void* self);
 	[LinkName("QSortFilterProxyModel_OnMimeTypes")]
 	public static extern void* QSortFilterProxyModel_OnMimeTypes(void* self, QSortFilterProxyModel_OnMimeTypes_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMimeTypes")]
+	public static extern void* QSortFilterProxyModel_SuperMimeTypes(void* self);
 	[LinkName("QSortFilterProxyModel_SupportedDropActions")]
 	public static extern void* QSortFilterProxyModel_SupportedDropActions(void* self);
 	
 	public function void QSortFilterProxyModel_OnSupportedDropActions_action(void* self);
 	[LinkName("QSortFilterProxyModel_OnSupportedDropActions")]
 	public static extern void* QSortFilterProxyModel_OnSupportedDropActions(void* self, QSortFilterProxyModel_OnSupportedDropActions_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSupportedDropActions")]
+	public static extern void* QSortFilterProxyModel_SuperSupportedDropActions(void* self);
 	[LinkName("QSortFilterProxyModel_DynamicSortFilterChanged")]
 	public static extern void QSortFilterProxyModel_DynamicSortFilterChanged(void* self, bool dynamicSortFilter);
 	
@@ -2030,112 +2468,169 @@ extension CQt
 	public function void QSortFilterProxyModel_OnEvent_action(void* self, void** event);
 	[LinkName("QSortFilterProxyModel_OnEvent")]
 	public static extern bool QSortFilterProxyModel_OnEvent(void* self, QSortFilterProxyModel_OnEvent_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperEvent")]
+	public static extern bool QSortFilterProxyModel_SuperEvent(void* self, void** event);
 	[LinkName("QSortFilterProxyModel_EventFilter")]
 	public static extern bool QSortFilterProxyModel_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QSortFilterProxyModel_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSortFilterProxyModel_OnEventFilter")]
 	public static extern bool QSortFilterProxyModel_OnEventFilter(void* self, QSortFilterProxyModel_OnEventFilter_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperEventFilter")]
+	public static extern bool QSortFilterProxyModel_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSortFilterProxyModel_TimerEvent")]
 	public static extern void QSortFilterProxyModel_TimerEvent(void* self, void** event);
 	
 	public function void QSortFilterProxyModel_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSortFilterProxyModel_OnTimerEvent")]
 	public static extern void QSortFilterProxyModel_OnTimerEvent(void* self, QSortFilterProxyModel_OnTimerEvent_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperTimerEvent")]
+	public static extern void QSortFilterProxyModel_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSortFilterProxyModel_ChildEvent")]
 	public static extern void QSortFilterProxyModel_ChildEvent(void* self, void** event);
 	
 	public function void QSortFilterProxyModel_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSortFilterProxyModel_OnChildEvent")]
 	public static extern void QSortFilterProxyModel_OnChildEvent(void* self, QSortFilterProxyModel_OnChildEvent_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperChildEvent")]
+	public static extern void QSortFilterProxyModel_SuperChildEvent(void* self, void** event);
 	[LinkName("QSortFilterProxyModel_CustomEvent")]
 	public static extern void QSortFilterProxyModel_CustomEvent(void* self, void** event);
 	
 	public function void QSortFilterProxyModel_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSortFilterProxyModel_OnCustomEvent")]
 	public static extern void QSortFilterProxyModel_OnCustomEvent(void* self, QSortFilterProxyModel_OnCustomEvent_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperCustomEvent")]
+	public static extern void QSortFilterProxyModel_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSortFilterProxyModel_ConnectNotify")]
 	public static extern void QSortFilterProxyModel_ConnectNotify(void* self, void** signal);
 	
 	public function void QSortFilterProxyModel_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSortFilterProxyModel_OnConnectNotify")]
 	public static extern void QSortFilterProxyModel_OnConnectNotify(void* self, QSortFilterProxyModel_OnConnectNotify_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperConnectNotify")]
+	public static extern void QSortFilterProxyModel_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSortFilterProxyModel_DisconnectNotify")]
 	public static extern void QSortFilterProxyModel_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSortFilterProxyModel_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSortFilterProxyModel_OnDisconnectNotify")]
 	public static extern void QSortFilterProxyModel_OnDisconnectNotify(void* self, QSortFilterProxyModel_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperDisconnectNotify")]
+	public static extern void QSortFilterProxyModel_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QSortFilterProxyModel_ItemData")]
 	public static extern void* QSortFilterProxyModel_ItemData(void* self, void** index);
 	
 	public function void QSortFilterProxyModel_OnItemData_action(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_OnItemData")]
 	public static extern void* QSortFilterProxyModel_OnItemData(void* self, QSortFilterProxyModel_OnItemData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperItemData")]
+	public static extern void* QSortFilterProxyModel_SuperItemData(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_SetItemData")]
 	public static extern bool QSortFilterProxyModel_SetItemData(void* self, void** index, void** roles);
 	
 	public function void QSortFilterProxyModel_OnSetItemData_action(void* self, void** index, void** roles);
 	[LinkName("QSortFilterProxyModel_OnSetItemData")]
 	public static extern bool QSortFilterProxyModel_OnSetItemData(void* self, QSortFilterProxyModel_OnSetItemData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSetItemData")]
+	public static extern bool QSortFilterProxyModel_SuperSetItemData(void* self, void** index, void** roles);
 	[LinkName("QSortFilterProxyModel_ClearItemData")]
 	public static extern bool QSortFilterProxyModel_ClearItemData(void* self, void** index);
 	
 	public function void QSortFilterProxyModel_OnClearItemData_action(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_OnClearItemData")]
 	public static extern bool QSortFilterProxyModel_OnClearItemData(void* self, QSortFilterProxyModel_OnClearItemData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperClearItemData")]
+	public static extern bool QSortFilterProxyModel_SuperClearItemData(void* self, void** index);
 	[LinkName("QSortFilterProxyModel_CanDropMimeData")]
 	public static extern bool QSortFilterProxyModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QSortFilterProxyModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QSortFilterProxyModel_OnCanDropMimeData")]
 	public static extern bool QSortFilterProxyModel_OnCanDropMimeData(void* self, QSortFilterProxyModel_OnCanDropMimeData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperCanDropMimeData")]
+	public static extern bool QSortFilterProxyModel_SuperCanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QSortFilterProxyModel_SupportedDragActions")]
 	public static extern void* QSortFilterProxyModel_SupportedDragActions(void* self);
 	
 	public function void QSortFilterProxyModel_OnSupportedDragActions_action(void* self);
 	[LinkName("QSortFilterProxyModel_OnSupportedDragActions")]
 	public static extern void* QSortFilterProxyModel_OnSupportedDragActions(void* self, QSortFilterProxyModel_OnSupportedDragActions_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSupportedDragActions")]
+	public static extern void* QSortFilterProxyModel_SuperSupportedDragActions(void* self);
 	[LinkName("QSortFilterProxyModel_MoveRows")]
 	public static extern bool QSortFilterProxyModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QSortFilterProxyModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QSortFilterProxyModel_OnMoveRows")]
 	public static extern bool QSortFilterProxyModel_OnMoveRows(void* self, QSortFilterProxyModel_OnMoveRows_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMoveRows")]
+	public static extern bool QSortFilterProxyModel_SuperMoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QSortFilterProxyModel_MoveColumns")]
 	public static extern bool QSortFilterProxyModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QSortFilterProxyModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QSortFilterProxyModel_OnMoveColumns")]
 	public static extern bool QSortFilterProxyModel_OnMoveColumns(void* self, QSortFilterProxyModel_OnMoveColumns_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMoveColumns")]
+	public static extern bool QSortFilterProxyModel_SuperMoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QSortFilterProxyModel_RoleNames")]
 	public static extern void* QSortFilterProxyModel_RoleNames(void* self);
 	
 	public function void QSortFilterProxyModel_OnRoleNames_action(void* self);
 	[LinkName("QSortFilterProxyModel_OnRoleNames")]
 	public static extern void* QSortFilterProxyModel_OnRoleNames(void* self, QSortFilterProxyModel_OnRoleNames_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperRoleNames")]
+	public static extern void* QSortFilterProxyModel_SuperRoleNames(void* self);
 	[LinkName("QSortFilterProxyModel_MultiData")]
 	public static extern void QSortFilterProxyModel_MultiData(void* self, void** index, void* roleDataSpan);
 	
 	public function void QSortFilterProxyModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
 	[LinkName("QSortFilterProxyModel_OnMultiData")]
 	public static extern void QSortFilterProxyModel_OnMultiData(void* self, QSortFilterProxyModel_OnMultiData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperMultiData")]
+	public static extern void QSortFilterProxyModel_SuperMultiData(void* self, void** index, void* roleDataSpan);
 	[LinkName("QSortFilterProxyModel_Submit")]
 	public static extern bool QSortFilterProxyModel_Submit(void* self);
 	
 	public function void QSortFilterProxyModel_OnSubmit_action(void* self);
 	[LinkName("QSortFilterProxyModel_OnSubmit")]
 	public static extern bool QSortFilterProxyModel_OnSubmit(void* self, QSortFilterProxyModel_OnSubmit_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperSubmit")]
+	public static extern bool QSortFilterProxyModel_SuperSubmit(void* self);
 	[LinkName("QSortFilterProxyModel_Revert")]
 	public static extern void QSortFilterProxyModel_Revert(void* self);
 	
 	public function void QSortFilterProxyModel_OnRevert_action(void* self);
 	[LinkName("QSortFilterProxyModel_OnRevert")]
 	public static extern void QSortFilterProxyModel_OnRevert(void* self, QSortFilterProxyModel_OnRevert_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperRevert")]
+	public static extern void QSortFilterProxyModel_SuperRevert(void* self);
 	[LinkName("QSortFilterProxyModel_ResetInternalData")]
 	public static extern void QSortFilterProxyModel_ResetInternalData(void* self);
 	
 	public function void QSortFilterProxyModel_OnResetInternalData_action(void* self);
 	[LinkName("QSortFilterProxyModel_OnResetInternalData")]
 	public static extern void QSortFilterProxyModel_OnResetInternalData(void* self, QSortFilterProxyModel_OnResetInternalData_action _action);
+	
+	[LinkName("QSortFilterProxyModel_SuperResetInternalData")]
+	public static extern void QSortFilterProxyModel_SuperResetInternalData(void* self);
 }

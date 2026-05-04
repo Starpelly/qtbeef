@@ -633,6 +633,58 @@ class QTransposeProxyModel : IQTransposeProxyModel, IQAbstractProxyModel, IQAbst
 		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged2);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2);
+		CQt.QTransposeProxyModel_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMetaObject);
+		CQt.QTransposeProxyModel_OnMetacast(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMetacast);
+		CQt.QTransposeProxyModel_OnMetacall(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMetacall);
+		CQt.QTransposeProxyModel_OnSetSourceModel(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSetSourceModel);
+		CQt.QTransposeProxyModel_OnRowCount(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnRowCount);
+		CQt.QTransposeProxyModel_OnColumnCount(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnColumnCount);
+		CQt.QTransposeProxyModel_OnHeaderData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnHeaderData);
+		CQt.QTransposeProxyModel_OnSetHeaderData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSetHeaderData);
+		CQt.QTransposeProxyModel_OnSetItemData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSetItemData);
+		CQt.QTransposeProxyModel_OnSpan(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSpan);
+		CQt.QTransposeProxyModel_OnItemData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnItemData);
+		CQt.QTransposeProxyModel_OnMapFromSource(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMapFromSource);
+		CQt.QTransposeProxyModel_OnMapToSource(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMapToSource);
+		CQt.QTransposeProxyModel_OnParent(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnParent);
+		CQt.QTransposeProxyModel_OnIndex(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnIndex);
+		CQt.QTransposeProxyModel_OnInsertRows(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnInsertRows);
+		CQt.QTransposeProxyModel_OnRemoveRows(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnRemoveRows);
+		CQt.QTransposeProxyModel_OnMoveRows(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMoveRows);
+		CQt.QTransposeProxyModel_OnInsertColumns(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnInsertColumns);
+		CQt.QTransposeProxyModel_OnRemoveColumns(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnRemoveColumns);
+		CQt.QTransposeProxyModel_OnMoveColumns(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMoveColumns);
+		CQt.QTransposeProxyModel_OnSort(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSort);
+		CQt.QTransposeProxyModel_OnEvent(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnEvent);
+		CQt.QTransposeProxyModel_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnEventFilter);
+		CQt.QTransposeProxyModel_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnTimerEvent);
+		CQt.QTransposeProxyModel_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnChildEvent);
+		CQt.QTransposeProxyModel_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnCustomEvent);
+		CQt.QTransposeProxyModel_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnConnectNotify);
+		CQt.QTransposeProxyModel_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnDisconnectNotify);
+		CQt.QTransposeProxyModel_OnSibling(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSibling);
+		CQt.QTransposeProxyModel_OnHasChildren(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnHasChildren);
+		CQt.QTransposeProxyModel_OnData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnData);
+		CQt.QTransposeProxyModel_OnSetData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSetData);
+		CQt.QTransposeProxyModel_OnClearItemData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnClearItemData);
+		CQt.QTransposeProxyModel_OnMimeTypes(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMimeTypes);
+		CQt.QTransposeProxyModel_OnMimeData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMimeData);
+		CQt.QTransposeProxyModel_OnCanDropMimeData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnCanDropMimeData);
+		CQt.QTransposeProxyModel_OnDropMimeData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnDropMimeData);
+		CQt.QTransposeProxyModel_OnSupportedDropActions(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSupportedDropActions);
+		CQt.QTransposeProxyModel_OnSupportedDragActions(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSupportedDragActions);
+		CQt.QTransposeProxyModel_OnFetchMore(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnFetchMore);
+		CQt.QTransposeProxyModel_OnCanFetchMore(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnCanFetchMore);
+		CQt.QTransposeProxyModel_OnFlags(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnFlags);
+		CQt.QTransposeProxyModel_OnBuddy(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnBuddy);
+		CQt.QTransposeProxyModel_OnMatch(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMatch);
+		CQt.QTransposeProxyModel_OnRoleNames(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnRoleNames);
+		CQt.QTransposeProxyModel_OnMultiData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMultiData);
+		CQt.QTransposeProxyModel_OnSubmit(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnSubmit);
+		CQt.QTransposeProxyModel_OnRevert(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnRevert);
+		CQt.QTransposeProxyModel_OnResetInternalData(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnResetInternalData);
+		CQt.QTransposeProxyModel_OnMapSelectionToSource(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMapSelectionToSource);
+		CQt.QTransposeProxyModel_OnMapSelectionFromSource(obj.ObjectPtr,  => QtBeef_QTransposeProxyModel_OnMapSelectionFromSource);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -699,6 +751,266 @@ class QTransposeProxyModel : IQTransposeProxyModel, IQAbstractProxyModel, IQAbst
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QTransposeProxyModel_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTransposeProxyModel_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTransposeProxyModel_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTransposeProxyModel_OnSetSourceModel(void* ptr, void** newSourceModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSourceModel(newSourceModel);
+	}
+	static void QtBeef_QTransposeProxyModel_OnRowCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowCount(parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnColumnCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnCount(parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnHeaderData(void* ptr, c_int section, Qt_Orientation orientation, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderData(section, orientation, role);
+	}
+	static void QtBeef_QTransposeProxyModel_OnSetHeaderData(void* ptr, c_int section, Qt_Orientation orientation, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetHeaderData(section, orientation, value, role);
+	}
+	static void QtBeef_QTransposeProxyModel_OnSetItemData(void* ptr, void** index, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetItemData(index, roles);
+	}
+	static void QtBeef_QTransposeProxyModel_OnSpan(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpan(index);
+	}
+	static void QtBeef_QTransposeProxyModel_OnItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemData(index);
+	}
+	static void QtBeef_QTransposeProxyModel_OnMapFromSource(void* ptr, void** sourceIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapFromSource(sourceIndex);
+	}
+	static void QtBeef_QTransposeProxyModel_OnMapToSource(void* ptr, void** proxyIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapToSource(proxyIndex);
+	}
+	static void QtBeef_QTransposeProxyModel_OnParent(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParent(index);
+	}
+	static void QtBeef_QTransposeProxyModel_OnIndex(void* ptr, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndex(row, column, parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnInsertRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertRows(row, count, parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnRemoveRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveRows(row, count, parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnMoveRows(void* ptr, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QTransposeProxyModel_OnInsertColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertColumns(column, count, parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnRemoveColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveColumns(column, count, parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnMoveColumns(void* ptr, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QTransposeProxyModel_OnSort(void* ptr, c_int column, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSort(column, order);
+	}
+	static void QtBeef_QTransposeProxyModel_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTransposeProxyModel_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTransposeProxyModel_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTransposeProxyModel_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTransposeProxyModel_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTransposeProxyModel_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTransposeProxyModel_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QTransposeProxyModel_OnSibling(void* ptr, c_int row, c_int column, void** idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSibling(row, column, idx);
+	}
+	static void QtBeef_QTransposeProxyModel_OnHasChildren(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasChildren(parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnData(void* ptr, void** index, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(index, role);
+	}
+	static void QtBeef_QTransposeProxyModel_OnSetData(void* ptr, void** index, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(index, value, role);
+	}
+	static void QtBeef_QTransposeProxyModel_OnClearItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClearItemData(index);
+	}
+	static void QtBeef_QTransposeProxyModel_OnMimeTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeTypes();
+	}
+	static void QtBeef_QTransposeProxyModel_OnMimeData(void* ptr, void** indexes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeData(indexes);
+	}
+	static void QtBeef_QTransposeProxyModel_OnCanDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnSupportedDropActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDropActions();
+	}
+	static void QtBeef_QTransposeProxyModel_OnSupportedDragActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDragActions();
+	}
+	static void QtBeef_QTransposeProxyModel_OnFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFetchMore(parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnCanFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanFetchMore(parent);
+	}
+	static void QtBeef_QTransposeProxyModel_OnFlags(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFlags(index);
+	}
+	static void QtBeef_QTransposeProxyModel_OnBuddy(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBuddy(index);
+	}
+	static void QtBeef_QTransposeProxyModel_OnMatch(void* ptr, void** start, c_int role, void** value, c_int hits, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMatch(start, role, value, hits, flags);
+	}
+	static void QtBeef_QTransposeProxyModel_OnRoleNames(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRoleNames();
+	}
+	static void QtBeef_QTransposeProxyModel_OnMultiData(void* ptr, void** index, void* roleDataSpan)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMultiData(index, roleDataSpan);
+	}
+	static void QtBeef_QTransposeProxyModel_OnSubmit(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSubmit();
+	}
+	static void QtBeef_QTransposeProxyModel_OnRevert(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRevert();
+	}
+	static void QtBeef_QTransposeProxyModel_OnResetInternalData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResetInternalData();
+	}
+	static void QtBeef_QTransposeProxyModel_OnMapSelectionToSource(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapSelectionToSource(selection);
+	}
+	static void QtBeef_QTransposeProxyModel_OnMapSelectionFromSource(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapSelectionFromSource(selection);
 	}
 	public this(QTransposeProxyModel_Ptr ptr)
 	{
@@ -1326,18 +1638,27 @@ extension CQt
 	public function void QTransposeProxyModel_OnMetaObject_action(void* self);
 	[LinkName("QTransposeProxyModel_OnMetaObject")]
 	public static extern void** QTransposeProxyModel_OnMetaObject(void* self, QTransposeProxyModel_OnMetaObject_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMetaObject")]
+	public static extern void** QTransposeProxyModel_SuperMetaObject(void* self);
 	[LinkName("QTransposeProxyModel_Qt_Metacast")]
 	public static extern void* QTransposeProxyModel_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTransposeProxyModel_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTransposeProxyModel_OnMetacast")]
 	public static extern void* QTransposeProxyModel_OnMetacast(void* self, QTransposeProxyModel_OnMetacast_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMetacast")]
+	public static extern void* QTransposeProxyModel_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTransposeProxyModel_Qt_Metacall")]
 	public static extern c_int QTransposeProxyModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTransposeProxyModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTransposeProxyModel_OnMetacall")]
 	public static extern c_int QTransposeProxyModel_OnMetacall(void* self, QTransposeProxyModel_OnMetacall_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMetacall")]
+	public static extern c_int QTransposeProxyModel_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTransposeProxyModel_Tr")]
 	public static extern libqt_string QTransposeProxyModel_Tr(c_char* s);
 	[LinkName("QTransposeProxyModel_SetSourceModel")]
@@ -1346,114 +1667,171 @@ extension CQt
 	public function void QTransposeProxyModel_OnSetSourceModel_action(void* self, void** newSourceModel);
 	[LinkName("QTransposeProxyModel_OnSetSourceModel")]
 	public static extern void QTransposeProxyModel_OnSetSourceModel(void* self, QTransposeProxyModel_OnSetSourceModel_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSetSourceModel")]
+	public static extern void QTransposeProxyModel_SuperSetSourceModel(void* self, void** newSourceModel);
 	[LinkName("QTransposeProxyModel_RowCount")]
 	public static extern c_int QTransposeProxyModel_RowCount(void* self, void** parent);
 	
 	public function void QTransposeProxyModel_OnRowCount_action(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_OnRowCount")]
 	public static extern c_int QTransposeProxyModel_OnRowCount(void* self, QTransposeProxyModel_OnRowCount_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperRowCount")]
+	public static extern c_int QTransposeProxyModel_SuperRowCount(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_ColumnCount")]
 	public static extern c_int QTransposeProxyModel_ColumnCount(void* self, void** parent);
 	
 	public function void QTransposeProxyModel_OnColumnCount_action(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_OnColumnCount")]
 	public static extern c_int QTransposeProxyModel_OnColumnCount(void* self, QTransposeProxyModel_OnColumnCount_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperColumnCount")]
+	public static extern c_int QTransposeProxyModel_SuperColumnCount(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_HeaderData")]
 	public static extern void* QTransposeProxyModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	
 	public function void QTransposeProxyModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QTransposeProxyModel_OnHeaderData")]
 	public static extern void* QTransposeProxyModel_OnHeaderData(void* self, QTransposeProxyModel_OnHeaderData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperHeaderData")]
+	public static extern void* QTransposeProxyModel_SuperHeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QTransposeProxyModel_SetHeaderData")]
 	public static extern bool QTransposeProxyModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	
 	public function void QTransposeProxyModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QTransposeProxyModel_OnSetHeaderData")]
 	public static extern bool QTransposeProxyModel_OnSetHeaderData(void* self, QTransposeProxyModel_OnSetHeaderData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSetHeaderData")]
+	public static extern bool QTransposeProxyModel_SuperSetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QTransposeProxyModel_SetItemData")]
 	public static extern bool QTransposeProxyModel_SetItemData(void* self, void** index, void** roles);
 	
 	public function void QTransposeProxyModel_OnSetItemData_action(void* self, void** index, void** roles);
 	[LinkName("QTransposeProxyModel_OnSetItemData")]
 	public static extern bool QTransposeProxyModel_OnSetItemData(void* self, QTransposeProxyModel_OnSetItemData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSetItemData")]
+	public static extern bool QTransposeProxyModel_SuperSetItemData(void* self, void** index, void** roles);
 	[LinkName("QTransposeProxyModel_Span")]
 	public static extern void* QTransposeProxyModel_Span(void* self, void** index);
 	
 	public function void QTransposeProxyModel_OnSpan_action(void* self, void** index);
 	[LinkName("QTransposeProxyModel_OnSpan")]
 	public static extern void* QTransposeProxyModel_OnSpan(void* self, QTransposeProxyModel_OnSpan_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSpan")]
+	public static extern void* QTransposeProxyModel_SuperSpan(void* self, void** index);
 	[LinkName("QTransposeProxyModel_ItemData")]
 	public static extern void* QTransposeProxyModel_ItemData(void* self, void** index);
 	
 	public function void QTransposeProxyModel_OnItemData_action(void* self, void** index);
 	[LinkName("QTransposeProxyModel_OnItemData")]
 	public static extern void* QTransposeProxyModel_OnItemData(void* self, QTransposeProxyModel_OnItemData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperItemData")]
+	public static extern void* QTransposeProxyModel_SuperItemData(void* self, void** index);
 	[LinkName("QTransposeProxyModel_MapFromSource")]
 	public static extern void* QTransposeProxyModel_MapFromSource(void* self, void** sourceIndex);
 	
 	public function void QTransposeProxyModel_OnMapFromSource_action(void* self, void** sourceIndex);
 	[LinkName("QTransposeProxyModel_OnMapFromSource")]
 	public static extern void* QTransposeProxyModel_OnMapFromSource(void* self, QTransposeProxyModel_OnMapFromSource_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMapFromSource")]
+	public static extern void* QTransposeProxyModel_SuperMapFromSource(void* self, void** sourceIndex);
 	[LinkName("QTransposeProxyModel_MapToSource")]
 	public static extern void* QTransposeProxyModel_MapToSource(void* self, void** proxyIndex);
 	
 	public function void QTransposeProxyModel_OnMapToSource_action(void* self, void** proxyIndex);
 	[LinkName("QTransposeProxyModel_OnMapToSource")]
 	public static extern void* QTransposeProxyModel_OnMapToSource(void* self, QTransposeProxyModel_OnMapToSource_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMapToSource")]
+	public static extern void* QTransposeProxyModel_SuperMapToSource(void* self, void** proxyIndex);
 	[LinkName("QTransposeProxyModel_Parent")]
 	public static extern void* QTransposeProxyModel_Parent(void* self, void** index);
 	
 	public function void QTransposeProxyModel_OnParent_action(void* self, void** index);
 	[LinkName("QTransposeProxyModel_OnParent")]
 	public static extern void* QTransposeProxyModel_OnParent(void* self, QTransposeProxyModel_OnParent_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperParent")]
+	public static extern void* QTransposeProxyModel_SuperParent(void* self, void** index);
 	[LinkName("QTransposeProxyModel_Index")]
 	public static extern void* QTransposeProxyModel_Index(void* self, c_int row, c_int column, void** parent);
 	
 	public function void QTransposeProxyModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QTransposeProxyModel_OnIndex")]
 	public static extern void* QTransposeProxyModel_OnIndex(void* self, QTransposeProxyModel_OnIndex_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperIndex")]
+	public static extern void* QTransposeProxyModel_SuperIndex(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QTransposeProxyModel_InsertRows")]
 	public static extern bool QTransposeProxyModel_InsertRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QTransposeProxyModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QTransposeProxyModel_OnInsertRows")]
 	public static extern bool QTransposeProxyModel_OnInsertRows(void* self, QTransposeProxyModel_OnInsertRows_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperInsertRows")]
+	public static extern bool QTransposeProxyModel_SuperInsertRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QTransposeProxyModel_RemoveRows")]
 	public static extern bool QTransposeProxyModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QTransposeProxyModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QTransposeProxyModel_OnRemoveRows")]
 	public static extern bool QTransposeProxyModel_OnRemoveRows(void* self, QTransposeProxyModel_OnRemoveRows_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperRemoveRows")]
+	public static extern bool QTransposeProxyModel_SuperRemoveRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QTransposeProxyModel_MoveRows")]
 	public static extern bool QTransposeProxyModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QTransposeProxyModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QTransposeProxyModel_OnMoveRows")]
 	public static extern bool QTransposeProxyModel_OnMoveRows(void* self, QTransposeProxyModel_OnMoveRows_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMoveRows")]
+	public static extern bool QTransposeProxyModel_SuperMoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QTransposeProxyModel_InsertColumns")]
 	public static extern bool QTransposeProxyModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QTransposeProxyModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QTransposeProxyModel_OnInsertColumns")]
 	public static extern bool QTransposeProxyModel_OnInsertColumns(void* self, QTransposeProxyModel_OnInsertColumns_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperInsertColumns")]
+	public static extern bool QTransposeProxyModel_SuperInsertColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QTransposeProxyModel_RemoveColumns")]
 	public static extern bool QTransposeProxyModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QTransposeProxyModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QTransposeProxyModel_OnRemoveColumns")]
 	public static extern bool QTransposeProxyModel_OnRemoveColumns(void* self, QTransposeProxyModel_OnRemoveColumns_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperRemoveColumns")]
+	public static extern bool QTransposeProxyModel_SuperRemoveColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QTransposeProxyModel_MoveColumns")]
 	public static extern bool QTransposeProxyModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QTransposeProxyModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QTransposeProxyModel_OnMoveColumns")]
 	public static extern bool QTransposeProxyModel_OnMoveColumns(void* self, QTransposeProxyModel_OnMoveColumns_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMoveColumns")]
+	public static extern bool QTransposeProxyModel_SuperMoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QTransposeProxyModel_Sort")]
 	public static extern void QTransposeProxyModel_Sort(void* self, c_int column, Qt_SortOrder order);
 	
 	public function void QTransposeProxyModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QTransposeProxyModel_OnSort")]
 	public static extern void QTransposeProxyModel_OnSort(void* self, QTransposeProxyModel_OnSort_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSort")]
+	public static extern void QTransposeProxyModel_SuperSort(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QTransposeProxyModel_Tr2")]
 	public static extern libqt_string QTransposeProxyModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QTransposeProxyModel_Tr3")]
@@ -1464,178 +1842,268 @@ extension CQt
 	public function void QTransposeProxyModel_OnEvent_action(void* self, void** event);
 	[LinkName("QTransposeProxyModel_OnEvent")]
 	public static extern bool QTransposeProxyModel_OnEvent(void* self, QTransposeProxyModel_OnEvent_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperEvent")]
+	public static extern bool QTransposeProxyModel_SuperEvent(void* self, void** event);
 	[LinkName("QTransposeProxyModel_EventFilter")]
 	public static extern bool QTransposeProxyModel_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTransposeProxyModel_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTransposeProxyModel_OnEventFilter")]
 	public static extern bool QTransposeProxyModel_OnEventFilter(void* self, QTransposeProxyModel_OnEventFilter_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperEventFilter")]
+	public static extern bool QTransposeProxyModel_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTransposeProxyModel_TimerEvent")]
 	public static extern void QTransposeProxyModel_TimerEvent(void* self, void** event);
 	
 	public function void QTransposeProxyModel_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTransposeProxyModel_OnTimerEvent")]
 	public static extern void QTransposeProxyModel_OnTimerEvent(void* self, QTransposeProxyModel_OnTimerEvent_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperTimerEvent")]
+	public static extern void QTransposeProxyModel_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTransposeProxyModel_ChildEvent")]
 	public static extern void QTransposeProxyModel_ChildEvent(void* self, void** event);
 	
 	public function void QTransposeProxyModel_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTransposeProxyModel_OnChildEvent")]
 	public static extern void QTransposeProxyModel_OnChildEvent(void* self, QTransposeProxyModel_OnChildEvent_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperChildEvent")]
+	public static extern void QTransposeProxyModel_SuperChildEvent(void* self, void** event);
 	[LinkName("QTransposeProxyModel_CustomEvent")]
 	public static extern void QTransposeProxyModel_CustomEvent(void* self, void** event);
 	
 	public function void QTransposeProxyModel_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTransposeProxyModel_OnCustomEvent")]
 	public static extern void QTransposeProxyModel_OnCustomEvent(void* self, QTransposeProxyModel_OnCustomEvent_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperCustomEvent")]
+	public static extern void QTransposeProxyModel_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTransposeProxyModel_ConnectNotify")]
 	public static extern void QTransposeProxyModel_ConnectNotify(void* self, void** signal);
 	
 	public function void QTransposeProxyModel_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTransposeProxyModel_OnConnectNotify")]
 	public static extern void QTransposeProxyModel_OnConnectNotify(void* self, QTransposeProxyModel_OnConnectNotify_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperConnectNotify")]
+	public static extern void QTransposeProxyModel_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTransposeProxyModel_DisconnectNotify")]
 	public static extern void QTransposeProxyModel_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTransposeProxyModel_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTransposeProxyModel_OnDisconnectNotify")]
 	public static extern void QTransposeProxyModel_OnDisconnectNotify(void* self, QTransposeProxyModel_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperDisconnectNotify")]
+	public static extern void QTransposeProxyModel_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QTransposeProxyModel_Sibling")]
 	public static extern void* QTransposeProxyModel_Sibling(void* self, c_int row, c_int column, void** idx);
 	
 	public function void QTransposeProxyModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QTransposeProxyModel_OnSibling")]
 	public static extern void* QTransposeProxyModel_OnSibling(void* self, QTransposeProxyModel_OnSibling_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSibling")]
+	public static extern void* QTransposeProxyModel_SuperSibling(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QTransposeProxyModel_HasChildren")]
 	public static extern bool QTransposeProxyModel_HasChildren(void* self, void** parent);
 	
 	public function void QTransposeProxyModel_OnHasChildren_action(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_OnHasChildren")]
 	public static extern bool QTransposeProxyModel_OnHasChildren(void* self, QTransposeProxyModel_OnHasChildren_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperHasChildren")]
+	public static extern bool QTransposeProxyModel_SuperHasChildren(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_Data")]
 	public static extern void* QTransposeProxyModel_Data(void* self, void** index, c_int role);
 	
 	public function void QTransposeProxyModel_OnData_action(void* self, void** index, c_int role);
 	[LinkName("QTransposeProxyModel_OnData")]
 	public static extern void* QTransposeProxyModel_OnData(void* self, QTransposeProxyModel_OnData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperData")]
+	public static extern void* QTransposeProxyModel_SuperData(void* self, void** index, c_int role);
 	[LinkName("QTransposeProxyModel_SetData")]
 	public static extern bool QTransposeProxyModel_SetData(void* self, void** index, void** value, c_int role);
 	
 	public function void QTransposeProxyModel_OnSetData_action(void* self, void** index, void** value, c_int role);
 	[LinkName("QTransposeProxyModel_OnSetData")]
 	public static extern bool QTransposeProxyModel_OnSetData(void* self, QTransposeProxyModel_OnSetData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSetData")]
+	public static extern bool QTransposeProxyModel_SuperSetData(void* self, void** index, void** value, c_int role);
 	[LinkName("QTransposeProxyModel_ClearItemData")]
 	public static extern bool QTransposeProxyModel_ClearItemData(void* self, void** index);
 	
 	public function void QTransposeProxyModel_OnClearItemData_action(void* self, void** index);
 	[LinkName("QTransposeProxyModel_OnClearItemData")]
 	public static extern bool QTransposeProxyModel_OnClearItemData(void* self, QTransposeProxyModel_OnClearItemData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperClearItemData")]
+	public static extern bool QTransposeProxyModel_SuperClearItemData(void* self, void** index);
 	[LinkName("QTransposeProxyModel_MimeTypes")]
 	public static extern void* QTransposeProxyModel_MimeTypes(void* self);
 	
 	public function void QTransposeProxyModel_OnMimeTypes_action(void* self);
 	[LinkName("QTransposeProxyModel_OnMimeTypes")]
 	public static extern void* QTransposeProxyModel_OnMimeTypes(void* self, QTransposeProxyModel_OnMimeTypes_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMimeTypes")]
+	public static extern void* QTransposeProxyModel_SuperMimeTypes(void* self);
 	[LinkName("QTransposeProxyModel_MimeData")]
 	public static extern void** QTransposeProxyModel_MimeData(void* self, void** indexes);
 	
 	public function void QTransposeProxyModel_OnMimeData_action(void* self, void** indexes);
 	[LinkName("QTransposeProxyModel_OnMimeData")]
 	public static extern void** QTransposeProxyModel_OnMimeData(void* self, QTransposeProxyModel_OnMimeData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMimeData")]
+	public static extern void** QTransposeProxyModel_SuperMimeData(void* self, void** indexes);
 	[LinkName("QTransposeProxyModel_CanDropMimeData")]
 	public static extern bool QTransposeProxyModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QTransposeProxyModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QTransposeProxyModel_OnCanDropMimeData")]
 	public static extern bool QTransposeProxyModel_OnCanDropMimeData(void* self, QTransposeProxyModel_OnCanDropMimeData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperCanDropMimeData")]
+	public static extern bool QTransposeProxyModel_SuperCanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QTransposeProxyModel_DropMimeData")]
 	public static extern bool QTransposeProxyModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QTransposeProxyModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QTransposeProxyModel_OnDropMimeData")]
 	public static extern bool QTransposeProxyModel_OnDropMimeData(void* self, QTransposeProxyModel_OnDropMimeData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperDropMimeData")]
+	public static extern bool QTransposeProxyModel_SuperDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QTransposeProxyModel_SupportedDropActions")]
 	public static extern void* QTransposeProxyModel_SupportedDropActions(void* self);
 	
 	public function void QTransposeProxyModel_OnSupportedDropActions_action(void* self);
 	[LinkName("QTransposeProxyModel_OnSupportedDropActions")]
 	public static extern void* QTransposeProxyModel_OnSupportedDropActions(void* self, QTransposeProxyModel_OnSupportedDropActions_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSupportedDropActions")]
+	public static extern void* QTransposeProxyModel_SuperSupportedDropActions(void* self);
 	[LinkName("QTransposeProxyModel_SupportedDragActions")]
 	public static extern void* QTransposeProxyModel_SupportedDragActions(void* self);
 	
 	public function void QTransposeProxyModel_OnSupportedDragActions_action(void* self);
 	[LinkName("QTransposeProxyModel_OnSupportedDragActions")]
 	public static extern void* QTransposeProxyModel_OnSupportedDragActions(void* self, QTransposeProxyModel_OnSupportedDragActions_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSupportedDragActions")]
+	public static extern void* QTransposeProxyModel_SuperSupportedDragActions(void* self);
 	[LinkName("QTransposeProxyModel_FetchMore")]
 	public static extern void QTransposeProxyModel_FetchMore(void* self, void** parent);
 	
 	public function void QTransposeProxyModel_OnFetchMore_action(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_OnFetchMore")]
 	public static extern void QTransposeProxyModel_OnFetchMore(void* self, QTransposeProxyModel_OnFetchMore_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperFetchMore")]
+	public static extern void QTransposeProxyModel_SuperFetchMore(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_CanFetchMore")]
 	public static extern bool QTransposeProxyModel_CanFetchMore(void* self, void** parent);
 	
 	public function void QTransposeProxyModel_OnCanFetchMore_action(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_OnCanFetchMore")]
 	public static extern bool QTransposeProxyModel_OnCanFetchMore(void* self, QTransposeProxyModel_OnCanFetchMore_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperCanFetchMore")]
+	public static extern bool QTransposeProxyModel_SuperCanFetchMore(void* self, void** parent);
 	[LinkName("QTransposeProxyModel_Flags")]
 	public static extern void* QTransposeProxyModel_Flags(void* self, void** index);
 	
 	public function void QTransposeProxyModel_OnFlags_action(void* self, void** index);
 	[LinkName("QTransposeProxyModel_OnFlags")]
 	public static extern void* QTransposeProxyModel_OnFlags(void* self, QTransposeProxyModel_OnFlags_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperFlags")]
+	public static extern void* QTransposeProxyModel_SuperFlags(void* self, void** index);
 	[LinkName("QTransposeProxyModel_Buddy")]
 	public static extern void* QTransposeProxyModel_Buddy(void* self, void** index);
 	
 	public function void QTransposeProxyModel_OnBuddy_action(void* self, void** index);
 	[LinkName("QTransposeProxyModel_OnBuddy")]
 	public static extern void* QTransposeProxyModel_OnBuddy(void* self, QTransposeProxyModel_OnBuddy_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperBuddy")]
+	public static extern void* QTransposeProxyModel_SuperBuddy(void* self, void** index);
 	[LinkName("QTransposeProxyModel_Match")]
 	public static extern void* QTransposeProxyModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	
 	public function void QTransposeProxyModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QTransposeProxyModel_OnMatch")]
 	public static extern void* QTransposeProxyModel_OnMatch(void* self, QTransposeProxyModel_OnMatch_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMatch")]
+	public static extern void* QTransposeProxyModel_SuperMatch(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QTransposeProxyModel_RoleNames")]
 	public static extern void* QTransposeProxyModel_RoleNames(void* self);
 	
 	public function void QTransposeProxyModel_OnRoleNames_action(void* self);
 	[LinkName("QTransposeProxyModel_OnRoleNames")]
 	public static extern void* QTransposeProxyModel_OnRoleNames(void* self, QTransposeProxyModel_OnRoleNames_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperRoleNames")]
+	public static extern void* QTransposeProxyModel_SuperRoleNames(void* self);
 	[LinkName("QTransposeProxyModel_MultiData")]
 	public static extern void QTransposeProxyModel_MultiData(void* self, void** index, void* roleDataSpan);
 	
 	public function void QTransposeProxyModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
 	[LinkName("QTransposeProxyModel_OnMultiData")]
 	public static extern void QTransposeProxyModel_OnMultiData(void* self, QTransposeProxyModel_OnMultiData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMultiData")]
+	public static extern void QTransposeProxyModel_SuperMultiData(void* self, void** index, void* roleDataSpan);
 	[LinkName("QTransposeProxyModel_Submit")]
 	public static extern bool QTransposeProxyModel_Submit(void* self);
 	
 	public function void QTransposeProxyModel_OnSubmit_action(void* self);
 	[LinkName("QTransposeProxyModel_OnSubmit")]
 	public static extern bool QTransposeProxyModel_OnSubmit(void* self, QTransposeProxyModel_OnSubmit_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperSubmit")]
+	public static extern bool QTransposeProxyModel_SuperSubmit(void* self);
 	[LinkName("QTransposeProxyModel_Revert")]
 	public static extern void QTransposeProxyModel_Revert(void* self);
 	
 	public function void QTransposeProxyModel_OnRevert_action(void* self);
 	[LinkName("QTransposeProxyModel_OnRevert")]
 	public static extern void QTransposeProxyModel_OnRevert(void* self, QTransposeProxyModel_OnRevert_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperRevert")]
+	public static extern void QTransposeProxyModel_SuperRevert(void* self);
 	[LinkName("QTransposeProxyModel_ResetInternalData")]
 	public static extern void QTransposeProxyModel_ResetInternalData(void* self);
 	
 	public function void QTransposeProxyModel_OnResetInternalData_action(void* self);
 	[LinkName("QTransposeProxyModel_OnResetInternalData")]
 	public static extern void QTransposeProxyModel_OnResetInternalData(void* self, QTransposeProxyModel_OnResetInternalData_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperResetInternalData")]
+	public static extern void QTransposeProxyModel_SuperResetInternalData(void* self);
 	[LinkName("QTransposeProxyModel_MapSelectionToSource")]
 	public static extern void* QTransposeProxyModel_MapSelectionToSource(void* self, void** selection);
 	
 	public function void QTransposeProxyModel_OnMapSelectionToSource_action(void* self, void** selection);
 	[LinkName("QTransposeProxyModel_OnMapSelectionToSource")]
 	public static extern void* QTransposeProxyModel_OnMapSelectionToSource(void* self, QTransposeProxyModel_OnMapSelectionToSource_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMapSelectionToSource")]
+	public static extern void* QTransposeProxyModel_SuperMapSelectionToSource(void* self, void** selection);
 	[LinkName("QTransposeProxyModel_MapSelectionFromSource")]
 	public static extern void* QTransposeProxyModel_MapSelectionFromSource(void* self, void** selection);
 	
 	public function void QTransposeProxyModel_OnMapSelectionFromSource_action(void* self, void** selection);
 	[LinkName("QTransposeProxyModel_OnMapSelectionFromSource")]
 	public static extern void* QTransposeProxyModel_OnMapSelectionFromSource(void* self, QTransposeProxyModel_OnMapSelectionFromSource_action _action);
+	
+	[LinkName("QTransposeProxyModel_SuperMapSelectionFromSource")]
+	public static extern void* QTransposeProxyModel_SuperMapSelectionFromSource(void* self, void** selection);
 }

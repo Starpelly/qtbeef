@@ -354,6 +354,42 @@ class QPixmap : IQPixmap, IQPaintDevice
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QPixmap_OnDevType(obj.ObjectPtr,  => QtBeef_QPixmap_OnDevType);
+		CQt.QPixmap_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QPixmap_OnPaintEngine);
+		CQt.QPixmap_OnMetric(obj.ObjectPtr,  => QtBeef_QPixmap_OnMetric);
+		CQt.QPixmap_OnInitPainter(obj.ObjectPtr,  => QtBeef_QPixmap_OnInitPainter);
+		CQt.QPixmap_OnRedirected(obj.ObjectPtr,  => QtBeef_QPixmap_OnRedirected);
+		CQt.QPixmap_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QPixmap_OnSharedPainter);
+	}
+	static void QtBeef_QPixmap_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QPixmap_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QPixmap_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(param1);
+	}
+	static void QtBeef_QPixmap_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QPixmap_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QPixmap_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
 	}
 	public this(QPixmap_Ptr ptr)
 	{
@@ -773,6 +809,9 @@ extension CQt
 	public function void QPixmap_OnDevType_action(void* self);
 	[LinkName("QPixmap_OnDevType")]
 	public static extern c_int QPixmap_OnDevType(void* self, QPixmap_OnDevType_action _action);
+	
+	[LinkName("QPixmap_SuperDevType")]
+	public static extern c_int QPixmap_SuperDevType(void* self);
 	[LinkName("QPixmap_Width")]
 	public static extern c_int QPixmap_Width(void* self);
 	[LinkName("QPixmap_Height")]
@@ -857,6 +896,9 @@ extension CQt
 	public function void QPixmap_OnPaintEngine_action(void* self);
 	[LinkName("QPixmap_OnPaintEngine")]
 	public static extern void** QPixmap_OnPaintEngine(void* self, QPixmap_OnPaintEngine_action _action);
+	
+	[LinkName("QPixmap_SuperPaintEngine")]
+	public static extern void** QPixmap_SuperPaintEngine(void* self);
 	[LinkName("QPixmap_OperatorNot")]
 	public static extern bool QPixmap_OperatorNot(void* self);
 	[LinkName("QPixmap_Metric")]
@@ -865,6 +907,9 @@ extension CQt
 	public function void QPixmap_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric param1);
 	[LinkName("QPixmap_OnMetric")]
 	public static extern c_int QPixmap_OnMetric(void* self, QPixmap_OnMetric_action _action);
+	
+	[LinkName("QPixmap_SuperMetric")]
+	public static extern c_int QPixmap_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric param1);
 	[LinkName("QPixmap_Fill1")]
 	public static extern void QPixmap_Fill1(void* self, void** fillColor);
 	[LinkName("QPixmap_CreateHeuristicMask1")]
@@ -923,16 +968,25 @@ extension CQt
 	public function void QPixmap_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QPixmap_OnInitPainter")]
 	public static extern void QPixmap_OnInitPainter(void* self, QPixmap_OnInitPainter_action _action);
+	
+	[LinkName("QPixmap_SuperInitPainter")]
+	public static extern void QPixmap_SuperInitPainter(void* self, void** painter);
 	[LinkName("QPixmap_Redirected")]
 	public static extern void** QPixmap_Redirected(void* self, void** offset);
 	
 	public function void QPixmap_OnRedirected_action(void* self, void** offset);
 	[LinkName("QPixmap_OnRedirected")]
 	public static extern void** QPixmap_OnRedirected(void* self, QPixmap_OnRedirected_action _action);
+	
+	[LinkName("QPixmap_SuperRedirected")]
+	public static extern void** QPixmap_SuperRedirected(void* self, void** offset);
 	[LinkName("QPixmap_SharedPainter")]
 	public static extern void** QPixmap_SharedPainter(void* self);
 	
 	public function void QPixmap_OnSharedPainter_action(void* self);
 	[LinkName("QPixmap_OnSharedPainter")]
 	public static extern void** QPixmap_OnSharedPainter(void* self, QPixmap_OnSharedPainter_action _action);
+	
+	[LinkName("QPixmap_SuperSharedPainter")]
+	public static extern void** QPixmap_SuperSharedPainter(void* self);
 }

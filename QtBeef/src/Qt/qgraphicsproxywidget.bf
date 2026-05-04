@@ -1642,6 +1642,73 @@ class QGraphicsProxyWidget : IQGraphicsProxyWidget, IQGraphicsWidget, IQGraphics
 		CQt.QGraphicsObject_Connect_HeightChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_HeightChanged);
 		CQt.QGraphicsWidget_Connect_GeometryChanged(obj.ObjectPtr,  => QtBeef_QGraphicsWidget_Connect_GeometryChanged);
 		CQt.QGraphicsWidget_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QGraphicsWidget_Connect_LayoutChanged);
+		CQt.QGraphicsProxyWidget_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnMetaObject);
+		CQt.QGraphicsProxyWidget_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnMetacast);
+		CQt.QGraphicsProxyWidget_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnMetacall);
+		CQt.QGraphicsProxyWidget_OnSetGeometry(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnSetGeometry);
+		CQt.QGraphicsProxyWidget_OnPaint(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnPaint);
+		CQt.QGraphicsProxyWidget_OnType(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnType);
+		CQt.QGraphicsProxyWidget_OnItemChange(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnItemChange);
+		CQt.QGraphicsProxyWidget_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnEvent);
+		CQt.QGraphicsProxyWidget_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnEventFilter);
+		CQt.QGraphicsProxyWidget_OnShowEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnShowEvent);
+		CQt.QGraphicsProxyWidget_OnHideEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnHideEvent);
+		CQt.QGraphicsProxyWidget_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnContextMenuEvent);
+		CQt.QGraphicsProxyWidget_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnDragEnterEvent);
+		CQt.QGraphicsProxyWidget_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnDragLeaveEvent);
+		CQt.QGraphicsProxyWidget_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnDragMoveEvent);
+		CQt.QGraphicsProxyWidget_OnDropEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnDropEvent);
+		CQt.QGraphicsProxyWidget_OnHoverEnterEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnHoverEnterEvent);
+		CQt.QGraphicsProxyWidget_OnHoverLeaveEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnHoverLeaveEvent);
+		CQt.QGraphicsProxyWidget_OnHoverMoveEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnHoverMoveEvent);
+		CQt.QGraphicsProxyWidget_OnGrabMouseEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnGrabMouseEvent);
+		CQt.QGraphicsProxyWidget_OnUngrabMouseEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnUngrabMouseEvent);
+		CQt.QGraphicsProxyWidget_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnMouseMoveEvent);
+		CQt.QGraphicsProxyWidget_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnMousePressEvent);
+		CQt.QGraphicsProxyWidget_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnMouseReleaseEvent);
+		CQt.QGraphicsProxyWidget_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnMouseDoubleClickEvent);
+		CQt.QGraphicsProxyWidget_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnWheelEvent);
+		CQt.QGraphicsProxyWidget_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnKeyPressEvent);
+		CQt.QGraphicsProxyWidget_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnKeyReleaseEvent);
+		CQt.QGraphicsProxyWidget_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnFocusInEvent);
+		CQt.QGraphicsProxyWidget_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnFocusOutEvent);
+		CQt.QGraphicsProxyWidget_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnFocusNextPrevChild);
+		CQt.QGraphicsProxyWidget_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnInputMethodQuery);
+		CQt.QGraphicsProxyWidget_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnInputMethodEvent);
+		CQt.QGraphicsProxyWidget_OnSizeHint(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnSizeHint);
+		CQt.QGraphicsProxyWidget_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnResizeEvent);
+		CQt.QGraphicsProxyWidget_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnTimerEvent);
+		CQt.QGraphicsProxyWidget_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnChildEvent);
+		CQt.QGraphicsProxyWidget_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnCustomEvent);
+		CQt.QGraphicsProxyWidget_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnConnectNotify);
+		CQt.QGraphicsProxyWidget_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnDisconnectNotify);
+		CQt.QGraphicsProxyWidget_OnAdvance(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnAdvance);
+		CQt.QGraphicsProxyWidget_OnBoundingRect(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnBoundingRect);
+		CQt.QGraphicsProxyWidget_OnShape(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnShape);
+		CQt.QGraphicsProxyWidget_OnContains(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnContains);
+		CQt.QGraphicsProxyWidget_OnCollidesWithItem(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnCollidesWithItem);
+		CQt.QGraphicsProxyWidget_OnCollidesWithPath(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnCollidesWithPath);
+		CQt.QGraphicsProxyWidget_OnIsObscuredBy(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnIsObscuredBy);
+		CQt.QGraphicsProxyWidget_OnOpaqueArea(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnOpaqueArea);
+		CQt.QGraphicsProxyWidget_OnSceneEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnSceneEventFilter);
+		CQt.QGraphicsProxyWidget_OnSceneEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnSceneEvent);
+		CQt.QGraphicsProxyWidget_OnSupportsExtension(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnSupportsExtension);
+		CQt.QGraphicsProxyWidget_OnSetExtension(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnSetExtension);
+		CQt.QGraphicsProxyWidget_OnExtension(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnExtension);
+		CQt.QGraphicsProxyWidget_OnGetContentsMargins(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnGetContentsMargins);
+		CQt.QGraphicsProxyWidget_OnUpdateGeometry(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnUpdateGeometry);
+		CQt.QGraphicsProxyWidget_OnIsEmpty(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnIsEmpty);
+		CQt.QGraphicsProxyWidget_OnPaintWindowFrame(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnPaintWindowFrame);
+		CQt.QGraphicsProxyWidget_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnInitStyleOption);
+		CQt.QGraphicsProxyWidget_OnPropertyChange(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnPropertyChange);
+		CQt.QGraphicsProxyWidget_OnWindowFrameEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnWindowFrameEvent);
+		CQt.QGraphicsProxyWidget_OnWindowFrameSectionAt(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnWindowFrameSectionAt);
+		CQt.QGraphicsProxyWidget_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnChangeEvent);
+		CQt.QGraphicsProxyWidget_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnCloseEvent);
+		CQt.QGraphicsProxyWidget_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnMoveEvent);
+		CQt.QGraphicsProxyWidget_OnPolishEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnPolishEvent);
+		CQt.QGraphicsProxyWidget_OnGrabKeyboardEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnGrabKeyboardEvent);
+		CQt.QGraphicsProxyWidget_OnUngrabKeyboardEvent(obj.ObjectPtr,  => QtBeef_QGraphicsProxyWidget_OnUngrabKeyboardEvent);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1738,6 +1805,341 @@ class QGraphicsProxyWidget : IQGraphicsProxyWidget, IQGraphicsWidget, IQGraphics
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnLayoutChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnSetGeometry(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetGeometry(rect);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnPaint(void* ptr, void** painter, void** option, void** widget)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaint(painter, option, widget);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnType();
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnItemChange(void* ptr, QGraphicsItem_GraphicsItemChange change, void** value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemChange(change, value);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnEventFilter(void* ptr, void** object, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(object, event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnHoverEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHoverEnterEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnHoverLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHoverLeaveEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnHoverMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHoverMoveEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnGrabMouseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGrabMouseEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnUngrabMouseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUngrabMouseEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery query)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(query);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnInputMethodEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnSizeHint(void* ptr, Qt_SizeHint which, void** constraint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint(which, constraint);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnAdvance(void* ptr, c_int phase)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAdvance(phase);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnBoundingRect(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBoundingRect();
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnShape(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShape();
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnContains(void* ptr, void** point)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContains(point);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnCollidesWithItem(void* ptr, void** other, Qt_ItemSelectionMode mode)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCollidesWithItem(other, mode);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnCollidesWithPath(void* ptr, void** path, Qt_ItemSelectionMode mode)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCollidesWithPath(path, mode);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnIsObscuredBy(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsObscuredBy(item);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnOpaqueArea(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpaqueArea();
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnSceneEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSceneEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnSceneEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSceneEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnSupportsExtension(void* ptr, QGraphicsItem_Extension _extension)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportsExtension(_extension);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnSetExtension(void* ptr, QGraphicsItem_Extension _extension, void** variant)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetExtension(_extension, variant);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnExtension(void* ptr, void** variant)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExtension(variant);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnGetContentsMargins(void* ptr, double* left, double* top, double* right, double* bottom)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGetContentsMargins(left, top, right, bottom);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnUpdateGeometry(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometry();
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnIsEmpty(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEmpty();
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnPaintWindowFrame(void* ptr, void** painter, void** option, void** widget)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintWindowFrame(painter, option, widget);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnPropertyChange(void* ptr, libqt_string propertyName, void** value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPropertyChange(propertyName, value);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnWindowFrameEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowFrameEvent(e);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnWindowFrameSectionAt(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowFrameSectionAt(pos);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnChangeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnPolishEvent(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPolishEvent();
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnGrabKeyboardEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGrabKeyboardEvent(event);
+	}
+	static void QtBeef_QGraphicsProxyWidget_OnUngrabKeyboardEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUngrabKeyboardEvent(event);
 	}
 	public this(QGraphicsProxyWidget_Ptr ptr)
 	{
@@ -3345,18 +3747,27 @@ extension CQt
 	public function void QGraphicsProxyWidget_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsProxyWidget_OnMetaObject")]
 	public static extern void** QGraphicsProxyWidget_OnMetaObject(void* self, QGraphicsProxyWidget_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperMetaObject")]
+	public static extern void** QGraphicsProxyWidget_SuperMetaObject(void* self);
 	[LinkName("QGraphicsProxyWidget_Qt_Metacast")]
 	public static extern void* QGraphicsProxyWidget_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsProxyWidget_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsProxyWidget_OnMetacast")]
 	public static extern void* QGraphicsProxyWidget_OnMetacast(void* self, QGraphicsProxyWidget_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperMetacast")]
+	public static extern void* QGraphicsProxyWidget_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsProxyWidget_Qt_Metacall")]
 	public static extern c_int QGraphicsProxyWidget_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsProxyWidget_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsProxyWidget_OnMetacall")]
 	public static extern c_int QGraphicsProxyWidget_OnMetacall(void* self, QGraphicsProxyWidget_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperMetacall")]
+	public static extern c_int QGraphicsProxyWidget_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsProxyWidget_Tr")]
 	public static extern libqt_string QGraphicsProxyWidget_Tr(c_char* s);
 	[LinkName("QGraphicsProxyWidget_SetWidget")]
@@ -3371,18 +3782,27 @@ extension CQt
 	public function void QGraphicsProxyWidget_OnSetGeometry_action(void* self, void** rect);
 	[LinkName("QGraphicsProxyWidget_OnSetGeometry")]
 	public static extern void QGraphicsProxyWidget_OnSetGeometry(void* self, QGraphicsProxyWidget_OnSetGeometry_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperSetGeometry")]
+	public static extern void QGraphicsProxyWidget_SuperSetGeometry(void* self, void** rect);
 	[LinkName("QGraphicsProxyWidget_Paint")]
 	public static extern void QGraphicsProxyWidget_Paint(void* self, void** painter, void** option, void** widget);
 	
 	public function void QGraphicsProxyWidget_OnPaint_action(void* self, void** painter, void** option, void** widget);
 	[LinkName("QGraphicsProxyWidget_OnPaint")]
 	public static extern void QGraphicsProxyWidget_OnPaint(void* self, QGraphicsProxyWidget_OnPaint_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperPaint")]
+	public static extern void QGraphicsProxyWidget_SuperPaint(void* self, void** painter, void** option, void** widget);
 	[LinkName("QGraphicsProxyWidget_Type")]
 	public static extern c_int QGraphicsProxyWidget_Type(void* self);
 	
 	public function void QGraphicsProxyWidget_OnType_action(void* self);
 	[LinkName("QGraphicsProxyWidget_OnType")]
 	public static extern c_int QGraphicsProxyWidget_OnType(void* self, QGraphicsProxyWidget_OnType_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperType")]
+	public static extern c_int QGraphicsProxyWidget_SuperType(void* self);
 	[LinkName("QGraphicsProxyWidget_CreateProxyForChildWidget")]
 	public static extern void** QGraphicsProxyWidget_CreateProxyForChildWidget(void* self, void** child);
 	[LinkName("QGraphicsProxyWidget_ItemChange")]
@@ -3391,174 +3811,261 @@ extension CQt
 	public function void QGraphicsProxyWidget_OnItemChange_action(void* self, QGraphicsItem_GraphicsItemChange change, void** value);
 	[LinkName("QGraphicsProxyWidget_OnItemChange")]
 	public static extern void* QGraphicsProxyWidget_OnItemChange(void* self, QGraphicsProxyWidget_OnItemChange_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperItemChange")]
+	public static extern void* QGraphicsProxyWidget_SuperItemChange(void* self, QGraphicsItem_GraphicsItemChange change, void** value);
 	[LinkName("QGraphicsProxyWidget_Event")]
 	public static extern bool QGraphicsProxyWidget_Event(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnEvent")]
 	public static extern bool QGraphicsProxyWidget_OnEvent(void* self, QGraphicsProxyWidget_OnEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperEvent")]
+	public static extern bool QGraphicsProxyWidget_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_EventFilter")]
 	public static extern bool QGraphicsProxyWidget_EventFilter(void* self, void** object, void** event);
 	
 	public function void QGraphicsProxyWidget_OnEventFilter_action(void* self, void** object, void** event);
 	[LinkName("QGraphicsProxyWidget_OnEventFilter")]
 	public static extern bool QGraphicsProxyWidget_OnEventFilter(void* self, QGraphicsProxyWidget_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperEventFilter")]
+	public static extern bool QGraphicsProxyWidget_SuperEventFilter(void* self, void** object, void** event);
 	[LinkName("QGraphicsProxyWidget_ShowEvent")]
 	public static extern void QGraphicsProxyWidget_ShowEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnShowEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnShowEvent")]
 	public static extern void QGraphicsProxyWidget_OnShowEvent(void* self, QGraphicsProxyWidget_OnShowEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperShowEvent")]
+	public static extern void QGraphicsProxyWidget_SuperShowEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_HideEvent")]
 	public static extern void QGraphicsProxyWidget_HideEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnHideEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnHideEvent")]
 	public static extern void QGraphicsProxyWidget_OnHideEvent(void* self, QGraphicsProxyWidget_OnHideEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperHideEvent")]
+	public static extern void QGraphicsProxyWidget_SuperHideEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_ContextMenuEvent")]
 	public static extern void QGraphicsProxyWidget_ContextMenuEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnContextMenuEvent")]
 	public static extern void QGraphicsProxyWidget_OnContextMenuEvent(void* self, QGraphicsProxyWidget_OnContextMenuEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperContextMenuEvent")]
+	public static extern void QGraphicsProxyWidget_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_DragEnterEvent")]
 	public static extern void QGraphicsProxyWidget_DragEnterEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnDragEnterEvent")]
 	public static extern void QGraphicsProxyWidget_OnDragEnterEvent(void* self, QGraphicsProxyWidget_OnDragEnterEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperDragEnterEvent")]
+	public static extern void QGraphicsProxyWidget_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_DragLeaveEvent")]
 	public static extern void QGraphicsProxyWidget_DragLeaveEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnDragLeaveEvent")]
 	public static extern void QGraphicsProxyWidget_OnDragLeaveEvent(void* self, QGraphicsProxyWidget_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperDragLeaveEvent")]
+	public static extern void QGraphicsProxyWidget_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_DragMoveEvent")]
 	public static extern void QGraphicsProxyWidget_DragMoveEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnDragMoveEvent")]
 	public static extern void QGraphicsProxyWidget_OnDragMoveEvent(void* self, QGraphicsProxyWidget_OnDragMoveEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperDragMoveEvent")]
+	public static extern void QGraphicsProxyWidget_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_DropEvent")]
 	public static extern void QGraphicsProxyWidget_DropEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnDropEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnDropEvent")]
 	public static extern void QGraphicsProxyWidget_OnDropEvent(void* self, QGraphicsProxyWidget_OnDropEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperDropEvent")]
+	public static extern void QGraphicsProxyWidget_SuperDropEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_HoverEnterEvent")]
 	public static extern void QGraphicsProxyWidget_HoverEnterEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnHoverEnterEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnHoverEnterEvent")]
 	public static extern void QGraphicsProxyWidget_OnHoverEnterEvent(void* self, QGraphicsProxyWidget_OnHoverEnterEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperHoverEnterEvent")]
+	public static extern void QGraphicsProxyWidget_SuperHoverEnterEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_HoverLeaveEvent")]
 	public static extern void QGraphicsProxyWidget_HoverLeaveEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnHoverLeaveEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnHoverLeaveEvent")]
 	public static extern void QGraphicsProxyWidget_OnHoverLeaveEvent(void* self, QGraphicsProxyWidget_OnHoverLeaveEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperHoverLeaveEvent")]
+	public static extern void QGraphicsProxyWidget_SuperHoverLeaveEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_HoverMoveEvent")]
 	public static extern void QGraphicsProxyWidget_HoverMoveEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnHoverMoveEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnHoverMoveEvent")]
 	public static extern void QGraphicsProxyWidget_OnHoverMoveEvent(void* self, QGraphicsProxyWidget_OnHoverMoveEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperHoverMoveEvent")]
+	public static extern void QGraphicsProxyWidget_SuperHoverMoveEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_GrabMouseEvent")]
 	public static extern void QGraphicsProxyWidget_GrabMouseEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnGrabMouseEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnGrabMouseEvent")]
 	public static extern void QGraphicsProxyWidget_OnGrabMouseEvent(void* self, QGraphicsProxyWidget_OnGrabMouseEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperGrabMouseEvent")]
+	public static extern void QGraphicsProxyWidget_SuperGrabMouseEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_UngrabMouseEvent")]
 	public static extern void QGraphicsProxyWidget_UngrabMouseEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnUngrabMouseEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnUngrabMouseEvent")]
 	public static extern void QGraphicsProxyWidget_OnUngrabMouseEvent(void* self, QGraphicsProxyWidget_OnUngrabMouseEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperUngrabMouseEvent")]
+	public static extern void QGraphicsProxyWidget_SuperUngrabMouseEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_MouseMoveEvent")]
 	public static extern void QGraphicsProxyWidget_MouseMoveEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnMouseMoveEvent")]
 	public static extern void QGraphicsProxyWidget_OnMouseMoveEvent(void* self, QGraphicsProxyWidget_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperMouseMoveEvent")]
+	public static extern void QGraphicsProxyWidget_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_MousePressEvent")]
 	public static extern void QGraphicsProxyWidget_MousePressEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnMousePressEvent")]
 	public static extern void QGraphicsProxyWidget_OnMousePressEvent(void* self, QGraphicsProxyWidget_OnMousePressEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperMousePressEvent")]
+	public static extern void QGraphicsProxyWidget_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_MouseReleaseEvent")]
 	public static extern void QGraphicsProxyWidget_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnMouseReleaseEvent")]
 	public static extern void QGraphicsProxyWidget_OnMouseReleaseEvent(void* self, QGraphicsProxyWidget_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperMouseReleaseEvent")]
+	public static extern void QGraphicsProxyWidget_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_MouseDoubleClickEvent")]
 	public static extern void QGraphicsProxyWidget_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnMouseDoubleClickEvent")]
 	public static extern void QGraphicsProxyWidget_OnMouseDoubleClickEvent(void* self, QGraphicsProxyWidget_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperMouseDoubleClickEvent")]
+	public static extern void QGraphicsProxyWidget_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_WheelEvent")]
 	public static extern void QGraphicsProxyWidget_WheelEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnWheelEvent")]
 	public static extern void QGraphicsProxyWidget_OnWheelEvent(void* self, QGraphicsProxyWidget_OnWheelEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperWheelEvent")]
+	public static extern void QGraphicsProxyWidget_SuperWheelEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_KeyPressEvent")]
 	public static extern void QGraphicsProxyWidget_KeyPressEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnKeyPressEvent")]
 	public static extern void QGraphicsProxyWidget_OnKeyPressEvent(void* self, QGraphicsProxyWidget_OnKeyPressEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperKeyPressEvent")]
+	public static extern void QGraphicsProxyWidget_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_KeyReleaseEvent")]
 	public static extern void QGraphicsProxyWidget_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnKeyReleaseEvent")]
 	public static extern void QGraphicsProxyWidget_OnKeyReleaseEvent(void* self, QGraphicsProxyWidget_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperKeyReleaseEvent")]
+	public static extern void QGraphicsProxyWidget_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_FocusInEvent")]
 	public static extern void QGraphicsProxyWidget_FocusInEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnFocusInEvent")]
 	public static extern void QGraphicsProxyWidget_OnFocusInEvent(void* self, QGraphicsProxyWidget_OnFocusInEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperFocusInEvent")]
+	public static extern void QGraphicsProxyWidget_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_FocusOutEvent")]
 	public static extern void QGraphicsProxyWidget_FocusOutEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnFocusOutEvent")]
 	public static extern void QGraphicsProxyWidget_OnFocusOutEvent(void* self, QGraphicsProxyWidget_OnFocusOutEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperFocusOutEvent")]
+	public static extern void QGraphicsProxyWidget_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_FocusNextPrevChild")]
 	public static extern bool QGraphicsProxyWidget_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QGraphicsProxyWidget_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QGraphicsProxyWidget_OnFocusNextPrevChild")]
 	public static extern bool QGraphicsProxyWidget_OnFocusNextPrevChild(void* self, QGraphicsProxyWidget_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperFocusNextPrevChild")]
+	public static extern bool QGraphicsProxyWidget_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QGraphicsProxyWidget_InputMethodQuery")]
 	public static extern void* QGraphicsProxyWidget_InputMethodQuery(void* self, Qt_InputMethodQuery query);
 	
 	public function void QGraphicsProxyWidget_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery query);
 	[LinkName("QGraphicsProxyWidget_OnInputMethodQuery")]
 	public static extern void* QGraphicsProxyWidget_OnInputMethodQuery(void* self, QGraphicsProxyWidget_OnInputMethodQuery_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperInputMethodQuery")]
+	public static extern void* QGraphicsProxyWidget_SuperInputMethodQuery(void* self, Qt_InputMethodQuery query);
 	[LinkName("QGraphicsProxyWidget_InputMethodEvent")]
 	public static extern void QGraphicsProxyWidget_InputMethodEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnInputMethodEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnInputMethodEvent")]
 	public static extern void QGraphicsProxyWidget_OnInputMethodEvent(void* self, QGraphicsProxyWidget_OnInputMethodEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperInputMethodEvent")]
+	public static extern void QGraphicsProxyWidget_SuperInputMethodEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_SizeHint")]
 	public static extern void* QGraphicsProxyWidget_SizeHint(void* self, Qt_SizeHint which, void** constraint);
 	
 	public function void QGraphicsProxyWidget_OnSizeHint_action(void* self, Qt_SizeHint which, void** constraint);
 	[LinkName("QGraphicsProxyWidget_OnSizeHint")]
 	public static extern void* QGraphicsProxyWidget_OnSizeHint(void* self, QGraphicsProxyWidget_OnSizeHint_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperSizeHint")]
+	public static extern void* QGraphicsProxyWidget_SuperSizeHint(void* self, Qt_SizeHint which, void** constraint);
 	[LinkName("QGraphicsProxyWidget_ResizeEvent")]
 	public static extern void QGraphicsProxyWidget_ResizeEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnResizeEvent")]
 	public static extern void QGraphicsProxyWidget_OnResizeEvent(void* self, QGraphicsProxyWidget_OnResizeEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperResizeEvent")]
+	public static extern void QGraphicsProxyWidget_SuperResizeEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_NewProxyWidget")]
 	public static extern void** QGraphicsProxyWidget_NewProxyWidget(void* self, void** param1);
 	[LinkName("QGraphicsProxyWidget_Tr2")]
@@ -3571,192 +4078,288 @@ extension CQt
 	public function void QGraphicsProxyWidget_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnTimerEvent")]
 	public static extern void QGraphicsProxyWidget_OnTimerEvent(void* self, QGraphicsProxyWidget_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperTimerEvent")]
+	public static extern void QGraphicsProxyWidget_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_ChildEvent")]
 	public static extern void QGraphicsProxyWidget_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnChildEvent")]
 	public static extern void QGraphicsProxyWidget_OnChildEvent(void* self, QGraphicsProxyWidget_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperChildEvent")]
+	public static extern void QGraphicsProxyWidget_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_CustomEvent")]
 	public static extern void QGraphicsProxyWidget_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnCustomEvent")]
 	public static extern void QGraphicsProxyWidget_OnCustomEvent(void* self, QGraphicsProxyWidget_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperCustomEvent")]
+	public static extern void QGraphicsProxyWidget_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_ConnectNotify")]
 	public static extern void QGraphicsProxyWidget_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsProxyWidget_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsProxyWidget_OnConnectNotify")]
 	public static extern void QGraphicsProxyWidget_OnConnectNotify(void* self, QGraphicsProxyWidget_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperConnectNotify")]
+	public static extern void QGraphicsProxyWidget_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsProxyWidget_DisconnectNotify")]
 	public static extern void QGraphicsProxyWidget_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsProxyWidget_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsProxyWidget_OnDisconnectNotify")]
 	public static extern void QGraphicsProxyWidget_OnDisconnectNotify(void* self, QGraphicsProxyWidget_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperDisconnectNotify")]
+	public static extern void QGraphicsProxyWidget_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsProxyWidget_Advance")]
 	public static extern void QGraphicsProxyWidget_Advance(void* self, c_int phase);
 	
 	public function void QGraphicsProxyWidget_OnAdvance_action(void* self, c_int phase);
 	[LinkName("QGraphicsProxyWidget_OnAdvance")]
 	public static extern void QGraphicsProxyWidget_OnAdvance(void* self, QGraphicsProxyWidget_OnAdvance_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperAdvance")]
+	public static extern void QGraphicsProxyWidget_SuperAdvance(void* self, c_int phase);
 	[LinkName("QGraphicsProxyWidget_BoundingRect")]
 	public static extern void* QGraphicsProxyWidget_BoundingRect(void* self);
 	
 	public function void QGraphicsProxyWidget_OnBoundingRect_action(void* self);
 	[LinkName("QGraphicsProxyWidget_OnBoundingRect")]
 	public static extern void* QGraphicsProxyWidget_OnBoundingRect(void* self, QGraphicsProxyWidget_OnBoundingRect_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperBoundingRect")]
+	public static extern void* QGraphicsProxyWidget_SuperBoundingRect(void* self);
 	[LinkName("QGraphicsProxyWidget_Shape")]
 	public static extern void* QGraphicsProxyWidget_Shape(void* self);
 	
 	public function void QGraphicsProxyWidget_OnShape_action(void* self);
 	[LinkName("QGraphicsProxyWidget_OnShape")]
 	public static extern void* QGraphicsProxyWidget_OnShape(void* self, QGraphicsProxyWidget_OnShape_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperShape")]
+	public static extern void* QGraphicsProxyWidget_SuperShape(void* self);
 	[LinkName("QGraphicsProxyWidget_Contains")]
 	public static extern bool QGraphicsProxyWidget_Contains(void* self, void** point);
 	
 	public function void QGraphicsProxyWidget_OnContains_action(void* self, void** point);
 	[LinkName("QGraphicsProxyWidget_OnContains")]
 	public static extern bool QGraphicsProxyWidget_OnContains(void* self, QGraphicsProxyWidget_OnContains_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperContains")]
+	public static extern bool QGraphicsProxyWidget_SuperContains(void* self, void** point);
 	[LinkName("QGraphicsProxyWidget_CollidesWithItem")]
 	public static extern bool QGraphicsProxyWidget_CollidesWithItem(void* self, void** other, Qt_ItemSelectionMode mode);
 	
 	public function void QGraphicsProxyWidget_OnCollidesWithItem_action(void* self, void** other, Qt_ItemSelectionMode mode);
 	[LinkName("QGraphicsProxyWidget_OnCollidesWithItem")]
 	public static extern bool QGraphicsProxyWidget_OnCollidesWithItem(void* self, QGraphicsProxyWidget_OnCollidesWithItem_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperCollidesWithItem")]
+	public static extern bool QGraphicsProxyWidget_SuperCollidesWithItem(void* self, void** other, Qt_ItemSelectionMode mode);
 	[LinkName("QGraphicsProxyWidget_CollidesWithPath")]
 	public static extern bool QGraphicsProxyWidget_CollidesWithPath(void* self, void** path, Qt_ItemSelectionMode mode);
 	
 	public function void QGraphicsProxyWidget_OnCollidesWithPath_action(void* self, void** path, Qt_ItemSelectionMode mode);
 	[LinkName("QGraphicsProxyWidget_OnCollidesWithPath")]
 	public static extern bool QGraphicsProxyWidget_OnCollidesWithPath(void* self, QGraphicsProxyWidget_OnCollidesWithPath_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperCollidesWithPath")]
+	public static extern bool QGraphicsProxyWidget_SuperCollidesWithPath(void* self, void** path, Qt_ItemSelectionMode mode);
 	[LinkName("QGraphicsProxyWidget_IsObscuredBy")]
 	public static extern bool QGraphicsProxyWidget_IsObscuredBy(void* self, void** item);
 	
 	public function void QGraphicsProxyWidget_OnIsObscuredBy_action(void* self, void** item);
 	[LinkName("QGraphicsProxyWidget_OnIsObscuredBy")]
 	public static extern bool QGraphicsProxyWidget_OnIsObscuredBy(void* self, QGraphicsProxyWidget_OnIsObscuredBy_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperIsObscuredBy")]
+	public static extern bool QGraphicsProxyWidget_SuperIsObscuredBy(void* self, void** item);
 	[LinkName("QGraphicsProxyWidget_OpaqueArea")]
 	public static extern void* QGraphicsProxyWidget_OpaqueArea(void* self);
 	
 	public function void QGraphicsProxyWidget_OnOpaqueArea_action(void* self);
 	[LinkName("QGraphicsProxyWidget_OnOpaqueArea")]
 	public static extern void* QGraphicsProxyWidget_OnOpaqueArea(void* self, QGraphicsProxyWidget_OnOpaqueArea_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperOpaqueArea")]
+	public static extern void* QGraphicsProxyWidget_SuperOpaqueArea(void* self);
 	[LinkName("QGraphicsProxyWidget_SceneEventFilter")]
 	public static extern bool QGraphicsProxyWidget_SceneEventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsProxyWidget_OnSceneEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsProxyWidget_OnSceneEventFilter")]
 	public static extern bool QGraphicsProxyWidget_OnSceneEventFilter(void* self, QGraphicsProxyWidget_OnSceneEventFilter_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperSceneEventFilter")]
+	public static extern bool QGraphicsProxyWidget_SuperSceneEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsProxyWidget_SceneEvent")]
 	public static extern bool QGraphicsProxyWidget_SceneEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnSceneEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnSceneEvent")]
 	public static extern bool QGraphicsProxyWidget_OnSceneEvent(void* self, QGraphicsProxyWidget_OnSceneEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperSceneEvent")]
+	public static extern bool QGraphicsProxyWidget_SuperSceneEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_SupportsExtension")]
 	public static extern bool QGraphicsProxyWidget_SupportsExtension(void* self, QGraphicsItem_Extension _extension);
 	
 	public function void QGraphicsProxyWidget_OnSupportsExtension_action(void* self, QGraphicsItem_Extension _extension);
 	[LinkName("QGraphicsProxyWidget_OnSupportsExtension")]
 	public static extern bool QGraphicsProxyWidget_OnSupportsExtension(void* self, QGraphicsProxyWidget_OnSupportsExtension_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperSupportsExtension")]
+	public static extern bool QGraphicsProxyWidget_SuperSupportsExtension(void* self, QGraphicsItem_Extension _extension);
 	[LinkName("QGraphicsProxyWidget_SetExtension")]
 	public static extern void QGraphicsProxyWidget_SetExtension(void* self, QGraphicsItem_Extension _extension, void** variant);
 	
 	public function void QGraphicsProxyWidget_OnSetExtension_action(void* self, QGraphicsItem_Extension _extension, void** variant);
 	[LinkName("QGraphicsProxyWidget_OnSetExtension")]
 	public static extern void QGraphicsProxyWidget_OnSetExtension(void* self, QGraphicsProxyWidget_OnSetExtension_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperSetExtension")]
+	public static extern void QGraphicsProxyWidget_SuperSetExtension(void* self, QGraphicsItem_Extension _extension, void** variant);
 	[LinkName("QGraphicsProxyWidget_Extension")]
 	public static extern void* QGraphicsProxyWidget_Extension(void* self, void** variant);
 	
 	public function void QGraphicsProxyWidget_OnExtension_action(void* self, void** variant);
 	[LinkName("QGraphicsProxyWidget_OnExtension")]
 	public static extern void* QGraphicsProxyWidget_OnExtension(void* self, QGraphicsProxyWidget_OnExtension_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperExtension")]
+	public static extern void* QGraphicsProxyWidget_SuperExtension(void* self, void** variant);
 	[LinkName("QGraphicsProxyWidget_GetContentsMargins")]
 	public static extern void QGraphicsProxyWidget_GetContentsMargins(void* self, double* left, double* top, double* right, double* bottom);
 	
 	public function void QGraphicsProxyWidget_OnGetContentsMargins_action(void* self, double* left, double* top, double* right, double* bottom);
 	[LinkName("QGraphicsProxyWidget_OnGetContentsMargins")]
 	public static extern void QGraphicsProxyWidget_OnGetContentsMargins(void* self, QGraphicsProxyWidget_OnGetContentsMargins_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperGetContentsMargins")]
+	public static extern void QGraphicsProxyWidget_SuperGetContentsMargins(void* self, double* left, double* top, double* right, double* bottom);
 	[LinkName("QGraphicsProxyWidget_UpdateGeometry")]
 	public static extern void QGraphicsProxyWidget_UpdateGeometry(void* self);
 	
 	public function void QGraphicsProxyWidget_OnUpdateGeometry_action(void* self);
 	[LinkName("QGraphicsProxyWidget_OnUpdateGeometry")]
 	public static extern void QGraphicsProxyWidget_OnUpdateGeometry(void* self, QGraphicsProxyWidget_OnUpdateGeometry_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperUpdateGeometry")]
+	public static extern void QGraphicsProxyWidget_SuperUpdateGeometry(void* self);
 	[LinkName("QGraphicsProxyWidget_IsEmpty")]
 	public static extern bool QGraphicsProxyWidget_IsEmpty(void* self);
 	
 	public function void QGraphicsProxyWidget_OnIsEmpty_action(void* self);
 	[LinkName("QGraphicsProxyWidget_OnIsEmpty")]
 	public static extern bool QGraphicsProxyWidget_OnIsEmpty(void* self, QGraphicsProxyWidget_OnIsEmpty_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperIsEmpty")]
+	public static extern bool QGraphicsProxyWidget_SuperIsEmpty(void* self);
 	[LinkName("QGraphicsProxyWidget_PaintWindowFrame")]
 	public static extern void QGraphicsProxyWidget_PaintWindowFrame(void* self, void** painter, void** option, void** widget);
 	
 	public function void QGraphicsProxyWidget_OnPaintWindowFrame_action(void* self, void** painter, void** option, void** widget);
 	[LinkName("QGraphicsProxyWidget_OnPaintWindowFrame")]
 	public static extern void QGraphicsProxyWidget_OnPaintWindowFrame(void* self, QGraphicsProxyWidget_OnPaintWindowFrame_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperPaintWindowFrame")]
+	public static extern void QGraphicsProxyWidget_SuperPaintWindowFrame(void* self, void** painter, void** option, void** widget);
 	[LinkName("QGraphicsProxyWidget_InitStyleOption")]
 	public static extern void QGraphicsProxyWidget_InitStyleOption(void* self, void** option);
 	
 	public function void QGraphicsProxyWidget_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QGraphicsProxyWidget_OnInitStyleOption")]
 	public static extern void QGraphicsProxyWidget_OnInitStyleOption(void* self, QGraphicsProxyWidget_OnInitStyleOption_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperInitStyleOption")]
+	public static extern void QGraphicsProxyWidget_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QGraphicsProxyWidget_PropertyChange")]
 	public static extern void* QGraphicsProxyWidget_PropertyChange(void* self, libqt_string propertyName, void** value);
 	
 	public function void QGraphicsProxyWidget_OnPropertyChange_action(void* self, libqt_string propertyName, void** value);
 	[LinkName("QGraphicsProxyWidget_OnPropertyChange")]
 	public static extern void* QGraphicsProxyWidget_OnPropertyChange(void* self, QGraphicsProxyWidget_OnPropertyChange_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperPropertyChange")]
+	public static extern void* QGraphicsProxyWidget_SuperPropertyChange(void* self, libqt_string propertyName, void** value);
 	[LinkName("QGraphicsProxyWidget_WindowFrameEvent")]
 	public static extern bool QGraphicsProxyWidget_WindowFrameEvent(void* self, void** e);
 	
 	public function void QGraphicsProxyWidget_OnWindowFrameEvent_action(void* self, void** e);
 	[LinkName("QGraphicsProxyWidget_OnWindowFrameEvent")]
 	public static extern bool QGraphicsProxyWidget_OnWindowFrameEvent(void* self, QGraphicsProxyWidget_OnWindowFrameEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperWindowFrameEvent")]
+	public static extern bool QGraphicsProxyWidget_SuperWindowFrameEvent(void* self, void** e);
 	[LinkName("QGraphicsProxyWidget_WindowFrameSectionAt")]
 	public static extern Qt_WindowFrameSection QGraphicsProxyWidget_WindowFrameSectionAt(void* self, void** pos);
 	
 	public function void QGraphicsProxyWidget_OnWindowFrameSectionAt_action(void* self, void** pos);
 	[LinkName("QGraphicsProxyWidget_OnWindowFrameSectionAt")]
 	public static extern Qt_WindowFrameSection QGraphicsProxyWidget_OnWindowFrameSectionAt(void* self, QGraphicsProxyWidget_OnWindowFrameSectionAt_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperWindowFrameSectionAt")]
+	public static extern Qt_WindowFrameSection QGraphicsProxyWidget_SuperWindowFrameSectionAt(void* self, void** pos);
 	[LinkName("QGraphicsProxyWidget_ChangeEvent")]
 	public static extern void QGraphicsProxyWidget_ChangeEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnChangeEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnChangeEvent")]
 	public static extern void QGraphicsProxyWidget_OnChangeEvent(void* self, QGraphicsProxyWidget_OnChangeEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperChangeEvent")]
+	public static extern void QGraphicsProxyWidget_SuperChangeEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_CloseEvent")]
 	public static extern void QGraphicsProxyWidget_CloseEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnCloseEvent")]
 	public static extern void QGraphicsProxyWidget_OnCloseEvent(void* self, QGraphicsProxyWidget_OnCloseEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperCloseEvent")]
+	public static extern void QGraphicsProxyWidget_SuperCloseEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_MoveEvent")]
 	public static extern void QGraphicsProxyWidget_MoveEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnMoveEvent")]
 	public static extern void QGraphicsProxyWidget_OnMoveEvent(void* self, QGraphicsProxyWidget_OnMoveEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperMoveEvent")]
+	public static extern void QGraphicsProxyWidget_SuperMoveEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_PolishEvent")]
 	public static extern void QGraphicsProxyWidget_PolishEvent(void* self);
 	
 	public function void QGraphicsProxyWidget_OnPolishEvent_action(void* self);
 	[LinkName("QGraphicsProxyWidget_OnPolishEvent")]
 	public static extern void QGraphicsProxyWidget_OnPolishEvent(void* self, QGraphicsProxyWidget_OnPolishEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperPolishEvent")]
+	public static extern void QGraphicsProxyWidget_SuperPolishEvent(void* self);
 	[LinkName("QGraphicsProxyWidget_GrabKeyboardEvent")]
 	public static extern void QGraphicsProxyWidget_GrabKeyboardEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnGrabKeyboardEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnGrabKeyboardEvent")]
 	public static extern void QGraphicsProxyWidget_OnGrabKeyboardEvent(void* self, QGraphicsProxyWidget_OnGrabKeyboardEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperGrabKeyboardEvent")]
+	public static extern void QGraphicsProxyWidget_SuperGrabKeyboardEvent(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_UngrabKeyboardEvent")]
 	public static extern void QGraphicsProxyWidget_UngrabKeyboardEvent(void* self, void** event);
 	
 	public function void QGraphicsProxyWidget_OnUngrabKeyboardEvent_action(void* self, void** event);
 	[LinkName("QGraphicsProxyWidget_OnUngrabKeyboardEvent")]
 	public static extern void QGraphicsProxyWidget_OnUngrabKeyboardEvent(void* self, QGraphicsProxyWidget_OnUngrabKeyboardEvent_action _action);
+	
+	[LinkName("QGraphicsProxyWidget_SuperUngrabKeyboardEvent")]
+	public static extern void QGraphicsProxyWidget_SuperUngrabKeyboardEvent(void* self, void** event);
 }
 [AllowDuplicates]
 enum QGraphicsProxyWidget_

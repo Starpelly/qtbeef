@@ -292,6 +292,16 @@ class QGraphicsAnchor : IQGraphicsAnchor, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGraphicsAnchor_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnMetaObject);
+		CQt.QGraphicsAnchor_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnMetacast);
+		CQt.QGraphicsAnchor_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnMetacall);
+		CQt.QGraphicsAnchor_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnEvent);
+		CQt.QGraphicsAnchor_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnEventFilter);
+		CQt.QGraphicsAnchor_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnTimerEvent);
+		CQt.QGraphicsAnchor_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnChildEvent);
+		CQt.QGraphicsAnchor_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnCustomEvent);
+		CQt.QGraphicsAnchor_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnConnectNotify);
+		CQt.QGraphicsAnchor_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsAnchor_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -304,6 +314,56 @@ class QGraphicsAnchor : IQGraphicsAnchor, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGraphicsAnchor_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsAnchor_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsAnchor_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsAnchor_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsAnchor_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsAnchor_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsAnchor_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsAnchor_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsAnchor_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsAnchor_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QGraphicsAnchor_Ptr ptr)
 	{
@@ -591,18 +651,27 @@ extension CQt
 	public function void QGraphicsAnchor_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsAnchor_OnMetaObject")]
 	public static extern void** QGraphicsAnchor_OnMetaObject(void* self, QGraphicsAnchor_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperMetaObject")]
+	public static extern void** QGraphicsAnchor_SuperMetaObject(void* self);
 	[LinkName("QGraphicsAnchor_Qt_Metacast")]
 	public static extern void* QGraphicsAnchor_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsAnchor_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsAnchor_OnMetacast")]
 	public static extern void* QGraphicsAnchor_OnMetacast(void* self, QGraphicsAnchor_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperMetacast")]
+	public static extern void* QGraphicsAnchor_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsAnchor_Qt_Metacall")]
 	public static extern c_int QGraphicsAnchor_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsAnchor_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsAnchor_OnMetacall")]
 	public static extern c_int QGraphicsAnchor_OnMetacall(void* self, QGraphicsAnchor_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperMetacall")]
+	public static extern c_int QGraphicsAnchor_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsAnchor_Tr")]
 	public static extern libqt_string QGraphicsAnchor_Tr(c_char* s);
 	[LinkName("QGraphicsAnchor_SetSpacing")]
@@ -625,42 +694,63 @@ extension CQt
 	public function void QGraphicsAnchor_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsAnchor_OnEvent")]
 	public static extern bool QGraphicsAnchor_OnEvent(void* self, QGraphicsAnchor_OnEvent_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperEvent")]
+	public static extern bool QGraphicsAnchor_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsAnchor_EventFilter")]
 	public static extern bool QGraphicsAnchor_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsAnchor_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsAnchor_OnEventFilter")]
 	public static extern bool QGraphicsAnchor_OnEventFilter(void* self, QGraphicsAnchor_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperEventFilter")]
+	public static extern bool QGraphicsAnchor_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsAnchor_TimerEvent")]
 	public static extern void QGraphicsAnchor_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsAnchor_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsAnchor_OnTimerEvent")]
 	public static extern void QGraphicsAnchor_OnTimerEvent(void* self, QGraphicsAnchor_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperTimerEvent")]
+	public static extern void QGraphicsAnchor_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsAnchor_ChildEvent")]
 	public static extern void QGraphicsAnchor_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsAnchor_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsAnchor_OnChildEvent")]
 	public static extern void QGraphicsAnchor_OnChildEvent(void* self, QGraphicsAnchor_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperChildEvent")]
+	public static extern void QGraphicsAnchor_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsAnchor_CustomEvent")]
 	public static extern void QGraphicsAnchor_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsAnchor_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsAnchor_OnCustomEvent")]
 	public static extern void QGraphicsAnchor_OnCustomEvent(void* self, QGraphicsAnchor_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperCustomEvent")]
+	public static extern void QGraphicsAnchor_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsAnchor_ConnectNotify")]
 	public static extern void QGraphicsAnchor_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsAnchor_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsAnchor_OnConnectNotify")]
 	public static extern void QGraphicsAnchor_OnConnectNotify(void* self, QGraphicsAnchor_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperConnectNotify")]
+	public static extern void QGraphicsAnchor_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsAnchor_DisconnectNotify")]
 	public static extern void QGraphicsAnchor_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsAnchor_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsAnchor_OnDisconnectNotify")]
 	public static extern void QGraphicsAnchor_OnDisconnectNotify(void* self, QGraphicsAnchor_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsAnchor_SuperDisconnectNotify")]
+	public static extern void QGraphicsAnchor_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QGraphicsAnchorLayout
@@ -929,6 +1019,66 @@ class QGraphicsAnchorLayout : IQGraphicsAnchorLayout, IQGraphicsLayout, IQGraphi
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsAnchorLayout_OnRemoveAt(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnRemoveAt);
+		CQt.QGraphicsAnchorLayout_OnSetGeometry(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnSetGeometry);
+		CQt.QGraphicsAnchorLayout_OnCount(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnCount);
+		CQt.QGraphicsAnchorLayout_OnItemAt(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnItemAt);
+		CQt.QGraphicsAnchorLayout_OnInvalidate(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnInvalidate);
+		CQt.QGraphicsAnchorLayout_OnSizeHint(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnSizeHint);
+		CQt.QGraphicsAnchorLayout_OnGetContentsMargins(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnGetContentsMargins);
+		CQt.QGraphicsAnchorLayout_OnUpdateGeometry(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnUpdateGeometry);
+		CQt.QGraphicsAnchorLayout_OnIsEmpty(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnIsEmpty);
+		CQt.QGraphicsAnchorLayout_OnWidgetEvent(obj.ObjectPtr,  => QtBeef_QGraphicsAnchorLayout_OnWidgetEvent);
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnRemoveAt(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveAt(index);
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnSetGeometry(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetGeometry(rect);
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCount();
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnItemAt(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemAt(index);
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnInvalidate(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInvalidate();
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnSizeHint(void* ptr, Qt_SizeHint which, void** constraint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint(which, constraint);
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnGetContentsMargins(void* ptr, double* left, double* top, double* right, double* bottom)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGetContentsMargins(left, top, right, bottom);
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnUpdateGeometry(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometry();
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnIsEmpty(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEmpty();
+	}
+	static void QtBeef_QGraphicsAnchorLayout_OnWidgetEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidgetEvent(e);
 	}
 	public this(QGraphicsAnchorLayout_Ptr ptr)
 	{
@@ -1227,36 +1377,54 @@ extension CQt
 	public function void QGraphicsAnchorLayout_OnRemoveAt_action(void* self, c_int index);
 	[LinkName("QGraphicsAnchorLayout_OnRemoveAt")]
 	public static extern void QGraphicsAnchorLayout_OnRemoveAt(void* self, QGraphicsAnchorLayout_OnRemoveAt_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperRemoveAt")]
+	public static extern void QGraphicsAnchorLayout_SuperRemoveAt(void* self, c_int index);
 	[LinkName("QGraphicsAnchorLayout_SetGeometry")]
 	public static extern void QGraphicsAnchorLayout_SetGeometry(void* self, void** rect);
 	
 	public function void QGraphicsAnchorLayout_OnSetGeometry_action(void* self, void** rect);
 	[LinkName("QGraphicsAnchorLayout_OnSetGeometry")]
 	public static extern void QGraphicsAnchorLayout_OnSetGeometry(void* self, QGraphicsAnchorLayout_OnSetGeometry_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperSetGeometry")]
+	public static extern void QGraphicsAnchorLayout_SuperSetGeometry(void* self, void** rect);
 	[LinkName("QGraphicsAnchorLayout_Count")]
 	public static extern c_int QGraphicsAnchorLayout_Count(void* self);
 	
 	public function void QGraphicsAnchorLayout_OnCount_action(void* self);
 	[LinkName("QGraphicsAnchorLayout_OnCount")]
 	public static extern c_int QGraphicsAnchorLayout_OnCount(void* self, QGraphicsAnchorLayout_OnCount_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperCount")]
+	public static extern c_int QGraphicsAnchorLayout_SuperCount(void* self);
 	[LinkName("QGraphicsAnchorLayout_ItemAt")]
 	public static extern void** QGraphicsAnchorLayout_ItemAt(void* self, c_int index);
 	
 	public function void QGraphicsAnchorLayout_OnItemAt_action(void* self, c_int index);
 	[LinkName("QGraphicsAnchorLayout_OnItemAt")]
 	public static extern void** QGraphicsAnchorLayout_OnItemAt(void* self, QGraphicsAnchorLayout_OnItemAt_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperItemAt")]
+	public static extern void** QGraphicsAnchorLayout_SuperItemAt(void* self, c_int index);
 	[LinkName("QGraphicsAnchorLayout_Invalidate")]
 	public static extern void QGraphicsAnchorLayout_Invalidate(void* self);
 	
 	public function void QGraphicsAnchorLayout_OnInvalidate_action(void* self);
 	[LinkName("QGraphicsAnchorLayout_OnInvalidate")]
 	public static extern void QGraphicsAnchorLayout_OnInvalidate(void* self, QGraphicsAnchorLayout_OnInvalidate_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperInvalidate")]
+	public static extern void QGraphicsAnchorLayout_SuperInvalidate(void* self);
 	[LinkName("QGraphicsAnchorLayout_SizeHint")]
 	public static extern void* QGraphicsAnchorLayout_SizeHint(void* self, Qt_SizeHint which, void** constraint);
 	
 	public function void QGraphicsAnchorLayout_OnSizeHint_action(void* self, Qt_SizeHint which, void** constraint);
 	[LinkName("QGraphicsAnchorLayout_OnSizeHint")]
 	public static extern void* QGraphicsAnchorLayout_OnSizeHint(void* self, QGraphicsAnchorLayout_OnSizeHint_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperSizeHint")]
+	public static extern void* QGraphicsAnchorLayout_SuperSizeHint(void* self, Qt_SizeHint which, void** constraint);
 	[LinkName("QGraphicsAnchorLayout_AddAnchors3")]
 	public static extern void QGraphicsAnchorLayout_AddAnchors3(void* self, void** firstItem, void** secondItem, void* orientations);
 	[LinkName("QGraphicsAnchorLayout_GetContentsMargins")]
@@ -1265,22 +1433,34 @@ extension CQt
 	public function void QGraphicsAnchorLayout_OnGetContentsMargins_action(void* self, double* left, double* top, double* right, double* bottom);
 	[LinkName("QGraphicsAnchorLayout_OnGetContentsMargins")]
 	public static extern void QGraphicsAnchorLayout_OnGetContentsMargins(void* self, QGraphicsAnchorLayout_OnGetContentsMargins_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperGetContentsMargins")]
+	public static extern void QGraphicsAnchorLayout_SuperGetContentsMargins(void* self, double* left, double* top, double* right, double* bottom);
 	[LinkName("QGraphicsAnchorLayout_UpdateGeometry")]
 	public static extern void QGraphicsAnchorLayout_UpdateGeometry(void* self);
 	
 	public function void QGraphicsAnchorLayout_OnUpdateGeometry_action(void* self);
 	[LinkName("QGraphicsAnchorLayout_OnUpdateGeometry")]
 	public static extern void QGraphicsAnchorLayout_OnUpdateGeometry(void* self, QGraphicsAnchorLayout_OnUpdateGeometry_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperUpdateGeometry")]
+	public static extern void QGraphicsAnchorLayout_SuperUpdateGeometry(void* self);
 	[LinkName("QGraphicsAnchorLayout_IsEmpty")]
 	public static extern bool QGraphicsAnchorLayout_IsEmpty(void* self);
 	
 	public function void QGraphicsAnchorLayout_OnIsEmpty_action(void* self);
 	[LinkName("QGraphicsAnchorLayout_OnIsEmpty")]
 	public static extern bool QGraphicsAnchorLayout_OnIsEmpty(void* self, QGraphicsAnchorLayout_OnIsEmpty_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperIsEmpty")]
+	public static extern bool QGraphicsAnchorLayout_SuperIsEmpty(void* self);
 	[LinkName("QGraphicsAnchorLayout_WidgetEvent")]
 	public static extern void QGraphicsAnchorLayout_WidgetEvent(void* self, void** e);
 	
 	public function void QGraphicsAnchorLayout_OnWidgetEvent_action(void* self, void** e);
 	[LinkName("QGraphicsAnchorLayout_OnWidgetEvent")]
 	public static extern void QGraphicsAnchorLayout_OnWidgetEvent(void* self, QGraphicsAnchorLayout_OnWidgetEvent_action _action);
+	
+	[LinkName("QGraphicsAnchorLayout_SuperWidgetEvent")]
+	public static extern void QGraphicsAnchorLayout_SuperWidgetEvent(void* self, void** e);
 }

@@ -2562,6 +2562,103 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Entered);
 		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_ViewportEntered);
 		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_IconSizeChanged);
+		CQt.QHeaderView_OnMetaObject(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMetaObject);
+		CQt.QHeaderView_OnMetacast(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMetacast);
+		CQt.QHeaderView_OnMetacall(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMetacall);
+		CQt.QHeaderView_OnSetModel(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSetModel);
+		CQt.QHeaderView_OnSizeHint(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSizeHint);
+		CQt.QHeaderView_OnSetVisible(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSetVisible);
+		CQt.QHeaderView_OnDoItemsLayout(obj.ObjectPtr,  => QtBeef_QHeaderView_OnDoItemsLayout);
+		CQt.QHeaderView_OnReset(obj.ObjectPtr,  => QtBeef_QHeaderView_OnReset);
+		CQt.QHeaderView_OnCurrentChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_OnCurrentChanged);
+		CQt.QHeaderView_OnEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnEvent);
+		CQt.QHeaderView_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnPaintEvent);
+		CQt.QHeaderView_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMousePressEvent);
+		CQt.QHeaderView_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMouseMoveEvent);
+		CQt.QHeaderView_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMouseReleaseEvent);
+		CQt.QHeaderView_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMouseDoubleClickEvent);
+		CQt.QHeaderView_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnViewportEvent);
+		CQt.QHeaderView_OnPaintSection(obj.ObjectPtr,  => QtBeef_QHeaderView_OnPaintSection);
+		CQt.QHeaderView_OnSectionSizeFromContents(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSectionSizeFromContents);
+		CQt.QHeaderView_OnHorizontalOffset(obj.ObjectPtr,  => QtBeef_QHeaderView_OnHorizontalOffset);
+		CQt.QHeaderView_OnVerticalOffset(obj.ObjectPtr,  => QtBeef_QHeaderView_OnVerticalOffset);
+		CQt.QHeaderView_OnUpdateGeometries(obj.ObjectPtr,  => QtBeef_QHeaderView_OnUpdateGeometries);
+		CQt.QHeaderView_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QHeaderView_OnScrollContentsBy);
+		CQt.QHeaderView_OnDataChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_OnDataChanged);
+		CQt.QHeaderView_OnRowsInserted(obj.ObjectPtr,  => QtBeef_QHeaderView_OnRowsInserted);
+		CQt.QHeaderView_OnVisualRect(obj.ObjectPtr,  => QtBeef_QHeaderView_OnVisualRect);
+		CQt.QHeaderView_OnScrollTo(obj.ObjectPtr,  => QtBeef_QHeaderView_OnScrollTo);
+		CQt.QHeaderView_OnIndexAt(obj.ObjectPtr,  => QtBeef_QHeaderView_OnIndexAt);
+		CQt.QHeaderView_OnIsIndexHidden(obj.ObjectPtr,  => QtBeef_QHeaderView_OnIsIndexHidden);
+		CQt.QHeaderView_OnMoveCursor(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMoveCursor);
+		CQt.QHeaderView_OnSetSelection(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSetSelection);
+		CQt.QHeaderView_OnVisualRegionForSelection(obj.ObjectPtr,  => QtBeef_QHeaderView_OnVisualRegionForSelection);
+		CQt.QHeaderView_OnInitStyleOptionForIndex(obj.ObjectPtr,  => QtBeef_QHeaderView_OnInitStyleOptionForIndex);
+		CQt.QHeaderView_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QHeaderView_OnInitStyleOption);
+		CQt.QHeaderView_OnEventFilter(obj.ObjectPtr,  => QtBeef_QHeaderView_OnEventFilter);
+		CQt.QHeaderView_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnTimerEvent);
+		CQt.QHeaderView_OnChildEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnChildEvent);
+		CQt.QHeaderView_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnCustomEvent);
+		CQt.QHeaderView_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QHeaderView_OnConnectNotify);
+		CQt.QHeaderView_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QHeaderView_OnDisconnectNotify);
+		CQt.QHeaderView_OnDevType(obj.ObjectPtr,  => QtBeef_QHeaderView_OnDevType);
+		CQt.QHeaderView_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QHeaderView_OnPaintEngine);
+		CQt.QHeaderView_OnMetric(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMetric);
+		CQt.QHeaderView_OnInitPainter(obj.ObjectPtr,  => QtBeef_QHeaderView_OnInitPainter);
+		CQt.QHeaderView_OnRedirected(obj.ObjectPtr,  => QtBeef_QHeaderView_OnRedirected);
+		CQt.QHeaderView_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSharedPainter);
+		CQt.QHeaderView_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMinimumSizeHint);
+		CQt.QHeaderView_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QHeaderView_OnHeightForWidth);
+		CQt.QHeaderView_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QHeaderView_OnHasHeightForWidth);
+		CQt.QHeaderView_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnWheelEvent);
+		CQt.QHeaderView_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnKeyPressEvent);
+		CQt.QHeaderView_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnKeyReleaseEvent);
+		CQt.QHeaderView_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnFocusInEvent);
+		CQt.QHeaderView_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnFocusOutEvent);
+		CQt.QHeaderView_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnEnterEvent);
+		CQt.QHeaderView_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnLeaveEvent);
+		CQt.QHeaderView_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnMoveEvent);
+		CQt.QHeaderView_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnResizeEvent);
+		CQt.QHeaderView_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnCloseEvent);
+		CQt.QHeaderView_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnContextMenuEvent);
+		CQt.QHeaderView_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnTabletEvent);
+		CQt.QHeaderView_OnActionEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnActionEvent);
+		CQt.QHeaderView_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnDragEnterEvent);
+		CQt.QHeaderView_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnDragMoveEvent);
+		CQt.QHeaderView_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnDragLeaveEvent);
+		CQt.QHeaderView_OnDropEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnDropEvent);
+		CQt.QHeaderView_OnShowEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnShowEvent);
+		CQt.QHeaderView_OnHideEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnHideEvent);
+		CQt.QHeaderView_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnNativeEvent);
+		CQt.QHeaderView_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnChangeEvent);
+		CQt.QHeaderView_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QHeaderView_OnInputMethodEvent);
+		CQt.QHeaderView_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QHeaderView_OnInputMethodQuery);
+		CQt.QHeaderView_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QHeaderView_OnFocusNextPrevChild);
+		CQt.QHeaderView_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSetupViewport);
+		CQt.QHeaderView_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QHeaderView_OnViewportSizeHint);
+		CQt.QHeaderView_OnSetSelectionModel(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSetSelectionModel);
+		CQt.QHeaderView_OnKeyboardSearch(obj.ObjectPtr,  => QtBeef_QHeaderView_OnKeyboardSearch);
+		CQt.QHeaderView_OnSizeHintForRow(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSizeHintForRow);
+		CQt.QHeaderView_OnSizeHintForColumn(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSizeHintForColumn);
+		CQt.QHeaderView_OnItemDelegateForIndex(obj.ObjectPtr,  => QtBeef_QHeaderView_OnItemDelegateForIndex);
+		CQt.QHeaderView_OnSetRootIndex(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSetRootIndex);
+		CQt.QHeaderView_OnSelectAll(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSelectAll);
+		CQt.QHeaderView_OnRowsAboutToBeRemoved(obj.ObjectPtr,  => QtBeef_QHeaderView_OnRowsAboutToBeRemoved);
+		CQt.QHeaderView_OnSelectionChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSelectionChanged);
+		CQt.QHeaderView_OnUpdateEditorData(obj.ObjectPtr,  => QtBeef_QHeaderView_OnUpdateEditorData);
+		CQt.QHeaderView_OnUpdateEditorGeometries(obj.ObjectPtr,  => QtBeef_QHeaderView_OnUpdateEditorGeometries);
+		CQt.QHeaderView_OnVerticalScrollbarAction(obj.ObjectPtr,  => QtBeef_QHeaderView_OnVerticalScrollbarAction);
+		CQt.QHeaderView_OnHorizontalScrollbarAction(obj.ObjectPtr,  => QtBeef_QHeaderView_OnHorizontalScrollbarAction);
+		CQt.QHeaderView_OnVerticalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_OnVerticalScrollbarValueChanged);
+		CQt.QHeaderView_OnHorizontalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_OnHorizontalScrollbarValueChanged);
+		CQt.QHeaderView_OnCloseEditor(obj.ObjectPtr,  => QtBeef_QHeaderView_OnCloseEditor);
+		CQt.QHeaderView_OnCommitData(obj.ObjectPtr,  => QtBeef_QHeaderView_OnCommitData);
+		CQt.QHeaderView_OnEditorDestroyed(obj.ObjectPtr,  => QtBeef_QHeaderView_OnEditorDestroyed);
+		CQt.QHeaderView_OnSelectedIndexes(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSelectedIndexes);
+		CQt.QHeaderView_OnEdit2(obj.ObjectPtr,  => QtBeef_QHeaderView_OnEdit2);
+		CQt.QHeaderView_OnSelectionCommand(obj.ObjectPtr,  => QtBeef_QHeaderView_OnSelectionCommand);
+		CQt.QHeaderView_OnStartDrag(obj.ObjectPtr,  => QtBeef_QHeaderView_OnStartDrag);
+		CQt.QHeaderView_OnInitViewItemOption(obj.ObjectPtr,  => QtBeef_QHeaderView_OnInitViewItemOption);
 	}
 	public Event<delegate void(c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex)> OnSectionMoved = .() ~ _.Dispose();
 	public Event<delegate void(c_int logicalIndex, c_int oldSize, c_int newSize)> OnSectionResized = .() ~ _.Dispose();
@@ -2706,6 +2803,491 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnIconSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QHeaderView_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QHeaderView_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QHeaderView_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QHeaderView_OnSetModel(void* ptr, void** model)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetModel(model);
+	}
+	static void QtBeef_QHeaderView_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QHeaderView_OnSetVisible(void* ptr, bool v)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(v);
+	}
+	static void QtBeef_QHeaderView_OnDoItemsLayout(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoItemsLayout();
+	}
+	static void QtBeef_QHeaderView_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QHeaderView_OnCurrentChanged(void* ptr, void** current, void** old)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged(current, old);
+	}
+	static void QtBeef_QHeaderView_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QHeaderView_OnPaintEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(e);
+	}
+	static void QtBeef_QHeaderView_OnMousePressEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(e);
+	}
+	static void QtBeef_QHeaderView_OnMouseMoveEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(e);
+	}
+	static void QtBeef_QHeaderView_OnMouseReleaseEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(e);
+	}
+	static void QtBeef_QHeaderView_OnMouseDoubleClickEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(e);
+	}
+	static void QtBeef_QHeaderView_OnViewportEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(e);
+	}
+	static void QtBeef_QHeaderView_OnPaintSection(void* ptr, void** painter, void** rect, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintSection(painter, rect, logicalIndex);
+	}
+	static void QtBeef_QHeaderView_OnSectionSizeFromContents(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionSizeFromContents(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_OnHorizontalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalOffset();
+	}
+	static void QtBeef_QHeaderView_OnVerticalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalOffset();
+	}
+	static void QtBeef_QHeaderView_OnUpdateGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometries();
+	}
+	static void QtBeef_QHeaderView_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
+	}
+	static void QtBeef_QHeaderView_OnDataChanged(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QHeaderView_OnRowsInserted(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsInserted(parent, start, end);
+	}
+	static void QtBeef_QHeaderView_OnVisualRect(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRect(index);
+	}
+	static void QtBeef_QHeaderView_OnScrollTo(void* ptr, void** index, QAbstractItemView_ScrollHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollTo(index, hint);
+	}
+	static void QtBeef_QHeaderView_OnIndexAt(void* ptr, void** p)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexAt(p);
+	}
+	static void QtBeef_QHeaderView_OnIsIndexHidden(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsIndexHidden(index);
+	}
+	static void QtBeef_QHeaderView_OnMoveCursor(void* ptr, QAbstractItemView_CursorAction param1, void* param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveCursor(param1, param2);
+	}
+	static void QtBeef_QHeaderView_OnSetSelection(void* ptr, void** rect, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelection(rect, flags);
+	}
+	static void QtBeef_QHeaderView_OnVisualRegionForSelection(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRegionForSelection(selection);
+	}
+	static void QtBeef_QHeaderView_OnInitStyleOptionForIndex(void* ptr, void** option, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOptionForIndex(option, logicalIndex);
+	}
+	static void QtBeef_QHeaderView_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QHeaderView_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QHeaderView_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QHeaderView_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QHeaderView_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QHeaderView_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QHeaderView_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QHeaderView_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QHeaderView_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QHeaderView_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QHeaderView_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QHeaderView_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QHeaderView_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QHeaderView_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QHeaderView_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QHeaderView_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QHeaderView_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QHeaderView_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QHeaderView_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QHeaderView_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QHeaderView_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
+	}
+	static void QtBeef_QHeaderView_OnSetSelectionModel(void* ptr, void** selectionModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelectionModel(selectionModel);
+	}
+	static void QtBeef_QHeaderView_OnKeyboardSearch(void* ptr, libqt_string search)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyboardSearch(search);
+	}
+	static void QtBeef_QHeaderView_OnSizeHintForRow(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForRow(row);
+	}
+	static void QtBeef_QHeaderView_OnSizeHintForColumn(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForColumn(column);
+	}
+	static void QtBeef_QHeaderView_OnItemDelegateForIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDelegateForIndex(index);
+	}
+	static void QtBeef_QHeaderView_OnSetRootIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetRootIndex(index);
+	}
+	static void QtBeef_QHeaderView_OnSelectAll(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectAll();
+	}
+	static void QtBeef_QHeaderView_OnRowsAboutToBeRemoved(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsAboutToBeRemoved(parent, start, end);
+	}
+	static void QtBeef_QHeaderView_OnSelectionChanged(void* ptr, void** selected, void** deselected)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged(selected, deselected);
+	}
+	static void QtBeef_QHeaderView_OnUpdateEditorData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorData();
+	}
+	static void QtBeef_QHeaderView_OnUpdateEditorGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorGeometries();
+	}
+	static void QtBeef_QHeaderView_OnVerticalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarAction(action);
+	}
+	static void QtBeef_QHeaderView_OnHorizontalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarAction(action);
+	}
+	static void QtBeef_QHeaderView_OnVerticalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QHeaderView_OnHorizontalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QHeaderView_OnCloseEditor(void* ptr, void** editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor(editor, hint);
+	}
+	static void QtBeef_QHeaderView_OnCommitData(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommitData(editor);
+	}
+	static void QtBeef_QHeaderView_OnEditorDestroyed(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditorDestroyed(editor);
+	}
+	static void QtBeef_QHeaderView_OnSelectedIndexes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedIndexes();
+	}
+	static void QtBeef_QHeaderView_OnEdit2(void* ptr, void** index, QAbstractItemView_EditTrigger trigger, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEdit2(index, trigger, event);
+	}
+	static void QtBeef_QHeaderView_OnSelectionCommand(void* ptr, void** index, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionCommand(index, event);
+	}
+	static void QtBeef_QHeaderView_OnStartDrag(void* ptr, void* supportedActions)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStartDrag(supportedActions);
+	}
+	static void QtBeef_QHeaderView_OnInitViewItemOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitViewItemOption(option);
 	}
 	public this(QHeaderView_Ptr ptr)
 	{
@@ -5196,18 +5778,27 @@ extension CQt
 	public function void QHeaderView_OnMetaObject_action(void* self);
 	[LinkName("QHeaderView_OnMetaObject")]
 	public static extern void** QHeaderView_OnMetaObject(void* self, QHeaderView_OnMetaObject_action _action);
+	
+	[LinkName("QHeaderView_SuperMetaObject")]
+	public static extern void** QHeaderView_SuperMetaObject(void* self);
 	[LinkName("QHeaderView_Qt_Metacast")]
 	public static extern void* QHeaderView_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QHeaderView_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QHeaderView_OnMetacast")]
 	public static extern void* QHeaderView_OnMetacast(void* self, QHeaderView_OnMetacast_action _action);
+	
+	[LinkName("QHeaderView_SuperMetacast")]
+	public static extern void* QHeaderView_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QHeaderView_Qt_Metacall")]
 	public static extern c_int QHeaderView_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QHeaderView_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QHeaderView_OnMetacall")]
 	public static extern c_int QHeaderView_OnMetacall(void* self, QHeaderView_OnMetacall_action _action);
+	
+	[LinkName("QHeaderView_SuperMetacall")]
+	public static extern c_int QHeaderView_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QHeaderView_Tr")]
 	public static extern libqt_string QHeaderView_Tr(c_char* s);
 	[LinkName("QHeaderView_SetModel")]
@@ -5216,6 +5807,9 @@ extension CQt
 	public function void QHeaderView_OnSetModel_action(void* self, void** model);
 	[LinkName("QHeaderView_OnSetModel")]
 	public static extern void QHeaderView_OnSetModel(void* self, QHeaderView_OnSetModel_action _action);
+	
+	[LinkName("QHeaderView_SuperSetModel")]
+	public static extern void QHeaderView_SuperSetModel(void* self, void** model);
 	[LinkName("QHeaderView_Orientation")]
 	public static extern Qt_Orientation QHeaderView_Orientation(void* self);
 	[LinkName("QHeaderView_Offset")]
@@ -5228,12 +5822,18 @@ extension CQt
 	public function void QHeaderView_OnSizeHint_action(void* self);
 	[LinkName("QHeaderView_OnSizeHint")]
 	public static extern void* QHeaderView_OnSizeHint(void* self, QHeaderView_OnSizeHint_action _action);
+	
+	[LinkName("QHeaderView_SuperSizeHint")]
+	public static extern void* QHeaderView_SuperSizeHint(void* self);
 	[LinkName("QHeaderView_SetVisible")]
 	public static extern void QHeaderView_SetVisible(void* self, bool v);
 	
 	public function void QHeaderView_OnSetVisible_action(void* self, bool v);
 	[LinkName("QHeaderView_OnSetVisible")]
 	public static extern void QHeaderView_OnSetVisible(void* self, QHeaderView_OnSetVisible_action _action);
+	
+	[LinkName("QHeaderView_SuperSetVisible")]
+	public static extern void QHeaderView_SuperSetVisible(void* self, bool v);
 	[LinkName("QHeaderView_SectionSizeHint")]
 	public static extern c_int QHeaderView_SectionSizeHint(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_VisualIndexAt")]
@@ -5348,6 +5948,9 @@ extension CQt
 	public function void QHeaderView_OnDoItemsLayout_action(void* self);
 	[LinkName("QHeaderView_OnDoItemsLayout")]
 	public static extern void QHeaderView_OnDoItemsLayout(void* self, QHeaderView_OnDoItemsLayout_action _action);
+	
+	[LinkName("QHeaderView_SuperDoItemsLayout")]
+	public static extern void QHeaderView_SuperDoItemsLayout(void* self);
 	[LinkName("QHeaderView_SectionsMoved")]
 	public static extern bool QHeaderView_SectionsMoved(void* self);
 	[LinkName("QHeaderView_SectionsHidden")]
@@ -5362,6 +5965,9 @@ extension CQt
 	public function void QHeaderView_OnReset_action(void* self);
 	[LinkName("QHeaderView_OnReset")]
 	public static extern void QHeaderView_OnReset(void* self, QHeaderView_OnReset_action _action);
+	
+	[LinkName("QHeaderView_SuperReset")]
+	public static extern void QHeaderView_SuperReset(void* self);
 	[LinkName("QHeaderView_SetOffset")]
 	public static extern void QHeaderView_SetOffset(void* self, c_int offset);
 	[LinkName("QHeaderView_SetOffsetToSectionPosition")]
@@ -5456,150 +6062,225 @@ extension CQt
 	public function void QHeaderView_OnCurrentChanged_action(void* self, void** current, void** old);
 	[LinkName("QHeaderView_OnCurrentChanged")]
 	public static extern void QHeaderView_OnCurrentChanged(void* self, QHeaderView_OnCurrentChanged_action _action);
+	
+	[LinkName("QHeaderView_SuperCurrentChanged")]
+	public static extern void QHeaderView_SuperCurrentChanged(void* self, void** current, void** old);
 	[LinkName("QHeaderView_Event")]
 	public static extern bool QHeaderView_Event(void* self, void** e);
 	
 	public function void QHeaderView_OnEvent_action(void* self, void** e);
 	[LinkName("QHeaderView_OnEvent")]
 	public static extern bool QHeaderView_OnEvent(void* self, QHeaderView_OnEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperEvent")]
+	public static extern bool QHeaderView_SuperEvent(void* self, void** e);
 	[LinkName("QHeaderView_PaintEvent")]
 	public static extern void QHeaderView_PaintEvent(void* self, void** e);
 	
 	public function void QHeaderView_OnPaintEvent_action(void* self, void** e);
 	[LinkName("QHeaderView_OnPaintEvent")]
 	public static extern void QHeaderView_OnPaintEvent(void* self, QHeaderView_OnPaintEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperPaintEvent")]
+	public static extern void QHeaderView_SuperPaintEvent(void* self, void** e);
 	[LinkName("QHeaderView_MousePressEvent")]
 	public static extern void QHeaderView_MousePressEvent(void* self, void** e);
 	
 	public function void QHeaderView_OnMousePressEvent_action(void* self, void** e);
 	[LinkName("QHeaderView_OnMousePressEvent")]
 	public static extern void QHeaderView_OnMousePressEvent(void* self, QHeaderView_OnMousePressEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperMousePressEvent")]
+	public static extern void QHeaderView_SuperMousePressEvent(void* self, void** e);
 	[LinkName("QHeaderView_MouseMoveEvent")]
 	public static extern void QHeaderView_MouseMoveEvent(void* self, void** e);
 	
 	public function void QHeaderView_OnMouseMoveEvent_action(void* self, void** e);
 	[LinkName("QHeaderView_OnMouseMoveEvent")]
 	public static extern void QHeaderView_OnMouseMoveEvent(void* self, QHeaderView_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperMouseMoveEvent")]
+	public static extern void QHeaderView_SuperMouseMoveEvent(void* self, void** e);
 	[LinkName("QHeaderView_MouseReleaseEvent")]
 	public static extern void QHeaderView_MouseReleaseEvent(void* self, void** e);
 	
 	public function void QHeaderView_OnMouseReleaseEvent_action(void* self, void** e);
 	[LinkName("QHeaderView_OnMouseReleaseEvent")]
 	public static extern void QHeaderView_OnMouseReleaseEvent(void* self, QHeaderView_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperMouseReleaseEvent")]
+	public static extern void QHeaderView_SuperMouseReleaseEvent(void* self, void** e);
 	[LinkName("QHeaderView_MouseDoubleClickEvent")]
 	public static extern void QHeaderView_MouseDoubleClickEvent(void* self, void** e);
 	
 	public function void QHeaderView_OnMouseDoubleClickEvent_action(void* self, void** e);
 	[LinkName("QHeaderView_OnMouseDoubleClickEvent")]
 	public static extern void QHeaderView_OnMouseDoubleClickEvent(void* self, QHeaderView_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperMouseDoubleClickEvent")]
+	public static extern void QHeaderView_SuperMouseDoubleClickEvent(void* self, void** e);
 	[LinkName("QHeaderView_ViewportEvent")]
 	public static extern bool QHeaderView_ViewportEvent(void* self, void** e);
 	
 	public function void QHeaderView_OnViewportEvent_action(void* self, void** e);
 	[LinkName("QHeaderView_OnViewportEvent")]
 	public static extern bool QHeaderView_OnViewportEvent(void* self, QHeaderView_OnViewportEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperViewportEvent")]
+	public static extern bool QHeaderView_SuperViewportEvent(void* self, void** e);
 	[LinkName("QHeaderView_PaintSection")]
 	public static extern void QHeaderView_PaintSection(void* self, void** painter, void** rect, c_int logicalIndex);
 	
 	public function void QHeaderView_OnPaintSection_action(void* self, void** painter, void** rect, c_int logicalIndex);
 	[LinkName("QHeaderView_OnPaintSection")]
 	public static extern void QHeaderView_OnPaintSection(void* self, QHeaderView_OnPaintSection_action _action);
+	
+	[LinkName("QHeaderView_SuperPaintSection")]
+	public static extern void QHeaderView_SuperPaintSection(void* self, void** painter, void** rect, c_int logicalIndex);
 	[LinkName("QHeaderView_SectionSizeFromContents")]
 	public static extern void* QHeaderView_SectionSizeFromContents(void* self, c_int logicalIndex);
 	
 	public function void QHeaderView_OnSectionSizeFromContents_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_OnSectionSizeFromContents")]
 	public static extern void* QHeaderView_OnSectionSizeFromContents(void* self, QHeaderView_OnSectionSizeFromContents_action _action);
+	
+	[LinkName("QHeaderView_SuperSectionSizeFromContents")]
+	public static extern void* QHeaderView_SuperSectionSizeFromContents(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_HorizontalOffset")]
 	public static extern c_int QHeaderView_HorizontalOffset(void* self);
 	
 	public function void QHeaderView_OnHorizontalOffset_action(void* self);
 	[LinkName("QHeaderView_OnHorizontalOffset")]
 	public static extern c_int QHeaderView_OnHorizontalOffset(void* self, QHeaderView_OnHorizontalOffset_action _action);
+	
+	[LinkName("QHeaderView_SuperHorizontalOffset")]
+	public static extern c_int QHeaderView_SuperHorizontalOffset(void* self);
 	[LinkName("QHeaderView_VerticalOffset")]
 	public static extern c_int QHeaderView_VerticalOffset(void* self);
 	
 	public function void QHeaderView_OnVerticalOffset_action(void* self);
 	[LinkName("QHeaderView_OnVerticalOffset")]
 	public static extern c_int QHeaderView_OnVerticalOffset(void* self, QHeaderView_OnVerticalOffset_action _action);
+	
+	[LinkName("QHeaderView_SuperVerticalOffset")]
+	public static extern c_int QHeaderView_SuperVerticalOffset(void* self);
 	[LinkName("QHeaderView_UpdateGeometries")]
 	public static extern void QHeaderView_UpdateGeometries(void* self);
 	
 	public function void QHeaderView_OnUpdateGeometries_action(void* self);
 	[LinkName("QHeaderView_OnUpdateGeometries")]
 	public static extern void QHeaderView_OnUpdateGeometries(void* self, QHeaderView_OnUpdateGeometries_action _action);
+	
+	[LinkName("QHeaderView_SuperUpdateGeometries")]
+	public static extern void QHeaderView_SuperUpdateGeometries(void* self);
 	[LinkName("QHeaderView_ScrollContentsBy")]
 	public static extern void QHeaderView_ScrollContentsBy(void* self, c_int dx, c_int dy);
 	
 	public function void QHeaderView_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QHeaderView_OnScrollContentsBy")]
 	public static extern void QHeaderView_OnScrollContentsBy(void* self, QHeaderView_OnScrollContentsBy_action _action);
+	
+	[LinkName("QHeaderView_SuperScrollContentsBy")]
+	public static extern void QHeaderView_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 	[LinkName("QHeaderView_DataChanged")]
 	public static extern void QHeaderView_DataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	
 	public function void QHeaderView_OnDataChanged_action(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QHeaderView_OnDataChanged")]
 	public static extern void QHeaderView_OnDataChanged(void* self, QHeaderView_OnDataChanged_action _action);
+	
+	[LinkName("QHeaderView_SuperDataChanged")]
+	public static extern void QHeaderView_SuperDataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QHeaderView_RowsInserted")]
 	public static extern void QHeaderView_RowsInserted(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QHeaderView_OnRowsInserted_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QHeaderView_OnRowsInserted")]
 	public static extern void QHeaderView_OnRowsInserted(void* self, QHeaderView_OnRowsInserted_action _action);
+	
+	[LinkName("QHeaderView_SuperRowsInserted")]
+	public static extern void QHeaderView_SuperRowsInserted(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QHeaderView_VisualRect")]
 	public static extern void* QHeaderView_VisualRect(void* self, void** index);
 	
 	public function void QHeaderView_OnVisualRect_action(void* self, void** index);
 	[LinkName("QHeaderView_OnVisualRect")]
 	public static extern void* QHeaderView_OnVisualRect(void* self, QHeaderView_OnVisualRect_action _action);
+	
+	[LinkName("QHeaderView_SuperVisualRect")]
+	public static extern void* QHeaderView_SuperVisualRect(void* self, void** index);
 	[LinkName("QHeaderView_ScrollTo")]
 	public static extern void QHeaderView_ScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	
 	public function void QHeaderView_OnScrollTo_action(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QHeaderView_OnScrollTo")]
 	public static extern void QHeaderView_OnScrollTo(void* self, QHeaderView_OnScrollTo_action _action);
+	
+	[LinkName("QHeaderView_SuperScrollTo")]
+	public static extern void QHeaderView_SuperScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QHeaderView_IndexAt")]
 	public static extern void* QHeaderView_IndexAt(void* self, void** p);
 	
 	public function void QHeaderView_OnIndexAt_action(void* self, void** p);
 	[LinkName("QHeaderView_OnIndexAt")]
 	public static extern void* QHeaderView_OnIndexAt(void* self, QHeaderView_OnIndexAt_action _action);
+	
+	[LinkName("QHeaderView_SuperIndexAt")]
+	public static extern void* QHeaderView_SuperIndexAt(void* self, void** p);
 	[LinkName("QHeaderView_IsIndexHidden")]
 	public static extern bool QHeaderView_IsIndexHidden(void* self, void** index);
 	
 	public function void QHeaderView_OnIsIndexHidden_action(void* self, void** index);
 	[LinkName("QHeaderView_OnIsIndexHidden")]
 	public static extern bool QHeaderView_OnIsIndexHidden(void* self, QHeaderView_OnIsIndexHidden_action _action);
+	
+	[LinkName("QHeaderView_SuperIsIndexHidden")]
+	public static extern bool QHeaderView_SuperIsIndexHidden(void* self, void** index);
 	[LinkName("QHeaderView_MoveCursor")]
 	public static extern void* QHeaderView_MoveCursor(void* self, QAbstractItemView_CursorAction param1, void* param2);
 	
 	public function void QHeaderView_OnMoveCursor_action(void* self, QAbstractItemView_CursorAction param1, void* param2);
 	[LinkName("QHeaderView_OnMoveCursor")]
 	public static extern void* QHeaderView_OnMoveCursor(void* self, QHeaderView_OnMoveCursor_action _action);
+	
+	[LinkName("QHeaderView_SuperMoveCursor")]
+	public static extern void* QHeaderView_SuperMoveCursor(void* self, QAbstractItemView_CursorAction param1, void* param2);
 	[LinkName("QHeaderView_SetSelection")]
 	public static extern void QHeaderView_SetSelection(void* self, void** rect, void* flags);
 	
 	public function void QHeaderView_OnSetSelection_action(void* self, void** rect, void* flags);
 	[LinkName("QHeaderView_OnSetSelection")]
 	public static extern void QHeaderView_OnSetSelection(void* self, QHeaderView_OnSetSelection_action _action);
+	
+	[LinkName("QHeaderView_SuperSetSelection")]
+	public static extern void QHeaderView_SuperSetSelection(void* self, void** rect, void* flags);
 	[LinkName("QHeaderView_VisualRegionForSelection")]
 	public static extern void* QHeaderView_VisualRegionForSelection(void* self, void** selection);
 	
 	public function void QHeaderView_OnVisualRegionForSelection_action(void* self, void** selection);
 	[LinkName("QHeaderView_OnVisualRegionForSelection")]
 	public static extern void* QHeaderView_OnVisualRegionForSelection(void* self, QHeaderView_OnVisualRegionForSelection_action _action);
+	
+	[LinkName("QHeaderView_SuperVisualRegionForSelection")]
+	public static extern void* QHeaderView_SuperVisualRegionForSelection(void* self, void** selection);
 	[LinkName("QHeaderView_InitStyleOptionForIndex")]
 	public static extern void QHeaderView_InitStyleOptionForIndex(void* self, void** option, c_int logicalIndex);
 	
 	public function void QHeaderView_OnInitStyleOptionForIndex_action(void* self, void** option, c_int logicalIndex);
 	[LinkName("QHeaderView_OnInitStyleOptionForIndex")]
 	public static extern void QHeaderView_OnInitStyleOptionForIndex(void* self, QHeaderView_OnInitStyleOptionForIndex_action _action);
+	
+	[LinkName("QHeaderView_SuperInitStyleOptionForIndex")]
+	public static extern void QHeaderView_SuperInitStyleOptionForIndex(void* self, void** option, c_int logicalIndex);
 	[LinkName("QHeaderView_InitStyleOption")]
 	public static extern void QHeaderView_InitStyleOption(void* self, void** option);
 	
 	public function void QHeaderView_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QHeaderView_OnInitStyleOption")]
 	public static extern void QHeaderView_OnInitStyleOption(void* self, QHeaderView_OnInitStyleOption_action _action);
+	
+	[LinkName("QHeaderView_SuperInitStyleOption")]
+	public static extern void QHeaderView_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QHeaderView_Tr2")]
 	public static extern libqt_string QHeaderView_Tr2(c_char* s, c_char* c);
 	[LinkName("QHeaderView_Tr3")]
@@ -5610,384 +6291,576 @@ extension CQt
 	public function void QHeaderView_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QHeaderView_OnEventFilter")]
 	public static extern bool QHeaderView_OnEventFilter(void* self, QHeaderView_OnEventFilter_action _action);
+	
+	[LinkName("QHeaderView_SuperEventFilter")]
+	public static extern bool QHeaderView_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QHeaderView_TimerEvent")]
 	public static extern void QHeaderView_TimerEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnTimerEvent")]
 	public static extern void QHeaderView_OnTimerEvent(void* self, QHeaderView_OnTimerEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperTimerEvent")]
+	public static extern void QHeaderView_SuperTimerEvent(void* self, void** event);
 	[LinkName("QHeaderView_ChildEvent")]
 	public static extern void QHeaderView_ChildEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnChildEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnChildEvent")]
 	public static extern void QHeaderView_OnChildEvent(void* self, QHeaderView_OnChildEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperChildEvent")]
+	public static extern void QHeaderView_SuperChildEvent(void* self, void** event);
 	[LinkName("QHeaderView_CustomEvent")]
 	public static extern void QHeaderView_CustomEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnCustomEvent")]
 	public static extern void QHeaderView_OnCustomEvent(void* self, QHeaderView_OnCustomEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperCustomEvent")]
+	public static extern void QHeaderView_SuperCustomEvent(void* self, void** event);
 	[LinkName("QHeaderView_ConnectNotify")]
 	public static extern void QHeaderView_ConnectNotify(void* self, void** signal);
 	
 	public function void QHeaderView_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QHeaderView_OnConnectNotify")]
 	public static extern void QHeaderView_OnConnectNotify(void* self, QHeaderView_OnConnectNotify_action _action);
+	
+	[LinkName("QHeaderView_SuperConnectNotify")]
+	public static extern void QHeaderView_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QHeaderView_DisconnectNotify")]
 	public static extern void QHeaderView_DisconnectNotify(void* self, void** signal);
 	
 	public function void QHeaderView_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QHeaderView_OnDisconnectNotify")]
 	public static extern void QHeaderView_OnDisconnectNotify(void* self, QHeaderView_OnDisconnectNotify_action _action);
+	
+	[LinkName("QHeaderView_SuperDisconnectNotify")]
+	public static extern void QHeaderView_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QHeaderView_DevType")]
 	public static extern c_int QHeaderView_DevType(void* self);
 	
 	public function void QHeaderView_OnDevType_action(void* self);
 	[LinkName("QHeaderView_OnDevType")]
 	public static extern c_int QHeaderView_OnDevType(void* self, QHeaderView_OnDevType_action _action);
+	
+	[LinkName("QHeaderView_SuperDevType")]
+	public static extern c_int QHeaderView_SuperDevType(void* self);
 	[LinkName("QHeaderView_PaintEngine")]
 	public static extern void** QHeaderView_PaintEngine(void* self);
 	
 	public function void QHeaderView_OnPaintEngine_action(void* self);
 	[LinkName("QHeaderView_OnPaintEngine")]
 	public static extern void** QHeaderView_OnPaintEngine(void* self, QHeaderView_OnPaintEngine_action _action);
+	
+	[LinkName("QHeaderView_SuperPaintEngine")]
+	public static extern void** QHeaderView_SuperPaintEngine(void* self);
 	[LinkName("QHeaderView_Metric")]
 	public static extern c_int QHeaderView_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QHeaderView_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QHeaderView_OnMetric")]
 	public static extern c_int QHeaderView_OnMetric(void* self, QHeaderView_OnMetric_action _action);
+	
+	[LinkName("QHeaderView_SuperMetric")]
+	public static extern c_int QHeaderView_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QHeaderView_InitPainter")]
 	public static extern void QHeaderView_InitPainter(void* self, void** painter);
 	
 	public function void QHeaderView_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QHeaderView_OnInitPainter")]
 	public static extern void QHeaderView_OnInitPainter(void* self, QHeaderView_OnInitPainter_action _action);
+	
+	[LinkName("QHeaderView_SuperInitPainter")]
+	public static extern void QHeaderView_SuperInitPainter(void* self, void** painter);
 	[LinkName("QHeaderView_Redirected")]
 	public static extern void** QHeaderView_Redirected(void* self, void** offset);
 	
 	public function void QHeaderView_OnRedirected_action(void* self, void** offset);
 	[LinkName("QHeaderView_OnRedirected")]
 	public static extern void** QHeaderView_OnRedirected(void* self, QHeaderView_OnRedirected_action _action);
+	
+	[LinkName("QHeaderView_SuperRedirected")]
+	public static extern void** QHeaderView_SuperRedirected(void* self, void** offset);
 	[LinkName("QHeaderView_SharedPainter")]
 	public static extern void** QHeaderView_SharedPainter(void* self);
 	
 	public function void QHeaderView_OnSharedPainter_action(void* self);
 	[LinkName("QHeaderView_OnSharedPainter")]
 	public static extern void** QHeaderView_OnSharedPainter(void* self, QHeaderView_OnSharedPainter_action _action);
+	
+	[LinkName("QHeaderView_SuperSharedPainter")]
+	public static extern void** QHeaderView_SuperSharedPainter(void* self);
 	[LinkName("QHeaderView_MinimumSizeHint")]
 	public static extern void* QHeaderView_MinimumSizeHint(void* self);
 	
 	public function void QHeaderView_OnMinimumSizeHint_action(void* self);
 	[LinkName("QHeaderView_OnMinimumSizeHint")]
 	public static extern void* QHeaderView_OnMinimumSizeHint(void* self, QHeaderView_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QHeaderView_SuperMinimumSizeHint")]
+	public static extern void* QHeaderView_SuperMinimumSizeHint(void* self);
 	[LinkName("QHeaderView_HeightForWidth")]
 	public static extern c_int QHeaderView_HeightForWidth(void* self, c_int param1);
 	
 	public function void QHeaderView_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QHeaderView_OnHeightForWidth")]
 	public static extern c_int QHeaderView_OnHeightForWidth(void* self, QHeaderView_OnHeightForWidth_action _action);
+	
+	[LinkName("QHeaderView_SuperHeightForWidth")]
+	public static extern c_int QHeaderView_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QHeaderView_HasHeightForWidth")]
 	public static extern bool QHeaderView_HasHeightForWidth(void* self);
 	
 	public function void QHeaderView_OnHasHeightForWidth_action(void* self);
 	[LinkName("QHeaderView_OnHasHeightForWidth")]
 	public static extern bool QHeaderView_OnHasHeightForWidth(void* self, QHeaderView_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QHeaderView_SuperHasHeightForWidth")]
+	public static extern bool QHeaderView_SuperHasHeightForWidth(void* self);
 	[LinkName("QHeaderView_WheelEvent")]
 	public static extern void QHeaderView_WheelEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnWheelEvent")]
 	public static extern void QHeaderView_OnWheelEvent(void* self, QHeaderView_OnWheelEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperWheelEvent")]
+	public static extern void QHeaderView_SuperWheelEvent(void* self, void** event);
 	[LinkName("QHeaderView_KeyPressEvent")]
 	public static extern void QHeaderView_KeyPressEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnKeyPressEvent")]
 	public static extern void QHeaderView_OnKeyPressEvent(void* self, QHeaderView_OnKeyPressEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperKeyPressEvent")]
+	public static extern void QHeaderView_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QHeaderView_KeyReleaseEvent")]
 	public static extern void QHeaderView_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnKeyReleaseEvent")]
 	public static extern void QHeaderView_OnKeyReleaseEvent(void* self, QHeaderView_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperKeyReleaseEvent")]
+	public static extern void QHeaderView_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QHeaderView_FocusInEvent")]
 	public static extern void QHeaderView_FocusInEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnFocusInEvent")]
 	public static extern void QHeaderView_OnFocusInEvent(void* self, QHeaderView_OnFocusInEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperFocusInEvent")]
+	public static extern void QHeaderView_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QHeaderView_FocusOutEvent")]
 	public static extern void QHeaderView_FocusOutEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnFocusOutEvent")]
 	public static extern void QHeaderView_OnFocusOutEvent(void* self, QHeaderView_OnFocusOutEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperFocusOutEvent")]
+	public static extern void QHeaderView_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QHeaderView_EnterEvent")]
 	public static extern void QHeaderView_EnterEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnEnterEvent")]
 	public static extern void QHeaderView_OnEnterEvent(void* self, QHeaderView_OnEnterEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperEnterEvent")]
+	public static extern void QHeaderView_SuperEnterEvent(void* self, void** event);
 	[LinkName("QHeaderView_LeaveEvent")]
 	public static extern void QHeaderView_LeaveEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnLeaveEvent")]
 	public static extern void QHeaderView_OnLeaveEvent(void* self, QHeaderView_OnLeaveEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperLeaveEvent")]
+	public static extern void QHeaderView_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QHeaderView_MoveEvent")]
 	public static extern void QHeaderView_MoveEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnMoveEvent")]
 	public static extern void QHeaderView_OnMoveEvent(void* self, QHeaderView_OnMoveEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperMoveEvent")]
+	public static extern void QHeaderView_SuperMoveEvent(void* self, void** event);
 	[LinkName("QHeaderView_ResizeEvent")]
 	public static extern void QHeaderView_ResizeEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnResizeEvent")]
 	public static extern void QHeaderView_OnResizeEvent(void* self, QHeaderView_OnResizeEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperResizeEvent")]
+	public static extern void QHeaderView_SuperResizeEvent(void* self, void** event);
 	[LinkName("QHeaderView_CloseEvent")]
 	public static extern void QHeaderView_CloseEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnCloseEvent")]
 	public static extern void QHeaderView_OnCloseEvent(void* self, QHeaderView_OnCloseEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperCloseEvent")]
+	public static extern void QHeaderView_SuperCloseEvent(void* self, void** event);
 	[LinkName("QHeaderView_ContextMenuEvent")]
 	public static extern void QHeaderView_ContextMenuEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnContextMenuEvent")]
 	public static extern void QHeaderView_OnContextMenuEvent(void* self, QHeaderView_OnContextMenuEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperContextMenuEvent")]
+	public static extern void QHeaderView_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QHeaderView_TabletEvent")]
 	public static extern void QHeaderView_TabletEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnTabletEvent")]
 	public static extern void QHeaderView_OnTabletEvent(void* self, QHeaderView_OnTabletEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperTabletEvent")]
+	public static extern void QHeaderView_SuperTabletEvent(void* self, void** event);
 	[LinkName("QHeaderView_ActionEvent")]
 	public static extern void QHeaderView_ActionEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnActionEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnActionEvent")]
 	public static extern void QHeaderView_OnActionEvent(void* self, QHeaderView_OnActionEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperActionEvent")]
+	public static extern void QHeaderView_SuperActionEvent(void* self, void** event);
 	[LinkName("QHeaderView_DragEnterEvent")]
 	public static extern void QHeaderView_DragEnterEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnDragEnterEvent")]
 	public static extern void QHeaderView_OnDragEnterEvent(void* self, QHeaderView_OnDragEnterEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperDragEnterEvent")]
+	public static extern void QHeaderView_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QHeaderView_DragMoveEvent")]
 	public static extern void QHeaderView_DragMoveEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnDragMoveEvent")]
 	public static extern void QHeaderView_OnDragMoveEvent(void* self, QHeaderView_OnDragMoveEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperDragMoveEvent")]
+	public static extern void QHeaderView_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QHeaderView_DragLeaveEvent")]
 	public static extern void QHeaderView_DragLeaveEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnDragLeaveEvent")]
 	public static extern void QHeaderView_OnDragLeaveEvent(void* self, QHeaderView_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperDragLeaveEvent")]
+	public static extern void QHeaderView_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QHeaderView_DropEvent")]
 	public static extern void QHeaderView_DropEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnDropEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnDropEvent")]
 	public static extern void QHeaderView_OnDropEvent(void* self, QHeaderView_OnDropEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperDropEvent")]
+	public static extern void QHeaderView_SuperDropEvent(void* self, void** event);
 	[LinkName("QHeaderView_ShowEvent")]
 	public static extern void QHeaderView_ShowEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnShowEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnShowEvent")]
 	public static extern void QHeaderView_OnShowEvent(void* self, QHeaderView_OnShowEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperShowEvent")]
+	public static extern void QHeaderView_SuperShowEvent(void* self, void** event);
 	[LinkName("QHeaderView_HideEvent")]
 	public static extern void QHeaderView_HideEvent(void* self, void** event);
 	
 	public function void QHeaderView_OnHideEvent_action(void* self, void** event);
 	[LinkName("QHeaderView_OnHideEvent")]
 	public static extern void QHeaderView_OnHideEvent(void* self, QHeaderView_OnHideEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperHideEvent")]
+	public static extern void QHeaderView_SuperHideEvent(void* self, void** event);
 	[LinkName("QHeaderView_NativeEvent")]
 	public static extern bool QHeaderView_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QHeaderView_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QHeaderView_OnNativeEvent")]
 	public static extern bool QHeaderView_OnNativeEvent(void* self, QHeaderView_OnNativeEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperNativeEvent")]
+	public static extern bool QHeaderView_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QHeaderView_ChangeEvent")]
 	public static extern void QHeaderView_ChangeEvent(void* self, void** param1);
 	
 	public function void QHeaderView_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QHeaderView_OnChangeEvent")]
 	public static extern void QHeaderView_OnChangeEvent(void* self, QHeaderView_OnChangeEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperChangeEvent")]
+	public static extern void QHeaderView_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QHeaderView_InputMethodEvent")]
 	public static extern void QHeaderView_InputMethodEvent(void* self, void** param1);
 	
 	public function void QHeaderView_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QHeaderView_OnInputMethodEvent")]
 	public static extern void QHeaderView_OnInputMethodEvent(void* self, QHeaderView_OnInputMethodEvent_action _action);
+	
+	[LinkName("QHeaderView_SuperInputMethodEvent")]
+	public static extern void QHeaderView_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QHeaderView_InputMethodQuery")]
 	public static extern void* QHeaderView_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QHeaderView_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QHeaderView_OnInputMethodQuery")]
 	public static extern void* QHeaderView_OnInputMethodQuery(void* self, QHeaderView_OnInputMethodQuery_action _action);
+	
+	[LinkName("QHeaderView_SuperInputMethodQuery")]
+	public static extern void* QHeaderView_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QHeaderView_FocusNextPrevChild")]
 	public static extern bool QHeaderView_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QHeaderView_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QHeaderView_OnFocusNextPrevChild")]
 	public static extern bool QHeaderView_OnFocusNextPrevChild(void* self, QHeaderView_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QHeaderView_SuperFocusNextPrevChild")]
+	public static extern bool QHeaderView_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QHeaderView_SetupViewport")]
 	public static extern void QHeaderView_SetupViewport(void* self, void** viewport);
 	
 	public function void QHeaderView_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QHeaderView_OnSetupViewport")]
 	public static extern void QHeaderView_OnSetupViewport(void* self, QHeaderView_OnSetupViewport_action _action);
+	
+	[LinkName("QHeaderView_SuperSetupViewport")]
+	public static extern void QHeaderView_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QHeaderView_ViewportSizeHint")]
 	public static extern void* QHeaderView_ViewportSizeHint(void* self);
 	
 	public function void QHeaderView_OnViewportSizeHint_action(void* self);
 	[LinkName("QHeaderView_OnViewportSizeHint")]
 	public static extern void* QHeaderView_OnViewportSizeHint(void* self, QHeaderView_OnViewportSizeHint_action _action);
+	
+	[LinkName("QHeaderView_SuperViewportSizeHint")]
+	public static extern void* QHeaderView_SuperViewportSizeHint(void* self);
 	[LinkName("QHeaderView_SetSelectionModel")]
 	public static extern void QHeaderView_SetSelectionModel(void* self, void** selectionModel);
 	
 	public function void QHeaderView_OnSetSelectionModel_action(void* self, void** selectionModel);
 	[LinkName("QHeaderView_OnSetSelectionModel")]
 	public static extern void QHeaderView_OnSetSelectionModel(void* self, QHeaderView_OnSetSelectionModel_action _action);
+	
+	[LinkName("QHeaderView_SuperSetSelectionModel")]
+	public static extern void QHeaderView_SuperSetSelectionModel(void* self, void** selectionModel);
 	[LinkName("QHeaderView_KeyboardSearch")]
 	public static extern void QHeaderView_KeyboardSearch(void* self, libqt_string search);
 	
 	public function void QHeaderView_OnKeyboardSearch_action(void* self, libqt_string search);
 	[LinkName("QHeaderView_OnKeyboardSearch")]
 	public static extern void QHeaderView_OnKeyboardSearch(void* self, QHeaderView_OnKeyboardSearch_action _action);
+	
+	[LinkName("QHeaderView_SuperKeyboardSearch")]
+	public static extern void QHeaderView_SuperKeyboardSearch(void* self, libqt_string search);
 	[LinkName("QHeaderView_SizeHintForRow")]
 	public static extern c_int QHeaderView_SizeHintForRow(void* self, c_int row);
 	
 	public function void QHeaderView_OnSizeHintForRow_action(void* self, c_int row);
 	[LinkName("QHeaderView_OnSizeHintForRow")]
 	public static extern c_int QHeaderView_OnSizeHintForRow(void* self, QHeaderView_OnSizeHintForRow_action _action);
+	
+	[LinkName("QHeaderView_SuperSizeHintForRow")]
+	public static extern c_int QHeaderView_SuperSizeHintForRow(void* self, c_int row);
 	[LinkName("QHeaderView_SizeHintForColumn")]
 	public static extern c_int QHeaderView_SizeHintForColumn(void* self, c_int column);
 	
 	public function void QHeaderView_OnSizeHintForColumn_action(void* self, c_int column);
 	[LinkName("QHeaderView_OnSizeHintForColumn")]
 	public static extern c_int QHeaderView_OnSizeHintForColumn(void* self, QHeaderView_OnSizeHintForColumn_action _action);
+	
+	[LinkName("QHeaderView_SuperSizeHintForColumn")]
+	public static extern c_int QHeaderView_SuperSizeHintForColumn(void* self, c_int column);
 	[LinkName("QHeaderView_ItemDelegateForIndex")]
 	public static extern void** QHeaderView_ItemDelegateForIndex(void* self, void** index);
 	
 	public function void QHeaderView_OnItemDelegateForIndex_action(void* self, void** index);
 	[LinkName("QHeaderView_OnItemDelegateForIndex")]
 	public static extern void** QHeaderView_OnItemDelegateForIndex(void* self, QHeaderView_OnItemDelegateForIndex_action _action);
+	
+	[LinkName("QHeaderView_SuperItemDelegateForIndex")]
+	public static extern void** QHeaderView_SuperItemDelegateForIndex(void* self, void** index);
 	[LinkName("QHeaderView_SetRootIndex")]
 	public static extern void QHeaderView_SetRootIndex(void* self, void** index);
 	
 	public function void QHeaderView_OnSetRootIndex_action(void* self, void** index);
 	[LinkName("QHeaderView_OnSetRootIndex")]
 	public static extern void QHeaderView_OnSetRootIndex(void* self, QHeaderView_OnSetRootIndex_action _action);
+	
+	[LinkName("QHeaderView_SuperSetRootIndex")]
+	public static extern void QHeaderView_SuperSetRootIndex(void* self, void** index);
 	[LinkName("QHeaderView_SelectAll")]
 	public static extern void QHeaderView_SelectAll(void* self);
 	
 	public function void QHeaderView_OnSelectAll_action(void* self);
 	[LinkName("QHeaderView_OnSelectAll")]
 	public static extern void QHeaderView_OnSelectAll(void* self, QHeaderView_OnSelectAll_action _action);
+	
+	[LinkName("QHeaderView_SuperSelectAll")]
+	public static extern void QHeaderView_SuperSelectAll(void* self);
 	[LinkName("QHeaderView_RowsAboutToBeRemoved")]
 	public static extern void QHeaderView_RowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QHeaderView_OnRowsAboutToBeRemoved_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QHeaderView_OnRowsAboutToBeRemoved")]
 	public static extern void QHeaderView_OnRowsAboutToBeRemoved(void* self, QHeaderView_OnRowsAboutToBeRemoved_action _action);
+	
+	[LinkName("QHeaderView_SuperRowsAboutToBeRemoved")]
+	public static extern void QHeaderView_SuperRowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QHeaderView_SelectionChanged")]
 	public static extern void QHeaderView_SelectionChanged(void* self, void** selected, void** deselected);
 	
 	public function void QHeaderView_OnSelectionChanged_action(void* self, void** selected, void** deselected);
 	[LinkName("QHeaderView_OnSelectionChanged")]
 	public static extern void QHeaderView_OnSelectionChanged(void* self, QHeaderView_OnSelectionChanged_action _action);
+	
+	[LinkName("QHeaderView_SuperSelectionChanged")]
+	public static extern void QHeaderView_SuperSelectionChanged(void* self, void** selected, void** deselected);
 	[LinkName("QHeaderView_UpdateEditorData")]
 	public static extern void QHeaderView_UpdateEditorData(void* self);
 	
 	public function void QHeaderView_OnUpdateEditorData_action(void* self);
 	[LinkName("QHeaderView_OnUpdateEditorData")]
 	public static extern void QHeaderView_OnUpdateEditorData(void* self, QHeaderView_OnUpdateEditorData_action _action);
+	
+	[LinkName("QHeaderView_SuperUpdateEditorData")]
+	public static extern void QHeaderView_SuperUpdateEditorData(void* self);
 	[LinkName("QHeaderView_UpdateEditorGeometries")]
 	public static extern void QHeaderView_UpdateEditorGeometries(void* self);
 	
 	public function void QHeaderView_OnUpdateEditorGeometries_action(void* self);
 	[LinkName("QHeaderView_OnUpdateEditorGeometries")]
 	public static extern void QHeaderView_OnUpdateEditorGeometries(void* self, QHeaderView_OnUpdateEditorGeometries_action _action);
+	
+	[LinkName("QHeaderView_SuperUpdateEditorGeometries")]
+	public static extern void QHeaderView_SuperUpdateEditorGeometries(void* self);
 	[LinkName("QHeaderView_VerticalScrollbarAction")]
 	public static extern void QHeaderView_VerticalScrollbarAction(void* self, c_int action);
 	
 	public function void QHeaderView_OnVerticalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QHeaderView_OnVerticalScrollbarAction")]
 	public static extern void QHeaderView_OnVerticalScrollbarAction(void* self, QHeaderView_OnVerticalScrollbarAction_action _action);
+	
+	[LinkName("QHeaderView_SuperVerticalScrollbarAction")]
+	public static extern void QHeaderView_SuperVerticalScrollbarAction(void* self, c_int action);
 	[LinkName("QHeaderView_HorizontalScrollbarAction")]
 	public static extern void QHeaderView_HorizontalScrollbarAction(void* self, c_int action);
 	
 	public function void QHeaderView_OnHorizontalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QHeaderView_OnHorizontalScrollbarAction")]
 	public static extern void QHeaderView_OnHorizontalScrollbarAction(void* self, QHeaderView_OnHorizontalScrollbarAction_action _action);
+	
+	[LinkName("QHeaderView_SuperHorizontalScrollbarAction")]
+	public static extern void QHeaderView_SuperHorizontalScrollbarAction(void* self, c_int action);
 	[LinkName("QHeaderView_VerticalScrollbarValueChanged")]
 	public static extern void QHeaderView_VerticalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QHeaderView_OnVerticalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QHeaderView_OnVerticalScrollbarValueChanged")]
 	public static extern void QHeaderView_OnVerticalScrollbarValueChanged(void* self, QHeaderView_OnVerticalScrollbarValueChanged_action _action);
+	
+	[LinkName("QHeaderView_SuperVerticalScrollbarValueChanged")]
+	public static extern void QHeaderView_SuperVerticalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QHeaderView_HorizontalScrollbarValueChanged")]
 	public static extern void QHeaderView_HorizontalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QHeaderView_OnHorizontalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QHeaderView_OnHorizontalScrollbarValueChanged")]
 	public static extern void QHeaderView_OnHorizontalScrollbarValueChanged(void* self, QHeaderView_OnHorizontalScrollbarValueChanged_action _action);
+	
+	[LinkName("QHeaderView_SuperHorizontalScrollbarValueChanged")]
+	public static extern void QHeaderView_SuperHorizontalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QHeaderView_CloseEditor")]
 	public static extern void QHeaderView_CloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	
 	public function void QHeaderView_OnCloseEditor_action(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QHeaderView_OnCloseEditor")]
 	public static extern void QHeaderView_OnCloseEditor(void* self, QHeaderView_OnCloseEditor_action _action);
+	
+	[LinkName("QHeaderView_SuperCloseEditor")]
+	public static extern void QHeaderView_SuperCloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QHeaderView_CommitData")]
 	public static extern void QHeaderView_CommitData(void* self, void** editor);
 	
 	public function void QHeaderView_OnCommitData_action(void* self, void** editor);
 	[LinkName("QHeaderView_OnCommitData")]
 	public static extern void QHeaderView_OnCommitData(void* self, QHeaderView_OnCommitData_action _action);
+	
+	[LinkName("QHeaderView_SuperCommitData")]
+	public static extern void QHeaderView_SuperCommitData(void* self, void** editor);
 	[LinkName("QHeaderView_EditorDestroyed")]
 	public static extern void QHeaderView_EditorDestroyed(void* self, void** editor);
 	
 	public function void QHeaderView_OnEditorDestroyed_action(void* self, void** editor);
 	[LinkName("QHeaderView_OnEditorDestroyed")]
 	public static extern void QHeaderView_OnEditorDestroyed(void* self, QHeaderView_OnEditorDestroyed_action _action);
+	
+	[LinkName("QHeaderView_SuperEditorDestroyed")]
+	public static extern void QHeaderView_SuperEditorDestroyed(void* self, void** editor);
 	[LinkName("QHeaderView_SelectedIndexes")]
 	public static extern void* QHeaderView_SelectedIndexes(void* self);
 	
 	public function void QHeaderView_OnSelectedIndexes_action(void* self);
 	[LinkName("QHeaderView_OnSelectedIndexes")]
 	public static extern void* QHeaderView_OnSelectedIndexes(void* self, QHeaderView_OnSelectedIndexes_action _action);
+	
+	[LinkName("QHeaderView_SuperSelectedIndexes")]
+	public static extern void* QHeaderView_SuperSelectedIndexes(void* self);
 	[LinkName("QHeaderView_Edit2")]
 	public static extern bool QHeaderView_Edit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	
 	public function void QHeaderView_OnEdit2_action(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QHeaderView_OnEdit2")]
 	public static extern bool QHeaderView_OnEdit2(void* self, QHeaderView_OnEdit2_action _action);
+	
+	[LinkName("QHeaderView_SuperEdit2")]
+	public static extern bool QHeaderView_SuperEdit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QHeaderView_SelectionCommand")]
 	public static extern void* QHeaderView_SelectionCommand(void* self, void** index, void** event);
 	
 	public function void QHeaderView_OnSelectionCommand_action(void* self, void** index, void** event);
 	[LinkName("QHeaderView_OnSelectionCommand")]
 	public static extern void* QHeaderView_OnSelectionCommand(void* self, QHeaderView_OnSelectionCommand_action _action);
+	
+	[LinkName("QHeaderView_SuperSelectionCommand")]
+	public static extern void* QHeaderView_SuperSelectionCommand(void* self, void** index, void** event);
 	[LinkName("QHeaderView_StartDrag")]
 	public static extern void QHeaderView_StartDrag(void* self, void* supportedActions);
 	
 	public function void QHeaderView_OnStartDrag_action(void* self, void* supportedActions);
 	[LinkName("QHeaderView_OnStartDrag")]
 	public static extern void QHeaderView_OnStartDrag(void* self, QHeaderView_OnStartDrag_action _action);
+	
+	[LinkName("QHeaderView_SuperStartDrag")]
+	public static extern void QHeaderView_SuperStartDrag(void* self, void* supportedActions);
 	[LinkName("QHeaderView_InitViewItemOption")]
 	public static extern void QHeaderView_InitViewItemOption(void* self, void** option);
 	
 	public function void QHeaderView_OnInitViewItemOption_action(void* self, void** option);
 	[LinkName("QHeaderView_OnInitViewItemOption")]
 	public static extern void QHeaderView_OnInitViewItemOption(void* self, QHeaderView_OnInitViewItemOption_action _action);
+	
+	[LinkName("QHeaderView_SuperInitViewItemOption")]
+	public static extern void QHeaderView_SuperInitViewItemOption(void* self, void** option);
 }
 [AllowDuplicates]
 enum QHeaderView_ResizeMode

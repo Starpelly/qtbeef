@@ -1781,6 +1781,60 @@ class QCommandLinkButton : IQCommandLinkButton, IQPushButton, IQAbstractButton, 
 		CQt.QAbstractButton_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Clicked);
 		CQt.QAbstractButton_Connect_Toggled(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Toggled);
 		CQt.QAbstractButton_Connect_Clicked1(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Clicked1);
+		CQt.QCommandLinkButton_OnMetaObject(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMetaObject);
+		CQt.QCommandLinkButton_OnMetacast(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMetacast);
+		CQt.QCommandLinkButton_OnMetacall(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMetacall);
+		CQt.QCommandLinkButton_OnSizeHint(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnSizeHint);
+		CQt.QCommandLinkButton_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnHeightForWidth);
+		CQt.QCommandLinkButton_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMinimumSizeHint);
+		CQt.QCommandLinkButton_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnInitStyleOption);
+		CQt.QCommandLinkButton_OnEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnEvent);
+		CQt.QCommandLinkButton_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnPaintEvent);
+		CQt.QCommandLinkButton_OnEventFilter(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnEventFilter);
+		CQt.QCommandLinkButton_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnTimerEvent);
+		CQt.QCommandLinkButton_OnChildEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnChildEvent);
+		CQt.QCommandLinkButton_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnCustomEvent);
+		CQt.QCommandLinkButton_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnConnectNotify);
+		CQt.QCommandLinkButton_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnDisconnectNotify);
+		CQt.QCommandLinkButton_OnDevType(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnDevType);
+		CQt.QCommandLinkButton_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnPaintEngine);
+		CQt.QCommandLinkButton_OnMetric(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMetric);
+		CQt.QCommandLinkButton_OnInitPainter(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnInitPainter);
+		CQt.QCommandLinkButton_OnRedirected(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnRedirected);
+		CQt.QCommandLinkButton_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnSharedPainter);
+		CQt.QCommandLinkButton_OnSetVisible(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnSetVisible);
+		CQt.QCommandLinkButton_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnHasHeightForWidth);
+		CQt.QCommandLinkButton_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMousePressEvent);
+		CQt.QCommandLinkButton_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMouseReleaseEvent);
+		CQt.QCommandLinkButton_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMouseDoubleClickEvent);
+		CQt.QCommandLinkButton_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMouseMoveEvent);
+		CQt.QCommandLinkButton_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnWheelEvent);
+		CQt.QCommandLinkButton_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnKeyPressEvent);
+		CQt.QCommandLinkButton_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnKeyReleaseEvent);
+		CQt.QCommandLinkButton_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnFocusInEvent);
+		CQt.QCommandLinkButton_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnFocusOutEvent);
+		CQt.QCommandLinkButton_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnEnterEvent);
+		CQt.QCommandLinkButton_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnLeaveEvent);
+		CQt.QCommandLinkButton_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnMoveEvent);
+		CQt.QCommandLinkButton_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnResizeEvent);
+		CQt.QCommandLinkButton_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnCloseEvent);
+		CQt.QCommandLinkButton_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnContextMenuEvent);
+		CQt.QCommandLinkButton_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnTabletEvent);
+		CQt.QCommandLinkButton_OnActionEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnActionEvent);
+		CQt.QCommandLinkButton_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnDragEnterEvent);
+		CQt.QCommandLinkButton_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnDragMoveEvent);
+		CQt.QCommandLinkButton_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnDragLeaveEvent);
+		CQt.QCommandLinkButton_OnDropEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnDropEvent);
+		CQt.QCommandLinkButton_OnShowEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnShowEvent);
+		CQt.QCommandLinkButton_OnHideEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnHideEvent);
+		CQt.QCommandLinkButton_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnNativeEvent);
+		CQt.QCommandLinkButton_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnChangeEvent);
+		CQt.QCommandLinkButton_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnInputMethodEvent);
+		CQt.QCommandLinkButton_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnInputMethodQuery);
+		CQt.QCommandLinkButton_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnFocusNextPrevChild);
+		CQt.QCommandLinkButton_OnHitButton(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnHitButton);
+		CQt.QCommandLinkButton_OnCheckStateSet(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnCheckStateSet);
+		CQt.QCommandLinkButton_OnNextCheckState(obj.ObjectPtr,  => QtBeef_QCommandLinkButton_OnNextCheckState);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1847,6 +1901,276 @@ class QCommandLinkButton : IQCommandLinkButton, IQPushButton, IQAbstractButton, 
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnClicked1.Invoke(_checked);
+	}
+	static void QtBeef_QCommandLinkButton_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QCommandLinkButton_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QCommandLinkButton_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QCommandLinkButton_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QCommandLinkButton_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QCommandLinkButton_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QCommandLinkButton_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QCommandLinkButton_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QCommandLinkButton_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QCommandLinkButton_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QCommandLinkButton_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QCommandLinkButton_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QCommandLinkButton_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QCommandLinkButton_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QCommandLinkButton_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QCommandLinkButton_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QCommandLinkButton_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QCommandLinkButton_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QCommandLinkButton_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QCommandLinkButton_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QCommandLinkButton_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QCommandLinkButton_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QCommandLinkButton_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QCommandLinkButton_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QCommandLinkButton_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QCommandLinkButton_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QCommandLinkButton_OnHitButton(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHitButton(pos);
+	}
+	static void QtBeef_QCommandLinkButton_OnCheckStateSet(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCheckStateSet();
+	}
+	static void QtBeef_QCommandLinkButton_OnNextCheckState(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNextCheckState();
 	}
 	public this(QCommandLinkButton_Ptr ptr)
 	{
@@ -3625,18 +3949,27 @@ extension CQt
 	public function void QCommandLinkButton_OnMetaObject_action(void* self);
 	[LinkName("QCommandLinkButton_OnMetaObject")]
 	public static extern void** QCommandLinkButton_OnMetaObject(void* self, QCommandLinkButton_OnMetaObject_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMetaObject")]
+	public static extern void** QCommandLinkButton_SuperMetaObject(void* self);
 	[LinkName("QCommandLinkButton_Qt_Metacast")]
 	public static extern void* QCommandLinkButton_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QCommandLinkButton_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QCommandLinkButton_OnMetacast")]
 	public static extern void* QCommandLinkButton_OnMetacast(void* self, QCommandLinkButton_OnMetacast_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMetacast")]
+	public static extern void* QCommandLinkButton_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QCommandLinkButton_Qt_Metacall")]
 	public static extern c_int QCommandLinkButton_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QCommandLinkButton_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCommandLinkButton_OnMetacall")]
 	public static extern c_int QCommandLinkButton_OnMetacall(void* self, QCommandLinkButton_OnMetacall_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMetacall")]
+	public static extern c_int QCommandLinkButton_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCommandLinkButton_Tr")]
 	public static extern libqt_string QCommandLinkButton_Tr(c_char* s);
 	[LinkName("QCommandLinkButton_Description")]
@@ -3649,36 +3982,54 @@ extension CQt
 	public function void QCommandLinkButton_OnSizeHint_action(void* self);
 	[LinkName("QCommandLinkButton_OnSizeHint")]
 	public static extern void* QCommandLinkButton_OnSizeHint(void* self, QCommandLinkButton_OnSizeHint_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperSizeHint")]
+	public static extern void* QCommandLinkButton_SuperSizeHint(void* self);
 	[LinkName("QCommandLinkButton_HeightForWidth")]
 	public static extern c_int QCommandLinkButton_HeightForWidth(void* self, c_int param1);
 	
 	public function void QCommandLinkButton_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QCommandLinkButton_OnHeightForWidth")]
 	public static extern c_int QCommandLinkButton_OnHeightForWidth(void* self, QCommandLinkButton_OnHeightForWidth_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperHeightForWidth")]
+	public static extern c_int QCommandLinkButton_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QCommandLinkButton_MinimumSizeHint")]
 	public static extern void* QCommandLinkButton_MinimumSizeHint(void* self);
 	
 	public function void QCommandLinkButton_OnMinimumSizeHint_action(void* self);
 	[LinkName("QCommandLinkButton_OnMinimumSizeHint")]
 	public static extern void* QCommandLinkButton_OnMinimumSizeHint(void* self, QCommandLinkButton_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMinimumSizeHint")]
+	public static extern void* QCommandLinkButton_SuperMinimumSizeHint(void* self);
 	[LinkName("QCommandLinkButton_InitStyleOption")]
 	public static extern void QCommandLinkButton_InitStyleOption(void* self, void** option);
 	
 	public function void QCommandLinkButton_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QCommandLinkButton_OnInitStyleOption")]
 	public static extern void QCommandLinkButton_OnInitStyleOption(void* self, QCommandLinkButton_OnInitStyleOption_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperInitStyleOption")]
+	public static extern void QCommandLinkButton_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QCommandLinkButton_Event")]
 	public static extern bool QCommandLinkButton_Event(void* self, void** e);
 	
 	public function void QCommandLinkButton_OnEvent_action(void* self, void** e);
 	[LinkName("QCommandLinkButton_OnEvent")]
 	public static extern bool QCommandLinkButton_OnEvent(void* self, QCommandLinkButton_OnEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperEvent")]
+	public static extern bool QCommandLinkButton_SuperEvent(void* self, void** e);
 	[LinkName("QCommandLinkButton_PaintEvent")]
 	public static extern void QCommandLinkButton_PaintEvent(void* self, void** param1);
 	
 	public function void QCommandLinkButton_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QCommandLinkButton_OnPaintEvent")]
 	public static extern void QCommandLinkButton_OnPaintEvent(void* self, QCommandLinkButton_OnPaintEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperPaintEvent")]
+	public static extern void QCommandLinkButton_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QCommandLinkButton_Tr2")]
 	public static extern libqt_string QCommandLinkButton_Tr2(c_char* s, c_char* c);
 	[LinkName("QCommandLinkButton_Tr3")]
@@ -3689,268 +4040,403 @@ extension CQt
 	public function void QCommandLinkButton_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QCommandLinkButton_OnEventFilter")]
 	public static extern bool QCommandLinkButton_OnEventFilter(void* self, QCommandLinkButton_OnEventFilter_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperEventFilter")]
+	public static extern bool QCommandLinkButton_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QCommandLinkButton_TimerEvent")]
 	public static extern void QCommandLinkButton_TimerEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnTimerEvent")]
 	public static extern void QCommandLinkButton_OnTimerEvent(void* self, QCommandLinkButton_OnTimerEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperTimerEvent")]
+	public static extern void QCommandLinkButton_SuperTimerEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_ChildEvent")]
 	public static extern void QCommandLinkButton_ChildEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnChildEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnChildEvent")]
 	public static extern void QCommandLinkButton_OnChildEvent(void* self, QCommandLinkButton_OnChildEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperChildEvent")]
+	public static extern void QCommandLinkButton_SuperChildEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_CustomEvent")]
 	public static extern void QCommandLinkButton_CustomEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnCustomEvent")]
 	public static extern void QCommandLinkButton_OnCustomEvent(void* self, QCommandLinkButton_OnCustomEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperCustomEvent")]
+	public static extern void QCommandLinkButton_SuperCustomEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_ConnectNotify")]
 	public static extern void QCommandLinkButton_ConnectNotify(void* self, void** signal);
 	
 	public function void QCommandLinkButton_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QCommandLinkButton_OnConnectNotify")]
 	public static extern void QCommandLinkButton_OnConnectNotify(void* self, QCommandLinkButton_OnConnectNotify_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperConnectNotify")]
+	public static extern void QCommandLinkButton_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QCommandLinkButton_DisconnectNotify")]
 	public static extern void QCommandLinkButton_DisconnectNotify(void* self, void** signal);
 	
 	public function void QCommandLinkButton_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QCommandLinkButton_OnDisconnectNotify")]
 	public static extern void QCommandLinkButton_OnDisconnectNotify(void* self, QCommandLinkButton_OnDisconnectNotify_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperDisconnectNotify")]
+	public static extern void QCommandLinkButton_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QCommandLinkButton_DevType")]
 	public static extern c_int QCommandLinkButton_DevType(void* self);
 	
 	public function void QCommandLinkButton_OnDevType_action(void* self);
 	[LinkName("QCommandLinkButton_OnDevType")]
 	public static extern c_int QCommandLinkButton_OnDevType(void* self, QCommandLinkButton_OnDevType_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperDevType")]
+	public static extern c_int QCommandLinkButton_SuperDevType(void* self);
 	[LinkName("QCommandLinkButton_PaintEngine")]
 	public static extern void** QCommandLinkButton_PaintEngine(void* self);
 	
 	public function void QCommandLinkButton_OnPaintEngine_action(void* self);
 	[LinkName("QCommandLinkButton_OnPaintEngine")]
 	public static extern void** QCommandLinkButton_OnPaintEngine(void* self, QCommandLinkButton_OnPaintEngine_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperPaintEngine")]
+	public static extern void** QCommandLinkButton_SuperPaintEngine(void* self);
 	[LinkName("QCommandLinkButton_Metric")]
 	public static extern c_int QCommandLinkButton_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QCommandLinkButton_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QCommandLinkButton_OnMetric")]
 	public static extern c_int QCommandLinkButton_OnMetric(void* self, QCommandLinkButton_OnMetric_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMetric")]
+	public static extern c_int QCommandLinkButton_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QCommandLinkButton_InitPainter")]
 	public static extern void QCommandLinkButton_InitPainter(void* self, void** painter);
 	
 	public function void QCommandLinkButton_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QCommandLinkButton_OnInitPainter")]
 	public static extern void QCommandLinkButton_OnInitPainter(void* self, QCommandLinkButton_OnInitPainter_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperInitPainter")]
+	public static extern void QCommandLinkButton_SuperInitPainter(void* self, void** painter);
 	[LinkName("QCommandLinkButton_Redirected")]
 	public static extern void** QCommandLinkButton_Redirected(void* self, void** offset);
 	
 	public function void QCommandLinkButton_OnRedirected_action(void* self, void** offset);
 	[LinkName("QCommandLinkButton_OnRedirected")]
 	public static extern void** QCommandLinkButton_OnRedirected(void* self, QCommandLinkButton_OnRedirected_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperRedirected")]
+	public static extern void** QCommandLinkButton_SuperRedirected(void* self, void** offset);
 	[LinkName("QCommandLinkButton_SharedPainter")]
 	public static extern void** QCommandLinkButton_SharedPainter(void* self);
 	
 	public function void QCommandLinkButton_OnSharedPainter_action(void* self);
 	[LinkName("QCommandLinkButton_OnSharedPainter")]
 	public static extern void** QCommandLinkButton_OnSharedPainter(void* self, QCommandLinkButton_OnSharedPainter_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperSharedPainter")]
+	public static extern void** QCommandLinkButton_SuperSharedPainter(void* self);
 	[LinkName("QCommandLinkButton_SetVisible")]
 	public static extern void QCommandLinkButton_SetVisible(void* self, bool visible);
 	
 	public function void QCommandLinkButton_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QCommandLinkButton_OnSetVisible")]
 	public static extern void QCommandLinkButton_OnSetVisible(void* self, QCommandLinkButton_OnSetVisible_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperSetVisible")]
+	public static extern void QCommandLinkButton_SuperSetVisible(void* self, bool visible);
 	[LinkName("QCommandLinkButton_HasHeightForWidth")]
 	public static extern bool QCommandLinkButton_HasHeightForWidth(void* self);
 	
 	public function void QCommandLinkButton_OnHasHeightForWidth_action(void* self);
 	[LinkName("QCommandLinkButton_OnHasHeightForWidth")]
 	public static extern bool QCommandLinkButton_OnHasHeightForWidth(void* self, QCommandLinkButton_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperHasHeightForWidth")]
+	public static extern bool QCommandLinkButton_SuperHasHeightForWidth(void* self);
 	[LinkName("QCommandLinkButton_MousePressEvent")]
 	public static extern void QCommandLinkButton_MousePressEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnMousePressEvent")]
 	public static extern void QCommandLinkButton_OnMousePressEvent(void* self, QCommandLinkButton_OnMousePressEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMousePressEvent")]
+	public static extern void QCommandLinkButton_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_MouseReleaseEvent")]
 	public static extern void QCommandLinkButton_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnMouseReleaseEvent")]
 	public static extern void QCommandLinkButton_OnMouseReleaseEvent(void* self, QCommandLinkButton_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMouseReleaseEvent")]
+	public static extern void QCommandLinkButton_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_MouseDoubleClickEvent")]
 	public static extern void QCommandLinkButton_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnMouseDoubleClickEvent")]
 	public static extern void QCommandLinkButton_OnMouseDoubleClickEvent(void* self, QCommandLinkButton_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMouseDoubleClickEvent")]
+	public static extern void QCommandLinkButton_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_MouseMoveEvent")]
 	public static extern void QCommandLinkButton_MouseMoveEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnMouseMoveEvent")]
 	public static extern void QCommandLinkButton_OnMouseMoveEvent(void* self, QCommandLinkButton_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMouseMoveEvent")]
+	public static extern void QCommandLinkButton_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_WheelEvent")]
 	public static extern void QCommandLinkButton_WheelEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnWheelEvent")]
 	public static extern void QCommandLinkButton_OnWheelEvent(void* self, QCommandLinkButton_OnWheelEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperWheelEvent")]
+	public static extern void QCommandLinkButton_SuperWheelEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_KeyPressEvent")]
 	public static extern void QCommandLinkButton_KeyPressEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnKeyPressEvent")]
 	public static extern void QCommandLinkButton_OnKeyPressEvent(void* self, QCommandLinkButton_OnKeyPressEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperKeyPressEvent")]
+	public static extern void QCommandLinkButton_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_KeyReleaseEvent")]
 	public static extern void QCommandLinkButton_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnKeyReleaseEvent")]
 	public static extern void QCommandLinkButton_OnKeyReleaseEvent(void* self, QCommandLinkButton_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperKeyReleaseEvent")]
+	public static extern void QCommandLinkButton_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_FocusInEvent")]
 	public static extern void QCommandLinkButton_FocusInEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnFocusInEvent")]
 	public static extern void QCommandLinkButton_OnFocusInEvent(void* self, QCommandLinkButton_OnFocusInEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperFocusInEvent")]
+	public static extern void QCommandLinkButton_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_FocusOutEvent")]
 	public static extern void QCommandLinkButton_FocusOutEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnFocusOutEvent")]
 	public static extern void QCommandLinkButton_OnFocusOutEvent(void* self, QCommandLinkButton_OnFocusOutEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperFocusOutEvent")]
+	public static extern void QCommandLinkButton_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_EnterEvent")]
 	public static extern void QCommandLinkButton_EnterEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnEnterEvent")]
 	public static extern void QCommandLinkButton_OnEnterEvent(void* self, QCommandLinkButton_OnEnterEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperEnterEvent")]
+	public static extern void QCommandLinkButton_SuperEnterEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_LeaveEvent")]
 	public static extern void QCommandLinkButton_LeaveEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnLeaveEvent")]
 	public static extern void QCommandLinkButton_OnLeaveEvent(void* self, QCommandLinkButton_OnLeaveEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperLeaveEvent")]
+	public static extern void QCommandLinkButton_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_MoveEvent")]
 	public static extern void QCommandLinkButton_MoveEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnMoveEvent")]
 	public static extern void QCommandLinkButton_OnMoveEvent(void* self, QCommandLinkButton_OnMoveEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperMoveEvent")]
+	public static extern void QCommandLinkButton_SuperMoveEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_ResizeEvent")]
 	public static extern void QCommandLinkButton_ResizeEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnResizeEvent")]
 	public static extern void QCommandLinkButton_OnResizeEvent(void* self, QCommandLinkButton_OnResizeEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperResizeEvent")]
+	public static extern void QCommandLinkButton_SuperResizeEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_CloseEvent")]
 	public static extern void QCommandLinkButton_CloseEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnCloseEvent")]
 	public static extern void QCommandLinkButton_OnCloseEvent(void* self, QCommandLinkButton_OnCloseEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperCloseEvent")]
+	public static extern void QCommandLinkButton_SuperCloseEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_ContextMenuEvent")]
 	public static extern void QCommandLinkButton_ContextMenuEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnContextMenuEvent")]
 	public static extern void QCommandLinkButton_OnContextMenuEvent(void* self, QCommandLinkButton_OnContextMenuEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperContextMenuEvent")]
+	public static extern void QCommandLinkButton_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_TabletEvent")]
 	public static extern void QCommandLinkButton_TabletEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnTabletEvent")]
 	public static extern void QCommandLinkButton_OnTabletEvent(void* self, QCommandLinkButton_OnTabletEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperTabletEvent")]
+	public static extern void QCommandLinkButton_SuperTabletEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_ActionEvent")]
 	public static extern void QCommandLinkButton_ActionEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnActionEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnActionEvent")]
 	public static extern void QCommandLinkButton_OnActionEvent(void* self, QCommandLinkButton_OnActionEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperActionEvent")]
+	public static extern void QCommandLinkButton_SuperActionEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_DragEnterEvent")]
 	public static extern void QCommandLinkButton_DragEnterEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnDragEnterEvent")]
 	public static extern void QCommandLinkButton_OnDragEnterEvent(void* self, QCommandLinkButton_OnDragEnterEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperDragEnterEvent")]
+	public static extern void QCommandLinkButton_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_DragMoveEvent")]
 	public static extern void QCommandLinkButton_DragMoveEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnDragMoveEvent")]
 	public static extern void QCommandLinkButton_OnDragMoveEvent(void* self, QCommandLinkButton_OnDragMoveEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperDragMoveEvent")]
+	public static extern void QCommandLinkButton_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_DragLeaveEvent")]
 	public static extern void QCommandLinkButton_DragLeaveEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnDragLeaveEvent")]
 	public static extern void QCommandLinkButton_OnDragLeaveEvent(void* self, QCommandLinkButton_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperDragLeaveEvent")]
+	public static extern void QCommandLinkButton_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_DropEvent")]
 	public static extern void QCommandLinkButton_DropEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnDropEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnDropEvent")]
 	public static extern void QCommandLinkButton_OnDropEvent(void* self, QCommandLinkButton_OnDropEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperDropEvent")]
+	public static extern void QCommandLinkButton_SuperDropEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_ShowEvent")]
 	public static extern void QCommandLinkButton_ShowEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnShowEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnShowEvent")]
 	public static extern void QCommandLinkButton_OnShowEvent(void* self, QCommandLinkButton_OnShowEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperShowEvent")]
+	public static extern void QCommandLinkButton_SuperShowEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_HideEvent")]
 	public static extern void QCommandLinkButton_HideEvent(void* self, void** event);
 	
 	public function void QCommandLinkButton_OnHideEvent_action(void* self, void** event);
 	[LinkName("QCommandLinkButton_OnHideEvent")]
 	public static extern void QCommandLinkButton_OnHideEvent(void* self, QCommandLinkButton_OnHideEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperHideEvent")]
+	public static extern void QCommandLinkButton_SuperHideEvent(void* self, void** event);
 	[LinkName("QCommandLinkButton_NativeEvent")]
 	public static extern bool QCommandLinkButton_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QCommandLinkButton_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QCommandLinkButton_OnNativeEvent")]
 	public static extern bool QCommandLinkButton_OnNativeEvent(void* self, QCommandLinkButton_OnNativeEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperNativeEvent")]
+	public static extern bool QCommandLinkButton_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QCommandLinkButton_ChangeEvent")]
 	public static extern void QCommandLinkButton_ChangeEvent(void* self, void** param1);
 	
 	public function void QCommandLinkButton_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QCommandLinkButton_OnChangeEvent")]
 	public static extern void QCommandLinkButton_OnChangeEvent(void* self, QCommandLinkButton_OnChangeEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperChangeEvent")]
+	public static extern void QCommandLinkButton_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QCommandLinkButton_InputMethodEvent")]
 	public static extern void QCommandLinkButton_InputMethodEvent(void* self, void** param1);
 	
 	public function void QCommandLinkButton_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QCommandLinkButton_OnInputMethodEvent")]
 	public static extern void QCommandLinkButton_OnInputMethodEvent(void* self, QCommandLinkButton_OnInputMethodEvent_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperInputMethodEvent")]
+	public static extern void QCommandLinkButton_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QCommandLinkButton_InputMethodQuery")]
 	public static extern void* QCommandLinkButton_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QCommandLinkButton_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QCommandLinkButton_OnInputMethodQuery")]
 	public static extern void* QCommandLinkButton_OnInputMethodQuery(void* self, QCommandLinkButton_OnInputMethodQuery_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperInputMethodQuery")]
+	public static extern void* QCommandLinkButton_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QCommandLinkButton_FocusNextPrevChild")]
 	public static extern bool QCommandLinkButton_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QCommandLinkButton_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QCommandLinkButton_OnFocusNextPrevChild")]
 	public static extern bool QCommandLinkButton_OnFocusNextPrevChild(void* self, QCommandLinkButton_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperFocusNextPrevChild")]
+	public static extern bool QCommandLinkButton_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QCommandLinkButton_HitButton")]
 	public static extern bool QCommandLinkButton_HitButton(void* self, void** pos);
 	
 	public function void QCommandLinkButton_OnHitButton_action(void* self, void** pos);
 	[LinkName("QCommandLinkButton_OnHitButton")]
 	public static extern bool QCommandLinkButton_OnHitButton(void* self, QCommandLinkButton_OnHitButton_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperHitButton")]
+	public static extern bool QCommandLinkButton_SuperHitButton(void* self, void** pos);
 	[LinkName("QCommandLinkButton_CheckStateSet")]
 	public static extern void QCommandLinkButton_CheckStateSet(void* self);
 	
 	public function void QCommandLinkButton_OnCheckStateSet_action(void* self);
 	[LinkName("QCommandLinkButton_OnCheckStateSet")]
 	public static extern void QCommandLinkButton_OnCheckStateSet(void* self, QCommandLinkButton_OnCheckStateSet_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperCheckStateSet")]
+	public static extern void QCommandLinkButton_SuperCheckStateSet(void* self);
 	[LinkName("QCommandLinkButton_NextCheckState")]
 	public static extern void QCommandLinkButton_NextCheckState(void* self);
 	
 	public function void QCommandLinkButton_OnNextCheckState_action(void* self);
 	[LinkName("QCommandLinkButton_OnNextCheckState")]
 	public static extern void QCommandLinkButton_OnNextCheckState(void* self, QCommandLinkButton_OnNextCheckState_action _action);
+	
+	[LinkName("QCommandLinkButton_SuperNextCheckState")]
+	public static extern void QCommandLinkButton_SuperNextCheckState(void* self);
 }

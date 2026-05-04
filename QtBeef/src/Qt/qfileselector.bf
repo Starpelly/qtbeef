@@ -292,6 +292,16 @@ class QFileSelector : IQFileSelector, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QFileSelector_OnMetaObject(obj.ObjectPtr,  => QtBeef_QFileSelector_OnMetaObject);
+		CQt.QFileSelector_OnMetacast(obj.ObjectPtr,  => QtBeef_QFileSelector_OnMetacast);
+		CQt.QFileSelector_OnMetacall(obj.ObjectPtr,  => QtBeef_QFileSelector_OnMetacall);
+		CQt.QFileSelector_OnEvent(obj.ObjectPtr,  => QtBeef_QFileSelector_OnEvent);
+		CQt.QFileSelector_OnEventFilter(obj.ObjectPtr,  => QtBeef_QFileSelector_OnEventFilter);
+		CQt.QFileSelector_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QFileSelector_OnTimerEvent);
+		CQt.QFileSelector_OnChildEvent(obj.ObjectPtr,  => QtBeef_QFileSelector_OnChildEvent);
+		CQt.QFileSelector_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QFileSelector_OnCustomEvent);
+		CQt.QFileSelector_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QFileSelector_OnConnectNotify);
+		CQt.QFileSelector_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QFileSelector_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -304,6 +314,56 @@ class QFileSelector : IQFileSelector, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QFileSelector_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QFileSelector_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QFileSelector_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QFileSelector_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QFileSelector_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QFileSelector_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QFileSelector_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QFileSelector_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QFileSelector_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QFileSelector_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QFileSelector_Ptr ptr)
 	{
@@ -605,18 +665,27 @@ extension CQt
 	public function void QFileSelector_OnMetaObject_action(void* self);
 	[LinkName("QFileSelector_OnMetaObject")]
 	public static extern void** QFileSelector_OnMetaObject(void* self, QFileSelector_OnMetaObject_action _action);
+	
+	[LinkName("QFileSelector_SuperMetaObject")]
+	public static extern void** QFileSelector_SuperMetaObject(void* self);
 	[LinkName("QFileSelector_Qt_Metacast")]
 	public static extern void* QFileSelector_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QFileSelector_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QFileSelector_OnMetacast")]
 	public static extern void* QFileSelector_OnMetacast(void* self, QFileSelector_OnMetacast_action _action);
+	
+	[LinkName("QFileSelector_SuperMetacast")]
+	public static extern void* QFileSelector_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QFileSelector_Qt_Metacall")]
 	public static extern c_int QFileSelector_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QFileSelector_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFileSelector_OnMetacall")]
 	public static extern c_int QFileSelector_OnMetacall(void* self, QFileSelector_OnMetacall_action _action);
+	
+	[LinkName("QFileSelector_SuperMetacall")]
+	public static extern c_int QFileSelector_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFileSelector_Tr")]
 	public static extern libqt_string QFileSelector_Tr(c_char* s);
 	[LinkName("QFileSelector_Select")]
@@ -639,40 +708,61 @@ extension CQt
 	public function void QFileSelector_OnEvent_action(void* self, void** event);
 	[LinkName("QFileSelector_OnEvent")]
 	public static extern bool QFileSelector_OnEvent(void* self, QFileSelector_OnEvent_action _action);
+	
+	[LinkName("QFileSelector_SuperEvent")]
+	public static extern bool QFileSelector_SuperEvent(void* self, void** event);
 	[LinkName("QFileSelector_EventFilter")]
 	public static extern bool QFileSelector_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QFileSelector_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QFileSelector_OnEventFilter")]
 	public static extern bool QFileSelector_OnEventFilter(void* self, QFileSelector_OnEventFilter_action _action);
+	
+	[LinkName("QFileSelector_SuperEventFilter")]
+	public static extern bool QFileSelector_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QFileSelector_TimerEvent")]
 	public static extern void QFileSelector_TimerEvent(void* self, void** event);
 	
 	public function void QFileSelector_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QFileSelector_OnTimerEvent")]
 	public static extern void QFileSelector_OnTimerEvent(void* self, QFileSelector_OnTimerEvent_action _action);
+	
+	[LinkName("QFileSelector_SuperTimerEvent")]
+	public static extern void QFileSelector_SuperTimerEvent(void* self, void** event);
 	[LinkName("QFileSelector_ChildEvent")]
 	public static extern void QFileSelector_ChildEvent(void* self, void** event);
 	
 	public function void QFileSelector_OnChildEvent_action(void* self, void** event);
 	[LinkName("QFileSelector_OnChildEvent")]
 	public static extern void QFileSelector_OnChildEvent(void* self, QFileSelector_OnChildEvent_action _action);
+	
+	[LinkName("QFileSelector_SuperChildEvent")]
+	public static extern void QFileSelector_SuperChildEvent(void* self, void** event);
 	[LinkName("QFileSelector_CustomEvent")]
 	public static extern void QFileSelector_CustomEvent(void* self, void** event);
 	
 	public function void QFileSelector_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QFileSelector_OnCustomEvent")]
 	public static extern void QFileSelector_OnCustomEvent(void* self, QFileSelector_OnCustomEvent_action _action);
+	
+	[LinkName("QFileSelector_SuperCustomEvent")]
+	public static extern void QFileSelector_SuperCustomEvent(void* self, void** event);
 	[LinkName("QFileSelector_ConnectNotify")]
 	public static extern void QFileSelector_ConnectNotify(void* self, void** signal);
 	
 	public function void QFileSelector_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QFileSelector_OnConnectNotify")]
 	public static extern void QFileSelector_OnConnectNotify(void* self, QFileSelector_OnConnectNotify_action _action);
+	
+	[LinkName("QFileSelector_SuperConnectNotify")]
+	public static extern void QFileSelector_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QFileSelector_DisconnectNotify")]
 	public static extern void QFileSelector_DisconnectNotify(void* self, void** signal);
 	
 	public function void QFileSelector_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QFileSelector_OnDisconnectNotify")]
 	public static extern void QFileSelector_OnDisconnectNotify(void* self, QFileSelector_OnDisconnectNotify_action _action);
+	
+	[LinkName("QFileSelector_SuperDisconnectNotify")]
+	public static extern void QFileSelector_SuperDisconnectNotify(void* self, void** signal);
 }

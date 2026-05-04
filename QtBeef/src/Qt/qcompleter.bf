@@ -428,6 +428,18 @@ class QCompleter : IQCompleter, IQObject
 		CQt.QCompleter_Connect_Highlighted2(obj.ObjectPtr,  => QtBeef_QCompleter_Connect_Highlighted2);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QCompleter_OnMetaObject(obj.ObjectPtr,  => QtBeef_QCompleter_OnMetaObject);
+		CQt.QCompleter_OnMetacast(obj.ObjectPtr,  => QtBeef_QCompleter_OnMetacast);
+		CQt.QCompleter_OnMetacall(obj.ObjectPtr,  => QtBeef_QCompleter_OnMetacall);
+		CQt.QCompleter_OnPathFromIndex(obj.ObjectPtr,  => QtBeef_QCompleter_OnPathFromIndex);
+		CQt.QCompleter_OnSplitPath(obj.ObjectPtr,  => QtBeef_QCompleter_OnSplitPath);
+		CQt.QCompleter_OnEventFilter(obj.ObjectPtr,  => QtBeef_QCompleter_OnEventFilter);
+		CQt.QCompleter_OnEvent(obj.ObjectPtr,  => QtBeef_QCompleter_OnEvent);
+		CQt.QCompleter_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QCompleter_OnTimerEvent);
+		CQt.QCompleter_OnChildEvent(obj.ObjectPtr,  => QtBeef_QCompleter_OnChildEvent);
+		CQt.QCompleter_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QCompleter_OnCustomEvent);
+		CQt.QCompleter_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QCompleter_OnConnectNotify);
+		CQt.QCompleter_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QCompleter_OnDisconnectNotify);
 	}
 	public Event<delegate void(libqt_string text)> OnActivated = .() ~ _.Dispose();
 	public Event<delegate void(void** index)> OnActivated2 = .() ~ _.Dispose();
@@ -464,6 +476,66 @@ class QCompleter : IQCompleter, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QCompleter_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QCompleter_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QCompleter_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QCompleter_OnPathFromIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPathFromIndex(scope .(), index);
+	}
+	static void QtBeef_QCompleter_OnSplitPath(void* ptr, libqt_string path)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSplitPath(path);
+	}
+	static void QtBeef_QCompleter_OnEventFilter(void* ptr, void** o, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(o, e);
+	}
+	static void QtBeef_QCompleter_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QCompleter_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QCompleter_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QCompleter_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QCompleter_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QCompleter_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QCompleter_Ptr ptr)
 	{
@@ -924,18 +996,27 @@ extension CQt
 	public function void QCompleter_OnMetaObject_action(void* self);
 	[LinkName("QCompleter_OnMetaObject")]
 	public static extern void** QCompleter_OnMetaObject(void* self, QCompleter_OnMetaObject_action _action);
+	
+	[LinkName("QCompleter_SuperMetaObject")]
+	public static extern void** QCompleter_SuperMetaObject(void* self);
 	[LinkName("QCompleter_Qt_Metacast")]
 	public static extern void* QCompleter_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QCompleter_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QCompleter_OnMetacast")]
 	public static extern void* QCompleter_OnMetacast(void* self, QCompleter_OnMetacast_action _action);
+	
+	[LinkName("QCompleter_SuperMetacast")]
+	public static extern void* QCompleter_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QCompleter_Qt_Metacall")]
 	public static extern c_int QCompleter_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QCompleter_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCompleter_OnMetacall")]
 	public static extern c_int QCompleter_OnMetacall(void* self, QCompleter_OnMetacall_action _action);
+	
+	[LinkName("QCompleter_SuperMetacall")]
+	public static extern c_int QCompleter_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCompleter_Tr")]
 	public static extern libqt_string QCompleter_Tr(c_char* s);
 	[LinkName("QCompleter_SetWidget")]
@@ -1006,24 +1087,36 @@ extension CQt
 	public function void QCompleter_OnPathFromIndex_action(void* self, void** index);
 	[LinkName("QCompleter_OnPathFromIndex")]
 	public static extern libqt_string QCompleter_OnPathFromIndex(void* self, QCompleter_OnPathFromIndex_action _action);
+	
+	[LinkName("QCompleter_SuperPathFromIndex")]
+	public static extern libqt_string QCompleter_SuperPathFromIndex(void* self, void** index);
 	[LinkName("QCompleter_SplitPath")]
 	public static extern void* QCompleter_SplitPath(void* self, libqt_string path);
 	
 	public function void QCompleter_OnSplitPath_action(void* self, libqt_string path);
 	[LinkName("QCompleter_OnSplitPath")]
 	public static extern void* QCompleter_OnSplitPath(void* self, QCompleter_OnSplitPath_action _action);
+	
+	[LinkName("QCompleter_SuperSplitPath")]
+	public static extern void* QCompleter_SuperSplitPath(void* self, libqt_string path);
 	[LinkName("QCompleter_EventFilter")]
 	public static extern bool QCompleter_EventFilter(void* self, void** o, void** e);
 	
 	public function void QCompleter_OnEventFilter_action(void* self, void** o, void** e);
 	[LinkName("QCompleter_OnEventFilter")]
 	public static extern bool QCompleter_OnEventFilter(void* self, QCompleter_OnEventFilter_action _action);
+	
+	[LinkName("QCompleter_SuperEventFilter")]
+	public static extern bool QCompleter_SuperEventFilter(void* self, void** o, void** e);
 	[LinkName("QCompleter_Event")]
 	public static extern bool QCompleter_Event(void* self, void** param1);
 	
 	public function void QCompleter_OnEvent_action(void* self, void** param1);
 	[LinkName("QCompleter_OnEvent")]
 	public static extern bool QCompleter_OnEvent(void* self, QCompleter_OnEvent_action _action);
+	
+	[LinkName("QCompleter_SuperEvent")]
+	public static extern bool QCompleter_SuperEvent(void* self, void** param1);
 	[LinkName("QCompleter_Activated")]
 	public static extern void QCompleter_Activated(void* self, libqt_string text);
 	
@@ -1060,30 +1153,45 @@ extension CQt
 	public function void QCompleter_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QCompleter_OnTimerEvent")]
 	public static extern void QCompleter_OnTimerEvent(void* self, QCompleter_OnTimerEvent_action _action);
+	
+	[LinkName("QCompleter_SuperTimerEvent")]
+	public static extern void QCompleter_SuperTimerEvent(void* self, void** event);
 	[LinkName("QCompleter_ChildEvent")]
 	public static extern void QCompleter_ChildEvent(void* self, void** event);
 	
 	public function void QCompleter_OnChildEvent_action(void* self, void** event);
 	[LinkName("QCompleter_OnChildEvent")]
 	public static extern void QCompleter_OnChildEvent(void* self, QCompleter_OnChildEvent_action _action);
+	
+	[LinkName("QCompleter_SuperChildEvent")]
+	public static extern void QCompleter_SuperChildEvent(void* self, void** event);
 	[LinkName("QCompleter_CustomEvent")]
 	public static extern void QCompleter_CustomEvent(void* self, void** event);
 	
 	public function void QCompleter_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QCompleter_OnCustomEvent")]
 	public static extern void QCompleter_OnCustomEvent(void* self, QCompleter_OnCustomEvent_action _action);
+	
+	[LinkName("QCompleter_SuperCustomEvent")]
+	public static extern void QCompleter_SuperCustomEvent(void* self, void** event);
 	[LinkName("QCompleter_ConnectNotify")]
 	public static extern void QCompleter_ConnectNotify(void* self, void** signal);
 	
 	public function void QCompleter_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QCompleter_OnConnectNotify")]
 	public static extern void QCompleter_OnConnectNotify(void* self, QCompleter_OnConnectNotify_action _action);
+	
+	[LinkName("QCompleter_SuperConnectNotify")]
+	public static extern void QCompleter_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QCompleter_DisconnectNotify")]
 	public static extern void QCompleter_DisconnectNotify(void* self, void** signal);
 	
 	public function void QCompleter_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QCompleter_OnDisconnectNotify")]
 	public static extern void QCompleter_OnDisconnectNotify(void* self, QCompleter_OnDisconnectNotify_action _action);
+	
+	[LinkName("QCompleter_SuperDisconnectNotify")]
+	public static extern void QCompleter_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QCompleter_CompletionMode

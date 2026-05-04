@@ -448,6 +448,16 @@ class QPointingDevice : IQPointingDevice, IQInputDevice, IQObject
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
 		CQt.QInputDevice_Connect_AvailableVirtualGeometryChanged(obj.ObjectPtr,  => QtBeef_QInputDevice_Connect_AvailableVirtualGeometryChanged);
+		CQt.QPointingDevice_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnMetaObject);
+		CQt.QPointingDevice_OnMetacast(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnMetacast);
+		CQt.QPointingDevice_OnMetacall(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnMetacall);
+		CQt.QPointingDevice_OnEvent(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnEvent);
+		CQt.QPointingDevice_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnEventFilter);
+		CQt.QPointingDevice_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnTimerEvent);
+		CQt.QPointingDevice_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnChildEvent);
+		CQt.QPointingDevice_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnCustomEvent);
+		CQt.QPointingDevice_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnConnectNotify);
+		CQt.QPointingDevice_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPointingDevice_OnDisconnectNotify);
 	}
 	public Event<delegate void(void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point)> OnGrabChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -472,6 +482,56 @@ class QPointingDevice : IQPointingDevice, IQInputDevice, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnAvailableVirtualGeometryChanged.Invoke(area);
+	}
+	static void QtBeef_QPointingDevice_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPointingDevice_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPointingDevice_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPointingDevice_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QPointingDevice_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPointingDevice_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QPointingDevice_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPointingDevice_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPointingDevice_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPointingDevice_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QPointingDevice_Ptr ptr)
 	{
@@ -869,18 +929,27 @@ extension CQt
 	public function void QPointingDevice_OnMetaObject_action(void* self);
 	[LinkName("QPointingDevice_OnMetaObject")]
 	public static extern void** QPointingDevice_OnMetaObject(void* self, QPointingDevice_OnMetaObject_action _action);
+	
+	[LinkName("QPointingDevice_SuperMetaObject")]
+	public static extern void** QPointingDevice_SuperMetaObject(void* self);
 	[LinkName("QPointingDevice_Qt_Metacast")]
 	public static extern void* QPointingDevice_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPointingDevice_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPointingDevice_OnMetacast")]
 	public static extern void* QPointingDevice_OnMetacast(void* self, QPointingDevice_OnMetacast_action _action);
+	
+	[LinkName("QPointingDevice_SuperMetacast")]
+	public static extern void* QPointingDevice_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPointingDevice_Qt_Metacall")]
 	public static extern c_int QPointingDevice_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPointingDevice_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPointingDevice_OnMetacall")]
 	public static extern c_int QPointingDevice_OnMetacall(void* self, QPointingDevice_OnMetacall_action _action);
+	
+	[LinkName("QPointingDevice_SuperMetacall")]
+	public static extern c_int QPointingDevice_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPointingDevice_Tr")]
 	public static extern libqt_string QPointingDevice_Tr(c_char* s);
 	[LinkName("QPointingDevice_SetType")]
@@ -919,42 +988,63 @@ extension CQt
 	public function void QPointingDevice_OnEvent_action(void* self, void** event);
 	[LinkName("QPointingDevice_OnEvent")]
 	public static extern bool QPointingDevice_OnEvent(void* self, QPointingDevice_OnEvent_action _action);
+	
+	[LinkName("QPointingDevice_SuperEvent")]
+	public static extern bool QPointingDevice_SuperEvent(void* self, void** event);
 	[LinkName("QPointingDevice_EventFilter")]
 	public static extern bool QPointingDevice_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QPointingDevice_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPointingDevice_OnEventFilter")]
 	public static extern bool QPointingDevice_OnEventFilter(void* self, QPointingDevice_OnEventFilter_action _action);
+	
+	[LinkName("QPointingDevice_SuperEventFilter")]
+	public static extern bool QPointingDevice_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPointingDevice_TimerEvent")]
 	public static extern void QPointingDevice_TimerEvent(void* self, void** event);
 	
 	public function void QPointingDevice_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QPointingDevice_OnTimerEvent")]
 	public static extern void QPointingDevice_OnTimerEvent(void* self, QPointingDevice_OnTimerEvent_action _action);
+	
+	[LinkName("QPointingDevice_SuperTimerEvent")]
+	public static extern void QPointingDevice_SuperTimerEvent(void* self, void** event);
 	[LinkName("QPointingDevice_ChildEvent")]
 	public static extern void QPointingDevice_ChildEvent(void* self, void** event);
 	
 	public function void QPointingDevice_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPointingDevice_OnChildEvent")]
 	public static extern void QPointingDevice_OnChildEvent(void* self, QPointingDevice_OnChildEvent_action _action);
+	
+	[LinkName("QPointingDevice_SuperChildEvent")]
+	public static extern void QPointingDevice_SuperChildEvent(void* self, void** event);
 	[LinkName("QPointingDevice_CustomEvent")]
 	public static extern void QPointingDevice_CustomEvent(void* self, void** event);
 	
 	public function void QPointingDevice_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPointingDevice_OnCustomEvent")]
 	public static extern void QPointingDevice_OnCustomEvent(void* self, QPointingDevice_OnCustomEvent_action _action);
+	
+	[LinkName("QPointingDevice_SuperCustomEvent")]
+	public static extern void QPointingDevice_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPointingDevice_ConnectNotify")]
 	public static extern void QPointingDevice_ConnectNotify(void* self, void** signal);
 	
 	public function void QPointingDevice_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPointingDevice_OnConnectNotify")]
 	public static extern void QPointingDevice_OnConnectNotify(void* self, QPointingDevice_OnConnectNotify_action _action);
+	
+	[LinkName("QPointingDevice_SuperConnectNotify")]
+	public static extern void QPointingDevice_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPointingDevice_DisconnectNotify")]
 	public static extern void QPointingDevice_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPointingDevice_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPointingDevice_OnDisconnectNotify")]
 	public static extern void QPointingDevice_OnDisconnectNotify(void* self, QPointingDevice_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPointingDevice_SuperDisconnectNotify")]
+	public static extern void QPointingDevice_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QPointingDevice_PointerType

@@ -394,6 +394,66 @@ class QGraphicsGridLayout : IQGraphicsGridLayout, IQGraphicsLayout, IQGraphicsLa
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsGridLayout_OnCount(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnCount);
+		CQt.QGraphicsGridLayout_OnItemAt2(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnItemAt2);
+		CQt.QGraphicsGridLayout_OnRemoveAt(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnRemoveAt);
+		CQt.QGraphicsGridLayout_OnInvalidate(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnInvalidate);
+		CQt.QGraphicsGridLayout_OnSetGeometry(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnSetGeometry);
+		CQt.QGraphicsGridLayout_OnSizeHint(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnSizeHint);
+		CQt.QGraphicsGridLayout_OnGetContentsMargins(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnGetContentsMargins);
+		CQt.QGraphicsGridLayout_OnUpdateGeometry(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnUpdateGeometry);
+		CQt.QGraphicsGridLayout_OnIsEmpty(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnIsEmpty);
+		CQt.QGraphicsGridLayout_OnWidgetEvent(obj.ObjectPtr,  => QtBeef_QGraphicsGridLayout_OnWidgetEvent);
+	}
+	static void QtBeef_QGraphicsGridLayout_OnCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCount();
+	}
+	static void QtBeef_QGraphicsGridLayout_OnItemAt2(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemAt2(index);
+	}
+	static void QtBeef_QGraphicsGridLayout_OnRemoveAt(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveAt(index);
+	}
+	static void QtBeef_QGraphicsGridLayout_OnInvalidate(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInvalidate();
+	}
+	static void QtBeef_QGraphicsGridLayout_OnSetGeometry(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetGeometry(rect);
+	}
+	static void QtBeef_QGraphicsGridLayout_OnSizeHint(void* ptr, Qt_SizeHint which, void** constraint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint(which, constraint);
+	}
+	static void QtBeef_QGraphicsGridLayout_OnGetContentsMargins(void* ptr, double* left, double* top, double* right, double* bottom)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGetContentsMargins(left, top, right, bottom);
+	}
+	static void QtBeef_QGraphicsGridLayout_OnUpdateGeometry(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometry();
+	}
+	static void QtBeef_QGraphicsGridLayout_OnIsEmpty(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEmpty();
+	}
+	static void QtBeef_QGraphicsGridLayout_OnWidgetEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidgetEvent(e);
 	}
 	public this(QGraphicsGridLayout_Ptr ptr)
 	{
@@ -874,18 +934,27 @@ extension CQt
 	public function void QGraphicsGridLayout_OnCount_action(void* self);
 	[LinkName("QGraphicsGridLayout_OnCount")]
 	public static extern c_int QGraphicsGridLayout_OnCount(void* self, QGraphicsGridLayout_OnCount_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperCount")]
+	public static extern c_int QGraphicsGridLayout_SuperCount(void* self);
 	[LinkName("QGraphicsGridLayout_ItemAt2")]
 	public static extern void** QGraphicsGridLayout_ItemAt2(void* self, c_int index);
 	
 	public function void QGraphicsGridLayout_OnItemAt2_action(void* self, c_int index);
 	[LinkName("QGraphicsGridLayout_OnItemAt2")]
 	public static extern void** QGraphicsGridLayout_OnItemAt2(void* self, QGraphicsGridLayout_OnItemAt2_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperItemAt2")]
+	public static extern void** QGraphicsGridLayout_SuperItemAt2(void* self, c_int index);
 	[LinkName("QGraphicsGridLayout_RemoveAt")]
 	public static extern void QGraphicsGridLayout_RemoveAt(void* self, c_int index);
 	
 	public function void QGraphicsGridLayout_OnRemoveAt_action(void* self, c_int index);
 	[LinkName("QGraphicsGridLayout_OnRemoveAt")]
 	public static extern void QGraphicsGridLayout_OnRemoveAt(void* self, QGraphicsGridLayout_OnRemoveAt_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperRemoveAt")]
+	public static extern void QGraphicsGridLayout_SuperRemoveAt(void* self, c_int index);
 	[LinkName("QGraphicsGridLayout_RemoveItem")]
 	public static extern void QGraphicsGridLayout_RemoveItem(void* self, void** item);
 	[LinkName("QGraphicsGridLayout_Invalidate")]
@@ -894,18 +963,27 @@ extension CQt
 	public function void QGraphicsGridLayout_OnInvalidate_action(void* self);
 	[LinkName("QGraphicsGridLayout_OnInvalidate")]
 	public static extern void QGraphicsGridLayout_OnInvalidate(void* self, QGraphicsGridLayout_OnInvalidate_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperInvalidate")]
+	public static extern void QGraphicsGridLayout_SuperInvalidate(void* self);
 	[LinkName("QGraphicsGridLayout_SetGeometry")]
 	public static extern void QGraphicsGridLayout_SetGeometry(void* self, void** rect);
 	
 	public function void QGraphicsGridLayout_OnSetGeometry_action(void* self, void** rect);
 	[LinkName("QGraphicsGridLayout_OnSetGeometry")]
 	public static extern void QGraphicsGridLayout_OnSetGeometry(void* self, QGraphicsGridLayout_OnSetGeometry_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperSetGeometry")]
+	public static extern void QGraphicsGridLayout_SuperSetGeometry(void* self, void** rect);
 	[LinkName("QGraphicsGridLayout_SizeHint")]
 	public static extern void* QGraphicsGridLayout_SizeHint(void* self, Qt_SizeHint which, void** constraint);
 	
 	public function void QGraphicsGridLayout_OnSizeHint_action(void* self, Qt_SizeHint which, void** constraint);
 	[LinkName("QGraphicsGridLayout_OnSizeHint")]
 	public static extern void* QGraphicsGridLayout_OnSizeHint(void* self, QGraphicsGridLayout_OnSizeHint_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperSizeHint")]
+	public static extern void* QGraphicsGridLayout_SuperSizeHint(void* self, Qt_SizeHint which, void** constraint);
 	[LinkName("QGraphicsGridLayout_AddItem6")]
 	public static extern void QGraphicsGridLayout_AddItem6(void* self, void** item, c_int row, c_int column, c_int rowSpan, c_int columnSpan, void* alignment);
 	[LinkName("QGraphicsGridLayout_AddItem4")]
@@ -916,22 +994,34 @@ extension CQt
 	public function void QGraphicsGridLayout_OnGetContentsMargins_action(void* self, double* left, double* top, double* right, double* bottom);
 	[LinkName("QGraphicsGridLayout_OnGetContentsMargins")]
 	public static extern void QGraphicsGridLayout_OnGetContentsMargins(void* self, QGraphicsGridLayout_OnGetContentsMargins_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperGetContentsMargins")]
+	public static extern void QGraphicsGridLayout_SuperGetContentsMargins(void* self, double* left, double* top, double* right, double* bottom);
 	[LinkName("QGraphicsGridLayout_UpdateGeometry")]
 	public static extern void QGraphicsGridLayout_UpdateGeometry(void* self);
 	
 	public function void QGraphicsGridLayout_OnUpdateGeometry_action(void* self);
 	[LinkName("QGraphicsGridLayout_OnUpdateGeometry")]
 	public static extern void QGraphicsGridLayout_OnUpdateGeometry(void* self, QGraphicsGridLayout_OnUpdateGeometry_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperUpdateGeometry")]
+	public static extern void QGraphicsGridLayout_SuperUpdateGeometry(void* self);
 	[LinkName("QGraphicsGridLayout_IsEmpty")]
 	public static extern bool QGraphicsGridLayout_IsEmpty(void* self);
 	
 	public function void QGraphicsGridLayout_OnIsEmpty_action(void* self);
 	[LinkName("QGraphicsGridLayout_OnIsEmpty")]
 	public static extern bool QGraphicsGridLayout_OnIsEmpty(void* self, QGraphicsGridLayout_OnIsEmpty_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperIsEmpty")]
+	public static extern bool QGraphicsGridLayout_SuperIsEmpty(void* self);
 	[LinkName("QGraphicsGridLayout_WidgetEvent")]
 	public static extern void QGraphicsGridLayout_WidgetEvent(void* self, void** e);
 	
 	public function void QGraphicsGridLayout_OnWidgetEvent_action(void* self, void** e);
 	[LinkName("QGraphicsGridLayout_OnWidgetEvent")]
 	public static extern void QGraphicsGridLayout_OnWidgetEvent(void* self, QGraphicsGridLayout_OnWidgetEvent_action _action);
+	
+	[LinkName("QGraphicsGridLayout_SuperWidgetEvent")]
+	public static extern void QGraphicsGridLayout_SuperWidgetEvent(void* self, void** e);
 }

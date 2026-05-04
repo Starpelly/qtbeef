@@ -280,6 +280,17 @@ class QGraphicsTransform : IQGraphicsTransform, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGraphicsTransform_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnMetaObject);
+		CQt.QGraphicsTransform_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnMetacast);
+		CQt.QGraphicsTransform_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnMetacall);
+		CQt.QGraphicsTransform_OnApplyTo(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnApplyTo);
+		CQt.QGraphicsTransform_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnEvent);
+		CQt.QGraphicsTransform_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnEventFilter);
+		CQt.QGraphicsTransform_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnTimerEvent);
+		CQt.QGraphicsTransform_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnChildEvent);
+		CQt.QGraphicsTransform_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnCustomEvent);
+		CQt.QGraphicsTransform_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnConnectNotify);
+		CQt.QGraphicsTransform_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsTransform_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -292,6 +303,61 @@ class QGraphicsTransform : IQGraphicsTransform, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGraphicsTransform_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsTransform_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsTransform_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsTransform_OnApplyTo(void* ptr, void** matrix)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnApplyTo(matrix);
+	}
+	static void QtBeef_QGraphicsTransform_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsTransform_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsTransform_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsTransform_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsTransform_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsTransform_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsTransform_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QGraphicsTransform_Ptr ptr)
 	{
@@ -580,18 +646,27 @@ extension CQt
 	public function void QGraphicsTransform_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsTransform_OnMetaObject")]
 	public static extern void** QGraphicsTransform_OnMetaObject(void* self, QGraphicsTransform_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperMetaObject")]
+	public static extern void** QGraphicsTransform_SuperMetaObject(void* self);
 	[LinkName("QGraphicsTransform_Qt_Metacast")]
 	public static extern void* QGraphicsTransform_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsTransform_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsTransform_OnMetacast")]
 	public static extern void* QGraphicsTransform_OnMetacast(void* self, QGraphicsTransform_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperMetacast")]
+	public static extern void* QGraphicsTransform_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsTransform_Qt_Metacall")]
 	public static extern c_int QGraphicsTransform_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsTransform_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsTransform_OnMetacall")]
 	public static extern c_int QGraphicsTransform_OnMetacall(void* self, QGraphicsTransform_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperMetacall")]
+	public static extern c_int QGraphicsTransform_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsTransform_Tr")]
 	public static extern libqt_string QGraphicsTransform_Tr(c_char* s);
 	[LinkName("QGraphicsTransform_ApplyTo")]
@@ -600,6 +675,9 @@ extension CQt
 	public function void QGraphicsTransform_OnApplyTo_action(void* self, void** matrix);
 	[LinkName("QGraphicsTransform_OnApplyTo")]
 	public static extern void QGraphicsTransform_OnApplyTo(void* self, QGraphicsTransform_OnApplyTo_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperApplyTo")]
+	public static extern void QGraphicsTransform_SuperApplyTo(void* self, void** matrix);
 	[LinkName("QGraphicsTransform_Update")]
 	public static extern void QGraphicsTransform_Update(void* self);
 	[LinkName("QGraphicsTransform_Tr2")]
@@ -612,42 +690,63 @@ extension CQt
 	public function void QGraphicsTransform_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsTransform_OnEvent")]
 	public static extern bool QGraphicsTransform_OnEvent(void* self, QGraphicsTransform_OnEvent_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperEvent")]
+	public static extern bool QGraphicsTransform_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsTransform_EventFilter")]
 	public static extern bool QGraphicsTransform_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsTransform_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsTransform_OnEventFilter")]
 	public static extern bool QGraphicsTransform_OnEventFilter(void* self, QGraphicsTransform_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperEventFilter")]
+	public static extern bool QGraphicsTransform_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsTransform_TimerEvent")]
 	public static extern void QGraphicsTransform_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsTransform_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsTransform_OnTimerEvent")]
 	public static extern void QGraphicsTransform_OnTimerEvent(void* self, QGraphicsTransform_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperTimerEvent")]
+	public static extern void QGraphicsTransform_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsTransform_ChildEvent")]
 	public static extern void QGraphicsTransform_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsTransform_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsTransform_OnChildEvent")]
 	public static extern void QGraphicsTransform_OnChildEvent(void* self, QGraphicsTransform_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperChildEvent")]
+	public static extern void QGraphicsTransform_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsTransform_CustomEvent")]
 	public static extern void QGraphicsTransform_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsTransform_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsTransform_OnCustomEvent")]
 	public static extern void QGraphicsTransform_OnCustomEvent(void* self, QGraphicsTransform_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperCustomEvent")]
+	public static extern void QGraphicsTransform_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsTransform_ConnectNotify")]
 	public static extern void QGraphicsTransform_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsTransform_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsTransform_OnConnectNotify")]
 	public static extern void QGraphicsTransform_OnConnectNotify(void* self, QGraphicsTransform_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperConnectNotify")]
+	public static extern void QGraphicsTransform_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsTransform_DisconnectNotify")]
 	public static extern void QGraphicsTransform_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsTransform_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsTransform_OnDisconnectNotify")]
 	public static extern void QGraphicsTransform_OnDisconnectNotify(void* self, QGraphicsTransform_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsTransform_SuperDisconnectNotify")]
+	public static extern void QGraphicsTransform_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QGraphicsScale
@@ -983,6 +1082,17 @@ class QGraphicsScale : IQGraphicsScale, IQGraphicsTransform, IQObject
 		CQt.QGraphicsScale_Connect_ScaleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScale_Connect_ScaleChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGraphicsScale_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnMetaObject);
+		CQt.QGraphicsScale_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnMetacast);
+		CQt.QGraphicsScale_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnMetacall);
+		CQt.QGraphicsScale_OnApplyTo(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnApplyTo);
+		CQt.QGraphicsScale_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnEvent);
+		CQt.QGraphicsScale_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnEventFilter);
+		CQt.QGraphicsScale_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnTimerEvent);
+		CQt.QGraphicsScale_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnChildEvent);
+		CQt.QGraphicsScale_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnCustomEvent);
+		CQt.QGraphicsScale_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnConnectNotify);
+		CQt.QGraphicsScale_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsScale_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnOriginChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnXScaleChanged = .() ~ _.Dispose();
@@ -1025,6 +1135,61 @@ class QGraphicsScale : IQGraphicsScale, IQGraphicsTransform, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGraphicsScale_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsScale_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsScale_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsScale_OnApplyTo(void* ptr, void** matrix)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnApplyTo(matrix);
+	}
+	static void QtBeef_QGraphicsScale_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsScale_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsScale_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsScale_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsScale_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsScale_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsScale_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QGraphicsScale_Ptr ptr)
 	{
@@ -1365,18 +1530,27 @@ extension CQt
 	public function void QGraphicsScale_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsScale_OnMetaObject")]
 	public static extern void** QGraphicsScale_OnMetaObject(void* self, QGraphicsScale_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsScale_SuperMetaObject")]
+	public static extern void** QGraphicsScale_SuperMetaObject(void* self);
 	[LinkName("QGraphicsScale_Qt_Metacast")]
 	public static extern void* QGraphicsScale_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsScale_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsScale_OnMetacast")]
 	public static extern void* QGraphicsScale_OnMetacast(void* self, QGraphicsScale_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsScale_SuperMetacast")]
+	public static extern void* QGraphicsScale_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsScale_Qt_Metacall")]
 	public static extern c_int QGraphicsScale_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsScale_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsScale_OnMetacall")]
 	public static extern c_int QGraphicsScale_OnMetacall(void* self, QGraphicsScale_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsScale_SuperMetacall")]
+	public static extern c_int QGraphicsScale_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsScale_Tr")]
 	public static extern libqt_string QGraphicsScale_Tr(c_char* s);
 	[LinkName("QGraphicsScale_Origin")]
@@ -1401,6 +1575,9 @@ extension CQt
 	public function void QGraphicsScale_OnApplyTo_action(void* self, void** matrix);
 	[LinkName("QGraphicsScale_OnApplyTo")]
 	public static extern void QGraphicsScale_OnApplyTo(void* self, QGraphicsScale_OnApplyTo_action _action);
+	
+	[LinkName("QGraphicsScale_SuperApplyTo")]
+	public static extern void QGraphicsScale_SuperApplyTo(void* self, void** matrix);
 	[LinkName("QGraphicsScale_OriginChanged")]
 	public static extern void QGraphicsScale_OriginChanged(void* self);
 	
@@ -1441,42 +1618,63 @@ extension CQt
 	public function void QGraphicsScale_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsScale_OnEvent")]
 	public static extern bool QGraphicsScale_OnEvent(void* self, QGraphicsScale_OnEvent_action _action);
+	
+	[LinkName("QGraphicsScale_SuperEvent")]
+	public static extern bool QGraphicsScale_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsScale_EventFilter")]
 	public static extern bool QGraphicsScale_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsScale_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsScale_OnEventFilter")]
 	public static extern bool QGraphicsScale_OnEventFilter(void* self, QGraphicsScale_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsScale_SuperEventFilter")]
+	public static extern bool QGraphicsScale_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsScale_TimerEvent")]
 	public static extern void QGraphicsScale_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsScale_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsScale_OnTimerEvent")]
 	public static extern void QGraphicsScale_OnTimerEvent(void* self, QGraphicsScale_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsScale_SuperTimerEvent")]
+	public static extern void QGraphicsScale_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsScale_ChildEvent")]
 	public static extern void QGraphicsScale_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsScale_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsScale_OnChildEvent")]
 	public static extern void QGraphicsScale_OnChildEvent(void* self, QGraphicsScale_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsScale_SuperChildEvent")]
+	public static extern void QGraphicsScale_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsScale_CustomEvent")]
 	public static extern void QGraphicsScale_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsScale_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsScale_OnCustomEvent")]
 	public static extern void QGraphicsScale_OnCustomEvent(void* self, QGraphicsScale_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsScale_SuperCustomEvent")]
+	public static extern void QGraphicsScale_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsScale_ConnectNotify")]
 	public static extern void QGraphicsScale_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsScale_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsScale_OnConnectNotify")]
 	public static extern void QGraphicsScale_OnConnectNotify(void* self, QGraphicsScale_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsScale_SuperConnectNotify")]
+	public static extern void QGraphicsScale_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsScale_DisconnectNotify")]
 	public static extern void QGraphicsScale_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsScale_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsScale_OnDisconnectNotify")]
 	public static extern void QGraphicsScale_OnDisconnectNotify(void* self, QGraphicsScale_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsScale_SuperDisconnectNotify")]
+	public static extern void QGraphicsScale_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QGraphicsRotation
@@ -1798,6 +1996,17 @@ class QGraphicsRotation : IQGraphicsRotation, IQGraphicsTransform, IQObject
 		CQt.QGraphicsRotation_Connect_AxisChanged(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_Connect_AxisChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGraphicsRotation_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnMetaObject);
+		CQt.QGraphicsRotation_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnMetacast);
+		CQt.QGraphicsRotation_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnMetacall);
+		CQt.QGraphicsRotation_OnApplyTo(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnApplyTo);
+		CQt.QGraphicsRotation_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnEvent);
+		CQt.QGraphicsRotation_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnEventFilter);
+		CQt.QGraphicsRotation_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnTimerEvent);
+		CQt.QGraphicsRotation_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnChildEvent);
+		CQt.QGraphicsRotation_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnCustomEvent);
+		CQt.QGraphicsRotation_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnConnectNotify);
+		CQt.QGraphicsRotation_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnOriginChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnAngleChanged = .() ~ _.Dispose();
@@ -1828,6 +2037,61 @@ class QGraphicsRotation : IQGraphicsRotation, IQGraphicsTransform, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGraphicsRotation_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsRotation_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsRotation_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsRotation_OnApplyTo(void* ptr, void** matrix)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnApplyTo(matrix);
+	}
+	static void QtBeef_QGraphicsRotation_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsRotation_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsRotation_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsRotation_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsRotation_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsRotation_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsRotation_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QGraphicsRotation_Ptr ptr)
 	{
@@ -2156,18 +2420,27 @@ extension CQt
 	public function void QGraphicsRotation_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsRotation_OnMetaObject")]
 	public static extern void** QGraphicsRotation_OnMetaObject(void* self, QGraphicsRotation_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperMetaObject")]
+	public static extern void** QGraphicsRotation_SuperMetaObject(void* self);
 	[LinkName("QGraphicsRotation_Qt_Metacast")]
 	public static extern void* QGraphicsRotation_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsRotation_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsRotation_OnMetacast")]
 	public static extern void* QGraphicsRotation_OnMetacast(void* self, QGraphicsRotation_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperMetacast")]
+	public static extern void* QGraphicsRotation_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsRotation_Qt_Metacall")]
 	public static extern c_int QGraphicsRotation_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsRotation_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsRotation_OnMetacall")]
 	public static extern c_int QGraphicsRotation_OnMetacall(void* self, QGraphicsRotation_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperMetacall")]
+	public static extern c_int QGraphicsRotation_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsRotation_Tr")]
 	public static extern libqt_string QGraphicsRotation_Tr(c_char* s);
 	[LinkName("QGraphicsRotation_Origin")]
@@ -2190,6 +2463,9 @@ extension CQt
 	public function void QGraphicsRotation_OnApplyTo_action(void* self, void** matrix);
 	[LinkName("QGraphicsRotation_OnApplyTo")]
 	public static extern void QGraphicsRotation_OnApplyTo(void* self, QGraphicsRotation_OnApplyTo_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperApplyTo")]
+	public static extern void QGraphicsRotation_SuperApplyTo(void* self, void** matrix);
 	[LinkName("QGraphicsRotation_OriginChanged")]
 	public static extern void QGraphicsRotation_OriginChanged(void* self);
 	
@@ -2218,40 +2494,61 @@ extension CQt
 	public function void QGraphicsRotation_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsRotation_OnEvent")]
 	public static extern bool QGraphicsRotation_OnEvent(void* self, QGraphicsRotation_OnEvent_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperEvent")]
+	public static extern bool QGraphicsRotation_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsRotation_EventFilter")]
 	public static extern bool QGraphicsRotation_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsRotation_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsRotation_OnEventFilter")]
 	public static extern bool QGraphicsRotation_OnEventFilter(void* self, QGraphicsRotation_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperEventFilter")]
+	public static extern bool QGraphicsRotation_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsRotation_TimerEvent")]
 	public static extern void QGraphicsRotation_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsRotation_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsRotation_OnTimerEvent")]
 	public static extern void QGraphicsRotation_OnTimerEvent(void* self, QGraphicsRotation_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperTimerEvent")]
+	public static extern void QGraphicsRotation_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsRotation_ChildEvent")]
 	public static extern void QGraphicsRotation_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsRotation_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsRotation_OnChildEvent")]
 	public static extern void QGraphicsRotation_OnChildEvent(void* self, QGraphicsRotation_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperChildEvent")]
+	public static extern void QGraphicsRotation_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsRotation_CustomEvent")]
 	public static extern void QGraphicsRotation_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsRotation_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsRotation_OnCustomEvent")]
 	public static extern void QGraphicsRotation_OnCustomEvent(void* self, QGraphicsRotation_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperCustomEvent")]
+	public static extern void QGraphicsRotation_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsRotation_ConnectNotify")]
 	public static extern void QGraphicsRotation_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsRotation_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsRotation_OnConnectNotify")]
 	public static extern void QGraphicsRotation_OnConnectNotify(void* self, QGraphicsRotation_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperConnectNotify")]
+	public static extern void QGraphicsRotation_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsRotation_DisconnectNotify")]
 	public static extern void QGraphicsRotation_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsRotation_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsRotation_OnDisconnectNotify")]
 	public static extern void QGraphicsRotation_OnDisconnectNotify(void* self, QGraphicsRotation_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsRotation_SuperDisconnectNotify")]
+	public static extern void QGraphicsRotation_SuperDisconnectNotify(void* self, void** signal);
 }

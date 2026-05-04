@@ -276,6 +276,17 @@ class QAccessiblePlugin : IQAccessiblePlugin, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QAccessiblePlugin_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnMetaObject);
+		CQt.QAccessiblePlugin_OnMetacast(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnMetacast);
+		CQt.QAccessiblePlugin_OnMetacall(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnMetacall);
+		CQt.QAccessiblePlugin_OnCreate(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnCreate);
+		CQt.QAccessiblePlugin_OnEvent(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnEvent);
+		CQt.QAccessiblePlugin_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnEventFilter);
+		CQt.QAccessiblePlugin_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnTimerEvent);
+		CQt.QAccessiblePlugin_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnChildEvent);
+		CQt.QAccessiblePlugin_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnCustomEvent);
+		CQt.QAccessiblePlugin_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnConnectNotify);
+		CQt.QAccessiblePlugin_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAccessiblePlugin_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -288,6 +299,61 @@ class QAccessiblePlugin : IQAccessiblePlugin, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QAccessiblePlugin_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAccessiblePlugin_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAccessiblePlugin_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAccessiblePlugin_OnCreate(void* ptr, libqt_string key, void** object)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreate(key, object);
+	}
+	static void QtBeef_QAccessiblePlugin_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QAccessiblePlugin_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QAccessiblePlugin_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QAccessiblePlugin_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAccessiblePlugin_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAccessiblePlugin_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAccessiblePlugin_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QAccessiblePlugin_Ptr ptr)
 	{
@@ -573,18 +639,27 @@ extension CQt
 	public function void QAccessiblePlugin_OnMetaObject_action(void* self);
 	[LinkName("QAccessiblePlugin_OnMetaObject")]
 	public static extern void** QAccessiblePlugin_OnMetaObject(void* self, QAccessiblePlugin_OnMetaObject_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperMetaObject")]
+	public static extern void** QAccessiblePlugin_SuperMetaObject(void* self);
 	[LinkName("QAccessiblePlugin_Qt_Metacast")]
 	public static extern void* QAccessiblePlugin_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAccessiblePlugin_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAccessiblePlugin_OnMetacast")]
 	public static extern void* QAccessiblePlugin_OnMetacast(void* self, QAccessiblePlugin_OnMetacast_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperMetacast")]
+	public static extern void* QAccessiblePlugin_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAccessiblePlugin_Qt_Metacall")]
 	public static extern c_int QAccessiblePlugin_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAccessiblePlugin_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAccessiblePlugin_OnMetacall")]
 	public static extern c_int QAccessiblePlugin_OnMetacall(void* self, QAccessiblePlugin_OnMetacall_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperMetacall")]
+	public static extern c_int QAccessiblePlugin_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAccessiblePlugin_Tr")]
 	public static extern libqt_string QAccessiblePlugin_Tr(c_char* s);
 	[LinkName("QAccessiblePlugin_Create")]
@@ -593,6 +668,9 @@ extension CQt
 	public function void QAccessiblePlugin_OnCreate_action(void* self, libqt_string key, void** object);
 	[LinkName("QAccessiblePlugin_OnCreate")]
 	public static extern void** QAccessiblePlugin_OnCreate(void* self, QAccessiblePlugin_OnCreate_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperCreate")]
+	public static extern void** QAccessiblePlugin_SuperCreate(void* self, libqt_string key, void** object);
 	[LinkName("QAccessiblePlugin_Tr2")]
 	public static extern libqt_string QAccessiblePlugin_Tr2(c_char* s, c_char* c);
 	[LinkName("QAccessiblePlugin_Tr3")]
@@ -603,40 +681,61 @@ extension CQt
 	public function void QAccessiblePlugin_OnEvent_action(void* self, void** event);
 	[LinkName("QAccessiblePlugin_OnEvent")]
 	public static extern bool QAccessiblePlugin_OnEvent(void* self, QAccessiblePlugin_OnEvent_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperEvent")]
+	public static extern bool QAccessiblePlugin_SuperEvent(void* self, void** event);
 	[LinkName("QAccessiblePlugin_EventFilter")]
 	public static extern bool QAccessiblePlugin_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QAccessiblePlugin_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QAccessiblePlugin_OnEventFilter")]
 	public static extern bool QAccessiblePlugin_OnEventFilter(void* self, QAccessiblePlugin_OnEventFilter_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperEventFilter")]
+	public static extern bool QAccessiblePlugin_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QAccessiblePlugin_TimerEvent")]
 	public static extern void QAccessiblePlugin_TimerEvent(void* self, void** event);
 	
 	public function void QAccessiblePlugin_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QAccessiblePlugin_OnTimerEvent")]
 	public static extern void QAccessiblePlugin_OnTimerEvent(void* self, QAccessiblePlugin_OnTimerEvent_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperTimerEvent")]
+	public static extern void QAccessiblePlugin_SuperTimerEvent(void* self, void** event);
 	[LinkName("QAccessiblePlugin_ChildEvent")]
 	public static extern void QAccessiblePlugin_ChildEvent(void* self, void** event);
 	
 	public function void QAccessiblePlugin_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAccessiblePlugin_OnChildEvent")]
 	public static extern void QAccessiblePlugin_OnChildEvent(void* self, QAccessiblePlugin_OnChildEvent_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperChildEvent")]
+	public static extern void QAccessiblePlugin_SuperChildEvent(void* self, void** event);
 	[LinkName("QAccessiblePlugin_CustomEvent")]
 	public static extern void QAccessiblePlugin_CustomEvent(void* self, void** event);
 	
 	public function void QAccessiblePlugin_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAccessiblePlugin_OnCustomEvent")]
 	public static extern void QAccessiblePlugin_OnCustomEvent(void* self, QAccessiblePlugin_OnCustomEvent_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperCustomEvent")]
+	public static extern void QAccessiblePlugin_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAccessiblePlugin_ConnectNotify")]
 	public static extern void QAccessiblePlugin_ConnectNotify(void* self, void** signal);
 	
 	public function void QAccessiblePlugin_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAccessiblePlugin_OnConnectNotify")]
 	public static extern void QAccessiblePlugin_OnConnectNotify(void* self, QAccessiblePlugin_OnConnectNotify_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperConnectNotify")]
+	public static extern void QAccessiblePlugin_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAccessiblePlugin_DisconnectNotify")]
 	public static extern void QAccessiblePlugin_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAccessiblePlugin_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAccessiblePlugin_OnDisconnectNotify")]
 	public static extern void QAccessiblePlugin_OnDisconnectNotify(void* self, QAccessiblePlugin_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAccessiblePlugin_SuperDisconnectNotify")]
+	public static extern void QAccessiblePlugin_SuperDisconnectNotify(void* self, void** signal);
 }

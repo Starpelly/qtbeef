@@ -1604,6 +1604,57 @@ class QFocusFrame : IQFocusFrame, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QFocusFrame_OnMetaObject(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMetaObject);
+		CQt.QFocusFrame_OnMetacast(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMetacast);
+		CQt.QFocusFrame_OnMetacall(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMetacall);
+		CQt.QFocusFrame_OnEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnEvent);
+		CQt.QFocusFrame_OnEventFilter(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnEventFilter);
+		CQt.QFocusFrame_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnPaintEvent);
+		CQt.QFocusFrame_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnInitStyleOption);
+		CQt.QFocusFrame_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnTimerEvent);
+		CQt.QFocusFrame_OnChildEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnChildEvent);
+		CQt.QFocusFrame_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnCustomEvent);
+		CQt.QFocusFrame_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnConnectNotify);
+		CQt.QFocusFrame_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnDisconnectNotify);
+		CQt.QFocusFrame_OnDevType(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnDevType);
+		CQt.QFocusFrame_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnPaintEngine);
+		CQt.QFocusFrame_OnMetric(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMetric);
+		CQt.QFocusFrame_OnInitPainter(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnInitPainter);
+		CQt.QFocusFrame_OnRedirected(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnRedirected);
+		CQt.QFocusFrame_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnSharedPainter);
+		CQt.QFocusFrame_OnSetVisible(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnSetVisible);
+		CQt.QFocusFrame_OnSizeHint(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnSizeHint);
+		CQt.QFocusFrame_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMinimumSizeHint);
+		CQt.QFocusFrame_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnHeightForWidth);
+		CQt.QFocusFrame_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnHasHeightForWidth);
+		CQt.QFocusFrame_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMousePressEvent);
+		CQt.QFocusFrame_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMouseReleaseEvent);
+		CQt.QFocusFrame_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMouseDoubleClickEvent);
+		CQt.QFocusFrame_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMouseMoveEvent);
+		CQt.QFocusFrame_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnWheelEvent);
+		CQt.QFocusFrame_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnKeyPressEvent);
+		CQt.QFocusFrame_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnKeyReleaseEvent);
+		CQt.QFocusFrame_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnFocusInEvent);
+		CQt.QFocusFrame_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnFocusOutEvent);
+		CQt.QFocusFrame_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnEnterEvent);
+		CQt.QFocusFrame_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnLeaveEvent);
+		CQt.QFocusFrame_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnMoveEvent);
+		CQt.QFocusFrame_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnResizeEvent);
+		CQt.QFocusFrame_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnCloseEvent);
+		CQt.QFocusFrame_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnContextMenuEvent);
+		CQt.QFocusFrame_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnTabletEvent);
+		CQt.QFocusFrame_OnActionEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnActionEvent);
+		CQt.QFocusFrame_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnDragEnterEvent);
+		CQt.QFocusFrame_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnDragMoveEvent);
+		CQt.QFocusFrame_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnDragLeaveEvent);
+		CQt.QFocusFrame_OnDropEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnDropEvent);
+		CQt.QFocusFrame_OnShowEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnShowEvent);
+		CQt.QFocusFrame_OnHideEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnHideEvent);
+		CQt.QFocusFrame_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnNativeEvent);
+		CQt.QFocusFrame_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnChangeEvent);
+		CQt.QFocusFrame_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnInputMethodEvent);
+		CQt.QFocusFrame_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnInputMethodQuery);
+		CQt.QFocusFrame_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QFocusFrame_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1640,6 +1691,261 @@ class QFocusFrame : IQFocusFrame, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QFocusFrame_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QFocusFrame_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QFocusFrame_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QFocusFrame_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QFocusFrame_OnEventFilter(void* ptr, void** param1, void** param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(param1, param2);
+	}
+	static void QtBeef_QFocusFrame_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QFocusFrame_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QFocusFrame_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QFocusFrame_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QFocusFrame_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QFocusFrame_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QFocusFrame_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QFocusFrame_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QFocusFrame_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QFocusFrame_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QFocusFrame_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QFocusFrame_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QFocusFrame_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QFocusFrame_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QFocusFrame_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QFocusFrame_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QFocusFrame_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QFocusFrame_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QFocusFrame_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QFocusFrame_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QFocusFrame_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QFocusFrame_Ptr ptr)
 	{
@@ -3220,18 +3526,27 @@ extension CQt
 	public function void QFocusFrame_OnMetaObject_action(void* self);
 	[LinkName("QFocusFrame_OnMetaObject")]
 	public static extern void** QFocusFrame_OnMetaObject(void* self, QFocusFrame_OnMetaObject_action _action);
+	
+	[LinkName("QFocusFrame_SuperMetaObject")]
+	public static extern void** QFocusFrame_SuperMetaObject(void* self);
 	[LinkName("QFocusFrame_Qt_Metacast")]
 	public static extern void* QFocusFrame_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QFocusFrame_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QFocusFrame_OnMetacast")]
 	public static extern void* QFocusFrame_OnMetacast(void* self, QFocusFrame_OnMetacast_action _action);
+	
+	[LinkName("QFocusFrame_SuperMetacast")]
+	public static extern void* QFocusFrame_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QFocusFrame_Qt_Metacall")]
 	public static extern c_int QFocusFrame_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QFocusFrame_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFocusFrame_OnMetacall")]
 	public static extern c_int QFocusFrame_OnMetacall(void* self, QFocusFrame_OnMetacall_action _action);
+	
+	[LinkName("QFocusFrame_SuperMetacall")]
+	public static extern c_int QFocusFrame_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFocusFrame_Tr")]
 	public static extern libqt_string QFocusFrame_Tr(c_char* s);
 	[LinkName("QFocusFrame_SetWidget")]
@@ -3244,24 +3559,36 @@ extension CQt
 	public function void QFocusFrame_OnEvent_action(void* self, void** e);
 	[LinkName("QFocusFrame_OnEvent")]
 	public static extern bool QFocusFrame_OnEvent(void* self, QFocusFrame_OnEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperEvent")]
+	public static extern bool QFocusFrame_SuperEvent(void* self, void** e);
 	[LinkName("QFocusFrame_EventFilter")]
 	public static extern bool QFocusFrame_EventFilter(void* self, void** param1, void** param2);
 	
 	public function void QFocusFrame_OnEventFilter_action(void* self, void** param1, void** param2);
 	[LinkName("QFocusFrame_OnEventFilter")]
 	public static extern bool QFocusFrame_OnEventFilter(void* self, QFocusFrame_OnEventFilter_action _action);
+	
+	[LinkName("QFocusFrame_SuperEventFilter")]
+	public static extern bool QFocusFrame_SuperEventFilter(void* self, void** param1, void** param2);
 	[LinkName("QFocusFrame_PaintEvent")]
 	public static extern void QFocusFrame_PaintEvent(void* self, void** param1);
 	
 	public function void QFocusFrame_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QFocusFrame_OnPaintEvent")]
 	public static extern void QFocusFrame_OnPaintEvent(void* self, QFocusFrame_OnPaintEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperPaintEvent")]
+	public static extern void QFocusFrame_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QFocusFrame_InitStyleOption")]
 	public static extern void QFocusFrame_InitStyleOption(void* self, void** option);
 	
 	public function void QFocusFrame_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QFocusFrame_OnInitStyleOption")]
 	public static extern void QFocusFrame_OnInitStyleOption(void* self, QFocusFrame_OnInitStyleOption_action _action);
+	
+	[LinkName("QFocusFrame_SuperInitStyleOption")]
+	public static extern void QFocusFrame_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QFocusFrame_Tr2")]
 	public static extern libqt_string QFocusFrame_Tr2(c_char* s, c_char* c);
 	[LinkName("QFocusFrame_Tr3")]
@@ -3272,262 +3599,394 @@ extension CQt
 	public function void QFocusFrame_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnTimerEvent")]
 	public static extern void QFocusFrame_OnTimerEvent(void* self, QFocusFrame_OnTimerEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperTimerEvent")]
+	public static extern void QFocusFrame_SuperTimerEvent(void* self, void** event);
 	[LinkName("QFocusFrame_ChildEvent")]
 	public static extern void QFocusFrame_ChildEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnChildEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnChildEvent")]
 	public static extern void QFocusFrame_OnChildEvent(void* self, QFocusFrame_OnChildEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperChildEvent")]
+	public static extern void QFocusFrame_SuperChildEvent(void* self, void** event);
 	[LinkName("QFocusFrame_CustomEvent")]
 	public static extern void QFocusFrame_CustomEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnCustomEvent")]
 	public static extern void QFocusFrame_OnCustomEvent(void* self, QFocusFrame_OnCustomEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperCustomEvent")]
+	public static extern void QFocusFrame_SuperCustomEvent(void* self, void** event);
 	[LinkName("QFocusFrame_ConnectNotify")]
 	public static extern void QFocusFrame_ConnectNotify(void* self, void** signal);
 	
 	public function void QFocusFrame_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QFocusFrame_OnConnectNotify")]
 	public static extern void QFocusFrame_OnConnectNotify(void* self, QFocusFrame_OnConnectNotify_action _action);
+	
+	[LinkName("QFocusFrame_SuperConnectNotify")]
+	public static extern void QFocusFrame_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QFocusFrame_DisconnectNotify")]
 	public static extern void QFocusFrame_DisconnectNotify(void* self, void** signal);
 	
 	public function void QFocusFrame_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QFocusFrame_OnDisconnectNotify")]
 	public static extern void QFocusFrame_OnDisconnectNotify(void* self, QFocusFrame_OnDisconnectNotify_action _action);
+	
+	[LinkName("QFocusFrame_SuperDisconnectNotify")]
+	public static extern void QFocusFrame_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QFocusFrame_DevType")]
 	public static extern c_int QFocusFrame_DevType(void* self);
 	
 	public function void QFocusFrame_OnDevType_action(void* self);
 	[LinkName("QFocusFrame_OnDevType")]
 	public static extern c_int QFocusFrame_OnDevType(void* self, QFocusFrame_OnDevType_action _action);
+	
+	[LinkName("QFocusFrame_SuperDevType")]
+	public static extern c_int QFocusFrame_SuperDevType(void* self);
 	[LinkName("QFocusFrame_PaintEngine")]
 	public static extern void** QFocusFrame_PaintEngine(void* self);
 	
 	public function void QFocusFrame_OnPaintEngine_action(void* self);
 	[LinkName("QFocusFrame_OnPaintEngine")]
 	public static extern void** QFocusFrame_OnPaintEngine(void* self, QFocusFrame_OnPaintEngine_action _action);
+	
+	[LinkName("QFocusFrame_SuperPaintEngine")]
+	public static extern void** QFocusFrame_SuperPaintEngine(void* self);
 	[LinkName("QFocusFrame_Metric")]
 	public static extern c_int QFocusFrame_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QFocusFrame_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QFocusFrame_OnMetric")]
 	public static extern c_int QFocusFrame_OnMetric(void* self, QFocusFrame_OnMetric_action _action);
+	
+	[LinkName("QFocusFrame_SuperMetric")]
+	public static extern c_int QFocusFrame_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QFocusFrame_InitPainter")]
 	public static extern void QFocusFrame_InitPainter(void* self, void** painter);
 	
 	public function void QFocusFrame_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QFocusFrame_OnInitPainter")]
 	public static extern void QFocusFrame_OnInitPainter(void* self, QFocusFrame_OnInitPainter_action _action);
+	
+	[LinkName("QFocusFrame_SuperInitPainter")]
+	public static extern void QFocusFrame_SuperInitPainter(void* self, void** painter);
 	[LinkName("QFocusFrame_Redirected")]
 	public static extern void** QFocusFrame_Redirected(void* self, void** offset);
 	
 	public function void QFocusFrame_OnRedirected_action(void* self, void** offset);
 	[LinkName("QFocusFrame_OnRedirected")]
 	public static extern void** QFocusFrame_OnRedirected(void* self, QFocusFrame_OnRedirected_action _action);
+	
+	[LinkName("QFocusFrame_SuperRedirected")]
+	public static extern void** QFocusFrame_SuperRedirected(void* self, void** offset);
 	[LinkName("QFocusFrame_SharedPainter")]
 	public static extern void** QFocusFrame_SharedPainter(void* self);
 	
 	public function void QFocusFrame_OnSharedPainter_action(void* self);
 	[LinkName("QFocusFrame_OnSharedPainter")]
 	public static extern void** QFocusFrame_OnSharedPainter(void* self, QFocusFrame_OnSharedPainter_action _action);
+	
+	[LinkName("QFocusFrame_SuperSharedPainter")]
+	public static extern void** QFocusFrame_SuperSharedPainter(void* self);
 	[LinkName("QFocusFrame_SetVisible")]
 	public static extern void QFocusFrame_SetVisible(void* self, bool visible);
 	
 	public function void QFocusFrame_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QFocusFrame_OnSetVisible")]
 	public static extern void QFocusFrame_OnSetVisible(void* self, QFocusFrame_OnSetVisible_action _action);
+	
+	[LinkName("QFocusFrame_SuperSetVisible")]
+	public static extern void QFocusFrame_SuperSetVisible(void* self, bool visible);
 	[LinkName("QFocusFrame_SizeHint")]
 	public static extern void* QFocusFrame_SizeHint(void* self);
 	
 	public function void QFocusFrame_OnSizeHint_action(void* self);
 	[LinkName("QFocusFrame_OnSizeHint")]
 	public static extern void* QFocusFrame_OnSizeHint(void* self, QFocusFrame_OnSizeHint_action _action);
+	
+	[LinkName("QFocusFrame_SuperSizeHint")]
+	public static extern void* QFocusFrame_SuperSizeHint(void* self);
 	[LinkName("QFocusFrame_MinimumSizeHint")]
 	public static extern void* QFocusFrame_MinimumSizeHint(void* self);
 	
 	public function void QFocusFrame_OnMinimumSizeHint_action(void* self);
 	[LinkName("QFocusFrame_OnMinimumSizeHint")]
 	public static extern void* QFocusFrame_OnMinimumSizeHint(void* self, QFocusFrame_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QFocusFrame_SuperMinimumSizeHint")]
+	public static extern void* QFocusFrame_SuperMinimumSizeHint(void* self);
 	[LinkName("QFocusFrame_HeightForWidth")]
 	public static extern c_int QFocusFrame_HeightForWidth(void* self, c_int param1);
 	
 	public function void QFocusFrame_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QFocusFrame_OnHeightForWidth")]
 	public static extern c_int QFocusFrame_OnHeightForWidth(void* self, QFocusFrame_OnHeightForWidth_action _action);
+	
+	[LinkName("QFocusFrame_SuperHeightForWidth")]
+	public static extern c_int QFocusFrame_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QFocusFrame_HasHeightForWidth")]
 	public static extern bool QFocusFrame_HasHeightForWidth(void* self);
 	
 	public function void QFocusFrame_OnHasHeightForWidth_action(void* self);
 	[LinkName("QFocusFrame_OnHasHeightForWidth")]
 	public static extern bool QFocusFrame_OnHasHeightForWidth(void* self, QFocusFrame_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QFocusFrame_SuperHasHeightForWidth")]
+	public static extern bool QFocusFrame_SuperHasHeightForWidth(void* self);
 	[LinkName("QFocusFrame_MousePressEvent")]
 	public static extern void QFocusFrame_MousePressEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnMousePressEvent")]
 	public static extern void QFocusFrame_OnMousePressEvent(void* self, QFocusFrame_OnMousePressEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperMousePressEvent")]
+	public static extern void QFocusFrame_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QFocusFrame_MouseReleaseEvent")]
 	public static extern void QFocusFrame_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnMouseReleaseEvent")]
 	public static extern void QFocusFrame_OnMouseReleaseEvent(void* self, QFocusFrame_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperMouseReleaseEvent")]
+	public static extern void QFocusFrame_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QFocusFrame_MouseDoubleClickEvent")]
 	public static extern void QFocusFrame_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnMouseDoubleClickEvent")]
 	public static extern void QFocusFrame_OnMouseDoubleClickEvent(void* self, QFocusFrame_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperMouseDoubleClickEvent")]
+	public static extern void QFocusFrame_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QFocusFrame_MouseMoveEvent")]
 	public static extern void QFocusFrame_MouseMoveEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnMouseMoveEvent")]
 	public static extern void QFocusFrame_OnMouseMoveEvent(void* self, QFocusFrame_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperMouseMoveEvent")]
+	public static extern void QFocusFrame_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QFocusFrame_WheelEvent")]
 	public static extern void QFocusFrame_WheelEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnWheelEvent")]
 	public static extern void QFocusFrame_OnWheelEvent(void* self, QFocusFrame_OnWheelEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperWheelEvent")]
+	public static extern void QFocusFrame_SuperWheelEvent(void* self, void** event);
 	[LinkName("QFocusFrame_KeyPressEvent")]
 	public static extern void QFocusFrame_KeyPressEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnKeyPressEvent")]
 	public static extern void QFocusFrame_OnKeyPressEvent(void* self, QFocusFrame_OnKeyPressEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperKeyPressEvent")]
+	public static extern void QFocusFrame_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QFocusFrame_KeyReleaseEvent")]
 	public static extern void QFocusFrame_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnKeyReleaseEvent")]
 	public static extern void QFocusFrame_OnKeyReleaseEvent(void* self, QFocusFrame_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperKeyReleaseEvent")]
+	public static extern void QFocusFrame_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QFocusFrame_FocusInEvent")]
 	public static extern void QFocusFrame_FocusInEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnFocusInEvent")]
 	public static extern void QFocusFrame_OnFocusInEvent(void* self, QFocusFrame_OnFocusInEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperFocusInEvent")]
+	public static extern void QFocusFrame_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QFocusFrame_FocusOutEvent")]
 	public static extern void QFocusFrame_FocusOutEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnFocusOutEvent")]
 	public static extern void QFocusFrame_OnFocusOutEvent(void* self, QFocusFrame_OnFocusOutEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperFocusOutEvent")]
+	public static extern void QFocusFrame_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QFocusFrame_EnterEvent")]
 	public static extern void QFocusFrame_EnterEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnEnterEvent")]
 	public static extern void QFocusFrame_OnEnterEvent(void* self, QFocusFrame_OnEnterEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperEnterEvent")]
+	public static extern void QFocusFrame_SuperEnterEvent(void* self, void** event);
 	[LinkName("QFocusFrame_LeaveEvent")]
 	public static extern void QFocusFrame_LeaveEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnLeaveEvent")]
 	public static extern void QFocusFrame_OnLeaveEvent(void* self, QFocusFrame_OnLeaveEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperLeaveEvent")]
+	public static extern void QFocusFrame_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QFocusFrame_MoveEvent")]
 	public static extern void QFocusFrame_MoveEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnMoveEvent")]
 	public static extern void QFocusFrame_OnMoveEvent(void* self, QFocusFrame_OnMoveEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperMoveEvent")]
+	public static extern void QFocusFrame_SuperMoveEvent(void* self, void** event);
 	[LinkName("QFocusFrame_ResizeEvent")]
 	public static extern void QFocusFrame_ResizeEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnResizeEvent")]
 	public static extern void QFocusFrame_OnResizeEvent(void* self, QFocusFrame_OnResizeEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperResizeEvent")]
+	public static extern void QFocusFrame_SuperResizeEvent(void* self, void** event);
 	[LinkName("QFocusFrame_CloseEvent")]
 	public static extern void QFocusFrame_CloseEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnCloseEvent")]
 	public static extern void QFocusFrame_OnCloseEvent(void* self, QFocusFrame_OnCloseEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperCloseEvent")]
+	public static extern void QFocusFrame_SuperCloseEvent(void* self, void** event);
 	[LinkName("QFocusFrame_ContextMenuEvent")]
 	public static extern void QFocusFrame_ContextMenuEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnContextMenuEvent")]
 	public static extern void QFocusFrame_OnContextMenuEvent(void* self, QFocusFrame_OnContextMenuEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperContextMenuEvent")]
+	public static extern void QFocusFrame_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QFocusFrame_TabletEvent")]
 	public static extern void QFocusFrame_TabletEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnTabletEvent")]
 	public static extern void QFocusFrame_OnTabletEvent(void* self, QFocusFrame_OnTabletEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperTabletEvent")]
+	public static extern void QFocusFrame_SuperTabletEvent(void* self, void** event);
 	[LinkName("QFocusFrame_ActionEvent")]
 	public static extern void QFocusFrame_ActionEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnActionEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnActionEvent")]
 	public static extern void QFocusFrame_OnActionEvent(void* self, QFocusFrame_OnActionEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperActionEvent")]
+	public static extern void QFocusFrame_SuperActionEvent(void* self, void** event);
 	[LinkName("QFocusFrame_DragEnterEvent")]
 	public static extern void QFocusFrame_DragEnterEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnDragEnterEvent")]
 	public static extern void QFocusFrame_OnDragEnterEvent(void* self, QFocusFrame_OnDragEnterEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperDragEnterEvent")]
+	public static extern void QFocusFrame_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QFocusFrame_DragMoveEvent")]
 	public static extern void QFocusFrame_DragMoveEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnDragMoveEvent")]
 	public static extern void QFocusFrame_OnDragMoveEvent(void* self, QFocusFrame_OnDragMoveEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperDragMoveEvent")]
+	public static extern void QFocusFrame_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QFocusFrame_DragLeaveEvent")]
 	public static extern void QFocusFrame_DragLeaveEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnDragLeaveEvent")]
 	public static extern void QFocusFrame_OnDragLeaveEvent(void* self, QFocusFrame_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperDragLeaveEvent")]
+	public static extern void QFocusFrame_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QFocusFrame_DropEvent")]
 	public static extern void QFocusFrame_DropEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnDropEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnDropEvent")]
 	public static extern void QFocusFrame_OnDropEvent(void* self, QFocusFrame_OnDropEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperDropEvent")]
+	public static extern void QFocusFrame_SuperDropEvent(void* self, void** event);
 	[LinkName("QFocusFrame_ShowEvent")]
 	public static extern void QFocusFrame_ShowEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnShowEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnShowEvent")]
 	public static extern void QFocusFrame_OnShowEvent(void* self, QFocusFrame_OnShowEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperShowEvent")]
+	public static extern void QFocusFrame_SuperShowEvent(void* self, void** event);
 	[LinkName("QFocusFrame_HideEvent")]
 	public static extern void QFocusFrame_HideEvent(void* self, void** event);
 	
 	public function void QFocusFrame_OnHideEvent_action(void* self, void** event);
 	[LinkName("QFocusFrame_OnHideEvent")]
 	public static extern void QFocusFrame_OnHideEvent(void* self, QFocusFrame_OnHideEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperHideEvent")]
+	public static extern void QFocusFrame_SuperHideEvent(void* self, void** event);
 	[LinkName("QFocusFrame_NativeEvent")]
 	public static extern bool QFocusFrame_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QFocusFrame_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QFocusFrame_OnNativeEvent")]
 	public static extern bool QFocusFrame_OnNativeEvent(void* self, QFocusFrame_OnNativeEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperNativeEvent")]
+	public static extern bool QFocusFrame_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QFocusFrame_ChangeEvent")]
 	public static extern void QFocusFrame_ChangeEvent(void* self, void** param1);
 	
 	public function void QFocusFrame_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QFocusFrame_OnChangeEvent")]
 	public static extern void QFocusFrame_OnChangeEvent(void* self, QFocusFrame_OnChangeEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperChangeEvent")]
+	public static extern void QFocusFrame_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QFocusFrame_InputMethodEvent")]
 	public static extern void QFocusFrame_InputMethodEvent(void* self, void** param1);
 	
 	public function void QFocusFrame_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QFocusFrame_OnInputMethodEvent")]
 	public static extern void QFocusFrame_OnInputMethodEvent(void* self, QFocusFrame_OnInputMethodEvent_action _action);
+	
+	[LinkName("QFocusFrame_SuperInputMethodEvent")]
+	public static extern void QFocusFrame_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QFocusFrame_InputMethodQuery")]
 	public static extern void* QFocusFrame_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QFocusFrame_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QFocusFrame_OnInputMethodQuery")]
 	public static extern void* QFocusFrame_OnInputMethodQuery(void* self, QFocusFrame_OnInputMethodQuery_action _action);
+	
+	[LinkName("QFocusFrame_SuperInputMethodQuery")]
+	public static extern void* QFocusFrame_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QFocusFrame_FocusNextPrevChild")]
 	public static extern bool QFocusFrame_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QFocusFrame_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QFocusFrame_OnFocusNextPrevChild")]
 	public static extern bool QFocusFrame_OnFocusNextPrevChild(void* self, QFocusFrame_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QFocusFrame_SuperFocusNextPrevChild")]
+	public static extern bool QFocusFrame_SuperFocusNextPrevChild(void* self, bool next);
 }

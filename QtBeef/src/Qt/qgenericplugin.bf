@@ -276,6 +276,17 @@ class QGenericPlugin : IQGenericPlugin, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGenericPlugin_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnMetaObject);
+		CQt.QGenericPlugin_OnMetacast(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnMetacast);
+		CQt.QGenericPlugin_OnMetacall(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnMetacall);
+		CQt.QGenericPlugin_OnCreate(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnCreate);
+		CQt.QGenericPlugin_OnEvent(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnEvent);
+		CQt.QGenericPlugin_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnEventFilter);
+		CQt.QGenericPlugin_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnTimerEvent);
+		CQt.QGenericPlugin_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnChildEvent);
+		CQt.QGenericPlugin_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnCustomEvent);
+		CQt.QGenericPlugin_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnConnectNotify);
+		CQt.QGenericPlugin_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGenericPlugin_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -288,6 +299,61 @@ class QGenericPlugin : IQGenericPlugin, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGenericPlugin_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGenericPlugin_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGenericPlugin_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGenericPlugin_OnCreate(void* ptr, libqt_string name, libqt_string spec)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreate(name, spec);
+	}
+	static void QtBeef_QGenericPlugin_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGenericPlugin_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGenericPlugin_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGenericPlugin_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGenericPlugin_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGenericPlugin_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGenericPlugin_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QGenericPlugin_Ptr ptr)
 	{
@@ -573,18 +639,27 @@ extension CQt
 	public function void QGenericPlugin_OnMetaObject_action(void* self);
 	[LinkName("QGenericPlugin_OnMetaObject")]
 	public static extern void** QGenericPlugin_OnMetaObject(void* self, QGenericPlugin_OnMetaObject_action _action);
+	
+	[LinkName("QGenericPlugin_SuperMetaObject")]
+	public static extern void** QGenericPlugin_SuperMetaObject(void* self);
 	[LinkName("QGenericPlugin_Qt_Metacast")]
 	public static extern void* QGenericPlugin_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGenericPlugin_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGenericPlugin_OnMetacast")]
 	public static extern void* QGenericPlugin_OnMetacast(void* self, QGenericPlugin_OnMetacast_action _action);
+	
+	[LinkName("QGenericPlugin_SuperMetacast")]
+	public static extern void* QGenericPlugin_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGenericPlugin_Qt_Metacall")]
 	public static extern c_int QGenericPlugin_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGenericPlugin_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGenericPlugin_OnMetacall")]
 	public static extern c_int QGenericPlugin_OnMetacall(void* self, QGenericPlugin_OnMetacall_action _action);
+	
+	[LinkName("QGenericPlugin_SuperMetacall")]
+	public static extern c_int QGenericPlugin_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGenericPlugin_Tr")]
 	public static extern libqt_string QGenericPlugin_Tr(c_char* s);
 	[LinkName("QGenericPlugin_Create")]
@@ -593,6 +668,9 @@ extension CQt
 	public function void QGenericPlugin_OnCreate_action(void* self, libqt_string name, libqt_string spec);
 	[LinkName("QGenericPlugin_OnCreate")]
 	public static extern void** QGenericPlugin_OnCreate(void* self, QGenericPlugin_OnCreate_action _action);
+	
+	[LinkName("QGenericPlugin_SuperCreate")]
+	public static extern void** QGenericPlugin_SuperCreate(void* self, libqt_string name, libqt_string spec);
 	[LinkName("QGenericPlugin_Tr2")]
 	public static extern libqt_string QGenericPlugin_Tr2(c_char* s, c_char* c);
 	[LinkName("QGenericPlugin_Tr3")]
@@ -603,40 +681,61 @@ extension CQt
 	public function void QGenericPlugin_OnEvent_action(void* self, void** event);
 	[LinkName("QGenericPlugin_OnEvent")]
 	public static extern bool QGenericPlugin_OnEvent(void* self, QGenericPlugin_OnEvent_action _action);
+	
+	[LinkName("QGenericPlugin_SuperEvent")]
+	public static extern bool QGenericPlugin_SuperEvent(void* self, void** event);
 	[LinkName("QGenericPlugin_EventFilter")]
 	public static extern bool QGenericPlugin_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGenericPlugin_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGenericPlugin_OnEventFilter")]
 	public static extern bool QGenericPlugin_OnEventFilter(void* self, QGenericPlugin_OnEventFilter_action _action);
+	
+	[LinkName("QGenericPlugin_SuperEventFilter")]
+	public static extern bool QGenericPlugin_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGenericPlugin_TimerEvent")]
 	public static extern void QGenericPlugin_TimerEvent(void* self, void** event);
 	
 	public function void QGenericPlugin_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGenericPlugin_OnTimerEvent")]
 	public static extern void QGenericPlugin_OnTimerEvent(void* self, QGenericPlugin_OnTimerEvent_action _action);
+	
+	[LinkName("QGenericPlugin_SuperTimerEvent")]
+	public static extern void QGenericPlugin_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGenericPlugin_ChildEvent")]
 	public static extern void QGenericPlugin_ChildEvent(void* self, void** event);
 	
 	public function void QGenericPlugin_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGenericPlugin_OnChildEvent")]
 	public static extern void QGenericPlugin_OnChildEvent(void* self, QGenericPlugin_OnChildEvent_action _action);
+	
+	[LinkName("QGenericPlugin_SuperChildEvent")]
+	public static extern void QGenericPlugin_SuperChildEvent(void* self, void** event);
 	[LinkName("QGenericPlugin_CustomEvent")]
 	public static extern void QGenericPlugin_CustomEvent(void* self, void** event);
 	
 	public function void QGenericPlugin_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGenericPlugin_OnCustomEvent")]
 	public static extern void QGenericPlugin_OnCustomEvent(void* self, QGenericPlugin_OnCustomEvent_action _action);
+	
+	[LinkName("QGenericPlugin_SuperCustomEvent")]
+	public static extern void QGenericPlugin_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGenericPlugin_ConnectNotify")]
 	public static extern void QGenericPlugin_ConnectNotify(void* self, void** signal);
 	
 	public function void QGenericPlugin_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGenericPlugin_OnConnectNotify")]
 	public static extern void QGenericPlugin_OnConnectNotify(void* self, QGenericPlugin_OnConnectNotify_action _action);
+	
+	[LinkName("QGenericPlugin_SuperConnectNotify")]
+	public static extern void QGenericPlugin_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGenericPlugin_DisconnectNotify")]
 	public static extern void QGenericPlugin_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGenericPlugin_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGenericPlugin_OnDisconnectNotify")]
 	public static extern void QGenericPlugin_OnDisconnectNotify(void* self, QGenericPlugin_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGenericPlugin_SuperDisconnectNotify")]
+	public static extern void QGenericPlugin_SuperDisconnectNotify(void* self, void** signal);
 }

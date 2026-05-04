@@ -30,6 +30,18 @@ class QAccessibleBridge : IQAccessibleBridge
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAccessibleBridge_OnSetRootObject(obj.ObjectPtr,  => QtBeef_QAccessibleBridge_OnSetRootObject);
+		CQt.QAccessibleBridge_OnNotifyAccessibilityUpdate(obj.ObjectPtr,  => QtBeef_QAccessibleBridge_OnNotifyAccessibilityUpdate);
+	}
+	static void QtBeef_QAccessibleBridge_OnSetRootObject(void* ptr, void** rootObject)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetRootObject(rootObject);
+	}
+	static void QtBeef_QAccessibleBridge_OnNotifyAccessibilityUpdate(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNotifyAccessibilityUpdate(event);
 	}
 	public this(QAccessibleBridge_Ptr ptr)
 	{
@@ -60,12 +72,18 @@ extension CQt
 	public function void QAccessibleBridge_OnSetRootObject_action(void* self, void** rootObject);
 	[LinkName("QAccessibleBridge_OnSetRootObject")]
 	public static extern void QAccessibleBridge_OnSetRootObject(void* self, QAccessibleBridge_OnSetRootObject_action _action);
+	
+	[LinkName("QAccessibleBridge_SuperSetRootObject")]
+	public static extern void QAccessibleBridge_SuperSetRootObject(void* self, void** rootObject);
 	[LinkName("QAccessibleBridge_NotifyAccessibilityUpdate")]
 	public static extern void QAccessibleBridge_NotifyAccessibilityUpdate(void* self, void** event);
 	
 	public function void QAccessibleBridge_OnNotifyAccessibilityUpdate_action(void* self, void** event);
 	[LinkName("QAccessibleBridge_OnNotifyAccessibilityUpdate")]
 	public static extern void QAccessibleBridge_OnNotifyAccessibilityUpdate(void* self, QAccessibleBridge_OnNotifyAccessibilityUpdate_action _action);
+	
+	[LinkName("QAccessibleBridge_SuperNotifyAccessibilityUpdate")]
+	public static extern void QAccessibleBridge_SuperNotifyAccessibilityUpdate(void* self, void** event);
 	[LinkName("QAccessibleBridge_OperatorAssign")]
 	public static extern void QAccessibleBridge_OperatorAssign(void* self, void** param1);
 }
@@ -342,6 +360,17 @@ class QAccessibleBridgePlugin : IQAccessibleBridgePlugin, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QAccessibleBridgePlugin_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnMetaObject);
+		CQt.QAccessibleBridgePlugin_OnMetacast(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnMetacast);
+		CQt.QAccessibleBridgePlugin_OnMetacall(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnMetacall);
+		CQt.QAccessibleBridgePlugin_OnCreate(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnCreate);
+		CQt.QAccessibleBridgePlugin_OnEvent(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnEvent);
+		CQt.QAccessibleBridgePlugin_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnEventFilter);
+		CQt.QAccessibleBridgePlugin_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnTimerEvent);
+		CQt.QAccessibleBridgePlugin_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnChildEvent);
+		CQt.QAccessibleBridgePlugin_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnCustomEvent);
+		CQt.QAccessibleBridgePlugin_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnConnectNotify);
+		CQt.QAccessibleBridgePlugin_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAccessibleBridgePlugin_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -354,6 +383,61 @@ class QAccessibleBridgePlugin : IQAccessibleBridgePlugin, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnCreate(void* ptr, libqt_string key)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreate(key);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAccessibleBridgePlugin_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QAccessibleBridgePlugin_Ptr ptr)
 	{
@@ -639,18 +723,27 @@ extension CQt
 	public function void QAccessibleBridgePlugin_OnMetaObject_action(void* self);
 	[LinkName("QAccessibleBridgePlugin_OnMetaObject")]
 	public static extern void** QAccessibleBridgePlugin_OnMetaObject(void* self, QAccessibleBridgePlugin_OnMetaObject_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperMetaObject")]
+	public static extern void** QAccessibleBridgePlugin_SuperMetaObject(void* self);
 	[LinkName("QAccessibleBridgePlugin_Qt_Metacast")]
 	public static extern void* QAccessibleBridgePlugin_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAccessibleBridgePlugin_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAccessibleBridgePlugin_OnMetacast")]
 	public static extern void* QAccessibleBridgePlugin_OnMetacast(void* self, QAccessibleBridgePlugin_OnMetacast_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperMetacast")]
+	public static extern void* QAccessibleBridgePlugin_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAccessibleBridgePlugin_Qt_Metacall")]
 	public static extern c_int QAccessibleBridgePlugin_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAccessibleBridgePlugin_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAccessibleBridgePlugin_OnMetacall")]
 	public static extern c_int QAccessibleBridgePlugin_OnMetacall(void* self, QAccessibleBridgePlugin_OnMetacall_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperMetacall")]
+	public static extern c_int QAccessibleBridgePlugin_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAccessibleBridgePlugin_Tr")]
 	public static extern libqt_string QAccessibleBridgePlugin_Tr(c_char* s);
 	[LinkName("QAccessibleBridgePlugin_Create")]
@@ -659,6 +752,9 @@ extension CQt
 	public function void QAccessibleBridgePlugin_OnCreate_action(void* self, libqt_string key);
 	[LinkName("QAccessibleBridgePlugin_OnCreate")]
 	public static extern void** QAccessibleBridgePlugin_OnCreate(void* self, QAccessibleBridgePlugin_OnCreate_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperCreate")]
+	public static extern void** QAccessibleBridgePlugin_SuperCreate(void* self, libqt_string key);
 	[LinkName("QAccessibleBridgePlugin_Tr2")]
 	public static extern libqt_string QAccessibleBridgePlugin_Tr2(c_char* s, c_char* c);
 	[LinkName("QAccessibleBridgePlugin_Tr3")]
@@ -669,40 +765,61 @@ extension CQt
 	public function void QAccessibleBridgePlugin_OnEvent_action(void* self, void** event);
 	[LinkName("QAccessibleBridgePlugin_OnEvent")]
 	public static extern bool QAccessibleBridgePlugin_OnEvent(void* self, QAccessibleBridgePlugin_OnEvent_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperEvent")]
+	public static extern bool QAccessibleBridgePlugin_SuperEvent(void* self, void** event);
 	[LinkName("QAccessibleBridgePlugin_EventFilter")]
 	public static extern bool QAccessibleBridgePlugin_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QAccessibleBridgePlugin_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QAccessibleBridgePlugin_OnEventFilter")]
 	public static extern bool QAccessibleBridgePlugin_OnEventFilter(void* self, QAccessibleBridgePlugin_OnEventFilter_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperEventFilter")]
+	public static extern bool QAccessibleBridgePlugin_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QAccessibleBridgePlugin_TimerEvent")]
 	public static extern void QAccessibleBridgePlugin_TimerEvent(void* self, void** event);
 	
 	public function void QAccessibleBridgePlugin_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QAccessibleBridgePlugin_OnTimerEvent")]
 	public static extern void QAccessibleBridgePlugin_OnTimerEvent(void* self, QAccessibleBridgePlugin_OnTimerEvent_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperTimerEvent")]
+	public static extern void QAccessibleBridgePlugin_SuperTimerEvent(void* self, void** event);
 	[LinkName("QAccessibleBridgePlugin_ChildEvent")]
 	public static extern void QAccessibleBridgePlugin_ChildEvent(void* self, void** event);
 	
 	public function void QAccessibleBridgePlugin_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAccessibleBridgePlugin_OnChildEvent")]
 	public static extern void QAccessibleBridgePlugin_OnChildEvent(void* self, QAccessibleBridgePlugin_OnChildEvent_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperChildEvent")]
+	public static extern void QAccessibleBridgePlugin_SuperChildEvent(void* self, void** event);
 	[LinkName("QAccessibleBridgePlugin_CustomEvent")]
 	public static extern void QAccessibleBridgePlugin_CustomEvent(void* self, void** event);
 	
 	public function void QAccessibleBridgePlugin_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAccessibleBridgePlugin_OnCustomEvent")]
 	public static extern void QAccessibleBridgePlugin_OnCustomEvent(void* self, QAccessibleBridgePlugin_OnCustomEvent_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperCustomEvent")]
+	public static extern void QAccessibleBridgePlugin_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAccessibleBridgePlugin_ConnectNotify")]
 	public static extern void QAccessibleBridgePlugin_ConnectNotify(void* self, void** signal);
 	
 	public function void QAccessibleBridgePlugin_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAccessibleBridgePlugin_OnConnectNotify")]
 	public static extern void QAccessibleBridgePlugin_OnConnectNotify(void* self, QAccessibleBridgePlugin_OnConnectNotify_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperConnectNotify")]
+	public static extern void QAccessibleBridgePlugin_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAccessibleBridgePlugin_DisconnectNotify")]
 	public static extern void QAccessibleBridgePlugin_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAccessibleBridgePlugin_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAccessibleBridgePlugin_OnDisconnectNotify")]
 	public static extern void QAccessibleBridgePlugin_OnDisconnectNotify(void* self, QAccessibleBridgePlugin_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAccessibleBridgePlugin_SuperDisconnectNotify")]
+	public static extern void QAccessibleBridgePlugin_SuperDisconnectNotify(void* self, void** signal);
 }

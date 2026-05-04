@@ -1748,6 +1748,61 @@ class QProgressDialog : IQProgressDialog, IQDialog, IQWidget, IQObject, IQPaintD
 		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Finished);
 		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Accepted);
 		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Rejected);
+		CQt.QProgressDialog_OnMetaObject(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMetaObject);
+		CQt.QProgressDialog_OnMetacast(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMetacast);
+		CQt.QProgressDialog_OnMetacall(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMetacall);
+		CQt.QProgressDialog_OnSizeHint(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnSizeHint);
+		CQt.QProgressDialog_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnResizeEvent);
+		CQt.QProgressDialog_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnCloseEvent);
+		CQt.QProgressDialog_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnChangeEvent);
+		CQt.QProgressDialog_OnShowEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnShowEvent);
+		CQt.QProgressDialog_OnEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnEvent);
+		CQt.QProgressDialog_OnEventFilter(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnEventFilter);
+		CQt.QProgressDialog_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnTimerEvent);
+		CQt.QProgressDialog_OnChildEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnChildEvent);
+		CQt.QProgressDialog_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnCustomEvent);
+		CQt.QProgressDialog_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnConnectNotify);
+		CQt.QProgressDialog_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnDisconnectNotify);
+		CQt.QProgressDialog_OnDevType(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnDevType);
+		CQt.QProgressDialog_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnPaintEngine);
+		CQt.QProgressDialog_OnMetric(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMetric);
+		CQt.QProgressDialog_OnInitPainter(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnInitPainter);
+		CQt.QProgressDialog_OnRedirected(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnRedirected);
+		CQt.QProgressDialog_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnSharedPainter);
+		CQt.QProgressDialog_OnSetVisible(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnSetVisible);
+		CQt.QProgressDialog_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMinimumSizeHint);
+		CQt.QProgressDialog_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnHeightForWidth);
+		CQt.QProgressDialog_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnHasHeightForWidth);
+		CQt.QProgressDialog_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMousePressEvent);
+		CQt.QProgressDialog_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMouseReleaseEvent);
+		CQt.QProgressDialog_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMouseDoubleClickEvent);
+		CQt.QProgressDialog_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMouseMoveEvent);
+		CQt.QProgressDialog_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnWheelEvent);
+		CQt.QProgressDialog_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnKeyPressEvent);
+		CQt.QProgressDialog_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnKeyReleaseEvent);
+		CQt.QProgressDialog_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnFocusInEvent);
+		CQt.QProgressDialog_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnFocusOutEvent);
+		CQt.QProgressDialog_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnEnterEvent);
+		CQt.QProgressDialog_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnLeaveEvent);
+		CQt.QProgressDialog_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnPaintEvent);
+		CQt.QProgressDialog_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnMoveEvent);
+		CQt.QProgressDialog_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnContextMenuEvent);
+		CQt.QProgressDialog_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnTabletEvent);
+		CQt.QProgressDialog_OnActionEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnActionEvent);
+		CQt.QProgressDialog_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnDragEnterEvent);
+		CQt.QProgressDialog_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnDragMoveEvent);
+		CQt.QProgressDialog_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnDragLeaveEvent);
+		CQt.QProgressDialog_OnDropEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnDropEvent);
+		CQt.QProgressDialog_OnHideEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnHideEvent);
+		CQt.QProgressDialog_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnNativeEvent);
+		CQt.QProgressDialog_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnInputMethodEvent);
+		CQt.QProgressDialog_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnInputMethodQuery);
+		CQt.QProgressDialog_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnFocusNextPrevChild);
+		CQt.QProgressDialog_OnOpen(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnOpen);
+		CQt.QProgressDialog_OnExec(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnExec);
+		CQt.QProgressDialog_OnDone(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnDone);
+		CQt.QProgressDialog_OnAccept(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnAccept);
+		CQt.QProgressDialog_OnReject(obj.ObjectPtr,  => QtBeef_QProgressDialog_OnReject);
 	}
 	public Event<delegate void()> OnCanceled = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1808,6 +1863,281 @@ class QProgressDialog : IQProgressDialog, IQDialog, IQWidget, IQObject, IQPaintD
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnRejected.Invoke();
+	}
+	static void QtBeef_QProgressDialog_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QProgressDialog_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QProgressDialog_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QProgressDialog_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QProgressDialog_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnChangeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QProgressDialog_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QProgressDialog_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QProgressDialog_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QProgressDialog_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QProgressDialog_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QProgressDialog_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QProgressDialog_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QProgressDialog_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QProgressDialog_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QProgressDialog_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QProgressDialog_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QProgressDialog_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QProgressDialog_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QProgressDialog_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QProgressDialog_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QProgressDialog_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QProgressDialog_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QProgressDialog_OnOpen(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen();
+	}
+	static void QtBeef_QProgressDialog_OnExec(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExec();
+	}
+	static void QtBeef_QProgressDialog_OnDone(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDone(param1);
+	}
+	static void QtBeef_QProgressDialog_OnAccept(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccept();
+	}
+	static void QtBeef_QProgressDialog_OnReject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReject();
 	}
 	public this(QProgressDialog_Ptr ptr)
 	{
@@ -3553,18 +3883,27 @@ extension CQt
 	public function void QProgressDialog_OnMetaObject_action(void* self);
 	[LinkName("QProgressDialog_OnMetaObject")]
 	public static extern void** QProgressDialog_OnMetaObject(void* self, QProgressDialog_OnMetaObject_action _action);
+	
+	[LinkName("QProgressDialog_SuperMetaObject")]
+	public static extern void** QProgressDialog_SuperMetaObject(void* self);
 	[LinkName("QProgressDialog_Qt_Metacast")]
 	public static extern void* QProgressDialog_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QProgressDialog_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QProgressDialog_OnMetacast")]
 	public static extern void* QProgressDialog_OnMetacast(void* self, QProgressDialog_OnMetacast_action _action);
+	
+	[LinkName("QProgressDialog_SuperMetacast")]
+	public static extern void* QProgressDialog_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QProgressDialog_Qt_Metacall")]
 	public static extern c_int QProgressDialog_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QProgressDialog_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QProgressDialog_OnMetacall")]
 	public static extern c_int QProgressDialog_OnMetacall(void* self, QProgressDialog_OnMetacall_action _action);
+	
+	[LinkName("QProgressDialog_SuperMetacall")]
+	public static extern c_int QProgressDialog_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QProgressDialog_Tr")]
 	public static extern libqt_string QProgressDialog_Tr(c_char* s);
 	[LinkName("QProgressDialog_SetLabel")]
@@ -3587,6 +3926,9 @@ extension CQt
 	public function void QProgressDialog_OnSizeHint_action(void* self);
 	[LinkName("QProgressDialog_OnSizeHint")]
 	public static extern void* QProgressDialog_OnSizeHint(void* self, QProgressDialog_OnSizeHint_action _action);
+	
+	[LinkName("QProgressDialog_SuperSizeHint")]
+	public static extern void* QProgressDialog_SuperSizeHint(void* self);
 	[LinkName("QProgressDialog_LabelText")]
 	public static extern libqt_string QProgressDialog_LabelText(void* self);
 	[LinkName("QProgressDialog_MinimumDuration")]
@@ -3629,24 +3971,36 @@ extension CQt
 	public function void QProgressDialog_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnResizeEvent")]
 	public static extern void QProgressDialog_OnResizeEvent(void* self, QProgressDialog_OnResizeEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperResizeEvent")]
+	public static extern void QProgressDialog_SuperResizeEvent(void* self, void** event);
 	[LinkName("QProgressDialog_CloseEvent")]
 	public static extern void QProgressDialog_CloseEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnCloseEvent")]
 	public static extern void QProgressDialog_OnCloseEvent(void* self, QProgressDialog_OnCloseEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperCloseEvent")]
+	public static extern void QProgressDialog_SuperCloseEvent(void* self, void** event);
 	[LinkName("QProgressDialog_ChangeEvent")]
 	public static extern void QProgressDialog_ChangeEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnChangeEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnChangeEvent")]
 	public static extern void QProgressDialog_OnChangeEvent(void* self, QProgressDialog_OnChangeEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperChangeEvent")]
+	public static extern void QProgressDialog_SuperChangeEvent(void* self, void** event);
 	[LinkName("QProgressDialog_ShowEvent")]
 	public static extern void QProgressDialog_ShowEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnShowEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnShowEvent")]
 	public static extern void QProgressDialog_OnShowEvent(void* self, QProgressDialog_OnShowEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperShowEvent")]
+	public static extern void QProgressDialog_SuperShowEvent(void* self, void** event);
 	[LinkName("QProgressDialog_ForceShow")]
 	public static extern void QProgressDialog_ForceShow(void* self);
 	[LinkName("QProgressDialog_Tr2")]
@@ -3659,280 +4013,421 @@ extension CQt
 	public function void QProgressDialog_OnEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnEvent")]
 	public static extern bool QProgressDialog_OnEvent(void* self, QProgressDialog_OnEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperEvent")]
+	public static extern bool QProgressDialog_SuperEvent(void* self, void** event);
 	[LinkName("QProgressDialog_EventFilter")]
 	public static extern bool QProgressDialog_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QProgressDialog_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QProgressDialog_OnEventFilter")]
 	public static extern bool QProgressDialog_OnEventFilter(void* self, QProgressDialog_OnEventFilter_action _action);
+	
+	[LinkName("QProgressDialog_SuperEventFilter")]
+	public static extern bool QProgressDialog_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QProgressDialog_TimerEvent")]
 	public static extern void QProgressDialog_TimerEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnTimerEvent")]
 	public static extern void QProgressDialog_OnTimerEvent(void* self, QProgressDialog_OnTimerEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperTimerEvent")]
+	public static extern void QProgressDialog_SuperTimerEvent(void* self, void** event);
 	[LinkName("QProgressDialog_ChildEvent")]
 	public static extern void QProgressDialog_ChildEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnChildEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnChildEvent")]
 	public static extern void QProgressDialog_OnChildEvent(void* self, QProgressDialog_OnChildEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperChildEvent")]
+	public static extern void QProgressDialog_SuperChildEvent(void* self, void** event);
 	[LinkName("QProgressDialog_CustomEvent")]
 	public static extern void QProgressDialog_CustomEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnCustomEvent")]
 	public static extern void QProgressDialog_OnCustomEvent(void* self, QProgressDialog_OnCustomEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperCustomEvent")]
+	public static extern void QProgressDialog_SuperCustomEvent(void* self, void** event);
 	[LinkName("QProgressDialog_ConnectNotify")]
 	public static extern void QProgressDialog_ConnectNotify(void* self, void** signal);
 	
 	public function void QProgressDialog_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QProgressDialog_OnConnectNotify")]
 	public static extern void QProgressDialog_OnConnectNotify(void* self, QProgressDialog_OnConnectNotify_action _action);
+	
+	[LinkName("QProgressDialog_SuperConnectNotify")]
+	public static extern void QProgressDialog_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QProgressDialog_DisconnectNotify")]
 	public static extern void QProgressDialog_DisconnectNotify(void* self, void** signal);
 	
 	public function void QProgressDialog_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QProgressDialog_OnDisconnectNotify")]
 	public static extern void QProgressDialog_OnDisconnectNotify(void* self, QProgressDialog_OnDisconnectNotify_action _action);
+	
+	[LinkName("QProgressDialog_SuperDisconnectNotify")]
+	public static extern void QProgressDialog_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QProgressDialog_DevType")]
 	public static extern c_int QProgressDialog_DevType(void* self);
 	
 	public function void QProgressDialog_OnDevType_action(void* self);
 	[LinkName("QProgressDialog_OnDevType")]
 	public static extern c_int QProgressDialog_OnDevType(void* self, QProgressDialog_OnDevType_action _action);
+	
+	[LinkName("QProgressDialog_SuperDevType")]
+	public static extern c_int QProgressDialog_SuperDevType(void* self);
 	[LinkName("QProgressDialog_PaintEngine")]
 	public static extern void** QProgressDialog_PaintEngine(void* self);
 	
 	public function void QProgressDialog_OnPaintEngine_action(void* self);
 	[LinkName("QProgressDialog_OnPaintEngine")]
 	public static extern void** QProgressDialog_OnPaintEngine(void* self, QProgressDialog_OnPaintEngine_action _action);
+	
+	[LinkName("QProgressDialog_SuperPaintEngine")]
+	public static extern void** QProgressDialog_SuperPaintEngine(void* self);
 	[LinkName("QProgressDialog_Metric")]
 	public static extern c_int QProgressDialog_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QProgressDialog_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QProgressDialog_OnMetric")]
 	public static extern c_int QProgressDialog_OnMetric(void* self, QProgressDialog_OnMetric_action _action);
+	
+	[LinkName("QProgressDialog_SuperMetric")]
+	public static extern c_int QProgressDialog_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QProgressDialog_InitPainter")]
 	public static extern void QProgressDialog_InitPainter(void* self, void** painter);
 	
 	public function void QProgressDialog_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QProgressDialog_OnInitPainter")]
 	public static extern void QProgressDialog_OnInitPainter(void* self, QProgressDialog_OnInitPainter_action _action);
+	
+	[LinkName("QProgressDialog_SuperInitPainter")]
+	public static extern void QProgressDialog_SuperInitPainter(void* self, void** painter);
 	[LinkName("QProgressDialog_Redirected")]
 	public static extern void** QProgressDialog_Redirected(void* self, void** offset);
 	
 	public function void QProgressDialog_OnRedirected_action(void* self, void** offset);
 	[LinkName("QProgressDialog_OnRedirected")]
 	public static extern void** QProgressDialog_OnRedirected(void* self, QProgressDialog_OnRedirected_action _action);
+	
+	[LinkName("QProgressDialog_SuperRedirected")]
+	public static extern void** QProgressDialog_SuperRedirected(void* self, void** offset);
 	[LinkName("QProgressDialog_SharedPainter")]
 	public static extern void** QProgressDialog_SharedPainter(void* self);
 	
 	public function void QProgressDialog_OnSharedPainter_action(void* self);
 	[LinkName("QProgressDialog_OnSharedPainter")]
 	public static extern void** QProgressDialog_OnSharedPainter(void* self, QProgressDialog_OnSharedPainter_action _action);
+	
+	[LinkName("QProgressDialog_SuperSharedPainter")]
+	public static extern void** QProgressDialog_SuperSharedPainter(void* self);
 	[LinkName("QProgressDialog_SetVisible")]
 	public static extern void QProgressDialog_SetVisible(void* self, bool visible);
 	
 	public function void QProgressDialog_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QProgressDialog_OnSetVisible")]
 	public static extern void QProgressDialog_OnSetVisible(void* self, QProgressDialog_OnSetVisible_action _action);
+	
+	[LinkName("QProgressDialog_SuperSetVisible")]
+	public static extern void QProgressDialog_SuperSetVisible(void* self, bool visible);
 	[LinkName("QProgressDialog_MinimumSizeHint")]
 	public static extern void* QProgressDialog_MinimumSizeHint(void* self);
 	
 	public function void QProgressDialog_OnMinimumSizeHint_action(void* self);
 	[LinkName("QProgressDialog_OnMinimumSizeHint")]
 	public static extern void* QProgressDialog_OnMinimumSizeHint(void* self, QProgressDialog_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QProgressDialog_SuperMinimumSizeHint")]
+	public static extern void* QProgressDialog_SuperMinimumSizeHint(void* self);
 	[LinkName("QProgressDialog_HeightForWidth")]
 	public static extern c_int QProgressDialog_HeightForWidth(void* self, c_int param1);
 	
 	public function void QProgressDialog_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QProgressDialog_OnHeightForWidth")]
 	public static extern c_int QProgressDialog_OnHeightForWidth(void* self, QProgressDialog_OnHeightForWidth_action _action);
+	
+	[LinkName("QProgressDialog_SuperHeightForWidth")]
+	public static extern c_int QProgressDialog_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QProgressDialog_HasHeightForWidth")]
 	public static extern bool QProgressDialog_HasHeightForWidth(void* self);
 	
 	public function void QProgressDialog_OnHasHeightForWidth_action(void* self);
 	[LinkName("QProgressDialog_OnHasHeightForWidth")]
 	public static extern bool QProgressDialog_OnHasHeightForWidth(void* self, QProgressDialog_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QProgressDialog_SuperHasHeightForWidth")]
+	public static extern bool QProgressDialog_SuperHasHeightForWidth(void* self);
 	[LinkName("QProgressDialog_MousePressEvent")]
 	public static extern void QProgressDialog_MousePressEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnMousePressEvent")]
 	public static extern void QProgressDialog_OnMousePressEvent(void* self, QProgressDialog_OnMousePressEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperMousePressEvent")]
+	public static extern void QProgressDialog_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QProgressDialog_MouseReleaseEvent")]
 	public static extern void QProgressDialog_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnMouseReleaseEvent")]
 	public static extern void QProgressDialog_OnMouseReleaseEvent(void* self, QProgressDialog_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperMouseReleaseEvent")]
+	public static extern void QProgressDialog_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QProgressDialog_MouseDoubleClickEvent")]
 	public static extern void QProgressDialog_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnMouseDoubleClickEvent")]
 	public static extern void QProgressDialog_OnMouseDoubleClickEvent(void* self, QProgressDialog_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperMouseDoubleClickEvent")]
+	public static extern void QProgressDialog_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QProgressDialog_MouseMoveEvent")]
 	public static extern void QProgressDialog_MouseMoveEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnMouseMoveEvent")]
 	public static extern void QProgressDialog_OnMouseMoveEvent(void* self, QProgressDialog_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperMouseMoveEvent")]
+	public static extern void QProgressDialog_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QProgressDialog_WheelEvent")]
 	public static extern void QProgressDialog_WheelEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnWheelEvent")]
 	public static extern void QProgressDialog_OnWheelEvent(void* self, QProgressDialog_OnWheelEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperWheelEvent")]
+	public static extern void QProgressDialog_SuperWheelEvent(void* self, void** event);
 	[LinkName("QProgressDialog_KeyPressEvent")]
 	public static extern void QProgressDialog_KeyPressEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnKeyPressEvent")]
 	public static extern void QProgressDialog_OnKeyPressEvent(void* self, QProgressDialog_OnKeyPressEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperKeyPressEvent")]
+	public static extern void QProgressDialog_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QProgressDialog_KeyReleaseEvent")]
 	public static extern void QProgressDialog_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnKeyReleaseEvent")]
 	public static extern void QProgressDialog_OnKeyReleaseEvent(void* self, QProgressDialog_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperKeyReleaseEvent")]
+	public static extern void QProgressDialog_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QProgressDialog_FocusInEvent")]
 	public static extern void QProgressDialog_FocusInEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnFocusInEvent")]
 	public static extern void QProgressDialog_OnFocusInEvent(void* self, QProgressDialog_OnFocusInEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperFocusInEvent")]
+	public static extern void QProgressDialog_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QProgressDialog_FocusOutEvent")]
 	public static extern void QProgressDialog_FocusOutEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnFocusOutEvent")]
 	public static extern void QProgressDialog_OnFocusOutEvent(void* self, QProgressDialog_OnFocusOutEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperFocusOutEvent")]
+	public static extern void QProgressDialog_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QProgressDialog_EnterEvent")]
 	public static extern void QProgressDialog_EnterEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnEnterEvent")]
 	public static extern void QProgressDialog_OnEnterEvent(void* self, QProgressDialog_OnEnterEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperEnterEvent")]
+	public static extern void QProgressDialog_SuperEnterEvent(void* self, void** event);
 	[LinkName("QProgressDialog_LeaveEvent")]
 	public static extern void QProgressDialog_LeaveEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnLeaveEvent")]
 	public static extern void QProgressDialog_OnLeaveEvent(void* self, QProgressDialog_OnLeaveEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperLeaveEvent")]
+	public static extern void QProgressDialog_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QProgressDialog_PaintEvent")]
 	public static extern void QProgressDialog_PaintEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnPaintEvent")]
 	public static extern void QProgressDialog_OnPaintEvent(void* self, QProgressDialog_OnPaintEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperPaintEvent")]
+	public static extern void QProgressDialog_SuperPaintEvent(void* self, void** event);
 	[LinkName("QProgressDialog_MoveEvent")]
 	public static extern void QProgressDialog_MoveEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnMoveEvent")]
 	public static extern void QProgressDialog_OnMoveEvent(void* self, QProgressDialog_OnMoveEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperMoveEvent")]
+	public static extern void QProgressDialog_SuperMoveEvent(void* self, void** event);
 	[LinkName("QProgressDialog_ContextMenuEvent")]
 	public static extern void QProgressDialog_ContextMenuEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnContextMenuEvent")]
 	public static extern void QProgressDialog_OnContextMenuEvent(void* self, QProgressDialog_OnContextMenuEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperContextMenuEvent")]
+	public static extern void QProgressDialog_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QProgressDialog_TabletEvent")]
 	public static extern void QProgressDialog_TabletEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnTabletEvent")]
 	public static extern void QProgressDialog_OnTabletEvent(void* self, QProgressDialog_OnTabletEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperTabletEvent")]
+	public static extern void QProgressDialog_SuperTabletEvent(void* self, void** event);
 	[LinkName("QProgressDialog_ActionEvent")]
 	public static extern void QProgressDialog_ActionEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnActionEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnActionEvent")]
 	public static extern void QProgressDialog_OnActionEvent(void* self, QProgressDialog_OnActionEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperActionEvent")]
+	public static extern void QProgressDialog_SuperActionEvent(void* self, void** event);
 	[LinkName("QProgressDialog_DragEnterEvent")]
 	public static extern void QProgressDialog_DragEnterEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnDragEnterEvent")]
 	public static extern void QProgressDialog_OnDragEnterEvent(void* self, QProgressDialog_OnDragEnterEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperDragEnterEvent")]
+	public static extern void QProgressDialog_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QProgressDialog_DragMoveEvent")]
 	public static extern void QProgressDialog_DragMoveEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnDragMoveEvent")]
 	public static extern void QProgressDialog_OnDragMoveEvent(void* self, QProgressDialog_OnDragMoveEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperDragMoveEvent")]
+	public static extern void QProgressDialog_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QProgressDialog_DragLeaveEvent")]
 	public static extern void QProgressDialog_DragLeaveEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnDragLeaveEvent")]
 	public static extern void QProgressDialog_OnDragLeaveEvent(void* self, QProgressDialog_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperDragLeaveEvent")]
+	public static extern void QProgressDialog_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QProgressDialog_DropEvent")]
 	public static extern void QProgressDialog_DropEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnDropEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnDropEvent")]
 	public static extern void QProgressDialog_OnDropEvent(void* self, QProgressDialog_OnDropEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperDropEvent")]
+	public static extern void QProgressDialog_SuperDropEvent(void* self, void** event);
 	[LinkName("QProgressDialog_HideEvent")]
 	public static extern void QProgressDialog_HideEvent(void* self, void** event);
 	
 	public function void QProgressDialog_OnHideEvent_action(void* self, void** event);
 	[LinkName("QProgressDialog_OnHideEvent")]
 	public static extern void QProgressDialog_OnHideEvent(void* self, QProgressDialog_OnHideEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperHideEvent")]
+	public static extern void QProgressDialog_SuperHideEvent(void* self, void** event);
 	[LinkName("QProgressDialog_NativeEvent")]
 	public static extern bool QProgressDialog_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QProgressDialog_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QProgressDialog_OnNativeEvent")]
 	public static extern bool QProgressDialog_OnNativeEvent(void* self, QProgressDialog_OnNativeEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperNativeEvent")]
+	public static extern bool QProgressDialog_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QProgressDialog_InputMethodEvent")]
 	public static extern void QProgressDialog_InputMethodEvent(void* self, void** param1);
 	
 	public function void QProgressDialog_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QProgressDialog_OnInputMethodEvent")]
 	public static extern void QProgressDialog_OnInputMethodEvent(void* self, QProgressDialog_OnInputMethodEvent_action _action);
+	
+	[LinkName("QProgressDialog_SuperInputMethodEvent")]
+	public static extern void QProgressDialog_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QProgressDialog_InputMethodQuery")]
 	public static extern void* QProgressDialog_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QProgressDialog_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QProgressDialog_OnInputMethodQuery")]
 	public static extern void* QProgressDialog_OnInputMethodQuery(void* self, QProgressDialog_OnInputMethodQuery_action _action);
+	
+	[LinkName("QProgressDialog_SuperInputMethodQuery")]
+	public static extern void* QProgressDialog_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QProgressDialog_FocusNextPrevChild")]
 	public static extern bool QProgressDialog_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QProgressDialog_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QProgressDialog_OnFocusNextPrevChild")]
 	public static extern bool QProgressDialog_OnFocusNextPrevChild(void* self, QProgressDialog_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QProgressDialog_SuperFocusNextPrevChild")]
+	public static extern bool QProgressDialog_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QProgressDialog_Open")]
 	public static extern void QProgressDialog_Open(void* self);
 	
 	public function void QProgressDialog_OnOpen_action(void* self);
 	[LinkName("QProgressDialog_OnOpen")]
 	public static extern void QProgressDialog_OnOpen(void* self, QProgressDialog_OnOpen_action _action);
+	
+	[LinkName("QProgressDialog_SuperOpen")]
+	public static extern void QProgressDialog_SuperOpen(void* self);
 	[LinkName("QProgressDialog_Exec")]
 	public static extern c_int QProgressDialog_Exec(void* self);
 	
 	public function void QProgressDialog_OnExec_action(void* self);
 	[LinkName("QProgressDialog_OnExec")]
 	public static extern c_int QProgressDialog_OnExec(void* self, QProgressDialog_OnExec_action _action);
+	
+	[LinkName("QProgressDialog_SuperExec")]
+	public static extern c_int QProgressDialog_SuperExec(void* self);
 	[LinkName("QProgressDialog_Done")]
 	public static extern void QProgressDialog_Done(void* self, c_int param1);
 	
 	public function void QProgressDialog_OnDone_action(void* self, c_int param1);
 	[LinkName("QProgressDialog_OnDone")]
 	public static extern void QProgressDialog_OnDone(void* self, QProgressDialog_OnDone_action _action);
+	
+	[LinkName("QProgressDialog_SuperDone")]
+	public static extern void QProgressDialog_SuperDone(void* self, c_int param1);
 	[LinkName("QProgressDialog_Accept")]
 	public static extern void QProgressDialog_Accept(void* self);
 	
 	public function void QProgressDialog_OnAccept_action(void* self);
 	[LinkName("QProgressDialog_OnAccept")]
 	public static extern void QProgressDialog_OnAccept(void* self, QProgressDialog_OnAccept_action _action);
+	
+	[LinkName("QProgressDialog_SuperAccept")]
+	public static extern void QProgressDialog_SuperAccept(void* self);
 	[LinkName("QProgressDialog_Reject")]
 	public static extern void QProgressDialog_Reject(void* self);
 	
 	public function void QProgressDialog_OnReject_action(void* self);
 	[LinkName("QProgressDialog_OnReject")]
 	public static extern void QProgressDialog_OnReject(void* self, QProgressDialog_OnReject_action _action);
+	
+	[LinkName("QProgressDialog_SuperReject")]
+	public static extern void QProgressDialog_SuperReject(void* self);
 }

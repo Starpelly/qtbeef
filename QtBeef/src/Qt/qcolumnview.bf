@@ -2244,6 +2244,101 @@ class QColumnView : IQColumnView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Entered);
 		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_ViewportEntered);
 		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_IconSizeChanged);
+		CQt.QColumnView_OnMetaObject(obj.ObjectPtr,  => QtBeef_QColumnView_OnMetaObject);
+		CQt.QColumnView_OnMetacast(obj.ObjectPtr,  => QtBeef_QColumnView_OnMetacast);
+		CQt.QColumnView_OnMetacall(obj.ObjectPtr,  => QtBeef_QColumnView_OnMetacall);
+		CQt.QColumnView_OnIndexAt(obj.ObjectPtr,  => QtBeef_QColumnView_OnIndexAt);
+		CQt.QColumnView_OnScrollTo(obj.ObjectPtr,  => QtBeef_QColumnView_OnScrollTo);
+		CQt.QColumnView_OnSizeHint(obj.ObjectPtr,  => QtBeef_QColumnView_OnSizeHint);
+		CQt.QColumnView_OnVisualRect(obj.ObjectPtr,  => QtBeef_QColumnView_OnVisualRect);
+		CQt.QColumnView_OnSetModel(obj.ObjectPtr,  => QtBeef_QColumnView_OnSetModel);
+		CQt.QColumnView_OnSetSelectionModel(obj.ObjectPtr,  => QtBeef_QColumnView_OnSetSelectionModel);
+		CQt.QColumnView_OnSetRootIndex(obj.ObjectPtr,  => QtBeef_QColumnView_OnSetRootIndex);
+		CQt.QColumnView_OnSelectAll(obj.ObjectPtr,  => QtBeef_QColumnView_OnSelectAll);
+		CQt.QColumnView_OnIsIndexHidden(obj.ObjectPtr,  => QtBeef_QColumnView_OnIsIndexHidden);
+		CQt.QColumnView_OnMoveCursor(obj.ObjectPtr,  => QtBeef_QColumnView_OnMoveCursor);
+		CQt.QColumnView_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnResizeEvent);
+		CQt.QColumnView_OnSetSelection(obj.ObjectPtr,  => QtBeef_QColumnView_OnSetSelection);
+		CQt.QColumnView_OnVisualRegionForSelection(obj.ObjectPtr,  => QtBeef_QColumnView_OnVisualRegionForSelection);
+		CQt.QColumnView_OnHorizontalOffset(obj.ObjectPtr,  => QtBeef_QColumnView_OnHorizontalOffset);
+		CQt.QColumnView_OnVerticalOffset(obj.ObjectPtr,  => QtBeef_QColumnView_OnVerticalOffset);
+		CQt.QColumnView_OnRowsInserted(obj.ObjectPtr,  => QtBeef_QColumnView_OnRowsInserted);
+		CQt.QColumnView_OnCurrentChanged(obj.ObjectPtr,  => QtBeef_QColumnView_OnCurrentChanged);
+		CQt.QColumnView_OnScrollContentsBy(obj.ObjectPtr,  => QtBeef_QColumnView_OnScrollContentsBy);
+		CQt.QColumnView_OnCreateColumn(obj.ObjectPtr,  => QtBeef_QColumnView_OnCreateColumn);
+		CQt.QColumnView_OnEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnEvent);
+		CQt.QColumnView_OnEventFilter(obj.ObjectPtr,  => QtBeef_QColumnView_OnEventFilter);
+		CQt.QColumnView_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnTimerEvent);
+		CQt.QColumnView_OnChildEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnChildEvent);
+		CQt.QColumnView_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnCustomEvent);
+		CQt.QColumnView_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QColumnView_OnConnectNotify);
+		CQt.QColumnView_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QColumnView_OnDisconnectNotify);
+		CQt.QColumnView_OnDevType(obj.ObjectPtr,  => QtBeef_QColumnView_OnDevType);
+		CQt.QColumnView_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QColumnView_OnPaintEngine);
+		CQt.QColumnView_OnMetric(obj.ObjectPtr,  => QtBeef_QColumnView_OnMetric);
+		CQt.QColumnView_OnInitPainter(obj.ObjectPtr,  => QtBeef_QColumnView_OnInitPainter);
+		CQt.QColumnView_OnRedirected(obj.ObjectPtr,  => QtBeef_QColumnView_OnRedirected);
+		CQt.QColumnView_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QColumnView_OnSharedPainter);
+		CQt.QColumnView_OnSetVisible(obj.ObjectPtr,  => QtBeef_QColumnView_OnSetVisible);
+		CQt.QColumnView_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QColumnView_OnMinimumSizeHint);
+		CQt.QColumnView_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QColumnView_OnHeightForWidth);
+		CQt.QColumnView_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QColumnView_OnHasHeightForWidth);
+		CQt.QColumnView_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnMousePressEvent);
+		CQt.QColumnView_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnMouseReleaseEvent);
+		CQt.QColumnView_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnMouseDoubleClickEvent);
+		CQt.QColumnView_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnMouseMoveEvent);
+		CQt.QColumnView_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnWheelEvent);
+		CQt.QColumnView_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnKeyPressEvent);
+		CQt.QColumnView_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnKeyReleaseEvent);
+		CQt.QColumnView_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnFocusInEvent);
+		CQt.QColumnView_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnFocusOutEvent);
+		CQt.QColumnView_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnEnterEvent);
+		CQt.QColumnView_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnLeaveEvent);
+		CQt.QColumnView_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnPaintEvent);
+		CQt.QColumnView_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnMoveEvent);
+		CQt.QColumnView_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnCloseEvent);
+		CQt.QColumnView_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnContextMenuEvent);
+		CQt.QColumnView_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnTabletEvent);
+		CQt.QColumnView_OnActionEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnActionEvent);
+		CQt.QColumnView_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnDragEnterEvent);
+		CQt.QColumnView_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnDragMoveEvent);
+		CQt.QColumnView_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnDragLeaveEvent);
+		CQt.QColumnView_OnDropEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnDropEvent);
+		CQt.QColumnView_OnShowEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnShowEvent);
+		CQt.QColumnView_OnHideEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnHideEvent);
+		CQt.QColumnView_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnNativeEvent);
+		CQt.QColumnView_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnChangeEvent);
+		CQt.QColumnView_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnInputMethodEvent);
+		CQt.QColumnView_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QColumnView_OnInputMethodQuery);
+		CQt.QColumnView_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QColumnView_OnFocusNextPrevChild);
+		CQt.QColumnView_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QColumnView_OnInitStyleOption);
+		CQt.QColumnView_OnSetupViewport(obj.ObjectPtr,  => QtBeef_QColumnView_OnSetupViewport);
+		CQt.QColumnView_OnViewportEvent(obj.ObjectPtr,  => QtBeef_QColumnView_OnViewportEvent);
+		CQt.QColumnView_OnViewportSizeHint(obj.ObjectPtr,  => QtBeef_QColumnView_OnViewportSizeHint);
+		CQt.QColumnView_OnKeyboardSearch(obj.ObjectPtr,  => QtBeef_QColumnView_OnKeyboardSearch);
+		CQt.QColumnView_OnSizeHintForRow(obj.ObjectPtr,  => QtBeef_QColumnView_OnSizeHintForRow);
+		CQt.QColumnView_OnSizeHintForColumn(obj.ObjectPtr,  => QtBeef_QColumnView_OnSizeHintForColumn);
+		CQt.QColumnView_OnItemDelegateForIndex(obj.ObjectPtr,  => QtBeef_QColumnView_OnItemDelegateForIndex);
+		CQt.QColumnView_OnReset(obj.ObjectPtr,  => QtBeef_QColumnView_OnReset);
+		CQt.QColumnView_OnDoItemsLayout(obj.ObjectPtr,  => QtBeef_QColumnView_OnDoItemsLayout);
+		CQt.QColumnView_OnDataChanged(obj.ObjectPtr,  => QtBeef_QColumnView_OnDataChanged);
+		CQt.QColumnView_OnRowsAboutToBeRemoved(obj.ObjectPtr,  => QtBeef_QColumnView_OnRowsAboutToBeRemoved);
+		CQt.QColumnView_OnSelectionChanged(obj.ObjectPtr,  => QtBeef_QColumnView_OnSelectionChanged);
+		CQt.QColumnView_OnUpdateEditorData(obj.ObjectPtr,  => QtBeef_QColumnView_OnUpdateEditorData);
+		CQt.QColumnView_OnUpdateEditorGeometries(obj.ObjectPtr,  => QtBeef_QColumnView_OnUpdateEditorGeometries);
+		CQt.QColumnView_OnUpdateGeometries(obj.ObjectPtr,  => QtBeef_QColumnView_OnUpdateGeometries);
+		CQt.QColumnView_OnVerticalScrollbarAction(obj.ObjectPtr,  => QtBeef_QColumnView_OnVerticalScrollbarAction);
+		CQt.QColumnView_OnHorizontalScrollbarAction(obj.ObjectPtr,  => QtBeef_QColumnView_OnHorizontalScrollbarAction);
+		CQt.QColumnView_OnVerticalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QColumnView_OnVerticalScrollbarValueChanged);
+		CQt.QColumnView_OnHorizontalScrollbarValueChanged(obj.ObjectPtr,  => QtBeef_QColumnView_OnHorizontalScrollbarValueChanged);
+		CQt.QColumnView_OnCloseEditor(obj.ObjectPtr,  => QtBeef_QColumnView_OnCloseEditor);
+		CQt.QColumnView_OnCommitData(obj.ObjectPtr,  => QtBeef_QColumnView_OnCommitData);
+		CQt.QColumnView_OnEditorDestroyed(obj.ObjectPtr,  => QtBeef_QColumnView_OnEditorDestroyed);
+		CQt.QColumnView_OnSelectedIndexes(obj.ObjectPtr,  => QtBeef_QColumnView_OnSelectedIndexes);
+		CQt.QColumnView_OnEdit2(obj.ObjectPtr,  => QtBeef_QColumnView_OnEdit2);
+		CQt.QColumnView_OnSelectionCommand(obj.ObjectPtr,  => QtBeef_QColumnView_OnSelectionCommand);
+		CQt.QColumnView_OnStartDrag(obj.ObjectPtr,  => QtBeef_QColumnView_OnStartDrag);
+		CQt.QColumnView_OnInitViewItemOption(obj.ObjectPtr,  => QtBeef_QColumnView_OnInitViewItemOption);
 	}
 	public Event<delegate void(void** index)> OnUpdatePreviewWidget = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -2328,6 +2423,481 @@ class QColumnView : IQColumnView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnIconSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QColumnView_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QColumnView_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QColumnView_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QColumnView_OnIndexAt(void* ptr, void** point)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexAt(point);
+	}
+	static void QtBeef_QColumnView_OnScrollTo(void* ptr, void** index, QAbstractItemView_ScrollHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollTo(index, hint);
+	}
+	static void QtBeef_QColumnView_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QColumnView_OnVisualRect(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRect(index);
+	}
+	static void QtBeef_QColumnView_OnSetModel(void* ptr, void** model)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetModel(model);
+	}
+	static void QtBeef_QColumnView_OnSetSelectionModel(void* ptr, void** selectionModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelectionModel(selectionModel);
+	}
+	static void QtBeef_QColumnView_OnSetRootIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetRootIndex(index);
+	}
+	static void QtBeef_QColumnView_OnSelectAll(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectAll();
+	}
+	static void QtBeef_QColumnView_OnIsIndexHidden(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsIndexHidden(index);
+	}
+	static void QtBeef_QColumnView_OnMoveCursor(void* ptr, QAbstractItemView_CursorAction cursorAction, void* modifiers)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveCursor(cursorAction, modifiers);
+	}
+	static void QtBeef_QColumnView_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QColumnView_OnSetSelection(void* ptr, void** rect, void* command)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSelection(rect, command);
+	}
+	static void QtBeef_QColumnView_OnVisualRegionForSelection(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisualRegionForSelection(selection);
+	}
+	static void QtBeef_QColumnView_OnHorizontalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalOffset();
+	}
+	static void QtBeef_QColumnView_OnVerticalOffset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalOffset();
+	}
+	static void QtBeef_QColumnView_OnRowsInserted(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsInserted(parent, start, end);
+	}
+	static void QtBeef_QColumnView_OnCurrentChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged(current, previous);
+	}
+	static void QtBeef_QColumnView_OnScrollContentsBy(void* ptr, c_int dx, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollContentsBy(dx, dy);
+	}
+	static void QtBeef_QColumnView_OnCreateColumn(void* ptr, void** rootIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreateColumn(rootIndex);
+	}
+	static void QtBeef_QColumnView_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QColumnView_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QColumnView_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QColumnView_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QColumnView_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QColumnView_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QColumnView_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QColumnView_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QColumnView_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QColumnView_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QColumnView_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QColumnView_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QColumnView_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QColumnView_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QColumnView_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QColumnView_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QColumnView_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QColumnView_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QColumnView_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QColumnView_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QColumnView_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QColumnView_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QColumnView_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QColumnView_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QColumnView_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QColumnView_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QColumnView_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QColumnView_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QColumnView_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QColumnView_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QColumnView_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QColumnView_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QColumnView_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QColumnView_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QColumnView_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QColumnView_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QColumnView_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QColumnView_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QColumnView_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QColumnView_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QColumnView_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QColumnView_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QColumnView_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QColumnView_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QColumnView_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QColumnView_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QColumnView_OnSetupViewport(void* ptr, void** viewport)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetupViewport(viewport);
+	}
+	static void QtBeef_QColumnView_OnViewportEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEvent(param1);
+	}
+	static void QtBeef_QColumnView_OnViewportSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportSizeHint();
+	}
+	static void QtBeef_QColumnView_OnKeyboardSearch(void* ptr, libqt_string search)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyboardSearch(search);
+	}
+	static void QtBeef_QColumnView_OnSizeHintForRow(void* ptr, c_int row)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForRow(row);
+	}
+	static void QtBeef_QColumnView_OnSizeHintForColumn(void* ptr, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintForColumn(column);
+	}
+	static void QtBeef_QColumnView_OnItemDelegateForIndex(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDelegateForIndex(index);
+	}
+	static void QtBeef_QColumnView_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QColumnView_OnDoItemsLayout(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoItemsLayout();
+	}
+	static void QtBeef_QColumnView_OnDataChanged(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QColumnView_OnRowsAboutToBeRemoved(void* ptr, void** parent, c_int start, c_int end)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowsAboutToBeRemoved(parent, start, end);
+	}
+	static void QtBeef_QColumnView_OnSelectionChanged(void* ptr, void** selected, void** deselected)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged(selected, deselected);
+	}
+	static void QtBeef_QColumnView_OnUpdateEditorData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorData();
+	}
+	static void QtBeef_QColumnView_OnUpdateEditorGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorGeometries();
+	}
+	static void QtBeef_QColumnView_OnUpdateGeometries(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometries();
+	}
+	static void QtBeef_QColumnView_OnVerticalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarAction(action);
+	}
+	static void QtBeef_QColumnView_OnHorizontalScrollbarAction(void* ptr, c_int action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarAction(action);
+	}
+	static void QtBeef_QColumnView_OnVerticalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVerticalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QColumnView_OnHorizontalScrollbarValueChanged(void* ptr, c_int value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHorizontalScrollbarValueChanged(value);
+	}
+	static void QtBeef_QColumnView_OnCloseEditor(void* ptr, void** editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor(editor, hint);
+	}
+	static void QtBeef_QColumnView_OnCommitData(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommitData(editor);
+	}
+	static void QtBeef_QColumnView_OnEditorDestroyed(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditorDestroyed(editor);
+	}
+	static void QtBeef_QColumnView_OnSelectedIndexes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectedIndexes();
+	}
+	static void QtBeef_QColumnView_OnEdit2(void* ptr, void** index, QAbstractItemView_EditTrigger trigger, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEdit2(index, trigger, event);
+	}
+	static void QtBeef_QColumnView_OnSelectionCommand(void* ptr, void** index, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionCommand(index, event);
+	}
+	static void QtBeef_QColumnView_OnStartDrag(void* ptr, void* supportedActions)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStartDrag(supportedActions);
+	}
+	static void QtBeef_QColumnView_OnInitViewItemOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitViewItemOption(option);
 	}
 	public this(QColumnView_Ptr ptr)
 	{
@@ -4512,18 +5082,27 @@ extension CQt
 	public function void QColumnView_OnMetaObject_action(void* self);
 	[LinkName("QColumnView_OnMetaObject")]
 	public static extern void** QColumnView_OnMetaObject(void* self, QColumnView_OnMetaObject_action _action);
+	
+	[LinkName("QColumnView_SuperMetaObject")]
+	public static extern void** QColumnView_SuperMetaObject(void* self);
 	[LinkName("QColumnView_Qt_Metacast")]
 	public static extern void* QColumnView_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QColumnView_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QColumnView_OnMetacast")]
 	public static extern void* QColumnView_OnMetacast(void* self, QColumnView_OnMetacast_action _action);
+	
+	[LinkName("QColumnView_SuperMetacast")]
+	public static extern void* QColumnView_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QColumnView_Qt_Metacall")]
 	public static extern c_int QColumnView_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QColumnView_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QColumnView_OnMetacall")]
 	public static extern c_int QColumnView_OnMetacall(void* self, QColumnView_OnMetacall_action _action);
+	
+	[LinkName("QColumnView_SuperMetacall")]
+	public static extern c_int QColumnView_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QColumnView_Tr")]
 	public static extern libqt_string QColumnView_Tr(c_char* s);
 	[LinkName("QColumnView_UpdatePreviewWidget")]
@@ -4538,48 +5117,72 @@ extension CQt
 	public function void QColumnView_OnIndexAt_action(void* self, void** point);
 	[LinkName("QColumnView_OnIndexAt")]
 	public static extern void* QColumnView_OnIndexAt(void* self, QColumnView_OnIndexAt_action _action);
+	
+	[LinkName("QColumnView_SuperIndexAt")]
+	public static extern void* QColumnView_SuperIndexAt(void* self, void** point);
 	[LinkName("QColumnView_ScrollTo")]
 	public static extern void QColumnView_ScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	
 	public function void QColumnView_OnScrollTo_action(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QColumnView_OnScrollTo")]
 	public static extern void QColumnView_OnScrollTo(void* self, QColumnView_OnScrollTo_action _action);
+	
+	[LinkName("QColumnView_SuperScrollTo")]
+	public static extern void QColumnView_SuperScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
 	[LinkName("QColumnView_SizeHint")]
 	public static extern void* QColumnView_SizeHint(void* self);
 	
 	public function void QColumnView_OnSizeHint_action(void* self);
 	[LinkName("QColumnView_OnSizeHint")]
 	public static extern void* QColumnView_OnSizeHint(void* self, QColumnView_OnSizeHint_action _action);
+	
+	[LinkName("QColumnView_SuperSizeHint")]
+	public static extern void* QColumnView_SuperSizeHint(void* self);
 	[LinkName("QColumnView_VisualRect")]
 	public static extern void* QColumnView_VisualRect(void* self, void** index);
 	
 	public function void QColumnView_OnVisualRect_action(void* self, void** index);
 	[LinkName("QColumnView_OnVisualRect")]
 	public static extern void* QColumnView_OnVisualRect(void* self, QColumnView_OnVisualRect_action _action);
+	
+	[LinkName("QColumnView_SuperVisualRect")]
+	public static extern void* QColumnView_SuperVisualRect(void* self, void** index);
 	[LinkName("QColumnView_SetModel")]
 	public static extern void QColumnView_SetModel(void* self, void** model);
 	
 	public function void QColumnView_OnSetModel_action(void* self, void** model);
 	[LinkName("QColumnView_OnSetModel")]
 	public static extern void QColumnView_OnSetModel(void* self, QColumnView_OnSetModel_action _action);
+	
+	[LinkName("QColumnView_SuperSetModel")]
+	public static extern void QColumnView_SuperSetModel(void* self, void** model);
 	[LinkName("QColumnView_SetSelectionModel")]
 	public static extern void QColumnView_SetSelectionModel(void* self, void** selectionModel);
 	
 	public function void QColumnView_OnSetSelectionModel_action(void* self, void** selectionModel);
 	[LinkName("QColumnView_OnSetSelectionModel")]
 	public static extern void QColumnView_OnSetSelectionModel(void* self, QColumnView_OnSetSelectionModel_action _action);
+	
+	[LinkName("QColumnView_SuperSetSelectionModel")]
+	public static extern void QColumnView_SuperSetSelectionModel(void* self, void** selectionModel);
 	[LinkName("QColumnView_SetRootIndex")]
 	public static extern void QColumnView_SetRootIndex(void* self, void** index);
 	
 	public function void QColumnView_OnSetRootIndex_action(void* self, void** index);
 	[LinkName("QColumnView_OnSetRootIndex")]
 	public static extern void QColumnView_OnSetRootIndex(void* self, QColumnView_OnSetRootIndex_action _action);
+	
+	[LinkName("QColumnView_SuperSetRootIndex")]
+	public static extern void QColumnView_SuperSetRootIndex(void* self, void** index);
 	[LinkName("QColumnView_SelectAll")]
 	public static extern void QColumnView_SelectAll(void* self);
 	
 	public function void QColumnView_OnSelectAll_action(void* self);
 	[LinkName("QColumnView_OnSelectAll")]
 	public static extern void QColumnView_OnSelectAll(void* self, QColumnView_OnSelectAll_action _action);
+	
+	[LinkName("QColumnView_SuperSelectAll")]
+	public static extern void QColumnView_SuperSelectAll(void* self);
 	[LinkName("QColumnView_SetResizeGripsVisible")]
 	public static extern void QColumnView_SetResizeGripsVisible(void* self, bool visible);
 	[LinkName("QColumnView_ResizeGripsVisible")]
@@ -4598,66 +5201,99 @@ extension CQt
 	public function void QColumnView_OnIsIndexHidden_action(void* self, void** index);
 	[LinkName("QColumnView_OnIsIndexHidden")]
 	public static extern bool QColumnView_OnIsIndexHidden(void* self, QColumnView_OnIsIndexHidden_action _action);
+	
+	[LinkName("QColumnView_SuperIsIndexHidden")]
+	public static extern bool QColumnView_SuperIsIndexHidden(void* self, void** index);
 	[LinkName("QColumnView_MoveCursor")]
 	public static extern void* QColumnView_MoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	
 	public function void QColumnView_OnMoveCursor_action(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QColumnView_OnMoveCursor")]
 	public static extern void* QColumnView_OnMoveCursor(void* self, QColumnView_OnMoveCursor_action _action);
+	
+	[LinkName("QColumnView_SuperMoveCursor")]
+	public static extern void* QColumnView_SuperMoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QColumnView_ResizeEvent")]
 	public static extern void QColumnView_ResizeEvent(void* self, void** event);
 	
 	public function void QColumnView_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnResizeEvent")]
 	public static extern void QColumnView_OnResizeEvent(void* self, QColumnView_OnResizeEvent_action _action);
+	
+	[LinkName("QColumnView_SuperResizeEvent")]
+	public static extern void QColumnView_SuperResizeEvent(void* self, void** event);
 	[LinkName("QColumnView_SetSelection")]
 	public static extern void QColumnView_SetSelection(void* self, void** rect, void* command);
 	
 	public function void QColumnView_OnSetSelection_action(void* self, void** rect, void* command);
 	[LinkName("QColumnView_OnSetSelection")]
 	public static extern void QColumnView_OnSetSelection(void* self, QColumnView_OnSetSelection_action _action);
+	
+	[LinkName("QColumnView_SuperSetSelection")]
+	public static extern void QColumnView_SuperSetSelection(void* self, void** rect, void* command);
 	[LinkName("QColumnView_VisualRegionForSelection")]
 	public static extern void* QColumnView_VisualRegionForSelection(void* self, void** selection);
 	
 	public function void QColumnView_OnVisualRegionForSelection_action(void* self, void** selection);
 	[LinkName("QColumnView_OnVisualRegionForSelection")]
 	public static extern void* QColumnView_OnVisualRegionForSelection(void* self, QColumnView_OnVisualRegionForSelection_action _action);
+	
+	[LinkName("QColumnView_SuperVisualRegionForSelection")]
+	public static extern void* QColumnView_SuperVisualRegionForSelection(void* self, void** selection);
 	[LinkName("QColumnView_HorizontalOffset")]
 	public static extern c_int QColumnView_HorizontalOffset(void* self);
 	
 	public function void QColumnView_OnHorizontalOffset_action(void* self);
 	[LinkName("QColumnView_OnHorizontalOffset")]
 	public static extern c_int QColumnView_OnHorizontalOffset(void* self, QColumnView_OnHorizontalOffset_action _action);
+	
+	[LinkName("QColumnView_SuperHorizontalOffset")]
+	public static extern c_int QColumnView_SuperHorizontalOffset(void* self);
 	[LinkName("QColumnView_VerticalOffset")]
 	public static extern c_int QColumnView_VerticalOffset(void* self);
 	
 	public function void QColumnView_OnVerticalOffset_action(void* self);
 	[LinkName("QColumnView_OnVerticalOffset")]
 	public static extern c_int QColumnView_OnVerticalOffset(void* self, QColumnView_OnVerticalOffset_action _action);
+	
+	[LinkName("QColumnView_SuperVerticalOffset")]
+	public static extern c_int QColumnView_SuperVerticalOffset(void* self);
 	[LinkName("QColumnView_RowsInserted")]
 	public static extern void QColumnView_RowsInserted(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QColumnView_OnRowsInserted_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QColumnView_OnRowsInserted")]
 	public static extern void QColumnView_OnRowsInserted(void* self, QColumnView_OnRowsInserted_action _action);
+	
+	[LinkName("QColumnView_SuperRowsInserted")]
+	public static extern void QColumnView_SuperRowsInserted(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QColumnView_CurrentChanged")]
 	public static extern void QColumnView_CurrentChanged(void* self, void** current, void** previous);
 	
 	public function void QColumnView_OnCurrentChanged_action(void* self, void** current, void** previous);
 	[LinkName("QColumnView_OnCurrentChanged")]
 	public static extern void QColumnView_OnCurrentChanged(void* self, QColumnView_OnCurrentChanged_action _action);
+	
+	[LinkName("QColumnView_SuperCurrentChanged")]
+	public static extern void QColumnView_SuperCurrentChanged(void* self, void** current, void** previous);
 	[LinkName("QColumnView_ScrollContentsBy")]
 	public static extern void QColumnView_ScrollContentsBy(void* self, c_int dx, c_int dy);
 	
 	public function void QColumnView_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
 	[LinkName("QColumnView_OnScrollContentsBy")]
 	public static extern void QColumnView_OnScrollContentsBy(void* self, QColumnView_OnScrollContentsBy_action _action);
+	
+	[LinkName("QColumnView_SuperScrollContentsBy")]
+	public static extern void QColumnView_SuperScrollContentsBy(void* self, c_int dx, c_int dy);
 	[LinkName("QColumnView_CreateColumn")]
 	public static extern void** QColumnView_CreateColumn(void* self, void** rootIndex);
 	
 	public function void QColumnView_OnCreateColumn_action(void* self, void** rootIndex);
 	[LinkName("QColumnView_OnCreateColumn")]
 	public static extern void** QColumnView_OnCreateColumn(void* self, QColumnView_OnCreateColumn_action _action);
+	
+	[LinkName("QColumnView_SuperCreateColumn")]
+	public static extern void** QColumnView_SuperCreateColumn(void* self, void** rootIndex);
 	[LinkName("QColumnView_InitializeColumn")]
 	public static extern void QColumnView_InitializeColumn(void* self, void** column);
 	[LinkName("QColumnView_Tr2")]
@@ -4670,436 +5306,655 @@ extension CQt
 	public function void QColumnView_OnEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnEvent")]
 	public static extern bool QColumnView_OnEvent(void* self, QColumnView_OnEvent_action _action);
+	
+	[LinkName("QColumnView_SuperEvent")]
+	public static extern bool QColumnView_SuperEvent(void* self, void** event);
 	[LinkName("QColumnView_EventFilter")]
 	public static extern bool QColumnView_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QColumnView_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QColumnView_OnEventFilter")]
 	public static extern bool QColumnView_OnEventFilter(void* self, QColumnView_OnEventFilter_action _action);
+	
+	[LinkName("QColumnView_SuperEventFilter")]
+	public static extern bool QColumnView_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QColumnView_TimerEvent")]
 	public static extern void QColumnView_TimerEvent(void* self, void** event);
 	
 	public function void QColumnView_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnTimerEvent")]
 	public static extern void QColumnView_OnTimerEvent(void* self, QColumnView_OnTimerEvent_action _action);
+	
+	[LinkName("QColumnView_SuperTimerEvent")]
+	public static extern void QColumnView_SuperTimerEvent(void* self, void** event);
 	[LinkName("QColumnView_ChildEvent")]
 	public static extern void QColumnView_ChildEvent(void* self, void** event);
 	
 	public function void QColumnView_OnChildEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnChildEvent")]
 	public static extern void QColumnView_OnChildEvent(void* self, QColumnView_OnChildEvent_action _action);
+	
+	[LinkName("QColumnView_SuperChildEvent")]
+	public static extern void QColumnView_SuperChildEvent(void* self, void** event);
 	[LinkName("QColumnView_CustomEvent")]
 	public static extern void QColumnView_CustomEvent(void* self, void** event);
 	
 	public function void QColumnView_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnCustomEvent")]
 	public static extern void QColumnView_OnCustomEvent(void* self, QColumnView_OnCustomEvent_action _action);
+	
+	[LinkName("QColumnView_SuperCustomEvent")]
+	public static extern void QColumnView_SuperCustomEvent(void* self, void** event);
 	[LinkName("QColumnView_ConnectNotify")]
 	public static extern void QColumnView_ConnectNotify(void* self, void** signal);
 	
 	public function void QColumnView_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QColumnView_OnConnectNotify")]
 	public static extern void QColumnView_OnConnectNotify(void* self, QColumnView_OnConnectNotify_action _action);
+	
+	[LinkName("QColumnView_SuperConnectNotify")]
+	public static extern void QColumnView_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QColumnView_DisconnectNotify")]
 	public static extern void QColumnView_DisconnectNotify(void* self, void** signal);
 	
 	public function void QColumnView_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QColumnView_OnDisconnectNotify")]
 	public static extern void QColumnView_OnDisconnectNotify(void* self, QColumnView_OnDisconnectNotify_action _action);
+	
+	[LinkName("QColumnView_SuperDisconnectNotify")]
+	public static extern void QColumnView_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QColumnView_DevType")]
 	public static extern c_int QColumnView_DevType(void* self);
 	
 	public function void QColumnView_OnDevType_action(void* self);
 	[LinkName("QColumnView_OnDevType")]
 	public static extern c_int QColumnView_OnDevType(void* self, QColumnView_OnDevType_action _action);
+	
+	[LinkName("QColumnView_SuperDevType")]
+	public static extern c_int QColumnView_SuperDevType(void* self);
 	[LinkName("QColumnView_PaintEngine")]
 	public static extern void** QColumnView_PaintEngine(void* self);
 	
 	public function void QColumnView_OnPaintEngine_action(void* self);
 	[LinkName("QColumnView_OnPaintEngine")]
 	public static extern void** QColumnView_OnPaintEngine(void* self, QColumnView_OnPaintEngine_action _action);
+	
+	[LinkName("QColumnView_SuperPaintEngine")]
+	public static extern void** QColumnView_SuperPaintEngine(void* self);
 	[LinkName("QColumnView_Metric")]
 	public static extern c_int QColumnView_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QColumnView_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QColumnView_OnMetric")]
 	public static extern c_int QColumnView_OnMetric(void* self, QColumnView_OnMetric_action _action);
+	
+	[LinkName("QColumnView_SuperMetric")]
+	public static extern c_int QColumnView_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QColumnView_InitPainter")]
 	public static extern void QColumnView_InitPainter(void* self, void** painter);
 	
 	public function void QColumnView_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QColumnView_OnInitPainter")]
 	public static extern void QColumnView_OnInitPainter(void* self, QColumnView_OnInitPainter_action _action);
+	
+	[LinkName("QColumnView_SuperInitPainter")]
+	public static extern void QColumnView_SuperInitPainter(void* self, void** painter);
 	[LinkName("QColumnView_Redirected")]
 	public static extern void** QColumnView_Redirected(void* self, void** offset);
 	
 	public function void QColumnView_OnRedirected_action(void* self, void** offset);
 	[LinkName("QColumnView_OnRedirected")]
 	public static extern void** QColumnView_OnRedirected(void* self, QColumnView_OnRedirected_action _action);
+	
+	[LinkName("QColumnView_SuperRedirected")]
+	public static extern void** QColumnView_SuperRedirected(void* self, void** offset);
 	[LinkName("QColumnView_SharedPainter")]
 	public static extern void** QColumnView_SharedPainter(void* self);
 	
 	public function void QColumnView_OnSharedPainter_action(void* self);
 	[LinkName("QColumnView_OnSharedPainter")]
 	public static extern void** QColumnView_OnSharedPainter(void* self, QColumnView_OnSharedPainter_action _action);
+	
+	[LinkName("QColumnView_SuperSharedPainter")]
+	public static extern void** QColumnView_SuperSharedPainter(void* self);
 	[LinkName("QColumnView_SetVisible")]
 	public static extern void QColumnView_SetVisible(void* self, bool visible);
 	
 	public function void QColumnView_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QColumnView_OnSetVisible")]
 	public static extern void QColumnView_OnSetVisible(void* self, QColumnView_OnSetVisible_action _action);
+	
+	[LinkName("QColumnView_SuperSetVisible")]
+	public static extern void QColumnView_SuperSetVisible(void* self, bool visible);
 	[LinkName("QColumnView_MinimumSizeHint")]
 	public static extern void* QColumnView_MinimumSizeHint(void* self);
 	
 	public function void QColumnView_OnMinimumSizeHint_action(void* self);
 	[LinkName("QColumnView_OnMinimumSizeHint")]
 	public static extern void* QColumnView_OnMinimumSizeHint(void* self, QColumnView_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QColumnView_SuperMinimumSizeHint")]
+	public static extern void* QColumnView_SuperMinimumSizeHint(void* self);
 	[LinkName("QColumnView_HeightForWidth")]
 	public static extern c_int QColumnView_HeightForWidth(void* self, c_int param1);
 	
 	public function void QColumnView_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QColumnView_OnHeightForWidth")]
 	public static extern c_int QColumnView_OnHeightForWidth(void* self, QColumnView_OnHeightForWidth_action _action);
+	
+	[LinkName("QColumnView_SuperHeightForWidth")]
+	public static extern c_int QColumnView_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QColumnView_HasHeightForWidth")]
 	public static extern bool QColumnView_HasHeightForWidth(void* self);
 	
 	public function void QColumnView_OnHasHeightForWidth_action(void* self);
 	[LinkName("QColumnView_OnHasHeightForWidth")]
 	public static extern bool QColumnView_OnHasHeightForWidth(void* self, QColumnView_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QColumnView_SuperHasHeightForWidth")]
+	public static extern bool QColumnView_SuperHasHeightForWidth(void* self);
 	[LinkName("QColumnView_MousePressEvent")]
 	public static extern void QColumnView_MousePressEvent(void* self, void** event);
 	
 	public function void QColumnView_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnMousePressEvent")]
 	public static extern void QColumnView_OnMousePressEvent(void* self, QColumnView_OnMousePressEvent_action _action);
+	
+	[LinkName("QColumnView_SuperMousePressEvent")]
+	public static extern void QColumnView_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QColumnView_MouseReleaseEvent")]
 	public static extern void QColumnView_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QColumnView_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnMouseReleaseEvent")]
 	public static extern void QColumnView_OnMouseReleaseEvent(void* self, QColumnView_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QColumnView_SuperMouseReleaseEvent")]
+	public static extern void QColumnView_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QColumnView_MouseDoubleClickEvent")]
 	public static extern void QColumnView_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QColumnView_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnMouseDoubleClickEvent")]
 	public static extern void QColumnView_OnMouseDoubleClickEvent(void* self, QColumnView_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QColumnView_SuperMouseDoubleClickEvent")]
+	public static extern void QColumnView_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QColumnView_MouseMoveEvent")]
 	public static extern void QColumnView_MouseMoveEvent(void* self, void** event);
 	
 	public function void QColumnView_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnMouseMoveEvent")]
 	public static extern void QColumnView_OnMouseMoveEvent(void* self, QColumnView_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QColumnView_SuperMouseMoveEvent")]
+	public static extern void QColumnView_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QColumnView_WheelEvent")]
 	public static extern void QColumnView_WheelEvent(void* self, void** event);
 	
 	public function void QColumnView_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnWheelEvent")]
 	public static extern void QColumnView_OnWheelEvent(void* self, QColumnView_OnWheelEvent_action _action);
+	
+	[LinkName("QColumnView_SuperWheelEvent")]
+	public static extern void QColumnView_SuperWheelEvent(void* self, void** event);
 	[LinkName("QColumnView_KeyPressEvent")]
 	public static extern void QColumnView_KeyPressEvent(void* self, void** event);
 	
 	public function void QColumnView_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnKeyPressEvent")]
 	public static extern void QColumnView_OnKeyPressEvent(void* self, QColumnView_OnKeyPressEvent_action _action);
+	
+	[LinkName("QColumnView_SuperKeyPressEvent")]
+	public static extern void QColumnView_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QColumnView_KeyReleaseEvent")]
 	public static extern void QColumnView_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QColumnView_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnKeyReleaseEvent")]
 	public static extern void QColumnView_OnKeyReleaseEvent(void* self, QColumnView_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QColumnView_SuperKeyReleaseEvent")]
+	public static extern void QColumnView_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QColumnView_FocusInEvent")]
 	public static extern void QColumnView_FocusInEvent(void* self, void** event);
 	
 	public function void QColumnView_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnFocusInEvent")]
 	public static extern void QColumnView_OnFocusInEvent(void* self, QColumnView_OnFocusInEvent_action _action);
+	
+	[LinkName("QColumnView_SuperFocusInEvent")]
+	public static extern void QColumnView_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QColumnView_FocusOutEvent")]
 	public static extern void QColumnView_FocusOutEvent(void* self, void** event);
 	
 	public function void QColumnView_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnFocusOutEvent")]
 	public static extern void QColumnView_OnFocusOutEvent(void* self, QColumnView_OnFocusOutEvent_action _action);
+	
+	[LinkName("QColumnView_SuperFocusOutEvent")]
+	public static extern void QColumnView_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QColumnView_EnterEvent")]
 	public static extern void QColumnView_EnterEvent(void* self, void** event);
 	
 	public function void QColumnView_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnEnterEvent")]
 	public static extern void QColumnView_OnEnterEvent(void* self, QColumnView_OnEnterEvent_action _action);
+	
+	[LinkName("QColumnView_SuperEnterEvent")]
+	public static extern void QColumnView_SuperEnterEvent(void* self, void** event);
 	[LinkName("QColumnView_LeaveEvent")]
 	public static extern void QColumnView_LeaveEvent(void* self, void** event);
 	
 	public function void QColumnView_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnLeaveEvent")]
 	public static extern void QColumnView_OnLeaveEvent(void* self, QColumnView_OnLeaveEvent_action _action);
+	
+	[LinkName("QColumnView_SuperLeaveEvent")]
+	public static extern void QColumnView_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QColumnView_PaintEvent")]
 	public static extern void QColumnView_PaintEvent(void* self, void** event);
 	
 	public function void QColumnView_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnPaintEvent")]
 	public static extern void QColumnView_OnPaintEvent(void* self, QColumnView_OnPaintEvent_action _action);
+	
+	[LinkName("QColumnView_SuperPaintEvent")]
+	public static extern void QColumnView_SuperPaintEvent(void* self, void** event);
 	[LinkName("QColumnView_MoveEvent")]
 	public static extern void QColumnView_MoveEvent(void* self, void** event);
 	
 	public function void QColumnView_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnMoveEvent")]
 	public static extern void QColumnView_OnMoveEvent(void* self, QColumnView_OnMoveEvent_action _action);
+	
+	[LinkName("QColumnView_SuperMoveEvent")]
+	public static extern void QColumnView_SuperMoveEvent(void* self, void** event);
 	[LinkName("QColumnView_CloseEvent")]
 	public static extern void QColumnView_CloseEvent(void* self, void** event);
 	
 	public function void QColumnView_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnCloseEvent")]
 	public static extern void QColumnView_OnCloseEvent(void* self, QColumnView_OnCloseEvent_action _action);
+	
+	[LinkName("QColumnView_SuperCloseEvent")]
+	public static extern void QColumnView_SuperCloseEvent(void* self, void** event);
 	[LinkName("QColumnView_ContextMenuEvent")]
 	public static extern void QColumnView_ContextMenuEvent(void* self, void** event);
 	
 	public function void QColumnView_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnContextMenuEvent")]
 	public static extern void QColumnView_OnContextMenuEvent(void* self, QColumnView_OnContextMenuEvent_action _action);
+	
+	[LinkName("QColumnView_SuperContextMenuEvent")]
+	public static extern void QColumnView_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QColumnView_TabletEvent")]
 	public static extern void QColumnView_TabletEvent(void* self, void** event);
 	
 	public function void QColumnView_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnTabletEvent")]
 	public static extern void QColumnView_OnTabletEvent(void* self, QColumnView_OnTabletEvent_action _action);
+	
+	[LinkName("QColumnView_SuperTabletEvent")]
+	public static extern void QColumnView_SuperTabletEvent(void* self, void** event);
 	[LinkName("QColumnView_ActionEvent")]
 	public static extern void QColumnView_ActionEvent(void* self, void** event);
 	
 	public function void QColumnView_OnActionEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnActionEvent")]
 	public static extern void QColumnView_OnActionEvent(void* self, QColumnView_OnActionEvent_action _action);
+	
+	[LinkName("QColumnView_SuperActionEvent")]
+	public static extern void QColumnView_SuperActionEvent(void* self, void** event);
 	[LinkName("QColumnView_DragEnterEvent")]
 	public static extern void QColumnView_DragEnterEvent(void* self, void** event);
 	
 	public function void QColumnView_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnDragEnterEvent")]
 	public static extern void QColumnView_OnDragEnterEvent(void* self, QColumnView_OnDragEnterEvent_action _action);
+	
+	[LinkName("QColumnView_SuperDragEnterEvent")]
+	public static extern void QColumnView_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QColumnView_DragMoveEvent")]
 	public static extern void QColumnView_DragMoveEvent(void* self, void** event);
 	
 	public function void QColumnView_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnDragMoveEvent")]
 	public static extern void QColumnView_OnDragMoveEvent(void* self, QColumnView_OnDragMoveEvent_action _action);
+	
+	[LinkName("QColumnView_SuperDragMoveEvent")]
+	public static extern void QColumnView_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QColumnView_DragLeaveEvent")]
 	public static extern void QColumnView_DragLeaveEvent(void* self, void** event);
 	
 	public function void QColumnView_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnDragLeaveEvent")]
 	public static extern void QColumnView_OnDragLeaveEvent(void* self, QColumnView_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QColumnView_SuperDragLeaveEvent")]
+	public static extern void QColumnView_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QColumnView_DropEvent")]
 	public static extern void QColumnView_DropEvent(void* self, void** event);
 	
 	public function void QColumnView_OnDropEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnDropEvent")]
 	public static extern void QColumnView_OnDropEvent(void* self, QColumnView_OnDropEvent_action _action);
+	
+	[LinkName("QColumnView_SuperDropEvent")]
+	public static extern void QColumnView_SuperDropEvent(void* self, void** event);
 	[LinkName("QColumnView_ShowEvent")]
 	public static extern void QColumnView_ShowEvent(void* self, void** event);
 	
 	public function void QColumnView_OnShowEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnShowEvent")]
 	public static extern void QColumnView_OnShowEvent(void* self, QColumnView_OnShowEvent_action _action);
+	
+	[LinkName("QColumnView_SuperShowEvent")]
+	public static extern void QColumnView_SuperShowEvent(void* self, void** event);
 	[LinkName("QColumnView_HideEvent")]
 	public static extern void QColumnView_HideEvent(void* self, void** event);
 	
 	public function void QColumnView_OnHideEvent_action(void* self, void** event);
 	[LinkName("QColumnView_OnHideEvent")]
 	public static extern void QColumnView_OnHideEvent(void* self, QColumnView_OnHideEvent_action _action);
+	
+	[LinkName("QColumnView_SuperHideEvent")]
+	public static extern void QColumnView_SuperHideEvent(void* self, void** event);
 	[LinkName("QColumnView_NativeEvent")]
 	public static extern bool QColumnView_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QColumnView_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QColumnView_OnNativeEvent")]
 	public static extern bool QColumnView_OnNativeEvent(void* self, QColumnView_OnNativeEvent_action _action);
+	
+	[LinkName("QColumnView_SuperNativeEvent")]
+	public static extern bool QColumnView_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QColumnView_ChangeEvent")]
 	public static extern void QColumnView_ChangeEvent(void* self, void** param1);
 	
 	public function void QColumnView_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QColumnView_OnChangeEvent")]
 	public static extern void QColumnView_OnChangeEvent(void* self, QColumnView_OnChangeEvent_action _action);
+	
+	[LinkName("QColumnView_SuperChangeEvent")]
+	public static extern void QColumnView_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QColumnView_InputMethodEvent")]
 	public static extern void QColumnView_InputMethodEvent(void* self, void** param1);
 	
 	public function void QColumnView_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QColumnView_OnInputMethodEvent")]
 	public static extern void QColumnView_OnInputMethodEvent(void* self, QColumnView_OnInputMethodEvent_action _action);
+	
+	[LinkName("QColumnView_SuperInputMethodEvent")]
+	public static extern void QColumnView_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QColumnView_InputMethodQuery")]
 	public static extern void* QColumnView_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QColumnView_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QColumnView_OnInputMethodQuery")]
 	public static extern void* QColumnView_OnInputMethodQuery(void* self, QColumnView_OnInputMethodQuery_action _action);
+	
+	[LinkName("QColumnView_SuperInputMethodQuery")]
+	public static extern void* QColumnView_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QColumnView_FocusNextPrevChild")]
 	public static extern bool QColumnView_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QColumnView_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QColumnView_OnFocusNextPrevChild")]
 	public static extern bool QColumnView_OnFocusNextPrevChild(void* self, QColumnView_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QColumnView_SuperFocusNextPrevChild")]
+	public static extern bool QColumnView_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QColumnView_InitStyleOption")]
 	public static extern void QColumnView_InitStyleOption(void* self, void** option);
 	
 	public function void QColumnView_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QColumnView_OnInitStyleOption")]
 	public static extern void QColumnView_OnInitStyleOption(void* self, QColumnView_OnInitStyleOption_action _action);
+	
+	[LinkName("QColumnView_SuperInitStyleOption")]
+	public static extern void QColumnView_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QColumnView_SetupViewport")]
 	public static extern void QColumnView_SetupViewport(void* self, void** viewport);
 	
 	public function void QColumnView_OnSetupViewport_action(void* self, void** viewport);
 	[LinkName("QColumnView_OnSetupViewport")]
 	public static extern void QColumnView_OnSetupViewport(void* self, QColumnView_OnSetupViewport_action _action);
+	
+	[LinkName("QColumnView_SuperSetupViewport")]
+	public static extern void QColumnView_SuperSetupViewport(void* self, void** viewport);
 	[LinkName("QColumnView_ViewportEvent")]
 	public static extern bool QColumnView_ViewportEvent(void* self, void** param1);
 	
 	public function void QColumnView_OnViewportEvent_action(void* self, void** param1);
 	[LinkName("QColumnView_OnViewportEvent")]
 	public static extern bool QColumnView_OnViewportEvent(void* self, QColumnView_OnViewportEvent_action _action);
+	
+	[LinkName("QColumnView_SuperViewportEvent")]
+	public static extern bool QColumnView_SuperViewportEvent(void* self, void** param1);
 	[LinkName("QColumnView_ViewportSizeHint")]
 	public static extern void* QColumnView_ViewportSizeHint(void* self);
 	
 	public function void QColumnView_OnViewportSizeHint_action(void* self);
 	[LinkName("QColumnView_OnViewportSizeHint")]
 	public static extern void* QColumnView_OnViewportSizeHint(void* self, QColumnView_OnViewportSizeHint_action _action);
+	
+	[LinkName("QColumnView_SuperViewportSizeHint")]
+	public static extern void* QColumnView_SuperViewportSizeHint(void* self);
 	[LinkName("QColumnView_KeyboardSearch")]
 	public static extern void QColumnView_KeyboardSearch(void* self, libqt_string search);
 	
 	public function void QColumnView_OnKeyboardSearch_action(void* self, libqt_string search);
 	[LinkName("QColumnView_OnKeyboardSearch")]
 	public static extern void QColumnView_OnKeyboardSearch(void* self, QColumnView_OnKeyboardSearch_action _action);
+	
+	[LinkName("QColumnView_SuperKeyboardSearch")]
+	public static extern void QColumnView_SuperKeyboardSearch(void* self, libqt_string search);
 	[LinkName("QColumnView_SizeHintForRow")]
 	public static extern c_int QColumnView_SizeHintForRow(void* self, c_int row);
 	
 	public function void QColumnView_OnSizeHintForRow_action(void* self, c_int row);
 	[LinkName("QColumnView_OnSizeHintForRow")]
 	public static extern c_int QColumnView_OnSizeHintForRow(void* self, QColumnView_OnSizeHintForRow_action _action);
+	
+	[LinkName("QColumnView_SuperSizeHintForRow")]
+	public static extern c_int QColumnView_SuperSizeHintForRow(void* self, c_int row);
 	[LinkName("QColumnView_SizeHintForColumn")]
 	public static extern c_int QColumnView_SizeHintForColumn(void* self, c_int column);
 	
 	public function void QColumnView_OnSizeHintForColumn_action(void* self, c_int column);
 	[LinkName("QColumnView_OnSizeHintForColumn")]
 	public static extern c_int QColumnView_OnSizeHintForColumn(void* self, QColumnView_OnSizeHintForColumn_action _action);
+	
+	[LinkName("QColumnView_SuperSizeHintForColumn")]
+	public static extern c_int QColumnView_SuperSizeHintForColumn(void* self, c_int column);
 	[LinkName("QColumnView_ItemDelegateForIndex")]
 	public static extern void** QColumnView_ItemDelegateForIndex(void* self, void** index);
 	
 	public function void QColumnView_OnItemDelegateForIndex_action(void* self, void** index);
 	[LinkName("QColumnView_OnItemDelegateForIndex")]
 	public static extern void** QColumnView_OnItemDelegateForIndex(void* self, QColumnView_OnItemDelegateForIndex_action _action);
+	
+	[LinkName("QColumnView_SuperItemDelegateForIndex")]
+	public static extern void** QColumnView_SuperItemDelegateForIndex(void* self, void** index);
 	[LinkName("QColumnView_Reset")]
 	public static extern void QColumnView_Reset(void* self);
 	
 	public function void QColumnView_OnReset_action(void* self);
 	[LinkName("QColumnView_OnReset")]
 	public static extern void QColumnView_OnReset(void* self, QColumnView_OnReset_action _action);
+	
+	[LinkName("QColumnView_SuperReset")]
+	public static extern void QColumnView_SuperReset(void* self);
 	[LinkName("QColumnView_DoItemsLayout")]
 	public static extern void QColumnView_DoItemsLayout(void* self);
 	
 	public function void QColumnView_OnDoItemsLayout_action(void* self);
 	[LinkName("QColumnView_OnDoItemsLayout")]
 	public static extern void QColumnView_OnDoItemsLayout(void* self, QColumnView_OnDoItemsLayout_action _action);
+	
+	[LinkName("QColumnView_SuperDoItemsLayout")]
+	public static extern void QColumnView_SuperDoItemsLayout(void* self);
 	[LinkName("QColumnView_DataChanged")]
 	public static extern void QColumnView_DataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	
 	public function void QColumnView_OnDataChanged_action(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QColumnView_OnDataChanged")]
 	public static extern void QColumnView_OnDataChanged(void* self, QColumnView_OnDataChanged_action _action);
+	
+	[LinkName("QColumnView_SuperDataChanged")]
+	public static extern void QColumnView_SuperDataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QColumnView_RowsAboutToBeRemoved")]
 	public static extern void QColumnView_RowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	
 	public function void QColumnView_OnRowsAboutToBeRemoved_action(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QColumnView_OnRowsAboutToBeRemoved")]
 	public static extern void QColumnView_OnRowsAboutToBeRemoved(void* self, QColumnView_OnRowsAboutToBeRemoved_action _action);
+	
+	[LinkName("QColumnView_SuperRowsAboutToBeRemoved")]
+	public static extern void QColumnView_SuperRowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
 	[LinkName("QColumnView_SelectionChanged")]
 	public static extern void QColumnView_SelectionChanged(void* self, void** selected, void** deselected);
 	
 	public function void QColumnView_OnSelectionChanged_action(void* self, void** selected, void** deselected);
 	[LinkName("QColumnView_OnSelectionChanged")]
 	public static extern void QColumnView_OnSelectionChanged(void* self, QColumnView_OnSelectionChanged_action _action);
+	
+	[LinkName("QColumnView_SuperSelectionChanged")]
+	public static extern void QColumnView_SuperSelectionChanged(void* self, void** selected, void** deselected);
 	[LinkName("QColumnView_UpdateEditorData")]
 	public static extern void QColumnView_UpdateEditorData(void* self);
 	
 	public function void QColumnView_OnUpdateEditorData_action(void* self);
 	[LinkName("QColumnView_OnUpdateEditorData")]
 	public static extern void QColumnView_OnUpdateEditorData(void* self, QColumnView_OnUpdateEditorData_action _action);
+	
+	[LinkName("QColumnView_SuperUpdateEditorData")]
+	public static extern void QColumnView_SuperUpdateEditorData(void* self);
 	[LinkName("QColumnView_UpdateEditorGeometries")]
 	public static extern void QColumnView_UpdateEditorGeometries(void* self);
 	
 	public function void QColumnView_OnUpdateEditorGeometries_action(void* self);
 	[LinkName("QColumnView_OnUpdateEditorGeometries")]
 	public static extern void QColumnView_OnUpdateEditorGeometries(void* self, QColumnView_OnUpdateEditorGeometries_action _action);
+	
+	[LinkName("QColumnView_SuperUpdateEditorGeometries")]
+	public static extern void QColumnView_SuperUpdateEditorGeometries(void* self);
 	[LinkName("QColumnView_UpdateGeometries")]
 	public static extern void QColumnView_UpdateGeometries(void* self);
 	
 	public function void QColumnView_OnUpdateGeometries_action(void* self);
 	[LinkName("QColumnView_OnUpdateGeometries")]
 	public static extern void QColumnView_OnUpdateGeometries(void* self, QColumnView_OnUpdateGeometries_action _action);
+	
+	[LinkName("QColumnView_SuperUpdateGeometries")]
+	public static extern void QColumnView_SuperUpdateGeometries(void* self);
 	[LinkName("QColumnView_VerticalScrollbarAction")]
 	public static extern void QColumnView_VerticalScrollbarAction(void* self, c_int action);
 	
 	public function void QColumnView_OnVerticalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QColumnView_OnVerticalScrollbarAction")]
 	public static extern void QColumnView_OnVerticalScrollbarAction(void* self, QColumnView_OnVerticalScrollbarAction_action _action);
+	
+	[LinkName("QColumnView_SuperVerticalScrollbarAction")]
+	public static extern void QColumnView_SuperVerticalScrollbarAction(void* self, c_int action);
 	[LinkName("QColumnView_HorizontalScrollbarAction")]
 	public static extern void QColumnView_HorizontalScrollbarAction(void* self, c_int action);
 	
 	public function void QColumnView_OnHorizontalScrollbarAction_action(void* self, c_int action);
 	[LinkName("QColumnView_OnHorizontalScrollbarAction")]
 	public static extern void QColumnView_OnHorizontalScrollbarAction(void* self, QColumnView_OnHorizontalScrollbarAction_action _action);
+	
+	[LinkName("QColumnView_SuperHorizontalScrollbarAction")]
+	public static extern void QColumnView_SuperHorizontalScrollbarAction(void* self, c_int action);
 	[LinkName("QColumnView_VerticalScrollbarValueChanged")]
 	public static extern void QColumnView_VerticalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QColumnView_OnVerticalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QColumnView_OnVerticalScrollbarValueChanged")]
 	public static extern void QColumnView_OnVerticalScrollbarValueChanged(void* self, QColumnView_OnVerticalScrollbarValueChanged_action _action);
+	
+	[LinkName("QColumnView_SuperVerticalScrollbarValueChanged")]
+	public static extern void QColumnView_SuperVerticalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QColumnView_HorizontalScrollbarValueChanged")]
 	public static extern void QColumnView_HorizontalScrollbarValueChanged(void* self, c_int value);
 	
 	public function void QColumnView_OnHorizontalScrollbarValueChanged_action(void* self, c_int value);
 	[LinkName("QColumnView_OnHorizontalScrollbarValueChanged")]
 	public static extern void QColumnView_OnHorizontalScrollbarValueChanged(void* self, QColumnView_OnHorizontalScrollbarValueChanged_action _action);
+	
+	[LinkName("QColumnView_SuperHorizontalScrollbarValueChanged")]
+	public static extern void QColumnView_SuperHorizontalScrollbarValueChanged(void* self, c_int value);
 	[LinkName("QColumnView_CloseEditor")]
 	public static extern void QColumnView_CloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	
 	public function void QColumnView_OnCloseEditor_action(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QColumnView_OnCloseEditor")]
 	public static extern void QColumnView_OnCloseEditor(void* self, QColumnView_OnCloseEditor_action _action);
+	
+	[LinkName("QColumnView_SuperCloseEditor")]
+	public static extern void QColumnView_SuperCloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QColumnView_CommitData")]
 	public static extern void QColumnView_CommitData(void* self, void** editor);
 	
 	public function void QColumnView_OnCommitData_action(void* self, void** editor);
 	[LinkName("QColumnView_OnCommitData")]
 	public static extern void QColumnView_OnCommitData(void* self, QColumnView_OnCommitData_action _action);
+	
+	[LinkName("QColumnView_SuperCommitData")]
+	public static extern void QColumnView_SuperCommitData(void* self, void** editor);
 	[LinkName("QColumnView_EditorDestroyed")]
 	public static extern void QColumnView_EditorDestroyed(void* self, void** editor);
 	
 	public function void QColumnView_OnEditorDestroyed_action(void* self, void** editor);
 	[LinkName("QColumnView_OnEditorDestroyed")]
 	public static extern void QColumnView_OnEditorDestroyed(void* self, QColumnView_OnEditorDestroyed_action _action);
+	
+	[LinkName("QColumnView_SuperEditorDestroyed")]
+	public static extern void QColumnView_SuperEditorDestroyed(void* self, void** editor);
 	[LinkName("QColumnView_SelectedIndexes")]
 	public static extern void* QColumnView_SelectedIndexes(void* self);
 	
 	public function void QColumnView_OnSelectedIndexes_action(void* self);
 	[LinkName("QColumnView_OnSelectedIndexes")]
 	public static extern void* QColumnView_OnSelectedIndexes(void* self, QColumnView_OnSelectedIndexes_action _action);
+	
+	[LinkName("QColumnView_SuperSelectedIndexes")]
+	public static extern void* QColumnView_SuperSelectedIndexes(void* self);
 	[LinkName("QColumnView_Edit2")]
 	public static extern bool QColumnView_Edit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	
 	public function void QColumnView_OnEdit2_action(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QColumnView_OnEdit2")]
 	public static extern bool QColumnView_OnEdit2(void* self, QColumnView_OnEdit2_action _action);
+	
+	[LinkName("QColumnView_SuperEdit2")]
+	public static extern bool QColumnView_SuperEdit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
 	[LinkName("QColumnView_SelectionCommand")]
 	public static extern void* QColumnView_SelectionCommand(void* self, void** index, void** event);
 	
 	public function void QColumnView_OnSelectionCommand_action(void* self, void** index, void** event);
 	[LinkName("QColumnView_OnSelectionCommand")]
 	public static extern void* QColumnView_OnSelectionCommand(void* self, QColumnView_OnSelectionCommand_action _action);
+	
+	[LinkName("QColumnView_SuperSelectionCommand")]
+	public static extern void* QColumnView_SuperSelectionCommand(void* self, void** index, void** event);
 	[LinkName("QColumnView_StartDrag")]
 	public static extern void QColumnView_StartDrag(void* self, void* supportedActions);
 	
 	public function void QColumnView_OnStartDrag_action(void* self, void* supportedActions);
 	[LinkName("QColumnView_OnStartDrag")]
 	public static extern void QColumnView_OnStartDrag(void* self, QColumnView_OnStartDrag_action _action);
+	
+	[LinkName("QColumnView_SuperStartDrag")]
+	public static extern void QColumnView_SuperStartDrag(void* self, void* supportedActions);
 	[LinkName("QColumnView_InitViewItemOption")]
 	public static extern void QColumnView_InitViewItemOption(void* self, void** option);
 	
 	public function void QColumnView_OnInitViewItemOption_action(void* self, void** option);
 	[LinkName("QColumnView_OnInitViewItemOption")]
 	public static extern void QColumnView_OnInitViewItemOption(void* self, QColumnView_OnInitViewItemOption_action _action);
+	
+	[LinkName("QColumnView_SuperInitViewItemOption")]
+	public static extern void QColumnView_SuperInitViewItemOption(void* self, void** option);
 }

@@ -613,6 +613,52 @@ class QStringListModel : IQStringListModel, IQAbstractListModel, IQAbstractItemM
 		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged2);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2);
+		CQt.QStringListModel_OnMetaObject(obj.ObjectPtr,  => QtBeef_QStringListModel_OnMetaObject);
+		CQt.QStringListModel_OnMetacast(obj.ObjectPtr,  => QtBeef_QStringListModel_OnMetacast);
+		CQt.QStringListModel_OnMetacall(obj.ObjectPtr,  => QtBeef_QStringListModel_OnMetacall);
+		CQt.QStringListModel_OnRowCount(obj.ObjectPtr,  => QtBeef_QStringListModel_OnRowCount);
+		CQt.QStringListModel_OnSibling(obj.ObjectPtr,  => QtBeef_QStringListModel_OnSibling);
+		CQt.QStringListModel_OnData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnData);
+		CQt.QStringListModel_OnSetData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnSetData);
+		CQt.QStringListModel_OnClearItemData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnClearItemData);
+		CQt.QStringListModel_OnFlags(obj.ObjectPtr,  => QtBeef_QStringListModel_OnFlags);
+		CQt.QStringListModel_OnInsertRows(obj.ObjectPtr,  => QtBeef_QStringListModel_OnInsertRows);
+		CQt.QStringListModel_OnRemoveRows(obj.ObjectPtr,  => QtBeef_QStringListModel_OnRemoveRows);
+		CQt.QStringListModel_OnMoveRows(obj.ObjectPtr,  => QtBeef_QStringListModel_OnMoveRows);
+		CQt.QStringListModel_OnItemData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnItemData);
+		CQt.QStringListModel_OnSetItemData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnSetItemData);
+		CQt.QStringListModel_OnSort(obj.ObjectPtr,  => QtBeef_QStringListModel_OnSort);
+		CQt.QStringListModel_OnSupportedDropActions(obj.ObjectPtr,  => QtBeef_QStringListModel_OnSupportedDropActions);
+		CQt.QStringListModel_OnEvent(obj.ObjectPtr,  => QtBeef_QStringListModel_OnEvent);
+		CQt.QStringListModel_OnEventFilter(obj.ObjectPtr,  => QtBeef_QStringListModel_OnEventFilter);
+		CQt.QStringListModel_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QStringListModel_OnTimerEvent);
+		CQt.QStringListModel_OnChildEvent(obj.ObjectPtr,  => QtBeef_QStringListModel_OnChildEvent);
+		CQt.QStringListModel_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QStringListModel_OnCustomEvent);
+		CQt.QStringListModel_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QStringListModel_OnConnectNotify);
+		CQt.QStringListModel_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QStringListModel_OnDisconnectNotify);
+		CQt.QStringListModel_OnIndex(obj.ObjectPtr,  => QtBeef_QStringListModel_OnIndex);
+		CQt.QStringListModel_OnColumnCount(obj.ObjectPtr,  => QtBeef_QStringListModel_OnColumnCount);
+		CQt.QStringListModel_OnHasChildren(obj.ObjectPtr,  => QtBeef_QStringListModel_OnHasChildren);
+		CQt.QStringListModel_OnHeaderData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnHeaderData);
+		CQt.QStringListModel_OnSetHeaderData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnSetHeaderData);
+		CQt.QStringListModel_OnMimeTypes(obj.ObjectPtr,  => QtBeef_QStringListModel_OnMimeTypes);
+		CQt.QStringListModel_OnMimeData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnMimeData);
+		CQt.QStringListModel_OnCanDropMimeData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnCanDropMimeData);
+		CQt.QStringListModel_OnDropMimeData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnDropMimeData);
+		CQt.QStringListModel_OnSupportedDragActions(obj.ObjectPtr,  => QtBeef_QStringListModel_OnSupportedDragActions);
+		CQt.QStringListModel_OnInsertColumns(obj.ObjectPtr,  => QtBeef_QStringListModel_OnInsertColumns);
+		CQt.QStringListModel_OnRemoveColumns(obj.ObjectPtr,  => QtBeef_QStringListModel_OnRemoveColumns);
+		CQt.QStringListModel_OnMoveColumns(obj.ObjectPtr,  => QtBeef_QStringListModel_OnMoveColumns);
+		CQt.QStringListModel_OnFetchMore(obj.ObjectPtr,  => QtBeef_QStringListModel_OnFetchMore);
+		CQt.QStringListModel_OnCanFetchMore(obj.ObjectPtr,  => QtBeef_QStringListModel_OnCanFetchMore);
+		CQt.QStringListModel_OnBuddy(obj.ObjectPtr,  => QtBeef_QStringListModel_OnBuddy);
+		CQt.QStringListModel_OnMatch(obj.ObjectPtr,  => QtBeef_QStringListModel_OnMatch);
+		CQt.QStringListModel_OnSpan(obj.ObjectPtr,  => QtBeef_QStringListModel_OnSpan);
+		CQt.QStringListModel_OnRoleNames(obj.ObjectPtr,  => QtBeef_QStringListModel_OnRoleNames);
+		CQt.QStringListModel_OnMultiData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnMultiData);
+		CQt.QStringListModel_OnSubmit(obj.ObjectPtr,  => QtBeef_QStringListModel_OnSubmit);
+		CQt.QStringListModel_OnRevert(obj.ObjectPtr,  => QtBeef_QStringListModel_OnRevert);
+		CQt.QStringListModel_OnResetInternalData(obj.ObjectPtr,  => QtBeef_QStringListModel_OnResetInternalData);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -679,6 +725,236 @@ class QStringListModel : IQStringListModel, IQAbstractListModel, IQAbstractItemM
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QStringListModel_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QStringListModel_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QStringListModel_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QStringListModel_OnRowCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowCount(parent);
+	}
+	static void QtBeef_QStringListModel_OnSibling(void* ptr, c_int row, c_int column, void** idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSibling(row, column, idx);
+	}
+	static void QtBeef_QStringListModel_OnData(void* ptr, void** index, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(index, role);
+	}
+	static void QtBeef_QStringListModel_OnSetData(void* ptr, void** index, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(index, value, role);
+	}
+	static void QtBeef_QStringListModel_OnClearItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClearItemData(index);
+	}
+	static void QtBeef_QStringListModel_OnFlags(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFlags(index);
+	}
+	static void QtBeef_QStringListModel_OnInsertRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertRows(row, count, parent);
+	}
+	static void QtBeef_QStringListModel_OnRemoveRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveRows(row, count, parent);
+	}
+	static void QtBeef_QStringListModel_OnMoveRows(void* ptr, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QStringListModel_OnItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemData(index);
+	}
+	static void QtBeef_QStringListModel_OnSetItemData(void* ptr, void** index, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetItemData(index, roles);
+	}
+	static void QtBeef_QStringListModel_OnSort(void* ptr, c_int column, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSort(column, order);
+	}
+	static void QtBeef_QStringListModel_OnSupportedDropActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDropActions();
+	}
+	static void QtBeef_QStringListModel_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QStringListModel_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QStringListModel_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QStringListModel_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QStringListModel_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QStringListModel_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QStringListModel_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QStringListModel_OnIndex(void* ptr, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndex(row, column, parent);
+	}
+	static void QtBeef_QStringListModel_OnColumnCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnCount(parent);
+	}
+	static void QtBeef_QStringListModel_OnHasChildren(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasChildren(parent);
+	}
+	static void QtBeef_QStringListModel_OnHeaderData(void* ptr, c_int section, Qt_Orientation orientation, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderData(section, orientation, role);
+	}
+	static void QtBeef_QStringListModel_OnSetHeaderData(void* ptr, c_int section, Qt_Orientation orientation, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetHeaderData(section, orientation, value, role);
+	}
+	static void QtBeef_QStringListModel_OnMimeTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeTypes();
+	}
+	static void QtBeef_QStringListModel_OnMimeData(void* ptr, void** indexes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeData(indexes);
+	}
+	static void QtBeef_QStringListModel_OnCanDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QStringListModel_OnDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QStringListModel_OnSupportedDragActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDragActions();
+	}
+	static void QtBeef_QStringListModel_OnInsertColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertColumns(column, count, parent);
+	}
+	static void QtBeef_QStringListModel_OnRemoveColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveColumns(column, count, parent);
+	}
+	static void QtBeef_QStringListModel_OnMoveColumns(void* ptr, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QStringListModel_OnFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFetchMore(parent);
+	}
+	static void QtBeef_QStringListModel_OnCanFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanFetchMore(parent);
+	}
+	static void QtBeef_QStringListModel_OnBuddy(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBuddy(index);
+	}
+	static void QtBeef_QStringListModel_OnMatch(void* ptr, void** start, c_int role, void** value, c_int hits, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMatch(start, role, value, hits, flags);
+	}
+	static void QtBeef_QStringListModel_OnSpan(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpan(index);
+	}
+	static void QtBeef_QStringListModel_OnRoleNames(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRoleNames();
+	}
+	static void QtBeef_QStringListModel_OnMultiData(void* ptr, void** index, void* roleDataSpan)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMultiData(index, roleDataSpan);
+	}
+	static void QtBeef_QStringListModel_OnSubmit(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSubmit();
+	}
+	static void QtBeef_QStringListModel_OnRevert(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRevert();
+	}
+	static void QtBeef_QStringListModel_OnResetInternalData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResetInternalData();
 	}
 	public this(QStringListModel_Ptr ptr)
 	{
@@ -1301,18 +1577,27 @@ extension CQt
 	public function void QStringListModel_OnMetaObject_action(void* self);
 	[LinkName("QStringListModel_OnMetaObject")]
 	public static extern void** QStringListModel_OnMetaObject(void* self, QStringListModel_OnMetaObject_action _action);
+	
+	[LinkName("QStringListModel_SuperMetaObject")]
+	public static extern void** QStringListModel_SuperMetaObject(void* self);
 	[LinkName("QStringListModel_Qt_Metacast")]
 	public static extern void* QStringListModel_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QStringListModel_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QStringListModel_OnMetacast")]
 	public static extern void* QStringListModel_OnMetacast(void* self, QStringListModel_OnMetacast_action _action);
+	
+	[LinkName("QStringListModel_SuperMetacast")]
+	public static extern void* QStringListModel_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QStringListModel_Qt_Metacall")]
 	public static extern c_int QStringListModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QStringListModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStringListModel_OnMetacall")]
 	public static extern c_int QStringListModel_OnMetacall(void* self, QStringListModel_OnMetacall_action _action);
+	
+	[LinkName("QStringListModel_SuperMetacall")]
+	public static extern c_int QStringListModel_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStringListModel_Tr")]
 	public static extern libqt_string QStringListModel_Tr(c_char* s);
 	[LinkName("QStringListModel_RowCount")]
@@ -1321,72 +1606,108 @@ extension CQt
 	public function void QStringListModel_OnRowCount_action(void* self, void** parent);
 	[LinkName("QStringListModel_OnRowCount")]
 	public static extern c_int QStringListModel_OnRowCount(void* self, QStringListModel_OnRowCount_action _action);
+	
+	[LinkName("QStringListModel_SuperRowCount")]
+	public static extern c_int QStringListModel_SuperRowCount(void* self, void** parent);
 	[LinkName("QStringListModel_Sibling")]
 	public static extern void* QStringListModel_Sibling(void* self, c_int row, c_int column, void** idx);
 	
 	public function void QStringListModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QStringListModel_OnSibling")]
 	public static extern void* QStringListModel_OnSibling(void* self, QStringListModel_OnSibling_action _action);
+	
+	[LinkName("QStringListModel_SuperSibling")]
+	public static extern void* QStringListModel_SuperSibling(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QStringListModel_Data")]
 	public static extern void* QStringListModel_Data(void* self, void** index, c_int role);
 	
 	public function void QStringListModel_OnData_action(void* self, void** index, c_int role);
 	[LinkName("QStringListModel_OnData")]
 	public static extern void* QStringListModel_OnData(void* self, QStringListModel_OnData_action _action);
+	
+	[LinkName("QStringListModel_SuperData")]
+	public static extern void* QStringListModel_SuperData(void* self, void** index, c_int role);
 	[LinkName("QStringListModel_SetData")]
 	public static extern bool QStringListModel_SetData(void* self, void** index, void** value, c_int role);
 	
 	public function void QStringListModel_OnSetData_action(void* self, void** index, void** value, c_int role);
 	[LinkName("QStringListModel_OnSetData")]
 	public static extern bool QStringListModel_OnSetData(void* self, QStringListModel_OnSetData_action _action);
+	
+	[LinkName("QStringListModel_SuperSetData")]
+	public static extern bool QStringListModel_SuperSetData(void* self, void** index, void** value, c_int role);
 	[LinkName("QStringListModel_ClearItemData")]
 	public static extern bool QStringListModel_ClearItemData(void* self, void** index);
 	
 	public function void QStringListModel_OnClearItemData_action(void* self, void** index);
 	[LinkName("QStringListModel_OnClearItemData")]
 	public static extern bool QStringListModel_OnClearItemData(void* self, QStringListModel_OnClearItemData_action _action);
+	
+	[LinkName("QStringListModel_SuperClearItemData")]
+	public static extern bool QStringListModel_SuperClearItemData(void* self, void** index);
 	[LinkName("QStringListModel_Flags")]
 	public static extern void* QStringListModel_Flags(void* self, void** index);
 	
 	public function void QStringListModel_OnFlags_action(void* self, void** index);
 	[LinkName("QStringListModel_OnFlags")]
 	public static extern void* QStringListModel_OnFlags(void* self, QStringListModel_OnFlags_action _action);
+	
+	[LinkName("QStringListModel_SuperFlags")]
+	public static extern void* QStringListModel_SuperFlags(void* self, void** index);
 	[LinkName("QStringListModel_InsertRows")]
 	public static extern bool QStringListModel_InsertRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QStringListModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QStringListModel_OnInsertRows")]
 	public static extern bool QStringListModel_OnInsertRows(void* self, QStringListModel_OnInsertRows_action _action);
+	
+	[LinkName("QStringListModel_SuperInsertRows")]
+	public static extern bool QStringListModel_SuperInsertRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QStringListModel_RemoveRows")]
 	public static extern bool QStringListModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QStringListModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QStringListModel_OnRemoveRows")]
 	public static extern bool QStringListModel_OnRemoveRows(void* self, QStringListModel_OnRemoveRows_action _action);
+	
+	[LinkName("QStringListModel_SuperRemoveRows")]
+	public static extern bool QStringListModel_SuperRemoveRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QStringListModel_MoveRows")]
 	public static extern bool QStringListModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QStringListModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QStringListModel_OnMoveRows")]
 	public static extern bool QStringListModel_OnMoveRows(void* self, QStringListModel_OnMoveRows_action _action);
+	
+	[LinkName("QStringListModel_SuperMoveRows")]
+	public static extern bool QStringListModel_SuperMoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QStringListModel_ItemData")]
 	public static extern void* QStringListModel_ItemData(void* self, void** index);
 	
 	public function void QStringListModel_OnItemData_action(void* self, void** index);
 	[LinkName("QStringListModel_OnItemData")]
 	public static extern void* QStringListModel_OnItemData(void* self, QStringListModel_OnItemData_action _action);
+	
+	[LinkName("QStringListModel_SuperItemData")]
+	public static extern void* QStringListModel_SuperItemData(void* self, void** index);
 	[LinkName("QStringListModel_SetItemData")]
 	public static extern bool QStringListModel_SetItemData(void* self, void** index, void** roles);
 	
 	public function void QStringListModel_OnSetItemData_action(void* self, void** index, void** roles);
 	[LinkName("QStringListModel_OnSetItemData")]
 	public static extern bool QStringListModel_OnSetItemData(void* self, QStringListModel_OnSetItemData_action _action);
+	
+	[LinkName("QStringListModel_SuperSetItemData")]
+	public static extern bool QStringListModel_SuperSetItemData(void* self, void** index, void** roles);
 	[LinkName("QStringListModel_Sort")]
 	public static extern void QStringListModel_Sort(void* self, c_int column, Qt_SortOrder order);
 	
 	public function void QStringListModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QStringListModel_OnSort")]
 	public static extern void QStringListModel_OnSort(void* self, QStringListModel_OnSort_action _action);
+	
+	[LinkName("QStringListModel_SuperSort")]
+	public static extern void QStringListModel_SuperSort(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QStringListModel_StringList")]
 	public static extern void* QStringListModel_StringList(void* self);
 	[LinkName("QStringListModel_SetStringList")]
@@ -1397,6 +1718,9 @@ extension CQt
 	public function void QStringListModel_OnSupportedDropActions_action(void* self);
 	[LinkName("QStringListModel_OnSupportedDropActions")]
 	public static extern void* QStringListModel_OnSupportedDropActions(void* self, QStringListModel_OnSupportedDropActions_action _action);
+	
+	[LinkName("QStringListModel_SuperSupportedDropActions")]
+	public static extern void* QStringListModel_SuperSupportedDropActions(void* self);
 	[LinkName("QStringListModel_Tr2")]
 	public static extern libqt_string QStringListModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QStringListModel_Tr3")]
@@ -1407,178 +1731,268 @@ extension CQt
 	public function void QStringListModel_OnEvent_action(void* self, void** event);
 	[LinkName("QStringListModel_OnEvent")]
 	public static extern bool QStringListModel_OnEvent(void* self, QStringListModel_OnEvent_action _action);
+	
+	[LinkName("QStringListModel_SuperEvent")]
+	public static extern bool QStringListModel_SuperEvent(void* self, void** event);
 	[LinkName("QStringListModel_EventFilter")]
 	public static extern bool QStringListModel_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QStringListModel_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QStringListModel_OnEventFilter")]
 	public static extern bool QStringListModel_OnEventFilter(void* self, QStringListModel_OnEventFilter_action _action);
+	
+	[LinkName("QStringListModel_SuperEventFilter")]
+	public static extern bool QStringListModel_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QStringListModel_TimerEvent")]
 	public static extern void QStringListModel_TimerEvent(void* self, void** event);
 	
 	public function void QStringListModel_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QStringListModel_OnTimerEvent")]
 	public static extern void QStringListModel_OnTimerEvent(void* self, QStringListModel_OnTimerEvent_action _action);
+	
+	[LinkName("QStringListModel_SuperTimerEvent")]
+	public static extern void QStringListModel_SuperTimerEvent(void* self, void** event);
 	[LinkName("QStringListModel_ChildEvent")]
 	public static extern void QStringListModel_ChildEvent(void* self, void** event);
 	
 	public function void QStringListModel_OnChildEvent_action(void* self, void** event);
 	[LinkName("QStringListModel_OnChildEvent")]
 	public static extern void QStringListModel_OnChildEvent(void* self, QStringListModel_OnChildEvent_action _action);
+	
+	[LinkName("QStringListModel_SuperChildEvent")]
+	public static extern void QStringListModel_SuperChildEvent(void* self, void** event);
 	[LinkName("QStringListModel_CustomEvent")]
 	public static extern void QStringListModel_CustomEvent(void* self, void** event);
 	
 	public function void QStringListModel_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QStringListModel_OnCustomEvent")]
 	public static extern void QStringListModel_OnCustomEvent(void* self, QStringListModel_OnCustomEvent_action _action);
+	
+	[LinkName("QStringListModel_SuperCustomEvent")]
+	public static extern void QStringListModel_SuperCustomEvent(void* self, void** event);
 	[LinkName("QStringListModel_ConnectNotify")]
 	public static extern void QStringListModel_ConnectNotify(void* self, void** signal);
 	
 	public function void QStringListModel_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QStringListModel_OnConnectNotify")]
 	public static extern void QStringListModel_OnConnectNotify(void* self, QStringListModel_OnConnectNotify_action _action);
+	
+	[LinkName("QStringListModel_SuperConnectNotify")]
+	public static extern void QStringListModel_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QStringListModel_DisconnectNotify")]
 	public static extern void QStringListModel_DisconnectNotify(void* self, void** signal);
 	
 	public function void QStringListModel_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QStringListModel_OnDisconnectNotify")]
 	public static extern void QStringListModel_OnDisconnectNotify(void* self, QStringListModel_OnDisconnectNotify_action _action);
+	
+	[LinkName("QStringListModel_SuperDisconnectNotify")]
+	public static extern void QStringListModel_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QStringListModel_Index")]
 	public static extern void* QStringListModel_Index(void* self, c_int row, c_int column, void** parent);
 	
 	public function void QStringListModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QStringListModel_OnIndex")]
 	public static extern void* QStringListModel_OnIndex(void* self, QStringListModel_OnIndex_action _action);
+	
+	[LinkName("QStringListModel_SuperIndex")]
+	public static extern void* QStringListModel_SuperIndex(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QStringListModel_ColumnCount")]
 	public static extern c_int QStringListModel_ColumnCount(void* self, void** parent);
 	
 	public function void QStringListModel_OnColumnCount_action(void* self, void** parent);
 	[LinkName("QStringListModel_OnColumnCount")]
 	public static extern c_int QStringListModel_OnColumnCount(void* self, QStringListModel_OnColumnCount_action _action);
+	
+	[LinkName("QStringListModel_SuperColumnCount")]
+	public static extern c_int QStringListModel_SuperColumnCount(void* self, void** parent);
 	[LinkName("QStringListModel_HasChildren")]
 	public static extern bool QStringListModel_HasChildren(void* self, void** parent);
 	
 	public function void QStringListModel_OnHasChildren_action(void* self, void** parent);
 	[LinkName("QStringListModel_OnHasChildren")]
 	public static extern bool QStringListModel_OnHasChildren(void* self, QStringListModel_OnHasChildren_action _action);
+	
+	[LinkName("QStringListModel_SuperHasChildren")]
+	public static extern bool QStringListModel_SuperHasChildren(void* self, void** parent);
 	[LinkName("QStringListModel_HeaderData")]
 	public static extern void* QStringListModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	
 	public function void QStringListModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QStringListModel_OnHeaderData")]
 	public static extern void* QStringListModel_OnHeaderData(void* self, QStringListModel_OnHeaderData_action _action);
+	
+	[LinkName("QStringListModel_SuperHeaderData")]
+	public static extern void* QStringListModel_SuperHeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QStringListModel_SetHeaderData")]
 	public static extern bool QStringListModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	
 	public function void QStringListModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QStringListModel_OnSetHeaderData")]
 	public static extern bool QStringListModel_OnSetHeaderData(void* self, QStringListModel_OnSetHeaderData_action _action);
+	
+	[LinkName("QStringListModel_SuperSetHeaderData")]
+	public static extern bool QStringListModel_SuperSetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QStringListModel_MimeTypes")]
 	public static extern void* QStringListModel_MimeTypes(void* self);
 	
 	public function void QStringListModel_OnMimeTypes_action(void* self);
 	[LinkName("QStringListModel_OnMimeTypes")]
 	public static extern void* QStringListModel_OnMimeTypes(void* self, QStringListModel_OnMimeTypes_action _action);
+	
+	[LinkName("QStringListModel_SuperMimeTypes")]
+	public static extern void* QStringListModel_SuperMimeTypes(void* self);
 	[LinkName("QStringListModel_MimeData")]
 	public static extern void** QStringListModel_MimeData(void* self, void** indexes);
 	
 	public function void QStringListModel_OnMimeData_action(void* self, void** indexes);
 	[LinkName("QStringListModel_OnMimeData")]
 	public static extern void** QStringListModel_OnMimeData(void* self, QStringListModel_OnMimeData_action _action);
+	
+	[LinkName("QStringListModel_SuperMimeData")]
+	public static extern void** QStringListModel_SuperMimeData(void* self, void** indexes);
 	[LinkName("QStringListModel_CanDropMimeData")]
 	public static extern bool QStringListModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QStringListModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QStringListModel_OnCanDropMimeData")]
 	public static extern bool QStringListModel_OnCanDropMimeData(void* self, QStringListModel_OnCanDropMimeData_action _action);
+	
+	[LinkName("QStringListModel_SuperCanDropMimeData")]
+	public static extern bool QStringListModel_SuperCanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QStringListModel_DropMimeData")]
 	public static extern bool QStringListModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QStringListModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QStringListModel_OnDropMimeData")]
 	public static extern bool QStringListModel_OnDropMimeData(void* self, QStringListModel_OnDropMimeData_action _action);
+	
+	[LinkName("QStringListModel_SuperDropMimeData")]
+	public static extern bool QStringListModel_SuperDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QStringListModel_SupportedDragActions")]
 	public static extern void* QStringListModel_SupportedDragActions(void* self);
 	
 	public function void QStringListModel_OnSupportedDragActions_action(void* self);
 	[LinkName("QStringListModel_OnSupportedDragActions")]
 	public static extern void* QStringListModel_OnSupportedDragActions(void* self, QStringListModel_OnSupportedDragActions_action _action);
+	
+	[LinkName("QStringListModel_SuperSupportedDragActions")]
+	public static extern void* QStringListModel_SuperSupportedDragActions(void* self);
 	[LinkName("QStringListModel_InsertColumns")]
 	public static extern bool QStringListModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QStringListModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QStringListModel_OnInsertColumns")]
 	public static extern bool QStringListModel_OnInsertColumns(void* self, QStringListModel_OnInsertColumns_action _action);
+	
+	[LinkName("QStringListModel_SuperInsertColumns")]
+	public static extern bool QStringListModel_SuperInsertColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QStringListModel_RemoveColumns")]
 	public static extern bool QStringListModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QStringListModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QStringListModel_OnRemoveColumns")]
 	public static extern bool QStringListModel_OnRemoveColumns(void* self, QStringListModel_OnRemoveColumns_action _action);
+	
+	[LinkName("QStringListModel_SuperRemoveColumns")]
+	public static extern bool QStringListModel_SuperRemoveColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QStringListModel_MoveColumns")]
 	public static extern bool QStringListModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QStringListModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QStringListModel_OnMoveColumns")]
 	public static extern bool QStringListModel_OnMoveColumns(void* self, QStringListModel_OnMoveColumns_action _action);
+	
+	[LinkName("QStringListModel_SuperMoveColumns")]
+	public static extern bool QStringListModel_SuperMoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QStringListModel_FetchMore")]
 	public static extern void QStringListModel_FetchMore(void* self, void** parent);
 	
 	public function void QStringListModel_OnFetchMore_action(void* self, void** parent);
 	[LinkName("QStringListModel_OnFetchMore")]
 	public static extern void QStringListModel_OnFetchMore(void* self, QStringListModel_OnFetchMore_action _action);
+	
+	[LinkName("QStringListModel_SuperFetchMore")]
+	public static extern void QStringListModel_SuperFetchMore(void* self, void** parent);
 	[LinkName("QStringListModel_CanFetchMore")]
 	public static extern bool QStringListModel_CanFetchMore(void* self, void** parent);
 	
 	public function void QStringListModel_OnCanFetchMore_action(void* self, void** parent);
 	[LinkName("QStringListModel_OnCanFetchMore")]
 	public static extern bool QStringListModel_OnCanFetchMore(void* self, QStringListModel_OnCanFetchMore_action _action);
+	
+	[LinkName("QStringListModel_SuperCanFetchMore")]
+	public static extern bool QStringListModel_SuperCanFetchMore(void* self, void** parent);
 	[LinkName("QStringListModel_Buddy")]
 	public static extern void* QStringListModel_Buddy(void* self, void** index);
 	
 	public function void QStringListModel_OnBuddy_action(void* self, void** index);
 	[LinkName("QStringListModel_OnBuddy")]
 	public static extern void* QStringListModel_OnBuddy(void* self, QStringListModel_OnBuddy_action _action);
+	
+	[LinkName("QStringListModel_SuperBuddy")]
+	public static extern void* QStringListModel_SuperBuddy(void* self, void** index);
 	[LinkName("QStringListModel_Match")]
 	public static extern void* QStringListModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	
 	public function void QStringListModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QStringListModel_OnMatch")]
 	public static extern void* QStringListModel_OnMatch(void* self, QStringListModel_OnMatch_action _action);
+	
+	[LinkName("QStringListModel_SuperMatch")]
+	public static extern void* QStringListModel_SuperMatch(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QStringListModel_Span")]
 	public static extern void* QStringListModel_Span(void* self, void** index);
 	
 	public function void QStringListModel_OnSpan_action(void* self, void** index);
 	[LinkName("QStringListModel_OnSpan")]
 	public static extern void* QStringListModel_OnSpan(void* self, QStringListModel_OnSpan_action _action);
+	
+	[LinkName("QStringListModel_SuperSpan")]
+	public static extern void* QStringListModel_SuperSpan(void* self, void** index);
 	[LinkName("QStringListModel_RoleNames")]
 	public static extern void* QStringListModel_RoleNames(void* self);
 	
 	public function void QStringListModel_OnRoleNames_action(void* self);
 	[LinkName("QStringListModel_OnRoleNames")]
 	public static extern void* QStringListModel_OnRoleNames(void* self, QStringListModel_OnRoleNames_action _action);
+	
+	[LinkName("QStringListModel_SuperRoleNames")]
+	public static extern void* QStringListModel_SuperRoleNames(void* self);
 	[LinkName("QStringListModel_MultiData")]
 	public static extern void QStringListModel_MultiData(void* self, void** index, void* roleDataSpan);
 	
 	public function void QStringListModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
 	[LinkName("QStringListModel_OnMultiData")]
 	public static extern void QStringListModel_OnMultiData(void* self, QStringListModel_OnMultiData_action _action);
+	
+	[LinkName("QStringListModel_SuperMultiData")]
+	public static extern void QStringListModel_SuperMultiData(void* self, void** index, void* roleDataSpan);
 	[LinkName("QStringListModel_Submit")]
 	public static extern bool QStringListModel_Submit(void* self);
 	
 	public function void QStringListModel_OnSubmit_action(void* self);
 	[LinkName("QStringListModel_OnSubmit")]
 	public static extern bool QStringListModel_OnSubmit(void* self, QStringListModel_OnSubmit_action _action);
+	
+	[LinkName("QStringListModel_SuperSubmit")]
+	public static extern bool QStringListModel_SuperSubmit(void* self);
 	[LinkName("QStringListModel_Revert")]
 	public static extern void QStringListModel_Revert(void* self);
 	
 	public function void QStringListModel_OnRevert_action(void* self);
 	[LinkName("QStringListModel_OnRevert")]
 	public static extern void QStringListModel_OnRevert(void* self, QStringListModel_OnRevert_action _action);
+	
+	[LinkName("QStringListModel_SuperRevert")]
+	public static extern void QStringListModel_SuperRevert(void* self);
 	[LinkName("QStringListModel_ResetInternalData")]
 	public static extern void QStringListModel_ResetInternalData(void* self);
 	
 	public function void QStringListModel_OnResetInternalData_action(void* self);
 	[LinkName("QStringListModel_OnResetInternalData")]
 	public static extern void QStringListModel_OnResetInternalData(void* self, QStringListModel_OnResetInternalData_action _action);
+	
+	[LinkName("QStringListModel_SuperResetInternalData")]
+	public static extern void QStringListModel_SuperResetInternalData(void* self);
 }

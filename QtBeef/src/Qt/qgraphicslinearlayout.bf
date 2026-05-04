@@ -306,6 +306,66 @@ class QGraphicsLinearLayout : IQGraphicsLinearLayout, IQGraphicsLayout, IQGraphi
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsLinearLayout_OnRemoveAt(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnRemoveAt);
+		CQt.QGraphicsLinearLayout_OnSetGeometry(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnSetGeometry);
+		CQt.QGraphicsLinearLayout_OnCount(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnCount);
+		CQt.QGraphicsLinearLayout_OnItemAt(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnItemAt);
+		CQt.QGraphicsLinearLayout_OnInvalidate(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnInvalidate);
+		CQt.QGraphicsLinearLayout_OnSizeHint(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnSizeHint);
+		CQt.QGraphicsLinearLayout_OnGetContentsMargins(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnGetContentsMargins);
+		CQt.QGraphicsLinearLayout_OnUpdateGeometry(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnUpdateGeometry);
+		CQt.QGraphicsLinearLayout_OnIsEmpty(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnIsEmpty);
+		CQt.QGraphicsLinearLayout_OnWidgetEvent(obj.ObjectPtr,  => QtBeef_QGraphicsLinearLayout_OnWidgetEvent);
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnRemoveAt(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveAt(index);
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnSetGeometry(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetGeometry(rect);
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCount();
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnItemAt(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemAt(index);
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnInvalidate(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInvalidate();
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnSizeHint(void* ptr, Qt_SizeHint which, void** constraint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint(which, constraint);
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnGetContentsMargins(void* ptr, double* left, double* top, double* right, double* bottom)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGetContentsMargins(left, top, right, bottom);
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnUpdateGeometry(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateGeometry();
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnIsEmpty(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEmpty();
+	}
+	static void QtBeef_QGraphicsLinearLayout_OnWidgetEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidgetEvent(e);
 	}
 	public this(QGraphicsLinearLayout_Ptr ptr)
 	{
@@ -650,6 +710,9 @@ extension CQt
 	public function void QGraphicsLinearLayout_OnRemoveAt_action(void* self, c_int index);
 	[LinkName("QGraphicsLinearLayout_OnRemoveAt")]
 	public static extern void QGraphicsLinearLayout_OnRemoveAt(void* self, QGraphicsLinearLayout_OnRemoveAt_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperRemoveAt")]
+	public static extern void QGraphicsLinearLayout_SuperRemoveAt(void* self, c_int index);
 	[LinkName("QGraphicsLinearLayout_SetSpacing")]
 	public static extern void QGraphicsLinearLayout_SetSpacing(void* self, double spacing);
 	[LinkName("QGraphicsLinearLayout_Spacing")]
@@ -672,30 +735,45 @@ extension CQt
 	public function void QGraphicsLinearLayout_OnSetGeometry_action(void* self, void** rect);
 	[LinkName("QGraphicsLinearLayout_OnSetGeometry")]
 	public static extern void QGraphicsLinearLayout_OnSetGeometry(void* self, QGraphicsLinearLayout_OnSetGeometry_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperSetGeometry")]
+	public static extern void QGraphicsLinearLayout_SuperSetGeometry(void* self, void** rect);
 	[LinkName("QGraphicsLinearLayout_Count")]
 	public static extern c_int QGraphicsLinearLayout_Count(void* self);
 	
 	public function void QGraphicsLinearLayout_OnCount_action(void* self);
 	[LinkName("QGraphicsLinearLayout_OnCount")]
 	public static extern c_int QGraphicsLinearLayout_OnCount(void* self, QGraphicsLinearLayout_OnCount_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperCount")]
+	public static extern c_int QGraphicsLinearLayout_SuperCount(void* self);
 	[LinkName("QGraphicsLinearLayout_ItemAt")]
 	public static extern void** QGraphicsLinearLayout_ItemAt(void* self, c_int index);
 	
 	public function void QGraphicsLinearLayout_OnItemAt_action(void* self, c_int index);
 	[LinkName("QGraphicsLinearLayout_OnItemAt")]
 	public static extern void** QGraphicsLinearLayout_OnItemAt(void* self, QGraphicsLinearLayout_OnItemAt_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperItemAt")]
+	public static extern void** QGraphicsLinearLayout_SuperItemAt(void* self, c_int index);
 	[LinkName("QGraphicsLinearLayout_Invalidate")]
 	public static extern void QGraphicsLinearLayout_Invalidate(void* self);
 	
 	public function void QGraphicsLinearLayout_OnInvalidate_action(void* self);
 	[LinkName("QGraphicsLinearLayout_OnInvalidate")]
 	public static extern void QGraphicsLinearLayout_OnInvalidate(void* self, QGraphicsLinearLayout_OnInvalidate_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperInvalidate")]
+	public static extern void QGraphicsLinearLayout_SuperInvalidate(void* self);
 	[LinkName("QGraphicsLinearLayout_SizeHint")]
 	public static extern void* QGraphicsLinearLayout_SizeHint(void* self, Qt_SizeHint which, void** constraint);
 	
 	public function void QGraphicsLinearLayout_OnSizeHint_action(void* self, Qt_SizeHint which, void** constraint);
 	[LinkName("QGraphicsLinearLayout_OnSizeHint")]
 	public static extern void* QGraphicsLinearLayout_OnSizeHint(void* self, QGraphicsLinearLayout_OnSizeHint_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperSizeHint")]
+	public static extern void* QGraphicsLinearLayout_SuperSizeHint(void* self, Qt_SizeHint which, void** constraint);
 	[LinkName("QGraphicsLinearLayout_Dump")]
 	public static extern void QGraphicsLinearLayout_Dump(void* self);
 	[LinkName("QGraphicsLinearLayout_AddStretch1")]
@@ -710,22 +788,34 @@ extension CQt
 	public function void QGraphicsLinearLayout_OnGetContentsMargins_action(void* self, double* left, double* top, double* right, double* bottom);
 	[LinkName("QGraphicsLinearLayout_OnGetContentsMargins")]
 	public static extern void QGraphicsLinearLayout_OnGetContentsMargins(void* self, QGraphicsLinearLayout_OnGetContentsMargins_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperGetContentsMargins")]
+	public static extern void QGraphicsLinearLayout_SuperGetContentsMargins(void* self, double* left, double* top, double* right, double* bottom);
 	[LinkName("QGraphicsLinearLayout_UpdateGeometry")]
 	public static extern void QGraphicsLinearLayout_UpdateGeometry(void* self);
 	
 	public function void QGraphicsLinearLayout_OnUpdateGeometry_action(void* self);
 	[LinkName("QGraphicsLinearLayout_OnUpdateGeometry")]
 	public static extern void QGraphicsLinearLayout_OnUpdateGeometry(void* self, QGraphicsLinearLayout_OnUpdateGeometry_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperUpdateGeometry")]
+	public static extern void QGraphicsLinearLayout_SuperUpdateGeometry(void* self);
 	[LinkName("QGraphicsLinearLayout_IsEmpty")]
 	public static extern bool QGraphicsLinearLayout_IsEmpty(void* self);
 	
 	public function void QGraphicsLinearLayout_OnIsEmpty_action(void* self);
 	[LinkName("QGraphicsLinearLayout_OnIsEmpty")]
 	public static extern bool QGraphicsLinearLayout_OnIsEmpty(void* self, QGraphicsLinearLayout_OnIsEmpty_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperIsEmpty")]
+	public static extern bool QGraphicsLinearLayout_SuperIsEmpty(void* self);
 	[LinkName("QGraphicsLinearLayout_WidgetEvent")]
 	public static extern void QGraphicsLinearLayout_WidgetEvent(void* self, void** e);
 	
 	public function void QGraphicsLinearLayout_OnWidgetEvent_action(void* self, void** e);
 	[LinkName("QGraphicsLinearLayout_OnWidgetEvent")]
 	public static extern void QGraphicsLinearLayout_OnWidgetEvent(void* self, QGraphicsLinearLayout_OnWidgetEvent_action _action);
+	
+	[LinkName("QGraphicsLinearLayout_SuperWidgetEvent")]
+	public static extern void QGraphicsLinearLayout_SuperWidgetEvent(void* self, void** e);
 }

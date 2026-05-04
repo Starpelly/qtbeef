@@ -74,6 +74,24 @@ class QNativeInterface_QEGLContext : IQNativeInterface_QEGLContext
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QNativeInterface_QEGLContext_OnNativeContext(obj.ObjectPtr,  => QtBeef_QNativeInterface_QEGLContext_OnNativeContext);
+		CQt.QNativeInterface_QEGLContext_OnConfig(obj.ObjectPtr,  => QtBeef_QNativeInterface_QEGLContext_OnConfig);
+		CQt.QNativeInterface_QEGLContext_OnDisplay(obj.ObjectPtr,  => QtBeef_QNativeInterface_QEGLContext_OnDisplay);
+	}
+	static void QtBeef_QNativeInterface_QEGLContext_OnNativeContext(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeContext();
+	}
+	static void QtBeef_QNativeInterface_QEGLContext_OnConfig(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConfig();
+	}
+	static void QtBeef_QNativeInterface_QEGLContext_OnDisplay(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisplay();
 	}
 	public this(QNativeInterface_QEGLContext_Ptr ptr)
 	{
@@ -114,18 +132,27 @@ extension CQt
 	public function void QNativeInterface_QEGLContext_OnNativeContext_action(void* self);
 	[LinkName("QNativeInterface_QEGLContext_OnNativeContext")]
 	public static extern void* QNativeInterface_QEGLContext_OnNativeContext(void* self, QNativeInterface_QEGLContext_OnNativeContext_action _action);
+	
+	[LinkName("QNativeInterface_QEGLContext_SuperNativeContext")]
+	public static extern void* QNativeInterface_QEGLContext_SuperNativeContext(void* self);
 	[LinkName("QNativeInterface_QEGLContext_Config")]
 	public static extern void* QNativeInterface_QEGLContext_Config(void* self);
 	
 	public function void QNativeInterface_QEGLContext_OnConfig_action(void* self);
 	[LinkName("QNativeInterface_QEGLContext_OnConfig")]
 	public static extern void* QNativeInterface_QEGLContext_OnConfig(void* self, QNativeInterface_QEGLContext_OnConfig_action _action);
+	
+	[LinkName("QNativeInterface_QEGLContext_SuperConfig")]
+	public static extern void* QNativeInterface_QEGLContext_SuperConfig(void* self);
 	[LinkName("QNativeInterface_QEGLContext_Display")]
 	public static extern void* QNativeInterface_QEGLContext_Display(void* self);
 	
 	public function void QNativeInterface_QEGLContext_OnDisplay_action(void* self);
 	[LinkName("QNativeInterface_QEGLContext_OnDisplay")]
 	public static extern void* QNativeInterface_QEGLContext_OnDisplay(void* self, QNativeInterface_QEGLContext_OnDisplay_action _action);
+	
+	[LinkName("QNativeInterface_QEGLContext_SuperDisplay")]
+	public static extern void* QNativeInterface_QEGLContext_SuperDisplay(void* self);
 	[LinkName("QNativeInterface_QEGLContext_FromNative3")]
 	public static extern void** QNativeInterface_QEGLContext_FromNative3(void* context, void* display, void** shareContext);
 }

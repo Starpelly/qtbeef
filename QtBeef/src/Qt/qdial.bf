@@ -1770,6 +1770,58 @@ class QDial : IQDial, IQAbstractSlider, IQWidget, IQObject, IQPaintDevice
 		CQt.QAbstractSlider_Connect_SliderReleased(obj.ObjectPtr,  => QtBeef_QAbstractSlider_Connect_SliderReleased);
 		CQt.QAbstractSlider_Connect_RangeChanged(obj.ObjectPtr,  => QtBeef_QAbstractSlider_Connect_RangeChanged);
 		CQt.QAbstractSlider_Connect_ActionTriggered(obj.ObjectPtr,  => QtBeef_QAbstractSlider_Connect_ActionTriggered);
+		CQt.QDial_OnMetaObject(obj.ObjectPtr,  => QtBeef_QDial_OnMetaObject);
+		CQt.QDial_OnMetacast(obj.ObjectPtr,  => QtBeef_QDial_OnMetacast);
+		CQt.QDial_OnMetacall(obj.ObjectPtr,  => QtBeef_QDial_OnMetacall);
+		CQt.QDial_OnSizeHint(obj.ObjectPtr,  => QtBeef_QDial_OnSizeHint);
+		CQt.QDial_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QDial_OnMinimumSizeHint);
+		CQt.QDial_OnEvent(obj.ObjectPtr,  => QtBeef_QDial_OnEvent);
+		CQt.QDial_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QDial_OnResizeEvent);
+		CQt.QDial_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QDial_OnPaintEvent);
+		CQt.QDial_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QDial_OnMousePressEvent);
+		CQt.QDial_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QDial_OnMouseReleaseEvent);
+		CQt.QDial_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QDial_OnMouseMoveEvent);
+		CQt.QDial_OnSliderChange(obj.ObjectPtr,  => QtBeef_QDial_OnSliderChange);
+		CQt.QDial_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QDial_OnInitStyleOption);
+		CQt.QDial_OnEventFilter(obj.ObjectPtr,  => QtBeef_QDial_OnEventFilter);
+		CQt.QDial_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QDial_OnTimerEvent);
+		CQt.QDial_OnChildEvent(obj.ObjectPtr,  => QtBeef_QDial_OnChildEvent);
+		CQt.QDial_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QDial_OnCustomEvent);
+		CQt.QDial_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QDial_OnConnectNotify);
+		CQt.QDial_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QDial_OnDisconnectNotify);
+		CQt.QDial_OnDevType(obj.ObjectPtr,  => QtBeef_QDial_OnDevType);
+		CQt.QDial_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QDial_OnPaintEngine);
+		CQt.QDial_OnMetric(obj.ObjectPtr,  => QtBeef_QDial_OnMetric);
+		CQt.QDial_OnInitPainter(obj.ObjectPtr,  => QtBeef_QDial_OnInitPainter);
+		CQt.QDial_OnRedirected(obj.ObjectPtr,  => QtBeef_QDial_OnRedirected);
+		CQt.QDial_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QDial_OnSharedPainter);
+		CQt.QDial_OnSetVisible(obj.ObjectPtr,  => QtBeef_QDial_OnSetVisible);
+		CQt.QDial_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QDial_OnHeightForWidth);
+		CQt.QDial_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QDial_OnHasHeightForWidth);
+		CQt.QDial_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QDial_OnMouseDoubleClickEvent);
+		CQt.QDial_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QDial_OnWheelEvent);
+		CQt.QDial_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QDial_OnKeyPressEvent);
+		CQt.QDial_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QDial_OnKeyReleaseEvent);
+		CQt.QDial_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QDial_OnFocusInEvent);
+		CQt.QDial_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QDial_OnFocusOutEvent);
+		CQt.QDial_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QDial_OnEnterEvent);
+		CQt.QDial_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QDial_OnLeaveEvent);
+		CQt.QDial_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QDial_OnMoveEvent);
+		CQt.QDial_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QDial_OnCloseEvent);
+		CQt.QDial_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QDial_OnContextMenuEvent);
+		CQt.QDial_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QDial_OnTabletEvent);
+		CQt.QDial_OnActionEvent(obj.ObjectPtr,  => QtBeef_QDial_OnActionEvent);
+		CQt.QDial_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QDial_OnDragEnterEvent);
+		CQt.QDial_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QDial_OnDragMoveEvent);
+		CQt.QDial_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QDial_OnDragLeaveEvent);
+		CQt.QDial_OnDropEvent(obj.ObjectPtr,  => QtBeef_QDial_OnDropEvent);
+		CQt.QDial_OnShowEvent(obj.ObjectPtr,  => QtBeef_QDial_OnShowEvent);
+		CQt.QDial_OnHideEvent(obj.ObjectPtr,  => QtBeef_QDial_OnHideEvent);
+		CQt.QDial_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QDial_OnNativeEvent);
+		CQt.QDial_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QDial_OnChangeEvent);
+		CQt.QDial_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QDial_OnInputMethodEvent);
+		CQt.QDial_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QDial_OnInputMethodQuery);
+		CQt.QDial_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QDial_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1842,6 +1894,266 @@ class QDial : IQDial, IQAbstractSlider, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnActionTriggered.Invoke(action);
+	}
+	static void QtBeef_QDial_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QDial_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QDial_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QDial_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QDial_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QDial_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QDial_OnResizeEvent(void* ptr, void** re)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(re);
+	}
+	static void QtBeef_QDial_OnPaintEvent(void* ptr, void** pe)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(pe);
+	}
+	static void QtBeef_QDial_OnMousePressEvent(void* ptr, void** me)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(me);
+	}
+	static void QtBeef_QDial_OnMouseReleaseEvent(void* ptr, void** me)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(me);
+	}
+	static void QtBeef_QDial_OnMouseMoveEvent(void* ptr, void** me)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(me);
+	}
+	static void QtBeef_QDial_OnSliderChange(void* ptr, QAbstractSlider_SliderChange change)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSliderChange(change);
+	}
+	static void QtBeef_QDial_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QDial_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QDial_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QDial_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QDial_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QDial_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QDial_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QDial_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QDial_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QDial_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QDial_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QDial_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QDial_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QDial_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QDial_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QDial_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QDial_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QDial_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QDial_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QDial_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QDial_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QDial_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QDial_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QDial_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QDial_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QDial_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QDial_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QDial_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QDial_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QDial_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QDial_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QDial_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QDial_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QDial_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QDial_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QDial_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QDial_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QDial_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QDial_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QDial_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QDial_Ptr ptr)
 	{
@@ -3581,18 +3893,27 @@ extension CQt
 	public function void QDial_OnMetaObject_action(void* self);
 	[LinkName("QDial_OnMetaObject")]
 	public static extern void** QDial_OnMetaObject(void* self, QDial_OnMetaObject_action _action);
+	
+	[LinkName("QDial_SuperMetaObject")]
+	public static extern void** QDial_SuperMetaObject(void* self);
 	[LinkName("QDial_Qt_Metacast")]
 	public static extern void* QDial_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QDial_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QDial_OnMetacast")]
 	public static extern void* QDial_OnMetacast(void* self, QDial_OnMetacast_action _action);
+	
+	[LinkName("QDial_SuperMetacast")]
+	public static extern void* QDial_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QDial_Qt_Metacall")]
 	public static extern c_int QDial_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QDial_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDial_OnMetacall")]
 	public static extern c_int QDial_OnMetacall(void* self, QDial_OnMetacall_action _action);
+	
+	[LinkName("QDial_SuperMetacall")]
+	public static extern c_int QDial_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDial_Tr")]
 	public static extern libqt_string QDial_Tr(c_char* s);
 	[LinkName("QDial_Wrapping")]
@@ -3611,12 +3932,18 @@ extension CQt
 	public function void QDial_OnSizeHint_action(void* self);
 	[LinkName("QDial_OnSizeHint")]
 	public static extern void* QDial_OnSizeHint(void* self, QDial_OnSizeHint_action _action);
+	
+	[LinkName("QDial_SuperSizeHint")]
+	public static extern void* QDial_SuperSizeHint(void* self);
 	[LinkName("QDial_MinimumSizeHint")]
 	public static extern void* QDial_MinimumSizeHint(void* self);
 	
 	public function void QDial_OnMinimumSizeHint_action(void* self);
 	[LinkName("QDial_OnMinimumSizeHint")]
 	public static extern void* QDial_OnMinimumSizeHint(void* self, QDial_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QDial_SuperMinimumSizeHint")]
+	public static extern void* QDial_SuperMinimumSizeHint(void* self);
 	[LinkName("QDial_SetNotchesVisible")]
 	public static extern void QDial_SetNotchesVisible(void* self, bool visible);
 	[LinkName("QDial_SetWrapping")]
@@ -3627,48 +3954,72 @@ extension CQt
 	public function void QDial_OnEvent_action(void* self, void** e);
 	[LinkName("QDial_OnEvent")]
 	public static extern bool QDial_OnEvent(void* self, QDial_OnEvent_action _action);
+	
+	[LinkName("QDial_SuperEvent")]
+	public static extern bool QDial_SuperEvent(void* self, void** e);
 	[LinkName("QDial_ResizeEvent")]
 	public static extern void QDial_ResizeEvent(void* self, void** re);
 	
 	public function void QDial_OnResizeEvent_action(void* self, void** re);
 	[LinkName("QDial_OnResizeEvent")]
 	public static extern void QDial_OnResizeEvent(void* self, QDial_OnResizeEvent_action _action);
+	
+	[LinkName("QDial_SuperResizeEvent")]
+	public static extern void QDial_SuperResizeEvent(void* self, void** re);
 	[LinkName("QDial_PaintEvent")]
 	public static extern void QDial_PaintEvent(void* self, void** pe);
 	
 	public function void QDial_OnPaintEvent_action(void* self, void** pe);
 	[LinkName("QDial_OnPaintEvent")]
 	public static extern void QDial_OnPaintEvent(void* self, QDial_OnPaintEvent_action _action);
+	
+	[LinkName("QDial_SuperPaintEvent")]
+	public static extern void QDial_SuperPaintEvent(void* self, void** pe);
 	[LinkName("QDial_MousePressEvent")]
 	public static extern void QDial_MousePressEvent(void* self, void** me);
 	
 	public function void QDial_OnMousePressEvent_action(void* self, void** me);
 	[LinkName("QDial_OnMousePressEvent")]
 	public static extern void QDial_OnMousePressEvent(void* self, QDial_OnMousePressEvent_action _action);
+	
+	[LinkName("QDial_SuperMousePressEvent")]
+	public static extern void QDial_SuperMousePressEvent(void* self, void** me);
 	[LinkName("QDial_MouseReleaseEvent")]
 	public static extern void QDial_MouseReleaseEvent(void* self, void** me);
 	
 	public function void QDial_OnMouseReleaseEvent_action(void* self, void** me);
 	[LinkName("QDial_OnMouseReleaseEvent")]
 	public static extern void QDial_OnMouseReleaseEvent(void* self, QDial_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QDial_SuperMouseReleaseEvent")]
+	public static extern void QDial_SuperMouseReleaseEvent(void* self, void** me);
 	[LinkName("QDial_MouseMoveEvent")]
 	public static extern void QDial_MouseMoveEvent(void* self, void** me);
 	
 	public function void QDial_OnMouseMoveEvent_action(void* self, void** me);
 	[LinkName("QDial_OnMouseMoveEvent")]
 	public static extern void QDial_OnMouseMoveEvent(void* self, QDial_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QDial_SuperMouseMoveEvent")]
+	public static extern void QDial_SuperMouseMoveEvent(void* self, void** me);
 	[LinkName("QDial_SliderChange")]
 	public static extern void QDial_SliderChange(void* self, QAbstractSlider_SliderChange change);
 	
 	public function void QDial_OnSliderChange_action(void* self, QAbstractSlider_SliderChange change);
 	[LinkName("QDial_OnSliderChange")]
 	public static extern void QDial_OnSliderChange(void* self, QDial_OnSliderChange_action _action);
+	
+	[LinkName("QDial_SuperSliderChange")]
+	public static extern void QDial_SuperSliderChange(void* self, QAbstractSlider_SliderChange change);
 	[LinkName("QDial_InitStyleOption")]
 	public static extern void QDial_InitStyleOption(void* self, void** option);
 	
 	public function void QDial_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QDial_OnInitStyleOption")]
 	public static extern void QDial_OnInitStyleOption(void* self, QDial_OnInitStyleOption_action _action);
+	
+	[LinkName("QDial_SuperInitStyleOption")]
+	public static extern void QDial_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QDial_Tr2")]
 	public static extern libqt_string QDial_Tr2(c_char* s, c_char* c);
 	[LinkName("QDial_Tr3")]
@@ -3679,232 +4030,349 @@ extension CQt
 	public function void QDial_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QDial_OnEventFilter")]
 	public static extern bool QDial_OnEventFilter(void* self, QDial_OnEventFilter_action _action);
+	
+	[LinkName("QDial_SuperEventFilter")]
+	public static extern bool QDial_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QDial_TimerEvent")]
 	public static extern void QDial_TimerEvent(void* self, void** event);
 	
 	public function void QDial_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QDial_OnTimerEvent")]
 	public static extern void QDial_OnTimerEvent(void* self, QDial_OnTimerEvent_action _action);
+	
+	[LinkName("QDial_SuperTimerEvent")]
+	public static extern void QDial_SuperTimerEvent(void* self, void** event);
 	[LinkName("QDial_ChildEvent")]
 	public static extern void QDial_ChildEvent(void* self, void** event);
 	
 	public function void QDial_OnChildEvent_action(void* self, void** event);
 	[LinkName("QDial_OnChildEvent")]
 	public static extern void QDial_OnChildEvent(void* self, QDial_OnChildEvent_action _action);
+	
+	[LinkName("QDial_SuperChildEvent")]
+	public static extern void QDial_SuperChildEvent(void* self, void** event);
 	[LinkName("QDial_CustomEvent")]
 	public static extern void QDial_CustomEvent(void* self, void** event);
 	
 	public function void QDial_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QDial_OnCustomEvent")]
 	public static extern void QDial_OnCustomEvent(void* self, QDial_OnCustomEvent_action _action);
+	
+	[LinkName("QDial_SuperCustomEvent")]
+	public static extern void QDial_SuperCustomEvent(void* self, void** event);
 	[LinkName("QDial_ConnectNotify")]
 	public static extern void QDial_ConnectNotify(void* self, void** signal);
 	
 	public function void QDial_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QDial_OnConnectNotify")]
 	public static extern void QDial_OnConnectNotify(void* self, QDial_OnConnectNotify_action _action);
+	
+	[LinkName("QDial_SuperConnectNotify")]
+	public static extern void QDial_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QDial_DisconnectNotify")]
 	public static extern void QDial_DisconnectNotify(void* self, void** signal);
 	
 	public function void QDial_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QDial_OnDisconnectNotify")]
 	public static extern void QDial_OnDisconnectNotify(void* self, QDial_OnDisconnectNotify_action _action);
+	
+	[LinkName("QDial_SuperDisconnectNotify")]
+	public static extern void QDial_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QDial_DevType")]
 	public static extern c_int QDial_DevType(void* self);
 	
 	public function void QDial_OnDevType_action(void* self);
 	[LinkName("QDial_OnDevType")]
 	public static extern c_int QDial_OnDevType(void* self, QDial_OnDevType_action _action);
+	
+	[LinkName("QDial_SuperDevType")]
+	public static extern c_int QDial_SuperDevType(void* self);
 	[LinkName("QDial_PaintEngine")]
 	public static extern void** QDial_PaintEngine(void* self);
 	
 	public function void QDial_OnPaintEngine_action(void* self);
 	[LinkName("QDial_OnPaintEngine")]
 	public static extern void** QDial_OnPaintEngine(void* self, QDial_OnPaintEngine_action _action);
+	
+	[LinkName("QDial_SuperPaintEngine")]
+	public static extern void** QDial_SuperPaintEngine(void* self);
 	[LinkName("QDial_Metric")]
 	public static extern c_int QDial_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QDial_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDial_OnMetric")]
 	public static extern c_int QDial_OnMetric(void* self, QDial_OnMetric_action _action);
+	
+	[LinkName("QDial_SuperMetric")]
+	public static extern c_int QDial_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDial_InitPainter")]
 	public static extern void QDial_InitPainter(void* self, void** painter);
 	
 	public function void QDial_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QDial_OnInitPainter")]
 	public static extern void QDial_OnInitPainter(void* self, QDial_OnInitPainter_action _action);
+	
+	[LinkName("QDial_SuperInitPainter")]
+	public static extern void QDial_SuperInitPainter(void* self, void** painter);
 	[LinkName("QDial_Redirected")]
 	public static extern void** QDial_Redirected(void* self, void** offset);
 	
 	public function void QDial_OnRedirected_action(void* self, void** offset);
 	[LinkName("QDial_OnRedirected")]
 	public static extern void** QDial_OnRedirected(void* self, QDial_OnRedirected_action _action);
+	
+	[LinkName("QDial_SuperRedirected")]
+	public static extern void** QDial_SuperRedirected(void* self, void** offset);
 	[LinkName("QDial_SharedPainter")]
 	public static extern void** QDial_SharedPainter(void* self);
 	
 	public function void QDial_OnSharedPainter_action(void* self);
 	[LinkName("QDial_OnSharedPainter")]
 	public static extern void** QDial_OnSharedPainter(void* self, QDial_OnSharedPainter_action _action);
+	
+	[LinkName("QDial_SuperSharedPainter")]
+	public static extern void** QDial_SuperSharedPainter(void* self);
 	[LinkName("QDial_SetVisible")]
 	public static extern void QDial_SetVisible(void* self, bool visible);
 	
 	public function void QDial_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QDial_OnSetVisible")]
 	public static extern void QDial_OnSetVisible(void* self, QDial_OnSetVisible_action _action);
+	
+	[LinkName("QDial_SuperSetVisible")]
+	public static extern void QDial_SuperSetVisible(void* self, bool visible);
 	[LinkName("QDial_HeightForWidth")]
 	public static extern c_int QDial_HeightForWidth(void* self, c_int param1);
 	
 	public function void QDial_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QDial_OnHeightForWidth")]
 	public static extern c_int QDial_OnHeightForWidth(void* self, QDial_OnHeightForWidth_action _action);
+	
+	[LinkName("QDial_SuperHeightForWidth")]
+	public static extern c_int QDial_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QDial_HasHeightForWidth")]
 	public static extern bool QDial_HasHeightForWidth(void* self);
 	
 	public function void QDial_OnHasHeightForWidth_action(void* self);
 	[LinkName("QDial_OnHasHeightForWidth")]
 	public static extern bool QDial_OnHasHeightForWidth(void* self, QDial_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QDial_SuperHasHeightForWidth")]
+	public static extern bool QDial_SuperHasHeightForWidth(void* self);
 	[LinkName("QDial_MouseDoubleClickEvent")]
 	public static extern void QDial_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QDial_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QDial_OnMouseDoubleClickEvent")]
 	public static extern void QDial_OnMouseDoubleClickEvent(void* self, QDial_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QDial_SuperMouseDoubleClickEvent")]
+	public static extern void QDial_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QDial_WheelEvent")]
 	public static extern void QDial_WheelEvent(void* self, void** event);
 	
 	public function void QDial_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QDial_OnWheelEvent")]
 	public static extern void QDial_OnWheelEvent(void* self, QDial_OnWheelEvent_action _action);
+	
+	[LinkName("QDial_SuperWheelEvent")]
+	public static extern void QDial_SuperWheelEvent(void* self, void** event);
 	[LinkName("QDial_KeyPressEvent")]
 	public static extern void QDial_KeyPressEvent(void* self, void** event);
 	
 	public function void QDial_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QDial_OnKeyPressEvent")]
 	public static extern void QDial_OnKeyPressEvent(void* self, QDial_OnKeyPressEvent_action _action);
+	
+	[LinkName("QDial_SuperKeyPressEvent")]
+	public static extern void QDial_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QDial_KeyReleaseEvent")]
 	public static extern void QDial_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QDial_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QDial_OnKeyReleaseEvent")]
 	public static extern void QDial_OnKeyReleaseEvent(void* self, QDial_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QDial_SuperKeyReleaseEvent")]
+	public static extern void QDial_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QDial_FocusInEvent")]
 	public static extern void QDial_FocusInEvent(void* self, void** event);
 	
 	public function void QDial_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QDial_OnFocusInEvent")]
 	public static extern void QDial_OnFocusInEvent(void* self, QDial_OnFocusInEvent_action _action);
+	
+	[LinkName("QDial_SuperFocusInEvent")]
+	public static extern void QDial_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QDial_FocusOutEvent")]
 	public static extern void QDial_FocusOutEvent(void* self, void** event);
 	
 	public function void QDial_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QDial_OnFocusOutEvent")]
 	public static extern void QDial_OnFocusOutEvent(void* self, QDial_OnFocusOutEvent_action _action);
+	
+	[LinkName("QDial_SuperFocusOutEvent")]
+	public static extern void QDial_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QDial_EnterEvent")]
 	public static extern void QDial_EnterEvent(void* self, void** event);
 	
 	public function void QDial_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QDial_OnEnterEvent")]
 	public static extern void QDial_OnEnterEvent(void* self, QDial_OnEnterEvent_action _action);
+	
+	[LinkName("QDial_SuperEnterEvent")]
+	public static extern void QDial_SuperEnterEvent(void* self, void** event);
 	[LinkName("QDial_LeaveEvent")]
 	public static extern void QDial_LeaveEvent(void* self, void** event);
 	
 	public function void QDial_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QDial_OnLeaveEvent")]
 	public static extern void QDial_OnLeaveEvent(void* self, QDial_OnLeaveEvent_action _action);
+	
+	[LinkName("QDial_SuperLeaveEvent")]
+	public static extern void QDial_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QDial_MoveEvent")]
 	public static extern void QDial_MoveEvent(void* self, void** event);
 	
 	public function void QDial_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QDial_OnMoveEvent")]
 	public static extern void QDial_OnMoveEvent(void* self, QDial_OnMoveEvent_action _action);
+	
+	[LinkName("QDial_SuperMoveEvent")]
+	public static extern void QDial_SuperMoveEvent(void* self, void** event);
 	[LinkName("QDial_CloseEvent")]
 	public static extern void QDial_CloseEvent(void* self, void** event);
 	
 	public function void QDial_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QDial_OnCloseEvent")]
 	public static extern void QDial_OnCloseEvent(void* self, QDial_OnCloseEvent_action _action);
+	
+	[LinkName("QDial_SuperCloseEvent")]
+	public static extern void QDial_SuperCloseEvent(void* self, void** event);
 	[LinkName("QDial_ContextMenuEvent")]
 	public static extern void QDial_ContextMenuEvent(void* self, void** event);
 	
 	public function void QDial_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QDial_OnContextMenuEvent")]
 	public static extern void QDial_OnContextMenuEvent(void* self, QDial_OnContextMenuEvent_action _action);
+	
+	[LinkName("QDial_SuperContextMenuEvent")]
+	public static extern void QDial_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QDial_TabletEvent")]
 	public static extern void QDial_TabletEvent(void* self, void** event);
 	
 	public function void QDial_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QDial_OnTabletEvent")]
 	public static extern void QDial_OnTabletEvent(void* self, QDial_OnTabletEvent_action _action);
+	
+	[LinkName("QDial_SuperTabletEvent")]
+	public static extern void QDial_SuperTabletEvent(void* self, void** event);
 	[LinkName("QDial_ActionEvent")]
 	public static extern void QDial_ActionEvent(void* self, void** event);
 	
 	public function void QDial_OnActionEvent_action(void* self, void** event);
 	[LinkName("QDial_OnActionEvent")]
 	public static extern void QDial_OnActionEvent(void* self, QDial_OnActionEvent_action _action);
+	
+	[LinkName("QDial_SuperActionEvent")]
+	public static extern void QDial_SuperActionEvent(void* self, void** event);
 	[LinkName("QDial_DragEnterEvent")]
 	public static extern void QDial_DragEnterEvent(void* self, void** event);
 	
 	public function void QDial_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QDial_OnDragEnterEvent")]
 	public static extern void QDial_OnDragEnterEvent(void* self, QDial_OnDragEnterEvent_action _action);
+	
+	[LinkName("QDial_SuperDragEnterEvent")]
+	public static extern void QDial_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QDial_DragMoveEvent")]
 	public static extern void QDial_DragMoveEvent(void* self, void** event);
 	
 	public function void QDial_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QDial_OnDragMoveEvent")]
 	public static extern void QDial_OnDragMoveEvent(void* self, QDial_OnDragMoveEvent_action _action);
+	
+	[LinkName("QDial_SuperDragMoveEvent")]
+	public static extern void QDial_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QDial_DragLeaveEvent")]
 	public static extern void QDial_DragLeaveEvent(void* self, void** event);
 	
 	public function void QDial_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QDial_OnDragLeaveEvent")]
 	public static extern void QDial_OnDragLeaveEvent(void* self, QDial_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QDial_SuperDragLeaveEvent")]
+	public static extern void QDial_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QDial_DropEvent")]
 	public static extern void QDial_DropEvent(void* self, void** event);
 	
 	public function void QDial_OnDropEvent_action(void* self, void** event);
 	[LinkName("QDial_OnDropEvent")]
 	public static extern void QDial_OnDropEvent(void* self, QDial_OnDropEvent_action _action);
+	
+	[LinkName("QDial_SuperDropEvent")]
+	public static extern void QDial_SuperDropEvent(void* self, void** event);
 	[LinkName("QDial_ShowEvent")]
 	public static extern void QDial_ShowEvent(void* self, void** event);
 	
 	public function void QDial_OnShowEvent_action(void* self, void** event);
 	[LinkName("QDial_OnShowEvent")]
 	public static extern void QDial_OnShowEvent(void* self, QDial_OnShowEvent_action _action);
+	
+	[LinkName("QDial_SuperShowEvent")]
+	public static extern void QDial_SuperShowEvent(void* self, void** event);
 	[LinkName("QDial_HideEvent")]
 	public static extern void QDial_HideEvent(void* self, void** event);
 	
 	public function void QDial_OnHideEvent_action(void* self, void** event);
 	[LinkName("QDial_OnHideEvent")]
 	public static extern void QDial_OnHideEvent(void* self, QDial_OnHideEvent_action _action);
+	
+	[LinkName("QDial_SuperHideEvent")]
+	public static extern void QDial_SuperHideEvent(void* self, void** event);
 	[LinkName("QDial_NativeEvent")]
 	public static extern bool QDial_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QDial_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDial_OnNativeEvent")]
 	public static extern bool QDial_OnNativeEvent(void* self, QDial_OnNativeEvent_action _action);
+	
+	[LinkName("QDial_SuperNativeEvent")]
+	public static extern bool QDial_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDial_ChangeEvent")]
 	public static extern void QDial_ChangeEvent(void* self, void** param1);
 	
 	public function void QDial_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QDial_OnChangeEvent")]
 	public static extern void QDial_OnChangeEvent(void* self, QDial_OnChangeEvent_action _action);
+	
+	[LinkName("QDial_SuperChangeEvent")]
+	public static extern void QDial_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QDial_InputMethodEvent")]
 	public static extern void QDial_InputMethodEvent(void* self, void** param1);
 	
 	public function void QDial_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QDial_OnInputMethodEvent")]
 	public static extern void QDial_OnInputMethodEvent(void* self, QDial_OnInputMethodEvent_action _action);
+	
+	[LinkName("QDial_SuperInputMethodEvent")]
+	public static extern void QDial_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QDial_InputMethodQuery")]
 	public static extern void* QDial_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QDial_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QDial_OnInputMethodQuery")]
 	public static extern void* QDial_OnInputMethodQuery(void* self, QDial_OnInputMethodQuery_action _action);
+	
+	[LinkName("QDial_SuperInputMethodQuery")]
+	public static extern void* QDial_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QDial_FocusNextPrevChild")]
 	public static extern bool QDial_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QDial_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QDial_OnFocusNextPrevChild")]
 	public static extern bool QDial_OnFocusNextPrevChild(void* self, QDial_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QDial_SuperFocusNextPrevChild")]
+	public static extern bool QDial_SuperFocusNextPrevChild(void* self, bool next);
 }

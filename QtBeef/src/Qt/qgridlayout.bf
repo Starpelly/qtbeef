@@ -624,6 +624,40 @@ class QGridLayout : IQGridLayout, IQLayout, IQObject, IQLayoutItem
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGridLayout_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGridLayout_OnMetaObject);
+		CQt.QGridLayout_OnMetacast(obj.ObjectPtr,  => QtBeef_QGridLayout_OnMetacast);
+		CQt.QGridLayout_OnMetacall(obj.ObjectPtr,  => QtBeef_QGridLayout_OnMetacall);
+		CQt.QGridLayout_OnSizeHint(obj.ObjectPtr,  => QtBeef_QGridLayout_OnSizeHint);
+		CQt.QGridLayout_OnMinimumSize(obj.ObjectPtr,  => QtBeef_QGridLayout_OnMinimumSize);
+		CQt.QGridLayout_OnMaximumSize(obj.ObjectPtr,  => QtBeef_QGridLayout_OnMaximumSize);
+		CQt.QGridLayout_OnSetSpacing(obj.ObjectPtr,  => QtBeef_QGridLayout_OnSetSpacing);
+		CQt.QGridLayout_OnSpacing(obj.ObjectPtr,  => QtBeef_QGridLayout_OnSpacing);
+		CQt.QGridLayout_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QGridLayout_OnHasHeightForWidth);
+		CQt.QGridLayout_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QGridLayout_OnHeightForWidth);
+		CQt.QGridLayout_OnMinimumHeightForWidth(obj.ObjectPtr,  => QtBeef_QGridLayout_OnMinimumHeightForWidth);
+		CQt.QGridLayout_OnExpandingDirections(obj.ObjectPtr,  => QtBeef_QGridLayout_OnExpandingDirections);
+		CQt.QGridLayout_OnInvalidate(obj.ObjectPtr,  => QtBeef_QGridLayout_OnInvalidate);
+		CQt.QGridLayout_OnItemAt(obj.ObjectPtr,  => QtBeef_QGridLayout_OnItemAt);
+		CQt.QGridLayout_OnTakeAt(obj.ObjectPtr,  => QtBeef_QGridLayout_OnTakeAt);
+		CQt.QGridLayout_OnCount(obj.ObjectPtr,  => QtBeef_QGridLayout_OnCount);
+		CQt.QGridLayout_OnSetGeometry(obj.ObjectPtr,  => QtBeef_QGridLayout_OnSetGeometry);
+		CQt.QGridLayout_OnAddItem2(obj.ObjectPtr,  => QtBeef_QGridLayout_OnAddItem2);
+		CQt.QGridLayout_OnEvent(obj.ObjectPtr,  => QtBeef_QGridLayout_OnEvent);
+		CQt.QGridLayout_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGridLayout_OnEventFilter);
+		CQt.QGridLayout_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGridLayout_OnTimerEvent);
+		CQt.QGridLayout_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGridLayout_OnChildEvent);
+		CQt.QGridLayout_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGridLayout_OnCustomEvent);
+		CQt.QGridLayout_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGridLayout_OnConnectNotify);
+		CQt.QGridLayout_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGridLayout_OnDisconnectNotify);
+		CQt.QGridLayout_OnGeometry(obj.ObjectPtr,  => QtBeef_QGridLayout_OnGeometry);
+		CQt.QGridLayout_OnIsEmpty(obj.ObjectPtr,  => QtBeef_QGridLayout_OnIsEmpty);
+		CQt.QGridLayout_OnWidget(obj.ObjectPtr,  => QtBeef_QGridLayout_OnWidget);
+		CQt.QGridLayout_OnLayout(obj.ObjectPtr,  => QtBeef_QGridLayout_OnLayout);
+		CQt.QGridLayout_OnSpacerItem(obj.ObjectPtr,  => QtBeef_QGridLayout_OnSpacerItem);
+		CQt.QGridLayout_OnControlTypes(obj.ObjectPtr,  => QtBeef_QGridLayout_OnControlTypes);
+		CQt.QGridLayout_OnIndexOf(obj.ObjectPtr,  => QtBeef_QGridLayout_OnIndexOf);
+		CQt.QGridLayout_OnIndexOf2(obj.ObjectPtr,  => QtBeef_QGridLayout_OnIndexOf2);
+		CQt.QGridLayout_OnReplaceWidget(obj.ObjectPtr,  => QtBeef_QGridLayout_OnReplaceWidget);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -636,6 +670,176 @@ class QGridLayout : IQGridLayout, IQLayout, IQObject, IQLayoutItem
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGridLayout_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGridLayout_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGridLayout_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGridLayout_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QGridLayout_OnMinimumSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSize();
+	}
+	static void QtBeef_QGridLayout_OnMaximumSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMaximumSize();
+	}
+	static void QtBeef_QGridLayout_OnSetSpacing(void* ptr, c_int spacing)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSpacing(spacing);
+	}
+	static void QtBeef_QGridLayout_OnSpacing(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpacing();
+	}
+	static void QtBeef_QGridLayout_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QGridLayout_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QGridLayout_OnMinimumHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumHeightForWidth(param1);
+	}
+	static void QtBeef_QGridLayout_OnExpandingDirections(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExpandingDirections();
+	}
+	static void QtBeef_QGridLayout_OnInvalidate(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInvalidate();
+	}
+	static void QtBeef_QGridLayout_OnItemAt(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemAt(index);
+	}
+	static void QtBeef_QGridLayout_OnTakeAt(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTakeAt(index);
+	}
+	static void QtBeef_QGridLayout_OnCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCount();
+	}
+	static void QtBeef_QGridLayout_OnSetGeometry(void* ptr, void** geometry)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetGeometry(geometry);
+	}
+	static void QtBeef_QGridLayout_OnAddItem2(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAddItem2(param1);
+	}
+	static void QtBeef_QGridLayout_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGridLayout_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGridLayout_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGridLayout_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGridLayout_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGridLayout_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGridLayout_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QGridLayout_OnGeometry(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGeometry();
+	}
+	static void QtBeef_QGridLayout_OnIsEmpty(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEmpty();
+	}
+	static void QtBeef_QGridLayout_OnWidget(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidget();
+	}
+	static void QtBeef_QGridLayout_OnLayout(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayout();
+	}
+	static void QtBeef_QGridLayout_OnSpacerItem(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpacerItem();
+	}
+	static void QtBeef_QGridLayout_OnControlTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnControlTypes();
+	}
+	static void QtBeef_QGridLayout_OnIndexOf(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexOf(param1);
+	}
+	static void QtBeef_QGridLayout_OnIndexOf2(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexOf2(param1);
+	}
+	static void QtBeef_QGridLayout_OnReplaceWidget(void* ptr, void** from, void** to, void* options)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReplaceWidget(from, to, options);
 	}
 	public this(QGridLayout_Ptr ptr)
 	{
@@ -1265,18 +1469,27 @@ extension CQt
 	public function void QGridLayout_OnMetaObject_action(void* self);
 	[LinkName("QGridLayout_OnMetaObject")]
 	public static extern void** QGridLayout_OnMetaObject(void* self, QGridLayout_OnMetaObject_action _action);
+	
+	[LinkName("QGridLayout_SuperMetaObject")]
+	public static extern void** QGridLayout_SuperMetaObject(void* self);
 	[LinkName("QGridLayout_Qt_Metacast")]
 	public static extern void* QGridLayout_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGridLayout_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGridLayout_OnMetacast")]
 	public static extern void* QGridLayout_OnMetacast(void* self, QGridLayout_OnMetacast_action _action);
+	
+	[LinkName("QGridLayout_SuperMetacast")]
+	public static extern void* QGridLayout_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGridLayout_Qt_Metacall")]
 	public static extern c_int QGridLayout_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGridLayout_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGridLayout_OnMetacall")]
 	public static extern c_int QGridLayout_OnMetacall(void* self, QGridLayout_OnMetacall_action _action);
+	
+	[LinkName("QGridLayout_SuperMetacall")]
+	public static extern c_int QGridLayout_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGridLayout_Tr")]
 	public static extern libqt_string QGridLayout_Tr(c_char* s);
 	[LinkName("QGridLayout_SizeHint")]
@@ -1285,18 +1498,27 @@ extension CQt
 	public function void QGridLayout_OnSizeHint_action(void* self);
 	[LinkName("QGridLayout_OnSizeHint")]
 	public static extern void* QGridLayout_OnSizeHint(void* self, QGridLayout_OnSizeHint_action _action);
+	
+	[LinkName("QGridLayout_SuperSizeHint")]
+	public static extern void* QGridLayout_SuperSizeHint(void* self);
 	[LinkName("QGridLayout_MinimumSize")]
 	public static extern void* QGridLayout_MinimumSize(void* self);
 	
 	public function void QGridLayout_OnMinimumSize_action(void* self);
 	[LinkName("QGridLayout_OnMinimumSize")]
 	public static extern void* QGridLayout_OnMinimumSize(void* self, QGridLayout_OnMinimumSize_action _action);
+	
+	[LinkName("QGridLayout_SuperMinimumSize")]
+	public static extern void* QGridLayout_SuperMinimumSize(void* self);
 	[LinkName("QGridLayout_MaximumSize")]
 	public static extern void* QGridLayout_MaximumSize(void* self);
 	
 	public function void QGridLayout_OnMaximumSize_action(void* self);
 	[LinkName("QGridLayout_OnMaximumSize")]
 	public static extern void* QGridLayout_OnMaximumSize(void* self, QGridLayout_OnMaximumSize_action _action);
+	
+	[LinkName("QGridLayout_SuperMaximumSize")]
+	public static extern void* QGridLayout_SuperMaximumSize(void* self);
 	[LinkName("QGridLayout_SetHorizontalSpacing")]
 	public static extern void QGridLayout_SetHorizontalSpacing(void* self, c_int spacing);
 	[LinkName("QGridLayout_HorizontalSpacing")]
@@ -1311,12 +1533,18 @@ extension CQt
 	public function void QGridLayout_OnSetSpacing_action(void* self, c_int spacing);
 	[LinkName("QGridLayout_OnSetSpacing")]
 	public static extern void QGridLayout_OnSetSpacing(void* self, QGridLayout_OnSetSpacing_action _action);
+	
+	[LinkName("QGridLayout_SuperSetSpacing")]
+	public static extern void QGridLayout_SuperSetSpacing(void* self, c_int spacing);
 	[LinkName("QGridLayout_Spacing")]
 	public static extern c_int QGridLayout_Spacing(void* self);
 	
 	public function void QGridLayout_OnSpacing_action(void* self);
 	[LinkName("QGridLayout_OnSpacing")]
 	public static extern c_int QGridLayout_OnSpacing(void* self, QGridLayout_OnSpacing_action _action);
+	
+	[LinkName("QGridLayout_SuperSpacing")]
+	public static extern c_int QGridLayout_SuperSpacing(void* self);
 	[LinkName("QGridLayout_SetRowStretch")]
 	public static extern void QGridLayout_SetRowStretch(void* self, c_int row, c_int stretch);
 	[LinkName("QGridLayout_SetColumnStretch")]
@@ -1345,30 +1573,45 @@ extension CQt
 	public function void QGridLayout_OnHasHeightForWidth_action(void* self);
 	[LinkName("QGridLayout_OnHasHeightForWidth")]
 	public static extern bool QGridLayout_OnHasHeightForWidth(void* self, QGridLayout_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QGridLayout_SuperHasHeightForWidth")]
+	public static extern bool QGridLayout_SuperHasHeightForWidth(void* self);
 	[LinkName("QGridLayout_HeightForWidth")]
 	public static extern c_int QGridLayout_HeightForWidth(void* self, c_int param1);
 	
 	public function void QGridLayout_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QGridLayout_OnHeightForWidth")]
 	public static extern c_int QGridLayout_OnHeightForWidth(void* self, QGridLayout_OnHeightForWidth_action _action);
+	
+	[LinkName("QGridLayout_SuperHeightForWidth")]
+	public static extern c_int QGridLayout_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QGridLayout_MinimumHeightForWidth")]
 	public static extern c_int QGridLayout_MinimumHeightForWidth(void* self, c_int param1);
 	
 	public function void QGridLayout_OnMinimumHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QGridLayout_OnMinimumHeightForWidth")]
 	public static extern c_int QGridLayout_OnMinimumHeightForWidth(void* self, QGridLayout_OnMinimumHeightForWidth_action _action);
+	
+	[LinkName("QGridLayout_SuperMinimumHeightForWidth")]
+	public static extern c_int QGridLayout_SuperMinimumHeightForWidth(void* self, c_int param1);
 	[LinkName("QGridLayout_ExpandingDirections")]
 	public static extern void* QGridLayout_ExpandingDirections(void* self);
 	
 	public function void QGridLayout_OnExpandingDirections_action(void* self);
 	[LinkName("QGridLayout_OnExpandingDirections")]
 	public static extern void* QGridLayout_OnExpandingDirections(void* self, QGridLayout_OnExpandingDirections_action _action);
+	
+	[LinkName("QGridLayout_SuperExpandingDirections")]
+	public static extern void* QGridLayout_SuperExpandingDirections(void* self);
 	[LinkName("QGridLayout_Invalidate")]
 	public static extern void QGridLayout_Invalidate(void* self);
 	
 	public function void QGridLayout_OnInvalidate_action(void* self);
 	[LinkName("QGridLayout_OnInvalidate")]
 	public static extern void QGridLayout_OnInvalidate(void* self, QGridLayout_OnInvalidate_action _action);
+	
+	[LinkName("QGridLayout_SuperInvalidate")]
+	public static extern void QGridLayout_SuperInvalidate(void* self);
 	[LinkName("QGridLayout_AddWidget")]
 	public static extern void QGridLayout_AddWidget(void* self, void** w);
 	[LinkName("QGridLayout_AddWidget2")]
@@ -1389,6 +1632,9 @@ extension CQt
 	public function void QGridLayout_OnItemAt_action(void* self, c_int index);
 	[LinkName("QGridLayout_OnItemAt")]
 	public static extern void** QGridLayout_OnItemAt(void* self, QGridLayout_OnItemAt_action _action);
+	
+	[LinkName("QGridLayout_SuperItemAt")]
+	public static extern void** QGridLayout_SuperItemAt(void* self, c_int index);
 	[LinkName("QGridLayout_ItemAtPosition")]
 	public static extern void** QGridLayout_ItemAtPosition(void* self, c_int row, c_int column);
 	[LinkName("QGridLayout_TakeAt")]
@@ -1397,18 +1643,27 @@ extension CQt
 	public function void QGridLayout_OnTakeAt_action(void* self, c_int index);
 	[LinkName("QGridLayout_OnTakeAt")]
 	public static extern void** QGridLayout_OnTakeAt(void* self, QGridLayout_OnTakeAt_action _action);
+	
+	[LinkName("QGridLayout_SuperTakeAt")]
+	public static extern void** QGridLayout_SuperTakeAt(void* self, c_int index);
 	[LinkName("QGridLayout_Count")]
 	public static extern c_int QGridLayout_Count(void* self);
 	
 	public function void QGridLayout_OnCount_action(void* self);
 	[LinkName("QGridLayout_OnCount")]
 	public static extern c_int QGridLayout_OnCount(void* self, QGridLayout_OnCount_action _action);
+	
+	[LinkName("QGridLayout_SuperCount")]
+	public static extern c_int QGridLayout_SuperCount(void* self);
 	[LinkName("QGridLayout_SetGeometry")]
 	public static extern void QGridLayout_SetGeometry(void* self, void** geometry);
 	
 	public function void QGridLayout_OnSetGeometry_action(void* self, void** geometry);
 	[LinkName("QGridLayout_OnSetGeometry")]
 	public static extern void QGridLayout_OnSetGeometry(void* self, QGridLayout_OnSetGeometry_action _action);
+	
+	[LinkName("QGridLayout_SuperSetGeometry")]
+	public static extern void QGridLayout_SuperSetGeometry(void* self, void** geometry);
 	[LinkName("QGridLayout_AddItem")]
 	public static extern void QGridLayout_AddItem(void* self, void** item, c_int row, c_int column);
 	[LinkName("QGridLayout_SetDefaultPositioning")]
@@ -1421,6 +1676,9 @@ extension CQt
 	public function void QGridLayout_OnAddItem2_action(void* self, void** param1);
 	[LinkName("QGridLayout_OnAddItem2")]
 	public static extern void QGridLayout_OnAddItem2(void* self, QGridLayout_OnAddItem2_action _action);
+	
+	[LinkName("QGridLayout_SuperAddItem2")]
+	public static extern void QGridLayout_SuperAddItem2(void* self, void** param1);
 	[LinkName("QGridLayout_Tr2")]
 	public static extern libqt_string QGridLayout_Tr2(c_char* s, c_char* c);
 	[LinkName("QGridLayout_Tr3")]
@@ -1445,94 +1703,142 @@ extension CQt
 	public function void QGridLayout_OnEvent_action(void* self, void** event);
 	[LinkName("QGridLayout_OnEvent")]
 	public static extern bool QGridLayout_OnEvent(void* self, QGridLayout_OnEvent_action _action);
+	
+	[LinkName("QGridLayout_SuperEvent")]
+	public static extern bool QGridLayout_SuperEvent(void* self, void** event);
 	[LinkName("QGridLayout_EventFilter")]
 	public static extern bool QGridLayout_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGridLayout_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGridLayout_OnEventFilter")]
 	public static extern bool QGridLayout_OnEventFilter(void* self, QGridLayout_OnEventFilter_action _action);
+	
+	[LinkName("QGridLayout_SuperEventFilter")]
+	public static extern bool QGridLayout_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGridLayout_TimerEvent")]
 	public static extern void QGridLayout_TimerEvent(void* self, void** event);
 	
 	public function void QGridLayout_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGridLayout_OnTimerEvent")]
 	public static extern void QGridLayout_OnTimerEvent(void* self, QGridLayout_OnTimerEvent_action _action);
+	
+	[LinkName("QGridLayout_SuperTimerEvent")]
+	public static extern void QGridLayout_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGridLayout_ChildEvent")]
 	public static extern void QGridLayout_ChildEvent(void* self, void** event);
 	
 	public function void QGridLayout_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGridLayout_OnChildEvent")]
 	public static extern void QGridLayout_OnChildEvent(void* self, QGridLayout_OnChildEvent_action _action);
+	
+	[LinkName("QGridLayout_SuperChildEvent")]
+	public static extern void QGridLayout_SuperChildEvent(void* self, void** event);
 	[LinkName("QGridLayout_CustomEvent")]
 	public static extern void QGridLayout_CustomEvent(void* self, void** event);
 	
 	public function void QGridLayout_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGridLayout_OnCustomEvent")]
 	public static extern void QGridLayout_OnCustomEvent(void* self, QGridLayout_OnCustomEvent_action _action);
+	
+	[LinkName("QGridLayout_SuperCustomEvent")]
+	public static extern void QGridLayout_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGridLayout_ConnectNotify")]
 	public static extern void QGridLayout_ConnectNotify(void* self, void** signal);
 	
 	public function void QGridLayout_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGridLayout_OnConnectNotify")]
 	public static extern void QGridLayout_OnConnectNotify(void* self, QGridLayout_OnConnectNotify_action _action);
+	
+	[LinkName("QGridLayout_SuperConnectNotify")]
+	public static extern void QGridLayout_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGridLayout_DisconnectNotify")]
 	public static extern void QGridLayout_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGridLayout_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGridLayout_OnDisconnectNotify")]
 	public static extern void QGridLayout_OnDisconnectNotify(void* self, QGridLayout_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGridLayout_SuperDisconnectNotify")]
+	public static extern void QGridLayout_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QGridLayout_Geometry")]
 	public static extern void* QGridLayout_Geometry(void* self);
 	
 	public function void QGridLayout_OnGeometry_action(void* self);
 	[LinkName("QGridLayout_OnGeometry")]
 	public static extern void* QGridLayout_OnGeometry(void* self, QGridLayout_OnGeometry_action _action);
+	
+	[LinkName("QGridLayout_SuperGeometry")]
+	public static extern void* QGridLayout_SuperGeometry(void* self);
 	[LinkName("QGridLayout_IsEmpty")]
 	public static extern bool QGridLayout_IsEmpty(void* self);
 	
 	public function void QGridLayout_OnIsEmpty_action(void* self);
 	[LinkName("QGridLayout_OnIsEmpty")]
 	public static extern bool QGridLayout_OnIsEmpty(void* self, QGridLayout_OnIsEmpty_action _action);
+	
+	[LinkName("QGridLayout_SuperIsEmpty")]
+	public static extern bool QGridLayout_SuperIsEmpty(void* self);
 	[LinkName("QGridLayout_Widget")]
 	public static extern void** QGridLayout_Widget(void* self);
 	
 	public function void QGridLayout_OnWidget_action(void* self);
 	[LinkName("QGridLayout_OnWidget")]
 	public static extern void** QGridLayout_OnWidget(void* self, QGridLayout_OnWidget_action _action);
+	
+	[LinkName("QGridLayout_SuperWidget")]
+	public static extern void** QGridLayout_SuperWidget(void* self);
 	[LinkName("QGridLayout_Layout")]
 	public static extern void** QGridLayout_Layout(void* self);
 	
 	public function void QGridLayout_OnLayout_action(void* self);
 	[LinkName("QGridLayout_OnLayout")]
 	public static extern void** QGridLayout_OnLayout(void* self, QGridLayout_OnLayout_action _action);
+	
+	[LinkName("QGridLayout_SuperLayout")]
+	public static extern void** QGridLayout_SuperLayout(void* self);
 	[LinkName("QGridLayout_SpacerItem")]
 	public static extern void** QGridLayout_SpacerItem(void* self);
 	
 	public function void QGridLayout_OnSpacerItem_action(void* self);
 	[LinkName("QGridLayout_OnSpacerItem")]
 	public static extern void** QGridLayout_OnSpacerItem(void* self, QGridLayout_OnSpacerItem_action _action);
+	
+	[LinkName("QGridLayout_SuperSpacerItem")]
+	public static extern void** QGridLayout_SuperSpacerItem(void* self);
 	[LinkName("QGridLayout_ControlTypes")]
 	public static extern void* QGridLayout_ControlTypes(void* self);
 	
 	public function void QGridLayout_OnControlTypes_action(void* self);
 	[LinkName("QGridLayout_OnControlTypes")]
 	public static extern void* QGridLayout_OnControlTypes(void* self, QGridLayout_OnControlTypes_action _action);
+	
+	[LinkName("QGridLayout_SuperControlTypes")]
+	public static extern void* QGridLayout_SuperControlTypes(void* self);
 	[LinkName("QGridLayout_IndexOf")]
 	public static extern c_int QGridLayout_IndexOf(void* self, void** param1);
 	
 	public function void QGridLayout_OnIndexOf_action(void* self, void** param1);
 	[LinkName("QGridLayout_OnIndexOf")]
 	public static extern c_int QGridLayout_OnIndexOf(void* self, QGridLayout_OnIndexOf_action _action);
+	
+	[LinkName("QGridLayout_SuperIndexOf")]
+	public static extern c_int QGridLayout_SuperIndexOf(void* self, void** param1);
 	[LinkName("QGridLayout_IndexOf2")]
 	public static extern c_int QGridLayout_IndexOf2(void* self, void** param1);
 	
 	public function void QGridLayout_OnIndexOf2_action(void* self, void** param1);
 	[LinkName("QGridLayout_OnIndexOf2")]
 	public static extern c_int QGridLayout_OnIndexOf2(void* self, QGridLayout_OnIndexOf2_action _action);
+	
+	[LinkName("QGridLayout_SuperIndexOf2")]
+	public static extern c_int QGridLayout_SuperIndexOf2(void* self, void** param1);
 	[LinkName("QGridLayout_ReplaceWidget")]
 	public static extern void** QGridLayout_ReplaceWidget(void* self, void** from, void** to, void* options);
 	
 	public function void QGridLayout_OnReplaceWidget_action(void* self, void** from, void** to, void* options);
 	[LinkName("QGridLayout_OnReplaceWidget")]
 	public static extern void** QGridLayout_OnReplaceWidget(void* self, QGridLayout_OnReplaceWidget_action _action);
+	
+	[LinkName("QGridLayout_SuperReplaceWidget")]
+	public static extern void** QGridLayout_SuperReplaceWidget(void* self, void** from, void** to, void* options);
 }

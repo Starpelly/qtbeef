@@ -425,6 +425,20 @@ class QSequentialAnimationGroup : IQSequentialAnimationGroup, IQAnimationGroup, 
 		CQt.QAbstractAnimation_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_StateChanged);
 		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_CurrentLoopChanged);
 		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_DirectionChanged);
+		CQt.QSequentialAnimationGroup_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnMetaObject);
+		CQt.QSequentialAnimationGroup_OnMetacast(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnMetacast);
+		CQt.QSequentialAnimationGroup_OnMetacall(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnMetacall);
+		CQt.QSequentialAnimationGroup_OnDuration(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnDuration);
+		CQt.QSequentialAnimationGroup_OnEvent(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnEvent);
+		CQt.QSequentialAnimationGroup_OnUpdateCurrentTime(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnUpdateCurrentTime);
+		CQt.QSequentialAnimationGroup_OnUpdateState(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnUpdateState);
+		CQt.QSequentialAnimationGroup_OnUpdateDirection(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnUpdateDirection);
+		CQt.QSequentialAnimationGroup_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnEventFilter);
+		CQt.QSequentialAnimationGroup_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnTimerEvent);
+		CQt.QSequentialAnimationGroup_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnChildEvent);
+		CQt.QSequentialAnimationGroup_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnCustomEvent);
+		CQt.QSequentialAnimationGroup_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnConnectNotify);
+		CQt.QSequentialAnimationGroup_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_OnDisconnectNotify);
 	}
 	public Event<delegate void(void** current)> OnCurrentAnimationChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -467,6 +481,76 @@ class QSequentialAnimationGroup : IQSequentialAnimationGroup, IQAnimationGroup, 
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDirectionChanged.Invoke(param1);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnDuration(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDuration();
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnUpdateCurrentTime(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateCurrentTime(param1);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnUpdateState(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateState(newState, oldState);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnUpdateDirection(void* ptr, QAbstractAnimation_Direction direction)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateDirection(direction);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSequentialAnimationGroup_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QSequentialAnimationGroup_Ptr ptr)
 	{
@@ -893,18 +977,27 @@ extension CQt
 	public function void QSequentialAnimationGroup_OnMetaObject_action(void* self);
 	[LinkName("QSequentialAnimationGroup_OnMetaObject")]
 	public static extern void** QSequentialAnimationGroup_OnMetaObject(void* self, QSequentialAnimationGroup_OnMetaObject_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperMetaObject")]
+	public static extern void** QSequentialAnimationGroup_SuperMetaObject(void* self);
 	[LinkName("QSequentialAnimationGroup_Qt_Metacast")]
 	public static extern void* QSequentialAnimationGroup_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSequentialAnimationGroup_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSequentialAnimationGroup_OnMetacast")]
 	public static extern void* QSequentialAnimationGroup_OnMetacast(void* self, QSequentialAnimationGroup_OnMetacast_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperMetacast")]
+	public static extern void* QSequentialAnimationGroup_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSequentialAnimationGroup_Qt_Metacall")]
 	public static extern c_int QSequentialAnimationGroup_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSequentialAnimationGroup_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSequentialAnimationGroup_OnMetacall")]
 	public static extern c_int QSequentialAnimationGroup_OnMetacall(void* self, QSequentialAnimationGroup_OnMetacall_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperMetacall")]
+	public static extern c_int QSequentialAnimationGroup_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSequentialAnimationGroup_Tr")]
 	public static extern libqt_string QSequentialAnimationGroup_Tr(c_char* s);
 	[LinkName("QSequentialAnimationGroup_AddPause")]
@@ -919,6 +1012,9 @@ extension CQt
 	public function void QSequentialAnimationGroup_OnDuration_action(void* self);
 	[LinkName("QSequentialAnimationGroup_OnDuration")]
 	public static extern c_int QSequentialAnimationGroup_OnDuration(void* self, QSequentialAnimationGroup_OnDuration_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperDuration")]
+	public static extern c_int QSequentialAnimationGroup_SuperDuration(void* self);
 	[LinkName("QSequentialAnimationGroup_CurrentAnimationChanged")]
 	public static extern void QSequentialAnimationGroup_CurrentAnimationChanged(void* self, void** current);
 	
@@ -931,24 +1027,36 @@ extension CQt
 	public function void QSequentialAnimationGroup_OnEvent_action(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_OnEvent")]
 	public static extern bool QSequentialAnimationGroup_OnEvent(void* self, QSequentialAnimationGroup_OnEvent_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperEvent")]
+	public static extern bool QSequentialAnimationGroup_SuperEvent(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_UpdateCurrentTime")]
 	public static extern void QSequentialAnimationGroup_UpdateCurrentTime(void* self, c_int param1);
 	
 	public function void QSequentialAnimationGroup_OnUpdateCurrentTime_action(void* self, c_int param1);
 	[LinkName("QSequentialAnimationGroup_OnUpdateCurrentTime")]
 	public static extern void QSequentialAnimationGroup_OnUpdateCurrentTime(void* self, QSequentialAnimationGroup_OnUpdateCurrentTime_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperUpdateCurrentTime")]
+	public static extern void QSequentialAnimationGroup_SuperUpdateCurrentTime(void* self, c_int param1);
 	[LinkName("QSequentialAnimationGroup_UpdateState")]
 	public static extern void QSequentialAnimationGroup_UpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	
 	public function void QSequentialAnimationGroup_OnUpdateState_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QSequentialAnimationGroup_OnUpdateState")]
 	public static extern void QSequentialAnimationGroup_OnUpdateState(void* self, QSequentialAnimationGroup_OnUpdateState_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperUpdateState")]
+	public static extern void QSequentialAnimationGroup_SuperUpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QSequentialAnimationGroup_UpdateDirection")]
 	public static extern void QSequentialAnimationGroup_UpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	
 	public function void QSequentialAnimationGroup_OnUpdateDirection_action(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QSequentialAnimationGroup_OnUpdateDirection")]
 	public static extern void QSequentialAnimationGroup_OnUpdateDirection(void* self, QSequentialAnimationGroup_OnUpdateDirection_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperUpdateDirection")]
+	public static extern void QSequentialAnimationGroup_SuperUpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QSequentialAnimationGroup_Tr2")]
 	public static extern libqt_string QSequentialAnimationGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QSequentialAnimationGroup_Tr3")]
@@ -959,34 +1067,52 @@ extension CQt
 	public function void QSequentialAnimationGroup_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSequentialAnimationGroup_OnEventFilter")]
 	public static extern bool QSequentialAnimationGroup_OnEventFilter(void* self, QSequentialAnimationGroup_OnEventFilter_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperEventFilter")]
+	public static extern bool QSequentialAnimationGroup_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSequentialAnimationGroup_TimerEvent")]
 	public static extern void QSequentialAnimationGroup_TimerEvent(void* self, void** event);
 	
 	public function void QSequentialAnimationGroup_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_OnTimerEvent")]
 	public static extern void QSequentialAnimationGroup_OnTimerEvent(void* self, QSequentialAnimationGroup_OnTimerEvent_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperTimerEvent")]
+	public static extern void QSequentialAnimationGroup_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_ChildEvent")]
 	public static extern void QSequentialAnimationGroup_ChildEvent(void* self, void** event);
 	
 	public function void QSequentialAnimationGroup_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_OnChildEvent")]
 	public static extern void QSequentialAnimationGroup_OnChildEvent(void* self, QSequentialAnimationGroup_OnChildEvent_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperChildEvent")]
+	public static extern void QSequentialAnimationGroup_SuperChildEvent(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_CustomEvent")]
 	public static extern void QSequentialAnimationGroup_CustomEvent(void* self, void** event);
 	
 	public function void QSequentialAnimationGroup_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_OnCustomEvent")]
 	public static extern void QSequentialAnimationGroup_OnCustomEvent(void* self, QSequentialAnimationGroup_OnCustomEvent_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperCustomEvent")]
+	public static extern void QSequentialAnimationGroup_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_ConnectNotify")]
 	public static extern void QSequentialAnimationGroup_ConnectNotify(void* self, void** signal);
 	
 	public function void QSequentialAnimationGroup_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSequentialAnimationGroup_OnConnectNotify")]
 	public static extern void QSequentialAnimationGroup_OnConnectNotify(void* self, QSequentialAnimationGroup_OnConnectNotify_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperConnectNotify")]
+	public static extern void QSequentialAnimationGroup_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSequentialAnimationGroup_DisconnectNotify")]
 	public static extern void QSequentialAnimationGroup_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSequentialAnimationGroup_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSequentialAnimationGroup_OnDisconnectNotify")]
 	public static extern void QSequentialAnimationGroup_OnDisconnectNotify(void* self, QSequentialAnimationGroup_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSequentialAnimationGroup_SuperDisconnectNotify")]
+	public static extern void QSequentialAnimationGroup_SuperDisconnectNotify(void* self, void** signal);
 }

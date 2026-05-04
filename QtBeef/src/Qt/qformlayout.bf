@@ -680,6 +680,40 @@ class QFormLayout : IQFormLayout, IQLayout, IQObject, IQLayoutItem
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QFormLayout_OnMetaObject(obj.ObjectPtr,  => QtBeef_QFormLayout_OnMetaObject);
+		CQt.QFormLayout_OnMetacast(obj.ObjectPtr,  => QtBeef_QFormLayout_OnMetacast);
+		CQt.QFormLayout_OnMetacall(obj.ObjectPtr,  => QtBeef_QFormLayout_OnMetacall);
+		CQt.QFormLayout_OnSpacing(obj.ObjectPtr,  => QtBeef_QFormLayout_OnSpacing);
+		CQt.QFormLayout_OnSetSpacing(obj.ObjectPtr,  => QtBeef_QFormLayout_OnSetSpacing);
+		CQt.QFormLayout_OnAddItem(obj.ObjectPtr,  => QtBeef_QFormLayout_OnAddItem);
+		CQt.QFormLayout_OnItemAt2(obj.ObjectPtr,  => QtBeef_QFormLayout_OnItemAt2);
+		CQt.QFormLayout_OnTakeAt(obj.ObjectPtr,  => QtBeef_QFormLayout_OnTakeAt);
+		CQt.QFormLayout_OnSetGeometry(obj.ObjectPtr,  => QtBeef_QFormLayout_OnSetGeometry);
+		CQt.QFormLayout_OnMinimumSize(obj.ObjectPtr,  => QtBeef_QFormLayout_OnMinimumSize);
+		CQt.QFormLayout_OnSizeHint(obj.ObjectPtr,  => QtBeef_QFormLayout_OnSizeHint);
+		CQt.QFormLayout_OnInvalidate(obj.ObjectPtr,  => QtBeef_QFormLayout_OnInvalidate);
+		CQt.QFormLayout_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QFormLayout_OnHasHeightForWidth);
+		CQt.QFormLayout_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QFormLayout_OnHeightForWidth);
+		CQt.QFormLayout_OnExpandingDirections(obj.ObjectPtr,  => QtBeef_QFormLayout_OnExpandingDirections);
+		CQt.QFormLayout_OnCount(obj.ObjectPtr,  => QtBeef_QFormLayout_OnCount);
+		CQt.QFormLayout_OnEvent(obj.ObjectPtr,  => QtBeef_QFormLayout_OnEvent);
+		CQt.QFormLayout_OnEventFilter(obj.ObjectPtr,  => QtBeef_QFormLayout_OnEventFilter);
+		CQt.QFormLayout_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QFormLayout_OnTimerEvent);
+		CQt.QFormLayout_OnChildEvent(obj.ObjectPtr,  => QtBeef_QFormLayout_OnChildEvent);
+		CQt.QFormLayout_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QFormLayout_OnCustomEvent);
+		CQt.QFormLayout_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QFormLayout_OnConnectNotify);
+		CQt.QFormLayout_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QFormLayout_OnDisconnectNotify);
+		CQt.QFormLayout_OnMaximumSize(obj.ObjectPtr,  => QtBeef_QFormLayout_OnMaximumSize);
+		CQt.QFormLayout_OnGeometry(obj.ObjectPtr,  => QtBeef_QFormLayout_OnGeometry);
+		CQt.QFormLayout_OnIsEmpty(obj.ObjectPtr,  => QtBeef_QFormLayout_OnIsEmpty);
+		CQt.QFormLayout_OnMinimumHeightForWidth(obj.ObjectPtr,  => QtBeef_QFormLayout_OnMinimumHeightForWidth);
+		CQt.QFormLayout_OnWidget(obj.ObjectPtr,  => QtBeef_QFormLayout_OnWidget);
+		CQt.QFormLayout_OnLayout(obj.ObjectPtr,  => QtBeef_QFormLayout_OnLayout);
+		CQt.QFormLayout_OnSpacerItem(obj.ObjectPtr,  => QtBeef_QFormLayout_OnSpacerItem);
+		CQt.QFormLayout_OnControlTypes(obj.ObjectPtr,  => QtBeef_QFormLayout_OnControlTypes);
+		CQt.QFormLayout_OnIndexOf(obj.ObjectPtr,  => QtBeef_QFormLayout_OnIndexOf);
+		CQt.QFormLayout_OnIndexOf2(obj.ObjectPtr,  => QtBeef_QFormLayout_OnIndexOf2);
+		CQt.QFormLayout_OnReplaceWidget(obj.ObjectPtr,  => QtBeef_QFormLayout_OnReplaceWidget);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -692,6 +726,176 @@ class QFormLayout : IQFormLayout, IQLayout, IQObject, IQLayoutItem
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QFormLayout_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QFormLayout_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QFormLayout_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QFormLayout_OnSpacing(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpacing();
+	}
+	static void QtBeef_QFormLayout_OnSetSpacing(void* ptr, c_int spacing)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSpacing(spacing);
+	}
+	static void QtBeef_QFormLayout_OnAddItem(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAddItem(item);
+	}
+	static void QtBeef_QFormLayout_OnItemAt2(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemAt2(index);
+	}
+	static void QtBeef_QFormLayout_OnTakeAt(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTakeAt(index);
+	}
+	static void QtBeef_QFormLayout_OnSetGeometry(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetGeometry(rect);
+	}
+	static void QtBeef_QFormLayout_OnMinimumSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSize();
+	}
+	static void QtBeef_QFormLayout_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QFormLayout_OnInvalidate(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInvalidate();
+	}
+	static void QtBeef_QFormLayout_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QFormLayout_OnHeightForWidth(void* ptr, c_int width)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(width);
+	}
+	static void QtBeef_QFormLayout_OnExpandingDirections(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExpandingDirections();
+	}
+	static void QtBeef_QFormLayout_OnCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCount();
+	}
+	static void QtBeef_QFormLayout_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QFormLayout_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QFormLayout_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QFormLayout_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QFormLayout_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QFormLayout_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QFormLayout_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QFormLayout_OnMaximumSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMaximumSize();
+	}
+	static void QtBeef_QFormLayout_OnGeometry(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGeometry();
+	}
+	static void QtBeef_QFormLayout_OnIsEmpty(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsEmpty();
+	}
+	static void QtBeef_QFormLayout_OnMinimumHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumHeightForWidth(param1);
+	}
+	static void QtBeef_QFormLayout_OnWidget(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidget();
+	}
+	static void QtBeef_QFormLayout_OnLayout(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayout();
+	}
+	static void QtBeef_QFormLayout_OnSpacerItem(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpacerItem();
+	}
+	static void QtBeef_QFormLayout_OnControlTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnControlTypes();
+	}
+	static void QtBeef_QFormLayout_OnIndexOf(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexOf(param1);
+	}
+	static void QtBeef_QFormLayout_OnIndexOf2(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexOf2(param1);
+	}
+	static void QtBeef_QFormLayout_OnReplaceWidget(void* ptr, void** from, void** to, void* options)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReplaceWidget(from, to, options);
 	}
 	public this(QFormLayout_Ptr ptr)
 	{
@@ -1377,18 +1581,27 @@ extension CQt
 	public function void QFormLayout_OnMetaObject_action(void* self);
 	[LinkName("QFormLayout_OnMetaObject")]
 	public static extern void** QFormLayout_OnMetaObject(void* self, QFormLayout_OnMetaObject_action _action);
+	
+	[LinkName("QFormLayout_SuperMetaObject")]
+	public static extern void** QFormLayout_SuperMetaObject(void* self);
 	[LinkName("QFormLayout_Qt_Metacast")]
 	public static extern void* QFormLayout_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QFormLayout_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QFormLayout_OnMetacast")]
 	public static extern void* QFormLayout_OnMetacast(void* self, QFormLayout_OnMetacast_action _action);
+	
+	[LinkName("QFormLayout_SuperMetacast")]
+	public static extern void* QFormLayout_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QFormLayout_Qt_Metacall")]
 	public static extern c_int QFormLayout_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QFormLayout_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFormLayout_OnMetacall")]
 	public static extern c_int QFormLayout_OnMetacall(void* self, QFormLayout_OnMetacall_action _action);
+	
+	[LinkName("QFormLayout_SuperMetacall")]
+	public static extern c_int QFormLayout_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFormLayout_Tr")]
 	public static extern libqt_string QFormLayout_Tr(c_char* s);
 	[LinkName("QFormLayout_SetFieldGrowthPolicy")]
@@ -1421,12 +1634,18 @@ extension CQt
 	public function void QFormLayout_OnSpacing_action(void* self);
 	[LinkName("QFormLayout_OnSpacing")]
 	public static extern c_int QFormLayout_OnSpacing(void* self, QFormLayout_OnSpacing_action _action);
+	
+	[LinkName("QFormLayout_SuperSpacing")]
+	public static extern c_int QFormLayout_SuperSpacing(void* self);
 	[LinkName("QFormLayout_SetSpacing")]
 	public static extern void QFormLayout_SetSpacing(void* self, c_int spacing);
 	
 	public function void QFormLayout_OnSetSpacing_action(void* self, c_int spacing);
 	[LinkName("QFormLayout_OnSetSpacing")]
 	public static extern void QFormLayout_OnSetSpacing(void* self, QFormLayout_OnSetSpacing_action _action);
+	
+	[LinkName("QFormLayout_SuperSetSpacing")]
+	public static extern void QFormLayout_SuperSetSpacing(void* self, c_int spacing);
 	[LinkName("QFormLayout_AddRow")]
 	public static extern void QFormLayout_AddRow(void* self, void** label, void** field);
 	[LinkName("QFormLayout_AddRow2")]
@@ -1499,66 +1718,99 @@ extension CQt
 	public function void QFormLayout_OnAddItem_action(void* self, void** item);
 	[LinkName("QFormLayout_OnAddItem")]
 	public static extern void QFormLayout_OnAddItem(void* self, QFormLayout_OnAddItem_action _action);
+	
+	[LinkName("QFormLayout_SuperAddItem")]
+	public static extern void QFormLayout_SuperAddItem(void* self, void** item);
 	[LinkName("QFormLayout_ItemAt2")]
 	public static extern void** QFormLayout_ItemAt2(void* self, c_int index);
 	
 	public function void QFormLayout_OnItemAt2_action(void* self, c_int index);
 	[LinkName("QFormLayout_OnItemAt2")]
 	public static extern void** QFormLayout_OnItemAt2(void* self, QFormLayout_OnItemAt2_action _action);
+	
+	[LinkName("QFormLayout_SuperItemAt2")]
+	public static extern void** QFormLayout_SuperItemAt2(void* self, c_int index);
 	[LinkName("QFormLayout_TakeAt")]
 	public static extern void** QFormLayout_TakeAt(void* self, c_int index);
 	
 	public function void QFormLayout_OnTakeAt_action(void* self, c_int index);
 	[LinkName("QFormLayout_OnTakeAt")]
 	public static extern void** QFormLayout_OnTakeAt(void* self, QFormLayout_OnTakeAt_action _action);
+	
+	[LinkName("QFormLayout_SuperTakeAt")]
+	public static extern void** QFormLayout_SuperTakeAt(void* self, c_int index);
 	[LinkName("QFormLayout_SetGeometry")]
 	public static extern void QFormLayout_SetGeometry(void* self, void** rect);
 	
 	public function void QFormLayout_OnSetGeometry_action(void* self, void** rect);
 	[LinkName("QFormLayout_OnSetGeometry")]
 	public static extern void QFormLayout_OnSetGeometry(void* self, QFormLayout_OnSetGeometry_action _action);
+	
+	[LinkName("QFormLayout_SuperSetGeometry")]
+	public static extern void QFormLayout_SuperSetGeometry(void* self, void** rect);
 	[LinkName("QFormLayout_MinimumSize")]
 	public static extern void* QFormLayout_MinimumSize(void* self);
 	
 	public function void QFormLayout_OnMinimumSize_action(void* self);
 	[LinkName("QFormLayout_OnMinimumSize")]
 	public static extern void* QFormLayout_OnMinimumSize(void* self, QFormLayout_OnMinimumSize_action _action);
+	
+	[LinkName("QFormLayout_SuperMinimumSize")]
+	public static extern void* QFormLayout_SuperMinimumSize(void* self);
 	[LinkName("QFormLayout_SizeHint")]
 	public static extern void* QFormLayout_SizeHint(void* self);
 	
 	public function void QFormLayout_OnSizeHint_action(void* self);
 	[LinkName("QFormLayout_OnSizeHint")]
 	public static extern void* QFormLayout_OnSizeHint(void* self, QFormLayout_OnSizeHint_action _action);
+	
+	[LinkName("QFormLayout_SuperSizeHint")]
+	public static extern void* QFormLayout_SuperSizeHint(void* self);
 	[LinkName("QFormLayout_Invalidate")]
 	public static extern void QFormLayout_Invalidate(void* self);
 	
 	public function void QFormLayout_OnInvalidate_action(void* self);
 	[LinkName("QFormLayout_OnInvalidate")]
 	public static extern void QFormLayout_OnInvalidate(void* self, QFormLayout_OnInvalidate_action _action);
+	
+	[LinkName("QFormLayout_SuperInvalidate")]
+	public static extern void QFormLayout_SuperInvalidate(void* self);
 	[LinkName("QFormLayout_HasHeightForWidth")]
 	public static extern bool QFormLayout_HasHeightForWidth(void* self);
 	
 	public function void QFormLayout_OnHasHeightForWidth_action(void* self);
 	[LinkName("QFormLayout_OnHasHeightForWidth")]
 	public static extern bool QFormLayout_OnHasHeightForWidth(void* self, QFormLayout_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QFormLayout_SuperHasHeightForWidth")]
+	public static extern bool QFormLayout_SuperHasHeightForWidth(void* self);
 	[LinkName("QFormLayout_HeightForWidth")]
 	public static extern c_int QFormLayout_HeightForWidth(void* self, c_int width);
 	
 	public function void QFormLayout_OnHeightForWidth_action(void* self, c_int width);
 	[LinkName("QFormLayout_OnHeightForWidth")]
 	public static extern c_int QFormLayout_OnHeightForWidth(void* self, QFormLayout_OnHeightForWidth_action _action);
+	
+	[LinkName("QFormLayout_SuperHeightForWidth")]
+	public static extern c_int QFormLayout_SuperHeightForWidth(void* self, c_int width);
 	[LinkName("QFormLayout_ExpandingDirections")]
 	public static extern void* QFormLayout_ExpandingDirections(void* self);
 	
 	public function void QFormLayout_OnExpandingDirections_action(void* self);
 	[LinkName("QFormLayout_OnExpandingDirections")]
 	public static extern void* QFormLayout_OnExpandingDirections(void* self, QFormLayout_OnExpandingDirections_action _action);
+	
+	[LinkName("QFormLayout_SuperExpandingDirections")]
+	public static extern void* QFormLayout_SuperExpandingDirections(void* self);
 	[LinkName("QFormLayout_Count")]
 	public static extern c_int QFormLayout_Count(void* self);
 	
 	public function void QFormLayout_OnCount_action(void* self);
 	[LinkName("QFormLayout_OnCount")]
 	public static extern c_int QFormLayout_OnCount(void* self, QFormLayout_OnCount_action _action);
+	
+	[LinkName("QFormLayout_SuperCount")]
+	public static extern c_int QFormLayout_SuperCount(void* self);
 	[LinkName("QFormLayout_RowCount")]
 	public static extern c_int QFormLayout_RowCount(void* self);
 	[LinkName("QFormLayout_Tr2")]
@@ -1571,108 +1823,162 @@ extension CQt
 	public function void QFormLayout_OnEvent_action(void* self, void** event);
 	[LinkName("QFormLayout_OnEvent")]
 	public static extern bool QFormLayout_OnEvent(void* self, QFormLayout_OnEvent_action _action);
+	
+	[LinkName("QFormLayout_SuperEvent")]
+	public static extern bool QFormLayout_SuperEvent(void* self, void** event);
 	[LinkName("QFormLayout_EventFilter")]
 	public static extern bool QFormLayout_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QFormLayout_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QFormLayout_OnEventFilter")]
 	public static extern bool QFormLayout_OnEventFilter(void* self, QFormLayout_OnEventFilter_action _action);
+	
+	[LinkName("QFormLayout_SuperEventFilter")]
+	public static extern bool QFormLayout_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QFormLayout_TimerEvent")]
 	public static extern void QFormLayout_TimerEvent(void* self, void** event);
 	
 	public function void QFormLayout_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QFormLayout_OnTimerEvent")]
 	public static extern void QFormLayout_OnTimerEvent(void* self, QFormLayout_OnTimerEvent_action _action);
+	
+	[LinkName("QFormLayout_SuperTimerEvent")]
+	public static extern void QFormLayout_SuperTimerEvent(void* self, void** event);
 	[LinkName("QFormLayout_ChildEvent")]
 	public static extern void QFormLayout_ChildEvent(void* self, void** event);
 	
 	public function void QFormLayout_OnChildEvent_action(void* self, void** event);
 	[LinkName("QFormLayout_OnChildEvent")]
 	public static extern void QFormLayout_OnChildEvent(void* self, QFormLayout_OnChildEvent_action _action);
+	
+	[LinkName("QFormLayout_SuperChildEvent")]
+	public static extern void QFormLayout_SuperChildEvent(void* self, void** event);
 	[LinkName("QFormLayout_CustomEvent")]
 	public static extern void QFormLayout_CustomEvent(void* self, void** event);
 	
 	public function void QFormLayout_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QFormLayout_OnCustomEvent")]
 	public static extern void QFormLayout_OnCustomEvent(void* self, QFormLayout_OnCustomEvent_action _action);
+	
+	[LinkName("QFormLayout_SuperCustomEvent")]
+	public static extern void QFormLayout_SuperCustomEvent(void* self, void** event);
 	[LinkName("QFormLayout_ConnectNotify")]
 	public static extern void QFormLayout_ConnectNotify(void* self, void** signal);
 	
 	public function void QFormLayout_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QFormLayout_OnConnectNotify")]
 	public static extern void QFormLayout_OnConnectNotify(void* self, QFormLayout_OnConnectNotify_action _action);
+	
+	[LinkName("QFormLayout_SuperConnectNotify")]
+	public static extern void QFormLayout_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QFormLayout_DisconnectNotify")]
 	public static extern void QFormLayout_DisconnectNotify(void* self, void** signal);
 	
 	public function void QFormLayout_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QFormLayout_OnDisconnectNotify")]
 	public static extern void QFormLayout_OnDisconnectNotify(void* self, QFormLayout_OnDisconnectNotify_action _action);
+	
+	[LinkName("QFormLayout_SuperDisconnectNotify")]
+	public static extern void QFormLayout_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QFormLayout_MaximumSize")]
 	public static extern void* QFormLayout_MaximumSize(void* self);
 	
 	public function void QFormLayout_OnMaximumSize_action(void* self);
 	[LinkName("QFormLayout_OnMaximumSize")]
 	public static extern void* QFormLayout_OnMaximumSize(void* self, QFormLayout_OnMaximumSize_action _action);
+	
+	[LinkName("QFormLayout_SuperMaximumSize")]
+	public static extern void* QFormLayout_SuperMaximumSize(void* self);
 	[LinkName("QFormLayout_Geometry")]
 	public static extern void* QFormLayout_Geometry(void* self);
 	
 	public function void QFormLayout_OnGeometry_action(void* self);
 	[LinkName("QFormLayout_OnGeometry")]
 	public static extern void* QFormLayout_OnGeometry(void* self, QFormLayout_OnGeometry_action _action);
+	
+	[LinkName("QFormLayout_SuperGeometry")]
+	public static extern void* QFormLayout_SuperGeometry(void* self);
 	[LinkName("QFormLayout_IsEmpty")]
 	public static extern bool QFormLayout_IsEmpty(void* self);
 	
 	public function void QFormLayout_OnIsEmpty_action(void* self);
 	[LinkName("QFormLayout_OnIsEmpty")]
 	public static extern bool QFormLayout_OnIsEmpty(void* self, QFormLayout_OnIsEmpty_action _action);
+	
+	[LinkName("QFormLayout_SuperIsEmpty")]
+	public static extern bool QFormLayout_SuperIsEmpty(void* self);
 	[LinkName("QFormLayout_MinimumHeightForWidth")]
 	public static extern c_int QFormLayout_MinimumHeightForWidth(void* self, c_int param1);
 	
 	public function void QFormLayout_OnMinimumHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QFormLayout_OnMinimumHeightForWidth")]
 	public static extern c_int QFormLayout_OnMinimumHeightForWidth(void* self, QFormLayout_OnMinimumHeightForWidth_action _action);
+	
+	[LinkName("QFormLayout_SuperMinimumHeightForWidth")]
+	public static extern c_int QFormLayout_SuperMinimumHeightForWidth(void* self, c_int param1);
 	[LinkName("QFormLayout_Widget")]
 	public static extern void** QFormLayout_Widget(void* self);
 	
 	public function void QFormLayout_OnWidget_action(void* self);
 	[LinkName("QFormLayout_OnWidget")]
 	public static extern void** QFormLayout_OnWidget(void* self, QFormLayout_OnWidget_action _action);
+	
+	[LinkName("QFormLayout_SuperWidget")]
+	public static extern void** QFormLayout_SuperWidget(void* self);
 	[LinkName("QFormLayout_Layout")]
 	public static extern void** QFormLayout_Layout(void* self);
 	
 	public function void QFormLayout_OnLayout_action(void* self);
 	[LinkName("QFormLayout_OnLayout")]
 	public static extern void** QFormLayout_OnLayout(void* self, QFormLayout_OnLayout_action _action);
+	
+	[LinkName("QFormLayout_SuperLayout")]
+	public static extern void** QFormLayout_SuperLayout(void* self);
 	[LinkName("QFormLayout_SpacerItem")]
 	public static extern void** QFormLayout_SpacerItem(void* self);
 	
 	public function void QFormLayout_OnSpacerItem_action(void* self);
 	[LinkName("QFormLayout_OnSpacerItem")]
 	public static extern void** QFormLayout_OnSpacerItem(void* self, QFormLayout_OnSpacerItem_action _action);
+	
+	[LinkName("QFormLayout_SuperSpacerItem")]
+	public static extern void** QFormLayout_SuperSpacerItem(void* self);
 	[LinkName("QFormLayout_ControlTypes")]
 	public static extern void* QFormLayout_ControlTypes(void* self);
 	
 	public function void QFormLayout_OnControlTypes_action(void* self);
 	[LinkName("QFormLayout_OnControlTypes")]
 	public static extern void* QFormLayout_OnControlTypes(void* self, QFormLayout_OnControlTypes_action _action);
+	
+	[LinkName("QFormLayout_SuperControlTypes")]
+	public static extern void* QFormLayout_SuperControlTypes(void* self);
 	[LinkName("QFormLayout_IndexOf")]
 	public static extern c_int QFormLayout_IndexOf(void* self, void** param1);
 	
 	public function void QFormLayout_OnIndexOf_action(void* self, void** param1);
 	[LinkName("QFormLayout_OnIndexOf")]
 	public static extern c_int QFormLayout_OnIndexOf(void* self, QFormLayout_OnIndexOf_action _action);
+	
+	[LinkName("QFormLayout_SuperIndexOf")]
+	public static extern c_int QFormLayout_SuperIndexOf(void* self, void** param1);
 	[LinkName("QFormLayout_IndexOf2")]
 	public static extern c_int QFormLayout_IndexOf2(void* self, void** param1);
 	
 	public function void QFormLayout_OnIndexOf2_action(void* self, void** param1);
 	[LinkName("QFormLayout_OnIndexOf2")]
 	public static extern c_int QFormLayout_OnIndexOf2(void* self, QFormLayout_OnIndexOf2_action _action);
+	
+	[LinkName("QFormLayout_SuperIndexOf2")]
+	public static extern c_int QFormLayout_SuperIndexOf2(void* self, void** param1);
 	[LinkName("QFormLayout_ReplaceWidget")]
 	public static extern void** QFormLayout_ReplaceWidget(void* self, void** from, void** to, void* options);
 	
 	public function void QFormLayout_OnReplaceWidget_action(void* self, void** from, void** to, void* options);
 	[LinkName("QFormLayout_OnReplaceWidget")]
 	public static extern void** QFormLayout_OnReplaceWidget(void* self, QFormLayout_OnReplaceWidget_action _action);
+	
+	[LinkName("QFormLayout_SuperReplaceWidget")]
+	public static extern void** QFormLayout_SuperReplaceWidget(void* self, void** from, void** to, void* options);
 }
 // --------------------------------------------------------------
 // QFormLayout::TakeRowResult

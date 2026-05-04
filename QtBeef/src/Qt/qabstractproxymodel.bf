@@ -633,6 +633,57 @@ class QAbstractProxyModel : IQAbstractProxyModel, IQAbstractItemModel, IQObject
 		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged2);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2);
+		CQt.QAbstractProxyModel_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMetaObject);
+		CQt.QAbstractProxyModel_OnMetacast(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMetacast);
+		CQt.QAbstractProxyModel_OnMetacall(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMetacall);
+		CQt.QAbstractProxyModel_OnSetSourceModel(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSetSourceModel);
+		CQt.QAbstractProxyModel_OnMapToSource(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMapToSource);
+		CQt.QAbstractProxyModel_OnMapFromSource(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMapFromSource);
+		CQt.QAbstractProxyModel_OnMapSelectionToSource(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMapSelectionToSource);
+		CQt.QAbstractProxyModel_OnMapSelectionFromSource(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMapSelectionFromSource);
+		CQt.QAbstractProxyModel_OnSubmit(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSubmit);
+		CQt.QAbstractProxyModel_OnRevert(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnRevert);
+		CQt.QAbstractProxyModel_OnData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnData);
+		CQt.QAbstractProxyModel_OnHeaderData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnHeaderData);
+		CQt.QAbstractProxyModel_OnItemData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnItemData);
+		CQt.QAbstractProxyModel_OnFlags(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnFlags);
+		CQt.QAbstractProxyModel_OnSetData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSetData);
+		CQt.QAbstractProxyModel_OnSetItemData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSetItemData);
+		CQt.QAbstractProxyModel_OnSetHeaderData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSetHeaderData);
+		CQt.QAbstractProxyModel_OnClearItemData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnClearItemData);
+		CQt.QAbstractProxyModel_OnBuddy(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnBuddy);
+		CQt.QAbstractProxyModel_OnCanFetchMore(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnCanFetchMore);
+		CQt.QAbstractProxyModel_OnFetchMore(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnFetchMore);
+		CQt.QAbstractProxyModel_OnSort(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSort);
+		CQt.QAbstractProxyModel_OnSpan(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSpan);
+		CQt.QAbstractProxyModel_OnHasChildren(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnHasChildren);
+		CQt.QAbstractProxyModel_OnSibling(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSibling);
+		CQt.QAbstractProxyModel_OnMimeData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMimeData);
+		CQt.QAbstractProxyModel_OnCanDropMimeData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnCanDropMimeData);
+		CQt.QAbstractProxyModel_OnDropMimeData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnDropMimeData);
+		CQt.QAbstractProxyModel_OnMimeTypes(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMimeTypes);
+		CQt.QAbstractProxyModel_OnSupportedDragActions(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSupportedDragActions);
+		CQt.QAbstractProxyModel_OnSupportedDropActions(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnSupportedDropActions);
+		CQt.QAbstractProxyModel_OnRoleNames(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnRoleNames);
+		CQt.QAbstractProxyModel_OnEvent(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnEvent);
+		CQt.QAbstractProxyModel_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnEventFilter);
+		CQt.QAbstractProxyModel_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnTimerEvent);
+		CQt.QAbstractProxyModel_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnChildEvent);
+		CQt.QAbstractProxyModel_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnCustomEvent);
+		CQt.QAbstractProxyModel_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnConnectNotify);
+		CQt.QAbstractProxyModel_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnDisconnectNotify);
+		CQt.QAbstractProxyModel_OnIndex(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnIndex);
+		CQt.QAbstractProxyModel_OnRowCount(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnRowCount);
+		CQt.QAbstractProxyModel_OnColumnCount(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnColumnCount);
+		CQt.QAbstractProxyModel_OnInsertRows(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnInsertRows);
+		CQt.QAbstractProxyModel_OnInsertColumns(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnInsertColumns);
+		CQt.QAbstractProxyModel_OnRemoveRows(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnRemoveRows);
+		CQt.QAbstractProxyModel_OnRemoveColumns(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnRemoveColumns);
+		CQt.QAbstractProxyModel_OnMoveRows(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMoveRows);
+		CQt.QAbstractProxyModel_OnMoveColumns(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMoveColumns);
+		CQt.QAbstractProxyModel_OnMatch(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMatch);
+		CQt.QAbstractProxyModel_OnMultiData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnMultiData);
+		CQt.QAbstractProxyModel_OnResetInternalData(obj.ObjectPtr,  => QtBeef_QAbstractProxyModel_OnResetInternalData);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -699,6 +750,261 @@ class QAbstractProxyModel : IQAbstractProxyModel, IQAbstractItemModel, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAbstractProxyModel_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAbstractProxyModel_OnSetSourceModel(void* ptr, void** sourceModel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetSourceModel(sourceModel);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMapToSource(void* ptr, void** proxyIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapToSource(proxyIndex);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMapFromSource(void* ptr, void** sourceIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapFromSource(sourceIndex);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMapSelectionToSource(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapSelectionToSource(selection);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMapSelectionFromSource(void* ptr, void** selection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMapSelectionFromSource(selection);
+	}
+	static void QtBeef_QAbstractProxyModel_OnSubmit(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSubmit();
+	}
+	static void QtBeef_QAbstractProxyModel_OnRevert(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRevert();
+	}
+	static void QtBeef_QAbstractProxyModel_OnData(void* ptr, void** proxyIndex, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(proxyIndex, role);
+	}
+	static void QtBeef_QAbstractProxyModel_OnHeaderData(void* ptr, c_int section, Qt_Orientation orientation, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderData(section, orientation, role);
+	}
+	static void QtBeef_QAbstractProxyModel_OnItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemData(index);
+	}
+	static void QtBeef_QAbstractProxyModel_OnFlags(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFlags(index);
+	}
+	static void QtBeef_QAbstractProxyModel_OnSetData(void* ptr, void** index, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(index, value, role);
+	}
+	static void QtBeef_QAbstractProxyModel_OnSetItemData(void* ptr, void** index, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetItemData(index, roles);
+	}
+	static void QtBeef_QAbstractProxyModel_OnSetHeaderData(void* ptr, c_int section, Qt_Orientation orientation, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetHeaderData(section, orientation, value, role);
+	}
+	static void QtBeef_QAbstractProxyModel_OnClearItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClearItemData(index);
+	}
+	static void QtBeef_QAbstractProxyModel_OnBuddy(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBuddy(index);
+	}
+	static void QtBeef_QAbstractProxyModel_OnCanFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanFetchMore(parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFetchMore(parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnSort(void* ptr, c_int column, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSort(column, order);
+	}
+	static void QtBeef_QAbstractProxyModel_OnSpan(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpan(index);
+	}
+	static void QtBeef_QAbstractProxyModel_OnHasChildren(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasChildren(parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnSibling(void* ptr, c_int row, c_int column, void** idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSibling(row, column, idx);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMimeData(void* ptr, void** indexes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeData(indexes);
+	}
+	static void QtBeef_QAbstractProxyModel_OnCanDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMimeTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeTypes();
+	}
+	static void QtBeef_QAbstractProxyModel_OnSupportedDragActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDragActions();
+	}
+	static void QtBeef_QAbstractProxyModel_OnSupportedDropActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDropActions();
+	}
+	static void QtBeef_QAbstractProxyModel_OnRoleNames(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRoleNames();
+	}
+	static void QtBeef_QAbstractProxyModel_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QAbstractProxyModel_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QAbstractProxyModel_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QAbstractProxyModel_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAbstractProxyModel_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAbstractProxyModel_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAbstractProxyModel_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QAbstractProxyModel_OnIndex(void* ptr, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndex(row, column, parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnRowCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowCount(parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnColumnCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnCount(parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnInsertRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertRows(row, count, parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnInsertColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertColumns(column, count, parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnRemoveRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveRows(row, count, parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnRemoveColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveColumns(column, count, parent);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMoveRows(void* ptr, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMoveColumns(void* ptr, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMatch(void* ptr, void** start, c_int role, void** value, c_int hits, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMatch(start, role, value, hits, flags);
+	}
+	static void QtBeef_QAbstractProxyModel_OnMultiData(void* ptr, void** index, void* roleDataSpan)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMultiData(index, roleDataSpan);
+	}
+	static void QtBeef_QAbstractProxyModel_OnResetInternalData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResetInternalData();
 	}
 	public this(QAbstractProxyModel_Ptr ptr)
 	{
@@ -1326,18 +1632,27 @@ extension CQt
 	public function void QAbstractProxyModel_OnMetaObject_action(void* self);
 	[LinkName("QAbstractProxyModel_OnMetaObject")]
 	public static extern void** QAbstractProxyModel_OnMetaObject(void* self, QAbstractProxyModel_OnMetaObject_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMetaObject")]
+	public static extern void** QAbstractProxyModel_SuperMetaObject(void* self);
 	[LinkName("QAbstractProxyModel_Qt_Metacast")]
 	public static extern void* QAbstractProxyModel_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAbstractProxyModel_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAbstractProxyModel_OnMetacast")]
 	public static extern void* QAbstractProxyModel_OnMetacast(void* self, QAbstractProxyModel_OnMetacast_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMetacast")]
+	public static extern void* QAbstractProxyModel_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAbstractProxyModel_Qt_Metacall")]
 	public static extern c_int QAbstractProxyModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAbstractProxyModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractProxyModel_OnMetacall")]
 	public static extern c_int QAbstractProxyModel_OnMetacall(void* self, QAbstractProxyModel_OnMetacall_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMetacall")]
+	public static extern c_int QAbstractProxyModel_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractProxyModel_Tr")]
 	public static extern libqt_string QAbstractProxyModel_Tr(c_char* s);
 	[LinkName("QAbstractProxyModel_SetSourceModel")]
@@ -1346,6 +1661,9 @@ extension CQt
 	public function void QAbstractProxyModel_OnSetSourceModel_action(void* self, void** sourceModel);
 	[LinkName("QAbstractProxyModel_OnSetSourceModel")]
 	public static extern void QAbstractProxyModel_OnSetSourceModel(void* self, QAbstractProxyModel_OnSetSourceModel_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSetSourceModel")]
+	public static extern void QAbstractProxyModel_SuperSetSourceModel(void* self, void** sourceModel);
 	[LinkName("QAbstractProxyModel_SourceModel")]
 	public static extern void** QAbstractProxyModel_SourceModel(void* self);
 	[LinkName("QAbstractProxyModel_MapToSource")]
@@ -1354,168 +1672,252 @@ extension CQt
 	public function void QAbstractProxyModel_OnMapToSource_action(void* self, void** proxyIndex);
 	[LinkName("QAbstractProxyModel_OnMapToSource")]
 	public static extern void* QAbstractProxyModel_OnMapToSource(void* self, QAbstractProxyModel_OnMapToSource_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMapToSource")]
+	public static extern void* QAbstractProxyModel_SuperMapToSource(void* self, void** proxyIndex);
 	[LinkName("QAbstractProxyModel_MapFromSource")]
 	public static extern void* QAbstractProxyModel_MapFromSource(void* self, void** sourceIndex);
 	
 	public function void QAbstractProxyModel_OnMapFromSource_action(void* self, void** sourceIndex);
 	[LinkName("QAbstractProxyModel_OnMapFromSource")]
 	public static extern void* QAbstractProxyModel_OnMapFromSource(void* self, QAbstractProxyModel_OnMapFromSource_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMapFromSource")]
+	public static extern void* QAbstractProxyModel_SuperMapFromSource(void* self, void** sourceIndex);
 	[LinkName("QAbstractProxyModel_MapSelectionToSource")]
 	public static extern void* QAbstractProxyModel_MapSelectionToSource(void* self, void** selection);
 	
 	public function void QAbstractProxyModel_OnMapSelectionToSource_action(void* self, void** selection);
 	[LinkName("QAbstractProxyModel_OnMapSelectionToSource")]
 	public static extern void* QAbstractProxyModel_OnMapSelectionToSource(void* self, QAbstractProxyModel_OnMapSelectionToSource_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMapSelectionToSource")]
+	public static extern void* QAbstractProxyModel_SuperMapSelectionToSource(void* self, void** selection);
 	[LinkName("QAbstractProxyModel_MapSelectionFromSource")]
 	public static extern void* QAbstractProxyModel_MapSelectionFromSource(void* self, void** selection);
 	
 	public function void QAbstractProxyModel_OnMapSelectionFromSource_action(void* self, void** selection);
 	[LinkName("QAbstractProxyModel_OnMapSelectionFromSource")]
 	public static extern void* QAbstractProxyModel_OnMapSelectionFromSource(void* self, QAbstractProxyModel_OnMapSelectionFromSource_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMapSelectionFromSource")]
+	public static extern void* QAbstractProxyModel_SuperMapSelectionFromSource(void* self, void** selection);
 	[LinkName("QAbstractProxyModel_Submit")]
 	public static extern bool QAbstractProxyModel_Submit(void* self);
 	
 	public function void QAbstractProxyModel_OnSubmit_action(void* self);
 	[LinkName("QAbstractProxyModel_OnSubmit")]
 	public static extern bool QAbstractProxyModel_OnSubmit(void* self, QAbstractProxyModel_OnSubmit_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSubmit")]
+	public static extern bool QAbstractProxyModel_SuperSubmit(void* self);
 	[LinkName("QAbstractProxyModel_Revert")]
 	public static extern void QAbstractProxyModel_Revert(void* self);
 	
 	public function void QAbstractProxyModel_OnRevert_action(void* self);
 	[LinkName("QAbstractProxyModel_OnRevert")]
 	public static extern void QAbstractProxyModel_OnRevert(void* self, QAbstractProxyModel_OnRevert_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperRevert")]
+	public static extern void QAbstractProxyModel_SuperRevert(void* self);
 	[LinkName("QAbstractProxyModel_Data")]
 	public static extern void* QAbstractProxyModel_Data(void* self, void** proxyIndex, c_int role);
 	
 	public function void QAbstractProxyModel_OnData_action(void* self, void** proxyIndex, c_int role);
 	[LinkName("QAbstractProxyModel_OnData")]
 	public static extern void* QAbstractProxyModel_OnData(void* self, QAbstractProxyModel_OnData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperData")]
+	public static extern void* QAbstractProxyModel_SuperData(void* self, void** proxyIndex, c_int role);
 	[LinkName("QAbstractProxyModel_HeaderData")]
 	public static extern void* QAbstractProxyModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	
 	public function void QAbstractProxyModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QAbstractProxyModel_OnHeaderData")]
 	public static extern void* QAbstractProxyModel_OnHeaderData(void* self, QAbstractProxyModel_OnHeaderData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperHeaderData")]
+	public static extern void* QAbstractProxyModel_SuperHeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QAbstractProxyModel_ItemData")]
 	public static extern void* QAbstractProxyModel_ItemData(void* self, void** index);
 	
 	public function void QAbstractProxyModel_OnItemData_action(void* self, void** index);
 	[LinkName("QAbstractProxyModel_OnItemData")]
 	public static extern void* QAbstractProxyModel_OnItemData(void* self, QAbstractProxyModel_OnItemData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperItemData")]
+	public static extern void* QAbstractProxyModel_SuperItemData(void* self, void** index);
 	[LinkName("QAbstractProxyModel_Flags")]
 	public static extern void* QAbstractProxyModel_Flags(void* self, void** index);
 	
 	public function void QAbstractProxyModel_OnFlags_action(void* self, void** index);
 	[LinkName("QAbstractProxyModel_OnFlags")]
 	public static extern void* QAbstractProxyModel_OnFlags(void* self, QAbstractProxyModel_OnFlags_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperFlags")]
+	public static extern void* QAbstractProxyModel_SuperFlags(void* self, void** index);
 	[LinkName("QAbstractProxyModel_SetData")]
 	public static extern bool QAbstractProxyModel_SetData(void* self, void** index, void** value, c_int role);
 	
 	public function void QAbstractProxyModel_OnSetData_action(void* self, void** index, void** value, c_int role);
 	[LinkName("QAbstractProxyModel_OnSetData")]
 	public static extern bool QAbstractProxyModel_OnSetData(void* self, QAbstractProxyModel_OnSetData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSetData")]
+	public static extern bool QAbstractProxyModel_SuperSetData(void* self, void** index, void** value, c_int role);
 	[LinkName("QAbstractProxyModel_SetItemData")]
 	public static extern bool QAbstractProxyModel_SetItemData(void* self, void** index, void** roles);
 	
 	public function void QAbstractProxyModel_OnSetItemData_action(void* self, void** index, void** roles);
 	[LinkName("QAbstractProxyModel_OnSetItemData")]
 	public static extern bool QAbstractProxyModel_OnSetItemData(void* self, QAbstractProxyModel_OnSetItemData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSetItemData")]
+	public static extern bool QAbstractProxyModel_SuperSetItemData(void* self, void** index, void** roles);
 	[LinkName("QAbstractProxyModel_SetHeaderData")]
 	public static extern bool QAbstractProxyModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	
 	public function void QAbstractProxyModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QAbstractProxyModel_OnSetHeaderData")]
 	public static extern bool QAbstractProxyModel_OnSetHeaderData(void* self, QAbstractProxyModel_OnSetHeaderData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSetHeaderData")]
+	public static extern bool QAbstractProxyModel_SuperSetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QAbstractProxyModel_ClearItemData")]
 	public static extern bool QAbstractProxyModel_ClearItemData(void* self, void** index);
 	
 	public function void QAbstractProxyModel_OnClearItemData_action(void* self, void** index);
 	[LinkName("QAbstractProxyModel_OnClearItemData")]
 	public static extern bool QAbstractProxyModel_OnClearItemData(void* self, QAbstractProxyModel_OnClearItemData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperClearItemData")]
+	public static extern bool QAbstractProxyModel_SuperClearItemData(void* self, void** index);
 	[LinkName("QAbstractProxyModel_Buddy")]
 	public static extern void* QAbstractProxyModel_Buddy(void* self, void** index);
 	
 	public function void QAbstractProxyModel_OnBuddy_action(void* self, void** index);
 	[LinkName("QAbstractProxyModel_OnBuddy")]
 	public static extern void* QAbstractProxyModel_OnBuddy(void* self, QAbstractProxyModel_OnBuddy_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperBuddy")]
+	public static extern void* QAbstractProxyModel_SuperBuddy(void* self, void** index);
 	[LinkName("QAbstractProxyModel_CanFetchMore")]
 	public static extern bool QAbstractProxyModel_CanFetchMore(void* self, void** parent);
 	
 	public function void QAbstractProxyModel_OnCanFetchMore_action(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_OnCanFetchMore")]
 	public static extern bool QAbstractProxyModel_OnCanFetchMore(void* self, QAbstractProxyModel_OnCanFetchMore_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperCanFetchMore")]
+	public static extern bool QAbstractProxyModel_SuperCanFetchMore(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_FetchMore")]
 	public static extern void QAbstractProxyModel_FetchMore(void* self, void** parent);
 	
 	public function void QAbstractProxyModel_OnFetchMore_action(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_OnFetchMore")]
 	public static extern void QAbstractProxyModel_OnFetchMore(void* self, QAbstractProxyModel_OnFetchMore_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperFetchMore")]
+	public static extern void QAbstractProxyModel_SuperFetchMore(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_Sort")]
 	public static extern void QAbstractProxyModel_Sort(void* self, c_int column, Qt_SortOrder order);
 	
 	public function void QAbstractProxyModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QAbstractProxyModel_OnSort")]
 	public static extern void QAbstractProxyModel_OnSort(void* self, QAbstractProxyModel_OnSort_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSort")]
+	public static extern void QAbstractProxyModel_SuperSort(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QAbstractProxyModel_Span")]
 	public static extern void* QAbstractProxyModel_Span(void* self, void** index);
 	
 	public function void QAbstractProxyModel_OnSpan_action(void* self, void** index);
 	[LinkName("QAbstractProxyModel_OnSpan")]
 	public static extern void* QAbstractProxyModel_OnSpan(void* self, QAbstractProxyModel_OnSpan_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSpan")]
+	public static extern void* QAbstractProxyModel_SuperSpan(void* self, void** index);
 	[LinkName("QAbstractProxyModel_HasChildren")]
 	public static extern bool QAbstractProxyModel_HasChildren(void* self, void** parent);
 	
 	public function void QAbstractProxyModel_OnHasChildren_action(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_OnHasChildren")]
 	public static extern bool QAbstractProxyModel_OnHasChildren(void* self, QAbstractProxyModel_OnHasChildren_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperHasChildren")]
+	public static extern bool QAbstractProxyModel_SuperHasChildren(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_Sibling")]
 	public static extern void* QAbstractProxyModel_Sibling(void* self, c_int row, c_int column, void** idx);
 	
 	public function void QAbstractProxyModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QAbstractProxyModel_OnSibling")]
 	public static extern void* QAbstractProxyModel_OnSibling(void* self, QAbstractProxyModel_OnSibling_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSibling")]
+	public static extern void* QAbstractProxyModel_SuperSibling(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QAbstractProxyModel_MimeData")]
 	public static extern void** QAbstractProxyModel_MimeData(void* self, void** indexes);
 	
 	public function void QAbstractProxyModel_OnMimeData_action(void* self, void** indexes);
 	[LinkName("QAbstractProxyModel_OnMimeData")]
 	public static extern void** QAbstractProxyModel_OnMimeData(void* self, QAbstractProxyModel_OnMimeData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMimeData")]
+	public static extern void** QAbstractProxyModel_SuperMimeData(void* self, void** indexes);
 	[LinkName("QAbstractProxyModel_CanDropMimeData")]
 	public static extern bool QAbstractProxyModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QAbstractProxyModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QAbstractProxyModel_OnCanDropMimeData")]
 	public static extern bool QAbstractProxyModel_OnCanDropMimeData(void* self, QAbstractProxyModel_OnCanDropMimeData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperCanDropMimeData")]
+	public static extern bool QAbstractProxyModel_SuperCanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QAbstractProxyModel_DropMimeData")]
 	public static extern bool QAbstractProxyModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QAbstractProxyModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QAbstractProxyModel_OnDropMimeData")]
 	public static extern bool QAbstractProxyModel_OnDropMimeData(void* self, QAbstractProxyModel_OnDropMimeData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperDropMimeData")]
+	public static extern bool QAbstractProxyModel_SuperDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QAbstractProxyModel_MimeTypes")]
 	public static extern void* QAbstractProxyModel_MimeTypes(void* self);
 	
 	public function void QAbstractProxyModel_OnMimeTypes_action(void* self);
 	[LinkName("QAbstractProxyModel_OnMimeTypes")]
 	public static extern void* QAbstractProxyModel_OnMimeTypes(void* self, QAbstractProxyModel_OnMimeTypes_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMimeTypes")]
+	public static extern void* QAbstractProxyModel_SuperMimeTypes(void* self);
 	[LinkName("QAbstractProxyModel_SupportedDragActions")]
 	public static extern void* QAbstractProxyModel_SupportedDragActions(void* self);
 	
 	public function void QAbstractProxyModel_OnSupportedDragActions_action(void* self);
 	[LinkName("QAbstractProxyModel_OnSupportedDragActions")]
 	public static extern void* QAbstractProxyModel_OnSupportedDragActions(void* self, QAbstractProxyModel_OnSupportedDragActions_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSupportedDragActions")]
+	public static extern void* QAbstractProxyModel_SuperSupportedDragActions(void* self);
 	[LinkName("QAbstractProxyModel_SupportedDropActions")]
 	public static extern void* QAbstractProxyModel_SupportedDropActions(void* self);
 	
 	public function void QAbstractProxyModel_OnSupportedDropActions_action(void* self);
 	[LinkName("QAbstractProxyModel_OnSupportedDropActions")]
 	public static extern void* QAbstractProxyModel_OnSupportedDropActions(void* self, QAbstractProxyModel_OnSupportedDropActions_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperSupportedDropActions")]
+	public static extern void* QAbstractProxyModel_SuperSupportedDropActions(void* self);
 	[LinkName("QAbstractProxyModel_RoleNames")]
 	public static extern void* QAbstractProxyModel_RoleNames(void* self);
 	
 	public function void QAbstractProxyModel_OnRoleNames_action(void* self);
 	[LinkName("QAbstractProxyModel_OnRoleNames")]
 	public static extern void* QAbstractProxyModel_OnRoleNames(void* self, QAbstractProxyModel_OnRoleNames_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperRoleNames")]
+	public static extern void* QAbstractProxyModel_SuperRoleNames(void* self);
 	[LinkName("QAbstractProxyModel_CreateSourceIndex")]
 	public static extern void* QAbstractProxyModel_CreateSourceIndex(void* self, c_int row, c_int col, void* internalPtr);
 	[LinkName("QAbstractProxyModel_Tr2")]
@@ -1528,112 +1930,169 @@ extension CQt
 	public function void QAbstractProxyModel_OnEvent_action(void* self, void** event);
 	[LinkName("QAbstractProxyModel_OnEvent")]
 	public static extern bool QAbstractProxyModel_OnEvent(void* self, QAbstractProxyModel_OnEvent_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperEvent")]
+	public static extern bool QAbstractProxyModel_SuperEvent(void* self, void** event);
 	[LinkName("QAbstractProxyModel_EventFilter")]
 	public static extern bool QAbstractProxyModel_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QAbstractProxyModel_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QAbstractProxyModel_OnEventFilter")]
 	public static extern bool QAbstractProxyModel_OnEventFilter(void* self, QAbstractProxyModel_OnEventFilter_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperEventFilter")]
+	public static extern bool QAbstractProxyModel_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QAbstractProxyModel_TimerEvent")]
 	public static extern void QAbstractProxyModel_TimerEvent(void* self, void** event);
 	
 	public function void QAbstractProxyModel_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QAbstractProxyModel_OnTimerEvent")]
 	public static extern void QAbstractProxyModel_OnTimerEvent(void* self, QAbstractProxyModel_OnTimerEvent_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperTimerEvent")]
+	public static extern void QAbstractProxyModel_SuperTimerEvent(void* self, void** event);
 	[LinkName("QAbstractProxyModel_ChildEvent")]
 	public static extern void QAbstractProxyModel_ChildEvent(void* self, void** event);
 	
 	public function void QAbstractProxyModel_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAbstractProxyModel_OnChildEvent")]
 	public static extern void QAbstractProxyModel_OnChildEvent(void* self, QAbstractProxyModel_OnChildEvent_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperChildEvent")]
+	public static extern void QAbstractProxyModel_SuperChildEvent(void* self, void** event);
 	[LinkName("QAbstractProxyModel_CustomEvent")]
 	public static extern void QAbstractProxyModel_CustomEvent(void* self, void** event);
 	
 	public function void QAbstractProxyModel_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAbstractProxyModel_OnCustomEvent")]
 	public static extern void QAbstractProxyModel_OnCustomEvent(void* self, QAbstractProxyModel_OnCustomEvent_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperCustomEvent")]
+	public static extern void QAbstractProxyModel_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAbstractProxyModel_ConnectNotify")]
 	public static extern void QAbstractProxyModel_ConnectNotify(void* self, void** signal);
 	
 	public function void QAbstractProxyModel_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractProxyModel_OnConnectNotify")]
 	public static extern void QAbstractProxyModel_OnConnectNotify(void* self, QAbstractProxyModel_OnConnectNotify_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperConnectNotify")]
+	public static extern void QAbstractProxyModel_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAbstractProxyModel_DisconnectNotify")]
 	public static extern void QAbstractProxyModel_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAbstractProxyModel_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractProxyModel_OnDisconnectNotify")]
 	public static extern void QAbstractProxyModel_OnDisconnectNotify(void* self, QAbstractProxyModel_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperDisconnectNotify")]
+	public static extern void QAbstractProxyModel_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QAbstractProxyModel_Index")]
 	public static extern void* QAbstractProxyModel_Index(void* self, c_int row, c_int column, void** parent);
 	
 	public function void QAbstractProxyModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QAbstractProxyModel_OnIndex")]
 	public static extern void* QAbstractProxyModel_OnIndex(void* self, QAbstractProxyModel_OnIndex_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperIndex")]
+	public static extern void* QAbstractProxyModel_SuperIndex(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QAbstractProxyModel_RowCount")]
 	public static extern c_int QAbstractProxyModel_RowCount(void* self, void** parent);
 	
 	public function void QAbstractProxyModel_OnRowCount_action(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_OnRowCount")]
 	public static extern c_int QAbstractProxyModel_OnRowCount(void* self, QAbstractProxyModel_OnRowCount_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperRowCount")]
+	public static extern c_int QAbstractProxyModel_SuperRowCount(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_ColumnCount")]
 	public static extern c_int QAbstractProxyModel_ColumnCount(void* self, void** parent);
 	
 	public function void QAbstractProxyModel_OnColumnCount_action(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_OnColumnCount")]
 	public static extern c_int QAbstractProxyModel_OnColumnCount(void* self, QAbstractProxyModel_OnColumnCount_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperColumnCount")]
+	public static extern c_int QAbstractProxyModel_SuperColumnCount(void* self, void** parent);
 	[LinkName("QAbstractProxyModel_InsertRows")]
 	public static extern bool QAbstractProxyModel_InsertRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QAbstractProxyModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QAbstractProxyModel_OnInsertRows")]
 	public static extern bool QAbstractProxyModel_OnInsertRows(void* self, QAbstractProxyModel_OnInsertRows_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperInsertRows")]
+	public static extern bool QAbstractProxyModel_SuperInsertRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QAbstractProxyModel_InsertColumns")]
 	public static extern bool QAbstractProxyModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QAbstractProxyModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QAbstractProxyModel_OnInsertColumns")]
 	public static extern bool QAbstractProxyModel_OnInsertColumns(void* self, QAbstractProxyModel_OnInsertColumns_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperInsertColumns")]
+	public static extern bool QAbstractProxyModel_SuperInsertColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QAbstractProxyModel_RemoveRows")]
 	public static extern bool QAbstractProxyModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QAbstractProxyModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QAbstractProxyModel_OnRemoveRows")]
 	public static extern bool QAbstractProxyModel_OnRemoveRows(void* self, QAbstractProxyModel_OnRemoveRows_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperRemoveRows")]
+	public static extern bool QAbstractProxyModel_SuperRemoveRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QAbstractProxyModel_RemoveColumns")]
 	public static extern bool QAbstractProxyModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QAbstractProxyModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QAbstractProxyModel_OnRemoveColumns")]
 	public static extern bool QAbstractProxyModel_OnRemoveColumns(void* self, QAbstractProxyModel_OnRemoveColumns_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperRemoveColumns")]
+	public static extern bool QAbstractProxyModel_SuperRemoveColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QAbstractProxyModel_MoveRows")]
 	public static extern bool QAbstractProxyModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QAbstractProxyModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QAbstractProxyModel_OnMoveRows")]
 	public static extern bool QAbstractProxyModel_OnMoveRows(void* self, QAbstractProxyModel_OnMoveRows_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMoveRows")]
+	public static extern bool QAbstractProxyModel_SuperMoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QAbstractProxyModel_MoveColumns")]
 	public static extern bool QAbstractProxyModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QAbstractProxyModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QAbstractProxyModel_OnMoveColumns")]
 	public static extern bool QAbstractProxyModel_OnMoveColumns(void* self, QAbstractProxyModel_OnMoveColumns_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMoveColumns")]
+	public static extern bool QAbstractProxyModel_SuperMoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QAbstractProxyModel_Match")]
 	public static extern void* QAbstractProxyModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	
 	public function void QAbstractProxyModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QAbstractProxyModel_OnMatch")]
 	public static extern void* QAbstractProxyModel_OnMatch(void* self, QAbstractProxyModel_OnMatch_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMatch")]
+	public static extern void* QAbstractProxyModel_SuperMatch(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QAbstractProxyModel_MultiData")]
 	public static extern void QAbstractProxyModel_MultiData(void* self, void** index, void* roleDataSpan);
 	
 	public function void QAbstractProxyModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
 	[LinkName("QAbstractProxyModel_OnMultiData")]
 	public static extern void QAbstractProxyModel_OnMultiData(void* self, QAbstractProxyModel_OnMultiData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperMultiData")]
+	public static extern void QAbstractProxyModel_SuperMultiData(void* self, void** index, void* roleDataSpan);
 	[LinkName("QAbstractProxyModel_ResetInternalData")]
 	public static extern void QAbstractProxyModel_ResetInternalData(void* self);
 	
 	public function void QAbstractProxyModel_OnResetInternalData_action(void* self);
 	[LinkName("QAbstractProxyModel_OnResetInternalData")]
 	public static extern void QAbstractProxyModel_OnResetInternalData(void* self, QAbstractProxyModel_OnResetInternalData_action _action);
+	
+	[LinkName("QAbstractProxyModel_SuperResetInternalData")]
+	public static extern void QAbstractProxyModel_SuperResetInternalData(void* self);
 }

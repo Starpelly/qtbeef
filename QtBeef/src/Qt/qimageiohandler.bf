@@ -98,6 +98,84 @@ class QImageIOHandler : IQImageIOHandler
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QImageIOHandler_OnCanRead(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnCanRead);
+		CQt.QImageIOHandler_OnRead(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnRead);
+		CQt.QImageIOHandler_OnWrite(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnWrite);
+		CQt.QImageIOHandler_OnOption(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnOption);
+		CQt.QImageIOHandler_OnSetOption(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnSetOption);
+		CQt.QImageIOHandler_OnSupportsOption(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnSupportsOption);
+		CQt.QImageIOHandler_OnJumpToNextImage(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnJumpToNextImage);
+		CQt.QImageIOHandler_OnJumpToImage(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnJumpToImage);
+		CQt.QImageIOHandler_OnLoopCount(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnLoopCount);
+		CQt.QImageIOHandler_OnImageCount(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnImageCount);
+		CQt.QImageIOHandler_OnNextImageDelay(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnNextImageDelay);
+		CQt.QImageIOHandler_OnCurrentImageNumber(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnCurrentImageNumber);
+		CQt.QImageIOHandler_OnCurrentImageRect(obj.ObjectPtr,  => QtBeef_QImageIOHandler_OnCurrentImageRect);
+	}
+	static void QtBeef_QImageIOHandler_OnCanRead(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanRead();
+	}
+	static void QtBeef_QImageIOHandler_OnRead(void* ptr, void** image)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRead(image);
+	}
+	static void QtBeef_QImageIOHandler_OnWrite(void* ptr, void** image)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWrite(image);
+	}
+	static void QtBeef_QImageIOHandler_OnOption(void* ptr, QImageIOHandler_ImageOption option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOption(option);
+	}
+	static void QtBeef_QImageIOHandler_OnSetOption(void* ptr, QImageIOHandler_ImageOption option, void** value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetOption(option, value);
+	}
+	static void QtBeef_QImageIOHandler_OnSupportsOption(void* ptr, QImageIOHandler_ImageOption option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportsOption(option);
+	}
+	static void QtBeef_QImageIOHandler_OnJumpToNextImage(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnJumpToNextImage();
+	}
+	static void QtBeef_QImageIOHandler_OnJumpToImage(void* ptr, c_int imageNumber)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnJumpToImage(imageNumber);
+	}
+	static void QtBeef_QImageIOHandler_OnLoopCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLoopCount();
+	}
+	static void QtBeef_QImageIOHandler_OnImageCount(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnImageCount();
+	}
+	static void QtBeef_QImageIOHandler_OnNextImageDelay(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNextImageDelay();
+	}
+	static void QtBeef_QImageIOHandler_OnCurrentImageNumber(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentImageNumber();
+	}
+	static void QtBeef_QImageIOHandler_OnCurrentImageRect(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentImageRect();
 	}
 	public this(QImageIOHandler_Ptr ptr)
 	{
@@ -214,78 +292,117 @@ extension CQt
 	public function void QImageIOHandler_OnCanRead_action(void* self);
 	[LinkName("QImageIOHandler_OnCanRead")]
 	public static extern bool QImageIOHandler_OnCanRead(void* self, QImageIOHandler_OnCanRead_action _action);
+	
+	[LinkName("QImageIOHandler_SuperCanRead")]
+	public static extern bool QImageIOHandler_SuperCanRead(void* self);
 	[LinkName("QImageIOHandler_Read")]
 	public static extern bool QImageIOHandler_Read(void* self, void** image);
 	
 	public function void QImageIOHandler_OnRead_action(void* self, void** image);
 	[LinkName("QImageIOHandler_OnRead")]
 	public static extern bool QImageIOHandler_OnRead(void* self, QImageIOHandler_OnRead_action _action);
+	
+	[LinkName("QImageIOHandler_SuperRead")]
+	public static extern bool QImageIOHandler_SuperRead(void* self, void** image);
 	[LinkName("QImageIOHandler_Write")]
 	public static extern bool QImageIOHandler_Write(void* self, void** image);
 	
 	public function void QImageIOHandler_OnWrite_action(void* self, void** image);
 	[LinkName("QImageIOHandler_OnWrite")]
 	public static extern bool QImageIOHandler_OnWrite(void* self, QImageIOHandler_OnWrite_action _action);
+	
+	[LinkName("QImageIOHandler_SuperWrite")]
+	public static extern bool QImageIOHandler_SuperWrite(void* self, void** image);
 	[LinkName("QImageIOHandler_Option")]
 	public static extern void* QImageIOHandler_Option(void* self, QImageIOHandler_ImageOption option);
 	
 	public function void QImageIOHandler_OnOption_action(void* self, QImageIOHandler_ImageOption option);
 	[LinkName("QImageIOHandler_OnOption")]
 	public static extern void* QImageIOHandler_OnOption(void* self, QImageIOHandler_OnOption_action _action);
+	
+	[LinkName("QImageIOHandler_SuperOption")]
+	public static extern void* QImageIOHandler_SuperOption(void* self, QImageIOHandler_ImageOption option);
 	[LinkName("QImageIOHandler_SetOption")]
 	public static extern void QImageIOHandler_SetOption(void* self, QImageIOHandler_ImageOption option, void** value);
 	
 	public function void QImageIOHandler_OnSetOption_action(void* self, QImageIOHandler_ImageOption option, void** value);
 	[LinkName("QImageIOHandler_OnSetOption")]
 	public static extern void QImageIOHandler_OnSetOption(void* self, QImageIOHandler_OnSetOption_action _action);
+	
+	[LinkName("QImageIOHandler_SuperSetOption")]
+	public static extern void QImageIOHandler_SuperSetOption(void* self, QImageIOHandler_ImageOption option, void** value);
 	[LinkName("QImageIOHandler_SupportsOption")]
 	public static extern bool QImageIOHandler_SupportsOption(void* self, QImageIOHandler_ImageOption option);
 	
 	public function void QImageIOHandler_OnSupportsOption_action(void* self, QImageIOHandler_ImageOption option);
 	[LinkName("QImageIOHandler_OnSupportsOption")]
 	public static extern bool QImageIOHandler_OnSupportsOption(void* self, QImageIOHandler_OnSupportsOption_action _action);
+	
+	[LinkName("QImageIOHandler_SuperSupportsOption")]
+	public static extern bool QImageIOHandler_SuperSupportsOption(void* self, QImageIOHandler_ImageOption option);
 	[LinkName("QImageIOHandler_JumpToNextImage")]
 	public static extern bool QImageIOHandler_JumpToNextImage(void* self);
 	
 	public function void QImageIOHandler_OnJumpToNextImage_action(void* self);
 	[LinkName("QImageIOHandler_OnJumpToNextImage")]
 	public static extern bool QImageIOHandler_OnJumpToNextImage(void* self, QImageIOHandler_OnJumpToNextImage_action _action);
+	
+	[LinkName("QImageIOHandler_SuperJumpToNextImage")]
+	public static extern bool QImageIOHandler_SuperJumpToNextImage(void* self);
 	[LinkName("QImageIOHandler_JumpToImage")]
 	public static extern bool QImageIOHandler_JumpToImage(void* self, c_int imageNumber);
 	
 	public function void QImageIOHandler_OnJumpToImage_action(void* self, c_int imageNumber);
 	[LinkName("QImageIOHandler_OnJumpToImage")]
 	public static extern bool QImageIOHandler_OnJumpToImage(void* self, QImageIOHandler_OnJumpToImage_action _action);
+	
+	[LinkName("QImageIOHandler_SuperJumpToImage")]
+	public static extern bool QImageIOHandler_SuperJumpToImage(void* self, c_int imageNumber);
 	[LinkName("QImageIOHandler_LoopCount")]
 	public static extern c_int QImageIOHandler_LoopCount(void* self);
 	
 	public function void QImageIOHandler_OnLoopCount_action(void* self);
 	[LinkName("QImageIOHandler_OnLoopCount")]
 	public static extern c_int QImageIOHandler_OnLoopCount(void* self, QImageIOHandler_OnLoopCount_action _action);
+	
+	[LinkName("QImageIOHandler_SuperLoopCount")]
+	public static extern c_int QImageIOHandler_SuperLoopCount(void* self);
 	[LinkName("QImageIOHandler_ImageCount")]
 	public static extern c_int QImageIOHandler_ImageCount(void* self);
 	
 	public function void QImageIOHandler_OnImageCount_action(void* self);
 	[LinkName("QImageIOHandler_OnImageCount")]
 	public static extern c_int QImageIOHandler_OnImageCount(void* self, QImageIOHandler_OnImageCount_action _action);
+	
+	[LinkName("QImageIOHandler_SuperImageCount")]
+	public static extern c_int QImageIOHandler_SuperImageCount(void* self);
 	[LinkName("QImageIOHandler_NextImageDelay")]
 	public static extern c_int QImageIOHandler_NextImageDelay(void* self);
 	
 	public function void QImageIOHandler_OnNextImageDelay_action(void* self);
 	[LinkName("QImageIOHandler_OnNextImageDelay")]
 	public static extern c_int QImageIOHandler_OnNextImageDelay(void* self, QImageIOHandler_OnNextImageDelay_action _action);
+	
+	[LinkName("QImageIOHandler_SuperNextImageDelay")]
+	public static extern c_int QImageIOHandler_SuperNextImageDelay(void* self);
 	[LinkName("QImageIOHandler_CurrentImageNumber")]
 	public static extern c_int QImageIOHandler_CurrentImageNumber(void* self);
 	
 	public function void QImageIOHandler_OnCurrentImageNumber_action(void* self);
 	[LinkName("QImageIOHandler_OnCurrentImageNumber")]
 	public static extern c_int QImageIOHandler_OnCurrentImageNumber(void* self, QImageIOHandler_OnCurrentImageNumber_action _action);
+	
+	[LinkName("QImageIOHandler_SuperCurrentImageNumber")]
+	public static extern c_int QImageIOHandler_SuperCurrentImageNumber(void* self);
 	[LinkName("QImageIOHandler_CurrentImageRect")]
 	public static extern void* QImageIOHandler_CurrentImageRect(void* self);
 	
 	public function void QImageIOHandler_OnCurrentImageRect_action(void* self);
 	[LinkName("QImageIOHandler_OnCurrentImageRect")]
 	public static extern void* QImageIOHandler_OnCurrentImageRect(void* self, QImageIOHandler_OnCurrentImageRect_action _action);
+	
+	[LinkName("QImageIOHandler_SuperCurrentImageRect")]
+	public static extern void* QImageIOHandler_SuperCurrentImageRect(void* self);
 	[LinkName("QImageIOHandler_AllocateImage")]
 	public static extern bool QImageIOHandler_AllocateImage(void* size, QImage_Format format, void** image);
 }
@@ -566,6 +683,18 @@ class QImageIOPlugin : IQImageIOPlugin, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QImageIOPlugin_OnMetaObject(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnMetaObject);
+		CQt.QImageIOPlugin_OnMetacast(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnMetacast);
+		CQt.QImageIOPlugin_OnMetacall(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnMetacall);
+		CQt.QImageIOPlugin_OnCapabilities(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnCapabilities);
+		CQt.QImageIOPlugin_OnCreate(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnCreate);
+		CQt.QImageIOPlugin_OnEvent(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnEvent);
+		CQt.QImageIOPlugin_OnEventFilter(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnEventFilter);
+		CQt.QImageIOPlugin_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnTimerEvent);
+		CQt.QImageIOPlugin_OnChildEvent(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnChildEvent);
+		CQt.QImageIOPlugin_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnCustomEvent);
+		CQt.QImageIOPlugin_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnConnectNotify);
+		CQt.QImageIOPlugin_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QImageIOPlugin_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -578,6 +707,66 @@ class QImageIOPlugin : IQImageIOPlugin, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QImageIOPlugin_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QImageIOPlugin_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QImageIOPlugin_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QImageIOPlugin_OnCapabilities(void* ptr, void** device, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCapabilities(device, format);
+	}
+	static void QtBeef_QImageIOPlugin_OnCreate(void* ptr, void** device, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreate(device, format);
+	}
+	static void QtBeef_QImageIOPlugin_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QImageIOPlugin_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QImageIOPlugin_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QImageIOPlugin_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QImageIOPlugin_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QImageIOPlugin_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QImageIOPlugin_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QImageIOPlugin_Ptr ptr)
 	{
@@ -867,18 +1056,27 @@ extension CQt
 	public function void QImageIOPlugin_OnMetaObject_action(void* self);
 	[LinkName("QImageIOPlugin_OnMetaObject")]
 	public static extern void** QImageIOPlugin_OnMetaObject(void* self, QImageIOPlugin_OnMetaObject_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperMetaObject")]
+	public static extern void** QImageIOPlugin_SuperMetaObject(void* self);
 	[LinkName("QImageIOPlugin_Qt_Metacast")]
 	public static extern void* QImageIOPlugin_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QImageIOPlugin_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QImageIOPlugin_OnMetacast")]
 	public static extern void* QImageIOPlugin_OnMetacast(void* self, QImageIOPlugin_OnMetacast_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperMetacast")]
+	public static extern void* QImageIOPlugin_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QImageIOPlugin_Qt_Metacall")]
 	public static extern c_int QImageIOPlugin_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QImageIOPlugin_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QImageIOPlugin_OnMetacall")]
 	public static extern c_int QImageIOPlugin_OnMetacall(void* self, QImageIOPlugin_OnMetacall_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperMetacall")]
+	public static extern c_int QImageIOPlugin_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QImageIOPlugin_Tr")]
 	public static extern libqt_string QImageIOPlugin_Tr(c_char* s);
 	[LinkName("QImageIOPlugin_Capabilities")]
@@ -887,12 +1085,18 @@ extension CQt
 	public function void QImageIOPlugin_OnCapabilities_action(void* self, void** device, void** format);
 	[LinkName("QImageIOPlugin_OnCapabilities")]
 	public static extern void* QImageIOPlugin_OnCapabilities(void* self, QImageIOPlugin_OnCapabilities_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperCapabilities")]
+	public static extern void* QImageIOPlugin_SuperCapabilities(void* self, void** device, void** format);
 	[LinkName("QImageIOPlugin_Create")]
 	public static extern void** QImageIOPlugin_Create(void* self, void** device, void** format);
 	
 	public function void QImageIOPlugin_OnCreate_action(void* self, void** device, void** format);
 	[LinkName("QImageIOPlugin_OnCreate")]
 	public static extern void** QImageIOPlugin_OnCreate(void* self, QImageIOPlugin_OnCreate_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperCreate")]
+	public static extern void** QImageIOPlugin_SuperCreate(void* self, void** device, void** format);
 	[LinkName("QImageIOPlugin_Tr2")]
 	public static extern libqt_string QImageIOPlugin_Tr2(c_char* s, c_char* c);
 	[LinkName("QImageIOPlugin_Tr3")]
@@ -903,42 +1107,63 @@ extension CQt
 	public function void QImageIOPlugin_OnEvent_action(void* self, void** event);
 	[LinkName("QImageIOPlugin_OnEvent")]
 	public static extern bool QImageIOPlugin_OnEvent(void* self, QImageIOPlugin_OnEvent_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperEvent")]
+	public static extern bool QImageIOPlugin_SuperEvent(void* self, void** event);
 	[LinkName("QImageIOPlugin_EventFilter")]
 	public static extern bool QImageIOPlugin_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QImageIOPlugin_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QImageIOPlugin_OnEventFilter")]
 	public static extern bool QImageIOPlugin_OnEventFilter(void* self, QImageIOPlugin_OnEventFilter_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperEventFilter")]
+	public static extern bool QImageIOPlugin_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QImageIOPlugin_TimerEvent")]
 	public static extern void QImageIOPlugin_TimerEvent(void* self, void** event);
 	
 	public function void QImageIOPlugin_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QImageIOPlugin_OnTimerEvent")]
 	public static extern void QImageIOPlugin_OnTimerEvent(void* self, QImageIOPlugin_OnTimerEvent_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperTimerEvent")]
+	public static extern void QImageIOPlugin_SuperTimerEvent(void* self, void** event);
 	[LinkName("QImageIOPlugin_ChildEvent")]
 	public static extern void QImageIOPlugin_ChildEvent(void* self, void** event);
 	
 	public function void QImageIOPlugin_OnChildEvent_action(void* self, void** event);
 	[LinkName("QImageIOPlugin_OnChildEvent")]
 	public static extern void QImageIOPlugin_OnChildEvent(void* self, QImageIOPlugin_OnChildEvent_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperChildEvent")]
+	public static extern void QImageIOPlugin_SuperChildEvent(void* self, void** event);
 	[LinkName("QImageIOPlugin_CustomEvent")]
 	public static extern void QImageIOPlugin_CustomEvent(void* self, void** event);
 	
 	public function void QImageIOPlugin_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QImageIOPlugin_OnCustomEvent")]
 	public static extern void QImageIOPlugin_OnCustomEvent(void* self, QImageIOPlugin_OnCustomEvent_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperCustomEvent")]
+	public static extern void QImageIOPlugin_SuperCustomEvent(void* self, void** event);
 	[LinkName("QImageIOPlugin_ConnectNotify")]
 	public static extern void QImageIOPlugin_ConnectNotify(void* self, void** signal);
 	
 	public function void QImageIOPlugin_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QImageIOPlugin_OnConnectNotify")]
 	public static extern void QImageIOPlugin_OnConnectNotify(void* self, QImageIOPlugin_OnConnectNotify_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperConnectNotify")]
+	public static extern void QImageIOPlugin_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QImageIOPlugin_DisconnectNotify")]
 	public static extern void QImageIOPlugin_DisconnectNotify(void* self, void** signal);
 	
 	public function void QImageIOPlugin_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QImageIOPlugin_OnDisconnectNotify")]
 	public static extern void QImageIOPlugin_OnDisconnectNotify(void* self, QImageIOPlugin_OnDisconnectNotify_action _action);
+	
+	[LinkName("QImageIOPlugin_SuperDisconnectNotify")]
+	public static extern void QImageIOPlugin_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QImageIOHandler_ImageOption

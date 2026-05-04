@@ -348,6 +348,28 @@ class QStyledItemDelegate : IQStyledItemDelegate, IQAbstractItemDelegate, IQObje
 		CQt.QAbstractItemDelegate_Connect_CloseEditor(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_Connect_CloseEditor);
 		CQt.QAbstractItemDelegate_Connect_SizeHintChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_Connect_SizeHintChanged);
 		CQt.QAbstractItemDelegate_Connect_CloseEditor2(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_Connect_CloseEditor2);
+		CQt.QStyledItemDelegate_OnMetaObject(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnMetaObject);
+		CQt.QStyledItemDelegate_OnMetacast(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnMetacast);
+		CQt.QStyledItemDelegate_OnMetacall(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnMetacall);
+		CQt.QStyledItemDelegate_OnPaint(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnPaint);
+		CQt.QStyledItemDelegate_OnSizeHint(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnSizeHint);
+		CQt.QStyledItemDelegate_OnCreateEditor(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnCreateEditor);
+		CQt.QStyledItemDelegate_OnSetEditorData(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnSetEditorData);
+		CQt.QStyledItemDelegate_OnSetModelData(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnSetModelData);
+		CQt.QStyledItemDelegate_OnUpdateEditorGeometry(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnUpdateEditorGeometry);
+		CQt.QStyledItemDelegate_OnDisplayText(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnDisplayText);
+		CQt.QStyledItemDelegate_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnInitStyleOption);
+		CQt.QStyledItemDelegate_OnEventFilter(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnEventFilter);
+		CQt.QStyledItemDelegate_OnEditorEvent(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnEditorEvent);
+		CQt.QStyledItemDelegate_OnEvent(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnEvent);
+		CQt.QStyledItemDelegate_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnTimerEvent);
+		CQt.QStyledItemDelegate_OnChildEvent(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnChildEvent);
+		CQt.QStyledItemDelegate_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnCustomEvent);
+		CQt.QStyledItemDelegate_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnConnectNotify);
+		CQt.QStyledItemDelegate_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnDisconnectNotify);
+		CQt.QStyledItemDelegate_OnDestroyEditor(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnDestroyEditor);
+		CQt.QStyledItemDelegate_OnHelpEvent(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnHelpEvent);
+		CQt.QStyledItemDelegate_OnPaintingRoles(obj.ObjectPtr,  => QtBeef_QStyledItemDelegate_OnPaintingRoles);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -384,6 +406,116 @@ class QStyledItemDelegate : IQStyledItemDelegate, IQAbstractItemDelegate, IQObje
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCloseEditor2.Invoke(editor, hint);
+	}
+	static void QtBeef_QStyledItemDelegate_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QStyledItemDelegate_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QStyledItemDelegate_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QStyledItemDelegate_OnPaint(void* ptr, void** painter, void** option, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaint(painter, option, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnSizeHint(void* ptr, void** option, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint(option, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnCreateEditor(void* ptr, void** parent, void** option, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreateEditor(parent, option, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnSetEditorData(void* ptr, void** editor, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetEditorData(editor, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnSetModelData(void* ptr, void** editor, void** model, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetModelData(editor, model, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnUpdateEditorGeometry(void* ptr, void** editor, void** option, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateEditorGeometry(editor, option, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnDisplayText(void* ptr, void** value, void** locale)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisplayText(scope .(), value, locale);
+	}
+	static void QtBeef_QStyledItemDelegate_OnInitStyleOption(void* ptr, void** option, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnEventFilter(void* ptr, void** object, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(object, event);
+	}
+	static void QtBeef_QStyledItemDelegate_OnEditorEvent(void* ptr, void** event, void** model, void** option, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditorEvent(event, model, option, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QStyledItemDelegate_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QStyledItemDelegate_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QStyledItemDelegate_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QStyledItemDelegate_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QStyledItemDelegate_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QStyledItemDelegate_OnDestroyEditor(void* ptr, void** editor, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyEditor(editor, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnHelpEvent(void* ptr, void** event, void** view, void** option, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHelpEvent(event, view, option, index);
+	}
+	static void QtBeef_QStyledItemDelegate_OnPaintingRoles(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintingRoles();
 	}
 	public this(QStyledItemDelegate_Ptr ptr)
 	{
@@ -730,18 +862,27 @@ extension CQt
 	public function void QStyledItemDelegate_OnMetaObject_action(void* self);
 	[LinkName("QStyledItemDelegate_OnMetaObject")]
 	public static extern void** QStyledItemDelegate_OnMetaObject(void* self, QStyledItemDelegate_OnMetaObject_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperMetaObject")]
+	public static extern void** QStyledItemDelegate_SuperMetaObject(void* self);
 	[LinkName("QStyledItemDelegate_Qt_Metacast")]
 	public static extern void* QStyledItemDelegate_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QStyledItemDelegate_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QStyledItemDelegate_OnMetacast")]
 	public static extern void* QStyledItemDelegate_OnMetacast(void* self, QStyledItemDelegate_OnMetacast_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperMetacast")]
+	public static extern void* QStyledItemDelegate_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QStyledItemDelegate_Qt_Metacall")]
 	public static extern c_int QStyledItemDelegate_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QStyledItemDelegate_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStyledItemDelegate_OnMetacall")]
 	public static extern c_int QStyledItemDelegate_OnMetacall(void* self, QStyledItemDelegate_OnMetacall_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperMetacall")]
+	public static extern c_int QStyledItemDelegate_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStyledItemDelegate_Tr")]
 	public static extern libqt_string QStyledItemDelegate_Tr(c_char* s);
 	[LinkName("QStyledItemDelegate_Paint")]
@@ -750,36 +891,54 @@ extension CQt
 	public function void QStyledItemDelegate_OnPaint_action(void* self, void** painter, void** option, void** index);
 	[LinkName("QStyledItemDelegate_OnPaint")]
 	public static extern void QStyledItemDelegate_OnPaint(void* self, QStyledItemDelegate_OnPaint_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperPaint")]
+	public static extern void QStyledItemDelegate_SuperPaint(void* self, void** painter, void** option, void** index);
 	[LinkName("QStyledItemDelegate_SizeHint")]
 	public static extern void* QStyledItemDelegate_SizeHint(void* self, void** option, void** index);
 	
 	public function void QStyledItemDelegate_OnSizeHint_action(void* self, void** option, void** index);
 	[LinkName("QStyledItemDelegate_OnSizeHint")]
 	public static extern void* QStyledItemDelegate_OnSizeHint(void* self, QStyledItemDelegate_OnSizeHint_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperSizeHint")]
+	public static extern void* QStyledItemDelegate_SuperSizeHint(void* self, void** option, void** index);
 	[LinkName("QStyledItemDelegate_CreateEditor")]
 	public static extern void** QStyledItemDelegate_CreateEditor(void* self, void** parent, void** option, void** index);
 	
 	public function void QStyledItemDelegate_OnCreateEditor_action(void* self, void** parent, void** option, void** index);
 	[LinkName("QStyledItemDelegate_OnCreateEditor")]
 	public static extern void** QStyledItemDelegate_OnCreateEditor(void* self, QStyledItemDelegate_OnCreateEditor_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperCreateEditor")]
+	public static extern void** QStyledItemDelegate_SuperCreateEditor(void* self, void** parent, void** option, void** index);
 	[LinkName("QStyledItemDelegate_SetEditorData")]
 	public static extern void QStyledItemDelegate_SetEditorData(void* self, void** editor, void** index);
 	
 	public function void QStyledItemDelegate_OnSetEditorData_action(void* self, void** editor, void** index);
 	[LinkName("QStyledItemDelegate_OnSetEditorData")]
 	public static extern void QStyledItemDelegate_OnSetEditorData(void* self, QStyledItemDelegate_OnSetEditorData_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperSetEditorData")]
+	public static extern void QStyledItemDelegate_SuperSetEditorData(void* self, void** editor, void** index);
 	[LinkName("QStyledItemDelegate_SetModelData")]
 	public static extern void QStyledItemDelegate_SetModelData(void* self, void** editor, void** model, void** index);
 	
 	public function void QStyledItemDelegate_OnSetModelData_action(void* self, void** editor, void** model, void** index);
 	[LinkName("QStyledItemDelegate_OnSetModelData")]
 	public static extern void QStyledItemDelegate_OnSetModelData(void* self, QStyledItemDelegate_OnSetModelData_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperSetModelData")]
+	public static extern void QStyledItemDelegate_SuperSetModelData(void* self, void** editor, void** model, void** index);
 	[LinkName("QStyledItemDelegate_UpdateEditorGeometry")]
 	public static extern void QStyledItemDelegate_UpdateEditorGeometry(void* self, void** editor, void** option, void** index);
 	
 	public function void QStyledItemDelegate_OnUpdateEditorGeometry_action(void* self, void** editor, void** option, void** index);
 	[LinkName("QStyledItemDelegate_OnUpdateEditorGeometry")]
 	public static extern void QStyledItemDelegate_OnUpdateEditorGeometry(void* self, QStyledItemDelegate_OnUpdateEditorGeometry_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperUpdateEditorGeometry")]
+	public static extern void QStyledItemDelegate_SuperUpdateEditorGeometry(void* self, void** editor, void** option, void** index);
 	[LinkName("QStyledItemDelegate_ItemEditorFactory")]
 	public static extern void** QStyledItemDelegate_ItemEditorFactory(void* self);
 	[LinkName("QStyledItemDelegate_SetItemEditorFactory")]
@@ -790,24 +949,36 @@ extension CQt
 	public function void QStyledItemDelegate_OnDisplayText_action(void* self, void** value, void** locale);
 	[LinkName("QStyledItemDelegate_OnDisplayText")]
 	public static extern libqt_string QStyledItemDelegate_OnDisplayText(void* self, QStyledItemDelegate_OnDisplayText_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperDisplayText")]
+	public static extern libqt_string QStyledItemDelegate_SuperDisplayText(void* self, void** value, void** locale);
 	[LinkName("QStyledItemDelegate_InitStyleOption")]
 	public static extern void QStyledItemDelegate_InitStyleOption(void* self, void** option, void** index);
 	
 	public function void QStyledItemDelegate_OnInitStyleOption_action(void* self, void** option, void** index);
 	[LinkName("QStyledItemDelegate_OnInitStyleOption")]
 	public static extern void QStyledItemDelegate_OnInitStyleOption(void* self, QStyledItemDelegate_OnInitStyleOption_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperInitStyleOption")]
+	public static extern void QStyledItemDelegate_SuperInitStyleOption(void* self, void** option, void** index);
 	[LinkName("QStyledItemDelegate_EventFilter")]
 	public static extern bool QStyledItemDelegate_EventFilter(void* self, void** object, void** event);
 	
 	public function void QStyledItemDelegate_OnEventFilter_action(void* self, void** object, void** event);
 	[LinkName("QStyledItemDelegate_OnEventFilter")]
 	public static extern bool QStyledItemDelegate_OnEventFilter(void* self, QStyledItemDelegate_OnEventFilter_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperEventFilter")]
+	public static extern bool QStyledItemDelegate_SuperEventFilter(void* self, void** object, void** event);
 	[LinkName("QStyledItemDelegate_EditorEvent")]
 	public static extern bool QStyledItemDelegate_EditorEvent(void* self, void** event, void** model, void** option, void** index);
 	
 	public function void QStyledItemDelegate_OnEditorEvent_action(void* self, void** event, void** model, void** option, void** index);
 	[LinkName("QStyledItemDelegate_OnEditorEvent")]
 	public static extern bool QStyledItemDelegate_OnEditorEvent(void* self, QStyledItemDelegate_OnEditorEvent_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperEditorEvent")]
+	public static extern bool QStyledItemDelegate_SuperEditorEvent(void* self, void** event, void** model, void** option, void** index);
 	[LinkName("QStyledItemDelegate_Tr2")]
 	public static extern libqt_string QStyledItemDelegate_Tr2(c_char* s, c_char* c);
 	[LinkName("QStyledItemDelegate_Tr3")]
@@ -818,52 +989,79 @@ extension CQt
 	public function void QStyledItemDelegate_OnEvent_action(void* self, void** event);
 	[LinkName("QStyledItemDelegate_OnEvent")]
 	public static extern bool QStyledItemDelegate_OnEvent(void* self, QStyledItemDelegate_OnEvent_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperEvent")]
+	public static extern bool QStyledItemDelegate_SuperEvent(void* self, void** event);
 	[LinkName("QStyledItemDelegate_TimerEvent")]
 	public static extern void QStyledItemDelegate_TimerEvent(void* self, void** event);
 	
 	public function void QStyledItemDelegate_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QStyledItemDelegate_OnTimerEvent")]
 	public static extern void QStyledItemDelegate_OnTimerEvent(void* self, QStyledItemDelegate_OnTimerEvent_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperTimerEvent")]
+	public static extern void QStyledItemDelegate_SuperTimerEvent(void* self, void** event);
 	[LinkName("QStyledItemDelegate_ChildEvent")]
 	public static extern void QStyledItemDelegate_ChildEvent(void* self, void** event);
 	
 	public function void QStyledItemDelegate_OnChildEvent_action(void* self, void** event);
 	[LinkName("QStyledItemDelegate_OnChildEvent")]
 	public static extern void QStyledItemDelegate_OnChildEvent(void* self, QStyledItemDelegate_OnChildEvent_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperChildEvent")]
+	public static extern void QStyledItemDelegate_SuperChildEvent(void* self, void** event);
 	[LinkName("QStyledItemDelegate_CustomEvent")]
 	public static extern void QStyledItemDelegate_CustomEvent(void* self, void** event);
 	
 	public function void QStyledItemDelegate_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QStyledItemDelegate_OnCustomEvent")]
 	public static extern void QStyledItemDelegate_OnCustomEvent(void* self, QStyledItemDelegate_OnCustomEvent_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperCustomEvent")]
+	public static extern void QStyledItemDelegate_SuperCustomEvent(void* self, void** event);
 	[LinkName("QStyledItemDelegate_ConnectNotify")]
 	public static extern void QStyledItemDelegate_ConnectNotify(void* self, void** signal);
 	
 	public function void QStyledItemDelegate_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QStyledItemDelegate_OnConnectNotify")]
 	public static extern void QStyledItemDelegate_OnConnectNotify(void* self, QStyledItemDelegate_OnConnectNotify_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperConnectNotify")]
+	public static extern void QStyledItemDelegate_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QStyledItemDelegate_DisconnectNotify")]
 	public static extern void QStyledItemDelegate_DisconnectNotify(void* self, void** signal);
 	
 	public function void QStyledItemDelegate_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QStyledItemDelegate_OnDisconnectNotify")]
 	public static extern void QStyledItemDelegate_OnDisconnectNotify(void* self, QStyledItemDelegate_OnDisconnectNotify_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperDisconnectNotify")]
+	public static extern void QStyledItemDelegate_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QStyledItemDelegate_DestroyEditor")]
 	public static extern void QStyledItemDelegate_DestroyEditor(void* self, void** editor, void** index);
 	
 	public function void QStyledItemDelegate_OnDestroyEditor_action(void* self, void** editor, void** index);
 	[LinkName("QStyledItemDelegate_OnDestroyEditor")]
 	public static extern void QStyledItemDelegate_OnDestroyEditor(void* self, QStyledItemDelegate_OnDestroyEditor_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperDestroyEditor")]
+	public static extern void QStyledItemDelegate_SuperDestroyEditor(void* self, void** editor, void** index);
 	[LinkName("QStyledItemDelegate_HelpEvent")]
 	public static extern bool QStyledItemDelegate_HelpEvent(void* self, void** event, void** view, void** option, void** index);
 	
 	public function void QStyledItemDelegate_OnHelpEvent_action(void* self, void** event, void** view, void** option, void** index);
 	[LinkName("QStyledItemDelegate_OnHelpEvent")]
 	public static extern bool QStyledItemDelegate_OnHelpEvent(void* self, QStyledItemDelegate_OnHelpEvent_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperHelpEvent")]
+	public static extern bool QStyledItemDelegate_SuperHelpEvent(void* self, void** event, void** view, void** option, void** index);
 	[LinkName("QStyledItemDelegate_PaintingRoles")]
 	public static extern void* QStyledItemDelegate_PaintingRoles(void* self);
 	
 	public function void QStyledItemDelegate_OnPaintingRoles_action(void* self);
 	[LinkName("QStyledItemDelegate_OnPaintingRoles")]
 	public static extern void* QStyledItemDelegate_OnPaintingRoles(void* self, QStyledItemDelegate_OnPaintingRoles_action _action);
+	
+	[LinkName("QStyledItemDelegate_SuperPaintingRoles")]
+	public static extern void* QStyledItemDelegate_SuperPaintingRoles(void* self);
 }

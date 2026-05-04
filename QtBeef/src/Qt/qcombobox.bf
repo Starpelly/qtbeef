@@ -1927,6 +1927,60 @@ class QComboBox : IQComboBox, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QComboBox_OnMetaObject(obj.ObjectPtr,  => QtBeef_QComboBox_OnMetaObject);
+		CQt.QComboBox_OnMetacast(obj.ObjectPtr,  => QtBeef_QComboBox_OnMetacast);
+		CQt.QComboBox_OnMetacall(obj.ObjectPtr,  => QtBeef_QComboBox_OnMetacall);
+		CQt.QComboBox_OnSetModel(obj.ObjectPtr,  => QtBeef_QComboBox_OnSetModel);
+		CQt.QComboBox_OnSizeHint(obj.ObjectPtr,  => QtBeef_QComboBox_OnSizeHint);
+		CQt.QComboBox_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QComboBox_OnMinimumSizeHint);
+		CQt.QComboBox_OnShowPopup(obj.ObjectPtr,  => QtBeef_QComboBox_OnShowPopup);
+		CQt.QComboBox_OnHidePopup(obj.ObjectPtr,  => QtBeef_QComboBox_OnHidePopup);
+		CQt.QComboBox_OnEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnEvent);
+		CQt.QComboBox_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QComboBox_OnInputMethodQuery);
+		CQt.QComboBox_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnFocusInEvent);
+		CQt.QComboBox_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnFocusOutEvent);
+		CQt.QComboBox_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnChangeEvent);
+		CQt.QComboBox_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnResizeEvent);
+		CQt.QComboBox_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnPaintEvent);
+		CQt.QComboBox_OnShowEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnShowEvent);
+		CQt.QComboBox_OnHideEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnHideEvent);
+		CQt.QComboBox_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnMousePressEvent);
+		CQt.QComboBox_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnMouseReleaseEvent);
+		CQt.QComboBox_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnKeyPressEvent);
+		CQt.QComboBox_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnKeyReleaseEvent);
+		CQt.QComboBox_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnWheelEvent);
+		CQt.QComboBox_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnContextMenuEvent);
+		CQt.QComboBox_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnInputMethodEvent);
+		CQt.QComboBox_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QComboBox_OnInitStyleOption);
+		CQt.QComboBox_OnEventFilter(obj.ObjectPtr,  => QtBeef_QComboBox_OnEventFilter);
+		CQt.QComboBox_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnTimerEvent);
+		CQt.QComboBox_OnChildEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnChildEvent);
+		CQt.QComboBox_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnCustomEvent);
+		CQt.QComboBox_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QComboBox_OnConnectNotify);
+		CQt.QComboBox_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QComboBox_OnDisconnectNotify);
+		CQt.QComboBox_OnDevType(obj.ObjectPtr,  => QtBeef_QComboBox_OnDevType);
+		CQt.QComboBox_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QComboBox_OnPaintEngine);
+		CQt.QComboBox_OnMetric(obj.ObjectPtr,  => QtBeef_QComboBox_OnMetric);
+		CQt.QComboBox_OnInitPainter(obj.ObjectPtr,  => QtBeef_QComboBox_OnInitPainter);
+		CQt.QComboBox_OnRedirected(obj.ObjectPtr,  => QtBeef_QComboBox_OnRedirected);
+		CQt.QComboBox_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QComboBox_OnSharedPainter);
+		CQt.QComboBox_OnSetVisible(obj.ObjectPtr,  => QtBeef_QComboBox_OnSetVisible);
+		CQt.QComboBox_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QComboBox_OnHeightForWidth);
+		CQt.QComboBox_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QComboBox_OnHasHeightForWidth);
+		CQt.QComboBox_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnMouseDoubleClickEvent);
+		CQt.QComboBox_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnMouseMoveEvent);
+		CQt.QComboBox_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnEnterEvent);
+		CQt.QComboBox_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnLeaveEvent);
+		CQt.QComboBox_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnMoveEvent);
+		CQt.QComboBox_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnCloseEvent);
+		CQt.QComboBox_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnTabletEvent);
+		CQt.QComboBox_OnActionEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnActionEvent);
+		CQt.QComboBox_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnDragEnterEvent);
+		CQt.QComboBox_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnDragMoveEvent);
+		CQt.QComboBox_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnDragLeaveEvent);
+		CQt.QComboBox_OnDropEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnDropEvent);
+		CQt.QComboBox_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QComboBox_OnNativeEvent);
+		CQt.QComboBox_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QComboBox_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(libqt_string param1)> OnEditTextChanged = .() ~ _.Dispose();
 	public Event<delegate void(c_int index)> OnActivated = .() ~ _.Dispose();
@@ -2005,6 +2059,276 @@ class QComboBox : IQComboBox, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QComboBox_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QComboBox_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QComboBox_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QComboBox_OnSetModel(void* ptr, void** model)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetModel(model);
+	}
+	static void QtBeef_QComboBox_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QComboBox_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QComboBox_OnShowPopup(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowPopup();
+	}
+	static void QtBeef_QComboBox_OnHidePopup(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHidePopup();
+	}
+	static void QtBeef_QComboBox_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QComboBox_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QComboBox_OnFocusInEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(e);
+	}
+	static void QtBeef_QComboBox_OnFocusOutEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(e);
+	}
+	static void QtBeef_QComboBox_OnChangeEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(e);
+	}
+	static void QtBeef_QComboBox_OnResizeEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(e);
+	}
+	static void QtBeef_QComboBox_OnPaintEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(e);
+	}
+	static void QtBeef_QComboBox_OnShowEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(e);
+	}
+	static void QtBeef_QComboBox_OnHideEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(e);
+	}
+	static void QtBeef_QComboBox_OnMousePressEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(e);
+	}
+	static void QtBeef_QComboBox_OnMouseReleaseEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(e);
+	}
+	static void QtBeef_QComboBox_OnKeyPressEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(e);
+	}
+	static void QtBeef_QComboBox_OnKeyReleaseEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(e);
+	}
+	static void QtBeef_QComboBox_OnWheelEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(e);
+	}
+	static void QtBeef_QComboBox_OnContextMenuEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(e);
+	}
+	static void QtBeef_QComboBox_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QComboBox_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QComboBox_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QComboBox_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QComboBox_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QComboBox_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QComboBox_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QComboBox_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QComboBox_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QComboBox_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QComboBox_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QComboBox_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QComboBox_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QComboBox_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QComboBox_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QComboBox_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QComboBox_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QComboBox_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QComboBox_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QComboBox_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QComboBox_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QComboBox_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QComboBox_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QComboBox_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QComboBox_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QComboBox_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QComboBox_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QComboBox_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QComboBox_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QComboBox_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QComboBox_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QComboBox_Ptr ptr)
 	{
@@ -3898,18 +4222,27 @@ extension CQt
 	public function void QComboBox_OnMetaObject_action(void* self);
 	[LinkName("QComboBox_OnMetaObject")]
 	public static extern void** QComboBox_OnMetaObject(void* self, QComboBox_OnMetaObject_action _action);
+	
+	[LinkName("QComboBox_SuperMetaObject")]
+	public static extern void** QComboBox_SuperMetaObject(void* self);
 	[LinkName("QComboBox_Qt_Metacast")]
 	public static extern void* QComboBox_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QComboBox_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QComboBox_OnMetacast")]
 	public static extern void* QComboBox_OnMetacast(void* self, QComboBox_OnMetacast_action _action);
+	
+	[LinkName("QComboBox_SuperMetacast")]
+	public static extern void* QComboBox_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QComboBox_Qt_Metacall")]
 	public static extern c_int QComboBox_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QComboBox_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QComboBox_OnMetacall")]
 	public static extern c_int QComboBox_OnMetacall(void* self, QComboBox_OnMetacall_action _action);
+	
+	[LinkName("QComboBox_SuperMetacall")]
+	public static extern c_int QComboBox_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QComboBox_Tr")]
 	public static extern libqt_string QComboBox_Tr(c_char* s);
 	[LinkName("QComboBox_MaxVisibleItems")]
@@ -3982,6 +4315,9 @@ extension CQt
 	public function void QComboBox_OnSetModel_action(void* self, void** model);
 	[LinkName("QComboBox_OnSetModel")]
 	public static extern void QComboBox_OnSetModel(void* self, QComboBox_OnSetModel_action _action);
+	
+	[LinkName("QComboBox_SuperSetModel")]
+	public static extern void QComboBox_SuperSetModel(void* self, void** model);
 	[LinkName("QComboBox_RootModelIndex")]
 	public static extern void* QComboBox_RootModelIndex(void* self);
 	[LinkName("QComboBox_SetRootModelIndex")]
@@ -4034,36 +4370,54 @@ extension CQt
 	public function void QComboBox_OnSizeHint_action(void* self);
 	[LinkName("QComboBox_OnSizeHint")]
 	public static extern void* QComboBox_OnSizeHint(void* self, QComboBox_OnSizeHint_action _action);
+	
+	[LinkName("QComboBox_SuperSizeHint")]
+	public static extern void* QComboBox_SuperSizeHint(void* self);
 	[LinkName("QComboBox_MinimumSizeHint")]
 	public static extern void* QComboBox_MinimumSizeHint(void* self);
 	
 	public function void QComboBox_OnMinimumSizeHint_action(void* self);
 	[LinkName("QComboBox_OnMinimumSizeHint")]
 	public static extern void* QComboBox_OnMinimumSizeHint(void* self, QComboBox_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QComboBox_SuperMinimumSizeHint")]
+	public static extern void* QComboBox_SuperMinimumSizeHint(void* self);
 	[LinkName("QComboBox_ShowPopup")]
 	public static extern void QComboBox_ShowPopup(void* self);
 	
 	public function void QComboBox_OnShowPopup_action(void* self);
 	[LinkName("QComboBox_OnShowPopup")]
 	public static extern void QComboBox_OnShowPopup(void* self, QComboBox_OnShowPopup_action _action);
+	
+	[LinkName("QComboBox_SuperShowPopup")]
+	public static extern void QComboBox_SuperShowPopup(void* self);
 	[LinkName("QComboBox_HidePopup")]
 	public static extern void QComboBox_HidePopup(void* self);
 	
 	public function void QComboBox_OnHidePopup_action(void* self);
 	[LinkName("QComboBox_OnHidePopup")]
 	public static extern void QComboBox_OnHidePopup(void* self, QComboBox_OnHidePopup_action _action);
+	
+	[LinkName("QComboBox_SuperHidePopup")]
+	public static extern void QComboBox_SuperHidePopup(void* self);
 	[LinkName("QComboBox_Event")]
 	public static extern bool QComboBox_Event(void* self, void** event);
 	
 	public function void QComboBox_OnEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnEvent")]
 	public static extern bool QComboBox_OnEvent(void* self, QComboBox_OnEvent_action _action);
+	
+	[LinkName("QComboBox_SuperEvent")]
+	public static extern bool QComboBox_SuperEvent(void* self, void** event);
 	[LinkName("QComboBox_InputMethodQuery")]
 	public static extern void* QComboBox_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QComboBox_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QComboBox_OnInputMethodQuery")]
 	public static extern void* QComboBox_OnInputMethodQuery(void* self, QComboBox_OnInputMethodQuery_action _action);
+	
+	[LinkName("QComboBox_SuperInputMethodQuery")]
+	public static extern void* QComboBox_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QComboBox_InputMethodQuery2")]
 	public static extern void* QComboBox_InputMethodQuery2(void* self, Qt_InputMethodQuery query, void** argument);
 	[LinkName("QComboBox_Clear")]
@@ -4124,90 +4478,135 @@ extension CQt
 	public function void QComboBox_OnFocusInEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnFocusInEvent")]
 	public static extern void QComboBox_OnFocusInEvent(void* self, QComboBox_OnFocusInEvent_action _action);
+	
+	[LinkName("QComboBox_SuperFocusInEvent")]
+	public static extern void QComboBox_SuperFocusInEvent(void* self, void** e);
 	[LinkName("QComboBox_FocusOutEvent")]
 	public static extern void QComboBox_FocusOutEvent(void* self, void** e);
 	
 	public function void QComboBox_OnFocusOutEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnFocusOutEvent")]
 	public static extern void QComboBox_OnFocusOutEvent(void* self, QComboBox_OnFocusOutEvent_action _action);
+	
+	[LinkName("QComboBox_SuperFocusOutEvent")]
+	public static extern void QComboBox_SuperFocusOutEvent(void* self, void** e);
 	[LinkName("QComboBox_ChangeEvent")]
 	public static extern void QComboBox_ChangeEvent(void* self, void** e);
 	
 	public function void QComboBox_OnChangeEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnChangeEvent")]
 	public static extern void QComboBox_OnChangeEvent(void* self, QComboBox_OnChangeEvent_action _action);
+	
+	[LinkName("QComboBox_SuperChangeEvent")]
+	public static extern void QComboBox_SuperChangeEvent(void* self, void** e);
 	[LinkName("QComboBox_ResizeEvent")]
 	public static extern void QComboBox_ResizeEvent(void* self, void** e);
 	
 	public function void QComboBox_OnResizeEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnResizeEvent")]
 	public static extern void QComboBox_OnResizeEvent(void* self, QComboBox_OnResizeEvent_action _action);
+	
+	[LinkName("QComboBox_SuperResizeEvent")]
+	public static extern void QComboBox_SuperResizeEvent(void* self, void** e);
 	[LinkName("QComboBox_PaintEvent")]
 	public static extern void QComboBox_PaintEvent(void* self, void** e);
 	
 	public function void QComboBox_OnPaintEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnPaintEvent")]
 	public static extern void QComboBox_OnPaintEvent(void* self, QComboBox_OnPaintEvent_action _action);
+	
+	[LinkName("QComboBox_SuperPaintEvent")]
+	public static extern void QComboBox_SuperPaintEvent(void* self, void** e);
 	[LinkName("QComboBox_ShowEvent")]
 	public static extern void QComboBox_ShowEvent(void* self, void** e);
 	
 	public function void QComboBox_OnShowEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnShowEvent")]
 	public static extern void QComboBox_OnShowEvent(void* self, QComboBox_OnShowEvent_action _action);
+	
+	[LinkName("QComboBox_SuperShowEvent")]
+	public static extern void QComboBox_SuperShowEvent(void* self, void** e);
 	[LinkName("QComboBox_HideEvent")]
 	public static extern void QComboBox_HideEvent(void* self, void** e);
 	
 	public function void QComboBox_OnHideEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnHideEvent")]
 	public static extern void QComboBox_OnHideEvent(void* self, QComboBox_OnHideEvent_action _action);
+	
+	[LinkName("QComboBox_SuperHideEvent")]
+	public static extern void QComboBox_SuperHideEvent(void* self, void** e);
 	[LinkName("QComboBox_MousePressEvent")]
 	public static extern void QComboBox_MousePressEvent(void* self, void** e);
 	
 	public function void QComboBox_OnMousePressEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnMousePressEvent")]
 	public static extern void QComboBox_OnMousePressEvent(void* self, QComboBox_OnMousePressEvent_action _action);
+	
+	[LinkName("QComboBox_SuperMousePressEvent")]
+	public static extern void QComboBox_SuperMousePressEvent(void* self, void** e);
 	[LinkName("QComboBox_MouseReleaseEvent")]
 	public static extern void QComboBox_MouseReleaseEvent(void* self, void** e);
 	
 	public function void QComboBox_OnMouseReleaseEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnMouseReleaseEvent")]
 	public static extern void QComboBox_OnMouseReleaseEvent(void* self, QComboBox_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QComboBox_SuperMouseReleaseEvent")]
+	public static extern void QComboBox_SuperMouseReleaseEvent(void* self, void** e);
 	[LinkName("QComboBox_KeyPressEvent")]
 	public static extern void QComboBox_KeyPressEvent(void* self, void** e);
 	
 	public function void QComboBox_OnKeyPressEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnKeyPressEvent")]
 	public static extern void QComboBox_OnKeyPressEvent(void* self, QComboBox_OnKeyPressEvent_action _action);
+	
+	[LinkName("QComboBox_SuperKeyPressEvent")]
+	public static extern void QComboBox_SuperKeyPressEvent(void* self, void** e);
 	[LinkName("QComboBox_KeyReleaseEvent")]
 	public static extern void QComboBox_KeyReleaseEvent(void* self, void** e);
 	
 	public function void QComboBox_OnKeyReleaseEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnKeyReleaseEvent")]
 	public static extern void QComboBox_OnKeyReleaseEvent(void* self, QComboBox_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QComboBox_SuperKeyReleaseEvent")]
+	public static extern void QComboBox_SuperKeyReleaseEvent(void* self, void** e);
 	[LinkName("QComboBox_WheelEvent")]
 	public static extern void QComboBox_WheelEvent(void* self, void** e);
 	
 	public function void QComboBox_OnWheelEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnWheelEvent")]
 	public static extern void QComboBox_OnWheelEvent(void* self, QComboBox_OnWheelEvent_action _action);
+	
+	[LinkName("QComboBox_SuperWheelEvent")]
+	public static extern void QComboBox_SuperWheelEvent(void* self, void** e);
 	[LinkName("QComboBox_ContextMenuEvent")]
 	public static extern void QComboBox_ContextMenuEvent(void* self, void** e);
 	
 	public function void QComboBox_OnContextMenuEvent_action(void* self, void** e);
 	[LinkName("QComboBox_OnContextMenuEvent")]
 	public static extern void QComboBox_OnContextMenuEvent(void* self, QComboBox_OnContextMenuEvent_action _action);
+	
+	[LinkName("QComboBox_SuperContextMenuEvent")]
+	public static extern void QComboBox_SuperContextMenuEvent(void* self, void** e);
 	[LinkName("QComboBox_InputMethodEvent")]
 	public static extern void QComboBox_InputMethodEvent(void* self, void** param1);
 	
 	public function void QComboBox_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QComboBox_OnInputMethodEvent")]
 	public static extern void QComboBox_OnInputMethodEvent(void* self, QComboBox_OnInputMethodEvent_action _action);
+	
+	[LinkName("QComboBox_SuperInputMethodEvent")]
+	public static extern void QComboBox_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QComboBox_InitStyleOption")]
 	public static extern void QComboBox_InitStyleOption(void* self, void** option);
 	
 	public function void QComboBox_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QComboBox_OnInitStyleOption")]
 	public static extern void QComboBox_OnInitStyleOption(void* self, QComboBox_OnInitStyleOption_action _action);
+	
+	[LinkName("QComboBox_SuperInitStyleOption")]
+	public static extern void QComboBox_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QComboBox_Tr2")]
 	public static extern libqt_string QComboBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QComboBox_Tr3")]
@@ -4238,174 +4637,261 @@ extension CQt
 	public function void QComboBox_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QComboBox_OnEventFilter")]
 	public static extern bool QComboBox_OnEventFilter(void* self, QComboBox_OnEventFilter_action _action);
+	
+	[LinkName("QComboBox_SuperEventFilter")]
+	public static extern bool QComboBox_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QComboBox_TimerEvent")]
 	public static extern void QComboBox_TimerEvent(void* self, void** event);
 	
 	public function void QComboBox_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnTimerEvent")]
 	public static extern void QComboBox_OnTimerEvent(void* self, QComboBox_OnTimerEvent_action _action);
+	
+	[LinkName("QComboBox_SuperTimerEvent")]
+	public static extern void QComboBox_SuperTimerEvent(void* self, void** event);
 	[LinkName("QComboBox_ChildEvent")]
 	public static extern void QComboBox_ChildEvent(void* self, void** event);
 	
 	public function void QComboBox_OnChildEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnChildEvent")]
 	public static extern void QComboBox_OnChildEvent(void* self, QComboBox_OnChildEvent_action _action);
+	
+	[LinkName("QComboBox_SuperChildEvent")]
+	public static extern void QComboBox_SuperChildEvent(void* self, void** event);
 	[LinkName("QComboBox_CustomEvent")]
 	public static extern void QComboBox_CustomEvent(void* self, void** event);
 	
 	public function void QComboBox_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnCustomEvent")]
 	public static extern void QComboBox_OnCustomEvent(void* self, QComboBox_OnCustomEvent_action _action);
+	
+	[LinkName("QComboBox_SuperCustomEvent")]
+	public static extern void QComboBox_SuperCustomEvent(void* self, void** event);
 	[LinkName("QComboBox_ConnectNotify")]
 	public static extern void QComboBox_ConnectNotify(void* self, void** signal);
 	
 	public function void QComboBox_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QComboBox_OnConnectNotify")]
 	public static extern void QComboBox_OnConnectNotify(void* self, QComboBox_OnConnectNotify_action _action);
+	
+	[LinkName("QComboBox_SuperConnectNotify")]
+	public static extern void QComboBox_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QComboBox_DisconnectNotify")]
 	public static extern void QComboBox_DisconnectNotify(void* self, void** signal);
 	
 	public function void QComboBox_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QComboBox_OnDisconnectNotify")]
 	public static extern void QComboBox_OnDisconnectNotify(void* self, QComboBox_OnDisconnectNotify_action _action);
+	
+	[LinkName("QComboBox_SuperDisconnectNotify")]
+	public static extern void QComboBox_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QComboBox_DevType")]
 	public static extern c_int QComboBox_DevType(void* self);
 	
 	public function void QComboBox_OnDevType_action(void* self);
 	[LinkName("QComboBox_OnDevType")]
 	public static extern c_int QComboBox_OnDevType(void* self, QComboBox_OnDevType_action _action);
+	
+	[LinkName("QComboBox_SuperDevType")]
+	public static extern c_int QComboBox_SuperDevType(void* self);
 	[LinkName("QComboBox_PaintEngine")]
 	public static extern void** QComboBox_PaintEngine(void* self);
 	
 	public function void QComboBox_OnPaintEngine_action(void* self);
 	[LinkName("QComboBox_OnPaintEngine")]
 	public static extern void** QComboBox_OnPaintEngine(void* self, QComboBox_OnPaintEngine_action _action);
+	
+	[LinkName("QComboBox_SuperPaintEngine")]
+	public static extern void** QComboBox_SuperPaintEngine(void* self);
 	[LinkName("QComboBox_Metric")]
 	public static extern c_int QComboBox_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QComboBox_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QComboBox_OnMetric")]
 	public static extern c_int QComboBox_OnMetric(void* self, QComboBox_OnMetric_action _action);
+	
+	[LinkName("QComboBox_SuperMetric")]
+	public static extern c_int QComboBox_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QComboBox_InitPainter")]
 	public static extern void QComboBox_InitPainter(void* self, void** painter);
 	
 	public function void QComboBox_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QComboBox_OnInitPainter")]
 	public static extern void QComboBox_OnInitPainter(void* self, QComboBox_OnInitPainter_action _action);
+	
+	[LinkName("QComboBox_SuperInitPainter")]
+	public static extern void QComboBox_SuperInitPainter(void* self, void** painter);
 	[LinkName("QComboBox_Redirected")]
 	public static extern void** QComboBox_Redirected(void* self, void** offset);
 	
 	public function void QComboBox_OnRedirected_action(void* self, void** offset);
 	[LinkName("QComboBox_OnRedirected")]
 	public static extern void** QComboBox_OnRedirected(void* self, QComboBox_OnRedirected_action _action);
+	
+	[LinkName("QComboBox_SuperRedirected")]
+	public static extern void** QComboBox_SuperRedirected(void* self, void** offset);
 	[LinkName("QComboBox_SharedPainter")]
 	public static extern void** QComboBox_SharedPainter(void* self);
 	
 	public function void QComboBox_OnSharedPainter_action(void* self);
 	[LinkName("QComboBox_OnSharedPainter")]
 	public static extern void** QComboBox_OnSharedPainter(void* self, QComboBox_OnSharedPainter_action _action);
+	
+	[LinkName("QComboBox_SuperSharedPainter")]
+	public static extern void** QComboBox_SuperSharedPainter(void* self);
 	[LinkName("QComboBox_SetVisible")]
 	public static extern void QComboBox_SetVisible(void* self, bool visible);
 	
 	public function void QComboBox_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QComboBox_OnSetVisible")]
 	public static extern void QComboBox_OnSetVisible(void* self, QComboBox_OnSetVisible_action _action);
+	
+	[LinkName("QComboBox_SuperSetVisible")]
+	public static extern void QComboBox_SuperSetVisible(void* self, bool visible);
 	[LinkName("QComboBox_HeightForWidth")]
 	public static extern c_int QComboBox_HeightForWidth(void* self, c_int param1);
 	
 	public function void QComboBox_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QComboBox_OnHeightForWidth")]
 	public static extern c_int QComboBox_OnHeightForWidth(void* self, QComboBox_OnHeightForWidth_action _action);
+	
+	[LinkName("QComboBox_SuperHeightForWidth")]
+	public static extern c_int QComboBox_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QComboBox_HasHeightForWidth")]
 	public static extern bool QComboBox_HasHeightForWidth(void* self);
 	
 	public function void QComboBox_OnHasHeightForWidth_action(void* self);
 	[LinkName("QComboBox_OnHasHeightForWidth")]
 	public static extern bool QComboBox_OnHasHeightForWidth(void* self, QComboBox_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QComboBox_SuperHasHeightForWidth")]
+	public static extern bool QComboBox_SuperHasHeightForWidth(void* self);
 	[LinkName("QComboBox_MouseDoubleClickEvent")]
 	public static extern void QComboBox_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QComboBox_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnMouseDoubleClickEvent")]
 	public static extern void QComboBox_OnMouseDoubleClickEvent(void* self, QComboBox_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QComboBox_SuperMouseDoubleClickEvent")]
+	public static extern void QComboBox_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QComboBox_MouseMoveEvent")]
 	public static extern void QComboBox_MouseMoveEvent(void* self, void** event);
 	
 	public function void QComboBox_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnMouseMoveEvent")]
 	public static extern void QComboBox_OnMouseMoveEvent(void* self, QComboBox_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QComboBox_SuperMouseMoveEvent")]
+	public static extern void QComboBox_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QComboBox_EnterEvent")]
 	public static extern void QComboBox_EnterEvent(void* self, void** event);
 	
 	public function void QComboBox_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnEnterEvent")]
 	public static extern void QComboBox_OnEnterEvent(void* self, QComboBox_OnEnterEvent_action _action);
+	
+	[LinkName("QComboBox_SuperEnterEvent")]
+	public static extern void QComboBox_SuperEnterEvent(void* self, void** event);
 	[LinkName("QComboBox_LeaveEvent")]
 	public static extern void QComboBox_LeaveEvent(void* self, void** event);
 	
 	public function void QComboBox_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnLeaveEvent")]
 	public static extern void QComboBox_OnLeaveEvent(void* self, QComboBox_OnLeaveEvent_action _action);
+	
+	[LinkName("QComboBox_SuperLeaveEvent")]
+	public static extern void QComboBox_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QComboBox_MoveEvent")]
 	public static extern void QComboBox_MoveEvent(void* self, void** event);
 	
 	public function void QComboBox_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnMoveEvent")]
 	public static extern void QComboBox_OnMoveEvent(void* self, QComboBox_OnMoveEvent_action _action);
+	
+	[LinkName("QComboBox_SuperMoveEvent")]
+	public static extern void QComboBox_SuperMoveEvent(void* self, void** event);
 	[LinkName("QComboBox_CloseEvent")]
 	public static extern void QComboBox_CloseEvent(void* self, void** event);
 	
 	public function void QComboBox_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnCloseEvent")]
 	public static extern void QComboBox_OnCloseEvent(void* self, QComboBox_OnCloseEvent_action _action);
+	
+	[LinkName("QComboBox_SuperCloseEvent")]
+	public static extern void QComboBox_SuperCloseEvent(void* self, void** event);
 	[LinkName("QComboBox_TabletEvent")]
 	public static extern void QComboBox_TabletEvent(void* self, void** event);
 	
 	public function void QComboBox_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnTabletEvent")]
 	public static extern void QComboBox_OnTabletEvent(void* self, QComboBox_OnTabletEvent_action _action);
+	
+	[LinkName("QComboBox_SuperTabletEvent")]
+	public static extern void QComboBox_SuperTabletEvent(void* self, void** event);
 	[LinkName("QComboBox_ActionEvent")]
 	public static extern void QComboBox_ActionEvent(void* self, void** event);
 	
 	public function void QComboBox_OnActionEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnActionEvent")]
 	public static extern void QComboBox_OnActionEvent(void* self, QComboBox_OnActionEvent_action _action);
+	
+	[LinkName("QComboBox_SuperActionEvent")]
+	public static extern void QComboBox_SuperActionEvent(void* self, void** event);
 	[LinkName("QComboBox_DragEnterEvent")]
 	public static extern void QComboBox_DragEnterEvent(void* self, void** event);
 	
 	public function void QComboBox_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnDragEnterEvent")]
 	public static extern void QComboBox_OnDragEnterEvent(void* self, QComboBox_OnDragEnterEvent_action _action);
+	
+	[LinkName("QComboBox_SuperDragEnterEvent")]
+	public static extern void QComboBox_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QComboBox_DragMoveEvent")]
 	public static extern void QComboBox_DragMoveEvent(void* self, void** event);
 	
 	public function void QComboBox_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnDragMoveEvent")]
 	public static extern void QComboBox_OnDragMoveEvent(void* self, QComboBox_OnDragMoveEvent_action _action);
+	
+	[LinkName("QComboBox_SuperDragMoveEvent")]
+	public static extern void QComboBox_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QComboBox_DragLeaveEvent")]
 	public static extern void QComboBox_DragLeaveEvent(void* self, void** event);
 	
 	public function void QComboBox_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnDragLeaveEvent")]
 	public static extern void QComboBox_OnDragLeaveEvent(void* self, QComboBox_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QComboBox_SuperDragLeaveEvent")]
+	public static extern void QComboBox_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QComboBox_DropEvent")]
 	public static extern void QComboBox_DropEvent(void* self, void** event);
 	
 	public function void QComboBox_OnDropEvent_action(void* self, void** event);
 	[LinkName("QComboBox_OnDropEvent")]
 	public static extern void QComboBox_OnDropEvent(void* self, QComboBox_OnDropEvent_action _action);
+	
+	[LinkName("QComboBox_SuperDropEvent")]
+	public static extern void QComboBox_SuperDropEvent(void* self, void** event);
 	[LinkName("QComboBox_NativeEvent")]
 	public static extern bool QComboBox_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QComboBox_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QComboBox_OnNativeEvent")]
 	public static extern bool QComboBox_OnNativeEvent(void* self, QComboBox_OnNativeEvent_action _action);
+	
+	[LinkName("QComboBox_SuperNativeEvent")]
+	public static extern bool QComboBox_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QComboBox_FocusNextPrevChild")]
 	public static extern bool QComboBox_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QComboBox_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QComboBox_OnFocusNextPrevChild")]
 	public static extern bool QComboBox_OnFocusNextPrevChild(void* self, QComboBox_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QComboBox_SuperFocusNextPrevChild")]
+	public static extern bool QComboBox_SuperFocusNextPrevChild(void* self, bool next);
 }
 [AllowDuplicates]
 enum QComboBox_InsertPolicy

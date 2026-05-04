@@ -506,6 +506,33 @@ class QIODevice : IQIODevice, IQObject, IQIODeviceBase
 		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ReadChannelFinished);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QIODevice_OnMetaObject(obj.ObjectPtr,  => QtBeef_QIODevice_OnMetaObject);
+		CQt.QIODevice_OnMetacast(obj.ObjectPtr,  => QtBeef_QIODevice_OnMetacast);
+		CQt.QIODevice_OnMetacall(obj.ObjectPtr,  => QtBeef_QIODevice_OnMetacall);
+		CQt.QIODevice_OnIsSequential(obj.ObjectPtr,  => QtBeef_QIODevice_OnIsSequential);
+		CQt.QIODevice_OnOpen(obj.ObjectPtr,  => QtBeef_QIODevice_OnOpen);
+		CQt.QIODevice_OnClose(obj.ObjectPtr,  => QtBeef_QIODevice_OnClose);
+		CQt.QIODevice_OnPos(obj.ObjectPtr,  => QtBeef_QIODevice_OnPos);
+		CQt.QIODevice_OnSize(obj.ObjectPtr,  => QtBeef_QIODevice_OnSize);
+		CQt.QIODevice_OnSeek(obj.ObjectPtr,  => QtBeef_QIODevice_OnSeek);
+		CQt.QIODevice_OnAtEnd(obj.ObjectPtr,  => QtBeef_QIODevice_OnAtEnd);
+		CQt.QIODevice_OnReset(obj.ObjectPtr,  => QtBeef_QIODevice_OnReset);
+		CQt.QIODevice_OnBytesAvailable(obj.ObjectPtr,  => QtBeef_QIODevice_OnBytesAvailable);
+		CQt.QIODevice_OnBytesToWrite(obj.ObjectPtr,  => QtBeef_QIODevice_OnBytesToWrite);
+		CQt.QIODevice_OnCanReadLine(obj.ObjectPtr,  => QtBeef_QIODevice_OnCanReadLine);
+		CQt.QIODevice_OnWaitForReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_OnWaitForReadyRead);
+		CQt.QIODevice_OnWaitForBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_OnWaitForBytesWritten);
+		CQt.QIODevice_OnReadData(obj.ObjectPtr,  => QtBeef_QIODevice_OnReadData);
+		CQt.QIODevice_OnReadLineData(obj.ObjectPtr,  => QtBeef_QIODevice_OnReadLineData);
+		CQt.QIODevice_OnSkipData(obj.ObjectPtr,  => QtBeef_QIODevice_OnSkipData);
+		CQt.QIODevice_OnWriteData(obj.ObjectPtr,  => QtBeef_QIODevice_OnWriteData);
+		CQt.QIODevice_OnEvent(obj.ObjectPtr,  => QtBeef_QIODevice_OnEvent);
+		CQt.QIODevice_OnEventFilter(obj.ObjectPtr,  => QtBeef_QIODevice_OnEventFilter);
+		CQt.QIODevice_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QIODevice_OnTimerEvent);
+		CQt.QIODevice_OnChildEvent(obj.ObjectPtr,  => QtBeef_QIODevice_OnChildEvent);
+		CQt.QIODevice_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QIODevice_OnCustomEvent);
+		CQt.QIODevice_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QIODevice_OnConnectNotify);
+		CQt.QIODevice_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QIODevice_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnReadyRead = .() ~ _.Dispose();
 	public Event<delegate void(c_int channel)> OnChannelReadyRead = .() ~ _.Dispose();
@@ -554,6 +581,141 @@ class QIODevice : IQIODevice, IQObject, IQIODeviceBase
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QIODevice_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QIODevice_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QIODevice_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QIODevice_OnIsSequential(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsSequential();
+	}
+	static void QtBeef_QIODevice_OnOpen(void* ptr, void* mode)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen(mode);
+	}
+	static void QtBeef_QIODevice_OnClose(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClose();
+	}
+	static void QtBeef_QIODevice_OnPos(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPos();
+	}
+	static void QtBeef_QIODevice_OnSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSize();
+	}
+	static void QtBeef_QIODevice_OnSeek(void* ptr, c_longlong pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSeek(pos);
+	}
+	static void QtBeef_QIODevice_OnAtEnd(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAtEnd();
+	}
+	static void QtBeef_QIODevice_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QIODevice_OnBytesAvailable(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesAvailable();
+	}
+	static void QtBeef_QIODevice_OnBytesToWrite(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesToWrite();
+	}
+	static void QtBeef_QIODevice_OnCanReadLine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanReadLine();
+	}
+	static void QtBeef_QIODevice_OnWaitForReadyRead(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForReadyRead(msecs);
+	}
+	static void QtBeef_QIODevice_OnWaitForBytesWritten(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForBytesWritten(msecs);
+	}
+	static void QtBeef_QIODevice_OnReadData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadData(data, maxlen);
+	}
+	static void QtBeef_QIODevice_OnReadLineData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadLineData(data, maxlen);
+	}
+	static void QtBeef_QIODevice_OnSkipData(void* ptr, c_longlong maxSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSkipData(maxSize);
+	}
+	static void QtBeef_QIODevice_OnWriteData(void* ptr, c_char* data, c_longlong lenVal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWriteData(data, lenVal);
+	}
+	static void QtBeef_QIODevice_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QIODevice_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QIODevice_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QIODevice_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QIODevice_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QIODevice_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QIODevice_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QIODevice_Ptr ptr)
 	{
@@ -1062,18 +1224,27 @@ extension CQt
 	public function void QIODevice_OnMetaObject_action(void* self);
 	[LinkName("QIODevice_OnMetaObject")]
 	public static extern void** QIODevice_OnMetaObject(void* self, QIODevice_OnMetaObject_action _action);
+	
+	[LinkName("QIODevice_SuperMetaObject")]
+	public static extern void** QIODevice_SuperMetaObject(void* self);
 	[LinkName("QIODevice_Qt_Metacast")]
 	public static extern void* QIODevice_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QIODevice_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QIODevice_OnMetacast")]
 	public static extern void* QIODevice_OnMetacast(void* self, QIODevice_OnMetacast_action _action);
+	
+	[LinkName("QIODevice_SuperMetacast")]
+	public static extern void* QIODevice_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QIODevice_Qt_Metacall")]
 	public static extern c_int QIODevice_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QIODevice_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QIODevice_OnMetacall")]
 	public static extern c_int QIODevice_OnMetacall(void* self, QIODevice_OnMetacall_action _action);
+	
+	[LinkName("QIODevice_SuperMetacall")]
+	public static extern c_int QIODevice_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QIODevice_Tr")]
 	public static extern libqt_string QIODevice_Tr(c_char* s);
 	[LinkName("QIODevice_OpenMode")]
@@ -1094,6 +1265,9 @@ extension CQt
 	public function void QIODevice_OnIsSequential_action(void* self);
 	[LinkName("QIODevice_OnIsSequential")]
 	public static extern bool QIODevice_OnIsSequential(void* self, QIODevice_OnIsSequential_action _action);
+	
+	[LinkName("QIODevice_SuperIsSequential")]
+	public static extern bool QIODevice_SuperIsSequential(void* self);
 	[LinkName("QIODevice_ReadChannelCount")]
 	public static extern c_int QIODevice_ReadChannelCount(void* self);
 	[LinkName("QIODevice_WriteChannelCount")]
@@ -1112,54 +1286,81 @@ extension CQt
 	public function void QIODevice_OnOpen_action(void* self, void* mode);
 	[LinkName("QIODevice_OnOpen")]
 	public static extern bool QIODevice_OnOpen(void* self, QIODevice_OnOpen_action _action);
+	
+	[LinkName("QIODevice_SuperOpen")]
+	public static extern bool QIODevice_SuperOpen(void* self, void* mode);
 	[LinkName("QIODevice_Close")]
 	public static extern void QIODevice_Close(void* self);
 	
 	public function void QIODevice_OnClose_action(void* self);
 	[LinkName("QIODevice_OnClose")]
 	public static extern void QIODevice_OnClose(void* self, QIODevice_OnClose_action _action);
+	
+	[LinkName("QIODevice_SuperClose")]
+	public static extern void QIODevice_SuperClose(void* self);
 	[LinkName("QIODevice_Pos")]
 	public static extern c_longlong QIODevice_Pos(void* self);
 	
 	public function void QIODevice_OnPos_action(void* self);
 	[LinkName("QIODevice_OnPos")]
 	public static extern c_longlong QIODevice_OnPos(void* self, QIODevice_OnPos_action _action);
+	
+	[LinkName("QIODevice_SuperPos")]
+	public static extern c_longlong QIODevice_SuperPos(void* self);
 	[LinkName("QIODevice_Size")]
 	public static extern c_longlong QIODevice_Size(void* self);
 	
 	public function void QIODevice_OnSize_action(void* self);
 	[LinkName("QIODevice_OnSize")]
 	public static extern c_longlong QIODevice_OnSize(void* self, QIODevice_OnSize_action _action);
+	
+	[LinkName("QIODevice_SuperSize")]
+	public static extern c_longlong QIODevice_SuperSize(void* self);
 	[LinkName("QIODevice_Seek")]
 	public static extern bool QIODevice_Seek(void* self, c_longlong pos);
 	
 	public function void QIODevice_OnSeek_action(void* self, c_longlong pos);
 	[LinkName("QIODevice_OnSeek")]
 	public static extern bool QIODevice_OnSeek(void* self, QIODevice_OnSeek_action _action);
+	
+	[LinkName("QIODevice_SuperSeek")]
+	public static extern bool QIODevice_SuperSeek(void* self, c_longlong pos);
 	[LinkName("QIODevice_AtEnd")]
 	public static extern bool QIODevice_AtEnd(void* self);
 	
 	public function void QIODevice_OnAtEnd_action(void* self);
 	[LinkName("QIODevice_OnAtEnd")]
 	public static extern bool QIODevice_OnAtEnd(void* self, QIODevice_OnAtEnd_action _action);
+	
+	[LinkName("QIODevice_SuperAtEnd")]
+	public static extern bool QIODevice_SuperAtEnd(void* self);
 	[LinkName("QIODevice_Reset")]
 	public static extern bool QIODevice_Reset(void* self);
 	
 	public function void QIODevice_OnReset_action(void* self);
 	[LinkName("QIODevice_OnReset")]
 	public static extern bool QIODevice_OnReset(void* self, QIODevice_OnReset_action _action);
+	
+	[LinkName("QIODevice_SuperReset")]
+	public static extern bool QIODevice_SuperReset(void* self);
 	[LinkName("QIODevice_BytesAvailable")]
 	public static extern c_longlong QIODevice_BytesAvailable(void* self);
 	
 	public function void QIODevice_OnBytesAvailable_action(void* self);
 	[LinkName("QIODevice_OnBytesAvailable")]
 	public static extern c_longlong QIODevice_OnBytesAvailable(void* self, QIODevice_OnBytesAvailable_action _action);
+	
+	[LinkName("QIODevice_SuperBytesAvailable")]
+	public static extern c_longlong QIODevice_SuperBytesAvailable(void* self);
 	[LinkName("QIODevice_BytesToWrite")]
 	public static extern c_longlong QIODevice_BytesToWrite(void* self);
 	
 	public function void QIODevice_OnBytesToWrite_action(void* self);
 	[LinkName("QIODevice_OnBytesToWrite")]
 	public static extern c_longlong QIODevice_OnBytesToWrite(void* self, QIODevice_OnBytesToWrite_action _action);
+	
+	[LinkName("QIODevice_SuperBytesToWrite")]
+	public static extern c_longlong QIODevice_SuperBytesToWrite(void* self);
 	[LinkName("QIODevice_Read")]
 	public static extern c_longlong QIODevice_Read(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QIODevice_Read2")]
@@ -1176,6 +1377,9 @@ extension CQt
 	public function void QIODevice_OnCanReadLine_action(void* self);
 	[LinkName("QIODevice_OnCanReadLine")]
 	public static extern bool QIODevice_OnCanReadLine(void* self, QIODevice_OnCanReadLine_action _action);
+	
+	[LinkName("QIODevice_SuperCanReadLine")]
+	public static extern bool QIODevice_SuperCanReadLine(void* self);
 	[LinkName("QIODevice_StartTransaction")]
 	public static extern void QIODevice_StartTransaction(void* self);
 	[LinkName("QIODevice_CommitTransaction")]
@@ -1202,12 +1406,18 @@ extension CQt
 	public function void QIODevice_OnWaitForReadyRead_action(void* self, c_int msecs);
 	[LinkName("QIODevice_OnWaitForReadyRead")]
 	public static extern bool QIODevice_OnWaitForReadyRead(void* self, QIODevice_OnWaitForReadyRead_action _action);
+	
+	[LinkName("QIODevice_SuperWaitForReadyRead")]
+	public static extern bool QIODevice_SuperWaitForReadyRead(void* self, c_int msecs);
 	[LinkName("QIODevice_WaitForBytesWritten")]
 	public static extern bool QIODevice_WaitForBytesWritten(void* self, c_int msecs);
 	
 	public function void QIODevice_OnWaitForBytesWritten_action(void* self, c_int msecs);
 	[LinkName("QIODevice_OnWaitForBytesWritten")]
 	public static extern bool QIODevice_OnWaitForBytesWritten(void* self, QIODevice_OnWaitForBytesWritten_action _action);
+	
+	[LinkName("QIODevice_SuperWaitForBytesWritten")]
+	public static extern bool QIODevice_SuperWaitForBytesWritten(void* self, c_int msecs);
 	[LinkName("QIODevice_UngetChar")]
 	public static extern void QIODevice_UngetChar(void* self, c_char c);
 	[LinkName("QIODevice_PutChar")]
@@ -1258,24 +1468,36 @@ extension CQt
 	public function void QIODevice_OnReadData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QIODevice_OnReadData")]
 	public static extern c_longlong QIODevice_OnReadData(void* self, QIODevice_OnReadData_action _action);
+	
+	[LinkName("QIODevice_SuperReadData")]
+	public static extern c_longlong QIODevice_SuperReadData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QIODevice_ReadLineData")]
 	public static extern c_longlong QIODevice_ReadLineData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QIODevice_OnReadLineData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QIODevice_OnReadLineData")]
 	public static extern c_longlong QIODevice_OnReadLineData(void* self, QIODevice_OnReadLineData_action _action);
+	
+	[LinkName("QIODevice_SuperReadLineData")]
+	public static extern c_longlong QIODevice_SuperReadLineData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QIODevice_SkipData")]
 	public static extern c_longlong QIODevice_SkipData(void* self, c_longlong maxSize);
 	
 	public function void QIODevice_OnSkipData_action(void* self, c_longlong maxSize);
 	[LinkName("QIODevice_OnSkipData")]
 	public static extern c_longlong QIODevice_OnSkipData(void* self, QIODevice_OnSkipData_action _action);
+	
+	[LinkName("QIODevice_SuperSkipData")]
+	public static extern c_longlong QIODevice_SuperSkipData(void* self, c_longlong maxSize);
 	[LinkName("QIODevice_WriteData")]
 	public static extern c_longlong QIODevice_WriteData(void* self, c_char* data, c_longlong lenVal);
 	
 	public function void QIODevice_OnWriteData_action(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QIODevice_OnWriteData")]
 	public static extern c_longlong QIODevice_OnWriteData(void* self, QIODevice_OnWriteData_action _action);
+	
+	[LinkName("QIODevice_SuperWriteData")]
+	public static extern c_longlong QIODevice_SuperWriteData(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QIODevice_SetOpenMode")]
 	public static extern void QIODevice_SetOpenMode(void* self, void* openMode);
 	[LinkName("QIODevice_SetErrorString")]
@@ -1292,40 +1514,61 @@ extension CQt
 	public function void QIODevice_OnEvent_action(void* self, void** event);
 	[LinkName("QIODevice_OnEvent")]
 	public static extern bool QIODevice_OnEvent(void* self, QIODevice_OnEvent_action _action);
+	
+	[LinkName("QIODevice_SuperEvent")]
+	public static extern bool QIODevice_SuperEvent(void* self, void** event);
 	[LinkName("QIODevice_EventFilter")]
 	public static extern bool QIODevice_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QIODevice_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QIODevice_OnEventFilter")]
 	public static extern bool QIODevice_OnEventFilter(void* self, QIODevice_OnEventFilter_action _action);
+	
+	[LinkName("QIODevice_SuperEventFilter")]
+	public static extern bool QIODevice_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QIODevice_TimerEvent")]
 	public static extern void QIODevice_TimerEvent(void* self, void** event);
 	
 	public function void QIODevice_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QIODevice_OnTimerEvent")]
 	public static extern void QIODevice_OnTimerEvent(void* self, QIODevice_OnTimerEvent_action _action);
+	
+	[LinkName("QIODevice_SuperTimerEvent")]
+	public static extern void QIODevice_SuperTimerEvent(void* self, void** event);
 	[LinkName("QIODevice_ChildEvent")]
 	public static extern void QIODevice_ChildEvent(void* self, void** event);
 	
 	public function void QIODevice_OnChildEvent_action(void* self, void** event);
 	[LinkName("QIODevice_OnChildEvent")]
 	public static extern void QIODevice_OnChildEvent(void* self, QIODevice_OnChildEvent_action _action);
+	
+	[LinkName("QIODevice_SuperChildEvent")]
+	public static extern void QIODevice_SuperChildEvent(void* self, void** event);
 	[LinkName("QIODevice_CustomEvent")]
 	public static extern void QIODevice_CustomEvent(void* self, void** event);
 	
 	public function void QIODevice_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QIODevice_OnCustomEvent")]
 	public static extern void QIODevice_OnCustomEvent(void* self, QIODevice_OnCustomEvent_action _action);
+	
+	[LinkName("QIODevice_SuperCustomEvent")]
+	public static extern void QIODevice_SuperCustomEvent(void* self, void** event);
 	[LinkName("QIODevice_ConnectNotify")]
 	public static extern void QIODevice_ConnectNotify(void* self, void** signal);
 	
 	public function void QIODevice_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QIODevice_OnConnectNotify")]
 	public static extern void QIODevice_OnConnectNotify(void* self, QIODevice_OnConnectNotify_action _action);
+	
+	[LinkName("QIODevice_SuperConnectNotify")]
+	public static extern void QIODevice_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QIODevice_DisconnectNotify")]
 	public static extern void QIODevice_DisconnectNotify(void* self, void** signal);
 	
 	public function void QIODevice_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QIODevice_OnDisconnectNotify")]
 	public static extern void QIODevice_OnDisconnectNotify(void* self, QIODevice_OnDisconnectNotify_action _action);
+	
+	[LinkName("QIODevice_SuperDisconnectNotify")]
+	public static extern void QIODevice_SuperDisconnectNotify(void* self, void** signal);
 }

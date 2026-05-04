@@ -376,6 +376,20 @@ class QAbstractAnimation : IQAbstractAnimation, IQObject
 		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_DirectionChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QAbstractAnimation_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnMetaObject);
+		CQt.QAbstractAnimation_OnMetacast(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnMetacast);
+		CQt.QAbstractAnimation_OnMetacall(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnMetacall);
+		CQt.QAbstractAnimation_OnDuration(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnDuration);
+		CQt.QAbstractAnimation_OnEvent(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnEvent);
+		CQt.QAbstractAnimation_OnUpdateCurrentTime(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnUpdateCurrentTime);
+		CQt.QAbstractAnimation_OnUpdateState(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnUpdateState);
+		CQt.QAbstractAnimation_OnUpdateDirection(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnUpdateDirection);
+		CQt.QAbstractAnimation_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnEventFilter);
+		CQt.QAbstractAnimation_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnTimerEvent);
+		CQt.QAbstractAnimation_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnChildEvent);
+		CQt.QAbstractAnimation_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnCustomEvent);
+		CQt.QAbstractAnimation_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnConnectNotify);
+		CQt.QAbstractAnimation_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
 	public Event<delegate void(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)> OnStateChanged = .() ~ _.Dispose();
@@ -412,6 +426,76 @@ class QAbstractAnimation : IQAbstractAnimation, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QAbstractAnimation_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAbstractAnimation_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAbstractAnimation_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAbstractAnimation_OnDuration(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDuration();
+	}
+	static void QtBeef_QAbstractAnimation_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QAbstractAnimation_OnUpdateCurrentTime(void* ptr, c_int currentTime)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateCurrentTime(currentTime);
+	}
+	static void QtBeef_QAbstractAnimation_OnUpdateState(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateState(newState, oldState);
+	}
+	static void QtBeef_QAbstractAnimation_OnUpdateDirection(void* ptr, QAbstractAnimation_Direction direction)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateDirection(direction);
+	}
+	static void QtBeef_QAbstractAnimation_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QAbstractAnimation_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QAbstractAnimation_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAbstractAnimation_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAbstractAnimation_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAbstractAnimation_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QAbstractAnimation_Ptr ptr)
 	{
@@ -790,18 +874,27 @@ extension CQt
 	public function void QAbstractAnimation_OnMetaObject_action(void* self);
 	[LinkName("QAbstractAnimation_OnMetaObject")]
 	public static extern void** QAbstractAnimation_OnMetaObject(void* self, QAbstractAnimation_OnMetaObject_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperMetaObject")]
+	public static extern void** QAbstractAnimation_SuperMetaObject(void* self);
 	[LinkName("QAbstractAnimation_Qt_Metacast")]
 	public static extern void* QAbstractAnimation_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAbstractAnimation_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAbstractAnimation_OnMetacast")]
 	public static extern void* QAbstractAnimation_OnMetacast(void* self, QAbstractAnimation_OnMetacast_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperMetacast")]
+	public static extern void* QAbstractAnimation_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAbstractAnimation_Qt_Metacall")]
 	public static extern c_int QAbstractAnimation_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAbstractAnimation_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractAnimation_OnMetacall")]
 	public static extern c_int QAbstractAnimation_OnMetacall(void* self, QAbstractAnimation_OnMetacall_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperMetacall")]
+	public static extern c_int QAbstractAnimation_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractAnimation_Tr")]
 	public static extern libqt_string QAbstractAnimation_Tr(c_char* s);
 	[LinkName("QAbstractAnimation_State")]
@@ -828,6 +921,9 @@ extension CQt
 	public function void QAbstractAnimation_OnDuration_action(void* self);
 	[LinkName("QAbstractAnimation_OnDuration")]
 	public static extern c_int QAbstractAnimation_OnDuration(void* self, QAbstractAnimation_OnDuration_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperDuration")]
+	public static extern c_int QAbstractAnimation_SuperDuration(void* self);
 	[LinkName("QAbstractAnimation_TotalDuration")]
 	public static extern c_int QAbstractAnimation_TotalDuration(void* self);
 	[LinkName("QAbstractAnimation_Finished")]
@@ -872,24 +968,36 @@ extension CQt
 	public function void QAbstractAnimation_OnEvent_action(void* self, void** event);
 	[LinkName("QAbstractAnimation_OnEvent")]
 	public static extern bool QAbstractAnimation_OnEvent(void* self, QAbstractAnimation_OnEvent_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperEvent")]
+	public static extern bool QAbstractAnimation_SuperEvent(void* self, void** event);
 	[LinkName("QAbstractAnimation_UpdateCurrentTime")]
 	public static extern void QAbstractAnimation_UpdateCurrentTime(void* self, c_int currentTime);
 	
 	public function void QAbstractAnimation_OnUpdateCurrentTime_action(void* self, c_int currentTime);
 	[LinkName("QAbstractAnimation_OnUpdateCurrentTime")]
 	public static extern void QAbstractAnimation_OnUpdateCurrentTime(void* self, QAbstractAnimation_OnUpdateCurrentTime_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperUpdateCurrentTime")]
+	public static extern void QAbstractAnimation_SuperUpdateCurrentTime(void* self, c_int currentTime);
 	[LinkName("QAbstractAnimation_UpdateState")]
 	public static extern void QAbstractAnimation_UpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	
 	public function void QAbstractAnimation_OnUpdateState_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QAbstractAnimation_OnUpdateState")]
 	public static extern void QAbstractAnimation_OnUpdateState(void* self, QAbstractAnimation_OnUpdateState_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperUpdateState")]
+	public static extern void QAbstractAnimation_SuperUpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QAbstractAnimation_UpdateDirection")]
 	public static extern void QAbstractAnimation_UpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	
 	public function void QAbstractAnimation_OnUpdateDirection_action(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QAbstractAnimation_OnUpdateDirection")]
 	public static extern void QAbstractAnimation_OnUpdateDirection(void* self, QAbstractAnimation_OnUpdateDirection_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperUpdateDirection")]
+	public static extern void QAbstractAnimation_SuperUpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QAbstractAnimation_Tr2")]
 	public static extern libqt_string QAbstractAnimation_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractAnimation_Tr3")]
@@ -902,36 +1010,54 @@ extension CQt
 	public function void QAbstractAnimation_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QAbstractAnimation_OnEventFilter")]
 	public static extern bool QAbstractAnimation_OnEventFilter(void* self, QAbstractAnimation_OnEventFilter_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperEventFilter")]
+	public static extern bool QAbstractAnimation_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QAbstractAnimation_TimerEvent")]
 	public static extern void QAbstractAnimation_TimerEvent(void* self, void** event);
 	
 	public function void QAbstractAnimation_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QAbstractAnimation_OnTimerEvent")]
 	public static extern void QAbstractAnimation_OnTimerEvent(void* self, QAbstractAnimation_OnTimerEvent_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperTimerEvent")]
+	public static extern void QAbstractAnimation_SuperTimerEvent(void* self, void** event);
 	[LinkName("QAbstractAnimation_ChildEvent")]
 	public static extern void QAbstractAnimation_ChildEvent(void* self, void** event);
 	
 	public function void QAbstractAnimation_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAbstractAnimation_OnChildEvent")]
 	public static extern void QAbstractAnimation_OnChildEvent(void* self, QAbstractAnimation_OnChildEvent_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperChildEvent")]
+	public static extern void QAbstractAnimation_SuperChildEvent(void* self, void** event);
 	[LinkName("QAbstractAnimation_CustomEvent")]
 	public static extern void QAbstractAnimation_CustomEvent(void* self, void** event);
 	
 	public function void QAbstractAnimation_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAbstractAnimation_OnCustomEvent")]
 	public static extern void QAbstractAnimation_OnCustomEvent(void* self, QAbstractAnimation_OnCustomEvent_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperCustomEvent")]
+	public static extern void QAbstractAnimation_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAbstractAnimation_ConnectNotify")]
 	public static extern void QAbstractAnimation_ConnectNotify(void* self, void** signal);
 	
 	public function void QAbstractAnimation_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractAnimation_OnConnectNotify")]
 	public static extern void QAbstractAnimation_OnConnectNotify(void* self, QAbstractAnimation_OnConnectNotify_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperConnectNotify")]
+	public static extern void QAbstractAnimation_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAbstractAnimation_DisconnectNotify")]
 	public static extern void QAbstractAnimation_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAbstractAnimation_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractAnimation_OnDisconnectNotify")]
 	public static extern void QAbstractAnimation_OnDisconnectNotify(void* self, QAbstractAnimation_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAbstractAnimation_SuperDisconnectNotify")]
+	public static extern void QAbstractAnimation_SuperDisconnectNotify(void* self, void** signal);
 }
 // --------------------------------------------------------------
 // QAnimationDriver
@@ -1244,6 +1370,20 @@ class QAnimationDriver : IQAnimationDriver, IQObject
 		CQt.QAnimationDriver_Connect_Stopped(obj.ObjectPtr,  => QtBeef_QAnimationDriver_Connect_Stopped);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QAnimationDriver_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnMetaObject);
+		CQt.QAnimationDriver_OnMetacast(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnMetacast);
+		CQt.QAnimationDriver_OnMetacall(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnMetacall);
+		CQt.QAnimationDriver_OnAdvance(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnAdvance);
+		CQt.QAnimationDriver_OnElapsed(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnElapsed);
+		CQt.QAnimationDriver_OnStart(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnStart);
+		CQt.QAnimationDriver_OnStop(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnStop);
+		CQt.QAnimationDriver_OnEvent(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnEvent);
+		CQt.QAnimationDriver_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnEventFilter);
+		CQt.QAnimationDriver_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnTimerEvent);
+		CQt.QAnimationDriver_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnChildEvent);
+		CQt.QAnimationDriver_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnCustomEvent);
+		CQt.QAnimationDriver_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnConnectNotify);
+		CQt.QAnimationDriver_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAnimationDriver_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnStarted = .() ~ _.Dispose();
 	public Event<delegate void()> OnStopped = .() ~ _.Dispose();
@@ -1268,6 +1408,76 @@ class QAnimationDriver : IQAnimationDriver, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QAnimationDriver_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAnimationDriver_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAnimationDriver_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAnimationDriver_OnAdvance(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAdvance();
+	}
+	static void QtBeef_QAnimationDriver_OnElapsed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnElapsed();
+	}
+	static void QtBeef_QAnimationDriver_OnStart(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStart();
+	}
+	static void QtBeef_QAnimationDriver_OnStop(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStop();
+	}
+	static void QtBeef_QAnimationDriver_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QAnimationDriver_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QAnimationDriver_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QAnimationDriver_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAnimationDriver_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAnimationDriver_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAnimationDriver_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QAnimationDriver_Ptr ptr)
 	{
@@ -1586,18 +1796,27 @@ extension CQt
 	public function void QAnimationDriver_OnMetaObject_action(void* self);
 	[LinkName("QAnimationDriver_OnMetaObject")]
 	public static extern void** QAnimationDriver_OnMetaObject(void* self, QAnimationDriver_OnMetaObject_action _action);
+	
+	[LinkName("QAnimationDriver_SuperMetaObject")]
+	public static extern void** QAnimationDriver_SuperMetaObject(void* self);
 	[LinkName("QAnimationDriver_Qt_Metacast")]
 	public static extern void* QAnimationDriver_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAnimationDriver_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAnimationDriver_OnMetacast")]
 	public static extern void* QAnimationDriver_OnMetacast(void* self, QAnimationDriver_OnMetacast_action _action);
+	
+	[LinkName("QAnimationDriver_SuperMetacast")]
+	public static extern void* QAnimationDriver_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAnimationDriver_Qt_Metacall")]
 	public static extern c_int QAnimationDriver_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAnimationDriver_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAnimationDriver_OnMetacall")]
 	public static extern c_int QAnimationDriver_OnMetacall(void* self, QAnimationDriver_OnMetacall_action _action);
+	
+	[LinkName("QAnimationDriver_SuperMetacall")]
+	public static extern c_int QAnimationDriver_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAnimationDriver_Tr")]
 	public static extern libqt_string QAnimationDriver_Tr(c_char* s);
 	[LinkName("QAnimationDriver_Advance")]
@@ -1606,6 +1825,9 @@ extension CQt
 	public function void QAnimationDriver_OnAdvance_action(void* self);
 	[LinkName("QAnimationDriver_OnAdvance")]
 	public static extern void QAnimationDriver_OnAdvance(void* self, QAnimationDriver_OnAdvance_action _action);
+	
+	[LinkName("QAnimationDriver_SuperAdvance")]
+	public static extern void QAnimationDriver_SuperAdvance(void* self);
 	[LinkName("QAnimationDriver_Install")]
 	public static extern void QAnimationDriver_Install(void* self);
 	[LinkName("QAnimationDriver_Uninstall")]
@@ -1618,6 +1840,9 @@ extension CQt
 	public function void QAnimationDriver_OnElapsed_action(void* self);
 	[LinkName("QAnimationDriver_OnElapsed")]
 	public static extern c_longlong QAnimationDriver_OnElapsed(void* self, QAnimationDriver_OnElapsed_action _action);
+	
+	[LinkName("QAnimationDriver_SuperElapsed")]
+	public static extern c_longlong QAnimationDriver_SuperElapsed(void* self);
 	[LinkName("QAnimationDriver_Started")]
 	public static extern void QAnimationDriver_Started(void* self);
 	
@@ -1638,12 +1863,18 @@ extension CQt
 	public function void QAnimationDriver_OnStart_action(void* self);
 	[LinkName("QAnimationDriver_OnStart")]
 	public static extern void QAnimationDriver_OnStart(void* self, QAnimationDriver_OnStart_action _action);
+	
+	[LinkName("QAnimationDriver_SuperStart")]
+	public static extern void QAnimationDriver_SuperStart(void* self);
 	[LinkName("QAnimationDriver_Stop")]
 	public static extern void QAnimationDriver_Stop(void* self);
 	
 	public function void QAnimationDriver_OnStop_action(void* self);
 	[LinkName("QAnimationDriver_OnStop")]
 	public static extern void QAnimationDriver_OnStop(void* self, QAnimationDriver_OnStop_action _action);
+	
+	[LinkName("QAnimationDriver_SuperStop")]
+	public static extern void QAnimationDriver_SuperStop(void* self);
 	[LinkName("QAnimationDriver_Tr2")]
 	public static extern libqt_string QAnimationDriver_Tr2(c_char* s, c_char* c);
 	[LinkName("QAnimationDriver_Tr3")]
@@ -1654,42 +1885,63 @@ extension CQt
 	public function void QAnimationDriver_OnEvent_action(void* self, void** event);
 	[LinkName("QAnimationDriver_OnEvent")]
 	public static extern bool QAnimationDriver_OnEvent(void* self, QAnimationDriver_OnEvent_action _action);
+	
+	[LinkName("QAnimationDriver_SuperEvent")]
+	public static extern bool QAnimationDriver_SuperEvent(void* self, void** event);
 	[LinkName("QAnimationDriver_EventFilter")]
 	public static extern bool QAnimationDriver_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QAnimationDriver_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QAnimationDriver_OnEventFilter")]
 	public static extern bool QAnimationDriver_OnEventFilter(void* self, QAnimationDriver_OnEventFilter_action _action);
+	
+	[LinkName("QAnimationDriver_SuperEventFilter")]
+	public static extern bool QAnimationDriver_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QAnimationDriver_TimerEvent")]
 	public static extern void QAnimationDriver_TimerEvent(void* self, void** event);
 	
 	public function void QAnimationDriver_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QAnimationDriver_OnTimerEvent")]
 	public static extern void QAnimationDriver_OnTimerEvent(void* self, QAnimationDriver_OnTimerEvent_action _action);
+	
+	[LinkName("QAnimationDriver_SuperTimerEvent")]
+	public static extern void QAnimationDriver_SuperTimerEvent(void* self, void** event);
 	[LinkName("QAnimationDriver_ChildEvent")]
 	public static extern void QAnimationDriver_ChildEvent(void* self, void** event);
 	
 	public function void QAnimationDriver_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAnimationDriver_OnChildEvent")]
 	public static extern void QAnimationDriver_OnChildEvent(void* self, QAnimationDriver_OnChildEvent_action _action);
+	
+	[LinkName("QAnimationDriver_SuperChildEvent")]
+	public static extern void QAnimationDriver_SuperChildEvent(void* self, void** event);
 	[LinkName("QAnimationDriver_CustomEvent")]
 	public static extern void QAnimationDriver_CustomEvent(void* self, void** event);
 	
 	public function void QAnimationDriver_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAnimationDriver_OnCustomEvent")]
 	public static extern void QAnimationDriver_OnCustomEvent(void* self, QAnimationDriver_OnCustomEvent_action _action);
+	
+	[LinkName("QAnimationDriver_SuperCustomEvent")]
+	public static extern void QAnimationDriver_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAnimationDriver_ConnectNotify")]
 	public static extern void QAnimationDriver_ConnectNotify(void* self, void** signal);
 	
 	public function void QAnimationDriver_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAnimationDriver_OnConnectNotify")]
 	public static extern void QAnimationDriver_OnConnectNotify(void* self, QAnimationDriver_OnConnectNotify_action _action);
+	
+	[LinkName("QAnimationDriver_SuperConnectNotify")]
+	public static extern void QAnimationDriver_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAnimationDriver_DisconnectNotify")]
 	public static extern void QAnimationDriver_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAnimationDriver_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAnimationDriver_OnDisconnectNotify")]
 	public static extern void QAnimationDriver_OnDisconnectNotify(void* self, QAnimationDriver_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAnimationDriver_SuperDisconnectNotify")]
+	public static extern void QAnimationDriver_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QAbstractAnimation_Direction

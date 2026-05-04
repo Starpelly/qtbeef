@@ -940,6 +940,33 @@ class QProcess : IQProcess, IQIODevice, IQObject, IQIODeviceBase
 		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ChannelBytesWritten);
 		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_AboutToClose);
 		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ReadChannelFinished);
+		CQt.QProcess_OnMetaObject(obj.ObjectPtr,  => QtBeef_QProcess_OnMetaObject);
+		CQt.QProcess_OnMetacast(obj.ObjectPtr,  => QtBeef_QProcess_OnMetacast);
+		CQt.QProcess_OnMetacall(obj.ObjectPtr,  => QtBeef_QProcess_OnMetacall);
+		CQt.QProcess_OnOpen(obj.ObjectPtr,  => QtBeef_QProcess_OnOpen);
+		CQt.QProcess_OnWaitForReadyRead(obj.ObjectPtr,  => QtBeef_QProcess_OnWaitForReadyRead);
+		CQt.QProcess_OnWaitForBytesWritten(obj.ObjectPtr,  => QtBeef_QProcess_OnWaitForBytesWritten);
+		CQt.QProcess_OnBytesToWrite(obj.ObjectPtr,  => QtBeef_QProcess_OnBytesToWrite);
+		CQt.QProcess_OnIsSequential(obj.ObjectPtr,  => QtBeef_QProcess_OnIsSequential);
+		CQt.QProcess_OnClose(obj.ObjectPtr,  => QtBeef_QProcess_OnClose);
+		CQt.QProcess_OnReadData(obj.ObjectPtr,  => QtBeef_QProcess_OnReadData);
+		CQt.QProcess_OnWriteData(obj.ObjectPtr,  => QtBeef_QProcess_OnWriteData);
+		CQt.QProcess_OnEvent(obj.ObjectPtr,  => QtBeef_QProcess_OnEvent);
+		CQt.QProcess_OnEventFilter(obj.ObjectPtr,  => QtBeef_QProcess_OnEventFilter);
+		CQt.QProcess_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QProcess_OnTimerEvent);
+		CQt.QProcess_OnChildEvent(obj.ObjectPtr,  => QtBeef_QProcess_OnChildEvent);
+		CQt.QProcess_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QProcess_OnCustomEvent);
+		CQt.QProcess_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QProcess_OnConnectNotify);
+		CQt.QProcess_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QProcess_OnDisconnectNotify);
+		CQt.QProcess_OnPos(obj.ObjectPtr,  => QtBeef_QProcess_OnPos);
+		CQt.QProcess_OnSize(obj.ObjectPtr,  => QtBeef_QProcess_OnSize);
+		CQt.QProcess_OnSeek(obj.ObjectPtr,  => QtBeef_QProcess_OnSeek);
+		CQt.QProcess_OnAtEnd(obj.ObjectPtr,  => QtBeef_QProcess_OnAtEnd);
+		CQt.QProcess_OnReset(obj.ObjectPtr,  => QtBeef_QProcess_OnReset);
+		CQt.QProcess_OnBytesAvailable(obj.ObjectPtr,  => QtBeef_QProcess_OnBytesAvailable);
+		CQt.QProcess_OnCanReadLine(obj.ObjectPtr,  => QtBeef_QProcess_OnCanReadLine);
+		CQt.QProcess_OnReadLineData(obj.ObjectPtr,  => QtBeef_QProcess_OnReadLineData);
+		CQt.QProcess_OnSkipData(obj.ObjectPtr,  => QtBeef_QProcess_OnSkipData);
 	}
 	public Event<delegate void(c_int exitCode)> OnFinished = .() ~ _.Dispose();
 	public Event<delegate void(QProcess_ProcessError error)> OnErrorOccurred = .() ~ _.Dispose();
@@ -1006,6 +1033,141 @@ class QProcess : IQProcess, IQIODevice, IQObject, IQIODeviceBase
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnReadChannelFinished.Invoke();
+	}
+	static void QtBeef_QProcess_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QProcess_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QProcess_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QProcess_OnOpen(void* ptr, void* mode)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen(mode);
+	}
+	static void QtBeef_QProcess_OnWaitForReadyRead(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForReadyRead(msecs);
+	}
+	static void QtBeef_QProcess_OnWaitForBytesWritten(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForBytesWritten(msecs);
+	}
+	static void QtBeef_QProcess_OnBytesToWrite(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesToWrite();
+	}
+	static void QtBeef_QProcess_OnIsSequential(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsSequential();
+	}
+	static void QtBeef_QProcess_OnClose(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClose();
+	}
+	static void QtBeef_QProcess_OnReadData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadData(data, maxlen);
+	}
+	static void QtBeef_QProcess_OnWriteData(void* ptr, c_char* data, c_longlong lenVal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWriteData(data, lenVal);
+	}
+	static void QtBeef_QProcess_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QProcess_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QProcess_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QProcess_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QProcess_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QProcess_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QProcess_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QProcess_OnPos(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPos();
+	}
+	static void QtBeef_QProcess_OnSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSize();
+	}
+	static void QtBeef_QProcess_OnSeek(void* ptr, c_longlong pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSeek(pos);
+	}
+	static void QtBeef_QProcess_OnAtEnd(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAtEnd();
+	}
+	static void QtBeef_QProcess_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QProcess_OnBytesAvailable(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesAvailable();
+	}
+	static void QtBeef_QProcess_OnCanReadLine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanReadLine();
+	}
+	static void QtBeef_QProcess_OnReadLineData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadLineData(data, maxlen);
+	}
+	static void QtBeef_QProcess_OnSkipData(void* ptr, c_longlong maxSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSkipData(maxSize);
 	}
 	public this(QProcess_Ptr ptr)
 	{
@@ -1750,18 +1912,27 @@ extension CQt
 	public function void QProcess_OnMetaObject_action(void* self);
 	[LinkName("QProcess_OnMetaObject")]
 	public static extern void** QProcess_OnMetaObject(void* self, QProcess_OnMetaObject_action _action);
+	
+	[LinkName("QProcess_SuperMetaObject")]
+	public static extern void** QProcess_SuperMetaObject(void* self);
 	[LinkName("QProcess_Qt_Metacast")]
 	public static extern void* QProcess_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QProcess_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QProcess_OnMetacast")]
 	public static extern void* QProcess_OnMetacast(void* self, QProcess_OnMetacast_action _action);
+	
+	[LinkName("QProcess_SuperMetacast")]
+	public static extern void* QProcess_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QProcess_Qt_Metacall")]
 	public static extern c_int QProcess_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QProcess_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QProcess_OnMetacall")]
 	public static extern c_int QProcess_OnMetacall(void* self, QProcess_OnMetacall_action _action);
+	
+	[LinkName("QProcess_SuperMetacall")]
+	public static extern c_int QProcess_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QProcess_Tr")]
 	public static extern libqt_string QProcess_Tr(c_char* s);
 	[LinkName("QProcess_Start")]
@@ -1778,6 +1949,9 @@ extension CQt
 	public function void QProcess_OnOpen_action(void* self, void* mode);
 	[LinkName("QProcess_OnOpen")]
 	public static extern bool QProcess_OnOpen(void* self, QProcess_OnOpen_action _action);
+	
+	[LinkName("QProcess_SuperOpen")]
+	public static extern bool QProcess_SuperOpen(void* self, void* mode);
 	[LinkName("QProcess_Program")]
 	public static extern libqt_string QProcess_Program(void* self);
 	[LinkName("QProcess_SetProgram")]
@@ -1838,12 +2012,18 @@ extension CQt
 	public function void QProcess_OnWaitForReadyRead_action(void* self, c_int msecs);
 	[LinkName("QProcess_OnWaitForReadyRead")]
 	public static extern bool QProcess_OnWaitForReadyRead(void* self, QProcess_OnWaitForReadyRead_action _action);
+	
+	[LinkName("QProcess_SuperWaitForReadyRead")]
+	public static extern bool QProcess_SuperWaitForReadyRead(void* self, c_int msecs);
 	[LinkName("QProcess_WaitForBytesWritten")]
 	public static extern bool QProcess_WaitForBytesWritten(void* self, c_int msecs);
 	
 	public function void QProcess_OnWaitForBytesWritten_action(void* self, c_int msecs);
 	[LinkName("QProcess_OnWaitForBytesWritten")]
 	public static extern bool QProcess_OnWaitForBytesWritten(void* self, QProcess_OnWaitForBytesWritten_action _action);
+	
+	[LinkName("QProcess_SuperWaitForBytesWritten")]
+	public static extern bool QProcess_SuperWaitForBytesWritten(void* self, c_int msecs);
 	[LinkName("QProcess_WaitForFinished")]
 	public static extern bool QProcess_WaitForFinished(void* self);
 	[LinkName("QProcess_ReadAllStandardOutput")]
@@ -1860,18 +2040,27 @@ extension CQt
 	public function void QProcess_OnBytesToWrite_action(void* self);
 	[LinkName("QProcess_OnBytesToWrite")]
 	public static extern c_longlong QProcess_OnBytesToWrite(void* self, QProcess_OnBytesToWrite_action _action);
+	
+	[LinkName("QProcess_SuperBytesToWrite")]
+	public static extern c_longlong QProcess_SuperBytesToWrite(void* self);
 	[LinkName("QProcess_IsSequential")]
 	public static extern bool QProcess_IsSequential(void* self);
 	
 	public function void QProcess_OnIsSequential_action(void* self);
 	[LinkName("QProcess_OnIsSequential")]
 	public static extern bool QProcess_OnIsSequential(void* self, QProcess_OnIsSequential_action _action);
+	
+	[LinkName("QProcess_SuperIsSequential")]
+	public static extern bool QProcess_SuperIsSequential(void* self);
 	[LinkName("QProcess_Close")]
 	public static extern void QProcess_Close(void* self);
 	
 	public function void QProcess_OnClose_action(void* self);
 	[LinkName("QProcess_OnClose")]
 	public static extern void QProcess_OnClose(void* self, QProcess_OnClose_action _action);
+	
+	[LinkName("QProcess_SuperClose")]
+	public static extern void QProcess_SuperClose(void* self);
 	[LinkName("QProcess_Execute")]
 	public static extern c_int QProcess_Execute(libqt_string program);
 	[LinkName("QProcess_StartDetached2")]
@@ -1904,12 +2093,18 @@ extension CQt
 	public function void QProcess_OnReadData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QProcess_OnReadData")]
 	public static extern c_longlong QProcess_OnReadData(void* self, QProcess_OnReadData_action _action);
+	
+	[LinkName("QProcess_SuperReadData")]
+	public static extern c_longlong QProcess_SuperReadData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QProcess_WriteData")]
 	public static extern c_longlong QProcess_WriteData(void* self, c_char* data, c_longlong lenVal);
 	
 	public function void QProcess_OnWriteData_action(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QProcess_OnWriteData")]
 	public static extern c_longlong QProcess_OnWriteData(void* self, QProcess_OnWriteData_action _action);
+	
+	[LinkName("QProcess_SuperWriteData")]
+	public static extern c_longlong QProcess_SuperWriteData(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QProcess_Tr2")]
 	public static extern libqt_string QProcess_Tr2(c_char* s, c_char* c);
 	[LinkName("QProcess_Tr3")]
@@ -1952,96 +2147,144 @@ extension CQt
 	public function void QProcess_OnEvent_action(void* self, void** event);
 	[LinkName("QProcess_OnEvent")]
 	public static extern bool QProcess_OnEvent(void* self, QProcess_OnEvent_action _action);
+	
+	[LinkName("QProcess_SuperEvent")]
+	public static extern bool QProcess_SuperEvent(void* self, void** event);
 	[LinkName("QProcess_EventFilter")]
 	public static extern bool QProcess_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QProcess_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QProcess_OnEventFilter")]
 	public static extern bool QProcess_OnEventFilter(void* self, QProcess_OnEventFilter_action _action);
+	
+	[LinkName("QProcess_SuperEventFilter")]
+	public static extern bool QProcess_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QProcess_TimerEvent")]
 	public static extern void QProcess_TimerEvent(void* self, void** event);
 	
 	public function void QProcess_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QProcess_OnTimerEvent")]
 	public static extern void QProcess_OnTimerEvent(void* self, QProcess_OnTimerEvent_action _action);
+	
+	[LinkName("QProcess_SuperTimerEvent")]
+	public static extern void QProcess_SuperTimerEvent(void* self, void** event);
 	[LinkName("QProcess_ChildEvent")]
 	public static extern void QProcess_ChildEvent(void* self, void** event);
 	
 	public function void QProcess_OnChildEvent_action(void* self, void** event);
 	[LinkName("QProcess_OnChildEvent")]
 	public static extern void QProcess_OnChildEvent(void* self, QProcess_OnChildEvent_action _action);
+	
+	[LinkName("QProcess_SuperChildEvent")]
+	public static extern void QProcess_SuperChildEvent(void* self, void** event);
 	[LinkName("QProcess_CustomEvent")]
 	public static extern void QProcess_CustomEvent(void* self, void** event);
 	
 	public function void QProcess_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QProcess_OnCustomEvent")]
 	public static extern void QProcess_OnCustomEvent(void* self, QProcess_OnCustomEvent_action _action);
+	
+	[LinkName("QProcess_SuperCustomEvent")]
+	public static extern void QProcess_SuperCustomEvent(void* self, void** event);
 	[LinkName("QProcess_ConnectNotify")]
 	public static extern void QProcess_ConnectNotify(void* self, void** signal);
 	
 	public function void QProcess_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QProcess_OnConnectNotify")]
 	public static extern void QProcess_OnConnectNotify(void* self, QProcess_OnConnectNotify_action _action);
+	
+	[LinkName("QProcess_SuperConnectNotify")]
+	public static extern void QProcess_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QProcess_DisconnectNotify")]
 	public static extern void QProcess_DisconnectNotify(void* self, void** signal);
 	
 	public function void QProcess_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QProcess_OnDisconnectNotify")]
 	public static extern void QProcess_OnDisconnectNotify(void* self, QProcess_OnDisconnectNotify_action _action);
+	
+	[LinkName("QProcess_SuperDisconnectNotify")]
+	public static extern void QProcess_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QProcess_Pos")]
 	public static extern c_longlong QProcess_Pos(void* self);
 	
 	public function void QProcess_OnPos_action(void* self);
 	[LinkName("QProcess_OnPos")]
 	public static extern c_longlong QProcess_OnPos(void* self, QProcess_OnPos_action _action);
+	
+	[LinkName("QProcess_SuperPos")]
+	public static extern c_longlong QProcess_SuperPos(void* self);
 	[LinkName("QProcess_Size")]
 	public static extern c_longlong QProcess_Size(void* self);
 	
 	public function void QProcess_OnSize_action(void* self);
 	[LinkName("QProcess_OnSize")]
 	public static extern c_longlong QProcess_OnSize(void* self, QProcess_OnSize_action _action);
+	
+	[LinkName("QProcess_SuperSize")]
+	public static extern c_longlong QProcess_SuperSize(void* self);
 	[LinkName("QProcess_Seek")]
 	public static extern bool QProcess_Seek(void* self, c_longlong pos);
 	
 	public function void QProcess_OnSeek_action(void* self, c_longlong pos);
 	[LinkName("QProcess_OnSeek")]
 	public static extern bool QProcess_OnSeek(void* self, QProcess_OnSeek_action _action);
+	
+	[LinkName("QProcess_SuperSeek")]
+	public static extern bool QProcess_SuperSeek(void* self, c_longlong pos);
 	[LinkName("QProcess_AtEnd")]
 	public static extern bool QProcess_AtEnd(void* self);
 	
 	public function void QProcess_OnAtEnd_action(void* self);
 	[LinkName("QProcess_OnAtEnd")]
 	public static extern bool QProcess_OnAtEnd(void* self, QProcess_OnAtEnd_action _action);
+	
+	[LinkName("QProcess_SuperAtEnd")]
+	public static extern bool QProcess_SuperAtEnd(void* self);
 	[LinkName("QProcess_Reset")]
 	public static extern bool QProcess_Reset(void* self);
 	
 	public function void QProcess_OnReset_action(void* self);
 	[LinkName("QProcess_OnReset")]
 	public static extern bool QProcess_OnReset(void* self, QProcess_OnReset_action _action);
+	
+	[LinkName("QProcess_SuperReset")]
+	public static extern bool QProcess_SuperReset(void* self);
 	[LinkName("QProcess_BytesAvailable")]
 	public static extern c_longlong QProcess_BytesAvailable(void* self);
 	
 	public function void QProcess_OnBytesAvailable_action(void* self);
 	[LinkName("QProcess_OnBytesAvailable")]
 	public static extern c_longlong QProcess_OnBytesAvailable(void* self, QProcess_OnBytesAvailable_action _action);
+	
+	[LinkName("QProcess_SuperBytesAvailable")]
+	public static extern c_longlong QProcess_SuperBytesAvailable(void* self);
 	[LinkName("QProcess_CanReadLine")]
 	public static extern bool QProcess_CanReadLine(void* self);
 	
 	public function void QProcess_OnCanReadLine_action(void* self);
 	[LinkName("QProcess_OnCanReadLine")]
 	public static extern bool QProcess_OnCanReadLine(void* self, QProcess_OnCanReadLine_action _action);
+	
+	[LinkName("QProcess_SuperCanReadLine")]
+	public static extern bool QProcess_SuperCanReadLine(void* self);
 	[LinkName("QProcess_ReadLineData")]
 	public static extern c_longlong QProcess_ReadLineData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QProcess_OnReadLineData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QProcess_OnReadLineData")]
 	public static extern c_longlong QProcess_OnReadLineData(void* self, QProcess_OnReadLineData_action _action);
+	
+	[LinkName("QProcess_SuperReadLineData")]
+	public static extern c_longlong QProcess_SuperReadLineData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QProcess_SkipData")]
 	public static extern c_longlong QProcess_SkipData(void* self, c_longlong maxSize);
 	
 	public function void QProcess_OnSkipData_action(void* self, c_longlong maxSize);
 	[LinkName("QProcess_OnSkipData")]
 	public static extern c_longlong QProcess_OnSkipData(void* self, QProcess_OnSkipData_action _action);
+	
+	[LinkName("QProcess_SuperSkipData")]
+	public static extern c_longlong QProcess_SuperSkipData(void* self, c_longlong maxSize);
 }
 [AllowDuplicates]
 enum QProcessEnvironment_Initialization

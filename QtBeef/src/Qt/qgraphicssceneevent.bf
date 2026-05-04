@@ -86,6 +86,18 @@ class QGraphicsSceneEvent : IQGraphicsSceneEvent, IQEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsSceneEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QGraphicsSceneEvent_OnSetAccepted);
+		CQt.QGraphicsSceneEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGraphicsSceneEvent_OnClone);
+	}
+	static void QtBeef_QGraphicsSceneEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QGraphicsSceneEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGraphicsSceneEvent_Ptr ptr)
 	{
@@ -188,12 +200,18 @@ extension CQt
 	public function void QGraphicsSceneEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QGraphicsSceneEvent_OnSetAccepted")]
 	public static extern void QGraphicsSceneEvent_OnSetAccepted(void* self, QGraphicsSceneEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QGraphicsSceneEvent_SuperSetAccepted")]
+	public static extern void QGraphicsSceneEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QGraphicsSceneEvent_Clone")]
 	public static extern void** QGraphicsSceneEvent_Clone(void* self);
 	
 	public function void QGraphicsSceneEvent_OnClone_action(void* self);
 	[LinkName("QGraphicsSceneEvent_OnClone")]
 	public static extern void** QGraphicsSceneEvent_OnClone(void* self, QGraphicsSceneEvent_OnClone_action _action);
+	
+	[LinkName("QGraphicsSceneEvent_SuperClone")]
+	public static extern void** QGraphicsSceneEvent_SuperClone(void* self);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneMouseEvent
@@ -390,6 +408,18 @@ class QGraphicsSceneMouseEvent : IQGraphicsSceneMouseEvent, IQGraphicsSceneEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsSceneMouseEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QGraphicsSceneMouseEvent_OnSetAccepted);
+		CQt.QGraphicsSceneMouseEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGraphicsSceneMouseEvent_OnClone);
+	}
+	static void QtBeef_QGraphicsSceneMouseEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QGraphicsSceneMouseEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGraphicsSceneMouseEvent_Ptr ptr)
 	{
@@ -659,12 +689,18 @@ extension CQt
 	public function void QGraphicsSceneMouseEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QGraphicsSceneMouseEvent_OnSetAccepted")]
 	public static extern void QGraphicsSceneMouseEvent_OnSetAccepted(void* self, QGraphicsSceneMouseEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QGraphicsSceneMouseEvent_SuperSetAccepted")]
+	public static extern void QGraphicsSceneMouseEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QGraphicsSceneMouseEvent_Clone")]
 	public static extern void** QGraphicsSceneMouseEvent_Clone(void* self);
 	
 	public function void QGraphicsSceneMouseEvent_OnClone_action(void* self);
 	[LinkName("QGraphicsSceneMouseEvent_OnClone")]
 	public static extern void** QGraphicsSceneMouseEvent_OnClone(void* self, QGraphicsSceneMouseEvent_OnClone_action _action);
+	
+	[LinkName("QGraphicsSceneMouseEvent_SuperClone")]
+	public static extern void** QGraphicsSceneMouseEvent_SuperClone(void* self);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneWheelEvent
@@ -829,6 +865,18 @@ class QGraphicsSceneWheelEvent : IQGraphicsSceneWheelEvent, IQGraphicsSceneEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsSceneWheelEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QGraphicsSceneWheelEvent_OnSetAccepted);
+		CQt.QGraphicsSceneWheelEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGraphicsSceneWheelEvent_OnClone);
+	}
+	static void QtBeef_QGraphicsSceneWheelEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QGraphicsSceneWheelEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGraphicsSceneWheelEvent_Ptr ptr)
 	{
@@ -1050,12 +1098,18 @@ extension CQt
 	public function void QGraphicsSceneWheelEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QGraphicsSceneWheelEvent_OnSetAccepted")]
 	public static extern void QGraphicsSceneWheelEvent_OnSetAccepted(void* self, QGraphicsSceneWheelEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QGraphicsSceneWheelEvent_SuperSetAccepted")]
+	public static extern void QGraphicsSceneWheelEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QGraphicsSceneWheelEvent_Clone")]
 	public static extern void** QGraphicsSceneWheelEvent_Clone(void* self);
 	
 	public function void QGraphicsSceneWheelEvent_OnClone_action(void* self);
 	[LinkName("QGraphicsSceneWheelEvent_OnClone")]
 	public static extern void** QGraphicsSceneWheelEvent_OnClone(void* self, QGraphicsSceneWheelEvent_OnClone_action _action);
+	
+	[LinkName("QGraphicsSceneWheelEvent_SuperClone")]
+	public static extern void** QGraphicsSceneWheelEvent_SuperClone(void* self);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneContextMenuEvent
@@ -1180,6 +1234,18 @@ class QGraphicsSceneContextMenuEvent : IQGraphicsSceneContextMenuEvent, IQGraphi
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsSceneContextMenuEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QGraphicsSceneContextMenuEvent_OnSetAccepted);
+		CQt.QGraphicsSceneContextMenuEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGraphicsSceneContextMenuEvent_OnClone);
+	}
+	static void QtBeef_QGraphicsSceneContextMenuEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QGraphicsSceneContextMenuEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGraphicsSceneContextMenuEvent_Ptr ptr)
 	{
@@ -1341,12 +1407,18 @@ extension CQt
 	public function void QGraphicsSceneContextMenuEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QGraphicsSceneContextMenuEvent_OnSetAccepted")]
 	public static extern void QGraphicsSceneContextMenuEvent_OnSetAccepted(void* self, QGraphicsSceneContextMenuEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QGraphicsSceneContextMenuEvent_SuperSetAccepted")]
+	public static extern void QGraphicsSceneContextMenuEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QGraphicsSceneContextMenuEvent_Clone")]
 	public static extern void** QGraphicsSceneContextMenuEvent_Clone(void* self);
 	
 	public function void QGraphicsSceneContextMenuEvent_OnClone_action(void* self);
 	[LinkName("QGraphicsSceneContextMenuEvent_OnClone")]
 	public static extern void** QGraphicsSceneContextMenuEvent_OnClone(void* self, QGraphicsSceneContextMenuEvent_OnClone_action _action);
+	
+	[LinkName("QGraphicsSceneContextMenuEvent_SuperClone")]
+	public static extern void** QGraphicsSceneContextMenuEvent_SuperClone(void* self);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneHoverEvent
@@ -1487,6 +1559,18 @@ class QGraphicsSceneHoverEvent : IQGraphicsSceneHoverEvent, IQGraphicsSceneEvent
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsSceneHoverEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QGraphicsSceneHoverEvent_OnSetAccepted);
+		CQt.QGraphicsSceneHoverEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGraphicsSceneHoverEvent_OnClone);
+	}
+	static void QtBeef_QGraphicsSceneHoverEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QGraphicsSceneHoverEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGraphicsSceneHoverEvent_Ptr ptr)
 	{
@@ -1672,12 +1756,18 @@ extension CQt
 	public function void QGraphicsSceneHoverEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QGraphicsSceneHoverEvent_OnSetAccepted")]
 	public static extern void QGraphicsSceneHoverEvent_OnSetAccepted(void* self, QGraphicsSceneHoverEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QGraphicsSceneHoverEvent_SuperSetAccepted")]
+	public static extern void QGraphicsSceneHoverEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QGraphicsSceneHoverEvent_Clone")]
 	public static extern void** QGraphicsSceneHoverEvent_Clone(void* self);
 	
 	public function void QGraphicsSceneHoverEvent_OnClone_action(void* self);
 	[LinkName("QGraphicsSceneHoverEvent_OnClone")]
 	public static extern void** QGraphicsSceneHoverEvent_OnClone(void* self, QGraphicsSceneHoverEvent_OnClone_action _action);
+	
+	[LinkName("QGraphicsSceneHoverEvent_SuperClone")]
+	public static extern void** QGraphicsSceneHoverEvent_SuperClone(void* self);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneHelpEvent
@@ -1778,6 +1868,18 @@ class QGraphicsSceneHelpEvent : IQGraphicsSceneHelpEvent, IQGraphicsSceneEvent, 
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsSceneHelpEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QGraphicsSceneHelpEvent_OnSetAccepted);
+		CQt.QGraphicsSceneHelpEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGraphicsSceneHelpEvent_OnClone);
+	}
+	static void QtBeef_QGraphicsSceneHelpEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QGraphicsSceneHelpEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGraphicsSceneHelpEvent_Ptr ptr)
 	{
@@ -1903,12 +2005,18 @@ extension CQt
 	public function void QGraphicsSceneHelpEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QGraphicsSceneHelpEvent_OnSetAccepted")]
 	public static extern void QGraphicsSceneHelpEvent_OnSetAccepted(void* self, QGraphicsSceneHelpEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QGraphicsSceneHelpEvent_SuperSetAccepted")]
+	public static extern void QGraphicsSceneHelpEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QGraphicsSceneHelpEvent_Clone")]
 	public static extern void** QGraphicsSceneHelpEvent_Clone(void* self);
 	
 	public function void QGraphicsSceneHelpEvent_OnClone_action(void* self);
 	[LinkName("QGraphicsSceneHelpEvent_OnClone")]
 	public static extern void** QGraphicsSceneHelpEvent_OnClone(void* self, QGraphicsSceneHelpEvent_OnClone_action _action);
+	
+	[LinkName("QGraphicsSceneHelpEvent_SuperClone")]
+	public static extern void** QGraphicsSceneHelpEvent_SuperClone(void* self);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneDragDropEvent
@@ -2077,6 +2185,18 @@ class QGraphicsSceneDragDropEvent : IQGraphicsSceneDragDropEvent, IQGraphicsScen
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsSceneDragDropEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QGraphicsSceneDragDropEvent_OnSetAccepted);
+		CQt.QGraphicsSceneDragDropEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGraphicsSceneDragDropEvent_OnClone);
+	}
+	static void QtBeef_QGraphicsSceneDragDropEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QGraphicsSceneDragDropEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGraphicsSceneDragDropEvent_Ptr ptr)
 	{
@@ -2304,12 +2424,18 @@ extension CQt
 	public function void QGraphicsSceneDragDropEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QGraphicsSceneDragDropEvent_OnSetAccepted")]
 	public static extern void QGraphicsSceneDragDropEvent_OnSetAccepted(void* self, QGraphicsSceneDragDropEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QGraphicsSceneDragDropEvent_SuperSetAccepted")]
+	public static extern void QGraphicsSceneDragDropEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QGraphicsSceneDragDropEvent_Clone")]
 	public static extern void** QGraphicsSceneDragDropEvent_Clone(void* self);
 	
 	public function void QGraphicsSceneDragDropEvent_OnClone_action(void* self);
 	[LinkName("QGraphicsSceneDragDropEvent_OnClone")]
 	public static extern void** QGraphicsSceneDragDropEvent_OnClone(void* self, QGraphicsSceneDragDropEvent_OnClone_action _action);
+	
+	[LinkName("QGraphicsSceneDragDropEvent_SuperClone")]
+	public static extern void** QGraphicsSceneDragDropEvent_SuperClone(void* self);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneResizeEvent
@@ -2410,6 +2536,18 @@ class QGraphicsSceneResizeEvent : IQGraphicsSceneResizeEvent, IQGraphicsSceneEve
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsSceneResizeEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QGraphicsSceneResizeEvent_OnSetAccepted);
+		CQt.QGraphicsSceneResizeEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGraphicsSceneResizeEvent_OnClone);
+	}
+	static void QtBeef_QGraphicsSceneResizeEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QGraphicsSceneResizeEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGraphicsSceneResizeEvent_Ptr ptr)
 	{
@@ -2528,12 +2666,18 @@ extension CQt
 	public function void QGraphicsSceneResizeEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QGraphicsSceneResizeEvent_OnSetAccepted")]
 	public static extern void QGraphicsSceneResizeEvent_OnSetAccepted(void* self, QGraphicsSceneResizeEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QGraphicsSceneResizeEvent_SuperSetAccepted")]
+	public static extern void QGraphicsSceneResizeEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QGraphicsSceneResizeEvent_Clone")]
 	public static extern void** QGraphicsSceneResizeEvent_Clone(void* self);
 	
 	public function void QGraphicsSceneResizeEvent_OnClone_action(void* self);
 	[LinkName("QGraphicsSceneResizeEvent_OnClone")]
 	public static extern void** QGraphicsSceneResizeEvent_OnClone(void* self, QGraphicsSceneResizeEvent_OnClone_action _action);
+	
+	[LinkName("QGraphicsSceneResizeEvent_SuperClone")]
+	public static extern void** QGraphicsSceneResizeEvent_SuperClone(void* self);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneMoveEvent
@@ -2634,6 +2778,18 @@ class QGraphicsSceneMoveEvent : IQGraphicsSceneMoveEvent, IQGraphicsSceneEvent, 
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsSceneMoveEvent_OnSetAccepted(obj.ObjectPtr,  => QtBeef_QGraphicsSceneMoveEvent_OnSetAccepted);
+		CQt.QGraphicsSceneMoveEvent_OnClone(obj.ObjectPtr,  => QtBeef_QGraphicsSceneMoveEvent_OnClone);
+	}
+	static void QtBeef_QGraphicsSceneMoveEvent_OnSetAccepted(void* ptr, bool accepted)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetAccepted(accepted);
+	}
+	static void QtBeef_QGraphicsSceneMoveEvent_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
 	}
 	public this(QGraphicsSceneMoveEvent_Ptr ptr)
 	{
@@ -2752,12 +2908,18 @@ extension CQt
 	public function void QGraphicsSceneMoveEvent_OnSetAccepted_action(void* self, bool accepted);
 	[LinkName("QGraphicsSceneMoveEvent_OnSetAccepted")]
 	public static extern void QGraphicsSceneMoveEvent_OnSetAccepted(void* self, QGraphicsSceneMoveEvent_OnSetAccepted_action _action);
+	
+	[LinkName("QGraphicsSceneMoveEvent_SuperSetAccepted")]
+	public static extern void QGraphicsSceneMoveEvent_SuperSetAccepted(void* self, bool accepted);
 	[LinkName("QGraphicsSceneMoveEvent_Clone")]
 	public static extern void** QGraphicsSceneMoveEvent_Clone(void* self);
 	
 	public function void QGraphicsSceneMoveEvent_OnClone_action(void* self);
 	[LinkName("QGraphicsSceneMoveEvent_OnClone")]
 	public static extern void** QGraphicsSceneMoveEvent_OnClone(void* self, QGraphicsSceneMoveEvent_OnClone_action _action);
+	
+	[LinkName("QGraphicsSceneMoveEvent_SuperClone")]
+	public static extern void** QGraphicsSceneMoveEvent_SuperClone(void* self);
 }
 [AllowDuplicates]
 enum QGraphicsSceneContextMenuEvent_Reason

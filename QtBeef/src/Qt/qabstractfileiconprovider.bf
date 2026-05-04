@@ -42,6 +42,36 @@ class QAbstractFileIconProvider : IQAbstractFileIconProvider
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractFileIconProvider_OnIcon(obj.ObjectPtr,  => QtBeef_QAbstractFileIconProvider_OnIcon);
+		CQt.QAbstractFileIconProvider_OnIcon2(obj.ObjectPtr,  => QtBeef_QAbstractFileIconProvider_OnIcon2);
+		CQt.QAbstractFileIconProvider_OnType(obj.ObjectPtr,  => QtBeef_QAbstractFileIconProvider_OnType);
+		CQt.QAbstractFileIconProvider_OnSetOptions(obj.ObjectPtr,  => QtBeef_QAbstractFileIconProvider_OnSetOptions);
+		CQt.QAbstractFileIconProvider_OnOptions(obj.ObjectPtr,  => QtBeef_QAbstractFileIconProvider_OnOptions);
+	}
+	static void QtBeef_QAbstractFileIconProvider_OnIcon(void* ptr, QAbstractFileIconProvider_IconType param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIcon(param1);
+	}
+	static void QtBeef_QAbstractFileIconProvider_OnIcon2(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIcon2(param1);
+	}
+	static void QtBeef_QAbstractFileIconProvider_OnType(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnType(scope .(), param1);
+	}
+	static void QtBeef_QAbstractFileIconProvider_OnSetOptions(void* ptr, void* options)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetOptions(options);
+	}
+	static void QtBeef_QAbstractFileIconProvider_OnOptions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOptions();
 	}
 	public this(QAbstractFileIconProvider_Ptr ptr)
 	{
@@ -91,30 +121,45 @@ extension CQt
 	public function void QAbstractFileIconProvider_OnIcon_action(void* self, QAbstractFileIconProvider_IconType param1);
 	[LinkName("QAbstractFileIconProvider_OnIcon")]
 	public static extern void* QAbstractFileIconProvider_OnIcon(void* self, QAbstractFileIconProvider_OnIcon_action _action);
+	
+	[LinkName("QAbstractFileIconProvider_SuperIcon")]
+	public static extern void* QAbstractFileIconProvider_SuperIcon(void* self, QAbstractFileIconProvider_IconType param1);
 	[LinkName("QAbstractFileIconProvider_Icon2")]
 	public static extern void* QAbstractFileIconProvider_Icon2(void* self, void** param1);
 	
 	public function void QAbstractFileIconProvider_OnIcon2_action(void* self, void** param1);
 	[LinkName("QAbstractFileIconProvider_OnIcon2")]
 	public static extern void* QAbstractFileIconProvider_OnIcon2(void* self, QAbstractFileIconProvider_OnIcon2_action _action);
+	
+	[LinkName("QAbstractFileIconProvider_SuperIcon2")]
+	public static extern void* QAbstractFileIconProvider_SuperIcon2(void* self, void** param1);
 	[LinkName("QAbstractFileIconProvider_Type")]
 	public static extern libqt_string QAbstractFileIconProvider_Type(void* self, void** param1);
 	
 	public function void QAbstractFileIconProvider_OnType_action(void* self, void** param1);
 	[LinkName("QAbstractFileIconProvider_OnType")]
 	public static extern libqt_string QAbstractFileIconProvider_OnType(void* self, QAbstractFileIconProvider_OnType_action _action);
+	
+	[LinkName("QAbstractFileIconProvider_SuperType")]
+	public static extern libqt_string QAbstractFileIconProvider_SuperType(void* self, void** param1);
 	[LinkName("QAbstractFileIconProvider_SetOptions")]
 	public static extern void QAbstractFileIconProvider_SetOptions(void* self, void* options);
 	
 	public function void QAbstractFileIconProvider_OnSetOptions_action(void* self, void* options);
 	[LinkName("QAbstractFileIconProvider_OnSetOptions")]
 	public static extern void QAbstractFileIconProvider_OnSetOptions(void* self, QAbstractFileIconProvider_OnSetOptions_action _action);
+	
+	[LinkName("QAbstractFileIconProvider_SuperSetOptions")]
+	public static extern void QAbstractFileIconProvider_SuperSetOptions(void* self, void* options);
 	[LinkName("QAbstractFileIconProvider_Options")]
 	public static extern void* QAbstractFileIconProvider_Options(void* self);
 	
 	public function void QAbstractFileIconProvider_OnOptions_action(void* self);
 	[LinkName("QAbstractFileIconProvider_OnOptions")]
 	public static extern void* QAbstractFileIconProvider_OnOptions(void* self, QAbstractFileIconProvider_OnOptions_action _action);
+	
+	[LinkName("QAbstractFileIconProvider_SuperOptions")]
+	public static extern void* QAbstractFileIconProvider_SuperOptions(void* self);
 }
 [AllowDuplicates]
 enum QAbstractFileIconProvider_IconType

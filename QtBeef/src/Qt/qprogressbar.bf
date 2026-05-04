@@ -1689,6 +1689,58 @@ class QProgressBar : IQProgressBar, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QProgressBar_OnMetaObject(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMetaObject);
+		CQt.QProgressBar_OnMetacast(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMetacast);
+		CQt.QProgressBar_OnMetacall(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMetacall);
+		CQt.QProgressBar_OnText(obj.ObjectPtr,  => QtBeef_QProgressBar_OnText);
+		CQt.QProgressBar_OnSizeHint(obj.ObjectPtr,  => QtBeef_QProgressBar_OnSizeHint);
+		CQt.QProgressBar_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMinimumSizeHint);
+		CQt.QProgressBar_OnEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnEvent);
+		CQt.QProgressBar_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnPaintEvent);
+		CQt.QProgressBar_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QProgressBar_OnInitStyleOption);
+		CQt.QProgressBar_OnEventFilter(obj.ObjectPtr,  => QtBeef_QProgressBar_OnEventFilter);
+		CQt.QProgressBar_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnTimerEvent);
+		CQt.QProgressBar_OnChildEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnChildEvent);
+		CQt.QProgressBar_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnCustomEvent);
+		CQt.QProgressBar_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QProgressBar_OnConnectNotify);
+		CQt.QProgressBar_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QProgressBar_OnDisconnectNotify);
+		CQt.QProgressBar_OnDevType(obj.ObjectPtr,  => QtBeef_QProgressBar_OnDevType);
+		CQt.QProgressBar_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QProgressBar_OnPaintEngine);
+		CQt.QProgressBar_OnMetric(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMetric);
+		CQt.QProgressBar_OnInitPainter(obj.ObjectPtr,  => QtBeef_QProgressBar_OnInitPainter);
+		CQt.QProgressBar_OnRedirected(obj.ObjectPtr,  => QtBeef_QProgressBar_OnRedirected);
+		CQt.QProgressBar_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QProgressBar_OnSharedPainter);
+		CQt.QProgressBar_OnSetVisible(obj.ObjectPtr,  => QtBeef_QProgressBar_OnSetVisible);
+		CQt.QProgressBar_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QProgressBar_OnHeightForWidth);
+		CQt.QProgressBar_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QProgressBar_OnHasHeightForWidth);
+		CQt.QProgressBar_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMousePressEvent);
+		CQt.QProgressBar_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMouseReleaseEvent);
+		CQt.QProgressBar_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMouseDoubleClickEvent);
+		CQt.QProgressBar_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMouseMoveEvent);
+		CQt.QProgressBar_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnWheelEvent);
+		CQt.QProgressBar_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnKeyPressEvent);
+		CQt.QProgressBar_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnKeyReleaseEvent);
+		CQt.QProgressBar_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnFocusInEvent);
+		CQt.QProgressBar_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnFocusOutEvent);
+		CQt.QProgressBar_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnEnterEvent);
+		CQt.QProgressBar_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnLeaveEvent);
+		CQt.QProgressBar_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnMoveEvent);
+		CQt.QProgressBar_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnResizeEvent);
+		CQt.QProgressBar_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnCloseEvent);
+		CQt.QProgressBar_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnContextMenuEvent);
+		CQt.QProgressBar_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnTabletEvent);
+		CQt.QProgressBar_OnActionEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnActionEvent);
+		CQt.QProgressBar_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnDragEnterEvent);
+		CQt.QProgressBar_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnDragMoveEvent);
+		CQt.QProgressBar_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnDragLeaveEvent);
+		CQt.QProgressBar_OnDropEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnDropEvent);
+		CQt.QProgressBar_OnShowEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnShowEvent);
+		CQt.QProgressBar_OnHideEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnHideEvent);
+		CQt.QProgressBar_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnNativeEvent);
+		CQt.QProgressBar_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnChangeEvent);
+		CQt.QProgressBar_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QProgressBar_OnInputMethodEvent);
+		CQt.QProgressBar_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QProgressBar_OnInputMethodQuery);
+		CQt.QProgressBar_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QProgressBar_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(c_int value)> OnValueChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1731,6 +1783,266 @@ class QProgressBar : IQProgressBar, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QProgressBar_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QProgressBar_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QProgressBar_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QProgressBar_OnText(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnText(scope .());
+	}
+	static void QtBeef_QProgressBar_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QProgressBar_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QProgressBar_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QProgressBar_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QProgressBar_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QProgressBar_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QProgressBar_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QProgressBar_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QProgressBar_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QProgressBar_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QProgressBar_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QProgressBar_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QProgressBar_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QProgressBar_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QProgressBar_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QProgressBar_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QProgressBar_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QProgressBar_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QProgressBar_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QProgressBar_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QProgressBar_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QProgressBar_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QProgressBar_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QProgressBar_Ptr ptr)
 	{
@@ -3394,18 +3706,27 @@ extension CQt
 	public function void QProgressBar_OnMetaObject_action(void* self);
 	[LinkName("QProgressBar_OnMetaObject")]
 	public static extern void** QProgressBar_OnMetaObject(void* self, QProgressBar_OnMetaObject_action _action);
+	
+	[LinkName("QProgressBar_SuperMetaObject")]
+	public static extern void** QProgressBar_SuperMetaObject(void* self);
 	[LinkName("QProgressBar_Qt_Metacast")]
 	public static extern void* QProgressBar_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QProgressBar_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QProgressBar_OnMetacast")]
 	public static extern void* QProgressBar_OnMetacast(void* self, QProgressBar_OnMetacast_action _action);
+	
+	[LinkName("QProgressBar_SuperMetacast")]
+	public static extern void* QProgressBar_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QProgressBar_Qt_Metacall")]
 	public static extern c_int QProgressBar_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QProgressBar_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QProgressBar_OnMetacall")]
 	public static extern c_int QProgressBar_OnMetacall(void* self, QProgressBar_OnMetacall_action _action);
+	
+	[LinkName("QProgressBar_SuperMetacall")]
+	public static extern c_int QProgressBar_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QProgressBar_Tr")]
 	public static extern libqt_string QProgressBar_Tr(c_char* s);
 	[LinkName("QProgressBar_Minimum")]
@@ -3420,6 +3741,9 @@ extension CQt
 	public function void QProgressBar_OnText_action(void* self);
 	[LinkName("QProgressBar_OnText")]
 	public static extern libqt_string QProgressBar_OnText(void* self, QProgressBar_OnText_action _action);
+	
+	[LinkName("QProgressBar_SuperText")]
+	public static extern libqt_string QProgressBar_SuperText(void* self);
 	[LinkName("QProgressBar_SetTextVisible")]
 	public static extern void QProgressBar_SetTextVisible(void* self, bool visible);
 	[LinkName("QProgressBar_IsTextVisible")]
@@ -3434,12 +3758,18 @@ extension CQt
 	public function void QProgressBar_OnSizeHint_action(void* self);
 	[LinkName("QProgressBar_OnSizeHint")]
 	public static extern void* QProgressBar_OnSizeHint(void* self, QProgressBar_OnSizeHint_action _action);
+	
+	[LinkName("QProgressBar_SuperSizeHint")]
+	public static extern void* QProgressBar_SuperSizeHint(void* self);
 	[LinkName("QProgressBar_MinimumSizeHint")]
 	public static extern void* QProgressBar_MinimumSizeHint(void* self);
 	
 	public function void QProgressBar_OnMinimumSizeHint_action(void* self);
 	[LinkName("QProgressBar_OnMinimumSizeHint")]
 	public static extern void* QProgressBar_OnMinimumSizeHint(void* self, QProgressBar_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QProgressBar_SuperMinimumSizeHint")]
+	public static extern void* QProgressBar_SuperMinimumSizeHint(void* self);
 	[LinkName("QProgressBar_Orientation")]
 	public static extern Qt_Orientation QProgressBar_Orientation(void* self);
 	[LinkName("QProgressBar_SetInvertedAppearance")]
@@ -3480,18 +3810,27 @@ extension CQt
 	public function void QProgressBar_OnEvent_action(void* self, void** e);
 	[LinkName("QProgressBar_OnEvent")]
 	public static extern bool QProgressBar_OnEvent(void* self, QProgressBar_OnEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperEvent")]
+	public static extern bool QProgressBar_SuperEvent(void* self, void** e);
 	[LinkName("QProgressBar_PaintEvent")]
 	public static extern void QProgressBar_PaintEvent(void* self, void** param1);
 	
 	public function void QProgressBar_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QProgressBar_OnPaintEvent")]
 	public static extern void QProgressBar_OnPaintEvent(void* self, QProgressBar_OnPaintEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperPaintEvent")]
+	public static extern void QProgressBar_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QProgressBar_InitStyleOption")]
 	public static extern void QProgressBar_InitStyleOption(void* self, void** option);
 	
 	public function void QProgressBar_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QProgressBar_OnInitStyleOption")]
 	public static extern void QProgressBar_OnInitStyleOption(void* self, QProgressBar_OnInitStyleOption_action _action);
+	
+	[LinkName("QProgressBar_SuperInitStyleOption")]
+	public static extern void QProgressBar_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QProgressBar_Tr2")]
 	public static extern libqt_string QProgressBar_Tr2(c_char* s, c_char* c);
 	[LinkName("QProgressBar_Tr3")]
@@ -3502,258 +3841,387 @@ extension CQt
 	public function void QProgressBar_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QProgressBar_OnEventFilter")]
 	public static extern bool QProgressBar_OnEventFilter(void* self, QProgressBar_OnEventFilter_action _action);
+	
+	[LinkName("QProgressBar_SuperEventFilter")]
+	public static extern bool QProgressBar_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QProgressBar_TimerEvent")]
 	public static extern void QProgressBar_TimerEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnTimerEvent")]
 	public static extern void QProgressBar_OnTimerEvent(void* self, QProgressBar_OnTimerEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperTimerEvent")]
+	public static extern void QProgressBar_SuperTimerEvent(void* self, void** event);
 	[LinkName("QProgressBar_ChildEvent")]
 	public static extern void QProgressBar_ChildEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnChildEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnChildEvent")]
 	public static extern void QProgressBar_OnChildEvent(void* self, QProgressBar_OnChildEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperChildEvent")]
+	public static extern void QProgressBar_SuperChildEvent(void* self, void** event);
 	[LinkName("QProgressBar_CustomEvent")]
 	public static extern void QProgressBar_CustomEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnCustomEvent")]
 	public static extern void QProgressBar_OnCustomEvent(void* self, QProgressBar_OnCustomEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperCustomEvent")]
+	public static extern void QProgressBar_SuperCustomEvent(void* self, void** event);
 	[LinkName("QProgressBar_ConnectNotify")]
 	public static extern void QProgressBar_ConnectNotify(void* self, void** signal);
 	
 	public function void QProgressBar_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QProgressBar_OnConnectNotify")]
 	public static extern void QProgressBar_OnConnectNotify(void* self, QProgressBar_OnConnectNotify_action _action);
+	
+	[LinkName("QProgressBar_SuperConnectNotify")]
+	public static extern void QProgressBar_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QProgressBar_DisconnectNotify")]
 	public static extern void QProgressBar_DisconnectNotify(void* self, void** signal);
 	
 	public function void QProgressBar_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QProgressBar_OnDisconnectNotify")]
 	public static extern void QProgressBar_OnDisconnectNotify(void* self, QProgressBar_OnDisconnectNotify_action _action);
+	
+	[LinkName("QProgressBar_SuperDisconnectNotify")]
+	public static extern void QProgressBar_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QProgressBar_DevType")]
 	public static extern c_int QProgressBar_DevType(void* self);
 	
 	public function void QProgressBar_OnDevType_action(void* self);
 	[LinkName("QProgressBar_OnDevType")]
 	public static extern c_int QProgressBar_OnDevType(void* self, QProgressBar_OnDevType_action _action);
+	
+	[LinkName("QProgressBar_SuperDevType")]
+	public static extern c_int QProgressBar_SuperDevType(void* self);
 	[LinkName("QProgressBar_PaintEngine")]
 	public static extern void** QProgressBar_PaintEngine(void* self);
 	
 	public function void QProgressBar_OnPaintEngine_action(void* self);
 	[LinkName("QProgressBar_OnPaintEngine")]
 	public static extern void** QProgressBar_OnPaintEngine(void* self, QProgressBar_OnPaintEngine_action _action);
+	
+	[LinkName("QProgressBar_SuperPaintEngine")]
+	public static extern void** QProgressBar_SuperPaintEngine(void* self);
 	[LinkName("QProgressBar_Metric")]
 	public static extern c_int QProgressBar_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QProgressBar_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QProgressBar_OnMetric")]
 	public static extern c_int QProgressBar_OnMetric(void* self, QProgressBar_OnMetric_action _action);
+	
+	[LinkName("QProgressBar_SuperMetric")]
+	public static extern c_int QProgressBar_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QProgressBar_InitPainter")]
 	public static extern void QProgressBar_InitPainter(void* self, void** painter);
 	
 	public function void QProgressBar_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QProgressBar_OnInitPainter")]
 	public static extern void QProgressBar_OnInitPainter(void* self, QProgressBar_OnInitPainter_action _action);
+	
+	[LinkName("QProgressBar_SuperInitPainter")]
+	public static extern void QProgressBar_SuperInitPainter(void* self, void** painter);
 	[LinkName("QProgressBar_Redirected")]
 	public static extern void** QProgressBar_Redirected(void* self, void** offset);
 	
 	public function void QProgressBar_OnRedirected_action(void* self, void** offset);
 	[LinkName("QProgressBar_OnRedirected")]
 	public static extern void** QProgressBar_OnRedirected(void* self, QProgressBar_OnRedirected_action _action);
+	
+	[LinkName("QProgressBar_SuperRedirected")]
+	public static extern void** QProgressBar_SuperRedirected(void* self, void** offset);
 	[LinkName("QProgressBar_SharedPainter")]
 	public static extern void** QProgressBar_SharedPainter(void* self);
 	
 	public function void QProgressBar_OnSharedPainter_action(void* self);
 	[LinkName("QProgressBar_OnSharedPainter")]
 	public static extern void** QProgressBar_OnSharedPainter(void* self, QProgressBar_OnSharedPainter_action _action);
+	
+	[LinkName("QProgressBar_SuperSharedPainter")]
+	public static extern void** QProgressBar_SuperSharedPainter(void* self);
 	[LinkName("QProgressBar_SetVisible")]
 	public static extern void QProgressBar_SetVisible(void* self, bool visible);
 	
 	public function void QProgressBar_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QProgressBar_OnSetVisible")]
 	public static extern void QProgressBar_OnSetVisible(void* self, QProgressBar_OnSetVisible_action _action);
+	
+	[LinkName("QProgressBar_SuperSetVisible")]
+	public static extern void QProgressBar_SuperSetVisible(void* self, bool visible);
 	[LinkName("QProgressBar_HeightForWidth")]
 	public static extern c_int QProgressBar_HeightForWidth(void* self, c_int param1);
 	
 	public function void QProgressBar_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QProgressBar_OnHeightForWidth")]
 	public static extern c_int QProgressBar_OnHeightForWidth(void* self, QProgressBar_OnHeightForWidth_action _action);
+	
+	[LinkName("QProgressBar_SuperHeightForWidth")]
+	public static extern c_int QProgressBar_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QProgressBar_HasHeightForWidth")]
 	public static extern bool QProgressBar_HasHeightForWidth(void* self);
 	
 	public function void QProgressBar_OnHasHeightForWidth_action(void* self);
 	[LinkName("QProgressBar_OnHasHeightForWidth")]
 	public static extern bool QProgressBar_OnHasHeightForWidth(void* self, QProgressBar_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QProgressBar_SuperHasHeightForWidth")]
+	public static extern bool QProgressBar_SuperHasHeightForWidth(void* self);
 	[LinkName("QProgressBar_MousePressEvent")]
 	public static extern void QProgressBar_MousePressEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnMousePressEvent")]
 	public static extern void QProgressBar_OnMousePressEvent(void* self, QProgressBar_OnMousePressEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperMousePressEvent")]
+	public static extern void QProgressBar_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QProgressBar_MouseReleaseEvent")]
 	public static extern void QProgressBar_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnMouseReleaseEvent")]
 	public static extern void QProgressBar_OnMouseReleaseEvent(void* self, QProgressBar_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperMouseReleaseEvent")]
+	public static extern void QProgressBar_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QProgressBar_MouseDoubleClickEvent")]
 	public static extern void QProgressBar_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnMouseDoubleClickEvent")]
 	public static extern void QProgressBar_OnMouseDoubleClickEvent(void* self, QProgressBar_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperMouseDoubleClickEvent")]
+	public static extern void QProgressBar_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QProgressBar_MouseMoveEvent")]
 	public static extern void QProgressBar_MouseMoveEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnMouseMoveEvent")]
 	public static extern void QProgressBar_OnMouseMoveEvent(void* self, QProgressBar_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperMouseMoveEvent")]
+	public static extern void QProgressBar_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QProgressBar_WheelEvent")]
 	public static extern void QProgressBar_WheelEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnWheelEvent")]
 	public static extern void QProgressBar_OnWheelEvent(void* self, QProgressBar_OnWheelEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperWheelEvent")]
+	public static extern void QProgressBar_SuperWheelEvent(void* self, void** event);
 	[LinkName("QProgressBar_KeyPressEvent")]
 	public static extern void QProgressBar_KeyPressEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnKeyPressEvent")]
 	public static extern void QProgressBar_OnKeyPressEvent(void* self, QProgressBar_OnKeyPressEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperKeyPressEvent")]
+	public static extern void QProgressBar_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QProgressBar_KeyReleaseEvent")]
 	public static extern void QProgressBar_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnKeyReleaseEvent")]
 	public static extern void QProgressBar_OnKeyReleaseEvent(void* self, QProgressBar_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperKeyReleaseEvent")]
+	public static extern void QProgressBar_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QProgressBar_FocusInEvent")]
 	public static extern void QProgressBar_FocusInEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnFocusInEvent")]
 	public static extern void QProgressBar_OnFocusInEvent(void* self, QProgressBar_OnFocusInEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperFocusInEvent")]
+	public static extern void QProgressBar_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QProgressBar_FocusOutEvent")]
 	public static extern void QProgressBar_FocusOutEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnFocusOutEvent")]
 	public static extern void QProgressBar_OnFocusOutEvent(void* self, QProgressBar_OnFocusOutEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperFocusOutEvent")]
+	public static extern void QProgressBar_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QProgressBar_EnterEvent")]
 	public static extern void QProgressBar_EnterEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnEnterEvent")]
 	public static extern void QProgressBar_OnEnterEvent(void* self, QProgressBar_OnEnterEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperEnterEvent")]
+	public static extern void QProgressBar_SuperEnterEvent(void* self, void** event);
 	[LinkName("QProgressBar_LeaveEvent")]
 	public static extern void QProgressBar_LeaveEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnLeaveEvent")]
 	public static extern void QProgressBar_OnLeaveEvent(void* self, QProgressBar_OnLeaveEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperLeaveEvent")]
+	public static extern void QProgressBar_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QProgressBar_MoveEvent")]
 	public static extern void QProgressBar_MoveEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnMoveEvent")]
 	public static extern void QProgressBar_OnMoveEvent(void* self, QProgressBar_OnMoveEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperMoveEvent")]
+	public static extern void QProgressBar_SuperMoveEvent(void* self, void** event);
 	[LinkName("QProgressBar_ResizeEvent")]
 	public static extern void QProgressBar_ResizeEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnResizeEvent")]
 	public static extern void QProgressBar_OnResizeEvent(void* self, QProgressBar_OnResizeEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperResizeEvent")]
+	public static extern void QProgressBar_SuperResizeEvent(void* self, void** event);
 	[LinkName("QProgressBar_CloseEvent")]
 	public static extern void QProgressBar_CloseEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnCloseEvent")]
 	public static extern void QProgressBar_OnCloseEvent(void* self, QProgressBar_OnCloseEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperCloseEvent")]
+	public static extern void QProgressBar_SuperCloseEvent(void* self, void** event);
 	[LinkName("QProgressBar_ContextMenuEvent")]
 	public static extern void QProgressBar_ContextMenuEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnContextMenuEvent")]
 	public static extern void QProgressBar_OnContextMenuEvent(void* self, QProgressBar_OnContextMenuEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperContextMenuEvent")]
+	public static extern void QProgressBar_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QProgressBar_TabletEvent")]
 	public static extern void QProgressBar_TabletEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnTabletEvent")]
 	public static extern void QProgressBar_OnTabletEvent(void* self, QProgressBar_OnTabletEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperTabletEvent")]
+	public static extern void QProgressBar_SuperTabletEvent(void* self, void** event);
 	[LinkName("QProgressBar_ActionEvent")]
 	public static extern void QProgressBar_ActionEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnActionEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnActionEvent")]
 	public static extern void QProgressBar_OnActionEvent(void* self, QProgressBar_OnActionEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperActionEvent")]
+	public static extern void QProgressBar_SuperActionEvent(void* self, void** event);
 	[LinkName("QProgressBar_DragEnterEvent")]
 	public static extern void QProgressBar_DragEnterEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnDragEnterEvent")]
 	public static extern void QProgressBar_OnDragEnterEvent(void* self, QProgressBar_OnDragEnterEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperDragEnterEvent")]
+	public static extern void QProgressBar_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QProgressBar_DragMoveEvent")]
 	public static extern void QProgressBar_DragMoveEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnDragMoveEvent")]
 	public static extern void QProgressBar_OnDragMoveEvent(void* self, QProgressBar_OnDragMoveEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperDragMoveEvent")]
+	public static extern void QProgressBar_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QProgressBar_DragLeaveEvent")]
 	public static extern void QProgressBar_DragLeaveEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnDragLeaveEvent")]
 	public static extern void QProgressBar_OnDragLeaveEvent(void* self, QProgressBar_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperDragLeaveEvent")]
+	public static extern void QProgressBar_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QProgressBar_DropEvent")]
 	public static extern void QProgressBar_DropEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnDropEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnDropEvent")]
 	public static extern void QProgressBar_OnDropEvent(void* self, QProgressBar_OnDropEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperDropEvent")]
+	public static extern void QProgressBar_SuperDropEvent(void* self, void** event);
 	[LinkName("QProgressBar_ShowEvent")]
 	public static extern void QProgressBar_ShowEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnShowEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnShowEvent")]
 	public static extern void QProgressBar_OnShowEvent(void* self, QProgressBar_OnShowEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperShowEvent")]
+	public static extern void QProgressBar_SuperShowEvent(void* self, void** event);
 	[LinkName("QProgressBar_HideEvent")]
 	public static extern void QProgressBar_HideEvent(void* self, void** event);
 	
 	public function void QProgressBar_OnHideEvent_action(void* self, void** event);
 	[LinkName("QProgressBar_OnHideEvent")]
 	public static extern void QProgressBar_OnHideEvent(void* self, QProgressBar_OnHideEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperHideEvent")]
+	public static extern void QProgressBar_SuperHideEvent(void* self, void** event);
 	[LinkName("QProgressBar_NativeEvent")]
 	public static extern bool QProgressBar_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QProgressBar_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QProgressBar_OnNativeEvent")]
 	public static extern bool QProgressBar_OnNativeEvent(void* self, QProgressBar_OnNativeEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperNativeEvent")]
+	public static extern bool QProgressBar_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QProgressBar_ChangeEvent")]
 	public static extern void QProgressBar_ChangeEvent(void* self, void** param1);
 	
 	public function void QProgressBar_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QProgressBar_OnChangeEvent")]
 	public static extern void QProgressBar_OnChangeEvent(void* self, QProgressBar_OnChangeEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperChangeEvent")]
+	public static extern void QProgressBar_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QProgressBar_InputMethodEvent")]
 	public static extern void QProgressBar_InputMethodEvent(void* self, void** param1);
 	
 	public function void QProgressBar_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QProgressBar_OnInputMethodEvent")]
 	public static extern void QProgressBar_OnInputMethodEvent(void* self, QProgressBar_OnInputMethodEvent_action _action);
+	
+	[LinkName("QProgressBar_SuperInputMethodEvent")]
+	public static extern void QProgressBar_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QProgressBar_InputMethodQuery")]
 	public static extern void* QProgressBar_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QProgressBar_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QProgressBar_OnInputMethodQuery")]
 	public static extern void* QProgressBar_OnInputMethodQuery(void* self, QProgressBar_OnInputMethodQuery_action _action);
+	
+	[LinkName("QProgressBar_SuperInputMethodQuery")]
+	public static extern void* QProgressBar_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QProgressBar_FocusNextPrevChild")]
 	public static extern bool QProgressBar_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QProgressBar_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QProgressBar_OnFocusNextPrevChild")]
 	public static extern bool QProgressBar_OnFocusNextPrevChild(void* self, QProgressBar_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QProgressBar_SuperFocusNextPrevChild")]
+	public static extern bool QProgressBar_SuperFocusNextPrevChild(void* self, bool next);
 }
 [AllowDuplicates]
 enum QProgressBar_Direction

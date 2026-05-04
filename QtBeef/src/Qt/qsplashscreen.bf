@@ -1633,6 +1633,57 @@ class QSplashScreen : IQSplashScreen, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QSplashScreen_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMetaObject);
+		CQt.QSplashScreen_OnMetacast(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMetacast);
+		CQt.QSplashScreen_OnMetacall(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMetacall);
+		CQt.QSplashScreen_OnEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnEvent);
+		CQt.QSplashScreen_OnDrawContents(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnDrawContents);
+		CQt.QSplashScreen_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMousePressEvent);
+		CQt.QSplashScreen_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnEventFilter);
+		CQt.QSplashScreen_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnTimerEvent);
+		CQt.QSplashScreen_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnChildEvent);
+		CQt.QSplashScreen_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnCustomEvent);
+		CQt.QSplashScreen_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnConnectNotify);
+		CQt.QSplashScreen_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnDisconnectNotify);
+		CQt.QSplashScreen_OnDevType(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnDevType);
+		CQt.QSplashScreen_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnPaintEngine);
+		CQt.QSplashScreen_OnMetric(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMetric);
+		CQt.QSplashScreen_OnInitPainter(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnInitPainter);
+		CQt.QSplashScreen_OnRedirected(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnRedirected);
+		CQt.QSplashScreen_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnSharedPainter);
+		CQt.QSplashScreen_OnSetVisible(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnSetVisible);
+		CQt.QSplashScreen_OnSizeHint(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnSizeHint);
+		CQt.QSplashScreen_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMinimumSizeHint);
+		CQt.QSplashScreen_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnHeightForWidth);
+		CQt.QSplashScreen_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnHasHeightForWidth);
+		CQt.QSplashScreen_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMouseReleaseEvent);
+		CQt.QSplashScreen_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMouseDoubleClickEvent);
+		CQt.QSplashScreen_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMouseMoveEvent);
+		CQt.QSplashScreen_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnWheelEvent);
+		CQt.QSplashScreen_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnKeyPressEvent);
+		CQt.QSplashScreen_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnKeyReleaseEvent);
+		CQt.QSplashScreen_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnFocusInEvent);
+		CQt.QSplashScreen_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnFocusOutEvent);
+		CQt.QSplashScreen_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnEnterEvent);
+		CQt.QSplashScreen_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnLeaveEvent);
+		CQt.QSplashScreen_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnPaintEvent);
+		CQt.QSplashScreen_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnMoveEvent);
+		CQt.QSplashScreen_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnResizeEvent);
+		CQt.QSplashScreen_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnCloseEvent);
+		CQt.QSplashScreen_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnContextMenuEvent);
+		CQt.QSplashScreen_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnTabletEvent);
+		CQt.QSplashScreen_OnActionEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnActionEvent);
+		CQt.QSplashScreen_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnDragEnterEvent);
+		CQt.QSplashScreen_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnDragMoveEvent);
+		CQt.QSplashScreen_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnDragLeaveEvent);
+		CQt.QSplashScreen_OnDropEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnDropEvent);
+		CQt.QSplashScreen_OnShowEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnShowEvent);
+		CQt.QSplashScreen_OnHideEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnHideEvent);
+		CQt.QSplashScreen_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnNativeEvent);
+		CQt.QSplashScreen_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnChangeEvent);
+		CQt.QSplashScreen_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnInputMethodEvent);
+		CQt.QSplashScreen_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnInputMethodQuery);
+		CQt.QSplashScreen_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QSplashScreen_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(libqt_string message)> OnMessageChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1675,6 +1726,261 @@ class QSplashScreen : IQSplashScreen, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QSplashScreen_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSplashScreen_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSplashScreen_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSplashScreen_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QSplashScreen_OnDrawContents(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDrawContents(painter);
+	}
+	static void QtBeef_QSplashScreen_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QSplashScreen_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSplashScreen_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSplashScreen_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QSplashScreen_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QSplashScreen_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QSplashScreen_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QSplashScreen_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QSplashScreen_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QSplashScreen_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QSplashScreen_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QSplashScreen_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QSplashScreen_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QSplashScreen_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QSplashScreen_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QSplashScreen_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QSplashScreen_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QSplashScreen_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QSplashScreen_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QSplashScreen_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QSplashScreen_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QSplashScreen_Ptr ptr)
 	{
@@ -3311,18 +3617,27 @@ extension CQt
 	public function void QSplashScreen_OnMetaObject_action(void* self);
 	[LinkName("QSplashScreen_OnMetaObject")]
 	public static extern void** QSplashScreen_OnMetaObject(void* self, QSplashScreen_OnMetaObject_action _action);
+	
+	[LinkName("QSplashScreen_SuperMetaObject")]
+	public static extern void** QSplashScreen_SuperMetaObject(void* self);
 	[LinkName("QSplashScreen_Qt_Metacast")]
 	public static extern void* QSplashScreen_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSplashScreen_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSplashScreen_OnMetacast")]
 	public static extern void* QSplashScreen_OnMetacast(void* self, QSplashScreen_OnMetacast_action _action);
+	
+	[LinkName("QSplashScreen_SuperMetacast")]
+	public static extern void* QSplashScreen_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSplashScreen_Qt_Metacall")]
 	public static extern c_int QSplashScreen_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSplashScreen_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSplashScreen_OnMetacall")]
 	public static extern c_int QSplashScreen_OnMetacall(void* self, QSplashScreen_OnMetacall_action _action);
+	
+	[LinkName("QSplashScreen_SuperMetacall")]
+	public static extern c_int QSplashScreen_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSplashScreen_Tr")]
 	public static extern libqt_string QSplashScreen_Tr(c_char* s);
 	[LinkName("QSplashScreen_SetPixmap")]
@@ -3351,18 +3666,27 @@ extension CQt
 	public function void QSplashScreen_OnEvent_action(void* self, void** e);
 	[LinkName("QSplashScreen_OnEvent")]
 	public static extern bool QSplashScreen_OnEvent(void* self, QSplashScreen_OnEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperEvent")]
+	public static extern bool QSplashScreen_SuperEvent(void* self, void** e);
 	[LinkName("QSplashScreen_DrawContents")]
 	public static extern void QSplashScreen_DrawContents(void* self, void** painter);
 	
 	public function void QSplashScreen_OnDrawContents_action(void* self, void** painter);
 	[LinkName("QSplashScreen_OnDrawContents")]
 	public static extern void QSplashScreen_OnDrawContents(void* self, QSplashScreen_OnDrawContents_action _action);
+	
+	[LinkName("QSplashScreen_SuperDrawContents")]
+	public static extern void QSplashScreen_SuperDrawContents(void* self, void** painter);
 	[LinkName("QSplashScreen_MousePressEvent")]
 	public static extern void QSplashScreen_MousePressEvent(void* self, void** param1);
 	
 	public function void QSplashScreen_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QSplashScreen_OnMousePressEvent")]
 	public static extern void QSplashScreen_OnMousePressEvent(void* self, QSplashScreen_OnMousePressEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperMousePressEvent")]
+	public static extern void QSplashScreen_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QSplashScreen_Tr2")]
 	public static extern libqt_string QSplashScreen_Tr2(c_char* s, c_char* c);
 	[LinkName("QSplashScreen_Tr3")]
@@ -3377,268 +3701,403 @@ extension CQt
 	public function void QSplashScreen_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSplashScreen_OnEventFilter")]
 	public static extern bool QSplashScreen_OnEventFilter(void* self, QSplashScreen_OnEventFilter_action _action);
+	
+	[LinkName("QSplashScreen_SuperEventFilter")]
+	public static extern bool QSplashScreen_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSplashScreen_TimerEvent")]
 	public static extern void QSplashScreen_TimerEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnTimerEvent")]
 	public static extern void QSplashScreen_OnTimerEvent(void* self, QSplashScreen_OnTimerEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperTimerEvent")]
+	public static extern void QSplashScreen_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSplashScreen_ChildEvent")]
 	public static extern void QSplashScreen_ChildEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnChildEvent")]
 	public static extern void QSplashScreen_OnChildEvent(void* self, QSplashScreen_OnChildEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperChildEvent")]
+	public static extern void QSplashScreen_SuperChildEvent(void* self, void** event);
 	[LinkName("QSplashScreen_CustomEvent")]
 	public static extern void QSplashScreen_CustomEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnCustomEvent")]
 	public static extern void QSplashScreen_OnCustomEvent(void* self, QSplashScreen_OnCustomEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperCustomEvent")]
+	public static extern void QSplashScreen_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSplashScreen_ConnectNotify")]
 	public static extern void QSplashScreen_ConnectNotify(void* self, void** signal);
 	
 	public function void QSplashScreen_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSplashScreen_OnConnectNotify")]
 	public static extern void QSplashScreen_OnConnectNotify(void* self, QSplashScreen_OnConnectNotify_action _action);
+	
+	[LinkName("QSplashScreen_SuperConnectNotify")]
+	public static extern void QSplashScreen_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSplashScreen_DisconnectNotify")]
 	public static extern void QSplashScreen_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSplashScreen_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSplashScreen_OnDisconnectNotify")]
 	public static extern void QSplashScreen_OnDisconnectNotify(void* self, QSplashScreen_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSplashScreen_SuperDisconnectNotify")]
+	public static extern void QSplashScreen_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QSplashScreen_DevType")]
 	public static extern c_int QSplashScreen_DevType(void* self);
 	
 	public function void QSplashScreen_OnDevType_action(void* self);
 	[LinkName("QSplashScreen_OnDevType")]
 	public static extern c_int QSplashScreen_OnDevType(void* self, QSplashScreen_OnDevType_action _action);
+	
+	[LinkName("QSplashScreen_SuperDevType")]
+	public static extern c_int QSplashScreen_SuperDevType(void* self);
 	[LinkName("QSplashScreen_PaintEngine")]
 	public static extern void** QSplashScreen_PaintEngine(void* self);
 	
 	public function void QSplashScreen_OnPaintEngine_action(void* self);
 	[LinkName("QSplashScreen_OnPaintEngine")]
 	public static extern void** QSplashScreen_OnPaintEngine(void* self, QSplashScreen_OnPaintEngine_action _action);
+	
+	[LinkName("QSplashScreen_SuperPaintEngine")]
+	public static extern void** QSplashScreen_SuperPaintEngine(void* self);
 	[LinkName("QSplashScreen_Metric")]
 	public static extern c_int QSplashScreen_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QSplashScreen_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSplashScreen_OnMetric")]
 	public static extern c_int QSplashScreen_OnMetric(void* self, QSplashScreen_OnMetric_action _action);
+	
+	[LinkName("QSplashScreen_SuperMetric")]
+	public static extern c_int QSplashScreen_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSplashScreen_InitPainter")]
 	public static extern void QSplashScreen_InitPainter(void* self, void** painter);
 	
 	public function void QSplashScreen_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QSplashScreen_OnInitPainter")]
 	public static extern void QSplashScreen_OnInitPainter(void* self, QSplashScreen_OnInitPainter_action _action);
+	
+	[LinkName("QSplashScreen_SuperInitPainter")]
+	public static extern void QSplashScreen_SuperInitPainter(void* self, void** painter);
 	[LinkName("QSplashScreen_Redirected")]
 	public static extern void** QSplashScreen_Redirected(void* self, void** offset);
 	
 	public function void QSplashScreen_OnRedirected_action(void* self, void** offset);
 	[LinkName("QSplashScreen_OnRedirected")]
 	public static extern void** QSplashScreen_OnRedirected(void* self, QSplashScreen_OnRedirected_action _action);
+	
+	[LinkName("QSplashScreen_SuperRedirected")]
+	public static extern void** QSplashScreen_SuperRedirected(void* self, void** offset);
 	[LinkName("QSplashScreen_SharedPainter")]
 	public static extern void** QSplashScreen_SharedPainter(void* self);
 	
 	public function void QSplashScreen_OnSharedPainter_action(void* self);
 	[LinkName("QSplashScreen_OnSharedPainter")]
 	public static extern void** QSplashScreen_OnSharedPainter(void* self, QSplashScreen_OnSharedPainter_action _action);
+	
+	[LinkName("QSplashScreen_SuperSharedPainter")]
+	public static extern void** QSplashScreen_SuperSharedPainter(void* self);
 	[LinkName("QSplashScreen_SetVisible")]
 	public static extern void QSplashScreen_SetVisible(void* self, bool visible);
 	
 	public function void QSplashScreen_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QSplashScreen_OnSetVisible")]
 	public static extern void QSplashScreen_OnSetVisible(void* self, QSplashScreen_OnSetVisible_action _action);
+	
+	[LinkName("QSplashScreen_SuperSetVisible")]
+	public static extern void QSplashScreen_SuperSetVisible(void* self, bool visible);
 	[LinkName("QSplashScreen_SizeHint")]
 	public static extern void* QSplashScreen_SizeHint(void* self);
 	
 	public function void QSplashScreen_OnSizeHint_action(void* self);
 	[LinkName("QSplashScreen_OnSizeHint")]
 	public static extern void* QSplashScreen_OnSizeHint(void* self, QSplashScreen_OnSizeHint_action _action);
+	
+	[LinkName("QSplashScreen_SuperSizeHint")]
+	public static extern void* QSplashScreen_SuperSizeHint(void* self);
 	[LinkName("QSplashScreen_MinimumSizeHint")]
 	public static extern void* QSplashScreen_MinimumSizeHint(void* self);
 	
 	public function void QSplashScreen_OnMinimumSizeHint_action(void* self);
 	[LinkName("QSplashScreen_OnMinimumSizeHint")]
 	public static extern void* QSplashScreen_OnMinimumSizeHint(void* self, QSplashScreen_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QSplashScreen_SuperMinimumSizeHint")]
+	public static extern void* QSplashScreen_SuperMinimumSizeHint(void* self);
 	[LinkName("QSplashScreen_HeightForWidth")]
 	public static extern c_int QSplashScreen_HeightForWidth(void* self, c_int param1);
 	
 	public function void QSplashScreen_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QSplashScreen_OnHeightForWidth")]
 	public static extern c_int QSplashScreen_OnHeightForWidth(void* self, QSplashScreen_OnHeightForWidth_action _action);
+	
+	[LinkName("QSplashScreen_SuperHeightForWidth")]
+	public static extern c_int QSplashScreen_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QSplashScreen_HasHeightForWidth")]
 	public static extern bool QSplashScreen_HasHeightForWidth(void* self);
 	
 	public function void QSplashScreen_OnHasHeightForWidth_action(void* self);
 	[LinkName("QSplashScreen_OnHasHeightForWidth")]
 	public static extern bool QSplashScreen_OnHasHeightForWidth(void* self, QSplashScreen_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QSplashScreen_SuperHasHeightForWidth")]
+	public static extern bool QSplashScreen_SuperHasHeightForWidth(void* self);
 	[LinkName("QSplashScreen_MouseReleaseEvent")]
 	public static extern void QSplashScreen_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnMouseReleaseEvent")]
 	public static extern void QSplashScreen_OnMouseReleaseEvent(void* self, QSplashScreen_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperMouseReleaseEvent")]
+	public static extern void QSplashScreen_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QSplashScreen_MouseDoubleClickEvent")]
 	public static extern void QSplashScreen_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnMouseDoubleClickEvent")]
 	public static extern void QSplashScreen_OnMouseDoubleClickEvent(void* self, QSplashScreen_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperMouseDoubleClickEvent")]
+	public static extern void QSplashScreen_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QSplashScreen_MouseMoveEvent")]
 	public static extern void QSplashScreen_MouseMoveEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnMouseMoveEvent")]
 	public static extern void QSplashScreen_OnMouseMoveEvent(void* self, QSplashScreen_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperMouseMoveEvent")]
+	public static extern void QSplashScreen_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QSplashScreen_WheelEvent")]
 	public static extern void QSplashScreen_WheelEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnWheelEvent")]
 	public static extern void QSplashScreen_OnWheelEvent(void* self, QSplashScreen_OnWheelEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperWheelEvent")]
+	public static extern void QSplashScreen_SuperWheelEvent(void* self, void** event);
 	[LinkName("QSplashScreen_KeyPressEvent")]
 	public static extern void QSplashScreen_KeyPressEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnKeyPressEvent")]
 	public static extern void QSplashScreen_OnKeyPressEvent(void* self, QSplashScreen_OnKeyPressEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperKeyPressEvent")]
+	public static extern void QSplashScreen_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QSplashScreen_KeyReleaseEvent")]
 	public static extern void QSplashScreen_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnKeyReleaseEvent")]
 	public static extern void QSplashScreen_OnKeyReleaseEvent(void* self, QSplashScreen_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperKeyReleaseEvent")]
+	public static extern void QSplashScreen_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QSplashScreen_FocusInEvent")]
 	public static extern void QSplashScreen_FocusInEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnFocusInEvent")]
 	public static extern void QSplashScreen_OnFocusInEvent(void* self, QSplashScreen_OnFocusInEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperFocusInEvent")]
+	public static extern void QSplashScreen_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QSplashScreen_FocusOutEvent")]
 	public static extern void QSplashScreen_FocusOutEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnFocusOutEvent")]
 	public static extern void QSplashScreen_OnFocusOutEvent(void* self, QSplashScreen_OnFocusOutEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperFocusOutEvent")]
+	public static extern void QSplashScreen_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QSplashScreen_EnterEvent")]
 	public static extern void QSplashScreen_EnterEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnEnterEvent")]
 	public static extern void QSplashScreen_OnEnterEvent(void* self, QSplashScreen_OnEnterEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperEnterEvent")]
+	public static extern void QSplashScreen_SuperEnterEvent(void* self, void** event);
 	[LinkName("QSplashScreen_LeaveEvent")]
 	public static extern void QSplashScreen_LeaveEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnLeaveEvent")]
 	public static extern void QSplashScreen_OnLeaveEvent(void* self, QSplashScreen_OnLeaveEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperLeaveEvent")]
+	public static extern void QSplashScreen_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QSplashScreen_PaintEvent")]
 	public static extern void QSplashScreen_PaintEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnPaintEvent")]
 	public static extern void QSplashScreen_OnPaintEvent(void* self, QSplashScreen_OnPaintEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperPaintEvent")]
+	public static extern void QSplashScreen_SuperPaintEvent(void* self, void** event);
 	[LinkName("QSplashScreen_MoveEvent")]
 	public static extern void QSplashScreen_MoveEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnMoveEvent")]
 	public static extern void QSplashScreen_OnMoveEvent(void* self, QSplashScreen_OnMoveEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperMoveEvent")]
+	public static extern void QSplashScreen_SuperMoveEvent(void* self, void** event);
 	[LinkName("QSplashScreen_ResizeEvent")]
 	public static extern void QSplashScreen_ResizeEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnResizeEvent")]
 	public static extern void QSplashScreen_OnResizeEvent(void* self, QSplashScreen_OnResizeEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperResizeEvent")]
+	public static extern void QSplashScreen_SuperResizeEvent(void* self, void** event);
 	[LinkName("QSplashScreen_CloseEvent")]
 	public static extern void QSplashScreen_CloseEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnCloseEvent")]
 	public static extern void QSplashScreen_OnCloseEvent(void* self, QSplashScreen_OnCloseEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperCloseEvent")]
+	public static extern void QSplashScreen_SuperCloseEvent(void* self, void** event);
 	[LinkName("QSplashScreen_ContextMenuEvent")]
 	public static extern void QSplashScreen_ContextMenuEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnContextMenuEvent")]
 	public static extern void QSplashScreen_OnContextMenuEvent(void* self, QSplashScreen_OnContextMenuEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperContextMenuEvent")]
+	public static extern void QSplashScreen_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QSplashScreen_TabletEvent")]
 	public static extern void QSplashScreen_TabletEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnTabletEvent")]
 	public static extern void QSplashScreen_OnTabletEvent(void* self, QSplashScreen_OnTabletEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperTabletEvent")]
+	public static extern void QSplashScreen_SuperTabletEvent(void* self, void** event);
 	[LinkName("QSplashScreen_ActionEvent")]
 	public static extern void QSplashScreen_ActionEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnActionEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnActionEvent")]
 	public static extern void QSplashScreen_OnActionEvent(void* self, QSplashScreen_OnActionEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperActionEvent")]
+	public static extern void QSplashScreen_SuperActionEvent(void* self, void** event);
 	[LinkName("QSplashScreen_DragEnterEvent")]
 	public static extern void QSplashScreen_DragEnterEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnDragEnterEvent")]
 	public static extern void QSplashScreen_OnDragEnterEvent(void* self, QSplashScreen_OnDragEnterEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperDragEnterEvent")]
+	public static extern void QSplashScreen_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QSplashScreen_DragMoveEvent")]
 	public static extern void QSplashScreen_DragMoveEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnDragMoveEvent")]
 	public static extern void QSplashScreen_OnDragMoveEvent(void* self, QSplashScreen_OnDragMoveEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperDragMoveEvent")]
+	public static extern void QSplashScreen_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QSplashScreen_DragLeaveEvent")]
 	public static extern void QSplashScreen_DragLeaveEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnDragLeaveEvent")]
 	public static extern void QSplashScreen_OnDragLeaveEvent(void* self, QSplashScreen_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperDragLeaveEvent")]
+	public static extern void QSplashScreen_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QSplashScreen_DropEvent")]
 	public static extern void QSplashScreen_DropEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnDropEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnDropEvent")]
 	public static extern void QSplashScreen_OnDropEvent(void* self, QSplashScreen_OnDropEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperDropEvent")]
+	public static extern void QSplashScreen_SuperDropEvent(void* self, void** event);
 	[LinkName("QSplashScreen_ShowEvent")]
 	public static extern void QSplashScreen_ShowEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnShowEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnShowEvent")]
 	public static extern void QSplashScreen_OnShowEvent(void* self, QSplashScreen_OnShowEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperShowEvent")]
+	public static extern void QSplashScreen_SuperShowEvent(void* self, void** event);
 	[LinkName("QSplashScreen_HideEvent")]
 	public static extern void QSplashScreen_HideEvent(void* self, void** event);
 	
 	public function void QSplashScreen_OnHideEvent_action(void* self, void** event);
 	[LinkName("QSplashScreen_OnHideEvent")]
 	public static extern void QSplashScreen_OnHideEvent(void* self, QSplashScreen_OnHideEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperHideEvent")]
+	public static extern void QSplashScreen_SuperHideEvent(void* self, void** event);
 	[LinkName("QSplashScreen_NativeEvent")]
 	public static extern bool QSplashScreen_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QSplashScreen_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSplashScreen_OnNativeEvent")]
 	public static extern bool QSplashScreen_OnNativeEvent(void* self, QSplashScreen_OnNativeEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperNativeEvent")]
+	public static extern bool QSplashScreen_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSplashScreen_ChangeEvent")]
 	public static extern void QSplashScreen_ChangeEvent(void* self, void** param1);
 	
 	public function void QSplashScreen_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QSplashScreen_OnChangeEvent")]
 	public static extern void QSplashScreen_OnChangeEvent(void* self, QSplashScreen_OnChangeEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperChangeEvent")]
+	public static extern void QSplashScreen_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QSplashScreen_InputMethodEvent")]
 	public static extern void QSplashScreen_InputMethodEvent(void* self, void** param1);
 	
 	public function void QSplashScreen_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QSplashScreen_OnInputMethodEvent")]
 	public static extern void QSplashScreen_OnInputMethodEvent(void* self, QSplashScreen_OnInputMethodEvent_action _action);
+	
+	[LinkName("QSplashScreen_SuperInputMethodEvent")]
+	public static extern void QSplashScreen_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QSplashScreen_InputMethodQuery")]
 	public static extern void* QSplashScreen_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QSplashScreen_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSplashScreen_OnInputMethodQuery")]
 	public static extern void* QSplashScreen_OnInputMethodQuery(void* self, QSplashScreen_OnInputMethodQuery_action _action);
+	
+	[LinkName("QSplashScreen_SuperInputMethodQuery")]
+	public static extern void* QSplashScreen_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSplashScreen_FocusNextPrevChild")]
 	public static extern bool QSplashScreen_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QSplashScreen_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QSplashScreen_OnFocusNextPrevChild")]
 	public static extern bool QSplashScreen_OnFocusNextPrevChild(void* self, QSplashScreen_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QSplashScreen_SuperFocusNextPrevChild")]
+	public static extern bool QSplashScreen_SuperFocusNextPrevChild(void* self, bool next);
 }

@@ -473,6 +473,16 @@ class QScreen : IQScreen, IQObject
 		CQt.QScreen_Connect_RefreshRateChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_RefreshRateChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QScreen_OnMetaObject(obj.ObjectPtr,  => QtBeef_QScreen_OnMetaObject);
+		CQt.QScreen_OnMetacast(obj.ObjectPtr,  => QtBeef_QScreen_OnMetacast);
+		CQt.QScreen_OnMetacall(obj.ObjectPtr,  => QtBeef_QScreen_OnMetacall);
+		CQt.QScreen_OnEvent(obj.ObjectPtr,  => QtBeef_QScreen_OnEvent);
+		CQt.QScreen_OnEventFilter(obj.ObjectPtr,  => QtBeef_QScreen_OnEventFilter);
+		CQt.QScreen_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QScreen_OnTimerEvent);
+		CQt.QScreen_OnChildEvent(obj.ObjectPtr,  => QtBeef_QScreen_OnChildEvent);
+		CQt.QScreen_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QScreen_OnCustomEvent);
+		CQt.QScreen_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QScreen_OnConnectNotify);
+		CQt.QScreen_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QScreen_OnDisconnectNotify);
 	}
 	public Event<delegate void(void** geometry)> OnGeometryChanged = .() ~ _.Dispose();
 	public Event<delegate void(void** geometry)> OnAvailableGeometryChanged = .() ~ _.Dispose();
@@ -539,6 +549,56 @@ class QScreen : IQScreen, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QScreen_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QScreen_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QScreen_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QScreen_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QScreen_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QScreen_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QScreen_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QScreen_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QScreen_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QScreen_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QScreen_Ptr ptr)
 	{
@@ -998,18 +1058,27 @@ extension CQt
 	public function void QScreen_OnMetaObject_action(void* self);
 	[LinkName("QScreen_OnMetaObject")]
 	public static extern void** QScreen_OnMetaObject(void* self, QScreen_OnMetaObject_action _action);
+	
+	[LinkName("QScreen_SuperMetaObject")]
+	public static extern void** QScreen_SuperMetaObject(void* self);
 	[LinkName("QScreen_Qt_Metacast")]
 	public static extern void* QScreen_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QScreen_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QScreen_OnMetacast")]
 	public static extern void* QScreen_OnMetacast(void* self, QScreen_OnMetacast_action _action);
+	
+	[LinkName("QScreen_SuperMetacast")]
+	public static extern void* QScreen_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QScreen_Qt_Metacall")]
 	public static extern c_int QScreen_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QScreen_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QScreen_OnMetacall")]
 	public static extern c_int QScreen_OnMetacall(void* self, QScreen_OnMetacall_action _action);
+	
+	[LinkName("QScreen_SuperMetacall")]
+	public static extern c_int QScreen_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QScreen_Tr")]
 	public static extern libqt_string QScreen_Tr(c_char* s);
 	[LinkName("QScreen_Name")]
@@ -1154,40 +1223,61 @@ extension CQt
 	public function void QScreen_OnEvent_action(void* self, void** event);
 	[LinkName("QScreen_OnEvent")]
 	public static extern bool QScreen_OnEvent(void* self, QScreen_OnEvent_action _action);
+	
+	[LinkName("QScreen_SuperEvent")]
+	public static extern bool QScreen_SuperEvent(void* self, void** event);
 	[LinkName("QScreen_EventFilter")]
 	public static extern bool QScreen_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QScreen_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QScreen_OnEventFilter")]
 	public static extern bool QScreen_OnEventFilter(void* self, QScreen_OnEventFilter_action _action);
+	
+	[LinkName("QScreen_SuperEventFilter")]
+	public static extern bool QScreen_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QScreen_TimerEvent")]
 	public static extern void QScreen_TimerEvent(void* self, void** event);
 	
 	public function void QScreen_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QScreen_OnTimerEvent")]
 	public static extern void QScreen_OnTimerEvent(void* self, QScreen_OnTimerEvent_action _action);
+	
+	[LinkName("QScreen_SuperTimerEvent")]
+	public static extern void QScreen_SuperTimerEvent(void* self, void** event);
 	[LinkName("QScreen_ChildEvent")]
 	public static extern void QScreen_ChildEvent(void* self, void** event);
 	
 	public function void QScreen_OnChildEvent_action(void* self, void** event);
 	[LinkName("QScreen_OnChildEvent")]
 	public static extern void QScreen_OnChildEvent(void* self, QScreen_OnChildEvent_action _action);
+	
+	[LinkName("QScreen_SuperChildEvent")]
+	public static extern void QScreen_SuperChildEvent(void* self, void** event);
 	[LinkName("QScreen_CustomEvent")]
 	public static extern void QScreen_CustomEvent(void* self, void** event);
 	
 	public function void QScreen_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QScreen_OnCustomEvent")]
 	public static extern void QScreen_OnCustomEvent(void* self, QScreen_OnCustomEvent_action _action);
+	
+	[LinkName("QScreen_SuperCustomEvent")]
+	public static extern void QScreen_SuperCustomEvent(void* self, void** event);
 	[LinkName("QScreen_ConnectNotify")]
 	public static extern void QScreen_ConnectNotify(void* self, void** signal);
 	
 	public function void QScreen_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QScreen_OnConnectNotify")]
 	public static extern void QScreen_OnConnectNotify(void* self, QScreen_OnConnectNotify_action _action);
+	
+	[LinkName("QScreen_SuperConnectNotify")]
+	public static extern void QScreen_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QScreen_DisconnectNotify")]
 	public static extern void QScreen_DisconnectNotify(void* self, void** signal);
 	
 	public function void QScreen_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QScreen_OnDisconnectNotify")]
 	public static extern void QScreen_OnDisconnectNotify(void* self, QScreen_OnDisconnectNotify_action _action);
+	
+	[LinkName("QScreen_SuperDisconnectNotify")]
+	public static extern void QScreen_SuperDisconnectNotify(void* self, void** signal);
 }

@@ -1663,6 +1663,61 @@ class QErrorMessage : IQErrorMessage, IQDialog, IQWidget, IQObject, IQPaintDevic
 		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Finished);
 		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Accepted);
 		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Rejected);
+		CQt.QErrorMessage_OnMetaObject(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMetaObject);
+		CQt.QErrorMessage_OnMetacast(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMetacast);
+		CQt.QErrorMessage_OnMetacall(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMetacall);
+		CQt.QErrorMessage_OnDone(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnDone);
+		CQt.QErrorMessage_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnChangeEvent);
+		CQt.QErrorMessage_OnEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnEvent);
+		CQt.QErrorMessage_OnEventFilter(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnEventFilter);
+		CQt.QErrorMessage_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnTimerEvent);
+		CQt.QErrorMessage_OnChildEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnChildEvent);
+		CQt.QErrorMessage_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnCustomEvent);
+		CQt.QErrorMessage_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnConnectNotify);
+		CQt.QErrorMessage_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnDisconnectNotify);
+		CQt.QErrorMessage_OnDevType(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnDevType);
+		CQt.QErrorMessage_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnPaintEngine);
+		CQt.QErrorMessage_OnMetric(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMetric);
+		CQt.QErrorMessage_OnInitPainter(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnInitPainter);
+		CQt.QErrorMessage_OnRedirected(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnRedirected);
+		CQt.QErrorMessage_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnSharedPainter);
+		CQt.QErrorMessage_OnSetVisible(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnSetVisible);
+		CQt.QErrorMessage_OnSizeHint(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnSizeHint);
+		CQt.QErrorMessage_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMinimumSizeHint);
+		CQt.QErrorMessage_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnHeightForWidth);
+		CQt.QErrorMessage_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnHasHeightForWidth);
+		CQt.QErrorMessage_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMousePressEvent);
+		CQt.QErrorMessage_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMouseReleaseEvent);
+		CQt.QErrorMessage_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMouseDoubleClickEvent);
+		CQt.QErrorMessage_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMouseMoveEvent);
+		CQt.QErrorMessage_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnWheelEvent);
+		CQt.QErrorMessage_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnKeyPressEvent);
+		CQt.QErrorMessage_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnKeyReleaseEvent);
+		CQt.QErrorMessage_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnFocusInEvent);
+		CQt.QErrorMessage_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnFocusOutEvent);
+		CQt.QErrorMessage_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnEnterEvent);
+		CQt.QErrorMessage_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnLeaveEvent);
+		CQt.QErrorMessage_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnPaintEvent);
+		CQt.QErrorMessage_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnMoveEvent);
+		CQt.QErrorMessage_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnResizeEvent);
+		CQt.QErrorMessage_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnCloseEvent);
+		CQt.QErrorMessage_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnContextMenuEvent);
+		CQt.QErrorMessage_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnTabletEvent);
+		CQt.QErrorMessage_OnActionEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnActionEvent);
+		CQt.QErrorMessage_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnDragEnterEvent);
+		CQt.QErrorMessage_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnDragMoveEvent);
+		CQt.QErrorMessage_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnDragLeaveEvent);
+		CQt.QErrorMessage_OnDropEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnDropEvent);
+		CQt.QErrorMessage_OnShowEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnShowEvent);
+		CQt.QErrorMessage_OnHideEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnHideEvent);
+		CQt.QErrorMessage_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnNativeEvent);
+		CQt.QErrorMessage_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnInputMethodEvent);
+		CQt.QErrorMessage_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnInputMethodQuery);
+		CQt.QErrorMessage_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnFocusNextPrevChild);
+		CQt.QErrorMessage_OnOpen(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnOpen);
+		CQt.QErrorMessage_OnExec(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnExec);
+		CQt.QErrorMessage_OnAccept(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnAccept);
+		CQt.QErrorMessage_OnReject(obj.ObjectPtr,  => QtBeef_QErrorMessage_OnReject);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1717,6 +1772,281 @@ class QErrorMessage : IQErrorMessage, IQDialog, IQWidget, IQObject, IQPaintDevic
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnRejected.Invoke();
+	}
+	static void QtBeef_QErrorMessage_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QErrorMessage_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QErrorMessage_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QErrorMessage_OnDone(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDone(param1);
+	}
+	static void QtBeef_QErrorMessage_OnChangeEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(e);
+	}
+	static void QtBeef_QErrorMessage_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QErrorMessage_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QErrorMessage_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QErrorMessage_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QErrorMessage_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QErrorMessage_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QErrorMessage_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QErrorMessage_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QErrorMessage_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QErrorMessage_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QErrorMessage_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QErrorMessage_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QErrorMessage_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QErrorMessage_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QErrorMessage_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QErrorMessage_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QErrorMessage_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QErrorMessage_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QErrorMessage_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QErrorMessage_OnOpen(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen();
+	}
+	static void QtBeef_QErrorMessage_OnExec(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExec();
+	}
+	static void QtBeef_QErrorMessage_OnAccept(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccept();
+	}
+	static void QtBeef_QErrorMessage_OnReject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReject();
 	}
 	public this(QErrorMessage_Ptr ptr)
 	{
@@ -3350,18 +3680,27 @@ extension CQt
 	public function void QErrorMessage_OnMetaObject_action(void* self);
 	[LinkName("QErrorMessage_OnMetaObject")]
 	public static extern void** QErrorMessage_OnMetaObject(void* self, QErrorMessage_OnMetaObject_action _action);
+	
+	[LinkName("QErrorMessage_SuperMetaObject")]
+	public static extern void** QErrorMessage_SuperMetaObject(void* self);
 	[LinkName("QErrorMessage_Qt_Metacast")]
 	public static extern void* QErrorMessage_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QErrorMessage_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QErrorMessage_OnMetacast")]
 	public static extern void* QErrorMessage_OnMetacast(void* self, QErrorMessage_OnMetacast_action _action);
+	
+	[LinkName("QErrorMessage_SuperMetacast")]
+	public static extern void* QErrorMessage_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QErrorMessage_Qt_Metacall")]
 	public static extern c_int QErrorMessage_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QErrorMessage_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QErrorMessage_OnMetacall")]
 	public static extern c_int QErrorMessage_OnMetacall(void* self, QErrorMessage_OnMetacall_action _action);
+	
+	[LinkName("QErrorMessage_SuperMetacall")]
+	public static extern c_int QErrorMessage_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QErrorMessage_Tr")]
 	public static extern libqt_string QErrorMessage_Tr(c_char* s);
 	[LinkName("QErrorMessage_QtHandler")]
@@ -3376,12 +3715,18 @@ extension CQt
 	public function void QErrorMessage_OnDone_action(void* self, c_int param1);
 	[LinkName("QErrorMessage_OnDone")]
 	public static extern void QErrorMessage_OnDone(void* self, QErrorMessage_OnDone_action _action);
+	
+	[LinkName("QErrorMessage_SuperDone")]
+	public static extern void QErrorMessage_SuperDone(void* self, c_int param1);
 	[LinkName("QErrorMessage_ChangeEvent")]
 	public static extern void QErrorMessage_ChangeEvent(void* self, void** e);
 	
 	public function void QErrorMessage_OnChangeEvent_action(void* self, void** e);
 	[LinkName("QErrorMessage_OnChangeEvent")]
 	public static extern void QErrorMessage_OnChangeEvent(void* self, QErrorMessage_OnChangeEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperChangeEvent")]
+	public static extern void QErrorMessage_SuperChangeEvent(void* self, void** e);
 	[LinkName("QErrorMessage_Tr2")]
 	public static extern libqt_string QErrorMessage_Tr2(c_char* s, c_char* c);
 	[LinkName("QErrorMessage_Tr3")]
@@ -3392,298 +3737,448 @@ extension CQt
 	public function void QErrorMessage_OnEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnEvent")]
 	public static extern bool QErrorMessage_OnEvent(void* self, QErrorMessage_OnEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperEvent")]
+	public static extern bool QErrorMessage_SuperEvent(void* self, void** event);
 	[LinkName("QErrorMessage_EventFilter")]
 	public static extern bool QErrorMessage_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QErrorMessage_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QErrorMessage_OnEventFilter")]
 	public static extern bool QErrorMessage_OnEventFilter(void* self, QErrorMessage_OnEventFilter_action _action);
+	
+	[LinkName("QErrorMessage_SuperEventFilter")]
+	public static extern bool QErrorMessage_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QErrorMessage_TimerEvent")]
 	public static extern void QErrorMessage_TimerEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnTimerEvent")]
 	public static extern void QErrorMessage_OnTimerEvent(void* self, QErrorMessage_OnTimerEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperTimerEvent")]
+	public static extern void QErrorMessage_SuperTimerEvent(void* self, void** event);
 	[LinkName("QErrorMessage_ChildEvent")]
 	public static extern void QErrorMessage_ChildEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnChildEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnChildEvent")]
 	public static extern void QErrorMessage_OnChildEvent(void* self, QErrorMessage_OnChildEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperChildEvent")]
+	public static extern void QErrorMessage_SuperChildEvent(void* self, void** event);
 	[LinkName("QErrorMessage_CustomEvent")]
 	public static extern void QErrorMessage_CustomEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnCustomEvent")]
 	public static extern void QErrorMessage_OnCustomEvent(void* self, QErrorMessage_OnCustomEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperCustomEvent")]
+	public static extern void QErrorMessage_SuperCustomEvent(void* self, void** event);
 	[LinkName("QErrorMessage_ConnectNotify")]
 	public static extern void QErrorMessage_ConnectNotify(void* self, void** signal);
 	
 	public function void QErrorMessage_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QErrorMessage_OnConnectNotify")]
 	public static extern void QErrorMessage_OnConnectNotify(void* self, QErrorMessage_OnConnectNotify_action _action);
+	
+	[LinkName("QErrorMessage_SuperConnectNotify")]
+	public static extern void QErrorMessage_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QErrorMessage_DisconnectNotify")]
 	public static extern void QErrorMessage_DisconnectNotify(void* self, void** signal);
 	
 	public function void QErrorMessage_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QErrorMessage_OnDisconnectNotify")]
 	public static extern void QErrorMessage_OnDisconnectNotify(void* self, QErrorMessage_OnDisconnectNotify_action _action);
+	
+	[LinkName("QErrorMessage_SuperDisconnectNotify")]
+	public static extern void QErrorMessage_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QErrorMessage_DevType")]
 	public static extern c_int QErrorMessage_DevType(void* self);
 	
 	public function void QErrorMessage_OnDevType_action(void* self);
 	[LinkName("QErrorMessage_OnDevType")]
 	public static extern c_int QErrorMessage_OnDevType(void* self, QErrorMessage_OnDevType_action _action);
+	
+	[LinkName("QErrorMessage_SuperDevType")]
+	public static extern c_int QErrorMessage_SuperDevType(void* self);
 	[LinkName("QErrorMessage_PaintEngine")]
 	public static extern void** QErrorMessage_PaintEngine(void* self);
 	
 	public function void QErrorMessage_OnPaintEngine_action(void* self);
 	[LinkName("QErrorMessage_OnPaintEngine")]
 	public static extern void** QErrorMessage_OnPaintEngine(void* self, QErrorMessage_OnPaintEngine_action _action);
+	
+	[LinkName("QErrorMessage_SuperPaintEngine")]
+	public static extern void** QErrorMessage_SuperPaintEngine(void* self);
 	[LinkName("QErrorMessage_Metric")]
 	public static extern c_int QErrorMessage_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QErrorMessage_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QErrorMessage_OnMetric")]
 	public static extern c_int QErrorMessage_OnMetric(void* self, QErrorMessage_OnMetric_action _action);
+	
+	[LinkName("QErrorMessage_SuperMetric")]
+	public static extern c_int QErrorMessage_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QErrorMessage_InitPainter")]
 	public static extern void QErrorMessage_InitPainter(void* self, void** painter);
 	
 	public function void QErrorMessage_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QErrorMessage_OnInitPainter")]
 	public static extern void QErrorMessage_OnInitPainter(void* self, QErrorMessage_OnInitPainter_action _action);
+	
+	[LinkName("QErrorMessage_SuperInitPainter")]
+	public static extern void QErrorMessage_SuperInitPainter(void* self, void** painter);
 	[LinkName("QErrorMessage_Redirected")]
 	public static extern void** QErrorMessage_Redirected(void* self, void** offset);
 	
 	public function void QErrorMessage_OnRedirected_action(void* self, void** offset);
 	[LinkName("QErrorMessage_OnRedirected")]
 	public static extern void** QErrorMessage_OnRedirected(void* self, QErrorMessage_OnRedirected_action _action);
+	
+	[LinkName("QErrorMessage_SuperRedirected")]
+	public static extern void** QErrorMessage_SuperRedirected(void* self, void** offset);
 	[LinkName("QErrorMessage_SharedPainter")]
 	public static extern void** QErrorMessage_SharedPainter(void* self);
 	
 	public function void QErrorMessage_OnSharedPainter_action(void* self);
 	[LinkName("QErrorMessage_OnSharedPainter")]
 	public static extern void** QErrorMessage_OnSharedPainter(void* self, QErrorMessage_OnSharedPainter_action _action);
+	
+	[LinkName("QErrorMessage_SuperSharedPainter")]
+	public static extern void** QErrorMessage_SuperSharedPainter(void* self);
 	[LinkName("QErrorMessage_SetVisible")]
 	public static extern void QErrorMessage_SetVisible(void* self, bool visible);
 	
 	public function void QErrorMessage_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QErrorMessage_OnSetVisible")]
 	public static extern void QErrorMessage_OnSetVisible(void* self, QErrorMessage_OnSetVisible_action _action);
+	
+	[LinkName("QErrorMessage_SuperSetVisible")]
+	public static extern void QErrorMessage_SuperSetVisible(void* self, bool visible);
 	[LinkName("QErrorMessage_SizeHint")]
 	public static extern void* QErrorMessage_SizeHint(void* self);
 	
 	public function void QErrorMessage_OnSizeHint_action(void* self);
 	[LinkName("QErrorMessage_OnSizeHint")]
 	public static extern void* QErrorMessage_OnSizeHint(void* self, QErrorMessage_OnSizeHint_action _action);
+	
+	[LinkName("QErrorMessage_SuperSizeHint")]
+	public static extern void* QErrorMessage_SuperSizeHint(void* self);
 	[LinkName("QErrorMessage_MinimumSizeHint")]
 	public static extern void* QErrorMessage_MinimumSizeHint(void* self);
 	
 	public function void QErrorMessage_OnMinimumSizeHint_action(void* self);
 	[LinkName("QErrorMessage_OnMinimumSizeHint")]
 	public static extern void* QErrorMessage_OnMinimumSizeHint(void* self, QErrorMessage_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QErrorMessage_SuperMinimumSizeHint")]
+	public static extern void* QErrorMessage_SuperMinimumSizeHint(void* self);
 	[LinkName("QErrorMessage_HeightForWidth")]
 	public static extern c_int QErrorMessage_HeightForWidth(void* self, c_int param1);
 	
 	public function void QErrorMessage_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QErrorMessage_OnHeightForWidth")]
 	public static extern c_int QErrorMessage_OnHeightForWidth(void* self, QErrorMessage_OnHeightForWidth_action _action);
+	
+	[LinkName("QErrorMessage_SuperHeightForWidth")]
+	public static extern c_int QErrorMessage_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QErrorMessage_HasHeightForWidth")]
 	public static extern bool QErrorMessage_HasHeightForWidth(void* self);
 	
 	public function void QErrorMessage_OnHasHeightForWidth_action(void* self);
 	[LinkName("QErrorMessage_OnHasHeightForWidth")]
 	public static extern bool QErrorMessage_OnHasHeightForWidth(void* self, QErrorMessage_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QErrorMessage_SuperHasHeightForWidth")]
+	public static extern bool QErrorMessage_SuperHasHeightForWidth(void* self);
 	[LinkName("QErrorMessage_MousePressEvent")]
 	public static extern void QErrorMessage_MousePressEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnMousePressEvent")]
 	public static extern void QErrorMessage_OnMousePressEvent(void* self, QErrorMessage_OnMousePressEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperMousePressEvent")]
+	public static extern void QErrorMessage_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QErrorMessage_MouseReleaseEvent")]
 	public static extern void QErrorMessage_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnMouseReleaseEvent")]
 	public static extern void QErrorMessage_OnMouseReleaseEvent(void* self, QErrorMessage_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperMouseReleaseEvent")]
+	public static extern void QErrorMessage_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QErrorMessage_MouseDoubleClickEvent")]
 	public static extern void QErrorMessage_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnMouseDoubleClickEvent")]
 	public static extern void QErrorMessage_OnMouseDoubleClickEvent(void* self, QErrorMessage_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperMouseDoubleClickEvent")]
+	public static extern void QErrorMessage_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QErrorMessage_MouseMoveEvent")]
 	public static extern void QErrorMessage_MouseMoveEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnMouseMoveEvent")]
 	public static extern void QErrorMessage_OnMouseMoveEvent(void* self, QErrorMessage_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperMouseMoveEvent")]
+	public static extern void QErrorMessage_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QErrorMessage_WheelEvent")]
 	public static extern void QErrorMessage_WheelEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnWheelEvent")]
 	public static extern void QErrorMessage_OnWheelEvent(void* self, QErrorMessage_OnWheelEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperWheelEvent")]
+	public static extern void QErrorMessage_SuperWheelEvent(void* self, void** event);
 	[LinkName("QErrorMessage_KeyPressEvent")]
 	public static extern void QErrorMessage_KeyPressEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnKeyPressEvent")]
 	public static extern void QErrorMessage_OnKeyPressEvent(void* self, QErrorMessage_OnKeyPressEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperKeyPressEvent")]
+	public static extern void QErrorMessage_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QErrorMessage_KeyReleaseEvent")]
 	public static extern void QErrorMessage_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnKeyReleaseEvent")]
 	public static extern void QErrorMessage_OnKeyReleaseEvent(void* self, QErrorMessage_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperKeyReleaseEvent")]
+	public static extern void QErrorMessage_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QErrorMessage_FocusInEvent")]
 	public static extern void QErrorMessage_FocusInEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnFocusInEvent")]
 	public static extern void QErrorMessage_OnFocusInEvent(void* self, QErrorMessage_OnFocusInEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperFocusInEvent")]
+	public static extern void QErrorMessage_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QErrorMessage_FocusOutEvent")]
 	public static extern void QErrorMessage_FocusOutEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnFocusOutEvent")]
 	public static extern void QErrorMessage_OnFocusOutEvent(void* self, QErrorMessage_OnFocusOutEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperFocusOutEvent")]
+	public static extern void QErrorMessage_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QErrorMessage_EnterEvent")]
 	public static extern void QErrorMessage_EnterEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnEnterEvent")]
 	public static extern void QErrorMessage_OnEnterEvent(void* self, QErrorMessage_OnEnterEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperEnterEvent")]
+	public static extern void QErrorMessage_SuperEnterEvent(void* self, void** event);
 	[LinkName("QErrorMessage_LeaveEvent")]
 	public static extern void QErrorMessage_LeaveEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnLeaveEvent")]
 	public static extern void QErrorMessage_OnLeaveEvent(void* self, QErrorMessage_OnLeaveEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperLeaveEvent")]
+	public static extern void QErrorMessage_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QErrorMessage_PaintEvent")]
 	public static extern void QErrorMessage_PaintEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnPaintEvent")]
 	public static extern void QErrorMessage_OnPaintEvent(void* self, QErrorMessage_OnPaintEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperPaintEvent")]
+	public static extern void QErrorMessage_SuperPaintEvent(void* self, void** event);
 	[LinkName("QErrorMessage_MoveEvent")]
 	public static extern void QErrorMessage_MoveEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnMoveEvent")]
 	public static extern void QErrorMessage_OnMoveEvent(void* self, QErrorMessage_OnMoveEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperMoveEvent")]
+	public static extern void QErrorMessage_SuperMoveEvent(void* self, void** event);
 	[LinkName("QErrorMessage_ResizeEvent")]
 	public static extern void QErrorMessage_ResizeEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnResizeEvent")]
 	public static extern void QErrorMessage_OnResizeEvent(void* self, QErrorMessage_OnResizeEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperResizeEvent")]
+	public static extern void QErrorMessage_SuperResizeEvent(void* self, void** event);
 	[LinkName("QErrorMessage_CloseEvent")]
 	public static extern void QErrorMessage_CloseEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnCloseEvent")]
 	public static extern void QErrorMessage_OnCloseEvent(void* self, QErrorMessage_OnCloseEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperCloseEvent")]
+	public static extern void QErrorMessage_SuperCloseEvent(void* self, void** event);
 	[LinkName("QErrorMessage_ContextMenuEvent")]
 	public static extern void QErrorMessage_ContextMenuEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnContextMenuEvent")]
 	public static extern void QErrorMessage_OnContextMenuEvent(void* self, QErrorMessage_OnContextMenuEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperContextMenuEvent")]
+	public static extern void QErrorMessage_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QErrorMessage_TabletEvent")]
 	public static extern void QErrorMessage_TabletEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnTabletEvent")]
 	public static extern void QErrorMessage_OnTabletEvent(void* self, QErrorMessage_OnTabletEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperTabletEvent")]
+	public static extern void QErrorMessage_SuperTabletEvent(void* self, void** event);
 	[LinkName("QErrorMessage_ActionEvent")]
 	public static extern void QErrorMessage_ActionEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnActionEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnActionEvent")]
 	public static extern void QErrorMessage_OnActionEvent(void* self, QErrorMessage_OnActionEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperActionEvent")]
+	public static extern void QErrorMessage_SuperActionEvent(void* self, void** event);
 	[LinkName("QErrorMessage_DragEnterEvent")]
 	public static extern void QErrorMessage_DragEnterEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnDragEnterEvent")]
 	public static extern void QErrorMessage_OnDragEnterEvent(void* self, QErrorMessage_OnDragEnterEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperDragEnterEvent")]
+	public static extern void QErrorMessage_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QErrorMessage_DragMoveEvent")]
 	public static extern void QErrorMessage_DragMoveEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnDragMoveEvent")]
 	public static extern void QErrorMessage_OnDragMoveEvent(void* self, QErrorMessage_OnDragMoveEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperDragMoveEvent")]
+	public static extern void QErrorMessage_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QErrorMessage_DragLeaveEvent")]
 	public static extern void QErrorMessage_DragLeaveEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnDragLeaveEvent")]
 	public static extern void QErrorMessage_OnDragLeaveEvent(void* self, QErrorMessage_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperDragLeaveEvent")]
+	public static extern void QErrorMessage_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QErrorMessage_DropEvent")]
 	public static extern void QErrorMessage_DropEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnDropEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnDropEvent")]
 	public static extern void QErrorMessage_OnDropEvent(void* self, QErrorMessage_OnDropEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperDropEvent")]
+	public static extern void QErrorMessage_SuperDropEvent(void* self, void** event);
 	[LinkName("QErrorMessage_ShowEvent")]
 	public static extern void QErrorMessage_ShowEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnShowEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnShowEvent")]
 	public static extern void QErrorMessage_OnShowEvent(void* self, QErrorMessage_OnShowEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperShowEvent")]
+	public static extern void QErrorMessage_SuperShowEvent(void* self, void** event);
 	[LinkName("QErrorMessage_HideEvent")]
 	public static extern void QErrorMessage_HideEvent(void* self, void** event);
 	
 	public function void QErrorMessage_OnHideEvent_action(void* self, void** event);
 	[LinkName("QErrorMessage_OnHideEvent")]
 	public static extern void QErrorMessage_OnHideEvent(void* self, QErrorMessage_OnHideEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperHideEvent")]
+	public static extern void QErrorMessage_SuperHideEvent(void* self, void** event);
 	[LinkName("QErrorMessage_NativeEvent")]
 	public static extern bool QErrorMessage_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QErrorMessage_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QErrorMessage_OnNativeEvent")]
 	public static extern bool QErrorMessage_OnNativeEvent(void* self, QErrorMessage_OnNativeEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperNativeEvent")]
+	public static extern bool QErrorMessage_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QErrorMessage_InputMethodEvent")]
 	public static extern void QErrorMessage_InputMethodEvent(void* self, void** param1);
 	
 	public function void QErrorMessage_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QErrorMessage_OnInputMethodEvent")]
 	public static extern void QErrorMessage_OnInputMethodEvent(void* self, QErrorMessage_OnInputMethodEvent_action _action);
+	
+	[LinkName("QErrorMessage_SuperInputMethodEvent")]
+	public static extern void QErrorMessage_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QErrorMessage_InputMethodQuery")]
 	public static extern void* QErrorMessage_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QErrorMessage_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QErrorMessage_OnInputMethodQuery")]
 	public static extern void* QErrorMessage_OnInputMethodQuery(void* self, QErrorMessage_OnInputMethodQuery_action _action);
+	
+	[LinkName("QErrorMessage_SuperInputMethodQuery")]
+	public static extern void* QErrorMessage_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QErrorMessage_FocusNextPrevChild")]
 	public static extern bool QErrorMessage_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QErrorMessage_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QErrorMessage_OnFocusNextPrevChild")]
 	public static extern bool QErrorMessage_OnFocusNextPrevChild(void* self, QErrorMessage_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QErrorMessage_SuperFocusNextPrevChild")]
+	public static extern bool QErrorMessage_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QErrorMessage_Open")]
 	public static extern void QErrorMessage_Open(void* self);
 	
 	public function void QErrorMessage_OnOpen_action(void* self);
 	[LinkName("QErrorMessage_OnOpen")]
 	public static extern void QErrorMessage_OnOpen(void* self, QErrorMessage_OnOpen_action _action);
+	
+	[LinkName("QErrorMessage_SuperOpen")]
+	public static extern void QErrorMessage_SuperOpen(void* self);
 	[LinkName("QErrorMessage_Exec")]
 	public static extern c_int QErrorMessage_Exec(void* self);
 	
 	public function void QErrorMessage_OnExec_action(void* self);
 	[LinkName("QErrorMessage_OnExec")]
 	public static extern c_int QErrorMessage_OnExec(void* self, QErrorMessage_OnExec_action _action);
+	
+	[LinkName("QErrorMessage_SuperExec")]
+	public static extern c_int QErrorMessage_SuperExec(void* self);
 	[LinkName("QErrorMessage_Accept")]
 	public static extern void QErrorMessage_Accept(void* self);
 	
 	public function void QErrorMessage_OnAccept_action(void* self);
 	[LinkName("QErrorMessage_OnAccept")]
 	public static extern void QErrorMessage_OnAccept(void* self, QErrorMessage_OnAccept_action _action);
+	
+	[LinkName("QErrorMessage_SuperAccept")]
+	public static extern void QErrorMessage_SuperAccept(void* self);
 	[LinkName("QErrorMessage_Reject")]
 	public static extern void QErrorMessage_Reject(void* self);
 	
 	public function void QErrorMessage_OnReject_action(void* self);
 	[LinkName("QErrorMessage_OnReject")]
 	public static extern void QErrorMessage_OnReject(void* self, QErrorMessage_OnReject_action _action);
+	
+	[LinkName("QErrorMessage_SuperReject")]
+	public static extern void QErrorMessage_SuperReject(void* self);
 }

@@ -1733,6 +1733,57 @@ class QLCDNumber : IQLCDNumber, IQFrame, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QLCDNumber_OnMetaObject(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMetaObject);
+		CQt.QLCDNumber_OnMetacast(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMetacast);
+		CQt.QLCDNumber_OnMetacall(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMetacall);
+		CQt.QLCDNumber_OnSizeHint(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnSizeHint);
+		CQt.QLCDNumber_OnEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnEvent);
+		CQt.QLCDNumber_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnPaintEvent);
+		CQt.QLCDNumber_OnEventFilter(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnEventFilter);
+		CQt.QLCDNumber_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnTimerEvent);
+		CQt.QLCDNumber_OnChildEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnChildEvent);
+		CQt.QLCDNumber_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnCustomEvent);
+		CQt.QLCDNumber_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnConnectNotify);
+		CQt.QLCDNumber_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnDisconnectNotify);
+		CQt.QLCDNumber_OnDevType(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnDevType);
+		CQt.QLCDNumber_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnPaintEngine);
+		CQt.QLCDNumber_OnMetric(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMetric);
+		CQt.QLCDNumber_OnInitPainter(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnInitPainter);
+		CQt.QLCDNumber_OnRedirected(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnRedirected);
+		CQt.QLCDNumber_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnSharedPainter);
+		CQt.QLCDNumber_OnSetVisible(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnSetVisible);
+		CQt.QLCDNumber_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMinimumSizeHint);
+		CQt.QLCDNumber_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnHeightForWidth);
+		CQt.QLCDNumber_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnHasHeightForWidth);
+		CQt.QLCDNumber_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMousePressEvent);
+		CQt.QLCDNumber_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMouseReleaseEvent);
+		CQt.QLCDNumber_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMouseDoubleClickEvent);
+		CQt.QLCDNumber_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMouseMoveEvent);
+		CQt.QLCDNumber_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnWheelEvent);
+		CQt.QLCDNumber_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnKeyPressEvent);
+		CQt.QLCDNumber_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnKeyReleaseEvent);
+		CQt.QLCDNumber_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnFocusInEvent);
+		CQt.QLCDNumber_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnFocusOutEvent);
+		CQt.QLCDNumber_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnEnterEvent);
+		CQt.QLCDNumber_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnLeaveEvent);
+		CQt.QLCDNumber_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnMoveEvent);
+		CQt.QLCDNumber_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnResizeEvent);
+		CQt.QLCDNumber_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnCloseEvent);
+		CQt.QLCDNumber_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnContextMenuEvent);
+		CQt.QLCDNumber_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnTabletEvent);
+		CQt.QLCDNumber_OnActionEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnActionEvent);
+		CQt.QLCDNumber_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnDragEnterEvent);
+		CQt.QLCDNumber_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnDragMoveEvent);
+		CQt.QLCDNumber_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnDragLeaveEvent);
+		CQt.QLCDNumber_OnDropEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnDropEvent);
+		CQt.QLCDNumber_OnShowEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnShowEvent);
+		CQt.QLCDNumber_OnHideEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnHideEvent);
+		CQt.QLCDNumber_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnNativeEvent);
+		CQt.QLCDNumber_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnChangeEvent);
+		CQt.QLCDNumber_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnInputMethodEvent);
+		CQt.QLCDNumber_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnInputMethodQuery);
+		CQt.QLCDNumber_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnFocusNextPrevChild);
+		CQt.QLCDNumber_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QLCDNumber_OnInitStyleOption);
 	}
 	public Event<delegate void()> OnOverflow = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1775,6 +1826,261 @@ class QLCDNumber : IQLCDNumber, IQFrame, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QLCDNumber_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QLCDNumber_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QLCDNumber_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QLCDNumber_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QLCDNumber_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QLCDNumber_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QLCDNumber_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QLCDNumber_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QLCDNumber_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QLCDNumber_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QLCDNumber_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QLCDNumber_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QLCDNumber_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QLCDNumber_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QLCDNumber_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QLCDNumber_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QLCDNumber_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QLCDNumber_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QLCDNumber_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QLCDNumber_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QLCDNumber_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QLCDNumber_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QLCDNumber_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QLCDNumber_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QLCDNumber_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QLCDNumber_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
 	}
 	public this(QLCDNumber_Ptr ptr)
 	{
@@ -3497,18 +3803,27 @@ extension CQt
 	public function void QLCDNumber_OnMetaObject_action(void* self);
 	[LinkName("QLCDNumber_OnMetaObject")]
 	public static extern void** QLCDNumber_OnMetaObject(void* self, QLCDNumber_OnMetaObject_action _action);
+	
+	[LinkName("QLCDNumber_SuperMetaObject")]
+	public static extern void** QLCDNumber_SuperMetaObject(void* self);
 	[LinkName("QLCDNumber_Qt_Metacast")]
 	public static extern void* QLCDNumber_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QLCDNumber_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QLCDNumber_OnMetacast")]
 	public static extern void* QLCDNumber_OnMetacast(void* self, QLCDNumber_OnMetacast_action _action);
+	
+	[LinkName("QLCDNumber_SuperMetacast")]
+	public static extern void* QLCDNumber_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QLCDNumber_Qt_Metacall")]
 	public static extern c_int QLCDNumber_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QLCDNumber_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QLCDNumber_OnMetacall")]
 	public static extern c_int QLCDNumber_OnMetacall(void* self, QLCDNumber_OnMetacall_action _action);
+	
+	[LinkName("QLCDNumber_SuperMetacall")]
+	public static extern c_int QLCDNumber_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QLCDNumber_Tr")]
 	public static extern libqt_string QLCDNumber_Tr(c_char* s);
 	[LinkName("QLCDNumber_SmallDecimalPoint")]
@@ -3539,6 +3854,9 @@ extension CQt
 	public function void QLCDNumber_OnSizeHint_action(void* self);
 	[LinkName("QLCDNumber_OnSizeHint")]
 	public static extern void* QLCDNumber_OnSizeHint(void* self, QLCDNumber_OnSizeHint_action _action);
+	
+	[LinkName("QLCDNumber_SuperSizeHint")]
+	public static extern void* QLCDNumber_SuperSizeHint(void* self);
 	[LinkName("QLCDNumber_Display")]
 	public static extern void QLCDNumber_Display(void* self, libqt_string str);
 	[LinkName("QLCDNumber_Display2")]
@@ -3567,12 +3885,18 @@ extension CQt
 	public function void QLCDNumber_OnEvent_action(void* self, void** e);
 	[LinkName("QLCDNumber_OnEvent")]
 	public static extern bool QLCDNumber_OnEvent(void* self, QLCDNumber_OnEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperEvent")]
+	public static extern bool QLCDNumber_SuperEvent(void* self, void** e);
 	[LinkName("QLCDNumber_PaintEvent")]
 	public static extern void QLCDNumber_PaintEvent(void* self, void** param1);
 	
 	public function void QLCDNumber_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QLCDNumber_OnPaintEvent")]
 	public static extern void QLCDNumber_OnPaintEvent(void* self, QLCDNumber_OnPaintEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperPaintEvent")]
+	public static extern void QLCDNumber_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QLCDNumber_Tr2")]
 	public static extern libqt_string QLCDNumber_Tr2(c_char* s, c_char* c);
 	[LinkName("QLCDNumber_Tr3")]
@@ -3583,270 +3907,405 @@ extension CQt
 	public function void QLCDNumber_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QLCDNumber_OnEventFilter")]
 	public static extern bool QLCDNumber_OnEventFilter(void* self, QLCDNumber_OnEventFilter_action _action);
+	
+	[LinkName("QLCDNumber_SuperEventFilter")]
+	public static extern bool QLCDNumber_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QLCDNumber_TimerEvent")]
 	public static extern void QLCDNumber_TimerEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnTimerEvent")]
 	public static extern void QLCDNumber_OnTimerEvent(void* self, QLCDNumber_OnTimerEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperTimerEvent")]
+	public static extern void QLCDNumber_SuperTimerEvent(void* self, void** event);
 	[LinkName("QLCDNumber_ChildEvent")]
 	public static extern void QLCDNumber_ChildEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnChildEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnChildEvent")]
 	public static extern void QLCDNumber_OnChildEvent(void* self, QLCDNumber_OnChildEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperChildEvent")]
+	public static extern void QLCDNumber_SuperChildEvent(void* self, void** event);
 	[LinkName("QLCDNumber_CustomEvent")]
 	public static extern void QLCDNumber_CustomEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnCustomEvent")]
 	public static extern void QLCDNumber_OnCustomEvent(void* self, QLCDNumber_OnCustomEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperCustomEvent")]
+	public static extern void QLCDNumber_SuperCustomEvent(void* self, void** event);
 	[LinkName("QLCDNumber_ConnectNotify")]
 	public static extern void QLCDNumber_ConnectNotify(void* self, void** signal);
 	
 	public function void QLCDNumber_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QLCDNumber_OnConnectNotify")]
 	public static extern void QLCDNumber_OnConnectNotify(void* self, QLCDNumber_OnConnectNotify_action _action);
+	
+	[LinkName("QLCDNumber_SuperConnectNotify")]
+	public static extern void QLCDNumber_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QLCDNumber_DisconnectNotify")]
 	public static extern void QLCDNumber_DisconnectNotify(void* self, void** signal);
 	
 	public function void QLCDNumber_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QLCDNumber_OnDisconnectNotify")]
 	public static extern void QLCDNumber_OnDisconnectNotify(void* self, QLCDNumber_OnDisconnectNotify_action _action);
+	
+	[LinkName("QLCDNumber_SuperDisconnectNotify")]
+	public static extern void QLCDNumber_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QLCDNumber_DevType")]
 	public static extern c_int QLCDNumber_DevType(void* self);
 	
 	public function void QLCDNumber_OnDevType_action(void* self);
 	[LinkName("QLCDNumber_OnDevType")]
 	public static extern c_int QLCDNumber_OnDevType(void* self, QLCDNumber_OnDevType_action _action);
+	
+	[LinkName("QLCDNumber_SuperDevType")]
+	public static extern c_int QLCDNumber_SuperDevType(void* self);
 	[LinkName("QLCDNumber_PaintEngine")]
 	public static extern void** QLCDNumber_PaintEngine(void* self);
 	
 	public function void QLCDNumber_OnPaintEngine_action(void* self);
 	[LinkName("QLCDNumber_OnPaintEngine")]
 	public static extern void** QLCDNumber_OnPaintEngine(void* self, QLCDNumber_OnPaintEngine_action _action);
+	
+	[LinkName("QLCDNumber_SuperPaintEngine")]
+	public static extern void** QLCDNumber_SuperPaintEngine(void* self);
 	[LinkName("QLCDNumber_Metric")]
 	public static extern c_int QLCDNumber_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QLCDNumber_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QLCDNumber_OnMetric")]
 	public static extern c_int QLCDNumber_OnMetric(void* self, QLCDNumber_OnMetric_action _action);
+	
+	[LinkName("QLCDNumber_SuperMetric")]
+	public static extern c_int QLCDNumber_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QLCDNumber_InitPainter")]
 	public static extern void QLCDNumber_InitPainter(void* self, void** painter);
 	
 	public function void QLCDNumber_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QLCDNumber_OnInitPainter")]
 	public static extern void QLCDNumber_OnInitPainter(void* self, QLCDNumber_OnInitPainter_action _action);
+	
+	[LinkName("QLCDNumber_SuperInitPainter")]
+	public static extern void QLCDNumber_SuperInitPainter(void* self, void** painter);
 	[LinkName("QLCDNumber_Redirected")]
 	public static extern void** QLCDNumber_Redirected(void* self, void** offset);
 	
 	public function void QLCDNumber_OnRedirected_action(void* self, void** offset);
 	[LinkName("QLCDNumber_OnRedirected")]
 	public static extern void** QLCDNumber_OnRedirected(void* self, QLCDNumber_OnRedirected_action _action);
+	
+	[LinkName("QLCDNumber_SuperRedirected")]
+	public static extern void** QLCDNumber_SuperRedirected(void* self, void** offset);
 	[LinkName("QLCDNumber_SharedPainter")]
 	public static extern void** QLCDNumber_SharedPainter(void* self);
 	
 	public function void QLCDNumber_OnSharedPainter_action(void* self);
 	[LinkName("QLCDNumber_OnSharedPainter")]
 	public static extern void** QLCDNumber_OnSharedPainter(void* self, QLCDNumber_OnSharedPainter_action _action);
+	
+	[LinkName("QLCDNumber_SuperSharedPainter")]
+	public static extern void** QLCDNumber_SuperSharedPainter(void* self);
 	[LinkName("QLCDNumber_SetVisible")]
 	public static extern void QLCDNumber_SetVisible(void* self, bool visible);
 	
 	public function void QLCDNumber_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QLCDNumber_OnSetVisible")]
 	public static extern void QLCDNumber_OnSetVisible(void* self, QLCDNumber_OnSetVisible_action _action);
+	
+	[LinkName("QLCDNumber_SuperSetVisible")]
+	public static extern void QLCDNumber_SuperSetVisible(void* self, bool visible);
 	[LinkName("QLCDNumber_MinimumSizeHint")]
 	public static extern void* QLCDNumber_MinimumSizeHint(void* self);
 	
 	public function void QLCDNumber_OnMinimumSizeHint_action(void* self);
 	[LinkName("QLCDNumber_OnMinimumSizeHint")]
 	public static extern void* QLCDNumber_OnMinimumSizeHint(void* self, QLCDNumber_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QLCDNumber_SuperMinimumSizeHint")]
+	public static extern void* QLCDNumber_SuperMinimumSizeHint(void* self);
 	[LinkName("QLCDNumber_HeightForWidth")]
 	public static extern c_int QLCDNumber_HeightForWidth(void* self, c_int param1);
 	
 	public function void QLCDNumber_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QLCDNumber_OnHeightForWidth")]
 	public static extern c_int QLCDNumber_OnHeightForWidth(void* self, QLCDNumber_OnHeightForWidth_action _action);
+	
+	[LinkName("QLCDNumber_SuperHeightForWidth")]
+	public static extern c_int QLCDNumber_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QLCDNumber_HasHeightForWidth")]
 	public static extern bool QLCDNumber_HasHeightForWidth(void* self);
 	
 	public function void QLCDNumber_OnHasHeightForWidth_action(void* self);
 	[LinkName("QLCDNumber_OnHasHeightForWidth")]
 	public static extern bool QLCDNumber_OnHasHeightForWidth(void* self, QLCDNumber_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QLCDNumber_SuperHasHeightForWidth")]
+	public static extern bool QLCDNumber_SuperHasHeightForWidth(void* self);
 	[LinkName("QLCDNumber_MousePressEvent")]
 	public static extern void QLCDNumber_MousePressEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnMousePressEvent")]
 	public static extern void QLCDNumber_OnMousePressEvent(void* self, QLCDNumber_OnMousePressEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperMousePressEvent")]
+	public static extern void QLCDNumber_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QLCDNumber_MouseReleaseEvent")]
 	public static extern void QLCDNumber_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnMouseReleaseEvent")]
 	public static extern void QLCDNumber_OnMouseReleaseEvent(void* self, QLCDNumber_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperMouseReleaseEvent")]
+	public static extern void QLCDNumber_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QLCDNumber_MouseDoubleClickEvent")]
 	public static extern void QLCDNumber_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnMouseDoubleClickEvent")]
 	public static extern void QLCDNumber_OnMouseDoubleClickEvent(void* self, QLCDNumber_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperMouseDoubleClickEvent")]
+	public static extern void QLCDNumber_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QLCDNumber_MouseMoveEvent")]
 	public static extern void QLCDNumber_MouseMoveEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnMouseMoveEvent")]
 	public static extern void QLCDNumber_OnMouseMoveEvent(void* self, QLCDNumber_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperMouseMoveEvent")]
+	public static extern void QLCDNumber_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QLCDNumber_WheelEvent")]
 	public static extern void QLCDNumber_WheelEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnWheelEvent")]
 	public static extern void QLCDNumber_OnWheelEvent(void* self, QLCDNumber_OnWheelEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperWheelEvent")]
+	public static extern void QLCDNumber_SuperWheelEvent(void* self, void** event);
 	[LinkName("QLCDNumber_KeyPressEvent")]
 	public static extern void QLCDNumber_KeyPressEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnKeyPressEvent")]
 	public static extern void QLCDNumber_OnKeyPressEvent(void* self, QLCDNumber_OnKeyPressEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperKeyPressEvent")]
+	public static extern void QLCDNumber_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QLCDNumber_KeyReleaseEvent")]
 	public static extern void QLCDNumber_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnKeyReleaseEvent")]
 	public static extern void QLCDNumber_OnKeyReleaseEvent(void* self, QLCDNumber_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperKeyReleaseEvent")]
+	public static extern void QLCDNumber_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QLCDNumber_FocusInEvent")]
 	public static extern void QLCDNumber_FocusInEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnFocusInEvent")]
 	public static extern void QLCDNumber_OnFocusInEvent(void* self, QLCDNumber_OnFocusInEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperFocusInEvent")]
+	public static extern void QLCDNumber_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QLCDNumber_FocusOutEvent")]
 	public static extern void QLCDNumber_FocusOutEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnFocusOutEvent")]
 	public static extern void QLCDNumber_OnFocusOutEvent(void* self, QLCDNumber_OnFocusOutEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperFocusOutEvent")]
+	public static extern void QLCDNumber_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QLCDNumber_EnterEvent")]
 	public static extern void QLCDNumber_EnterEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnEnterEvent")]
 	public static extern void QLCDNumber_OnEnterEvent(void* self, QLCDNumber_OnEnterEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperEnterEvent")]
+	public static extern void QLCDNumber_SuperEnterEvent(void* self, void** event);
 	[LinkName("QLCDNumber_LeaveEvent")]
 	public static extern void QLCDNumber_LeaveEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnLeaveEvent")]
 	public static extern void QLCDNumber_OnLeaveEvent(void* self, QLCDNumber_OnLeaveEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperLeaveEvent")]
+	public static extern void QLCDNumber_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QLCDNumber_MoveEvent")]
 	public static extern void QLCDNumber_MoveEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnMoveEvent")]
 	public static extern void QLCDNumber_OnMoveEvent(void* self, QLCDNumber_OnMoveEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperMoveEvent")]
+	public static extern void QLCDNumber_SuperMoveEvent(void* self, void** event);
 	[LinkName("QLCDNumber_ResizeEvent")]
 	public static extern void QLCDNumber_ResizeEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnResizeEvent")]
 	public static extern void QLCDNumber_OnResizeEvent(void* self, QLCDNumber_OnResizeEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperResizeEvent")]
+	public static extern void QLCDNumber_SuperResizeEvent(void* self, void** event);
 	[LinkName("QLCDNumber_CloseEvent")]
 	public static extern void QLCDNumber_CloseEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnCloseEvent")]
 	public static extern void QLCDNumber_OnCloseEvent(void* self, QLCDNumber_OnCloseEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperCloseEvent")]
+	public static extern void QLCDNumber_SuperCloseEvent(void* self, void** event);
 	[LinkName("QLCDNumber_ContextMenuEvent")]
 	public static extern void QLCDNumber_ContextMenuEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnContextMenuEvent")]
 	public static extern void QLCDNumber_OnContextMenuEvent(void* self, QLCDNumber_OnContextMenuEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperContextMenuEvent")]
+	public static extern void QLCDNumber_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QLCDNumber_TabletEvent")]
 	public static extern void QLCDNumber_TabletEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnTabletEvent")]
 	public static extern void QLCDNumber_OnTabletEvent(void* self, QLCDNumber_OnTabletEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperTabletEvent")]
+	public static extern void QLCDNumber_SuperTabletEvent(void* self, void** event);
 	[LinkName("QLCDNumber_ActionEvent")]
 	public static extern void QLCDNumber_ActionEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnActionEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnActionEvent")]
 	public static extern void QLCDNumber_OnActionEvent(void* self, QLCDNumber_OnActionEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperActionEvent")]
+	public static extern void QLCDNumber_SuperActionEvent(void* self, void** event);
 	[LinkName("QLCDNumber_DragEnterEvent")]
 	public static extern void QLCDNumber_DragEnterEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnDragEnterEvent")]
 	public static extern void QLCDNumber_OnDragEnterEvent(void* self, QLCDNumber_OnDragEnterEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperDragEnterEvent")]
+	public static extern void QLCDNumber_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QLCDNumber_DragMoveEvent")]
 	public static extern void QLCDNumber_DragMoveEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnDragMoveEvent")]
 	public static extern void QLCDNumber_OnDragMoveEvent(void* self, QLCDNumber_OnDragMoveEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperDragMoveEvent")]
+	public static extern void QLCDNumber_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QLCDNumber_DragLeaveEvent")]
 	public static extern void QLCDNumber_DragLeaveEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnDragLeaveEvent")]
 	public static extern void QLCDNumber_OnDragLeaveEvent(void* self, QLCDNumber_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperDragLeaveEvent")]
+	public static extern void QLCDNumber_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QLCDNumber_DropEvent")]
 	public static extern void QLCDNumber_DropEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnDropEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnDropEvent")]
 	public static extern void QLCDNumber_OnDropEvent(void* self, QLCDNumber_OnDropEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperDropEvent")]
+	public static extern void QLCDNumber_SuperDropEvent(void* self, void** event);
 	[LinkName("QLCDNumber_ShowEvent")]
 	public static extern void QLCDNumber_ShowEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnShowEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnShowEvent")]
 	public static extern void QLCDNumber_OnShowEvent(void* self, QLCDNumber_OnShowEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperShowEvent")]
+	public static extern void QLCDNumber_SuperShowEvent(void* self, void** event);
 	[LinkName("QLCDNumber_HideEvent")]
 	public static extern void QLCDNumber_HideEvent(void* self, void** event);
 	
 	public function void QLCDNumber_OnHideEvent_action(void* self, void** event);
 	[LinkName("QLCDNumber_OnHideEvent")]
 	public static extern void QLCDNumber_OnHideEvent(void* self, QLCDNumber_OnHideEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperHideEvent")]
+	public static extern void QLCDNumber_SuperHideEvent(void* self, void** event);
 	[LinkName("QLCDNumber_NativeEvent")]
 	public static extern bool QLCDNumber_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QLCDNumber_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QLCDNumber_OnNativeEvent")]
 	public static extern bool QLCDNumber_OnNativeEvent(void* self, QLCDNumber_OnNativeEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperNativeEvent")]
+	public static extern bool QLCDNumber_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QLCDNumber_ChangeEvent")]
 	public static extern void QLCDNumber_ChangeEvent(void* self, void** param1);
 	
 	public function void QLCDNumber_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QLCDNumber_OnChangeEvent")]
 	public static extern void QLCDNumber_OnChangeEvent(void* self, QLCDNumber_OnChangeEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperChangeEvent")]
+	public static extern void QLCDNumber_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QLCDNumber_InputMethodEvent")]
 	public static extern void QLCDNumber_InputMethodEvent(void* self, void** param1);
 	
 	public function void QLCDNumber_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QLCDNumber_OnInputMethodEvent")]
 	public static extern void QLCDNumber_OnInputMethodEvent(void* self, QLCDNumber_OnInputMethodEvent_action _action);
+	
+	[LinkName("QLCDNumber_SuperInputMethodEvent")]
+	public static extern void QLCDNumber_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QLCDNumber_InputMethodQuery")]
 	public static extern void* QLCDNumber_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QLCDNumber_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QLCDNumber_OnInputMethodQuery")]
 	public static extern void* QLCDNumber_OnInputMethodQuery(void* self, QLCDNumber_OnInputMethodQuery_action _action);
+	
+	[LinkName("QLCDNumber_SuperInputMethodQuery")]
+	public static extern void* QLCDNumber_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QLCDNumber_FocusNextPrevChild")]
 	public static extern bool QLCDNumber_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QLCDNumber_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QLCDNumber_OnFocusNextPrevChild")]
 	public static extern bool QLCDNumber_OnFocusNextPrevChild(void* self, QLCDNumber_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QLCDNumber_SuperFocusNextPrevChild")]
+	public static extern bool QLCDNumber_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QLCDNumber_InitStyleOption")]
 	public static extern void QLCDNumber_InitStyleOption(void* self, void** option);
 	
 	public function void QLCDNumber_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QLCDNumber_OnInitStyleOption")]
 	public static extern void QLCDNumber_OnInitStyleOption(void* self, QLCDNumber_OnInitStyleOption_action _action);
+	
+	[LinkName("QLCDNumber_SuperInitStyleOption")]
+	public static extern void QLCDNumber_SuperInitStyleOption(void* self, void** option);
 }
 [AllowDuplicates]
 enum QLCDNumber_Mode

@@ -526,6 +526,33 @@ class QBuffer : IQBuffer, IQIODevice, IQObject, IQIODeviceBase
 		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ChannelBytesWritten);
 		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_AboutToClose);
 		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ReadChannelFinished);
+		CQt.QBuffer_OnMetaObject(obj.ObjectPtr,  => QtBeef_QBuffer_OnMetaObject);
+		CQt.QBuffer_OnMetacast(obj.ObjectPtr,  => QtBeef_QBuffer_OnMetacast);
+		CQt.QBuffer_OnMetacall(obj.ObjectPtr,  => QtBeef_QBuffer_OnMetacall);
+		CQt.QBuffer_OnOpen(obj.ObjectPtr,  => QtBeef_QBuffer_OnOpen);
+		CQt.QBuffer_OnClose(obj.ObjectPtr,  => QtBeef_QBuffer_OnClose);
+		CQt.QBuffer_OnSize(obj.ObjectPtr,  => QtBeef_QBuffer_OnSize);
+		CQt.QBuffer_OnPos(obj.ObjectPtr,  => QtBeef_QBuffer_OnPos);
+		CQt.QBuffer_OnSeek(obj.ObjectPtr,  => QtBeef_QBuffer_OnSeek);
+		CQt.QBuffer_OnAtEnd(obj.ObjectPtr,  => QtBeef_QBuffer_OnAtEnd);
+		CQt.QBuffer_OnCanReadLine(obj.ObjectPtr,  => QtBeef_QBuffer_OnCanReadLine);
+		CQt.QBuffer_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QBuffer_OnConnectNotify);
+		CQt.QBuffer_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QBuffer_OnDisconnectNotify);
+		CQt.QBuffer_OnReadData(obj.ObjectPtr,  => QtBeef_QBuffer_OnReadData);
+		CQt.QBuffer_OnWriteData(obj.ObjectPtr,  => QtBeef_QBuffer_OnWriteData);
+		CQt.QBuffer_OnEvent(obj.ObjectPtr,  => QtBeef_QBuffer_OnEvent);
+		CQt.QBuffer_OnEventFilter(obj.ObjectPtr,  => QtBeef_QBuffer_OnEventFilter);
+		CQt.QBuffer_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QBuffer_OnTimerEvent);
+		CQt.QBuffer_OnChildEvent(obj.ObjectPtr,  => QtBeef_QBuffer_OnChildEvent);
+		CQt.QBuffer_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QBuffer_OnCustomEvent);
+		CQt.QBuffer_OnIsSequential(obj.ObjectPtr,  => QtBeef_QBuffer_OnIsSequential);
+		CQt.QBuffer_OnReset(obj.ObjectPtr,  => QtBeef_QBuffer_OnReset);
+		CQt.QBuffer_OnBytesAvailable(obj.ObjectPtr,  => QtBeef_QBuffer_OnBytesAvailable);
+		CQt.QBuffer_OnBytesToWrite(obj.ObjectPtr,  => QtBeef_QBuffer_OnBytesToWrite);
+		CQt.QBuffer_OnWaitForReadyRead(obj.ObjectPtr,  => QtBeef_QBuffer_OnWaitForReadyRead);
+		CQt.QBuffer_OnWaitForBytesWritten(obj.ObjectPtr,  => QtBeef_QBuffer_OnWaitForBytesWritten);
+		CQt.QBuffer_OnReadLineData(obj.ObjectPtr,  => QtBeef_QBuffer_OnReadLineData);
+		CQt.QBuffer_OnSkipData(obj.ObjectPtr,  => QtBeef_QBuffer_OnSkipData);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -574,6 +601,141 @@ class QBuffer : IQBuffer, IQIODevice, IQObject, IQIODeviceBase
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnReadChannelFinished.Invoke();
+	}
+	static void QtBeef_QBuffer_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QBuffer_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QBuffer_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QBuffer_OnOpen(void* ptr, void* openMode)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen(openMode);
+	}
+	static void QtBeef_QBuffer_OnClose(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClose();
+	}
+	static void QtBeef_QBuffer_OnSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSize();
+	}
+	static void QtBeef_QBuffer_OnPos(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPos();
+	}
+	static void QtBeef_QBuffer_OnSeek(void* ptr, c_longlong off)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSeek(off);
+	}
+	static void QtBeef_QBuffer_OnAtEnd(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAtEnd();
+	}
+	static void QtBeef_QBuffer_OnCanReadLine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanReadLine();
+	}
+	static void QtBeef_QBuffer_OnConnectNotify(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(param1);
+	}
+	static void QtBeef_QBuffer_OnDisconnectNotify(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(param1);
+	}
+	static void QtBeef_QBuffer_OnReadData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadData(data, maxlen);
+	}
+	static void QtBeef_QBuffer_OnWriteData(void* ptr, c_char* data, c_longlong lenVal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWriteData(data, lenVal);
+	}
+	static void QtBeef_QBuffer_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QBuffer_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QBuffer_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QBuffer_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QBuffer_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QBuffer_OnIsSequential(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsSequential();
+	}
+	static void QtBeef_QBuffer_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QBuffer_OnBytesAvailable(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesAvailable();
+	}
+	static void QtBeef_QBuffer_OnBytesToWrite(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesToWrite();
+	}
+	static void QtBeef_QBuffer_OnWaitForReadyRead(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForReadyRead(msecs);
+	}
+	static void QtBeef_QBuffer_OnWaitForBytesWritten(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForBytesWritten(msecs);
+	}
+	static void QtBeef_QBuffer_OnReadLineData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadLineData(data, maxlen);
+	}
+	static void QtBeef_QBuffer_OnSkipData(void* ptr, c_longlong maxSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSkipData(maxSize);
 	}
 	public this(QBuffer_Ptr ptr)
 	{
@@ -1102,18 +1264,27 @@ extension CQt
 	public function void QBuffer_OnMetaObject_action(void* self);
 	[LinkName("QBuffer_OnMetaObject")]
 	public static extern void** QBuffer_OnMetaObject(void* self, QBuffer_OnMetaObject_action _action);
+	
+	[LinkName("QBuffer_SuperMetaObject")]
+	public static extern void** QBuffer_SuperMetaObject(void* self);
 	[LinkName("QBuffer_Qt_Metacast")]
 	public static extern void* QBuffer_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QBuffer_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QBuffer_OnMetacast")]
 	public static extern void* QBuffer_OnMetacast(void* self, QBuffer_OnMetacast_action _action);
+	
+	[LinkName("QBuffer_SuperMetacast")]
+	public static extern void* QBuffer_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QBuffer_Qt_Metacall")]
 	public static extern c_int QBuffer_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QBuffer_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QBuffer_OnMetacall")]
 	public static extern c_int QBuffer_OnMetacall(void* self, QBuffer_OnMetacall_action _action);
+	
+	[LinkName("QBuffer_SuperMetacall")]
+	public static extern c_int QBuffer_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QBuffer_Tr")]
 	public static extern libqt_string QBuffer_Tr(c_char* s);
 	[LinkName("QBuffer_Buffer")]
@@ -1132,66 +1303,99 @@ extension CQt
 	public function void QBuffer_OnOpen_action(void* self, void* openMode);
 	[LinkName("QBuffer_OnOpen")]
 	public static extern bool QBuffer_OnOpen(void* self, QBuffer_OnOpen_action _action);
+	
+	[LinkName("QBuffer_SuperOpen")]
+	public static extern bool QBuffer_SuperOpen(void* self, void* openMode);
 	[LinkName("QBuffer_Close")]
 	public static extern void QBuffer_Close(void* self);
 	
 	public function void QBuffer_OnClose_action(void* self);
 	[LinkName("QBuffer_OnClose")]
 	public static extern void QBuffer_OnClose(void* self, QBuffer_OnClose_action _action);
+	
+	[LinkName("QBuffer_SuperClose")]
+	public static extern void QBuffer_SuperClose(void* self);
 	[LinkName("QBuffer_Size")]
 	public static extern c_longlong QBuffer_Size(void* self);
 	
 	public function void QBuffer_OnSize_action(void* self);
 	[LinkName("QBuffer_OnSize")]
 	public static extern c_longlong QBuffer_OnSize(void* self, QBuffer_OnSize_action _action);
+	
+	[LinkName("QBuffer_SuperSize")]
+	public static extern c_longlong QBuffer_SuperSize(void* self);
 	[LinkName("QBuffer_Pos")]
 	public static extern c_longlong QBuffer_Pos(void* self);
 	
 	public function void QBuffer_OnPos_action(void* self);
 	[LinkName("QBuffer_OnPos")]
 	public static extern c_longlong QBuffer_OnPos(void* self, QBuffer_OnPos_action _action);
+	
+	[LinkName("QBuffer_SuperPos")]
+	public static extern c_longlong QBuffer_SuperPos(void* self);
 	[LinkName("QBuffer_Seek")]
 	public static extern bool QBuffer_Seek(void* self, c_longlong off);
 	
 	public function void QBuffer_OnSeek_action(void* self, c_longlong off);
 	[LinkName("QBuffer_OnSeek")]
 	public static extern bool QBuffer_OnSeek(void* self, QBuffer_OnSeek_action _action);
+	
+	[LinkName("QBuffer_SuperSeek")]
+	public static extern bool QBuffer_SuperSeek(void* self, c_longlong off);
 	[LinkName("QBuffer_AtEnd")]
 	public static extern bool QBuffer_AtEnd(void* self);
 	
 	public function void QBuffer_OnAtEnd_action(void* self);
 	[LinkName("QBuffer_OnAtEnd")]
 	public static extern bool QBuffer_OnAtEnd(void* self, QBuffer_OnAtEnd_action _action);
+	
+	[LinkName("QBuffer_SuperAtEnd")]
+	public static extern bool QBuffer_SuperAtEnd(void* self);
 	[LinkName("QBuffer_CanReadLine")]
 	public static extern bool QBuffer_CanReadLine(void* self);
 	
 	public function void QBuffer_OnCanReadLine_action(void* self);
 	[LinkName("QBuffer_OnCanReadLine")]
 	public static extern bool QBuffer_OnCanReadLine(void* self, QBuffer_OnCanReadLine_action _action);
+	
+	[LinkName("QBuffer_SuperCanReadLine")]
+	public static extern bool QBuffer_SuperCanReadLine(void* self);
 	[LinkName("QBuffer_ConnectNotify")]
 	public static extern void QBuffer_ConnectNotify(void* self, void** param1);
 	
 	public function void QBuffer_OnConnectNotify_action(void* self, void** param1);
 	[LinkName("QBuffer_OnConnectNotify")]
 	public static extern void QBuffer_OnConnectNotify(void* self, QBuffer_OnConnectNotify_action _action);
+	
+	[LinkName("QBuffer_SuperConnectNotify")]
+	public static extern void QBuffer_SuperConnectNotify(void* self, void** param1);
 	[LinkName("QBuffer_DisconnectNotify")]
 	public static extern void QBuffer_DisconnectNotify(void* self, void** param1);
 	
 	public function void QBuffer_OnDisconnectNotify_action(void* self, void** param1);
 	[LinkName("QBuffer_OnDisconnectNotify")]
 	public static extern void QBuffer_OnDisconnectNotify(void* self, QBuffer_OnDisconnectNotify_action _action);
+	
+	[LinkName("QBuffer_SuperDisconnectNotify")]
+	public static extern void QBuffer_SuperDisconnectNotify(void* self, void** param1);
 	[LinkName("QBuffer_ReadData")]
 	public static extern c_longlong QBuffer_ReadData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QBuffer_OnReadData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QBuffer_OnReadData")]
 	public static extern c_longlong QBuffer_OnReadData(void* self, QBuffer_OnReadData_action _action);
+	
+	[LinkName("QBuffer_SuperReadData")]
+	public static extern c_longlong QBuffer_SuperReadData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QBuffer_WriteData")]
 	public static extern c_longlong QBuffer_WriteData(void* self, c_char* data, c_longlong lenVal);
 	
 	public function void QBuffer_OnWriteData_action(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QBuffer_OnWriteData")]
 	public static extern c_longlong QBuffer_OnWriteData(void* self, QBuffer_OnWriteData_action _action);
+	
+	[LinkName("QBuffer_SuperWriteData")]
+	public static extern c_longlong QBuffer_SuperWriteData(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QBuffer_Tr2")]
 	public static extern libqt_string QBuffer_Tr2(c_char* s, c_char* c);
 	[LinkName("QBuffer_Tr3")]
@@ -1202,76 +1406,115 @@ extension CQt
 	public function void QBuffer_OnEvent_action(void* self, void** event);
 	[LinkName("QBuffer_OnEvent")]
 	public static extern bool QBuffer_OnEvent(void* self, QBuffer_OnEvent_action _action);
+	
+	[LinkName("QBuffer_SuperEvent")]
+	public static extern bool QBuffer_SuperEvent(void* self, void** event);
 	[LinkName("QBuffer_EventFilter")]
 	public static extern bool QBuffer_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QBuffer_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QBuffer_OnEventFilter")]
 	public static extern bool QBuffer_OnEventFilter(void* self, QBuffer_OnEventFilter_action _action);
+	
+	[LinkName("QBuffer_SuperEventFilter")]
+	public static extern bool QBuffer_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QBuffer_TimerEvent")]
 	public static extern void QBuffer_TimerEvent(void* self, void** event);
 	
 	public function void QBuffer_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QBuffer_OnTimerEvent")]
 	public static extern void QBuffer_OnTimerEvent(void* self, QBuffer_OnTimerEvent_action _action);
+	
+	[LinkName("QBuffer_SuperTimerEvent")]
+	public static extern void QBuffer_SuperTimerEvent(void* self, void** event);
 	[LinkName("QBuffer_ChildEvent")]
 	public static extern void QBuffer_ChildEvent(void* self, void** event);
 	
 	public function void QBuffer_OnChildEvent_action(void* self, void** event);
 	[LinkName("QBuffer_OnChildEvent")]
 	public static extern void QBuffer_OnChildEvent(void* self, QBuffer_OnChildEvent_action _action);
+	
+	[LinkName("QBuffer_SuperChildEvent")]
+	public static extern void QBuffer_SuperChildEvent(void* self, void** event);
 	[LinkName("QBuffer_CustomEvent")]
 	public static extern void QBuffer_CustomEvent(void* self, void** event);
 	
 	public function void QBuffer_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QBuffer_OnCustomEvent")]
 	public static extern void QBuffer_OnCustomEvent(void* self, QBuffer_OnCustomEvent_action _action);
+	
+	[LinkName("QBuffer_SuperCustomEvent")]
+	public static extern void QBuffer_SuperCustomEvent(void* self, void** event);
 	[LinkName("QBuffer_IsSequential")]
 	public static extern bool QBuffer_IsSequential(void* self);
 	
 	public function void QBuffer_OnIsSequential_action(void* self);
 	[LinkName("QBuffer_OnIsSequential")]
 	public static extern bool QBuffer_OnIsSequential(void* self, QBuffer_OnIsSequential_action _action);
+	
+	[LinkName("QBuffer_SuperIsSequential")]
+	public static extern bool QBuffer_SuperIsSequential(void* self);
 	[LinkName("QBuffer_Reset")]
 	public static extern bool QBuffer_Reset(void* self);
 	
 	public function void QBuffer_OnReset_action(void* self);
 	[LinkName("QBuffer_OnReset")]
 	public static extern bool QBuffer_OnReset(void* self, QBuffer_OnReset_action _action);
+	
+	[LinkName("QBuffer_SuperReset")]
+	public static extern bool QBuffer_SuperReset(void* self);
 	[LinkName("QBuffer_BytesAvailable")]
 	public static extern c_longlong QBuffer_BytesAvailable(void* self);
 	
 	public function void QBuffer_OnBytesAvailable_action(void* self);
 	[LinkName("QBuffer_OnBytesAvailable")]
 	public static extern c_longlong QBuffer_OnBytesAvailable(void* self, QBuffer_OnBytesAvailable_action _action);
+	
+	[LinkName("QBuffer_SuperBytesAvailable")]
+	public static extern c_longlong QBuffer_SuperBytesAvailable(void* self);
 	[LinkName("QBuffer_BytesToWrite")]
 	public static extern c_longlong QBuffer_BytesToWrite(void* self);
 	
 	public function void QBuffer_OnBytesToWrite_action(void* self);
 	[LinkName("QBuffer_OnBytesToWrite")]
 	public static extern c_longlong QBuffer_OnBytesToWrite(void* self, QBuffer_OnBytesToWrite_action _action);
+	
+	[LinkName("QBuffer_SuperBytesToWrite")]
+	public static extern c_longlong QBuffer_SuperBytesToWrite(void* self);
 	[LinkName("QBuffer_WaitForReadyRead")]
 	public static extern bool QBuffer_WaitForReadyRead(void* self, c_int msecs);
 	
 	public function void QBuffer_OnWaitForReadyRead_action(void* self, c_int msecs);
 	[LinkName("QBuffer_OnWaitForReadyRead")]
 	public static extern bool QBuffer_OnWaitForReadyRead(void* self, QBuffer_OnWaitForReadyRead_action _action);
+	
+	[LinkName("QBuffer_SuperWaitForReadyRead")]
+	public static extern bool QBuffer_SuperWaitForReadyRead(void* self, c_int msecs);
 	[LinkName("QBuffer_WaitForBytesWritten")]
 	public static extern bool QBuffer_WaitForBytesWritten(void* self, c_int msecs);
 	
 	public function void QBuffer_OnWaitForBytesWritten_action(void* self, c_int msecs);
 	[LinkName("QBuffer_OnWaitForBytesWritten")]
 	public static extern bool QBuffer_OnWaitForBytesWritten(void* self, QBuffer_OnWaitForBytesWritten_action _action);
+	
+	[LinkName("QBuffer_SuperWaitForBytesWritten")]
+	public static extern bool QBuffer_SuperWaitForBytesWritten(void* self, c_int msecs);
 	[LinkName("QBuffer_ReadLineData")]
 	public static extern c_longlong QBuffer_ReadLineData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QBuffer_OnReadLineData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QBuffer_OnReadLineData")]
 	public static extern c_longlong QBuffer_OnReadLineData(void* self, QBuffer_OnReadLineData_action _action);
+	
+	[LinkName("QBuffer_SuperReadLineData")]
+	public static extern c_longlong QBuffer_SuperReadLineData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QBuffer_SkipData")]
 	public static extern c_longlong QBuffer_SkipData(void* self, c_longlong maxSize);
 	
 	public function void QBuffer_OnSkipData_action(void* self, c_longlong maxSize);
 	[LinkName("QBuffer_OnSkipData")]
 	public static extern c_longlong QBuffer_OnSkipData(void* self, QBuffer_OnSkipData_action _action);
+	
+	[LinkName("QBuffer_SuperSkipData")]
+	public static extern c_longlong QBuffer_SuperSkipData(void* self, c_longlong maxSize);
 }

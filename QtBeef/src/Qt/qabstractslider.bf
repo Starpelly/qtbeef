@@ -1738,6 +1738,57 @@ class QAbstractSlider : IQAbstractSlider, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QAbstractSlider_OnMetaObject(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMetaObject);
+		CQt.QAbstractSlider_OnMetacast(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMetacast);
+		CQt.QAbstractSlider_OnMetacall(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMetacall);
+		CQt.QAbstractSlider_OnEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnEvent);
+		CQt.QAbstractSlider_OnSliderChange(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnSliderChange);
+		CQt.QAbstractSlider_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnKeyPressEvent);
+		CQt.QAbstractSlider_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnTimerEvent);
+		CQt.QAbstractSlider_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnWheelEvent);
+		CQt.QAbstractSlider_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnChangeEvent);
+		CQt.QAbstractSlider_OnEventFilter(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnEventFilter);
+		CQt.QAbstractSlider_OnChildEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnChildEvent);
+		CQt.QAbstractSlider_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnCustomEvent);
+		CQt.QAbstractSlider_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnConnectNotify);
+		CQt.QAbstractSlider_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnDisconnectNotify);
+		CQt.QAbstractSlider_OnDevType(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnDevType);
+		CQt.QAbstractSlider_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnPaintEngine);
+		CQt.QAbstractSlider_OnMetric(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMetric);
+		CQt.QAbstractSlider_OnInitPainter(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnInitPainter);
+		CQt.QAbstractSlider_OnRedirected(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnRedirected);
+		CQt.QAbstractSlider_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnSharedPainter);
+		CQt.QAbstractSlider_OnSetVisible(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnSetVisible);
+		CQt.QAbstractSlider_OnSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnSizeHint);
+		CQt.QAbstractSlider_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMinimumSizeHint);
+		CQt.QAbstractSlider_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnHeightForWidth);
+		CQt.QAbstractSlider_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnHasHeightForWidth);
+		CQt.QAbstractSlider_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMousePressEvent);
+		CQt.QAbstractSlider_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMouseReleaseEvent);
+		CQt.QAbstractSlider_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMouseDoubleClickEvent);
+		CQt.QAbstractSlider_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMouseMoveEvent);
+		CQt.QAbstractSlider_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnKeyReleaseEvent);
+		CQt.QAbstractSlider_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnFocusInEvent);
+		CQt.QAbstractSlider_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnFocusOutEvent);
+		CQt.QAbstractSlider_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnEnterEvent);
+		CQt.QAbstractSlider_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnLeaveEvent);
+		CQt.QAbstractSlider_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnPaintEvent);
+		CQt.QAbstractSlider_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnMoveEvent);
+		CQt.QAbstractSlider_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnResizeEvent);
+		CQt.QAbstractSlider_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnCloseEvent);
+		CQt.QAbstractSlider_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnContextMenuEvent);
+		CQt.QAbstractSlider_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnTabletEvent);
+		CQt.QAbstractSlider_OnActionEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnActionEvent);
+		CQt.QAbstractSlider_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnDragEnterEvent);
+		CQt.QAbstractSlider_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnDragMoveEvent);
+		CQt.QAbstractSlider_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnDragLeaveEvent);
+		CQt.QAbstractSlider_OnDropEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnDropEvent);
+		CQt.QAbstractSlider_OnShowEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnShowEvent);
+		CQt.QAbstractSlider_OnHideEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnHideEvent);
+		CQt.QAbstractSlider_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnNativeEvent);
+		CQt.QAbstractSlider_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnInputMethodEvent);
+		CQt.QAbstractSlider_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnInputMethodQuery);
+		CQt.QAbstractSlider_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QAbstractSlider_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(c_int value)> OnValueChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnSliderPressed = .() ~ _.Dispose();
@@ -1810,6 +1861,261 @@ class QAbstractSlider : IQAbstractSlider, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QAbstractSlider_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QAbstractSlider_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QAbstractSlider_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QAbstractSlider_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QAbstractSlider_OnSliderChange(void* ptr, QAbstractSlider_SliderChange change)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSliderChange(change);
+	}
+	static void QtBeef_QAbstractSlider_OnKeyPressEvent(void* ptr, void** ev)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(ev);
+	}
+	static void QtBeef_QAbstractSlider_OnTimerEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(param1);
+	}
+	static void QtBeef_QAbstractSlider_OnWheelEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(e);
+	}
+	static void QtBeef_QAbstractSlider_OnChangeEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(e);
+	}
+	static void QtBeef_QAbstractSlider_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QAbstractSlider_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QAbstractSlider_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QAbstractSlider_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QAbstractSlider_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QAbstractSlider_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QAbstractSlider_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QAbstractSlider_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QAbstractSlider_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QAbstractSlider_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QAbstractSlider_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QAbstractSlider_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QAbstractSlider_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QAbstractSlider_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QAbstractSlider_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QAbstractSlider_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QAbstractSlider_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QAbstractSlider_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QAbstractSlider_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QAbstractSlider_Ptr ptr)
 	{
@@ -3518,18 +3824,27 @@ extension CQt
 	public function void QAbstractSlider_OnMetaObject_action(void* self);
 	[LinkName("QAbstractSlider_OnMetaObject")]
 	public static extern void** QAbstractSlider_OnMetaObject(void* self, QAbstractSlider_OnMetaObject_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMetaObject")]
+	public static extern void** QAbstractSlider_SuperMetaObject(void* self);
 	[LinkName("QAbstractSlider_Qt_Metacast")]
 	public static extern void* QAbstractSlider_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QAbstractSlider_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QAbstractSlider_OnMetacast")]
 	public static extern void* QAbstractSlider_OnMetacast(void* self, QAbstractSlider_OnMetacast_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMetacast")]
+	public static extern void* QAbstractSlider_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QAbstractSlider_Qt_Metacall")]
 	public static extern c_int QAbstractSlider_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QAbstractSlider_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractSlider_OnMetacall")]
 	public static extern c_int QAbstractSlider_OnMetacall(void* self, QAbstractSlider_OnMetacall_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMetacall")]
+	public static extern c_int QAbstractSlider_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractSlider_Tr")]
 	public static extern libqt_string QAbstractSlider_Tr(c_char* s);
 	[LinkName("QAbstractSlider_Orientation")]
@@ -3622,6 +3937,9 @@ extension CQt
 	public function void QAbstractSlider_OnEvent_action(void* self, void** e);
 	[LinkName("QAbstractSlider_OnEvent")]
 	public static extern bool QAbstractSlider_OnEvent(void* self, QAbstractSlider_OnEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperEvent")]
+	public static extern bool QAbstractSlider_SuperEvent(void* self, void** e);
 	[LinkName("QAbstractSlider_SetRepeatAction")]
 	public static extern void QAbstractSlider_SetRepeatAction(void* self, QAbstractSlider_SliderAction action);
 	[LinkName("QAbstractSlider_RepeatAction")]
@@ -3632,30 +3950,45 @@ extension CQt
 	public function void QAbstractSlider_OnSliderChange_action(void* self, QAbstractSlider_SliderChange change);
 	[LinkName("QAbstractSlider_OnSliderChange")]
 	public static extern void QAbstractSlider_OnSliderChange(void* self, QAbstractSlider_OnSliderChange_action _action);
+	
+	[LinkName("QAbstractSlider_SuperSliderChange")]
+	public static extern void QAbstractSlider_SuperSliderChange(void* self, QAbstractSlider_SliderChange change);
 	[LinkName("QAbstractSlider_KeyPressEvent")]
 	public static extern void QAbstractSlider_KeyPressEvent(void* self, void** ev);
 	
 	public function void QAbstractSlider_OnKeyPressEvent_action(void* self, void** ev);
 	[LinkName("QAbstractSlider_OnKeyPressEvent")]
 	public static extern void QAbstractSlider_OnKeyPressEvent(void* self, QAbstractSlider_OnKeyPressEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperKeyPressEvent")]
+	public static extern void QAbstractSlider_SuperKeyPressEvent(void* self, void** ev);
 	[LinkName("QAbstractSlider_TimerEvent")]
 	public static extern void QAbstractSlider_TimerEvent(void* self, void** param1);
 	
 	public function void QAbstractSlider_OnTimerEvent_action(void* self, void** param1);
 	[LinkName("QAbstractSlider_OnTimerEvent")]
 	public static extern void QAbstractSlider_OnTimerEvent(void* self, QAbstractSlider_OnTimerEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperTimerEvent")]
+	public static extern void QAbstractSlider_SuperTimerEvent(void* self, void** param1);
 	[LinkName("QAbstractSlider_WheelEvent")]
 	public static extern void QAbstractSlider_WheelEvent(void* self, void** e);
 	
 	public function void QAbstractSlider_OnWheelEvent_action(void* self, void** e);
 	[LinkName("QAbstractSlider_OnWheelEvent")]
 	public static extern void QAbstractSlider_OnWheelEvent(void* self, QAbstractSlider_OnWheelEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperWheelEvent")]
+	public static extern void QAbstractSlider_SuperWheelEvent(void* self, void** e);
 	[LinkName("QAbstractSlider_ChangeEvent")]
 	public static extern void QAbstractSlider_ChangeEvent(void* self, void** e);
 	
 	public function void QAbstractSlider_OnChangeEvent_action(void* self, void** e);
 	[LinkName("QAbstractSlider_OnChangeEvent")]
 	public static extern void QAbstractSlider_OnChangeEvent(void* self, QAbstractSlider_OnChangeEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperChangeEvent")]
+	public static extern void QAbstractSlider_SuperChangeEvent(void* self, void** e);
 	[LinkName("QAbstractSlider_Tr2")]
 	public static extern libqt_string QAbstractSlider_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractSlider_Tr3")]
@@ -3670,252 +4003,378 @@ extension CQt
 	public function void QAbstractSlider_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QAbstractSlider_OnEventFilter")]
 	public static extern bool QAbstractSlider_OnEventFilter(void* self, QAbstractSlider_OnEventFilter_action _action);
+	
+	[LinkName("QAbstractSlider_SuperEventFilter")]
+	public static extern bool QAbstractSlider_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QAbstractSlider_ChildEvent")]
 	public static extern void QAbstractSlider_ChildEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnChildEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnChildEvent")]
 	public static extern void QAbstractSlider_OnChildEvent(void* self, QAbstractSlider_OnChildEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperChildEvent")]
+	public static extern void QAbstractSlider_SuperChildEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_CustomEvent")]
 	public static extern void QAbstractSlider_CustomEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnCustomEvent")]
 	public static extern void QAbstractSlider_OnCustomEvent(void* self, QAbstractSlider_OnCustomEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperCustomEvent")]
+	public static extern void QAbstractSlider_SuperCustomEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_ConnectNotify")]
 	public static extern void QAbstractSlider_ConnectNotify(void* self, void** signal);
 	
 	public function void QAbstractSlider_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractSlider_OnConnectNotify")]
 	public static extern void QAbstractSlider_OnConnectNotify(void* self, QAbstractSlider_OnConnectNotify_action _action);
+	
+	[LinkName("QAbstractSlider_SuperConnectNotify")]
+	public static extern void QAbstractSlider_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QAbstractSlider_DisconnectNotify")]
 	public static extern void QAbstractSlider_DisconnectNotify(void* self, void** signal);
 	
 	public function void QAbstractSlider_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QAbstractSlider_OnDisconnectNotify")]
 	public static extern void QAbstractSlider_OnDisconnectNotify(void* self, QAbstractSlider_OnDisconnectNotify_action _action);
+	
+	[LinkName("QAbstractSlider_SuperDisconnectNotify")]
+	public static extern void QAbstractSlider_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QAbstractSlider_DevType")]
 	public static extern c_int QAbstractSlider_DevType(void* self);
 	
 	public function void QAbstractSlider_OnDevType_action(void* self);
 	[LinkName("QAbstractSlider_OnDevType")]
 	public static extern c_int QAbstractSlider_OnDevType(void* self, QAbstractSlider_OnDevType_action _action);
+	
+	[LinkName("QAbstractSlider_SuperDevType")]
+	public static extern c_int QAbstractSlider_SuperDevType(void* self);
 	[LinkName("QAbstractSlider_PaintEngine")]
 	public static extern void** QAbstractSlider_PaintEngine(void* self);
 	
 	public function void QAbstractSlider_OnPaintEngine_action(void* self);
 	[LinkName("QAbstractSlider_OnPaintEngine")]
 	public static extern void** QAbstractSlider_OnPaintEngine(void* self, QAbstractSlider_OnPaintEngine_action _action);
+	
+	[LinkName("QAbstractSlider_SuperPaintEngine")]
+	public static extern void** QAbstractSlider_SuperPaintEngine(void* self);
 	[LinkName("QAbstractSlider_Metric")]
 	public static extern c_int QAbstractSlider_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QAbstractSlider_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QAbstractSlider_OnMetric")]
 	public static extern c_int QAbstractSlider_OnMetric(void* self, QAbstractSlider_OnMetric_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMetric")]
+	public static extern c_int QAbstractSlider_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QAbstractSlider_InitPainter")]
 	public static extern void QAbstractSlider_InitPainter(void* self, void** painter);
 	
 	public function void QAbstractSlider_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QAbstractSlider_OnInitPainter")]
 	public static extern void QAbstractSlider_OnInitPainter(void* self, QAbstractSlider_OnInitPainter_action _action);
+	
+	[LinkName("QAbstractSlider_SuperInitPainter")]
+	public static extern void QAbstractSlider_SuperInitPainter(void* self, void** painter);
 	[LinkName("QAbstractSlider_Redirected")]
 	public static extern void** QAbstractSlider_Redirected(void* self, void** offset);
 	
 	public function void QAbstractSlider_OnRedirected_action(void* self, void** offset);
 	[LinkName("QAbstractSlider_OnRedirected")]
 	public static extern void** QAbstractSlider_OnRedirected(void* self, QAbstractSlider_OnRedirected_action _action);
+	
+	[LinkName("QAbstractSlider_SuperRedirected")]
+	public static extern void** QAbstractSlider_SuperRedirected(void* self, void** offset);
 	[LinkName("QAbstractSlider_SharedPainter")]
 	public static extern void** QAbstractSlider_SharedPainter(void* self);
 	
 	public function void QAbstractSlider_OnSharedPainter_action(void* self);
 	[LinkName("QAbstractSlider_OnSharedPainter")]
 	public static extern void** QAbstractSlider_OnSharedPainter(void* self, QAbstractSlider_OnSharedPainter_action _action);
+	
+	[LinkName("QAbstractSlider_SuperSharedPainter")]
+	public static extern void** QAbstractSlider_SuperSharedPainter(void* self);
 	[LinkName("QAbstractSlider_SetVisible")]
 	public static extern void QAbstractSlider_SetVisible(void* self, bool visible);
 	
 	public function void QAbstractSlider_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QAbstractSlider_OnSetVisible")]
 	public static extern void QAbstractSlider_OnSetVisible(void* self, QAbstractSlider_OnSetVisible_action _action);
+	
+	[LinkName("QAbstractSlider_SuperSetVisible")]
+	public static extern void QAbstractSlider_SuperSetVisible(void* self, bool visible);
 	[LinkName("QAbstractSlider_SizeHint")]
 	public static extern void* QAbstractSlider_SizeHint(void* self);
 	
 	public function void QAbstractSlider_OnSizeHint_action(void* self);
 	[LinkName("QAbstractSlider_OnSizeHint")]
 	public static extern void* QAbstractSlider_OnSizeHint(void* self, QAbstractSlider_OnSizeHint_action _action);
+	
+	[LinkName("QAbstractSlider_SuperSizeHint")]
+	public static extern void* QAbstractSlider_SuperSizeHint(void* self);
 	[LinkName("QAbstractSlider_MinimumSizeHint")]
 	public static extern void* QAbstractSlider_MinimumSizeHint(void* self);
 	
 	public function void QAbstractSlider_OnMinimumSizeHint_action(void* self);
 	[LinkName("QAbstractSlider_OnMinimumSizeHint")]
 	public static extern void* QAbstractSlider_OnMinimumSizeHint(void* self, QAbstractSlider_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMinimumSizeHint")]
+	public static extern void* QAbstractSlider_SuperMinimumSizeHint(void* self);
 	[LinkName("QAbstractSlider_HeightForWidth")]
 	public static extern c_int QAbstractSlider_HeightForWidth(void* self, c_int param1);
 	
 	public function void QAbstractSlider_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QAbstractSlider_OnHeightForWidth")]
 	public static extern c_int QAbstractSlider_OnHeightForWidth(void* self, QAbstractSlider_OnHeightForWidth_action _action);
+	
+	[LinkName("QAbstractSlider_SuperHeightForWidth")]
+	public static extern c_int QAbstractSlider_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QAbstractSlider_HasHeightForWidth")]
 	public static extern bool QAbstractSlider_HasHeightForWidth(void* self);
 	
 	public function void QAbstractSlider_OnHasHeightForWidth_action(void* self);
 	[LinkName("QAbstractSlider_OnHasHeightForWidth")]
 	public static extern bool QAbstractSlider_OnHasHeightForWidth(void* self, QAbstractSlider_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QAbstractSlider_SuperHasHeightForWidth")]
+	public static extern bool QAbstractSlider_SuperHasHeightForWidth(void* self);
 	[LinkName("QAbstractSlider_MousePressEvent")]
 	public static extern void QAbstractSlider_MousePressEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnMousePressEvent")]
 	public static extern void QAbstractSlider_OnMousePressEvent(void* self, QAbstractSlider_OnMousePressEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMousePressEvent")]
+	public static extern void QAbstractSlider_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_MouseReleaseEvent")]
 	public static extern void QAbstractSlider_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnMouseReleaseEvent")]
 	public static extern void QAbstractSlider_OnMouseReleaseEvent(void* self, QAbstractSlider_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMouseReleaseEvent")]
+	public static extern void QAbstractSlider_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_MouseDoubleClickEvent")]
 	public static extern void QAbstractSlider_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnMouseDoubleClickEvent")]
 	public static extern void QAbstractSlider_OnMouseDoubleClickEvent(void* self, QAbstractSlider_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMouseDoubleClickEvent")]
+	public static extern void QAbstractSlider_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_MouseMoveEvent")]
 	public static extern void QAbstractSlider_MouseMoveEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnMouseMoveEvent")]
 	public static extern void QAbstractSlider_OnMouseMoveEvent(void* self, QAbstractSlider_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMouseMoveEvent")]
+	public static extern void QAbstractSlider_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_KeyReleaseEvent")]
 	public static extern void QAbstractSlider_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnKeyReleaseEvent")]
 	public static extern void QAbstractSlider_OnKeyReleaseEvent(void* self, QAbstractSlider_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperKeyReleaseEvent")]
+	public static extern void QAbstractSlider_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_FocusInEvent")]
 	public static extern void QAbstractSlider_FocusInEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnFocusInEvent")]
 	public static extern void QAbstractSlider_OnFocusInEvent(void* self, QAbstractSlider_OnFocusInEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperFocusInEvent")]
+	public static extern void QAbstractSlider_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_FocusOutEvent")]
 	public static extern void QAbstractSlider_FocusOutEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnFocusOutEvent")]
 	public static extern void QAbstractSlider_OnFocusOutEvent(void* self, QAbstractSlider_OnFocusOutEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperFocusOutEvent")]
+	public static extern void QAbstractSlider_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_EnterEvent")]
 	public static extern void QAbstractSlider_EnterEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnEnterEvent")]
 	public static extern void QAbstractSlider_OnEnterEvent(void* self, QAbstractSlider_OnEnterEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperEnterEvent")]
+	public static extern void QAbstractSlider_SuperEnterEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_LeaveEvent")]
 	public static extern void QAbstractSlider_LeaveEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnLeaveEvent")]
 	public static extern void QAbstractSlider_OnLeaveEvent(void* self, QAbstractSlider_OnLeaveEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperLeaveEvent")]
+	public static extern void QAbstractSlider_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_PaintEvent")]
 	public static extern void QAbstractSlider_PaintEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnPaintEvent")]
 	public static extern void QAbstractSlider_OnPaintEvent(void* self, QAbstractSlider_OnPaintEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperPaintEvent")]
+	public static extern void QAbstractSlider_SuperPaintEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_MoveEvent")]
 	public static extern void QAbstractSlider_MoveEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnMoveEvent")]
 	public static extern void QAbstractSlider_OnMoveEvent(void* self, QAbstractSlider_OnMoveEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperMoveEvent")]
+	public static extern void QAbstractSlider_SuperMoveEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_ResizeEvent")]
 	public static extern void QAbstractSlider_ResizeEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnResizeEvent")]
 	public static extern void QAbstractSlider_OnResizeEvent(void* self, QAbstractSlider_OnResizeEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperResizeEvent")]
+	public static extern void QAbstractSlider_SuperResizeEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_CloseEvent")]
 	public static extern void QAbstractSlider_CloseEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnCloseEvent")]
 	public static extern void QAbstractSlider_OnCloseEvent(void* self, QAbstractSlider_OnCloseEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperCloseEvent")]
+	public static extern void QAbstractSlider_SuperCloseEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_ContextMenuEvent")]
 	public static extern void QAbstractSlider_ContextMenuEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnContextMenuEvent")]
 	public static extern void QAbstractSlider_OnContextMenuEvent(void* self, QAbstractSlider_OnContextMenuEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperContextMenuEvent")]
+	public static extern void QAbstractSlider_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_TabletEvent")]
 	public static extern void QAbstractSlider_TabletEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnTabletEvent")]
 	public static extern void QAbstractSlider_OnTabletEvent(void* self, QAbstractSlider_OnTabletEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperTabletEvent")]
+	public static extern void QAbstractSlider_SuperTabletEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_ActionEvent")]
 	public static extern void QAbstractSlider_ActionEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnActionEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnActionEvent")]
 	public static extern void QAbstractSlider_OnActionEvent(void* self, QAbstractSlider_OnActionEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperActionEvent")]
+	public static extern void QAbstractSlider_SuperActionEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_DragEnterEvent")]
 	public static extern void QAbstractSlider_DragEnterEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnDragEnterEvent")]
 	public static extern void QAbstractSlider_OnDragEnterEvent(void* self, QAbstractSlider_OnDragEnterEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperDragEnterEvent")]
+	public static extern void QAbstractSlider_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_DragMoveEvent")]
 	public static extern void QAbstractSlider_DragMoveEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnDragMoveEvent")]
 	public static extern void QAbstractSlider_OnDragMoveEvent(void* self, QAbstractSlider_OnDragMoveEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperDragMoveEvent")]
+	public static extern void QAbstractSlider_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_DragLeaveEvent")]
 	public static extern void QAbstractSlider_DragLeaveEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnDragLeaveEvent")]
 	public static extern void QAbstractSlider_OnDragLeaveEvent(void* self, QAbstractSlider_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperDragLeaveEvent")]
+	public static extern void QAbstractSlider_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_DropEvent")]
 	public static extern void QAbstractSlider_DropEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnDropEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnDropEvent")]
 	public static extern void QAbstractSlider_OnDropEvent(void* self, QAbstractSlider_OnDropEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperDropEvent")]
+	public static extern void QAbstractSlider_SuperDropEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_ShowEvent")]
 	public static extern void QAbstractSlider_ShowEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnShowEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnShowEvent")]
 	public static extern void QAbstractSlider_OnShowEvent(void* self, QAbstractSlider_OnShowEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperShowEvent")]
+	public static extern void QAbstractSlider_SuperShowEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_HideEvent")]
 	public static extern void QAbstractSlider_HideEvent(void* self, void** event);
 	
 	public function void QAbstractSlider_OnHideEvent_action(void* self, void** event);
 	[LinkName("QAbstractSlider_OnHideEvent")]
 	public static extern void QAbstractSlider_OnHideEvent(void* self, QAbstractSlider_OnHideEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperHideEvent")]
+	public static extern void QAbstractSlider_SuperHideEvent(void* self, void** event);
 	[LinkName("QAbstractSlider_NativeEvent")]
 	public static extern bool QAbstractSlider_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QAbstractSlider_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractSlider_OnNativeEvent")]
 	public static extern bool QAbstractSlider_OnNativeEvent(void* self, QAbstractSlider_OnNativeEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperNativeEvent")]
+	public static extern bool QAbstractSlider_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractSlider_InputMethodEvent")]
 	public static extern void QAbstractSlider_InputMethodEvent(void* self, void** param1);
 	
 	public function void QAbstractSlider_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QAbstractSlider_OnInputMethodEvent")]
 	public static extern void QAbstractSlider_OnInputMethodEvent(void* self, QAbstractSlider_OnInputMethodEvent_action _action);
+	
+	[LinkName("QAbstractSlider_SuperInputMethodEvent")]
+	public static extern void QAbstractSlider_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QAbstractSlider_InputMethodQuery")]
 	public static extern void* QAbstractSlider_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QAbstractSlider_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QAbstractSlider_OnInputMethodQuery")]
 	public static extern void* QAbstractSlider_OnInputMethodQuery(void* self, QAbstractSlider_OnInputMethodQuery_action _action);
+	
+	[LinkName("QAbstractSlider_SuperInputMethodQuery")]
+	public static extern void* QAbstractSlider_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QAbstractSlider_FocusNextPrevChild")]
 	public static extern bool QAbstractSlider_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QAbstractSlider_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QAbstractSlider_OnFocusNextPrevChild")]
 	public static extern bool QAbstractSlider_OnFocusNextPrevChild(void* self, QAbstractSlider_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QAbstractSlider_SuperFocusNextPrevChild")]
+	public static extern bool QAbstractSlider_SuperFocusNextPrevChild(void* self, bool next);
 }
 [AllowDuplicates]
 enum QAbstractSlider_SliderAction

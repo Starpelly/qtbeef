@@ -654,6 +654,37 @@ class QFile : IQFile, IQFileDevice, IQIODevice, IQObject, IQIODeviceBase
 		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ChannelBytesWritten);
 		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_AboutToClose);
 		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ReadChannelFinished);
+		CQt.QFile_OnMetaObject(obj.ObjectPtr,  => QtBeef_QFile_OnMetaObject);
+		CQt.QFile_OnMetacast(obj.ObjectPtr,  => QtBeef_QFile_OnMetacast);
+		CQt.QFile_OnMetacall(obj.ObjectPtr,  => QtBeef_QFile_OnMetacall);
+		CQt.QFile_OnFileName(obj.ObjectPtr,  => QtBeef_QFile_OnFileName);
+		CQt.QFile_OnOpen(obj.ObjectPtr,  => QtBeef_QFile_OnOpen);
+		CQt.QFile_OnSize(obj.ObjectPtr,  => QtBeef_QFile_OnSize);
+		CQt.QFile_OnResize(obj.ObjectPtr,  => QtBeef_QFile_OnResize);
+		CQt.QFile_OnPermissions(obj.ObjectPtr,  => QtBeef_QFile_OnPermissions);
+		CQt.QFile_OnSetPermissions(obj.ObjectPtr,  => QtBeef_QFile_OnSetPermissions);
+		CQt.QFile_OnEvent(obj.ObjectPtr,  => QtBeef_QFile_OnEvent);
+		CQt.QFile_OnEventFilter(obj.ObjectPtr,  => QtBeef_QFile_OnEventFilter);
+		CQt.QFile_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QFile_OnTimerEvent);
+		CQt.QFile_OnChildEvent(obj.ObjectPtr,  => QtBeef_QFile_OnChildEvent);
+		CQt.QFile_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QFile_OnCustomEvent);
+		CQt.QFile_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QFile_OnConnectNotify);
+		CQt.QFile_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QFile_OnDisconnectNotify);
+		CQt.QFile_OnIsSequential(obj.ObjectPtr,  => QtBeef_QFile_OnIsSequential);
+		CQt.QFile_OnClose(obj.ObjectPtr,  => QtBeef_QFile_OnClose);
+		CQt.QFile_OnPos(obj.ObjectPtr,  => QtBeef_QFile_OnPos);
+		CQt.QFile_OnSeek(obj.ObjectPtr,  => QtBeef_QFile_OnSeek);
+		CQt.QFile_OnAtEnd(obj.ObjectPtr,  => QtBeef_QFile_OnAtEnd);
+		CQt.QFile_OnReset(obj.ObjectPtr,  => QtBeef_QFile_OnReset);
+		CQt.QFile_OnBytesAvailable(obj.ObjectPtr,  => QtBeef_QFile_OnBytesAvailable);
+		CQt.QFile_OnBytesToWrite(obj.ObjectPtr,  => QtBeef_QFile_OnBytesToWrite);
+		CQt.QFile_OnCanReadLine(obj.ObjectPtr,  => QtBeef_QFile_OnCanReadLine);
+		CQt.QFile_OnWaitForReadyRead(obj.ObjectPtr,  => QtBeef_QFile_OnWaitForReadyRead);
+		CQt.QFile_OnWaitForBytesWritten(obj.ObjectPtr,  => QtBeef_QFile_OnWaitForBytesWritten);
+		CQt.QFile_OnReadData(obj.ObjectPtr,  => QtBeef_QFile_OnReadData);
+		CQt.QFile_OnReadLineData(obj.ObjectPtr,  => QtBeef_QFile_OnReadLineData);
+		CQt.QFile_OnSkipData(obj.ObjectPtr,  => QtBeef_QFile_OnSkipData);
+		CQt.QFile_OnWriteData(obj.ObjectPtr,  => QtBeef_QFile_OnWriteData);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -702,6 +733,161 @@ class QFile : IQFile, IQFileDevice, IQIODevice, IQObject, IQIODeviceBase
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnReadChannelFinished.Invoke();
+	}
+	static void QtBeef_QFile_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QFile_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QFile_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QFile_OnFileName(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFileName(scope .());
+	}
+	static void QtBeef_QFile_OnOpen(void* ptr, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen(flags);
+	}
+	static void QtBeef_QFile_OnSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSize();
+	}
+	static void QtBeef_QFile_OnResize(void* ptr, c_longlong sz)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResize(sz);
+	}
+	static void QtBeef_QFile_OnPermissions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPermissions();
+	}
+	static void QtBeef_QFile_OnSetPermissions(void* ptr, void* permissionSpec)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetPermissions(permissionSpec);
+	}
+	static void QtBeef_QFile_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QFile_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QFile_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QFile_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QFile_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QFile_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QFile_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QFile_OnIsSequential(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsSequential();
+	}
+	static void QtBeef_QFile_OnClose(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClose();
+	}
+	static void QtBeef_QFile_OnPos(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPos();
+	}
+	static void QtBeef_QFile_OnSeek(void* ptr, c_longlong pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSeek(pos);
+	}
+	static void QtBeef_QFile_OnAtEnd(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAtEnd();
+	}
+	static void QtBeef_QFile_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QFile_OnBytesAvailable(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesAvailable();
+	}
+	static void QtBeef_QFile_OnBytesToWrite(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesToWrite();
+	}
+	static void QtBeef_QFile_OnCanReadLine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanReadLine();
+	}
+	static void QtBeef_QFile_OnWaitForReadyRead(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForReadyRead(msecs);
+	}
+	static void QtBeef_QFile_OnWaitForBytesWritten(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForBytesWritten(msecs);
+	}
+	static void QtBeef_QFile_OnReadData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadData(data, maxlen);
+	}
+	static void QtBeef_QFile_OnReadLineData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadLineData(data, maxlen);
+	}
+	static void QtBeef_QFile_OnSkipData(void* ptr, c_longlong maxSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSkipData(maxSize);
+	}
+	static void QtBeef_QFile_OnWriteData(void* ptr, c_char* data, c_longlong lenVal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWriteData(data, lenVal);
 	}
 	public this(QFile_Ptr ptr)
 	{
@@ -1371,18 +1557,27 @@ extension CQt
 	public function void QFile_OnMetaObject_action(void* self);
 	[LinkName("QFile_OnMetaObject")]
 	public static extern void** QFile_OnMetaObject(void* self, QFile_OnMetaObject_action _action);
+	
+	[LinkName("QFile_SuperMetaObject")]
+	public static extern void** QFile_SuperMetaObject(void* self);
 	[LinkName("QFile_Qt_Metacast")]
 	public static extern void* QFile_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QFile_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QFile_OnMetacast")]
 	public static extern void* QFile_OnMetacast(void* self, QFile_OnMetacast_action _action);
+	
+	[LinkName("QFile_SuperMetacast")]
+	public static extern void* QFile_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QFile_Qt_Metacall")]
 	public static extern c_int QFile_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QFile_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFile_OnMetacall")]
 	public static extern c_int QFile_OnMetacall(void* self, QFile_OnMetacall_action _action);
+	
+	[LinkName("QFile_SuperMetacall")]
+	public static extern c_int QFile_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFile_Tr")]
 	public static extern libqt_string QFile_Tr(c_char* s);
 	[LinkName("QFile_FileName")]
@@ -1391,6 +1586,9 @@ extension CQt
 	public function void QFile_OnFileName_action(void* self);
 	[LinkName("QFile_OnFileName")]
 	public static extern libqt_string QFile_OnFileName(void* self, QFile_OnFileName_action _action);
+	
+	[LinkName("QFile_SuperFileName")]
+	public static extern libqt_string QFile_SuperFileName(void* self);
 	[LinkName("QFile_SetFileName")]
 	public static extern void QFile_SetFileName(void* self, libqt_string name);
 	[LinkName("QFile_EncodeName")]
@@ -1433,6 +1631,9 @@ extension CQt
 	public function void QFile_OnOpen_action(void* self, void* flags);
 	[LinkName("QFile_OnOpen")]
 	public static extern bool QFile_OnOpen(void* self, QFile_OnOpen_action _action);
+	
+	[LinkName("QFile_SuperOpen")]
+	public static extern bool QFile_SuperOpen(void* self, void* flags);
 	[LinkName("QFile_Open2")]
 	public static extern bool QFile_Open2(void* self, void* flags, void* permissions);
 	[LinkName("QFile_Open4")]
@@ -1443,12 +1644,18 @@ extension CQt
 	public function void QFile_OnSize_action(void* self);
 	[LinkName("QFile_OnSize")]
 	public static extern c_longlong QFile_OnSize(void* self, QFile_OnSize_action _action);
+	
+	[LinkName("QFile_SuperSize")]
+	public static extern c_longlong QFile_SuperSize(void* self);
 	[LinkName("QFile_Resize")]
 	public static extern bool QFile_Resize(void* self, c_longlong sz);
 	
 	public function void QFile_OnResize_action(void* self, c_longlong sz);
 	[LinkName("QFile_OnResize")]
 	public static extern bool QFile_OnResize(void* self, QFile_OnResize_action _action);
+	
+	[LinkName("QFile_SuperResize")]
+	public static extern bool QFile_SuperResize(void* self, c_longlong sz);
 	[LinkName("QFile_Resize2")]
 	public static extern bool QFile_Resize2(libqt_string filename, c_longlong sz);
 	[LinkName("QFile_Permissions")]
@@ -1457,6 +1664,9 @@ extension CQt
 	public function void QFile_OnPermissions_action(void* self);
 	[LinkName("QFile_OnPermissions")]
 	public static extern void* QFile_OnPermissions(void* self, QFile_OnPermissions_action _action);
+	
+	[LinkName("QFile_SuperPermissions")]
+	public static extern void* QFile_SuperPermissions(void* self);
 	[LinkName("QFile_Permissions2")]
 	public static extern void* QFile_Permissions2(libqt_string filename);
 	[LinkName("QFile_SetPermissions")]
@@ -1465,6 +1675,9 @@ extension CQt
 	public function void QFile_OnSetPermissions_action(void* self, void* permissionSpec);
 	[LinkName("QFile_OnSetPermissions")]
 	public static extern bool QFile_OnSetPermissions(void* self, QFile_OnSetPermissions_action _action);
+	
+	[LinkName("QFile_SuperSetPermissions")]
+	public static extern bool QFile_SuperSetPermissions(void* self, void* permissionSpec);
 	[LinkName("QFile_SetPermissions2")]
 	public static extern bool QFile_SetPermissions2(libqt_string filename, void* permissionSpec);
 	[LinkName("QFile_Tr2")]
@@ -1479,130 +1692,196 @@ extension CQt
 	public function void QFile_OnEvent_action(void* self, void** event);
 	[LinkName("QFile_OnEvent")]
 	public static extern bool QFile_OnEvent(void* self, QFile_OnEvent_action _action);
+	
+	[LinkName("QFile_SuperEvent")]
+	public static extern bool QFile_SuperEvent(void* self, void** event);
 	[LinkName("QFile_EventFilter")]
 	public static extern bool QFile_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QFile_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QFile_OnEventFilter")]
 	public static extern bool QFile_OnEventFilter(void* self, QFile_OnEventFilter_action _action);
+	
+	[LinkName("QFile_SuperEventFilter")]
+	public static extern bool QFile_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QFile_TimerEvent")]
 	public static extern void QFile_TimerEvent(void* self, void** event);
 	
 	public function void QFile_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QFile_OnTimerEvent")]
 	public static extern void QFile_OnTimerEvent(void* self, QFile_OnTimerEvent_action _action);
+	
+	[LinkName("QFile_SuperTimerEvent")]
+	public static extern void QFile_SuperTimerEvent(void* self, void** event);
 	[LinkName("QFile_ChildEvent")]
 	public static extern void QFile_ChildEvent(void* self, void** event);
 	
 	public function void QFile_OnChildEvent_action(void* self, void** event);
 	[LinkName("QFile_OnChildEvent")]
 	public static extern void QFile_OnChildEvent(void* self, QFile_OnChildEvent_action _action);
+	
+	[LinkName("QFile_SuperChildEvent")]
+	public static extern void QFile_SuperChildEvent(void* self, void** event);
 	[LinkName("QFile_CustomEvent")]
 	public static extern void QFile_CustomEvent(void* self, void** event);
 	
 	public function void QFile_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QFile_OnCustomEvent")]
 	public static extern void QFile_OnCustomEvent(void* self, QFile_OnCustomEvent_action _action);
+	
+	[LinkName("QFile_SuperCustomEvent")]
+	public static extern void QFile_SuperCustomEvent(void* self, void** event);
 	[LinkName("QFile_ConnectNotify")]
 	public static extern void QFile_ConnectNotify(void* self, void** signal);
 	
 	public function void QFile_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QFile_OnConnectNotify")]
 	public static extern void QFile_OnConnectNotify(void* self, QFile_OnConnectNotify_action _action);
+	
+	[LinkName("QFile_SuperConnectNotify")]
+	public static extern void QFile_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QFile_DisconnectNotify")]
 	public static extern void QFile_DisconnectNotify(void* self, void** signal);
 	
 	public function void QFile_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QFile_OnDisconnectNotify")]
 	public static extern void QFile_OnDisconnectNotify(void* self, QFile_OnDisconnectNotify_action _action);
+	
+	[LinkName("QFile_SuperDisconnectNotify")]
+	public static extern void QFile_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QFile_IsSequential")]
 	public static extern bool QFile_IsSequential(void* self);
 	
 	public function void QFile_OnIsSequential_action(void* self);
 	[LinkName("QFile_OnIsSequential")]
 	public static extern bool QFile_OnIsSequential(void* self, QFile_OnIsSequential_action _action);
+	
+	[LinkName("QFile_SuperIsSequential")]
+	public static extern bool QFile_SuperIsSequential(void* self);
 	[LinkName("QFile_Close")]
 	public static extern void QFile_Close(void* self);
 	
 	public function void QFile_OnClose_action(void* self);
 	[LinkName("QFile_OnClose")]
 	public static extern void QFile_OnClose(void* self, QFile_OnClose_action _action);
+	
+	[LinkName("QFile_SuperClose")]
+	public static extern void QFile_SuperClose(void* self);
 	[LinkName("QFile_Pos")]
 	public static extern c_longlong QFile_Pos(void* self);
 	
 	public function void QFile_OnPos_action(void* self);
 	[LinkName("QFile_OnPos")]
 	public static extern c_longlong QFile_OnPos(void* self, QFile_OnPos_action _action);
+	
+	[LinkName("QFile_SuperPos")]
+	public static extern c_longlong QFile_SuperPos(void* self);
 	[LinkName("QFile_Seek")]
 	public static extern bool QFile_Seek(void* self, c_longlong pos);
 	
 	public function void QFile_OnSeek_action(void* self, c_longlong pos);
 	[LinkName("QFile_OnSeek")]
 	public static extern bool QFile_OnSeek(void* self, QFile_OnSeek_action _action);
+	
+	[LinkName("QFile_SuperSeek")]
+	public static extern bool QFile_SuperSeek(void* self, c_longlong pos);
 	[LinkName("QFile_AtEnd")]
 	public static extern bool QFile_AtEnd(void* self);
 	
 	public function void QFile_OnAtEnd_action(void* self);
 	[LinkName("QFile_OnAtEnd")]
 	public static extern bool QFile_OnAtEnd(void* self, QFile_OnAtEnd_action _action);
+	
+	[LinkName("QFile_SuperAtEnd")]
+	public static extern bool QFile_SuperAtEnd(void* self);
 	[LinkName("QFile_Reset")]
 	public static extern bool QFile_Reset(void* self);
 	
 	public function void QFile_OnReset_action(void* self);
 	[LinkName("QFile_OnReset")]
 	public static extern bool QFile_OnReset(void* self, QFile_OnReset_action _action);
+	
+	[LinkName("QFile_SuperReset")]
+	public static extern bool QFile_SuperReset(void* self);
 	[LinkName("QFile_BytesAvailable")]
 	public static extern c_longlong QFile_BytesAvailable(void* self);
 	
 	public function void QFile_OnBytesAvailable_action(void* self);
 	[LinkName("QFile_OnBytesAvailable")]
 	public static extern c_longlong QFile_OnBytesAvailable(void* self, QFile_OnBytesAvailable_action _action);
+	
+	[LinkName("QFile_SuperBytesAvailable")]
+	public static extern c_longlong QFile_SuperBytesAvailable(void* self);
 	[LinkName("QFile_BytesToWrite")]
 	public static extern c_longlong QFile_BytesToWrite(void* self);
 	
 	public function void QFile_OnBytesToWrite_action(void* self);
 	[LinkName("QFile_OnBytesToWrite")]
 	public static extern c_longlong QFile_OnBytesToWrite(void* self, QFile_OnBytesToWrite_action _action);
+	
+	[LinkName("QFile_SuperBytesToWrite")]
+	public static extern c_longlong QFile_SuperBytesToWrite(void* self);
 	[LinkName("QFile_CanReadLine")]
 	public static extern bool QFile_CanReadLine(void* self);
 	
 	public function void QFile_OnCanReadLine_action(void* self);
 	[LinkName("QFile_OnCanReadLine")]
 	public static extern bool QFile_OnCanReadLine(void* self, QFile_OnCanReadLine_action _action);
+	
+	[LinkName("QFile_SuperCanReadLine")]
+	public static extern bool QFile_SuperCanReadLine(void* self);
 	[LinkName("QFile_WaitForReadyRead")]
 	public static extern bool QFile_WaitForReadyRead(void* self, c_int msecs);
 	
 	public function void QFile_OnWaitForReadyRead_action(void* self, c_int msecs);
 	[LinkName("QFile_OnWaitForReadyRead")]
 	public static extern bool QFile_OnWaitForReadyRead(void* self, QFile_OnWaitForReadyRead_action _action);
+	
+	[LinkName("QFile_SuperWaitForReadyRead")]
+	public static extern bool QFile_SuperWaitForReadyRead(void* self, c_int msecs);
 	[LinkName("QFile_WaitForBytesWritten")]
 	public static extern bool QFile_WaitForBytesWritten(void* self, c_int msecs);
 	
 	public function void QFile_OnWaitForBytesWritten_action(void* self, c_int msecs);
 	[LinkName("QFile_OnWaitForBytesWritten")]
 	public static extern bool QFile_OnWaitForBytesWritten(void* self, QFile_OnWaitForBytesWritten_action _action);
+	
+	[LinkName("QFile_SuperWaitForBytesWritten")]
+	public static extern bool QFile_SuperWaitForBytesWritten(void* self, c_int msecs);
 	[LinkName("QFile_ReadData")]
 	public static extern c_longlong QFile_ReadData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QFile_OnReadData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QFile_OnReadData")]
 	public static extern c_longlong QFile_OnReadData(void* self, QFile_OnReadData_action _action);
+	
+	[LinkName("QFile_SuperReadData")]
+	public static extern c_longlong QFile_SuperReadData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QFile_ReadLineData")]
 	public static extern c_longlong QFile_ReadLineData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QFile_OnReadLineData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QFile_OnReadLineData")]
 	public static extern c_longlong QFile_OnReadLineData(void* self, QFile_OnReadLineData_action _action);
+	
+	[LinkName("QFile_SuperReadLineData")]
+	public static extern c_longlong QFile_SuperReadLineData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QFile_SkipData")]
 	public static extern c_longlong QFile_SkipData(void* self, c_longlong maxSize);
 	
 	public function void QFile_OnSkipData_action(void* self, c_longlong maxSize);
 	[LinkName("QFile_OnSkipData")]
 	public static extern c_longlong QFile_OnSkipData(void* self, QFile_OnSkipData_action _action);
+	
+	[LinkName("QFile_SuperSkipData")]
+	public static extern c_longlong QFile_SuperSkipData(void* self, c_longlong maxSize);
 	[LinkName("QFile_WriteData")]
 	public static extern c_longlong QFile_WriteData(void* self, c_char* data, c_longlong lenVal);
 	
 	public function void QFile_OnWriteData_action(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QFile_OnWriteData")]
 	public static extern c_longlong QFile_OnWriteData(void* self, QFile_OnWriteData_action _action);
+	
+	[LinkName("QFile_SuperWriteData")]
+	public static extern c_longlong QFile_SuperWriteData(void* self, c_char* data, c_longlong lenVal);
 }

@@ -380,6 +380,20 @@ class QPauseAnimation : IQPauseAnimation, IQAbstractAnimation, IQObject
 		CQt.QAbstractAnimation_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_StateChanged);
 		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_CurrentLoopChanged);
 		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_DirectionChanged);
+		CQt.QPauseAnimation_OnMetaObject(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnMetaObject);
+		CQt.QPauseAnimation_OnMetacast(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnMetacast);
+		CQt.QPauseAnimation_OnMetacall(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnMetacall);
+		CQt.QPauseAnimation_OnDuration(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnDuration);
+		CQt.QPauseAnimation_OnEvent(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnEvent);
+		CQt.QPauseAnimation_OnUpdateCurrentTime(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnUpdateCurrentTime);
+		CQt.QPauseAnimation_OnEventFilter(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnEventFilter);
+		CQt.QPauseAnimation_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnTimerEvent);
+		CQt.QPauseAnimation_OnChildEvent(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnChildEvent);
+		CQt.QPauseAnimation_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnCustomEvent);
+		CQt.QPauseAnimation_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnConnectNotify);
+		CQt.QPauseAnimation_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnDisconnectNotify);
+		CQt.QPauseAnimation_OnUpdateState(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnUpdateState);
+		CQt.QPauseAnimation_OnUpdateDirection(obj.ObjectPtr,  => QtBeef_QPauseAnimation_OnUpdateDirection);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -416,6 +430,76 @@ class QPauseAnimation : IQPauseAnimation, IQAbstractAnimation, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDirectionChanged.Invoke(param1);
+	}
+	static void QtBeef_QPauseAnimation_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QPauseAnimation_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QPauseAnimation_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QPauseAnimation_OnDuration(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDuration();
+	}
+	static void QtBeef_QPauseAnimation_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QPauseAnimation_OnUpdateCurrentTime(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateCurrentTime(param1);
+	}
+	static void QtBeef_QPauseAnimation_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QPauseAnimation_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QPauseAnimation_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QPauseAnimation_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QPauseAnimation_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QPauseAnimation_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QPauseAnimation_OnUpdateState(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateState(newState, oldState);
+	}
+	static void QtBeef_QPauseAnimation_OnUpdateDirection(void* ptr, QAbstractAnimation_Direction direction)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateDirection(direction);
 	}
 	public this(QPauseAnimation_Ptr ptr)
 	{
@@ -812,18 +896,27 @@ extension CQt
 	public function void QPauseAnimation_OnMetaObject_action(void* self);
 	[LinkName("QPauseAnimation_OnMetaObject")]
 	public static extern void** QPauseAnimation_OnMetaObject(void* self, QPauseAnimation_OnMetaObject_action _action);
+	
+	[LinkName("QPauseAnimation_SuperMetaObject")]
+	public static extern void** QPauseAnimation_SuperMetaObject(void* self);
 	[LinkName("QPauseAnimation_Qt_Metacast")]
 	public static extern void* QPauseAnimation_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QPauseAnimation_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QPauseAnimation_OnMetacast")]
 	public static extern void* QPauseAnimation_OnMetacast(void* self, QPauseAnimation_OnMetacast_action _action);
+	
+	[LinkName("QPauseAnimation_SuperMetacast")]
+	public static extern void* QPauseAnimation_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QPauseAnimation_Qt_Metacall")]
 	public static extern c_int QPauseAnimation_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QPauseAnimation_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPauseAnimation_OnMetacall")]
 	public static extern c_int QPauseAnimation_OnMetacall(void* self, QPauseAnimation_OnMetacall_action _action);
+	
+	[LinkName("QPauseAnimation_SuperMetacall")]
+	public static extern c_int QPauseAnimation_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QPauseAnimation_Tr")]
 	public static extern libqt_string QPauseAnimation_Tr(c_char* s);
 	[LinkName("QPauseAnimation_Duration")]
@@ -832,6 +925,9 @@ extension CQt
 	public function void QPauseAnimation_OnDuration_action(void* self);
 	[LinkName("QPauseAnimation_OnDuration")]
 	public static extern c_int QPauseAnimation_OnDuration(void* self, QPauseAnimation_OnDuration_action _action);
+	
+	[LinkName("QPauseAnimation_SuperDuration")]
+	public static extern c_int QPauseAnimation_SuperDuration(void* self);
 	[LinkName("QPauseAnimation_SetDuration")]
 	public static extern void QPauseAnimation_SetDuration(void* self, c_int msecs);
 	[LinkName("QPauseAnimation_Event")]
@@ -840,12 +936,18 @@ extension CQt
 	public function void QPauseAnimation_OnEvent_action(void* self, void** e);
 	[LinkName("QPauseAnimation_OnEvent")]
 	public static extern bool QPauseAnimation_OnEvent(void* self, QPauseAnimation_OnEvent_action _action);
+	
+	[LinkName("QPauseAnimation_SuperEvent")]
+	public static extern bool QPauseAnimation_SuperEvent(void* self, void** e);
 	[LinkName("QPauseAnimation_UpdateCurrentTime")]
 	public static extern void QPauseAnimation_UpdateCurrentTime(void* self, c_int param1);
 	
 	public function void QPauseAnimation_OnUpdateCurrentTime_action(void* self, c_int param1);
 	[LinkName("QPauseAnimation_OnUpdateCurrentTime")]
 	public static extern void QPauseAnimation_OnUpdateCurrentTime(void* self, QPauseAnimation_OnUpdateCurrentTime_action _action);
+	
+	[LinkName("QPauseAnimation_SuperUpdateCurrentTime")]
+	public static extern void QPauseAnimation_SuperUpdateCurrentTime(void* self, c_int param1);
 	[LinkName("QPauseAnimation_Tr2")]
 	public static extern libqt_string QPauseAnimation_Tr2(c_char* s, c_char* c);
 	[LinkName("QPauseAnimation_Tr3")]
@@ -856,46 +958,70 @@ extension CQt
 	public function void QPauseAnimation_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QPauseAnimation_OnEventFilter")]
 	public static extern bool QPauseAnimation_OnEventFilter(void* self, QPauseAnimation_OnEventFilter_action _action);
+	
+	[LinkName("QPauseAnimation_SuperEventFilter")]
+	public static extern bool QPauseAnimation_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QPauseAnimation_TimerEvent")]
 	public static extern void QPauseAnimation_TimerEvent(void* self, void** event);
 	
 	public function void QPauseAnimation_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QPauseAnimation_OnTimerEvent")]
 	public static extern void QPauseAnimation_OnTimerEvent(void* self, QPauseAnimation_OnTimerEvent_action _action);
+	
+	[LinkName("QPauseAnimation_SuperTimerEvent")]
+	public static extern void QPauseAnimation_SuperTimerEvent(void* self, void** event);
 	[LinkName("QPauseAnimation_ChildEvent")]
 	public static extern void QPauseAnimation_ChildEvent(void* self, void** event);
 	
 	public function void QPauseAnimation_OnChildEvent_action(void* self, void** event);
 	[LinkName("QPauseAnimation_OnChildEvent")]
 	public static extern void QPauseAnimation_OnChildEvent(void* self, QPauseAnimation_OnChildEvent_action _action);
+	
+	[LinkName("QPauseAnimation_SuperChildEvent")]
+	public static extern void QPauseAnimation_SuperChildEvent(void* self, void** event);
 	[LinkName("QPauseAnimation_CustomEvent")]
 	public static extern void QPauseAnimation_CustomEvent(void* self, void** event);
 	
 	public function void QPauseAnimation_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QPauseAnimation_OnCustomEvent")]
 	public static extern void QPauseAnimation_OnCustomEvent(void* self, QPauseAnimation_OnCustomEvent_action _action);
+	
+	[LinkName("QPauseAnimation_SuperCustomEvent")]
+	public static extern void QPauseAnimation_SuperCustomEvent(void* self, void** event);
 	[LinkName("QPauseAnimation_ConnectNotify")]
 	public static extern void QPauseAnimation_ConnectNotify(void* self, void** signal);
 	
 	public function void QPauseAnimation_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QPauseAnimation_OnConnectNotify")]
 	public static extern void QPauseAnimation_OnConnectNotify(void* self, QPauseAnimation_OnConnectNotify_action _action);
+	
+	[LinkName("QPauseAnimation_SuperConnectNotify")]
+	public static extern void QPauseAnimation_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QPauseAnimation_DisconnectNotify")]
 	public static extern void QPauseAnimation_DisconnectNotify(void* self, void** signal);
 	
 	public function void QPauseAnimation_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QPauseAnimation_OnDisconnectNotify")]
 	public static extern void QPauseAnimation_OnDisconnectNotify(void* self, QPauseAnimation_OnDisconnectNotify_action _action);
+	
+	[LinkName("QPauseAnimation_SuperDisconnectNotify")]
+	public static extern void QPauseAnimation_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QPauseAnimation_UpdateState")]
 	public static extern void QPauseAnimation_UpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	
 	public function void QPauseAnimation_OnUpdateState_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QPauseAnimation_OnUpdateState")]
 	public static extern void QPauseAnimation_OnUpdateState(void* self, QPauseAnimation_OnUpdateState_action _action);
+	
+	[LinkName("QPauseAnimation_SuperUpdateState")]
+	public static extern void QPauseAnimation_SuperUpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QPauseAnimation_UpdateDirection")]
 	public static extern void QPauseAnimation_UpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	
 	public function void QPauseAnimation_OnUpdateDirection_action(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QPauseAnimation_OnUpdateDirection")]
 	public static extern void QPauseAnimation_OnUpdateDirection(void* self, QPauseAnimation_OnUpdateDirection_action _action);
+	
+	[LinkName("QPauseAnimation_SuperUpdateDirection")]
+	public static extern void QPauseAnimation_SuperUpdateDirection(void* self, QAbstractAnimation_Direction direction);
 }

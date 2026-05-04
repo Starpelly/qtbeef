@@ -78,6 +78,24 @@ class QUndoView : IQUndoView
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QUndoView_OnMetaObject(obj.ObjectPtr,  => QtBeef_QUndoView_OnMetaObject);
+		CQt.QUndoView_OnMetacast(obj.ObjectPtr,  => QtBeef_QUndoView_OnMetacast);
+		CQt.QUndoView_OnMetacall(obj.ObjectPtr,  => QtBeef_QUndoView_OnMetacall);
+	}
+	static void QtBeef_QUndoView_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QUndoView_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QUndoView_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
 	}
 	public this(QUndoView_Ptr ptr)
 	{
@@ -200,18 +218,27 @@ extension CQt
 	public function void QUndoView_OnMetaObject_action(void* self);
 	[LinkName("QUndoView_OnMetaObject")]
 	public static extern void** QUndoView_OnMetaObject(void* self, QUndoView_OnMetaObject_action _action);
+	
+	[LinkName("QUndoView_SuperMetaObject")]
+	public static extern void** QUndoView_SuperMetaObject(void* self);
 	[LinkName("QUndoView_Qt_Metacast")]
 	public static extern void* QUndoView_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QUndoView_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QUndoView_OnMetacast")]
 	public static extern void* QUndoView_OnMetacast(void* self, QUndoView_OnMetacast_action _action);
+	
+	[LinkName("QUndoView_SuperMetacast")]
+	public static extern void* QUndoView_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QUndoView_Qt_Metacall")]
 	public static extern c_int QUndoView_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QUndoView_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QUndoView_OnMetacall")]
 	public static extern c_int QUndoView_OnMetacall(void* self, QUndoView_OnMetacall_action _action);
+	
+	[LinkName("QUndoView_SuperMetacall")]
+	public static extern c_int QUndoView_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QUndoView_Tr")]
 	public static extern libqt_string QUndoView_Tr(c_char* s);
 	[LinkName("QUndoView_Stack")]

@@ -374,6 +374,42 @@ class QBitmap : IQBitmap, IQPixmap, IQPaintDevice
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QBitmap_OnDevType(obj.ObjectPtr,  => QtBeef_QBitmap_OnDevType);
+		CQt.QBitmap_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QBitmap_OnPaintEngine);
+		CQt.QBitmap_OnMetric(obj.ObjectPtr,  => QtBeef_QBitmap_OnMetric);
+		CQt.QBitmap_OnInitPainter(obj.ObjectPtr,  => QtBeef_QBitmap_OnInitPainter);
+		CQt.QBitmap_OnRedirected(obj.ObjectPtr,  => QtBeef_QBitmap_OnRedirected);
+		CQt.QBitmap_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QBitmap_OnSharedPainter);
+	}
+	static void QtBeef_QBitmap_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QBitmap_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QBitmap_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QBitmap_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QBitmap_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QBitmap_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
 	}
 	public this(QBitmap_Ptr ptr)
 	{
@@ -820,34 +856,52 @@ extension CQt
 	public function void QBitmap_OnDevType_action(void* self);
 	[LinkName("QBitmap_OnDevType")]
 	public static extern c_int QBitmap_OnDevType(void* self, QBitmap_OnDevType_action _action);
+	
+	[LinkName("QBitmap_SuperDevType")]
+	public static extern c_int QBitmap_SuperDevType(void* self);
 	[LinkName("QBitmap_PaintEngine")]
 	public static extern void** QBitmap_PaintEngine(void* self);
 	
 	public function void QBitmap_OnPaintEngine_action(void* self);
 	[LinkName("QBitmap_OnPaintEngine")]
 	public static extern void** QBitmap_OnPaintEngine(void* self, QBitmap_OnPaintEngine_action _action);
+	
+	[LinkName("QBitmap_SuperPaintEngine")]
+	public static extern void** QBitmap_SuperPaintEngine(void* self);
 	[LinkName("QBitmap_Metric")]
 	public static extern c_int QBitmap_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QBitmap_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QBitmap_OnMetric")]
 	public static extern c_int QBitmap_OnMetric(void* self, QBitmap_OnMetric_action _action);
+	
+	[LinkName("QBitmap_SuperMetric")]
+	public static extern c_int QBitmap_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QBitmap_InitPainter")]
 	public static extern void QBitmap_InitPainter(void* self, void** painter);
 	
 	public function void QBitmap_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QBitmap_OnInitPainter")]
 	public static extern void QBitmap_OnInitPainter(void* self, QBitmap_OnInitPainter_action _action);
+	
+	[LinkName("QBitmap_SuperInitPainter")]
+	public static extern void QBitmap_SuperInitPainter(void* self, void** painter);
 	[LinkName("QBitmap_Redirected")]
 	public static extern void** QBitmap_Redirected(void* self, void** offset);
 	
 	public function void QBitmap_OnRedirected_action(void* self, void** offset);
 	[LinkName("QBitmap_OnRedirected")]
 	public static extern void** QBitmap_OnRedirected(void* self, QBitmap_OnRedirected_action _action);
+	
+	[LinkName("QBitmap_SuperRedirected")]
+	public static extern void** QBitmap_SuperRedirected(void* self, void** offset);
 	[LinkName("QBitmap_SharedPainter")]
 	public static extern void** QBitmap_SharedPainter(void* self);
 	
 	public function void QBitmap_OnSharedPainter_action(void* self);
 	[LinkName("QBitmap_OnSharedPainter")]
 	public static extern void** QBitmap_OnSharedPainter(void* self, QBitmap_OnSharedPainter_action _action);
+	
+	[LinkName("QBitmap_SuperSharedPainter")]
+	public static extern void** QBitmap_SuperSharedPainter(void* self);
 }

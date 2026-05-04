@@ -1717,6 +1717,61 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Finished);
 		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Accepted);
 		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Rejected);
+		CQt.QFontDialog_OnMetaObject(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMetaObject);
+		CQt.QFontDialog_OnMetacast(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMetacast);
+		CQt.QFontDialog_OnMetacall(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMetacall);
+		CQt.QFontDialog_OnSetVisible(obj.ObjectPtr,  => QtBeef_QFontDialog_OnSetVisible);
+		CQt.QFontDialog_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnChangeEvent);
+		CQt.QFontDialog_OnDone(obj.ObjectPtr,  => QtBeef_QFontDialog_OnDone);
+		CQt.QFontDialog_OnEventFilter(obj.ObjectPtr,  => QtBeef_QFontDialog_OnEventFilter);
+		CQt.QFontDialog_OnEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnEvent);
+		CQt.QFontDialog_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnTimerEvent);
+		CQt.QFontDialog_OnChildEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnChildEvent);
+		CQt.QFontDialog_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnCustomEvent);
+		CQt.QFontDialog_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QFontDialog_OnConnectNotify);
+		CQt.QFontDialog_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QFontDialog_OnDisconnectNotify);
+		CQt.QFontDialog_OnDevType(obj.ObjectPtr,  => QtBeef_QFontDialog_OnDevType);
+		CQt.QFontDialog_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QFontDialog_OnPaintEngine);
+		CQt.QFontDialog_OnMetric(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMetric);
+		CQt.QFontDialog_OnInitPainter(obj.ObjectPtr,  => QtBeef_QFontDialog_OnInitPainter);
+		CQt.QFontDialog_OnRedirected(obj.ObjectPtr,  => QtBeef_QFontDialog_OnRedirected);
+		CQt.QFontDialog_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QFontDialog_OnSharedPainter);
+		CQt.QFontDialog_OnSizeHint(obj.ObjectPtr,  => QtBeef_QFontDialog_OnSizeHint);
+		CQt.QFontDialog_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMinimumSizeHint);
+		CQt.QFontDialog_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QFontDialog_OnHeightForWidth);
+		CQt.QFontDialog_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QFontDialog_OnHasHeightForWidth);
+		CQt.QFontDialog_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMousePressEvent);
+		CQt.QFontDialog_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMouseReleaseEvent);
+		CQt.QFontDialog_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMouseDoubleClickEvent);
+		CQt.QFontDialog_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMouseMoveEvent);
+		CQt.QFontDialog_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnWheelEvent);
+		CQt.QFontDialog_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnKeyPressEvent);
+		CQt.QFontDialog_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnKeyReleaseEvent);
+		CQt.QFontDialog_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnFocusInEvent);
+		CQt.QFontDialog_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnFocusOutEvent);
+		CQt.QFontDialog_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnEnterEvent);
+		CQt.QFontDialog_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnLeaveEvent);
+		CQt.QFontDialog_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnPaintEvent);
+		CQt.QFontDialog_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnMoveEvent);
+		CQt.QFontDialog_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnResizeEvent);
+		CQt.QFontDialog_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnCloseEvent);
+		CQt.QFontDialog_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnContextMenuEvent);
+		CQt.QFontDialog_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnTabletEvent);
+		CQt.QFontDialog_OnActionEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnActionEvent);
+		CQt.QFontDialog_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnDragEnterEvent);
+		CQt.QFontDialog_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnDragMoveEvent);
+		CQt.QFontDialog_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnDragLeaveEvent);
+		CQt.QFontDialog_OnDropEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnDropEvent);
+		CQt.QFontDialog_OnShowEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnShowEvent);
+		CQt.QFontDialog_OnHideEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnHideEvent);
+		CQt.QFontDialog_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnNativeEvent);
+		CQt.QFontDialog_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QFontDialog_OnInputMethodEvent);
+		CQt.QFontDialog_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QFontDialog_OnInputMethodQuery);
+		CQt.QFontDialog_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QFontDialog_OnFocusNextPrevChild);
+		CQt.QFontDialog_OnOpen(obj.ObjectPtr,  => QtBeef_QFontDialog_OnOpen);
+		CQt.QFontDialog_OnExec(obj.ObjectPtr,  => QtBeef_QFontDialog_OnExec);
+		CQt.QFontDialog_OnAccept(obj.ObjectPtr,  => QtBeef_QFontDialog_OnAccept);
+		CQt.QFontDialog_OnReject(obj.ObjectPtr,  => QtBeef_QFontDialog_OnReject);
 	}
 	public Event<delegate void(void** font)> OnCurrentFontChanged = .() ~ _.Dispose();
 	public Event<delegate void(void** font)> OnFontSelected = .() ~ _.Dispose();
@@ -1783,6 +1838,281 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnRejected.Invoke();
+	}
+	static void QtBeef_QFontDialog_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QFontDialog_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QFontDialog_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QFontDialog_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QFontDialog_OnChangeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnDone(void* ptr, c_int result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDone(result);
+	}
+	static void QtBeef_QFontDialog_OnEventFilter(void* ptr, void** object, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(object, event);
+	}
+	static void QtBeef_QFontDialog_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QFontDialog_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QFontDialog_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QFontDialog_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QFontDialog_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QFontDialog_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QFontDialog_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QFontDialog_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QFontDialog_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QFontDialog_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QFontDialog_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QFontDialog_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QFontDialog_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QFontDialog_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QFontDialog_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QFontDialog_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QFontDialog_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QFontDialog_OnOpen(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen();
+	}
+	static void QtBeef_QFontDialog_OnExec(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExec();
+	}
+	static void QtBeef_QFontDialog_OnAccept(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccept();
+	}
+	static void QtBeef_QFontDialog_OnReject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReject();
 	}
 	public this(QFontDialog_Ptr ptr)
 	{
@@ -3482,18 +3812,27 @@ extension CQt
 	public function void QFontDialog_OnMetaObject_action(void* self);
 	[LinkName("QFontDialog_OnMetaObject")]
 	public static extern void** QFontDialog_OnMetaObject(void* self, QFontDialog_OnMetaObject_action _action);
+	
+	[LinkName("QFontDialog_SuperMetaObject")]
+	public static extern void** QFontDialog_SuperMetaObject(void* self);
 	[LinkName("QFontDialog_Qt_Metacast")]
 	public static extern void* QFontDialog_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QFontDialog_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QFontDialog_OnMetacast")]
 	public static extern void* QFontDialog_OnMetacast(void* self, QFontDialog_OnMetacast_action _action);
+	
+	[LinkName("QFontDialog_SuperMetacast")]
+	public static extern void* QFontDialog_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QFontDialog_Qt_Metacall")]
 	public static extern c_int QFontDialog_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QFontDialog_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFontDialog_OnMetacall")]
 	public static extern c_int QFontDialog_OnMetacall(void* self, QFontDialog_OnMetacall_action _action);
+	
+	[LinkName("QFontDialog_SuperMetacall")]
+	public static extern c_int QFontDialog_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QFontDialog_Tr")]
 	public static extern libqt_string QFontDialog_Tr(c_char* s);
 	[LinkName("QFontDialog_SetCurrentFont")]
@@ -3516,6 +3855,9 @@ extension CQt
 	public function void QFontDialog_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QFontDialog_OnSetVisible")]
 	public static extern void QFontDialog_OnSetVisible(void* self, QFontDialog_OnSetVisible_action _action);
+	
+	[LinkName("QFontDialog_SuperSetVisible")]
+	public static extern void QFontDialog_SuperSetVisible(void* self, bool visible);
 	[LinkName("QFontDialog_GetFont")]
 	public static extern void* QFontDialog_GetFont(bool* ok);
 	[LinkName("QFontDialog_GetFont2")]
@@ -3538,18 +3880,27 @@ extension CQt
 	public function void QFontDialog_OnChangeEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnChangeEvent")]
 	public static extern void QFontDialog_OnChangeEvent(void* self, QFontDialog_OnChangeEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperChangeEvent")]
+	public static extern void QFontDialog_SuperChangeEvent(void* self, void** event);
 	[LinkName("QFontDialog_Done")]
 	public static extern void QFontDialog_Done(void* self, c_int result);
 	
 	public function void QFontDialog_OnDone_action(void* self, c_int result);
 	[LinkName("QFontDialog_OnDone")]
 	public static extern void QFontDialog_OnDone(void* self, QFontDialog_OnDone_action _action);
+	
+	[LinkName("QFontDialog_SuperDone")]
+	public static extern void QFontDialog_SuperDone(void* self, c_int result);
 	[LinkName("QFontDialog_EventFilter")]
 	public static extern bool QFontDialog_EventFilter(void* self, void** object, void** event);
 	
 	public function void QFontDialog_OnEventFilter_action(void* self, void** object, void** event);
 	[LinkName("QFontDialog_OnEventFilter")]
 	public static extern bool QFontDialog_OnEventFilter(void* self, QFontDialog_OnEventFilter_action _action);
+	
+	[LinkName("QFontDialog_SuperEventFilter")]
+	public static extern bool QFontDialog_SuperEventFilter(void* self, void** object, void** event);
 	[LinkName("QFontDialog_Tr2")]
 	public static extern libqt_string QFontDialog_Tr2(c_char* s, c_char* c);
 	[LinkName("QFontDialog_Tr3")]
@@ -3570,288 +3921,432 @@ extension CQt
 	public function void QFontDialog_OnEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnEvent")]
 	public static extern bool QFontDialog_OnEvent(void* self, QFontDialog_OnEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperEvent")]
+	public static extern bool QFontDialog_SuperEvent(void* self, void** event);
 	[LinkName("QFontDialog_TimerEvent")]
 	public static extern void QFontDialog_TimerEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnTimerEvent")]
 	public static extern void QFontDialog_OnTimerEvent(void* self, QFontDialog_OnTimerEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperTimerEvent")]
+	public static extern void QFontDialog_SuperTimerEvent(void* self, void** event);
 	[LinkName("QFontDialog_ChildEvent")]
 	public static extern void QFontDialog_ChildEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnChildEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnChildEvent")]
 	public static extern void QFontDialog_OnChildEvent(void* self, QFontDialog_OnChildEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperChildEvent")]
+	public static extern void QFontDialog_SuperChildEvent(void* self, void** event);
 	[LinkName("QFontDialog_CustomEvent")]
 	public static extern void QFontDialog_CustomEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnCustomEvent")]
 	public static extern void QFontDialog_OnCustomEvent(void* self, QFontDialog_OnCustomEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperCustomEvent")]
+	public static extern void QFontDialog_SuperCustomEvent(void* self, void** event);
 	[LinkName("QFontDialog_ConnectNotify")]
 	public static extern void QFontDialog_ConnectNotify(void* self, void** signal);
 	
 	public function void QFontDialog_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QFontDialog_OnConnectNotify")]
 	public static extern void QFontDialog_OnConnectNotify(void* self, QFontDialog_OnConnectNotify_action _action);
+	
+	[LinkName("QFontDialog_SuperConnectNotify")]
+	public static extern void QFontDialog_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QFontDialog_DisconnectNotify")]
 	public static extern void QFontDialog_DisconnectNotify(void* self, void** signal);
 	
 	public function void QFontDialog_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QFontDialog_OnDisconnectNotify")]
 	public static extern void QFontDialog_OnDisconnectNotify(void* self, QFontDialog_OnDisconnectNotify_action _action);
+	
+	[LinkName("QFontDialog_SuperDisconnectNotify")]
+	public static extern void QFontDialog_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QFontDialog_DevType")]
 	public static extern c_int QFontDialog_DevType(void* self);
 	
 	public function void QFontDialog_OnDevType_action(void* self);
 	[LinkName("QFontDialog_OnDevType")]
 	public static extern c_int QFontDialog_OnDevType(void* self, QFontDialog_OnDevType_action _action);
+	
+	[LinkName("QFontDialog_SuperDevType")]
+	public static extern c_int QFontDialog_SuperDevType(void* self);
 	[LinkName("QFontDialog_PaintEngine")]
 	public static extern void** QFontDialog_PaintEngine(void* self);
 	
 	public function void QFontDialog_OnPaintEngine_action(void* self);
 	[LinkName("QFontDialog_OnPaintEngine")]
 	public static extern void** QFontDialog_OnPaintEngine(void* self, QFontDialog_OnPaintEngine_action _action);
+	
+	[LinkName("QFontDialog_SuperPaintEngine")]
+	public static extern void** QFontDialog_SuperPaintEngine(void* self);
 	[LinkName("QFontDialog_Metric")]
 	public static extern c_int QFontDialog_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QFontDialog_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QFontDialog_OnMetric")]
 	public static extern c_int QFontDialog_OnMetric(void* self, QFontDialog_OnMetric_action _action);
+	
+	[LinkName("QFontDialog_SuperMetric")]
+	public static extern c_int QFontDialog_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QFontDialog_InitPainter")]
 	public static extern void QFontDialog_InitPainter(void* self, void** painter);
 	
 	public function void QFontDialog_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QFontDialog_OnInitPainter")]
 	public static extern void QFontDialog_OnInitPainter(void* self, QFontDialog_OnInitPainter_action _action);
+	
+	[LinkName("QFontDialog_SuperInitPainter")]
+	public static extern void QFontDialog_SuperInitPainter(void* self, void** painter);
 	[LinkName("QFontDialog_Redirected")]
 	public static extern void** QFontDialog_Redirected(void* self, void** offset);
 	
 	public function void QFontDialog_OnRedirected_action(void* self, void** offset);
 	[LinkName("QFontDialog_OnRedirected")]
 	public static extern void** QFontDialog_OnRedirected(void* self, QFontDialog_OnRedirected_action _action);
+	
+	[LinkName("QFontDialog_SuperRedirected")]
+	public static extern void** QFontDialog_SuperRedirected(void* self, void** offset);
 	[LinkName("QFontDialog_SharedPainter")]
 	public static extern void** QFontDialog_SharedPainter(void* self);
 	
 	public function void QFontDialog_OnSharedPainter_action(void* self);
 	[LinkName("QFontDialog_OnSharedPainter")]
 	public static extern void** QFontDialog_OnSharedPainter(void* self, QFontDialog_OnSharedPainter_action _action);
+	
+	[LinkName("QFontDialog_SuperSharedPainter")]
+	public static extern void** QFontDialog_SuperSharedPainter(void* self);
 	[LinkName("QFontDialog_SizeHint")]
 	public static extern void* QFontDialog_SizeHint(void* self);
 	
 	public function void QFontDialog_OnSizeHint_action(void* self);
 	[LinkName("QFontDialog_OnSizeHint")]
 	public static extern void* QFontDialog_OnSizeHint(void* self, QFontDialog_OnSizeHint_action _action);
+	
+	[LinkName("QFontDialog_SuperSizeHint")]
+	public static extern void* QFontDialog_SuperSizeHint(void* self);
 	[LinkName("QFontDialog_MinimumSizeHint")]
 	public static extern void* QFontDialog_MinimumSizeHint(void* self);
 	
 	public function void QFontDialog_OnMinimumSizeHint_action(void* self);
 	[LinkName("QFontDialog_OnMinimumSizeHint")]
 	public static extern void* QFontDialog_OnMinimumSizeHint(void* self, QFontDialog_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QFontDialog_SuperMinimumSizeHint")]
+	public static extern void* QFontDialog_SuperMinimumSizeHint(void* self);
 	[LinkName("QFontDialog_HeightForWidth")]
 	public static extern c_int QFontDialog_HeightForWidth(void* self, c_int param1);
 	
 	public function void QFontDialog_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QFontDialog_OnHeightForWidth")]
 	public static extern c_int QFontDialog_OnHeightForWidth(void* self, QFontDialog_OnHeightForWidth_action _action);
+	
+	[LinkName("QFontDialog_SuperHeightForWidth")]
+	public static extern c_int QFontDialog_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QFontDialog_HasHeightForWidth")]
 	public static extern bool QFontDialog_HasHeightForWidth(void* self);
 	
 	public function void QFontDialog_OnHasHeightForWidth_action(void* self);
 	[LinkName("QFontDialog_OnHasHeightForWidth")]
 	public static extern bool QFontDialog_OnHasHeightForWidth(void* self, QFontDialog_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QFontDialog_SuperHasHeightForWidth")]
+	public static extern bool QFontDialog_SuperHasHeightForWidth(void* self);
 	[LinkName("QFontDialog_MousePressEvent")]
 	public static extern void QFontDialog_MousePressEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnMousePressEvent")]
 	public static extern void QFontDialog_OnMousePressEvent(void* self, QFontDialog_OnMousePressEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperMousePressEvent")]
+	public static extern void QFontDialog_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QFontDialog_MouseReleaseEvent")]
 	public static extern void QFontDialog_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnMouseReleaseEvent")]
 	public static extern void QFontDialog_OnMouseReleaseEvent(void* self, QFontDialog_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperMouseReleaseEvent")]
+	public static extern void QFontDialog_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QFontDialog_MouseDoubleClickEvent")]
 	public static extern void QFontDialog_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnMouseDoubleClickEvent")]
 	public static extern void QFontDialog_OnMouseDoubleClickEvent(void* self, QFontDialog_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperMouseDoubleClickEvent")]
+	public static extern void QFontDialog_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QFontDialog_MouseMoveEvent")]
 	public static extern void QFontDialog_MouseMoveEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnMouseMoveEvent")]
 	public static extern void QFontDialog_OnMouseMoveEvent(void* self, QFontDialog_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperMouseMoveEvent")]
+	public static extern void QFontDialog_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QFontDialog_WheelEvent")]
 	public static extern void QFontDialog_WheelEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnWheelEvent")]
 	public static extern void QFontDialog_OnWheelEvent(void* self, QFontDialog_OnWheelEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperWheelEvent")]
+	public static extern void QFontDialog_SuperWheelEvent(void* self, void** event);
 	[LinkName("QFontDialog_KeyPressEvent")]
 	public static extern void QFontDialog_KeyPressEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnKeyPressEvent")]
 	public static extern void QFontDialog_OnKeyPressEvent(void* self, QFontDialog_OnKeyPressEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperKeyPressEvent")]
+	public static extern void QFontDialog_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QFontDialog_KeyReleaseEvent")]
 	public static extern void QFontDialog_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnKeyReleaseEvent")]
 	public static extern void QFontDialog_OnKeyReleaseEvent(void* self, QFontDialog_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperKeyReleaseEvent")]
+	public static extern void QFontDialog_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QFontDialog_FocusInEvent")]
 	public static extern void QFontDialog_FocusInEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnFocusInEvent")]
 	public static extern void QFontDialog_OnFocusInEvent(void* self, QFontDialog_OnFocusInEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperFocusInEvent")]
+	public static extern void QFontDialog_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QFontDialog_FocusOutEvent")]
 	public static extern void QFontDialog_FocusOutEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnFocusOutEvent")]
 	public static extern void QFontDialog_OnFocusOutEvent(void* self, QFontDialog_OnFocusOutEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperFocusOutEvent")]
+	public static extern void QFontDialog_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QFontDialog_EnterEvent")]
 	public static extern void QFontDialog_EnterEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnEnterEvent")]
 	public static extern void QFontDialog_OnEnterEvent(void* self, QFontDialog_OnEnterEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperEnterEvent")]
+	public static extern void QFontDialog_SuperEnterEvent(void* self, void** event);
 	[LinkName("QFontDialog_LeaveEvent")]
 	public static extern void QFontDialog_LeaveEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnLeaveEvent")]
 	public static extern void QFontDialog_OnLeaveEvent(void* self, QFontDialog_OnLeaveEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperLeaveEvent")]
+	public static extern void QFontDialog_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QFontDialog_PaintEvent")]
 	public static extern void QFontDialog_PaintEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnPaintEvent")]
 	public static extern void QFontDialog_OnPaintEvent(void* self, QFontDialog_OnPaintEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperPaintEvent")]
+	public static extern void QFontDialog_SuperPaintEvent(void* self, void** event);
 	[LinkName("QFontDialog_MoveEvent")]
 	public static extern void QFontDialog_MoveEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnMoveEvent")]
 	public static extern void QFontDialog_OnMoveEvent(void* self, QFontDialog_OnMoveEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperMoveEvent")]
+	public static extern void QFontDialog_SuperMoveEvent(void* self, void** event);
 	[LinkName("QFontDialog_ResizeEvent")]
 	public static extern void QFontDialog_ResizeEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnResizeEvent")]
 	public static extern void QFontDialog_OnResizeEvent(void* self, QFontDialog_OnResizeEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperResizeEvent")]
+	public static extern void QFontDialog_SuperResizeEvent(void* self, void** event);
 	[LinkName("QFontDialog_CloseEvent")]
 	public static extern void QFontDialog_CloseEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnCloseEvent")]
 	public static extern void QFontDialog_OnCloseEvent(void* self, QFontDialog_OnCloseEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperCloseEvent")]
+	public static extern void QFontDialog_SuperCloseEvent(void* self, void** event);
 	[LinkName("QFontDialog_ContextMenuEvent")]
 	public static extern void QFontDialog_ContextMenuEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnContextMenuEvent")]
 	public static extern void QFontDialog_OnContextMenuEvent(void* self, QFontDialog_OnContextMenuEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperContextMenuEvent")]
+	public static extern void QFontDialog_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QFontDialog_TabletEvent")]
 	public static extern void QFontDialog_TabletEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnTabletEvent")]
 	public static extern void QFontDialog_OnTabletEvent(void* self, QFontDialog_OnTabletEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperTabletEvent")]
+	public static extern void QFontDialog_SuperTabletEvent(void* self, void** event);
 	[LinkName("QFontDialog_ActionEvent")]
 	public static extern void QFontDialog_ActionEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnActionEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnActionEvent")]
 	public static extern void QFontDialog_OnActionEvent(void* self, QFontDialog_OnActionEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperActionEvent")]
+	public static extern void QFontDialog_SuperActionEvent(void* self, void** event);
 	[LinkName("QFontDialog_DragEnterEvent")]
 	public static extern void QFontDialog_DragEnterEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnDragEnterEvent")]
 	public static extern void QFontDialog_OnDragEnterEvent(void* self, QFontDialog_OnDragEnterEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperDragEnterEvent")]
+	public static extern void QFontDialog_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QFontDialog_DragMoveEvent")]
 	public static extern void QFontDialog_DragMoveEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnDragMoveEvent")]
 	public static extern void QFontDialog_OnDragMoveEvent(void* self, QFontDialog_OnDragMoveEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperDragMoveEvent")]
+	public static extern void QFontDialog_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QFontDialog_DragLeaveEvent")]
 	public static extern void QFontDialog_DragLeaveEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnDragLeaveEvent")]
 	public static extern void QFontDialog_OnDragLeaveEvent(void* self, QFontDialog_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperDragLeaveEvent")]
+	public static extern void QFontDialog_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QFontDialog_DropEvent")]
 	public static extern void QFontDialog_DropEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnDropEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnDropEvent")]
 	public static extern void QFontDialog_OnDropEvent(void* self, QFontDialog_OnDropEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperDropEvent")]
+	public static extern void QFontDialog_SuperDropEvent(void* self, void** event);
 	[LinkName("QFontDialog_ShowEvent")]
 	public static extern void QFontDialog_ShowEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnShowEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnShowEvent")]
 	public static extern void QFontDialog_OnShowEvent(void* self, QFontDialog_OnShowEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperShowEvent")]
+	public static extern void QFontDialog_SuperShowEvent(void* self, void** event);
 	[LinkName("QFontDialog_HideEvent")]
 	public static extern void QFontDialog_HideEvent(void* self, void** event);
 	
 	public function void QFontDialog_OnHideEvent_action(void* self, void** event);
 	[LinkName("QFontDialog_OnHideEvent")]
 	public static extern void QFontDialog_OnHideEvent(void* self, QFontDialog_OnHideEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperHideEvent")]
+	public static extern void QFontDialog_SuperHideEvent(void* self, void** event);
 	[LinkName("QFontDialog_NativeEvent")]
 	public static extern bool QFontDialog_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QFontDialog_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QFontDialog_OnNativeEvent")]
 	public static extern bool QFontDialog_OnNativeEvent(void* self, QFontDialog_OnNativeEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperNativeEvent")]
+	public static extern bool QFontDialog_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QFontDialog_InputMethodEvent")]
 	public static extern void QFontDialog_InputMethodEvent(void* self, void** param1);
 	
 	public function void QFontDialog_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QFontDialog_OnInputMethodEvent")]
 	public static extern void QFontDialog_OnInputMethodEvent(void* self, QFontDialog_OnInputMethodEvent_action _action);
+	
+	[LinkName("QFontDialog_SuperInputMethodEvent")]
+	public static extern void QFontDialog_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QFontDialog_InputMethodQuery")]
 	public static extern void* QFontDialog_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QFontDialog_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QFontDialog_OnInputMethodQuery")]
 	public static extern void* QFontDialog_OnInputMethodQuery(void* self, QFontDialog_OnInputMethodQuery_action _action);
+	
+	[LinkName("QFontDialog_SuperInputMethodQuery")]
+	public static extern void* QFontDialog_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QFontDialog_FocusNextPrevChild")]
 	public static extern bool QFontDialog_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QFontDialog_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QFontDialog_OnFocusNextPrevChild")]
 	public static extern bool QFontDialog_OnFocusNextPrevChild(void* self, QFontDialog_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QFontDialog_SuperFocusNextPrevChild")]
+	public static extern bool QFontDialog_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QFontDialog_Open")]
 	public static extern void QFontDialog_Open(void* self);
 	
 	public function void QFontDialog_OnOpen_action(void* self);
 	[LinkName("QFontDialog_OnOpen")]
 	public static extern void QFontDialog_OnOpen(void* self, QFontDialog_OnOpen_action _action);
+	
+	[LinkName("QFontDialog_SuperOpen")]
+	public static extern void QFontDialog_SuperOpen(void* self);
 	[LinkName("QFontDialog_Exec")]
 	public static extern c_int QFontDialog_Exec(void* self);
 	
 	public function void QFontDialog_OnExec_action(void* self);
 	[LinkName("QFontDialog_OnExec")]
 	public static extern c_int QFontDialog_OnExec(void* self, QFontDialog_OnExec_action _action);
+	
+	[LinkName("QFontDialog_SuperExec")]
+	public static extern c_int QFontDialog_SuperExec(void* self);
 	[LinkName("QFontDialog_Accept")]
 	public static extern void QFontDialog_Accept(void* self);
 	
 	public function void QFontDialog_OnAccept_action(void* self);
 	[LinkName("QFontDialog_OnAccept")]
 	public static extern void QFontDialog_OnAccept(void* self, QFontDialog_OnAccept_action _action);
+	
+	[LinkName("QFontDialog_SuperAccept")]
+	public static extern void QFontDialog_SuperAccept(void* self);
 	[LinkName("QFontDialog_Reject")]
 	public static extern void QFontDialog_Reject(void* self);
 	
 	public function void QFontDialog_OnReject_action(void* self);
 	[LinkName("QFontDialog_OnReject")]
 	public static extern void QFontDialog_OnReject(void* self, QFontDialog_OnReject_action _action);
+	
+	[LinkName("QFontDialog_SuperReject")]
+	public static extern void QFontDialog_SuperReject(void* self);
 }
 [AllowDuplicates]
 enum QFontDialog_FontDialogOption

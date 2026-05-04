@@ -400,6 +400,16 @@ class QSettings : IQSettings, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QSettings_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSettings_OnMetaObject);
+		CQt.QSettings_OnMetacast(obj.ObjectPtr,  => QtBeef_QSettings_OnMetacast);
+		CQt.QSettings_OnMetacall(obj.ObjectPtr,  => QtBeef_QSettings_OnMetacall);
+		CQt.QSettings_OnEvent(obj.ObjectPtr,  => QtBeef_QSettings_OnEvent);
+		CQt.QSettings_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSettings_OnEventFilter);
+		CQt.QSettings_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSettings_OnTimerEvent);
+		CQt.QSettings_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSettings_OnChildEvent);
+		CQt.QSettings_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSettings_OnCustomEvent);
+		CQt.QSettings_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSettings_OnConnectNotify);
+		CQt.QSettings_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSettings_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -412,6 +422,56 @@ class QSettings : IQSettings, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QSettings_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSettings_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSettings_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSettings_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSettings_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSettings_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSettings_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSettings_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSettings_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSettings_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QSettings_Ptr ptr)
 	{
@@ -912,18 +972,27 @@ extension CQt
 	public function void QSettings_OnMetaObject_action(void* self);
 	[LinkName("QSettings_OnMetaObject")]
 	public static extern void** QSettings_OnMetaObject(void* self, QSettings_OnMetaObject_action _action);
+	
+	[LinkName("QSettings_SuperMetaObject")]
+	public static extern void** QSettings_SuperMetaObject(void* self);
 	[LinkName("QSettings_Qt_Metacast")]
 	public static extern void* QSettings_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSettings_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSettings_OnMetacast")]
 	public static extern void* QSettings_OnMetacast(void* self, QSettings_OnMetacast_action _action);
+	
+	[LinkName("QSettings_SuperMetacast")]
+	public static extern void* QSettings_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSettings_Qt_Metacall")]
 	public static extern c_int QSettings_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSettings_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSettings_OnMetacall")]
 	public static extern c_int QSettings_OnMetacall(void* self, QSettings_OnMetacall_action _action);
+	
+	[LinkName("QSettings_SuperMetacall")]
+	public static extern c_int QSettings_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSettings_Tr")]
 	public static extern libqt_string QSettings_Tr(c_char* s);
 	[LinkName("QSettings_Clear")]
@@ -994,6 +1063,9 @@ extension CQt
 	public function void QSettings_OnEvent_action(void* self, void** event);
 	[LinkName("QSettings_OnEvent")]
 	public static extern bool QSettings_OnEvent(void* self, QSettings_OnEvent_action _action);
+	
+	[LinkName("QSettings_SuperEvent")]
+	public static extern bool QSettings_SuperEvent(void* self, void** event);
 	[LinkName("QSettings_Tr2")]
 	public static extern libqt_string QSettings_Tr2(c_char* s, c_char* c);
 	[LinkName("QSettings_Tr3")]
@@ -1006,36 +1078,54 @@ extension CQt
 	public function void QSettings_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSettings_OnEventFilter")]
 	public static extern bool QSettings_OnEventFilter(void* self, QSettings_OnEventFilter_action _action);
+	
+	[LinkName("QSettings_SuperEventFilter")]
+	public static extern bool QSettings_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSettings_TimerEvent")]
 	public static extern void QSettings_TimerEvent(void* self, void** event);
 	
 	public function void QSettings_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSettings_OnTimerEvent")]
 	public static extern void QSettings_OnTimerEvent(void* self, QSettings_OnTimerEvent_action _action);
+	
+	[LinkName("QSettings_SuperTimerEvent")]
+	public static extern void QSettings_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSettings_ChildEvent")]
 	public static extern void QSettings_ChildEvent(void* self, void** event);
 	
 	public function void QSettings_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSettings_OnChildEvent")]
 	public static extern void QSettings_OnChildEvent(void* self, QSettings_OnChildEvent_action _action);
+	
+	[LinkName("QSettings_SuperChildEvent")]
+	public static extern void QSettings_SuperChildEvent(void* self, void** event);
 	[LinkName("QSettings_CustomEvent")]
 	public static extern void QSettings_CustomEvent(void* self, void** event);
 	
 	public function void QSettings_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSettings_OnCustomEvent")]
 	public static extern void QSettings_OnCustomEvent(void* self, QSettings_OnCustomEvent_action _action);
+	
+	[LinkName("QSettings_SuperCustomEvent")]
+	public static extern void QSettings_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSettings_ConnectNotify")]
 	public static extern void QSettings_ConnectNotify(void* self, void** signal);
 	
 	public function void QSettings_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSettings_OnConnectNotify")]
 	public static extern void QSettings_OnConnectNotify(void* self, QSettings_OnConnectNotify_action _action);
+	
+	[LinkName("QSettings_SuperConnectNotify")]
+	public static extern void QSettings_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSettings_DisconnectNotify")]
 	public static extern void QSettings_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSettings_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSettings_OnDisconnectNotify")]
 	public static extern void QSettings_OnDisconnectNotify(void* self, QSettings_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSettings_SuperDisconnectNotify")]
+	public static extern void QSettings_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QSettings_Status

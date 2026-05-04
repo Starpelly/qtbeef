@@ -380,6 +380,17 @@ class QTimeLine : IQTimeLine, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QTimeLine_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTimeLine_OnMetaObject);
+		CQt.QTimeLine_OnMetacast(obj.ObjectPtr,  => QtBeef_QTimeLine_OnMetacast);
+		CQt.QTimeLine_OnMetacall(obj.ObjectPtr,  => QtBeef_QTimeLine_OnMetacall);
+		CQt.QTimeLine_OnValueForTime(obj.ObjectPtr,  => QtBeef_QTimeLine_OnValueForTime);
+		CQt.QTimeLine_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTimeLine_OnTimerEvent);
+		CQt.QTimeLine_OnEvent(obj.ObjectPtr,  => QtBeef_QTimeLine_OnEvent);
+		CQt.QTimeLine_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTimeLine_OnEventFilter);
+		CQt.QTimeLine_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTimeLine_OnChildEvent);
+		CQt.QTimeLine_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTimeLine_OnCustomEvent);
+		CQt.QTimeLine_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTimeLine_OnConnectNotify);
+		CQt.QTimeLine_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTimeLine_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -392,6 +403,61 @@ class QTimeLine : IQTimeLine, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QTimeLine_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTimeLine_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTimeLine_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTimeLine_OnValueForTime(void* ptr, c_int msec)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValueForTime(msec);
+	}
+	static void QtBeef_QTimeLine_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTimeLine_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTimeLine_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTimeLine_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTimeLine_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTimeLine_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTimeLine_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QTimeLine_Ptr ptr)
 	{
@@ -788,18 +854,27 @@ extension CQt
 	public function void QTimeLine_OnMetaObject_action(void* self);
 	[LinkName("QTimeLine_OnMetaObject")]
 	public static extern void** QTimeLine_OnMetaObject(void* self, QTimeLine_OnMetaObject_action _action);
+	
+	[LinkName("QTimeLine_SuperMetaObject")]
+	public static extern void** QTimeLine_SuperMetaObject(void* self);
 	[LinkName("QTimeLine_Qt_Metacast")]
 	public static extern void* QTimeLine_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTimeLine_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTimeLine_OnMetacast")]
 	public static extern void* QTimeLine_OnMetacast(void* self, QTimeLine_OnMetacast_action _action);
+	
+	[LinkName("QTimeLine_SuperMetacast")]
+	public static extern void* QTimeLine_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTimeLine_Qt_Metacall")]
 	public static extern c_int QTimeLine_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTimeLine_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTimeLine_OnMetacall")]
 	public static extern c_int QTimeLine_OnMetacall(void* self, QTimeLine_OnMetacall_action _action);
+	
+	[LinkName("QTimeLine_SuperMetacall")]
+	public static extern c_int QTimeLine_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTimeLine_Tr")]
 	public static extern libqt_string QTimeLine_Tr(c_char* s);
 	[LinkName("QTimeLine_State")]
@@ -848,6 +923,9 @@ extension CQt
 	public function void QTimeLine_OnValueForTime_action(void* self, c_int msec);
 	[LinkName("QTimeLine_OnValueForTime")]
 	public static extern double QTimeLine_OnValueForTime(void* self, QTimeLine_OnValueForTime_action _action);
+	
+	[LinkName("QTimeLine_SuperValueForTime")]
+	public static extern double QTimeLine_SuperValueForTime(void* self, c_int msec);
 	[LinkName("QTimeLine_Start")]
 	public static extern void QTimeLine_Start(void* self);
 	[LinkName("QTimeLine_Resume")]
@@ -866,6 +944,9 @@ extension CQt
 	public function void QTimeLine_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTimeLine_OnTimerEvent")]
 	public static extern void QTimeLine_OnTimerEvent(void* self, QTimeLine_OnTimerEvent_action _action);
+	
+	[LinkName("QTimeLine_SuperTimerEvent")]
+	public static extern void QTimeLine_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTimeLine_Tr2")]
 	public static extern libqt_string QTimeLine_Tr2(c_char* s, c_char* c);
 	[LinkName("QTimeLine_Tr3")]
@@ -876,36 +957,54 @@ extension CQt
 	public function void QTimeLine_OnEvent_action(void* self, void** event);
 	[LinkName("QTimeLine_OnEvent")]
 	public static extern bool QTimeLine_OnEvent(void* self, QTimeLine_OnEvent_action _action);
+	
+	[LinkName("QTimeLine_SuperEvent")]
+	public static extern bool QTimeLine_SuperEvent(void* self, void** event);
 	[LinkName("QTimeLine_EventFilter")]
 	public static extern bool QTimeLine_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTimeLine_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTimeLine_OnEventFilter")]
 	public static extern bool QTimeLine_OnEventFilter(void* self, QTimeLine_OnEventFilter_action _action);
+	
+	[LinkName("QTimeLine_SuperEventFilter")]
+	public static extern bool QTimeLine_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTimeLine_ChildEvent")]
 	public static extern void QTimeLine_ChildEvent(void* self, void** event);
 	
 	public function void QTimeLine_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTimeLine_OnChildEvent")]
 	public static extern void QTimeLine_OnChildEvent(void* self, QTimeLine_OnChildEvent_action _action);
+	
+	[LinkName("QTimeLine_SuperChildEvent")]
+	public static extern void QTimeLine_SuperChildEvent(void* self, void** event);
 	[LinkName("QTimeLine_CustomEvent")]
 	public static extern void QTimeLine_CustomEvent(void* self, void** event);
 	
 	public function void QTimeLine_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTimeLine_OnCustomEvent")]
 	public static extern void QTimeLine_OnCustomEvent(void* self, QTimeLine_OnCustomEvent_action _action);
+	
+	[LinkName("QTimeLine_SuperCustomEvent")]
+	public static extern void QTimeLine_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTimeLine_ConnectNotify")]
 	public static extern void QTimeLine_ConnectNotify(void* self, void** signal);
 	
 	public function void QTimeLine_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTimeLine_OnConnectNotify")]
 	public static extern void QTimeLine_OnConnectNotify(void* self, QTimeLine_OnConnectNotify_action _action);
+	
+	[LinkName("QTimeLine_SuperConnectNotify")]
+	public static extern void QTimeLine_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTimeLine_DisconnectNotify")]
 	public static extern void QTimeLine_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTimeLine_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTimeLine_OnDisconnectNotify")]
 	public static extern void QTimeLine_OnDisconnectNotify(void* self, QTimeLine_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTimeLine_SuperDisconnectNotify")]
+	public static extern void QTimeLine_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QTimeLine_State

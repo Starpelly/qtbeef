@@ -38,6 +38,12 @@ class QRunnable : IQRunnable
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QRunnable_OnRun(obj.ObjectPtr,  => QtBeef_QRunnable_OnRun);
+	}
+	static void QtBeef_QRunnable_OnRun(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRun();
 	}
 	public this(QRunnable_Ptr ptr)
 	{
@@ -84,6 +90,9 @@ extension CQt
 	public function void QRunnable_OnRun_action(void* self);
 	[LinkName("QRunnable_OnRun")]
 	public static extern void QRunnable_OnRun(void* self, QRunnable_OnRun_action _action);
+	
+	[LinkName("QRunnable_SuperRun")]
+	public static extern void QRunnable_SuperRun(void* self);
 	[LinkName("QRunnable_Create")]
 	public static extern void** QRunnable_Create(void* functionToRun);
 	[LinkName("QRunnable_AutoDelete")]

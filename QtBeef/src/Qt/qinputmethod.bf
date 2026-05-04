@@ -392,6 +392,16 @@ class QInputMethod : IQInputMethod, IQObject
 		CQt.QInputMethod_Connect_InputDirectionChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_Connect_InputDirectionChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QInputMethod_OnMetaObject(obj.ObjectPtr,  => QtBeef_QInputMethod_OnMetaObject);
+		CQt.QInputMethod_OnMetacast(obj.ObjectPtr,  => QtBeef_QInputMethod_OnMetacast);
+		CQt.QInputMethod_OnMetacall(obj.ObjectPtr,  => QtBeef_QInputMethod_OnMetacall);
+		CQt.QInputMethod_OnEvent(obj.ObjectPtr,  => QtBeef_QInputMethod_OnEvent);
+		CQt.QInputMethod_OnEventFilter(obj.ObjectPtr,  => QtBeef_QInputMethod_OnEventFilter);
+		CQt.QInputMethod_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QInputMethod_OnTimerEvent);
+		CQt.QInputMethod_OnChildEvent(obj.ObjectPtr,  => QtBeef_QInputMethod_OnChildEvent);
+		CQt.QInputMethod_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QInputMethod_OnCustomEvent);
+		CQt.QInputMethod_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QInputMethod_OnConnectNotify);
+		CQt.QInputMethod_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QInputMethod_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnCursorRectangleChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnAnchorRectangleChanged = .() ~ _.Dispose();
@@ -452,6 +462,56 @@ class QInputMethod : IQInputMethod, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QInputMethod_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QInputMethod_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QInputMethod_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QInputMethod_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QInputMethod_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QInputMethod_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QInputMethod_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QInputMethod_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QInputMethod_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QInputMethod_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QInputMethod_Ptr ptr)
 	{
@@ -825,18 +885,27 @@ extension CQt
 	public function void QInputMethod_OnMetaObject_action(void* self);
 	[LinkName("QInputMethod_OnMetaObject")]
 	public static extern void** QInputMethod_OnMetaObject(void* self, QInputMethod_OnMetaObject_action _action);
+	
+	[LinkName("QInputMethod_SuperMetaObject")]
+	public static extern void** QInputMethod_SuperMetaObject(void* self);
 	[LinkName("QInputMethod_Qt_Metacast")]
 	public static extern void* QInputMethod_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QInputMethod_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QInputMethod_OnMetacast")]
 	public static extern void* QInputMethod_OnMetacast(void* self, QInputMethod_OnMetacast_action _action);
+	
+	[LinkName("QInputMethod_SuperMetacast")]
+	public static extern void* QInputMethod_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QInputMethod_Qt_Metacall")]
 	public static extern c_int QInputMethod_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QInputMethod_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QInputMethod_OnMetacall")]
 	public static extern c_int QInputMethod_OnMetacall(void* self, QInputMethod_OnMetacall_action _action);
+	
+	[LinkName("QInputMethod_SuperMetacall")]
+	public static extern c_int QInputMethod_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QInputMethod_Tr")]
 	public static extern libqt_string QInputMethod_Tr(c_char* s);
 	[LinkName("QInputMethod_InputItemTransform")]
@@ -937,42 +1006,63 @@ extension CQt
 	public function void QInputMethod_OnEvent_action(void* self, void** event);
 	[LinkName("QInputMethod_OnEvent")]
 	public static extern bool QInputMethod_OnEvent(void* self, QInputMethod_OnEvent_action _action);
+	
+	[LinkName("QInputMethod_SuperEvent")]
+	public static extern bool QInputMethod_SuperEvent(void* self, void** event);
 	[LinkName("QInputMethod_EventFilter")]
 	public static extern bool QInputMethod_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QInputMethod_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QInputMethod_OnEventFilter")]
 	public static extern bool QInputMethod_OnEventFilter(void* self, QInputMethod_OnEventFilter_action _action);
+	
+	[LinkName("QInputMethod_SuperEventFilter")]
+	public static extern bool QInputMethod_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QInputMethod_TimerEvent")]
 	public static extern void QInputMethod_TimerEvent(void* self, void** event);
 	
 	public function void QInputMethod_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QInputMethod_OnTimerEvent")]
 	public static extern void QInputMethod_OnTimerEvent(void* self, QInputMethod_OnTimerEvent_action _action);
+	
+	[LinkName("QInputMethod_SuperTimerEvent")]
+	public static extern void QInputMethod_SuperTimerEvent(void* self, void** event);
 	[LinkName("QInputMethod_ChildEvent")]
 	public static extern void QInputMethod_ChildEvent(void* self, void** event);
 	
 	public function void QInputMethod_OnChildEvent_action(void* self, void** event);
 	[LinkName("QInputMethod_OnChildEvent")]
 	public static extern void QInputMethod_OnChildEvent(void* self, QInputMethod_OnChildEvent_action _action);
+	
+	[LinkName("QInputMethod_SuperChildEvent")]
+	public static extern void QInputMethod_SuperChildEvent(void* self, void** event);
 	[LinkName("QInputMethod_CustomEvent")]
 	public static extern void QInputMethod_CustomEvent(void* self, void** event);
 	
 	public function void QInputMethod_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QInputMethod_OnCustomEvent")]
 	public static extern void QInputMethod_OnCustomEvent(void* self, QInputMethod_OnCustomEvent_action _action);
+	
+	[LinkName("QInputMethod_SuperCustomEvent")]
+	public static extern void QInputMethod_SuperCustomEvent(void* self, void** event);
 	[LinkName("QInputMethod_ConnectNotify")]
 	public static extern void QInputMethod_ConnectNotify(void* self, void** signal);
 	
 	public function void QInputMethod_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QInputMethod_OnConnectNotify")]
 	public static extern void QInputMethod_OnConnectNotify(void* self, QInputMethod_OnConnectNotify_action _action);
+	
+	[LinkName("QInputMethod_SuperConnectNotify")]
+	public static extern void QInputMethod_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QInputMethod_DisconnectNotify")]
 	public static extern void QInputMethod_DisconnectNotify(void* self, void** signal);
 	
 	public function void QInputMethod_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QInputMethod_OnDisconnectNotify")]
 	public static extern void QInputMethod_OnDisconnectNotify(void* self, QInputMethod_OnDisconnectNotify_action _action);
+	
+	[LinkName("QInputMethod_SuperDisconnectNotify")]
+	public static extern void QInputMethod_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QInputMethod_Action

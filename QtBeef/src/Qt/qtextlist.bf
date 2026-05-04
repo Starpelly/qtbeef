@@ -336,6 +336,19 @@ class QTextList : IQTextList, IQTextBlockGroup, IQTextObject, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QTextList_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTextList_OnMetaObject);
+		CQt.QTextList_OnMetacast(obj.ObjectPtr,  => QtBeef_QTextList_OnMetacast);
+		CQt.QTextList_OnMetacall(obj.ObjectPtr,  => QtBeef_QTextList_OnMetacall);
+		CQt.QTextList_OnEvent(obj.ObjectPtr,  => QtBeef_QTextList_OnEvent);
+		CQt.QTextList_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTextList_OnEventFilter);
+		CQt.QTextList_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTextList_OnTimerEvent);
+		CQt.QTextList_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTextList_OnChildEvent);
+		CQt.QTextList_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTextList_OnCustomEvent);
+		CQt.QTextList_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTextList_OnConnectNotify);
+		CQt.QTextList_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTextList_OnDisconnectNotify);
+		CQt.QTextList_OnBlockInserted(obj.ObjectPtr,  => QtBeef_QTextList_OnBlockInserted);
+		CQt.QTextList_OnBlockRemoved(obj.ObjectPtr,  => QtBeef_QTextList_OnBlockRemoved);
+		CQt.QTextList_OnBlockFormatChanged(obj.ObjectPtr,  => QtBeef_QTextList_OnBlockFormatChanged);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -348,6 +361,71 @@ class QTextList : IQTextList, IQTextBlockGroup, IQTextObject, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QTextList_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTextList_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTextList_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTextList_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTextList_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTextList_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTextList_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTextList_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTextList_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTextList_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QTextList_OnBlockInserted(void* ptr, void** block)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlockInserted(block);
+	}
+	static void QtBeef_QTextList_OnBlockRemoved(void* ptr, void** block)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlockRemoved(block);
+	}
+	static void QtBeef_QTextList_OnBlockFormatChanged(void* ptr, void** block)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlockFormatChanged(block);
 	}
 	public this(QTextList_Ptr ptr)
 	{
@@ -683,18 +761,27 @@ extension CQt
 	public function void QTextList_OnMetaObject_action(void* self);
 	[LinkName("QTextList_OnMetaObject")]
 	public static extern void** QTextList_OnMetaObject(void* self, QTextList_OnMetaObject_action _action);
+	
+	[LinkName("QTextList_SuperMetaObject")]
+	public static extern void** QTextList_SuperMetaObject(void* self);
 	[LinkName("QTextList_Qt_Metacast")]
 	public static extern void* QTextList_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTextList_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTextList_OnMetacast")]
 	public static extern void* QTextList_OnMetacast(void* self, QTextList_OnMetacast_action _action);
+	
+	[LinkName("QTextList_SuperMetacast")]
+	public static extern void* QTextList_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTextList_Qt_Metacall")]
 	public static extern c_int QTextList_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTextList_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTextList_OnMetacall")]
 	public static extern c_int QTextList_OnMetacall(void* self, QTextList_OnMetacall_action _action);
+	
+	[LinkName("QTextList_SuperMetacall")]
+	public static extern c_int QTextList_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTextList_Tr")]
 	public static extern libqt_string QTextList_Tr(c_char* s);
 	[LinkName("QTextList_Count")]
@@ -725,58 +812,88 @@ extension CQt
 	public function void QTextList_OnEvent_action(void* self, void** event);
 	[LinkName("QTextList_OnEvent")]
 	public static extern bool QTextList_OnEvent(void* self, QTextList_OnEvent_action _action);
+	
+	[LinkName("QTextList_SuperEvent")]
+	public static extern bool QTextList_SuperEvent(void* self, void** event);
 	[LinkName("QTextList_EventFilter")]
 	public static extern bool QTextList_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTextList_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTextList_OnEventFilter")]
 	public static extern bool QTextList_OnEventFilter(void* self, QTextList_OnEventFilter_action _action);
+	
+	[LinkName("QTextList_SuperEventFilter")]
+	public static extern bool QTextList_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTextList_TimerEvent")]
 	public static extern void QTextList_TimerEvent(void* self, void** event);
 	
 	public function void QTextList_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTextList_OnTimerEvent")]
 	public static extern void QTextList_OnTimerEvent(void* self, QTextList_OnTimerEvent_action _action);
+	
+	[LinkName("QTextList_SuperTimerEvent")]
+	public static extern void QTextList_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTextList_ChildEvent")]
 	public static extern void QTextList_ChildEvent(void* self, void** event);
 	
 	public function void QTextList_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTextList_OnChildEvent")]
 	public static extern void QTextList_OnChildEvent(void* self, QTextList_OnChildEvent_action _action);
+	
+	[LinkName("QTextList_SuperChildEvent")]
+	public static extern void QTextList_SuperChildEvent(void* self, void** event);
 	[LinkName("QTextList_CustomEvent")]
 	public static extern void QTextList_CustomEvent(void* self, void** event);
 	
 	public function void QTextList_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTextList_OnCustomEvent")]
 	public static extern void QTextList_OnCustomEvent(void* self, QTextList_OnCustomEvent_action _action);
+	
+	[LinkName("QTextList_SuperCustomEvent")]
+	public static extern void QTextList_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTextList_ConnectNotify")]
 	public static extern void QTextList_ConnectNotify(void* self, void** signal);
 	
 	public function void QTextList_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTextList_OnConnectNotify")]
 	public static extern void QTextList_OnConnectNotify(void* self, QTextList_OnConnectNotify_action _action);
+	
+	[LinkName("QTextList_SuperConnectNotify")]
+	public static extern void QTextList_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTextList_DisconnectNotify")]
 	public static extern void QTextList_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTextList_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTextList_OnDisconnectNotify")]
 	public static extern void QTextList_OnDisconnectNotify(void* self, QTextList_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTextList_SuperDisconnectNotify")]
+	public static extern void QTextList_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QTextList_BlockInserted")]
 	public static extern void QTextList_BlockInserted(void* self, void** block);
 	
 	public function void QTextList_OnBlockInserted_action(void* self, void** block);
 	[LinkName("QTextList_OnBlockInserted")]
 	public static extern void QTextList_OnBlockInserted(void* self, QTextList_OnBlockInserted_action _action);
+	
+	[LinkName("QTextList_SuperBlockInserted")]
+	public static extern void QTextList_SuperBlockInserted(void* self, void** block);
 	[LinkName("QTextList_BlockRemoved")]
 	public static extern void QTextList_BlockRemoved(void* self, void** block);
 	
 	public function void QTextList_OnBlockRemoved_action(void* self, void** block);
 	[LinkName("QTextList_OnBlockRemoved")]
 	public static extern void QTextList_OnBlockRemoved(void* self, QTextList_OnBlockRemoved_action _action);
+	
+	[LinkName("QTextList_SuperBlockRemoved")]
+	public static extern void QTextList_SuperBlockRemoved(void* self, void** block);
 	[LinkName("QTextList_BlockFormatChanged")]
 	public static extern void QTextList_BlockFormatChanged(void* self, void** block);
 	
 	public function void QTextList_OnBlockFormatChanged_action(void* self, void** block);
 	[LinkName("QTextList_OnBlockFormatChanged")]
 	public static extern void QTextList_OnBlockFormatChanged(void* self, QTextList_OnBlockFormatChanged_action _action);
+	
+	[LinkName("QTextList_SuperBlockFormatChanged")]
+	public static extern void QTextList_SuperBlockFormatChanged(void* self, void** block);
 }

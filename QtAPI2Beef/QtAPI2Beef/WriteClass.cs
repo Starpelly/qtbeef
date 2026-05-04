@@ -259,7 +259,10 @@ class WriteClass
             if (kind == SignalVirtualKind.Virtual)
             {
                 outStr = $"{bfClassName}_On{toPascalCase(cppMethodNameToBfMethodNameStr(method.MethodName))}";
-
+            }
+            else if (kind == SignalVirtualKind.Super)
+            {
+                outStr = $"{bfClassName}_Super{toPascalCase(cppMethodNameToBfMethodNameStr(method.MethodName))}";
             }
             else if (kind == SignalVirtualKind.Signal)
             {
@@ -304,7 +307,7 @@ class WriteClass
     {
         var parameters = new StringCodeBuilder();
 
-        bool isSignal = kind != SignalVirtualKind.None;
+        bool isSignal = kind != SignalVirtualKind.None && kind != SignalVirtualKind.Super;
 
         if (stage == Stage.CApi)
         {
@@ -382,7 +385,8 @@ class WriteClass
     {
         None,
         Signal,
-        Virtual
+        Virtual,
+        Super
     }
 
     string getSignalFunctionTypedefName(CppClass _class, CppMethod method, SignalVirtualKind kind)
@@ -856,7 +860,6 @@ if (masterClass.ClassName == "QGestureEvent")
                             code.AppendLine($"CQt.{signalName}({signalArguments});");
                         }
 
-                        /*
                         foreach (var signal in allVirtualMethods)
                         {
                             // @TEMP
@@ -869,7 +872,6 @@ if (masterClass.ClassName == "QGestureEvent")
 
                             code.AppendLine($"CQt.{signalName}({signalArguments});");
                         }
-                        */
 
                         /*
                         code.AppendLine("switch (signalType)");
@@ -912,7 +914,6 @@ if (masterClass.ClassName == "QGestureEvent")
                         code.AppendLine("}");
                     }
 
-                    /*
                     foreach (var method in allVirtualMethods)
                     {
                         if (method.method.MethodName.StartsWith("operator"))
@@ -925,14 +926,13 @@ if (masterClass.ClassName == "QGestureEvent")
                         code.AppendLine("{");
                         code.IncreaseTab();
                         {
-                            // code.AppendLine("let obj = CQt.ObjectHandleMap[ptr] as Self;");
-                            // code.AppendLine($"obj.On{toPascalCase(cppMethodNameToBfMethodNameStr(method.method.MethodName))}({arguments});");
+                            code.AppendLine("let obj = CQt.ObjectHandleMap[ptr] as Self;");
+                            code.AppendLine($"obj.On{toPascalCase(cppMethodNameToBfMethodNameStr(method.method.MethodName))}({arguments});");
                         }
                         code.DecreaseTab();
                         code.AppendLine("}");
 
                     }
-                    */
 
                     void emitConnectSignalsCall()
                     {
@@ -1100,6 +1100,20 @@ if (masterClass.ClassName == "QGestureEvent")
                             code.AppendEmptyLine();
 
                             code.AppendLine($"public function void {getSignalFunctionTypedefName(cppClass, method, kind)}({parameters});");
+
+                            var signalName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, kind);
+                            var signalParameters = buildBfParameters(cppClass, method, Stage.CApi, true, kind);
+
+                            code.AppendLine($"[LinkName(\"{signalName}\")]");
+                            code.AppendLine($"public static extern {getBfTypeName(method.ReturnType, Stage.CApi)} {signalName}({signalParameters});");
+                        }
+
+                        // Virtual methods have "super" methods.
+                        if (method.IsVirtual)
+                        {
+                            var kind = SignalVirtualKind.Super;
+
+                            code.AppendEmptyLine();
 
                             var signalName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, kind);
                             var signalParameters = buildBfParameters(cppClass, method, Stage.CApi, true, kind);

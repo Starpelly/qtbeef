@@ -634,6 +634,42 @@ class QImage : IQImage, IQPaintDevice
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QImage_OnDevType(obj.ObjectPtr,  => QtBeef_QImage_OnDevType);
+		CQt.QImage_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QImage_OnPaintEngine);
+		CQt.QImage_OnMetric(obj.ObjectPtr,  => QtBeef_QImage_OnMetric);
+		CQt.QImage_OnInitPainter(obj.ObjectPtr,  => QtBeef_QImage_OnInitPainter);
+		CQt.QImage_OnRedirected(obj.ObjectPtr,  => QtBeef_QImage_OnRedirected);
+		CQt.QImage_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QImage_OnSharedPainter);
+	}
+	static void QtBeef_QImage_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QImage_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QImage_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QImage_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QImage_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QImage_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
 	}
 	public this(QImage_Ptr ptr)
 	{
@@ -1378,6 +1414,9 @@ extension CQt
 	public function void QImage_OnDevType_action(void* self);
 	[LinkName("QImage_OnDevType")]
 	public static extern c_int QImage_OnDevType(void* self, QImage_OnDevType_action _action);
+	
+	[LinkName("QImage_SuperDevType")]
+	public static extern c_int QImage_SuperDevType(void* self);
 	[LinkName("QImage_OperatorEqual")]
 	public static extern bool QImage_OperatorEqual(void* self, void** param1);
 	[LinkName("QImage_OperatorNotEqual")]
@@ -1556,6 +1595,9 @@ extension CQt
 	public function void QImage_OnPaintEngine_action(void* self);
 	[LinkName("QImage_OnPaintEngine")]
 	public static extern void** QImage_OnPaintEngine(void* self, QImage_OnPaintEngine_action _action);
+	
+	[LinkName("QImage_SuperPaintEngine")]
+	public static extern void** QImage_SuperPaintEngine(void* self);
 	[LinkName("QImage_DotsPerMeterX")]
 	public static extern c_int QImage_DotsPerMeterX(void* self);
 	[LinkName("QImage_DotsPerMeterY")]
@@ -1586,6 +1628,9 @@ extension CQt
 	public function void QImage_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QImage_OnMetric")]
 	public static extern c_int QImage_OnMetric(void* self, QImage_OnMetric_action _action);
+	
+	[LinkName("QImage_SuperMetric")]
+	public static extern c_int QImage_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QImage_Mirrored_Helper")]
 	public static extern void* QImage_Mirrored_Helper(void* self, bool horizontal, bool vertical);
 	[LinkName("QImage_RgbSwapped_Helper")]
@@ -1674,18 +1719,27 @@ extension CQt
 	public function void QImage_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QImage_OnInitPainter")]
 	public static extern void QImage_OnInitPainter(void* self, QImage_OnInitPainter_action _action);
+	
+	[LinkName("QImage_SuperInitPainter")]
+	public static extern void QImage_SuperInitPainter(void* self, void** painter);
 	[LinkName("QImage_Redirected")]
 	public static extern void** QImage_Redirected(void* self, void** offset);
 	
 	public function void QImage_OnRedirected_action(void* self, void** offset);
 	[LinkName("QImage_OnRedirected")]
 	public static extern void** QImage_OnRedirected(void* self, QImage_OnRedirected_action _action);
+	
+	[LinkName("QImage_SuperRedirected")]
+	public static extern void** QImage_SuperRedirected(void* self, void** offset);
 	[LinkName("QImage_SharedPainter")]
 	public static extern void** QImage_SharedPainter(void* self);
 	
 	public function void QImage_OnSharedPainter_action(void* self);
 	[LinkName("QImage_OnSharedPainter")]
 	public static extern void** QImage_OnSharedPainter(void* self, QImage_OnSharedPainter_action _action);
+	
+	[LinkName("QImage_SuperSharedPainter")]
+	public static extern void** QImage_SuperSharedPainter(void* self);
 }
 [AllowDuplicates]
 enum QImage_InvertMode

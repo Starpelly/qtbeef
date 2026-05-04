@@ -1651,6 +1651,57 @@ class QGroupBox : IQGroupBox, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QGroupBox_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMetaObject);
+		CQt.QGroupBox_OnMetacast(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMetacast);
+		CQt.QGroupBox_OnMetacall(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMetacall);
+		CQt.QGroupBox_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMinimumSizeHint);
+		CQt.QGroupBox_OnEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnEvent);
+		CQt.QGroupBox_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnChildEvent);
+		CQt.QGroupBox_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnResizeEvent);
+		CQt.QGroupBox_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnPaintEvent);
+		CQt.QGroupBox_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnFocusInEvent);
+		CQt.QGroupBox_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnChangeEvent);
+		CQt.QGroupBox_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMousePressEvent);
+		CQt.QGroupBox_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMouseMoveEvent);
+		CQt.QGroupBox_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMouseReleaseEvent);
+		CQt.QGroupBox_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QGroupBox_OnInitStyleOption);
+		CQt.QGroupBox_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGroupBox_OnEventFilter);
+		CQt.QGroupBox_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnTimerEvent);
+		CQt.QGroupBox_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnCustomEvent);
+		CQt.QGroupBox_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGroupBox_OnConnectNotify);
+		CQt.QGroupBox_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGroupBox_OnDisconnectNotify);
+		CQt.QGroupBox_OnDevType(obj.ObjectPtr,  => QtBeef_QGroupBox_OnDevType);
+		CQt.QGroupBox_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QGroupBox_OnPaintEngine);
+		CQt.QGroupBox_OnMetric(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMetric);
+		CQt.QGroupBox_OnInitPainter(obj.ObjectPtr,  => QtBeef_QGroupBox_OnInitPainter);
+		CQt.QGroupBox_OnRedirected(obj.ObjectPtr,  => QtBeef_QGroupBox_OnRedirected);
+		CQt.QGroupBox_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QGroupBox_OnSharedPainter);
+		CQt.QGroupBox_OnSetVisible(obj.ObjectPtr,  => QtBeef_QGroupBox_OnSetVisible);
+		CQt.QGroupBox_OnSizeHint(obj.ObjectPtr,  => QtBeef_QGroupBox_OnSizeHint);
+		CQt.QGroupBox_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QGroupBox_OnHeightForWidth);
+		CQt.QGroupBox_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QGroupBox_OnHasHeightForWidth);
+		CQt.QGroupBox_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMouseDoubleClickEvent);
+		CQt.QGroupBox_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnWheelEvent);
+		CQt.QGroupBox_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnKeyPressEvent);
+		CQt.QGroupBox_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnKeyReleaseEvent);
+		CQt.QGroupBox_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnFocusOutEvent);
+		CQt.QGroupBox_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnEnterEvent);
+		CQt.QGroupBox_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnLeaveEvent);
+		CQt.QGroupBox_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnMoveEvent);
+		CQt.QGroupBox_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnCloseEvent);
+		CQt.QGroupBox_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnContextMenuEvent);
+		CQt.QGroupBox_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnTabletEvent);
+		CQt.QGroupBox_OnActionEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnActionEvent);
+		CQt.QGroupBox_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnDragEnterEvent);
+		CQt.QGroupBox_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnDragMoveEvent);
+		CQt.QGroupBox_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnDragLeaveEvent);
+		CQt.QGroupBox_OnDropEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnDropEvent);
+		CQt.QGroupBox_OnShowEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnShowEvent);
+		CQt.QGroupBox_OnHideEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnHideEvent);
+		CQt.QGroupBox_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnNativeEvent);
+		CQt.QGroupBox_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QGroupBox_OnInputMethodEvent);
+		CQt.QGroupBox_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QGroupBox_OnInputMethodQuery);
+		CQt.QGroupBox_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QGroupBox_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnClicked = .() ~ _.Dispose();
 	public Event<delegate void(bool param1)> OnToggled = .() ~ _.Dispose();
@@ -1705,6 +1756,261 @@ class QGroupBox : IQGroupBox, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QGroupBox_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGroupBox_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGroupBox_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGroupBox_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QGroupBox_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnChangeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QGroupBox_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGroupBox_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGroupBox_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QGroupBox_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QGroupBox_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QGroupBox_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QGroupBox_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QGroupBox_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QGroupBox_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QGroupBox_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QGroupBox_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QGroupBox_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QGroupBox_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QGroupBox_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QGroupBox_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QGroupBox_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QGroupBox_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QGroupBox_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QGroupBox_Ptr ptr)
 	{
@@ -3343,18 +3649,27 @@ extension CQt
 	public function void QGroupBox_OnMetaObject_action(void* self);
 	[LinkName("QGroupBox_OnMetaObject")]
 	public static extern void** QGroupBox_OnMetaObject(void* self, QGroupBox_OnMetaObject_action _action);
+	
+	[LinkName("QGroupBox_SuperMetaObject")]
+	public static extern void** QGroupBox_SuperMetaObject(void* self);
 	[LinkName("QGroupBox_Qt_Metacast")]
 	public static extern void* QGroupBox_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGroupBox_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGroupBox_OnMetacast")]
 	public static extern void* QGroupBox_OnMetacast(void* self, QGroupBox_OnMetacast_action _action);
+	
+	[LinkName("QGroupBox_SuperMetacast")]
+	public static extern void* QGroupBox_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGroupBox_Qt_Metacall")]
 	public static extern c_int QGroupBox_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGroupBox_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGroupBox_OnMetacall")]
 	public static extern c_int QGroupBox_OnMetacall(void* self, QGroupBox_OnMetacall_action _action);
+	
+	[LinkName("QGroupBox_SuperMetacall")]
+	public static extern c_int QGroupBox_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGroupBox_Tr")]
 	public static extern libqt_string QGroupBox_Tr(c_char* s);
 	[LinkName("QGroupBox_Title")]
@@ -3371,6 +3686,9 @@ extension CQt
 	public function void QGroupBox_OnMinimumSizeHint_action(void* self);
 	[LinkName("QGroupBox_OnMinimumSizeHint")]
 	public static extern void* QGroupBox_OnMinimumSizeHint(void* self, QGroupBox_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QGroupBox_SuperMinimumSizeHint")]
+	public static extern void* QGroupBox_SuperMinimumSizeHint(void* self);
 	[LinkName("QGroupBox_IsFlat")]
 	public static extern bool QGroupBox_IsFlat(void* self);
 	[LinkName("QGroupBox_SetFlat")]
@@ -3401,60 +3719,90 @@ extension CQt
 	public function void QGroupBox_OnEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnEvent")]
 	public static extern bool QGroupBox_OnEvent(void* self, QGroupBox_OnEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperEvent")]
+	public static extern bool QGroupBox_SuperEvent(void* self, void** event);
 	[LinkName("QGroupBox_ChildEvent")]
 	public static extern void QGroupBox_ChildEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnChildEvent")]
 	public static extern void QGroupBox_OnChildEvent(void* self, QGroupBox_OnChildEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperChildEvent")]
+	public static extern void QGroupBox_SuperChildEvent(void* self, void** event);
 	[LinkName("QGroupBox_ResizeEvent")]
 	public static extern void QGroupBox_ResizeEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnResizeEvent")]
 	public static extern void QGroupBox_OnResizeEvent(void* self, QGroupBox_OnResizeEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperResizeEvent")]
+	public static extern void QGroupBox_SuperResizeEvent(void* self, void** event);
 	[LinkName("QGroupBox_PaintEvent")]
 	public static extern void QGroupBox_PaintEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnPaintEvent")]
 	public static extern void QGroupBox_OnPaintEvent(void* self, QGroupBox_OnPaintEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperPaintEvent")]
+	public static extern void QGroupBox_SuperPaintEvent(void* self, void** event);
 	[LinkName("QGroupBox_FocusInEvent")]
 	public static extern void QGroupBox_FocusInEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnFocusInEvent")]
 	public static extern void QGroupBox_OnFocusInEvent(void* self, QGroupBox_OnFocusInEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperFocusInEvent")]
+	public static extern void QGroupBox_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QGroupBox_ChangeEvent")]
 	public static extern void QGroupBox_ChangeEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnChangeEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnChangeEvent")]
 	public static extern void QGroupBox_OnChangeEvent(void* self, QGroupBox_OnChangeEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperChangeEvent")]
+	public static extern void QGroupBox_SuperChangeEvent(void* self, void** event);
 	[LinkName("QGroupBox_MousePressEvent")]
 	public static extern void QGroupBox_MousePressEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnMousePressEvent")]
 	public static extern void QGroupBox_OnMousePressEvent(void* self, QGroupBox_OnMousePressEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperMousePressEvent")]
+	public static extern void QGroupBox_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QGroupBox_MouseMoveEvent")]
 	public static extern void QGroupBox_MouseMoveEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnMouseMoveEvent")]
 	public static extern void QGroupBox_OnMouseMoveEvent(void* self, QGroupBox_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperMouseMoveEvent")]
+	public static extern void QGroupBox_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QGroupBox_MouseReleaseEvent")]
 	public static extern void QGroupBox_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnMouseReleaseEvent")]
 	public static extern void QGroupBox_OnMouseReleaseEvent(void* self, QGroupBox_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperMouseReleaseEvent")]
+	public static extern void QGroupBox_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QGroupBox_InitStyleOption")]
 	public static extern void QGroupBox_InitStyleOption(void* self, void** option);
 	
 	public function void QGroupBox_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QGroupBox_OnInitStyleOption")]
 	public static extern void QGroupBox_OnInitStyleOption(void* self, QGroupBox_OnInitStyleOption_action _action);
+	
+	[LinkName("QGroupBox_SuperInitStyleOption")]
+	public static extern void QGroupBox_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QGroupBox_Tr2")]
 	public static extern libqt_string QGroupBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QGroupBox_Tr3")]
@@ -3471,220 +3819,331 @@ extension CQt
 	public function void QGroupBox_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGroupBox_OnEventFilter")]
 	public static extern bool QGroupBox_OnEventFilter(void* self, QGroupBox_OnEventFilter_action _action);
+	
+	[LinkName("QGroupBox_SuperEventFilter")]
+	public static extern bool QGroupBox_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGroupBox_TimerEvent")]
 	public static extern void QGroupBox_TimerEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnTimerEvent")]
 	public static extern void QGroupBox_OnTimerEvent(void* self, QGroupBox_OnTimerEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperTimerEvent")]
+	public static extern void QGroupBox_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGroupBox_CustomEvent")]
 	public static extern void QGroupBox_CustomEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnCustomEvent")]
 	public static extern void QGroupBox_OnCustomEvent(void* self, QGroupBox_OnCustomEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperCustomEvent")]
+	public static extern void QGroupBox_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGroupBox_ConnectNotify")]
 	public static extern void QGroupBox_ConnectNotify(void* self, void** signal);
 	
 	public function void QGroupBox_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGroupBox_OnConnectNotify")]
 	public static extern void QGroupBox_OnConnectNotify(void* self, QGroupBox_OnConnectNotify_action _action);
+	
+	[LinkName("QGroupBox_SuperConnectNotify")]
+	public static extern void QGroupBox_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGroupBox_DisconnectNotify")]
 	public static extern void QGroupBox_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGroupBox_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGroupBox_OnDisconnectNotify")]
 	public static extern void QGroupBox_OnDisconnectNotify(void* self, QGroupBox_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGroupBox_SuperDisconnectNotify")]
+	public static extern void QGroupBox_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QGroupBox_DevType")]
 	public static extern c_int QGroupBox_DevType(void* self);
 	
 	public function void QGroupBox_OnDevType_action(void* self);
 	[LinkName("QGroupBox_OnDevType")]
 	public static extern c_int QGroupBox_OnDevType(void* self, QGroupBox_OnDevType_action _action);
+	
+	[LinkName("QGroupBox_SuperDevType")]
+	public static extern c_int QGroupBox_SuperDevType(void* self);
 	[LinkName("QGroupBox_PaintEngine")]
 	public static extern void** QGroupBox_PaintEngine(void* self);
 	
 	public function void QGroupBox_OnPaintEngine_action(void* self);
 	[LinkName("QGroupBox_OnPaintEngine")]
 	public static extern void** QGroupBox_OnPaintEngine(void* self, QGroupBox_OnPaintEngine_action _action);
+	
+	[LinkName("QGroupBox_SuperPaintEngine")]
+	public static extern void** QGroupBox_SuperPaintEngine(void* self);
 	[LinkName("QGroupBox_Metric")]
 	public static extern c_int QGroupBox_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QGroupBox_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QGroupBox_OnMetric")]
 	public static extern c_int QGroupBox_OnMetric(void* self, QGroupBox_OnMetric_action _action);
+	
+	[LinkName("QGroupBox_SuperMetric")]
+	public static extern c_int QGroupBox_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QGroupBox_InitPainter")]
 	public static extern void QGroupBox_InitPainter(void* self, void** painter);
 	
 	public function void QGroupBox_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QGroupBox_OnInitPainter")]
 	public static extern void QGroupBox_OnInitPainter(void* self, QGroupBox_OnInitPainter_action _action);
+	
+	[LinkName("QGroupBox_SuperInitPainter")]
+	public static extern void QGroupBox_SuperInitPainter(void* self, void** painter);
 	[LinkName("QGroupBox_Redirected")]
 	public static extern void** QGroupBox_Redirected(void* self, void** offset);
 	
 	public function void QGroupBox_OnRedirected_action(void* self, void** offset);
 	[LinkName("QGroupBox_OnRedirected")]
 	public static extern void** QGroupBox_OnRedirected(void* self, QGroupBox_OnRedirected_action _action);
+	
+	[LinkName("QGroupBox_SuperRedirected")]
+	public static extern void** QGroupBox_SuperRedirected(void* self, void** offset);
 	[LinkName("QGroupBox_SharedPainter")]
 	public static extern void** QGroupBox_SharedPainter(void* self);
 	
 	public function void QGroupBox_OnSharedPainter_action(void* self);
 	[LinkName("QGroupBox_OnSharedPainter")]
 	public static extern void** QGroupBox_OnSharedPainter(void* self, QGroupBox_OnSharedPainter_action _action);
+	
+	[LinkName("QGroupBox_SuperSharedPainter")]
+	public static extern void** QGroupBox_SuperSharedPainter(void* self);
 	[LinkName("QGroupBox_SetVisible")]
 	public static extern void QGroupBox_SetVisible(void* self, bool visible);
 	
 	public function void QGroupBox_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QGroupBox_OnSetVisible")]
 	public static extern void QGroupBox_OnSetVisible(void* self, QGroupBox_OnSetVisible_action _action);
+	
+	[LinkName("QGroupBox_SuperSetVisible")]
+	public static extern void QGroupBox_SuperSetVisible(void* self, bool visible);
 	[LinkName("QGroupBox_SizeHint")]
 	public static extern void* QGroupBox_SizeHint(void* self);
 	
 	public function void QGroupBox_OnSizeHint_action(void* self);
 	[LinkName("QGroupBox_OnSizeHint")]
 	public static extern void* QGroupBox_OnSizeHint(void* self, QGroupBox_OnSizeHint_action _action);
+	
+	[LinkName("QGroupBox_SuperSizeHint")]
+	public static extern void* QGroupBox_SuperSizeHint(void* self);
 	[LinkName("QGroupBox_HeightForWidth")]
 	public static extern c_int QGroupBox_HeightForWidth(void* self, c_int param1);
 	
 	public function void QGroupBox_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QGroupBox_OnHeightForWidth")]
 	public static extern c_int QGroupBox_OnHeightForWidth(void* self, QGroupBox_OnHeightForWidth_action _action);
+	
+	[LinkName("QGroupBox_SuperHeightForWidth")]
+	public static extern c_int QGroupBox_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QGroupBox_HasHeightForWidth")]
 	public static extern bool QGroupBox_HasHeightForWidth(void* self);
 	
 	public function void QGroupBox_OnHasHeightForWidth_action(void* self);
 	[LinkName("QGroupBox_OnHasHeightForWidth")]
 	public static extern bool QGroupBox_OnHasHeightForWidth(void* self, QGroupBox_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QGroupBox_SuperHasHeightForWidth")]
+	public static extern bool QGroupBox_SuperHasHeightForWidth(void* self);
 	[LinkName("QGroupBox_MouseDoubleClickEvent")]
 	public static extern void QGroupBox_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnMouseDoubleClickEvent")]
 	public static extern void QGroupBox_OnMouseDoubleClickEvent(void* self, QGroupBox_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperMouseDoubleClickEvent")]
+	public static extern void QGroupBox_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QGroupBox_WheelEvent")]
 	public static extern void QGroupBox_WheelEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnWheelEvent")]
 	public static extern void QGroupBox_OnWheelEvent(void* self, QGroupBox_OnWheelEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperWheelEvent")]
+	public static extern void QGroupBox_SuperWheelEvent(void* self, void** event);
 	[LinkName("QGroupBox_KeyPressEvent")]
 	public static extern void QGroupBox_KeyPressEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnKeyPressEvent")]
 	public static extern void QGroupBox_OnKeyPressEvent(void* self, QGroupBox_OnKeyPressEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperKeyPressEvent")]
+	public static extern void QGroupBox_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QGroupBox_KeyReleaseEvent")]
 	public static extern void QGroupBox_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnKeyReleaseEvent")]
 	public static extern void QGroupBox_OnKeyReleaseEvent(void* self, QGroupBox_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperKeyReleaseEvent")]
+	public static extern void QGroupBox_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QGroupBox_FocusOutEvent")]
 	public static extern void QGroupBox_FocusOutEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnFocusOutEvent")]
 	public static extern void QGroupBox_OnFocusOutEvent(void* self, QGroupBox_OnFocusOutEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperFocusOutEvent")]
+	public static extern void QGroupBox_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QGroupBox_EnterEvent")]
 	public static extern void QGroupBox_EnterEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnEnterEvent")]
 	public static extern void QGroupBox_OnEnterEvent(void* self, QGroupBox_OnEnterEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperEnterEvent")]
+	public static extern void QGroupBox_SuperEnterEvent(void* self, void** event);
 	[LinkName("QGroupBox_LeaveEvent")]
 	public static extern void QGroupBox_LeaveEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnLeaveEvent")]
 	public static extern void QGroupBox_OnLeaveEvent(void* self, QGroupBox_OnLeaveEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperLeaveEvent")]
+	public static extern void QGroupBox_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QGroupBox_MoveEvent")]
 	public static extern void QGroupBox_MoveEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnMoveEvent")]
 	public static extern void QGroupBox_OnMoveEvent(void* self, QGroupBox_OnMoveEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperMoveEvent")]
+	public static extern void QGroupBox_SuperMoveEvent(void* self, void** event);
 	[LinkName("QGroupBox_CloseEvent")]
 	public static extern void QGroupBox_CloseEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnCloseEvent")]
 	public static extern void QGroupBox_OnCloseEvent(void* self, QGroupBox_OnCloseEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperCloseEvent")]
+	public static extern void QGroupBox_SuperCloseEvent(void* self, void** event);
 	[LinkName("QGroupBox_ContextMenuEvent")]
 	public static extern void QGroupBox_ContextMenuEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnContextMenuEvent")]
 	public static extern void QGroupBox_OnContextMenuEvent(void* self, QGroupBox_OnContextMenuEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperContextMenuEvent")]
+	public static extern void QGroupBox_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QGroupBox_TabletEvent")]
 	public static extern void QGroupBox_TabletEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnTabletEvent")]
 	public static extern void QGroupBox_OnTabletEvent(void* self, QGroupBox_OnTabletEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperTabletEvent")]
+	public static extern void QGroupBox_SuperTabletEvent(void* self, void** event);
 	[LinkName("QGroupBox_ActionEvent")]
 	public static extern void QGroupBox_ActionEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnActionEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnActionEvent")]
 	public static extern void QGroupBox_OnActionEvent(void* self, QGroupBox_OnActionEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperActionEvent")]
+	public static extern void QGroupBox_SuperActionEvent(void* self, void** event);
 	[LinkName("QGroupBox_DragEnterEvent")]
 	public static extern void QGroupBox_DragEnterEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnDragEnterEvent")]
 	public static extern void QGroupBox_OnDragEnterEvent(void* self, QGroupBox_OnDragEnterEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperDragEnterEvent")]
+	public static extern void QGroupBox_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QGroupBox_DragMoveEvent")]
 	public static extern void QGroupBox_DragMoveEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnDragMoveEvent")]
 	public static extern void QGroupBox_OnDragMoveEvent(void* self, QGroupBox_OnDragMoveEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperDragMoveEvent")]
+	public static extern void QGroupBox_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QGroupBox_DragLeaveEvent")]
 	public static extern void QGroupBox_DragLeaveEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnDragLeaveEvent")]
 	public static extern void QGroupBox_OnDragLeaveEvent(void* self, QGroupBox_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperDragLeaveEvent")]
+	public static extern void QGroupBox_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QGroupBox_DropEvent")]
 	public static extern void QGroupBox_DropEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnDropEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnDropEvent")]
 	public static extern void QGroupBox_OnDropEvent(void* self, QGroupBox_OnDropEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperDropEvent")]
+	public static extern void QGroupBox_SuperDropEvent(void* self, void** event);
 	[LinkName("QGroupBox_ShowEvent")]
 	public static extern void QGroupBox_ShowEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnShowEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnShowEvent")]
 	public static extern void QGroupBox_OnShowEvent(void* self, QGroupBox_OnShowEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperShowEvent")]
+	public static extern void QGroupBox_SuperShowEvent(void* self, void** event);
 	[LinkName("QGroupBox_HideEvent")]
 	public static extern void QGroupBox_HideEvent(void* self, void** event);
 	
 	public function void QGroupBox_OnHideEvent_action(void* self, void** event);
 	[LinkName("QGroupBox_OnHideEvent")]
 	public static extern void QGroupBox_OnHideEvent(void* self, QGroupBox_OnHideEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperHideEvent")]
+	public static extern void QGroupBox_SuperHideEvent(void* self, void** event);
 	[LinkName("QGroupBox_NativeEvent")]
 	public static extern bool QGroupBox_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QGroupBox_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QGroupBox_OnNativeEvent")]
 	public static extern bool QGroupBox_OnNativeEvent(void* self, QGroupBox_OnNativeEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperNativeEvent")]
+	public static extern bool QGroupBox_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QGroupBox_InputMethodEvent")]
 	public static extern void QGroupBox_InputMethodEvent(void* self, void** param1);
 	
 	public function void QGroupBox_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QGroupBox_OnInputMethodEvent")]
 	public static extern void QGroupBox_OnInputMethodEvent(void* self, QGroupBox_OnInputMethodEvent_action _action);
+	
+	[LinkName("QGroupBox_SuperInputMethodEvent")]
+	public static extern void QGroupBox_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QGroupBox_InputMethodQuery")]
 	public static extern void* QGroupBox_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QGroupBox_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QGroupBox_OnInputMethodQuery")]
 	public static extern void* QGroupBox_OnInputMethodQuery(void* self, QGroupBox_OnInputMethodQuery_action _action);
+	
+	[LinkName("QGroupBox_SuperInputMethodQuery")]
+	public static extern void* QGroupBox_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QGroupBox_FocusNextPrevChild")]
 	public static extern bool QGroupBox_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QGroupBox_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QGroupBox_OnFocusNextPrevChild")]
 	public static extern bool QGroupBox_OnFocusNextPrevChild(void* self, QGroupBox_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QGroupBox_SuperFocusNextPrevChild")]
+	public static extern bool QGroupBox_SuperFocusNextPrevChild(void* self, bool next);
 }

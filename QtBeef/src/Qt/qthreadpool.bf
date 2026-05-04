@@ -372,6 +372,16 @@ class QThreadPool : IQThreadPool, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QThreadPool_OnMetaObject(obj.ObjectPtr,  => QtBeef_QThreadPool_OnMetaObject);
+		CQt.QThreadPool_OnMetacast(obj.ObjectPtr,  => QtBeef_QThreadPool_OnMetacast);
+		CQt.QThreadPool_OnMetacall(obj.ObjectPtr,  => QtBeef_QThreadPool_OnMetacall);
+		CQt.QThreadPool_OnEvent(obj.ObjectPtr,  => QtBeef_QThreadPool_OnEvent);
+		CQt.QThreadPool_OnEventFilter(obj.ObjectPtr,  => QtBeef_QThreadPool_OnEventFilter);
+		CQt.QThreadPool_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QThreadPool_OnTimerEvent);
+		CQt.QThreadPool_OnChildEvent(obj.ObjectPtr,  => QtBeef_QThreadPool_OnChildEvent);
+		CQt.QThreadPool_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QThreadPool_OnCustomEvent);
+		CQt.QThreadPool_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QThreadPool_OnConnectNotify);
+		CQt.QThreadPool_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QThreadPool_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -384,6 +394,56 @@ class QThreadPool : IQThreadPool, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QThreadPool_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QThreadPool_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QThreadPool_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QThreadPool_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QThreadPool_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QThreadPool_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QThreadPool_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QThreadPool_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QThreadPool_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QThreadPool_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QThreadPool_Ptr ptr)
 	{
@@ -765,18 +825,27 @@ extension CQt
 	public function void QThreadPool_OnMetaObject_action(void* self);
 	[LinkName("QThreadPool_OnMetaObject")]
 	public static extern void** QThreadPool_OnMetaObject(void* self, QThreadPool_OnMetaObject_action _action);
+	
+	[LinkName("QThreadPool_SuperMetaObject")]
+	public static extern void** QThreadPool_SuperMetaObject(void* self);
 	[LinkName("QThreadPool_Qt_Metacast")]
 	public static extern void* QThreadPool_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QThreadPool_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QThreadPool_OnMetacast")]
 	public static extern void* QThreadPool_OnMetacast(void* self, QThreadPool_OnMetacast_action _action);
+	
+	[LinkName("QThreadPool_SuperMetacast")]
+	public static extern void* QThreadPool_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QThreadPool_Qt_Metacall")]
 	public static extern c_int QThreadPool_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QThreadPool_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QThreadPool_OnMetacall")]
 	public static extern c_int QThreadPool_OnMetacall(void* self, QThreadPool_OnMetacall_action _action);
+	
+	[LinkName("QThreadPool_SuperMetacall")]
+	public static extern c_int QThreadPool_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QThreadPool_Tr")]
 	public static extern libqt_string QThreadPool_Tr(c_char* s);
 	[LinkName("QThreadPool_GlobalInstance")]
@@ -839,40 +908,61 @@ extension CQt
 	public function void QThreadPool_OnEvent_action(void* self, void** event);
 	[LinkName("QThreadPool_OnEvent")]
 	public static extern bool QThreadPool_OnEvent(void* self, QThreadPool_OnEvent_action _action);
+	
+	[LinkName("QThreadPool_SuperEvent")]
+	public static extern bool QThreadPool_SuperEvent(void* self, void** event);
 	[LinkName("QThreadPool_EventFilter")]
 	public static extern bool QThreadPool_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QThreadPool_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QThreadPool_OnEventFilter")]
 	public static extern bool QThreadPool_OnEventFilter(void* self, QThreadPool_OnEventFilter_action _action);
+	
+	[LinkName("QThreadPool_SuperEventFilter")]
+	public static extern bool QThreadPool_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QThreadPool_TimerEvent")]
 	public static extern void QThreadPool_TimerEvent(void* self, void** event);
 	
 	public function void QThreadPool_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QThreadPool_OnTimerEvent")]
 	public static extern void QThreadPool_OnTimerEvent(void* self, QThreadPool_OnTimerEvent_action _action);
+	
+	[LinkName("QThreadPool_SuperTimerEvent")]
+	public static extern void QThreadPool_SuperTimerEvent(void* self, void** event);
 	[LinkName("QThreadPool_ChildEvent")]
 	public static extern void QThreadPool_ChildEvent(void* self, void** event);
 	
 	public function void QThreadPool_OnChildEvent_action(void* self, void** event);
 	[LinkName("QThreadPool_OnChildEvent")]
 	public static extern void QThreadPool_OnChildEvent(void* self, QThreadPool_OnChildEvent_action _action);
+	
+	[LinkName("QThreadPool_SuperChildEvent")]
+	public static extern void QThreadPool_SuperChildEvent(void* self, void** event);
 	[LinkName("QThreadPool_CustomEvent")]
 	public static extern void QThreadPool_CustomEvent(void* self, void** event);
 	
 	public function void QThreadPool_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QThreadPool_OnCustomEvent")]
 	public static extern void QThreadPool_OnCustomEvent(void* self, QThreadPool_OnCustomEvent_action _action);
+	
+	[LinkName("QThreadPool_SuperCustomEvent")]
+	public static extern void QThreadPool_SuperCustomEvent(void* self, void** event);
 	[LinkName("QThreadPool_ConnectNotify")]
 	public static extern void QThreadPool_ConnectNotify(void* self, void** signal);
 	
 	public function void QThreadPool_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QThreadPool_OnConnectNotify")]
 	public static extern void QThreadPool_OnConnectNotify(void* self, QThreadPool_OnConnectNotify_action _action);
+	
+	[LinkName("QThreadPool_SuperConnectNotify")]
+	public static extern void QThreadPool_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QThreadPool_DisconnectNotify")]
 	public static extern void QThreadPool_DisconnectNotify(void* self, void** signal);
 	
 	public function void QThreadPool_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QThreadPool_OnDisconnectNotify")]
 	public static extern void QThreadPool_OnDisconnectNotify(void* self, QThreadPool_OnDisconnectNotify_action _action);
+	
+	[LinkName("QThreadPool_SuperDisconnectNotify")]
+	public static extern void QThreadPool_SuperDisconnectNotify(void* self, void** signal);
 }

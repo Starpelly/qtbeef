@@ -502,6 +502,17 @@ class QCoreApplication : IQCoreApplication, IQObject
 		CQt.QCoreApplication_Connect_ApplicationVersionChanged(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_ApplicationVersionChanged);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QCoreApplication_OnMetaObject(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnMetaObject);
+		CQt.QCoreApplication_OnMetacast(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnMetacast);
+		CQt.QCoreApplication_OnMetacall(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnMetacall);
+		CQt.QCoreApplication_OnNotify(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnNotify);
+		CQt.QCoreApplication_OnEvent(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnEvent);
+		CQt.QCoreApplication_OnEventFilter(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnEventFilter);
+		CQt.QCoreApplication_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnTimerEvent);
+		CQt.QCoreApplication_OnChildEvent(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnChildEvent);
+		CQt.QCoreApplication_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnCustomEvent);
+		CQt.QCoreApplication_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnConnectNotify);
+		CQt.QCoreApplication_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QCoreApplication_OnDisconnectNotify);
 	}
 	public Event<delegate void(void** filterObj)> OnInstallNativeEventFilter = .() ~ _.Dispose();
 	public Event<delegate void(void** filterObj)> OnRemoveNativeEventFilter = .() ~ _.Dispose();
@@ -550,6 +561,61 @@ class QCoreApplication : IQCoreApplication, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QCoreApplication_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QCoreApplication_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QCoreApplication_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QCoreApplication_OnNotify(void* ptr, void** param1, void** param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNotify(param1, param2);
+	}
+	static void QtBeef_QCoreApplication_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QCoreApplication_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QCoreApplication_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QCoreApplication_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QCoreApplication_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QCoreApplication_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QCoreApplication_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QCoreApplication_Ptr ptr)
 	{
@@ -1055,18 +1121,27 @@ extension CQt
 	public function void QCoreApplication_OnMetaObject_action(void* self);
 	[LinkName("QCoreApplication_OnMetaObject")]
 	public static extern void** QCoreApplication_OnMetaObject(void* self, QCoreApplication_OnMetaObject_action _action);
+	
+	[LinkName("QCoreApplication_SuperMetaObject")]
+	public static extern void** QCoreApplication_SuperMetaObject(void* self);
 	[LinkName("QCoreApplication_Qt_Metacast")]
 	public static extern void* QCoreApplication_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QCoreApplication_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QCoreApplication_OnMetacast")]
 	public static extern void* QCoreApplication_OnMetacast(void* self, QCoreApplication_OnMetacast_action _action);
+	
+	[LinkName("QCoreApplication_SuperMetacast")]
+	public static extern void* QCoreApplication_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QCoreApplication_Qt_Metacall")]
 	public static extern c_int QCoreApplication_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QCoreApplication_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCoreApplication_OnMetacall")]
 	public static extern c_int QCoreApplication_OnMetacall(void* self, QCoreApplication_OnMetacall_action _action);
+	
+	[LinkName("QCoreApplication_SuperMetacall")]
+	public static extern c_int QCoreApplication_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCoreApplication_Tr")]
 	public static extern libqt_string QCoreApplication_Tr(c_char* s);
 	[LinkName("QCoreApplication_Arguments")]
@@ -1121,6 +1196,9 @@ extension CQt
 	public function void QCoreApplication_OnNotify_action(void* self, void** param1, void** param2);
 	[LinkName("QCoreApplication_OnNotify")]
 	public static extern bool QCoreApplication_OnNotify(void* self, QCoreApplication_OnNotify_action _action);
+	
+	[LinkName("QCoreApplication_SuperNotify")]
+	public static extern bool QCoreApplication_SuperNotify(void* self, void** param1, void** param2);
 	[LinkName("QCoreApplication_StartingUp")]
 	public static extern bool QCoreApplication_StartingUp();
 	[LinkName("QCoreApplication_ClosingDown")]
@@ -1197,6 +1275,9 @@ extension CQt
 	public function void QCoreApplication_OnEvent_action(void* self, void** param1);
 	[LinkName("QCoreApplication_OnEvent")]
 	public static extern bool QCoreApplication_OnEvent(void* self, QCoreApplication_OnEvent_action _action);
+	
+	[LinkName("QCoreApplication_SuperEvent")]
+	public static extern bool QCoreApplication_SuperEvent(void* self, void** param1);
 	[LinkName("QCoreApplication_Tr2")]
 	public static extern libqt_string QCoreApplication_Tr2(c_char* s, c_char* c);
 	[LinkName("QCoreApplication_Tr3")]
@@ -1225,36 +1306,54 @@ extension CQt
 	public function void QCoreApplication_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QCoreApplication_OnEventFilter")]
 	public static extern bool QCoreApplication_OnEventFilter(void* self, QCoreApplication_OnEventFilter_action _action);
+	
+	[LinkName("QCoreApplication_SuperEventFilter")]
+	public static extern bool QCoreApplication_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QCoreApplication_TimerEvent")]
 	public static extern void QCoreApplication_TimerEvent(void* self, void** event);
 	
 	public function void QCoreApplication_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QCoreApplication_OnTimerEvent")]
 	public static extern void QCoreApplication_OnTimerEvent(void* self, QCoreApplication_OnTimerEvent_action _action);
+	
+	[LinkName("QCoreApplication_SuperTimerEvent")]
+	public static extern void QCoreApplication_SuperTimerEvent(void* self, void** event);
 	[LinkName("QCoreApplication_ChildEvent")]
 	public static extern void QCoreApplication_ChildEvent(void* self, void** event);
 	
 	public function void QCoreApplication_OnChildEvent_action(void* self, void** event);
 	[LinkName("QCoreApplication_OnChildEvent")]
 	public static extern void QCoreApplication_OnChildEvent(void* self, QCoreApplication_OnChildEvent_action _action);
+	
+	[LinkName("QCoreApplication_SuperChildEvent")]
+	public static extern void QCoreApplication_SuperChildEvent(void* self, void** event);
 	[LinkName("QCoreApplication_CustomEvent")]
 	public static extern void QCoreApplication_CustomEvent(void* self, void** event);
 	
 	public function void QCoreApplication_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QCoreApplication_OnCustomEvent")]
 	public static extern void QCoreApplication_OnCustomEvent(void* self, QCoreApplication_OnCustomEvent_action _action);
+	
+	[LinkName("QCoreApplication_SuperCustomEvent")]
+	public static extern void QCoreApplication_SuperCustomEvent(void* self, void** event);
 	[LinkName("QCoreApplication_ConnectNotify")]
 	public static extern void QCoreApplication_ConnectNotify(void* self, void** signal);
 	
 	public function void QCoreApplication_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QCoreApplication_OnConnectNotify")]
 	public static extern void QCoreApplication_OnConnectNotify(void* self, QCoreApplication_OnConnectNotify_action _action);
+	
+	[LinkName("QCoreApplication_SuperConnectNotify")]
+	public static extern void QCoreApplication_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QCoreApplication_DisconnectNotify")]
 	public static extern void QCoreApplication_DisconnectNotify(void* self, void** signal);
 	
 	public function void QCoreApplication_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QCoreApplication_OnDisconnectNotify")]
 	public static extern void QCoreApplication_OnDisconnectNotify(void* self, QCoreApplication_OnDisconnectNotify_action _action);
+	
+	[LinkName("QCoreApplication_SuperDisconnectNotify")]
+	public static extern void QCoreApplication_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QCoreApplication_

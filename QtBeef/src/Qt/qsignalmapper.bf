@@ -323,6 +323,16 @@ class QSignalMapper : IQSignalMapper, IQObject
 		CQt.QSignalMapper_Connect_MappedObject(obj.ObjectPtr,  => QtBeef_QSignalMapper_Connect_MappedObject);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QSignalMapper_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnMetaObject);
+		CQt.QSignalMapper_OnMetacast(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnMetacast);
+		CQt.QSignalMapper_OnMetacall(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnMetacall);
+		CQt.QSignalMapper_OnEvent(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnEvent);
+		CQt.QSignalMapper_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnEventFilter);
+		CQt.QSignalMapper_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnTimerEvent);
+		CQt.QSignalMapper_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnChildEvent);
+		CQt.QSignalMapper_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnCustomEvent);
+		CQt.QSignalMapper_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnConnectNotify);
+		CQt.QSignalMapper_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSignalMapper_OnDisconnectNotify);
 	}
 	public Event<delegate void(c_int param1)> OnMappedInt = .() ~ _.Dispose();
 	public Event<delegate void(libqt_string param1)> OnMappedString = .() ~ _.Dispose();
@@ -353,6 +363,56 @@ class QSignalMapper : IQSignalMapper, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QSignalMapper_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSignalMapper_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSignalMapper_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSignalMapper_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSignalMapper_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSignalMapper_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSignalMapper_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSignalMapper_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSignalMapper_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSignalMapper_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QSignalMapper_Ptr ptr)
 	{
@@ -682,18 +742,27 @@ extension CQt
 	public function void QSignalMapper_OnMetaObject_action(void* self);
 	[LinkName("QSignalMapper_OnMetaObject")]
 	public static extern void** QSignalMapper_OnMetaObject(void* self, QSignalMapper_OnMetaObject_action _action);
+	
+	[LinkName("QSignalMapper_SuperMetaObject")]
+	public static extern void** QSignalMapper_SuperMetaObject(void* self);
 	[LinkName("QSignalMapper_Qt_Metacast")]
 	public static extern void* QSignalMapper_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSignalMapper_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSignalMapper_OnMetacast")]
 	public static extern void* QSignalMapper_OnMetacast(void* self, QSignalMapper_OnMetacast_action _action);
+	
+	[LinkName("QSignalMapper_SuperMetacast")]
+	public static extern void* QSignalMapper_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSignalMapper_Qt_Metacall")]
 	public static extern c_int QSignalMapper_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSignalMapper_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSignalMapper_OnMetacall")]
 	public static extern c_int QSignalMapper_OnMetacall(void* self, QSignalMapper_OnMetacall_action _action);
+	
+	[LinkName("QSignalMapper_SuperMetacall")]
+	public static extern c_int QSignalMapper_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSignalMapper_Tr")]
 	public static extern libqt_string QSignalMapper_Tr(c_char* s);
 	[LinkName("QSignalMapper_SetMapping")]
@@ -742,40 +811,61 @@ extension CQt
 	public function void QSignalMapper_OnEvent_action(void* self, void** event);
 	[LinkName("QSignalMapper_OnEvent")]
 	public static extern bool QSignalMapper_OnEvent(void* self, QSignalMapper_OnEvent_action _action);
+	
+	[LinkName("QSignalMapper_SuperEvent")]
+	public static extern bool QSignalMapper_SuperEvent(void* self, void** event);
 	[LinkName("QSignalMapper_EventFilter")]
 	public static extern bool QSignalMapper_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QSignalMapper_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSignalMapper_OnEventFilter")]
 	public static extern bool QSignalMapper_OnEventFilter(void* self, QSignalMapper_OnEventFilter_action _action);
+	
+	[LinkName("QSignalMapper_SuperEventFilter")]
+	public static extern bool QSignalMapper_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSignalMapper_TimerEvent")]
 	public static extern void QSignalMapper_TimerEvent(void* self, void** event);
 	
 	public function void QSignalMapper_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSignalMapper_OnTimerEvent")]
 	public static extern void QSignalMapper_OnTimerEvent(void* self, QSignalMapper_OnTimerEvent_action _action);
+	
+	[LinkName("QSignalMapper_SuperTimerEvent")]
+	public static extern void QSignalMapper_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSignalMapper_ChildEvent")]
 	public static extern void QSignalMapper_ChildEvent(void* self, void** event);
 	
 	public function void QSignalMapper_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSignalMapper_OnChildEvent")]
 	public static extern void QSignalMapper_OnChildEvent(void* self, QSignalMapper_OnChildEvent_action _action);
+	
+	[LinkName("QSignalMapper_SuperChildEvent")]
+	public static extern void QSignalMapper_SuperChildEvent(void* self, void** event);
 	[LinkName("QSignalMapper_CustomEvent")]
 	public static extern void QSignalMapper_CustomEvent(void* self, void** event);
 	
 	public function void QSignalMapper_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSignalMapper_OnCustomEvent")]
 	public static extern void QSignalMapper_OnCustomEvent(void* self, QSignalMapper_OnCustomEvent_action _action);
+	
+	[LinkName("QSignalMapper_SuperCustomEvent")]
+	public static extern void QSignalMapper_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSignalMapper_ConnectNotify")]
 	public static extern void QSignalMapper_ConnectNotify(void* self, void** signal);
 	
 	public function void QSignalMapper_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSignalMapper_OnConnectNotify")]
 	public static extern void QSignalMapper_OnConnectNotify(void* self, QSignalMapper_OnConnectNotify_action _action);
+	
+	[LinkName("QSignalMapper_SuperConnectNotify")]
+	public static extern void QSignalMapper_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSignalMapper_DisconnectNotify")]
 	public static extern void QSignalMapper_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSignalMapper_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSignalMapper_OnDisconnectNotify")]
 	public static extern void QSignalMapper_OnDisconnectNotify(void* self, QSignalMapper_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSignalMapper_SuperDisconnectNotify")]
+	public static extern void QSignalMapper_SuperDisconnectNotify(void* self, void** signal);
 }

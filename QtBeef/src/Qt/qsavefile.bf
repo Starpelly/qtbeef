@@ -578,6 +578,37 @@ class QSaveFile : IQSaveFile, IQFileDevice, IQIODevice, IQObject, IQIODeviceBase
 		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ChannelBytesWritten);
 		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_AboutToClose);
 		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ReadChannelFinished);
+		CQt.QSaveFile_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSaveFile_OnMetaObject);
+		CQt.QSaveFile_OnMetacast(obj.ObjectPtr,  => QtBeef_QSaveFile_OnMetacast);
+		CQt.QSaveFile_OnMetacall(obj.ObjectPtr,  => QtBeef_QSaveFile_OnMetacall);
+		CQt.QSaveFile_OnFileName(obj.ObjectPtr,  => QtBeef_QSaveFile_OnFileName);
+		CQt.QSaveFile_OnOpen(obj.ObjectPtr,  => QtBeef_QSaveFile_OnOpen);
+		CQt.QSaveFile_OnWriteData(obj.ObjectPtr,  => QtBeef_QSaveFile_OnWriteData);
+		CQt.QSaveFile_OnEvent(obj.ObjectPtr,  => QtBeef_QSaveFile_OnEvent);
+		CQt.QSaveFile_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSaveFile_OnEventFilter);
+		CQt.QSaveFile_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSaveFile_OnTimerEvent);
+		CQt.QSaveFile_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSaveFile_OnChildEvent);
+		CQt.QSaveFile_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSaveFile_OnCustomEvent);
+		CQt.QSaveFile_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSaveFile_OnConnectNotify);
+		CQt.QSaveFile_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSaveFile_OnDisconnectNotify);
+		CQt.QSaveFile_OnIsSequential(obj.ObjectPtr,  => QtBeef_QSaveFile_OnIsSequential);
+		CQt.QSaveFile_OnClose(obj.ObjectPtr,  => QtBeef_QSaveFile_OnClose);
+		CQt.QSaveFile_OnPos(obj.ObjectPtr,  => QtBeef_QSaveFile_OnPos);
+		CQt.QSaveFile_OnSize(obj.ObjectPtr,  => QtBeef_QSaveFile_OnSize);
+		CQt.QSaveFile_OnSeek(obj.ObjectPtr,  => QtBeef_QSaveFile_OnSeek);
+		CQt.QSaveFile_OnAtEnd(obj.ObjectPtr,  => QtBeef_QSaveFile_OnAtEnd);
+		CQt.QSaveFile_OnReset(obj.ObjectPtr,  => QtBeef_QSaveFile_OnReset);
+		CQt.QSaveFile_OnBytesAvailable(obj.ObjectPtr,  => QtBeef_QSaveFile_OnBytesAvailable);
+		CQt.QSaveFile_OnBytesToWrite(obj.ObjectPtr,  => QtBeef_QSaveFile_OnBytesToWrite);
+		CQt.QSaveFile_OnCanReadLine(obj.ObjectPtr,  => QtBeef_QSaveFile_OnCanReadLine);
+		CQt.QSaveFile_OnWaitForReadyRead(obj.ObjectPtr,  => QtBeef_QSaveFile_OnWaitForReadyRead);
+		CQt.QSaveFile_OnWaitForBytesWritten(obj.ObjectPtr,  => QtBeef_QSaveFile_OnWaitForBytesWritten);
+		CQt.QSaveFile_OnReadData(obj.ObjectPtr,  => QtBeef_QSaveFile_OnReadData);
+		CQt.QSaveFile_OnReadLineData(obj.ObjectPtr,  => QtBeef_QSaveFile_OnReadLineData);
+		CQt.QSaveFile_OnSkipData(obj.ObjectPtr,  => QtBeef_QSaveFile_OnSkipData);
+		CQt.QSaveFile_OnResize(obj.ObjectPtr,  => QtBeef_QSaveFile_OnResize);
+		CQt.QSaveFile_OnPermissions(obj.ObjectPtr,  => QtBeef_QSaveFile_OnPermissions);
+		CQt.QSaveFile_OnSetPermissions(obj.ObjectPtr,  => QtBeef_QSaveFile_OnSetPermissions);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -626,6 +657,161 @@ class QSaveFile : IQSaveFile, IQFileDevice, IQIODevice, IQObject, IQIODeviceBase
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnReadChannelFinished.Invoke();
+	}
+	static void QtBeef_QSaveFile_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSaveFile_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSaveFile_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSaveFile_OnFileName(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFileName(scope .());
+	}
+	static void QtBeef_QSaveFile_OnOpen(void* ptr, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen(flags);
+	}
+	static void QtBeef_QSaveFile_OnWriteData(void* ptr, c_char* data, c_longlong lenVal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWriteData(data, lenVal);
+	}
+	static void QtBeef_QSaveFile_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSaveFile_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSaveFile_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSaveFile_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSaveFile_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSaveFile_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSaveFile_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QSaveFile_OnIsSequential(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIsSequential();
+	}
+	static void QtBeef_QSaveFile_OnClose(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClose();
+	}
+	static void QtBeef_QSaveFile_OnPos(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPos();
+	}
+	static void QtBeef_QSaveFile_OnSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSize();
+	}
+	static void QtBeef_QSaveFile_OnSeek(void* ptr, c_longlong pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSeek(pos);
+	}
+	static void QtBeef_QSaveFile_OnAtEnd(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAtEnd();
+	}
+	static void QtBeef_QSaveFile_OnReset(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReset();
+	}
+	static void QtBeef_QSaveFile_OnBytesAvailable(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesAvailable();
+	}
+	static void QtBeef_QSaveFile_OnBytesToWrite(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesToWrite();
+	}
+	static void QtBeef_QSaveFile_OnCanReadLine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanReadLine();
+	}
+	static void QtBeef_QSaveFile_OnWaitForReadyRead(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForReadyRead(msecs);
+	}
+	static void QtBeef_QSaveFile_OnWaitForBytesWritten(void* ptr, c_int msecs)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWaitForBytesWritten(msecs);
+	}
+	static void QtBeef_QSaveFile_OnReadData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadData(data, maxlen);
+	}
+	static void QtBeef_QSaveFile_OnReadLineData(void* ptr, c_char* data, c_longlong maxlen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadLineData(data, maxlen);
+	}
+	static void QtBeef_QSaveFile_OnSkipData(void* ptr, c_longlong maxSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSkipData(maxSize);
+	}
+	static void QtBeef_QSaveFile_OnResize(void* ptr, c_longlong sz)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResize(sz);
+	}
+	static void QtBeef_QSaveFile_OnPermissions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPermissions();
+	}
+	static void QtBeef_QSaveFile_OnSetPermissions(void* ptr, void* permissionSpec)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetPermissions(permissionSpec);
 	}
 	public this(QSaveFile_Ptr ptr)
 	{
@@ -1219,18 +1405,27 @@ extension CQt
 	public function void QSaveFile_OnMetaObject_action(void* self);
 	[LinkName("QSaveFile_OnMetaObject")]
 	public static extern void** QSaveFile_OnMetaObject(void* self, QSaveFile_OnMetaObject_action _action);
+	
+	[LinkName("QSaveFile_SuperMetaObject")]
+	public static extern void** QSaveFile_SuperMetaObject(void* self);
 	[LinkName("QSaveFile_Qt_Metacast")]
 	public static extern void* QSaveFile_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSaveFile_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSaveFile_OnMetacast")]
 	public static extern void* QSaveFile_OnMetacast(void* self, QSaveFile_OnMetacast_action _action);
+	
+	[LinkName("QSaveFile_SuperMetacast")]
+	public static extern void* QSaveFile_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSaveFile_Qt_Metacall")]
 	public static extern c_int QSaveFile_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSaveFile_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSaveFile_OnMetacall")]
 	public static extern c_int QSaveFile_OnMetacall(void* self, QSaveFile_OnMetacall_action _action);
+	
+	[LinkName("QSaveFile_SuperMetacall")]
+	public static extern c_int QSaveFile_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSaveFile_Tr")]
 	public static extern libqt_string QSaveFile_Tr(c_char* s);
 	[LinkName("QSaveFile_FileName")]
@@ -1239,6 +1434,9 @@ extension CQt
 	public function void QSaveFile_OnFileName_action(void* self);
 	[LinkName("QSaveFile_OnFileName")]
 	public static extern libqt_string QSaveFile_OnFileName(void* self, QSaveFile_OnFileName_action _action);
+	
+	[LinkName("QSaveFile_SuperFileName")]
+	public static extern libqt_string QSaveFile_SuperFileName(void* self);
 	[LinkName("QSaveFile_SetFileName")]
 	public static extern void QSaveFile_SetFileName(void* self, libqt_string name);
 	[LinkName("QSaveFile_Open")]
@@ -1247,6 +1445,9 @@ extension CQt
 	public function void QSaveFile_OnOpen_action(void* self, void* flags);
 	[LinkName("QSaveFile_OnOpen")]
 	public static extern bool QSaveFile_OnOpen(void* self, QSaveFile_OnOpen_action _action);
+	
+	[LinkName("QSaveFile_SuperOpen")]
+	public static extern bool QSaveFile_SuperOpen(void* self, void* flags);
 	[LinkName("QSaveFile_Commit")]
 	public static extern bool QSaveFile_Commit(void* self);
 	[LinkName("QSaveFile_CancelWriting")]
@@ -1261,6 +1462,9 @@ extension CQt
 	public function void QSaveFile_OnWriteData_action(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QSaveFile_OnWriteData")]
 	public static extern c_longlong QSaveFile_OnWriteData(void* self, QSaveFile_OnWriteData_action _action);
+	
+	[LinkName("QSaveFile_SuperWriteData")]
+	public static extern c_longlong QSaveFile_SuperWriteData(void* self, c_char* data, c_longlong lenVal);
 	[LinkName("QSaveFile_Tr2")]
 	public static extern libqt_string QSaveFile_Tr2(c_char* s, c_char* c);
 	[LinkName("QSaveFile_Tr3")]
@@ -1271,148 +1475,223 @@ extension CQt
 	public function void QSaveFile_OnEvent_action(void* self, void** event);
 	[LinkName("QSaveFile_OnEvent")]
 	public static extern bool QSaveFile_OnEvent(void* self, QSaveFile_OnEvent_action _action);
+	
+	[LinkName("QSaveFile_SuperEvent")]
+	public static extern bool QSaveFile_SuperEvent(void* self, void** event);
 	[LinkName("QSaveFile_EventFilter")]
 	public static extern bool QSaveFile_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QSaveFile_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSaveFile_OnEventFilter")]
 	public static extern bool QSaveFile_OnEventFilter(void* self, QSaveFile_OnEventFilter_action _action);
+	
+	[LinkName("QSaveFile_SuperEventFilter")]
+	public static extern bool QSaveFile_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSaveFile_TimerEvent")]
 	public static extern void QSaveFile_TimerEvent(void* self, void** event);
 	
 	public function void QSaveFile_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSaveFile_OnTimerEvent")]
 	public static extern void QSaveFile_OnTimerEvent(void* self, QSaveFile_OnTimerEvent_action _action);
+	
+	[LinkName("QSaveFile_SuperTimerEvent")]
+	public static extern void QSaveFile_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSaveFile_ChildEvent")]
 	public static extern void QSaveFile_ChildEvent(void* self, void** event);
 	
 	public function void QSaveFile_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSaveFile_OnChildEvent")]
 	public static extern void QSaveFile_OnChildEvent(void* self, QSaveFile_OnChildEvent_action _action);
+	
+	[LinkName("QSaveFile_SuperChildEvent")]
+	public static extern void QSaveFile_SuperChildEvent(void* self, void** event);
 	[LinkName("QSaveFile_CustomEvent")]
 	public static extern void QSaveFile_CustomEvent(void* self, void** event);
 	
 	public function void QSaveFile_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSaveFile_OnCustomEvent")]
 	public static extern void QSaveFile_OnCustomEvent(void* self, QSaveFile_OnCustomEvent_action _action);
+	
+	[LinkName("QSaveFile_SuperCustomEvent")]
+	public static extern void QSaveFile_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSaveFile_ConnectNotify")]
 	public static extern void QSaveFile_ConnectNotify(void* self, void** signal);
 	
 	public function void QSaveFile_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSaveFile_OnConnectNotify")]
 	public static extern void QSaveFile_OnConnectNotify(void* self, QSaveFile_OnConnectNotify_action _action);
+	
+	[LinkName("QSaveFile_SuperConnectNotify")]
+	public static extern void QSaveFile_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSaveFile_DisconnectNotify")]
 	public static extern void QSaveFile_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSaveFile_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSaveFile_OnDisconnectNotify")]
 	public static extern void QSaveFile_OnDisconnectNotify(void* self, QSaveFile_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSaveFile_SuperDisconnectNotify")]
+	public static extern void QSaveFile_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QSaveFile_IsSequential")]
 	public static extern bool QSaveFile_IsSequential(void* self);
 	
 	public function void QSaveFile_OnIsSequential_action(void* self);
 	[LinkName("QSaveFile_OnIsSequential")]
 	public static extern bool QSaveFile_OnIsSequential(void* self, QSaveFile_OnIsSequential_action _action);
+	
+	[LinkName("QSaveFile_SuperIsSequential")]
+	public static extern bool QSaveFile_SuperIsSequential(void* self);
 	[LinkName("QSaveFile_Close")]
 	public static extern void QSaveFile_Close(void* self);
 	
 	public function void QSaveFile_OnClose_action(void* self);
 	[LinkName("QSaveFile_OnClose")]
 	public static extern void QSaveFile_OnClose(void* self, QSaveFile_OnClose_action _action);
+	
+	[LinkName("QSaveFile_SuperClose")]
+	public static extern void QSaveFile_SuperClose(void* self);
 	[LinkName("QSaveFile_Pos")]
 	public static extern c_longlong QSaveFile_Pos(void* self);
 	
 	public function void QSaveFile_OnPos_action(void* self);
 	[LinkName("QSaveFile_OnPos")]
 	public static extern c_longlong QSaveFile_OnPos(void* self, QSaveFile_OnPos_action _action);
+	
+	[LinkName("QSaveFile_SuperPos")]
+	public static extern c_longlong QSaveFile_SuperPos(void* self);
 	[LinkName("QSaveFile_Size")]
 	public static extern c_longlong QSaveFile_Size(void* self);
 	
 	public function void QSaveFile_OnSize_action(void* self);
 	[LinkName("QSaveFile_OnSize")]
 	public static extern c_longlong QSaveFile_OnSize(void* self, QSaveFile_OnSize_action _action);
+	
+	[LinkName("QSaveFile_SuperSize")]
+	public static extern c_longlong QSaveFile_SuperSize(void* self);
 	[LinkName("QSaveFile_Seek")]
 	public static extern bool QSaveFile_Seek(void* self, c_longlong pos);
 	
 	public function void QSaveFile_OnSeek_action(void* self, c_longlong pos);
 	[LinkName("QSaveFile_OnSeek")]
 	public static extern bool QSaveFile_OnSeek(void* self, QSaveFile_OnSeek_action _action);
+	
+	[LinkName("QSaveFile_SuperSeek")]
+	public static extern bool QSaveFile_SuperSeek(void* self, c_longlong pos);
 	[LinkName("QSaveFile_AtEnd")]
 	public static extern bool QSaveFile_AtEnd(void* self);
 	
 	public function void QSaveFile_OnAtEnd_action(void* self);
 	[LinkName("QSaveFile_OnAtEnd")]
 	public static extern bool QSaveFile_OnAtEnd(void* self, QSaveFile_OnAtEnd_action _action);
+	
+	[LinkName("QSaveFile_SuperAtEnd")]
+	public static extern bool QSaveFile_SuperAtEnd(void* self);
 	[LinkName("QSaveFile_Reset")]
 	public static extern bool QSaveFile_Reset(void* self);
 	
 	public function void QSaveFile_OnReset_action(void* self);
 	[LinkName("QSaveFile_OnReset")]
 	public static extern bool QSaveFile_OnReset(void* self, QSaveFile_OnReset_action _action);
+	
+	[LinkName("QSaveFile_SuperReset")]
+	public static extern bool QSaveFile_SuperReset(void* self);
 	[LinkName("QSaveFile_BytesAvailable")]
 	public static extern c_longlong QSaveFile_BytesAvailable(void* self);
 	
 	public function void QSaveFile_OnBytesAvailable_action(void* self);
 	[LinkName("QSaveFile_OnBytesAvailable")]
 	public static extern c_longlong QSaveFile_OnBytesAvailable(void* self, QSaveFile_OnBytesAvailable_action _action);
+	
+	[LinkName("QSaveFile_SuperBytesAvailable")]
+	public static extern c_longlong QSaveFile_SuperBytesAvailable(void* self);
 	[LinkName("QSaveFile_BytesToWrite")]
 	public static extern c_longlong QSaveFile_BytesToWrite(void* self);
 	
 	public function void QSaveFile_OnBytesToWrite_action(void* self);
 	[LinkName("QSaveFile_OnBytesToWrite")]
 	public static extern c_longlong QSaveFile_OnBytesToWrite(void* self, QSaveFile_OnBytesToWrite_action _action);
+	
+	[LinkName("QSaveFile_SuperBytesToWrite")]
+	public static extern c_longlong QSaveFile_SuperBytesToWrite(void* self);
 	[LinkName("QSaveFile_CanReadLine")]
 	public static extern bool QSaveFile_CanReadLine(void* self);
 	
 	public function void QSaveFile_OnCanReadLine_action(void* self);
 	[LinkName("QSaveFile_OnCanReadLine")]
 	public static extern bool QSaveFile_OnCanReadLine(void* self, QSaveFile_OnCanReadLine_action _action);
+	
+	[LinkName("QSaveFile_SuperCanReadLine")]
+	public static extern bool QSaveFile_SuperCanReadLine(void* self);
 	[LinkName("QSaveFile_WaitForReadyRead")]
 	public static extern bool QSaveFile_WaitForReadyRead(void* self, c_int msecs);
 	
 	public function void QSaveFile_OnWaitForReadyRead_action(void* self, c_int msecs);
 	[LinkName("QSaveFile_OnWaitForReadyRead")]
 	public static extern bool QSaveFile_OnWaitForReadyRead(void* self, QSaveFile_OnWaitForReadyRead_action _action);
+	
+	[LinkName("QSaveFile_SuperWaitForReadyRead")]
+	public static extern bool QSaveFile_SuperWaitForReadyRead(void* self, c_int msecs);
 	[LinkName("QSaveFile_WaitForBytesWritten")]
 	public static extern bool QSaveFile_WaitForBytesWritten(void* self, c_int msecs);
 	
 	public function void QSaveFile_OnWaitForBytesWritten_action(void* self, c_int msecs);
 	[LinkName("QSaveFile_OnWaitForBytesWritten")]
 	public static extern bool QSaveFile_OnWaitForBytesWritten(void* self, QSaveFile_OnWaitForBytesWritten_action _action);
+	
+	[LinkName("QSaveFile_SuperWaitForBytesWritten")]
+	public static extern bool QSaveFile_SuperWaitForBytesWritten(void* self, c_int msecs);
 	[LinkName("QSaveFile_ReadData")]
 	public static extern c_longlong QSaveFile_ReadData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QSaveFile_OnReadData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QSaveFile_OnReadData")]
 	public static extern c_longlong QSaveFile_OnReadData(void* self, QSaveFile_OnReadData_action _action);
+	
+	[LinkName("QSaveFile_SuperReadData")]
+	public static extern c_longlong QSaveFile_SuperReadData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QSaveFile_ReadLineData")]
 	public static extern c_longlong QSaveFile_ReadLineData(void* self, c_char* data, c_longlong maxlen);
 	
 	public function void QSaveFile_OnReadLineData_action(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QSaveFile_OnReadLineData")]
 	public static extern c_longlong QSaveFile_OnReadLineData(void* self, QSaveFile_OnReadLineData_action _action);
+	
+	[LinkName("QSaveFile_SuperReadLineData")]
+	public static extern c_longlong QSaveFile_SuperReadLineData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QSaveFile_SkipData")]
 	public static extern c_longlong QSaveFile_SkipData(void* self, c_longlong maxSize);
 	
 	public function void QSaveFile_OnSkipData_action(void* self, c_longlong maxSize);
 	[LinkName("QSaveFile_OnSkipData")]
 	public static extern c_longlong QSaveFile_OnSkipData(void* self, QSaveFile_OnSkipData_action _action);
+	
+	[LinkName("QSaveFile_SuperSkipData")]
+	public static extern c_longlong QSaveFile_SuperSkipData(void* self, c_longlong maxSize);
 	[LinkName("QSaveFile_Resize")]
 	public static extern bool QSaveFile_Resize(void* self, c_longlong sz);
 	
 	public function void QSaveFile_OnResize_action(void* self, c_longlong sz);
 	[LinkName("QSaveFile_OnResize")]
 	public static extern bool QSaveFile_OnResize(void* self, QSaveFile_OnResize_action _action);
+	
+	[LinkName("QSaveFile_SuperResize")]
+	public static extern bool QSaveFile_SuperResize(void* self, c_longlong sz);
 	[LinkName("QSaveFile_Permissions")]
 	public static extern void* QSaveFile_Permissions(void* self);
 	
 	public function void QSaveFile_OnPermissions_action(void* self);
 	[LinkName("QSaveFile_OnPermissions")]
 	public static extern void* QSaveFile_OnPermissions(void* self, QSaveFile_OnPermissions_action _action);
+	
+	[LinkName("QSaveFile_SuperPermissions")]
+	public static extern void* QSaveFile_SuperPermissions(void* self);
 	[LinkName("QSaveFile_SetPermissions")]
 	public static extern bool QSaveFile_SetPermissions(void* self, void* permissionSpec);
 	
 	public function void QSaveFile_OnSetPermissions_action(void* self, void* permissionSpec);
 	[LinkName("QSaveFile_OnSetPermissions")]
 	public static extern bool QSaveFile_OnSetPermissions(void* self, QSaveFile_OnSetPermissions_action _action);
+	
+	[LinkName("QSaveFile_SuperSetPermissions")]
+	public static extern bool QSaveFile_SuperSetPermissions(void* self, void* permissionSpec);
 }

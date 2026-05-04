@@ -380,6 +380,18 @@ class QGraphicsItemAnimation : IQGraphicsItemAnimation, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGraphicsItemAnimation_OnMetaObject(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnMetaObject);
+		CQt.QGraphicsItemAnimation_OnMetacast(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnMetacast);
+		CQt.QGraphicsItemAnimation_OnMetacall(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnMetacall);
+		CQt.QGraphicsItemAnimation_OnBeforeAnimationStep(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnBeforeAnimationStep);
+		CQt.QGraphicsItemAnimation_OnAfterAnimationStep(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnAfterAnimationStep);
+		CQt.QGraphicsItemAnimation_OnEvent(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnEvent);
+		CQt.QGraphicsItemAnimation_OnEventFilter(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnEventFilter);
+		CQt.QGraphicsItemAnimation_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnTimerEvent);
+		CQt.QGraphicsItemAnimation_OnChildEvent(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnChildEvent);
+		CQt.QGraphicsItemAnimation_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnCustomEvent);
+		CQt.QGraphicsItemAnimation_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnConnectNotify);
+		CQt.QGraphicsItemAnimation_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QGraphicsItemAnimation_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -392,6 +404,66 @@ class QGraphicsItemAnimation : IQGraphicsItemAnimation, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnBeforeAnimationStep(void* ptr, double step)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBeforeAnimationStep(step);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnAfterAnimationStep(void* ptr, double step)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAfterAnimationStep(step);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QGraphicsItemAnimation_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QGraphicsItemAnimation_Ptr ptr)
 	{
@@ -779,18 +851,27 @@ extension CQt
 	public function void QGraphicsItemAnimation_OnMetaObject_action(void* self);
 	[LinkName("QGraphicsItemAnimation_OnMetaObject")]
 	public static extern void** QGraphicsItemAnimation_OnMetaObject(void* self, QGraphicsItemAnimation_OnMetaObject_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperMetaObject")]
+	public static extern void** QGraphicsItemAnimation_SuperMetaObject(void* self);
 	[LinkName("QGraphicsItemAnimation_Qt_Metacast")]
 	public static extern void* QGraphicsItemAnimation_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QGraphicsItemAnimation_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QGraphicsItemAnimation_OnMetacast")]
 	public static extern void* QGraphicsItemAnimation_OnMetacast(void* self, QGraphicsItemAnimation_OnMetacast_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperMetacast")]
+	public static extern void* QGraphicsItemAnimation_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QGraphicsItemAnimation_Qt_Metacall")]
 	public static extern c_int QGraphicsItemAnimation_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QGraphicsItemAnimation_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsItemAnimation_OnMetacall")]
 	public static extern c_int QGraphicsItemAnimation_OnMetacall(void* self, QGraphicsItemAnimation_OnMetacall_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperMetacall")]
+	public static extern c_int QGraphicsItemAnimation_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QGraphicsItemAnimation_Tr")]
 	public static extern libqt_string QGraphicsItemAnimation_Tr(c_char* s);
 	[LinkName("QGraphicsItemAnimation_Item")]
@@ -849,12 +930,18 @@ extension CQt
 	public function void QGraphicsItemAnimation_OnBeforeAnimationStep_action(void* self, double step);
 	[LinkName("QGraphicsItemAnimation_OnBeforeAnimationStep")]
 	public static extern void QGraphicsItemAnimation_OnBeforeAnimationStep(void* self, QGraphicsItemAnimation_OnBeforeAnimationStep_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperBeforeAnimationStep")]
+	public static extern void QGraphicsItemAnimation_SuperBeforeAnimationStep(void* self, double step);
 	[LinkName("QGraphicsItemAnimation_AfterAnimationStep")]
 	public static extern void QGraphicsItemAnimation_AfterAnimationStep(void* self, double step);
 	
 	public function void QGraphicsItemAnimation_OnAfterAnimationStep_action(void* self, double step);
 	[LinkName("QGraphicsItemAnimation_OnAfterAnimationStep")]
 	public static extern void QGraphicsItemAnimation_OnAfterAnimationStep(void* self, QGraphicsItemAnimation_OnAfterAnimationStep_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperAfterAnimationStep")]
+	public static extern void QGraphicsItemAnimation_SuperAfterAnimationStep(void* self, double step);
 	[LinkName("QGraphicsItemAnimation_Tr2")]
 	public static extern libqt_string QGraphicsItemAnimation_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsItemAnimation_Tr3")]
@@ -865,40 +952,61 @@ extension CQt
 	public function void QGraphicsItemAnimation_OnEvent_action(void* self, void** event);
 	[LinkName("QGraphicsItemAnimation_OnEvent")]
 	public static extern bool QGraphicsItemAnimation_OnEvent(void* self, QGraphicsItemAnimation_OnEvent_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperEvent")]
+	public static extern bool QGraphicsItemAnimation_SuperEvent(void* self, void** event);
 	[LinkName("QGraphicsItemAnimation_EventFilter")]
 	public static extern bool QGraphicsItemAnimation_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QGraphicsItemAnimation_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QGraphicsItemAnimation_OnEventFilter")]
 	public static extern bool QGraphicsItemAnimation_OnEventFilter(void* self, QGraphicsItemAnimation_OnEventFilter_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperEventFilter")]
+	public static extern bool QGraphicsItemAnimation_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QGraphicsItemAnimation_TimerEvent")]
 	public static extern void QGraphicsItemAnimation_TimerEvent(void* self, void** event);
 	
 	public function void QGraphicsItemAnimation_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QGraphicsItemAnimation_OnTimerEvent")]
 	public static extern void QGraphicsItemAnimation_OnTimerEvent(void* self, QGraphicsItemAnimation_OnTimerEvent_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperTimerEvent")]
+	public static extern void QGraphicsItemAnimation_SuperTimerEvent(void* self, void** event);
 	[LinkName("QGraphicsItemAnimation_ChildEvent")]
 	public static extern void QGraphicsItemAnimation_ChildEvent(void* self, void** event);
 	
 	public function void QGraphicsItemAnimation_OnChildEvent_action(void* self, void** event);
 	[LinkName("QGraphicsItemAnimation_OnChildEvent")]
 	public static extern void QGraphicsItemAnimation_OnChildEvent(void* self, QGraphicsItemAnimation_OnChildEvent_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperChildEvent")]
+	public static extern void QGraphicsItemAnimation_SuperChildEvent(void* self, void** event);
 	[LinkName("QGraphicsItemAnimation_CustomEvent")]
 	public static extern void QGraphicsItemAnimation_CustomEvent(void* self, void** event);
 	
 	public function void QGraphicsItemAnimation_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QGraphicsItemAnimation_OnCustomEvent")]
 	public static extern void QGraphicsItemAnimation_OnCustomEvent(void* self, QGraphicsItemAnimation_OnCustomEvent_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperCustomEvent")]
+	public static extern void QGraphicsItemAnimation_SuperCustomEvent(void* self, void** event);
 	[LinkName("QGraphicsItemAnimation_ConnectNotify")]
 	public static extern void QGraphicsItemAnimation_ConnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsItemAnimation_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsItemAnimation_OnConnectNotify")]
 	public static extern void QGraphicsItemAnimation_OnConnectNotify(void* self, QGraphicsItemAnimation_OnConnectNotify_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperConnectNotify")]
+	public static extern void QGraphicsItemAnimation_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QGraphicsItemAnimation_DisconnectNotify")]
 	public static extern void QGraphicsItemAnimation_DisconnectNotify(void* self, void** signal);
 	
 	public function void QGraphicsItemAnimation_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QGraphicsItemAnimation_OnDisconnectNotify")]
 	public static extern void QGraphicsItemAnimation_OnDisconnectNotify(void* self, QGraphicsItemAnimation_OnDisconnectNotify_action _action);
+	
+	[LinkName("QGraphicsItemAnimation_SuperDisconnectNotify")]
+	public static extern void QGraphicsItemAnimation_SuperDisconnectNotify(void* self, void** signal);
 }

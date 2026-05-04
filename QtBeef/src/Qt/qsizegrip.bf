@@ -1592,6 +1592,56 @@ class QSizeGrip : IQSizeGrip, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QSizeGrip_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMetaObject);
+		CQt.QSizeGrip_OnMetacast(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMetacast);
+		CQt.QSizeGrip_OnMetacall(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMetacall);
+		CQt.QSizeGrip_OnSizeHint(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnSizeHint);
+		CQt.QSizeGrip_OnSetVisible(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnSetVisible);
+		CQt.QSizeGrip_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnPaintEvent);
+		CQt.QSizeGrip_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMousePressEvent);
+		CQt.QSizeGrip_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMouseMoveEvent);
+		CQt.QSizeGrip_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMouseReleaseEvent);
+		CQt.QSizeGrip_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMoveEvent);
+		CQt.QSizeGrip_OnShowEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnShowEvent);
+		CQt.QSizeGrip_OnHideEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnHideEvent);
+		CQt.QSizeGrip_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnEventFilter);
+		CQt.QSizeGrip_OnEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnEvent);
+		CQt.QSizeGrip_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnTimerEvent);
+		CQt.QSizeGrip_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnChildEvent);
+		CQt.QSizeGrip_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnCustomEvent);
+		CQt.QSizeGrip_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnConnectNotify);
+		CQt.QSizeGrip_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnDisconnectNotify);
+		CQt.QSizeGrip_OnDevType(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnDevType);
+		CQt.QSizeGrip_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnPaintEngine);
+		CQt.QSizeGrip_OnMetric(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMetric);
+		CQt.QSizeGrip_OnInitPainter(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnInitPainter);
+		CQt.QSizeGrip_OnRedirected(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnRedirected);
+		CQt.QSizeGrip_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnSharedPainter);
+		CQt.QSizeGrip_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMinimumSizeHint);
+		CQt.QSizeGrip_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnHeightForWidth);
+		CQt.QSizeGrip_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnHasHeightForWidth);
+		CQt.QSizeGrip_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnMouseDoubleClickEvent);
+		CQt.QSizeGrip_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnWheelEvent);
+		CQt.QSizeGrip_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnKeyPressEvent);
+		CQt.QSizeGrip_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnKeyReleaseEvent);
+		CQt.QSizeGrip_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnFocusInEvent);
+		CQt.QSizeGrip_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnFocusOutEvent);
+		CQt.QSizeGrip_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnEnterEvent);
+		CQt.QSizeGrip_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnLeaveEvent);
+		CQt.QSizeGrip_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnResizeEvent);
+		CQt.QSizeGrip_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnCloseEvent);
+		CQt.QSizeGrip_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnContextMenuEvent);
+		CQt.QSizeGrip_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnTabletEvent);
+		CQt.QSizeGrip_OnActionEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnActionEvent);
+		CQt.QSizeGrip_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnDragEnterEvent);
+		CQt.QSizeGrip_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnDragMoveEvent);
+		CQt.QSizeGrip_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnDragLeaveEvent);
+		CQt.QSizeGrip_OnDropEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnDropEvent);
+		CQt.QSizeGrip_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnNativeEvent);
+		CQt.QSizeGrip_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnChangeEvent);
+		CQt.QSizeGrip_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnInputMethodEvent);
+		CQt.QSizeGrip_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnInputMethodQuery);
+		CQt.QSizeGrip_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QSizeGrip_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1628,6 +1678,256 @@ class QSizeGrip : IQSizeGrip, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QSizeGrip_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSizeGrip_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSizeGrip_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSizeGrip_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QSizeGrip_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QSizeGrip_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QSizeGrip_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QSizeGrip_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QSizeGrip_OnMouseReleaseEvent(void* ptr, void** mouseEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(mouseEvent);
+	}
+	static void QtBeef_QSizeGrip_OnMoveEvent(void* ptr, void** moveEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(moveEvent);
+	}
+	static void QtBeef_QSizeGrip_OnShowEvent(void* ptr, void** showEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(showEvent);
+	}
+	static void QtBeef_QSizeGrip_OnHideEvent(void* ptr, void** hideEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(hideEvent);
+	}
+	static void QtBeef_QSizeGrip_OnEventFilter(void* ptr, void** param1, void** param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(param1, param2);
+	}
+	static void QtBeef_QSizeGrip_OnEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(param1);
+	}
+	static void QtBeef_QSizeGrip_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSizeGrip_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QSizeGrip_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QSizeGrip_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QSizeGrip_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QSizeGrip_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QSizeGrip_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QSizeGrip_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QSizeGrip_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QSizeGrip_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QSizeGrip_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QSizeGrip_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QSizeGrip_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QSizeGrip_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QSizeGrip_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QSizeGrip_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QSizeGrip_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QSizeGrip_Ptr ptr)
 	{
@@ -3190,18 +3490,27 @@ extension CQt
 	public function void QSizeGrip_OnMetaObject_action(void* self);
 	[LinkName("QSizeGrip_OnMetaObject")]
 	public static extern void** QSizeGrip_OnMetaObject(void* self, QSizeGrip_OnMetaObject_action _action);
+	
+	[LinkName("QSizeGrip_SuperMetaObject")]
+	public static extern void** QSizeGrip_SuperMetaObject(void* self);
 	[LinkName("QSizeGrip_Qt_Metacast")]
 	public static extern void* QSizeGrip_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSizeGrip_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSizeGrip_OnMetacast")]
 	public static extern void* QSizeGrip_OnMetacast(void* self, QSizeGrip_OnMetacast_action _action);
+	
+	[LinkName("QSizeGrip_SuperMetacast")]
+	public static extern void* QSizeGrip_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSizeGrip_Qt_Metacall")]
 	public static extern c_int QSizeGrip_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSizeGrip_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSizeGrip_OnMetacall")]
 	public static extern c_int QSizeGrip_OnMetacall(void* self, QSizeGrip_OnMetacall_action _action);
+	
+	[LinkName("QSizeGrip_SuperMetacall")]
+	public static extern c_int QSizeGrip_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSizeGrip_Tr")]
 	public static extern libqt_string QSizeGrip_Tr(c_char* s);
 	[LinkName("QSizeGrip_SizeHint")]
@@ -3210,66 +3519,99 @@ extension CQt
 	public function void QSizeGrip_OnSizeHint_action(void* self);
 	[LinkName("QSizeGrip_OnSizeHint")]
 	public static extern void* QSizeGrip_OnSizeHint(void* self, QSizeGrip_OnSizeHint_action _action);
+	
+	[LinkName("QSizeGrip_SuperSizeHint")]
+	public static extern void* QSizeGrip_SuperSizeHint(void* self);
 	[LinkName("QSizeGrip_SetVisible")]
 	public static extern void QSizeGrip_SetVisible(void* self, bool visible);
 	
 	public function void QSizeGrip_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QSizeGrip_OnSetVisible")]
 	public static extern void QSizeGrip_OnSetVisible(void* self, QSizeGrip_OnSetVisible_action _action);
+	
+	[LinkName("QSizeGrip_SuperSetVisible")]
+	public static extern void QSizeGrip_SuperSetVisible(void* self, bool visible);
 	[LinkName("QSizeGrip_PaintEvent")]
 	public static extern void QSizeGrip_PaintEvent(void* self, void** param1);
 	
 	public function void QSizeGrip_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QSizeGrip_OnPaintEvent")]
 	public static extern void QSizeGrip_OnPaintEvent(void* self, QSizeGrip_OnPaintEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperPaintEvent")]
+	public static extern void QSizeGrip_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QSizeGrip_MousePressEvent")]
 	public static extern void QSizeGrip_MousePressEvent(void* self, void** param1);
 	
 	public function void QSizeGrip_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QSizeGrip_OnMousePressEvent")]
 	public static extern void QSizeGrip_OnMousePressEvent(void* self, QSizeGrip_OnMousePressEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperMousePressEvent")]
+	public static extern void QSizeGrip_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QSizeGrip_MouseMoveEvent")]
 	public static extern void QSizeGrip_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QSizeGrip_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QSizeGrip_OnMouseMoveEvent")]
 	public static extern void QSizeGrip_OnMouseMoveEvent(void* self, QSizeGrip_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperMouseMoveEvent")]
+	public static extern void QSizeGrip_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QSizeGrip_MouseReleaseEvent")]
 	public static extern void QSizeGrip_MouseReleaseEvent(void* self, void** mouseEvent);
 	
 	public function void QSizeGrip_OnMouseReleaseEvent_action(void* self, void** mouseEvent);
 	[LinkName("QSizeGrip_OnMouseReleaseEvent")]
 	public static extern void QSizeGrip_OnMouseReleaseEvent(void* self, QSizeGrip_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperMouseReleaseEvent")]
+	public static extern void QSizeGrip_SuperMouseReleaseEvent(void* self, void** mouseEvent);
 	[LinkName("QSizeGrip_MoveEvent")]
 	public static extern void QSizeGrip_MoveEvent(void* self, void** moveEvent);
 	
 	public function void QSizeGrip_OnMoveEvent_action(void* self, void** moveEvent);
 	[LinkName("QSizeGrip_OnMoveEvent")]
 	public static extern void QSizeGrip_OnMoveEvent(void* self, QSizeGrip_OnMoveEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperMoveEvent")]
+	public static extern void QSizeGrip_SuperMoveEvent(void* self, void** moveEvent);
 	[LinkName("QSizeGrip_ShowEvent")]
 	public static extern void QSizeGrip_ShowEvent(void* self, void** showEvent);
 	
 	public function void QSizeGrip_OnShowEvent_action(void* self, void** showEvent);
 	[LinkName("QSizeGrip_OnShowEvent")]
 	public static extern void QSizeGrip_OnShowEvent(void* self, QSizeGrip_OnShowEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperShowEvent")]
+	public static extern void QSizeGrip_SuperShowEvent(void* self, void** showEvent);
 	[LinkName("QSizeGrip_HideEvent")]
 	public static extern void QSizeGrip_HideEvent(void* self, void** hideEvent);
 	
 	public function void QSizeGrip_OnHideEvent_action(void* self, void** hideEvent);
 	[LinkName("QSizeGrip_OnHideEvent")]
 	public static extern void QSizeGrip_OnHideEvent(void* self, QSizeGrip_OnHideEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperHideEvent")]
+	public static extern void QSizeGrip_SuperHideEvent(void* self, void** hideEvent);
 	[LinkName("QSizeGrip_EventFilter")]
 	public static extern bool QSizeGrip_EventFilter(void* self, void** param1, void** param2);
 	
 	public function void QSizeGrip_OnEventFilter_action(void* self, void** param1, void** param2);
 	[LinkName("QSizeGrip_OnEventFilter")]
 	public static extern bool QSizeGrip_OnEventFilter(void* self, QSizeGrip_OnEventFilter_action _action);
+	
+	[LinkName("QSizeGrip_SuperEventFilter")]
+	public static extern bool QSizeGrip_SuperEventFilter(void* self, void** param1, void** param2);
 	[LinkName("QSizeGrip_Event")]
 	public static extern bool QSizeGrip_Event(void* self, void** param1);
 	
 	public function void QSizeGrip_OnEvent_action(void* self, void** param1);
 	[LinkName("QSizeGrip_OnEvent")]
 	public static extern bool QSizeGrip_OnEvent(void* self, QSizeGrip_OnEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperEvent")]
+	public static extern bool QSizeGrip_SuperEvent(void* self, void** param1);
 	[LinkName("QSizeGrip_Tr2")]
 	public static extern libqt_string QSizeGrip_Tr2(c_char* s, c_char* c);
 	[LinkName("QSizeGrip_Tr3")]
@@ -3280,214 +3622,322 @@ extension CQt
 	public function void QSizeGrip_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnTimerEvent")]
 	public static extern void QSizeGrip_OnTimerEvent(void* self, QSizeGrip_OnTimerEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperTimerEvent")]
+	public static extern void QSizeGrip_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSizeGrip_ChildEvent")]
 	public static extern void QSizeGrip_ChildEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnChildEvent")]
 	public static extern void QSizeGrip_OnChildEvent(void* self, QSizeGrip_OnChildEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperChildEvent")]
+	public static extern void QSizeGrip_SuperChildEvent(void* self, void** event);
 	[LinkName("QSizeGrip_CustomEvent")]
 	public static extern void QSizeGrip_CustomEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnCustomEvent")]
 	public static extern void QSizeGrip_OnCustomEvent(void* self, QSizeGrip_OnCustomEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperCustomEvent")]
+	public static extern void QSizeGrip_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSizeGrip_ConnectNotify")]
 	public static extern void QSizeGrip_ConnectNotify(void* self, void** signal);
 	
 	public function void QSizeGrip_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSizeGrip_OnConnectNotify")]
 	public static extern void QSizeGrip_OnConnectNotify(void* self, QSizeGrip_OnConnectNotify_action _action);
+	
+	[LinkName("QSizeGrip_SuperConnectNotify")]
+	public static extern void QSizeGrip_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSizeGrip_DisconnectNotify")]
 	public static extern void QSizeGrip_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSizeGrip_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSizeGrip_OnDisconnectNotify")]
 	public static extern void QSizeGrip_OnDisconnectNotify(void* self, QSizeGrip_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSizeGrip_SuperDisconnectNotify")]
+	public static extern void QSizeGrip_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QSizeGrip_DevType")]
 	public static extern c_int QSizeGrip_DevType(void* self);
 	
 	public function void QSizeGrip_OnDevType_action(void* self);
 	[LinkName("QSizeGrip_OnDevType")]
 	public static extern c_int QSizeGrip_OnDevType(void* self, QSizeGrip_OnDevType_action _action);
+	
+	[LinkName("QSizeGrip_SuperDevType")]
+	public static extern c_int QSizeGrip_SuperDevType(void* self);
 	[LinkName("QSizeGrip_PaintEngine")]
 	public static extern void** QSizeGrip_PaintEngine(void* self);
 	
 	public function void QSizeGrip_OnPaintEngine_action(void* self);
 	[LinkName("QSizeGrip_OnPaintEngine")]
 	public static extern void** QSizeGrip_OnPaintEngine(void* self, QSizeGrip_OnPaintEngine_action _action);
+	
+	[LinkName("QSizeGrip_SuperPaintEngine")]
+	public static extern void** QSizeGrip_SuperPaintEngine(void* self);
 	[LinkName("QSizeGrip_Metric")]
 	public static extern c_int QSizeGrip_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QSizeGrip_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSizeGrip_OnMetric")]
 	public static extern c_int QSizeGrip_OnMetric(void* self, QSizeGrip_OnMetric_action _action);
+	
+	[LinkName("QSizeGrip_SuperMetric")]
+	public static extern c_int QSizeGrip_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSizeGrip_InitPainter")]
 	public static extern void QSizeGrip_InitPainter(void* self, void** painter);
 	
 	public function void QSizeGrip_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QSizeGrip_OnInitPainter")]
 	public static extern void QSizeGrip_OnInitPainter(void* self, QSizeGrip_OnInitPainter_action _action);
+	
+	[LinkName("QSizeGrip_SuperInitPainter")]
+	public static extern void QSizeGrip_SuperInitPainter(void* self, void** painter);
 	[LinkName("QSizeGrip_Redirected")]
 	public static extern void** QSizeGrip_Redirected(void* self, void** offset);
 	
 	public function void QSizeGrip_OnRedirected_action(void* self, void** offset);
 	[LinkName("QSizeGrip_OnRedirected")]
 	public static extern void** QSizeGrip_OnRedirected(void* self, QSizeGrip_OnRedirected_action _action);
+	
+	[LinkName("QSizeGrip_SuperRedirected")]
+	public static extern void** QSizeGrip_SuperRedirected(void* self, void** offset);
 	[LinkName("QSizeGrip_SharedPainter")]
 	public static extern void** QSizeGrip_SharedPainter(void* self);
 	
 	public function void QSizeGrip_OnSharedPainter_action(void* self);
 	[LinkName("QSizeGrip_OnSharedPainter")]
 	public static extern void** QSizeGrip_OnSharedPainter(void* self, QSizeGrip_OnSharedPainter_action _action);
+	
+	[LinkName("QSizeGrip_SuperSharedPainter")]
+	public static extern void** QSizeGrip_SuperSharedPainter(void* self);
 	[LinkName("QSizeGrip_MinimumSizeHint")]
 	public static extern void* QSizeGrip_MinimumSizeHint(void* self);
 	
 	public function void QSizeGrip_OnMinimumSizeHint_action(void* self);
 	[LinkName("QSizeGrip_OnMinimumSizeHint")]
 	public static extern void* QSizeGrip_OnMinimumSizeHint(void* self, QSizeGrip_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QSizeGrip_SuperMinimumSizeHint")]
+	public static extern void* QSizeGrip_SuperMinimumSizeHint(void* self);
 	[LinkName("QSizeGrip_HeightForWidth")]
 	public static extern c_int QSizeGrip_HeightForWidth(void* self, c_int param1);
 	
 	public function void QSizeGrip_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QSizeGrip_OnHeightForWidth")]
 	public static extern c_int QSizeGrip_OnHeightForWidth(void* self, QSizeGrip_OnHeightForWidth_action _action);
+	
+	[LinkName("QSizeGrip_SuperHeightForWidth")]
+	public static extern c_int QSizeGrip_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QSizeGrip_HasHeightForWidth")]
 	public static extern bool QSizeGrip_HasHeightForWidth(void* self);
 	
 	public function void QSizeGrip_OnHasHeightForWidth_action(void* self);
 	[LinkName("QSizeGrip_OnHasHeightForWidth")]
 	public static extern bool QSizeGrip_OnHasHeightForWidth(void* self, QSizeGrip_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QSizeGrip_SuperHasHeightForWidth")]
+	public static extern bool QSizeGrip_SuperHasHeightForWidth(void* self);
 	[LinkName("QSizeGrip_MouseDoubleClickEvent")]
 	public static extern void QSizeGrip_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnMouseDoubleClickEvent")]
 	public static extern void QSizeGrip_OnMouseDoubleClickEvent(void* self, QSizeGrip_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperMouseDoubleClickEvent")]
+	public static extern void QSizeGrip_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QSizeGrip_WheelEvent")]
 	public static extern void QSizeGrip_WheelEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnWheelEvent")]
 	public static extern void QSizeGrip_OnWheelEvent(void* self, QSizeGrip_OnWheelEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperWheelEvent")]
+	public static extern void QSizeGrip_SuperWheelEvent(void* self, void** event);
 	[LinkName("QSizeGrip_KeyPressEvent")]
 	public static extern void QSizeGrip_KeyPressEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnKeyPressEvent")]
 	public static extern void QSizeGrip_OnKeyPressEvent(void* self, QSizeGrip_OnKeyPressEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperKeyPressEvent")]
+	public static extern void QSizeGrip_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QSizeGrip_KeyReleaseEvent")]
 	public static extern void QSizeGrip_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnKeyReleaseEvent")]
 	public static extern void QSizeGrip_OnKeyReleaseEvent(void* self, QSizeGrip_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperKeyReleaseEvent")]
+	public static extern void QSizeGrip_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QSizeGrip_FocusInEvent")]
 	public static extern void QSizeGrip_FocusInEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnFocusInEvent")]
 	public static extern void QSizeGrip_OnFocusInEvent(void* self, QSizeGrip_OnFocusInEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperFocusInEvent")]
+	public static extern void QSizeGrip_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QSizeGrip_FocusOutEvent")]
 	public static extern void QSizeGrip_FocusOutEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnFocusOutEvent")]
 	public static extern void QSizeGrip_OnFocusOutEvent(void* self, QSizeGrip_OnFocusOutEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperFocusOutEvent")]
+	public static extern void QSizeGrip_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QSizeGrip_EnterEvent")]
 	public static extern void QSizeGrip_EnterEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnEnterEvent")]
 	public static extern void QSizeGrip_OnEnterEvent(void* self, QSizeGrip_OnEnterEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperEnterEvent")]
+	public static extern void QSizeGrip_SuperEnterEvent(void* self, void** event);
 	[LinkName("QSizeGrip_LeaveEvent")]
 	public static extern void QSizeGrip_LeaveEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnLeaveEvent")]
 	public static extern void QSizeGrip_OnLeaveEvent(void* self, QSizeGrip_OnLeaveEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperLeaveEvent")]
+	public static extern void QSizeGrip_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QSizeGrip_ResizeEvent")]
 	public static extern void QSizeGrip_ResizeEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnResizeEvent")]
 	public static extern void QSizeGrip_OnResizeEvent(void* self, QSizeGrip_OnResizeEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperResizeEvent")]
+	public static extern void QSizeGrip_SuperResizeEvent(void* self, void** event);
 	[LinkName("QSizeGrip_CloseEvent")]
 	public static extern void QSizeGrip_CloseEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnCloseEvent")]
 	public static extern void QSizeGrip_OnCloseEvent(void* self, QSizeGrip_OnCloseEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperCloseEvent")]
+	public static extern void QSizeGrip_SuperCloseEvent(void* self, void** event);
 	[LinkName("QSizeGrip_ContextMenuEvent")]
 	public static extern void QSizeGrip_ContextMenuEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnContextMenuEvent")]
 	public static extern void QSizeGrip_OnContextMenuEvent(void* self, QSizeGrip_OnContextMenuEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperContextMenuEvent")]
+	public static extern void QSizeGrip_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QSizeGrip_TabletEvent")]
 	public static extern void QSizeGrip_TabletEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnTabletEvent")]
 	public static extern void QSizeGrip_OnTabletEvent(void* self, QSizeGrip_OnTabletEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperTabletEvent")]
+	public static extern void QSizeGrip_SuperTabletEvent(void* self, void** event);
 	[LinkName("QSizeGrip_ActionEvent")]
 	public static extern void QSizeGrip_ActionEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnActionEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnActionEvent")]
 	public static extern void QSizeGrip_OnActionEvent(void* self, QSizeGrip_OnActionEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperActionEvent")]
+	public static extern void QSizeGrip_SuperActionEvent(void* self, void** event);
 	[LinkName("QSizeGrip_DragEnterEvent")]
 	public static extern void QSizeGrip_DragEnterEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnDragEnterEvent")]
 	public static extern void QSizeGrip_OnDragEnterEvent(void* self, QSizeGrip_OnDragEnterEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperDragEnterEvent")]
+	public static extern void QSizeGrip_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QSizeGrip_DragMoveEvent")]
 	public static extern void QSizeGrip_DragMoveEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnDragMoveEvent")]
 	public static extern void QSizeGrip_OnDragMoveEvent(void* self, QSizeGrip_OnDragMoveEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperDragMoveEvent")]
+	public static extern void QSizeGrip_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QSizeGrip_DragLeaveEvent")]
 	public static extern void QSizeGrip_DragLeaveEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnDragLeaveEvent")]
 	public static extern void QSizeGrip_OnDragLeaveEvent(void* self, QSizeGrip_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperDragLeaveEvent")]
+	public static extern void QSizeGrip_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QSizeGrip_DropEvent")]
 	public static extern void QSizeGrip_DropEvent(void* self, void** event);
 	
 	public function void QSizeGrip_OnDropEvent_action(void* self, void** event);
 	[LinkName("QSizeGrip_OnDropEvent")]
 	public static extern void QSizeGrip_OnDropEvent(void* self, QSizeGrip_OnDropEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperDropEvent")]
+	public static extern void QSizeGrip_SuperDropEvent(void* self, void** event);
 	[LinkName("QSizeGrip_NativeEvent")]
 	public static extern bool QSizeGrip_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QSizeGrip_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSizeGrip_OnNativeEvent")]
 	public static extern bool QSizeGrip_OnNativeEvent(void* self, QSizeGrip_OnNativeEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperNativeEvent")]
+	public static extern bool QSizeGrip_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSizeGrip_ChangeEvent")]
 	public static extern void QSizeGrip_ChangeEvent(void* self, void** param1);
 	
 	public function void QSizeGrip_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QSizeGrip_OnChangeEvent")]
 	public static extern void QSizeGrip_OnChangeEvent(void* self, QSizeGrip_OnChangeEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperChangeEvent")]
+	public static extern void QSizeGrip_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QSizeGrip_InputMethodEvent")]
 	public static extern void QSizeGrip_InputMethodEvent(void* self, void** param1);
 	
 	public function void QSizeGrip_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QSizeGrip_OnInputMethodEvent")]
 	public static extern void QSizeGrip_OnInputMethodEvent(void* self, QSizeGrip_OnInputMethodEvent_action _action);
+	
+	[LinkName("QSizeGrip_SuperInputMethodEvent")]
+	public static extern void QSizeGrip_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QSizeGrip_InputMethodQuery")]
 	public static extern void* QSizeGrip_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QSizeGrip_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSizeGrip_OnInputMethodQuery")]
 	public static extern void* QSizeGrip_OnInputMethodQuery(void* self, QSizeGrip_OnInputMethodQuery_action _action);
+	
+	[LinkName("QSizeGrip_SuperInputMethodQuery")]
+	public static extern void* QSizeGrip_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSizeGrip_FocusNextPrevChild")]
 	public static extern bool QSizeGrip_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QSizeGrip_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QSizeGrip_OnFocusNextPrevChild")]
 	public static extern bool QSizeGrip_OnFocusNextPrevChild(void* self, QSizeGrip_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QSizeGrip_SuperFocusNextPrevChild")]
+	public static extern bool QSizeGrip_SuperFocusNextPrevChild(void* self, bool next);
 }

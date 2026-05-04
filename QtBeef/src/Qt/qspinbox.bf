@@ -1823,6 +1823,64 @@ class QSpinBox : IQSpinBox, IQAbstractSpinBox, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
 		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_Connect_EditingFinished);
+		CQt.QSpinBox_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMetaObject);
+		CQt.QSpinBox_OnMetacast(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMetacast);
+		CQt.QSpinBox_OnMetacall(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMetacall);
+		CQt.QSpinBox_OnEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnEvent);
+		CQt.QSpinBox_OnValidate(obj.ObjectPtr,  => QtBeef_QSpinBox_OnValidate);
+		CQt.QSpinBox_OnValueFromText(obj.ObjectPtr,  => QtBeef_QSpinBox_OnValueFromText);
+		CQt.QSpinBox_OnTextFromValue(obj.ObjectPtr,  => QtBeef_QSpinBox_OnTextFromValue);
+		CQt.QSpinBox_OnFixup(obj.ObjectPtr,  => QtBeef_QSpinBox_OnFixup);
+		CQt.QSpinBox_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSpinBox_OnEventFilter);
+		CQt.QSpinBox_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnTimerEvent);
+		CQt.QSpinBox_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnChildEvent);
+		CQt.QSpinBox_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnCustomEvent);
+		CQt.QSpinBox_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSpinBox_OnConnectNotify);
+		CQt.QSpinBox_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSpinBox_OnDisconnectNotify);
+		CQt.QSpinBox_OnDevType(obj.ObjectPtr,  => QtBeef_QSpinBox_OnDevType);
+		CQt.QSpinBox_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QSpinBox_OnPaintEngine);
+		CQt.QSpinBox_OnMetric(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMetric);
+		CQt.QSpinBox_OnInitPainter(obj.ObjectPtr,  => QtBeef_QSpinBox_OnInitPainter);
+		CQt.QSpinBox_OnRedirected(obj.ObjectPtr,  => QtBeef_QSpinBox_OnRedirected);
+		CQt.QSpinBox_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QSpinBox_OnSharedPainter);
+		CQt.QSpinBox_OnSetVisible(obj.ObjectPtr,  => QtBeef_QSpinBox_OnSetVisible);
+		CQt.QSpinBox_OnSizeHint(obj.ObjectPtr,  => QtBeef_QSpinBox_OnSizeHint);
+		CQt.QSpinBox_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMinimumSizeHint);
+		CQt.QSpinBox_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QSpinBox_OnHeightForWidth);
+		CQt.QSpinBox_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QSpinBox_OnHasHeightForWidth);
+		CQt.QSpinBox_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMousePressEvent);
+		CQt.QSpinBox_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMouseReleaseEvent);
+		CQt.QSpinBox_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMouseDoubleClickEvent);
+		CQt.QSpinBox_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMouseMoveEvent);
+		CQt.QSpinBox_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnWheelEvent);
+		CQt.QSpinBox_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnKeyPressEvent);
+		CQt.QSpinBox_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnKeyReleaseEvent);
+		CQt.QSpinBox_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnFocusInEvent);
+		CQt.QSpinBox_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnFocusOutEvent);
+		CQt.QSpinBox_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnEnterEvent);
+		CQt.QSpinBox_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnLeaveEvent);
+		CQt.QSpinBox_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnPaintEvent);
+		CQt.QSpinBox_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnMoveEvent);
+		CQt.QSpinBox_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnResizeEvent);
+		CQt.QSpinBox_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnCloseEvent);
+		CQt.QSpinBox_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnContextMenuEvent);
+		CQt.QSpinBox_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnTabletEvent);
+		CQt.QSpinBox_OnActionEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnActionEvent);
+		CQt.QSpinBox_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnDragEnterEvent);
+		CQt.QSpinBox_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnDragMoveEvent);
+		CQt.QSpinBox_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnDragLeaveEvent);
+		CQt.QSpinBox_OnDropEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnDropEvent);
+		CQt.QSpinBox_OnShowEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnShowEvent);
+		CQt.QSpinBox_OnHideEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnHideEvent);
+		CQt.QSpinBox_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnNativeEvent);
+		CQt.QSpinBox_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnChangeEvent);
+		CQt.QSpinBox_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QSpinBox_OnInputMethodEvent);
+		CQt.QSpinBox_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QSpinBox_OnInputMethodQuery);
+		CQt.QSpinBox_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QSpinBox_OnFocusNextPrevChild);
+		CQt.QSpinBox_OnStepBy(obj.ObjectPtr,  => QtBeef_QSpinBox_OnStepBy);
+		CQt.QSpinBox_OnClear(obj.ObjectPtr,  => QtBeef_QSpinBox_OnClear);
+		CQt.QSpinBox_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QSpinBox_OnInitStyleOption);
+		CQt.QSpinBox_OnStepEnabled(obj.ObjectPtr,  => QtBeef_QSpinBox_OnStepEnabled);
 	}
 	public Event<delegate void(c_int param1)> OnValueChanged = .() ~ _.Dispose();
 	public Event<delegate void(libqt_string param1)> OnTextChanged = .() ~ _.Dispose();
@@ -1877,6 +1935,296 @@ class QSpinBox : IQSpinBox, IQAbstractSpinBox, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnEditingFinished.Invoke();
+	}
+	static void QtBeef_QSpinBox_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSpinBox_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSpinBox_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSpinBox_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnValidate(void* ptr, libqt_string input, c_int* pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValidate(input, pos);
+	}
+	static void QtBeef_QSpinBox_OnValueFromText(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValueFromText(text);
+	}
+	static void QtBeef_QSpinBox_OnTextFromValue(void* ptr, c_int val)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextFromValue(scope .(), val);
+	}
+	static void QtBeef_QSpinBox_OnFixup(void* ptr, libqt_string str)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFixup(str);
+	}
+	static void QtBeef_QSpinBox_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSpinBox_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSpinBox_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QSpinBox_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QSpinBox_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QSpinBox_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QSpinBox_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QSpinBox_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QSpinBox_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QSpinBox_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QSpinBox_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QSpinBox_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QSpinBox_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QSpinBox_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QSpinBox_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QSpinBox_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QSpinBox_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QSpinBox_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QSpinBox_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QSpinBox_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QSpinBox_OnStepBy(void* ptr, c_int steps)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepBy(steps);
+	}
+	static void QtBeef_QSpinBox_OnClear(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClear();
+	}
+	static void QtBeef_QSpinBox_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QSpinBox_OnStepEnabled(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepEnabled();
 	}
 	public this(QSpinBox_Ptr ptr)
 	{
@@ -3669,18 +4017,27 @@ extension CQt
 	public function void QSpinBox_OnMetaObject_action(void* self);
 	[LinkName("QSpinBox_OnMetaObject")]
 	public static extern void** QSpinBox_OnMetaObject(void* self, QSpinBox_OnMetaObject_action _action);
+	
+	[LinkName("QSpinBox_SuperMetaObject")]
+	public static extern void** QSpinBox_SuperMetaObject(void* self);
 	[LinkName("QSpinBox_Qt_Metacast")]
 	public static extern void* QSpinBox_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSpinBox_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSpinBox_OnMetacast")]
 	public static extern void* QSpinBox_OnMetacast(void* self, QSpinBox_OnMetacast_action _action);
+	
+	[LinkName("QSpinBox_SuperMetacast")]
+	public static extern void* QSpinBox_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSpinBox_Qt_Metacall")]
 	public static extern c_int QSpinBox_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSpinBox_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSpinBox_OnMetacall")]
 	public static extern c_int QSpinBox_OnMetacall(void* self, QSpinBox_OnMetacall_action _action);
+	
+	[LinkName("QSpinBox_SuperMetacall")]
+	public static extern c_int QSpinBox_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSpinBox_Tr")]
 	public static extern libqt_string QSpinBox_Tr(c_char* s);
 	[LinkName("QSpinBox_Value")]
@@ -3723,30 +4080,45 @@ extension CQt
 	public function void QSpinBox_OnEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnEvent")]
 	public static extern bool QSpinBox_OnEvent(void* self, QSpinBox_OnEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperEvent")]
+	public static extern bool QSpinBox_SuperEvent(void* self, void** event);
 	[LinkName("QSpinBox_Validate")]
 	public static extern QValidator_State QSpinBox_Validate(void* self, libqt_string input, c_int* pos);
 	
 	public function void QSpinBox_OnValidate_action(void* self, libqt_string input, c_int* pos);
 	[LinkName("QSpinBox_OnValidate")]
 	public static extern QValidator_State QSpinBox_OnValidate(void* self, QSpinBox_OnValidate_action _action);
+	
+	[LinkName("QSpinBox_SuperValidate")]
+	public static extern QValidator_State QSpinBox_SuperValidate(void* self, libqt_string input, c_int* pos);
 	[LinkName("QSpinBox_ValueFromText")]
 	public static extern c_int QSpinBox_ValueFromText(void* self, libqt_string text);
 	
 	public function void QSpinBox_OnValueFromText_action(void* self, libqt_string text);
 	[LinkName("QSpinBox_OnValueFromText")]
 	public static extern c_int QSpinBox_OnValueFromText(void* self, QSpinBox_OnValueFromText_action _action);
+	
+	[LinkName("QSpinBox_SuperValueFromText")]
+	public static extern c_int QSpinBox_SuperValueFromText(void* self, libqt_string text);
 	[LinkName("QSpinBox_TextFromValue")]
 	public static extern libqt_string QSpinBox_TextFromValue(void* self, c_int val);
 	
 	public function void QSpinBox_OnTextFromValue_action(void* self, c_int val);
 	[LinkName("QSpinBox_OnTextFromValue")]
 	public static extern libqt_string QSpinBox_OnTextFromValue(void* self, QSpinBox_OnTextFromValue_action _action);
+	
+	[LinkName("QSpinBox_SuperTextFromValue")]
+	public static extern libqt_string QSpinBox_SuperTextFromValue(void* self, c_int val);
 	[LinkName("QSpinBox_Fixup")]
 	public static extern void QSpinBox_Fixup(void* self, libqt_string str);
 	
 	public function void QSpinBox_OnFixup_action(void* self, libqt_string str);
 	[LinkName("QSpinBox_OnFixup")]
 	public static extern void QSpinBox_OnFixup(void* self, QSpinBox_OnFixup_action _action);
+	
+	[LinkName("QSpinBox_SuperFixup")]
+	public static extern void QSpinBox_SuperFixup(void* self, libqt_string str);
 	[LinkName("QSpinBox_SetValue")]
 	public static extern void QSpinBox_SetValue(void* self, c_int val);
 	[LinkName("QSpinBox_ValueChanged")]
@@ -3771,300 +4143,450 @@ extension CQt
 	public function void QSpinBox_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSpinBox_OnEventFilter")]
 	public static extern bool QSpinBox_OnEventFilter(void* self, QSpinBox_OnEventFilter_action _action);
+	
+	[LinkName("QSpinBox_SuperEventFilter")]
+	public static extern bool QSpinBox_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSpinBox_TimerEvent")]
 	public static extern void QSpinBox_TimerEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnTimerEvent")]
 	public static extern void QSpinBox_OnTimerEvent(void* self, QSpinBox_OnTimerEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperTimerEvent")]
+	public static extern void QSpinBox_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSpinBox_ChildEvent")]
 	public static extern void QSpinBox_ChildEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnChildEvent")]
 	public static extern void QSpinBox_OnChildEvent(void* self, QSpinBox_OnChildEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperChildEvent")]
+	public static extern void QSpinBox_SuperChildEvent(void* self, void** event);
 	[LinkName("QSpinBox_CustomEvent")]
 	public static extern void QSpinBox_CustomEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnCustomEvent")]
 	public static extern void QSpinBox_OnCustomEvent(void* self, QSpinBox_OnCustomEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperCustomEvent")]
+	public static extern void QSpinBox_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSpinBox_ConnectNotify")]
 	public static extern void QSpinBox_ConnectNotify(void* self, void** signal);
 	
 	public function void QSpinBox_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSpinBox_OnConnectNotify")]
 	public static extern void QSpinBox_OnConnectNotify(void* self, QSpinBox_OnConnectNotify_action _action);
+	
+	[LinkName("QSpinBox_SuperConnectNotify")]
+	public static extern void QSpinBox_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSpinBox_DisconnectNotify")]
 	public static extern void QSpinBox_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSpinBox_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSpinBox_OnDisconnectNotify")]
 	public static extern void QSpinBox_OnDisconnectNotify(void* self, QSpinBox_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSpinBox_SuperDisconnectNotify")]
+	public static extern void QSpinBox_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QSpinBox_DevType")]
 	public static extern c_int QSpinBox_DevType(void* self);
 	
 	public function void QSpinBox_OnDevType_action(void* self);
 	[LinkName("QSpinBox_OnDevType")]
 	public static extern c_int QSpinBox_OnDevType(void* self, QSpinBox_OnDevType_action _action);
+	
+	[LinkName("QSpinBox_SuperDevType")]
+	public static extern c_int QSpinBox_SuperDevType(void* self);
 	[LinkName("QSpinBox_PaintEngine")]
 	public static extern void** QSpinBox_PaintEngine(void* self);
 	
 	public function void QSpinBox_OnPaintEngine_action(void* self);
 	[LinkName("QSpinBox_OnPaintEngine")]
 	public static extern void** QSpinBox_OnPaintEngine(void* self, QSpinBox_OnPaintEngine_action _action);
+	
+	[LinkName("QSpinBox_SuperPaintEngine")]
+	public static extern void** QSpinBox_SuperPaintEngine(void* self);
 	[LinkName("QSpinBox_Metric")]
 	public static extern c_int QSpinBox_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QSpinBox_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSpinBox_OnMetric")]
 	public static extern c_int QSpinBox_OnMetric(void* self, QSpinBox_OnMetric_action _action);
+	
+	[LinkName("QSpinBox_SuperMetric")]
+	public static extern c_int QSpinBox_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QSpinBox_InitPainter")]
 	public static extern void QSpinBox_InitPainter(void* self, void** painter);
 	
 	public function void QSpinBox_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QSpinBox_OnInitPainter")]
 	public static extern void QSpinBox_OnInitPainter(void* self, QSpinBox_OnInitPainter_action _action);
+	
+	[LinkName("QSpinBox_SuperInitPainter")]
+	public static extern void QSpinBox_SuperInitPainter(void* self, void** painter);
 	[LinkName("QSpinBox_Redirected")]
 	public static extern void** QSpinBox_Redirected(void* self, void** offset);
 	
 	public function void QSpinBox_OnRedirected_action(void* self, void** offset);
 	[LinkName("QSpinBox_OnRedirected")]
 	public static extern void** QSpinBox_OnRedirected(void* self, QSpinBox_OnRedirected_action _action);
+	
+	[LinkName("QSpinBox_SuperRedirected")]
+	public static extern void** QSpinBox_SuperRedirected(void* self, void** offset);
 	[LinkName("QSpinBox_SharedPainter")]
 	public static extern void** QSpinBox_SharedPainter(void* self);
 	
 	public function void QSpinBox_OnSharedPainter_action(void* self);
 	[LinkName("QSpinBox_OnSharedPainter")]
 	public static extern void** QSpinBox_OnSharedPainter(void* self, QSpinBox_OnSharedPainter_action _action);
+	
+	[LinkName("QSpinBox_SuperSharedPainter")]
+	public static extern void** QSpinBox_SuperSharedPainter(void* self);
 	[LinkName("QSpinBox_SetVisible")]
 	public static extern void QSpinBox_SetVisible(void* self, bool visible);
 	
 	public function void QSpinBox_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QSpinBox_OnSetVisible")]
 	public static extern void QSpinBox_OnSetVisible(void* self, QSpinBox_OnSetVisible_action _action);
+	
+	[LinkName("QSpinBox_SuperSetVisible")]
+	public static extern void QSpinBox_SuperSetVisible(void* self, bool visible);
 	[LinkName("QSpinBox_SizeHint")]
 	public static extern void* QSpinBox_SizeHint(void* self);
 	
 	public function void QSpinBox_OnSizeHint_action(void* self);
 	[LinkName("QSpinBox_OnSizeHint")]
 	public static extern void* QSpinBox_OnSizeHint(void* self, QSpinBox_OnSizeHint_action _action);
+	
+	[LinkName("QSpinBox_SuperSizeHint")]
+	public static extern void* QSpinBox_SuperSizeHint(void* self);
 	[LinkName("QSpinBox_MinimumSizeHint")]
 	public static extern void* QSpinBox_MinimumSizeHint(void* self);
 	
 	public function void QSpinBox_OnMinimumSizeHint_action(void* self);
 	[LinkName("QSpinBox_OnMinimumSizeHint")]
 	public static extern void* QSpinBox_OnMinimumSizeHint(void* self, QSpinBox_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QSpinBox_SuperMinimumSizeHint")]
+	public static extern void* QSpinBox_SuperMinimumSizeHint(void* self);
 	[LinkName("QSpinBox_HeightForWidth")]
 	public static extern c_int QSpinBox_HeightForWidth(void* self, c_int param1);
 	
 	public function void QSpinBox_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QSpinBox_OnHeightForWidth")]
 	public static extern c_int QSpinBox_OnHeightForWidth(void* self, QSpinBox_OnHeightForWidth_action _action);
+	
+	[LinkName("QSpinBox_SuperHeightForWidth")]
+	public static extern c_int QSpinBox_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QSpinBox_HasHeightForWidth")]
 	public static extern bool QSpinBox_HasHeightForWidth(void* self);
 	
 	public function void QSpinBox_OnHasHeightForWidth_action(void* self);
 	[LinkName("QSpinBox_OnHasHeightForWidth")]
 	public static extern bool QSpinBox_OnHasHeightForWidth(void* self, QSpinBox_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QSpinBox_SuperHasHeightForWidth")]
+	public static extern bool QSpinBox_SuperHasHeightForWidth(void* self);
 	[LinkName("QSpinBox_MousePressEvent")]
 	public static extern void QSpinBox_MousePressEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnMousePressEvent")]
 	public static extern void QSpinBox_OnMousePressEvent(void* self, QSpinBox_OnMousePressEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperMousePressEvent")]
+	public static extern void QSpinBox_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QSpinBox_MouseReleaseEvent")]
 	public static extern void QSpinBox_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnMouseReleaseEvent")]
 	public static extern void QSpinBox_OnMouseReleaseEvent(void* self, QSpinBox_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperMouseReleaseEvent")]
+	public static extern void QSpinBox_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QSpinBox_MouseDoubleClickEvent")]
 	public static extern void QSpinBox_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnMouseDoubleClickEvent")]
 	public static extern void QSpinBox_OnMouseDoubleClickEvent(void* self, QSpinBox_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperMouseDoubleClickEvent")]
+	public static extern void QSpinBox_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QSpinBox_MouseMoveEvent")]
 	public static extern void QSpinBox_MouseMoveEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnMouseMoveEvent")]
 	public static extern void QSpinBox_OnMouseMoveEvent(void* self, QSpinBox_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperMouseMoveEvent")]
+	public static extern void QSpinBox_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QSpinBox_WheelEvent")]
 	public static extern void QSpinBox_WheelEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnWheelEvent")]
 	public static extern void QSpinBox_OnWheelEvent(void* self, QSpinBox_OnWheelEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperWheelEvent")]
+	public static extern void QSpinBox_SuperWheelEvent(void* self, void** event);
 	[LinkName("QSpinBox_KeyPressEvent")]
 	public static extern void QSpinBox_KeyPressEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnKeyPressEvent")]
 	public static extern void QSpinBox_OnKeyPressEvent(void* self, QSpinBox_OnKeyPressEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperKeyPressEvent")]
+	public static extern void QSpinBox_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QSpinBox_KeyReleaseEvent")]
 	public static extern void QSpinBox_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnKeyReleaseEvent")]
 	public static extern void QSpinBox_OnKeyReleaseEvent(void* self, QSpinBox_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperKeyReleaseEvent")]
+	public static extern void QSpinBox_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QSpinBox_FocusInEvent")]
 	public static extern void QSpinBox_FocusInEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnFocusInEvent")]
 	public static extern void QSpinBox_OnFocusInEvent(void* self, QSpinBox_OnFocusInEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperFocusInEvent")]
+	public static extern void QSpinBox_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QSpinBox_FocusOutEvent")]
 	public static extern void QSpinBox_FocusOutEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnFocusOutEvent")]
 	public static extern void QSpinBox_OnFocusOutEvent(void* self, QSpinBox_OnFocusOutEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperFocusOutEvent")]
+	public static extern void QSpinBox_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QSpinBox_EnterEvent")]
 	public static extern void QSpinBox_EnterEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnEnterEvent")]
 	public static extern void QSpinBox_OnEnterEvent(void* self, QSpinBox_OnEnterEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperEnterEvent")]
+	public static extern void QSpinBox_SuperEnterEvent(void* self, void** event);
 	[LinkName("QSpinBox_LeaveEvent")]
 	public static extern void QSpinBox_LeaveEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnLeaveEvent")]
 	public static extern void QSpinBox_OnLeaveEvent(void* self, QSpinBox_OnLeaveEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperLeaveEvent")]
+	public static extern void QSpinBox_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QSpinBox_PaintEvent")]
 	public static extern void QSpinBox_PaintEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnPaintEvent")]
 	public static extern void QSpinBox_OnPaintEvent(void* self, QSpinBox_OnPaintEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperPaintEvent")]
+	public static extern void QSpinBox_SuperPaintEvent(void* self, void** event);
 	[LinkName("QSpinBox_MoveEvent")]
 	public static extern void QSpinBox_MoveEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnMoveEvent")]
 	public static extern void QSpinBox_OnMoveEvent(void* self, QSpinBox_OnMoveEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperMoveEvent")]
+	public static extern void QSpinBox_SuperMoveEvent(void* self, void** event);
 	[LinkName("QSpinBox_ResizeEvent")]
 	public static extern void QSpinBox_ResizeEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnResizeEvent")]
 	public static extern void QSpinBox_OnResizeEvent(void* self, QSpinBox_OnResizeEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperResizeEvent")]
+	public static extern void QSpinBox_SuperResizeEvent(void* self, void** event);
 	[LinkName("QSpinBox_CloseEvent")]
 	public static extern void QSpinBox_CloseEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnCloseEvent")]
 	public static extern void QSpinBox_OnCloseEvent(void* self, QSpinBox_OnCloseEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperCloseEvent")]
+	public static extern void QSpinBox_SuperCloseEvent(void* self, void** event);
 	[LinkName("QSpinBox_ContextMenuEvent")]
 	public static extern void QSpinBox_ContextMenuEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnContextMenuEvent")]
 	public static extern void QSpinBox_OnContextMenuEvent(void* self, QSpinBox_OnContextMenuEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperContextMenuEvent")]
+	public static extern void QSpinBox_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QSpinBox_TabletEvent")]
 	public static extern void QSpinBox_TabletEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnTabletEvent")]
 	public static extern void QSpinBox_OnTabletEvent(void* self, QSpinBox_OnTabletEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperTabletEvent")]
+	public static extern void QSpinBox_SuperTabletEvent(void* self, void** event);
 	[LinkName("QSpinBox_ActionEvent")]
 	public static extern void QSpinBox_ActionEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnActionEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnActionEvent")]
 	public static extern void QSpinBox_OnActionEvent(void* self, QSpinBox_OnActionEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperActionEvent")]
+	public static extern void QSpinBox_SuperActionEvent(void* self, void** event);
 	[LinkName("QSpinBox_DragEnterEvent")]
 	public static extern void QSpinBox_DragEnterEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnDragEnterEvent")]
 	public static extern void QSpinBox_OnDragEnterEvent(void* self, QSpinBox_OnDragEnterEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperDragEnterEvent")]
+	public static extern void QSpinBox_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QSpinBox_DragMoveEvent")]
 	public static extern void QSpinBox_DragMoveEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnDragMoveEvent")]
 	public static extern void QSpinBox_OnDragMoveEvent(void* self, QSpinBox_OnDragMoveEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperDragMoveEvent")]
+	public static extern void QSpinBox_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QSpinBox_DragLeaveEvent")]
 	public static extern void QSpinBox_DragLeaveEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnDragLeaveEvent")]
 	public static extern void QSpinBox_OnDragLeaveEvent(void* self, QSpinBox_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperDragLeaveEvent")]
+	public static extern void QSpinBox_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QSpinBox_DropEvent")]
 	public static extern void QSpinBox_DropEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnDropEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnDropEvent")]
 	public static extern void QSpinBox_OnDropEvent(void* self, QSpinBox_OnDropEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperDropEvent")]
+	public static extern void QSpinBox_SuperDropEvent(void* self, void** event);
 	[LinkName("QSpinBox_ShowEvent")]
 	public static extern void QSpinBox_ShowEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnShowEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnShowEvent")]
 	public static extern void QSpinBox_OnShowEvent(void* self, QSpinBox_OnShowEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperShowEvent")]
+	public static extern void QSpinBox_SuperShowEvent(void* self, void** event);
 	[LinkName("QSpinBox_HideEvent")]
 	public static extern void QSpinBox_HideEvent(void* self, void** event);
 	
 	public function void QSpinBox_OnHideEvent_action(void* self, void** event);
 	[LinkName("QSpinBox_OnHideEvent")]
 	public static extern void QSpinBox_OnHideEvent(void* self, QSpinBox_OnHideEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperHideEvent")]
+	public static extern void QSpinBox_SuperHideEvent(void* self, void** event);
 	[LinkName("QSpinBox_NativeEvent")]
 	public static extern bool QSpinBox_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QSpinBox_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSpinBox_OnNativeEvent")]
 	public static extern bool QSpinBox_OnNativeEvent(void* self, QSpinBox_OnNativeEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperNativeEvent")]
+	public static extern bool QSpinBox_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QSpinBox_ChangeEvent")]
 	public static extern void QSpinBox_ChangeEvent(void* self, void** param1);
 	
 	public function void QSpinBox_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QSpinBox_OnChangeEvent")]
 	public static extern void QSpinBox_OnChangeEvent(void* self, QSpinBox_OnChangeEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperChangeEvent")]
+	public static extern void QSpinBox_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QSpinBox_InputMethodEvent")]
 	public static extern void QSpinBox_InputMethodEvent(void* self, void** param1);
 	
 	public function void QSpinBox_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QSpinBox_OnInputMethodEvent")]
 	public static extern void QSpinBox_OnInputMethodEvent(void* self, QSpinBox_OnInputMethodEvent_action _action);
+	
+	[LinkName("QSpinBox_SuperInputMethodEvent")]
+	public static extern void QSpinBox_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QSpinBox_InputMethodQuery")]
 	public static extern void* QSpinBox_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QSpinBox_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSpinBox_OnInputMethodQuery")]
 	public static extern void* QSpinBox_OnInputMethodQuery(void* self, QSpinBox_OnInputMethodQuery_action _action);
+	
+	[LinkName("QSpinBox_SuperInputMethodQuery")]
+	public static extern void* QSpinBox_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QSpinBox_FocusNextPrevChild")]
 	public static extern bool QSpinBox_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QSpinBox_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QSpinBox_OnFocusNextPrevChild")]
 	public static extern bool QSpinBox_OnFocusNextPrevChild(void* self, QSpinBox_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QSpinBox_SuperFocusNextPrevChild")]
+	public static extern bool QSpinBox_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QSpinBox_StepBy")]
 	public static extern void QSpinBox_StepBy(void* self, c_int steps);
 	
 	public function void QSpinBox_OnStepBy_action(void* self, c_int steps);
 	[LinkName("QSpinBox_OnStepBy")]
 	public static extern void QSpinBox_OnStepBy(void* self, QSpinBox_OnStepBy_action _action);
+	
+	[LinkName("QSpinBox_SuperStepBy")]
+	public static extern void QSpinBox_SuperStepBy(void* self, c_int steps);
 	[LinkName("QSpinBox_Clear")]
 	public static extern void QSpinBox_Clear(void* self);
 	
 	public function void QSpinBox_OnClear_action(void* self);
 	[LinkName("QSpinBox_OnClear")]
 	public static extern void QSpinBox_OnClear(void* self, QSpinBox_OnClear_action _action);
+	
+	[LinkName("QSpinBox_SuperClear")]
+	public static extern void QSpinBox_SuperClear(void* self);
 	[LinkName("QSpinBox_InitStyleOption")]
 	public static extern void QSpinBox_InitStyleOption(void* self, void** option);
 	
 	public function void QSpinBox_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QSpinBox_OnInitStyleOption")]
 	public static extern void QSpinBox_OnInitStyleOption(void* self, QSpinBox_OnInitStyleOption_action _action);
+	
+	[LinkName("QSpinBox_SuperInitStyleOption")]
+	public static extern void QSpinBox_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QSpinBox_StepEnabled")]
 	public static extern void* QSpinBox_StepEnabled(void* self);
 	
 	public function void QSpinBox_OnStepEnabled_action(void* self);
 	[LinkName("QSpinBox_OnStepEnabled")]
 	public static extern void* QSpinBox_OnStepEnabled(void* self, QSpinBox_OnStepEnabled_action _action);
+	
+	[LinkName("QSpinBox_SuperStepEnabled")]
+	public static extern void* QSpinBox_SuperStepEnabled(void* self);
 }
 // --------------------------------------------------------------
 // QDoubleSpinBox
@@ -5886,6 +6408,64 @@ class QDoubleSpinBox : IQDoubleSpinBox, IQAbstractSpinBox, IQWidget, IQObject, I
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
 		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_Connect_EditingFinished);
+		CQt.QDoubleSpinBox_OnMetaObject(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMetaObject);
+		CQt.QDoubleSpinBox_OnMetacast(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMetacast);
+		CQt.QDoubleSpinBox_OnMetacall(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMetacall);
+		CQt.QDoubleSpinBox_OnValidate(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnValidate);
+		CQt.QDoubleSpinBox_OnValueFromText(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnValueFromText);
+		CQt.QDoubleSpinBox_OnTextFromValue(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnTextFromValue);
+		CQt.QDoubleSpinBox_OnFixup(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnFixup);
+		CQt.QDoubleSpinBox_OnEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnEvent);
+		CQt.QDoubleSpinBox_OnEventFilter(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnEventFilter);
+		CQt.QDoubleSpinBox_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnTimerEvent);
+		CQt.QDoubleSpinBox_OnChildEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnChildEvent);
+		CQt.QDoubleSpinBox_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnCustomEvent);
+		CQt.QDoubleSpinBox_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnConnectNotify);
+		CQt.QDoubleSpinBox_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnDisconnectNotify);
+		CQt.QDoubleSpinBox_OnDevType(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnDevType);
+		CQt.QDoubleSpinBox_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnPaintEngine);
+		CQt.QDoubleSpinBox_OnMetric(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMetric);
+		CQt.QDoubleSpinBox_OnInitPainter(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnInitPainter);
+		CQt.QDoubleSpinBox_OnRedirected(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnRedirected);
+		CQt.QDoubleSpinBox_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnSharedPainter);
+		CQt.QDoubleSpinBox_OnSetVisible(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnSetVisible);
+		CQt.QDoubleSpinBox_OnSizeHint(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnSizeHint);
+		CQt.QDoubleSpinBox_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMinimumSizeHint);
+		CQt.QDoubleSpinBox_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnHeightForWidth);
+		CQt.QDoubleSpinBox_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnHasHeightForWidth);
+		CQt.QDoubleSpinBox_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMousePressEvent);
+		CQt.QDoubleSpinBox_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMouseReleaseEvent);
+		CQt.QDoubleSpinBox_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMouseDoubleClickEvent);
+		CQt.QDoubleSpinBox_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMouseMoveEvent);
+		CQt.QDoubleSpinBox_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnWheelEvent);
+		CQt.QDoubleSpinBox_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnKeyPressEvent);
+		CQt.QDoubleSpinBox_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnKeyReleaseEvent);
+		CQt.QDoubleSpinBox_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnFocusInEvent);
+		CQt.QDoubleSpinBox_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnFocusOutEvent);
+		CQt.QDoubleSpinBox_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnEnterEvent);
+		CQt.QDoubleSpinBox_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnLeaveEvent);
+		CQt.QDoubleSpinBox_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnPaintEvent);
+		CQt.QDoubleSpinBox_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnMoveEvent);
+		CQt.QDoubleSpinBox_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnResizeEvent);
+		CQt.QDoubleSpinBox_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnCloseEvent);
+		CQt.QDoubleSpinBox_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnContextMenuEvent);
+		CQt.QDoubleSpinBox_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnTabletEvent);
+		CQt.QDoubleSpinBox_OnActionEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnActionEvent);
+		CQt.QDoubleSpinBox_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnDragEnterEvent);
+		CQt.QDoubleSpinBox_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnDragMoveEvent);
+		CQt.QDoubleSpinBox_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnDragLeaveEvent);
+		CQt.QDoubleSpinBox_OnDropEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnDropEvent);
+		CQt.QDoubleSpinBox_OnShowEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnShowEvent);
+		CQt.QDoubleSpinBox_OnHideEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnHideEvent);
+		CQt.QDoubleSpinBox_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnNativeEvent);
+		CQt.QDoubleSpinBox_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnChangeEvent);
+		CQt.QDoubleSpinBox_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnInputMethodEvent);
+		CQt.QDoubleSpinBox_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnInputMethodQuery);
+		CQt.QDoubleSpinBox_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnFocusNextPrevChild);
+		CQt.QDoubleSpinBox_OnStepBy(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnStepBy);
+		CQt.QDoubleSpinBox_OnClear(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnClear);
+		CQt.QDoubleSpinBox_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnInitStyleOption);
+		CQt.QDoubleSpinBox_OnStepEnabled(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_OnStepEnabled);
 	}
 	public Event<delegate void(double param1)> OnValueChanged = .() ~ _.Dispose();
 	public Event<delegate void(libqt_string param1)> OnTextChanged = .() ~ _.Dispose();
@@ -5940,6 +6520,296 @@ class QDoubleSpinBox : IQDoubleSpinBox, IQAbstractSpinBox, IQWidget, IQObject, I
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnEditingFinished.Invoke();
+	}
+	static void QtBeef_QDoubleSpinBox_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QDoubleSpinBox_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QDoubleSpinBox_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QDoubleSpinBox_OnValidate(void* ptr, libqt_string input, c_int* pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValidate(input, pos);
+	}
+	static void QtBeef_QDoubleSpinBox_OnValueFromText(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValueFromText(text);
+	}
+	static void QtBeef_QDoubleSpinBox_OnTextFromValue(void* ptr, double val)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextFromValue(scope .(), val);
+	}
+	static void QtBeef_QDoubleSpinBox_OnFixup(void* ptr, libqt_string str)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFixup(str);
+	}
+	static void QtBeef_QDoubleSpinBox_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QDoubleSpinBox_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QDoubleSpinBox_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QDoubleSpinBox_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QDoubleSpinBox_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QDoubleSpinBox_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QDoubleSpinBox_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QDoubleSpinBox_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QDoubleSpinBox_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QDoubleSpinBox_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QDoubleSpinBox_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QDoubleSpinBox_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QDoubleSpinBox_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QDoubleSpinBox_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QDoubleSpinBox_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QDoubleSpinBox_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QDoubleSpinBox_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QDoubleSpinBox_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QDoubleSpinBox_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QDoubleSpinBox_OnStepBy(void* ptr, c_int steps)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepBy(steps);
+	}
+	static void QtBeef_QDoubleSpinBox_OnClear(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClear();
+	}
+	static void QtBeef_QDoubleSpinBox_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QDoubleSpinBox_OnStepEnabled(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepEnabled();
 	}
 	public this(QDoubleSpinBox_Ptr ptr)
 	{
@@ -7732,18 +8602,27 @@ extension CQt
 	public function void QDoubleSpinBox_OnMetaObject_action(void* self);
 	[LinkName("QDoubleSpinBox_OnMetaObject")]
 	public static extern void** QDoubleSpinBox_OnMetaObject(void* self, QDoubleSpinBox_OnMetaObject_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMetaObject")]
+	public static extern void** QDoubleSpinBox_SuperMetaObject(void* self);
 	[LinkName("QDoubleSpinBox_Qt_Metacast")]
 	public static extern void* QDoubleSpinBox_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QDoubleSpinBox_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QDoubleSpinBox_OnMetacast")]
 	public static extern void* QDoubleSpinBox_OnMetacast(void* self, QDoubleSpinBox_OnMetacast_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMetacast")]
+	public static extern void* QDoubleSpinBox_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QDoubleSpinBox_Qt_Metacall")]
 	public static extern c_int QDoubleSpinBox_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QDoubleSpinBox_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDoubleSpinBox_OnMetacall")]
 	public static extern c_int QDoubleSpinBox_OnMetacall(void* self, QDoubleSpinBox_OnMetacall_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMetacall")]
+	public static extern c_int QDoubleSpinBox_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDoubleSpinBox_Tr")]
 	public static extern libqt_string QDoubleSpinBox_Tr(c_char* s);
 	[LinkName("QDoubleSpinBox_Value")]
@@ -7786,24 +8665,36 @@ extension CQt
 	public function void QDoubleSpinBox_OnValidate_action(void* self, libqt_string input, c_int* pos);
 	[LinkName("QDoubleSpinBox_OnValidate")]
 	public static extern QValidator_State QDoubleSpinBox_OnValidate(void* self, QDoubleSpinBox_OnValidate_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperValidate")]
+	public static extern QValidator_State QDoubleSpinBox_SuperValidate(void* self, libqt_string input, c_int* pos);
 	[LinkName("QDoubleSpinBox_ValueFromText")]
 	public static extern double QDoubleSpinBox_ValueFromText(void* self, libqt_string text);
 	
 	public function void QDoubleSpinBox_OnValueFromText_action(void* self, libqt_string text);
 	[LinkName("QDoubleSpinBox_OnValueFromText")]
 	public static extern double QDoubleSpinBox_OnValueFromText(void* self, QDoubleSpinBox_OnValueFromText_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperValueFromText")]
+	public static extern double QDoubleSpinBox_SuperValueFromText(void* self, libqt_string text);
 	[LinkName("QDoubleSpinBox_TextFromValue")]
 	public static extern libqt_string QDoubleSpinBox_TextFromValue(void* self, double val);
 	
 	public function void QDoubleSpinBox_OnTextFromValue_action(void* self, double val);
 	[LinkName("QDoubleSpinBox_OnTextFromValue")]
 	public static extern libqt_string QDoubleSpinBox_OnTextFromValue(void* self, QDoubleSpinBox_OnTextFromValue_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperTextFromValue")]
+	public static extern libqt_string QDoubleSpinBox_SuperTextFromValue(void* self, double val);
 	[LinkName("QDoubleSpinBox_Fixup")]
 	public static extern void QDoubleSpinBox_Fixup(void* self, libqt_string str);
 	
 	public function void QDoubleSpinBox_OnFixup_action(void* self, libqt_string str);
 	[LinkName("QDoubleSpinBox_OnFixup")]
 	public static extern void QDoubleSpinBox_OnFixup(void* self, QDoubleSpinBox_OnFixup_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperFixup")]
+	public static extern void QDoubleSpinBox_SuperFixup(void* self, libqt_string str);
 	[LinkName("QDoubleSpinBox_SetValue")]
 	public static extern void QDoubleSpinBox_SetValue(void* self, double val);
 	[LinkName("QDoubleSpinBox_ValueChanged")]
@@ -7828,304 +8719,457 @@ extension CQt
 	public function void QDoubleSpinBox_OnEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnEvent")]
 	public static extern bool QDoubleSpinBox_OnEvent(void* self, QDoubleSpinBox_OnEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperEvent")]
+	public static extern bool QDoubleSpinBox_SuperEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_EventFilter")]
 	public static extern bool QDoubleSpinBox_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QDoubleSpinBox_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QDoubleSpinBox_OnEventFilter")]
 	public static extern bool QDoubleSpinBox_OnEventFilter(void* self, QDoubleSpinBox_OnEventFilter_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperEventFilter")]
+	public static extern bool QDoubleSpinBox_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QDoubleSpinBox_TimerEvent")]
 	public static extern void QDoubleSpinBox_TimerEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnTimerEvent")]
 	public static extern void QDoubleSpinBox_OnTimerEvent(void* self, QDoubleSpinBox_OnTimerEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperTimerEvent")]
+	public static extern void QDoubleSpinBox_SuperTimerEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_ChildEvent")]
 	public static extern void QDoubleSpinBox_ChildEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnChildEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnChildEvent")]
 	public static extern void QDoubleSpinBox_OnChildEvent(void* self, QDoubleSpinBox_OnChildEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperChildEvent")]
+	public static extern void QDoubleSpinBox_SuperChildEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_CustomEvent")]
 	public static extern void QDoubleSpinBox_CustomEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnCustomEvent")]
 	public static extern void QDoubleSpinBox_OnCustomEvent(void* self, QDoubleSpinBox_OnCustomEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperCustomEvent")]
+	public static extern void QDoubleSpinBox_SuperCustomEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_ConnectNotify")]
 	public static extern void QDoubleSpinBox_ConnectNotify(void* self, void** signal);
 	
 	public function void QDoubleSpinBox_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QDoubleSpinBox_OnConnectNotify")]
 	public static extern void QDoubleSpinBox_OnConnectNotify(void* self, QDoubleSpinBox_OnConnectNotify_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperConnectNotify")]
+	public static extern void QDoubleSpinBox_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QDoubleSpinBox_DisconnectNotify")]
 	public static extern void QDoubleSpinBox_DisconnectNotify(void* self, void** signal);
 	
 	public function void QDoubleSpinBox_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QDoubleSpinBox_OnDisconnectNotify")]
 	public static extern void QDoubleSpinBox_OnDisconnectNotify(void* self, QDoubleSpinBox_OnDisconnectNotify_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperDisconnectNotify")]
+	public static extern void QDoubleSpinBox_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QDoubleSpinBox_DevType")]
 	public static extern c_int QDoubleSpinBox_DevType(void* self);
 	
 	public function void QDoubleSpinBox_OnDevType_action(void* self);
 	[LinkName("QDoubleSpinBox_OnDevType")]
 	public static extern c_int QDoubleSpinBox_OnDevType(void* self, QDoubleSpinBox_OnDevType_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperDevType")]
+	public static extern c_int QDoubleSpinBox_SuperDevType(void* self);
 	[LinkName("QDoubleSpinBox_PaintEngine")]
 	public static extern void** QDoubleSpinBox_PaintEngine(void* self);
 	
 	public function void QDoubleSpinBox_OnPaintEngine_action(void* self);
 	[LinkName("QDoubleSpinBox_OnPaintEngine")]
 	public static extern void** QDoubleSpinBox_OnPaintEngine(void* self, QDoubleSpinBox_OnPaintEngine_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperPaintEngine")]
+	public static extern void** QDoubleSpinBox_SuperPaintEngine(void* self);
 	[LinkName("QDoubleSpinBox_Metric")]
 	public static extern c_int QDoubleSpinBox_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QDoubleSpinBox_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDoubleSpinBox_OnMetric")]
 	public static extern c_int QDoubleSpinBox_OnMetric(void* self, QDoubleSpinBox_OnMetric_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMetric")]
+	public static extern c_int QDoubleSpinBox_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDoubleSpinBox_InitPainter")]
 	public static extern void QDoubleSpinBox_InitPainter(void* self, void** painter);
 	
 	public function void QDoubleSpinBox_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QDoubleSpinBox_OnInitPainter")]
 	public static extern void QDoubleSpinBox_OnInitPainter(void* self, QDoubleSpinBox_OnInitPainter_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperInitPainter")]
+	public static extern void QDoubleSpinBox_SuperInitPainter(void* self, void** painter);
 	[LinkName("QDoubleSpinBox_Redirected")]
 	public static extern void** QDoubleSpinBox_Redirected(void* self, void** offset);
 	
 	public function void QDoubleSpinBox_OnRedirected_action(void* self, void** offset);
 	[LinkName("QDoubleSpinBox_OnRedirected")]
 	public static extern void** QDoubleSpinBox_OnRedirected(void* self, QDoubleSpinBox_OnRedirected_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperRedirected")]
+	public static extern void** QDoubleSpinBox_SuperRedirected(void* self, void** offset);
 	[LinkName("QDoubleSpinBox_SharedPainter")]
 	public static extern void** QDoubleSpinBox_SharedPainter(void* self);
 	
 	public function void QDoubleSpinBox_OnSharedPainter_action(void* self);
 	[LinkName("QDoubleSpinBox_OnSharedPainter")]
 	public static extern void** QDoubleSpinBox_OnSharedPainter(void* self, QDoubleSpinBox_OnSharedPainter_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperSharedPainter")]
+	public static extern void** QDoubleSpinBox_SuperSharedPainter(void* self);
 	[LinkName("QDoubleSpinBox_SetVisible")]
 	public static extern void QDoubleSpinBox_SetVisible(void* self, bool visible);
 	
 	public function void QDoubleSpinBox_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QDoubleSpinBox_OnSetVisible")]
 	public static extern void QDoubleSpinBox_OnSetVisible(void* self, QDoubleSpinBox_OnSetVisible_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperSetVisible")]
+	public static extern void QDoubleSpinBox_SuperSetVisible(void* self, bool visible);
 	[LinkName("QDoubleSpinBox_SizeHint")]
 	public static extern void* QDoubleSpinBox_SizeHint(void* self);
 	
 	public function void QDoubleSpinBox_OnSizeHint_action(void* self);
 	[LinkName("QDoubleSpinBox_OnSizeHint")]
 	public static extern void* QDoubleSpinBox_OnSizeHint(void* self, QDoubleSpinBox_OnSizeHint_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperSizeHint")]
+	public static extern void* QDoubleSpinBox_SuperSizeHint(void* self);
 	[LinkName("QDoubleSpinBox_MinimumSizeHint")]
 	public static extern void* QDoubleSpinBox_MinimumSizeHint(void* self);
 	
 	public function void QDoubleSpinBox_OnMinimumSizeHint_action(void* self);
 	[LinkName("QDoubleSpinBox_OnMinimumSizeHint")]
 	public static extern void* QDoubleSpinBox_OnMinimumSizeHint(void* self, QDoubleSpinBox_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMinimumSizeHint")]
+	public static extern void* QDoubleSpinBox_SuperMinimumSizeHint(void* self);
 	[LinkName("QDoubleSpinBox_HeightForWidth")]
 	public static extern c_int QDoubleSpinBox_HeightForWidth(void* self, c_int param1);
 	
 	public function void QDoubleSpinBox_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QDoubleSpinBox_OnHeightForWidth")]
 	public static extern c_int QDoubleSpinBox_OnHeightForWidth(void* self, QDoubleSpinBox_OnHeightForWidth_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperHeightForWidth")]
+	public static extern c_int QDoubleSpinBox_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QDoubleSpinBox_HasHeightForWidth")]
 	public static extern bool QDoubleSpinBox_HasHeightForWidth(void* self);
 	
 	public function void QDoubleSpinBox_OnHasHeightForWidth_action(void* self);
 	[LinkName("QDoubleSpinBox_OnHasHeightForWidth")]
 	public static extern bool QDoubleSpinBox_OnHasHeightForWidth(void* self, QDoubleSpinBox_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperHasHeightForWidth")]
+	public static extern bool QDoubleSpinBox_SuperHasHeightForWidth(void* self);
 	[LinkName("QDoubleSpinBox_MousePressEvent")]
 	public static extern void QDoubleSpinBox_MousePressEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnMousePressEvent")]
 	public static extern void QDoubleSpinBox_OnMousePressEvent(void* self, QDoubleSpinBox_OnMousePressEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMousePressEvent")]
+	public static extern void QDoubleSpinBox_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_MouseReleaseEvent")]
 	public static extern void QDoubleSpinBox_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnMouseReleaseEvent")]
 	public static extern void QDoubleSpinBox_OnMouseReleaseEvent(void* self, QDoubleSpinBox_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMouseReleaseEvent")]
+	public static extern void QDoubleSpinBox_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_MouseDoubleClickEvent")]
 	public static extern void QDoubleSpinBox_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnMouseDoubleClickEvent")]
 	public static extern void QDoubleSpinBox_OnMouseDoubleClickEvent(void* self, QDoubleSpinBox_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMouseDoubleClickEvent")]
+	public static extern void QDoubleSpinBox_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_MouseMoveEvent")]
 	public static extern void QDoubleSpinBox_MouseMoveEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnMouseMoveEvent")]
 	public static extern void QDoubleSpinBox_OnMouseMoveEvent(void* self, QDoubleSpinBox_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMouseMoveEvent")]
+	public static extern void QDoubleSpinBox_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_WheelEvent")]
 	public static extern void QDoubleSpinBox_WheelEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnWheelEvent")]
 	public static extern void QDoubleSpinBox_OnWheelEvent(void* self, QDoubleSpinBox_OnWheelEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperWheelEvent")]
+	public static extern void QDoubleSpinBox_SuperWheelEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_KeyPressEvent")]
 	public static extern void QDoubleSpinBox_KeyPressEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnKeyPressEvent")]
 	public static extern void QDoubleSpinBox_OnKeyPressEvent(void* self, QDoubleSpinBox_OnKeyPressEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperKeyPressEvent")]
+	public static extern void QDoubleSpinBox_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_KeyReleaseEvent")]
 	public static extern void QDoubleSpinBox_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnKeyReleaseEvent")]
 	public static extern void QDoubleSpinBox_OnKeyReleaseEvent(void* self, QDoubleSpinBox_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperKeyReleaseEvent")]
+	public static extern void QDoubleSpinBox_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_FocusInEvent")]
 	public static extern void QDoubleSpinBox_FocusInEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnFocusInEvent")]
 	public static extern void QDoubleSpinBox_OnFocusInEvent(void* self, QDoubleSpinBox_OnFocusInEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperFocusInEvent")]
+	public static extern void QDoubleSpinBox_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_FocusOutEvent")]
 	public static extern void QDoubleSpinBox_FocusOutEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnFocusOutEvent")]
 	public static extern void QDoubleSpinBox_OnFocusOutEvent(void* self, QDoubleSpinBox_OnFocusOutEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperFocusOutEvent")]
+	public static extern void QDoubleSpinBox_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_EnterEvent")]
 	public static extern void QDoubleSpinBox_EnterEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnEnterEvent")]
 	public static extern void QDoubleSpinBox_OnEnterEvent(void* self, QDoubleSpinBox_OnEnterEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperEnterEvent")]
+	public static extern void QDoubleSpinBox_SuperEnterEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_LeaveEvent")]
 	public static extern void QDoubleSpinBox_LeaveEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnLeaveEvent")]
 	public static extern void QDoubleSpinBox_OnLeaveEvent(void* self, QDoubleSpinBox_OnLeaveEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperLeaveEvent")]
+	public static extern void QDoubleSpinBox_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_PaintEvent")]
 	public static extern void QDoubleSpinBox_PaintEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnPaintEvent")]
 	public static extern void QDoubleSpinBox_OnPaintEvent(void* self, QDoubleSpinBox_OnPaintEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperPaintEvent")]
+	public static extern void QDoubleSpinBox_SuperPaintEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_MoveEvent")]
 	public static extern void QDoubleSpinBox_MoveEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnMoveEvent")]
 	public static extern void QDoubleSpinBox_OnMoveEvent(void* self, QDoubleSpinBox_OnMoveEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperMoveEvent")]
+	public static extern void QDoubleSpinBox_SuperMoveEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_ResizeEvent")]
 	public static extern void QDoubleSpinBox_ResizeEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnResizeEvent")]
 	public static extern void QDoubleSpinBox_OnResizeEvent(void* self, QDoubleSpinBox_OnResizeEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperResizeEvent")]
+	public static extern void QDoubleSpinBox_SuperResizeEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_CloseEvent")]
 	public static extern void QDoubleSpinBox_CloseEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnCloseEvent")]
 	public static extern void QDoubleSpinBox_OnCloseEvent(void* self, QDoubleSpinBox_OnCloseEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperCloseEvent")]
+	public static extern void QDoubleSpinBox_SuperCloseEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_ContextMenuEvent")]
 	public static extern void QDoubleSpinBox_ContextMenuEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnContextMenuEvent")]
 	public static extern void QDoubleSpinBox_OnContextMenuEvent(void* self, QDoubleSpinBox_OnContextMenuEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperContextMenuEvent")]
+	public static extern void QDoubleSpinBox_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_TabletEvent")]
 	public static extern void QDoubleSpinBox_TabletEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnTabletEvent")]
 	public static extern void QDoubleSpinBox_OnTabletEvent(void* self, QDoubleSpinBox_OnTabletEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperTabletEvent")]
+	public static extern void QDoubleSpinBox_SuperTabletEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_ActionEvent")]
 	public static extern void QDoubleSpinBox_ActionEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnActionEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnActionEvent")]
 	public static extern void QDoubleSpinBox_OnActionEvent(void* self, QDoubleSpinBox_OnActionEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperActionEvent")]
+	public static extern void QDoubleSpinBox_SuperActionEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_DragEnterEvent")]
 	public static extern void QDoubleSpinBox_DragEnterEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnDragEnterEvent")]
 	public static extern void QDoubleSpinBox_OnDragEnterEvent(void* self, QDoubleSpinBox_OnDragEnterEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperDragEnterEvent")]
+	public static extern void QDoubleSpinBox_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_DragMoveEvent")]
 	public static extern void QDoubleSpinBox_DragMoveEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnDragMoveEvent")]
 	public static extern void QDoubleSpinBox_OnDragMoveEvent(void* self, QDoubleSpinBox_OnDragMoveEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperDragMoveEvent")]
+	public static extern void QDoubleSpinBox_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_DragLeaveEvent")]
 	public static extern void QDoubleSpinBox_DragLeaveEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnDragLeaveEvent")]
 	public static extern void QDoubleSpinBox_OnDragLeaveEvent(void* self, QDoubleSpinBox_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperDragLeaveEvent")]
+	public static extern void QDoubleSpinBox_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_DropEvent")]
 	public static extern void QDoubleSpinBox_DropEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnDropEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnDropEvent")]
 	public static extern void QDoubleSpinBox_OnDropEvent(void* self, QDoubleSpinBox_OnDropEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperDropEvent")]
+	public static extern void QDoubleSpinBox_SuperDropEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_ShowEvent")]
 	public static extern void QDoubleSpinBox_ShowEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnShowEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnShowEvent")]
 	public static extern void QDoubleSpinBox_OnShowEvent(void* self, QDoubleSpinBox_OnShowEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperShowEvent")]
+	public static extern void QDoubleSpinBox_SuperShowEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_HideEvent")]
 	public static extern void QDoubleSpinBox_HideEvent(void* self, void** event);
 	
 	public function void QDoubleSpinBox_OnHideEvent_action(void* self, void** event);
 	[LinkName("QDoubleSpinBox_OnHideEvent")]
 	public static extern void QDoubleSpinBox_OnHideEvent(void* self, QDoubleSpinBox_OnHideEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperHideEvent")]
+	public static extern void QDoubleSpinBox_SuperHideEvent(void* self, void** event);
 	[LinkName("QDoubleSpinBox_NativeEvent")]
 	public static extern bool QDoubleSpinBox_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QDoubleSpinBox_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDoubleSpinBox_OnNativeEvent")]
 	public static extern bool QDoubleSpinBox_OnNativeEvent(void* self, QDoubleSpinBox_OnNativeEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperNativeEvent")]
+	public static extern bool QDoubleSpinBox_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDoubleSpinBox_ChangeEvent")]
 	public static extern void QDoubleSpinBox_ChangeEvent(void* self, void** param1);
 	
 	public function void QDoubleSpinBox_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QDoubleSpinBox_OnChangeEvent")]
 	public static extern void QDoubleSpinBox_OnChangeEvent(void* self, QDoubleSpinBox_OnChangeEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperChangeEvent")]
+	public static extern void QDoubleSpinBox_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QDoubleSpinBox_InputMethodEvent")]
 	public static extern void QDoubleSpinBox_InputMethodEvent(void* self, void** param1);
 	
 	public function void QDoubleSpinBox_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QDoubleSpinBox_OnInputMethodEvent")]
 	public static extern void QDoubleSpinBox_OnInputMethodEvent(void* self, QDoubleSpinBox_OnInputMethodEvent_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperInputMethodEvent")]
+	public static extern void QDoubleSpinBox_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QDoubleSpinBox_InputMethodQuery")]
 	public static extern void* QDoubleSpinBox_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QDoubleSpinBox_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QDoubleSpinBox_OnInputMethodQuery")]
 	public static extern void* QDoubleSpinBox_OnInputMethodQuery(void* self, QDoubleSpinBox_OnInputMethodQuery_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperInputMethodQuery")]
+	public static extern void* QDoubleSpinBox_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QDoubleSpinBox_FocusNextPrevChild")]
 	public static extern bool QDoubleSpinBox_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QDoubleSpinBox_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QDoubleSpinBox_OnFocusNextPrevChild")]
 	public static extern bool QDoubleSpinBox_OnFocusNextPrevChild(void* self, QDoubleSpinBox_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperFocusNextPrevChild")]
+	public static extern bool QDoubleSpinBox_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QDoubleSpinBox_StepBy")]
 	public static extern void QDoubleSpinBox_StepBy(void* self, c_int steps);
 	
 	public function void QDoubleSpinBox_OnStepBy_action(void* self, c_int steps);
 	[LinkName("QDoubleSpinBox_OnStepBy")]
 	public static extern void QDoubleSpinBox_OnStepBy(void* self, QDoubleSpinBox_OnStepBy_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperStepBy")]
+	public static extern void QDoubleSpinBox_SuperStepBy(void* self, c_int steps);
 	[LinkName("QDoubleSpinBox_Clear")]
 	public static extern void QDoubleSpinBox_Clear(void* self);
 	
 	public function void QDoubleSpinBox_OnClear_action(void* self);
 	[LinkName("QDoubleSpinBox_OnClear")]
 	public static extern void QDoubleSpinBox_OnClear(void* self, QDoubleSpinBox_OnClear_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperClear")]
+	public static extern void QDoubleSpinBox_SuperClear(void* self);
 	[LinkName("QDoubleSpinBox_InitStyleOption")]
 	public static extern void QDoubleSpinBox_InitStyleOption(void* self, void** option);
 	
 	public function void QDoubleSpinBox_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QDoubleSpinBox_OnInitStyleOption")]
 	public static extern void QDoubleSpinBox_OnInitStyleOption(void* self, QDoubleSpinBox_OnInitStyleOption_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperInitStyleOption")]
+	public static extern void QDoubleSpinBox_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QDoubleSpinBox_StepEnabled")]
 	public static extern void* QDoubleSpinBox_StepEnabled(void* self);
 	
 	public function void QDoubleSpinBox_OnStepEnabled_action(void* self);
 	[LinkName("QDoubleSpinBox_OnStepEnabled")]
 	public static extern void* QDoubleSpinBox_OnStepEnabled(void* self, QDoubleSpinBox_OnStepEnabled_action _action);
+	
+	[LinkName("QDoubleSpinBox_SuperStepEnabled")]
+	public static extern void* QDoubleSpinBox_SuperStepEnabled(void* self);
 }

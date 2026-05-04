@@ -19,11 +19,36 @@ class Program
 		}
 
 		QAction t ~ delete _;
+		Rect a ~ delete _;
+		QLabel l ~ delete _;
+
+		class Rect : QWidget
+		{
+			public this(IQWidget parent) : base(parent)
+			{
+			}
+
+			public override void OnPaintEvent(void** event)
+			{
+				// base.OnPaintEvent(event);
+				QStylePainter p = scope .(this);
+
+				let b = scope QBrush(scope QColor(255, 255, 255), .SolidPattern);
+
+				p.SetBrush(b);
+				p.DrawRect2(0, 0, Width(), Height());
+
+				// p.DrawRect(scope QRectF(0, 0, 100, 100));
+
+				Console.WriteLine("Test");
+			}
+		}
 
 		public this(IQWidget parent) : base(parent)
 		{
 			Resize(1280, 720);
 
+			/*
 			// Menubar
 			{
 				m_menubar = new QMenuBar(this);
@@ -44,7 +69,7 @@ class Program
 				let help = m_menubar.AddMenu2("Help");
 				t = new QAction("About Qt");
 				t.SetMenuRole(.AboutQtRole);
-				help.AddAction(t);
+				// help.AddAction(t);
 
 				t.OnTriggered.Add(new () => {
 					CQt.QApplication_AboutQt();
@@ -52,6 +77,11 @@ class Program
 
 				SetMenuBar(m_menubar);
 			}
+
+			// a = new Rect(this);
+			l = new QLabel("Hello", this);
+			l.Move(30, 30);
+			*/
 
 			/*
 			button = new QPushButton(this);
@@ -117,7 +147,7 @@ class Program
 				let text = new QLabel("Hello from Beef!");
 				let rect = new Rectangle(this);
 
-				// CQt.QLabel_OnMouseMoveEvent(text.ObjectPtr, => wheelevent);
+				CQt.QLabel_OnMouseMoveEvent(text.ObjectPtr, => wheelevent);
 
 				QGridLayout mainLayout = new QGridLayout();
 				mainLayout.AddWidget(text);

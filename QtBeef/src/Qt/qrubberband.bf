@@ -1600,6 +1600,57 @@ class QRubberBand : IQRubberBand, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QRubberBand_OnMetaObject(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMetaObject);
+		CQt.QRubberBand_OnMetacast(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMetacast);
+		CQt.QRubberBand_OnMetacall(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMetacall);
+		CQt.QRubberBand_OnEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnEvent);
+		CQt.QRubberBand_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnPaintEvent);
+		CQt.QRubberBand_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnChangeEvent);
+		CQt.QRubberBand_OnShowEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnShowEvent);
+		CQt.QRubberBand_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnResizeEvent);
+		CQt.QRubberBand_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMoveEvent);
+		CQt.QRubberBand_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QRubberBand_OnInitStyleOption);
+		CQt.QRubberBand_OnEventFilter(obj.ObjectPtr,  => QtBeef_QRubberBand_OnEventFilter);
+		CQt.QRubberBand_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnTimerEvent);
+		CQt.QRubberBand_OnChildEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnChildEvent);
+		CQt.QRubberBand_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnCustomEvent);
+		CQt.QRubberBand_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QRubberBand_OnConnectNotify);
+		CQt.QRubberBand_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QRubberBand_OnDisconnectNotify);
+		CQt.QRubberBand_OnDevType(obj.ObjectPtr,  => QtBeef_QRubberBand_OnDevType);
+		CQt.QRubberBand_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QRubberBand_OnPaintEngine);
+		CQt.QRubberBand_OnMetric(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMetric);
+		CQt.QRubberBand_OnInitPainter(obj.ObjectPtr,  => QtBeef_QRubberBand_OnInitPainter);
+		CQt.QRubberBand_OnRedirected(obj.ObjectPtr,  => QtBeef_QRubberBand_OnRedirected);
+		CQt.QRubberBand_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QRubberBand_OnSharedPainter);
+		CQt.QRubberBand_OnSetVisible(obj.ObjectPtr,  => QtBeef_QRubberBand_OnSetVisible);
+		CQt.QRubberBand_OnSizeHint(obj.ObjectPtr,  => QtBeef_QRubberBand_OnSizeHint);
+		CQt.QRubberBand_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMinimumSizeHint);
+		CQt.QRubberBand_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QRubberBand_OnHeightForWidth);
+		CQt.QRubberBand_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QRubberBand_OnHasHeightForWidth);
+		CQt.QRubberBand_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMousePressEvent);
+		CQt.QRubberBand_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMouseReleaseEvent);
+		CQt.QRubberBand_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMouseDoubleClickEvent);
+		CQt.QRubberBand_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnMouseMoveEvent);
+		CQt.QRubberBand_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnWheelEvent);
+		CQt.QRubberBand_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnKeyPressEvent);
+		CQt.QRubberBand_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnKeyReleaseEvent);
+		CQt.QRubberBand_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnFocusInEvent);
+		CQt.QRubberBand_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnFocusOutEvent);
+		CQt.QRubberBand_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnEnterEvent);
+		CQt.QRubberBand_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnLeaveEvent);
+		CQt.QRubberBand_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnCloseEvent);
+		CQt.QRubberBand_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnContextMenuEvent);
+		CQt.QRubberBand_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnTabletEvent);
+		CQt.QRubberBand_OnActionEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnActionEvent);
+		CQt.QRubberBand_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnDragEnterEvent);
+		CQt.QRubberBand_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnDragMoveEvent);
+		CQt.QRubberBand_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnDragLeaveEvent);
+		CQt.QRubberBand_OnDropEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnDropEvent);
+		CQt.QRubberBand_OnHideEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnHideEvent);
+		CQt.QRubberBand_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnNativeEvent);
+		CQt.QRubberBand_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QRubberBand_OnInputMethodEvent);
+		CQt.QRubberBand_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QRubberBand_OnInputMethodQuery);
+		CQt.QRubberBand_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QRubberBand_OnFocusNextPrevChild);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1636,6 +1687,261 @@ class QRubberBand : IQRubberBand, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QRubberBand_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QRubberBand_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QRubberBand_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QRubberBand_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QRubberBand_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QRubberBand_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QRubberBand_OnShowEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(param1);
+	}
+	static void QtBeef_QRubberBand_OnResizeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(param1);
+	}
+	static void QtBeef_QRubberBand_OnMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(param1);
+	}
+	static void QtBeef_QRubberBand_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QRubberBand_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QRubberBand_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QRubberBand_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QRubberBand_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QRubberBand_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QRubberBand_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QRubberBand_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QRubberBand_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QRubberBand_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QRubberBand_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QRubberBand_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QRubberBand_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QRubberBand_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QRubberBand_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QRubberBand_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QRubberBand_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QRubberBand_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QRubberBand_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QRubberBand_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QRubberBand_Ptr ptr)
 	{
@@ -3212,18 +3518,27 @@ extension CQt
 	public function void QRubberBand_OnMetaObject_action(void* self);
 	[LinkName("QRubberBand_OnMetaObject")]
 	public static extern void** QRubberBand_OnMetaObject(void* self, QRubberBand_OnMetaObject_action _action);
+	
+	[LinkName("QRubberBand_SuperMetaObject")]
+	public static extern void** QRubberBand_SuperMetaObject(void* self);
 	[LinkName("QRubberBand_Qt_Metacast")]
 	public static extern void* QRubberBand_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QRubberBand_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QRubberBand_OnMetacast")]
 	public static extern void* QRubberBand_OnMetacast(void* self, QRubberBand_OnMetacast_action _action);
+	
+	[LinkName("QRubberBand_SuperMetacast")]
+	public static extern void* QRubberBand_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QRubberBand_Qt_Metacall")]
 	public static extern c_int QRubberBand_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QRubberBand_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QRubberBand_OnMetacall")]
 	public static extern c_int QRubberBand_OnMetacall(void* self, QRubberBand_OnMetacall_action _action);
+	
+	[LinkName("QRubberBand_SuperMetacall")]
+	public static extern c_int QRubberBand_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QRubberBand_Tr")]
 	public static extern libqt_string QRubberBand_Tr(c_char* s);
 	[LinkName("QRubberBand_Shape")]
@@ -3246,42 +3561,63 @@ extension CQt
 	public function void QRubberBand_OnEvent_action(void* self, void** e);
 	[LinkName("QRubberBand_OnEvent")]
 	public static extern bool QRubberBand_OnEvent(void* self, QRubberBand_OnEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperEvent")]
+	public static extern bool QRubberBand_SuperEvent(void* self, void** e);
 	[LinkName("QRubberBand_PaintEvent")]
 	public static extern void QRubberBand_PaintEvent(void* self, void** param1);
 	
 	public function void QRubberBand_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QRubberBand_OnPaintEvent")]
 	public static extern void QRubberBand_OnPaintEvent(void* self, QRubberBand_OnPaintEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperPaintEvent")]
+	public static extern void QRubberBand_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QRubberBand_ChangeEvent")]
 	public static extern void QRubberBand_ChangeEvent(void* self, void** param1);
 	
 	public function void QRubberBand_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QRubberBand_OnChangeEvent")]
 	public static extern void QRubberBand_OnChangeEvent(void* self, QRubberBand_OnChangeEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperChangeEvent")]
+	public static extern void QRubberBand_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QRubberBand_ShowEvent")]
 	public static extern void QRubberBand_ShowEvent(void* self, void** param1);
 	
 	public function void QRubberBand_OnShowEvent_action(void* self, void** param1);
 	[LinkName("QRubberBand_OnShowEvent")]
 	public static extern void QRubberBand_OnShowEvent(void* self, QRubberBand_OnShowEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperShowEvent")]
+	public static extern void QRubberBand_SuperShowEvent(void* self, void** param1);
 	[LinkName("QRubberBand_ResizeEvent")]
 	public static extern void QRubberBand_ResizeEvent(void* self, void** param1);
 	
 	public function void QRubberBand_OnResizeEvent_action(void* self, void** param1);
 	[LinkName("QRubberBand_OnResizeEvent")]
 	public static extern void QRubberBand_OnResizeEvent(void* self, QRubberBand_OnResizeEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperResizeEvent")]
+	public static extern void QRubberBand_SuperResizeEvent(void* self, void** param1);
 	[LinkName("QRubberBand_MoveEvent")]
 	public static extern void QRubberBand_MoveEvent(void* self, void** param1);
 	
 	public function void QRubberBand_OnMoveEvent_action(void* self, void** param1);
 	[LinkName("QRubberBand_OnMoveEvent")]
 	public static extern void QRubberBand_OnMoveEvent(void* self, QRubberBand_OnMoveEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperMoveEvent")]
+	public static extern void QRubberBand_SuperMoveEvent(void* self, void** param1);
 	[LinkName("QRubberBand_InitStyleOption")]
 	public static extern void QRubberBand_InitStyleOption(void* self, void** option);
 	
 	public function void QRubberBand_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QRubberBand_OnInitStyleOption")]
 	public static extern void QRubberBand_OnInitStyleOption(void* self, QRubberBand_OnInitStyleOption_action _action);
+	
+	[LinkName("QRubberBand_SuperInitStyleOption")]
+	public static extern void QRubberBand_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QRubberBand_Tr2")]
 	public static extern libqt_string QRubberBand_Tr2(c_char* s, c_char* c);
 	[LinkName("QRubberBand_Tr3")]
@@ -3292,246 +3628,369 @@ extension CQt
 	public function void QRubberBand_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QRubberBand_OnEventFilter")]
 	public static extern bool QRubberBand_OnEventFilter(void* self, QRubberBand_OnEventFilter_action _action);
+	
+	[LinkName("QRubberBand_SuperEventFilter")]
+	public static extern bool QRubberBand_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QRubberBand_TimerEvent")]
 	public static extern void QRubberBand_TimerEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnTimerEvent")]
 	public static extern void QRubberBand_OnTimerEvent(void* self, QRubberBand_OnTimerEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperTimerEvent")]
+	public static extern void QRubberBand_SuperTimerEvent(void* self, void** event);
 	[LinkName("QRubberBand_ChildEvent")]
 	public static extern void QRubberBand_ChildEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnChildEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnChildEvent")]
 	public static extern void QRubberBand_OnChildEvent(void* self, QRubberBand_OnChildEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperChildEvent")]
+	public static extern void QRubberBand_SuperChildEvent(void* self, void** event);
 	[LinkName("QRubberBand_CustomEvent")]
 	public static extern void QRubberBand_CustomEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnCustomEvent")]
 	public static extern void QRubberBand_OnCustomEvent(void* self, QRubberBand_OnCustomEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperCustomEvent")]
+	public static extern void QRubberBand_SuperCustomEvent(void* self, void** event);
 	[LinkName("QRubberBand_ConnectNotify")]
 	public static extern void QRubberBand_ConnectNotify(void* self, void** signal);
 	
 	public function void QRubberBand_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QRubberBand_OnConnectNotify")]
 	public static extern void QRubberBand_OnConnectNotify(void* self, QRubberBand_OnConnectNotify_action _action);
+	
+	[LinkName("QRubberBand_SuperConnectNotify")]
+	public static extern void QRubberBand_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QRubberBand_DisconnectNotify")]
 	public static extern void QRubberBand_DisconnectNotify(void* self, void** signal);
 	
 	public function void QRubberBand_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QRubberBand_OnDisconnectNotify")]
 	public static extern void QRubberBand_OnDisconnectNotify(void* self, QRubberBand_OnDisconnectNotify_action _action);
+	
+	[LinkName("QRubberBand_SuperDisconnectNotify")]
+	public static extern void QRubberBand_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QRubberBand_DevType")]
 	public static extern c_int QRubberBand_DevType(void* self);
 	
 	public function void QRubberBand_OnDevType_action(void* self);
 	[LinkName("QRubberBand_OnDevType")]
 	public static extern c_int QRubberBand_OnDevType(void* self, QRubberBand_OnDevType_action _action);
+	
+	[LinkName("QRubberBand_SuperDevType")]
+	public static extern c_int QRubberBand_SuperDevType(void* self);
 	[LinkName("QRubberBand_PaintEngine")]
 	public static extern void** QRubberBand_PaintEngine(void* self);
 	
 	public function void QRubberBand_OnPaintEngine_action(void* self);
 	[LinkName("QRubberBand_OnPaintEngine")]
 	public static extern void** QRubberBand_OnPaintEngine(void* self, QRubberBand_OnPaintEngine_action _action);
+	
+	[LinkName("QRubberBand_SuperPaintEngine")]
+	public static extern void** QRubberBand_SuperPaintEngine(void* self);
 	[LinkName("QRubberBand_Metric")]
 	public static extern c_int QRubberBand_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QRubberBand_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QRubberBand_OnMetric")]
 	public static extern c_int QRubberBand_OnMetric(void* self, QRubberBand_OnMetric_action _action);
+	
+	[LinkName("QRubberBand_SuperMetric")]
+	public static extern c_int QRubberBand_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QRubberBand_InitPainter")]
 	public static extern void QRubberBand_InitPainter(void* self, void** painter);
 	
 	public function void QRubberBand_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QRubberBand_OnInitPainter")]
 	public static extern void QRubberBand_OnInitPainter(void* self, QRubberBand_OnInitPainter_action _action);
+	
+	[LinkName("QRubberBand_SuperInitPainter")]
+	public static extern void QRubberBand_SuperInitPainter(void* self, void** painter);
 	[LinkName("QRubberBand_Redirected")]
 	public static extern void** QRubberBand_Redirected(void* self, void** offset);
 	
 	public function void QRubberBand_OnRedirected_action(void* self, void** offset);
 	[LinkName("QRubberBand_OnRedirected")]
 	public static extern void** QRubberBand_OnRedirected(void* self, QRubberBand_OnRedirected_action _action);
+	
+	[LinkName("QRubberBand_SuperRedirected")]
+	public static extern void** QRubberBand_SuperRedirected(void* self, void** offset);
 	[LinkName("QRubberBand_SharedPainter")]
 	public static extern void** QRubberBand_SharedPainter(void* self);
 	
 	public function void QRubberBand_OnSharedPainter_action(void* self);
 	[LinkName("QRubberBand_OnSharedPainter")]
 	public static extern void** QRubberBand_OnSharedPainter(void* self, QRubberBand_OnSharedPainter_action _action);
+	
+	[LinkName("QRubberBand_SuperSharedPainter")]
+	public static extern void** QRubberBand_SuperSharedPainter(void* self);
 	[LinkName("QRubberBand_SetVisible")]
 	public static extern void QRubberBand_SetVisible(void* self, bool visible);
 	
 	public function void QRubberBand_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QRubberBand_OnSetVisible")]
 	public static extern void QRubberBand_OnSetVisible(void* self, QRubberBand_OnSetVisible_action _action);
+	
+	[LinkName("QRubberBand_SuperSetVisible")]
+	public static extern void QRubberBand_SuperSetVisible(void* self, bool visible);
 	[LinkName("QRubberBand_SizeHint")]
 	public static extern void* QRubberBand_SizeHint(void* self);
 	
 	public function void QRubberBand_OnSizeHint_action(void* self);
 	[LinkName("QRubberBand_OnSizeHint")]
 	public static extern void* QRubberBand_OnSizeHint(void* self, QRubberBand_OnSizeHint_action _action);
+	
+	[LinkName("QRubberBand_SuperSizeHint")]
+	public static extern void* QRubberBand_SuperSizeHint(void* self);
 	[LinkName("QRubberBand_MinimumSizeHint")]
 	public static extern void* QRubberBand_MinimumSizeHint(void* self);
 	
 	public function void QRubberBand_OnMinimumSizeHint_action(void* self);
 	[LinkName("QRubberBand_OnMinimumSizeHint")]
 	public static extern void* QRubberBand_OnMinimumSizeHint(void* self, QRubberBand_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QRubberBand_SuperMinimumSizeHint")]
+	public static extern void* QRubberBand_SuperMinimumSizeHint(void* self);
 	[LinkName("QRubberBand_HeightForWidth")]
 	public static extern c_int QRubberBand_HeightForWidth(void* self, c_int param1);
 	
 	public function void QRubberBand_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QRubberBand_OnHeightForWidth")]
 	public static extern c_int QRubberBand_OnHeightForWidth(void* self, QRubberBand_OnHeightForWidth_action _action);
+	
+	[LinkName("QRubberBand_SuperHeightForWidth")]
+	public static extern c_int QRubberBand_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QRubberBand_HasHeightForWidth")]
 	public static extern bool QRubberBand_HasHeightForWidth(void* self);
 	
 	public function void QRubberBand_OnHasHeightForWidth_action(void* self);
 	[LinkName("QRubberBand_OnHasHeightForWidth")]
 	public static extern bool QRubberBand_OnHasHeightForWidth(void* self, QRubberBand_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QRubberBand_SuperHasHeightForWidth")]
+	public static extern bool QRubberBand_SuperHasHeightForWidth(void* self);
 	[LinkName("QRubberBand_MousePressEvent")]
 	public static extern void QRubberBand_MousePressEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnMousePressEvent")]
 	public static extern void QRubberBand_OnMousePressEvent(void* self, QRubberBand_OnMousePressEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperMousePressEvent")]
+	public static extern void QRubberBand_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QRubberBand_MouseReleaseEvent")]
 	public static extern void QRubberBand_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnMouseReleaseEvent")]
 	public static extern void QRubberBand_OnMouseReleaseEvent(void* self, QRubberBand_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperMouseReleaseEvent")]
+	public static extern void QRubberBand_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QRubberBand_MouseDoubleClickEvent")]
 	public static extern void QRubberBand_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnMouseDoubleClickEvent")]
 	public static extern void QRubberBand_OnMouseDoubleClickEvent(void* self, QRubberBand_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperMouseDoubleClickEvent")]
+	public static extern void QRubberBand_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QRubberBand_MouseMoveEvent")]
 	public static extern void QRubberBand_MouseMoveEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnMouseMoveEvent")]
 	public static extern void QRubberBand_OnMouseMoveEvent(void* self, QRubberBand_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperMouseMoveEvent")]
+	public static extern void QRubberBand_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QRubberBand_WheelEvent")]
 	public static extern void QRubberBand_WheelEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnWheelEvent")]
 	public static extern void QRubberBand_OnWheelEvent(void* self, QRubberBand_OnWheelEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperWheelEvent")]
+	public static extern void QRubberBand_SuperWheelEvent(void* self, void** event);
 	[LinkName("QRubberBand_KeyPressEvent")]
 	public static extern void QRubberBand_KeyPressEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnKeyPressEvent")]
 	public static extern void QRubberBand_OnKeyPressEvent(void* self, QRubberBand_OnKeyPressEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperKeyPressEvent")]
+	public static extern void QRubberBand_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QRubberBand_KeyReleaseEvent")]
 	public static extern void QRubberBand_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnKeyReleaseEvent")]
 	public static extern void QRubberBand_OnKeyReleaseEvent(void* self, QRubberBand_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperKeyReleaseEvent")]
+	public static extern void QRubberBand_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QRubberBand_FocusInEvent")]
 	public static extern void QRubberBand_FocusInEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnFocusInEvent")]
 	public static extern void QRubberBand_OnFocusInEvent(void* self, QRubberBand_OnFocusInEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperFocusInEvent")]
+	public static extern void QRubberBand_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QRubberBand_FocusOutEvent")]
 	public static extern void QRubberBand_FocusOutEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnFocusOutEvent")]
 	public static extern void QRubberBand_OnFocusOutEvent(void* self, QRubberBand_OnFocusOutEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperFocusOutEvent")]
+	public static extern void QRubberBand_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QRubberBand_EnterEvent")]
 	public static extern void QRubberBand_EnterEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnEnterEvent")]
 	public static extern void QRubberBand_OnEnterEvent(void* self, QRubberBand_OnEnterEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperEnterEvent")]
+	public static extern void QRubberBand_SuperEnterEvent(void* self, void** event);
 	[LinkName("QRubberBand_LeaveEvent")]
 	public static extern void QRubberBand_LeaveEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnLeaveEvent")]
 	public static extern void QRubberBand_OnLeaveEvent(void* self, QRubberBand_OnLeaveEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperLeaveEvent")]
+	public static extern void QRubberBand_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QRubberBand_CloseEvent")]
 	public static extern void QRubberBand_CloseEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnCloseEvent")]
 	public static extern void QRubberBand_OnCloseEvent(void* self, QRubberBand_OnCloseEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperCloseEvent")]
+	public static extern void QRubberBand_SuperCloseEvent(void* self, void** event);
 	[LinkName("QRubberBand_ContextMenuEvent")]
 	public static extern void QRubberBand_ContextMenuEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnContextMenuEvent")]
 	public static extern void QRubberBand_OnContextMenuEvent(void* self, QRubberBand_OnContextMenuEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperContextMenuEvent")]
+	public static extern void QRubberBand_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QRubberBand_TabletEvent")]
 	public static extern void QRubberBand_TabletEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnTabletEvent")]
 	public static extern void QRubberBand_OnTabletEvent(void* self, QRubberBand_OnTabletEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperTabletEvent")]
+	public static extern void QRubberBand_SuperTabletEvent(void* self, void** event);
 	[LinkName("QRubberBand_ActionEvent")]
 	public static extern void QRubberBand_ActionEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnActionEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnActionEvent")]
 	public static extern void QRubberBand_OnActionEvent(void* self, QRubberBand_OnActionEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperActionEvent")]
+	public static extern void QRubberBand_SuperActionEvent(void* self, void** event);
 	[LinkName("QRubberBand_DragEnterEvent")]
 	public static extern void QRubberBand_DragEnterEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnDragEnterEvent")]
 	public static extern void QRubberBand_OnDragEnterEvent(void* self, QRubberBand_OnDragEnterEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperDragEnterEvent")]
+	public static extern void QRubberBand_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QRubberBand_DragMoveEvent")]
 	public static extern void QRubberBand_DragMoveEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnDragMoveEvent")]
 	public static extern void QRubberBand_OnDragMoveEvent(void* self, QRubberBand_OnDragMoveEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperDragMoveEvent")]
+	public static extern void QRubberBand_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QRubberBand_DragLeaveEvent")]
 	public static extern void QRubberBand_DragLeaveEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnDragLeaveEvent")]
 	public static extern void QRubberBand_OnDragLeaveEvent(void* self, QRubberBand_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperDragLeaveEvent")]
+	public static extern void QRubberBand_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QRubberBand_DropEvent")]
 	public static extern void QRubberBand_DropEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnDropEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnDropEvent")]
 	public static extern void QRubberBand_OnDropEvent(void* self, QRubberBand_OnDropEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperDropEvent")]
+	public static extern void QRubberBand_SuperDropEvent(void* self, void** event);
 	[LinkName("QRubberBand_HideEvent")]
 	public static extern void QRubberBand_HideEvent(void* self, void** event);
 	
 	public function void QRubberBand_OnHideEvent_action(void* self, void** event);
 	[LinkName("QRubberBand_OnHideEvent")]
 	public static extern void QRubberBand_OnHideEvent(void* self, QRubberBand_OnHideEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperHideEvent")]
+	public static extern void QRubberBand_SuperHideEvent(void* self, void** event);
 	[LinkName("QRubberBand_NativeEvent")]
 	public static extern bool QRubberBand_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QRubberBand_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QRubberBand_OnNativeEvent")]
 	public static extern bool QRubberBand_OnNativeEvent(void* self, QRubberBand_OnNativeEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperNativeEvent")]
+	public static extern bool QRubberBand_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QRubberBand_InputMethodEvent")]
 	public static extern void QRubberBand_InputMethodEvent(void* self, void** param1);
 	
 	public function void QRubberBand_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QRubberBand_OnInputMethodEvent")]
 	public static extern void QRubberBand_OnInputMethodEvent(void* self, QRubberBand_OnInputMethodEvent_action _action);
+	
+	[LinkName("QRubberBand_SuperInputMethodEvent")]
+	public static extern void QRubberBand_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QRubberBand_InputMethodQuery")]
 	public static extern void* QRubberBand_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QRubberBand_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QRubberBand_OnInputMethodQuery")]
 	public static extern void* QRubberBand_OnInputMethodQuery(void* self, QRubberBand_OnInputMethodQuery_action _action);
+	
+	[LinkName("QRubberBand_SuperInputMethodQuery")]
+	public static extern void* QRubberBand_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QRubberBand_FocusNextPrevChild")]
 	public static extern bool QRubberBand_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QRubberBand_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QRubberBand_OnFocusNextPrevChild")]
 	public static extern bool QRubberBand_OnFocusNextPrevChild(void* self, QRubberBand_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QRubberBand_SuperFocusNextPrevChild")]
+	public static extern bool QRubberBand_SuperFocusNextPrevChild(void* self, bool next);
 }
 [AllowDuplicates]
 enum QRubberBand_Shape

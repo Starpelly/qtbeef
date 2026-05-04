@@ -342,6 +342,16 @@ class QActionGroup : IQActionGroup, IQObject
 		CQt.QActionGroup_Connect_Hovered(obj.ObjectPtr,  => QtBeef_QActionGroup_Connect_Hovered);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QActionGroup_OnMetaObject(obj.ObjectPtr,  => QtBeef_QActionGroup_OnMetaObject);
+		CQt.QActionGroup_OnMetacast(obj.ObjectPtr,  => QtBeef_QActionGroup_OnMetacast);
+		CQt.QActionGroup_OnMetacall(obj.ObjectPtr,  => QtBeef_QActionGroup_OnMetacall);
+		CQt.QActionGroup_OnEvent(obj.ObjectPtr,  => QtBeef_QActionGroup_OnEvent);
+		CQt.QActionGroup_OnEventFilter(obj.ObjectPtr,  => QtBeef_QActionGroup_OnEventFilter);
+		CQt.QActionGroup_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QActionGroup_OnTimerEvent);
+		CQt.QActionGroup_OnChildEvent(obj.ObjectPtr,  => QtBeef_QActionGroup_OnChildEvent);
+		CQt.QActionGroup_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QActionGroup_OnCustomEvent);
+		CQt.QActionGroup_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QActionGroup_OnConnectNotify);
+		CQt.QActionGroup_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QActionGroup_OnDisconnectNotify);
 	}
 	public Event<delegate void(void** param1)> OnTriggered = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnHovered = .() ~ _.Dispose();
@@ -366,6 +376,56 @@ class QActionGroup : IQActionGroup, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QActionGroup_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QActionGroup_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QActionGroup_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QActionGroup_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QActionGroup_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QActionGroup_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QActionGroup_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QActionGroup_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QActionGroup_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QActionGroup_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QActionGroup_Ptr ptr)
 	{
@@ -708,18 +768,27 @@ extension CQt
 	public function void QActionGroup_OnMetaObject_action(void* self);
 	[LinkName("QActionGroup_OnMetaObject")]
 	public static extern void** QActionGroup_OnMetaObject(void* self, QActionGroup_OnMetaObject_action _action);
+	
+	[LinkName("QActionGroup_SuperMetaObject")]
+	public static extern void** QActionGroup_SuperMetaObject(void* self);
 	[LinkName("QActionGroup_Qt_Metacast")]
 	public static extern void* QActionGroup_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QActionGroup_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QActionGroup_OnMetacast")]
 	public static extern void* QActionGroup_OnMetacast(void* self, QActionGroup_OnMetacast_action _action);
+	
+	[LinkName("QActionGroup_SuperMetacast")]
+	public static extern void* QActionGroup_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QActionGroup_Qt_Metacall")]
 	public static extern c_int QActionGroup_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QActionGroup_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QActionGroup_OnMetacall")]
 	public static extern c_int QActionGroup_OnMetacall(void* self, QActionGroup_OnMetacall_action _action);
+	
+	[LinkName("QActionGroup_SuperMetacall")]
+	public static extern c_int QActionGroup_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QActionGroup_Tr")]
 	public static extern libqt_string QActionGroup_Tr(c_char* s);
 	[LinkName("QActionGroup_AddAction")]
@@ -774,42 +843,63 @@ extension CQt
 	public function void QActionGroup_OnEvent_action(void* self, void** event);
 	[LinkName("QActionGroup_OnEvent")]
 	public static extern bool QActionGroup_OnEvent(void* self, QActionGroup_OnEvent_action _action);
+	
+	[LinkName("QActionGroup_SuperEvent")]
+	public static extern bool QActionGroup_SuperEvent(void* self, void** event);
 	[LinkName("QActionGroup_EventFilter")]
 	public static extern bool QActionGroup_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QActionGroup_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QActionGroup_OnEventFilter")]
 	public static extern bool QActionGroup_OnEventFilter(void* self, QActionGroup_OnEventFilter_action _action);
+	
+	[LinkName("QActionGroup_SuperEventFilter")]
+	public static extern bool QActionGroup_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QActionGroup_TimerEvent")]
 	public static extern void QActionGroup_TimerEvent(void* self, void** event);
 	
 	public function void QActionGroup_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QActionGroup_OnTimerEvent")]
 	public static extern void QActionGroup_OnTimerEvent(void* self, QActionGroup_OnTimerEvent_action _action);
+	
+	[LinkName("QActionGroup_SuperTimerEvent")]
+	public static extern void QActionGroup_SuperTimerEvent(void* self, void** event);
 	[LinkName("QActionGroup_ChildEvent")]
 	public static extern void QActionGroup_ChildEvent(void* self, void** event);
 	
 	public function void QActionGroup_OnChildEvent_action(void* self, void** event);
 	[LinkName("QActionGroup_OnChildEvent")]
 	public static extern void QActionGroup_OnChildEvent(void* self, QActionGroup_OnChildEvent_action _action);
+	
+	[LinkName("QActionGroup_SuperChildEvent")]
+	public static extern void QActionGroup_SuperChildEvent(void* self, void** event);
 	[LinkName("QActionGroup_CustomEvent")]
 	public static extern void QActionGroup_CustomEvent(void* self, void** event);
 	
 	public function void QActionGroup_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QActionGroup_OnCustomEvent")]
 	public static extern void QActionGroup_OnCustomEvent(void* self, QActionGroup_OnCustomEvent_action _action);
+	
+	[LinkName("QActionGroup_SuperCustomEvent")]
+	public static extern void QActionGroup_SuperCustomEvent(void* self, void** event);
 	[LinkName("QActionGroup_ConnectNotify")]
 	public static extern void QActionGroup_ConnectNotify(void* self, void** signal);
 	
 	public function void QActionGroup_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QActionGroup_OnConnectNotify")]
 	public static extern void QActionGroup_OnConnectNotify(void* self, QActionGroup_OnConnectNotify_action _action);
+	
+	[LinkName("QActionGroup_SuperConnectNotify")]
+	public static extern void QActionGroup_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QActionGroup_DisconnectNotify")]
 	public static extern void QActionGroup_DisconnectNotify(void* self, void** signal);
 	
 	public function void QActionGroup_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QActionGroup_OnDisconnectNotify")]
 	public static extern void QActionGroup_OnDisconnectNotify(void* self, QActionGroup_OnDisconnectNotify_action _action);
+	
+	[LinkName("QActionGroup_SuperDisconnectNotify")]
+	public static extern void QActionGroup_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QActionGroup_ExclusionPolicy

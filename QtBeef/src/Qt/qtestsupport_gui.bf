@@ -66,6 +66,18 @@ class QTest_QTouchEventSequence : IQTest_QTouchEventSequence
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTest_QTouchEventSequence_OnStationary(obj.ObjectPtr,  => QtBeef_QTest_QTouchEventSequence_OnStationary);
+		CQt.QTest_QTouchEventSequence_OnCommit(obj.ObjectPtr,  => QtBeef_QTest_QTouchEventSequence_OnCommit);
+	}
+	static void QtBeef_QTest_QTouchEventSequence_OnStationary(void* ptr, c_int touchId)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStationary(touchId);
+	}
+	static void QtBeef_QTest_QTouchEventSequence_OnCommit(void* ptr, bool processEvents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommit(processEvents);
 	}
 	public this(QTest_QTouchEventSequence_Ptr ptr)
 	{
@@ -140,12 +152,18 @@ extension CQt
 	public function void QTest_QTouchEventSequence_OnStationary_action(void* self, c_int touchId);
 	[LinkName("QTest_QTouchEventSequence_OnStationary")]
 	public static extern void** QTest_QTouchEventSequence_OnStationary(void* self, QTest_QTouchEventSequence_OnStationary_action _action);
+	
+	[LinkName("QTest_QTouchEventSequence_SuperStationary")]
+	public static extern void** QTest_QTouchEventSequence_SuperStationary(void* self, c_int touchId);
 	[LinkName("QTest_QTouchEventSequence_Commit")]
 	public static extern bool QTest_QTouchEventSequence_Commit(void* self, bool processEvents);
 	
 	public function void QTest_QTouchEventSequence_OnCommit_action(void* self, bool processEvents);
 	[LinkName("QTest_QTouchEventSequence_OnCommit")]
 	public static extern bool QTest_QTouchEventSequence_OnCommit(void* self, QTest_QTouchEventSequence_OnCommit_action _action);
+	
+	[LinkName("QTest_QTouchEventSequence_SuperCommit")]
+	public static extern bool QTest_QTouchEventSequence_SuperCommit(void* self, bool processEvents);
 	[LinkName("QTest_QTouchEventSequence_MapToScreen")]
 	public static extern void* QTest_QTouchEventSequence_MapToScreen(void* self, void** window, void** pt);
 	[LinkName("QTest_QTouchEventSequence_Point")]

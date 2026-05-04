@@ -1762,6 +1762,60 @@ class QCheckBox : IQCheckBox, IQAbstractButton, IQWidget, IQObject, IQPaintDevic
 		CQt.QAbstractButton_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Clicked);
 		CQt.QAbstractButton_Connect_Toggled(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Toggled);
 		CQt.QAbstractButton_Connect_Clicked1(obj.ObjectPtr,  => QtBeef_QAbstractButton_Connect_Clicked1);
+		CQt.QCheckBox_OnMetaObject(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMetaObject);
+		CQt.QCheckBox_OnMetacast(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMetacast);
+		CQt.QCheckBox_OnMetacall(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMetacall);
+		CQt.QCheckBox_OnSizeHint(obj.ObjectPtr,  => QtBeef_QCheckBox_OnSizeHint);
+		CQt.QCheckBox_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMinimumSizeHint);
+		CQt.QCheckBox_OnEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnEvent);
+		CQt.QCheckBox_OnHitButton(obj.ObjectPtr,  => QtBeef_QCheckBox_OnHitButton);
+		CQt.QCheckBox_OnCheckStateSet(obj.ObjectPtr,  => QtBeef_QCheckBox_OnCheckStateSet);
+		CQt.QCheckBox_OnNextCheckState(obj.ObjectPtr,  => QtBeef_QCheckBox_OnNextCheckState);
+		CQt.QCheckBox_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnPaintEvent);
+		CQt.QCheckBox_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMouseMoveEvent);
+		CQt.QCheckBox_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QCheckBox_OnInitStyleOption);
+		CQt.QCheckBox_OnEventFilter(obj.ObjectPtr,  => QtBeef_QCheckBox_OnEventFilter);
+		CQt.QCheckBox_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnTimerEvent);
+		CQt.QCheckBox_OnChildEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnChildEvent);
+		CQt.QCheckBox_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnCustomEvent);
+		CQt.QCheckBox_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QCheckBox_OnConnectNotify);
+		CQt.QCheckBox_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QCheckBox_OnDisconnectNotify);
+		CQt.QCheckBox_OnDevType(obj.ObjectPtr,  => QtBeef_QCheckBox_OnDevType);
+		CQt.QCheckBox_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QCheckBox_OnPaintEngine);
+		CQt.QCheckBox_OnMetric(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMetric);
+		CQt.QCheckBox_OnInitPainter(obj.ObjectPtr,  => QtBeef_QCheckBox_OnInitPainter);
+		CQt.QCheckBox_OnRedirected(obj.ObjectPtr,  => QtBeef_QCheckBox_OnRedirected);
+		CQt.QCheckBox_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QCheckBox_OnSharedPainter);
+		CQt.QCheckBox_OnSetVisible(obj.ObjectPtr,  => QtBeef_QCheckBox_OnSetVisible);
+		CQt.QCheckBox_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QCheckBox_OnHeightForWidth);
+		CQt.QCheckBox_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QCheckBox_OnHasHeightForWidth);
+		CQt.QCheckBox_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMousePressEvent);
+		CQt.QCheckBox_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMouseReleaseEvent);
+		CQt.QCheckBox_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMouseDoubleClickEvent);
+		CQt.QCheckBox_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnWheelEvent);
+		CQt.QCheckBox_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnKeyPressEvent);
+		CQt.QCheckBox_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnKeyReleaseEvent);
+		CQt.QCheckBox_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnFocusInEvent);
+		CQt.QCheckBox_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnFocusOutEvent);
+		CQt.QCheckBox_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnEnterEvent);
+		CQt.QCheckBox_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnLeaveEvent);
+		CQt.QCheckBox_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnMoveEvent);
+		CQt.QCheckBox_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnResizeEvent);
+		CQt.QCheckBox_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnCloseEvent);
+		CQt.QCheckBox_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnContextMenuEvent);
+		CQt.QCheckBox_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnTabletEvent);
+		CQt.QCheckBox_OnActionEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnActionEvent);
+		CQt.QCheckBox_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnDragEnterEvent);
+		CQt.QCheckBox_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnDragMoveEvent);
+		CQt.QCheckBox_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnDragLeaveEvent);
+		CQt.QCheckBox_OnDropEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnDropEvent);
+		CQt.QCheckBox_OnShowEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnShowEvent);
+		CQt.QCheckBox_OnHideEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnHideEvent);
+		CQt.QCheckBox_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnNativeEvent);
+		CQt.QCheckBox_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnChangeEvent);
+		CQt.QCheckBox_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QCheckBox_OnInputMethodEvent);
+		CQt.QCheckBox_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QCheckBox_OnInputMethodQuery);
+		CQt.QCheckBox_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QCheckBox_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(c_int param1)> OnStateChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1834,6 +1888,276 @@ class QCheckBox : IQCheckBox, IQAbstractButton, IQWidget, IQObject, IQPaintDevic
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnClicked1.Invoke(_checked);
+	}
+	static void QtBeef_QCheckBox_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QCheckBox_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QCheckBox_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QCheckBox_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QCheckBox_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QCheckBox_OnEvent(void* ptr, void** e)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(e);
+	}
+	static void QtBeef_QCheckBox_OnHitButton(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHitButton(pos);
+	}
+	static void QtBeef_QCheckBox_OnCheckStateSet(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCheckStateSet();
+	}
+	static void QtBeef_QCheckBox_OnNextCheckState(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNextCheckState();
+	}
+	static void QtBeef_QCheckBox_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QCheckBox_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QCheckBox_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QCheckBox_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QCheckBox_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QCheckBox_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QCheckBox_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QCheckBox_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QCheckBox_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QCheckBox_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QCheckBox_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QCheckBox_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QCheckBox_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QCheckBox_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QCheckBox_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QCheckBox_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QCheckBox_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QCheckBox_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QCheckBox_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QCheckBox_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QCheckBox_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QCheckBox_Ptr ptr)
 	{
@@ -3578,18 +3902,27 @@ extension CQt
 	public function void QCheckBox_OnMetaObject_action(void* self);
 	[LinkName("QCheckBox_OnMetaObject")]
 	public static extern void** QCheckBox_OnMetaObject(void* self, QCheckBox_OnMetaObject_action _action);
+	
+	[LinkName("QCheckBox_SuperMetaObject")]
+	public static extern void** QCheckBox_SuperMetaObject(void* self);
 	[LinkName("QCheckBox_Qt_Metacast")]
 	public static extern void* QCheckBox_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QCheckBox_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QCheckBox_OnMetacast")]
 	public static extern void* QCheckBox_OnMetacast(void* self, QCheckBox_OnMetacast_action _action);
+	
+	[LinkName("QCheckBox_SuperMetacast")]
+	public static extern void* QCheckBox_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QCheckBox_Qt_Metacall")]
 	public static extern c_int QCheckBox_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QCheckBox_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCheckBox_OnMetacall")]
 	public static extern c_int QCheckBox_OnMetacall(void* self, QCheckBox_OnMetacall_action _action);
+	
+	[LinkName("QCheckBox_SuperMetacall")]
+	public static extern c_int QCheckBox_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QCheckBox_Tr")]
 	public static extern libqt_string QCheckBox_Tr(c_char* s);
 	[LinkName("QCheckBox_SizeHint")]
@@ -3598,12 +3931,18 @@ extension CQt
 	public function void QCheckBox_OnSizeHint_action(void* self);
 	[LinkName("QCheckBox_OnSizeHint")]
 	public static extern void* QCheckBox_OnSizeHint(void* self, QCheckBox_OnSizeHint_action _action);
+	
+	[LinkName("QCheckBox_SuperSizeHint")]
+	public static extern void* QCheckBox_SuperSizeHint(void* self);
 	[LinkName("QCheckBox_MinimumSizeHint")]
 	public static extern void* QCheckBox_MinimumSizeHint(void* self);
 	
 	public function void QCheckBox_OnMinimumSizeHint_action(void* self);
 	[LinkName("QCheckBox_OnMinimumSizeHint")]
 	public static extern void* QCheckBox_OnMinimumSizeHint(void* self, QCheckBox_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QCheckBox_SuperMinimumSizeHint")]
+	public static extern void* QCheckBox_SuperMinimumSizeHint(void* self);
 	[LinkName("QCheckBox_SetTristate")]
 	public static extern void QCheckBox_SetTristate(void* self);
 	[LinkName("QCheckBox_IsTristate")]
@@ -3624,42 +3963,63 @@ extension CQt
 	public function void QCheckBox_OnEvent_action(void* self, void** e);
 	[LinkName("QCheckBox_OnEvent")]
 	public static extern bool QCheckBox_OnEvent(void* self, QCheckBox_OnEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperEvent")]
+	public static extern bool QCheckBox_SuperEvent(void* self, void** e);
 	[LinkName("QCheckBox_HitButton")]
 	public static extern bool QCheckBox_HitButton(void* self, void** pos);
 	
 	public function void QCheckBox_OnHitButton_action(void* self, void** pos);
 	[LinkName("QCheckBox_OnHitButton")]
 	public static extern bool QCheckBox_OnHitButton(void* self, QCheckBox_OnHitButton_action _action);
+	
+	[LinkName("QCheckBox_SuperHitButton")]
+	public static extern bool QCheckBox_SuperHitButton(void* self, void** pos);
 	[LinkName("QCheckBox_CheckStateSet")]
 	public static extern void QCheckBox_CheckStateSet(void* self);
 	
 	public function void QCheckBox_OnCheckStateSet_action(void* self);
 	[LinkName("QCheckBox_OnCheckStateSet")]
 	public static extern void QCheckBox_OnCheckStateSet(void* self, QCheckBox_OnCheckStateSet_action _action);
+	
+	[LinkName("QCheckBox_SuperCheckStateSet")]
+	public static extern void QCheckBox_SuperCheckStateSet(void* self);
 	[LinkName("QCheckBox_NextCheckState")]
 	public static extern void QCheckBox_NextCheckState(void* self);
 	
 	public function void QCheckBox_OnNextCheckState_action(void* self);
 	[LinkName("QCheckBox_OnNextCheckState")]
 	public static extern void QCheckBox_OnNextCheckState(void* self, QCheckBox_OnNextCheckState_action _action);
+	
+	[LinkName("QCheckBox_SuperNextCheckState")]
+	public static extern void QCheckBox_SuperNextCheckState(void* self);
 	[LinkName("QCheckBox_PaintEvent")]
 	public static extern void QCheckBox_PaintEvent(void* self, void** param1);
 	
 	public function void QCheckBox_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QCheckBox_OnPaintEvent")]
 	public static extern void QCheckBox_OnPaintEvent(void* self, QCheckBox_OnPaintEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperPaintEvent")]
+	public static extern void QCheckBox_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QCheckBox_MouseMoveEvent")]
 	public static extern void QCheckBox_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QCheckBox_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QCheckBox_OnMouseMoveEvent")]
 	public static extern void QCheckBox_OnMouseMoveEvent(void* self, QCheckBox_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperMouseMoveEvent")]
+	public static extern void QCheckBox_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QCheckBox_InitStyleOption")]
 	public static extern void QCheckBox_InitStyleOption(void* self, void** option);
 	
 	public function void QCheckBox_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QCheckBox_OnInitStyleOption")]
 	public static extern void QCheckBox_OnInitStyleOption(void* self, QCheckBox_OnInitStyleOption_action _action);
+	
+	[LinkName("QCheckBox_SuperInitStyleOption")]
+	public static extern void QCheckBox_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QCheckBox_Tr2")]
 	public static extern libqt_string QCheckBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QCheckBox_Tr3")]
@@ -3672,250 +4032,376 @@ extension CQt
 	public function void QCheckBox_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QCheckBox_OnEventFilter")]
 	public static extern bool QCheckBox_OnEventFilter(void* self, QCheckBox_OnEventFilter_action _action);
+	
+	[LinkName("QCheckBox_SuperEventFilter")]
+	public static extern bool QCheckBox_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QCheckBox_TimerEvent")]
 	public static extern void QCheckBox_TimerEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnTimerEvent")]
 	public static extern void QCheckBox_OnTimerEvent(void* self, QCheckBox_OnTimerEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperTimerEvent")]
+	public static extern void QCheckBox_SuperTimerEvent(void* self, void** event);
 	[LinkName("QCheckBox_ChildEvent")]
 	public static extern void QCheckBox_ChildEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnChildEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnChildEvent")]
 	public static extern void QCheckBox_OnChildEvent(void* self, QCheckBox_OnChildEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperChildEvent")]
+	public static extern void QCheckBox_SuperChildEvent(void* self, void** event);
 	[LinkName("QCheckBox_CustomEvent")]
 	public static extern void QCheckBox_CustomEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnCustomEvent")]
 	public static extern void QCheckBox_OnCustomEvent(void* self, QCheckBox_OnCustomEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperCustomEvent")]
+	public static extern void QCheckBox_SuperCustomEvent(void* self, void** event);
 	[LinkName("QCheckBox_ConnectNotify")]
 	public static extern void QCheckBox_ConnectNotify(void* self, void** signal);
 	
 	public function void QCheckBox_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QCheckBox_OnConnectNotify")]
 	public static extern void QCheckBox_OnConnectNotify(void* self, QCheckBox_OnConnectNotify_action _action);
+	
+	[LinkName("QCheckBox_SuperConnectNotify")]
+	public static extern void QCheckBox_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QCheckBox_DisconnectNotify")]
 	public static extern void QCheckBox_DisconnectNotify(void* self, void** signal);
 	
 	public function void QCheckBox_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QCheckBox_OnDisconnectNotify")]
 	public static extern void QCheckBox_OnDisconnectNotify(void* self, QCheckBox_OnDisconnectNotify_action _action);
+	
+	[LinkName("QCheckBox_SuperDisconnectNotify")]
+	public static extern void QCheckBox_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QCheckBox_DevType")]
 	public static extern c_int QCheckBox_DevType(void* self);
 	
 	public function void QCheckBox_OnDevType_action(void* self);
 	[LinkName("QCheckBox_OnDevType")]
 	public static extern c_int QCheckBox_OnDevType(void* self, QCheckBox_OnDevType_action _action);
+	
+	[LinkName("QCheckBox_SuperDevType")]
+	public static extern c_int QCheckBox_SuperDevType(void* self);
 	[LinkName("QCheckBox_PaintEngine")]
 	public static extern void** QCheckBox_PaintEngine(void* self);
 	
 	public function void QCheckBox_OnPaintEngine_action(void* self);
 	[LinkName("QCheckBox_OnPaintEngine")]
 	public static extern void** QCheckBox_OnPaintEngine(void* self, QCheckBox_OnPaintEngine_action _action);
+	
+	[LinkName("QCheckBox_SuperPaintEngine")]
+	public static extern void** QCheckBox_SuperPaintEngine(void* self);
 	[LinkName("QCheckBox_Metric")]
 	public static extern c_int QCheckBox_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QCheckBox_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QCheckBox_OnMetric")]
 	public static extern c_int QCheckBox_OnMetric(void* self, QCheckBox_OnMetric_action _action);
+	
+	[LinkName("QCheckBox_SuperMetric")]
+	public static extern c_int QCheckBox_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QCheckBox_InitPainter")]
 	public static extern void QCheckBox_InitPainter(void* self, void** painter);
 	
 	public function void QCheckBox_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QCheckBox_OnInitPainter")]
 	public static extern void QCheckBox_OnInitPainter(void* self, QCheckBox_OnInitPainter_action _action);
+	
+	[LinkName("QCheckBox_SuperInitPainter")]
+	public static extern void QCheckBox_SuperInitPainter(void* self, void** painter);
 	[LinkName("QCheckBox_Redirected")]
 	public static extern void** QCheckBox_Redirected(void* self, void** offset);
 	
 	public function void QCheckBox_OnRedirected_action(void* self, void** offset);
 	[LinkName("QCheckBox_OnRedirected")]
 	public static extern void** QCheckBox_OnRedirected(void* self, QCheckBox_OnRedirected_action _action);
+	
+	[LinkName("QCheckBox_SuperRedirected")]
+	public static extern void** QCheckBox_SuperRedirected(void* self, void** offset);
 	[LinkName("QCheckBox_SharedPainter")]
 	public static extern void** QCheckBox_SharedPainter(void* self);
 	
 	public function void QCheckBox_OnSharedPainter_action(void* self);
 	[LinkName("QCheckBox_OnSharedPainter")]
 	public static extern void** QCheckBox_OnSharedPainter(void* self, QCheckBox_OnSharedPainter_action _action);
+	
+	[LinkName("QCheckBox_SuperSharedPainter")]
+	public static extern void** QCheckBox_SuperSharedPainter(void* self);
 	[LinkName("QCheckBox_SetVisible")]
 	public static extern void QCheckBox_SetVisible(void* self, bool visible);
 	
 	public function void QCheckBox_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QCheckBox_OnSetVisible")]
 	public static extern void QCheckBox_OnSetVisible(void* self, QCheckBox_OnSetVisible_action _action);
+	
+	[LinkName("QCheckBox_SuperSetVisible")]
+	public static extern void QCheckBox_SuperSetVisible(void* self, bool visible);
 	[LinkName("QCheckBox_HeightForWidth")]
 	public static extern c_int QCheckBox_HeightForWidth(void* self, c_int param1);
 	
 	public function void QCheckBox_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QCheckBox_OnHeightForWidth")]
 	public static extern c_int QCheckBox_OnHeightForWidth(void* self, QCheckBox_OnHeightForWidth_action _action);
+	
+	[LinkName("QCheckBox_SuperHeightForWidth")]
+	public static extern c_int QCheckBox_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QCheckBox_HasHeightForWidth")]
 	public static extern bool QCheckBox_HasHeightForWidth(void* self);
 	
 	public function void QCheckBox_OnHasHeightForWidth_action(void* self);
 	[LinkName("QCheckBox_OnHasHeightForWidth")]
 	public static extern bool QCheckBox_OnHasHeightForWidth(void* self, QCheckBox_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QCheckBox_SuperHasHeightForWidth")]
+	public static extern bool QCheckBox_SuperHasHeightForWidth(void* self);
 	[LinkName("QCheckBox_MousePressEvent")]
 	public static extern void QCheckBox_MousePressEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnMousePressEvent")]
 	public static extern void QCheckBox_OnMousePressEvent(void* self, QCheckBox_OnMousePressEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperMousePressEvent")]
+	public static extern void QCheckBox_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QCheckBox_MouseReleaseEvent")]
 	public static extern void QCheckBox_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnMouseReleaseEvent")]
 	public static extern void QCheckBox_OnMouseReleaseEvent(void* self, QCheckBox_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperMouseReleaseEvent")]
+	public static extern void QCheckBox_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QCheckBox_MouseDoubleClickEvent")]
 	public static extern void QCheckBox_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnMouseDoubleClickEvent")]
 	public static extern void QCheckBox_OnMouseDoubleClickEvent(void* self, QCheckBox_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperMouseDoubleClickEvent")]
+	public static extern void QCheckBox_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QCheckBox_WheelEvent")]
 	public static extern void QCheckBox_WheelEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnWheelEvent")]
 	public static extern void QCheckBox_OnWheelEvent(void* self, QCheckBox_OnWheelEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperWheelEvent")]
+	public static extern void QCheckBox_SuperWheelEvent(void* self, void** event);
 	[LinkName("QCheckBox_KeyPressEvent")]
 	public static extern void QCheckBox_KeyPressEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnKeyPressEvent")]
 	public static extern void QCheckBox_OnKeyPressEvent(void* self, QCheckBox_OnKeyPressEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperKeyPressEvent")]
+	public static extern void QCheckBox_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QCheckBox_KeyReleaseEvent")]
 	public static extern void QCheckBox_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnKeyReleaseEvent")]
 	public static extern void QCheckBox_OnKeyReleaseEvent(void* self, QCheckBox_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperKeyReleaseEvent")]
+	public static extern void QCheckBox_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QCheckBox_FocusInEvent")]
 	public static extern void QCheckBox_FocusInEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnFocusInEvent")]
 	public static extern void QCheckBox_OnFocusInEvent(void* self, QCheckBox_OnFocusInEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperFocusInEvent")]
+	public static extern void QCheckBox_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QCheckBox_FocusOutEvent")]
 	public static extern void QCheckBox_FocusOutEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnFocusOutEvent")]
 	public static extern void QCheckBox_OnFocusOutEvent(void* self, QCheckBox_OnFocusOutEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperFocusOutEvent")]
+	public static extern void QCheckBox_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QCheckBox_EnterEvent")]
 	public static extern void QCheckBox_EnterEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnEnterEvent")]
 	public static extern void QCheckBox_OnEnterEvent(void* self, QCheckBox_OnEnterEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperEnterEvent")]
+	public static extern void QCheckBox_SuperEnterEvent(void* self, void** event);
 	[LinkName("QCheckBox_LeaveEvent")]
 	public static extern void QCheckBox_LeaveEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnLeaveEvent")]
 	public static extern void QCheckBox_OnLeaveEvent(void* self, QCheckBox_OnLeaveEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperLeaveEvent")]
+	public static extern void QCheckBox_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QCheckBox_MoveEvent")]
 	public static extern void QCheckBox_MoveEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnMoveEvent")]
 	public static extern void QCheckBox_OnMoveEvent(void* self, QCheckBox_OnMoveEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperMoveEvent")]
+	public static extern void QCheckBox_SuperMoveEvent(void* self, void** event);
 	[LinkName("QCheckBox_ResizeEvent")]
 	public static extern void QCheckBox_ResizeEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnResizeEvent")]
 	public static extern void QCheckBox_OnResizeEvent(void* self, QCheckBox_OnResizeEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperResizeEvent")]
+	public static extern void QCheckBox_SuperResizeEvent(void* self, void** event);
 	[LinkName("QCheckBox_CloseEvent")]
 	public static extern void QCheckBox_CloseEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnCloseEvent")]
 	public static extern void QCheckBox_OnCloseEvent(void* self, QCheckBox_OnCloseEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperCloseEvent")]
+	public static extern void QCheckBox_SuperCloseEvent(void* self, void** event);
 	[LinkName("QCheckBox_ContextMenuEvent")]
 	public static extern void QCheckBox_ContextMenuEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnContextMenuEvent")]
 	public static extern void QCheckBox_OnContextMenuEvent(void* self, QCheckBox_OnContextMenuEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperContextMenuEvent")]
+	public static extern void QCheckBox_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QCheckBox_TabletEvent")]
 	public static extern void QCheckBox_TabletEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnTabletEvent")]
 	public static extern void QCheckBox_OnTabletEvent(void* self, QCheckBox_OnTabletEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperTabletEvent")]
+	public static extern void QCheckBox_SuperTabletEvent(void* self, void** event);
 	[LinkName("QCheckBox_ActionEvent")]
 	public static extern void QCheckBox_ActionEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnActionEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnActionEvent")]
 	public static extern void QCheckBox_OnActionEvent(void* self, QCheckBox_OnActionEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperActionEvent")]
+	public static extern void QCheckBox_SuperActionEvent(void* self, void** event);
 	[LinkName("QCheckBox_DragEnterEvent")]
 	public static extern void QCheckBox_DragEnterEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnDragEnterEvent")]
 	public static extern void QCheckBox_OnDragEnterEvent(void* self, QCheckBox_OnDragEnterEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperDragEnterEvent")]
+	public static extern void QCheckBox_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QCheckBox_DragMoveEvent")]
 	public static extern void QCheckBox_DragMoveEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnDragMoveEvent")]
 	public static extern void QCheckBox_OnDragMoveEvent(void* self, QCheckBox_OnDragMoveEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperDragMoveEvent")]
+	public static extern void QCheckBox_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QCheckBox_DragLeaveEvent")]
 	public static extern void QCheckBox_DragLeaveEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnDragLeaveEvent")]
 	public static extern void QCheckBox_OnDragLeaveEvent(void* self, QCheckBox_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperDragLeaveEvent")]
+	public static extern void QCheckBox_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QCheckBox_DropEvent")]
 	public static extern void QCheckBox_DropEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnDropEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnDropEvent")]
 	public static extern void QCheckBox_OnDropEvent(void* self, QCheckBox_OnDropEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperDropEvent")]
+	public static extern void QCheckBox_SuperDropEvent(void* self, void** event);
 	[LinkName("QCheckBox_ShowEvent")]
 	public static extern void QCheckBox_ShowEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnShowEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnShowEvent")]
 	public static extern void QCheckBox_OnShowEvent(void* self, QCheckBox_OnShowEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperShowEvent")]
+	public static extern void QCheckBox_SuperShowEvent(void* self, void** event);
 	[LinkName("QCheckBox_HideEvent")]
 	public static extern void QCheckBox_HideEvent(void* self, void** event);
 	
 	public function void QCheckBox_OnHideEvent_action(void* self, void** event);
 	[LinkName("QCheckBox_OnHideEvent")]
 	public static extern void QCheckBox_OnHideEvent(void* self, QCheckBox_OnHideEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperHideEvent")]
+	public static extern void QCheckBox_SuperHideEvent(void* self, void** event);
 	[LinkName("QCheckBox_NativeEvent")]
 	public static extern bool QCheckBox_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QCheckBox_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QCheckBox_OnNativeEvent")]
 	public static extern bool QCheckBox_OnNativeEvent(void* self, QCheckBox_OnNativeEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperNativeEvent")]
+	public static extern bool QCheckBox_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QCheckBox_ChangeEvent")]
 	public static extern void QCheckBox_ChangeEvent(void* self, void** param1);
 	
 	public function void QCheckBox_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QCheckBox_OnChangeEvent")]
 	public static extern void QCheckBox_OnChangeEvent(void* self, QCheckBox_OnChangeEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperChangeEvent")]
+	public static extern void QCheckBox_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QCheckBox_InputMethodEvent")]
 	public static extern void QCheckBox_InputMethodEvent(void* self, void** param1);
 	
 	public function void QCheckBox_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QCheckBox_OnInputMethodEvent")]
 	public static extern void QCheckBox_OnInputMethodEvent(void* self, QCheckBox_OnInputMethodEvent_action _action);
+	
+	[LinkName("QCheckBox_SuperInputMethodEvent")]
+	public static extern void QCheckBox_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QCheckBox_InputMethodQuery")]
 	public static extern void* QCheckBox_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QCheckBox_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QCheckBox_OnInputMethodQuery")]
 	public static extern void* QCheckBox_OnInputMethodQuery(void* self, QCheckBox_OnInputMethodQuery_action _action);
+	
+	[LinkName("QCheckBox_SuperInputMethodQuery")]
+	public static extern void* QCheckBox_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QCheckBox_FocusNextPrevChild")]
 	public static extern bool QCheckBox_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QCheckBox_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QCheckBox_OnFocusNextPrevChild")]
 	public static extern bool QCheckBox_OnFocusNextPrevChild(void* self, QCheckBox_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QCheckBox_SuperFocusNextPrevChild")]
+	public static extern bool QCheckBox_SuperFocusNextPrevChild(void* self, bool next);
 }

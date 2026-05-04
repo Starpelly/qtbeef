@@ -370,6 +370,48 @@ class QStandardItem : IQStandardItem
 	static void QtBf_ConnectSignals(Self obj)
 	{
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QStandardItem_OnData(obj.ObjectPtr,  => QtBeef_QStandardItem_OnData);
+		CQt.QStandardItem_OnMultiData(obj.ObjectPtr,  => QtBeef_QStandardItem_OnMultiData);
+		CQt.QStandardItem_OnSetData(obj.ObjectPtr,  => QtBeef_QStandardItem_OnSetData);
+		CQt.QStandardItem_OnClone(obj.ObjectPtr,  => QtBeef_QStandardItem_OnClone);
+		CQt.QStandardItem_OnType(obj.ObjectPtr,  => QtBeef_QStandardItem_OnType);
+		CQt.QStandardItem_OnRead(obj.ObjectPtr,  => QtBeef_QStandardItem_OnRead);
+		CQt.QStandardItem_OnWrite(obj.ObjectPtr,  => QtBeef_QStandardItem_OnWrite);
+	}
+	static void QtBeef_QStandardItem_OnData(void* ptr, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(role);
+	}
+	static void QtBeef_QStandardItem_OnMultiData(void* ptr, void* roleDataSpan)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMultiData(roleDataSpan);
+	}
+	static void QtBeef_QStandardItem_OnSetData(void* ptr, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(value, role);
+	}
+	static void QtBeef_QStandardItem_OnClone(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClone();
+	}
+	static void QtBeef_QStandardItem_OnType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnType();
+	}
+	static void QtBeef_QStandardItem_OnRead(void* ptr, void** _in)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRead(_in);
+	}
+	static void QtBeef_QStandardItem_OnWrite(void* ptr, void** _out)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWrite(_out);
 	}
 	public this(QStandardItem_Ptr ptr)
 	{
@@ -773,18 +815,27 @@ extension CQt
 	public function void QStandardItem_OnData_action(void* self, c_int role);
 	[LinkName("QStandardItem_OnData")]
 	public static extern void* QStandardItem_OnData(void* self, QStandardItem_OnData_action _action);
+	
+	[LinkName("QStandardItem_SuperData")]
+	public static extern void* QStandardItem_SuperData(void* self, c_int role);
 	[LinkName("QStandardItem_MultiData")]
 	public static extern void QStandardItem_MultiData(void* self, void* roleDataSpan);
 	
 	public function void QStandardItem_OnMultiData_action(void* self, void* roleDataSpan);
 	[LinkName("QStandardItem_OnMultiData")]
 	public static extern void QStandardItem_OnMultiData(void* self, QStandardItem_OnMultiData_action _action);
+	
+	[LinkName("QStandardItem_SuperMultiData")]
+	public static extern void QStandardItem_SuperMultiData(void* self, void* roleDataSpan);
 	[LinkName("QStandardItem_SetData")]
 	public static extern void QStandardItem_SetData(void* self, void** value, c_int role);
 	
 	public function void QStandardItem_OnSetData_action(void* self, void** value, c_int role);
 	[LinkName("QStandardItem_OnSetData")]
 	public static extern void QStandardItem_OnSetData(void* self, QStandardItem_OnSetData_action _action);
+	
+	[LinkName("QStandardItem_SuperSetData")]
+	public static extern void QStandardItem_SuperSetData(void* self, void** value, c_int role);
 	[LinkName("QStandardItem_ClearData")]
 	public static extern void QStandardItem_ClearData(void* self);
 	[LinkName("QStandardItem_Text")]
@@ -943,30 +994,45 @@ extension CQt
 	public function void QStandardItem_OnClone_action(void* self);
 	[LinkName("QStandardItem_OnClone")]
 	public static extern void** QStandardItem_OnClone(void* self, QStandardItem_OnClone_action _action);
+	
+	[LinkName("QStandardItem_SuperClone")]
+	public static extern void** QStandardItem_SuperClone(void* self);
 	[LinkName("QStandardItem_Type")]
 	public static extern c_int QStandardItem_Type(void* self);
 	
 	public function void QStandardItem_OnType_action(void* self);
 	[LinkName("QStandardItem_OnType")]
 	public static extern c_int QStandardItem_OnType(void* self, QStandardItem_OnType_action _action);
+	
+	[LinkName("QStandardItem_SuperType")]
+	public static extern c_int QStandardItem_SuperType(void* self);
 	[LinkName("QStandardItem_Read")]
 	public static extern void QStandardItem_Read(void* self, void** _in);
 	
 	public function void QStandardItem_OnRead_action(void* self, void** _in);
 	[LinkName("QStandardItem_OnRead")]
 	public static extern void QStandardItem_OnRead(void* self, QStandardItem_OnRead_action _action);
+	
+	[LinkName("QStandardItem_SuperRead")]
+	public static extern void QStandardItem_SuperRead(void* self, void** _in);
 	[LinkName("QStandardItem_Write")]
 	public static extern void QStandardItem_Write(void* self, void** _out);
 	
 	public function void QStandardItem_OnWrite_action(void* self, void** _out);
 	[LinkName("QStandardItem_OnWrite")]
 	public static extern void QStandardItem_OnWrite(void* self, QStandardItem_OnWrite_action _action);
+	
+	[LinkName("QStandardItem_SuperWrite")]
+	public static extern void QStandardItem_SuperWrite(void* self, void** _out);
 	[LinkName("QStandardItem_OperatorLesser")]
 	public static extern bool QStandardItem_OperatorLesser(void* self, void** other);
 	
 	public function void QStandardItem_OnOperatorLesser_action(void* self, void** other);
 	[LinkName("QStandardItem_OnOperatorLesser")]
 	public static extern bool QStandardItem_OnOperatorLesser(void* self, QStandardItem_OnOperatorLesser_action _action);
+	
+	[LinkName("QStandardItem_SuperOperatorLesser")]
+	public static extern bool QStandardItem_SuperOperatorLesser(void* self, void** other);
 	[LinkName("QStandardItem_OperatorAssign")]
 	public static extern void QStandardItem_OperatorAssign(void* self, void** other);
 	[LinkName("QStandardItem_EmitDataChanged")]
@@ -1737,6 +1803,53 @@ class QStandardItemModel : IQStandardItemModel, IQAbstractItemModel, IQObject
 		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged2);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1);
 		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2);
+		CQt.QStandardItemModel_OnMetaObject(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnMetaObject);
+		CQt.QStandardItemModel_OnMetacast(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnMetacast);
+		CQt.QStandardItemModel_OnMetacall(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnMetacall);
+		CQt.QStandardItemModel_OnRoleNames(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnRoleNames);
+		CQt.QStandardItemModel_OnIndex(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnIndex);
+		CQt.QStandardItemModel_OnParent(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnParent);
+		CQt.QStandardItemModel_OnRowCount(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnRowCount);
+		CQt.QStandardItemModel_OnColumnCount(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnColumnCount);
+		CQt.QStandardItemModel_OnHasChildren(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnHasChildren);
+		CQt.QStandardItemModel_OnData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnData);
+		CQt.QStandardItemModel_OnMultiData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnMultiData);
+		CQt.QStandardItemModel_OnSetData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnSetData);
+		CQt.QStandardItemModel_OnClearItemData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnClearItemData);
+		CQt.QStandardItemModel_OnHeaderData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnHeaderData);
+		CQt.QStandardItemModel_OnSetHeaderData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnSetHeaderData);
+		CQt.QStandardItemModel_OnInsertRows(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnInsertRows);
+		CQt.QStandardItemModel_OnInsertColumns(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnInsertColumns);
+		CQt.QStandardItemModel_OnRemoveRows(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnRemoveRows);
+		CQt.QStandardItemModel_OnRemoveColumns(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnRemoveColumns);
+		CQt.QStandardItemModel_OnFlags(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnFlags);
+		CQt.QStandardItemModel_OnSupportedDropActions(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnSupportedDropActions);
+		CQt.QStandardItemModel_OnItemData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnItemData);
+		CQt.QStandardItemModel_OnSetItemData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnSetItemData);
+		CQt.QStandardItemModel_OnSort(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnSort);
+		CQt.QStandardItemModel_OnMimeTypes(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnMimeTypes);
+		CQt.QStandardItemModel_OnMimeData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnMimeData);
+		CQt.QStandardItemModel_OnDropMimeData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnDropMimeData);
+		CQt.QStandardItemModel_OnEvent(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnEvent);
+		CQt.QStandardItemModel_OnEventFilter(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnEventFilter);
+		CQt.QStandardItemModel_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnTimerEvent);
+		CQt.QStandardItemModel_OnChildEvent(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnChildEvent);
+		CQt.QStandardItemModel_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnCustomEvent);
+		CQt.QStandardItemModel_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnConnectNotify);
+		CQt.QStandardItemModel_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnDisconnectNotify);
+		CQt.QStandardItemModel_OnSibling(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnSibling);
+		CQt.QStandardItemModel_OnCanDropMimeData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnCanDropMimeData);
+		CQt.QStandardItemModel_OnSupportedDragActions(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnSupportedDragActions);
+		CQt.QStandardItemModel_OnMoveRows(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnMoveRows);
+		CQt.QStandardItemModel_OnMoveColumns(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnMoveColumns);
+		CQt.QStandardItemModel_OnFetchMore(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnFetchMore);
+		CQt.QStandardItemModel_OnCanFetchMore(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnCanFetchMore);
+		CQt.QStandardItemModel_OnBuddy(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnBuddy);
+		CQt.QStandardItemModel_OnMatch(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnMatch);
+		CQt.QStandardItemModel_OnSpan(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnSpan);
+		CQt.QStandardItemModel_OnSubmit(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnSubmit);
+		CQt.QStandardItemModel_OnRevert(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnRevert);
+		CQt.QStandardItemModel_OnResetInternalData(obj.ObjectPtr,  => QtBeef_QStandardItemModel_OnResetInternalData);
 	}
 	public Event<delegate void(void** item)> OnItemChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -1809,6 +1922,241 @@ class QStandardItemModel : IQStandardItemModel, IQAbstractItemModel, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QStandardItemModel_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QStandardItemModel_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QStandardItemModel_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QStandardItemModel_OnRoleNames(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRoleNames();
+	}
+	static void QtBeef_QStandardItemModel_OnIndex(void* ptr, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndex(row, column, parent);
+	}
+	static void QtBeef_QStandardItemModel_OnParent(void* ptr, void** child)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParent(child);
+	}
+	static void QtBeef_QStandardItemModel_OnRowCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRowCount(parent);
+	}
+	static void QtBeef_QStandardItemModel_OnColumnCount(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColumnCount(parent);
+	}
+	static void QtBeef_QStandardItemModel_OnHasChildren(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasChildren(parent);
+	}
+	static void QtBeef_QStandardItemModel_OnData(void* ptr, void** index, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnData(index, role);
+	}
+	static void QtBeef_QStandardItemModel_OnMultiData(void* ptr, void** index, void* roleDataSpan)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMultiData(index, roleDataSpan);
+	}
+	static void QtBeef_QStandardItemModel_OnSetData(void* ptr, void** index, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetData(index, value, role);
+	}
+	static void QtBeef_QStandardItemModel_OnClearItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClearItemData(index);
+	}
+	static void QtBeef_QStandardItemModel_OnHeaderData(void* ptr, c_int section, Qt_Orientation orientation, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderData(section, orientation, role);
+	}
+	static void QtBeef_QStandardItemModel_OnSetHeaderData(void* ptr, c_int section, Qt_Orientation orientation, void** value, c_int role)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetHeaderData(section, orientation, value, role);
+	}
+	static void QtBeef_QStandardItemModel_OnInsertRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertRows(row, count, parent);
+	}
+	static void QtBeef_QStandardItemModel_OnInsertColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInsertColumns(column, count, parent);
+	}
+	static void QtBeef_QStandardItemModel_OnRemoveRows(void* ptr, c_int row, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveRows(row, count, parent);
+	}
+	static void QtBeef_QStandardItemModel_OnRemoveColumns(void* ptr, c_int column, c_int count, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveColumns(column, count, parent);
+	}
+	static void QtBeef_QStandardItemModel_OnFlags(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFlags(index);
+	}
+	static void QtBeef_QStandardItemModel_OnSupportedDropActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDropActions();
+	}
+	static void QtBeef_QStandardItemModel_OnItemData(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemData(index);
+	}
+	static void QtBeef_QStandardItemModel_OnSetItemData(void* ptr, void** index, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetItemData(index, roles);
+	}
+	static void QtBeef_QStandardItemModel_OnSort(void* ptr, c_int column, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSort(column, order);
+	}
+	static void QtBeef_QStandardItemModel_OnMimeTypes(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeTypes();
+	}
+	static void QtBeef_QStandardItemModel_OnMimeData(void* ptr, void** indexes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMimeData(indexes);
+	}
+	static void QtBeef_QStandardItemModel_OnDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QStandardItemModel_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QStandardItemModel_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QStandardItemModel_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QStandardItemModel_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QStandardItemModel_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QStandardItemModel_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QStandardItemModel_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QStandardItemModel_OnSibling(void* ptr, c_int row, c_int column, void** idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSibling(row, column, idx);
+	}
+	static void QtBeef_QStandardItemModel_OnCanDropMimeData(void* ptr, void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanDropMimeData(data, action, row, column, parent);
+	}
+	static void QtBeef_QStandardItemModel_OnSupportedDragActions(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSupportedDragActions();
+	}
+	static void QtBeef_QStandardItemModel_OnMoveRows(void* ptr, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QStandardItemModel_OnMoveColumns(void* ptr, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+	}
+	static void QtBeef_QStandardItemModel_OnFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFetchMore(parent);
+	}
+	static void QtBeef_QStandardItemModel_OnCanFetchMore(void* ptr, void** parent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanFetchMore(parent);
+	}
+	static void QtBeef_QStandardItemModel_OnBuddy(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBuddy(index);
+	}
+	static void QtBeef_QStandardItemModel_OnMatch(void* ptr, void** start, c_int role, void** value, c_int hits, void* flags)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMatch(start, role, value, hits, flags);
+	}
+	static void QtBeef_QStandardItemModel_OnSpan(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSpan(index);
+	}
+	static void QtBeef_QStandardItemModel_OnSubmit(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSubmit();
+	}
+	static void QtBeef_QStandardItemModel_OnRevert(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRevert();
+	}
+	static void QtBeef_QStandardItemModel_OnResetInternalData(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResetInternalData();
 	}
 	public this(QStandardItemModel_Ptr ptr)
 	{
@@ -2579,18 +2927,27 @@ extension CQt
 	public function void QStandardItemModel_OnMetaObject_action(void* self);
 	[LinkName("QStandardItemModel_OnMetaObject")]
 	public static extern void** QStandardItemModel_OnMetaObject(void* self, QStandardItemModel_OnMetaObject_action _action);
+	
+	[LinkName("QStandardItemModel_SuperMetaObject")]
+	public static extern void** QStandardItemModel_SuperMetaObject(void* self);
 	[LinkName("QStandardItemModel_Qt_Metacast")]
 	public static extern void* QStandardItemModel_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QStandardItemModel_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QStandardItemModel_OnMetacast")]
 	public static extern void* QStandardItemModel_OnMetacast(void* self, QStandardItemModel_OnMetacast_action _action);
+	
+	[LinkName("QStandardItemModel_SuperMetacast")]
+	public static extern void* QStandardItemModel_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QStandardItemModel_Qt_Metacall")]
 	public static extern c_int QStandardItemModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QStandardItemModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStandardItemModel_OnMetacall")]
 	public static extern c_int QStandardItemModel_OnMetacall(void* self, QStandardItemModel_OnMetacall_action _action);
+	
+	[LinkName("QStandardItemModel_SuperMetacall")]
+	public static extern c_int QStandardItemModel_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QStandardItemModel_Tr")]
 	public static extern libqt_string QStandardItemModel_Tr(c_char* s);
 	[LinkName("QStandardItemModel_SetItemRoleNames")]
@@ -2601,120 +2958,180 @@ extension CQt
 	public function void QStandardItemModel_OnRoleNames_action(void* self);
 	[LinkName("QStandardItemModel_OnRoleNames")]
 	public static extern void* QStandardItemModel_OnRoleNames(void* self, QStandardItemModel_OnRoleNames_action _action);
+	
+	[LinkName("QStandardItemModel_SuperRoleNames")]
+	public static extern void* QStandardItemModel_SuperRoleNames(void* self);
 	[LinkName("QStandardItemModel_Index")]
 	public static extern void* QStandardItemModel_Index(void* self, c_int row, c_int column, void** parent);
 	
 	public function void QStandardItemModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QStandardItemModel_OnIndex")]
 	public static extern void* QStandardItemModel_OnIndex(void* self, QStandardItemModel_OnIndex_action _action);
+	
+	[LinkName("QStandardItemModel_SuperIndex")]
+	public static extern void* QStandardItemModel_SuperIndex(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QStandardItemModel_Parent")]
 	public static extern void* QStandardItemModel_Parent(void* self, void** child);
 	
 	public function void QStandardItemModel_OnParent_action(void* self, void** child);
 	[LinkName("QStandardItemModel_OnParent")]
 	public static extern void* QStandardItemModel_OnParent(void* self, QStandardItemModel_OnParent_action _action);
+	
+	[LinkName("QStandardItemModel_SuperParent")]
+	public static extern void* QStandardItemModel_SuperParent(void* self, void** child);
 	[LinkName("QStandardItemModel_RowCount")]
 	public static extern c_int QStandardItemModel_RowCount(void* self, void** parent);
 	
 	public function void QStandardItemModel_OnRowCount_action(void* self, void** parent);
 	[LinkName("QStandardItemModel_OnRowCount")]
 	public static extern c_int QStandardItemModel_OnRowCount(void* self, QStandardItemModel_OnRowCount_action _action);
+	
+	[LinkName("QStandardItemModel_SuperRowCount")]
+	public static extern c_int QStandardItemModel_SuperRowCount(void* self, void** parent);
 	[LinkName("QStandardItemModel_ColumnCount")]
 	public static extern c_int QStandardItemModel_ColumnCount(void* self, void** parent);
 	
 	public function void QStandardItemModel_OnColumnCount_action(void* self, void** parent);
 	[LinkName("QStandardItemModel_OnColumnCount")]
 	public static extern c_int QStandardItemModel_OnColumnCount(void* self, QStandardItemModel_OnColumnCount_action _action);
+	
+	[LinkName("QStandardItemModel_SuperColumnCount")]
+	public static extern c_int QStandardItemModel_SuperColumnCount(void* self, void** parent);
 	[LinkName("QStandardItemModel_HasChildren")]
 	public static extern bool QStandardItemModel_HasChildren(void* self, void** parent);
 	
 	public function void QStandardItemModel_OnHasChildren_action(void* self, void** parent);
 	[LinkName("QStandardItemModel_OnHasChildren")]
 	public static extern bool QStandardItemModel_OnHasChildren(void* self, QStandardItemModel_OnHasChildren_action _action);
+	
+	[LinkName("QStandardItemModel_SuperHasChildren")]
+	public static extern bool QStandardItemModel_SuperHasChildren(void* self, void** parent);
 	[LinkName("QStandardItemModel_Data")]
 	public static extern void* QStandardItemModel_Data(void* self, void** index, c_int role);
 	
 	public function void QStandardItemModel_OnData_action(void* self, void** index, c_int role);
 	[LinkName("QStandardItemModel_OnData")]
 	public static extern void* QStandardItemModel_OnData(void* self, QStandardItemModel_OnData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperData")]
+	public static extern void* QStandardItemModel_SuperData(void* self, void** index, c_int role);
 	[LinkName("QStandardItemModel_MultiData")]
 	public static extern void QStandardItemModel_MultiData(void* self, void** index, void* roleDataSpan);
 	
 	public function void QStandardItemModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
 	[LinkName("QStandardItemModel_OnMultiData")]
 	public static extern void QStandardItemModel_OnMultiData(void* self, QStandardItemModel_OnMultiData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperMultiData")]
+	public static extern void QStandardItemModel_SuperMultiData(void* self, void** index, void* roleDataSpan);
 	[LinkName("QStandardItemModel_SetData")]
 	public static extern bool QStandardItemModel_SetData(void* self, void** index, void** value, c_int role);
 	
 	public function void QStandardItemModel_OnSetData_action(void* self, void** index, void** value, c_int role);
 	[LinkName("QStandardItemModel_OnSetData")]
 	public static extern bool QStandardItemModel_OnSetData(void* self, QStandardItemModel_OnSetData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperSetData")]
+	public static extern bool QStandardItemModel_SuperSetData(void* self, void** index, void** value, c_int role);
 	[LinkName("QStandardItemModel_ClearItemData")]
 	public static extern bool QStandardItemModel_ClearItemData(void* self, void** index);
 	
 	public function void QStandardItemModel_OnClearItemData_action(void* self, void** index);
 	[LinkName("QStandardItemModel_OnClearItemData")]
 	public static extern bool QStandardItemModel_OnClearItemData(void* self, QStandardItemModel_OnClearItemData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperClearItemData")]
+	public static extern bool QStandardItemModel_SuperClearItemData(void* self, void** index);
 	[LinkName("QStandardItemModel_HeaderData")]
 	public static extern void* QStandardItemModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	
 	public function void QStandardItemModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QStandardItemModel_OnHeaderData")]
 	public static extern void* QStandardItemModel_OnHeaderData(void* self, QStandardItemModel_OnHeaderData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperHeaderData")]
+	public static extern void* QStandardItemModel_SuperHeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QStandardItemModel_SetHeaderData")]
 	public static extern bool QStandardItemModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	
 	public function void QStandardItemModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QStandardItemModel_OnSetHeaderData")]
 	public static extern bool QStandardItemModel_OnSetHeaderData(void* self, QStandardItemModel_OnSetHeaderData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperSetHeaderData")]
+	public static extern bool QStandardItemModel_SuperSetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
 	[LinkName("QStandardItemModel_InsertRows")]
 	public static extern bool QStandardItemModel_InsertRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QStandardItemModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QStandardItemModel_OnInsertRows")]
 	public static extern bool QStandardItemModel_OnInsertRows(void* self, QStandardItemModel_OnInsertRows_action _action);
+	
+	[LinkName("QStandardItemModel_SuperInsertRows")]
+	public static extern bool QStandardItemModel_SuperInsertRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QStandardItemModel_InsertColumns")]
 	public static extern bool QStandardItemModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QStandardItemModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QStandardItemModel_OnInsertColumns")]
 	public static extern bool QStandardItemModel_OnInsertColumns(void* self, QStandardItemModel_OnInsertColumns_action _action);
+	
+	[LinkName("QStandardItemModel_SuperInsertColumns")]
+	public static extern bool QStandardItemModel_SuperInsertColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QStandardItemModel_RemoveRows")]
 	public static extern bool QStandardItemModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
 	
 	public function void QStandardItemModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QStandardItemModel_OnRemoveRows")]
 	public static extern bool QStandardItemModel_OnRemoveRows(void* self, QStandardItemModel_OnRemoveRows_action _action);
+	
+	[LinkName("QStandardItemModel_SuperRemoveRows")]
+	public static extern bool QStandardItemModel_SuperRemoveRows(void* self, c_int row, c_int count, void** parent);
 	[LinkName("QStandardItemModel_RemoveColumns")]
 	public static extern bool QStandardItemModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
 	
 	public function void QStandardItemModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QStandardItemModel_OnRemoveColumns")]
 	public static extern bool QStandardItemModel_OnRemoveColumns(void* self, QStandardItemModel_OnRemoveColumns_action _action);
+	
+	[LinkName("QStandardItemModel_SuperRemoveColumns")]
+	public static extern bool QStandardItemModel_SuperRemoveColumns(void* self, c_int column, c_int count, void** parent);
 	[LinkName("QStandardItemModel_Flags")]
 	public static extern void* QStandardItemModel_Flags(void* self, void** index);
 	
 	public function void QStandardItemModel_OnFlags_action(void* self, void** index);
 	[LinkName("QStandardItemModel_OnFlags")]
 	public static extern void* QStandardItemModel_OnFlags(void* self, QStandardItemModel_OnFlags_action _action);
+	
+	[LinkName("QStandardItemModel_SuperFlags")]
+	public static extern void* QStandardItemModel_SuperFlags(void* self, void** index);
 	[LinkName("QStandardItemModel_SupportedDropActions")]
 	public static extern void* QStandardItemModel_SupportedDropActions(void* self);
 	
 	public function void QStandardItemModel_OnSupportedDropActions_action(void* self);
 	[LinkName("QStandardItemModel_OnSupportedDropActions")]
 	public static extern void* QStandardItemModel_OnSupportedDropActions(void* self, QStandardItemModel_OnSupportedDropActions_action _action);
+	
+	[LinkName("QStandardItemModel_SuperSupportedDropActions")]
+	public static extern void* QStandardItemModel_SuperSupportedDropActions(void* self);
 	[LinkName("QStandardItemModel_ItemData")]
 	public static extern void* QStandardItemModel_ItemData(void* self, void** index);
 	
 	public function void QStandardItemModel_OnItemData_action(void* self, void** index);
 	[LinkName("QStandardItemModel_OnItemData")]
 	public static extern void* QStandardItemModel_OnItemData(void* self, QStandardItemModel_OnItemData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperItemData")]
+	public static extern void* QStandardItemModel_SuperItemData(void* self, void** index);
 	[LinkName("QStandardItemModel_SetItemData")]
 	public static extern bool QStandardItemModel_SetItemData(void* self, void** index, void** roles);
 	
 	public function void QStandardItemModel_OnSetItemData_action(void* self, void** index, void** roles);
 	[LinkName("QStandardItemModel_OnSetItemData")]
 	public static extern bool QStandardItemModel_OnSetItemData(void* self, QStandardItemModel_OnSetItemData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperSetItemData")]
+	public static extern bool QStandardItemModel_SuperSetItemData(void* self, void** index, void** roles);
 	[LinkName("QStandardItemModel_Clear")]
 	public static extern void QStandardItemModel_Clear(void* self);
 	[LinkName("QStandardItemModel_Sort")]
@@ -2723,6 +3140,9 @@ extension CQt
 	public function void QStandardItemModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QStandardItemModel_OnSort")]
 	public static extern void QStandardItemModel_OnSort(void* self, QStandardItemModel_OnSort_action _action);
+	
+	[LinkName("QStandardItemModel_SuperSort")]
+	public static extern void QStandardItemModel_SuperSort(void* self, c_int column, Qt_SortOrder order);
 	[LinkName("QStandardItemModel_ItemFromIndex")]
 	public static extern void** QStandardItemModel_ItemFromIndex(void* self, void** index);
 	[LinkName("QStandardItemModel_IndexFromItem")]
@@ -2793,18 +3213,27 @@ extension CQt
 	public function void QStandardItemModel_OnMimeTypes_action(void* self);
 	[LinkName("QStandardItemModel_OnMimeTypes")]
 	public static extern void* QStandardItemModel_OnMimeTypes(void* self, QStandardItemModel_OnMimeTypes_action _action);
+	
+	[LinkName("QStandardItemModel_SuperMimeTypes")]
+	public static extern void* QStandardItemModel_SuperMimeTypes(void* self);
 	[LinkName("QStandardItemModel_MimeData")]
 	public static extern void** QStandardItemModel_MimeData(void* self, void** indexes);
 	
 	public function void QStandardItemModel_OnMimeData_action(void* self, void** indexes);
 	[LinkName("QStandardItemModel_OnMimeData")]
 	public static extern void** QStandardItemModel_OnMimeData(void* self, QStandardItemModel_OnMimeData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperMimeData")]
+	public static extern void** QStandardItemModel_SuperMimeData(void* self, void** indexes);
 	[LinkName("QStandardItemModel_DropMimeData")]
 	public static extern bool QStandardItemModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QStandardItemModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QStandardItemModel_OnDropMimeData")]
 	public static extern bool QStandardItemModel_OnDropMimeData(void* self, QStandardItemModel_OnDropMimeData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperDropMimeData")]
+	public static extern bool QStandardItemModel_SuperDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QStandardItemModel_ItemChanged")]
 	public static extern void QStandardItemModel_ItemChanged(void* self, void** item);
 	
@@ -2833,120 +3262,180 @@ extension CQt
 	public function void QStandardItemModel_OnEvent_action(void* self, void** event);
 	[LinkName("QStandardItemModel_OnEvent")]
 	public static extern bool QStandardItemModel_OnEvent(void* self, QStandardItemModel_OnEvent_action _action);
+	
+	[LinkName("QStandardItemModel_SuperEvent")]
+	public static extern bool QStandardItemModel_SuperEvent(void* self, void** event);
 	[LinkName("QStandardItemModel_EventFilter")]
 	public static extern bool QStandardItemModel_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QStandardItemModel_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QStandardItemModel_OnEventFilter")]
 	public static extern bool QStandardItemModel_OnEventFilter(void* self, QStandardItemModel_OnEventFilter_action _action);
+	
+	[LinkName("QStandardItemModel_SuperEventFilter")]
+	public static extern bool QStandardItemModel_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QStandardItemModel_TimerEvent")]
 	public static extern void QStandardItemModel_TimerEvent(void* self, void** event);
 	
 	public function void QStandardItemModel_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QStandardItemModel_OnTimerEvent")]
 	public static extern void QStandardItemModel_OnTimerEvent(void* self, QStandardItemModel_OnTimerEvent_action _action);
+	
+	[LinkName("QStandardItemModel_SuperTimerEvent")]
+	public static extern void QStandardItemModel_SuperTimerEvent(void* self, void** event);
 	[LinkName("QStandardItemModel_ChildEvent")]
 	public static extern void QStandardItemModel_ChildEvent(void* self, void** event);
 	
 	public function void QStandardItemModel_OnChildEvent_action(void* self, void** event);
 	[LinkName("QStandardItemModel_OnChildEvent")]
 	public static extern void QStandardItemModel_OnChildEvent(void* self, QStandardItemModel_OnChildEvent_action _action);
+	
+	[LinkName("QStandardItemModel_SuperChildEvent")]
+	public static extern void QStandardItemModel_SuperChildEvent(void* self, void** event);
 	[LinkName("QStandardItemModel_CustomEvent")]
 	public static extern void QStandardItemModel_CustomEvent(void* self, void** event);
 	
 	public function void QStandardItemModel_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QStandardItemModel_OnCustomEvent")]
 	public static extern void QStandardItemModel_OnCustomEvent(void* self, QStandardItemModel_OnCustomEvent_action _action);
+	
+	[LinkName("QStandardItemModel_SuperCustomEvent")]
+	public static extern void QStandardItemModel_SuperCustomEvent(void* self, void** event);
 	[LinkName("QStandardItemModel_ConnectNotify")]
 	public static extern void QStandardItemModel_ConnectNotify(void* self, void** signal);
 	
 	public function void QStandardItemModel_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QStandardItemModel_OnConnectNotify")]
 	public static extern void QStandardItemModel_OnConnectNotify(void* self, QStandardItemModel_OnConnectNotify_action _action);
+	
+	[LinkName("QStandardItemModel_SuperConnectNotify")]
+	public static extern void QStandardItemModel_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QStandardItemModel_DisconnectNotify")]
 	public static extern void QStandardItemModel_DisconnectNotify(void* self, void** signal);
 	
 	public function void QStandardItemModel_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QStandardItemModel_OnDisconnectNotify")]
 	public static extern void QStandardItemModel_OnDisconnectNotify(void* self, QStandardItemModel_OnDisconnectNotify_action _action);
+	
+	[LinkName("QStandardItemModel_SuperDisconnectNotify")]
+	public static extern void QStandardItemModel_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QStandardItemModel_Sibling")]
 	public static extern void* QStandardItemModel_Sibling(void* self, c_int row, c_int column, void** idx);
 	
 	public function void QStandardItemModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QStandardItemModel_OnSibling")]
 	public static extern void* QStandardItemModel_OnSibling(void* self, QStandardItemModel_OnSibling_action _action);
+	
+	[LinkName("QStandardItemModel_SuperSibling")]
+	public static extern void* QStandardItemModel_SuperSibling(void* self, c_int row, c_int column, void** idx);
 	[LinkName("QStandardItemModel_CanDropMimeData")]
 	public static extern bool QStandardItemModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	
 	public function void QStandardItemModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QStandardItemModel_OnCanDropMimeData")]
 	public static extern bool QStandardItemModel_OnCanDropMimeData(void* self, QStandardItemModel_OnCanDropMimeData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperCanDropMimeData")]
+	public static extern bool QStandardItemModel_SuperCanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QStandardItemModel_SupportedDragActions")]
 	public static extern void* QStandardItemModel_SupportedDragActions(void* self);
 	
 	public function void QStandardItemModel_OnSupportedDragActions_action(void* self);
 	[LinkName("QStandardItemModel_OnSupportedDragActions")]
 	public static extern void* QStandardItemModel_OnSupportedDragActions(void* self, QStandardItemModel_OnSupportedDragActions_action _action);
+	
+	[LinkName("QStandardItemModel_SuperSupportedDragActions")]
+	public static extern void* QStandardItemModel_SuperSupportedDragActions(void* self);
 	[LinkName("QStandardItemModel_MoveRows")]
 	public static extern bool QStandardItemModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QStandardItemModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QStandardItemModel_OnMoveRows")]
 	public static extern bool QStandardItemModel_OnMoveRows(void* self, QStandardItemModel_OnMoveRows_action _action);
+	
+	[LinkName("QStandardItemModel_SuperMoveRows")]
+	public static extern bool QStandardItemModel_SuperMoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QStandardItemModel_MoveColumns")]
 	public static extern bool QStandardItemModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	
 	public function void QStandardItemModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QStandardItemModel_OnMoveColumns")]
 	public static extern bool QStandardItemModel_OnMoveColumns(void* self, QStandardItemModel_OnMoveColumns_action _action);
+	
+	[LinkName("QStandardItemModel_SuperMoveColumns")]
+	public static extern bool QStandardItemModel_SuperMoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
 	[LinkName("QStandardItemModel_FetchMore")]
 	public static extern void QStandardItemModel_FetchMore(void* self, void** parent);
 	
 	public function void QStandardItemModel_OnFetchMore_action(void* self, void** parent);
 	[LinkName("QStandardItemModel_OnFetchMore")]
 	public static extern void QStandardItemModel_OnFetchMore(void* self, QStandardItemModel_OnFetchMore_action _action);
+	
+	[LinkName("QStandardItemModel_SuperFetchMore")]
+	public static extern void QStandardItemModel_SuperFetchMore(void* self, void** parent);
 	[LinkName("QStandardItemModel_CanFetchMore")]
 	public static extern bool QStandardItemModel_CanFetchMore(void* self, void** parent);
 	
 	public function void QStandardItemModel_OnCanFetchMore_action(void* self, void** parent);
 	[LinkName("QStandardItemModel_OnCanFetchMore")]
 	public static extern bool QStandardItemModel_OnCanFetchMore(void* self, QStandardItemModel_OnCanFetchMore_action _action);
+	
+	[LinkName("QStandardItemModel_SuperCanFetchMore")]
+	public static extern bool QStandardItemModel_SuperCanFetchMore(void* self, void** parent);
 	[LinkName("QStandardItemModel_Buddy")]
 	public static extern void* QStandardItemModel_Buddy(void* self, void** index);
 	
 	public function void QStandardItemModel_OnBuddy_action(void* self, void** index);
 	[LinkName("QStandardItemModel_OnBuddy")]
 	public static extern void* QStandardItemModel_OnBuddy(void* self, QStandardItemModel_OnBuddy_action _action);
+	
+	[LinkName("QStandardItemModel_SuperBuddy")]
+	public static extern void* QStandardItemModel_SuperBuddy(void* self, void** index);
 	[LinkName("QStandardItemModel_Match")]
 	public static extern void* QStandardItemModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	
 	public function void QStandardItemModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QStandardItemModel_OnMatch")]
 	public static extern void* QStandardItemModel_OnMatch(void* self, QStandardItemModel_OnMatch_action _action);
+	
+	[LinkName("QStandardItemModel_SuperMatch")]
+	public static extern void* QStandardItemModel_SuperMatch(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
 	[LinkName("QStandardItemModel_Span")]
 	public static extern void* QStandardItemModel_Span(void* self, void** index);
 	
 	public function void QStandardItemModel_OnSpan_action(void* self, void** index);
 	[LinkName("QStandardItemModel_OnSpan")]
 	public static extern void* QStandardItemModel_OnSpan(void* self, QStandardItemModel_OnSpan_action _action);
+	
+	[LinkName("QStandardItemModel_SuperSpan")]
+	public static extern void* QStandardItemModel_SuperSpan(void* self, void** index);
 	[LinkName("QStandardItemModel_Submit")]
 	public static extern bool QStandardItemModel_Submit(void* self);
 	
 	public function void QStandardItemModel_OnSubmit_action(void* self);
 	[LinkName("QStandardItemModel_OnSubmit")]
 	public static extern bool QStandardItemModel_OnSubmit(void* self, QStandardItemModel_OnSubmit_action _action);
+	
+	[LinkName("QStandardItemModel_SuperSubmit")]
+	public static extern bool QStandardItemModel_SuperSubmit(void* self);
 	[LinkName("QStandardItemModel_Revert")]
 	public static extern void QStandardItemModel_Revert(void* self);
 	
 	public function void QStandardItemModel_OnRevert_action(void* self);
 	[LinkName("QStandardItemModel_OnRevert")]
 	public static extern void QStandardItemModel_OnRevert(void* self, QStandardItemModel_OnRevert_action _action);
+	
+	[LinkName("QStandardItemModel_SuperRevert")]
+	public static extern void QStandardItemModel_SuperRevert(void* self);
 	[LinkName("QStandardItemModel_ResetInternalData")]
 	public static extern void QStandardItemModel_ResetInternalData(void* self);
 	
 	public function void QStandardItemModel_OnResetInternalData_action(void* self);
 	[LinkName("QStandardItemModel_OnResetInternalData")]
 	public static extern void QStandardItemModel_OnResetInternalData(void* self, QStandardItemModel_OnResetInternalData_action _action);
+	
+	[LinkName("QStandardItemModel_SuperResetInternalData")]
+	public static extern void QStandardItemModel_SuperResetInternalData(void* self);
 }
 [AllowDuplicates]
 enum QStandardItem_ItemType

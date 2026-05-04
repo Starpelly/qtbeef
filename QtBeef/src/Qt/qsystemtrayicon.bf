@@ -354,6 +354,16 @@ class QSystemTrayIcon : IQSystemTrayIcon, IQObject
 		CQt.QSystemTrayIcon_Connect_MessageClicked(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_Connect_MessageClicked);
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QSystemTrayIcon_OnMetaObject(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnMetaObject);
+		CQt.QSystemTrayIcon_OnMetacast(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnMetacast);
+		CQt.QSystemTrayIcon_OnMetacall(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnMetacall);
+		CQt.QSystemTrayIcon_OnEvent(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnEvent);
+		CQt.QSystemTrayIcon_OnEventFilter(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnEventFilter);
+		CQt.QSystemTrayIcon_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnTimerEvent);
+		CQt.QSystemTrayIcon_OnChildEvent(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnChildEvent);
+		CQt.QSystemTrayIcon_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnCustomEvent);
+		CQt.QSystemTrayIcon_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnConnectNotify);
+		CQt.QSystemTrayIcon_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_OnDisconnectNotify);
 	}
 	public Event<delegate void(QSystemTrayIcon_ActivationReason reason)> OnActivated = .() ~ _.Dispose();
 	public Event<delegate void()> OnMessageClicked = .() ~ _.Dispose();
@@ -378,6 +388,56 @@ class QSystemTrayIcon : IQSystemTrayIcon, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QSystemTrayIcon_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QSystemTrayIcon_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QSystemTrayIcon_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QSystemTrayIcon_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QSystemTrayIcon_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QSystemTrayIcon_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QSystemTrayIcon_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QSystemTrayIcon_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QSystemTrayIcon_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QSystemTrayIcon_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QSystemTrayIcon_Ptr ptr)
 	{
@@ -753,18 +813,27 @@ extension CQt
 	public function void QSystemTrayIcon_OnMetaObject_action(void* self);
 	[LinkName("QSystemTrayIcon_OnMetaObject")]
 	public static extern void** QSystemTrayIcon_OnMetaObject(void* self, QSystemTrayIcon_OnMetaObject_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperMetaObject")]
+	public static extern void** QSystemTrayIcon_SuperMetaObject(void* self);
 	[LinkName("QSystemTrayIcon_Qt_Metacast")]
 	public static extern void* QSystemTrayIcon_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QSystemTrayIcon_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QSystemTrayIcon_OnMetacast")]
 	public static extern void* QSystemTrayIcon_OnMetacast(void* self, QSystemTrayIcon_OnMetacast_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperMetacast")]
+	public static extern void* QSystemTrayIcon_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QSystemTrayIcon_Qt_Metacall")]
 	public static extern c_int QSystemTrayIcon_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QSystemTrayIcon_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSystemTrayIcon_OnMetacall")]
 	public static extern c_int QSystemTrayIcon_OnMetacall(void* self, QSystemTrayIcon_OnMetacall_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperMetacall")]
+	public static extern c_int QSystemTrayIcon_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QSystemTrayIcon_Tr")]
 	public static extern libqt_string QSystemTrayIcon_Tr(c_char* s);
 	[LinkName("QSystemTrayIcon_SetContextMenu")]
@@ -815,6 +884,9 @@ extension CQt
 	public function void QSystemTrayIcon_OnEvent_action(void* self, void** event);
 	[LinkName("QSystemTrayIcon_OnEvent")]
 	public static extern bool QSystemTrayIcon_OnEvent(void* self, QSystemTrayIcon_OnEvent_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperEvent")]
+	public static extern bool QSystemTrayIcon_SuperEvent(void* self, void** event);
 	[LinkName("QSystemTrayIcon_Tr2")]
 	public static extern libqt_string QSystemTrayIcon_Tr2(c_char* s, c_char* c);
 	[LinkName("QSystemTrayIcon_Tr3")]
@@ -831,36 +903,54 @@ extension CQt
 	public function void QSystemTrayIcon_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QSystemTrayIcon_OnEventFilter")]
 	public static extern bool QSystemTrayIcon_OnEventFilter(void* self, QSystemTrayIcon_OnEventFilter_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperEventFilter")]
+	public static extern bool QSystemTrayIcon_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QSystemTrayIcon_TimerEvent")]
 	public static extern void QSystemTrayIcon_TimerEvent(void* self, void** event);
 	
 	public function void QSystemTrayIcon_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QSystemTrayIcon_OnTimerEvent")]
 	public static extern void QSystemTrayIcon_OnTimerEvent(void* self, QSystemTrayIcon_OnTimerEvent_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperTimerEvent")]
+	public static extern void QSystemTrayIcon_SuperTimerEvent(void* self, void** event);
 	[LinkName("QSystemTrayIcon_ChildEvent")]
 	public static extern void QSystemTrayIcon_ChildEvent(void* self, void** event);
 	
 	public function void QSystemTrayIcon_OnChildEvent_action(void* self, void** event);
 	[LinkName("QSystemTrayIcon_OnChildEvent")]
 	public static extern void QSystemTrayIcon_OnChildEvent(void* self, QSystemTrayIcon_OnChildEvent_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperChildEvent")]
+	public static extern void QSystemTrayIcon_SuperChildEvent(void* self, void** event);
 	[LinkName("QSystemTrayIcon_CustomEvent")]
 	public static extern void QSystemTrayIcon_CustomEvent(void* self, void** event);
 	
 	public function void QSystemTrayIcon_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QSystemTrayIcon_OnCustomEvent")]
 	public static extern void QSystemTrayIcon_OnCustomEvent(void* self, QSystemTrayIcon_OnCustomEvent_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperCustomEvent")]
+	public static extern void QSystemTrayIcon_SuperCustomEvent(void* self, void** event);
 	[LinkName("QSystemTrayIcon_ConnectNotify")]
 	public static extern void QSystemTrayIcon_ConnectNotify(void* self, void** signal);
 	
 	public function void QSystemTrayIcon_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QSystemTrayIcon_OnConnectNotify")]
 	public static extern void QSystemTrayIcon_OnConnectNotify(void* self, QSystemTrayIcon_OnConnectNotify_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperConnectNotify")]
+	public static extern void QSystemTrayIcon_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QSystemTrayIcon_DisconnectNotify")]
 	public static extern void QSystemTrayIcon_DisconnectNotify(void* self, void** signal);
 	
 	public function void QSystemTrayIcon_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QSystemTrayIcon_OnDisconnectNotify")]
 	public static extern void QSystemTrayIcon_OnDisconnectNotify(void* self, QSystemTrayIcon_OnDisconnectNotify_action _action);
+	
+	[LinkName("QSystemTrayIcon_SuperDisconnectNotify")]
+	public static extern void QSystemTrayIcon_SuperDisconnectNotify(void* self, void** signal);
 }
 [AllowDuplicates]
 enum QSystemTrayIcon_ActivationReason

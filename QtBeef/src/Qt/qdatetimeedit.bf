@@ -1940,6 +1940,64 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
 		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_Connect_EditingFinished);
+		CQt.QDateTimeEdit_OnMetaObject(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMetaObject);
+		CQt.QDateTimeEdit_OnMetacast(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMetacast);
+		CQt.QDateTimeEdit_OnMetacall(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMetacall);
+		CQt.QDateTimeEdit_OnSizeHint(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnSizeHint);
+		CQt.QDateTimeEdit_OnClear(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnClear);
+		CQt.QDateTimeEdit_OnStepBy(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnStepBy);
+		CQt.QDateTimeEdit_OnEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnEvent);
+		CQt.QDateTimeEdit_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnKeyPressEvent);
+		CQt.QDateTimeEdit_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnWheelEvent);
+		CQt.QDateTimeEdit_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnFocusInEvent);
+		CQt.QDateTimeEdit_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnFocusNextPrevChild);
+		CQt.QDateTimeEdit_OnValidate(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnValidate);
+		CQt.QDateTimeEdit_OnFixup(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnFixup);
+		CQt.QDateTimeEdit_OnDateTimeFromText(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnDateTimeFromText);
+		CQt.QDateTimeEdit_OnTextFromDateTime(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnTextFromDateTime);
+		CQt.QDateTimeEdit_OnStepEnabled(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnStepEnabled);
+		CQt.QDateTimeEdit_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMousePressEvent);
+		CQt.QDateTimeEdit_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnPaintEvent);
+		CQt.QDateTimeEdit_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnInitStyleOption);
+		CQt.QDateTimeEdit_OnEventFilter(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnEventFilter);
+		CQt.QDateTimeEdit_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnTimerEvent);
+		CQt.QDateTimeEdit_OnChildEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnChildEvent);
+		CQt.QDateTimeEdit_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnCustomEvent);
+		CQt.QDateTimeEdit_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnConnectNotify);
+		CQt.QDateTimeEdit_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnDisconnectNotify);
+		CQt.QDateTimeEdit_OnDevType(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnDevType);
+		CQt.QDateTimeEdit_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnPaintEngine);
+		CQt.QDateTimeEdit_OnMetric(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMetric);
+		CQt.QDateTimeEdit_OnInitPainter(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnInitPainter);
+		CQt.QDateTimeEdit_OnRedirected(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnRedirected);
+		CQt.QDateTimeEdit_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnSharedPainter);
+		CQt.QDateTimeEdit_OnSetVisible(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnSetVisible);
+		CQt.QDateTimeEdit_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMinimumSizeHint);
+		CQt.QDateTimeEdit_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnHeightForWidth);
+		CQt.QDateTimeEdit_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnHasHeightForWidth);
+		CQt.QDateTimeEdit_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMouseReleaseEvent);
+		CQt.QDateTimeEdit_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMouseDoubleClickEvent);
+		CQt.QDateTimeEdit_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMouseMoveEvent);
+		CQt.QDateTimeEdit_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnKeyReleaseEvent);
+		CQt.QDateTimeEdit_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnFocusOutEvent);
+		CQt.QDateTimeEdit_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnEnterEvent);
+		CQt.QDateTimeEdit_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnLeaveEvent);
+		CQt.QDateTimeEdit_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnMoveEvent);
+		CQt.QDateTimeEdit_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnResizeEvent);
+		CQt.QDateTimeEdit_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnCloseEvent);
+		CQt.QDateTimeEdit_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnContextMenuEvent);
+		CQt.QDateTimeEdit_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnTabletEvent);
+		CQt.QDateTimeEdit_OnActionEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnActionEvent);
+		CQt.QDateTimeEdit_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnDragEnterEvent);
+		CQt.QDateTimeEdit_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnDragMoveEvent);
+		CQt.QDateTimeEdit_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnDragLeaveEvent);
+		CQt.QDateTimeEdit_OnDropEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnDropEvent);
+		CQt.QDateTimeEdit_OnShowEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnShowEvent);
+		CQt.QDateTimeEdit_OnHideEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnHideEvent);
+		CQt.QDateTimeEdit_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnNativeEvent);
+		CQt.QDateTimeEdit_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnChangeEvent);
+		CQt.QDateTimeEdit_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnInputMethodEvent);
+		CQt.QDateTimeEdit_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_OnInputMethodQuery);
 	}
 	public Event<delegate void(void** dateTime)> OnDateTimeChanged = .() ~ _.Dispose();
 	public Event<delegate void(void* time)> OnTimeChanged = .() ~ _.Dispose();
@@ -2000,6 +2058,296 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnEditingFinished.Invoke();
+	}
+	static void QtBeef_QDateTimeEdit_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QDateTimeEdit_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QDateTimeEdit_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QDateTimeEdit_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QDateTimeEdit_OnClear(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClear();
+	}
+	static void QtBeef_QDateTimeEdit_OnStepBy(void* ptr, c_int steps)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepBy(steps);
+	}
+	static void QtBeef_QDateTimeEdit_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QDateTimeEdit_OnValidate(void* ptr, libqt_string input, c_int* pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValidate(input, pos);
+	}
+	static void QtBeef_QDateTimeEdit_OnFixup(void* ptr, libqt_string input)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFixup(input);
+	}
+	static void QtBeef_QDateTimeEdit_OnDateTimeFromText(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDateTimeFromText(text);
+	}
+	static void QtBeef_QDateTimeEdit_OnTextFromDateTime(void* ptr, void** dt)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextFromDateTime(scope .(), dt);
+	}
+	static void QtBeef_QDateTimeEdit_OnStepEnabled(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepEnabled();
+	}
+	static void QtBeef_QDateTimeEdit_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QDateTimeEdit_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QDateTimeEdit_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QDateTimeEdit_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QDateTimeEdit_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QDateTimeEdit_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QDateTimeEdit_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QDateTimeEdit_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QDateTimeEdit_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QDateTimeEdit_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QDateTimeEdit_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QDateTimeEdit_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QDateTimeEdit_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QDateTimeEdit_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QDateTimeEdit_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QDateTimeEdit_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QDateTimeEdit_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QDateTimeEdit_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QDateTimeEdit_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
 	}
 	public this(QDateTimeEdit_Ptr ptr)
 	{
@@ -3950,18 +4298,27 @@ extension CQt
 	public function void QDateTimeEdit_OnMetaObject_action(void* self);
 	[LinkName("QDateTimeEdit_OnMetaObject")]
 	public static extern void** QDateTimeEdit_OnMetaObject(void* self, QDateTimeEdit_OnMetaObject_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMetaObject")]
+	public static extern void** QDateTimeEdit_SuperMetaObject(void* self);
 	[LinkName("QDateTimeEdit_Qt_Metacast")]
 	public static extern void* QDateTimeEdit_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QDateTimeEdit_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QDateTimeEdit_OnMetacast")]
 	public static extern void* QDateTimeEdit_OnMetacast(void* self, QDateTimeEdit_OnMetacast_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMetacast")]
+	public static extern void* QDateTimeEdit_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QDateTimeEdit_Qt_Metacall")]
 	public static extern c_int QDateTimeEdit_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QDateTimeEdit_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDateTimeEdit_OnMetacall")]
 	public static extern c_int QDateTimeEdit_OnMetacall(void* self, QDateTimeEdit_OnMetacall_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMetacall")]
+	public static extern c_int QDateTimeEdit_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDateTimeEdit_Tr")]
 	public static extern libqt_string QDateTimeEdit_Tr(c_char* s);
 	[LinkName("QDateTimeEdit_DateTime")]
@@ -4056,24 +4413,36 @@ extension CQt
 	public function void QDateTimeEdit_OnSizeHint_action(void* self);
 	[LinkName("QDateTimeEdit_OnSizeHint")]
 	public static extern void* QDateTimeEdit_OnSizeHint(void* self, QDateTimeEdit_OnSizeHint_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperSizeHint")]
+	public static extern void* QDateTimeEdit_SuperSizeHint(void* self);
 	[LinkName("QDateTimeEdit_Clear")]
 	public static extern void QDateTimeEdit_Clear(void* self);
 	
 	public function void QDateTimeEdit_OnClear_action(void* self);
 	[LinkName("QDateTimeEdit_OnClear")]
 	public static extern void QDateTimeEdit_OnClear(void* self, QDateTimeEdit_OnClear_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperClear")]
+	public static extern void QDateTimeEdit_SuperClear(void* self);
 	[LinkName("QDateTimeEdit_StepBy")]
 	public static extern void QDateTimeEdit_StepBy(void* self, c_int steps);
 	
 	public function void QDateTimeEdit_OnStepBy_action(void* self, c_int steps);
 	[LinkName("QDateTimeEdit_OnStepBy")]
 	public static extern void QDateTimeEdit_OnStepBy(void* self, QDateTimeEdit_OnStepBy_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperStepBy")]
+	public static extern void QDateTimeEdit_SuperStepBy(void* self, c_int steps);
 	[LinkName("QDateTimeEdit_Event")]
 	public static extern bool QDateTimeEdit_Event(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnEvent")]
 	public static extern bool QDateTimeEdit_OnEvent(void* self, QDateTimeEdit_OnEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperEvent")]
+	public static extern bool QDateTimeEdit_SuperEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_DateTimeChanged")]
 	public static extern void QDateTimeEdit_DateTimeChanged(void* self, void** dateTime);
 	
@@ -4104,72 +4473,108 @@ extension CQt
 	public function void QDateTimeEdit_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnKeyPressEvent")]
 	public static extern void QDateTimeEdit_OnKeyPressEvent(void* self, QDateTimeEdit_OnKeyPressEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperKeyPressEvent")]
+	public static extern void QDateTimeEdit_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_WheelEvent")]
 	public static extern void QDateTimeEdit_WheelEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnWheelEvent")]
 	public static extern void QDateTimeEdit_OnWheelEvent(void* self, QDateTimeEdit_OnWheelEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperWheelEvent")]
+	public static extern void QDateTimeEdit_SuperWheelEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_FocusInEvent")]
 	public static extern void QDateTimeEdit_FocusInEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnFocusInEvent")]
 	public static extern void QDateTimeEdit_OnFocusInEvent(void* self, QDateTimeEdit_OnFocusInEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperFocusInEvent")]
+	public static extern void QDateTimeEdit_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_FocusNextPrevChild")]
 	public static extern bool QDateTimeEdit_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QDateTimeEdit_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QDateTimeEdit_OnFocusNextPrevChild")]
 	public static extern bool QDateTimeEdit_OnFocusNextPrevChild(void* self, QDateTimeEdit_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperFocusNextPrevChild")]
+	public static extern bool QDateTimeEdit_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QDateTimeEdit_Validate")]
 	public static extern QValidator_State QDateTimeEdit_Validate(void* self, libqt_string input, c_int* pos);
 	
 	public function void QDateTimeEdit_OnValidate_action(void* self, libqt_string input, c_int* pos);
 	[LinkName("QDateTimeEdit_OnValidate")]
 	public static extern QValidator_State QDateTimeEdit_OnValidate(void* self, QDateTimeEdit_OnValidate_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperValidate")]
+	public static extern QValidator_State QDateTimeEdit_SuperValidate(void* self, libqt_string input, c_int* pos);
 	[LinkName("QDateTimeEdit_Fixup")]
 	public static extern void QDateTimeEdit_Fixup(void* self, libqt_string input);
 	
 	public function void QDateTimeEdit_OnFixup_action(void* self, libqt_string input);
 	[LinkName("QDateTimeEdit_OnFixup")]
 	public static extern void QDateTimeEdit_OnFixup(void* self, QDateTimeEdit_OnFixup_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperFixup")]
+	public static extern void QDateTimeEdit_SuperFixup(void* self, libqt_string input);
 	[LinkName("QDateTimeEdit_DateTimeFromText")]
 	public static extern void* QDateTimeEdit_DateTimeFromText(void* self, libqt_string text);
 	
 	public function void QDateTimeEdit_OnDateTimeFromText_action(void* self, libqt_string text);
 	[LinkName("QDateTimeEdit_OnDateTimeFromText")]
 	public static extern void* QDateTimeEdit_OnDateTimeFromText(void* self, QDateTimeEdit_OnDateTimeFromText_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperDateTimeFromText")]
+	public static extern void* QDateTimeEdit_SuperDateTimeFromText(void* self, libqt_string text);
 	[LinkName("QDateTimeEdit_TextFromDateTime")]
 	public static extern libqt_string QDateTimeEdit_TextFromDateTime(void* self, void** dt);
 	
 	public function void QDateTimeEdit_OnTextFromDateTime_action(void* self, void** dt);
 	[LinkName("QDateTimeEdit_OnTextFromDateTime")]
 	public static extern libqt_string QDateTimeEdit_OnTextFromDateTime(void* self, QDateTimeEdit_OnTextFromDateTime_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperTextFromDateTime")]
+	public static extern libqt_string QDateTimeEdit_SuperTextFromDateTime(void* self, void** dt);
 	[LinkName("QDateTimeEdit_StepEnabled")]
 	public static extern void* QDateTimeEdit_StepEnabled(void* self);
 	
 	public function void QDateTimeEdit_OnStepEnabled_action(void* self);
 	[LinkName("QDateTimeEdit_OnStepEnabled")]
 	public static extern void* QDateTimeEdit_OnStepEnabled(void* self, QDateTimeEdit_OnStepEnabled_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperStepEnabled")]
+	public static extern void* QDateTimeEdit_SuperStepEnabled(void* self);
 	[LinkName("QDateTimeEdit_MousePressEvent")]
 	public static extern void QDateTimeEdit_MousePressEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnMousePressEvent")]
 	public static extern void QDateTimeEdit_OnMousePressEvent(void* self, QDateTimeEdit_OnMousePressEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMousePressEvent")]
+	public static extern void QDateTimeEdit_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_PaintEvent")]
 	public static extern void QDateTimeEdit_PaintEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnPaintEvent")]
 	public static extern void QDateTimeEdit_OnPaintEvent(void* self, QDateTimeEdit_OnPaintEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperPaintEvent")]
+	public static extern void QDateTimeEdit_SuperPaintEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_InitStyleOption")]
 	public static extern void QDateTimeEdit_InitStyleOption(void* self, void** option);
 	
 	public function void QDateTimeEdit_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QDateTimeEdit_OnInitStyleOption")]
 	public static extern void QDateTimeEdit_OnInitStyleOption(void* self, QDateTimeEdit_OnInitStyleOption_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperInitStyleOption")]
+	public static extern void QDateTimeEdit_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QDateTimeEdit_Tr2")]
 	public static extern libqt_string QDateTimeEdit_Tr2(c_char* s, c_char* c);
 	[LinkName("QDateTimeEdit_Tr3")]
@@ -4180,234 +4585,351 @@ extension CQt
 	public function void QDateTimeEdit_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QDateTimeEdit_OnEventFilter")]
 	public static extern bool QDateTimeEdit_OnEventFilter(void* self, QDateTimeEdit_OnEventFilter_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperEventFilter")]
+	public static extern bool QDateTimeEdit_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QDateTimeEdit_TimerEvent")]
 	public static extern void QDateTimeEdit_TimerEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnTimerEvent")]
 	public static extern void QDateTimeEdit_OnTimerEvent(void* self, QDateTimeEdit_OnTimerEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperTimerEvent")]
+	public static extern void QDateTimeEdit_SuperTimerEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_ChildEvent")]
 	public static extern void QDateTimeEdit_ChildEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnChildEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnChildEvent")]
 	public static extern void QDateTimeEdit_OnChildEvent(void* self, QDateTimeEdit_OnChildEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperChildEvent")]
+	public static extern void QDateTimeEdit_SuperChildEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_CustomEvent")]
 	public static extern void QDateTimeEdit_CustomEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnCustomEvent")]
 	public static extern void QDateTimeEdit_OnCustomEvent(void* self, QDateTimeEdit_OnCustomEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperCustomEvent")]
+	public static extern void QDateTimeEdit_SuperCustomEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_ConnectNotify")]
 	public static extern void QDateTimeEdit_ConnectNotify(void* self, void** signal);
 	
 	public function void QDateTimeEdit_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QDateTimeEdit_OnConnectNotify")]
 	public static extern void QDateTimeEdit_OnConnectNotify(void* self, QDateTimeEdit_OnConnectNotify_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperConnectNotify")]
+	public static extern void QDateTimeEdit_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QDateTimeEdit_DisconnectNotify")]
 	public static extern void QDateTimeEdit_DisconnectNotify(void* self, void** signal);
 	
 	public function void QDateTimeEdit_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QDateTimeEdit_OnDisconnectNotify")]
 	public static extern void QDateTimeEdit_OnDisconnectNotify(void* self, QDateTimeEdit_OnDisconnectNotify_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperDisconnectNotify")]
+	public static extern void QDateTimeEdit_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QDateTimeEdit_DevType")]
 	public static extern c_int QDateTimeEdit_DevType(void* self);
 	
 	public function void QDateTimeEdit_OnDevType_action(void* self);
 	[LinkName("QDateTimeEdit_OnDevType")]
 	public static extern c_int QDateTimeEdit_OnDevType(void* self, QDateTimeEdit_OnDevType_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperDevType")]
+	public static extern c_int QDateTimeEdit_SuperDevType(void* self);
 	[LinkName("QDateTimeEdit_PaintEngine")]
 	public static extern void** QDateTimeEdit_PaintEngine(void* self);
 	
 	public function void QDateTimeEdit_OnPaintEngine_action(void* self);
 	[LinkName("QDateTimeEdit_OnPaintEngine")]
 	public static extern void** QDateTimeEdit_OnPaintEngine(void* self, QDateTimeEdit_OnPaintEngine_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperPaintEngine")]
+	public static extern void** QDateTimeEdit_SuperPaintEngine(void* self);
 	[LinkName("QDateTimeEdit_Metric")]
 	public static extern c_int QDateTimeEdit_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QDateTimeEdit_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDateTimeEdit_OnMetric")]
 	public static extern c_int QDateTimeEdit_OnMetric(void* self, QDateTimeEdit_OnMetric_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMetric")]
+	public static extern c_int QDateTimeEdit_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDateTimeEdit_InitPainter")]
 	public static extern void QDateTimeEdit_InitPainter(void* self, void** painter);
 	
 	public function void QDateTimeEdit_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QDateTimeEdit_OnInitPainter")]
 	public static extern void QDateTimeEdit_OnInitPainter(void* self, QDateTimeEdit_OnInitPainter_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperInitPainter")]
+	public static extern void QDateTimeEdit_SuperInitPainter(void* self, void** painter);
 	[LinkName("QDateTimeEdit_Redirected")]
 	public static extern void** QDateTimeEdit_Redirected(void* self, void** offset);
 	
 	public function void QDateTimeEdit_OnRedirected_action(void* self, void** offset);
 	[LinkName("QDateTimeEdit_OnRedirected")]
 	public static extern void** QDateTimeEdit_OnRedirected(void* self, QDateTimeEdit_OnRedirected_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperRedirected")]
+	public static extern void** QDateTimeEdit_SuperRedirected(void* self, void** offset);
 	[LinkName("QDateTimeEdit_SharedPainter")]
 	public static extern void** QDateTimeEdit_SharedPainter(void* self);
 	
 	public function void QDateTimeEdit_OnSharedPainter_action(void* self);
 	[LinkName("QDateTimeEdit_OnSharedPainter")]
 	public static extern void** QDateTimeEdit_OnSharedPainter(void* self, QDateTimeEdit_OnSharedPainter_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperSharedPainter")]
+	public static extern void** QDateTimeEdit_SuperSharedPainter(void* self);
 	[LinkName("QDateTimeEdit_SetVisible")]
 	public static extern void QDateTimeEdit_SetVisible(void* self, bool visible);
 	
 	public function void QDateTimeEdit_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QDateTimeEdit_OnSetVisible")]
 	public static extern void QDateTimeEdit_OnSetVisible(void* self, QDateTimeEdit_OnSetVisible_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperSetVisible")]
+	public static extern void QDateTimeEdit_SuperSetVisible(void* self, bool visible);
 	[LinkName("QDateTimeEdit_MinimumSizeHint")]
 	public static extern void* QDateTimeEdit_MinimumSizeHint(void* self);
 	
 	public function void QDateTimeEdit_OnMinimumSizeHint_action(void* self);
 	[LinkName("QDateTimeEdit_OnMinimumSizeHint")]
 	public static extern void* QDateTimeEdit_OnMinimumSizeHint(void* self, QDateTimeEdit_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMinimumSizeHint")]
+	public static extern void* QDateTimeEdit_SuperMinimumSizeHint(void* self);
 	[LinkName("QDateTimeEdit_HeightForWidth")]
 	public static extern c_int QDateTimeEdit_HeightForWidth(void* self, c_int param1);
 	
 	public function void QDateTimeEdit_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QDateTimeEdit_OnHeightForWidth")]
 	public static extern c_int QDateTimeEdit_OnHeightForWidth(void* self, QDateTimeEdit_OnHeightForWidth_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperHeightForWidth")]
+	public static extern c_int QDateTimeEdit_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QDateTimeEdit_HasHeightForWidth")]
 	public static extern bool QDateTimeEdit_HasHeightForWidth(void* self);
 	
 	public function void QDateTimeEdit_OnHasHeightForWidth_action(void* self);
 	[LinkName("QDateTimeEdit_OnHasHeightForWidth")]
 	public static extern bool QDateTimeEdit_OnHasHeightForWidth(void* self, QDateTimeEdit_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperHasHeightForWidth")]
+	public static extern bool QDateTimeEdit_SuperHasHeightForWidth(void* self);
 	[LinkName("QDateTimeEdit_MouseReleaseEvent")]
 	public static extern void QDateTimeEdit_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnMouseReleaseEvent")]
 	public static extern void QDateTimeEdit_OnMouseReleaseEvent(void* self, QDateTimeEdit_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMouseReleaseEvent")]
+	public static extern void QDateTimeEdit_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_MouseDoubleClickEvent")]
 	public static extern void QDateTimeEdit_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnMouseDoubleClickEvent")]
 	public static extern void QDateTimeEdit_OnMouseDoubleClickEvent(void* self, QDateTimeEdit_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMouseDoubleClickEvent")]
+	public static extern void QDateTimeEdit_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_MouseMoveEvent")]
 	public static extern void QDateTimeEdit_MouseMoveEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnMouseMoveEvent")]
 	public static extern void QDateTimeEdit_OnMouseMoveEvent(void* self, QDateTimeEdit_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMouseMoveEvent")]
+	public static extern void QDateTimeEdit_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_KeyReleaseEvent")]
 	public static extern void QDateTimeEdit_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnKeyReleaseEvent")]
 	public static extern void QDateTimeEdit_OnKeyReleaseEvent(void* self, QDateTimeEdit_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperKeyReleaseEvent")]
+	public static extern void QDateTimeEdit_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_FocusOutEvent")]
 	public static extern void QDateTimeEdit_FocusOutEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnFocusOutEvent")]
 	public static extern void QDateTimeEdit_OnFocusOutEvent(void* self, QDateTimeEdit_OnFocusOutEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperFocusOutEvent")]
+	public static extern void QDateTimeEdit_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_EnterEvent")]
 	public static extern void QDateTimeEdit_EnterEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnEnterEvent")]
 	public static extern void QDateTimeEdit_OnEnterEvent(void* self, QDateTimeEdit_OnEnterEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperEnterEvent")]
+	public static extern void QDateTimeEdit_SuperEnterEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_LeaveEvent")]
 	public static extern void QDateTimeEdit_LeaveEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnLeaveEvent")]
 	public static extern void QDateTimeEdit_OnLeaveEvent(void* self, QDateTimeEdit_OnLeaveEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperLeaveEvent")]
+	public static extern void QDateTimeEdit_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_MoveEvent")]
 	public static extern void QDateTimeEdit_MoveEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnMoveEvent")]
 	public static extern void QDateTimeEdit_OnMoveEvent(void* self, QDateTimeEdit_OnMoveEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperMoveEvent")]
+	public static extern void QDateTimeEdit_SuperMoveEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_ResizeEvent")]
 	public static extern void QDateTimeEdit_ResizeEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnResizeEvent")]
 	public static extern void QDateTimeEdit_OnResizeEvent(void* self, QDateTimeEdit_OnResizeEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperResizeEvent")]
+	public static extern void QDateTimeEdit_SuperResizeEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_CloseEvent")]
 	public static extern void QDateTimeEdit_CloseEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnCloseEvent")]
 	public static extern void QDateTimeEdit_OnCloseEvent(void* self, QDateTimeEdit_OnCloseEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperCloseEvent")]
+	public static extern void QDateTimeEdit_SuperCloseEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_ContextMenuEvent")]
 	public static extern void QDateTimeEdit_ContextMenuEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnContextMenuEvent")]
 	public static extern void QDateTimeEdit_OnContextMenuEvent(void* self, QDateTimeEdit_OnContextMenuEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperContextMenuEvent")]
+	public static extern void QDateTimeEdit_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_TabletEvent")]
 	public static extern void QDateTimeEdit_TabletEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnTabletEvent")]
 	public static extern void QDateTimeEdit_OnTabletEvent(void* self, QDateTimeEdit_OnTabletEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperTabletEvent")]
+	public static extern void QDateTimeEdit_SuperTabletEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_ActionEvent")]
 	public static extern void QDateTimeEdit_ActionEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnActionEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnActionEvent")]
 	public static extern void QDateTimeEdit_OnActionEvent(void* self, QDateTimeEdit_OnActionEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperActionEvent")]
+	public static extern void QDateTimeEdit_SuperActionEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_DragEnterEvent")]
 	public static extern void QDateTimeEdit_DragEnterEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnDragEnterEvent")]
 	public static extern void QDateTimeEdit_OnDragEnterEvent(void* self, QDateTimeEdit_OnDragEnterEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperDragEnterEvent")]
+	public static extern void QDateTimeEdit_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_DragMoveEvent")]
 	public static extern void QDateTimeEdit_DragMoveEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnDragMoveEvent")]
 	public static extern void QDateTimeEdit_OnDragMoveEvent(void* self, QDateTimeEdit_OnDragMoveEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperDragMoveEvent")]
+	public static extern void QDateTimeEdit_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_DragLeaveEvent")]
 	public static extern void QDateTimeEdit_DragLeaveEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnDragLeaveEvent")]
 	public static extern void QDateTimeEdit_OnDragLeaveEvent(void* self, QDateTimeEdit_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperDragLeaveEvent")]
+	public static extern void QDateTimeEdit_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_DropEvent")]
 	public static extern void QDateTimeEdit_DropEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnDropEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnDropEvent")]
 	public static extern void QDateTimeEdit_OnDropEvent(void* self, QDateTimeEdit_OnDropEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperDropEvent")]
+	public static extern void QDateTimeEdit_SuperDropEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_ShowEvent")]
 	public static extern void QDateTimeEdit_ShowEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnShowEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnShowEvent")]
 	public static extern void QDateTimeEdit_OnShowEvent(void* self, QDateTimeEdit_OnShowEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperShowEvent")]
+	public static extern void QDateTimeEdit_SuperShowEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_HideEvent")]
 	public static extern void QDateTimeEdit_HideEvent(void* self, void** event);
 	
 	public function void QDateTimeEdit_OnHideEvent_action(void* self, void** event);
 	[LinkName("QDateTimeEdit_OnHideEvent")]
 	public static extern void QDateTimeEdit_OnHideEvent(void* self, QDateTimeEdit_OnHideEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperHideEvent")]
+	public static extern void QDateTimeEdit_SuperHideEvent(void* self, void** event);
 	[LinkName("QDateTimeEdit_NativeEvent")]
 	public static extern bool QDateTimeEdit_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QDateTimeEdit_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDateTimeEdit_OnNativeEvent")]
 	public static extern bool QDateTimeEdit_OnNativeEvent(void* self, QDateTimeEdit_OnNativeEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperNativeEvent")]
+	public static extern bool QDateTimeEdit_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDateTimeEdit_ChangeEvent")]
 	public static extern void QDateTimeEdit_ChangeEvent(void* self, void** param1);
 	
 	public function void QDateTimeEdit_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QDateTimeEdit_OnChangeEvent")]
 	public static extern void QDateTimeEdit_OnChangeEvent(void* self, QDateTimeEdit_OnChangeEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperChangeEvent")]
+	public static extern void QDateTimeEdit_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QDateTimeEdit_InputMethodEvent")]
 	public static extern void QDateTimeEdit_InputMethodEvent(void* self, void** param1);
 	
 	public function void QDateTimeEdit_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QDateTimeEdit_OnInputMethodEvent")]
 	public static extern void QDateTimeEdit_OnInputMethodEvent(void* self, QDateTimeEdit_OnInputMethodEvent_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperInputMethodEvent")]
+	public static extern void QDateTimeEdit_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QDateTimeEdit_InputMethodQuery")]
 	public static extern void* QDateTimeEdit_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QDateTimeEdit_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QDateTimeEdit_OnInputMethodQuery")]
 	public static extern void* QDateTimeEdit_OnInputMethodQuery(void* self, QDateTimeEdit_OnInputMethodQuery_action _action);
+	
+	[LinkName("QDateTimeEdit_SuperInputMethodQuery")]
+	public static extern void* QDateTimeEdit_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 }
 // --------------------------------------------------------------
 // QTimeEdit
@@ -6351,6 +6873,64 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 		CQt.QDateTimeEdit_Connect_DateTimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateTimeChanged);
 		CQt.QDateTimeEdit_Connect_TimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_TimeChanged);
 		CQt.QDateTimeEdit_Connect_DateChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateChanged);
+		CQt.QTimeEdit_OnMetaObject(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMetaObject);
+		CQt.QTimeEdit_OnMetacast(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMetacast);
+		CQt.QTimeEdit_OnMetacall(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMetacall);
+		CQt.QTimeEdit_OnEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnEvent);
+		CQt.QTimeEdit_OnEventFilter(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnEventFilter);
+		CQt.QTimeEdit_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnTimerEvent);
+		CQt.QTimeEdit_OnChildEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnChildEvent);
+		CQt.QTimeEdit_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnCustomEvent);
+		CQt.QTimeEdit_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnConnectNotify);
+		CQt.QTimeEdit_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnDisconnectNotify);
+		CQt.QTimeEdit_OnDevType(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnDevType);
+		CQt.QTimeEdit_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnPaintEngine);
+		CQt.QTimeEdit_OnMetric(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMetric);
+		CQt.QTimeEdit_OnInitPainter(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnInitPainter);
+		CQt.QTimeEdit_OnRedirected(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnRedirected);
+		CQt.QTimeEdit_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnSharedPainter);
+		CQt.QTimeEdit_OnSetVisible(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnSetVisible);
+		CQt.QTimeEdit_OnSizeHint(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnSizeHint);
+		CQt.QTimeEdit_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMinimumSizeHint);
+		CQt.QTimeEdit_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnHeightForWidth);
+		CQt.QTimeEdit_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnHasHeightForWidth);
+		CQt.QTimeEdit_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMousePressEvent);
+		CQt.QTimeEdit_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMouseReleaseEvent);
+		CQt.QTimeEdit_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMouseDoubleClickEvent);
+		CQt.QTimeEdit_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMouseMoveEvent);
+		CQt.QTimeEdit_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnWheelEvent);
+		CQt.QTimeEdit_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnKeyPressEvent);
+		CQt.QTimeEdit_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnKeyReleaseEvent);
+		CQt.QTimeEdit_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnFocusInEvent);
+		CQt.QTimeEdit_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnFocusOutEvent);
+		CQt.QTimeEdit_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnEnterEvent);
+		CQt.QTimeEdit_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnLeaveEvent);
+		CQt.QTimeEdit_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnPaintEvent);
+		CQt.QTimeEdit_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnMoveEvent);
+		CQt.QTimeEdit_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnResizeEvent);
+		CQt.QTimeEdit_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnCloseEvent);
+		CQt.QTimeEdit_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnContextMenuEvent);
+		CQt.QTimeEdit_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnTabletEvent);
+		CQt.QTimeEdit_OnActionEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnActionEvent);
+		CQt.QTimeEdit_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnDragEnterEvent);
+		CQt.QTimeEdit_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnDragMoveEvent);
+		CQt.QTimeEdit_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnDragLeaveEvent);
+		CQt.QTimeEdit_OnDropEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnDropEvent);
+		CQt.QTimeEdit_OnShowEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnShowEvent);
+		CQt.QTimeEdit_OnHideEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnHideEvent);
+		CQt.QTimeEdit_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnNativeEvent);
+		CQt.QTimeEdit_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnChangeEvent);
+		CQt.QTimeEdit_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnInputMethodEvent);
+		CQt.QTimeEdit_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnInputMethodQuery);
+		CQt.QTimeEdit_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnFocusNextPrevChild);
+		CQt.QTimeEdit_OnValidate(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnValidate);
+		CQt.QTimeEdit_OnFixup(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnFixup);
+		CQt.QTimeEdit_OnStepBy(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnStepBy);
+		CQt.QTimeEdit_OnClear(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnClear);
+		CQt.QTimeEdit_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnInitStyleOption);
+		CQt.QTimeEdit_OnStepEnabled(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnStepEnabled);
+		CQt.QTimeEdit_OnDateTimeFromText(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnDateTimeFromText);
+		CQt.QTimeEdit_OnTextFromDateTime(obj.ObjectPtr,  => QtBeef_QTimeEdit_OnTextFromDateTime);
 	}
 	public Event<delegate void(void* time)> OnUserTimeChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -6417,6 +6997,296 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDateChanged.Invoke(date);
+	}
+	static void QtBeef_QTimeEdit_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QTimeEdit_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QTimeEdit_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QTimeEdit_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QTimeEdit_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QTimeEdit_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QTimeEdit_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QTimeEdit_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QTimeEdit_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QTimeEdit_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QTimeEdit_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QTimeEdit_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QTimeEdit_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QTimeEdit_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QTimeEdit_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QTimeEdit_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QTimeEdit_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QTimeEdit_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QTimeEdit_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QTimeEdit_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QTimeEdit_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QTimeEdit_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QTimeEdit_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QTimeEdit_OnValidate(void* ptr, libqt_string input, c_int* pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValidate(input, pos);
+	}
+	static void QtBeef_QTimeEdit_OnFixup(void* ptr, libqt_string input)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFixup(input);
+	}
+	static void QtBeef_QTimeEdit_OnStepBy(void* ptr, c_int steps)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepBy(steps);
+	}
+	static void QtBeef_QTimeEdit_OnClear(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClear();
+	}
+	static void QtBeef_QTimeEdit_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QTimeEdit_OnStepEnabled(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepEnabled();
+	}
+	static void QtBeef_QTimeEdit_OnDateTimeFromText(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDateTimeFromText(text);
+	}
+	static void QtBeef_QTimeEdit_OnTextFromDateTime(void* ptr, void** dt)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextFromDateTime(scope .(), dt);
 	}
 	public this(QTimeEdit_Ptr ptr)
 	{
@@ -8343,18 +9213,27 @@ extension CQt
 	public function void QTimeEdit_OnMetaObject_action(void* self);
 	[LinkName("QTimeEdit_OnMetaObject")]
 	public static extern void** QTimeEdit_OnMetaObject(void* self, QTimeEdit_OnMetaObject_action _action);
+	
+	[LinkName("QTimeEdit_SuperMetaObject")]
+	public static extern void** QTimeEdit_SuperMetaObject(void* self);
 	[LinkName("QTimeEdit_Qt_Metacast")]
 	public static extern void* QTimeEdit_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QTimeEdit_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QTimeEdit_OnMetacast")]
 	public static extern void* QTimeEdit_OnMetacast(void* self, QTimeEdit_OnMetacast_action _action);
+	
+	[LinkName("QTimeEdit_SuperMetacast")]
+	public static extern void* QTimeEdit_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QTimeEdit_Qt_Metacall")]
 	public static extern c_int QTimeEdit_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QTimeEdit_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTimeEdit_OnMetacall")]
 	public static extern c_int QTimeEdit_OnMetacall(void* self, QTimeEdit_OnMetacall_action _action);
+	
+	[LinkName("QTimeEdit_SuperMetacall")]
+	public static extern c_int QTimeEdit_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTimeEdit_Tr")]
 	public static extern libqt_string QTimeEdit_Tr(c_char* s);
 	[LinkName("QTimeEdit_UserTimeChanged")]
@@ -8373,330 +9252,495 @@ extension CQt
 	public function void QTimeEdit_OnEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnEvent")]
 	public static extern bool QTimeEdit_OnEvent(void* self, QTimeEdit_OnEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperEvent")]
+	public static extern bool QTimeEdit_SuperEvent(void* self, void** event);
 	[LinkName("QTimeEdit_EventFilter")]
 	public static extern bool QTimeEdit_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QTimeEdit_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QTimeEdit_OnEventFilter")]
 	public static extern bool QTimeEdit_OnEventFilter(void* self, QTimeEdit_OnEventFilter_action _action);
+	
+	[LinkName("QTimeEdit_SuperEventFilter")]
+	public static extern bool QTimeEdit_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QTimeEdit_TimerEvent")]
 	public static extern void QTimeEdit_TimerEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnTimerEvent")]
 	public static extern void QTimeEdit_OnTimerEvent(void* self, QTimeEdit_OnTimerEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperTimerEvent")]
+	public static extern void QTimeEdit_SuperTimerEvent(void* self, void** event);
 	[LinkName("QTimeEdit_ChildEvent")]
 	public static extern void QTimeEdit_ChildEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnChildEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnChildEvent")]
 	public static extern void QTimeEdit_OnChildEvent(void* self, QTimeEdit_OnChildEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperChildEvent")]
+	public static extern void QTimeEdit_SuperChildEvent(void* self, void** event);
 	[LinkName("QTimeEdit_CustomEvent")]
 	public static extern void QTimeEdit_CustomEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnCustomEvent")]
 	public static extern void QTimeEdit_OnCustomEvent(void* self, QTimeEdit_OnCustomEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperCustomEvent")]
+	public static extern void QTimeEdit_SuperCustomEvent(void* self, void** event);
 	[LinkName("QTimeEdit_ConnectNotify")]
 	public static extern void QTimeEdit_ConnectNotify(void* self, void** signal);
 	
 	public function void QTimeEdit_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QTimeEdit_OnConnectNotify")]
 	public static extern void QTimeEdit_OnConnectNotify(void* self, QTimeEdit_OnConnectNotify_action _action);
+	
+	[LinkName("QTimeEdit_SuperConnectNotify")]
+	public static extern void QTimeEdit_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QTimeEdit_DisconnectNotify")]
 	public static extern void QTimeEdit_DisconnectNotify(void* self, void** signal);
 	
 	public function void QTimeEdit_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QTimeEdit_OnDisconnectNotify")]
 	public static extern void QTimeEdit_OnDisconnectNotify(void* self, QTimeEdit_OnDisconnectNotify_action _action);
+	
+	[LinkName("QTimeEdit_SuperDisconnectNotify")]
+	public static extern void QTimeEdit_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QTimeEdit_DevType")]
 	public static extern c_int QTimeEdit_DevType(void* self);
 	
 	public function void QTimeEdit_OnDevType_action(void* self);
 	[LinkName("QTimeEdit_OnDevType")]
 	public static extern c_int QTimeEdit_OnDevType(void* self, QTimeEdit_OnDevType_action _action);
+	
+	[LinkName("QTimeEdit_SuperDevType")]
+	public static extern c_int QTimeEdit_SuperDevType(void* self);
 	[LinkName("QTimeEdit_PaintEngine")]
 	public static extern void** QTimeEdit_PaintEngine(void* self);
 	
 	public function void QTimeEdit_OnPaintEngine_action(void* self);
 	[LinkName("QTimeEdit_OnPaintEngine")]
 	public static extern void** QTimeEdit_OnPaintEngine(void* self, QTimeEdit_OnPaintEngine_action _action);
+	
+	[LinkName("QTimeEdit_SuperPaintEngine")]
+	public static extern void** QTimeEdit_SuperPaintEngine(void* self);
 	[LinkName("QTimeEdit_Metric")]
 	public static extern c_int QTimeEdit_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QTimeEdit_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTimeEdit_OnMetric")]
 	public static extern c_int QTimeEdit_OnMetric(void* self, QTimeEdit_OnMetric_action _action);
+	
+	[LinkName("QTimeEdit_SuperMetric")]
+	public static extern c_int QTimeEdit_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QTimeEdit_InitPainter")]
 	public static extern void QTimeEdit_InitPainter(void* self, void** painter);
 	
 	public function void QTimeEdit_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QTimeEdit_OnInitPainter")]
 	public static extern void QTimeEdit_OnInitPainter(void* self, QTimeEdit_OnInitPainter_action _action);
+	
+	[LinkName("QTimeEdit_SuperInitPainter")]
+	public static extern void QTimeEdit_SuperInitPainter(void* self, void** painter);
 	[LinkName("QTimeEdit_Redirected")]
 	public static extern void** QTimeEdit_Redirected(void* self, void** offset);
 	
 	public function void QTimeEdit_OnRedirected_action(void* self, void** offset);
 	[LinkName("QTimeEdit_OnRedirected")]
 	public static extern void** QTimeEdit_OnRedirected(void* self, QTimeEdit_OnRedirected_action _action);
+	
+	[LinkName("QTimeEdit_SuperRedirected")]
+	public static extern void** QTimeEdit_SuperRedirected(void* self, void** offset);
 	[LinkName("QTimeEdit_SharedPainter")]
 	public static extern void** QTimeEdit_SharedPainter(void* self);
 	
 	public function void QTimeEdit_OnSharedPainter_action(void* self);
 	[LinkName("QTimeEdit_OnSharedPainter")]
 	public static extern void** QTimeEdit_OnSharedPainter(void* self, QTimeEdit_OnSharedPainter_action _action);
+	
+	[LinkName("QTimeEdit_SuperSharedPainter")]
+	public static extern void** QTimeEdit_SuperSharedPainter(void* self);
 	[LinkName("QTimeEdit_SetVisible")]
 	public static extern void QTimeEdit_SetVisible(void* self, bool visible);
 	
 	public function void QTimeEdit_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QTimeEdit_OnSetVisible")]
 	public static extern void QTimeEdit_OnSetVisible(void* self, QTimeEdit_OnSetVisible_action _action);
+	
+	[LinkName("QTimeEdit_SuperSetVisible")]
+	public static extern void QTimeEdit_SuperSetVisible(void* self, bool visible);
 	[LinkName("QTimeEdit_SizeHint")]
 	public static extern void* QTimeEdit_SizeHint(void* self);
 	
 	public function void QTimeEdit_OnSizeHint_action(void* self);
 	[LinkName("QTimeEdit_OnSizeHint")]
 	public static extern void* QTimeEdit_OnSizeHint(void* self, QTimeEdit_OnSizeHint_action _action);
+	
+	[LinkName("QTimeEdit_SuperSizeHint")]
+	public static extern void* QTimeEdit_SuperSizeHint(void* self);
 	[LinkName("QTimeEdit_MinimumSizeHint")]
 	public static extern void* QTimeEdit_MinimumSizeHint(void* self);
 	
 	public function void QTimeEdit_OnMinimumSizeHint_action(void* self);
 	[LinkName("QTimeEdit_OnMinimumSizeHint")]
 	public static extern void* QTimeEdit_OnMinimumSizeHint(void* self, QTimeEdit_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QTimeEdit_SuperMinimumSizeHint")]
+	public static extern void* QTimeEdit_SuperMinimumSizeHint(void* self);
 	[LinkName("QTimeEdit_HeightForWidth")]
 	public static extern c_int QTimeEdit_HeightForWidth(void* self, c_int param1);
 	
 	public function void QTimeEdit_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QTimeEdit_OnHeightForWidth")]
 	public static extern c_int QTimeEdit_OnHeightForWidth(void* self, QTimeEdit_OnHeightForWidth_action _action);
+	
+	[LinkName("QTimeEdit_SuperHeightForWidth")]
+	public static extern c_int QTimeEdit_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QTimeEdit_HasHeightForWidth")]
 	public static extern bool QTimeEdit_HasHeightForWidth(void* self);
 	
 	public function void QTimeEdit_OnHasHeightForWidth_action(void* self);
 	[LinkName("QTimeEdit_OnHasHeightForWidth")]
 	public static extern bool QTimeEdit_OnHasHeightForWidth(void* self, QTimeEdit_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QTimeEdit_SuperHasHeightForWidth")]
+	public static extern bool QTimeEdit_SuperHasHeightForWidth(void* self);
 	[LinkName("QTimeEdit_MousePressEvent")]
 	public static extern void QTimeEdit_MousePressEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnMousePressEvent")]
 	public static extern void QTimeEdit_OnMousePressEvent(void* self, QTimeEdit_OnMousePressEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperMousePressEvent")]
+	public static extern void QTimeEdit_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QTimeEdit_MouseReleaseEvent")]
 	public static extern void QTimeEdit_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnMouseReleaseEvent")]
 	public static extern void QTimeEdit_OnMouseReleaseEvent(void* self, QTimeEdit_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperMouseReleaseEvent")]
+	public static extern void QTimeEdit_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QTimeEdit_MouseDoubleClickEvent")]
 	public static extern void QTimeEdit_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnMouseDoubleClickEvent")]
 	public static extern void QTimeEdit_OnMouseDoubleClickEvent(void* self, QTimeEdit_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperMouseDoubleClickEvent")]
+	public static extern void QTimeEdit_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QTimeEdit_MouseMoveEvent")]
 	public static extern void QTimeEdit_MouseMoveEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnMouseMoveEvent")]
 	public static extern void QTimeEdit_OnMouseMoveEvent(void* self, QTimeEdit_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperMouseMoveEvent")]
+	public static extern void QTimeEdit_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QTimeEdit_WheelEvent")]
 	public static extern void QTimeEdit_WheelEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnWheelEvent")]
 	public static extern void QTimeEdit_OnWheelEvent(void* self, QTimeEdit_OnWheelEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperWheelEvent")]
+	public static extern void QTimeEdit_SuperWheelEvent(void* self, void** event);
 	[LinkName("QTimeEdit_KeyPressEvent")]
 	public static extern void QTimeEdit_KeyPressEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnKeyPressEvent")]
 	public static extern void QTimeEdit_OnKeyPressEvent(void* self, QTimeEdit_OnKeyPressEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperKeyPressEvent")]
+	public static extern void QTimeEdit_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QTimeEdit_KeyReleaseEvent")]
 	public static extern void QTimeEdit_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnKeyReleaseEvent")]
 	public static extern void QTimeEdit_OnKeyReleaseEvent(void* self, QTimeEdit_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperKeyReleaseEvent")]
+	public static extern void QTimeEdit_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QTimeEdit_FocusInEvent")]
 	public static extern void QTimeEdit_FocusInEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnFocusInEvent")]
 	public static extern void QTimeEdit_OnFocusInEvent(void* self, QTimeEdit_OnFocusInEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperFocusInEvent")]
+	public static extern void QTimeEdit_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QTimeEdit_FocusOutEvent")]
 	public static extern void QTimeEdit_FocusOutEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnFocusOutEvent")]
 	public static extern void QTimeEdit_OnFocusOutEvent(void* self, QTimeEdit_OnFocusOutEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperFocusOutEvent")]
+	public static extern void QTimeEdit_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QTimeEdit_EnterEvent")]
 	public static extern void QTimeEdit_EnterEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnEnterEvent")]
 	public static extern void QTimeEdit_OnEnterEvent(void* self, QTimeEdit_OnEnterEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperEnterEvent")]
+	public static extern void QTimeEdit_SuperEnterEvent(void* self, void** event);
 	[LinkName("QTimeEdit_LeaveEvent")]
 	public static extern void QTimeEdit_LeaveEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnLeaveEvent")]
 	public static extern void QTimeEdit_OnLeaveEvent(void* self, QTimeEdit_OnLeaveEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperLeaveEvent")]
+	public static extern void QTimeEdit_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QTimeEdit_PaintEvent")]
 	public static extern void QTimeEdit_PaintEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnPaintEvent")]
 	public static extern void QTimeEdit_OnPaintEvent(void* self, QTimeEdit_OnPaintEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperPaintEvent")]
+	public static extern void QTimeEdit_SuperPaintEvent(void* self, void** event);
 	[LinkName("QTimeEdit_MoveEvent")]
 	public static extern void QTimeEdit_MoveEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnMoveEvent")]
 	public static extern void QTimeEdit_OnMoveEvent(void* self, QTimeEdit_OnMoveEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperMoveEvent")]
+	public static extern void QTimeEdit_SuperMoveEvent(void* self, void** event);
 	[LinkName("QTimeEdit_ResizeEvent")]
 	public static extern void QTimeEdit_ResizeEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnResizeEvent")]
 	public static extern void QTimeEdit_OnResizeEvent(void* self, QTimeEdit_OnResizeEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperResizeEvent")]
+	public static extern void QTimeEdit_SuperResizeEvent(void* self, void** event);
 	[LinkName("QTimeEdit_CloseEvent")]
 	public static extern void QTimeEdit_CloseEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnCloseEvent")]
 	public static extern void QTimeEdit_OnCloseEvent(void* self, QTimeEdit_OnCloseEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperCloseEvent")]
+	public static extern void QTimeEdit_SuperCloseEvent(void* self, void** event);
 	[LinkName("QTimeEdit_ContextMenuEvent")]
 	public static extern void QTimeEdit_ContextMenuEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnContextMenuEvent")]
 	public static extern void QTimeEdit_OnContextMenuEvent(void* self, QTimeEdit_OnContextMenuEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperContextMenuEvent")]
+	public static extern void QTimeEdit_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QTimeEdit_TabletEvent")]
 	public static extern void QTimeEdit_TabletEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnTabletEvent")]
 	public static extern void QTimeEdit_OnTabletEvent(void* self, QTimeEdit_OnTabletEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperTabletEvent")]
+	public static extern void QTimeEdit_SuperTabletEvent(void* self, void** event);
 	[LinkName("QTimeEdit_ActionEvent")]
 	public static extern void QTimeEdit_ActionEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnActionEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnActionEvent")]
 	public static extern void QTimeEdit_OnActionEvent(void* self, QTimeEdit_OnActionEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperActionEvent")]
+	public static extern void QTimeEdit_SuperActionEvent(void* self, void** event);
 	[LinkName("QTimeEdit_DragEnterEvent")]
 	public static extern void QTimeEdit_DragEnterEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnDragEnterEvent")]
 	public static extern void QTimeEdit_OnDragEnterEvent(void* self, QTimeEdit_OnDragEnterEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperDragEnterEvent")]
+	public static extern void QTimeEdit_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QTimeEdit_DragMoveEvent")]
 	public static extern void QTimeEdit_DragMoveEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnDragMoveEvent")]
 	public static extern void QTimeEdit_OnDragMoveEvent(void* self, QTimeEdit_OnDragMoveEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperDragMoveEvent")]
+	public static extern void QTimeEdit_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QTimeEdit_DragLeaveEvent")]
 	public static extern void QTimeEdit_DragLeaveEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnDragLeaveEvent")]
 	public static extern void QTimeEdit_OnDragLeaveEvent(void* self, QTimeEdit_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperDragLeaveEvent")]
+	public static extern void QTimeEdit_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QTimeEdit_DropEvent")]
 	public static extern void QTimeEdit_DropEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnDropEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnDropEvent")]
 	public static extern void QTimeEdit_OnDropEvent(void* self, QTimeEdit_OnDropEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperDropEvent")]
+	public static extern void QTimeEdit_SuperDropEvent(void* self, void** event);
 	[LinkName("QTimeEdit_ShowEvent")]
 	public static extern void QTimeEdit_ShowEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnShowEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnShowEvent")]
 	public static extern void QTimeEdit_OnShowEvent(void* self, QTimeEdit_OnShowEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperShowEvent")]
+	public static extern void QTimeEdit_SuperShowEvent(void* self, void** event);
 	[LinkName("QTimeEdit_HideEvent")]
 	public static extern void QTimeEdit_HideEvent(void* self, void** event);
 	
 	public function void QTimeEdit_OnHideEvent_action(void* self, void** event);
 	[LinkName("QTimeEdit_OnHideEvent")]
 	public static extern void QTimeEdit_OnHideEvent(void* self, QTimeEdit_OnHideEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperHideEvent")]
+	public static extern void QTimeEdit_SuperHideEvent(void* self, void** event);
 	[LinkName("QTimeEdit_NativeEvent")]
 	public static extern bool QTimeEdit_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QTimeEdit_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTimeEdit_OnNativeEvent")]
 	public static extern bool QTimeEdit_OnNativeEvent(void* self, QTimeEdit_OnNativeEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperNativeEvent")]
+	public static extern bool QTimeEdit_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QTimeEdit_ChangeEvent")]
 	public static extern void QTimeEdit_ChangeEvent(void* self, void** param1);
 	
 	public function void QTimeEdit_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QTimeEdit_OnChangeEvent")]
 	public static extern void QTimeEdit_OnChangeEvent(void* self, QTimeEdit_OnChangeEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperChangeEvent")]
+	public static extern void QTimeEdit_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QTimeEdit_InputMethodEvent")]
 	public static extern void QTimeEdit_InputMethodEvent(void* self, void** param1);
 	
 	public function void QTimeEdit_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QTimeEdit_OnInputMethodEvent")]
 	public static extern void QTimeEdit_OnInputMethodEvent(void* self, QTimeEdit_OnInputMethodEvent_action _action);
+	
+	[LinkName("QTimeEdit_SuperInputMethodEvent")]
+	public static extern void QTimeEdit_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QTimeEdit_InputMethodQuery")]
 	public static extern void* QTimeEdit_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QTimeEdit_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTimeEdit_OnInputMethodQuery")]
 	public static extern void* QTimeEdit_OnInputMethodQuery(void* self, QTimeEdit_OnInputMethodQuery_action _action);
+	
+	[LinkName("QTimeEdit_SuperInputMethodQuery")]
+	public static extern void* QTimeEdit_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QTimeEdit_FocusNextPrevChild")]
 	public static extern bool QTimeEdit_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QTimeEdit_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QTimeEdit_OnFocusNextPrevChild")]
 	public static extern bool QTimeEdit_OnFocusNextPrevChild(void* self, QTimeEdit_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QTimeEdit_SuperFocusNextPrevChild")]
+	public static extern bool QTimeEdit_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QTimeEdit_Validate")]
 	public static extern QValidator_State QTimeEdit_Validate(void* self, libqt_string input, c_int* pos);
 	
 	public function void QTimeEdit_OnValidate_action(void* self, libqt_string input, c_int* pos);
 	[LinkName("QTimeEdit_OnValidate")]
 	public static extern QValidator_State QTimeEdit_OnValidate(void* self, QTimeEdit_OnValidate_action _action);
+	
+	[LinkName("QTimeEdit_SuperValidate")]
+	public static extern QValidator_State QTimeEdit_SuperValidate(void* self, libqt_string input, c_int* pos);
 	[LinkName("QTimeEdit_Fixup")]
 	public static extern void QTimeEdit_Fixup(void* self, libqt_string input);
 	
 	public function void QTimeEdit_OnFixup_action(void* self, libqt_string input);
 	[LinkName("QTimeEdit_OnFixup")]
 	public static extern void QTimeEdit_OnFixup(void* self, QTimeEdit_OnFixup_action _action);
+	
+	[LinkName("QTimeEdit_SuperFixup")]
+	public static extern void QTimeEdit_SuperFixup(void* self, libqt_string input);
 	[LinkName("QTimeEdit_StepBy")]
 	public static extern void QTimeEdit_StepBy(void* self, c_int steps);
 	
 	public function void QTimeEdit_OnStepBy_action(void* self, c_int steps);
 	[LinkName("QTimeEdit_OnStepBy")]
 	public static extern void QTimeEdit_OnStepBy(void* self, QTimeEdit_OnStepBy_action _action);
+	
+	[LinkName("QTimeEdit_SuperStepBy")]
+	public static extern void QTimeEdit_SuperStepBy(void* self, c_int steps);
 	[LinkName("QTimeEdit_Clear")]
 	public static extern void QTimeEdit_Clear(void* self);
 	
 	public function void QTimeEdit_OnClear_action(void* self);
 	[LinkName("QTimeEdit_OnClear")]
 	public static extern void QTimeEdit_OnClear(void* self, QTimeEdit_OnClear_action _action);
+	
+	[LinkName("QTimeEdit_SuperClear")]
+	public static extern void QTimeEdit_SuperClear(void* self);
 	[LinkName("QTimeEdit_InitStyleOption")]
 	public static extern void QTimeEdit_InitStyleOption(void* self, void** option);
 	
 	public function void QTimeEdit_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QTimeEdit_OnInitStyleOption")]
 	public static extern void QTimeEdit_OnInitStyleOption(void* self, QTimeEdit_OnInitStyleOption_action _action);
+	
+	[LinkName("QTimeEdit_SuperInitStyleOption")]
+	public static extern void QTimeEdit_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QTimeEdit_StepEnabled")]
 	public static extern void* QTimeEdit_StepEnabled(void* self);
 	
 	public function void QTimeEdit_OnStepEnabled_action(void* self);
 	[LinkName("QTimeEdit_OnStepEnabled")]
 	public static extern void* QTimeEdit_OnStepEnabled(void* self, QTimeEdit_OnStepEnabled_action _action);
+	
+	[LinkName("QTimeEdit_SuperStepEnabled")]
+	public static extern void* QTimeEdit_SuperStepEnabled(void* self);
 	[LinkName("QTimeEdit_DateTimeFromText")]
 	public static extern void* QTimeEdit_DateTimeFromText(void* self, libqt_string text);
 	
 	public function void QTimeEdit_OnDateTimeFromText_action(void* self, libqt_string text);
 	[LinkName("QTimeEdit_OnDateTimeFromText")]
 	public static extern void* QTimeEdit_OnDateTimeFromText(void* self, QTimeEdit_OnDateTimeFromText_action _action);
+	
+	[LinkName("QTimeEdit_SuperDateTimeFromText")]
+	public static extern void* QTimeEdit_SuperDateTimeFromText(void* self, libqt_string text);
 	[LinkName("QTimeEdit_TextFromDateTime")]
 	public static extern libqt_string QTimeEdit_TextFromDateTime(void* self, void** dt);
 	
 	public function void QTimeEdit_OnTextFromDateTime_action(void* self, void** dt);
 	[LinkName("QTimeEdit_OnTextFromDateTime")]
 	public static extern libqt_string QTimeEdit_OnTextFromDateTime(void* self, QTimeEdit_OnTextFromDateTime_action _action);
+	
+	[LinkName("QTimeEdit_SuperTextFromDateTime")]
+	public static extern libqt_string QTimeEdit_SuperTextFromDateTime(void* self, void** dt);
 }
 // --------------------------------------------------------------
 // QDateEdit
@@ -10640,6 +11684,64 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 		CQt.QDateTimeEdit_Connect_DateTimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateTimeChanged);
 		CQt.QDateTimeEdit_Connect_TimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_TimeChanged);
 		CQt.QDateTimeEdit_Connect_DateChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateChanged);
+		CQt.QDateEdit_OnMetaObject(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMetaObject);
+		CQt.QDateEdit_OnMetacast(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMetacast);
+		CQt.QDateEdit_OnMetacall(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMetacall);
+		CQt.QDateEdit_OnEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnEvent);
+		CQt.QDateEdit_OnEventFilter(obj.ObjectPtr,  => QtBeef_QDateEdit_OnEventFilter);
+		CQt.QDateEdit_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnTimerEvent);
+		CQt.QDateEdit_OnChildEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnChildEvent);
+		CQt.QDateEdit_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnCustomEvent);
+		CQt.QDateEdit_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QDateEdit_OnConnectNotify);
+		CQt.QDateEdit_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QDateEdit_OnDisconnectNotify);
+		CQt.QDateEdit_OnDevType(obj.ObjectPtr,  => QtBeef_QDateEdit_OnDevType);
+		CQt.QDateEdit_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QDateEdit_OnPaintEngine);
+		CQt.QDateEdit_OnMetric(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMetric);
+		CQt.QDateEdit_OnInitPainter(obj.ObjectPtr,  => QtBeef_QDateEdit_OnInitPainter);
+		CQt.QDateEdit_OnRedirected(obj.ObjectPtr,  => QtBeef_QDateEdit_OnRedirected);
+		CQt.QDateEdit_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QDateEdit_OnSharedPainter);
+		CQt.QDateEdit_OnSetVisible(obj.ObjectPtr,  => QtBeef_QDateEdit_OnSetVisible);
+		CQt.QDateEdit_OnSizeHint(obj.ObjectPtr,  => QtBeef_QDateEdit_OnSizeHint);
+		CQt.QDateEdit_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMinimumSizeHint);
+		CQt.QDateEdit_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QDateEdit_OnHeightForWidth);
+		CQt.QDateEdit_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QDateEdit_OnHasHeightForWidth);
+		CQt.QDateEdit_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMousePressEvent);
+		CQt.QDateEdit_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMouseReleaseEvent);
+		CQt.QDateEdit_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMouseDoubleClickEvent);
+		CQt.QDateEdit_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMouseMoveEvent);
+		CQt.QDateEdit_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnWheelEvent);
+		CQt.QDateEdit_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnKeyPressEvent);
+		CQt.QDateEdit_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnKeyReleaseEvent);
+		CQt.QDateEdit_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnFocusInEvent);
+		CQt.QDateEdit_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnFocusOutEvent);
+		CQt.QDateEdit_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnEnterEvent);
+		CQt.QDateEdit_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnLeaveEvent);
+		CQt.QDateEdit_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnPaintEvent);
+		CQt.QDateEdit_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnMoveEvent);
+		CQt.QDateEdit_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnResizeEvent);
+		CQt.QDateEdit_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnCloseEvent);
+		CQt.QDateEdit_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnContextMenuEvent);
+		CQt.QDateEdit_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnTabletEvent);
+		CQt.QDateEdit_OnActionEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnActionEvent);
+		CQt.QDateEdit_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnDragEnterEvent);
+		CQt.QDateEdit_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnDragMoveEvent);
+		CQt.QDateEdit_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnDragLeaveEvent);
+		CQt.QDateEdit_OnDropEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnDropEvent);
+		CQt.QDateEdit_OnShowEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnShowEvent);
+		CQt.QDateEdit_OnHideEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnHideEvent);
+		CQt.QDateEdit_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnNativeEvent);
+		CQt.QDateEdit_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnChangeEvent);
+		CQt.QDateEdit_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QDateEdit_OnInputMethodEvent);
+		CQt.QDateEdit_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QDateEdit_OnInputMethodQuery);
+		CQt.QDateEdit_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QDateEdit_OnFocusNextPrevChild);
+		CQt.QDateEdit_OnValidate(obj.ObjectPtr,  => QtBeef_QDateEdit_OnValidate);
+		CQt.QDateEdit_OnFixup(obj.ObjectPtr,  => QtBeef_QDateEdit_OnFixup);
+		CQt.QDateEdit_OnStepBy(obj.ObjectPtr,  => QtBeef_QDateEdit_OnStepBy);
+		CQt.QDateEdit_OnClear(obj.ObjectPtr,  => QtBeef_QDateEdit_OnClear);
+		CQt.QDateEdit_OnInitStyleOption(obj.ObjectPtr,  => QtBeef_QDateEdit_OnInitStyleOption);
+		CQt.QDateEdit_OnStepEnabled(obj.ObjectPtr,  => QtBeef_QDateEdit_OnStepEnabled);
+		CQt.QDateEdit_OnDateTimeFromText(obj.ObjectPtr,  => QtBeef_QDateEdit_OnDateTimeFromText);
+		CQt.QDateEdit_OnTextFromDateTime(obj.ObjectPtr,  => QtBeef_QDateEdit_OnTextFromDateTime);
 	}
 	public Event<delegate void(void* date)> OnUserDateChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -10706,6 +11808,296 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDateChanged.Invoke(date);
+	}
+	static void QtBeef_QDateEdit_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QDateEdit_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QDateEdit_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QDateEdit_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QDateEdit_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QDateEdit_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QDateEdit_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QDateEdit_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QDateEdit_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QDateEdit_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QDateEdit_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QDateEdit_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QDateEdit_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QDateEdit_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QDateEdit_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QDateEdit_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QDateEdit_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QDateEdit_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnKeyPressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnResizeEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnCloseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnContextMenuEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnShowEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QDateEdit_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QDateEdit_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QDateEdit_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QDateEdit_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QDateEdit_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
+	}
+	static void QtBeef_QDateEdit_OnValidate(void* ptr, libqt_string input, c_int* pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValidate(input, pos);
+	}
+	static void QtBeef_QDateEdit_OnFixup(void* ptr, libqt_string input)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFixup(input);
+	}
+	static void QtBeef_QDateEdit_OnStepBy(void* ptr, c_int steps)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepBy(steps);
+	}
+	static void QtBeef_QDateEdit_OnClear(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClear();
+	}
+	static void QtBeef_QDateEdit_OnInitStyleOption(void* ptr, void** option)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitStyleOption(option);
+	}
+	static void QtBeef_QDateEdit_OnStepEnabled(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStepEnabled();
+	}
+	static void QtBeef_QDateEdit_OnDateTimeFromText(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDateTimeFromText(text);
+	}
+	static void QtBeef_QDateEdit_OnTextFromDateTime(void* ptr, void** dt)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextFromDateTime(scope .(), dt);
 	}
 	public this(QDateEdit_Ptr ptr)
 	{
@@ -12632,18 +14024,27 @@ extension CQt
 	public function void QDateEdit_OnMetaObject_action(void* self);
 	[LinkName("QDateEdit_OnMetaObject")]
 	public static extern void** QDateEdit_OnMetaObject(void* self, QDateEdit_OnMetaObject_action _action);
+	
+	[LinkName("QDateEdit_SuperMetaObject")]
+	public static extern void** QDateEdit_SuperMetaObject(void* self);
 	[LinkName("QDateEdit_Qt_Metacast")]
 	public static extern void* QDateEdit_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QDateEdit_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QDateEdit_OnMetacast")]
 	public static extern void* QDateEdit_OnMetacast(void* self, QDateEdit_OnMetacast_action _action);
+	
+	[LinkName("QDateEdit_SuperMetacast")]
+	public static extern void* QDateEdit_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QDateEdit_Qt_Metacall")]
 	public static extern c_int QDateEdit_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QDateEdit_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDateEdit_OnMetacall")]
 	public static extern c_int QDateEdit_OnMetacall(void* self, QDateEdit_OnMetacall_action _action);
+	
+	[LinkName("QDateEdit_SuperMetacall")]
+	public static extern c_int QDateEdit_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDateEdit_Tr")]
 	public static extern libqt_string QDateEdit_Tr(c_char* s);
 	[LinkName("QDateEdit_UserDateChanged")]
@@ -12662,330 +14063,495 @@ extension CQt
 	public function void QDateEdit_OnEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnEvent")]
 	public static extern bool QDateEdit_OnEvent(void* self, QDateEdit_OnEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperEvent")]
+	public static extern bool QDateEdit_SuperEvent(void* self, void** event);
 	[LinkName("QDateEdit_EventFilter")]
 	public static extern bool QDateEdit_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QDateEdit_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QDateEdit_OnEventFilter")]
 	public static extern bool QDateEdit_OnEventFilter(void* self, QDateEdit_OnEventFilter_action _action);
+	
+	[LinkName("QDateEdit_SuperEventFilter")]
+	public static extern bool QDateEdit_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QDateEdit_TimerEvent")]
 	public static extern void QDateEdit_TimerEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnTimerEvent")]
 	public static extern void QDateEdit_OnTimerEvent(void* self, QDateEdit_OnTimerEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperTimerEvent")]
+	public static extern void QDateEdit_SuperTimerEvent(void* self, void** event);
 	[LinkName("QDateEdit_ChildEvent")]
 	public static extern void QDateEdit_ChildEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnChildEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnChildEvent")]
 	public static extern void QDateEdit_OnChildEvent(void* self, QDateEdit_OnChildEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperChildEvent")]
+	public static extern void QDateEdit_SuperChildEvent(void* self, void** event);
 	[LinkName("QDateEdit_CustomEvent")]
 	public static extern void QDateEdit_CustomEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnCustomEvent")]
 	public static extern void QDateEdit_OnCustomEvent(void* self, QDateEdit_OnCustomEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperCustomEvent")]
+	public static extern void QDateEdit_SuperCustomEvent(void* self, void** event);
 	[LinkName("QDateEdit_ConnectNotify")]
 	public static extern void QDateEdit_ConnectNotify(void* self, void** signal);
 	
 	public function void QDateEdit_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QDateEdit_OnConnectNotify")]
 	public static extern void QDateEdit_OnConnectNotify(void* self, QDateEdit_OnConnectNotify_action _action);
+	
+	[LinkName("QDateEdit_SuperConnectNotify")]
+	public static extern void QDateEdit_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QDateEdit_DisconnectNotify")]
 	public static extern void QDateEdit_DisconnectNotify(void* self, void** signal);
 	
 	public function void QDateEdit_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QDateEdit_OnDisconnectNotify")]
 	public static extern void QDateEdit_OnDisconnectNotify(void* self, QDateEdit_OnDisconnectNotify_action _action);
+	
+	[LinkName("QDateEdit_SuperDisconnectNotify")]
+	public static extern void QDateEdit_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QDateEdit_DevType")]
 	public static extern c_int QDateEdit_DevType(void* self);
 	
 	public function void QDateEdit_OnDevType_action(void* self);
 	[LinkName("QDateEdit_OnDevType")]
 	public static extern c_int QDateEdit_OnDevType(void* self, QDateEdit_OnDevType_action _action);
+	
+	[LinkName("QDateEdit_SuperDevType")]
+	public static extern c_int QDateEdit_SuperDevType(void* self);
 	[LinkName("QDateEdit_PaintEngine")]
 	public static extern void** QDateEdit_PaintEngine(void* self);
 	
 	public function void QDateEdit_OnPaintEngine_action(void* self);
 	[LinkName("QDateEdit_OnPaintEngine")]
 	public static extern void** QDateEdit_OnPaintEngine(void* self, QDateEdit_OnPaintEngine_action _action);
+	
+	[LinkName("QDateEdit_SuperPaintEngine")]
+	public static extern void** QDateEdit_SuperPaintEngine(void* self);
 	[LinkName("QDateEdit_Metric")]
 	public static extern c_int QDateEdit_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QDateEdit_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDateEdit_OnMetric")]
 	public static extern c_int QDateEdit_OnMetric(void* self, QDateEdit_OnMetric_action _action);
+	
+	[LinkName("QDateEdit_SuperMetric")]
+	public static extern c_int QDateEdit_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDateEdit_InitPainter")]
 	public static extern void QDateEdit_InitPainter(void* self, void** painter);
 	
 	public function void QDateEdit_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QDateEdit_OnInitPainter")]
 	public static extern void QDateEdit_OnInitPainter(void* self, QDateEdit_OnInitPainter_action _action);
+	
+	[LinkName("QDateEdit_SuperInitPainter")]
+	public static extern void QDateEdit_SuperInitPainter(void* self, void** painter);
 	[LinkName("QDateEdit_Redirected")]
 	public static extern void** QDateEdit_Redirected(void* self, void** offset);
 	
 	public function void QDateEdit_OnRedirected_action(void* self, void** offset);
 	[LinkName("QDateEdit_OnRedirected")]
 	public static extern void** QDateEdit_OnRedirected(void* self, QDateEdit_OnRedirected_action _action);
+	
+	[LinkName("QDateEdit_SuperRedirected")]
+	public static extern void** QDateEdit_SuperRedirected(void* self, void** offset);
 	[LinkName("QDateEdit_SharedPainter")]
 	public static extern void** QDateEdit_SharedPainter(void* self);
 	
 	public function void QDateEdit_OnSharedPainter_action(void* self);
 	[LinkName("QDateEdit_OnSharedPainter")]
 	public static extern void** QDateEdit_OnSharedPainter(void* self, QDateEdit_OnSharedPainter_action _action);
+	
+	[LinkName("QDateEdit_SuperSharedPainter")]
+	public static extern void** QDateEdit_SuperSharedPainter(void* self);
 	[LinkName("QDateEdit_SetVisible")]
 	public static extern void QDateEdit_SetVisible(void* self, bool visible);
 	
 	public function void QDateEdit_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QDateEdit_OnSetVisible")]
 	public static extern void QDateEdit_OnSetVisible(void* self, QDateEdit_OnSetVisible_action _action);
+	
+	[LinkName("QDateEdit_SuperSetVisible")]
+	public static extern void QDateEdit_SuperSetVisible(void* self, bool visible);
 	[LinkName("QDateEdit_SizeHint")]
 	public static extern void* QDateEdit_SizeHint(void* self);
 	
 	public function void QDateEdit_OnSizeHint_action(void* self);
 	[LinkName("QDateEdit_OnSizeHint")]
 	public static extern void* QDateEdit_OnSizeHint(void* self, QDateEdit_OnSizeHint_action _action);
+	
+	[LinkName("QDateEdit_SuperSizeHint")]
+	public static extern void* QDateEdit_SuperSizeHint(void* self);
 	[LinkName("QDateEdit_MinimumSizeHint")]
 	public static extern void* QDateEdit_MinimumSizeHint(void* self);
 	
 	public function void QDateEdit_OnMinimumSizeHint_action(void* self);
 	[LinkName("QDateEdit_OnMinimumSizeHint")]
 	public static extern void* QDateEdit_OnMinimumSizeHint(void* self, QDateEdit_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QDateEdit_SuperMinimumSizeHint")]
+	public static extern void* QDateEdit_SuperMinimumSizeHint(void* self);
 	[LinkName("QDateEdit_HeightForWidth")]
 	public static extern c_int QDateEdit_HeightForWidth(void* self, c_int param1);
 	
 	public function void QDateEdit_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QDateEdit_OnHeightForWidth")]
 	public static extern c_int QDateEdit_OnHeightForWidth(void* self, QDateEdit_OnHeightForWidth_action _action);
+	
+	[LinkName("QDateEdit_SuperHeightForWidth")]
+	public static extern c_int QDateEdit_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QDateEdit_HasHeightForWidth")]
 	public static extern bool QDateEdit_HasHeightForWidth(void* self);
 	
 	public function void QDateEdit_OnHasHeightForWidth_action(void* self);
 	[LinkName("QDateEdit_OnHasHeightForWidth")]
 	public static extern bool QDateEdit_OnHasHeightForWidth(void* self, QDateEdit_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QDateEdit_SuperHasHeightForWidth")]
+	public static extern bool QDateEdit_SuperHasHeightForWidth(void* self);
 	[LinkName("QDateEdit_MousePressEvent")]
 	public static extern void QDateEdit_MousePressEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnMousePressEvent")]
 	public static extern void QDateEdit_OnMousePressEvent(void* self, QDateEdit_OnMousePressEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperMousePressEvent")]
+	public static extern void QDateEdit_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QDateEdit_MouseReleaseEvent")]
 	public static extern void QDateEdit_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnMouseReleaseEvent")]
 	public static extern void QDateEdit_OnMouseReleaseEvent(void* self, QDateEdit_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperMouseReleaseEvent")]
+	public static extern void QDateEdit_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QDateEdit_MouseDoubleClickEvent")]
 	public static extern void QDateEdit_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnMouseDoubleClickEvent")]
 	public static extern void QDateEdit_OnMouseDoubleClickEvent(void* self, QDateEdit_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperMouseDoubleClickEvent")]
+	public static extern void QDateEdit_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QDateEdit_MouseMoveEvent")]
 	public static extern void QDateEdit_MouseMoveEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnMouseMoveEvent")]
 	public static extern void QDateEdit_OnMouseMoveEvent(void* self, QDateEdit_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperMouseMoveEvent")]
+	public static extern void QDateEdit_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QDateEdit_WheelEvent")]
 	public static extern void QDateEdit_WheelEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnWheelEvent")]
 	public static extern void QDateEdit_OnWheelEvent(void* self, QDateEdit_OnWheelEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperWheelEvent")]
+	public static extern void QDateEdit_SuperWheelEvent(void* self, void** event);
 	[LinkName("QDateEdit_KeyPressEvent")]
 	public static extern void QDateEdit_KeyPressEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnKeyPressEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnKeyPressEvent")]
 	public static extern void QDateEdit_OnKeyPressEvent(void* self, QDateEdit_OnKeyPressEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperKeyPressEvent")]
+	public static extern void QDateEdit_SuperKeyPressEvent(void* self, void** event);
 	[LinkName("QDateEdit_KeyReleaseEvent")]
 	public static extern void QDateEdit_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnKeyReleaseEvent")]
 	public static extern void QDateEdit_OnKeyReleaseEvent(void* self, QDateEdit_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperKeyReleaseEvent")]
+	public static extern void QDateEdit_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QDateEdit_FocusInEvent")]
 	public static extern void QDateEdit_FocusInEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnFocusInEvent")]
 	public static extern void QDateEdit_OnFocusInEvent(void* self, QDateEdit_OnFocusInEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperFocusInEvent")]
+	public static extern void QDateEdit_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QDateEdit_FocusOutEvent")]
 	public static extern void QDateEdit_FocusOutEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnFocusOutEvent")]
 	public static extern void QDateEdit_OnFocusOutEvent(void* self, QDateEdit_OnFocusOutEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperFocusOutEvent")]
+	public static extern void QDateEdit_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QDateEdit_EnterEvent")]
 	public static extern void QDateEdit_EnterEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnEnterEvent")]
 	public static extern void QDateEdit_OnEnterEvent(void* self, QDateEdit_OnEnterEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperEnterEvent")]
+	public static extern void QDateEdit_SuperEnterEvent(void* self, void** event);
 	[LinkName("QDateEdit_LeaveEvent")]
 	public static extern void QDateEdit_LeaveEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnLeaveEvent")]
 	public static extern void QDateEdit_OnLeaveEvent(void* self, QDateEdit_OnLeaveEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperLeaveEvent")]
+	public static extern void QDateEdit_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QDateEdit_PaintEvent")]
 	public static extern void QDateEdit_PaintEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnPaintEvent")]
 	public static extern void QDateEdit_OnPaintEvent(void* self, QDateEdit_OnPaintEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperPaintEvent")]
+	public static extern void QDateEdit_SuperPaintEvent(void* self, void** event);
 	[LinkName("QDateEdit_MoveEvent")]
 	public static extern void QDateEdit_MoveEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnMoveEvent")]
 	public static extern void QDateEdit_OnMoveEvent(void* self, QDateEdit_OnMoveEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperMoveEvent")]
+	public static extern void QDateEdit_SuperMoveEvent(void* self, void** event);
 	[LinkName("QDateEdit_ResizeEvent")]
 	public static extern void QDateEdit_ResizeEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnResizeEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnResizeEvent")]
 	public static extern void QDateEdit_OnResizeEvent(void* self, QDateEdit_OnResizeEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperResizeEvent")]
+	public static extern void QDateEdit_SuperResizeEvent(void* self, void** event);
 	[LinkName("QDateEdit_CloseEvent")]
 	public static extern void QDateEdit_CloseEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnCloseEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnCloseEvent")]
 	public static extern void QDateEdit_OnCloseEvent(void* self, QDateEdit_OnCloseEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperCloseEvent")]
+	public static extern void QDateEdit_SuperCloseEvent(void* self, void** event);
 	[LinkName("QDateEdit_ContextMenuEvent")]
 	public static extern void QDateEdit_ContextMenuEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnContextMenuEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnContextMenuEvent")]
 	public static extern void QDateEdit_OnContextMenuEvent(void* self, QDateEdit_OnContextMenuEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperContextMenuEvent")]
+	public static extern void QDateEdit_SuperContextMenuEvent(void* self, void** event);
 	[LinkName("QDateEdit_TabletEvent")]
 	public static extern void QDateEdit_TabletEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnTabletEvent")]
 	public static extern void QDateEdit_OnTabletEvent(void* self, QDateEdit_OnTabletEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperTabletEvent")]
+	public static extern void QDateEdit_SuperTabletEvent(void* self, void** event);
 	[LinkName("QDateEdit_ActionEvent")]
 	public static extern void QDateEdit_ActionEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnActionEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnActionEvent")]
 	public static extern void QDateEdit_OnActionEvent(void* self, QDateEdit_OnActionEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperActionEvent")]
+	public static extern void QDateEdit_SuperActionEvent(void* self, void** event);
 	[LinkName("QDateEdit_DragEnterEvent")]
 	public static extern void QDateEdit_DragEnterEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnDragEnterEvent")]
 	public static extern void QDateEdit_OnDragEnterEvent(void* self, QDateEdit_OnDragEnterEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperDragEnterEvent")]
+	public static extern void QDateEdit_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QDateEdit_DragMoveEvent")]
 	public static extern void QDateEdit_DragMoveEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnDragMoveEvent")]
 	public static extern void QDateEdit_OnDragMoveEvent(void* self, QDateEdit_OnDragMoveEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperDragMoveEvent")]
+	public static extern void QDateEdit_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QDateEdit_DragLeaveEvent")]
 	public static extern void QDateEdit_DragLeaveEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnDragLeaveEvent")]
 	public static extern void QDateEdit_OnDragLeaveEvent(void* self, QDateEdit_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperDragLeaveEvent")]
+	public static extern void QDateEdit_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QDateEdit_DropEvent")]
 	public static extern void QDateEdit_DropEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnDropEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnDropEvent")]
 	public static extern void QDateEdit_OnDropEvent(void* self, QDateEdit_OnDropEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperDropEvent")]
+	public static extern void QDateEdit_SuperDropEvent(void* self, void** event);
 	[LinkName("QDateEdit_ShowEvent")]
 	public static extern void QDateEdit_ShowEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnShowEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnShowEvent")]
 	public static extern void QDateEdit_OnShowEvent(void* self, QDateEdit_OnShowEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperShowEvent")]
+	public static extern void QDateEdit_SuperShowEvent(void* self, void** event);
 	[LinkName("QDateEdit_HideEvent")]
 	public static extern void QDateEdit_HideEvent(void* self, void** event);
 	
 	public function void QDateEdit_OnHideEvent_action(void* self, void** event);
 	[LinkName("QDateEdit_OnHideEvent")]
 	public static extern void QDateEdit_OnHideEvent(void* self, QDateEdit_OnHideEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperHideEvent")]
+	public static extern void QDateEdit_SuperHideEvent(void* self, void** event);
 	[LinkName("QDateEdit_NativeEvent")]
 	public static extern bool QDateEdit_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QDateEdit_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDateEdit_OnNativeEvent")]
 	public static extern bool QDateEdit_OnNativeEvent(void* self, QDateEdit_OnNativeEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperNativeEvent")]
+	public static extern bool QDateEdit_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDateEdit_ChangeEvent")]
 	public static extern void QDateEdit_ChangeEvent(void* self, void** param1);
 	
 	public function void QDateEdit_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QDateEdit_OnChangeEvent")]
 	public static extern void QDateEdit_OnChangeEvent(void* self, QDateEdit_OnChangeEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperChangeEvent")]
+	public static extern void QDateEdit_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QDateEdit_InputMethodEvent")]
 	public static extern void QDateEdit_InputMethodEvent(void* self, void** param1);
 	
 	public function void QDateEdit_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QDateEdit_OnInputMethodEvent")]
 	public static extern void QDateEdit_OnInputMethodEvent(void* self, QDateEdit_OnInputMethodEvent_action _action);
+	
+	[LinkName("QDateEdit_SuperInputMethodEvent")]
+	public static extern void QDateEdit_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QDateEdit_InputMethodQuery")]
 	public static extern void* QDateEdit_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QDateEdit_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QDateEdit_OnInputMethodQuery")]
 	public static extern void* QDateEdit_OnInputMethodQuery(void* self, QDateEdit_OnInputMethodQuery_action _action);
+	
+	[LinkName("QDateEdit_SuperInputMethodQuery")]
+	public static extern void* QDateEdit_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QDateEdit_FocusNextPrevChild")]
 	public static extern bool QDateEdit_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QDateEdit_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QDateEdit_OnFocusNextPrevChild")]
 	public static extern bool QDateEdit_OnFocusNextPrevChild(void* self, QDateEdit_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QDateEdit_SuperFocusNextPrevChild")]
+	public static extern bool QDateEdit_SuperFocusNextPrevChild(void* self, bool next);
 	[LinkName("QDateEdit_Validate")]
 	public static extern QValidator_State QDateEdit_Validate(void* self, libqt_string input, c_int* pos);
 	
 	public function void QDateEdit_OnValidate_action(void* self, libqt_string input, c_int* pos);
 	[LinkName("QDateEdit_OnValidate")]
 	public static extern QValidator_State QDateEdit_OnValidate(void* self, QDateEdit_OnValidate_action _action);
+	
+	[LinkName("QDateEdit_SuperValidate")]
+	public static extern QValidator_State QDateEdit_SuperValidate(void* self, libqt_string input, c_int* pos);
 	[LinkName("QDateEdit_Fixup")]
 	public static extern void QDateEdit_Fixup(void* self, libqt_string input);
 	
 	public function void QDateEdit_OnFixup_action(void* self, libqt_string input);
 	[LinkName("QDateEdit_OnFixup")]
 	public static extern void QDateEdit_OnFixup(void* self, QDateEdit_OnFixup_action _action);
+	
+	[LinkName("QDateEdit_SuperFixup")]
+	public static extern void QDateEdit_SuperFixup(void* self, libqt_string input);
 	[LinkName("QDateEdit_StepBy")]
 	public static extern void QDateEdit_StepBy(void* self, c_int steps);
 	
 	public function void QDateEdit_OnStepBy_action(void* self, c_int steps);
 	[LinkName("QDateEdit_OnStepBy")]
 	public static extern void QDateEdit_OnStepBy(void* self, QDateEdit_OnStepBy_action _action);
+	
+	[LinkName("QDateEdit_SuperStepBy")]
+	public static extern void QDateEdit_SuperStepBy(void* self, c_int steps);
 	[LinkName("QDateEdit_Clear")]
 	public static extern void QDateEdit_Clear(void* self);
 	
 	public function void QDateEdit_OnClear_action(void* self);
 	[LinkName("QDateEdit_OnClear")]
 	public static extern void QDateEdit_OnClear(void* self, QDateEdit_OnClear_action _action);
+	
+	[LinkName("QDateEdit_SuperClear")]
+	public static extern void QDateEdit_SuperClear(void* self);
 	[LinkName("QDateEdit_InitStyleOption")]
 	public static extern void QDateEdit_InitStyleOption(void* self, void** option);
 	
 	public function void QDateEdit_OnInitStyleOption_action(void* self, void** option);
 	[LinkName("QDateEdit_OnInitStyleOption")]
 	public static extern void QDateEdit_OnInitStyleOption(void* self, QDateEdit_OnInitStyleOption_action _action);
+	
+	[LinkName("QDateEdit_SuperInitStyleOption")]
+	public static extern void QDateEdit_SuperInitStyleOption(void* self, void** option);
 	[LinkName("QDateEdit_StepEnabled")]
 	public static extern void* QDateEdit_StepEnabled(void* self);
 	
 	public function void QDateEdit_OnStepEnabled_action(void* self);
 	[LinkName("QDateEdit_OnStepEnabled")]
 	public static extern void* QDateEdit_OnStepEnabled(void* self, QDateEdit_OnStepEnabled_action _action);
+	
+	[LinkName("QDateEdit_SuperStepEnabled")]
+	public static extern void* QDateEdit_SuperStepEnabled(void* self);
 	[LinkName("QDateEdit_DateTimeFromText")]
 	public static extern void* QDateEdit_DateTimeFromText(void* self, libqt_string text);
 	
 	public function void QDateEdit_OnDateTimeFromText_action(void* self, libqt_string text);
 	[LinkName("QDateEdit_OnDateTimeFromText")]
 	public static extern void* QDateEdit_OnDateTimeFromText(void* self, QDateEdit_OnDateTimeFromText_action _action);
+	
+	[LinkName("QDateEdit_SuperDateTimeFromText")]
+	public static extern void* QDateEdit_SuperDateTimeFromText(void* self, libqt_string text);
 	[LinkName("QDateEdit_TextFromDateTime")]
 	public static extern libqt_string QDateEdit_TextFromDateTime(void* self, void** dt);
 	
 	public function void QDateEdit_OnTextFromDateTime_action(void* self, void** dt);
 	[LinkName("QDateEdit_OnTextFromDateTime")]
 	public static extern libqt_string QDateEdit_OnTextFromDateTime(void* self, QDateEdit_OnTextFromDateTime_action _action);
+	
+	[LinkName("QDateEdit_SuperTextFromDateTime")]
+	public static extern libqt_string QDateEdit_SuperTextFromDateTime(void* self, void** dt);
 }
 [AllowDuplicates]
 enum QDateTimeEdit_Section

@@ -975,6 +975,46 @@ class QRasterWindow : IQRasterWindow, IQPaintDeviceWindow, IQWindow, IQObject, I
 		CQt.QWindow_Connect_FocusObjectChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_FocusObjectChanged);
 		CQt.QWindow_Connect_OpacityChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_OpacityChanged);
 		CQt.QWindow_Connect_TransientParentChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_TransientParentChanged);
+		CQt.QRasterWindow_OnMetaObject(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnMetaObject);
+		CQt.QRasterWindow_OnMetacast(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnMetacast);
+		CQt.QRasterWindow_OnMetacall(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnMetacall);
+		CQt.QRasterWindow_OnMetric(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnMetric);
+		CQt.QRasterWindow_OnRedirected(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnRedirected);
+		CQt.QRasterWindow_OnEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnEvent);
+		CQt.QRasterWindow_OnEventFilter(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnEventFilter);
+		CQt.QRasterWindow_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnTimerEvent);
+		CQt.QRasterWindow_OnChildEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnChildEvent);
+		CQt.QRasterWindow_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnCustomEvent);
+		CQt.QRasterWindow_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnConnectNotify);
+		CQt.QRasterWindow_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnDisconnectNotify);
+		CQt.QRasterWindow_OnFormat(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnFormat);
+		CQt.QRasterWindow_OnSurfaceType(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnSurfaceType);
+		CQt.QRasterWindow_OnSize(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnSize);
+		CQt.QRasterWindow_OnAccessibleRoot(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnAccessibleRoot);
+		CQt.QRasterWindow_OnFocusObject(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnFocusObject);
+		CQt.QRasterWindow_OnExposeEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnExposeEvent);
+		CQt.QRasterWindow_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnResizeEvent);
+		CQt.QRasterWindow_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnPaintEvent);
+		CQt.QRasterWindow_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnMoveEvent);
+		CQt.QRasterWindow_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnFocusInEvent);
+		CQt.QRasterWindow_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnFocusOutEvent);
+		CQt.QRasterWindow_OnShowEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnShowEvent);
+		CQt.QRasterWindow_OnHideEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnHideEvent);
+		CQt.QRasterWindow_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnCloseEvent);
+		CQt.QRasterWindow_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnKeyPressEvent);
+		CQt.QRasterWindow_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnKeyReleaseEvent);
+		CQt.QRasterWindow_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnMousePressEvent);
+		CQt.QRasterWindow_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnMouseReleaseEvent);
+		CQt.QRasterWindow_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnMouseDoubleClickEvent);
+		CQt.QRasterWindow_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnMouseMoveEvent);
+		CQt.QRasterWindow_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnWheelEvent);
+		CQt.QRasterWindow_OnTouchEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnTouchEvent);
+		CQt.QRasterWindow_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnTabletEvent);
+		CQt.QRasterWindow_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnNativeEvent);
+		CQt.QRasterWindow_OnDevType(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnDevType);
+		CQt.QRasterWindow_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnPaintEngine);
+		CQt.QRasterWindow_OnInitPainter(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnInitPainter);
+		CQt.QRasterWindow_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QRasterWindow_OnSharedPainter);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -1101,6 +1141,206 @@ class QRasterWindow : IQRasterWindow, IQPaintDeviceWindow, IQWindow, IQObject, I
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnTransientParentChanged.Invoke(transientParent);
+	}
+	static void QtBeef_QRasterWindow_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QRasterWindow_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QRasterWindow_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QRasterWindow_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QRasterWindow_OnRedirected(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(param1);
+	}
+	static void QtBeef_QRasterWindow_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QRasterWindow_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QRasterWindow_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QRasterWindow_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QRasterWindow_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QRasterWindow_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QRasterWindow_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QRasterWindow_OnFormat(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFormat();
+	}
+	static void QtBeef_QRasterWindow_OnSurfaceType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSurfaceType();
+	}
+	static void QtBeef_QRasterWindow_OnSize(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSize();
+	}
+	static void QtBeef_QRasterWindow_OnAccessibleRoot(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccessibleRoot();
+	}
+	static void QtBeef_QRasterWindow_OnFocusObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusObject();
+	}
+	static void QtBeef_QRasterWindow_OnExposeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExposeEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnResizeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnPaintEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnFocusInEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnFocusOutEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnShowEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnHideEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnCloseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnKeyPressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnKeyReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnMousePressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnMouseReleaseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnMouseDoubleClickEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnMouseMoveEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnWheelEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnTouchEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTouchEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnTabletEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(param1);
+	}
+	static void QtBeef_QRasterWindow_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QRasterWindow_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QRasterWindow_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QRasterWindow_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QRasterWindow_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
 	}
 	public this(QRasterWindow_Ptr ptr)
 	{
@@ -2047,18 +2287,27 @@ extension CQt
 	public function void QRasterWindow_OnMetaObject_action(void* self);
 	[LinkName("QRasterWindow_OnMetaObject")]
 	public static extern void** QRasterWindow_OnMetaObject(void* self, QRasterWindow_OnMetaObject_action _action);
+	
+	[LinkName("QRasterWindow_SuperMetaObject")]
+	public static extern void** QRasterWindow_SuperMetaObject(void* self);
 	[LinkName("QRasterWindow_Qt_Metacast")]
 	public static extern void* QRasterWindow_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QRasterWindow_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QRasterWindow_OnMetacast")]
 	public static extern void* QRasterWindow_OnMetacast(void* self, QRasterWindow_OnMetacast_action _action);
+	
+	[LinkName("QRasterWindow_SuperMetacast")]
+	public static extern void* QRasterWindow_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QRasterWindow_Qt_Metacall")]
 	public static extern c_int QRasterWindow_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QRasterWindow_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QRasterWindow_OnMetacall")]
 	public static extern c_int QRasterWindow_OnMetacall(void* self, QRasterWindow_OnMetacall_action _action);
+	
+	[LinkName("QRasterWindow_SuperMetacall")]
+	public static extern c_int QRasterWindow_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QRasterWindow_Tr")]
 	public static extern libqt_string QRasterWindow_Tr(c_char* s);
 	[LinkName("QRasterWindow_Metric")]
@@ -2067,12 +2316,18 @@ extension CQt
 	public function void QRasterWindow_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QRasterWindow_OnMetric")]
 	public static extern c_int QRasterWindow_OnMetric(void* self, QRasterWindow_OnMetric_action _action);
+	
+	[LinkName("QRasterWindow_SuperMetric")]
+	public static extern c_int QRasterWindow_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QRasterWindow_Redirected")]
 	public static extern void** QRasterWindow_Redirected(void* self, void** param1);
 	
 	public function void QRasterWindow_OnRedirected_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnRedirected")]
 	public static extern void** QRasterWindow_OnRedirected(void* self, QRasterWindow_OnRedirected_action _action);
+	
+	[LinkName("QRasterWindow_SuperRedirected")]
+	public static extern void** QRasterWindow_SuperRedirected(void* self, void** param1);
 	[LinkName("QRasterWindow_Tr2")]
 	public static extern libqt_string QRasterWindow_Tr2(c_char* s, c_char* c);
 	[LinkName("QRasterWindow_Tr3")]
@@ -2083,208 +2338,313 @@ extension CQt
 	public function void QRasterWindow_OnEvent_action(void* self, void** event);
 	[LinkName("QRasterWindow_OnEvent")]
 	public static extern bool QRasterWindow_OnEvent(void* self, QRasterWindow_OnEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperEvent")]
+	public static extern bool QRasterWindow_SuperEvent(void* self, void** event);
 	[LinkName("QRasterWindow_EventFilter")]
 	public static extern bool QRasterWindow_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QRasterWindow_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QRasterWindow_OnEventFilter")]
 	public static extern bool QRasterWindow_OnEventFilter(void* self, QRasterWindow_OnEventFilter_action _action);
+	
+	[LinkName("QRasterWindow_SuperEventFilter")]
+	public static extern bool QRasterWindow_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QRasterWindow_TimerEvent")]
 	public static extern void QRasterWindow_TimerEvent(void* self, void** event);
 	
 	public function void QRasterWindow_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QRasterWindow_OnTimerEvent")]
 	public static extern void QRasterWindow_OnTimerEvent(void* self, QRasterWindow_OnTimerEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperTimerEvent")]
+	public static extern void QRasterWindow_SuperTimerEvent(void* self, void** event);
 	[LinkName("QRasterWindow_ChildEvent")]
 	public static extern void QRasterWindow_ChildEvent(void* self, void** event);
 	
 	public function void QRasterWindow_OnChildEvent_action(void* self, void** event);
 	[LinkName("QRasterWindow_OnChildEvent")]
 	public static extern void QRasterWindow_OnChildEvent(void* self, QRasterWindow_OnChildEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperChildEvent")]
+	public static extern void QRasterWindow_SuperChildEvent(void* self, void** event);
 	[LinkName("QRasterWindow_CustomEvent")]
 	public static extern void QRasterWindow_CustomEvent(void* self, void** event);
 	
 	public function void QRasterWindow_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QRasterWindow_OnCustomEvent")]
 	public static extern void QRasterWindow_OnCustomEvent(void* self, QRasterWindow_OnCustomEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperCustomEvent")]
+	public static extern void QRasterWindow_SuperCustomEvent(void* self, void** event);
 	[LinkName("QRasterWindow_ConnectNotify")]
 	public static extern void QRasterWindow_ConnectNotify(void* self, void** signal);
 	
 	public function void QRasterWindow_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QRasterWindow_OnConnectNotify")]
 	public static extern void QRasterWindow_OnConnectNotify(void* self, QRasterWindow_OnConnectNotify_action _action);
+	
+	[LinkName("QRasterWindow_SuperConnectNotify")]
+	public static extern void QRasterWindow_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QRasterWindow_DisconnectNotify")]
 	public static extern void QRasterWindow_DisconnectNotify(void* self, void** signal);
 	
 	public function void QRasterWindow_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QRasterWindow_OnDisconnectNotify")]
 	public static extern void QRasterWindow_OnDisconnectNotify(void* self, QRasterWindow_OnDisconnectNotify_action _action);
+	
+	[LinkName("QRasterWindow_SuperDisconnectNotify")]
+	public static extern void QRasterWindow_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QRasterWindow_Format")]
 	public static extern void* QRasterWindow_Format(void* self);
 	
 	public function void QRasterWindow_OnFormat_action(void* self);
 	[LinkName("QRasterWindow_OnFormat")]
 	public static extern void* QRasterWindow_OnFormat(void* self, QRasterWindow_OnFormat_action _action);
+	
+	[LinkName("QRasterWindow_SuperFormat")]
+	public static extern void* QRasterWindow_SuperFormat(void* self);
 	[LinkName("QRasterWindow_SurfaceType")]
 	public static extern QSurface_SurfaceType QRasterWindow_SurfaceType(void* self);
 	
 	public function void QRasterWindow_OnSurfaceType_action(void* self);
 	[LinkName("QRasterWindow_OnSurfaceType")]
 	public static extern QSurface_SurfaceType QRasterWindow_OnSurfaceType(void* self, QRasterWindow_OnSurfaceType_action _action);
+	
+	[LinkName("QRasterWindow_SuperSurfaceType")]
+	public static extern QSurface_SurfaceType QRasterWindow_SuperSurfaceType(void* self);
 	[LinkName("QRasterWindow_Size")]
 	public static extern void* QRasterWindow_Size(void* self);
 	
 	public function void QRasterWindow_OnSize_action(void* self);
 	[LinkName("QRasterWindow_OnSize")]
 	public static extern void* QRasterWindow_OnSize(void* self, QRasterWindow_OnSize_action _action);
+	
+	[LinkName("QRasterWindow_SuperSize")]
+	public static extern void* QRasterWindow_SuperSize(void* self);
 	[LinkName("QRasterWindow_AccessibleRoot")]
 	public static extern void** QRasterWindow_AccessibleRoot(void* self);
 	
 	public function void QRasterWindow_OnAccessibleRoot_action(void* self);
 	[LinkName("QRasterWindow_OnAccessibleRoot")]
 	public static extern void** QRasterWindow_OnAccessibleRoot(void* self, QRasterWindow_OnAccessibleRoot_action _action);
+	
+	[LinkName("QRasterWindow_SuperAccessibleRoot")]
+	public static extern void** QRasterWindow_SuperAccessibleRoot(void* self);
 	[LinkName("QRasterWindow_FocusObject")]
 	public static extern void** QRasterWindow_FocusObject(void* self);
 	
 	public function void QRasterWindow_OnFocusObject_action(void* self);
 	[LinkName("QRasterWindow_OnFocusObject")]
 	public static extern void** QRasterWindow_OnFocusObject(void* self, QRasterWindow_OnFocusObject_action _action);
+	
+	[LinkName("QRasterWindow_SuperFocusObject")]
+	public static extern void** QRasterWindow_SuperFocusObject(void* self);
 	[LinkName("QRasterWindow_ExposeEvent")]
 	public static extern void QRasterWindow_ExposeEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnExposeEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnExposeEvent")]
 	public static extern void QRasterWindow_OnExposeEvent(void* self, QRasterWindow_OnExposeEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperExposeEvent")]
+	public static extern void QRasterWindow_SuperExposeEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_ResizeEvent")]
 	public static extern void QRasterWindow_ResizeEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnResizeEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnResizeEvent")]
 	public static extern void QRasterWindow_OnResizeEvent(void* self, QRasterWindow_OnResizeEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperResizeEvent")]
+	public static extern void QRasterWindow_SuperResizeEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_PaintEvent")]
 	public static extern void QRasterWindow_PaintEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnPaintEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnPaintEvent")]
 	public static extern void QRasterWindow_OnPaintEvent(void* self, QRasterWindow_OnPaintEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperPaintEvent")]
+	public static extern void QRasterWindow_SuperPaintEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_MoveEvent")]
 	public static extern void QRasterWindow_MoveEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnMoveEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnMoveEvent")]
 	public static extern void QRasterWindow_OnMoveEvent(void* self, QRasterWindow_OnMoveEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperMoveEvent")]
+	public static extern void QRasterWindow_SuperMoveEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_FocusInEvent")]
 	public static extern void QRasterWindow_FocusInEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnFocusInEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnFocusInEvent")]
 	public static extern void QRasterWindow_OnFocusInEvent(void* self, QRasterWindow_OnFocusInEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperFocusInEvent")]
+	public static extern void QRasterWindow_SuperFocusInEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_FocusOutEvent")]
 	public static extern void QRasterWindow_FocusOutEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnFocusOutEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnFocusOutEvent")]
 	public static extern void QRasterWindow_OnFocusOutEvent(void* self, QRasterWindow_OnFocusOutEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperFocusOutEvent")]
+	public static extern void QRasterWindow_SuperFocusOutEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_ShowEvent")]
 	public static extern void QRasterWindow_ShowEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnShowEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnShowEvent")]
 	public static extern void QRasterWindow_OnShowEvent(void* self, QRasterWindow_OnShowEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperShowEvent")]
+	public static extern void QRasterWindow_SuperShowEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_HideEvent")]
 	public static extern void QRasterWindow_HideEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnHideEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnHideEvent")]
 	public static extern void QRasterWindow_OnHideEvent(void* self, QRasterWindow_OnHideEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperHideEvent")]
+	public static extern void QRasterWindow_SuperHideEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_CloseEvent")]
 	public static extern void QRasterWindow_CloseEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnCloseEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnCloseEvent")]
 	public static extern void QRasterWindow_OnCloseEvent(void* self, QRasterWindow_OnCloseEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperCloseEvent")]
+	public static extern void QRasterWindow_SuperCloseEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_KeyPressEvent")]
 	public static extern void QRasterWindow_KeyPressEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnKeyPressEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnKeyPressEvent")]
 	public static extern void QRasterWindow_OnKeyPressEvent(void* self, QRasterWindow_OnKeyPressEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperKeyPressEvent")]
+	public static extern void QRasterWindow_SuperKeyPressEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_KeyReleaseEvent")]
 	public static extern void QRasterWindow_KeyReleaseEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnKeyReleaseEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnKeyReleaseEvent")]
 	public static extern void QRasterWindow_OnKeyReleaseEvent(void* self, QRasterWindow_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperKeyReleaseEvent")]
+	public static extern void QRasterWindow_SuperKeyReleaseEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_MousePressEvent")]
 	public static extern void QRasterWindow_MousePressEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnMousePressEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnMousePressEvent")]
 	public static extern void QRasterWindow_OnMousePressEvent(void* self, QRasterWindow_OnMousePressEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperMousePressEvent")]
+	public static extern void QRasterWindow_SuperMousePressEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_MouseReleaseEvent")]
 	public static extern void QRasterWindow_MouseReleaseEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnMouseReleaseEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnMouseReleaseEvent")]
 	public static extern void QRasterWindow_OnMouseReleaseEvent(void* self, QRasterWindow_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperMouseReleaseEvent")]
+	public static extern void QRasterWindow_SuperMouseReleaseEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_MouseDoubleClickEvent")]
 	public static extern void QRasterWindow_MouseDoubleClickEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnMouseDoubleClickEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnMouseDoubleClickEvent")]
 	public static extern void QRasterWindow_OnMouseDoubleClickEvent(void* self, QRasterWindow_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperMouseDoubleClickEvent")]
+	public static extern void QRasterWindow_SuperMouseDoubleClickEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_MouseMoveEvent")]
 	public static extern void QRasterWindow_MouseMoveEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnMouseMoveEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnMouseMoveEvent")]
 	public static extern void QRasterWindow_OnMouseMoveEvent(void* self, QRasterWindow_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperMouseMoveEvent")]
+	public static extern void QRasterWindow_SuperMouseMoveEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_WheelEvent")]
 	public static extern void QRasterWindow_WheelEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnWheelEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnWheelEvent")]
 	public static extern void QRasterWindow_OnWheelEvent(void* self, QRasterWindow_OnWheelEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperWheelEvent")]
+	public static extern void QRasterWindow_SuperWheelEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_TouchEvent")]
 	public static extern void QRasterWindow_TouchEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnTouchEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnTouchEvent")]
 	public static extern void QRasterWindow_OnTouchEvent(void* self, QRasterWindow_OnTouchEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperTouchEvent")]
+	public static extern void QRasterWindow_SuperTouchEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_TabletEvent")]
 	public static extern void QRasterWindow_TabletEvent(void* self, void** param1);
 	
 	public function void QRasterWindow_OnTabletEvent_action(void* self, void** param1);
 	[LinkName("QRasterWindow_OnTabletEvent")]
 	public static extern void QRasterWindow_OnTabletEvent(void* self, QRasterWindow_OnTabletEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperTabletEvent")]
+	public static extern void QRasterWindow_SuperTabletEvent(void* self, void** param1);
 	[LinkName("QRasterWindow_NativeEvent")]
 	public static extern bool QRasterWindow_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QRasterWindow_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QRasterWindow_OnNativeEvent")]
 	public static extern bool QRasterWindow_OnNativeEvent(void* self, QRasterWindow_OnNativeEvent_action _action);
+	
+	[LinkName("QRasterWindow_SuperNativeEvent")]
+	public static extern bool QRasterWindow_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QRasterWindow_DevType")]
 	public static extern c_int QRasterWindow_DevType(void* self);
 	
 	public function void QRasterWindow_OnDevType_action(void* self);
 	[LinkName("QRasterWindow_OnDevType")]
 	public static extern c_int QRasterWindow_OnDevType(void* self, QRasterWindow_OnDevType_action _action);
+	
+	[LinkName("QRasterWindow_SuperDevType")]
+	public static extern c_int QRasterWindow_SuperDevType(void* self);
 	[LinkName("QRasterWindow_PaintEngine")]
 	public static extern void** QRasterWindow_PaintEngine(void* self);
 	
 	public function void QRasterWindow_OnPaintEngine_action(void* self);
 	[LinkName("QRasterWindow_OnPaintEngine")]
 	public static extern void** QRasterWindow_OnPaintEngine(void* self, QRasterWindow_OnPaintEngine_action _action);
+	
+	[LinkName("QRasterWindow_SuperPaintEngine")]
+	public static extern void** QRasterWindow_SuperPaintEngine(void* self);
 	[LinkName("QRasterWindow_InitPainter")]
 	public static extern void QRasterWindow_InitPainter(void* self, void** painter);
 	
 	public function void QRasterWindow_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QRasterWindow_OnInitPainter")]
 	public static extern void QRasterWindow_OnInitPainter(void* self, QRasterWindow_OnInitPainter_action _action);
+	
+	[LinkName("QRasterWindow_SuperInitPainter")]
+	public static extern void QRasterWindow_SuperInitPainter(void* self, void** painter);
 	[LinkName("QRasterWindow_SharedPainter")]
 	public static extern void** QRasterWindow_SharedPainter(void* self);
 	
 	public function void QRasterWindow_OnSharedPainter_action(void* self);
 	[LinkName("QRasterWindow_OnSharedPainter")]
 	public static extern void** QRasterWindow_OnSharedPainter(void* self, QRasterWindow_OnSharedPainter_action _action);
+	
+	[LinkName("QRasterWindow_SuperSharedPainter")]
+	public static extern void** QRasterWindow_SuperSharedPainter(void* self);
 }

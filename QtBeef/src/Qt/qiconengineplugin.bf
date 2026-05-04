@@ -276,6 +276,17 @@ class QIconEnginePlugin : IQIconEnginePlugin, IQObject
 		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
 		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
 		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QIconEnginePlugin_OnMetaObject(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnMetaObject);
+		CQt.QIconEnginePlugin_OnMetacast(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnMetacast);
+		CQt.QIconEnginePlugin_OnMetacall(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnMetacall);
+		CQt.QIconEnginePlugin_OnCreate(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnCreate);
+		CQt.QIconEnginePlugin_OnEvent(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnEvent);
+		CQt.QIconEnginePlugin_OnEventFilter(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnEventFilter);
+		CQt.QIconEnginePlugin_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnTimerEvent);
+		CQt.QIconEnginePlugin_OnChildEvent(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnChildEvent);
+		CQt.QIconEnginePlugin_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnCustomEvent);
+		CQt.QIconEnginePlugin_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnConnectNotify);
+		CQt.QIconEnginePlugin_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QIconEnginePlugin_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -288,6 +299,61 @@ class QIconEnginePlugin : IQIconEnginePlugin, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QIconEnginePlugin_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QIconEnginePlugin_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QIconEnginePlugin_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QIconEnginePlugin_OnCreate(void* ptr, libqt_string filename)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCreate(filename);
+	}
+	static void QtBeef_QIconEnginePlugin_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QIconEnginePlugin_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QIconEnginePlugin_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QIconEnginePlugin_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QIconEnginePlugin_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QIconEnginePlugin_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QIconEnginePlugin_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QIconEnginePlugin_Ptr ptr)
 	{
@@ -573,18 +639,27 @@ extension CQt
 	public function void QIconEnginePlugin_OnMetaObject_action(void* self);
 	[LinkName("QIconEnginePlugin_OnMetaObject")]
 	public static extern void** QIconEnginePlugin_OnMetaObject(void* self, QIconEnginePlugin_OnMetaObject_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperMetaObject")]
+	public static extern void** QIconEnginePlugin_SuperMetaObject(void* self);
 	[LinkName("QIconEnginePlugin_Qt_Metacast")]
 	public static extern void* QIconEnginePlugin_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QIconEnginePlugin_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QIconEnginePlugin_OnMetacast")]
 	public static extern void* QIconEnginePlugin_OnMetacast(void* self, QIconEnginePlugin_OnMetacast_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperMetacast")]
+	public static extern void* QIconEnginePlugin_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QIconEnginePlugin_Qt_Metacall")]
 	public static extern c_int QIconEnginePlugin_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QIconEnginePlugin_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QIconEnginePlugin_OnMetacall")]
 	public static extern c_int QIconEnginePlugin_OnMetacall(void* self, QIconEnginePlugin_OnMetacall_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperMetacall")]
+	public static extern c_int QIconEnginePlugin_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QIconEnginePlugin_Tr")]
 	public static extern libqt_string QIconEnginePlugin_Tr(c_char* s);
 	[LinkName("QIconEnginePlugin_Create")]
@@ -593,6 +668,9 @@ extension CQt
 	public function void QIconEnginePlugin_OnCreate_action(void* self, libqt_string filename);
 	[LinkName("QIconEnginePlugin_OnCreate")]
 	public static extern void** QIconEnginePlugin_OnCreate(void* self, QIconEnginePlugin_OnCreate_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperCreate")]
+	public static extern void** QIconEnginePlugin_SuperCreate(void* self, libqt_string filename);
 	[LinkName("QIconEnginePlugin_Tr2")]
 	public static extern libqt_string QIconEnginePlugin_Tr2(c_char* s, c_char* c);
 	[LinkName("QIconEnginePlugin_Tr3")]
@@ -603,40 +681,61 @@ extension CQt
 	public function void QIconEnginePlugin_OnEvent_action(void* self, void** event);
 	[LinkName("QIconEnginePlugin_OnEvent")]
 	public static extern bool QIconEnginePlugin_OnEvent(void* self, QIconEnginePlugin_OnEvent_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperEvent")]
+	public static extern bool QIconEnginePlugin_SuperEvent(void* self, void** event);
 	[LinkName("QIconEnginePlugin_EventFilter")]
 	public static extern bool QIconEnginePlugin_EventFilter(void* self, void** watched, void** event);
 	
 	public function void QIconEnginePlugin_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QIconEnginePlugin_OnEventFilter")]
 	public static extern bool QIconEnginePlugin_OnEventFilter(void* self, QIconEnginePlugin_OnEventFilter_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperEventFilter")]
+	public static extern bool QIconEnginePlugin_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QIconEnginePlugin_TimerEvent")]
 	public static extern void QIconEnginePlugin_TimerEvent(void* self, void** event);
 	
 	public function void QIconEnginePlugin_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QIconEnginePlugin_OnTimerEvent")]
 	public static extern void QIconEnginePlugin_OnTimerEvent(void* self, QIconEnginePlugin_OnTimerEvent_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperTimerEvent")]
+	public static extern void QIconEnginePlugin_SuperTimerEvent(void* self, void** event);
 	[LinkName("QIconEnginePlugin_ChildEvent")]
 	public static extern void QIconEnginePlugin_ChildEvent(void* self, void** event);
 	
 	public function void QIconEnginePlugin_OnChildEvent_action(void* self, void** event);
 	[LinkName("QIconEnginePlugin_OnChildEvent")]
 	public static extern void QIconEnginePlugin_OnChildEvent(void* self, QIconEnginePlugin_OnChildEvent_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperChildEvent")]
+	public static extern void QIconEnginePlugin_SuperChildEvent(void* self, void** event);
 	[LinkName("QIconEnginePlugin_CustomEvent")]
 	public static extern void QIconEnginePlugin_CustomEvent(void* self, void** event);
 	
 	public function void QIconEnginePlugin_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QIconEnginePlugin_OnCustomEvent")]
 	public static extern void QIconEnginePlugin_OnCustomEvent(void* self, QIconEnginePlugin_OnCustomEvent_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperCustomEvent")]
+	public static extern void QIconEnginePlugin_SuperCustomEvent(void* self, void** event);
 	[LinkName("QIconEnginePlugin_ConnectNotify")]
 	public static extern void QIconEnginePlugin_ConnectNotify(void* self, void** signal);
 	
 	public function void QIconEnginePlugin_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QIconEnginePlugin_OnConnectNotify")]
 	public static extern void QIconEnginePlugin_OnConnectNotify(void* self, QIconEnginePlugin_OnConnectNotify_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperConnectNotify")]
+	public static extern void QIconEnginePlugin_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QIconEnginePlugin_DisconnectNotify")]
 	public static extern void QIconEnginePlugin_DisconnectNotify(void* self, void** signal);
 	
 	public function void QIconEnginePlugin_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QIconEnginePlugin_OnDisconnectNotify")]
 	public static extern void QIconEnginePlugin_OnDisconnectNotify(void* self, QIconEnginePlugin_OnDisconnectNotify_action _action);
+	
+	[LinkName("QIconEnginePlugin_SuperDisconnectNotify")]
+	public static extern void QIconEnginePlugin_SuperDisconnectNotify(void* self, void** signal);
 }

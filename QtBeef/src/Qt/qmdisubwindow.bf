@@ -1670,6 +1670,56 @@ class QMdiSubWindow : IQMdiSubWindow, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QMdiSubWindow_OnMetaObject(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMetaObject);
+		CQt.QMdiSubWindow_OnMetacast(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMetacast);
+		CQt.QMdiSubWindow_OnMetacall(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMetacall);
+		CQt.QMdiSubWindow_OnSizeHint(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnSizeHint);
+		CQt.QMdiSubWindow_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMinimumSizeHint);
+		CQt.QMdiSubWindow_OnEventFilter(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnEventFilter);
+		CQt.QMdiSubWindow_OnEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnEvent);
+		CQt.QMdiSubWindow_OnShowEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnShowEvent);
+		CQt.QMdiSubWindow_OnHideEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnHideEvent);
+		CQt.QMdiSubWindow_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnChangeEvent);
+		CQt.QMdiSubWindow_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnCloseEvent);
+		CQt.QMdiSubWindow_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnLeaveEvent);
+		CQt.QMdiSubWindow_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnResizeEvent);
+		CQt.QMdiSubWindow_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnTimerEvent);
+		CQt.QMdiSubWindow_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMoveEvent);
+		CQt.QMdiSubWindow_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnPaintEvent);
+		CQt.QMdiSubWindow_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMousePressEvent);
+		CQt.QMdiSubWindow_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMouseDoubleClickEvent);
+		CQt.QMdiSubWindow_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMouseReleaseEvent);
+		CQt.QMdiSubWindow_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMouseMoveEvent);
+		CQt.QMdiSubWindow_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnKeyPressEvent);
+		CQt.QMdiSubWindow_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnContextMenuEvent);
+		CQt.QMdiSubWindow_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnFocusInEvent);
+		CQt.QMdiSubWindow_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnFocusOutEvent);
+		CQt.QMdiSubWindow_OnChildEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnChildEvent);
+		CQt.QMdiSubWindow_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnCustomEvent);
+		CQt.QMdiSubWindow_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnConnectNotify);
+		CQt.QMdiSubWindow_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnDisconnectNotify);
+		CQt.QMdiSubWindow_OnDevType(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnDevType);
+		CQt.QMdiSubWindow_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnPaintEngine);
+		CQt.QMdiSubWindow_OnMetric(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnMetric);
+		CQt.QMdiSubWindow_OnInitPainter(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnInitPainter);
+		CQt.QMdiSubWindow_OnRedirected(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnRedirected);
+		CQt.QMdiSubWindow_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnSharedPainter);
+		CQt.QMdiSubWindow_OnSetVisible(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnSetVisible);
+		CQt.QMdiSubWindow_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnHeightForWidth);
+		CQt.QMdiSubWindow_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnHasHeightForWidth);
+		CQt.QMdiSubWindow_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnWheelEvent);
+		CQt.QMdiSubWindow_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnKeyReleaseEvent);
+		CQt.QMdiSubWindow_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnEnterEvent);
+		CQt.QMdiSubWindow_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnTabletEvent);
+		CQt.QMdiSubWindow_OnActionEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnActionEvent);
+		CQt.QMdiSubWindow_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnDragEnterEvent);
+		CQt.QMdiSubWindow_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnDragMoveEvent);
+		CQt.QMdiSubWindow_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnDragLeaveEvent);
+		CQt.QMdiSubWindow_OnDropEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnDropEvent);
+		CQt.QMdiSubWindow_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnNativeEvent);
+		CQt.QMdiSubWindow_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnInputMethodEvent);
+		CQt.QMdiSubWindow_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnInputMethodQuery);
+		CQt.QMdiSubWindow_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(void* oldState, void* newState)> OnWindowStateChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnAboutToActivate = .() ~ _.Dispose();
@@ -1718,6 +1768,256 @@ class QMdiSubWindow : IQMdiSubWindow, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QMdiSubWindow_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QMdiSubWindow_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QMdiSubWindow_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QMdiSubWindow_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QMdiSubWindow_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QMdiSubWindow_OnEventFilter(void* ptr, void** object, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(object, event);
+	}
+	static void QtBeef_QMdiSubWindow_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnShowEvent(void* ptr, void** showEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(showEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnHideEvent(void* ptr, void** hideEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(hideEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnChangeEvent(void* ptr, void** changeEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(changeEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnCloseEvent(void* ptr, void** closeEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(closeEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnLeaveEvent(void* ptr, void** leaveEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(leaveEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnResizeEvent(void* ptr, void** resizeEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(resizeEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnTimerEvent(void* ptr, void** timerEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(timerEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnMoveEvent(void* ptr, void** moveEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(moveEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnPaintEvent(void* ptr, void** paintEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(paintEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnMousePressEvent(void* ptr, void** mouseEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(mouseEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnMouseDoubleClickEvent(void* ptr, void** mouseEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(mouseEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnMouseReleaseEvent(void* ptr, void** mouseEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(mouseEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnMouseMoveEvent(void* ptr, void** mouseEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(mouseEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnKeyPressEvent(void* ptr, void** keyEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(keyEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnContextMenuEvent(void* ptr, void** contextMenuEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(contextMenuEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnFocusInEvent(void* ptr, void** focusInEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(focusInEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnFocusOutEvent(void* ptr, void** focusOutEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(focusOutEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnChildEvent(void* ptr, void** childEvent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(childEvent);
+	}
+	static void QtBeef_QMdiSubWindow_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QMdiSubWindow_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QMdiSubWindow_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QMdiSubWindow_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QMdiSubWindow_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QMdiSubWindow_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QMdiSubWindow_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QMdiSubWindow_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QMdiSubWindow_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QMdiSubWindow_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QMdiSubWindow_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QMdiSubWindow_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QMdiSubWindow_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QMdiSubWindow_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QMdiSubWindow_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QMdiSubWindow_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QMdiSubWindow_Ptr ptr)
 	{
@@ -3370,18 +3670,27 @@ extension CQt
 	public function void QMdiSubWindow_OnMetaObject_action(void* self);
 	[LinkName("QMdiSubWindow_OnMetaObject")]
 	public static extern void** QMdiSubWindow_OnMetaObject(void* self, QMdiSubWindow_OnMetaObject_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMetaObject")]
+	public static extern void** QMdiSubWindow_SuperMetaObject(void* self);
 	[LinkName("QMdiSubWindow_Qt_Metacast")]
 	public static extern void* QMdiSubWindow_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QMdiSubWindow_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QMdiSubWindow_OnMetacast")]
 	public static extern void* QMdiSubWindow_OnMetacast(void* self, QMdiSubWindow_OnMetacast_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMetacast")]
+	public static extern void* QMdiSubWindow_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QMdiSubWindow_Qt_Metacall")]
 	public static extern c_int QMdiSubWindow_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QMdiSubWindow_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QMdiSubWindow_OnMetacall")]
 	public static extern c_int QMdiSubWindow_OnMetacall(void* self, QMdiSubWindow_OnMetacall_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMetacall")]
+	public static extern c_int QMdiSubWindow_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QMdiSubWindow_Tr")]
 	public static extern libqt_string QMdiSubWindow_Tr(c_char* s);
 	[LinkName("QMdiSubWindow_SizeHint")]
@@ -3390,12 +3699,18 @@ extension CQt
 	public function void QMdiSubWindow_OnSizeHint_action(void* self);
 	[LinkName("QMdiSubWindow_OnSizeHint")]
 	public static extern void* QMdiSubWindow_OnSizeHint(void* self, QMdiSubWindow_OnSizeHint_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperSizeHint")]
+	public static extern void* QMdiSubWindow_SuperSizeHint(void* self);
 	[LinkName("QMdiSubWindow_MinimumSizeHint")]
 	public static extern void* QMdiSubWindow_MinimumSizeHint(void* self);
 	
 	public function void QMdiSubWindow_OnMinimumSizeHint_action(void* self);
 	[LinkName("QMdiSubWindow_OnMinimumSizeHint")]
 	public static extern void* QMdiSubWindow_OnMinimumSizeHint(void* self, QMdiSubWindow_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMinimumSizeHint")]
+	public static extern void* QMdiSubWindow_SuperMinimumSizeHint(void* self);
 	[LinkName("QMdiSubWindow_SetWidget")]
 	public static extern void QMdiSubWindow_SetWidget(void* self, void** widget);
 	[LinkName("QMdiSubWindow_Widget")]
@@ -3446,120 +3761,180 @@ extension CQt
 	public function void QMdiSubWindow_OnEventFilter_action(void* self, void** object, void** event);
 	[LinkName("QMdiSubWindow_OnEventFilter")]
 	public static extern bool QMdiSubWindow_OnEventFilter(void* self, QMdiSubWindow_OnEventFilter_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperEventFilter")]
+	public static extern bool QMdiSubWindow_SuperEventFilter(void* self, void** object, void** event);
 	[LinkName("QMdiSubWindow_Event")]
 	public static extern bool QMdiSubWindow_Event(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnEvent")]
 	public static extern bool QMdiSubWindow_OnEvent(void* self, QMdiSubWindow_OnEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperEvent")]
+	public static extern bool QMdiSubWindow_SuperEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_ShowEvent")]
 	public static extern void QMdiSubWindow_ShowEvent(void* self, void** showEvent);
 	
 	public function void QMdiSubWindow_OnShowEvent_action(void* self, void** showEvent);
 	[LinkName("QMdiSubWindow_OnShowEvent")]
 	public static extern void QMdiSubWindow_OnShowEvent(void* self, QMdiSubWindow_OnShowEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperShowEvent")]
+	public static extern void QMdiSubWindow_SuperShowEvent(void* self, void** showEvent);
 	[LinkName("QMdiSubWindow_HideEvent")]
 	public static extern void QMdiSubWindow_HideEvent(void* self, void** hideEvent);
 	
 	public function void QMdiSubWindow_OnHideEvent_action(void* self, void** hideEvent);
 	[LinkName("QMdiSubWindow_OnHideEvent")]
 	public static extern void QMdiSubWindow_OnHideEvent(void* self, QMdiSubWindow_OnHideEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperHideEvent")]
+	public static extern void QMdiSubWindow_SuperHideEvent(void* self, void** hideEvent);
 	[LinkName("QMdiSubWindow_ChangeEvent")]
 	public static extern void QMdiSubWindow_ChangeEvent(void* self, void** changeEvent);
 	
 	public function void QMdiSubWindow_OnChangeEvent_action(void* self, void** changeEvent);
 	[LinkName("QMdiSubWindow_OnChangeEvent")]
 	public static extern void QMdiSubWindow_OnChangeEvent(void* self, QMdiSubWindow_OnChangeEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperChangeEvent")]
+	public static extern void QMdiSubWindow_SuperChangeEvent(void* self, void** changeEvent);
 	[LinkName("QMdiSubWindow_CloseEvent")]
 	public static extern void QMdiSubWindow_CloseEvent(void* self, void** closeEvent);
 	
 	public function void QMdiSubWindow_OnCloseEvent_action(void* self, void** closeEvent);
 	[LinkName("QMdiSubWindow_OnCloseEvent")]
 	public static extern void QMdiSubWindow_OnCloseEvent(void* self, QMdiSubWindow_OnCloseEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperCloseEvent")]
+	public static extern void QMdiSubWindow_SuperCloseEvent(void* self, void** closeEvent);
 	[LinkName("QMdiSubWindow_LeaveEvent")]
 	public static extern void QMdiSubWindow_LeaveEvent(void* self, void** leaveEvent);
 	
 	public function void QMdiSubWindow_OnLeaveEvent_action(void* self, void** leaveEvent);
 	[LinkName("QMdiSubWindow_OnLeaveEvent")]
 	public static extern void QMdiSubWindow_OnLeaveEvent(void* self, QMdiSubWindow_OnLeaveEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperLeaveEvent")]
+	public static extern void QMdiSubWindow_SuperLeaveEvent(void* self, void** leaveEvent);
 	[LinkName("QMdiSubWindow_ResizeEvent")]
 	public static extern void QMdiSubWindow_ResizeEvent(void* self, void** resizeEvent);
 	
 	public function void QMdiSubWindow_OnResizeEvent_action(void* self, void** resizeEvent);
 	[LinkName("QMdiSubWindow_OnResizeEvent")]
 	public static extern void QMdiSubWindow_OnResizeEvent(void* self, QMdiSubWindow_OnResizeEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperResizeEvent")]
+	public static extern void QMdiSubWindow_SuperResizeEvent(void* self, void** resizeEvent);
 	[LinkName("QMdiSubWindow_TimerEvent")]
 	public static extern void QMdiSubWindow_TimerEvent(void* self, void** timerEvent);
 	
 	public function void QMdiSubWindow_OnTimerEvent_action(void* self, void** timerEvent);
 	[LinkName("QMdiSubWindow_OnTimerEvent")]
 	public static extern void QMdiSubWindow_OnTimerEvent(void* self, QMdiSubWindow_OnTimerEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperTimerEvent")]
+	public static extern void QMdiSubWindow_SuperTimerEvent(void* self, void** timerEvent);
 	[LinkName("QMdiSubWindow_MoveEvent")]
 	public static extern void QMdiSubWindow_MoveEvent(void* self, void** moveEvent);
 	
 	public function void QMdiSubWindow_OnMoveEvent_action(void* self, void** moveEvent);
 	[LinkName("QMdiSubWindow_OnMoveEvent")]
 	public static extern void QMdiSubWindow_OnMoveEvent(void* self, QMdiSubWindow_OnMoveEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMoveEvent")]
+	public static extern void QMdiSubWindow_SuperMoveEvent(void* self, void** moveEvent);
 	[LinkName("QMdiSubWindow_PaintEvent")]
 	public static extern void QMdiSubWindow_PaintEvent(void* self, void** paintEvent);
 	
 	public function void QMdiSubWindow_OnPaintEvent_action(void* self, void** paintEvent);
 	[LinkName("QMdiSubWindow_OnPaintEvent")]
 	public static extern void QMdiSubWindow_OnPaintEvent(void* self, QMdiSubWindow_OnPaintEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperPaintEvent")]
+	public static extern void QMdiSubWindow_SuperPaintEvent(void* self, void** paintEvent);
 	[LinkName("QMdiSubWindow_MousePressEvent")]
 	public static extern void QMdiSubWindow_MousePressEvent(void* self, void** mouseEvent);
 	
 	public function void QMdiSubWindow_OnMousePressEvent_action(void* self, void** mouseEvent);
 	[LinkName("QMdiSubWindow_OnMousePressEvent")]
 	public static extern void QMdiSubWindow_OnMousePressEvent(void* self, QMdiSubWindow_OnMousePressEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMousePressEvent")]
+	public static extern void QMdiSubWindow_SuperMousePressEvent(void* self, void** mouseEvent);
 	[LinkName("QMdiSubWindow_MouseDoubleClickEvent")]
 	public static extern void QMdiSubWindow_MouseDoubleClickEvent(void* self, void** mouseEvent);
 	
 	public function void QMdiSubWindow_OnMouseDoubleClickEvent_action(void* self, void** mouseEvent);
 	[LinkName("QMdiSubWindow_OnMouseDoubleClickEvent")]
 	public static extern void QMdiSubWindow_OnMouseDoubleClickEvent(void* self, QMdiSubWindow_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMouseDoubleClickEvent")]
+	public static extern void QMdiSubWindow_SuperMouseDoubleClickEvent(void* self, void** mouseEvent);
 	[LinkName("QMdiSubWindow_MouseReleaseEvent")]
 	public static extern void QMdiSubWindow_MouseReleaseEvent(void* self, void** mouseEvent);
 	
 	public function void QMdiSubWindow_OnMouseReleaseEvent_action(void* self, void** mouseEvent);
 	[LinkName("QMdiSubWindow_OnMouseReleaseEvent")]
 	public static extern void QMdiSubWindow_OnMouseReleaseEvent(void* self, QMdiSubWindow_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMouseReleaseEvent")]
+	public static extern void QMdiSubWindow_SuperMouseReleaseEvent(void* self, void** mouseEvent);
 	[LinkName("QMdiSubWindow_MouseMoveEvent")]
 	public static extern void QMdiSubWindow_MouseMoveEvent(void* self, void** mouseEvent);
 	
 	public function void QMdiSubWindow_OnMouseMoveEvent_action(void* self, void** mouseEvent);
 	[LinkName("QMdiSubWindow_OnMouseMoveEvent")]
 	public static extern void QMdiSubWindow_OnMouseMoveEvent(void* self, QMdiSubWindow_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMouseMoveEvent")]
+	public static extern void QMdiSubWindow_SuperMouseMoveEvent(void* self, void** mouseEvent);
 	[LinkName("QMdiSubWindow_KeyPressEvent")]
 	public static extern void QMdiSubWindow_KeyPressEvent(void* self, void** keyEvent);
 	
 	public function void QMdiSubWindow_OnKeyPressEvent_action(void* self, void** keyEvent);
 	[LinkName("QMdiSubWindow_OnKeyPressEvent")]
 	public static extern void QMdiSubWindow_OnKeyPressEvent(void* self, QMdiSubWindow_OnKeyPressEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperKeyPressEvent")]
+	public static extern void QMdiSubWindow_SuperKeyPressEvent(void* self, void** keyEvent);
 	[LinkName("QMdiSubWindow_ContextMenuEvent")]
 	public static extern void QMdiSubWindow_ContextMenuEvent(void* self, void** contextMenuEvent);
 	
 	public function void QMdiSubWindow_OnContextMenuEvent_action(void* self, void** contextMenuEvent);
 	[LinkName("QMdiSubWindow_OnContextMenuEvent")]
 	public static extern void QMdiSubWindow_OnContextMenuEvent(void* self, QMdiSubWindow_OnContextMenuEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperContextMenuEvent")]
+	public static extern void QMdiSubWindow_SuperContextMenuEvent(void* self, void** contextMenuEvent);
 	[LinkName("QMdiSubWindow_FocusInEvent")]
 	public static extern void QMdiSubWindow_FocusInEvent(void* self, void** focusInEvent);
 	
 	public function void QMdiSubWindow_OnFocusInEvent_action(void* self, void** focusInEvent);
 	[LinkName("QMdiSubWindow_OnFocusInEvent")]
 	public static extern void QMdiSubWindow_OnFocusInEvent(void* self, QMdiSubWindow_OnFocusInEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperFocusInEvent")]
+	public static extern void QMdiSubWindow_SuperFocusInEvent(void* self, void** focusInEvent);
 	[LinkName("QMdiSubWindow_FocusOutEvent")]
 	public static extern void QMdiSubWindow_FocusOutEvent(void* self, void** focusOutEvent);
 	
 	public function void QMdiSubWindow_OnFocusOutEvent_action(void* self, void** focusOutEvent);
 	[LinkName("QMdiSubWindow_OnFocusOutEvent")]
 	public static extern void QMdiSubWindow_OnFocusOutEvent(void* self, QMdiSubWindow_OnFocusOutEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperFocusOutEvent")]
+	public static extern void QMdiSubWindow_SuperFocusOutEvent(void* self, void** focusOutEvent);
 	[LinkName("QMdiSubWindow_ChildEvent")]
 	public static extern void QMdiSubWindow_ChildEvent(void* self, void** childEvent);
 	
 	public function void QMdiSubWindow_OnChildEvent_action(void* self, void** childEvent);
 	[LinkName("QMdiSubWindow_OnChildEvent")]
 	public static extern void QMdiSubWindow_OnChildEvent(void* self, QMdiSubWindow_OnChildEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperChildEvent")]
+	public static extern void QMdiSubWindow_SuperChildEvent(void* self, void** childEvent);
 	[LinkName("QMdiSubWindow_Tr2")]
 	public static extern libqt_string QMdiSubWindow_Tr2(c_char* s, c_char* c);
 	[LinkName("QMdiSubWindow_Tr3")]
@@ -3572,150 +3947,225 @@ extension CQt
 	public function void QMdiSubWindow_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnCustomEvent")]
 	public static extern void QMdiSubWindow_OnCustomEvent(void* self, QMdiSubWindow_OnCustomEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperCustomEvent")]
+	public static extern void QMdiSubWindow_SuperCustomEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_ConnectNotify")]
 	public static extern void QMdiSubWindow_ConnectNotify(void* self, void** signal);
 	
 	public function void QMdiSubWindow_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QMdiSubWindow_OnConnectNotify")]
 	public static extern void QMdiSubWindow_OnConnectNotify(void* self, QMdiSubWindow_OnConnectNotify_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperConnectNotify")]
+	public static extern void QMdiSubWindow_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QMdiSubWindow_DisconnectNotify")]
 	public static extern void QMdiSubWindow_DisconnectNotify(void* self, void** signal);
 	
 	public function void QMdiSubWindow_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QMdiSubWindow_OnDisconnectNotify")]
 	public static extern void QMdiSubWindow_OnDisconnectNotify(void* self, QMdiSubWindow_OnDisconnectNotify_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperDisconnectNotify")]
+	public static extern void QMdiSubWindow_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QMdiSubWindow_DevType")]
 	public static extern c_int QMdiSubWindow_DevType(void* self);
 	
 	public function void QMdiSubWindow_OnDevType_action(void* self);
 	[LinkName("QMdiSubWindow_OnDevType")]
 	public static extern c_int QMdiSubWindow_OnDevType(void* self, QMdiSubWindow_OnDevType_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperDevType")]
+	public static extern c_int QMdiSubWindow_SuperDevType(void* self);
 	[LinkName("QMdiSubWindow_PaintEngine")]
 	public static extern void** QMdiSubWindow_PaintEngine(void* self);
 	
 	public function void QMdiSubWindow_OnPaintEngine_action(void* self);
 	[LinkName("QMdiSubWindow_OnPaintEngine")]
 	public static extern void** QMdiSubWindow_OnPaintEngine(void* self, QMdiSubWindow_OnPaintEngine_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperPaintEngine")]
+	public static extern void** QMdiSubWindow_SuperPaintEngine(void* self);
 	[LinkName("QMdiSubWindow_Metric")]
 	public static extern c_int QMdiSubWindow_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QMdiSubWindow_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QMdiSubWindow_OnMetric")]
 	public static extern c_int QMdiSubWindow_OnMetric(void* self, QMdiSubWindow_OnMetric_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperMetric")]
+	public static extern c_int QMdiSubWindow_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QMdiSubWindow_InitPainter")]
 	public static extern void QMdiSubWindow_InitPainter(void* self, void** painter);
 	
 	public function void QMdiSubWindow_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QMdiSubWindow_OnInitPainter")]
 	public static extern void QMdiSubWindow_OnInitPainter(void* self, QMdiSubWindow_OnInitPainter_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperInitPainter")]
+	public static extern void QMdiSubWindow_SuperInitPainter(void* self, void** painter);
 	[LinkName("QMdiSubWindow_Redirected")]
 	public static extern void** QMdiSubWindow_Redirected(void* self, void** offset);
 	
 	public function void QMdiSubWindow_OnRedirected_action(void* self, void** offset);
 	[LinkName("QMdiSubWindow_OnRedirected")]
 	public static extern void** QMdiSubWindow_OnRedirected(void* self, QMdiSubWindow_OnRedirected_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperRedirected")]
+	public static extern void** QMdiSubWindow_SuperRedirected(void* self, void** offset);
 	[LinkName("QMdiSubWindow_SharedPainter")]
 	public static extern void** QMdiSubWindow_SharedPainter(void* self);
 	
 	public function void QMdiSubWindow_OnSharedPainter_action(void* self);
 	[LinkName("QMdiSubWindow_OnSharedPainter")]
 	public static extern void** QMdiSubWindow_OnSharedPainter(void* self, QMdiSubWindow_OnSharedPainter_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperSharedPainter")]
+	public static extern void** QMdiSubWindow_SuperSharedPainter(void* self);
 	[LinkName("QMdiSubWindow_SetVisible")]
 	public static extern void QMdiSubWindow_SetVisible(void* self, bool visible);
 	
 	public function void QMdiSubWindow_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QMdiSubWindow_OnSetVisible")]
 	public static extern void QMdiSubWindow_OnSetVisible(void* self, QMdiSubWindow_OnSetVisible_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperSetVisible")]
+	public static extern void QMdiSubWindow_SuperSetVisible(void* self, bool visible);
 	[LinkName("QMdiSubWindow_HeightForWidth")]
 	public static extern c_int QMdiSubWindow_HeightForWidth(void* self, c_int param1);
 	
 	public function void QMdiSubWindow_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QMdiSubWindow_OnHeightForWidth")]
 	public static extern c_int QMdiSubWindow_OnHeightForWidth(void* self, QMdiSubWindow_OnHeightForWidth_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperHeightForWidth")]
+	public static extern c_int QMdiSubWindow_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QMdiSubWindow_HasHeightForWidth")]
 	public static extern bool QMdiSubWindow_HasHeightForWidth(void* self);
 	
 	public function void QMdiSubWindow_OnHasHeightForWidth_action(void* self);
 	[LinkName("QMdiSubWindow_OnHasHeightForWidth")]
 	public static extern bool QMdiSubWindow_OnHasHeightForWidth(void* self, QMdiSubWindow_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperHasHeightForWidth")]
+	public static extern bool QMdiSubWindow_SuperHasHeightForWidth(void* self);
 	[LinkName("QMdiSubWindow_WheelEvent")]
 	public static extern void QMdiSubWindow_WheelEvent(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnWheelEvent")]
 	public static extern void QMdiSubWindow_OnWheelEvent(void* self, QMdiSubWindow_OnWheelEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperWheelEvent")]
+	public static extern void QMdiSubWindow_SuperWheelEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_KeyReleaseEvent")]
 	public static extern void QMdiSubWindow_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnKeyReleaseEvent")]
 	public static extern void QMdiSubWindow_OnKeyReleaseEvent(void* self, QMdiSubWindow_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperKeyReleaseEvent")]
+	public static extern void QMdiSubWindow_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_EnterEvent")]
 	public static extern void QMdiSubWindow_EnterEvent(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnEnterEvent")]
 	public static extern void QMdiSubWindow_OnEnterEvent(void* self, QMdiSubWindow_OnEnterEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperEnterEvent")]
+	public static extern void QMdiSubWindow_SuperEnterEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_TabletEvent")]
 	public static extern void QMdiSubWindow_TabletEvent(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnTabletEvent")]
 	public static extern void QMdiSubWindow_OnTabletEvent(void* self, QMdiSubWindow_OnTabletEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperTabletEvent")]
+	public static extern void QMdiSubWindow_SuperTabletEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_ActionEvent")]
 	public static extern void QMdiSubWindow_ActionEvent(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnActionEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnActionEvent")]
 	public static extern void QMdiSubWindow_OnActionEvent(void* self, QMdiSubWindow_OnActionEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperActionEvent")]
+	public static extern void QMdiSubWindow_SuperActionEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_DragEnterEvent")]
 	public static extern void QMdiSubWindow_DragEnterEvent(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnDragEnterEvent")]
 	public static extern void QMdiSubWindow_OnDragEnterEvent(void* self, QMdiSubWindow_OnDragEnterEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperDragEnterEvent")]
+	public static extern void QMdiSubWindow_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_DragMoveEvent")]
 	public static extern void QMdiSubWindow_DragMoveEvent(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnDragMoveEvent")]
 	public static extern void QMdiSubWindow_OnDragMoveEvent(void* self, QMdiSubWindow_OnDragMoveEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperDragMoveEvent")]
+	public static extern void QMdiSubWindow_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_DragLeaveEvent")]
 	public static extern void QMdiSubWindow_DragLeaveEvent(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnDragLeaveEvent")]
 	public static extern void QMdiSubWindow_OnDragLeaveEvent(void* self, QMdiSubWindow_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperDragLeaveEvent")]
+	public static extern void QMdiSubWindow_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_DropEvent")]
 	public static extern void QMdiSubWindow_DropEvent(void* self, void** event);
 	
 	public function void QMdiSubWindow_OnDropEvent_action(void* self, void** event);
 	[LinkName("QMdiSubWindow_OnDropEvent")]
 	public static extern void QMdiSubWindow_OnDropEvent(void* self, QMdiSubWindow_OnDropEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperDropEvent")]
+	public static extern void QMdiSubWindow_SuperDropEvent(void* self, void** event);
 	[LinkName("QMdiSubWindow_NativeEvent")]
 	public static extern bool QMdiSubWindow_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QMdiSubWindow_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QMdiSubWindow_OnNativeEvent")]
 	public static extern bool QMdiSubWindow_OnNativeEvent(void* self, QMdiSubWindow_OnNativeEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperNativeEvent")]
+	public static extern bool QMdiSubWindow_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QMdiSubWindow_InputMethodEvent")]
 	public static extern void QMdiSubWindow_InputMethodEvent(void* self, void** param1);
 	
 	public function void QMdiSubWindow_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QMdiSubWindow_OnInputMethodEvent")]
 	public static extern void QMdiSubWindow_OnInputMethodEvent(void* self, QMdiSubWindow_OnInputMethodEvent_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperInputMethodEvent")]
+	public static extern void QMdiSubWindow_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QMdiSubWindow_InputMethodQuery")]
 	public static extern void* QMdiSubWindow_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QMdiSubWindow_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QMdiSubWindow_OnInputMethodQuery")]
 	public static extern void* QMdiSubWindow_OnInputMethodQuery(void* self, QMdiSubWindow_OnInputMethodQuery_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperInputMethodQuery")]
+	public static extern void* QMdiSubWindow_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QMdiSubWindow_FocusNextPrevChild")]
 	public static extern bool QMdiSubWindow_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QMdiSubWindow_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QMdiSubWindow_OnFocusNextPrevChild")]
 	public static extern bool QMdiSubWindow_OnFocusNextPrevChild(void* self, QMdiSubWindow_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QMdiSubWindow_SuperFocusNextPrevChild")]
+	public static extern bool QMdiSubWindow_SuperFocusNextPrevChild(void* self, bool next);
 }
 [AllowDuplicates]
 enum QMdiSubWindow_SubWindowOption

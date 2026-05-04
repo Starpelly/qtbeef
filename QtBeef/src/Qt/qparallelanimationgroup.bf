@@ -408,6 +408,20 @@ class QParallelAnimationGroup : IQParallelAnimationGroup, IQAnimationGroup, IQAb
 		CQt.QAbstractAnimation_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_StateChanged);
 		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_CurrentLoopChanged);
 		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_DirectionChanged);
+		CQt.QParallelAnimationGroup_OnMetaObject(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnMetaObject);
+		CQt.QParallelAnimationGroup_OnMetacast(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnMetacast);
+		CQt.QParallelAnimationGroup_OnMetacall(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnMetacall);
+		CQt.QParallelAnimationGroup_OnDuration(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnDuration);
+		CQt.QParallelAnimationGroup_OnEvent(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnEvent);
+		CQt.QParallelAnimationGroup_OnUpdateCurrentTime(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnUpdateCurrentTime);
+		CQt.QParallelAnimationGroup_OnUpdateState(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnUpdateState);
+		CQt.QParallelAnimationGroup_OnUpdateDirection(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnUpdateDirection);
+		CQt.QParallelAnimationGroup_OnEventFilter(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnEventFilter);
+		CQt.QParallelAnimationGroup_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnTimerEvent);
+		CQt.QParallelAnimationGroup_OnChildEvent(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnChildEvent);
+		CQt.QParallelAnimationGroup_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnCustomEvent);
+		CQt.QParallelAnimationGroup_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnConnectNotify);
+		CQt.QParallelAnimationGroup_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QParallelAnimationGroup_OnDisconnectNotify);
 	}
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
 	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
@@ -444,6 +458,76 @@ class QParallelAnimationGroup : IQParallelAnimationGroup, IQAnimationGroup, IQAb
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDirectionChanged.Invoke(param1);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QParallelAnimationGroup_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnDuration(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDuration();
+	}
+	static void QtBeef_QParallelAnimationGroup_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnUpdateCurrentTime(void* ptr, c_int currentTime)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateCurrentTime(currentTime);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnUpdateState(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateState(newState, oldState);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnUpdateDirection(void* ptr, QAbstractAnimation_Direction direction)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateDirection(direction);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QParallelAnimationGroup_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
 	}
 	public this(QParallelAnimationGroup_Ptr ptr)
 	{
@@ -854,18 +938,27 @@ extension CQt
 	public function void QParallelAnimationGroup_OnMetaObject_action(void* self);
 	[LinkName("QParallelAnimationGroup_OnMetaObject")]
 	public static extern void** QParallelAnimationGroup_OnMetaObject(void* self, QParallelAnimationGroup_OnMetaObject_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperMetaObject")]
+	public static extern void** QParallelAnimationGroup_SuperMetaObject(void* self);
 	[LinkName("QParallelAnimationGroup_Qt_Metacast")]
 	public static extern void* QParallelAnimationGroup_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QParallelAnimationGroup_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QParallelAnimationGroup_OnMetacast")]
 	public static extern void* QParallelAnimationGroup_OnMetacast(void* self, QParallelAnimationGroup_OnMetacast_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperMetacast")]
+	public static extern void* QParallelAnimationGroup_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QParallelAnimationGroup_Qt_Metacall")]
 	public static extern c_int QParallelAnimationGroup_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QParallelAnimationGroup_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QParallelAnimationGroup_OnMetacall")]
 	public static extern c_int QParallelAnimationGroup_OnMetacall(void* self, QParallelAnimationGroup_OnMetacall_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperMetacall")]
+	public static extern c_int QParallelAnimationGroup_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QParallelAnimationGroup_Tr")]
 	public static extern libqt_string QParallelAnimationGroup_Tr(c_char* s);
 	[LinkName("QParallelAnimationGroup_Duration")]
@@ -874,30 +967,45 @@ extension CQt
 	public function void QParallelAnimationGroup_OnDuration_action(void* self);
 	[LinkName("QParallelAnimationGroup_OnDuration")]
 	public static extern c_int QParallelAnimationGroup_OnDuration(void* self, QParallelAnimationGroup_OnDuration_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperDuration")]
+	public static extern c_int QParallelAnimationGroup_SuperDuration(void* self);
 	[LinkName("QParallelAnimationGroup_Event")]
 	public static extern bool QParallelAnimationGroup_Event(void* self, void** event);
 	
 	public function void QParallelAnimationGroup_OnEvent_action(void* self, void** event);
 	[LinkName("QParallelAnimationGroup_OnEvent")]
 	public static extern bool QParallelAnimationGroup_OnEvent(void* self, QParallelAnimationGroup_OnEvent_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperEvent")]
+	public static extern bool QParallelAnimationGroup_SuperEvent(void* self, void** event);
 	[LinkName("QParallelAnimationGroup_UpdateCurrentTime")]
 	public static extern void QParallelAnimationGroup_UpdateCurrentTime(void* self, c_int currentTime);
 	
 	public function void QParallelAnimationGroup_OnUpdateCurrentTime_action(void* self, c_int currentTime);
 	[LinkName("QParallelAnimationGroup_OnUpdateCurrentTime")]
 	public static extern void QParallelAnimationGroup_OnUpdateCurrentTime(void* self, QParallelAnimationGroup_OnUpdateCurrentTime_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperUpdateCurrentTime")]
+	public static extern void QParallelAnimationGroup_SuperUpdateCurrentTime(void* self, c_int currentTime);
 	[LinkName("QParallelAnimationGroup_UpdateState")]
 	public static extern void QParallelAnimationGroup_UpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	
 	public function void QParallelAnimationGroup_OnUpdateState_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QParallelAnimationGroup_OnUpdateState")]
 	public static extern void QParallelAnimationGroup_OnUpdateState(void* self, QParallelAnimationGroup_OnUpdateState_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperUpdateState")]
+	public static extern void QParallelAnimationGroup_SuperUpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QParallelAnimationGroup_UpdateDirection")]
 	public static extern void QParallelAnimationGroup_UpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	
 	public function void QParallelAnimationGroup_OnUpdateDirection_action(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QParallelAnimationGroup_OnUpdateDirection")]
 	public static extern void QParallelAnimationGroup_OnUpdateDirection(void* self, QParallelAnimationGroup_OnUpdateDirection_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperUpdateDirection")]
+	public static extern void QParallelAnimationGroup_SuperUpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QParallelAnimationGroup_Tr2")]
 	public static extern libqt_string QParallelAnimationGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QParallelAnimationGroup_Tr3")]
@@ -908,34 +1016,52 @@ extension CQt
 	public function void QParallelAnimationGroup_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QParallelAnimationGroup_OnEventFilter")]
 	public static extern bool QParallelAnimationGroup_OnEventFilter(void* self, QParallelAnimationGroup_OnEventFilter_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperEventFilter")]
+	public static extern bool QParallelAnimationGroup_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QParallelAnimationGroup_TimerEvent")]
 	public static extern void QParallelAnimationGroup_TimerEvent(void* self, void** event);
 	
 	public function void QParallelAnimationGroup_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QParallelAnimationGroup_OnTimerEvent")]
 	public static extern void QParallelAnimationGroup_OnTimerEvent(void* self, QParallelAnimationGroup_OnTimerEvent_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperTimerEvent")]
+	public static extern void QParallelAnimationGroup_SuperTimerEvent(void* self, void** event);
 	[LinkName("QParallelAnimationGroup_ChildEvent")]
 	public static extern void QParallelAnimationGroup_ChildEvent(void* self, void** event);
 	
 	public function void QParallelAnimationGroup_OnChildEvent_action(void* self, void** event);
 	[LinkName("QParallelAnimationGroup_OnChildEvent")]
 	public static extern void QParallelAnimationGroup_OnChildEvent(void* self, QParallelAnimationGroup_OnChildEvent_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperChildEvent")]
+	public static extern void QParallelAnimationGroup_SuperChildEvent(void* self, void** event);
 	[LinkName("QParallelAnimationGroup_CustomEvent")]
 	public static extern void QParallelAnimationGroup_CustomEvent(void* self, void** event);
 	
 	public function void QParallelAnimationGroup_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QParallelAnimationGroup_OnCustomEvent")]
 	public static extern void QParallelAnimationGroup_OnCustomEvent(void* self, QParallelAnimationGroup_OnCustomEvent_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperCustomEvent")]
+	public static extern void QParallelAnimationGroup_SuperCustomEvent(void* self, void** event);
 	[LinkName("QParallelAnimationGroup_ConnectNotify")]
 	public static extern void QParallelAnimationGroup_ConnectNotify(void* self, void** signal);
 	
 	public function void QParallelAnimationGroup_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QParallelAnimationGroup_OnConnectNotify")]
 	public static extern void QParallelAnimationGroup_OnConnectNotify(void* self, QParallelAnimationGroup_OnConnectNotify_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperConnectNotify")]
+	public static extern void QParallelAnimationGroup_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QParallelAnimationGroup_DisconnectNotify")]
 	public static extern void QParallelAnimationGroup_DisconnectNotify(void* self, void** signal);
 	
 	public function void QParallelAnimationGroup_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QParallelAnimationGroup_OnDisconnectNotify")]
 	public static extern void QParallelAnimationGroup_OnDisconnectNotify(void* self, QParallelAnimationGroup_OnDisconnectNotify_action _action);
+	
+	[LinkName("QParallelAnimationGroup_SuperDisconnectNotify")]
+	public static extern void QParallelAnimationGroup_SuperDisconnectNotify(void* self, void** signal);
 }

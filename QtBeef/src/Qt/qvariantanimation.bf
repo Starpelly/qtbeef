@@ -437,6 +437,22 @@ class QVariantAnimation : IQVariantAnimation, IQAbstractAnimation, IQObject
 		CQt.QAbstractAnimation_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_StateChanged);
 		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_CurrentLoopChanged);
 		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_Connect_DirectionChanged);
+		CQt.QVariantAnimation_OnMetaObject(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnMetaObject);
+		CQt.QVariantAnimation_OnMetacast(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnMetacast);
+		CQt.QVariantAnimation_OnMetacall(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnMetacall);
+		CQt.QVariantAnimation_OnDuration(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnDuration);
+		CQt.QVariantAnimation_OnEvent(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnEvent);
+		CQt.QVariantAnimation_OnUpdateCurrentTime(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnUpdateCurrentTime);
+		CQt.QVariantAnimation_OnUpdateState(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnUpdateState);
+		CQt.QVariantAnimation_OnUpdateCurrentValue(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnUpdateCurrentValue);
+		CQt.QVariantAnimation_OnInterpolated(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnInterpolated);
+		CQt.QVariantAnimation_OnEventFilter(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnEventFilter);
+		CQt.QVariantAnimation_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnTimerEvent);
+		CQt.QVariantAnimation_OnChildEvent(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnChildEvent);
+		CQt.QVariantAnimation_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnCustomEvent);
+		CQt.QVariantAnimation_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnConnectNotify);
+		CQt.QVariantAnimation_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnDisconnectNotify);
+		CQt.QVariantAnimation_OnUpdateDirection(obj.ObjectPtr,  => QtBeef_QVariantAnimation_OnUpdateDirection);
 	}
 	public Event<delegate void(void** value)> OnValueChanged = .() ~ _.Dispose();
 	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
@@ -479,6 +495,86 @@ class QVariantAnimation : IQVariantAnimation, IQAbstractAnimation, IQObject
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnDirectionChanged.Invoke(param1);
+	}
+	static void QtBeef_QVariantAnimation_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QVariantAnimation_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QVariantAnimation_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QVariantAnimation_OnDuration(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDuration();
+	}
+	static void QtBeef_QVariantAnimation_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QVariantAnimation_OnUpdateCurrentTime(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateCurrentTime(param1);
+	}
+	static void QtBeef_QVariantAnimation_OnUpdateState(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateState(newState, oldState);
+	}
+	static void QtBeef_QVariantAnimation_OnUpdateCurrentValue(void* ptr, void** value)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateCurrentValue(value);
+	}
+	static void QtBeef_QVariantAnimation_OnInterpolated(void* ptr, void** from, void** to, double progress)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInterpolated(from, to, progress);
+	}
+	static void QtBeef_QVariantAnimation_OnEventFilter(void* ptr, void** watched, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(watched, event);
+	}
+	static void QtBeef_QVariantAnimation_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QVariantAnimation_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QVariantAnimation_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QVariantAnimation_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QVariantAnimation_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QVariantAnimation_OnUpdateDirection(void* ptr, QAbstractAnimation_Direction direction)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateDirection(direction);
 	}
 	public this(QVariantAnimation_Ptr ptr)
 	{
@@ -916,18 +1012,27 @@ extension CQt
 	public function void QVariantAnimation_OnMetaObject_action(void* self);
 	[LinkName("QVariantAnimation_OnMetaObject")]
 	public static extern void** QVariantAnimation_OnMetaObject(void* self, QVariantAnimation_OnMetaObject_action _action);
+	
+	[LinkName("QVariantAnimation_SuperMetaObject")]
+	public static extern void** QVariantAnimation_SuperMetaObject(void* self);
 	[LinkName("QVariantAnimation_Qt_Metacast")]
 	public static extern void* QVariantAnimation_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QVariantAnimation_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QVariantAnimation_OnMetacast")]
 	public static extern void* QVariantAnimation_OnMetacast(void* self, QVariantAnimation_OnMetacast_action _action);
+	
+	[LinkName("QVariantAnimation_SuperMetacast")]
+	public static extern void* QVariantAnimation_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QVariantAnimation_Qt_Metacall")]
 	public static extern c_int QVariantAnimation_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QVariantAnimation_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QVariantAnimation_OnMetacall")]
 	public static extern c_int QVariantAnimation_OnMetacall(void* self, QVariantAnimation_OnMetacall_action _action);
+	
+	[LinkName("QVariantAnimation_SuperMetacall")]
+	public static extern c_int QVariantAnimation_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QVariantAnimation_Tr")]
 	public static extern libqt_string QVariantAnimation_Tr(c_char* s);
 	[LinkName("QVariantAnimation_StartValue")]
@@ -954,6 +1059,9 @@ extension CQt
 	public function void QVariantAnimation_OnDuration_action(void* self);
 	[LinkName("QVariantAnimation_OnDuration")]
 	public static extern c_int QVariantAnimation_OnDuration(void* self, QVariantAnimation_OnDuration_action _action);
+	
+	[LinkName("QVariantAnimation_SuperDuration")]
+	public static extern c_int QVariantAnimation_SuperDuration(void* self);
 	[LinkName("QVariantAnimation_SetDuration")]
 	public static extern void QVariantAnimation_SetDuration(void* self, c_int msecs);
 	[LinkName("QVariantAnimation_EasingCurve")]
@@ -972,30 +1080,45 @@ extension CQt
 	public function void QVariantAnimation_OnEvent_action(void* self, void** event);
 	[LinkName("QVariantAnimation_OnEvent")]
 	public static extern bool QVariantAnimation_OnEvent(void* self, QVariantAnimation_OnEvent_action _action);
+	
+	[LinkName("QVariantAnimation_SuperEvent")]
+	public static extern bool QVariantAnimation_SuperEvent(void* self, void** event);
 	[LinkName("QVariantAnimation_UpdateCurrentTime")]
 	public static extern void QVariantAnimation_UpdateCurrentTime(void* self, c_int param1);
 	
 	public function void QVariantAnimation_OnUpdateCurrentTime_action(void* self, c_int param1);
 	[LinkName("QVariantAnimation_OnUpdateCurrentTime")]
 	public static extern void QVariantAnimation_OnUpdateCurrentTime(void* self, QVariantAnimation_OnUpdateCurrentTime_action _action);
+	
+	[LinkName("QVariantAnimation_SuperUpdateCurrentTime")]
+	public static extern void QVariantAnimation_SuperUpdateCurrentTime(void* self, c_int param1);
 	[LinkName("QVariantAnimation_UpdateState")]
 	public static extern void QVariantAnimation_UpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	
 	public function void QVariantAnimation_OnUpdateState_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QVariantAnimation_OnUpdateState")]
 	public static extern void QVariantAnimation_OnUpdateState(void* self, QVariantAnimation_OnUpdateState_action _action);
+	
+	[LinkName("QVariantAnimation_SuperUpdateState")]
+	public static extern void QVariantAnimation_SuperUpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QVariantAnimation_UpdateCurrentValue")]
 	public static extern void QVariantAnimation_UpdateCurrentValue(void* self, void** value);
 	
 	public function void QVariantAnimation_OnUpdateCurrentValue_action(void* self, void** value);
 	[LinkName("QVariantAnimation_OnUpdateCurrentValue")]
 	public static extern void QVariantAnimation_OnUpdateCurrentValue(void* self, QVariantAnimation_OnUpdateCurrentValue_action _action);
+	
+	[LinkName("QVariantAnimation_SuperUpdateCurrentValue")]
+	public static extern void QVariantAnimation_SuperUpdateCurrentValue(void* self, void** value);
 	[LinkName("QVariantAnimation_Interpolated")]
 	public static extern void* QVariantAnimation_Interpolated(void* self, void** from, void** to, double progress);
 	
 	public function void QVariantAnimation_OnInterpolated_action(void* self, void** from, void** to, double progress);
 	[LinkName("QVariantAnimation_OnInterpolated")]
 	public static extern void* QVariantAnimation_OnInterpolated(void* self, QVariantAnimation_OnInterpolated_action _action);
+	
+	[LinkName("QVariantAnimation_SuperInterpolated")]
+	public static extern void* QVariantAnimation_SuperInterpolated(void* self, void** from, void** to, double progress);
 	[LinkName("QVariantAnimation_Tr2")]
 	public static extern libqt_string QVariantAnimation_Tr2(c_char* s, c_char* c);
 	[LinkName("QVariantAnimation_Tr3")]
@@ -1006,40 +1129,61 @@ extension CQt
 	public function void QVariantAnimation_OnEventFilter_action(void* self, void** watched, void** event);
 	[LinkName("QVariantAnimation_OnEventFilter")]
 	public static extern bool QVariantAnimation_OnEventFilter(void* self, QVariantAnimation_OnEventFilter_action _action);
+	
+	[LinkName("QVariantAnimation_SuperEventFilter")]
+	public static extern bool QVariantAnimation_SuperEventFilter(void* self, void** watched, void** event);
 	[LinkName("QVariantAnimation_TimerEvent")]
 	public static extern void QVariantAnimation_TimerEvent(void* self, void** event);
 	
 	public function void QVariantAnimation_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QVariantAnimation_OnTimerEvent")]
 	public static extern void QVariantAnimation_OnTimerEvent(void* self, QVariantAnimation_OnTimerEvent_action _action);
+	
+	[LinkName("QVariantAnimation_SuperTimerEvent")]
+	public static extern void QVariantAnimation_SuperTimerEvent(void* self, void** event);
 	[LinkName("QVariantAnimation_ChildEvent")]
 	public static extern void QVariantAnimation_ChildEvent(void* self, void** event);
 	
 	public function void QVariantAnimation_OnChildEvent_action(void* self, void** event);
 	[LinkName("QVariantAnimation_OnChildEvent")]
 	public static extern void QVariantAnimation_OnChildEvent(void* self, QVariantAnimation_OnChildEvent_action _action);
+	
+	[LinkName("QVariantAnimation_SuperChildEvent")]
+	public static extern void QVariantAnimation_SuperChildEvent(void* self, void** event);
 	[LinkName("QVariantAnimation_CustomEvent")]
 	public static extern void QVariantAnimation_CustomEvent(void* self, void** event);
 	
 	public function void QVariantAnimation_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QVariantAnimation_OnCustomEvent")]
 	public static extern void QVariantAnimation_OnCustomEvent(void* self, QVariantAnimation_OnCustomEvent_action _action);
+	
+	[LinkName("QVariantAnimation_SuperCustomEvent")]
+	public static extern void QVariantAnimation_SuperCustomEvent(void* self, void** event);
 	[LinkName("QVariantAnimation_ConnectNotify")]
 	public static extern void QVariantAnimation_ConnectNotify(void* self, void** signal);
 	
 	public function void QVariantAnimation_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QVariantAnimation_OnConnectNotify")]
 	public static extern void QVariantAnimation_OnConnectNotify(void* self, QVariantAnimation_OnConnectNotify_action _action);
+	
+	[LinkName("QVariantAnimation_SuperConnectNotify")]
+	public static extern void QVariantAnimation_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QVariantAnimation_DisconnectNotify")]
 	public static extern void QVariantAnimation_DisconnectNotify(void* self, void** signal);
 	
 	public function void QVariantAnimation_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QVariantAnimation_OnDisconnectNotify")]
 	public static extern void QVariantAnimation_OnDisconnectNotify(void* self, QVariantAnimation_OnDisconnectNotify_action _action);
+	
+	[LinkName("QVariantAnimation_SuperDisconnectNotify")]
+	public static extern void QVariantAnimation_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QVariantAnimation_UpdateDirection")]
 	public static extern void QVariantAnimation_UpdateDirection(void* self, QAbstractAnimation_Direction direction);
 	
 	public function void QVariantAnimation_OnUpdateDirection_action(void* self, QAbstractAnimation_Direction direction);
 	[LinkName("QVariantAnimation_OnUpdateDirection")]
 	public static extern void QVariantAnimation_OnUpdateDirection(void* self, QVariantAnimation_OnUpdateDirection_action _action);
+	
+	[LinkName("QVariantAnimation_SuperUpdateDirection")]
+	public static extern void QVariantAnimation_SuperUpdateDirection(void* self, QAbstractAnimation_Direction direction);
 }

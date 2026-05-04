@@ -1651,6 +1651,61 @@ class QDialog : IQDialog, IQWidget, IQObject, IQPaintDevice
 		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
 		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
 		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QDialog_OnMetaObject(obj.ObjectPtr,  => QtBeef_QDialog_OnMetaObject);
+		CQt.QDialog_OnMetacast(obj.ObjectPtr,  => QtBeef_QDialog_OnMetacast);
+		CQt.QDialog_OnMetacall(obj.ObjectPtr,  => QtBeef_QDialog_OnMetacall);
+		CQt.QDialog_OnSetVisible(obj.ObjectPtr,  => QtBeef_QDialog_OnSetVisible);
+		CQt.QDialog_OnSizeHint(obj.ObjectPtr,  => QtBeef_QDialog_OnSizeHint);
+		CQt.QDialog_OnMinimumSizeHint(obj.ObjectPtr,  => QtBeef_QDialog_OnMinimumSizeHint);
+		CQt.QDialog_OnOpen(obj.ObjectPtr,  => QtBeef_QDialog_OnOpen);
+		CQt.QDialog_OnExec(obj.ObjectPtr,  => QtBeef_QDialog_OnExec);
+		CQt.QDialog_OnDone(obj.ObjectPtr,  => QtBeef_QDialog_OnDone);
+		CQt.QDialog_OnAccept(obj.ObjectPtr,  => QtBeef_QDialog_OnAccept);
+		CQt.QDialog_OnReject(obj.ObjectPtr,  => QtBeef_QDialog_OnReject);
+		CQt.QDialog_OnKeyPressEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnKeyPressEvent);
+		CQt.QDialog_OnCloseEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnCloseEvent);
+		CQt.QDialog_OnShowEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnShowEvent);
+		CQt.QDialog_OnResizeEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnResizeEvent);
+		CQt.QDialog_OnContextMenuEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnContextMenuEvent);
+		CQt.QDialog_OnEventFilter(obj.ObjectPtr,  => QtBeef_QDialog_OnEventFilter);
+		CQt.QDialog_OnEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnEvent);
+		CQt.QDialog_OnTimerEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnTimerEvent);
+		CQt.QDialog_OnChildEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnChildEvent);
+		CQt.QDialog_OnCustomEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnCustomEvent);
+		CQt.QDialog_OnConnectNotify(obj.ObjectPtr,  => QtBeef_QDialog_OnConnectNotify);
+		CQt.QDialog_OnDisconnectNotify(obj.ObjectPtr,  => QtBeef_QDialog_OnDisconnectNotify);
+		CQt.QDialog_OnDevType(obj.ObjectPtr,  => QtBeef_QDialog_OnDevType);
+		CQt.QDialog_OnPaintEngine(obj.ObjectPtr,  => QtBeef_QDialog_OnPaintEngine);
+		CQt.QDialog_OnMetric(obj.ObjectPtr,  => QtBeef_QDialog_OnMetric);
+		CQt.QDialog_OnInitPainter(obj.ObjectPtr,  => QtBeef_QDialog_OnInitPainter);
+		CQt.QDialog_OnRedirected(obj.ObjectPtr,  => QtBeef_QDialog_OnRedirected);
+		CQt.QDialog_OnSharedPainter(obj.ObjectPtr,  => QtBeef_QDialog_OnSharedPainter);
+		CQt.QDialog_OnHeightForWidth(obj.ObjectPtr,  => QtBeef_QDialog_OnHeightForWidth);
+		CQt.QDialog_OnHasHeightForWidth(obj.ObjectPtr,  => QtBeef_QDialog_OnHasHeightForWidth);
+		CQt.QDialog_OnMousePressEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnMousePressEvent);
+		CQt.QDialog_OnMouseReleaseEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnMouseReleaseEvent);
+		CQt.QDialog_OnMouseDoubleClickEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnMouseDoubleClickEvent);
+		CQt.QDialog_OnMouseMoveEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnMouseMoveEvent);
+		CQt.QDialog_OnWheelEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnWheelEvent);
+		CQt.QDialog_OnKeyReleaseEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnKeyReleaseEvent);
+		CQt.QDialog_OnFocusInEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnFocusInEvent);
+		CQt.QDialog_OnFocusOutEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnFocusOutEvent);
+		CQt.QDialog_OnEnterEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnEnterEvent);
+		CQt.QDialog_OnLeaveEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnLeaveEvent);
+		CQt.QDialog_OnPaintEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnPaintEvent);
+		CQt.QDialog_OnMoveEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnMoveEvent);
+		CQt.QDialog_OnTabletEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnTabletEvent);
+		CQt.QDialog_OnActionEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnActionEvent);
+		CQt.QDialog_OnDragEnterEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnDragEnterEvent);
+		CQt.QDialog_OnDragMoveEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnDragMoveEvent);
+		CQt.QDialog_OnDragLeaveEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnDragLeaveEvent);
+		CQt.QDialog_OnDropEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnDropEvent);
+		CQt.QDialog_OnHideEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnHideEvent);
+		CQt.QDialog_OnNativeEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnNativeEvent);
+		CQt.QDialog_OnChangeEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnChangeEvent);
+		CQt.QDialog_OnInputMethodEvent(obj.ObjectPtr,  => QtBeef_QDialog_OnInputMethodEvent);
+		CQt.QDialog_OnInputMethodQuery(obj.ObjectPtr,  => QtBeef_QDialog_OnInputMethodQuery);
+		CQt.QDialog_OnFocusNextPrevChild(obj.ObjectPtr,  => QtBeef_QDialog_OnFocusNextPrevChild);
 	}
 	public Event<delegate void(c_int result)> OnFinished = .() ~ _.Dispose();
 	public Event<delegate void()> OnAccepted = .() ~ _.Dispose();
@@ -1705,6 +1760,281 @@ class QDialog : IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		let obj = CQt.ObjectHandleMap[ptr] as Self;
 		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QDialog_OnMetaObject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetaObject();
+	}
+	static void QtBeef_QDialog_OnMetacast(void* ptr, c_char* param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacast(param1);
+	}
+	static void QtBeef_QDialog_OnMetacall(void* ptr, QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetacall(param1, param2, param3);
+	}
+	static void QtBeef_QDialog_OnSetVisible(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSetVisible(visible);
+	}
+	static void QtBeef_QDialog_OnSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHint();
+	}
+	static void QtBeef_QDialog_OnMinimumSizeHint(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumSizeHint();
+	}
+	static void QtBeef_QDialog_OnOpen(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpen();
+	}
+	static void QtBeef_QDialog_OnExec(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExec();
+	}
+	static void QtBeef_QDialog_OnDone(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDone(param1);
+	}
+	static void QtBeef_QDialog_OnAccept(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccept();
+	}
+	static void QtBeef_QDialog_OnReject(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReject();
+	}
+	static void QtBeef_QDialog_OnKeyPressEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyPressEvent(param1);
+	}
+	static void QtBeef_QDialog_OnCloseEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEvent(param1);
+	}
+	static void QtBeef_QDialog_OnShowEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowEvent(param1);
+	}
+	static void QtBeef_QDialog_OnResizeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResizeEvent(param1);
+	}
+	static void QtBeef_QDialog_OnContextMenuEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContextMenuEvent(param1);
+	}
+	static void QtBeef_QDialog_OnEventFilter(void* ptr, void** param1, void** param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEventFilter(param1, param2);
+	}
+	static void QtBeef_QDialog_OnEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEvent(event);
+	}
+	static void QtBeef_QDialog_OnTimerEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimerEvent(event);
+	}
+	static void QtBeef_QDialog_OnChildEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildEvent(event);
+	}
+	static void QtBeef_QDialog_OnCustomEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomEvent(event);
+	}
+	static void QtBeef_QDialog_OnConnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnConnectNotify(signal);
+	}
+	static void QtBeef_QDialog_OnDisconnectNotify(void* ptr, void** signal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDisconnectNotify(signal);
+	}
+	static void QtBeef_QDialog_OnDevType(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDevType();
+	}
+	static void QtBeef_QDialog_OnPaintEngine(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEngine();
+	}
+	static void QtBeef_QDialog_OnMetric(void* ptr, QPaintDevice_PaintDeviceMetric metric)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMetric(metric);
+	}
+	static void QtBeef_QDialog_OnInitPainter(void* ptr, void** painter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInitPainter(painter);
+	}
+	static void QtBeef_QDialog_OnRedirected(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedirected(offset);
+	}
+	static void QtBeef_QDialog_OnSharedPainter(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSharedPainter();
+	}
+	static void QtBeef_QDialog_OnHeightForWidth(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightForWidth(param1);
+	}
+	static void QtBeef_QDialog_OnHasHeightForWidth(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHasHeightForWidth();
+	}
+	static void QtBeef_QDialog_OnMousePressEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressEvent(event);
+	}
+	static void QtBeef_QDialog_OnMouseReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseReleaseEvent(event);
+	}
+	static void QtBeef_QDialog_OnMouseDoubleClickEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickEvent(event);
+	}
+	static void QtBeef_QDialog_OnMouseMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseMoveEvent(event);
+	}
+	static void QtBeef_QDialog_OnWheelEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelEvent(event);
+	}
+	static void QtBeef_QDialog_OnKeyReleaseEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyReleaseEvent(event);
+	}
+	static void QtBeef_QDialog_OnFocusInEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusInEvent(event);
+	}
+	static void QtBeef_QDialog_OnFocusOutEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusOutEvent(event);
+	}
+	static void QtBeef_QDialog_OnEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnterEvent(event);
+	}
+	static void QtBeef_QDialog_OnLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLeaveEvent(event);
+	}
+	static void QtBeef_QDialog_OnPaintEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaintEvent(event);
+	}
+	static void QtBeef_QDialog_OnMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMoveEvent(event);
+	}
+	static void QtBeef_QDialog_OnTabletEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabletEvent(event);
+	}
+	static void QtBeef_QDialog_OnActionEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionEvent(event);
+	}
+	static void QtBeef_QDialog_OnDragEnterEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragEnterEvent(event);
+	}
+	static void QtBeef_QDialog_OnDragMoveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragMoveEvent(event);
+	}
+	static void QtBeef_QDialog_OnDragLeaveEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDragLeaveEvent(event);
+	}
+	static void QtBeef_QDialog_OnDropEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDropEvent(event);
+	}
+	static void QtBeef_QDialog_OnHideEvent(void* ptr, void** event)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHideEvent(event);
+	}
+	static void QtBeef_QDialog_OnNativeEvent(void* ptr, void** eventType, void* message, void** result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNativeEvent(eventType, message, result);
+	}
+	static void QtBeef_QDialog_OnChangeEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChangeEvent(param1);
+	}
+	static void QtBeef_QDialog_OnInputMethodEvent(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodEvent(param1);
+	}
+	static void QtBeef_QDialog_OnInputMethodQuery(void* ptr, Qt_InputMethodQuery param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputMethodQuery(param1);
+	}
+	static void QtBeef_QDialog_OnFocusNextPrevChild(void* ptr, bool next)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusNextPrevChild(next);
 	}
 	public this(QDialog_Ptr ptr)
 	{
@@ -3333,18 +3663,27 @@ extension CQt
 	public function void QDialog_OnMetaObject_action(void* self);
 	[LinkName("QDialog_OnMetaObject")]
 	public static extern void** QDialog_OnMetaObject(void* self, QDialog_OnMetaObject_action _action);
+	
+	[LinkName("QDialog_SuperMetaObject")]
+	public static extern void** QDialog_SuperMetaObject(void* self);
 	[LinkName("QDialog_Qt_Metacast")]
 	public static extern void* QDialog_Qt_Metacast(void* self, c_char* param1);
 	
 	public function void QDialog_OnMetacast_action(void* self, c_char* param1);
 	[LinkName("QDialog_OnMetacast")]
 	public static extern void* QDialog_OnMetacast(void* self, QDialog_OnMetacast_action _action);
+	
+	[LinkName("QDialog_SuperMetacast")]
+	public static extern void* QDialog_SuperMetacast(void* self, c_char* param1);
 	[LinkName("QDialog_Qt_Metacall")]
 	public static extern c_int QDialog_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	
 	public function void QDialog_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDialog_OnMetacall")]
 	public static extern c_int QDialog_OnMetacall(void* self, QDialog_OnMetacall_action _action);
+	
+	[LinkName("QDialog_SuperMetacall")]
+	public static extern c_int QDialog_SuperMetacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QDialog_Tr")]
 	public static extern libqt_string QDialog_Tr(c_char* s);
 	[LinkName("QDialog_Result")]
@@ -3355,18 +3694,27 @@ extension CQt
 	public function void QDialog_OnSetVisible_action(void* self, bool visible);
 	[LinkName("QDialog_OnSetVisible")]
 	public static extern void QDialog_OnSetVisible(void* self, QDialog_OnSetVisible_action _action);
+	
+	[LinkName("QDialog_SuperSetVisible")]
+	public static extern void QDialog_SuperSetVisible(void* self, bool visible);
 	[LinkName("QDialog_SizeHint")]
 	public static extern void* QDialog_SizeHint(void* self);
 	
 	public function void QDialog_OnSizeHint_action(void* self);
 	[LinkName("QDialog_OnSizeHint")]
 	public static extern void* QDialog_OnSizeHint(void* self, QDialog_OnSizeHint_action _action);
+	
+	[LinkName("QDialog_SuperSizeHint")]
+	public static extern void* QDialog_SuperSizeHint(void* self);
 	[LinkName("QDialog_MinimumSizeHint")]
 	public static extern void* QDialog_MinimumSizeHint(void* self);
 	
 	public function void QDialog_OnMinimumSizeHint_action(void* self);
 	[LinkName("QDialog_OnMinimumSizeHint")]
 	public static extern void* QDialog_OnMinimumSizeHint(void* self, QDialog_OnMinimumSizeHint_action _action);
+	
+	[LinkName("QDialog_SuperMinimumSizeHint")]
+	public static extern void* QDialog_SuperMinimumSizeHint(void* self);
 	[LinkName("QDialog_SetSizeGripEnabled")]
 	public static extern void QDialog_SetSizeGripEnabled(void* self, bool sizeGripEnabled);
 	[LinkName("QDialog_IsSizeGripEnabled")]
@@ -3399,66 +3747,99 @@ extension CQt
 	public function void QDialog_OnOpen_action(void* self);
 	[LinkName("QDialog_OnOpen")]
 	public static extern void QDialog_OnOpen(void* self, QDialog_OnOpen_action _action);
+	
+	[LinkName("QDialog_SuperOpen")]
+	public static extern void QDialog_SuperOpen(void* self);
 	[LinkName("QDialog_Exec")]
 	public static extern c_int QDialog_Exec(void* self);
 	
 	public function void QDialog_OnExec_action(void* self);
 	[LinkName("QDialog_OnExec")]
 	public static extern c_int QDialog_OnExec(void* self, QDialog_OnExec_action _action);
+	
+	[LinkName("QDialog_SuperExec")]
+	public static extern c_int QDialog_SuperExec(void* self);
 	[LinkName("QDialog_Done")]
 	public static extern void QDialog_Done(void* self, c_int param1);
 	
 	public function void QDialog_OnDone_action(void* self, c_int param1);
 	[LinkName("QDialog_OnDone")]
 	public static extern void QDialog_OnDone(void* self, QDialog_OnDone_action _action);
+	
+	[LinkName("QDialog_SuperDone")]
+	public static extern void QDialog_SuperDone(void* self, c_int param1);
 	[LinkName("QDialog_Accept")]
 	public static extern void QDialog_Accept(void* self);
 	
 	public function void QDialog_OnAccept_action(void* self);
 	[LinkName("QDialog_OnAccept")]
 	public static extern void QDialog_OnAccept(void* self, QDialog_OnAccept_action _action);
+	
+	[LinkName("QDialog_SuperAccept")]
+	public static extern void QDialog_SuperAccept(void* self);
 	[LinkName("QDialog_Reject")]
 	public static extern void QDialog_Reject(void* self);
 	
 	public function void QDialog_OnReject_action(void* self);
 	[LinkName("QDialog_OnReject")]
 	public static extern void QDialog_OnReject(void* self, QDialog_OnReject_action _action);
+	
+	[LinkName("QDialog_SuperReject")]
+	public static extern void QDialog_SuperReject(void* self);
 	[LinkName("QDialog_KeyPressEvent")]
 	public static extern void QDialog_KeyPressEvent(void* self, void** param1);
 	
 	public function void QDialog_OnKeyPressEvent_action(void* self, void** param1);
 	[LinkName("QDialog_OnKeyPressEvent")]
 	public static extern void QDialog_OnKeyPressEvent(void* self, QDialog_OnKeyPressEvent_action _action);
+	
+	[LinkName("QDialog_SuperKeyPressEvent")]
+	public static extern void QDialog_SuperKeyPressEvent(void* self, void** param1);
 	[LinkName("QDialog_CloseEvent")]
 	public static extern void QDialog_CloseEvent(void* self, void** param1);
 	
 	public function void QDialog_OnCloseEvent_action(void* self, void** param1);
 	[LinkName("QDialog_OnCloseEvent")]
 	public static extern void QDialog_OnCloseEvent(void* self, QDialog_OnCloseEvent_action _action);
+	
+	[LinkName("QDialog_SuperCloseEvent")]
+	public static extern void QDialog_SuperCloseEvent(void* self, void** param1);
 	[LinkName("QDialog_ShowEvent")]
 	public static extern void QDialog_ShowEvent(void* self, void** param1);
 	
 	public function void QDialog_OnShowEvent_action(void* self, void** param1);
 	[LinkName("QDialog_OnShowEvent")]
 	public static extern void QDialog_OnShowEvent(void* self, QDialog_OnShowEvent_action _action);
+	
+	[LinkName("QDialog_SuperShowEvent")]
+	public static extern void QDialog_SuperShowEvent(void* self, void** param1);
 	[LinkName("QDialog_ResizeEvent")]
 	public static extern void QDialog_ResizeEvent(void* self, void** param1);
 	
 	public function void QDialog_OnResizeEvent_action(void* self, void** param1);
 	[LinkName("QDialog_OnResizeEvent")]
 	public static extern void QDialog_OnResizeEvent(void* self, QDialog_OnResizeEvent_action _action);
+	
+	[LinkName("QDialog_SuperResizeEvent")]
+	public static extern void QDialog_SuperResizeEvent(void* self, void** param1);
 	[LinkName("QDialog_ContextMenuEvent")]
 	public static extern void QDialog_ContextMenuEvent(void* self, void** param1);
 	
 	public function void QDialog_OnContextMenuEvent_action(void* self, void** param1);
 	[LinkName("QDialog_OnContextMenuEvent")]
 	public static extern void QDialog_OnContextMenuEvent(void* self, QDialog_OnContextMenuEvent_action _action);
+	
+	[LinkName("QDialog_SuperContextMenuEvent")]
+	public static extern void QDialog_SuperContextMenuEvent(void* self, void** param1);
 	[LinkName("QDialog_EventFilter")]
 	public static extern bool QDialog_EventFilter(void* self, void** param1, void** param2);
 	
 	public function void QDialog_OnEventFilter_action(void* self, void** param1, void** param2);
 	[LinkName("QDialog_OnEventFilter")]
 	public static extern bool QDialog_OnEventFilter(void* self, QDialog_OnEventFilter_action _action);
+	
+	[LinkName("QDialog_SuperEventFilter")]
+	public static extern bool QDialog_SuperEventFilter(void* self, void** param1, void** param2);
 	[LinkName("QDialog_AdjustPosition")]
 	public static extern void QDialog_AdjustPosition(void* self, void** param1);
 	[LinkName("QDialog_Tr2")]
@@ -3471,228 +3852,342 @@ extension CQt
 	public function void QDialog_OnEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnEvent")]
 	public static extern bool QDialog_OnEvent(void* self, QDialog_OnEvent_action _action);
+	
+	[LinkName("QDialog_SuperEvent")]
+	public static extern bool QDialog_SuperEvent(void* self, void** event);
 	[LinkName("QDialog_TimerEvent")]
 	public static extern void QDialog_TimerEvent(void* self, void** event);
 	
 	public function void QDialog_OnTimerEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnTimerEvent")]
 	public static extern void QDialog_OnTimerEvent(void* self, QDialog_OnTimerEvent_action _action);
+	
+	[LinkName("QDialog_SuperTimerEvent")]
+	public static extern void QDialog_SuperTimerEvent(void* self, void** event);
 	[LinkName("QDialog_ChildEvent")]
 	public static extern void QDialog_ChildEvent(void* self, void** event);
 	
 	public function void QDialog_OnChildEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnChildEvent")]
 	public static extern void QDialog_OnChildEvent(void* self, QDialog_OnChildEvent_action _action);
+	
+	[LinkName("QDialog_SuperChildEvent")]
+	public static extern void QDialog_SuperChildEvent(void* self, void** event);
 	[LinkName("QDialog_CustomEvent")]
 	public static extern void QDialog_CustomEvent(void* self, void** event);
 	
 	public function void QDialog_OnCustomEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnCustomEvent")]
 	public static extern void QDialog_OnCustomEvent(void* self, QDialog_OnCustomEvent_action _action);
+	
+	[LinkName("QDialog_SuperCustomEvent")]
+	public static extern void QDialog_SuperCustomEvent(void* self, void** event);
 	[LinkName("QDialog_ConnectNotify")]
 	public static extern void QDialog_ConnectNotify(void* self, void** signal);
 	
 	public function void QDialog_OnConnectNotify_action(void* self, void** signal);
 	[LinkName("QDialog_OnConnectNotify")]
 	public static extern void QDialog_OnConnectNotify(void* self, QDialog_OnConnectNotify_action _action);
+	
+	[LinkName("QDialog_SuperConnectNotify")]
+	public static extern void QDialog_SuperConnectNotify(void* self, void** signal);
 	[LinkName("QDialog_DisconnectNotify")]
 	public static extern void QDialog_DisconnectNotify(void* self, void** signal);
 	
 	public function void QDialog_OnDisconnectNotify_action(void* self, void** signal);
 	[LinkName("QDialog_OnDisconnectNotify")]
 	public static extern void QDialog_OnDisconnectNotify(void* self, QDialog_OnDisconnectNotify_action _action);
+	
+	[LinkName("QDialog_SuperDisconnectNotify")]
+	public static extern void QDialog_SuperDisconnectNotify(void* self, void** signal);
 	[LinkName("QDialog_DevType")]
 	public static extern c_int QDialog_DevType(void* self);
 	
 	public function void QDialog_OnDevType_action(void* self);
 	[LinkName("QDialog_OnDevType")]
 	public static extern c_int QDialog_OnDevType(void* self, QDialog_OnDevType_action _action);
+	
+	[LinkName("QDialog_SuperDevType")]
+	public static extern c_int QDialog_SuperDevType(void* self);
 	[LinkName("QDialog_PaintEngine")]
 	public static extern void** QDialog_PaintEngine(void* self);
 	
 	public function void QDialog_OnPaintEngine_action(void* self);
 	[LinkName("QDialog_OnPaintEngine")]
 	public static extern void** QDialog_OnPaintEngine(void* self, QDialog_OnPaintEngine_action _action);
+	
+	[LinkName("QDialog_SuperPaintEngine")]
+	public static extern void** QDialog_SuperPaintEngine(void* self);
 	[LinkName("QDialog_Metric")]
 	public static extern c_int QDialog_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	
 	public function void QDialog_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDialog_OnMetric")]
 	public static extern c_int QDialog_OnMetric(void* self, QDialog_OnMetric_action _action);
+	
+	[LinkName("QDialog_SuperMetric")]
+	public static extern c_int QDialog_SuperMetric(void* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QDialog_InitPainter")]
 	public static extern void QDialog_InitPainter(void* self, void** painter);
 	
 	public function void QDialog_OnInitPainter_action(void* self, void** painter);
 	[LinkName("QDialog_OnInitPainter")]
 	public static extern void QDialog_OnInitPainter(void* self, QDialog_OnInitPainter_action _action);
+	
+	[LinkName("QDialog_SuperInitPainter")]
+	public static extern void QDialog_SuperInitPainter(void* self, void** painter);
 	[LinkName("QDialog_Redirected")]
 	public static extern void** QDialog_Redirected(void* self, void** offset);
 	
 	public function void QDialog_OnRedirected_action(void* self, void** offset);
 	[LinkName("QDialog_OnRedirected")]
 	public static extern void** QDialog_OnRedirected(void* self, QDialog_OnRedirected_action _action);
+	
+	[LinkName("QDialog_SuperRedirected")]
+	public static extern void** QDialog_SuperRedirected(void* self, void** offset);
 	[LinkName("QDialog_SharedPainter")]
 	public static extern void** QDialog_SharedPainter(void* self);
 	
 	public function void QDialog_OnSharedPainter_action(void* self);
 	[LinkName("QDialog_OnSharedPainter")]
 	public static extern void** QDialog_OnSharedPainter(void* self, QDialog_OnSharedPainter_action _action);
+	
+	[LinkName("QDialog_SuperSharedPainter")]
+	public static extern void** QDialog_SuperSharedPainter(void* self);
 	[LinkName("QDialog_HeightForWidth")]
 	public static extern c_int QDialog_HeightForWidth(void* self, c_int param1);
 	
 	public function void QDialog_OnHeightForWidth_action(void* self, c_int param1);
 	[LinkName("QDialog_OnHeightForWidth")]
 	public static extern c_int QDialog_OnHeightForWidth(void* self, QDialog_OnHeightForWidth_action _action);
+	
+	[LinkName("QDialog_SuperHeightForWidth")]
+	public static extern c_int QDialog_SuperHeightForWidth(void* self, c_int param1);
 	[LinkName("QDialog_HasHeightForWidth")]
 	public static extern bool QDialog_HasHeightForWidth(void* self);
 	
 	public function void QDialog_OnHasHeightForWidth_action(void* self);
 	[LinkName("QDialog_OnHasHeightForWidth")]
 	public static extern bool QDialog_OnHasHeightForWidth(void* self, QDialog_OnHasHeightForWidth_action _action);
+	
+	[LinkName("QDialog_SuperHasHeightForWidth")]
+	public static extern bool QDialog_SuperHasHeightForWidth(void* self);
 	[LinkName("QDialog_MousePressEvent")]
 	public static extern void QDialog_MousePressEvent(void* self, void** event);
 	
 	public function void QDialog_OnMousePressEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnMousePressEvent")]
 	public static extern void QDialog_OnMousePressEvent(void* self, QDialog_OnMousePressEvent_action _action);
+	
+	[LinkName("QDialog_SuperMousePressEvent")]
+	public static extern void QDialog_SuperMousePressEvent(void* self, void** event);
 	[LinkName("QDialog_MouseReleaseEvent")]
 	public static extern void QDialog_MouseReleaseEvent(void* self, void** event);
 	
 	public function void QDialog_OnMouseReleaseEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnMouseReleaseEvent")]
 	public static extern void QDialog_OnMouseReleaseEvent(void* self, QDialog_OnMouseReleaseEvent_action _action);
+	
+	[LinkName("QDialog_SuperMouseReleaseEvent")]
+	public static extern void QDialog_SuperMouseReleaseEvent(void* self, void** event);
 	[LinkName("QDialog_MouseDoubleClickEvent")]
 	public static extern void QDialog_MouseDoubleClickEvent(void* self, void** event);
 	
 	public function void QDialog_OnMouseDoubleClickEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnMouseDoubleClickEvent")]
 	public static extern void QDialog_OnMouseDoubleClickEvent(void* self, QDialog_OnMouseDoubleClickEvent_action _action);
+	
+	[LinkName("QDialog_SuperMouseDoubleClickEvent")]
+	public static extern void QDialog_SuperMouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QDialog_MouseMoveEvent")]
 	public static extern void QDialog_MouseMoveEvent(void* self, void** event);
 	
 	public function void QDialog_OnMouseMoveEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnMouseMoveEvent")]
 	public static extern void QDialog_OnMouseMoveEvent(void* self, QDialog_OnMouseMoveEvent_action _action);
+	
+	[LinkName("QDialog_SuperMouseMoveEvent")]
+	public static extern void QDialog_SuperMouseMoveEvent(void* self, void** event);
 	[LinkName("QDialog_WheelEvent")]
 	public static extern void QDialog_WheelEvent(void* self, void** event);
 	
 	public function void QDialog_OnWheelEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnWheelEvent")]
 	public static extern void QDialog_OnWheelEvent(void* self, QDialog_OnWheelEvent_action _action);
+	
+	[LinkName("QDialog_SuperWheelEvent")]
+	public static extern void QDialog_SuperWheelEvent(void* self, void** event);
 	[LinkName("QDialog_KeyReleaseEvent")]
 	public static extern void QDialog_KeyReleaseEvent(void* self, void** event);
 	
 	public function void QDialog_OnKeyReleaseEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnKeyReleaseEvent")]
 	public static extern void QDialog_OnKeyReleaseEvent(void* self, QDialog_OnKeyReleaseEvent_action _action);
+	
+	[LinkName("QDialog_SuperKeyReleaseEvent")]
+	public static extern void QDialog_SuperKeyReleaseEvent(void* self, void** event);
 	[LinkName("QDialog_FocusInEvent")]
 	public static extern void QDialog_FocusInEvent(void* self, void** event);
 	
 	public function void QDialog_OnFocusInEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnFocusInEvent")]
 	public static extern void QDialog_OnFocusInEvent(void* self, QDialog_OnFocusInEvent_action _action);
+	
+	[LinkName("QDialog_SuperFocusInEvent")]
+	public static extern void QDialog_SuperFocusInEvent(void* self, void** event);
 	[LinkName("QDialog_FocusOutEvent")]
 	public static extern void QDialog_FocusOutEvent(void* self, void** event);
 	
 	public function void QDialog_OnFocusOutEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnFocusOutEvent")]
 	public static extern void QDialog_OnFocusOutEvent(void* self, QDialog_OnFocusOutEvent_action _action);
+	
+	[LinkName("QDialog_SuperFocusOutEvent")]
+	public static extern void QDialog_SuperFocusOutEvent(void* self, void** event);
 	[LinkName("QDialog_EnterEvent")]
 	public static extern void QDialog_EnterEvent(void* self, void** event);
 	
 	public function void QDialog_OnEnterEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnEnterEvent")]
 	public static extern void QDialog_OnEnterEvent(void* self, QDialog_OnEnterEvent_action _action);
+	
+	[LinkName("QDialog_SuperEnterEvent")]
+	public static extern void QDialog_SuperEnterEvent(void* self, void** event);
 	[LinkName("QDialog_LeaveEvent")]
 	public static extern void QDialog_LeaveEvent(void* self, void** event);
 	
 	public function void QDialog_OnLeaveEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnLeaveEvent")]
 	public static extern void QDialog_OnLeaveEvent(void* self, QDialog_OnLeaveEvent_action _action);
+	
+	[LinkName("QDialog_SuperLeaveEvent")]
+	public static extern void QDialog_SuperLeaveEvent(void* self, void** event);
 	[LinkName("QDialog_PaintEvent")]
 	public static extern void QDialog_PaintEvent(void* self, void** event);
 	
 	public function void QDialog_OnPaintEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnPaintEvent")]
 	public static extern void QDialog_OnPaintEvent(void* self, QDialog_OnPaintEvent_action _action);
+	
+	[LinkName("QDialog_SuperPaintEvent")]
+	public static extern void QDialog_SuperPaintEvent(void* self, void** event);
 	[LinkName("QDialog_MoveEvent")]
 	public static extern void QDialog_MoveEvent(void* self, void** event);
 	
 	public function void QDialog_OnMoveEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnMoveEvent")]
 	public static extern void QDialog_OnMoveEvent(void* self, QDialog_OnMoveEvent_action _action);
+	
+	[LinkName("QDialog_SuperMoveEvent")]
+	public static extern void QDialog_SuperMoveEvent(void* self, void** event);
 	[LinkName("QDialog_TabletEvent")]
 	public static extern void QDialog_TabletEvent(void* self, void** event);
 	
 	public function void QDialog_OnTabletEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnTabletEvent")]
 	public static extern void QDialog_OnTabletEvent(void* self, QDialog_OnTabletEvent_action _action);
+	
+	[LinkName("QDialog_SuperTabletEvent")]
+	public static extern void QDialog_SuperTabletEvent(void* self, void** event);
 	[LinkName("QDialog_ActionEvent")]
 	public static extern void QDialog_ActionEvent(void* self, void** event);
 	
 	public function void QDialog_OnActionEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnActionEvent")]
 	public static extern void QDialog_OnActionEvent(void* self, QDialog_OnActionEvent_action _action);
+	
+	[LinkName("QDialog_SuperActionEvent")]
+	public static extern void QDialog_SuperActionEvent(void* self, void** event);
 	[LinkName("QDialog_DragEnterEvent")]
 	public static extern void QDialog_DragEnterEvent(void* self, void** event);
 	
 	public function void QDialog_OnDragEnterEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnDragEnterEvent")]
 	public static extern void QDialog_OnDragEnterEvent(void* self, QDialog_OnDragEnterEvent_action _action);
+	
+	[LinkName("QDialog_SuperDragEnterEvent")]
+	public static extern void QDialog_SuperDragEnterEvent(void* self, void** event);
 	[LinkName("QDialog_DragMoveEvent")]
 	public static extern void QDialog_DragMoveEvent(void* self, void** event);
 	
 	public function void QDialog_OnDragMoveEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnDragMoveEvent")]
 	public static extern void QDialog_OnDragMoveEvent(void* self, QDialog_OnDragMoveEvent_action _action);
+	
+	[LinkName("QDialog_SuperDragMoveEvent")]
+	public static extern void QDialog_SuperDragMoveEvent(void* self, void** event);
 	[LinkName("QDialog_DragLeaveEvent")]
 	public static extern void QDialog_DragLeaveEvent(void* self, void** event);
 	
 	public function void QDialog_OnDragLeaveEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnDragLeaveEvent")]
 	public static extern void QDialog_OnDragLeaveEvent(void* self, QDialog_OnDragLeaveEvent_action _action);
+	
+	[LinkName("QDialog_SuperDragLeaveEvent")]
+	public static extern void QDialog_SuperDragLeaveEvent(void* self, void** event);
 	[LinkName("QDialog_DropEvent")]
 	public static extern void QDialog_DropEvent(void* self, void** event);
 	
 	public function void QDialog_OnDropEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnDropEvent")]
 	public static extern void QDialog_OnDropEvent(void* self, QDialog_OnDropEvent_action _action);
+	
+	[LinkName("QDialog_SuperDropEvent")]
+	public static extern void QDialog_SuperDropEvent(void* self, void** event);
 	[LinkName("QDialog_HideEvent")]
 	public static extern void QDialog_HideEvent(void* self, void** event);
 	
 	public function void QDialog_OnHideEvent_action(void* self, void** event);
 	[LinkName("QDialog_OnHideEvent")]
 	public static extern void QDialog_OnHideEvent(void* self, QDialog_OnHideEvent_action _action);
+	
+	[LinkName("QDialog_SuperHideEvent")]
+	public static extern void QDialog_SuperHideEvent(void* self, void** event);
 	[LinkName("QDialog_NativeEvent")]
 	public static extern bool QDialog_NativeEvent(void* self, void** eventType, void* message, void** result);
 	
 	public function void QDialog_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDialog_OnNativeEvent")]
 	public static extern bool QDialog_OnNativeEvent(void* self, QDialog_OnNativeEvent_action _action);
+	
+	[LinkName("QDialog_SuperNativeEvent")]
+	public static extern bool QDialog_SuperNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QDialog_ChangeEvent")]
 	public static extern void QDialog_ChangeEvent(void* self, void** param1);
 	
 	public function void QDialog_OnChangeEvent_action(void* self, void** param1);
 	[LinkName("QDialog_OnChangeEvent")]
 	public static extern void QDialog_OnChangeEvent(void* self, QDialog_OnChangeEvent_action _action);
+	
+	[LinkName("QDialog_SuperChangeEvent")]
+	public static extern void QDialog_SuperChangeEvent(void* self, void** param1);
 	[LinkName("QDialog_InputMethodEvent")]
 	public static extern void QDialog_InputMethodEvent(void* self, void** param1);
 	
 	public function void QDialog_OnInputMethodEvent_action(void* self, void** param1);
 	[LinkName("QDialog_OnInputMethodEvent")]
 	public static extern void QDialog_OnInputMethodEvent(void* self, QDialog_OnInputMethodEvent_action _action);
+	
+	[LinkName("QDialog_SuperInputMethodEvent")]
+	public static extern void QDialog_SuperInputMethodEvent(void* self, void** param1);
 	[LinkName("QDialog_InputMethodQuery")]
 	public static extern void* QDialog_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	
 	public function void QDialog_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QDialog_OnInputMethodQuery")]
 	public static extern void* QDialog_OnInputMethodQuery(void* self, QDialog_OnInputMethodQuery_action _action);
+	
+	[LinkName("QDialog_SuperInputMethodQuery")]
+	public static extern void* QDialog_SuperInputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QDialog_FocusNextPrevChild")]
 	public static extern bool QDialog_FocusNextPrevChild(void* self, bool next);
 	
 	public function void QDialog_OnFocusNextPrevChild_action(void* self, bool next);
 	[LinkName("QDialog_OnFocusNextPrevChild")]
 	public static extern bool QDialog_OnFocusNextPrevChild(void* self, QDialog_OnFocusNextPrevChild_action _action);
+	
+	[LinkName("QDialog_SuperFocusNextPrevChild")]
+	public static extern bool QDialog_SuperFocusNextPrevChild(void* self, bool next);
 }
 [AllowDuplicates]
 enum QDialog_DialogCode
