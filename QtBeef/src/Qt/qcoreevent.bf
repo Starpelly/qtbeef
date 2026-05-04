@@ -67,24 +67,13 @@ class QEvent : IQEvent
 {
 	private QEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QEvent_new(type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -98,9 +87,8 @@ class QEvent : IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -130,9 +118,9 @@ class QEvent : IQEvent
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
@@ -154,6 +142,10 @@ extension CQt
 	public static extern bool QEvent_Spontaneous(void* self);
 	[LinkName("QEvent_SetAccepted")]
 	public static extern void QEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QEvent_OnSetAccepted")]
+	public static extern void QEvent_OnSetAccepted(void* self, QEvent_OnSetAccepted_action _action);
 	[LinkName("QEvent_IsAccepted")]
 	public static extern bool QEvent_IsAccepted(void* self);
 	[LinkName("QEvent_Accept")]
@@ -170,6 +162,10 @@ extension CQt
 	public static extern c_int QEvent_RegisterEventType();
 	[LinkName("QEvent_Clone")]
 	public static extern void** QEvent_Clone(void* self);
+	
+	public function void QEvent_OnClone_action(void* self);
+	[LinkName("QEvent_OnClone")]
+	public static extern void** QEvent_OnClone(void* self, QEvent_OnClone_action _action);
 	[LinkName("QEvent_RegisterEventType1")]
 	public static extern c_int QEvent_RegisterEventType1(c_int hint);
 }
@@ -202,7 +198,7 @@ struct QTimerEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QTimerEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -241,32 +237,21 @@ class QTimerEvent : IQTimerEvent, IQEvent
 {
 	private QTimerEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTimerEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int timerId)
 	{
 		this.ptr = CQt.QTimerEvent_new(timerId);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTimerEvent_Delete(this.ptr);
 	}
-	public QTimerEvent_Ptr Clone()
+	public  virtual QTimerEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int TimerId()
 	{
@@ -280,9 +265,8 @@ class QTimerEvent : IQTimerEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -328,8 +312,18 @@ extension CQt
 	public static extern void QTimerEvent_Delete(QTimerEvent_Ptr self);
 	[LinkName("QTimerEvent_Clone")]
 	public static extern void** QTimerEvent_Clone(void* self);
+	
+	public function void QTimerEvent_OnClone_action(void* self);
+	[LinkName("QTimerEvent_OnClone")]
+	public static extern void** QTimerEvent_OnClone(void* self, QTimerEvent_OnClone_action _action);
 	[LinkName("QTimerEvent_TimerId")]
 	public static extern c_int QTimerEvent_TimerId(void* self);
+	[LinkName("QTimerEvent_SetAccepted")]
+	public static extern void QTimerEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QTimerEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QTimerEvent_OnSetAccepted")]
+	public static extern void QTimerEvent_OnSetAccepted(void* self, QTimerEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QChildEvent
@@ -372,7 +366,7 @@ struct QChildEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QChildEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -411,32 +405,21 @@ class QChildEvent : IQChildEvent, IQEvent
 {
 	private QChildEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QChildEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQObject child)
 	{
 		this.ptr = CQt.QChildEvent_new(type, (.)child?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QChildEvent_Delete(this.ptr);
 	}
-	public QChildEvent_Ptr Clone()
+	public  virtual QChildEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QObject_Ptr Child()
 	{
@@ -462,9 +445,8 @@ class QChildEvent : IQChildEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -510,6 +492,10 @@ extension CQt
 	public static extern void QChildEvent_Delete(QChildEvent_Ptr self);
 	[LinkName("QChildEvent_Clone")]
 	public static extern void** QChildEvent_Clone(void* self);
+	
+	public function void QChildEvent_OnClone_action(void* self);
+	[LinkName("QChildEvent_OnClone")]
+	public static extern void** QChildEvent_OnClone(void* self, QChildEvent_OnClone_action _action);
 	[LinkName("QChildEvent_Child")]
 	public static extern void** QChildEvent_Child(void* self);
 	[LinkName("QChildEvent_Added")]
@@ -518,6 +504,12 @@ extension CQt
 	public static extern bool QChildEvent_Polished(void* self);
 	[LinkName("QChildEvent_Removed")]
 	public static extern bool QChildEvent_Removed(void* self);
+	[LinkName("QChildEvent_SetAccepted")]
+	public static extern void QChildEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QChildEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QChildEvent_OnSetAccepted")]
+	public static extern void QChildEvent_OnSetAccepted(void* self, QChildEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QDynamicPropertyChangeEvent
@@ -548,7 +540,7 @@ struct QDynamicPropertyChangeEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QDynamicPropertyChangeEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -587,32 +579,21 @@ class QDynamicPropertyChangeEvent : IQDynamicPropertyChangeEvent, IQEvent
 {
 	private QDynamicPropertyChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QDynamicPropertyChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(void** name)
 	{
 		this.ptr = CQt.QDynamicPropertyChangeEvent_new(name);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDynamicPropertyChangeEvent_Delete(this.ptr);
 	}
-	public QDynamicPropertyChangeEvent_Ptr Clone()
+	public  virtual QDynamicPropertyChangeEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public void* PropertyName()
 	{
@@ -626,9 +607,8 @@ class QDynamicPropertyChangeEvent : IQDynamicPropertyChangeEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -674,8 +654,18 @@ extension CQt
 	public static extern void QDynamicPropertyChangeEvent_Delete(QDynamicPropertyChangeEvent_Ptr self);
 	[LinkName("QDynamicPropertyChangeEvent_Clone")]
 	public static extern void** QDynamicPropertyChangeEvent_Clone(void* self);
+	
+	public function void QDynamicPropertyChangeEvent_OnClone_action(void* self);
+	[LinkName("QDynamicPropertyChangeEvent_OnClone")]
+	public static extern void** QDynamicPropertyChangeEvent_OnClone(void* self, QDynamicPropertyChangeEvent_OnClone_action _action);
 	[LinkName("QDynamicPropertyChangeEvent_PropertyName")]
 	public static extern void* QDynamicPropertyChangeEvent_PropertyName(void* self);
+	[LinkName("QDynamicPropertyChangeEvent_SetAccepted")]
+	public static extern void QDynamicPropertyChangeEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QDynamicPropertyChangeEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QDynamicPropertyChangeEvent_OnSetAccepted")]
+	public static extern void QDynamicPropertyChangeEvent_OnSetAccepted(void* self, QDynamicPropertyChangeEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QDeferredDeleteEvent
@@ -706,7 +696,7 @@ struct QDeferredDeleteEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QDeferredDeleteEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -745,32 +735,21 @@ class QDeferredDeleteEvent : IQDeferredDeleteEvent, IQEvent
 {
 	private QDeferredDeleteEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QDeferredDeleteEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDeferredDeleteEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDeferredDeleteEvent_Delete(this.ptr);
 	}
-	public QDeferredDeleteEvent_Ptr Clone()
+	public  virtual QDeferredDeleteEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int LoopLevel()
 	{
@@ -784,9 +763,8 @@ class QDeferredDeleteEvent : IQDeferredDeleteEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -832,8 +810,18 @@ extension CQt
 	public static extern void QDeferredDeleteEvent_Delete(QDeferredDeleteEvent_Ptr self);
 	[LinkName("QDeferredDeleteEvent_Clone")]
 	public static extern void** QDeferredDeleteEvent_Clone(void* self);
+	
+	public function void QDeferredDeleteEvent_OnClone_action(void* self);
+	[LinkName("QDeferredDeleteEvent_OnClone")]
+	public static extern void** QDeferredDeleteEvent_OnClone(void* self, QDeferredDeleteEvent_OnClone_action _action);
 	[LinkName("QDeferredDeleteEvent_LoopLevel")]
 	public static extern c_int QDeferredDeleteEvent_LoopLevel(void* self);
+	[LinkName("QDeferredDeleteEvent_SetAccepted")]
+	public static extern void QDeferredDeleteEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QDeferredDeleteEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QDeferredDeleteEvent_OnSetAccepted")]
+	public static extern void QDeferredDeleteEvent_OnSetAccepted(void* self, QDeferredDeleteEvent_OnSetAccepted_action _action);
 }
 [AllowDuplicates]
 enum QEvent_Type

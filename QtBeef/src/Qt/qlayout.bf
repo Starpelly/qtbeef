@@ -18,11 +18,11 @@ struct QLayout_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QLayout_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QLayout_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QLayout_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -240,11 +240,11 @@ struct QLayout_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QLayout_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QLayout_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -404,19 +404,19 @@ struct QLayout_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLayout_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLayout_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QLayout_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QLayout_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -460,27 +460,27 @@ struct QLayout_Ptr
 	}
 	public QSize_Ptr SizeHint()
 	{
-		return QSize_Ptr(CQt.QLayoutItem_SizeHint((.)this.Ptr));
+		return QSize_Ptr(CQt.QLayout_SizeHint((.)this.Ptr));
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QLayoutItem_HasHeightForWidth((.)this.Ptr);
+		return CQt.QLayout_HasHeightForWidth((.)this.Ptr);
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QLayoutItem_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QLayout_HeightForWidth((.)this.Ptr, param1);
 	}
 	public c_int MinimumHeightForWidth(c_int param1)
 	{
-		return CQt.QLayoutItem_MinimumHeightForWidth((.)this.Ptr, param1);
+		return CQt.QLayout_MinimumHeightForWidth((.)this.Ptr, param1);
 	}
 	public QWidget_Ptr Widget()
 	{
-		return QWidget_Ptr(CQt.QLayoutItem_Widget((.)this.Ptr));
+		return QWidget_Ptr(CQt.QLayout_Widget((.)this.Ptr));
 	}
 	public QSpacerItem_Ptr SpacerItem()
 	{
-		return QSpacerItem_Ptr(CQt.QLayoutItem_SpacerItem((.)this.Ptr));
+		return QSpacerItem_Ptr(CQt.QLayout_SpacerItem((.)this.Ptr));
 	}
 	public void* Alignment()
 	{
@@ -491,73 +491,44 @@ class QLayout : IQLayout, IQObject, IQLayoutItem
 {
 	private QLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QLayout_destroyed,
-		QLayout_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QLayout_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLayout_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QLayout_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public c_int Spacing()
+	public  virtual c_int OnSpacing()
 	{
-		return this.ptr.Spacing();
+		return default;
 	}
-	public void SetSpacing(c_int spacing)
+	public  virtual void OnSetSpacing(c_int spacing)
 	{
-		this.ptr.SetSpacing(spacing);
 	}
 	public void SetContentsMargins(c_int left, c_int top, c_int right, c_int bottom)
 	{
@@ -611,13 +582,12 @@ class QLayout : IQLayout, IQObject, IQLayoutItem
 	{
 		return this.ptr.ParentWidget();
 	}
-	public void Invalidate()
+	public  virtual void OnInvalidate()
 	{
-		this.ptr.Invalidate();
 	}
-	public QRect_Ptr Geometry()
+	public  virtual QRect_Ptr OnGeometry()
 	{
-		return this.ptr.Geometry();
+		return default;
 	}
 	public bool Activate()
 	{
@@ -631,9 +601,8 @@ class QLayout : IQLayout, IQObject, IQLayoutItem
 	{
 		this.ptr.AddWidget(w);
 	}
-	public void AddItem(IQLayoutItem param1)
+	public  virtual void OnAddItem(void** param1)
 	{
-		this.ptr.AddItem(param1);
 	}
 	public void RemoveWidget(IQWidget w)
 	{
@@ -643,53 +612,52 @@ class QLayout : IQLayout, IQObject, IQLayoutItem
 	{
 		this.ptr.RemoveItem(param1);
 	}
-	public void* ExpandingDirections()
+	public  virtual void* OnExpandingDirections()
 	{
-		return this.ptr.ExpandingDirections();
+		return default;
 	}
-	public QSize_Ptr MinimumSize()
+	public  virtual QSize_Ptr OnMinimumSize()
 	{
-		return this.ptr.MinimumSize();
+		return default;
 	}
-	public QSize_Ptr MaximumSize()
+	public  virtual QSize_Ptr OnMaximumSize()
 	{
-		return this.ptr.MaximumSize();
+		return default;
 	}
-	public void SetGeometry(IQRect geometry)
+	public  virtual void OnSetGeometry(void** geometry)
 	{
-		this.ptr.SetGeometry(geometry);
 	}
-	public QLayoutItem_Ptr ItemAt(c_int index)
+	public  virtual QLayoutItem_Ptr OnItemAt(c_int index)
 	{
-		return this.ptr.ItemAt(index);
+		return default;
 	}
-	public QLayoutItem_Ptr TakeAt(c_int index)
+	public  virtual QLayoutItem_Ptr OnTakeAt(c_int index)
 	{
-		return this.ptr.TakeAt(index);
+		return default;
 	}
-	public c_int IndexOf(IQWidget param1)
+	public  virtual c_int OnIndexOf(void** param1)
 	{
-		return this.ptr.IndexOf(param1);
+		return default;
 	}
-	public c_int IndexOf2(IQLayoutItem param1)
+	public  virtual c_int OnIndexOf2(void** param1)
 	{
-		return this.ptr.IndexOf2(param1);
+		return default;
 	}
-	public c_int Count()
+	public  virtual c_int OnCount()
 	{
-		return this.ptr.Count();
+		return default;
 	}
-	public bool IsEmpty()
+	public  virtual bool OnIsEmpty()
 	{
-		return this.ptr.IsEmpty();
+		return default;
 	}
-	public void* ControlTypes()
+	public  virtual void* OnControlTypes()
 	{
-		return this.ptr.ControlTypes();
+		return default;
 	}
-	public QLayoutItem_Ptr ReplaceWidget(IQWidget from, IQWidget to, void* options)
+	public  virtual QLayoutItem_Ptr OnReplaceWidget(void** from, void** to, void* options)
 	{
-		return this.ptr.ReplaceWidget(from, to, options);
+		return default;
 	}
 	public c_int TotalMinimumHeightForWidth(c_int w)
 	{
@@ -711,9 +679,9 @@ class QLayout : IQLayout, IQObject, IQLayoutItem
 	{
 		return this.ptr.TotalSizeHint();
 	}
-	public QLayout_Ptr Layout()
+	public  virtual QLayout_Ptr OnLayout()
 	{
-		return this.ptr.Layout();
+		return default;
 	}
 	public void SetEnabled(bool enabled)
 	{
@@ -731,9 +699,8 @@ class QLayout : IQLayout, IQObject, IQLayoutItem
 	{
 		this.ptr.WidgetEvent(param1);
 	}
-	public void ChildEvent(IQChildEvent e)
+	public  virtual void OnChildEvent(void** e)
 	{
-		this.ptr.ChildEvent(e);
 	}
 	public void AddChildLayout(IQLayout l)
 	{
@@ -759,13 +726,13 @@ class QLayout : IQLayout, IQObject, IQLayoutItem
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -923,21 +890,17 @@ class QLayout : IQLayout, IQObject, IQLayoutItem
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -979,29 +942,29 @@ class QLayout : IQLayout, IQObject, IQLayoutItem
 	{
 		this.ptr.Destroyed1(param1);
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual QSize_Ptr OnSizeHint()
 	{
-		return this.ptr.SizeHint();
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public c_int MinimumHeightForWidth(c_int param1)
+	public  virtual c_int OnMinimumHeightForWidth(c_int param1)
 	{
-		return this.ptr.MinimumHeightForWidth(param1);
+		return default;
 	}
-	public QWidget_Ptr Widget()
+	public  virtual QWidget_Ptr OnWidget()
 	{
-		return this.ptr.Widget();
+		return default;
 	}
-	public QSpacerItem_Ptr SpacerItem()
+	public  virtual QSpacerItem_Ptr OnSpacerItem()
 	{
-		return this.ptr.SpacerItem();
+		return default;
 	}
 	public void* Alignment()
 	{
@@ -1021,16 +984,36 @@ extension CQt
 	public static extern void QLayout_Delete(QLayout_Ptr self);
 	[LinkName("QLayout_MetaObject")]
 	public static extern void** QLayout_MetaObject(void* self);
+	
+	public function void QLayout_OnMetaObject_action(void* self);
+	[LinkName("QLayout_OnMetaObject")]
+	public static extern void** QLayout_OnMetaObject(void* self, QLayout_OnMetaObject_action _action);
 	[LinkName("QLayout_Qt_Metacast")]
 	public static extern void* QLayout_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QLayout_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QLayout_OnMetacast")]
+	public static extern void* QLayout_OnMetacast(void* self, QLayout_OnMetacast_action _action);
 	[LinkName("QLayout_Qt_Metacall")]
 	public static extern c_int QLayout_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QLayout_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QLayout_OnMetacall")]
+	public static extern c_int QLayout_OnMetacall(void* self, QLayout_OnMetacall_action _action);
 	[LinkName("QLayout_Tr")]
 	public static extern libqt_string QLayout_Tr(c_char* s);
 	[LinkName("QLayout_Spacing")]
 	public static extern c_int QLayout_Spacing(void* self);
+	
+	public function void QLayout_OnSpacing_action(void* self);
+	[LinkName("QLayout_OnSpacing")]
+	public static extern c_int QLayout_OnSpacing(void* self, QLayout_OnSpacing_action _action);
 	[LinkName("QLayout_SetSpacing")]
 	public static extern void QLayout_SetSpacing(void* self, c_int spacing);
+	
+	public function void QLayout_OnSetSpacing_action(void* self, c_int spacing);
+	[LinkName("QLayout_OnSetSpacing")]
+	public static extern void QLayout_OnSetSpacing(void* self, QLayout_OnSetSpacing_action _action);
 	[LinkName("QLayout_SetContentsMargins")]
 	public static extern void QLayout_SetContentsMargins(void* self, c_int left, c_int top, c_int right, c_int bottom);
 	[LinkName("QLayout_SetContentsMargins2")]
@@ -1059,8 +1042,16 @@ extension CQt
 	public static extern void** QLayout_ParentWidget(void* self);
 	[LinkName("QLayout_Invalidate")]
 	public static extern void QLayout_Invalidate(void* self);
+	
+	public function void QLayout_OnInvalidate_action(void* self);
+	[LinkName("QLayout_OnInvalidate")]
+	public static extern void QLayout_OnInvalidate(void* self, QLayout_OnInvalidate_action _action);
 	[LinkName("QLayout_Geometry")]
 	public static extern void* QLayout_Geometry(void* self);
+	
+	public function void QLayout_OnGeometry_action(void* self);
+	[LinkName("QLayout_OnGeometry")]
+	public static extern void* QLayout_OnGeometry(void* self, QLayout_OnGeometry_action _action);
 	[LinkName("QLayout_Activate")]
 	public static extern bool QLayout_Activate(void* self);
 	[LinkName("QLayout_Update")]
@@ -1069,34 +1060,86 @@ extension CQt
 	public static extern void QLayout_AddWidget(void* self, void** w);
 	[LinkName("QLayout_AddItem")]
 	public static extern void QLayout_AddItem(void* self, void** param1);
+	
+	public function void QLayout_OnAddItem_action(void* self, void** param1);
+	[LinkName("QLayout_OnAddItem")]
+	public static extern void QLayout_OnAddItem(void* self, QLayout_OnAddItem_action _action);
 	[LinkName("QLayout_RemoveWidget")]
 	public static extern void QLayout_RemoveWidget(void* self, void** w);
 	[LinkName("QLayout_RemoveItem")]
 	public static extern void QLayout_RemoveItem(void* self, void** param1);
 	[LinkName("QLayout_ExpandingDirections")]
 	public static extern void* QLayout_ExpandingDirections(void* self);
+	
+	public function void QLayout_OnExpandingDirections_action(void* self);
+	[LinkName("QLayout_OnExpandingDirections")]
+	public static extern void* QLayout_OnExpandingDirections(void* self, QLayout_OnExpandingDirections_action _action);
 	[LinkName("QLayout_MinimumSize")]
 	public static extern void* QLayout_MinimumSize(void* self);
+	
+	public function void QLayout_OnMinimumSize_action(void* self);
+	[LinkName("QLayout_OnMinimumSize")]
+	public static extern void* QLayout_OnMinimumSize(void* self, QLayout_OnMinimumSize_action _action);
 	[LinkName("QLayout_MaximumSize")]
 	public static extern void* QLayout_MaximumSize(void* self);
+	
+	public function void QLayout_OnMaximumSize_action(void* self);
+	[LinkName("QLayout_OnMaximumSize")]
+	public static extern void* QLayout_OnMaximumSize(void* self, QLayout_OnMaximumSize_action _action);
 	[LinkName("QLayout_SetGeometry")]
 	public static extern void QLayout_SetGeometry(void* self, void** geometry);
+	
+	public function void QLayout_OnSetGeometry_action(void* self, void** geometry);
+	[LinkName("QLayout_OnSetGeometry")]
+	public static extern void QLayout_OnSetGeometry(void* self, QLayout_OnSetGeometry_action _action);
 	[LinkName("QLayout_ItemAt")]
 	public static extern void** QLayout_ItemAt(void* self, c_int index);
+	
+	public function void QLayout_OnItemAt_action(void* self, c_int index);
+	[LinkName("QLayout_OnItemAt")]
+	public static extern void** QLayout_OnItemAt(void* self, QLayout_OnItemAt_action _action);
 	[LinkName("QLayout_TakeAt")]
 	public static extern void** QLayout_TakeAt(void* self, c_int index);
+	
+	public function void QLayout_OnTakeAt_action(void* self, c_int index);
+	[LinkName("QLayout_OnTakeAt")]
+	public static extern void** QLayout_OnTakeAt(void* self, QLayout_OnTakeAt_action _action);
 	[LinkName("QLayout_IndexOf")]
 	public static extern c_int QLayout_IndexOf(void* self, void** param1);
+	
+	public function void QLayout_OnIndexOf_action(void* self, void** param1);
+	[LinkName("QLayout_OnIndexOf")]
+	public static extern c_int QLayout_OnIndexOf(void* self, QLayout_OnIndexOf_action _action);
 	[LinkName("QLayout_IndexOf2")]
 	public static extern c_int QLayout_IndexOf2(void* self, void** param1);
+	
+	public function void QLayout_OnIndexOf2_action(void* self, void** param1);
+	[LinkName("QLayout_OnIndexOf2")]
+	public static extern c_int QLayout_OnIndexOf2(void* self, QLayout_OnIndexOf2_action _action);
 	[LinkName("QLayout_Count")]
 	public static extern c_int QLayout_Count(void* self);
+	
+	public function void QLayout_OnCount_action(void* self);
+	[LinkName("QLayout_OnCount")]
+	public static extern c_int QLayout_OnCount(void* self, QLayout_OnCount_action _action);
 	[LinkName("QLayout_IsEmpty")]
 	public static extern bool QLayout_IsEmpty(void* self);
+	
+	public function void QLayout_OnIsEmpty_action(void* self);
+	[LinkName("QLayout_OnIsEmpty")]
+	public static extern bool QLayout_OnIsEmpty(void* self, QLayout_OnIsEmpty_action _action);
 	[LinkName("QLayout_ControlTypes")]
 	public static extern void* QLayout_ControlTypes(void* self);
+	
+	public function void QLayout_OnControlTypes_action(void* self);
+	[LinkName("QLayout_OnControlTypes")]
+	public static extern void* QLayout_OnControlTypes(void* self, QLayout_OnControlTypes_action _action);
 	[LinkName("QLayout_ReplaceWidget")]
 	public static extern void** QLayout_ReplaceWidget(void* self, void** from, void** to, void* options);
+	
+	public function void QLayout_OnReplaceWidget_action(void* self, void** from, void** to, void* options);
+	[LinkName("QLayout_OnReplaceWidget")]
+	public static extern void** QLayout_OnReplaceWidget(void* self, QLayout_OnReplaceWidget_action _action);
 	[LinkName("QLayout_TotalMinimumHeightForWidth")]
 	public static extern c_int QLayout_TotalMinimumHeightForWidth(void* self, c_int w);
 	[LinkName("QLayout_TotalHeightForWidth")]
@@ -1109,6 +1152,10 @@ extension CQt
 	public static extern void* QLayout_TotalSizeHint(void* self);
 	[LinkName("QLayout_Layout")]
 	public static extern void** QLayout_Layout(void* self);
+	
+	public function void QLayout_OnLayout_action(void* self);
+	[LinkName("QLayout_OnLayout")]
+	public static extern void** QLayout_OnLayout(void* self, QLayout_OnLayout_action _action);
 	[LinkName("QLayout_SetEnabled")]
 	public static extern void QLayout_SetEnabled(void* self, bool enabled);
 	[LinkName("QLayout_IsEnabled")]
@@ -1119,6 +1166,10 @@ extension CQt
 	public static extern void QLayout_WidgetEvent(void* self, void** param1);
 	[LinkName("QLayout_ChildEvent")]
 	public static extern void QLayout_ChildEvent(void* self, void** e);
+	
+	public function void QLayout_OnChildEvent_action(void* self, void** e);
+	[LinkName("QLayout_OnChildEvent")]
+	public static extern void QLayout_OnChildEvent(void* self, QLayout_OnChildEvent_action _action);
 	[LinkName("QLayout_AddChildLayout")]
 	public static extern void QLayout_AddChildLayout(void* self, void** l);
 	[LinkName("QLayout_AddChildWidget")]
@@ -1131,6 +1182,78 @@ extension CQt
 	public static extern libqt_string QLayout_Tr2(c_char* s, c_char* c);
 	[LinkName("QLayout_Tr3")]
 	public static extern libqt_string QLayout_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QLayout_Event")]
+	public static extern bool QLayout_Event(void* self, void** event);
+	
+	public function void QLayout_OnEvent_action(void* self, void** event);
+	[LinkName("QLayout_OnEvent")]
+	public static extern bool QLayout_OnEvent(void* self, QLayout_OnEvent_action _action);
+	[LinkName("QLayout_EventFilter")]
+	public static extern bool QLayout_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QLayout_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QLayout_OnEventFilter")]
+	public static extern bool QLayout_OnEventFilter(void* self, QLayout_OnEventFilter_action _action);
+	[LinkName("QLayout_TimerEvent")]
+	public static extern void QLayout_TimerEvent(void* self, void** event);
+	
+	public function void QLayout_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QLayout_OnTimerEvent")]
+	public static extern void QLayout_OnTimerEvent(void* self, QLayout_OnTimerEvent_action _action);
+	[LinkName("QLayout_CustomEvent")]
+	public static extern void QLayout_CustomEvent(void* self, void** event);
+	
+	public function void QLayout_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QLayout_OnCustomEvent")]
+	public static extern void QLayout_OnCustomEvent(void* self, QLayout_OnCustomEvent_action _action);
+	[LinkName("QLayout_ConnectNotify")]
+	public static extern void QLayout_ConnectNotify(void* self, void** signal);
+	
+	public function void QLayout_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QLayout_OnConnectNotify")]
+	public static extern void QLayout_OnConnectNotify(void* self, QLayout_OnConnectNotify_action _action);
+	[LinkName("QLayout_DisconnectNotify")]
+	public static extern void QLayout_DisconnectNotify(void* self, void** signal);
+	
+	public function void QLayout_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QLayout_OnDisconnectNotify")]
+	public static extern void QLayout_OnDisconnectNotify(void* self, QLayout_OnDisconnectNotify_action _action);
+	[LinkName("QLayout_SizeHint")]
+	public static extern void* QLayout_SizeHint(void* self);
+	
+	public function void QLayout_OnSizeHint_action(void* self);
+	[LinkName("QLayout_OnSizeHint")]
+	public static extern void* QLayout_OnSizeHint(void* self, QLayout_OnSizeHint_action _action);
+	[LinkName("QLayout_HasHeightForWidth")]
+	public static extern bool QLayout_HasHeightForWidth(void* self);
+	
+	public function void QLayout_OnHasHeightForWidth_action(void* self);
+	[LinkName("QLayout_OnHasHeightForWidth")]
+	public static extern bool QLayout_OnHasHeightForWidth(void* self, QLayout_OnHasHeightForWidth_action _action);
+	[LinkName("QLayout_HeightForWidth")]
+	public static extern c_int QLayout_HeightForWidth(void* self, c_int param1);
+	
+	public function void QLayout_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QLayout_OnHeightForWidth")]
+	public static extern c_int QLayout_OnHeightForWidth(void* self, QLayout_OnHeightForWidth_action _action);
+	[LinkName("QLayout_MinimumHeightForWidth")]
+	public static extern c_int QLayout_MinimumHeightForWidth(void* self, c_int param1);
+	
+	public function void QLayout_OnMinimumHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QLayout_OnMinimumHeightForWidth")]
+	public static extern c_int QLayout_OnMinimumHeightForWidth(void* self, QLayout_OnMinimumHeightForWidth_action _action);
+	[LinkName("QLayout_Widget")]
+	public static extern void** QLayout_Widget(void* self);
+	
+	public function void QLayout_OnWidget_action(void* self);
+	[LinkName("QLayout_OnWidget")]
+	public static extern void** QLayout_OnWidget(void* self, QLayout_OnWidget_action _action);
+	[LinkName("QLayout_SpacerItem")]
+	public static extern void** QLayout_SpacerItem(void* self);
+	
+	public function void QLayout_OnSpacerItem_action(void* self);
+	[LinkName("QLayout_OnSpacerItem")]
+	public static extern void** QLayout_OnSpacerItem(void* self, QLayout_OnSpacerItem_action _action);
 }
 [AllowDuplicates]
 enum QLayout_SizeConstraint

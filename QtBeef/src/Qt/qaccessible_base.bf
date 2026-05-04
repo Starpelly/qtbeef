@@ -79,24 +79,13 @@ class QAccessible : IQAccessible
 {
 	private QAccessible_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QAccessible_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessible other)
 	{
 		this.ptr = CQt.QAccessible_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -517,29 +506,17 @@ class QAccessible_State : IQAccessible_State
 {
 	private QAccessible_State_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QAccessible_State_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessible_State other)
 	{
 		this.ptr = CQt.QAccessible_State_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAccessible_State_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1024,27 +1001,16 @@ class QAccessible_ActivationObserver : IQAccessible_ActivationObserver
 {
 	private QAccessible_ActivationObserver_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QAccessible_ActivationObserver_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QAccessible_ActivationObserver_Delete(this.ptr);
 	}
-	public void AccessibilityActiveChanged(bool active)
+	public  virtual void OnAccessibilityActiveChanged(bool active)
 	{
-		this.ptr.AccessibilityActiveChanged(active);
 	}
 }
 interface IQAccessible_ActivationObserver : IQtObjectInterface
@@ -1056,6 +1022,10 @@ extension CQt
 	public static extern void QAccessible_ActivationObserver_Delete(QAccessible_ActivationObserver_Ptr self);
 	[LinkName("QAccessible_ActivationObserver_AccessibilityActiveChanged")]
 	public static extern void QAccessible_ActivationObserver_AccessibilityActiveChanged(void* self, bool active);
+	
+	public function void QAccessible_ActivationObserver_OnAccessibilityActiveChanged_action(void* self, bool active);
+	[LinkName("QAccessible_ActivationObserver_OnAccessibilityActiveChanged")]
+	public static extern void QAccessible_ActivationObserver_OnAccessibilityActiveChanged(void* self, QAccessible_ActivationObserver_OnAccessibilityActiveChanged_action _action);
 	[LinkName("QAccessible_ActivationObserver_OperatorAssign")]
 	public static extern void QAccessible_ActivationObserver_OperatorAssign(void* self, void** param1);
 }

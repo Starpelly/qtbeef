@@ -18,11 +18,11 @@ struct QInputMethod_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QInputMethod_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QInputMethod_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QInputMethod_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -152,11 +152,11 @@ struct QInputMethod_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QInputMethod_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QInputMethod_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -316,23 +316,23 @@ struct QInputMethod_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QInputMethod_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QInputMethod_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QInputMethod_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QInputMethod_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QInputMethod_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -379,111 +379,21 @@ class QInputMethod : IQInputMethod, IQObject
 {
 	private QInputMethod_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QInputMethod_cursorRectangleChanged,
-		QInputMethod_anchorRectangleChanged,
-		QInputMethod_keyboardRectangleChanged,
-		QInputMethod_inputItemClipRectangleChanged,
-		QInputMethod_visibleChanged,
-		QInputMethod_animatingChanged,
-		QInputMethod_localeChanged,
-		QInputMethod_inputDirectionChanged,
-		QInputMethod_destroyed,
-		QInputMethod_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QInputMethod_Connect_CursorRectangleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_cursorRectangleChanged);
-		CQt.QInputMethod_Connect_AnchorRectangleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_anchorRectangleChanged);
-		CQt.QInputMethod_Connect_KeyboardRectangleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_keyboardRectangleChanged);
-		CQt.QInputMethod_Connect_InputItemClipRectangleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_inputItemClipRectangleChanged);
-		CQt.QInputMethod_Connect_VisibleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_visibleChanged);
-		CQt.QInputMethod_Connect_AnimatingChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_animatingChanged);
-		CQt.QInputMethod_Connect_LocaleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_localeChanged);
-		CQt.QInputMethod_Connect_InputDirectionChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_inputDirectionChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnCursorRectangleChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnAnchorRectangleChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnKeyboardRectangleChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnInputItemClipRectangleChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnVisibleChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnAnimatingChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLocaleChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_LayoutDirection newDirection)> OnInputDirectionChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QInputMethod_cursorRectangleChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCursorRectangleChanged.Invoke();
-	}
-	static void QtBeef_QInputMethod_anchorRectangleChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAnchorRectangleChanged.Invoke();
-	}
-	static void QtBeef_QInputMethod_keyboardRectangleChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnKeyboardRectangleChanged.Invoke();
-	}
-	static void QtBeef_QInputMethod_inputItemClipRectangleChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnInputItemClipRectangleChanged.Invoke();
-	}
-	static void QtBeef_QInputMethod_visibleChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnVisibleChanged.Invoke();
-	}
-	static void QtBeef_QInputMethod_animatingChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAnimatingChanged.Invoke();
-	}
-	static void QtBeef_QInputMethod_localeChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLocaleChanged.Invoke();
-	}
-	static void QtBeef_QInputMethod_inputDirectionChanged(void* ptr, Qt_LayoutDirection newDirection)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnInputDirectionChanged.Invoke(newDirection);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QInputMethod_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -609,13 +519,13 @@ class QInputMethod : IQInputMethod, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -773,25 +683,20 @@ class QInputMethod : IQInputMethod, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -841,10 +746,22 @@ extension CQt
 {
 	[LinkName("QInputMethod_MetaObject")]
 	public static extern void** QInputMethod_MetaObject(void* self);
+	
+	public function void QInputMethod_OnMetaObject_action(void* self);
+	[LinkName("QInputMethod_OnMetaObject")]
+	public static extern void** QInputMethod_OnMetaObject(void* self, QInputMethod_OnMetaObject_action _action);
 	[LinkName("QInputMethod_Qt_Metacast")]
 	public static extern void* QInputMethod_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QInputMethod_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QInputMethod_OnMetacast")]
+	public static extern void* QInputMethod_OnMetacast(void* self, QInputMethod_OnMetacast_action _action);
 	[LinkName("QInputMethod_Qt_Metacall")]
 	public static extern c_int QInputMethod_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QInputMethod_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QInputMethod_OnMetacall")]
+	public static extern c_int QInputMethod_OnMetacall(void* self, QInputMethod_OnMetacall_action _action);
 	[LinkName("QInputMethod_Tr")]
 	public static extern libqt_string QInputMethod_Tr(c_char* s);
 	[LinkName("QInputMethod_InputItemTransform")]
@@ -890,55 +807,97 @@ extension CQt
 	[LinkName("QInputMethod_CursorRectangleChanged")]
 	public static extern void QInputMethod_CursorRectangleChanged(void* self);
 	
-	public function void QInputMethod_cursorRectangleChanged_action(void* self);
+	public function void QInputMethod_Connect_CursorRectangleChanged_action(void* self);
 	[LinkName("QInputMethod_Connect_CursorRectangleChanged")]
-	public static extern void QInputMethod_Connect_CursorRectangleChanged(void* self, QInputMethod_cursorRectangleChanged_action _action);
+	public static extern void QInputMethod_Connect_CursorRectangleChanged(void* self, QInputMethod_Connect_CursorRectangleChanged_action _action);
 	[LinkName("QInputMethod_AnchorRectangleChanged")]
 	public static extern void QInputMethod_AnchorRectangleChanged(void* self);
 	
-	public function void QInputMethod_anchorRectangleChanged_action(void* self);
+	public function void QInputMethod_Connect_AnchorRectangleChanged_action(void* self);
 	[LinkName("QInputMethod_Connect_AnchorRectangleChanged")]
-	public static extern void QInputMethod_Connect_AnchorRectangleChanged(void* self, QInputMethod_anchorRectangleChanged_action _action);
+	public static extern void QInputMethod_Connect_AnchorRectangleChanged(void* self, QInputMethod_Connect_AnchorRectangleChanged_action _action);
 	[LinkName("QInputMethod_KeyboardRectangleChanged")]
 	public static extern void QInputMethod_KeyboardRectangleChanged(void* self);
 	
-	public function void QInputMethod_keyboardRectangleChanged_action(void* self);
+	public function void QInputMethod_Connect_KeyboardRectangleChanged_action(void* self);
 	[LinkName("QInputMethod_Connect_KeyboardRectangleChanged")]
-	public static extern void QInputMethod_Connect_KeyboardRectangleChanged(void* self, QInputMethod_keyboardRectangleChanged_action _action);
+	public static extern void QInputMethod_Connect_KeyboardRectangleChanged(void* self, QInputMethod_Connect_KeyboardRectangleChanged_action _action);
 	[LinkName("QInputMethod_InputItemClipRectangleChanged")]
 	public static extern void QInputMethod_InputItemClipRectangleChanged(void* self);
 	
-	public function void QInputMethod_inputItemClipRectangleChanged_action(void* self);
+	public function void QInputMethod_Connect_InputItemClipRectangleChanged_action(void* self);
 	[LinkName("QInputMethod_Connect_InputItemClipRectangleChanged")]
-	public static extern void QInputMethod_Connect_InputItemClipRectangleChanged(void* self, QInputMethod_inputItemClipRectangleChanged_action _action);
+	public static extern void QInputMethod_Connect_InputItemClipRectangleChanged(void* self, QInputMethod_Connect_InputItemClipRectangleChanged_action _action);
 	[LinkName("QInputMethod_VisibleChanged")]
 	public static extern void QInputMethod_VisibleChanged(void* self);
 	
-	public function void QInputMethod_visibleChanged_action(void* self);
+	public function void QInputMethod_Connect_VisibleChanged_action(void* self);
 	[LinkName("QInputMethod_Connect_VisibleChanged")]
-	public static extern void QInputMethod_Connect_VisibleChanged(void* self, QInputMethod_visibleChanged_action _action);
+	public static extern void QInputMethod_Connect_VisibleChanged(void* self, QInputMethod_Connect_VisibleChanged_action _action);
 	[LinkName("QInputMethod_AnimatingChanged")]
 	public static extern void QInputMethod_AnimatingChanged(void* self);
 	
-	public function void QInputMethod_animatingChanged_action(void* self);
+	public function void QInputMethod_Connect_AnimatingChanged_action(void* self);
 	[LinkName("QInputMethod_Connect_AnimatingChanged")]
-	public static extern void QInputMethod_Connect_AnimatingChanged(void* self, QInputMethod_animatingChanged_action _action);
+	public static extern void QInputMethod_Connect_AnimatingChanged(void* self, QInputMethod_Connect_AnimatingChanged_action _action);
 	[LinkName("QInputMethod_LocaleChanged")]
 	public static extern void QInputMethod_LocaleChanged(void* self);
 	
-	public function void QInputMethod_localeChanged_action(void* self);
+	public function void QInputMethod_Connect_LocaleChanged_action(void* self);
 	[LinkName("QInputMethod_Connect_LocaleChanged")]
-	public static extern void QInputMethod_Connect_LocaleChanged(void* self, QInputMethod_localeChanged_action _action);
+	public static extern void QInputMethod_Connect_LocaleChanged(void* self, QInputMethod_Connect_LocaleChanged_action _action);
 	[LinkName("QInputMethod_InputDirectionChanged")]
 	public static extern void QInputMethod_InputDirectionChanged(void* self, Qt_LayoutDirection newDirection);
 	
-	public function void QInputMethod_inputDirectionChanged_action(void* self, Qt_LayoutDirection newDirection);
+	public function void QInputMethod_Connect_InputDirectionChanged_action(void* self, Qt_LayoutDirection newDirection);
 	[LinkName("QInputMethod_Connect_InputDirectionChanged")]
-	public static extern void QInputMethod_Connect_InputDirectionChanged(void* self, QInputMethod_inputDirectionChanged_action _action);
+	public static extern void QInputMethod_Connect_InputDirectionChanged(void* self, QInputMethod_Connect_InputDirectionChanged_action _action);
 	[LinkName("QInputMethod_Tr2")]
 	public static extern libqt_string QInputMethod_Tr2(c_char* s, c_char* c);
 	[LinkName("QInputMethod_Tr3")]
 	public static extern libqt_string QInputMethod_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QInputMethod_Event")]
+	public static extern bool QInputMethod_Event(void* self, void** event);
+	
+	public function void QInputMethod_OnEvent_action(void* self, void** event);
+	[LinkName("QInputMethod_OnEvent")]
+	public static extern bool QInputMethod_OnEvent(void* self, QInputMethod_OnEvent_action _action);
+	[LinkName("QInputMethod_EventFilter")]
+	public static extern bool QInputMethod_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QInputMethod_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QInputMethod_OnEventFilter")]
+	public static extern bool QInputMethod_OnEventFilter(void* self, QInputMethod_OnEventFilter_action _action);
+	[LinkName("QInputMethod_TimerEvent")]
+	public static extern void QInputMethod_TimerEvent(void* self, void** event);
+	
+	public function void QInputMethod_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QInputMethod_OnTimerEvent")]
+	public static extern void QInputMethod_OnTimerEvent(void* self, QInputMethod_OnTimerEvent_action _action);
+	[LinkName("QInputMethod_ChildEvent")]
+	public static extern void QInputMethod_ChildEvent(void* self, void** event);
+	
+	public function void QInputMethod_OnChildEvent_action(void* self, void** event);
+	[LinkName("QInputMethod_OnChildEvent")]
+	public static extern void QInputMethod_OnChildEvent(void* self, QInputMethod_OnChildEvent_action _action);
+	[LinkName("QInputMethod_CustomEvent")]
+	public static extern void QInputMethod_CustomEvent(void* self, void** event);
+	
+	public function void QInputMethod_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QInputMethod_OnCustomEvent")]
+	public static extern void QInputMethod_OnCustomEvent(void* self, QInputMethod_OnCustomEvent_action _action);
+	[LinkName("QInputMethod_ConnectNotify")]
+	public static extern void QInputMethod_ConnectNotify(void* self, void** signal);
+	
+	public function void QInputMethod_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QInputMethod_OnConnectNotify")]
+	public static extern void QInputMethod_OnConnectNotify(void* self, QInputMethod_OnConnectNotify_action _action);
+	[LinkName("QInputMethod_DisconnectNotify")]
+	public static extern void QInputMethod_DisconnectNotify(void* self, void** signal);
+	
+	public function void QInputMethod_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QInputMethod_OnDisconnectNotify")]
+	public static extern void QInputMethod_OnDisconnectNotify(void* self, QInputMethod_OnDisconnectNotify_action _action);
 }
 [AllowDuplicates]
 enum QInputMethod_Action

@@ -83,34 +83,21 @@ class QTextOption : IQTextOption
 {
 	private QTextOption_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextOption_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextOption_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* alignment)
 	{
 		this.ptr = CQt.QTextOption_new2(alignment);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextOption o)
 	{
 		this.ptr = CQt.QTextOption_new3((.)o?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -269,39 +256,25 @@ class QTextOption_Tab : IQTextOption_Tab
 {
 	private QTextOption_Tab_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextOption_Tab_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextOption_Tab other)
 	{
 		this.ptr = CQt.QTextOption_Tab_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextOption_Tab_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(double pos, QTextOption_TabType tabType)
 	{
 		this.ptr = CQt.QTextOption_Tab_new4(pos, tabType);
-		QtBf_ConnectSignals(this);
 	}
 	public this(double pos, QTextOption_TabType tabType, IQChar delim)
 	{
 		this.ptr = CQt.QTextOption_Tab_new5(pos, tabType, (.)delim?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

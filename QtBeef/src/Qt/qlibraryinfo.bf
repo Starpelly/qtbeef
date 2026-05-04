@@ -43,24 +43,13 @@ class QLibraryInfo : IQLibraryInfo
 {
 	private QLibraryInfo_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QLibraryInfo_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQLibraryInfo other)
 	{
 		this.ptr = CQt.QLibraryInfo_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

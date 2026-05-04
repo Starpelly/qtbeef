@@ -183,44 +183,29 @@ class QEventPoint : IQEventPoint
 {
 	private QEventPoint_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QEventPoint_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QEventPoint_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int pointId, QEventPoint_State state, IQPointF scenePosition, IQPointF globalPosition)
 	{
 		this.ptr = CQt.QEventPoint_new2(pointId, state, (.)scenePosition?.ObjectPtr, (.)globalPosition?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQEventPoint other)
 	{
 		this.ptr = CQt.QEventPoint_new3((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int id)
 	{
 		this.ptr = CQt.QEventPoint_new4(id);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int id, IQPointingDevice device)
 	{
 		this.ptr = CQt.QEventPoint_new5(id, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

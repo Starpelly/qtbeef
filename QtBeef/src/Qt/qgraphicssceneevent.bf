@@ -40,7 +40,7 @@ struct QGraphicsSceneEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QGraphicsSceneEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -72,7 +72,7 @@ struct QGraphicsSceneEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGraphicsSceneEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
@@ -83,24 +83,13 @@ class QGraphicsSceneEvent : IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsSceneEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneEvent_new(type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -130,9 +119,8 @@ class QGraphicsSceneEvent : IQGraphicsSceneEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -162,9 +150,9 @@ class QGraphicsSceneEvent : IQGraphicsSceneEvent, IQEvent
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
@@ -188,6 +176,18 @@ extension CQt
 	public static extern c_ulonglong QGraphicsSceneEvent_Timestamp(void* self);
 	[LinkName("QGraphicsSceneEvent_SetTimestamp")]
 	public static extern void QGraphicsSceneEvent_SetTimestamp(void* self, c_ulonglong ts);
+	[LinkName("QGraphicsSceneEvent_SetAccepted")]
+	public static extern void QGraphicsSceneEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QGraphicsSceneEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QGraphicsSceneEvent_OnSetAccepted")]
+	public static extern void QGraphicsSceneEvent_OnSetAccepted(void* self, QGraphicsSceneEvent_OnSetAccepted_action _action);
+	[LinkName("QGraphicsSceneEvent_Clone")]
+	public static extern void** QGraphicsSceneEvent_Clone(void* self);
+	
+	public function void QGraphicsSceneEvent_OnClone_action(void* self);
+	[LinkName("QGraphicsSceneEvent_OnClone")]
+	public static extern void** QGraphicsSceneEvent_OnClone(void* self, QGraphicsSceneEvent_OnClone_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneMouseEvent
@@ -312,22 +312,6 @@ struct QGraphicsSceneMouseEvent_Ptr
 	{
 		CQt.QGraphicsSceneMouseEvent_SetFlags((.)this.Ptr, flags);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -338,7 +322,7 @@ struct QGraphicsSceneMouseEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QGraphicsSceneMouseEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -370,40 +354,44 @@ struct QGraphicsSceneMouseEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGraphicsSceneMouseEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
 	}
 }
 class QGraphicsSceneMouseEvent : IQGraphicsSceneMouseEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneMouseEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsSceneMouseEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneMouseEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneMouseEvent_new2(type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -521,22 +509,6 @@ class QGraphicsSceneMouseEvent : IQGraphicsSceneMouseEvent, IQGraphicsSceneEvent
 	{
 		this.ptr.SetFlags(flags);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return this.ptr.Widget();
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		this.ptr.SetWidget(widget);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		this.ptr.SetTimestamp(ts);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -545,9 +517,8 @@ class QGraphicsSceneMouseEvent : IQGraphicsSceneMouseEvent, IQGraphicsSceneEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -577,13 +548,29 @@ class QGraphicsSceneMouseEvent : IQGraphicsSceneMouseEvent, IQGraphicsSceneEvent
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return this.ptr.RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
 	}
 }
 interface IQGraphicsSceneMouseEvent : IQtObjectInterface
@@ -653,6 +640,18 @@ extension CQt
 	public static extern void* QGraphicsSceneMouseEvent_Flags(void* self);
 	[LinkName("QGraphicsSceneMouseEvent_SetFlags")]
 	public static extern void QGraphicsSceneMouseEvent_SetFlags(void* self, void* flags);
+	[LinkName("QGraphicsSceneMouseEvent_SetAccepted")]
+	public static extern void QGraphicsSceneMouseEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QGraphicsSceneMouseEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QGraphicsSceneMouseEvent_OnSetAccepted")]
+	public static extern void QGraphicsSceneMouseEvent_OnSetAccepted(void* self, QGraphicsSceneMouseEvent_OnSetAccepted_action _action);
+	[LinkName("QGraphicsSceneMouseEvent_Clone")]
+	public static extern void** QGraphicsSceneMouseEvent_Clone(void* self);
+	
+	public function void QGraphicsSceneMouseEvent_OnClone_action(void* self);
+	[LinkName("QGraphicsSceneMouseEvent_OnClone")]
+	public static extern void** QGraphicsSceneMouseEvent_OnClone(void* self, QGraphicsSceneMouseEvent_OnClone_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneWheelEvent
@@ -745,22 +744,6 @@ struct QGraphicsSceneWheelEvent_Ptr
 	{
 		CQt.QGraphicsSceneWheelEvent_SetInverted((.)this.Ptr, inverted);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -771,7 +754,7 @@ struct QGraphicsSceneWheelEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QGraphicsSceneWheelEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -803,40 +786,44 @@ struct QGraphicsSceneWheelEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGraphicsSceneWheelEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
 	}
 }
 class QGraphicsSceneWheelEvent : IQGraphicsSceneWheelEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneWheelEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsSceneWheelEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneWheelEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneWheelEvent_new2(type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -922,22 +909,6 @@ class QGraphicsSceneWheelEvent : IQGraphicsSceneWheelEvent, IQGraphicsSceneEvent
 	{
 		this.ptr.SetInverted(inverted);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return this.ptr.Widget();
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		this.ptr.SetWidget(widget);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		this.ptr.SetTimestamp(ts);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -946,9 +917,8 @@ class QGraphicsSceneWheelEvent : IQGraphicsSceneWheelEvent, IQGraphicsSceneEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -978,13 +948,29 @@ class QGraphicsSceneWheelEvent : IQGraphicsSceneWheelEvent, IQGraphicsSceneEvent
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return this.ptr.RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
 	}
 }
 interface IQGraphicsSceneWheelEvent : IQtObjectInterface
@@ -1038,6 +1024,18 @@ extension CQt
 	public static extern bool QGraphicsSceneWheelEvent_IsInverted(void* self);
 	[LinkName("QGraphicsSceneWheelEvent_SetInverted")]
 	public static extern void QGraphicsSceneWheelEvent_SetInverted(void* self, bool inverted);
+	[LinkName("QGraphicsSceneWheelEvent_SetAccepted")]
+	public static extern void QGraphicsSceneWheelEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QGraphicsSceneWheelEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QGraphicsSceneWheelEvent_OnSetAccepted")]
+	public static extern void QGraphicsSceneWheelEvent_OnSetAccepted(void* self, QGraphicsSceneWheelEvent_OnSetAccepted_action _action);
+	[LinkName("QGraphicsSceneWheelEvent_Clone")]
+	public static extern void** QGraphicsSceneWheelEvent_Clone(void* self);
+	
+	public function void QGraphicsSceneWheelEvent_OnClone_action(void* self);
+	[LinkName("QGraphicsSceneWheelEvent_OnClone")]
+	public static extern void** QGraphicsSceneWheelEvent_OnClone(void* self, QGraphicsSceneWheelEvent_OnClone_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneContextMenuEvent
@@ -1090,22 +1088,6 @@ struct QGraphicsSceneContextMenuEvent_Ptr
 	{
 		CQt.QGraphicsSceneContextMenuEvent_SetReason((.)this.Ptr, reason);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -1116,7 +1098,7 @@ struct QGraphicsSceneContextMenuEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QGraphicsSceneContextMenuEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -1148,40 +1130,44 @@ struct QGraphicsSceneContextMenuEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGraphicsSceneContextMenuEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
 	}
 }
 class QGraphicsSceneContextMenuEvent : IQGraphicsSceneContextMenuEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneContextMenuEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsSceneContextMenuEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneContextMenuEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneContextMenuEvent_new2(type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1227,22 +1213,6 @@ class QGraphicsSceneContextMenuEvent : IQGraphicsSceneContextMenuEvent, IQGraphi
 	{
 		this.ptr.SetReason(reason);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return this.ptr.Widget();
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		this.ptr.SetWidget(widget);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		this.ptr.SetTimestamp(ts);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -1251,9 +1221,8 @@ class QGraphicsSceneContextMenuEvent : IQGraphicsSceneContextMenuEvent, IQGraphi
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -1283,13 +1252,29 @@ class QGraphicsSceneContextMenuEvent : IQGraphicsSceneContextMenuEvent, IQGraphi
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return this.ptr.RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
 	}
 }
 interface IQGraphicsSceneContextMenuEvent : IQtObjectInterface
@@ -1323,6 +1308,18 @@ extension CQt
 	public static extern QGraphicsSceneContextMenuEvent_Reason QGraphicsSceneContextMenuEvent_Reason(void* self);
 	[LinkName("QGraphicsSceneContextMenuEvent_SetReason")]
 	public static extern void QGraphicsSceneContextMenuEvent_SetReason(void* self, QGraphicsSceneContextMenuEvent_Reason reason);
+	[LinkName("QGraphicsSceneContextMenuEvent_SetAccepted")]
+	public static extern void QGraphicsSceneContextMenuEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QGraphicsSceneContextMenuEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QGraphicsSceneContextMenuEvent_OnSetAccepted")]
+	public static extern void QGraphicsSceneContextMenuEvent_OnSetAccepted(void* self, QGraphicsSceneContextMenuEvent_OnSetAccepted_action _action);
+	[LinkName("QGraphicsSceneContextMenuEvent_Clone")]
+	public static extern void** QGraphicsSceneContextMenuEvent_Clone(void* self);
+	
+	public function void QGraphicsSceneContextMenuEvent_OnClone_action(void* self);
+	[LinkName("QGraphicsSceneContextMenuEvent_OnClone")]
+	public static extern void** QGraphicsSceneContextMenuEvent_OnClone(void* self, QGraphicsSceneContextMenuEvent_OnClone_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneHoverEvent
@@ -1391,22 +1388,6 @@ struct QGraphicsSceneHoverEvent_Ptr
 	{
 		CQt.QGraphicsSceneHoverEvent_SetModifiers((.)this.Ptr, modifiers);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -1417,7 +1398,7 @@ struct QGraphicsSceneHoverEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QGraphicsSceneHoverEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -1449,40 +1430,44 @@ struct QGraphicsSceneHoverEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGraphicsSceneHoverEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
 	}
 }
 class QGraphicsSceneHoverEvent : IQGraphicsSceneHoverEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneHoverEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsSceneHoverEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneHoverEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneHoverEvent_new2(type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1544,22 +1529,6 @@ class QGraphicsSceneHoverEvent : IQGraphicsSceneHoverEvent, IQGraphicsSceneEvent
 	{
 		this.ptr.SetModifiers(modifiers);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return this.ptr.Widget();
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		this.ptr.SetWidget(widget);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		this.ptr.SetTimestamp(ts);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -1568,9 +1537,8 @@ class QGraphicsSceneHoverEvent : IQGraphicsSceneHoverEvent, IQGraphicsSceneEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -1600,13 +1568,29 @@ class QGraphicsSceneHoverEvent : IQGraphicsSceneHoverEvent, IQGraphicsSceneEvent
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return this.ptr.RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
 	}
 }
 interface IQGraphicsSceneHoverEvent : IQtObjectInterface
@@ -1648,6 +1632,18 @@ extension CQt
 	public static extern void* QGraphicsSceneHoverEvent_Modifiers(void* self);
 	[LinkName("QGraphicsSceneHoverEvent_SetModifiers")]
 	public static extern void QGraphicsSceneHoverEvent_SetModifiers(void* self, void* modifiers);
+	[LinkName("QGraphicsSceneHoverEvent_SetAccepted")]
+	public static extern void QGraphicsSceneHoverEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QGraphicsSceneHoverEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QGraphicsSceneHoverEvent_OnSetAccepted")]
+	public static extern void QGraphicsSceneHoverEvent_OnSetAccepted(void* self, QGraphicsSceneHoverEvent_OnSetAccepted_action _action);
+	[LinkName("QGraphicsSceneHoverEvent_Clone")]
+	public static extern void** QGraphicsSceneHoverEvent_Clone(void* self);
+	
+	public function void QGraphicsSceneHoverEvent_OnClone_action(void* self);
+	[LinkName("QGraphicsSceneHoverEvent_OnClone")]
+	public static extern void** QGraphicsSceneHoverEvent_OnClone(void* self, QGraphicsSceneHoverEvent_OnClone_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneHelpEvent
@@ -1676,22 +1672,6 @@ struct QGraphicsSceneHelpEvent_Ptr
 	{
 		CQt.QGraphicsSceneHelpEvent_SetScreenPos((.)this.Ptr, (.)pos?.ObjectPtr);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -1702,7 +1682,7 @@ struct QGraphicsSceneHelpEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QGraphicsSceneHelpEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -1734,40 +1714,44 @@ struct QGraphicsSceneHelpEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGraphicsSceneHelpEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
 	}
 }
 class QGraphicsSceneHelpEvent : IQGraphicsSceneHelpEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneHelpEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsSceneHelpEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneHelpEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneHelpEvent_new2(type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1789,22 +1773,6 @@ class QGraphicsSceneHelpEvent : IQGraphicsSceneHelpEvent, IQGraphicsSceneEvent, 
 	{
 		this.ptr.SetScreenPos(pos);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return this.ptr.Widget();
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		this.ptr.SetWidget(widget);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		this.ptr.SetTimestamp(ts);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -1813,9 +1781,8 @@ class QGraphicsSceneHelpEvent : IQGraphicsSceneHelpEvent, IQGraphicsSceneEvent, 
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -1845,13 +1812,29 @@ class QGraphicsSceneHelpEvent : IQGraphicsSceneHelpEvent, IQGraphicsSceneEvent, 
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return this.ptr.RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
 	}
 }
 interface IQGraphicsSceneHelpEvent : IQtObjectInterface
@@ -1873,6 +1856,18 @@ extension CQt
 	public static extern void* QGraphicsSceneHelpEvent_ScreenPos(void* self);
 	[LinkName("QGraphicsSceneHelpEvent_SetScreenPos")]
 	public static extern void QGraphicsSceneHelpEvent_SetScreenPos(void* self, void** pos);
+	[LinkName("QGraphicsSceneHelpEvent_SetAccepted")]
+	public static extern void QGraphicsSceneHelpEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QGraphicsSceneHelpEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QGraphicsSceneHelpEvent_OnSetAccepted")]
+	public static extern void QGraphicsSceneHelpEvent_OnSetAccepted(void* self, QGraphicsSceneHelpEvent_OnSetAccepted_action _action);
+	[LinkName("QGraphicsSceneHelpEvent_Clone")]
+	public static extern void** QGraphicsSceneHelpEvent_Clone(void* self);
+	
+	public function void QGraphicsSceneHelpEvent_OnClone_action(void* self);
+	[LinkName("QGraphicsSceneHelpEvent_OnClone")]
+	public static extern void** QGraphicsSceneHelpEvent_OnClone(void* self, QGraphicsSceneHelpEvent_OnClone_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneDragDropEvent
@@ -1969,22 +1964,6 @@ struct QGraphicsSceneDragDropEvent_Ptr
 	{
 		CQt.QGraphicsSceneDragDropEvent_SetMimeData((.)this.Ptr, (.)data?.ObjectPtr);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -1995,7 +1974,7 @@ struct QGraphicsSceneDragDropEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QGraphicsSceneDragDropEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -2027,40 +2006,44 @@ struct QGraphicsSceneDragDropEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGraphicsSceneDragDropEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
 	}
 }
 class QGraphicsSceneDragDropEvent : IQGraphicsSceneDragDropEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneDragDropEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsSceneDragDropEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneDragDropEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneDragDropEvent_new2(type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2150,22 +2133,6 @@ class QGraphicsSceneDragDropEvent : IQGraphicsSceneDragDropEvent, IQGraphicsScen
 	{
 		this.ptr.SetMimeData(data);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return this.ptr.Widget();
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		this.ptr.SetWidget(widget);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		this.ptr.SetTimestamp(ts);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -2174,9 +2141,8 @@ class QGraphicsSceneDragDropEvent : IQGraphicsSceneDragDropEvent, IQGraphicsScen
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -2206,13 +2172,29 @@ class QGraphicsSceneDragDropEvent : IQGraphicsSceneDragDropEvent, IQGraphicsScen
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return this.ptr.RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
 	}
 }
 interface IQGraphicsSceneDragDropEvent : IQtObjectInterface
@@ -2268,6 +2250,18 @@ extension CQt
 	public static extern void** QGraphicsSceneDragDropEvent_MimeData(void* self);
 	[LinkName("QGraphicsSceneDragDropEvent_SetMimeData")]
 	public static extern void QGraphicsSceneDragDropEvent_SetMimeData(void* self, void** data);
+	[LinkName("QGraphicsSceneDragDropEvent_SetAccepted")]
+	public static extern void QGraphicsSceneDragDropEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QGraphicsSceneDragDropEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QGraphicsSceneDragDropEvent_OnSetAccepted")]
+	public static extern void QGraphicsSceneDragDropEvent_OnSetAccepted(void* self, QGraphicsSceneDragDropEvent_OnSetAccepted_action _action);
+	[LinkName("QGraphicsSceneDragDropEvent_Clone")]
+	public static extern void** QGraphicsSceneDragDropEvent_Clone(void* self);
+	
+	public function void QGraphicsSceneDragDropEvent_OnClone_action(void* self);
+	[LinkName("QGraphicsSceneDragDropEvent_OnClone")]
+	public static extern void** QGraphicsSceneDragDropEvent_OnClone(void* self, QGraphicsSceneDragDropEvent_OnClone_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneResizeEvent
@@ -2296,22 +2290,6 @@ struct QGraphicsSceneResizeEvent_Ptr
 	{
 		CQt.QGraphicsSceneResizeEvent_SetNewSize((.)this.Ptr, (.)size?.ObjectPtr);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -2322,7 +2300,7 @@ struct QGraphicsSceneResizeEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QGraphicsSceneResizeEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -2354,35 +2332,40 @@ struct QGraphicsSceneResizeEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGraphicsSceneResizeEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
 	}
 }
 class QGraphicsSceneResizeEvent : IQGraphicsSceneResizeEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneResizeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsSceneResizeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneResizeEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2404,22 +2387,6 @@ class QGraphicsSceneResizeEvent : IQGraphicsSceneResizeEvent, IQGraphicsSceneEve
 	{
 		this.ptr.SetNewSize(size);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return this.ptr.Widget();
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		this.ptr.SetWidget(widget);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		this.ptr.SetTimestamp(ts);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -2428,9 +2395,8 @@ class QGraphicsSceneResizeEvent : IQGraphicsSceneResizeEvent, IQGraphicsSceneEve
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -2460,13 +2426,29 @@ class QGraphicsSceneResizeEvent : IQGraphicsSceneResizeEvent, IQGraphicsSceneEve
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return this.ptr.RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
 	}
 }
 interface IQGraphicsSceneResizeEvent : IQtObjectInterface
@@ -2486,6 +2468,18 @@ extension CQt
 	public static extern void* QGraphicsSceneResizeEvent_NewSize(void* self);
 	[LinkName("QGraphicsSceneResizeEvent_SetNewSize")]
 	public static extern void QGraphicsSceneResizeEvent_SetNewSize(void* self, void** size);
+	[LinkName("QGraphicsSceneResizeEvent_SetAccepted")]
+	public static extern void QGraphicsSceneResizeEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QGraphicsSceneResizeEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QGraphicsSceneResizeEvent_OnSetAccepted")]
+	public static extern void QGraphicsSceneResizeEvent_OnSetAccepted(void* self, QGraphicsSceneResizeEvent_OnSetAccepted_action _action);
+	[LinkName("QGraphicsSceneResizeEvent_Clone")]
+	public static extern void** QGraphicsSceneResizeEvent_Clone(void* self);
+	
+	public function void QGraphicsSceneResizeEvent_OnClone_action(void* self);
+	[LinkName("QGraphicsSceneResizeEvent_OnClone")]
+	public static extern void** QGraphicsSceneResizeEvent_OnClone(void* self, QGraphicsSceneResizeEvent_OnClone_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneMoveEvent
@@ -2514,22 +2508,6 @@ struct QGraphicsSceneMoveEvent_Ptr
 	{
 		CQt.QGraphicsSceneMoveEvent_SetNewPos((.)this.Ptr, (.)pos?.ObjectPtr);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -2540,7 +2518,7 @@ struct QGraphicsSceneMoveEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QGraphicsSceneMoveEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -2572,35 +2550,40 @@ struct QGraphicsSceneMoveEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGraphicsSceneMoveEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
 	}
 }
 class QGraphicsSceneMoveEvent : IQGraphicsSceneMoveEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneMoveEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsSceneMoveEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneMoveEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2622,22 +2605,6 @@ class QGraphicsSceneMoveEvent : IQGraphicsSceneMoveEvent, IQGraphicsSceneEvent, 
 	{
 		this.ptr.SetNewPos(pos);
 	}
-	public QWidget_Ptr Widget()
-	{
-		return this.ptr.Widget();
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		this.ptr.SetWidget(widget);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		this.ptr.SetTimestamp(ts);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -2646,9 +2613,8 @@ class QGraphicsSceneMoveEvent : IQGraphicsSceneMoveEvent, IQGraphicsSceneEvent, 
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -2678,13 +2644,29 @@ class QGraphicsSceneMoveEvent : IQGraphicsSceneMoveEvent, IQGraphicsSceneEvent, 
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
 		return this.ptr.RegisterEventType1(hint);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
 	}
 }
 interface IQGraphicsSceneMoveEvent : IQtObjectInterface
@@ -2704,6 +2686,18 @@ extension CQt
 	public static extern void* QGraphicsSceneMoveEvent_NewPos(void* self);
 	[LinkName("QGraphicsSceneMoveEvent_SetNewPos")]
 	public static extern void QGraphicsSceneMoveEvent_SetNewPos(void* self, void** pos);
+	[LinkName("QGraphicsSceneMoveEvent_SetAccepted")]
+	public static extern void QGraphicsSceneMoveEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QGraphicsSceneMoveEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QGraphicsSceneMoveEvent_OnSetAccepted")]
+	public static extern void QGraphicsSceneMoveEvent_OnSetAccepted(void* self, QGraphicsSceneMoveEvent_OnSetAccepted_action _action);
+	[LinkName("QGraphicsSceneMoveEvent_Clone")]
+	public static extern void** QGraphicsSceneMoveEvent_Clone(void* self);
+	
+	public function void QGraphicsSceneMoveEvent_OnClone_action(void* self);
+	[LinkName("QGraphicsSceneMoveEvent_OnClone")]
+	public static extern void** QGraphicsSceneMoveEvent_OnClone(void* self, QGraphicsSceneMoveEvent_OnClone_action _action);
 }
 [AllowDuplicates]
 enum QGraphicsSceneContextMenuEvent_Reason

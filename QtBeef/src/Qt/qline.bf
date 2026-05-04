@@ -95,39 +95,25 @@ class QLine : IQLine
 {
 	private QLine_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QLine_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQLine other)
 	{
 		this.ptr = CQt.QLine_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLine_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pt1, IQPoint pt2)
 	{
 		this.ptr = CQt.QLine_new4((.)pt1?.ObjectPtr, (.)pt2?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int x1, c_int y1, c_int x2, c_int y2)
 	{
 		this.ptr = CQt.QLine_new5(x1, y1, x2, y2);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -408,44 +394,29 @@ class QLineF : IQLineF
 {
 	private QLineF_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QLineF_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQLineF other)
 	{
 		this.ptr = CQt.QLineF_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLineF_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pt1, IQPointF pt2)
 	{
 		this.ptr = CQt.QLineF_new4((.)pt1?.ObjectPtr, (.)pt2?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(double x1, double y1, double x2, double y2)
 	{
 		this.ptr = CQt.QLineF_new5(x1, y1, x2, y2);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQLine line)
 	{
 		this.ptr = CQt.QLineF_new6((.)line?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -43,44 +43,29 @@ class QByteArrayMatcher : IQByteArrayMatcher
 {
 	private QByteArrayMatcher_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QByteArrayMatcher_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QByteArrayMatcher_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(void** pattern)
 	{
 		this.ptr = CQt.QByteArrayMatcher_new2(pattern);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* pattern)
 	{
 		this.ptr = CQt.QByteArrayMatcher_new3(pattern);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* pattern)
 	{
 		this.ptr = CQt.QByteArrayMatcher_new4(pattern);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* pattern, void* length)
 	{
 		this.ptr = CQt.QByteArrayMatcher_new6(pattern, length);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -161,24 +146,13 @@ class QStaticByteArrayMatcherBase : IQStaticByteArrayMatcherBase
 {
 	private QStaticByteArrayMatcherBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStaticByteArrayMatcherBase_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStaticByteArrayMatcherBase other)
 	{
 		this.ptr = CQt.QStaticByteArrayMatcherBase_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 }
 interface IQStaticByteArrayMatcherBase : IQtObjectInterface

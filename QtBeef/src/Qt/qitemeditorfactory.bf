@@ -27,31 +27,21 @@ class QItemEditorCreatorBase : IQItemEditorCreatorBase
 {
 	private QItemEditorCreatorBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QItemEditorCreatorBase_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QItemEditorCreatorBase_Delete(this.ptr);
 	}
-	public QWidget_Ptr CreateWidget(IQWidget parent)
+	public  virtual QWidget_Ptr OnCreateWidget(void** parent)
 	{
-		return this.ptr.CreateWidget(parent);
+		return default;
 	}
-	public void* ValuePropertyName()
+	public  virtual void* OnValuePropertyName()
 	{
-		return this.ptr.ValuePropertyName();
+		return default;
 	}
 }
 interface IQItemEditorCreatorBase : IQtObjectInterface
@@ -63,8 +53,16 @@ extension CQt
 	public static extern void QItemEditorCreatorBase_Delete(QItemEditorCreatorBase_Ptr self);
 	[LinkName("QItemEditorCreatorBase_CreateWidget")]
 	public static extern void** QItemEditorCreatorBase_CreateWidget(void* self, void** parent);
+	
+	public function void QItemEditorCreatorBase_OnCreateWidget_action(void* self, void** parent);
+	[LinkName("QItemEditorCreatorBase_OnCreateWidget")]
+	public static extern void** QItemEditorCreatorBase_OnCreateWidget(void* self, QItemEditorCreatorBase_OnCreateWidget_action _action);
 	[LinkName("QItemEditorCreatorBase_ValuePropertyName")]
 	public static extern void* QItemEditorCreatorBase_ValuePropertyName(void* self);
+	
+	public function void QItemEditorCreatorBase_OnValuePropertyName_action(void* self);
+	[LinkName("QItemEditorCreatorBase_OnValuePropertyName")]
+	public static extern void* QItemEditorCreatorBase_OnValuePropertyName(void* self, QItemEditorCreatorBase_OnValuePropertyName_action _action);
 	[LinkName("QItemEditorCreatorBase_OperatorAssign")]
 	public static extern void QItemEditorCreatorBase_OperatorAssign(void* self, void** param1);
 }
@@ -104,41 +102,29 @@ class QItemEditorFactory : IQItemEditorFactory
 {
 	private QItemEditorFactory_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QItemEditorFactory_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QItemEditorFactory_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQItemEditorFactory param1)
 	{
 		this.ptr = CQt.QItemEditorFactory_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QItemEditorFactory_Delete(this.ptr);
 	}
-	public QWidget_Ptr CreateEditor(c_int userType, IQWidget parent)
+	public  virtual QWidget_Ptr OnCreateEditor(c_int userType, void** parent)
 	{
-		return this.ptr.CreateEditor(userType, parent);
+		return default;
 	}
-	public void* ValuePropertyName(c_int userType)
+	public  virtual void* OnValuePropertyName(c_int userType)
 	{
-		return this.ptr.ValuePropertyName(userType);
+		return default;
 	}
 	public void RegisterEditor(c_int userType, IQItemEditorCreatorBase creator)
 	{
@@ -166,8 +152,16 @@ extension CQt
 	public static extern void QItemEditorFactory_Delete(QItemEditorFactory_Ptr self);
 	[LinkName("QItemEditorFactory_CreateEditor")]
 	public static extern void** QItemEditorFactory_CreateEditor(void* self, c_int userType, void** parent);
+	
+	public function void QItemEditorFactory_OnCreateEditor_action(void* self, c_int userType, void** parent);
+	[LinkName("QItemEditorFactory_OnCreateEditor")]
+	public static extern void** QItemEditorFactory_OnCreateEditor(void* self, QItemEditorFactory_OnCreateEditor_action _action);
 	[LinkName("QItemEditorFactory_ValuePropertyName")]
 	public static extern void* QItemEditorFactory_ValuePropertyName(void* self, c_int userType);
+	
+	public function void QItemEditorFactory_OnValuePropertyName_action(void* self, c_int userType);
+	[LinkName("QItemEditorFactory_OnValuePropertyName")]
+	public static extern void* QItemEditorFactory_OnValuePropertyName(void* self, QItemEditorFactory_OnValuePropertyName_action _action);
 	[LinkName("QItemEditorFactory_RegisterEditor")]
 	public static extern void QItemEditorFactory_RegisterEditor(void* self, c_int userType, void** creator);
 	[LinkName("QItemEditorFactory_DefaultFactory")]

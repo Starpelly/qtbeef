@@ -199,44 +199,29 @@ class QTransform : IQTransform
 {
 	private QTransform_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTransform_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTransform other)
 	{
 		this.ptr = CQt.QTransform_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Initialization param1)
 	{
 		this.ptr = CQt.QTransform_new3(param1);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTransform_new4();
-		QtBf_ConnectSignals(this);
 	}
 	public this(double h11, double h12, double h13, double h21, double h22, double h23, double h31, double h32, double h33)
 	{
 		this.ptr = CQt.QTransform_new5(h11, h12, h13, h21, h22, h23, h31, h32, h33);
-		QtBf_ConnectSignals(this);
 	}
 	public this(double h11, double h12, double h21, double h22, double dx, double dy)
 	{
 		this.ptr = CQt.QTransform_new6(h11, h12, h21, h22, dx, dy);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

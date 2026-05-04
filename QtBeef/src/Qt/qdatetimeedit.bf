@@ -18,11 +18,11 @@ struct QDateTimeEdit_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QDateTimeEdit_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QDateTimeEdit_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QDateTimeEdit_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -298,177 +298,305 @@ struct QDateTimeEdit_Ptr
 	{
 		CQt.QDateTimeEdit_Tr3(s, c, n);
 	}
-	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QAbstractSpinBox_ButtonSymbols((.)this.Ptr);
+		return CQt.QDateTimeEdit_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
+	public void ObjectName(String outStr)
 	{
-		CQt.QAbstractSpinBox_SetButtonSymbols((.)this.Ptr, bs);
+		CQt.QObject_ObjectName((.)this.Ptr);
 	}
-	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QAbstractSpinBox_SetCorrectionMode((.)this.Ptr, cm);
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
 	}
-	public QAbstractSpinBox_CorrectionMode CorrectionMode()
+	public bool IsWidgetType()
 	{
-		return CQt.QAbstractSpinBox_CorrectionMode((.)this.Ptr);
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
 	}
-	public bool HasAcceptableInput()
+	public bool IsWindowType()
 	{
-		return CQt.QAbstractSpinBox_HasAcceptableInput((.)this.Ptr);
+		return CQt.QObject_IsWindowType((.)this.Ptr);
 	}
-	public void Text(String outStr)
+	public bool IsQuickItemType()
 	{
-		CQt.QAbstractSpinBox_Text((.)this.Ptr);
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
 	}
-	public void SpecialValueText(String outStr)
+	public bool SignalsBlocked()
 	{
-		CQt.QAbstractSpinBox_SpecialValueText((.)this.Ptr);
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
 	}
-	public void SetSpecialValueText(String txt)
+	public bool BlockSignals(bool b)
 	{
-		CQt.QAbstractSpinBox_SetSpecialValueText((.)this.Ptr, libqt_string(txt));
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
 	}
-	public bool Wrapping()
+	public QThread_Ptr Thread()
 	{
-		return CQt.QAbstractSpinBox_Wrapping((.)this.Ptr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
 	}
-	public void SetWrapping(bool w)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QAbstractSpinBox_SetWrapping((.)this.Ptr, w);
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
 	}
-	public void SetReadOnly(bool r)
+	public c_int StartTimer(c_int interval)
 	{
-		CQt.QAbstractSpinBox_SetReadOnly((.)this.Ptr, r);
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
 	}
-	public bool IsReadOnly()
+	public c_int StartTimer2(void* time)
 	{
-		return CQt.QAbstractSpinBox_IsReadOnly((.)this.Ptr);
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
 	}
-	public void SetKeyboardTracking(bool kt)
+	public void KillTimer(c_int id)
 	{
-		CQt.QAbstractSpinBox_SetKeyboardTracking((.)this.Ptr, kt);
+		CQt.QObject_KillTimer((.)this.Ptr, id);
 	}
-	public bool KeyboardTracking()
+	public void** Children()
 	{
-		return CQt.QAbstractSpinBox_KeyboardTracking((.)this.Ptr);
+		return CQt.QObject_Children((.)this.Ptr);
 	}
-	public void SetAlignment(void* flag)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QAbstractSpinBox_SetAlignment((.)this.Ptr, flag);
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
-	public void* Alignment()
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		return CQt.QAbstractSpinBox_Alignment((.)this.Ptr);
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void SetFrame(bool frame)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QAbstractSpinBox_SetFrame((.)this.Ptr, frame);
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
 	}
-	public bool HasFrame()
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QAbstractSpinBox_HasFrame((.)this.Ptr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public void SetAccelerated(bool on)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		CQt.QAbstractSpinBox_SetAccelerated((.)this.Ptr, on);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public bool IsAccelerated()
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QAbstractSpinBox_IsAccelerated((.)this.Ptr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
-	public void SetGroupSeparatorShown(bool shown)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		CQt.QAbstractSpinBox_SetGroupSeparatorShown((.)this.Ptr, shown);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool IsGroupSeparatorShown()
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QAbstractSpinBox_IsGroupSeparatorShown((.)this.Ptr);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
-	public QSize_Ptr MinimumSizeHint()
+	public bool Disconnect3()
 	{
-		return QSize_Ptr(CQt.QAbstractSpinBox_MinimumSizeHint((.)this.Ptr));
+		return CQt.QObject_Disconnect3((.)this.Ptr);
 	}
-	public void InterpretText()
+	public bool Disconnect4(IQObject receiver)
 	{
-		CQt.QAbstractSpinBox_InterpretText((.)this.Ptr);
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return QVariant_Ptr(CQt.QAbstractSpinBox_InputMethodQuery((.)this.Ptr, param1));
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
-	public void StepUp()
+	public void DumpObjectTree()
 	{
-		CQt.QAbstractSpinBox_StepUp((.)this.Ptr);
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
 	}
-	public void StepDown()
+	public void DumpObjectInfo()
 	{
-		CQt.QAbstractSpinBox_StepDown((.)this.Ptr);
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
 	}
-	public void SelectAll()
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		CQt.QAbstractSpinBox_SelectAll((.)this.Ptr);
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
 	}
-	public void ResizeEvent(IQResizeEvent event)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		CQt.QAbstractSpinBox_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
 	}
-	public void KeyReleaseEvent(IQKeyEvent event)
+	public void* DynamicPropertyNames()
 	{
-		CQt.QAbstractSpinBox_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
 	}
-	public void FocusOutEvent(IQFocusEvent event)
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		CQt.QAbstractSpinBox_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
 	}
-	public void ContextMenuEvent(IQContextMenuEvent event)
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		CQt.QAbstractSpinBox_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
 	}
-	public void ChangeEvent(IQEvent event)
+	public void Destroyed()
 	{
-		CQt.QAbstractSpinBox_ChangeEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QObject_Destroyed((.)this.Ptr);
 	}
-	public void CloseEvent(IQCloseEvent event)
+	public QObject_Ptr Parent()
 	{
-		CQt.QAbstractSpinBox_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
 	}
-	public void HideEvent(IQHideEvent event)
+	public bool Inherits(c_char* classname)
 	{
-		CQt.QAbstractSpinBox_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
 	}
-	public void MouseReleaseEvent(IQMouseEvent event)
+	public void DeleteLater()
 	{
-		CQt.QAbstractSpinBox_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QObject_DeleteLater((.)this.Ptr);
 	}
-	public void MouseMoveEvent(IQMouseEvent event)
+	public QObject_Ptr Sender()
 	{
-		CQt.QAbstractSpinBox_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QAbstractSpinBox_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void ShowEvent(IQShowEvent event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QAbstractSpinBox_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public QLineEdit_Ptr LineEdit()
+	public void CustomEvent(IQEvent event)
 	{
-		return QLineEdit_Ptr(CQt.QAbstractSpinBox_LineEdit((.)this.Ptr));
+		CQt.QDateTimeEdit_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void SetLineEdit(IQLineEdit edit)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QAbstractSpinBox_SetLineEdit((.)this.Ptr, (.)edit?.ObjectPtr);
+		CQt.QDateTimeEdit_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
-	public void EditingFinished()
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QAbstractSpinBox_EditingFinished((.)this.Ptr);
+		CQt.QDateTimeEdit_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.Ptr);
+		return CQt.QDateTimeEdit_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QDateTimeEdit_PaintEngine((.)this.Ptr));
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QDateTimeEdit_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QDateTimeEdit_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QDateTimeEdit_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QDateTimeEdit_SharedPainter((.)this.Ptr));
 	}
 	public void* WinId()
 	{
@@ -565,14 +693,6 @@ struct QDateTimeEdit_Ptr
 	public QSize_Ptr Size()
 	{
 		return QSize_Ptr(CQt.QWidget_Size((.)this.Ptr));
-	}
-	public c_int Width()
-	{
-		return CQt.QWidget_Width((.)this.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QWidget_Height((.)this.Ptr);
 	}
 	public QRect_Ptr Rect()
 	{
@@ -1140,7 +1260,7 @@ struct QDateTimeEdit_Ptr
 	}
 	public void SetVisible(bool visible)
 	{
-		CQt.QWidget_SetVisible((.)this.Ptr, visible);
+		CQt.QDateTimeEdit_SetVisible((.)this.Ptr, visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -1258,6 +1378,10 @@ struct QDateTimeEdit_Ptr
 	{
 		CQt.QWidget_OverrideWindowState((.)this.Ptr, state);
 	}
+	public QSize_Ptr MinimumSizeHint()
+	{
+		return QSize_Ptr(CQt.QDateTimeEdit_MinimumSizeHint((.)this.Ptr));
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return QSizePolicy_Ptr(CQt.QWidget_SizePolicy((.)this.Ptr));
@@ -1272,11 +1396,11 @@ struct QDateTimeEdit_Ptr
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QDateTimeEdit_HeightForWidth((.)this.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.Ptr);
+		return CQt.QDateTimeEdit_HasHeightForWidth((.)this.Ptr);
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -1309,10 +1433,6 @@ struct QDateTimeEdit_Ptr
 	public void UpdateGeometry()
 	{
 		CQt.QWidget_UpdateGeometry((.)this.Ptr);
-	}
-	public void SetParent(IQWidget parent)
-	{
-		CQt.QWidget_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -1430,10 +1550,6 @@ struct QDateTimeEdit_Ptr
 	{
 		return CQt.QWidget_TestAttribute((.)this.Ptr, param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.Ptr));
-	}
 	public void EnsurePolished()
 	{
 		CQt.QWidget_EnsurePolished((.)this.Ptr);
@@ -1486,69 +1602,97 @@ struct QDateTimeEdit_Ptr
 	{
 		CQt.QWidget_CustomContextMenuRequested((.)this.Ptr, (.)pos?.ObjectPtr);
 	}
+	public void MouseReleaseEvent(IQMouseEvent event)
+	{
+		CQt.QDateTimeEdit_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
 	public void MouseDoubleClickEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void MouseMoveEvent(IQMouseEvent event)
+	{
+		CQt.QDateTimeEdit_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyReleaseEvent(IQKeyEvent event)
+	{
+		CQt.QDateTimeEdit_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void FocusOutEvent(IQFocusEvent event)
+	{
+		CQt.QDateTimeEdit_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ResizeEvent(IQResizeEvent event)
+	{
+		CQt.QDateTimeEdit_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CloseEvent(IQCloseEvent event)
+	{
+		CQt.QDateTimeEdit_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ContextMenuEvent(IQContextMenuEvent event)
+	{
+		CQt.QDateTimeEdit_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragEnterEvent(IQDragEnterEvent event)
 	{
-		CQt.QWidget_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragMoveEvent(IQDragMoveEvent event)
 	{
-		CQt.QWidget_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragLeaveEvent(IQDragLeaveEvent event)
 	{
-		CQt.QWidget_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DropEvent(IQDropEvent event)
 	{
-		CQt.QWidget_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ShowEvent(IQShowEvent event)
+	{
+		CQt.QDateTimeEdit_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void HideEvent(IQHideEvent event)
+	{
+		CQt.QDateTimeEdit_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.Ptr, eventType, message, result);
+		return CQt.QDateTimeEdit_NativeEvent((.)this.Ptr, eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public void ChangeEvent(IQEvent param1)
 	{
-		return CQt.QWidget_Metric((.)this.Ptr, param1);
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		CQt.QWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.Ptr));
+		CQt.QDateTimeEdit_ChangeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void InputMethodEvent(IQInputMethodEvent param1)
 	{
-		CQt.QWidget_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QDateTimeEdit_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
+	{
+		return QVariant_Ptr(CQt.QDateTimeEdit_InputMethodQuery((.)this.Ptr, param1));
 	}
 	public void* InputMethodHints()
 	{
@@ -1662,420 +1806,178 @@ struct QDateTimeEdit_Ptr
 	{
 		CQt.QWidget_Destroy2((.)this.Ptr, destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QAbstractSpinBox_ButtonSymbols((.)this.Ptr);
 	}
-	public void ObjectName(String outStr)
+	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
 	{
-		CQt.QObject_ObjectName((.)this.Ptr);
+		CQt.QAbstractSpinBox_SetButtonSymbols((.)this.Ptr, bs);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
 	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetCorrectionMode((.)this.Ptr, cm);
 	}
-	public bool IsWidgetType()
+	public QAbstractSpinBox_CorrectionMode CorrectionMode()
 	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
+		return CQt.QAbstractSpinBox_CorrectionMode((.)this.Ptr);
 	}
-	public bool IsWindowType()
+	public bool HasAcceptableInput()
 	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
+		return CQt.QAbstractSpinBox_HasAcceptableInput((.)this.Ptr);
 	}
-	public bool IsQuickItemType()
+	public void Text(String outStr)
 	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+		CQt.QAbstractSpinBox_Text((.)this.Ptr);
 	}
-	public bool SignalsBlocked()
+	public void SpecialValueText(String outStr)
 	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+		CQt.QAbstractSpinBox_SpecialValueText((.)this.Ptr);
 	}
-	public bool BlockSignals(bool b)
+	public void SetSpecialValueText(String txt)
 	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+		CQt.QAbstractSpinBox_SetSpecialValueText((.)this.Ptr, libqt_string(txt));
 	}
-	public QThread_Ptr Thread()
+	public bool Wrapping()
 	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+		return CQt.QAbstractSpinBox_Wrapping((.)this.Ptr);
 	}
-	public void MoveToThread(IQThread thread)
+	public void SetWrapping(bool w)
 	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetWrapping((.)this.Ptr, w);
 	}
-	public c_int StartTimer(c_int interval)
+	public void SetReadOnly(bool r)
 	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+		CQt.QAbstractSpinBox_SetReadOnly((.)this.Ptr, r);
 	}
-	public c_int StartTimer2(void* time)
+	public bool IsReadOnly()
 	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+		return CQt.QAbstractSpinBox_IsReadOnly((.)this.Ptr);
 	}
-	public void KillTimer(c_int id)
+	public void SetKeyboardTracking(bool kt)
 	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
+		CQt.QAbstractSpinBox_SetKeyboardTracking((.)this.Ptr, kt);
 	}
-	public void** Children()
+	public bool KeyboardTracking()
 	{
-		return CQt.QObject_Children((.)this.Ptr);
+		return CQt.QAbstractSpinBox_KeyboardTracking((.)this.Ptr);
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void SetAlignment(void* flag)
 	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetAlignment((.)this.Ptr, flag);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public void* Alignment()
 	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+		return CQt.QAbstractSpinBox_Alignment((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetFrame(bool frame)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+		CQt.QAbstractSpinBox_SetFrame((.)this.Ptr, frame);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public bool HasFrame()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+		return CQt.QAbstractSpinBox_HasFrame((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetAccelerated(bool on)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+		CQt.QAbstractSpinBox_SetAccelerated((.)this.Ptr, on);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public bool IsAccelerated()
 	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+		return CQt.QAbstractSpinBox_IsAccelerated((.)this.Ptr);
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void SetGroupSeparatorShown(bool shown)
 	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetGroupSeparatorShown((.)this.Ptr, shown);
 	}
-	public bool Disconnect3()
+	public bool IsGroupSeparatorShown()
 	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
+		return CQt.QAbstractSpinBox_IsGroupSeparatorShown((.)this.Ptr);
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void InterpretText()
 	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+		CQt.QAbstractSpinBox_InterpretText((.)this.Ptr);
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public void StepUp()
 	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+		CQt.QAbstractSpinBox_StepUp((.)this.Ptr);
 	}
-	public void DumpObjectTree()
+	public void StepDown()
 	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
+		CQt.QAbstractSpinBox_StepDown((.)this.Ptr);
 	}
-	public void DumpObjectInfo()
+	public void SelectAll()
 	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+		CQt.QAbstractSpinBox_SelectAll((.)this.Ptr);
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public QLineEdit_Ptr LineEdit()
 	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+		return QLineEdit_Ptr(CQt.QAbstractSpinBox_LineEdit((.)this.Ptr));
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public void SetLineEdit(IQLineEdit edit)
 	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+		CQt.QAbstractSpinBox_SetLineEdit((.)this.Ptr, (.)edit?.ObjectPtr);
 	}
-	public void* DynamicPropertyNames()
+	public void EditingFinished()
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public bool PaintingActive()
-	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
-	}
-	public c_int WidthMM()
-	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
-	}
-	public c_int HeightMM()
-	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
-	}
-	public c_int LogicalDpiX()
-	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
-	}
-	public c_int LogicalDpiY()
-	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
-	}
-	public c_int PhysicalDpiX()
-	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
-	}
-	public c_int PhysicalDpiY()
-	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
-	}
-	public double DevicePixelRatio()
-	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
-	}
-	public double DevicePixelRatioF()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
-	}
-	public c_int ColorCount()
-	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
-	}
-	public c_int Depth()
-	{
-		return CQt.QPaintDevice_Depth((.)this.Ptr);
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
+		CQt.QAbstractSpinBox_EditingFinished((.)this.Ptr);
 	}
 }
 class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQPaintDevice
 {
 	private QDateTimeEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QDateTimeEdit_dateTimeChanged,
-		QDateTimeEdit_timeChanged,
-		QDateTimeEdit_dateChanged,
-		QDateTimeEdit_editingFinished,
-		QDateTimeEdit_windowTitleChanged,
-		QDateTimeEdit_windowIconChanged,
-		QDateTimeEdit_windowIconTextChanged,
-		QDateTimeEdit_customContextMenuRequested,
-		QDateTimeEdit_destroyed,
-		QDateTimeEdit_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QDateTimeEdit_Connect_DateTimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_dateTimeChanged);
-		CQt.QDateTimeEdit_Connect_TimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_timeChanged);
-		CQt.QDateTimeEdit_Connect_DateChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_dateChanged);
-		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_editingFinished);
-		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
-		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
-		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
-		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** dateTime)> OnDateTimeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void* time)> OnTimeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void* date)> OnDateChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QDateTimeEdit_dateTimeChanged(void* ptr, void** dateTime)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDateTimeChanged.Invoke(dateTime);
-	}
-	static void QtBeef_QDateTimeEdit_timeChanged(void* ptr, void* time)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTimeChanged.Invoke(time);
-	}
-	static void QtBeef_QDateTimeEdit_dateChanged(void* ptr, void* date)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDateChanged.Invoke(date);
-	}
-	static void QtBeef_QAbstractSpinBox_editingFinished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEditingFinished.Invoke();
-	}
-	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconChanged.Invoke(icon);
-	}
-	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconTextChanged.Invoke(iconText);
-	}
-	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCustomContextMenuRequested.Invoke(pos);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QDateTimeEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QDateTimeEdit_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDateTimeEdit_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQDateTime dt)
 	{
 		this.ptr = CQt.QDateTimeEdit_new3((.)dt?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate d)
 	{
 		this.ptr = CQt.QDateTimeEdit_new4((.)d?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime t)
 	{
 		this.ptr = CQt.QDateTimeEdit_new5((.)t?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQDateTime dt, IQWidget parent)
 	{
 		this.ptr = CQt.QDateTimeEdit_new6((.)dt?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate d, IQWidget parent)
 	{
 		this.ptr = CQt.QDateTimeEdit_new7((.)d?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime t, IQWidget parent)
 	{
 		this.ptr = CQt.QDateTimeEdit_new8((.)t?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDateTimeEdit_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -2253,21 +2155,19 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		this.ptr.SetTimeSpec(spec);
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual QSize_Ptr OnSizeHint()
 	{
-		return this.ptr.SizeHint();
+		return default;
 	}
-	public void Clear()
+	public  virtual void OnClear()
 	{
-		this.ptr.Clear();
 	}
-	public void StepBy(c_int steps)
+	public  virtual void OnStepBy(c_int steps)
 	{
-		this.ptr.StepBy(steps);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
 	public void DateTimeChanged(IQDateTime dateTime)
 	{
@@ -2293,53 +2193,45 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		this.ptr.SetTime(time);
 	}
-	public void KeyPressEvent(IQKeyEvent event)
+	public  virtual void OnKeyPressEvent(void** event)
 	{
-		this.ptr.KeyPressEvent(event);
 	}
-	public void WheelEvent(IQWheelEvent event)
+	public  virtual void OnWheelEvent(void** event)
 	{
-		this.ptr.WheelEvent(event);
 	}
-	public void FocusInEvent(IQFocusEvent event)
+	public  virtual void OnFocusInEvent(void** event)
 	{
-		this.ptr.FocusInEvent(event);
 	}
-	public bool FocusNextPrevChild(bool next)
+	public  virtual bool OnFocusNextPrevChild(bool next)
 	{
-		return this.ptr.FocusNextPrevChild(next);
+		return default;
 	}
-	public QValidator_State Validate(String input, c_int* pos)
+	public  virtual QValidator_State OnValidate(libqt_string input, c_int* pos)
 	{
-		return this.ptr.Validate(input, pos);
+		return default;
 	}
-	public void Fixup(String input)
+	public  virtual void OnFixup(libqt_string input)
 	{
-		this.ptr.Fixup(input);
 	}
-	public QDateTime_Ptr DateTimeFromText(String text)
+	public  virtual QDateTime_Ptr OnDateTimeFromText(libqt_string text)
 	{
-		return this.ptr.DateTimeFromText(text);
+		return default;
 	}
-	public void TextFromDateTime(String outStr, IQDateTime dt)
+	public  virtual void OnTextFromDateTime(String outStr, void** dt)
 	{
-		this.ptr.TextFromDateTime(outStr, dt);
 	}
-	public void* StepEnabled()
+	public  virtual void* OnStepEnabled()
 	{
-		return this.ptr.StepEnabled();
+		return default;
 	}
-	public void MousePressEvent(IQMouseEvent event)
+	public  virtual void OnMousePressEvent(void** event)
 	{
-		this.ptr.MousePressEvent(event);
 	}
-	public void PaintEvent(IQPaintEvent event)
+	public  virtual void OnPaintEvent(void** event)
 	{
-		this.ptr.PaintEvent(event);
 	}
-	public void InitStyleOption(IQStyleOptionSpinBox option)
+	public  virtual void OnInitStyleOption(void** option)
 	{
-		this.ptr.InitStyleOption(option);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -2349,177 +2241,299 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.ButtonSymbols();
+		return default;
 	}
-	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
+	public void ObjectName(String outStr)
 	{
-		this.ptr.SetButtonSymbols(bs);
+		this.ptr.ObjectName(outStr);
 	}
-	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		this.ptr.SetCorrectionMode(cm);
+		this.ptr.SetObjectName(name);
 	}
-	public QAbstractSpinBox_CorrectionMode CorrectionMode()
+	public bool IsWidgetType()
 	{
-		return this.ptr.CorrectionMode();
+		return this.ptr.IsWidgetType();
 	}
-	public bool HasAcceptableInput()
+	public bool IsWindowType()
 	{
-		return this.ptr.HasAcceptableInput();
+		return this.ptr.IsWindowType();
 	}
-	public void Text(String outStr)
+	public bool IsQuickItemType()
 	{
-		this.ptr.Text(outStr);
+		return this.ptr.IsQuickItemType();
 	}
-	public void SpecialValueText(String outStr)
+	public bool SignalsBlocked()
 	{
-		this.ptr.SpecialValueText(outStr);
+		return this.ptr.SignalsBlocked();
 	}
-	public void SetSpecialValueText(String txt)
+	public bool BlockSignals(bool b)
 	{
-		this.ptr.SetSpecialValueText(txt);
+		return this.ptr.BlockSignals(b);
 	}
-	public bool Wrapping()
+	public QThread_Ptr Thread()
 	{
-		return this.ptr.Wrapping();
+		return this.ptr.Thread();
 	}
-	public void SetWrapping(bool w)
+	public void MoveToThread(IQThread thread)
 	{
-		this.ptr.SetWrapping(w);
+		this.ptr.MoveToThread(thread);
 	}
-	public void SetReadOnly(bool r)
+	public c_int StartTimer(c_int interval)
 	{
-		this.ptr.SetReadOnly(r);
+		return this.ptr.StartTimer(interval);
 	}
-	public bool IsReadOnly()
+	public c_int StartTimer2(void* time)
 	{
-		return this.ptr.IsReadOnly();
+		return this.ptr.StartTimer2(time);
 	}
-	public void SetKeyboardTracking(bool kt)
+	public void KillTimer(c_int id)
 	{
-		this.ptr.SetKeyboardTracking(kt);
+		this.ptr.KillTimer(id);
 	}
-	public bool KeyboardTracking()
+	public void** Children()
 	{
-		return this.ptr.KeyboardTracking();
+		return this.ptr.Children();
 	}
-	public void SetAlignment(void* flag)
+	public void SetParent(IQObject parent)
 	{
-		this.ptr.SetAlignment(flag);
+		this.ptr.SetParent(parent);
 	}
-	public void* Alignment()
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		return this.ptr.Alignment();
+		this.ptr.InstallEventFilter(filterObj);
 	}
-	public void SetFrame(bool frame)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		this.ptr.SetFrame(frame);
+		this.ptr.RemoveEventFilter(obj);
 	}
-	public bool HasFrame()
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return this.ptr.HasFrame();
+		return this.ptr.Connect(sender, signal, receiver, member);
 	}
-	public void SetAccelerated(bool on)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		this.ptr.SetAccelerated(on);
+		return this.ptr.Connect2(sender, signal, receiver, method);
 	}
-	public bool IsAccelerated()
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return this.ptr.IsAccelerated();
+		return this.ptr.Connect3(sender, signal, member);
 	}
-	public void SetGroupSeparatorShown(bool shown)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.SetGroupSeparatorShown(shown);
+		return this.ptr.Disconnect(sender, signal, receiver, member);
 	}
-	public bool IsGroupSeparatorShown()
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return this.ptr.IsGroupSeparatorShown();
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
 	}
-	public QSize_Ptr MinimumSizeHint()
+	public bool Disconnect3()
 	{
-		return this.ptr.MinimumSizeHint();
+		return this.ptr.Disconnect3();
 	}
-	public void InterpretText()
+	public bool Disconnect4(IQObject receiver)
 	{
-		this.ptr.InterpretText();
+		return this.ptr.Disconnect4(receiver);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return this.ptr.InputMethodQuery(param1);
+		return this.ptr.Disconnect5(param1);
 	}
-	public void StepUp()
+	public void DumpObjectTree()
 	{
-		this.ptr.StepUp();
+		this.ptr.DumpObjectTree();
 	}
-	public void StepDown()
+	public void DumpObjectInfo()
 	{
-		this.ptr.StepDown();
+		this.ptr.DumpObjectInfo();
 	}
-	public void SelectAll()
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		this.ptr.SelectAll();
+		return this.ptr.SetProperty(name, value);
 	}
-	public void ResizeEvent(IQResizeEvent event)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		this.ptr.ResizeEvent(event);
+		return this.ptr.Property(name);
 	}
-	public void KeyReleaseEvent(IQKeyEvent event)
+	public void* DynamicPropertyNames()
 	{
-		this.ptr.KeyReleaseEvent(event);
+		return this.ptr.DynamicPropertyNames();
 	}
-	public void FocusOutEvent(IQFocusEvent event)
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		this.ptr.FocusOutEvent(event);
+		return this.ptr.BindingStorage();
 	}
-	public void ContextMenuEvent(IQContextMenuEvent event)
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		this.ptr.ContextMenuEvent(event);
+		return this.ptr.BindingStorage2();
 	}
-	public void ChangeEvent(IQEvent event)
+	public void Destroyed()
 	{
-		this.ptr.ChangeEvent(event);
+		this.ptr.Destroyed();
 	}
-	public void CloseEvent(IQCloseEvent event)
+	public QObject_Ptr Parent()
 	{
-		this.ptr.CloseEvent(event);
+		return this.ptr.Parent();
 	}
-	public void HideEvent(IQHideEvent event)
+	public bool Inherits(c_char* classname)
 	{
-		this.ptr.HideEvent(event);
+		return this.ptr.Inherits(classname);
 	}
-	public void MouseReleaseEvent(IQMouseEvent event)
+	public void DeleteLater()
 	{
-		this.ptr.MouseReleaseEvent(event);
+		this.ptr.DeleteLater();
 	}
-	public void MouseMoveEvent(IQMouseEvent event)
+	public QObject_Ptr Sender()
 	{
-		this.ptr.MouseMoveEvent(event);
+		return this.ptr.Sender();
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public c_int SenderSignalIndex()
 	{
-		this.ptr.TimerEvent(event);
+		return this.ptr.SenderSignalIndex();
 	}
-	public void ShowEvent(IQShowEvent event)
+	public c_int Receivers(c_char* signal)
 	{
-		this.ptr.ShowEvent(event);
+		return this.ptr.Receivers(signal);
 	}
-	public QLineEdit_Ptr LineEdit()
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return this.ptr.LineEdit();
+		return this.ptr.IsSignalConnected(signal);
 	}
-	public void SetLineEdit(IQLineEdit edit)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.SetLineEdit(edit);
 	}
-	public void EditingFinished()
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.EditingFinished();
 	}
-	public c_int DevType()
+	public  virtual void OnCustomEvent(void** event)
 	{
-		return this.ptr.DevType();
+	}
+	public  virtual void OnConnectNotify(void** signal)
+	{
+	}
+	public  virtual void OnDisconnectNotify(void** signal)
+	{
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+	public  virtual c_int OnDevType()
+	{
+		return default;
+	}
+	public bool PaintingActive()
+	{
+		return this.ptr.PaintingActive();
+	}
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
+	{
+		return default;
+	}
+	public c_int Width()
+	{
+		return this.ptr.Width();
+	}
+	public c_int Height()
+	{
+		return this.ptr.Height();
+	}
+	public c_int WidthMM()
+	{
+		return this.ptr.WidthMM();
+	}
+	public c_int HeightMM()
+	{
+		return this.ptr.HeightMM();
+	}
+	public c_int LogicalDpiX()
+	{
+		return this.ptr.LogicalDpiX();
+	}
+	public c_int LogicalDpiY()
+	{
+		return this.ptr.LogicalDpiY();
+	}
+	public c_int PhysicalDpiX()
+	{
+		return this.ptr.PhysicalDpiX();
+	}
+	public c_int PhysicalDpiY()
+	{
+		return this.ptr.PhysicalDpiY();
+	}
+	public double DevicePixelRatio()
+	{
+		return this.ptr.DevicePixelRatio();
+	}
+	public double DevicePixelRatioF()
+	{
+		return this.ptr.DevicePixelRatioF();
+	}
+	public c_int ColorCount()
+	{
+		return this.ptr.ColorCount();
+	}
+	public c_int Depth()
+	{
+		return this.ptr.Depth();
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return this.ptr.DevicePixelRatioFScale();
+	}
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return default;
+	}
+	public  virtual void OnInitPainter(void** painter)
+	{
+	}
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
+	{
+		return default;
+	}
+	public  virtual QPainter_Ptr OnSharedPainter()
+	{
+		return default;
 	}
 	public void* WinId()
 	{
@@ -2616,14 +2630,6 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
-	}
-	public c_int Width()
-	{
-		return this.ptr.Width();
-	}
-	public c_int Height()
-	{
-		return this.ptr.Height();
 	}
 	public QRect_Ptr Rect()
 	{
@@ -3189,9 +3195,8 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		this.ptr.Repaint4(param1);
 	}
-	public void SetVisible(bool visible)
+	public  virtual void OnSetVisible(bool visible)
 	{
-		this.ptr.SetVisible(visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -3309,6 +3314,10 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		this.ptr.OverrideWindowState(state);
 	}
+	public  virtual QSize_Ptr OnMinimumSizeHint()
+	{
+		return default;
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return this.ptr.SizePolicy();
@@ -3321,13 +3330,13 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		this.ptr.SetSizePolicy2(horizontal, vertical);
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -3360,10 +3369,6 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	public void UpdateGeometry()
 	{
 		this.ptr.UpdateGeometry();
-	}
-	public void SetParent(IQWidget parent)
-	{
-		this.ptr.SetParent(parent);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -3481,10 +3486,6 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		return this.ptr.TestAttribute(param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
 	public void EnsurePolished()
 	{
 		this.ptr.EnsurePolished();
@@ -3537,69 +3538,76 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		this.ptr.CustomContextMenuRequested(pos);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent event)
+	public  virtual void OnMouseReleaseEvent(void** event)
 	{
-		this.ptr.MouseDoubleClickEvent(event);
 	}
-	public void EnterEvent(IQEnterEvent event)
+	public  virtual void OnMouseDoubleClickEvent(void** event)
 	{
-		this.ptr.EnterEvent(event);
 	}
-	public void LeaveEvent(IQEvent event)
+	public  virtual void OnMouseMoveEvent(void** event)
 	{
-		this.ptr.LeaveEvent(event);
 	}
-	public void MoveEvent(IQMoveEvent event)
+	public  virtual void OnKeyReleaseEvent(void** event)
 	{
-		this.ptr.MoveEvent(event);
 	}
-	public void TabletEvent(IQTabletEvent event)
+	public  virtual void OnFocusOutEvent(void** event)
 	{
-		this.ptr.TabletEvent(event);
 	}
-	public void ActionEvent(IQActionEvent event)
+	public  virtual void OnEnterEvent(void** event)
 	{
-		this.ptr.ActionEvent(event);
 	}
-	public void DragEnterEvent(IQDragEnterEvent event)
+	public  virtual void OnLeaveEvent(void** event)
 	{
-		this.ptr.DragEnterEvent(event);
 	}
-	public void DragMoveEvent(IQDragMoveEvent event)
+	public  virtual void OnMoveEvent(void** event)
 	{
-		this.ptr.DragMoveEvent(event);
 	}
-	public void DragLeaveEvent(IQDragLeaveEvent event)
+	public  virtual void OnResizeEvent(void** event)
 	{
-		this.ptr.DragLeaveEvent(event);
 	}
-	public void DropEvent(IQDropEvent event)
+	public  virtual void OnCloseEvent(void** event)
 	{
-		this.ptr.DropEvent(event);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual void OnContextMenuEvent(void** event)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public  virtual void OnTabletEvent(void** event)
 	{
-		return this.ptr.Metric(param1);
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnActionEvent(void** event)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual void OnDragEnterEvent(void** event)
 	{
-		return this.ptr.Redirected(offset);
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual void OnDragMoveEvent(void** event)
 	{
-		return this.ptr.SharedPainter();
 	}
-	public void InputMethodEvent(IQInputMethodEvent param1)
+	public  virtual void OnDragLeaveEvent(void** event)
 	{
-		this.ptr.InputMethodEvent(param1);
+	}
+	public  virtual void OnDropEvent(void** event)
+	{
+	}
+	public  virtual void OnShowEvent(void** event)
+	{
+	}
+	public  virtual void OnHideEvent(void** event)
+	{
+	}
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
+	{
+		return default;
+	}
+	public  virtual void OnChangeEvent(void** param1)
+	{
+	}
+	public  virtual void OnInputMethodEvent(void** param1)
+	{
+	}
+	public  virtual QVariant_Ptr OnInputMethodQuery(Qt_InputMethodQuery param1)
+	{
+		return default;
 	}
 	public void* InputMethodHints()
 	{
@@ -3713,265 +3721,121 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 	{
 		this.ptr.Destroy2(destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
 	{
-		return this.ptr.EventFilter(watched, event);
+		return this.ptr.ButtonSymbols();
 	}
-	public void ObjectName(String outStr)
+	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
 	{
-		this.ptr.ObjectName(outStr);
+		this.ptr.SetButtonSymbols(bs);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
 	{
-		this.ptr.SetObjectName(name);
+		this.ptr.SetCorrectionMode(cm);
 	}
-	public bool IsWidgetType()
+	public QAbstractSpinBox_CorrectionMode CorrectionMode()
 	{
-		return this.ptr.IsWidgetType();
+		return this.ptr.CorrectionMode();
 	}
-	public bool IsWindowType()
+	public bool HasAcceptableInput()
 	{
-		return this.ptr.IsWindowType();
+		return this.ptr.HasAcceptableInput();
 	}
-	public bool IsQuickItemType()
+	public void Text(String outStr)
 	{
-		return this.ptr.IsQuickItemType();
+		this.ptr.Text(outStr);
 	}
-	public bool SignalsBlocked()
+	public void SpecialValueText(String outStr)
 	{
-		return this.ptr.SignalsBlocked();
+		this.ptr.SpecialValueText(outStr);
 	}
-	public bool BlockSignals(bool b)
+	public void SetSpecialValueText(String txt)
 	{
-		return this.ptr.BlockSignals(b);
+		this.ptr.SetSpecialValueText(txt);
 	}
-	public QThread_Ptr Thread()
+	public bool Wrapping()
 	{
-		return this.ptr.Thread();
+		return this.ptr.Wrapping();
 	}
-	public void MoveToThread(IQThread thread)
+	public void SetWrapping(bool w)
 	{
-		this.ptr.MoveToThread(thread);
+		this.ptr.SetWrapping(w);
 	}
-	public c_int StartTimer(c_int interval)
+	public void SetReadOnly(bool r)
 	{
-		return this.ptr.StartTimer(interval);
+		this.ptr.SetReadOnly(r);
 	}
-	public c_int StartTimer2(void* time)
+	public bool IsReadOnly()
 	{
-		return this.ptr.StartTimer2(time);
+		return this.ptr.IsReadOnly();
 	}
-	public void KillTimer(c_int id)
+	public void SetKeyboardTracking(bool kt)
 	{
-		this.ptr.KillTimer(id);
+		this.ptr.SetKeyboardTracking(kt);
 	}
-	public void** Children()
+	public bool KeyboardTracking()
 	{
-		return this.ptr.Children();
+		return this.ptr.KeyboardTracking();
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void SetAlignment(void* flag)
 	{
-		this.ptr.InstallEventFilter(filterObj);
+		this.ptr.SetAlignment(flag);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public void* Alignment()
 	{
-		this.ptr.RemoveEventFilter(obj);
+		return this.ptr.Alignment();
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetFrame(bool frame)
 	{
-		return this.ptr.Connect(sender, signal, receiver, member);
+		this.ptr.SetFrame(frame);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public bool HasFrame()
 	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
+		return this.ptr.HasFrame();
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetAccelerated(bool on)
 	{
-		return this.ptr.Connect3(sender, signal, member);
+		this.ptr.SetAccelerated(on);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public bool IsAccelerated()
 	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
+		return this.ptr.IsAccelerated();
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void SetGroupSeparatorShown(bool shown)
 	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
+		this.ptr.SetGroupSeparatorShown(shown);
 	}
-	public bool Disconnect3()
+	public bool IsGroupSeparatorShown()
 	{
-		return this.ptr.Disconnect3();
+		return this.ptr.IsGroupSeparatorShown();
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void InterpretText()
 	{
-		return this.ptr.Disconnect4(receiver);
+		this.ptr.InterpretText();
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public void StepUp()
 	{
-		return this.ptr.Disconnect5(param1);
+		this.ptr.StepUp();
 	}
-	public void DumpObjectTree()
+	public void StepDown()
 	{
-		this.ptr.DumpObjectTree();
+		this.ptr.StepDown();
 	}
-	public void DumpObjectInfo()
+	public void SelectAll()
 	{
-		this.ptr.DumpObjectInfo();
+		this.ptr.SelectAll();
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public QLineEdit_Ptr LineEdit()
 	{
-		return this.ptr.SetProperty(name, value);
+		return this.ptr.LineEdit();
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public void SetLineEdit(IQLineEdit edit)
 	{
-		return this.ptr.Property(name);
+		this.ptr.SetLineEdit(edit);
 	}
-	public void* DynamicPropertyNames()
+	public void EditingFinished()
 	{
-		return this.ptr.DynamicPropertyNames();
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return this.ptr.BindingStorage();
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return this.ptr.BindingStorage2();
-	}
-	public void Destroyed()
-	{
-		this.ptr.Destroyed();
-	}
-	public QObject_Ptr Parent()
-	{
-		return this.ptr.Parent();
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return this.ptr.Inherits(classname);
-	}
-	public void DeleteLater()
-	{
-		this.ptr.DeleteLater();
-	}
-	public QObject_Ptr Sender()
-	{
-		return this.ptr.Sender();
-	}
-	public c_int SenderSignalIndex()
-	{
-		return this.ptr.SenderSignalIndex();
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return this.ptr.Receivers(signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return this.ptr.IsSignalConnected(signal);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		this.ptr.ChildEvent(event);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		this.ptr.CustomEvent(event);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.ConnectNotify(signal);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.DisconnectNotify(signal);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer22(interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer23(time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect4(sender, signal, member, type);
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return this.ptr.Disconnect1(signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return this.ptr.Disconnect22(signal, receiver);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect32(signal, receiver, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect23(receiver, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		this.ptr.Destroyed1(param1);
-	}
-	public bool PaintingActive()
-	{
-		return this.ptr.PaintingActive();
-	}
-	public c_int WidthMM()
-	{
-		return this.ptr.WidthMM();
-	}
-	public c_int HeightMM()
-	{
-		return this.ptr.HeightMM();
-	}
-	public c_int LogicalDpiX()
-	{
-		return this.ptr.LogicalDpiX();
-	}
-	public c_int LogicalDpiY()
-	{
-		return this.ptr.LogicalDpiY();
-	}
-	public c_int PhysicalDpiX()
-	{
-		return this.ptr.PhysicalDpiX();
-	}
-	public c_int PhysicalDpiY()
-	{
-		return this.ptr.PhysicalDpiY();
-	}
-	public double DevicePixelRatio()
-	{
-		return this.ptr.DevicePixelRatio();
-	}
-	public double DevicePixelRatioF()
-	{
-		return this.ptr.DevicePixelRatioF();
-	}
-	public c_int ColorCount()
-	{
-		return this.ptr.ColorCount();
-	}
-	public c_int Depth()
-	{
-		return this.ptr.Depth();
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return this.ptr.DevicePixelRatioFScale();
+		this.ptr.EditingFinished();
 	}
 }
 interface IQDateTimeEdit : IQtObjectInterface
@@ -3999,10 +3863,22 @@ extension CQt
 	public static extern void QDateTimeEdit_Delete(QDateTimeEdit_Ptr self);
 	[LinkName("QDateTimeEdit_MetaObject")]
 	public static extern void** QDateTimeEdit_MetaObject(void* self);
+	
+	public function void QDateTimeEdit_OnMetaObject_action(void* self);
+	[LinkName("QDateTimeEdit_OnMetaObject")]
+	public static extern void** QDateTimeEdit_OnMetaObject(void* self, QDateTimeEdit_OnMetaObject_action _action);
 	[LinkName("QDateTimeEdit_Qt_Metacast")]
 	public static extern void* QDateTimeEdit_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QDateTimeEdit_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QDateTimeEdit_OnMetacast")]
+	public static extern void* QDateTimeEdit_OnMetacast(void* self, QDateTimeEdit_OnMetacast_action _action);
 	[LinkName("QDateTimeEdit_Qt_Metacall")]
 	public static extern c_int QDateTimeEdit_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QDateTimeEdit_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QDateTimeEdit_OnMetacall")]
+	public static extern c_int QDateTimeEdit_OnMetacall(void* self, QDateTimeEdit_OnMetacall_action _action);
 	[LinkName("QDateTimeEdit_Tr")]
 	public static extern libqt_string QDateTimeEdit_Tr(c_char* s);
 	[LinkName("QDateTimeEdit_DateTime")]
@@ -4093,30 +3969,46 @@ extension CQt
 	public static extern void QDateTimeEdit_SetTimeSpec(void* self, Qt_TimeSpec spec);
 	[LinkName("QDateTimeEdit_SizeHint")]
 	public static extern void* QDateTimeEdit_SizeHint(void* self);
+	
+	public function void QDateTimeEdit_OnSizeHint_action(void* self);
+	[LinkName("QDateTimeEdit_OnSizeHint")]
+	public static extern void* QDateTimeEdit_OnSizeHint(void* self, QDateTimeEdit_OnSizeHint_action _action);
 	[LinkName("QDateTimeEdit_Clear")]
 	public static extern void QDateTimeEdit_Clear(void* self);
+	
+	public function void QDateTimeEdit_OnClear_action(void* self);
+	[LinkName("QDateTimeEdit_OnClear")]
+	public static extern void QDateTimeEdit_OnClear(void* self, QDateTimeEdit_OnClear_action _action);
 	[LinkName("QDateTimeEdit_StepBy")]
 	public static extern void QDateTimeEdit_StepBy(void* self, c_int steps);
+	
+	public function void QDateTimeEdit_OnStepBy_action(void* self, c_int steps);
+	[LinkName("QDateTimeEdit_OnStepBy")]
+	public static extern void QDateTimeEdit_OnStepBy(void* self, QDateTimeEdit_OnStepBy_action _action);
 	[LinkName("QDateTimeEdit_Event")]
 	public static extern bool QDateTimeEdit_Event(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnEvent")]
+	public static extern bool QDateTimeEdit_OnEvent(void* self, QDateTimeEdit_OnEvent_action _action);
 	[LinkName("QDateTimeEdit_DateTimeChanged")]
 	public static extern void QDateTimeEdit_DateTimeChanged(void* self, void** dateTime);
 	
-	public function void QDateTimeEdit_dateTimeChanged_action(void* self, void** dateTime);
+	public function void QDateTimeEdit_Connect_DateTimeChanged_action(void* self, void** dateTime);
 	[LinkName("QDateTimeEdit_Connect_DateTimeChanged")]
-	public static extern void QDateTimeEdit_Connect_DateTimeChanged(void* self, QDateTimeEdit_dateTimeChanged_action _action);
+	public static extern void QDateTimeEdit_Connect_DateTimeChanged(void* self, QDateTimeEdit_Connect_DateTimeChanged_action _action);
 	[LinkName("QDateTimeEdit_TimeChanged")]
 	public static extern void QDateTimeEdit_TimeChanged(void* self, void* time);
 	
-	public function void QDateTimeEdit_timeChanged_action(void* self, void* time);
+	public function void QDateTimeEdit_Connect_TimeChanged_action(void* self, void* time);
 	[LinkName("QDateTimeEdit_Connect_TimeChanged")]
-	public static extern void QDateTimeEdit_Connect_TimeChanged(void* self, QDateTimeEdit_timeChanged_action _action);
+	public static extern void QDateTimeEdit_Connect_TimeChanged(void* self, QDateTimeEdit_Connect_TimeChanged_action _action);
 	[LinkName("QDateTimeEdit_DateChanged")]
 	public static extern void QDateTimeEdit_DateChanged(void* self, void* date);
 	
-	public function void QDateTimeEdit_dateChanged_action(void* self, void* date);
+	public function void QDateTimeEdit_Connect_DateChanged_action(void* self, void* date);
 	[LinkName("QDateTimeEdit_Connect_DateChanged")]
-	public static extern void QDateTimeEdit_Connect_DateChanged(void* self, QDateTimeEdit_dateChanged_action _action);
+	public static extern void QDateTimeEdit_Connect_DateChanged(void* self, QDateTimeEdit_Connect_DateChanged_action _action);
 	[LinkName("QDateTimeEdit_SetDateTime")]
 	public static extern void QDateTimeEdit_SetDateTime(void* self, void** dateTime);
 	[LinkName("QDateTimeEdit_SetDate")]
@@ -4125,32 +4017,314 @@ extension CQt
 	public static extern void QDateTimeEdit_SetTime(void* self, void* time);
 	[LinkName("QDateTimeEdit_KeyPressEvent")]
 	public static extern void QDateTimeEdit_KeyPressEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnKeyPressEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnKeyPressEvent")]
+	public static extern void QDateTimeEdit_OnKeyPressEvent(void* self, QDateTimeEdit_OnKeyPressEvent_action _action);
 	[LinkName("QDateTimeEdit_WheelEvent")]
 	public static extern void QDateTimeEdit_WheelEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnWheelEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnWheelEvent")]
+	public static extern void QDateTimeEdit_OnWheelEvent(void* self, QDateTimeEdit_OnWheelEvent_action _action);
 	[LinkName("QDateTimeEdit_FocusInEvent")]
 	public static extern void QDateTimeEdit_FocusInEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnFocusInEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnFocusInEvent")]
+	public static extern void QDateTimeEdit_OnFocusInEvent(void* self, QDateTimeEdit_OnFocusInEvent_action _action);
 	[LinkName("QDateTimeEdit_FocusNextPrevChild")]
 	public static extern bool QDateTimeEdit_FocusNextPrevChild(void* self, bool next);
+	
+	public function void QDateTimeEdit_OnFocusNextPrevChild_action(void* self, bool next);
+	[LinkName("QDateTimeEdit_OnFocusNextPrevChild")]
+	public static extern bool QDateTimeEdit_OnFocusNextPrevChild(void* self, QDateTimeEdit_OnFocusNextPrevChild_action _action);
 	[LinkName("QDateTimeEdit_Validate")]
 	public static extern QValidator_State QDateTimeEdit_Validate(void* self, libqt_string input, c_int* pos);
+	
+	public function void QDateTimeEdit_OnValidate_action(void* self, libqt_string input, c_int* pos);
+	[LinkName("QDateTimeEdit_OnValidate")]
+	public static extern QValidator_State QDateTimeEdit_OnValidate(void* self, QDateTimeEdit_OnValidate_action _action);
 	[LinkName("QDateTimeEdit_Fixup")]
 	public static extern void QDateTimeEdit_Fixup(void* self, libqt_string input);
+	
+	public function void QDateTimeEdit_OnFixup_action(void* self, libqt_string input);
+	[LinkName("QDateTimeEdit_OnFixup")]
+	public static extern void QDateTimeEdit_OnFixup(void* self, QDateTimeEdit_OnFixup_action _action);
 	[LinkName("QDateTimeEdit_DateTimeFromText")]
 	public static extern void* QDateTimeEdit_DateTimeFromText(void* self, libqt_string text);
+	
+	public function void QDateTimeEdit_OnDateTimeFromText_action(void* self, libqt_string text);
+	[LinkName("QDateTimeEdit_OnDateTimeFromText")]
+	public static extern void* QDateTimeEdit_OnDateTimeFromText(void* self, QDateTimeEdit_OnDateTimeFromText_action _action);
 	[LinkName("QDateTimeEdit_TextFromDateTime")]
 	public static extern libqt_string QDateTimeEdit_TextFromDateTime(void* self, void** dt);
+	
+	public function void QDateTimeEdit_OnTextFromDateTime_action(void* self, void** dt);
+	[LinkName("QDateTimeEdit_OnTextFromDateTime")]
+	public static extern libqt_string QDateTimeEdit_OnTextFromDateTime(void* self, QDateTimeEdit_OnTextFromDateTime_action _action);
 	[LinkName("QDateTimeEdit_StepEnabled")]
 	public static extern void* QDateTimeEdit_StepEnabled(void* self);
+	
+	public function void QDateTimeEdit_OnStepEnabled_action(void* self);
+	[LinkName("QDateTimeEdit_OnStepEnabled")]
+	public static extern void* QDateTimeEdit_OnStepEnabled(void* self, QDateTimeEdit_OnStepEnabled_action _action);
 	[LinkName("QDateTimeEdit_MousePressEvent")]
 	public static extern void QDateTimeEdit_MousePressEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnMousePressEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnMousePressEvent")]
+	public static extern void QDateTimeEdit_OnMousePressEvent(void* self, QDateTimeEdit_OnMousePressEvent_action _action);
 	[LinkName("QDateTimeEdit_PaintEvent")]
 	public static extern void QDateTimeEdit_PaintEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnPaintEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnPaintEvent")]
+	public static extern void QDateTimeEdit_OnPaintEvent(void* self, QDateTimeEdit_OnPaintEvent_action _action);
 	[LinkName("QDateTimeEdit_InitStyleOption")]
 	public static extern void QDateTimeEdit_InitStyleOption(void* self, void** option);
+	
+	public function void QDateTimeEdit_OnInitStyleOption_action(void* self, void** option);
+	[LinkName("QDateTimeEdit_OnInitStyleOption")]
+	public static extern void QDateTimeEdit_OnInitStyleOption(void* self, QDateTimeEdit_OnInitStyleOption_action _action);
 	[LinkName("QDateTimeEdit_Tr2")]
 	public static extern libqt_string QDateTimeEdit_Tr2(c_char* s, c_char* c);
 	[LinkName("QDateTimeEdit_Tr3")]
 	public static extern libqt_string QDateTimeEdit_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QDateTimeEdit_EventFilter")]
+	public static extern bool QDateTimeEdit_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QDateTimeEdit_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QDateTimeEdit_OnEventFilter")]
+	public static extern bool QDateTimeEdit_OnEventFilter(void* self, QDateTimeEdit_OnEventFilter_action _action);
+	[LinkName("QDateTimeEdit_TimerEvent")]
+	public static extern void QDateTimeEdit_TimerEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnTimerEvent")]
+	public static extern void QDateTimeEdit_OnTimerEvent(void* self, QDateTimeEdit_OnTimerEvent_action _action);
+	[LinkName("QDateTimeEdit_ChildEvent")]
+	public static extern void QDateTimeEdit_ChildEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnChildEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnChildEvent")]
+	public static extern void QDateTimeEdit_OnChildEvent(void* self, QDateTimeEdit_OnChildEvent_action _action);
+	[LinkName("QDateTimeEdit_CustomEvent")]
+	public static extern void QDateTimeEdit_CustomEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnCustomEvent")]
+	public static extern void QDateTimeEdit_OnCustomEvent(void* self, QDateTimeEdit_OnCustomEvent_action _action);
+	[LinkName("QDateTimeEdit_ConnectNotify")]
+	public static extern void QDateTimeEdit_ConnectNotify(void* self, void** signal);
+	
+	public function void QDateTimeEdit_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QDateTimeEdit_OnConnectNotify")]
+	public static extern void QDateTimeEdit_OnConnectNotify(void* self, QDateTimeEdit_OnConnectNotify_action _action);
+	[LinkName("QDateTimeEdit_DisconnectNotify")]
+	public static extern void QDateTimeEdit_DisconnectNotify(void* self, void** signal);
+	
+	public function void QDateTimeEdit_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QDateTimeEdit_OnDisconnectNotify")]
+	public static extern void QDateTimeEdit_OnDisconnectNotify(void* self, QDateTimeEdit_OnDisconnectNotify_action _action);
+	[LinkName("QDateTimeEdit_DevType")]
+	public static extern c_int QDateTimeEdit_DevType(void* self);
+	
+	public function void QDateTimeEdit_OnDevType_action(void* self);
+	[LinkName("QDateTimeEdit_OnDevType")]
+	public static extern c_int QDateTimeEdit_OnDevType(void* self, QDateTimeEdit_OnDevType_action _action);
+	[LinkName("QDateTimeEdit_PaintEngine")]
+	public static extern void** QDateTimeEdit_PaintEngine(void* self);
+	
+	public function void QDateTimeEdit_OnPaintEngine_action(void* self);
+	[LinkName("QDateTimeEdit_OnPaintEngine")]
+	public static extern void** QDateTimeEdit_OnPaintEngine(void* self, QDateTimeEdit_OnPaintEngine_action _action);
+	[LinkName("QDateTimeEdit_Metric")]
+	public static extern c_int QDateTimeEdit_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QDateTimeEdit_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QDateTimeEdit_OnMetric")]
+	public static extern c_int QDateTimeEdit_OnMetric(void* self, QDateTimeEdit_OnMetric_action _action);
+	[LinkName("QDateTimeEdit_InitPainter")]
+	public static extern void QDateTimeEdit_InitPainter(void* self, void** painter);
+	
+	public function void QDateTimeEdit_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QDateTimeEdit_OnInitPainter")]
+	public static extern void QDateTimeEdit_OnInitPainter(void* self, QDateTimeEdit_OnInitPainter_action _action);
+	[LinkName("QDateTimeEdit_Redirected")]
+	public static extern void** QDateTimeEdit_Redirected(void* self, void** offset);
+	
+	public function void QDateTimeEdit_OnRedirected_action(void* self, void** offset);
+	[LinkName("QDateTimeEdit_OnRedirected")]
+	public static extern void** QDateTimeEdit_OnRedirected(void* self, QDateTimeEdit_OnRedirected_action _action);
+	[LinkName("QDateTimeEdit_SharedPainter")]
+	public static extern void** QDateTimeEdit_SharedPainter(void* self);
+	
+	public function void QDateTimeEdit_OnSharedPainter_action(void* self);
+	[LinkName("QDateTimeEdit_OnSharedPainter")]
+	public static extern void** QDateTimeEdit_OnSharedPainter(void* self, QDateTimeEdit_OnSharedPainter_action _action);
+	[LinkName("QDateTimeEdit_SetVisible")]
+	public static extern void QDateTimeEdit_SetVisible(void* self, bool visible);
+	
+	public function void QDateTimeEdit_OnSetVisible_action(void* self, bool visible);
+	[LinkName("QDateTimeEdit_OnSetVisible")]
+	public static extern void QDateTimeEdit_OnSetVisible(void* self, QDateTimeEdit_OnSetVisible_action _action);
+	[LinkName("QDateTimeEdit_MinimumSizeHint")]
+	public static extern void* QDateTimeEdit_MinimumSizeHint(void* self);
+	
+	public function void QDateTimeEdit_OnMinimumSizeHint_action(void* self);
+	[LinkName("QDateTimeEdit_OnMinimumSizeHint")]
+	public static extern void* QDateTimeEdit_OnMinimumSizeHint(void* self, QDateTimeEdit_OnMinimumSizeHint_action _action);
+	[LinkName("QDateTimeEdit_HeightForWidth")]
+	public static extern c_int QDateTimeEdit_HeightForWidth(void* self, c_int param1);
+	
+	public function void QDateTimeEdit_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QDateTimeEdit_OnHeightForWidth")]
+	public static extern c_int QDateTimeEdit_OnHeightForWidth(void* self, QDateTimeEdit_OnHeightForWidth_action _action);
+	[LinkName("QDateTimeEdit_HasHeightForWidth")]
+	public static extern bool QDateTimeEdit_HasHeightForWidth(void* self);
+	
+	public function void QDateTimeEdit_OnHasHeightForWidth_action(void* self);
+	[LinkName("QDateTimeEdit_OnHasHeightForWidth")]
+	public static extern bool QDateTimeEdit_OnHasHeightForWidth(void* self, QDateTimeEdit_OnHasHeightForWidth_action _action);
+	[LinkName("QDateTimeEdit_MouseReleaseEvent")]
+	public static extern void QDateTimeEdit_MouseReleaseEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnMouseReleaseEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnMouseReleaseEvent")]
+	public static extern void QDateTimeEdit_OnMouseReleaseEvent(void* self, QDateTimeEdit_OnMouseReleaseEvent_action _action);
+	[LinkName("QDateTimeEdit_MouseDoubleClickEvent")]
+	public static extern void QDateTimeEdit_MouseDoubleClickEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnMouseDoubleClickEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnMouseDoubleClickEvent")]
+	public static extern void QDateTimeEdit_OnMouseDoubleClickEvent(void* self, QDateTimeEdit_OnMouseDoubleClickEvent_action _action);
+	[LinkName("QDateTimeEdit_MouseMoveEvent")]
+	public static extern void QDateTimeEdit_MouseMoveEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnMouseMoveEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnMouseMoveEvent")]
+	public static extern void QDateTimeEdit_OnMouseMoveEvent(void* self, QDateTimeEdit_OnMouseMoveEvent_action _action);
+	[LinkName("QDateTimeEdit_KeyReleaseEvent")]
+	public static extern void QDateTimeEdit_KeyReleaseEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnKeyReleaseEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnKeyReleaseEvent")]
+	public static extern void QDateTimeEdit_OnKeyReleaseEvent(void* self, QDateTimeEdit_OnKeyReleaseEvent_action _action);
+	[LinkName("QDateTimeEdit_FocusOutEvent")]
+	public static extern void QDateTimeEdit_FocusOutEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnFocusOutEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnFocusOutEvent")]
+	public static extern void QDateTimeEdit_OnFocusOutEvent(void* self, QDateTimeEdit_OnFocusOutEvent_action _action);
+	[LinkName("QDateTimeEdit_EnterEvent")]
+	public static extern void QDateTimeEdit_EnterEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnEnterEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnEnterEvent")]
+	public static extern void QDateTimeEdit_OnEnterEvent(void* self, QDateTimeEdit_OnEnterEvent_action _action);
+	[LinkName("QDateTimeEdit_LeaveEvent")]
+	public static extern void QDateTimeEdit_LeaveEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnLeaveEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnLeaveEvent")]
+	public static extern void QDateTimeEdit_OnLeaveEvent(void* self, QDateTimeEdit_OnLeaveEvent_action _action);
+	[LinkName("QDateTimeEdit_MoveEvent")]
+	public static extern void QDateTimeEdit_MoveEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnMoveEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnMoveEvent")]
+	public static extern void QDateTimeEdit_OnMoveEvent(void* self, QDateTimeEdit_OnMoveEvent_action _action);
+	[LinkName("QDateTimeEdit_ResizeEvent")]
+	public static extern void QDateTimeEdit_ResizeEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnResizeEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnResizeEvent")]
+	public static extern void QDateTimeEdit_OnResizeEvent(void* self, QDateTimeEdit_OnResizeEvent_action _action);
+	[LinkName("QDateTimeEdit_CloseEvent")]
+	public static extern void QDateTimeEdit_CloseEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnCloseEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnCloseEvent")]
+	public static extern void QDateTimeEdit_OnCloseEvent(void* self, QDateTimeEdit_OnCloseEvent_action _action);
+	[LinkName("QDateTimeEdit_ContextMenuEvent")]
+	public static extern void QDateTimeEdit_ContextMenuEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnContextMenuEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnContextMenuEvent")]
+	public static extern void QDateTimeEdit_OnContextMenuEvent(void* self, QDateTimeEdit_OnContextMenuEvent_action _action);
+	[LinkName("QDateTimeEdit_TabletEvent")]
+	public static extern void QDateTimeEdit_TabletEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnTabletEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnTabletEvent")]
+	public static extern void QDateTimeEdit_OnTabletEvent(void* self, QDateTimeEdit_OnTabletEvent_action _action);
+	[LinkName("QDateTimeEdit_ActionEvent")]
+	public static extern void QDateTimeEdit_ActionEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnActionEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnActionEvent")]
+	public static extern void QDateTimeEdit_OnActionEvent(void* self, QDateTimeEdit_OnActionEvent_action _action);
+	[LinkName("QDateTimeEdit_DragEnterEvent")]
+	public static extern void QDateTimeEdit_DragEnterEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnDragEnterEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnDragEnterEvent")]
+	public static extern void QDateTimeEdit_OnDragEnterEvent(void* self, QDateTimeEdit_OnDragEnterEvent_action _action);
+	[LinkName("QDateTimeEdit_DragMoveEvent")]
+	public static extern void QDateTimeEdit_DragMoveEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnDragMoveEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnDragMoveEvent")]
+	public static extern void QDateTimeEdit_OnDragMoveEvent(void* self, QDateTimeEdit_OnDragMoveEvent_action _action);
+	[LinkName("QDateTimeEdit_DragLeaveEvent")]
+	public static extern void QDateTimeEdit_DragLeaveEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnDragLeaveEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnDragLeaveEvent")]
+	public static extern void QDateTimeEdit_OnDragLeaveEvent(void* self, QDateTimeEdit_OnDragLeaveEvent_action _action);
+	[LinkName("QDateTimeEdit_DropEvent")]
+	public static extern void QDateTimeEdit_DropEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnDropEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnDropEvent")]
+	public static extern void QDateTimeEdit_OnDropEvent(void* self, QDateTimeEdit_OnDropEvent_action _action);
+	[LinkName("QDateTimeEdit_ShowEvent")]
+	public static extern void QDateTimeEdit_ShowEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnShowEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnShowEvent")]
+	public static extern void QDateTimeEdit_OnShowEvent(void* self, QDateTimeEdit_OnShowEvent_action _action);
+	[LinkName("QDateTimeEdit_HideEvent")]
+	public static extern void QDateTimeEdit_HideEvent(void* self, void** event);
+	
+	public function void QDateTimeEdit_OnHideEvent_action(void* self, void** event);
+	[LinkName("QDateTimeEdit_OnHideEvent")]
+	public static extern void QDateTimeEdit_OnHideEvent(void* self, QDateTimeEdit_OnHideEvent_action _action);
+	[LinkName("QDateTimeEdit_NativeEvent")]
+	public static extern bool QDateTimeEdit_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QDateTimeEdit_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QDateTimeEdit_OnNativeEvent")]
+	public static extern bool QDateTimeEdit_OnNativeEvent(void* self, QDateTimeEdit_OnNativeEvent_action _action);
+	[LinkName("QDateTimeEdit_ChangeEvent")]
+	public static extern void QDateTimeEdit_ChangeEvent(void* self, void** param1);
+	
+	public function void QDateTimeEdit_OnChangeEvent_action(void* self, void** param1);
+	[LinkName("QDateTimeEdit_OnChangeEvent")]
+	public static extern void QDateTimeEdit_OnChangeEvent(void* self, QDateTimeEdit_OnChangeEvent_action _action);
+	[LinkName("QDateTimeEdit_InputMethodEvent")]
+	public static extern void QDateTimeEdit_InputMethodEvent(void* self, void** param1);
+	
+	public function void QDateTimeEdit_OnInputMethodEvent_action(void* self, void** param1);
+	[LinkName("QDateTimeEdit_OnInputMethodEvent")]
+	public static extern void QDateTimeEdit_OnInputMethodEvent(void* self, QDateTimeEdit_OnInputMethodEvent_action _action);
+	[LinkName("QDateTimeEdit_InputMethodQuery")]
+	public static extern void* QDateTimeEdit_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
+	
+	public function void QDateTimeEdit_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
+	[LinkName("QDateTimeEdit_OnInputMethodQuery")]
+	public static extern void* QDateTimeEdit_OnInputMethodQuery(void* self, QDateTimeEdit_OnInputMethodQuery_action _action);
 }
 // --------------------------------------------------------------
 // QTimeEdit
@@ -4167,11 +4341,11 @@ struct QTimeEdit_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QTimeEdit_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QTimeEdit_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QTimeEdit_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -4191,437 +4365,309 @@ struct QTimeEdit_Ptr
 	{
 		CQt.QTimeEdit_Tr3(s, c, n);
 	}
-	public QDateTime_Ptr DateTime()
-	{
-		return QDateTime_Ptr(CQt.QDateTimeEdit_DateTime((.)this.Ptr));
-	}
-	public QDate_Ptr Date()
-	{
-		return QDate_Ptr(CQt.QDateTimeEdit_Date((.)this.Ptr));
-	}
-	public QTime_Ptr Time()
-	{
-		return QTime_Ptr(CQt.QDateTimeEdit_Time((.)this.Ptr));
-	}
-	public QCalendar_Ptr Calendar()
-	{
-		return QCalendar_Ptr(CQt.QDateTimeEdit_Calendar((.)this.Ptr));
-	}
-	public void SetCalendar(IQCalendar calendar)
-	{
-		CQt.QDateTimeEdit_SetCalendar((.)this.Ptr, (.)calendar?.ObjectPtr);
-	}
-	public QDateTime_Ptr MinimumDateTime()
-	{
-		return QDateTime_Ptr(CQt.QDateTimeEdit_MinimumDateTime((.)this.Ptr));
-	}
-	public void ClearMinimumDateTime()
-	{
-		CQt.QDateTimeEdit_ClearMinimumDateTime((.)this.Ptr);
-	}
-	public void SetMinimumDateTime(IQDateTime dt)
-	{
-		CQt.QDateTimeEdit_SetMinimumDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
-	}
-	public QDateTime_Ptr MaximumDateTime()
-	{
-		return QDateTime_Ptr(CQt.QDateTimeEdit_MaximumDateTime((.)this.Ptr));
-	}
-	public void ClearMaximumDateTime()
-	{
-		CQt.QDateTimeEdit_ClearMaximumDateTime((.)this.Ptr);
-	}
-	public void SetMaximumDateTime(IQDateTime dt)
-	{
-		CQt.QDateTimeEdit_SetMaximumDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
-	}
-	public void SetDateTimeRange(IQDateTime min, IQDateTime max)
-	{
-		CQt.QDateTimeEdit_SetDateTimeRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
-	}
-	public QDate_Ptr MinimumDate()
-	{
-		return QDate_Ptr(CQt.QDateTimeEdit_MinimumDate((.)this.Ptr));
-	}
-	public void SetMinimumDate(IQDate min)
-	{
-		CQt.QDateTimeEdit_SetMinimumDate((.)this.Ptr, (.)min?.ObjectPtr);
-	}
-	public void ClearMinimumDate()
-	{
-		CQt.QDateTimeEdit_ClearMinimumDate((.)this.Ptr);
-	}
-	public QDate_Ptr MaximumDate()
-	{
-		return QDate_Ptr(CQt.QDateTimeEdit_MaximumDate((.)this.Ptr));
-	}
-	public void SetMaximumDate(IQDate max)
-	{
-		CQt.QDateTimeEdit_SetMaximumDate((.)this.Ptr, (.)max?.ObjectPtr);
-	}
-	public void ClearMaximumDate()
-	{
-		CQt.QDateTimeEdit_ClearMaximumDate((.)this.Ptr);
-	}
-	public void SetDateRange(IQDate min, IQDate max)
-	{
-		CQt.QDateTimeEdit_SetDateRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
-	}
-	public QTime_Ptr MinimumTime()
-	{
-		return QTime_Ptr(CQt.QDateTimeEdit_MinimumTime((.)this.Ptr));
-	}
-	public void SetMinimumTime(IQTime min)
-	{
-		CQt.QDateTimeEdit_SetMinimumTime((.)this.Ptr, (.)min?.ObjectPtr);
-	}
-	public void ClearMinimumTime()
-	{
-		CQt.QDateTimeEdit_ClearMinimumTime((.)this.Ptr);
-	}
-	public QTime_Ptr MaximumTime()
-	{
-		return QTime_Ptr(CQt.QDateTimeEdit_MaximumTime((.)this.Ptr));
-	}
-	public void SetMaximumTime(IQTime max)
-	{
-		CQt.QDateTimeEdit_SetMaximumTime((.)this.Ptr, (.)max?.ObjectPtr);
-	}
-	public void ClearMaximumTime()
-	{
-		CQt.QDateTimeEdit_ClearMaximumTime((.)this.Ptr);
-	}
-	public void SetTimeRange(IQTime min, IQTime max)
-	{
-		CQt.QDateTimeEdit_SetTimeRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
-	}
-	public void* DisplayedSections()
-	{
-		return CQt.QDateTimeEdit_DisplayedSections((.)this.Ptr);
-	}
-	public QDateTimeEdit_Section CurrentSection()
-	{
-		return CQt.QDateTimeEdit_CurrentSection((.)this.Ptr);
-	}
-	public QDateTimeEdit_Section SectionAt(c_int index)
-	{
-		return CQt.QDateTimeEdit_SectionAt((.)this.Ptr, index);
-	}
-	public void SetCurrentSection(QDateTimeEdit_Section section)
-	{
-		CQt.QDateTimeEdit_SetCurrentSection((.)this.Ptr, section);
-	}
-	public c_int CurrentSectionIndex()
-	{
-		return CQt.QDateTimeEdit_CurrentSectionIndex((.)this.Ptr);
-	}
-	public void SetCurrentSectionIndex(c_int index)
-	{
-		CQt.QDateTimeEdit_SetCurrentSectionIndex((.)this.Ptr, index);
-	}
-	public QCalendarWidget_Ptr CalendarWidget()
-	{
-		return QCalendarWidget_Ptr(CQt.QDateTimeEdit_CalendarWidget((.)this.Ptr));
-	}
-	public void SetCalendarWidget(IQCalendarWidget calendarWidget)
-	{
-		CQt.QDateTimeEdit_SetCalendarWidget((.)this.Ptr, (.)calendarWidget?.ObjectPtr);
-	}
-	public c_int SectionCount()
-	{
-		return CQt.QDateTimeEdit_SectionCount((.)this.Ptr);
-	}
-	public void SetSelectedSection(QDateTimeEdit_Section section)
-	{
-		CQt.QDateTimeEdit_SetSelectedSection((.)this.Ptr, section);
-	}
-	public void SectionText(String outStr, QDateTimeEdit_Section section)
-	{
-		CQt.QDateTimeEdit_SectionText((.)this.Ptr, section);
-	}
-	public void DisplayFormat(String outStr)
-	{
-		CQt.QDateTimeEdit_DisplayFormat((.)this.Ptr);
-	}
-	public void SetDisplayFormat(String format)
-	{
-		CQt.QDateTimeEdit_SetDisplayFormat((.)this.Ptr, libqt_string(format));
-	}
-	public bool CalendarPopup()
-	{
-		return CQt.QDateTimeEdit_CalendarPopup((.)this.Ptr);
-	}
-	public void SetCalendarPopup(bool enable)
-	{
-		CQt.QDateTimeEdit_SetCalendarPopup((.)this.Ptr, enable);
-	}
-	public Qt_TimeSpec TimeSpec()
-	{
-		return CQt.QDateTimeEdit_TimeSpec((.)this.Ptr);
-	}
-	public void SetTimeSpec(Qt_TimeSpec spec)
-	{
-		CQt.QDateTimeEdit_SetTimeSpec((.)this.Ptr, spec);
-	}
-	public QSize_Ptr SizeHint()
-	{
-		return QSize_Ptr(CQt.QDateTimeEdit_SizeHint((.)this.Ptr));
-	}
-	public void Clear()
-	{
-		CQt.QDateTimeEdit_Clear((.)this.Ptr);
-	}
-	public void StepBy(c_int steps)
-	{
-		CQt.QDateTimeEdit_StepBy((.)this.Ptr, steps);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QDateTimeEdit_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QTimeEdit_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void DateTimeChanged(IQDateTime dateTime)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		CQt.QDateTimeEdit_DateTimeChanged((.)this.Ptr, (.)dateTime?.ObjectPtr);
+		return CQt.QTimeEdit_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public void TimeChanged(IQTime time)
+	public void ObjectName(String outStr)
 	{
-		CQt.QDateTimeEdit_TimeChanged((.)this.Ptr, (.)time?.ObjectPtr);
+		CQt.QObject_ObjectName((.)this.Ptr);
 	}
-	public void DateChanged(IQDate date)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QDateTimeEdit_DateChanged((.)this.Ptr, (.)date?.ObjectPtr);
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
 	}
-	public void SetDateTime(IQDateTime dateTime)
+	public bool IsWidgetType()
 	{
-		CQt.QDateTimeEdit_SetDateTime((.)this.Ptr, (.)dateTime?.ObjectPtr);
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
 	}
-	public void SetDate(IQDate date)
+	public bool IsWindowType()
 	{
-		CQt.QDateTimeEdit_SetDate((.)this.Ptr, (.)date?.ObjectPtr);
+		return CQt.QObject_IsWindowType((.)this.Ptr);
 	}
-	public void SetTime(IQTime time)
+	public bool IsQuickItemType()
 	{
-		CQt.QDateTimeEdit_SetTime((.)this.Ptr, (.)time?.ObjectPtr);
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
 	}
-	public void KeyPressEvent(IQKeyEvent event)
+	public bool SignalsBlocked()
 	{
-		CQt.QDateTimeEdit_KeyPressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
 	}
-	public void WheelEvent(IQWheelEvent event)
+	public bool BlockSignals(bool b)
 	{
-		CQt.QDateTimeEdit_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
 	}
-	public void FocusInEvent(IQFocusEvent event)
+	public QThread_Ptr Thread()
 	{
-		CQt.QDateTimeEdit_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
 	}
-	public bool FocusNextPrevChild(bool next)
+	public void MoveToThread(IQThread thread)
 	{
-		return CQt.QDateTimeEdit_FocusNextPrevChild((.)this.Ptr, next);
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
 	}
-	public QValidator_State Validate(String input, c_int* pos)
+	public c_int StartTimer(c_int interval)
 	{
-		return CQt.QDateTimeEdit_Validate((.)this.Ptr, libqt_string(input), pos);
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
 	}
-	public void Fixup(String input)
+	public c_int StartTimer2(void* time)
 	{
-		CQt.QDateTimeEdit_Fixup((.)this.Ptr, libqt_string(input));
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
 	}
-	public QDateTime_Ptr DateTimeFromText(String text)
+	public void KillTimer(c_int id)
 	{
-		return QDateTime_Ptr(CQt.QDateTimeEdit_DateTimeFromText((.)this.Ptr, libqt_string(text)));
+		CQt.QObject_KillTimer((.)this.Ptr, id);
 	}
-	public void TextFromDateTime(String outStr, IQDateTime dt)
+	public void** Children()
 	{
-		CQt.QDateTimeEdit_TextFromDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
+		return CQt.QObject_Children((.)this.Ptr);
 	}
-	public void* StepEnabled()
+	public void SetParent(IQObject parent)
 	{
-		return CQt.QDateTimeEdit_StepEnabled((.)this.Ptr);
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
-	public void MousePressEvent(IQMouseEvent event)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QDateTimeEdit_MousePressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void PaintEvent(IQPaintEvent event)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QDateTimeEdit_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
 	}
-	public void InitStyleOption(IQStyleOptionSpinBox option)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		CQt.QDateTimeEdit_InitStyleOption((.)this.Ptr, (.)option?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QAbstractSpinBox_ButtonSymbols((.)this.Ptr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		CQt.QAbstractSpinBox_SetButtonSymbols((.)this.Ptr, bs);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
-	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		CQt.QAbstractSpinBox_SetCorrectionMode((.)this.Ptr, cm);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QAbstractSpinBox_CorrectionMode CorrectionMode()
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QAbstractSpinBox_CorrectionMode((.)this.Ptr);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
-	public bool HasAcceptableInput()
+	public bool Disconnect3()
 	{
-		return CQt.QAbstractSpinBox_HasAcceptableInput((.)this.Ptr);
+		return CQt.QObject_Disconnect3((.)this.Ptr);
 	}
-	public void Text(String outStr)
+	public bool Disconnect4(IQObject receiver)
 	{
-		CQt.QAbstractSpinBox_Text((.)this.Ptr);
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
 	}
-	public void SpecialValueText(String outStr)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		CQt.QAbstractSpinBox_SpecialValueText((.)this.Ptr);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
-	public void SetSpecialValueText(String txt)
+	public void DumpObjectTree()
 	{
-		CQt.QAbstractSpinBox_SetSpecialValueText((.)this.Ptr, libqt_string(txt));
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
 	}
-	public bool Wrapping()
+	public void DumpObjectInfo()
 	{
-		return CQt.QAbstractSpinBox_Wrapping((.)this.Ptr);
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
 	}
-	public void SetWrapping(bool w)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		CQt.QAbstractSpinBox_SetWrapping((.)this.Ptr, w);
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
 	}
-	public void SetReadOnly(bool r)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		CQt.QAbstractSpinBox_SetReadOnly((.)this.Ptr, r);
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
 	}
-	public bool IsReadOnly()
+	public void* DynamicPropertyNames()
 	{
-		return CQt.QAbstractSpinBox_IsReadOnly((.)this.Ptr);
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
 	}
-	public void SetKeyboardTracking(bool kt)
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		CQt.QAbstractSpinBox_SetKeyboardTracking((.)this.Ptr, kt);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
 	}
-	public bool KeyboardTracking()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return CQt.QAbstractSpinBox_KeyboardTracking((.)this.Ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
 	}
-	public void SetAlignment(void* flag)
+	public void Destroyed()
 	{
-		CQt.QAbstractSpinBox_SetAlignment((.)this.Ptr, flag);
+		CQt.QObject_Destroyed((.)this.Ptr);
 	}
-	public void* Alignment()
+	public QObject_Ptr Parent()
 	{
-		return CQt.QAbstractSpinBox_Alignment((.)this.Ptr);
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
 	}
-	public void SetFrame(bool frame)
+	public bool Inherits(c_char* classname)
 	{
-		CQt.QAbstractSpinBox_SetFrame((.)this.Ptr, frame);
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
 	}
-	public bool HasFrame()
+	public void DeleteLater()
 	{
-		return CQt.QAbstractSpinBox_HasFrame((.)this.Ptr);
+		CQt.QObject_DeleteLater((.)this.Ptr);
 	}
-	public void SetAccelerated(bool on)
+	public QObject_Ptr Sender()
 	{
-		CQt.QAbstractSpinBox_SetAccelerated((.)this.Ptr, on);
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
 	}
-	public bool IsAccelerated()
+	public c_int SenderSignalIndex()
 	{
-		return CQt.QAbstractSpinBox_IsAccelerated((.)this.Ptr);
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
 	}
-	public void SetGroupSeparatorShown(bool shown)
+	public c_int Receivers(c_char* signal)
 	{
-		CQt.QAbstractSpinBox_SetGroupSeparatorShown((.)this.Ptr, shown);
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
 	}
-	public bool IsGroupSeparatorShown()
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QAbstractSpinBox_IsGroupSeparatorShown((.)this.Ptr);
-	}
-	public QSize_Ptr MinimumSizeHint()
-	{
-		return QSize_Ptr(CQt.QAbstractSpinBox_MinimumSizeHint((.)this.Ptr));
-	}
-	public void InterpretText()
-	{
-		CQt.QAbstractSpinBox_InterpretText((.)this.Ptr);
-	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
-	{
-		return QVariant_Ptr(CQt.QAbstractSpinBox_InputMethodQuery((.)this.Ptr, param1));
-	}
-	public void StepUp()
-	{
-		CQt.QAbstractSpinBox_StepUp((.)this.Ptr);
-	}
-	public void StepDown()
-	{
-		CQt.QAbstractSpinBox_StepDown((.)this.Ptr);
-	}
-	public void SelectAll()
-	{
-		CQt.QAbstractSpinBox_SelectAll((.)this.Ptr);
-	}
-	public void ResizeEvent(IQResizeEvent event)
-	{
-		CQt.QAbstractSpinBox_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void KeyReleaseEvent(IQKeyEvent event)
-	{
-		CQt.QAbstractSpinBox_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void FocusOutEvent(IQFocusEvent event)
-	{
-		CQt.QAbstractSpinBox_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ContextMenuEvent(IQContextMenuEvent event)
-	{
-		CQt.QAbstractSpinBox_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChangeEvent(IQEvent event)
-	{
-		CQt.QAbstractSpinBox_ChangeEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CloseEvent(IQCloseEvent event)
-	{
-		CQt.QAbstractSpinBox_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void HideEvent(IQHideEvent event)
-	{
-		CQt.QAbstractSpinBox_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void MouseReleaseEvent(IQMouseEvent event)
-	{
-		CQt.QAbstractSpinBox_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void MouseMoveEvent(IQMouseEvent event)
-	{
-		CQt.QAbstractSpinBox_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QAbstractSpinBox_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void ShowEvent(IQShowEvent event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QAbstractSpinBox_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public QLineEdit_Ptr LineEdit()
+	public void CustomEvent(IQEvent event)
 	{
-		return QLineEdit_Ptr(CQt.QAbstractSpinBox_LineEdit((.)this.Ptr));
+		CQt.QTimeEdit_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void SetLineEdit(IQLineEdit edit)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QAbstractSpinBox_SetLineEdit((.)this.Ptr, (.)edit?.ObjectPtr);
+		CQt.QTimeEdit_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
-	public void EditingFinished()
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QAbstractSpinBox_EditingFinished((.)this.Ptr);
+		CQt.QTimeEdit_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.Ptr);
+		return CQt.QTimeEdit_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QTimeEdit_PaintEngine((.)this.Ptr));
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QTimeEdit_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QTimeEdit_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QTimeEdit_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QTimeEdit_SharedPainter((.)this.Ptr));
 	}
 	public void* WinId()
 	{
@@ -4718,14 +4764,6 @@ struct QTimeEdit_Ptr
 	public QSize_Ptr Size()
 	{
 		return QSize_Ptr(CQt.QWidget_Size((.)this.Ptr));
-	}
-	public c_int Width()
-	{
-		return CQt.QWidget_Width((.)this.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QWidget_Height((.)this.Ptr);
 	}
 	public QRect_Ptr Rect()
 	{
@@ -5293,7 +5331,7 @@ struct QTimeEdit_Ptr
 	}
 	public void SetVisible(bool visible)
 	{
-		CQt.QWidget_SetVisible((.)this.Ptr, visible);
+		CQt.QTimeEdit_SetVisible((.)this.Ptr, visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -5411,6 +5449,14 @@ struct QTimeEdit_Ptr
 	{
 		CQt.QWidget_OverrideWindowState((.)this.Ptr, state);
 	}
+	public QSize_Ptr SizeHint()
+	{
+		return QSize_Ptr(CQt.QTimeEdit_SizeHint((.)this.Ptr));
+	}
+	public QSize_Ptr MinimumSizeHint()
+	{
+		return QSize_Ptr(CQt.QTimeEdit_MinimumSizeHint((.)this.Ptr));
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return QSizePolicy_Ptr(CQt.QWidget_SizePolicy((.)this.Ptr));
@@ -5425,11 +5471,11 @@ struct QTimeEdit_Ptr
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QTimeEdit_HeightForWidth((.)this.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.Ptr);
+		return CQt.QTimeEdit_HasHeightForWidth((.)this.Ptr);
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -5462,10 +5508,6 @@ struct QTimeEdit_Ptr
 	public void UpdateGeometry()
 	{
 		CQt.QWidget_UpdateGeometry((.)this.Ptr);
-	}
-	public void SetParent(IQWidget parent)
-	{
-		CQt.QWidget_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -5583,10 +5625,6 @@ struct QTimeEdit_Ptr
 	{
 		return CQt.QWidget_TestAttribute((.)this.Ptr, param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.Ptr));
-	}
 	public void EnsurePolished()
 	{
 		CQt.QWidget_EnsurePolished((.)this.Ptr);
@@ -5639,69 +5677,117 @@ struct QTimeEdit_Ptr
 	{
 		CQt.QWidget_CustomContextMenuRequested((.)this.Ptr, (.)pos?.ObjectPtr);
 	}
+	public void MousePressEvent(IQMouseEvent event)
+	{
+		CQt.QTimeEdit_MousePressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void MouseReleaseEvent(IQMouseEvent event)
+	{
+		CQt.QTimeEdit_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
 	public void MouseDoubleClickEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void MouseMoveEvent(IQMouseEvent event)
+	{
+		CQt.QTimeEdit_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void WheelEvent(IQWheelEvent event)
+	{
+		CQt.QTimeEdit_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyPressEvent(IQKeyEvent event)
+	{
+		CQt.QTimeEdit_KeyPressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyReleaseEvent(IQKeyEvent event)
+	{
+		CQt.QTimeEdit_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void FocusInEvent(IQFocusEvent event)
+	{
+		CQt.QTimeEdit_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void FocusOutEvent(IQFocusEvent event)
+	{
+		CQt.QTimeEdit_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void PaintEvent(IQPaintEvent event)
+	{
+		CQt.QTimeEdit_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ResizeEvent(IQResizeEvent event)
+	{
+		CQt.QTimeEdit_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CloseEvent(IQCloseEvent event)
+	{
+		CQt.QTimeEdit_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ContextMenuEvent(IQContextMenuEvent event)
+	{
+		CQt.QTimeEdit_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragEnterEvent(IQDragEnterEvent event)
 	{
-		CQt.QWidget_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragMoveEvent(IQDragMoveEvent event)
 	{
-		CQt.QWidget_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragLeaveEvent(IQDragLeaveEvent event)
 	{
-		CQt.QWidget_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DropEvent(IQDropEvent event)
 	{
-		CQt.QWidget_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTimeEdit_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ShowEvent(IQShowEvent event)
+	{
+		CQt.QTimeEdit_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void HideEvent(IQHideEvent event)
+	{
+		CQt.QTimeEdit_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.Ptr, eventType, message, result);
+		return CQt.QTimeEdit_NativeEvent((.)this.Ptr, eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public void ChangeEvent(IQEvent param1)
 	{
-		return CQt.QWidget_Metric((.)this.Ptr, param1);
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		CQt.QWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.Ptr));
+		CQt.QTimeEdit_ChangeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void InputMethodEvent(IQInputMethodEvent param1)
 	{
-		CQt.QWidget_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QTimeEdit_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
+	{
+		return QVariant_Ptr(CQt.QTimeEdit_InputMethodQuery((.)this.Ptr, param1));
 	}
 	public void* InputMethodHints()
 	{
@@ -5722,6 +5808,10 @@ struct QTimeEdit_Ptr
 	public void Destroy()
 	{
 		CQt.QWidget_Destroy((.)this.Ptr);
+	}
+	public bool FocusNextPrevChild(bool next)
+	{
+		return CQt.QTimeEdit_FocusNextPrevChild((.)this.Ptr, next);
 	}
 	public bool FocusNextChild()
 	{
@@ -5815,408 +5905,390 @@ struct QTimeEdit_Ptr
 	{
 		CQt.QWidget_Destroy2((.)this.Ptr, destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QAbstractSpinBox_ButtonSymbols((.)this.Ptr);
 	}
-	public void ObjectName(String outStr)
+	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
 	{
-		CQt.QObject_ObjectName((.)this.Ptr);
+		CQt.QAbstractSpinBox_SetButtonSymbols((.)this.Ptr, bs);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
 	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetCorrectionMode((.)this.Ptr, cm);
 	}
-	public bool IsWidgetType()
+	public QAbstractSpinBox_CorrectionMode CorrectionMode()
 	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
+		return CQt.QAbstractSpinBox_CorrectionMode((.)this.Ptr);
 	}
-	public bool IsWindowType()
+	public bool HasAcceptableInput()
 	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
+		return CQt.QAbstractSpinBox_HasAcceptableInput((.)this.Ptr);
 	}
-	public bool IsQuickItemType()
+	public void Text(String outStr)
 	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+		CQt.QAbstractSpinBox_Text((.)this.Ptr);
 	}
-	public bool SignalsBlocked()
+	public void SpecialValueText(String outStr)
 	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+		CQt.QAbstractSpinBox_SpecialValueText((.)this.Ptr);
 	}
-	public bool BlockSignals(bool b)
+	public void SetSpecialValueText(String txt)
 	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+		CQt.QAbstractSpinBox_SetSpecialValueText((.)this.Ptr, libqt_string(txt));
 	}
-	public QThread_Ptr Thread()
+	public bool Wrapping()
 	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+		return CQt.QAbstractSpinBox_Wrapping((.)this.Ptr);
 	}
-	public void MoveToThread(IQThread thread)
+	public void SetWrapping(bool w)
 	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetWrapping((.)this.Ptr, w);
 	}
-	public c_int StartTimer(c_int interval)
+	public void SetReadOnly(bool r)
 	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+		CQt.QAbstractSpinBox_SetReadOnly((.)this.Ptr, r);
 	}
-	public c_int StartTimer2(void* time)
+	public bool IsReadOnly()
 	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+		return CQt.QAbstractSpinBox_IsReadOnly((.)this.Ptr);
 	}
-	public void KillTimer(c_int id)
+	public void SetKeyboardTracking(bool kt)
 	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
+		CQt.QAbstractSpinBox_SetKeyboardTracking((.)this.Ptr, kt);
 	}
-	public void** Children()
+	public bool KeyboardTracking()
 	{
-		return CQt.QObject_Children((.)this.Ptr);
+		return CQt.QAbstractSpinBox_KeyboardTracking((.)this.Ptr);
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void SetAlignment(void* flag)
 	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetAlignment((.)this.Ptr, flag);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public void* Alignment()
 	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+		return CQt.QAbstractSpinBox_Alignment((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetFrame(bool frame)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+		CQt.QAbstractSpinBox_SetFrame((.)this.Ptr, frame);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public bool HasFrame()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+		return CQt.QAbstractSpinBox_HasFrame((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetAccelerated(bool on)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+		CQt.QAbstractSpinBox_SetAccelerated((.)this.Ptr, on);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public bool IsAccelerated()
 	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+		return CQt.QAbstractSpinBox_IsAccelerated((.)this.Ptr);
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void SetGroupSeparatorShown(bool shown)
 	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetGroupSeparatorShown((.)this.Ptr, shown);
 	}
-	public bool Disconnect3()
+	public bool IsGroupSeparatorShown()
 	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
+		return CQt.QAbstractSpinBox_IsGroupSeparatorShown((.)this.Ptr);
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void InterpretText()
 	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+		CQt.QAbstractSpinBox_InterpretText((.)this.Ptr);
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public QValidator_State Validate(String input, c_int* pos)
 	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+		return CQt.QTimeEdit_Validate((.)this.Ptr, libqt_string(input), pos);
 	}
-	public void DumpObjectTree()
+	public void Fixup(String input)
 	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
+		CQt.QTimeEdit_Fixup((.)this.Ptr, libqt_string(input));
 	}
-	public void DumpObjectInfo()
+	public void StepBy(c_int steps)
 	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+		CQt.QTimeEdit_StepBy((.)this.Ptr, steps);
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public void StepUp()
 	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+		CQt.QAbstractSpinBox_StepUp((.)this.Ptr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public void StepDown()
 	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+		CQt.QAbstractSpinBox_StepDown((.)this.Ptr);
 	}
-	public void* DynamicPropertyNames()
+	public void SelectAll()
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+		CQt.QAbstractSpinBox_SelectAll((.)this.Ptr);
 	}
-	public QBindingStorage_Ptr BindingStorage()
+	public void Clear()
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+		CQt.QTimeEdit_Clear((.)this.Ptr);
 	}
-	public QBindingStorage_Ptr BindingStorage2()
+	public void InitStyleOption(IQStyleOptionSpinBox option)
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+		CQt.QTimeEdit_InitStyleOption((.)this.Ptr, (.)option?.ObjectPtr);
 	}
-	public void Destroyed()
+	public QLineEdit_Ptr LineEdit()
 	{
-		CQt.QObject_Destroyed((.)this.Ptr);
+		return QLineEdit_Ptr(CQt.QAbstractSpinBox_LineEdit((.)this.Ptr));
 	}
-	public QObject_Ptr Parent()
+	public void SetLineEdit(IQLineEdit edit)
 	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+		CQt.QAbstractSpinBox_SetLineEdit((.)this.Ptr, (.)edit?.ObjectPtr);
 	}
-	public bool Inherits(c_char* classname)
+	public void* StepEnabled()
 	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
+		return CQt.QTimeEdit_StepEnabled((.)this.Ptr);
 	}
-	public void DeleteLater()
+	public void EditingFinished()
 	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
+		CQt.QAbstractSpinBox_EditingFinished((.)this.Ptr);
 	}
-	public QObject_Ptr Sender()
+	public QDateTime_Ptr DateTime()
 	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+		return QDateTime_Ptr(CQt.QDateTimeEdit_DateTime((.)this.Ptr));
 	}
-	public c_int SenderSignalIndex()
+	public QDate_Ptr Date()
 	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+		return QDate_Ptr(CQt.QDateTimeEdit_Date((.)this.Ptr));
 	}
-	public c_int Receivers(c_char* signal)
+	public QTime_Ptr Time()
 	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
+		return QTime_Ptr(CQt.QDateTimeEdit_Time((.)this.Ptr));
 	}
-	public bool IsSignalConnected(IQMetaMethod signal)
+	public QCalendar_Ptr Calendar()
 	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+		return QCalendar_Ptr(CQt.QDateTimeEdit_Calendar((.)this.Ptr));
 	}
-	public void ChildEvent(IQChildEvent event)
+	public void SetCalendar(IQCalendar calendar)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_SetCalendar((.)this.Ptr, (.)calendar?.ObjectPtr);
 	}
-	public void CustomEvent(IQEvent event)
+	public QDateTime_Ptr MinimumDateTime()
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QDateTime_Ptr(CQt.QDateTimeEdit_MinimumDateTime((.)this.Ptr));
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public void ClearMinimumDateTime()
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QDateTimeEdit_ClearMinimumDateTime((.)this.Ptr);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public void SetMinimumDateTime(IQDateTime dt)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QDateTimeEdit_SetMinimumDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
 	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	public QDateTime_Ptr MaximumDateTime()
 	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+		return QDateTime_Ptr(CQt.QDateTimeEdit_MaximumDateTime((.)this.Ptr));
 	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	public void ClearMaximumDateTime()
 	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+		CQt.QDateTimeEdit_ClearMaximumDateTime((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public void SetMaximumDateTime(IQDateTime dt)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+		CQt.QDateTimeEdit_SetMaximumDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
 	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public void SetDateTimeRange(IQDateTime min, IQDateTime max)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+		CQt.QDateTimeEdit_SetDateTimeRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
 	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QDate_Ptr MinimumDate()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+		return QDate_Ptr(CQt.QDateTimeEdit_MinimumDate((.)this.Ptr));
 	}
-	public bool Disconnect1(c_char* signal)
+	public void SetMinimumDate(IQDate min)
 	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+		CQt.QDateTimeEdit_SetMinimumDate((.)this.Ptr, (.)min?.ObjectPtr);
 	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
+	public void ClearMinimumDate()
 	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+		CQt.QDateTimeEdit_ClearMinimumDate((.)this.Ptr);
 	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	public QDate_Ptr MaximumDate()
 	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+		return QDate_Ptr(CQt.QDateTimeEdit_MaximumDate((.)this.Ptr));
 	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
+	public void SetMaximumDate(IQDate max)
 	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+		CQt.QDateTimeEdit_SetMaximumDate((.)this.Ptr, (.)max?.ObjectPtr);
 	}
-	public void Destroyed1(IQObject param1)
+	public void ClearMaximumDate()
 	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QDateTimeEdit_ClearMaximumDate((.)this.Ptr);
 	}
-	public bool PaintingActive()
+	public void SetDateRange(IQDate min, IQDate max)
 	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+		CQt.QDateTimeEdit_SetDateRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
 	}
-	public c_int WidthMM()
+	public QTime_Ptr MinimumTime()
 	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+		return QTime_Ptr(CQt.QDateTimeEdit_MinimumTime((.)this.Ptr));
 	}
-	public c_int HeightMM()
+	public void SetMinimumTime(IQTime min)
 	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+		CQt.QDateTimeEdit_SetMinimumTime((.)this.Ptr, (.)min?.ObjectPtr);
 	}
-	public c_int LogicalDpiX()
+	public void ClearMinimumTime()
 	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+		CQt.QDateTimeEdit_ClearMinimumTime((.)this.Ptr);
 	}
-	public c_int LogicalDpiY()
+	public QTime_Ptr MaximumTime()
 	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+		return QTime_Ptr(CQt.QDateTimeEdit_MaximumTime((.)this.Ptr));
 	}
-	public c_int PhysicalDpiX()
+	public void SetMaximumTime(IQTime max)
 	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+		CQt.QDateTimeEdit_SetMaximumTime((.)this.Ptr, (.)max?.ObjectPtr);
 	}
-	public c_int PhysicalDpiY()
+	public void ClearMaximumTime()
 	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+		CQt.QDateTimeEdit_ClearMaximumTime((.)this.Ptr);
 	}
-	public double DevicePixelRatio()
+	public void SetTimeRange(IQTime min, IQTime max)
 	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+		CQt.QDateTimeEdit_SetTimeRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
 	}
-	public double DevicePixelRatioF()
+	public void* DisplayedSections()
 	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+		return CQt.QDateTimeEdit_DisplayedSections((.)this.Ptr);
 	}
-	public c_int ColorCount()
+	public QDateTimeEdit_Section CurrentSection()
 	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+		return CQt.QDateTimeEdit_CurrentSection((.)this.Ptr);
 	}
-	public c_int Depth()
+	public QDateTimeEdit_Section SectionAt(c_int index)
 	{
-		return CQt.QPaintDevice_Depth((.)this.Ptr);
+		return CQt.QDateTimeEdit_SectionAt((.)this.Ptr, index);
 	}
-	public double DevicePixelRatioFScale()
+	public void SetCurrentSection(QDateTimeEdit_Section section)
 	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
+		CQt.QDateTimeEdit_SetCurrentSection((.)this.Ptr, section);
+	}
+	public c_int CurrentSectionIndex()
+	{
+		return CQt.QDateTimeEdit_CurrentSectionIndex((.)this.Ptr);
+	}
+	public void SetCurrentSectionIndex(c_int index)
+	{
+		CQt.QDateTimeEdit_SetCurrentSectionIndex((.)this.Ptr, index);
+	}
+	public QCalendarWidget_Ptr CalendarWidget()
+	{
+		return QCalendarWidget_Ptr(CQt.QDateTimeEdit_CalendarWidget((.)this.Ptr));
+	}
+	public void SetCalendarWidget(IQCalendarWidget calendarWidget)
+	{
+		CQt.QDateTimeEdit_SetCalendarWidget((.)this.Ptr, (.)calendarWidget?.ObjectPtr);
+	}
+	public c_int SectionCount()
+	{
+		return CQt.QDateTimeEdit_SectionCount((.)this.Ptr);
+	}
+	public void SetSelectedSection(QDateTimeEdit_Section section)
+	{
+		CQt.QDateTimeEdit_SetSelectedSection((.)this.Ptr, section);
+	}
+	public void SectionText(String outStr, QDateTimeEdit_Section section)
+	{
+		CQt.QDateTimeEdit_SectionText((.)this.Ptr, section);
+	}
+	public void DisplayFormat(String outStr)
+	{
+		CQt.QDateTimeEdit_DisplayFormat((.)this.Ptr);
+	}
+	public void SetDisplayFormat(String format)
+	{
+		CQt.QDateTimeEdit_SetDisplayFormat((.)this.Ptr, libqt_string(format));
+	}
+	public bool CalendarPopup()
+	{
+		return CQt.QDateTimeEdit_CalendarPopup((.)this.Ptr);
+	}
+	public void SetCalendarPopup(bool enable)
+	{
+		CQt.QDateTimeEdit_SetCalendarPopup((.)this.Ptr, enable);
+	}
+	public Qt_TimeSpec TimeSpec()
+	{
+		return CQt.QDateTimeEdit_TimeSpec((.)this.Ptr);
+	}
+	public void SetTimeSpec(Qt_TimeSpec spec)
+	{
+		CQt.QDateTimeEdit_SetTimeSpec((.)this.Ptr, spec);
+	}
+	public void DateTimeChanged(IQDateTime dateTime)
+	{
+		CQt.QDateTimeEdit_DateTimeChanged((.)this.Ptr, (.)dateTime?.ObjectPtr);
+	}
+	public void TimeChanged(IQTime time)
+	{
+		CQt.QDateTimeEdit_TimeChanged((.)this.Ptr, (.)time?.ObjectPtr);
+	}
+	public void DateChanged(IQDate date)
+	{
+		CQt.QDateTimeEdit_DateChanged((.)this.Ptr, (.)date?.ObjectPtr);
+	}
+	public void SetDateTime(IQDateTime dateTime)
+	{
+		CQt.QDateTimeEdit_SetDateTime((.)this.Ptr, (.)dateTime?.ObjectPtr);
+	}
+	public void SetDate(IQDate date)
+	{
+		CQt.QDateTimeEdit_SetDate((.)this.Ptr, (.)date?.ObjectPtr);
+	}
+	public void SetTime(IQTime time)
+	{
+		CQt.QDateTimeEdit_SetTime((.)this.Ptr, (.)time?.ObjectPtr);
+	}
+	public QDateTime_Ptr DateTimeFromText(String text)
+	{
+		return QDateTime_Ptr(CQt.QTimeEdit_DateTimeFromText((.)this.Ptr, libqt_string(text)));
+	}
+	public void TextFromDateTime(String outStr, IQDateTime dt)
+	{
+		CQt.QTimeEdit_TextFromDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
 	}
 }
 class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQPaintDevice
 {
 	private QTimeEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QTimeEdit_userTimeChanged,
-		QTimeEdit_dateTimeChanged,
-		QTimeEdit_timeChanged,
-		QTimeEdit_dateChanged,
-		QTimeEdit_editingFinished,
-		QTimeEdit_windowTitleChanged,
-		QTimeEdit_windowIconChanged,
-		QTimeEdit_windowIconTextChanged,
-		QTimeEdit_customContextMenuRequested,
-		QTimeEdit_destroyed,
-		QTimeEdit_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QTimeEdit_Connect_UserTimeChanged(obj.ObjectPtr,  => QtBeef_QTimeEdit_userTimeChanged);
-		CQt.QDateTimeEdit_Connect_DateTimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_dateTimeChanged);
-		CQt.QDateTimeEdit_Connect_TimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_timeChanged);
-		CQt.QDateTimeEdit_Connect_DateChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_dateChanged);
-		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_editingFinished);
-		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
-		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
-		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
-		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void* time)> OnUserTimeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** dateTime)> OnDateTimeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void* time)> OnTimeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void* date)> OnDateChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QTimeEdit_userTimeChanged(void* ptr, void* time)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnUserTimeChanged.Invoke(time);
-	}
-	static void QtBeef_QDateTimeEdit_dateTimeChanged(void* ptr, void** dateTime)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDateTimeChanged.Invoke(dateTime);
-	}
-	static void QtBeef_QDateTimeEdit_timeChanged(void* ptr, void* time)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTimeChanged.Invoke(time);
-	}
-	static void QtBeef_QDateTimeEdit_dateChanged(void* ptr, void* date)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDateChanged.Invoke(date);
-	}
-	static void QtBeef_QAbstractSpinBox_editingFinished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEditingFinished.Invoke();
-	}
-	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconChanged.Invoke(icon);
-	}
-	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconTextChanged.Invoke(iconText);
-	}
-	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCustomContextMenuRequested.Invoke(pos);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QTimeEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QTimeEdit_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTimeEdit_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime time)
 	{
 		this.ptr = CQt.QTimeEdit_new3((.)time?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime time, IQWidget parent)
 	{
 		this.ptr = CQt.QTimeEdit_new4((.)time?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTimeEdit_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -6234,437 +6306,303 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QDateTime_Ptr DateTime()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.DateTime();
+		return default;
 	}
-	public QDate_Ptr Date()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Date();
+		return default;
 	}
-	public QTime_Ptr Time()
+	public void ObjectName(String outStr)
 	{
-		return this.ptr.Time();
+		this.ptr.ObjectName(outStr);
 	}
-	public QCalendar_Ptr Calendar()
+	public void SetObjectName(IQAnyStringView name)
 	{
-		return this.ptr.Calendar();
+		this.ptr.SetObjectName(name);
 	}
-	public void SetCalendar(IQCalendar calendar)
+	public bool IsWidgetType()
 	{
-		this.ptr.SetCalendar(calendar);
+		return this.ptr.IsWidgetType();
 	}
-	public QDateTime_Ptr MinimumDateTime()
+	public bool IsWindowType()
 	{
-		return this.ptr.MinimumDateTime();
+		return this.ptr.IsWindowType();
 	}
-	public void ClearMinimumDateTime()
+	public bool IsQuickItemType()
 	{
-		this.ptr.ClearMinimumDateTime();
+		return this.ptr.IsQuickItemType();
 	}
-	public void SetMinimumDateTime(IQDateTime dt)
+	public bool SignalsBlocked()
 	{
-		this.ptr.SetMinimumDateTime(dt);
+		return this.ptr.SignalsBlocked();
 	}
-	public QDateTime_Ptr MaximumDateTime()
+	public bool BlockSignals(bool b)
 	{
-		return this.ptr.MaximumDateTime();
+		return this.ptr.BlockSignals(b);
 	}
-	public void ClearMaximumDateTime()
+	public QThread_Ptr Thread()
 	{
-		this.ptr.ClearMaximumDateTime();
+		return this.ptr.Thread();
 	}
-	public void SetMaximumDateTime(IQDateTime dt)
+	public void MoveToThread(IQThread thread)
 	{
-		this.ptr.SetMaximumDateTime(dt);
+		this.ptr.MoveToThread(thread);
 	}
-	public void SetDateTimeRange(IQDateTime min, IQDateTime max)
+	public c_int StartTimer(c_int interval)
 	{
-		this.ptr.SetDateTimeRange(min, max);
+		return this.ptr.StartTimer(interval);
 	}
-	public QDate_Ptr MinimumDate()
+	public c_int StartTimer2(void* time)
 	{
-		return this.ptr.MinimumDate();
+		return this.ptr.StartTimer2(time);
 	}
-	public void SetMinimumDate(IQDate min)
+	public void KillTimer(c_int id)
 	{
-		this.ptr.SetMinimumDate(min);
+		this.ptr.KillTimer(id);
 	}
-	public void ClearMinimumDate()
+	public void** Children()
 	{
-		this.ptr.ClearMinimumDate();
+		return this.ptr.Children();
 	}
-	public QDate_Ptr MaximumDate()
+	public void SetParent(IQObject parent)
 	{
-		return this.ptr.MaximumDate();
+		this.ptr.SetParent(parent);
 	}
-	public void SetMaximumDate(IQDate max)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		this.ptr.SetMaximumDate(max);
+		this.ptr.InstallEventFilter(filterObj);
 	}
-	public void ClearMaximumDate()
+	public void RemoveEventFilter(IQObject obj)
 	{
-		this.ptr.ClearMaximumDate();
+		this.ptr.RemoveEventFilter(obj);
 	}
-	public void SetDateRange(IQDate min, IQDate max)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.SetDateRange(min, max);
+		return this.ptr.Connect(sender, signal, receiver, member);
 	}
-	public QTime_Ptr MinimumTime()
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return this.ptr.MinimumTime();
+		return this.ptr.Connect2(sender, signal, receiver, method);
 	}
-	public void SetMinimumTime(IQTime min)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		this.ptr.SetMinimumTime(min);
+		return this.ptr.Connect3(sender, signal, member);
 	}
-	public void ClearMinimumTime()
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.ClearMinimumTime();
+		return this.ptr.Disconnect(sender, signal, receiver, member);
 	}
-	public QTime_Ptr MaximumTime()
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return this.ptr.MaximumTime();
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
 	}
-	public void SetMaximumTime(IQTime max)
+	public bool Disconnect3()
 	{
-		this.ptr.SetMaximumTime(max);
+		return this.ptr.Disconnect3();
 	}
-	public void ClearMaximumTime()
+	public bool Disconnect4(IQObject receiver)
 	{
-		this.ptr.ClearMaximumTime();
+		return this.ptr.Disconnect4(receiver);
 	}
-	public void SetTimeRange(IQTime min, IQTime max)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		this.ptr.SetTimeRange(min, max);
+		return this.ptr.Disconnect5(param1);
 	}
-	public void* DisplayedSections()
+	public void DumpObjectTree()
 	{
-		return this.ptr.DisplayedSections();
+		this.ptr.DumpObjectTree();
 	}
-	public QDateTimeEdit_Section CurrentSection()
+	public void DumpObjectInfo()
 	{
-		return this.ptr.CurrentSection();
+		this.ptr.DumpObjectInfo();
 	}
-	public QDateTimeEdit_Section SectionAt(c_int index)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return this.ptr.SectionAt(index);
+		return this.ptr.SetProperty(name, value);
 	}
-	public void SetCurrentSection(QDateTimeEdit_Section section)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		this.ptr.SetCurrentSection(section);
+		return this.ptr.Property(name);
 	}
-	public c_int CurrentSectionIndex()
+	public void* DynamicPropertyNames()
 	{
-		return this.ptr.CurrentSectionIndex();
+		return this.ptr.DynamicPropertyNames();
 	}
-	public void SetCurrentSectionIndex(c_int index)
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		this.ptr.SetCurrentSectionIndex(index);
+		return this.ptr.BindingStorage();
 	}
-	public QCalendarWidget_Ptr CalendarWidget()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return this.ptr.CalendarWidget();
+		return this.ptr.BindingStorage2();
 	}
-	public void SetCalendarWidget(IQCalendarWidget calendarWidget)
+	public void Destroyed()
 	{
-		this.ptr.SetCalendarWidget(calendarWidget);
+		this.ptr.Destroyed();
 	}
-	public c_int SectionCount()
+	public QObject_Ptr Parent()
 	{
-		return this.ptr.SectionCount();
+		return this.ptr.Parent();
 	}
-	public void SetSelectedSection(QDateTimeEdit_Section section)
+	public bool Inherits(c_char* classname)
 	{
-		this.ptr.SetSelectedSection(section);
+		return this.ptr.Inherits(classname);
 	}
-	public void SectionText(String outStr, QDateTimeEdit_Section section)
+	public void DeleteLater()
 	{
-		this.ptr.SectionText(outStr, section);
+		this.ptr.DeleteLater();
 	}
-	public void DisplayFormat(String outStr)
+	public QObject_Ptr Sender()
 	{
-		this.ptr.DisplayFormat(outStr);
+		return this.ptr.Sender();
 	}
-	public void SetDisplayFormat(String format)
+	public c_int SenderSignalIndex()
 	{
-		this.ptr.SetDisplayFormat(format);
+		return this.ptr.SenderSignalIndex();
 	}
-	public bool CalendarPopup()
+	public c_int Receivers(c_char* signal)
 	{
-		return this.ptr.CalendarPopup();
+		return this.ptr.Receivers(signal);
 	}
-	public void SetCalendarPopup(bool enable)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		this.ptr.SetCalendarPopup(enable);
+		return this.ptr.IsSignalConnected(signal);
 	}
-	public Qt_TimeSpec TimeSpec()
+	public  virtual void OnTimerEvent(void** event)
 	{
-		return this.ptr.TimeSpec();
 	}
-	public void SetTimeSpec(Qt_TimeSpec spec)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.SetTimeSpec(spec);
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual void OnCustomEvent(void** event)
 	{
-		return this.ptr.SizeHint();
 	}
-	public void Clear()
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.Clear();
 	}
-	public void StepBy(c_int steps)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.StepBy(steps);
 	}
-	public bool Event(IQEvent event)
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		return this.ptr.Event(event);
+		return this.ptr.StartTimer22(interval, timerType);
 	}
-	public void DateTimeChanged(IQDateTime dateTime)
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		this.ptr.DateTimeChanged(dateTime);
+		return this.ptr.StartTimer23(time, timerType);
 	}
-	public void TimeChanged(IQTime time)
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		this.ptr.TimeChanged(time);
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
 	}
-	public void DateChanged(IQDate date)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		this.ptr.DateChanged(date);
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
 	}
-	public void SetDateTime(IQDateTime dateTime)
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		this.ptr.SetDateTime(dateTime);
+		return this.ptr.Connect4(sender, signal, member, type);
 	}
-	public void SetDate(IQDate date)
+	public bool Disconnect1(c_char* signal)
 	{
-		this.ptr.SetDate(date);
+		return this.ptr.Disconnect1(signal);
 	}
-	public void SetTime(IQTime time)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		this.ptr.SetTime(time);
+		return this.ptr.Disconnect22(signal, receiver);
 	}
-	public void KeyPressEvent(IQKeyEvent event)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.KeyPressEvent(event);
+		return this.ptr.Disconnect32(signal, receiver, member);
 	}
-	public void WheelEvent(IQWheelEvent event)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		this.ptr.WheelEvent(event);
+		return this.ptr.Disconnect23(receiver, member);
 	}
-	public void FocusInEvent(IQFocusEvent event)
+	public void Destroyed1(IQObject param1)
 	{
-		this.ptr.FocusInEvent(event);
+		this.ptr.Destroyed1(param1);
 	}
-	public bool FocusNextPrevChild(bool next)
+	public  virtual c_int OnDevType()
 	{
-		return this.ptr.FocusNextPrevChild(next);
+		return default;
 	}
-	public QValidator_State Validate(String input, c_int* pos)
+	public bool PaintingActive()
 	{
-		return this.ptr.Validate(input, pos);
+		return this.ptr.PaintingActive();
 	}
-	public void Fixup(String input)
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
 	{
-		this.ptr.Fixup(input);
+		return default;
 	}
-	public QDateTime_Ptr DateTimeFromText(String text)
+	public c_int Width()
 	{
-		return this.ptr.DateTimeFromText(text);
+		return this.ptr.Width();
 	}
-	public void TextFromDateTime(String outStr, IQDateTime dt)
+	public c_int Height()
 	{
-		this.ptr.TextFromDateTime(outStr, dt);
+		return this.ptr.Height();
 	}
-	public void* StepEnabled()
+	public c_int WidthMM()
 	{
-		return this.ptr.StepEnabled();
+		return this.ptr.WidthMM();
 	}
-	public void MousePressEvent(IQMouseEvent event)
+	public c_int HeightMM()
 	{
-		this.ptr.MousePressEvent(event);
+		return this.ptr.HeightMM();
 	}
-	public void PaintEvent(IQPaintEvent event)
+	public c_int LogicalDpiX()
 	{
-		this.ptr.PaintEvent(event);
+		return this.ptr.LogicalDpiX();
 	}
-	public void InitStyleOption(IQStyleOptionSpinBox option)
+	public c_int LogicalDpiY()
 	{
-		this.ptr.InitStyleOption(option);
+		return this.ptr.LogicalDpiY();
 	}
-	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
+	public c_int PhysicalDpiX()
 	{
-		return this.ptr.ButtonSymbols();
+		return this.ptr.PhysicalDpiX();
 	}
-	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
+	public c_int PhysicalDpiY()
 	{
-		this.ptr.SetButtonSymbols(bs);
+		return this.ptr.PhysicalDpiY();
 	}
-	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
+	public double DevicePixelRatio()
 	{
-		this.ptr.SetCorrectionMode(cm);
+		return this.ptr.DevicePixelRatio();
 	}
-	public QAbstractSpinBox_CorrectionMode CorrectionMode()
+	public double DevicePixelRatioF()
 	{
-		return this.ptr.CorrectionMode();
+		return this.ptr.DevicePixelRatioF();
 	}
-	public bool HasAcceptableInput()
+	public c_int ColorCount()
 	{
-		return this.ptr.HasAcceptableInput();
+		return this.ptr.ColorCount();
 	}
-	public void Text(String outStr)
+	public c_int Depth()
 	{
-		this.ptr.Text(outStr);
+		return this.ptr.Depth();
 	}
-	public void SpecialValueText(String outStr)
+	public double DevicePixelRatioFScale()
 	{
-		this.ptr.SpecialValueText(outStr);
+		return this.ptr.DevicePixelRatioFScale();
 	}
-	public void SetSpecialValueText(String txt)
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
 	{
-		this.ptr.SetSpecialValueText(txt);
+		return default;
 	}
-	public bool Wrapping()
+	public  virtual void OnInitPainter(void** painter)
 	{
-		return this.ptr.Wrapping();
 	}
-	public void SetWrapping(bool w)
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
 	{
-		this.ptr.SetWrapping(w);
+		return default;
 	}
-	public void SetReadOnly(bool r)
+	public  virtual QPainter_Ptr OnSharedPainter()
 	{
-		this.ptr.SetReadOnly(r);
-	}
-	public bool IsReadOnly()
-	{
-		return this.ptr.IsReadOnly();
-	}
-	public void SetKeyboardTracking(bool kt)
-	{
-		this.ptr.SetKeyboardTracking(kt);
-	}
-	public bool KeyboardTracking()
-	{
-		return this.ptr.KeyboardTracking();
-	}
-	public void SetAlignment(void* flag)
-	{
-		this.ptr.SetAlignment(flag);
-	}
-	public void* Alignment()
-	{
-		return this.ptr.Alignment();
-	}
-	public void SetFrame(bool frame)
-	{
-		this.ptr.SetFrame(frame);
-	}
-	public bool HasFrame()
-	{
-		return this.ptr.HasFrame();
-	}
-	public void SetAccelerated(bool on)
-	{
-		this.ptr.SetAccelerated(on);
-	}
-	public bool IsAccelerated()
-	{
-		return this.ptr.IsAccelerated();
-	}
-	public void SetGroupSeparatorShown(bool shown)
-	{
-		this.ptr.SetGroupSeparatorShown(shown);
-	}
-	public bool IsGroupSeparatorShown()
-	{
-		return this.ptr.IsGroupSeparatorShown();
-	}
-	public QSize_Ptr MinimumSizeHint()
-	{
-		return this.ptr.MinimumSizeHint();
-	}
-	public void InterpretText()
-	{
-		this.ptr.InterpretText();
-	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
-	{
-		return this.ptr.InputMethodQuery(param1);
-	}
-	public void StepUp()
-	{
-		this.ptr.StepUp();
-	}
-	public void StepDown()
-	{
-		this.ptr.StepDown();
-	}
-	public void SelectAll()
-	{
-		this.ptr.SelectAll();
-	}
-	public void ResizeEvent(IQResizeEvent event)
-	{
-		this.ptr.ResizeEvent(event);
-	}
-	public void KeyReleaseEvent(IQKeyEvent event)
-	{
-		this.ptr.KeyReleaseEvent(event);
-	}
-	public void FocusOutEvent(IQFocusEvent event)
-	{
-		this.ptr.FocusOutEvent(event);
-	}
-	public void ContextMenuEvent(IQContextMenuEvent event)
-	{
-		this.ptr.ContextMenuEvent(event);
-	}
-	public void ChangeEvent(IQEvent event)
-	{
-		this.ptr.ChangeEvent(event);
-	}
-	public void CloseEvent(IQCloseEvent event)
-	{
-		this.ptr.CloseEvent(event);
-	}
-	public void HideEvent(IQHideEvent event)
-	{
-		this.ptr.HideEvent(event);
-	}
-	public void MouseReleaseEvent(IQMouseEvent event)
-	{
-		this.ptr.MouseReleaseEvent(event);
-	}
-	public void MouseMoveEvent(IQMouseEvent event)
-	{
-		this.ptr.MouseMoveEvent(event);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		this.ptr.TimerEvent(event);
-	}
-	public void ShowEvent(IQShowEvent event)
-	{
-		this.ptr.ShowEvent(event);
-	}
-	public QLineEdit_Ptr LineEdit()
-	{
-		return this.ptr.LineEdit();
-	}
-	public void SetLineEdit(IQLineEdit edit)
-	{
-		this.ptr.SetLineEdit(edit);
-	}
-	public void EditingFinished()
-	{
-		this.ptr.EditingFinished();
-	}
-	public c_int DevType()
-	{
-		return this.ptr.DevType();
+		return default;
 	}
 	public void* WinId()
 	{
@@ -6761,14 +6699,6 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
-	}
-	public c_int Width()
-	{
-		return this.ptr.Width();
-	}
-	public c_int Height()
-	{
-		return this.ptr.Height();
 	}
 	public QRect_Ptr Rect()
 	{
@@ -7334,9 +7264,8 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.Repaint4(param1);
 	}
-	public void SetVisible(bool visible)
+	public  virtual void OnSetVisible(bool visible)
 	{
-		this.ptr.SetVisible(visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -7454,6 +7383,14 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.OverrideWindowState(state);
 	}
+	public  virtual QSize_Ptr OnSizeHint()
+	{
+		return default;
+	}
+	public  virtual QSize_Ptr OnMinimumSizeHint()
+	{
+		return default;
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return this.ptr.SizePolicy();
@@ -7466,13 +7403,13 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.SetSizePolicy2(horizontal, vertical);
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -7505,10 +7442,6 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	public void UpdateGeometry()
 	{
 		this.ptr.UpdateGeometry();
-	}
-	public void SetParent(IQWidget parent)
-	{
-		this.ptr.SetParent(parent);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -7626,10 +7559,6 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		return this.ptr.TestAttribute(param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
 	public void EnsurePolished()
 	{
 		this.ptr.EnsurePolished();
@@ -7682,69 +7611,91 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.CustomContextMenuRequested(pos);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent event)
+	public  virtual void OnMousePressEvent(void** event)
 	{
-		this.ptr.MouseDoubleClickEvent(event);
 	}
-	public void EnterEvent(IQEnterEvent event)
+	public  virtual void OnMouseReleaseEvent(void** event)
 	{
-		this.ptr.EnterEvent(event);
 	}
-	public void LeaveEvent(IQEvent event)
+	public  virtual void OnMouseDoubleClickEvent(void** event)
 	{
-		this.ptr.LeaveEvent(event);
 	}
-	public void MoveEvent(IQMoveEvent event)
+	public  virtual void OnMouseMoveEvent(void** event)
 	{
-		this.ptr.MoveEvent(event);
 	}
-	public void TabletEvent(IQTabletEvent event)
+	public  virtual void OnWheelEvent(void** event)
 	{
-		this.ptr.TabletEvent(event);
 	}
-	public void ActionEvent(IQActionEvent event)
+	public  virtual void OnKeyPressEvent(void** event)
 	{
-		this.ptr.ActionEvent(event);
 	}
-	public void DragEnterEvent(IQDragEnterEvent event)
+	public  virtual void OnKeyReleaseEvent(void** event)
 	{
-		this.ptr.DragEnterEvent(event);
 	}
-	public void DragMoveEvent(IQDragMoveEvent event)
+	public  virtual void OnFocusInEvent(void** event)
 	{
-		this.ptr.DragMoveEvent(event);
 	}
-	public void DragLeaveEvent(IQDragLeaveEvent event)
+	public  virtual void OnFocusOutEvent(void** event)
 	{
-		this.ptr.DragLeaveEvent(event);
 	}
-	public void DropEvent(IQDropEvent event)
+	public  virtual void OnEnterEvent(void** event)
 	{
-		this.ptr.DropEvent(event);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual void OnLeaveEvent(void** event)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public  virtual void OnPaintEvent(void** event)
 	{
-		return this.ptr.Metric(param1);
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnMoveEvent(void** event)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual void OnResizeEvent(void** event)
 	{
-		return this.ptr.Redirected(offset);
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual void OnCloseEvent(void** event)
 	{
-		return this.ptr.SharedPainter();
 	}
-	public void InputMethodEvent(IQInputMethodEvent param1)
+	public  virtual void OnContextMenuEvent(void** event)
 	{
-		this.ptr.InputMethodEvent(param1);
+	}
+	public  virtual void OnTabletEvent(void** event)
+	{
+	}
+	public  virtual void OnActionEvent(void** event)
+	{
+	}
+	public  virtual void OnDragEnterEvent(void** event)
+	{
+	}
+	public  virtual void OnDragMoveEvent(void** event)
+	{
+	}
+	public  virtual void OnDragLeaveEvent(void** event)
+	{
+	}
+	public  virtual void OnDropEvent(void** event)
+	{
+	}
+	public  virtual void OnShowEvent(void** event)
+	{
+	}
+	public  virtual void OnHideEvent(void** event)
+	{
+	}
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
+	{
+		return default;
+	}
+	public  virtual void OnChangeEvent(void** param1)
+	{
+	}
+	public  virtual void OnInputMethodEvent(void** param1)
+	{
+	}
+	public  virtual QVariant_Ptr OnInputMethodQuery(Qt_InputMethodQuery param1)
+	{
+		return default;
 	}
 	public void* InputMethodHints()
 	{
@@ -7765,6 +7716,10 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	public void Destroy()
 	{
 		this.ptr.Destroy();
+	}
+	public  virtual bool OnFocusNextPrevChild(bool next)
+	{
+		return default;
 	}
 	public bool FocusNextChild()
 	{
@@ -7858,265 +7813,344 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.Destroy2(destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
 	{
-		return this.ptr.EventFilter(watched, event);
+		return this.ptr.ButtonSymbols();
 	}
-	public void ObjectName(String outStr)
+	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
 	{
-		this.ptr.ObjectName(outStr);
+		this.ptr.SetButtonSymbols(bs);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
 	{
-		this.ptr.SetObjectName(name);
+		this.ptr.SetCorrectionMode(cm);
 	}
-	public bool IsWidgetType()
+	public QAbstractSpinBox_CorrectionMode CorrectionMode()
 	{
-		return this.ptr.IsWidgetType();
+		return this.ptr.CorrectionMode();
 	}
-	public bool IsWindowType()
+	public bool HasAcceptableInput()
 	{
-		return this.ptr.IsWindowType();
+		return this.ptr.HasAcceptableInput();
 	}
-	public bool IsQuickItemType()
+	public void Text(String outStr)
 	{
-		return this.ptr.IsQuickItemType();
+		this.ptr.Text(outStr);
 	}
-	public bool SignalsBlocked()
+	public void SpecialValueText(String outStr)
 	{
-		return this.ptr.SignalsBlocked();
+		this.ptr.SpecialValueText(outStr);
 	}
-	public bool BlockSignals(bool b)
+	public void SetSpecialValueText(String txt)
 	{
-		return this.ptr.BlockSignals(b);
+		this.ptr.SetSpecialValueText(txt);
 	}
-	public QThread_Ptr Thread()
+	public bool Wrapping()
 	{
-		return this.ptr.Thread();
+		return this.ptr.Wrapping();
 	}
-	public void MoveToThread(IQThread thread)
+	public void SetWrapping(bool w)
 	{
-		this.ptr.MoveToThread(thread);
+		this.ptr.SetWrapping(w);
 	}
-	public c_int StartTimer(c_int interval)
+	public void SetReadOnly(bool r)
 	{
-		return this.ptr.StartTimer(interval);
+		this.ptr.SetReadOnly(r);
 	}
-	public c_int StartTimer2(void* time)
+	public bool IsReadOnly()
 	{
-		return this.ptr.StartTimer2(time);
+		return this.ptr.IsReadOnly();
 	}
-	public void KillTimer(c_int id)
+	public void SetKeyboardTracking(bool kt)
 	{
-		this.ptr.KillTimer(id);
+		this.ptr.SetKeyboardTracking(kt);
 	}
-	public void** Children()
+	public bool KeyboardTracking()
 	{
-		return this.ptr.Children();
+		return this.ptr.KeyboardTracking();
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void SetAlignment(void* flag)
 	{
-		this.ptr.InstallEventFilter(filterObj);
+		this.ptr.SetAlignment(flag);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public void* Alignment()
 	{
-		this.ptr.RemoveEventFilter(obj);
+		return this.ptr.Alignment();
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetFrame(bool frame)
 	{
-		return this.ptr.Connect(sender, signal, receiver, member);
+		this.ptr.SetFrame(frame);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public bool HasFrame()
 	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
+		return this.ptr.HasFrame();
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetAccelerated(bool on)
 	{
-		return this.ptr.Connect3(sender, signal, member);
+		this.ptr.SetAccelerated(on);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public bool IsAccelerated()
 	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
+		return this.ptr.IsAccelerated();
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void SetGroupSeparatorShown(bool shown)
 	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
+		this.ptr.SetGroupSeparatorShown(shown);
 	}
-	public bool Disconnect3()
+	public bool IsGroupSeparatorShown()
 	{
-		return this.ptr.Disconnect3();
+		return this.ptr.IsGroupSeparatorShown();
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void InterpretText()
 	{
-		return this.ptr.Disconnect4(receiver);
+		this.ptr.InterpretText();
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public  virtual QValidator_State OnValidate(libqt_string input, c_int* pos)
 	{
-		return this.ptr.Disconnect5(param1);
+		return default;
 	}
-	public void DumpObjectTree()
+	public  virtual void OnFixup(libqt_string input)
 	{
-		this.ptr.DumpObjectTree();
 	}
-	public void DumpObjectInfo()
+	public  virtual void OnStepBy(c_int steps)
 	{
-		this.ptr.DumpObjectInfo();
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public void StepUp()
 	{
-		return this.ptr.SetProperty(name, value);
+		this.ptr.StepUp();
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public void StepDown()
 	{
-		return this.ptr.Property(name);
+		this.ptr.StepDown();
 	}
-	public void* DynamicPropertyNames()
+	public void SelectAll()
 	{
-		return this.ptr.DynamicPropertyNames();
+		this.ptr.SelectAll();
 	}
-	public QBindingStorage_Ptr BindingStorage()
+	public  virtual void OnClear()
 	{
-		return this.ptr.BindingStorage();
 	}
-	public QBindingStorage_Ptr BindingStorage2()
+	public  virtual void OnInitStyleOption(void** option)
 	{
-		return this.ptr.BindingStorage2();
 	}
-	public void Destroyed()
+	public QLineEdit_Ptr LineEdit()
 	{
-		this.ptr.Destroyed();
+		return this.ptr.LineEdit();
 	}
-	public QObject_Ptr Parent()
+	public void SetLineEdit(IQLineEdit edit)
 	{
-		return this.ptr.Parent();
+		this.ptr.SetLineEdit(edit);
 	}
-	public bool Inherits(c_char* classname)
+	public  virtual void* OnStepEnabled()
 	{
-		return this.ptr.Inherits(classname);
+		return default;
 	}
-	public void DeleteLater()
+	public void EditingFinished()
 	{
-		this.ptr.DeleteLater();
+		this.ptr.EditingFinished();
 	}
-	public QObject_Ptr Sender()
+	public QDateTime_Ptr DateTime()
 	{
-		return this.ptr.Sender();
+		return this.ptr.DateTime();
 	}
-	public c_int SenderSignalIndex()
+	public QDate_Ptr Date()
 	{
-		return this.ptr.SenderSignalIndex();
+		return this.ptr.Date();
 	}
-	public c_int Receivers(c_char* signal)
+	public QTime_Ptr Time()
 	{
-		return this.ptr.Receivers(signal);
+		return this.ptr.Time();
 	}
-	public bool IsSignalConnected(IQMetaMethod signal)
+	public QCalendar_Ptr Calendar()
 	{
-		return this.ptr.IsSignalConnected(signal);
+		return this.ptr.Calendar();
 	}
-	public void ChildEvent(IQChildEvent event)
+	public void SetCalendar(IQCalendar calendar)
 	{
-		this.ptr.ChildEvent(event);
+		this.ptr.SetCalendar(calendar);
 	}
-	public void CustomEvent(IQEvent event)
+	public QDateTime_Ptr MinimumDateTime()
 	{
-		this.ptr.CustomEvent(event);
+		return this.ptr.MinimumDateTime();
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public void ClearMinimumDateTime()
 	{
-		this.ptr.ConnectNotify(signal);
+		this.ptr.ClearMinimumDateTime();
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public void SetMinimumDateTime(IQDateTime dt)
 	{
-		this.ptr.DisconnectNotify(signal);
+		this.ptr.SetMinimumDateTime(dt);
 	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	public QDateTime_Ptr MaximumDateTime()
 	{
-		return this.ptr.StartTimer22(interval, timerType);
+		return this.ptr.MaximumDateTime();
 	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	public void ClearMaximumDateTime()
 	{
-		return this.ptr.StartTimer23(time, timerType);
+		this.ptr.ClearMaximumDateTime();
 	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public void SetMaximumDateTime(IQDateTime dt)
 	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+		this.ptr.SetMaximumDateTime(dt);
 	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public void SetDateTimeRange(IQDateTime min, IQDateTime max)
 	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
+		this.ptr.SetDateTimeRange(min, max);
 	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QDate_Ptr MinimumDate()
 	{
-		return this.ptr.Connect4(sender, signal, member, type);
+		return this.ptr.MinimumDate();
 	}
-	public bool Disconnect1(c_char* signal)
+	public void SetMinimumDate(IQDate min)
 	{
-		return this.ptr.Disconnect1(signal);
+		this.ptr.SetMinimumDate(min);
 	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
+	public void ClearMinimumDate()
 	{
-		return this.ptr.Disconnect22(signal, receiver);
+		this.ptr.ClearMinimumDate();
 	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	public QDate_Ptr MaximumDate()
 	{
-		return this.ptr.Disconnect32(signal, receiver, member);
+		return this.ptr.MaximumDate();
 	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
+	public void SetMaximumDate(IQDate max)
 	{
-		return this.ptr.Disconnect23(receiver, member);
+		this.ptr.SetMaximumDate(max);
 	}
-	public void Destroyed1(IQObject param1)
+	public void ClearMaximumDate()
 	{
-		this.ptr.Destroyed1(param1);
+		this.ptr.ClearMaximumDate();
 	}
-	public bool PaintingActive()
+	public void SetDateRange(IQDate min, IQDate max)
 	{
-		return this.ptr.PaintingActive();
+		this.ptr.SetDateRange(min, max);
 	}
-	public c_int WidthMM()
+	public QTime_Ptr MinimumTime()
 	{
-		return this.ptr.WidthMM();
+		return this.ptr.MinimumTime();
 	}
-	public c_int HeightMM()
+	public void SetMinimumTime(IQTime min)
 	{
-		return this.ptr.HeightMM();
+		this.ptr.SetMinimumTime(min);
 	}
-	public c_int LogicalDpiX()
+	public void ClearMinimumTime()
 	{
-		return this.ptr.LogicalDpiX();
+		this.ptr.ClearMinimumTime();
 	}
-	public c_int LogicalDpiY()
+	public QTime_Ptr MaximumTime()
 	{
-		return this.ptr.LogicalDpiY();
+		return this.ptr.MaximumTime();
 	}
-	public c_int PhysicalDpiX()
+	public void SetMaximumTime(IQTime max)
 	{
-		return this.ptr.PhysicalDpiX();
+		this.ptr.SetMaximumTime(max);
 	}
-	public c_int PhysicalDpiY()
+	public void ClearMaximumTime()
 	{
-		return this.ptr.PhysicalDpiY();
+		this.ptr.ClearMaximumTime();
 	}
-	public double DevicePixelRatio()
+	public void SetTimeRange(IQTime min, IQTime max)
 	{
-		return this.ptr.DevicePixelRatio();
+		this.ptr.SetTimeRange(min, max);
 	}
-	public double DevicePixelRatioF()
+	public void* DisplayedSections()
 	{
-		return this.ptr.DevicePixelRatioF();
+		return this.ptr.DisplayedSections();
 	}
-	public c_int ColorCount()
+	public QDateTimeEdit_Section CurrentSection()
 	{
-		return this.ptr.ColorCount();
+		return this.ptr.CurrentSection();
 	}
-	public c_int Depth()
+	public QDateTimeEdit_Section SectionAt(c_int index)
 	{
-		return this.ptr.Depth();
+		return this.ptr.SectionAt(index);
 	}
-	public double DevicePixelRatioFScale()
+	public void SetCurrentSection(QDateTimeEdit_Section section)
 	{
-		return this.ptr.DevicePixelRatioFScale();
+		this.ptr.SetCurrentSection(section);
+	}
+	public c_int CurrentSectionIndex()
+	{
+		return this.ptr.CurrentSectionIndex();
+	}
+	public void SetCurrentSectionIndex(c_int index)
+	{
+		this.ptr.SetCurrentSectionIndex(index);
+	}
+	public QCalendarWidget_Ptr CalendarWidget()
+	{
+		return this.ptr.CalendarWidget();
+	}
+	public void SetCalendarWidget(IQCalendarWidget calendarWidget)
+	{
+		this.ptr.SetCalendarWidget(calendarWidget);
+	}
+	public c_int SectionCount()
+	{
+		return this.ptr.SectionCount();
+	}
+	public void SetSelectedSection(QDateTimeEdit_Section section)
+	{
+		this.ptr.SetSelectedSection(section);
+	}
+	public void SectionText(String outStr, QDateTimeEdit_Section section)
+	{
+		this.ptr.SectionText(outStr, section);
+	}
+	public void DisplayFormat(String outStr)
+	{
+		this.ptr.DisplayFormat(outStr);
+	}
+	public void SetDisplayFormat(String format)
+	{
+		this.ptr.SetDisplayFormat(format);
+	}
+	public bool CalendarPopup()
+	{
+		return this.ptr.CalendarPopup();
+	}
+	public void SetCalendarPopup(bool enable)
+	{
+		this.ptr.SetCalendarPopup(enable);
+	}
+	public Qt_TimeSpec TimeSpec()
+	{
+		return this.ptr.TimeSpec();
+	}
+	public void SetTimeSpec(Qt_TimeSpec spec)
+	{
+		this.ptr.SetTimeSpec(spec);
+	}
+	public void DateTimeChanged(IQDateTime dateTime)
+	{
+		this.ptr.DateTimeChanged(dateTime);
+	}
+	public void TimeChanged(IQTime time)
+	{
+		this.ptr.TimeChanged(time);
+	}
+	public void DateChanged(IQDate date)
+	{
+		this.ptr.DateChanged(date);
+	}
+	public void SetDateTime(IQDateTime dateTime)
+	{
+		this.ptr.SetDateTime(dateTime);
+	}
+	public void SetDate(IQDate date)
+	{
+		this.ptr.SetDate(date);
+	}
+	public void SetTime(IQTime time)
+	{
+		this.ptr.SetTime(time);
+	}
+	public  virtual QDateTime_Ptr OnDateTimeFromText(libqt_string text)
+	{
+		return default;
+	}
+	public  virtual void OnTextFromDateTime(String outStr, void** dt)
+	{
 	}
 }
 interface IQTimeEdit : IQtObjectInterface
@@ -8136,22 +8170,364 @@ extension CQt
 	public static extern void QTimeEdit_Delete(QTimeEdit_Ptr self);
 	[LinkName("QTimeEdit_MetaObject")]
 	public static extern void** QTimeEdit_MetaObject(void* self);
+	
+	public function void QTimeEdit_OnMetaObject_action(void* self);
+	[LinkName("QTimeEdit_OnMetaObject")]
+	public static extern void** QTimeEdit_OnMetaObject(void* self, QTimeEdit_OnMetaObject_action _action);
 	[LinkName("QTimeEdit_Qt_Metacast")]
 	public static extern void* QTimeEdit_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QTimeEdit_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QTimeEdit_OnMetacast")]
+	public static extern void* QTimeEdit_OnMetacast(void* self, QTimeEdit_OnMetacast_action _action);
 	[LinkName("QTimeEdit_Qt_Metacall")]
 	public static extern c_int QTimeEdit_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QTimeEdit_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QTimeEdit_OnMetacall")]
+	public static extern c_int QTimeEdit_OnMetacall(void* self, QTimeEdit_OnMetacall_action _action);
 	[LinkName("QTimeEdit_Tr")]
 	public static extern libqt_string QTimeEdit_Tr(c_char* s);
 	[LinkName("QTimeEdit_UserTimeChanged")]
 	public static extern void QTimeEdit_UserTimeChanged(void* self, void* time);
 	
-	public function void QTimeEdit_userTimeChanged_action(void* self, void* time);
+	public function void QTimeEdit_Connect_UserTimeChanged_action(void* self, void* time);
 	[LinkName("QTimeEdit_Connect_UserTimeChanged")]
-	public static extern void QTimeEdit_Connect_UserTimeChanged(void* self, QTimeEdit_userTimeChanged_action _action);
+	public static extern void QTimeEdit_Connect_UserTimeChanged(void* self, QTimeEdit_Connect_UserTimeChanged_action _action);
 	[LinkName("QTimeEdit_Tr2")]
 	public static extern libqt_string QTimeEdit_Tr2(c_char* s, c_char* c);
 	[LinkName("QTimeEdit_Tr3")]
 	public static extern libqt_string QTimeEdit_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QTimeEdit_Event")]
+	public static extern bool QTimeEdit_Event(void* self, void** event);
+	
+	public function void QTimeEdit_OnEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnEvent")]
+	public static extern bool QTimeEdit_OnEvent(void* self, QTimeEdit_OnEvent_action _action);
+	[LinkName("QTimeEdit_EventFilter")]
+	public static extern bool QTimeEdit_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QTimeEdit_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QTimeEdit_OnEventFilter")]
+	public static extern bool QTimeEdit_OnEventFilter(void* self, QTimeEdit_OnEventFilter_action _action);
+	[LinkName("QTimeEdit_TimerEvent")]
+	public static extern void QTimeEdit_TimerEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnTimerEvent")]
+	public static extern void QTimeEdit_OnTimerEvent(void* self, QTimeEdit_OnTimerEvent_action _action);
+	[LinkName("QTimeEdit_ChildEvent")]
+	public static extern void QTimeEdit_ChildEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnChildEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnChildEvent")]
+	public static extern void QTimeEdit_OnChildEvent(void* self, QTimeEdit_OnChildEvent_action _action);
+	[LinkName("QTimeEdit_CustomEvent")]
+	public static extern void QTimeEdit_CustomEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnCustomEvent")]
+	public static extern void QTimeEdit_OnCustomEvent(void* self, QTimeEdit_OnCustomEvent_action _action);
+	[LinkName("QTimeEdit_ConnectNotify")]
+	public static extern void QTimeEdit_ConnectNotify(void* self, void** signal);
+	
+	public function void QTimeEdit_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QTimeEdit_OnConnectNotify")]
+	public static extern void QTimeEdit_OnConnectNotify(void* self, QTimeEdit_OnConnectNotify_action _action);
+	[LinkName("QTimeEdit_DisconnectNotify")]
+	public static extern void QTimeEdit_DisconnectNotify(void* self, void** signal);
+	
+	public function void QTimeEdit_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QTimeEdit_OnDisconnectNotify")]
+	public static extern void QTimeEdit_OnDisconnectNotify(void* self, QTimeEdit_OnDisconnectNotify_action _action);
+	[LinkName("QTimeEdit_DevType")]
+	public static extern c_int QTimeEdit_DevType(void* self);
+	
+	public function void QTimeEdit_OnDevType_action(void* self);
+	[LinkName("QTimeEdit_OnDevType")]
+	public static extern c_int QTimeEdit_OnDevType(void* self, QTimeEdit_OnDevType_action _action);
+	[LinkName("QTimeEdit_PaintEngine")]
+	public static extern void** QTimeEdit_PaintEngine(void* self);
+	
+	public function void QTimeEdit_OnPaintEngine_action(void* self);
+	[LinkName("QTimeEdit_OnPaintEngine")]
+	public static extern void** QTimeEdit_OnPaintEngine(void* self, QTimeEdit_OnPaintEngine_action _action);
+	[LinkName("QTimeEdit_Metric")]
+	public static extern c_int QTimeEdit_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QTimeEdit_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QTimeEdit_OnMetric")]
+	public static extern c_int QTimeEdit_OnMetric(void* self, QTimeEdit_OnMetric_action _action);
+	[LinkName("QTimeEdit_InitPainter")]
+	public static extern void QTimeEdit_InitPainter(void* self, void** painter);
+	
+	public function void QTimeEdit_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QTimeEdit_OnInitPainter")]
+	public static extern void QTimeEdit_OnInitPainter(void* self, QTimeEdit_OnInitPainter_action _action);
+	[LinkName("QTimeEdit_Redirected")]
+	public static extern void** QTimeEdit_Redirected(void* self, void** offset);
+	
+	public function void QTimeEdit_OnRedirected_action(void* self, void** offset);
+	[LinkName("QTimeEdit_OnRedirected")]
+	public static extern void** QTimeEdit_OnRedirected(void* self, QTimeEdit_OnRedirected_action _action);
+	[LinkName("QTimeEdit_SharedPainter")]
+	public static extern void** QTimeEdit_SharedPainter(void* self);
+	
+	public function void QTimeEdit_OnSharedPainter_action(void* self);
+	[LinkName("QTimeEdit_OnSharedPainter")]
+	public static extern void** QTimeEdit_OnSharedPainter(void* self, QTimeEdit_OnSharedPainter_action _action);
+	[LinkName("QTimeEdit_SetVisible")]
+	public static extern void QTimeEdit_SetVisible(void* self, bool visible);
+	
+	public function void QTimeEdit_OnSetVisible_action(void* self, bool visible);
+	[LinkName("QTimeEdit_OnSetVisible")]
+	public static extern void QTimeEdit_OnSetVisible(void* self, QTimeEdit_OnSetVisible_action _action);
+	[LinkName("QTimeEdit_SizeHint")]
+	public static extern void* QTimeEdit_SizeHint(void* self);
+	
+	public function void QTimeEdit_OnSizeHint_action(void* self);
+	[LinkName("QTimeEdit_OnSizeHint")]
+	public static extern void* QTimeEdit_OnSizeHint(void* self, QTimeEdit_OnSizeHint_action _action);
+	[LinkName("QTimeEdit_MinimumSizeHint")]
+	public static extern void* QTimeEdit_MinimumSizeHint(void* self);
+	
+	public function void QTimeEdit_OnMinimumSizeHint_action(void* self);
+	[LinkName("QTimeEdit_OnMinimumSizeHint")]
+	public static extern void* QTimeEdit_OnMinimumSizeHint(void* self, QTimeEdit_OnMinimumSizeHint_action _action);
+	[LinkName("QTimeEdit_HeightForWidth")]
+	public static extern c_int QTimeEdit_HeightForWidth(void* self, c_int param1);
+	
+	public function void QTimeEdit_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QTimeEdit_OnHeightForWidth")]
+	public static extern c_int QTimeEdit_OnHeightForWidth(void* self, QTimeEdit_OnHeightForWidth_action _action);
+	[LinkName("QTimeEdit_HasHeightForWidth")]
+	public static extern bool QTimeEdit_HasHeightForWidth(void* self);
+	
+	public function void QTimeEdit_OnHasHeightForWidth_action(void* self);
+	[LinkName("QTimeEdit_OnHasHeightForWidth")]
+	public static extern bool QTimeEdit_OnHasHeightForWidth(void* self, QTimeEdit_OnHasHeightForWidth_action _action);
+	[LinkName("QTimeEdit_MousePressEvent")]
+	public static extern void QTimeEdit_MousePressEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnMousePressEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnMousePressEvent")]
+	public static extern void QTimeEdit_OnMousePressEvent(void* self, QTimeEdit_OnMousePressEvent_action _action);
+	[LinkName("QTimeEdit_MouseReleaseEvent")]
+	public static extern void QTimeEdit_MouseReleaseEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnMouseReleaseEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnMouseReleaseEvent")]
+	public static extern void QTimeEdit_OnMouseReleaseEvent(void* self, QTimeEdit_OnMouseReleaseEvent_action _action);
+	[LinkName("QTimeEdit_MouseDoubleClickEvent")]
+	public static extern void QTimeEdit_MouseDoubleClickEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnMouseDoubleClickEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnMouseDoubleClickEvent")]
+	public static extern void QTimeEdit_OnMouseDoubleClickEvent(void* self, QTimeEdit_OnMouseDoubleClickEvent_action _action);
+	[LinkName("QTimeEdit_MouseMoveEvent")]
+	public static extern void QTimeEdit_MouseMoveEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnMouseMoveEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnMouseMoveEvent")]
+	public static extern void QTimeEdit_OnMouseMoveEvent(void* self, QTimeEdit_OnMouseMoveEvent_action _action);
+	[LinkName("QTimeEdit_WheelEvent")]
+	public static extern void QTimeEdit_WheelEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnWheelEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnWheelEvent")]
+	public static extern void QTimeEdit_OnWheelEvent(void* self, QTimeEdit_OnWheelEvent_action _action);
+	[LinkName("QTimeEdit_KeyPressEvent")]
+	public static extern void QTimeEdit_KeyPressEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnKeyPressEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnKeyPressEvent")]
+	public static extern void QTimeEdit_OnKeyPressEvent(void* self, QTimeEdit_OnKeyPressEvent_action _action);
+	[LinkName("QTimeEdit_KeyReleaseEvent")]
+	public static extern void QTimeEdit_KeyReleaseEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnKeyReleaseEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnKeyReleaseEvent")]
+	public static extern void QTimeEdit_OnKeyReleaseEvent(void* self, QTimeEdit_OnKeyReleaseEvent_action _action);
+	[LinkName("QTimeEdit_FocusInEvent")]
+	public static extern void QTimeEdit_FocusInEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnFocusInEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnFocusInEvent")]
+	public static extern void QTimeEdit_OnFocusInEvent(void* self, QTimeEdit_OnFocusInEvent_action _action);
+	[LinkName("QTimeEdit_FocusOutEvent")]
+	public static extern void QTimeEdit_FocusOutEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnFocusOutEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnFocusOutEvent")]
+	public static extern void QTimeEdit_OnFocusOutEvent(void* self, QTimeEdit_OnFocusOutEvent_action _action);
+	[LinkName("QTimeEdit_EnterEvent")]
+	public static extern void QTimeEdit_EnterEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnEnterEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnEnterEvent")]
+	public static extern void QTimeEdit_OnEnterEvent(void* self, QTimeEdit_OnEnterEvent_action _action);
+	[LinkName("QTimeEdit_LeaveEvent")]
+	public static extern void QTimeEdit_LeaveEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnLeaveEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnLeaveEvent")]
+	public static extern void QTimeEdit_OnLeaveEvent(void* self, QTimeEdit_OnLeaveEvent_action _action);
+	[LinkName("QTimeEdit_PaintEvent")]
+	public static extern void QTimeEdit_PaintEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnPaintEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnPaintEvent")]
+	public static extern void QTimeEdit_OnPaintEvent(void* self, QTimeEdit_OnPaintEvent_action _action);
+	[LinkName("QTimeEdit_MoveEvent")]
+	public static extern void QTimeEdit_MoveEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnMoveEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnMoveEvent")]
+	public static extern void QTimeEdit_OnMoveEvent(void* self, QTimeEdit_OnMoveEvent_action _action);
+	[LinkName("QTimeEdit_ResizeEvent")]
+	public static extern void QTimeEdit_ResizeEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnResizeEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnResizeEvent")]
+	public static extern void QTimeEdit_OnResizeEvent(void* self, QTimeEdit_OnResizeEvent_action _action);
+	[LinkName("QTimeEdit_CloseEvent")]
+	public static extern void QTimeEdit_CloseEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnCloseEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnCloseEvent")]
+	public static extern void QTimeEdit_OnCloseEvent(void* self, QTimeEdit_OnCloseEvent_action _action);
+	[LinkName("QTimeEdit_ContextMenuEvent")]
+	public static extern void QTimeEdit_ContextMenuEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnContextMenuEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnContextMenuEvent")]
+	public static extern void QTimeEdit_OnContextMenuEvent(void* self, QTimeEdit_OnContextMenuEvent_action _action);
+	[LinkName("QTimeEdit_TabletEvent")]
+	public static extern void QTimeEdit_TabletEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnTabletEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnTabletEvent")]
+	public static extern void QTimeEdit_OnTabletEvent(void* self, QTimeEdit_OnTabletEvent_action _action);
+	[LinkName("QTimeEdit_ActionEvent")]
+	public static extern void QTimeEdit_ActionEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnActionEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnActionEvent")]
+	public static extern void QTimeEdit_OnActionEvent(void* self, QTimeEdit_OnActionEvent_action _action);
+	[LinkName("QTimeEdit_DragEnterEvent")]
+	public static extern void QTimeEdit_DragEnterEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnDragEnterEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnDragEnterEvent")]
+	public static extern void QTimeEdit_OnDragEnterEvent(void* self, QTimeEdit_OnDragEnterEvent_action _action);
+	[LinkName("QTimeEdit_DragMoveEvent")]
+	public static extern void QTimeEdit_DragMoveEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnDragMoveEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnDragMoveEvent")]
+	public static extern void QTimeEdit_OnDragMoveEvent(void* self, QTimeEdit_OnDragMoveEvent_action _action);
+	[LinkName("QTimeEdit_DragLeaveEvent")]
+	public static extern void QTimeEdit_DragLeaveEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnDragLeaveEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnDragLeaveEvent")]
+	public static extern void QTimeEdit_OnDragLeaveEvent(void* self, QTimeEdit_OnDragLeaveEvent_action _action);
+	[LinkName("QTimeEdit_DropEvent")]
+	public static extern void QTimeEdit_DropEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnDropEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnDropEvent")]
+	public static extern void QTimeEdit_OnDropEvent(void* self, QTimeEdit_OnDropEvent_action _action);
+	[LinkName("QTimeEdit_ShowEvent")]
+	public static extern void QTimeEdit_ShowEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnShowEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnShowEvent")]
+	public static extern void QTimeEdit_OnShowEvent(void* self, QTimeEdit_OnShowEvent_action _action);
+	[LinkName("QTimeEdit_HideEvent")]
+	public static extern void QTimeEdit_HideEvent(void* self, void** event);
+	
+	public function void QTimeEdit_OnHideEvent_action(void* self, void** event);
+	[LinkName("QTimeEdit_OnHideEvent")]
+	public static extern void QTimeEdit_OnHideEvent(void* self, QTimeEdit_OnHideEvent_action _action);
+	[LinkName("QTimeEdit_NativeEvent")]
+	public static extern bool QTimeEdit_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QTimeEdit_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QTimeEdit_OnNativeEvent")]
+	public static extern bool QTimeEdit_OnNativeEvent(void* self, QTimeEdit_OnNativeEvent_action _action);
+	[LinkName("QTimeEdit_ChangeEvent")]
+	public static extern void QTimeEdit_ChangeEvent(void* self, void** param1);
+	
+	public function void QTimeEdit_OnChangeEvent_action(void* self, void** param1);
+	[LinkName("QTimeEdit_OnChangeEvent")]
+	public static extern void QTimeEdit_OnChangeEvent(void* self, QTimeEdit_OnChangeEvent_action _action);
+	[LinkName("QTimeEdit_InputMethodEvent")]
+	public static extern void QTimeEdit_InputMethodEvent(void* self, void** param1);
+	
+	public function void QTimeEdit_OnInputMethodEvent_action(void* self, void** param1);
+	[LinkName("QTimeEdit_OnInputMethodEvent")]
+	public static extern void QTimeEdit_OnInputMethodEvent(void* self, QTimeEdit_OnInputMethodEvent_action _action);
+	[LinkName("QTimeEdit_InputMethodQuery")]
+	public static extern void* QTimeEdit_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
+	
+	public function void QTimeEdit_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
+	[LinkName("QTimeEdit_OnInputMethodQuery")]
+	public static extern void* QTimeEdit_OnInputMethodQuery(void* self, QTimeEdit_OnInputMethodQuery_action _action);
+	[LinkName("QTimeEdit_FocusNextPrevChild")]
+	public static extern bool QTimeEdit_FocusNextPrevChild(void* self, bool next);
+	
+	public function void QTimeEdit_OnFocusNextPrevChild_action(void* self, bool next);
+	[LinkName("QTimeEdit_OnFocusNextPrevChild")]
+	public static extern bool QTimeEdit_OnFocusNextPrevChild(void* self, QTimeEdit_OnFocusNextPrevChild_action _action);
+	[LinkName("QTimeEdit_Validate")]
+	public static extern QValidator_State QTimeEdit_Validate(void* self, libqt_string input, c_int* pos);
+	
+	public function void QTimeEdit_OnValidate_action(void* self, libqt_string input, c_int* pos);
+	[LinkName("QTimeEdit_OnValidate")]
+	public static extern QValidator_State QTimeEdit_OnValidate(void* self, QTimeEdit_OnValidate_action _action);
+	[LinkName("QTimeEdit_Fixup")]
+	public static extern void QTimeEdit_Fixup(void* self, libqt_string input);
+	
+	public function void QTimeEdit_OnFixup_action(void* self, libqt_string input);
+	[LinkName("QTimeEdit_OnFixup")]
+	public static extern void QTimeEdit_OnFixup(void* self, QTimeEdit_OnFixup_action _action);
+	[LinkName("QTimeEdit_StepBy")]
+	public static extern void QTimeEdit_StepBy(void* self, c_int steps);
+	
+	public function void QTimeEdit_OnStepBy_action(void* self, c_int steps);
+	[LinkName("QTimeEdit_OnStepBy")]
+	public static extern void QTimeEdit_OnStepBy(void* self, QTimeEdit_OnStepBy_action _action);
+	[LinkName("QTimeEdit_Clear")]
+	public static extern void QTimeEdit_Clear(void* self);
+	
+	public function void QTimeEdit_OnClear_action(void* self);
+	[LinkName("QTimeEdit_OnClear")]
+	public static extern void QTimeEdit_OnClear(void* self, QTimeEdit_OnClear_action _action);
+	[LinkName("QTimeEdit_InitStyleOption")]
+	public static extern void QTimeEdit_InitStyleOption(void* self, void** option);
+	
+	public function void QTimeEdit_OnInitStyleOption_action(void* self, void** option);
+	[LinkName("QTimeEdit_OnInitStyleOption")]
+	public static extern void QTimeEdit_OnInitStyleOption(void* self, QTimeEdit_OnInitStyleOption_action _action);
+	[LinkName("QTimeEdit_StepEnabled")]
+	public static extern void* QTimeEdit_StepEnabled(void* self);
+	
+	public function void QTimeEdit_OnStepEnabled_action(void* self);
+	[LinkName("QTimeEdit_OnStepEnabled")]
+	public static extern void* QTimeEdit_OnStepEnabled(void* self, QTimeEdit_OnStepEnabled_action _action);
+	[LinkName("QTimeEdit_DateTimeFromText")]
+	public static extern void* QTimeEdit_DateTimeFromText(void* self, libqt_string text);
+	
+	public function void QTimeEdit_OnDateTimeFromText_action(void* self, libqt_string text);
+	[LinkName("QTimeEdit_OnDateTimeFromText")]
+	public static extern void* QTimeEdit_OnDateTimeFromText(void* self, QTimeEdit_OnDateTimeFromText_action _action);
+	[LinkName("QTimeEdit_TextFromDateTime")]
+	public static extern libqt_string QTimeEdit_TextFromDateTime(void* self, void** dt);
+	
+	public function void QTimeEdit_OnTextFromDateTime_action(void* self, void** dt);
+	[LinkName("QTimeEdit_OnTextFromDateTime")]
+	public static extern libqt_string QTimeEdit_OnTextFromDateTime(void* self, QTimeEdit_OnTextFromDateTime_action _action);
 }
 // --------------------------------------------------------------
 // QDateEdit
@@ -8168,11 +8544,11 @@ struct QDateEdit_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QDateEdit_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QDateEdit_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QDateEdit_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -8192,437 +8568,309 @@ struct QDateEdit_Ptr
 	{
 		CQt.QDateEdit_Tr3(s, c, n);
 	}
-	public QDateTime_Ptr DateTime()
-	{
-		return QDateTime_Ptr(CQt.QDateTimeEdit_DateTime((.)this.Ptr));
-	}
-	public QDate_Ptr Date()
-	{
-		return QDate_Ptr(CQt.QDateTimeEdit_Date((.)this.Ptr));
-	}
-	public QTime_Ptr Time()
-	{
-		return QTime_Ptr(CQt.QDateTimeEdit_Time((.)this.Ptr));
-	}
-	public QCalendar_Ptr Calendar()
-	{
-		return QCalendar_Ptr(CQt.QDateTimeEdit_Calendar((.)this.Ptr));
-	}
-	public void SetCalendar(IQCalendar calendar)
-	{
-		CQt.QDateTimeEdit_SetCalendar((.)this.Ptr, (.)calendar?.ObjectPtr);
-	}
-	public QDateTime_Ptr MinimumDateTime()
-	{
-		return QDateTime_Ptr(CQt.QDateTimeEdit_MinimumDateTime((.)this.Ptr));
-	}
-	public void ClearMinimumDateTime()
-	{
-		CQt.QDateTimeEdit_ClearMinimumDateTime((.)this.Ptr);
-	}
-	public void SetMinimumDateTime(IQDateTime dt)
-	{
-		CQt.QDateTimeEdit_SetMinimumDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
-	}
-	public QDateTime_Ptr MaximumDateTime()
-	{
-		return QDateTime_Ptr(CQt.QDateTimeEdit_MaximumDateTime((.)this.Ptr));
-	}
-	public void ClearMaximumDateTime()
-	{
-		CQt.QDateTimeEdit_ClearMaximumDateTime((.)this.Ptr);
-	}
-	public void SetMaximumDateTime(IQDateTime dt)
-	{
-		CQt.QDateTimeEdit_SetMaximumDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
-	}
-	public void SetDateTimeRange(IQDateTime min, IQDateTime max)
-	{
-		CQt.QDateTimeEdit_SetDateTimeRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
-	}
-	public QDate_Ptr MinimumDate()
-	{
-		return QDate_Ptr(CQt.QDateTimeEdit_MinimumDate((.)this.Ptr));
-	}
-	public void SetMinimumDate(IQDate min)
-	{
-		CQt.QDateTimeEdit_SetMinimumDate((.)this.Ptr, (.)min?.ObjectPtr);
-	}
-	public void ClearMinimumDate()
-	{
-		CQt.QDateTimeEdit_ClearMinimumDate((.)this.Ptr);
-	}
-	public QDate_Ptr MaximumDate()
-	{
-		return QDate_Ptr(CQt.QDateTimeEdit_MaximumDate((.)this.Ptr));
-	}
-	public void SetMaximumDate(IQDate max)
-	{
-		CQt.QDateTimeEdit_SetMaximumDate((.)this.Ptr, (.)max?.ObjectPtr);
-	}
-	public void ClearMaximumDate()
-	{
-		CQt.QDateTimeEdit_ClearMaximumDate((.)this.Ptr);
-	}
-	public void SetDateRange(IQDate min, IQDate max)
-	{
-		CQt.QDateTimeEdit_SetDateRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
-	}
-	public QTime_Ptr MinimumTime()
-	{
-		return QTime_Ptr(CQt.QDateTimeEdit_MinimumTime((.)this.Ptr));
-	}
-	public void SetMinimumTime(IQTime min)
-	{
-		CQt.QDateTimeEdit_SetMinimumTime((.)this.Ptr, (.)min?.ObjectPtr);
-	}
-	public void ClearMinimumTime()
-	{
-		CQt.QDateTimeEdit_ClearMinimumTime((.)this.Ptr);
-	}
-	public QTime_Ptr MaximumTime()
-	{
-		return QTime_Ptr(CQt.QDateTimeEdit_MaximumTime((.)this.Ptr));
-	}
-	public void SetMaximumTime(IQTime max)
-	{
-		CQt.QDateTimeEdit_SetMaximumTime((.)this.Ptr, (.)max?.ObjectPtr);
-	}
-	public void ClearMaximumTime()
-	{
-		CQt.QDateTimeEdit_ClearMaximumTime((.)this.Ptr);
-	}
-	public void SetTimeRange(IQTime min, IQTime max)
-	{
-		CQt.QDateTimeEdit_SetTimeRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
-	}
-	public void* DisplayedSections()
-	{
-		return CQt.QDateTimeEdit_DisplayedSections((.)this.Ptr);
-	}
-	public QDateTimeEdit_Section CurrentSection()
-	{
-		return CQt.QDateTimeEdit_CurrentSection((.)this.Ptr);
-	}
-	public QDateTimeEdit_Section SectionAt(c_int index)
-	{
-		return CQt.QDateTimeEdit_SectionAt((.)this.Ptr, index);
-	}
-	public void SetCurrentSection(QDateTimeEdit_Section section)
-	{
-		CQt.QDateTimeEdit_SetCurrentSection((.)this.Ptr, section);
-	}
-	public c_int CurrentSectionIndex()
-	{
-		return CQt.QDateTimeEdit_CurrentSectionIndex((.)this.Ptr);
-	}
-	public void SetCurrentSectionIndex(c_int index)
-	{
-		CQt.QDateTimeEdit_SetCurrentSectionIndex((.)this.Ptr, index);
-	}
-	public QCalendarWidget_Ptr CalendarWidget()
-	{
-		return QCalendarWidget_Ptr(CQt.QDateTimeEdit_CalendarWidget((.)this.Ptr));
-	}
-	public void SetCalendarWidget(IQCalendarWidget calendarWidget)
-	{
-		CQt.QDateTimeEdit_SetCalendarWidget((.)this.Ptr, (.)calendarWidget?.ObjectPtr);
-	}
-	public c_int SectionCount()
-	{
-		return CQt.QDateTimeEdit_SectionCount((.)this.Ptr);
-	}
-	public void SetSelectedSection(QDateTimeEdit_Section section)
-	{
-		CQt.QDateTimeEdit_SetSelectedSection((.)this.Ptr, section);
-	}
-	public void SectionText(String outStr, QDateTimeEdit_Section section)
-	{
-		CQt.QDateTimeEdit_SectionText((.)this.Ptr, section);
-	}
-	public void DisplayFormat(String outStr)
-	{
-		CQt.QDateTimeEdit_DisplayFormat((.)this.Ptr);
-	}
-	public void SetDisplayFormat(String format)
-	{
-		CQt.QDateTimeEdit_SetDisplayFormat((.)this.Ptr, libqt_string(format));
-	}
-	public bool CalendarPopup()
-	{
-		return CQt.QDateTimeEdit_CalendarPopup((.)this.Ptr);
-	}
-	public void SetCalendarPopup(bool enable)
-	{
-		CQt.QDateTimeEdit_SetCalendarPopup((.)this.Ptr, enable);
-	}
-	public Qt_TimeSpec TimeSpec()
-	{
-		return CQt.QDateTimeEdit_TimeSpec((.)this.Ptr);
-	}
-	public void SetTimeSpec(Qt_TimeSpec spec)
-	{
-		CQt.QDateTimeEdit_SetTimeSpec((.)this.Ptr, spec);
-	}
-	public QSize_Ptr SizeHint()
-	{
-		return QSize_Ptr(CQt.QDateTimeEdit_SizeHint((.)this.Ptr));
-	}
-	public void Clear()
-	{
-		CQt.QDateTimeEdit_Clear((.)this.Ptr);
-	}
-	public void StepBy(c_int steps)
-	{
-		CQt.QDateTimeEdit_StepBy((.)this.Ptr, steps);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QDateTimeEdit_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QDateEdit_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void DateTimeChanged(IQDateTime dateTime)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		CQt.QDateTimeEdit_DateTimeChanged((.)this.Ptr, (.)dateTime?.ObjectPtr);
+		return CQt.QDateEdit_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public void TimeChanged(IQTime time)
+	public void ObjectName(String outStr)
 	{
-		CQt.QDateTimeEdit_TimeChanged((.)this.Ptr, (.)time?.ObjectPtr);
+		CQt.QObject_ObjectName((.)this.Ptr);
 	}
-	public void DateChanged(IQDate date)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QDateTimeEdit_DateChanged((.)this.Ptr, (.)date?.ObjectPtr);
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
 	}
-	public void SetDateTime(IQDateTime dateTime)
+	public bool IsWidgetType()
 	{
-		CQt.QDateTimeEdit_SetDateTime((.)this.Ptr, (.)dateTime?.ObjectPtr);
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
 	}
-	public void SetDate(IQDate date)
+	public bool IsWindowType()
 	{
-		CQt.QDateTimeEdit_SetDate((.)this.Ptr, (.)date?.ObjectPtr);
+		return CQt.QObject_IsWindowType((.)this.Ptr);
 	}
-	public void SetTime(IQTime time)
+	public bool IsQuickItemType()
 	{
-		CQt.QDateTimeEdit_SetTime((.)this.Ptr, (.)time?.ObjectPtr);
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
 	}
-	public void KeyPressEvent(IQKeyEvent event)
+	public bool SignalsBlocked()
 	{
-		CQt.QDateTimeEdit_KeyPressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
 	}
-	public void WheelEvent(IQWheelEvent event)
+	public bool BlockSignals(bool b)
 	{
-		CQt.QDateTimeEdit_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
 	}
-	public void FocusInEvent(IQFocusEvent event)
+	public QThread_Ptr Thread()
 	{
-		CQt.QDateTimeEdit_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
 	}
-	public bool FocusNextPrevChild(bool next)
+	public void MoveToThread(IQThread thread)
 	{
-		return CQt.QDateTimeEdit_FocusNextPrevChild((.)this.Ptr, next);
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
 	}
-	public QValidator_State Validate(String input, c_int* pos)
+	public c_int StartTimer(c_int interval)
 	{
-		return CQt.QDateTimeEdit_Validate((.)this.Ptr, libqt_string(input), pos);
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
 	}
-	public void Fixup(String input)
+	public c_int StartTimer2(void* time)
 	{
-		CQt.QDateTimeEdit_Fixup((.)this.Ptr, libqt_string(input));
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
 	}
-	public QDateTime_Ptr DateTimeFromText(String text)
+	public void KillTimer(c_int id)
 	{
-		return QDateTime_Ptr(CQt.QDateTimeEdit_DateTimeFromText((.)this.Ptr, libqt_string(text)));
+		CQt.QObject_KillTimer((.)this.Ptr, id);
 	}
-	public void TextFromDateTime(String outStr, IQDateTime dt)
+	public void** Children()
 	{
-		CQt.QDateTimeEdit_TextFromDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
+		return CQt.QObject_Children((.)this.Ptr);
 	}
-	public void* StepEnabled()
+	public void SetParent(IQObject parent)
 	{
-		return CQt.QDateTimeEdit_StepEnabled((.)this.Ptr);
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
-	public void MousePressEvent(IQMouseEvent event)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QDateTimeEdit_MousePressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void PaintEvent(IQPaintEvent event)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QDateTimeEdit_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
 	}
-	public void InitStyleOption(IQStyleOptionSpinBox option)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		CQt.QDateTimeEdit_InitStyleOption((.)this.Ptr, (.)option?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QAbstractSpinBox_ButtonSymbols((.)this.Ptr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		CQt.QAbstractSpinBox_SetButtonSymbols((.)this.Ptr, bs);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
-	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		CQt.QAbstractSpinBox_SetCorrectionMode((.)this.Ptr, cm);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QAbstractSpinBox_CorrectionMode CorrectionMode()
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QAbstractSpinBox_CorrectionMode((.)this.Ptr);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
-	public bool HasAcceptableInput()
+	public bool Disconnect3()
 	{
-		return CQt.QAbstractSpinBox_HasAcceptableInput((.)this.Ptr);
+		return CQt.QObject_Disconnect3((.)this.Ptr);
 	}
-	public void Text(String outStr)
+	public bool Disconnect4(IQObject receiver)
 	{
-		CQt.QAbstractSpinBox_Text((.)this.Ptr);
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
 	}
-	public void SpecialValueText(String outStr)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		CQt.QAbstractSpinBox_SpecialValueText((.)this.Ptr);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
-	public void SetSpecialValueText(String txt)
+	public void DumpObjectTree()
 	{
-		CQt.QAbstractSpinBox_SetSpecialValueText((.)this.Ptr, libqt_string(txt));
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
 	}
-	public bool Wrapping()
+	public void DumpObjectInfo()
 	{
-		return CQt.QAbstractSpinBox_Wrapping((.)this.Ptr);
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
 	}
-	public void SetWrapping(bool w)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		CQt.QAbstractSpinBox_SetWrapping((.)this.Ptr, w);
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
 	}
-	public void SetReadOnly(bool r)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		CQt.QAbstractSpinBox_SetReadOnly((.)this.Ptr, r);
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
 	}
-	public bool IsReadOnly()
+	public void* DynamicPropertyNames()
 	{
-		return CQt.QAbstractSpinBox_IsReadOnly((.)this.Ptr);
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
 	}
-	public void SetKeyboardTracking(bool kt)
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		CQt.QAbstractSpinBox_SetKeyboardTracking((.)this.Ptr, kt);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
 	}
-	public bool KeyboardTracking()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return CQt.QAbstractSpinBox_KeyboardTracking((.)this.Ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
 	}
-	public void SetAlignment(void* flag)
+	public void Destroyed()
 	{
-		CQt.QAbstractSpinBox_SetAlignment((.)this.Ptr, flag);
+		CQt.QObject_Destroyed((.)this.Ptr);
 	}
-	public void* Alignment()
+	public QObject_Ptr Parent()
 	{
-		return CQt.QAbstractSpinBox_Alignment((.)this.Ptr);
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
 	}
-	public void SetFrame(bool frame)
+	public bool Inherits(c_char* classname)
 	{
-		CQt.QAbstractSpinBox_SetFrame((.)this.Ptr, frame);
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
 	}
-	public bool HasFrame()
+	public void DeleteLater()
 	{
-		return CQt.QAbstractSpinBox_HasFrame((.)this.Ptr);
+		CQt.QObject_DeleteLater((.)this.Ptr);
 	}
-	public void SetAccelerated(bool on)
+	public QObject_Ptr Sender()
 	{
-		CQt.QAbstractSpinBox_SetAccelerated((.)this.Ptr, on);
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
 	}
-	public bool IsAccelerated()
+	public c_int SenderSignalIndex()
 	{
-		return CQt.QAbstractSpinBox_IsAccelerated((.)this.Ptr);
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
 	}
-	public void SetGroupSeparatorShown(bool shown)
+	public c_int Receivers(c_char* signal)
 	{
-		CQt.QAbstractSpinBox_SetGroupSeparatorShown((.)this.Ptr, shown);
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
 	}
-	public bool IsGroupSeparatorShown()
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QAbstractSpinBox_IsGroupSeparatorShown((.)this.Ptr);
-	}
-	public QSize_Ptr MinimumSizeHint()
-	{
-		return QSize_Ptr(CQt.QAbstractSpinBox_MinimumSizeHint((.)this.Ptr));
-	}
-	public void InterpretText()
-	{
-		CQt.QAbstractSpinBox_InterpretText((.)this.Ptr);
-	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
-	{
-		return QVariant_Ptr(CQt.QAbstractSpinBox_InputMethodQuery((.)this.Ptr, param1));
-	}
-	public void StepUp()
-	{
-		CQt.QAbstractSpinBox_StepUp((.)this.Ptr);
-	}
-	public void StepDown()
-	{
-		CQt.QAbstractSpinBox_StepDown((.)this.Ptr);
-	}
-	public void SelectAll()
-	{
-		CQt.QAbstractSpinBox_SelectAll((.)this.Ptr);
-	}
-	public void ResizeEvent(IQResizeEvent event)
-	{
-		CQt.QAbstractSpinBox_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void KeyReleaseEvent(IQKeyEvent event)
-	{
-		CQt.QAbstractSpinBox_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void FocusOutEvent(IQFocusEvent event)
-	{
-		CQt.QAbstractSpinBox_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ContextMenuEvent(IQContextMenuEvent event)
-	{
-		CQt.QAbstractSpinBox_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChangeEvent(IQEvent event)
-	{
-		CQt.QAbstractSpinBox_ChangeEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CloseEvent(IQCloseEvent event)
-	{
-		CQt.QAbstractSpinBox_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void HideEvent(IQHideEvent event)
-	{
-		CQt.QAbstractSpinBox_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void MouseReleaseEvent(IQMouseEvent event)
-	{
-		CQt.QAbstractSpinBox_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void MouseMoveEvent(IQMouseEvent event)
-	{
-		CQt.QAbstractSpinBox_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QAbstractSpinBox_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void ShowEvent(IQShowEvent event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QAbstractSpinBox_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public QLineEdit_Ptr LineEdit()
+	public void CustomEvent(IQEvent event)
 	{
-		return QLineEdit_Ptr(CQt.QAbstractSpinBox_LineEdit((.)this.Ptr));
+		CQt.QDateEdit_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void SetLineEdit(IQLineEdit edit)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QAbstractSpinBox_SetLineEdit((.)this.Ptr, (.)edit?.ObjectPtr);
+		CQt.QDateEdit_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
-	public void EditingFinished()
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QAbstractSpinBox_EditingFinished((.)this.Ptr);
+		CQt.QDateEdit_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.Ptr);
+		return CQt.QDateEdit_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QDateEdit_PaintEngine((.)this.Ptr));
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QDateEdit_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QDateEdit_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QDateEdit_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QDateEdit_SharedPainter((.)this.Ptr));
 	}
 	public void* WinId()
 	{
@@ -8719,14 +8967,6 @@ struct QDateEdit_Ptr
 	public QSize_Ptr Size()
 	{
 		return QSize_Ptr(CQt.QWidget_Size((.)this.Ptr));
-	}
-	public c_int Width()
-	{
-		return CQt.QWidget_Width((.)this.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QWidget_Height((.)this.Ptr);
 	}
 	public QRect_Ptr Rect()
 	{
@@ -9294,7 +9534,7 @@ struct QDateEdit_Ptr
 	}
 	public void SetVisible(bool visible)
 	{
-		CQt.QWidget_SetVisible((.)this.Ptr, visible);
+		CQt.QDateEdit_SetVisible((.)this.Ptr, visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -9412,6 +9652,14 @@ struct QDateEdit_Ptr
 	{
 		CQt.QWidget_OverrideWindowState((.)this.Ptr, state);
 	}
+	public QSize_Ptr SizeHint()
+	{
+		return QSize_Ptr(CQt.QDateEdit_SizeHint((.)this.Ptr));
+	}
+	public QSize_Ptr MinimumSizeHint()
+	{
+		return QSize_Ptr(CQt.QDateEdit_MinimumSizeHint((.)this.Ptr));
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return QSizePolicy_Ptr(CQt.QWidget_SizePolicy((.)this.Ptr));
@@ -9426,11 +9674,11 @@ struct QDateEdit_Ptr
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QDateEdit_HeightForWidth((.)this.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.Ptr);
+		return CQt.QDateEdit_HasHeightForWidth((.)this.Ptr);
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -9463,10 +9711,6 @@ struct QDateEdit_Ptr
 	public void UpdateGeometry()
 	{
 		CQt.QWidget_UpdateGeometry((.)this.Ptr);
-	}
-	public void SetParent(IQWidget parent)
-	{
-		CQt.QWidget_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -9584,10 +9828,6 @@ struct QDateEdit_Ptr
 	{
 		return CQt.QWidget_TestAttribute((.)this.Ptr, param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.Ptr));
-	}
 	public void EnsurePolished()
 	{
 		CQt.QWidget_EnsurePolished((.)this.Ptr);
@@ -9640,69 +9880,117 @@ struct QDateEdit_Ptr
 	{
 		CQt.QWidget_CustomContextMenuRequested((.)this.Ptr, (.)pos?.ObjectPtr);
 	}
+	public void MousePressEvent(IQMouseEvent event)
+	{
+		CQt.QDateEdit_MousePressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void MouseReleaseEvent(IQMouseEvent event)
+	{
+		CQt.QDateEdit_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
 	public void MouseDoubleClickEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void MouseMoveEvent(IQMouseEvent event)
+	{
+		CQt.QDateEdit_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void WheelEvent(IQWheelEvent event)
+	{
+		CQt.QDateEdit_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyPressEvent(IQKeyEvent event)
+	{
+		CQt.QDateEdit_KeyPressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyReleaseEvent(IQKeyEvent event)
+	{
+		CQt.QDateEdit_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void FocusInEvent(IQFocusEvent event)
+	{
+		CQt.QDateEdit_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void FocusOutEvent(IQFocusEvent event)
+	{
+		CQt.QDateEdit_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void PaintEvent(IQPaintEvent event)
+	{
+		CQt.QDateEdit_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ResizeEvent(IQResizeEvent event)
+	{
+		CQt.QDateEdit_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CloseEvent(IQCloseEvent event)
+	{
+		CQt.QDateEdit_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ContextMenuEvent(IQContextMenuEvent event)
+	{
+		CQt.QDateEdit_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragEnterEvent(IQDragEnterEvent event)
 	{
-		CQt.QWidget_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragMoveEvent(IQDragMoveEvent event)
 	{
-		CQt.QWidget_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragLeaveEvent(IQDragLeaveEvent event)
 	{
-		CQt.QWidget_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DropEvent(IQDropEvent event)
 	{
-		CQt.QWidget_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateEdit_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ShowEvent(IQShowEvent event)
+	{
+		CQt.QDateEdit_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void HideEvent(IQHideEvent event)
+	{
+		CQt.QDateEdit_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.Ptr, eventType, message, result);
+		return CQt.QDateEdit_NativeEvent((.)this.Ptr, eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public void ChangeEvent(IQEvent param1)
 	{
-		return CQt.QWidget_Metric((.)this.Ptr, param1);
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		CQt.QWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.Ptr));
+		CQt.QDateEdit_ChangeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void InputMethodEvent(IQInputMethodEvent param1)
 	{
-		CQt.QWidget_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QDateEdit_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
+	{
+		return QVariant_Ptr(CQt.QDateEdit_InputMethodQuery((.)this.Ptr, param1));
 	}
 	public void* InputMethodHints()
 	{
@@ -9723,6 +10011,10 @@ struct QDateEdit_Ptr
 	public void Destroy()
 	{
 		CQt.QWidget_Destroy((.)this.Ptr);
+	}
+	public bool FocusNextPrevChild(bool next)
+	{
+		return CQt.QDateEdit_FocusNextPrevChild((.)this.Ptr, next);
 	}
 	public bool FocusNextChild()
 	{
@@ -9816,408 +10108,390 @@ struct QDateEdit_Ptr
 	{
 		CQt.QWidget_Destroy2((.)this.Ptr, destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QAbstractSpinBox_ButtonSymbols((.)this.Ptr);
 	}
-	public void ObjectName(String outStr)
+	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
 	{
-		CQt.QObject_ObjectName((.)this.Ptr);
+		CQt.QAbstractSpinBox_SetButtonSymbols((.)this.Ptr, bs);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
 	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetCorrectionMode((.)this.Ptr, cm);
 	}
-	public bool IsWidgetType()
+	public QAbstractSpinBox_CorrectionMode CorrectionMode()
 	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
+		return CQt.QAbstractSpinBox_CorrectionMode((.)this.Ptr);
 	}
-	public bool IsWindowType()
+	public bool HasAcceptableInput()
 	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
+		return CQt.QAbstractSpinBox_HasAcceptableInput((.)this.Ptr);
 	}
-	public bool IsQuickItemType()
+	public void Text(String outStr)
 	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+		CQt.QAbstractSpinBox_Text((.)this.Ptr);
 	}
-	public bool SignalsBlocked()
+	public void SpecialValueText(String outStr)
 	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+		CQt.QAbstractSpinBox_SpecialValueText((.)this.Ptr);
 	}
-	public bool BlockSignals(bool b)
+	public void SetSpecialValueText(String txt)
 	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+		CQt.QAbstractSpinBox_SetSpecialValueText((.)this.Ptr, libqt_string(txt));
 	}
-	public QThread_Ptr Thread()
+	public bool Wrapping()
 	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+		return CQt.QAbstractSpinBox_Wrapping((.)this.Ptr);
 	}
-	public void MoveToThread(IQThread thread)
+	public void SetWrapping(bool w)
 	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetWrapping((.)this.Ptr, w);
 	}
-	public c_int StartTimer(c_int interval)
+	public void SetReadOnly(bool r)
 	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+		CQt.QAbstractSpinBox_SetReadOnly((.)this.Ptr, r);
 	}
-	public c_int StartTimer2(void* time)
+	public bool IsReadOnly()
 	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+		return CQt.QAbstractSpinBox_IsReadOnly((.)this.Ptr);
 	}
-	public void KillTimer(c_int id)
+	public void SetKeyboardTracking(bool kt)
 	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
+		CQt.QAbstractSpinBox_SetKeyboardTracking((.)this.Ptr, kt);
 	}
-	public void** Children()
+	public bool KeyboardTracking()
 	{
-		return CQt.QObject_Children((.)this.Ptr);
+		return CQt.QAbstractSpinBox_KeyboardTracking((.)this.Ptr);
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void SetAlignment(void* flag)
 	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetAlignment((.)this.Ptr, flag);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public void* Alignment()
 	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+		return CQt.QAbstractSpinBox_Alignment((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetFrame(bool frame)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+		CQt.QAbstractSpinBox_SetFrame((.)this.Ptr, frame);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public bool HasFrame()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+		return CQt.QAbstractSpinBox_HasFrame((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetAccelerated(bool on)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+		CQt.QAbstractSpinBox_SetAccelerated((.)this.Ptr, on);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public bool IsAccelerated()
 	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+		return CQt.QAbstractSpinBox_IsAccelerated((.)this.Ptr);
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void SetGroupSeparatorShown(bool shown)
 	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+		CQt.QAbstractSpinBox_SetGroupSeparatorShown((.)this.Ptr, shown);
 	}
-	public bool Disconnect3()
+	public bool IsGroupSeparatorShown()
 	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
+		return CQt.QAbstractSpinBox_IsGroupSeparatorShown((.)this.Ptr);
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void InterpretText()
 	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+		CQt.QAbstractSpinBox_InterpretText((.)this.Ptr);
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public QValidator_State Validate(String input, c_int* pos)
 	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+		return CQt.QDateEdit_Validate((.)this.Ptr, libqt_string(input), pos);
 	}
-	public void DumpObjectTree()
+	public void Fixup(String input)
 	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
+		CQt.QDateEdit_Fixup((.)this.Ptr, libqt_string(input));
 	}
-	public void DumpObjectInfo()
+	public void StepBy(c_int steps)
 	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+		CQt.QDateEdit_StepBy((.)this.Ptr, steps);
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public void StepUp()
 	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+		CQt.QAbstractSpinBox_StepUp((.)this.Ptr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public void StepDown()
 	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+		CQt.QAbstractSpinBox_StepDown((.)this.Ptr);
 	}
-	public void* DynamicPropertyNames()
+	public void SelectAll()
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+		CQt.QAbstractSpinBox_SelectAll((.)this.Ptr);
 	}
-	public QBindingStorage_Ptr BindingStorage()
+	public void Clear()
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+		CQt.QDateEdit_Clear((.)this.Ptr);
 	}
-	public QBindingStorage_Ptr BindingStorage2()
+	public void InitStyleOption(IQStyleOptionSpinBox option)
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+		CQt.QDateEdit_InitStyleOption((.)this.Ptr, (.)option?.ObjectPtr);
 	}
-	public void Destroyed()
+	public QLineEdit_Ptr LineEdit()
 	{
-		CQt.QObject_Destroyed((.)this.Ptr);
+		return QLineEdit_Ptr(CQt.QAbstractSpinBox_LineEdit((.)this.Ptr));
 	}
-	public QObject_Ptr Parent()
+	public void SetLineEdit(IQLineEdit edit)
 	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+		CQt.QAbstractSpinBox_SetLineEdit((.)this.Ptr, (.)edit?.ObjectPtr);
 	}
-	public bool Inherits(c_char* classname)
+	public void* StepEnabled()
 	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
+		return CQt.QDateEdit_StepEnabled((.)this.Ptr);
 	}
-	public void DeleteLater()
+	public void EditingFinished()
 	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
+		CQt.QAbstractSpinBox_EditingFinished((.)this.Ptr);
 	}
-	public QObject_Ptr Sender()
+	public QDateTime_Ptr DateTime()
 	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+		return QDateTime_Ptr(CQt.QDateTimeEdit_DateTime((.)this.Ptr));
 	}
-	public c_int SenderSignalIndex()
+	public QDate_Ptr Date()
 	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+		return QDate_Ptr(CQt.QDateTimeEdit_Date((.)this.Ptr));
 	}
-	public c_int Receivers(c_char* signal)
+	public QTime_Ptr Time()
 	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
+		return QTime_Ptr(CQt.QDateTimeEdit_Time((.)this.Ptr));
 	}
-	public bool IsSignalConnected(IQMetaMethod signal)
+	public QCalendar_Ptr Calendar()
 	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+		return QCalendar_Ptr(CQt.QDateTimeEdit_Calendar((.)this.Ptr));
 	}
-	public void ChildEvent(IQChildEvent event)
+	public void SetCalendar(IQCalendar calendar)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDateTimeEdit_SetCalendar((.)this.Ptr, (.)calendar?.ObjectPtr);
 	}
-	public void CustomEvent(IQEvent event)
+	public QDateTime_Ptr MinimumDateTime()
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QDateTime_Ptr(CQt.QDateTimeEdit_MinimumDateTime((.)this.Ptr));
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public void ClearMinimumDateTime()
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QDateTimeEdit_ClearMinimumDateTime((.)this.Ptr);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public void SetMinimumDateTime(IQDateTime dt)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QDateTimeEdit_SetMinimumDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
 	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	public QDateTime_Ptr MaximumDateTime()
 	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+		return QDateTime_Ptr(CQt.QDateTimeEdit_MaximumDateTime((.)this.Ptr));
 	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	public void ClearMaximumDateTime()
 	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+		CQt.QDateTimeEdit_ClearMaximumDateTime((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public void SetMaximumDateTime(IQDateTime dt)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+		CQt.QDateTimeEdit_SetMaximumDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
 	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public void SetDateTimeRange(IQDateTime min, IQDateTime max)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+		CQt.QDateTimeEdit_SetDateTimeRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
 	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QDate_Ptr MinimumDate()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+		return QDate_Ptr(CQt.QDateTimeEdit_MinimumDate((.)this.Ptr));
 	}
-	public bool Disconnect1(c_char* signal)
+	public void SetMinimumDate(IQDate min)
 	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+		CQt.QDateTimeEdit_SetMinimumDate((.)this.Ptr, (.)min?.ObjectPtr);
 	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
+	public void ClearMinimumDate()
 	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+		CQt.QDateTimeEdit_ClearMinimumDate((.)this.Ptr);
 	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	public QDate_Ptr MaximumDate()
 	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+		return QDate_Ptr(CQt.QDateTimeEdit_MaximumDate((.)this.Ptr));
 	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
+	public void SetMaximumDate(IQDate max)
 	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+		CQt.QDateTimeEdit_SetMaximumDate((.)this.Ptr, (.)max?.ObjectPtr);
 	}
-	public void Destroyed1(IQObject param1)
+	public void ClearMaximumDate()
 	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QDateTimeEdit_ClearMaximumDate((.)this.Ptr);
 	}
-	public bool PaintingActive()
+	public void SetDateRange(IQDate min, IQDate max)
 	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+		CQt.QDateTimeEdit_SetDateRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
 	}
-	public c_int WidthMM()
+	public QTime_Ptr MinimumTime()
 	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+		return QTime_Ptr(CQt.QDateTimeEdit_MinimumTime((.)this.Ptr));
 	}
-	public c_int HeightMM()
+	public void SetMinimumTime(IQTime min)
 	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+		CQt.QDateTimeEdit_SetMinimumTime((.)this.Ptr, (.)min?.ObjectPtr);
 	}
-	public c_int LogicalDpiX()
+	public void ClearMinimumTime()
 	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+		CQt.QDateTimeEdit_ClearMinimumTime((.)this.Ptr);
 	}
-	public c_int LogicalDpiY()
+	public QTime_Ptr MaximumTime()
 	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+		return QTime_Ptr(CQt.QDateTimeEdit_MaximumTime((.)this.Ptr));
 	}
-	public c_int PhysicalDpiX()
+	public void SetMaximumTime(IQTime max)
 	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+		CQt.QDateTimeEdit_SetMaximumTime((.)this.Ptr, (.)max?.ObjectPtr);
 	}
-	public c_int PhysicalDpiY()
+	public void ClearMaximumTime()
 	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+		CQt.QDateTimeEdit_ClearMaximumTime((.)this.Ptr);
 	}
-	public double DevicePixelRatio()
+	public void SetTimeRange(IQTime min, IQTime max)
 	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+		CQt.QDateTimeEdit_SetTimeRange((.)this.Ptr, (.)min?.ObjectPtr, (.)max?.ObjectPtr);
 	}
-	public double DevicePixelRatioF()
+	public void* DisplayedSections()
 	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+		return CQt.QDateTimeEdit_DisplayedSections((.)this.Ptr);
 	}
-	public c_int ColorCount()
+	public QDateTimeEdit_Section CurrentSection()
 	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+		return CQt.QDateTimeEdit_CurrentSection((.)this.Ptr);
 	}
-	public c_int Depth()
+	public QDateTimeEdit_Section SectionAt(c_int index)
 	{
-		return CQt.QPaintDevice_Depth((.)this.Ptr);
+		return CQt.QDateTimeEdit_SectionAt((.)this.Ptr, index);
 	}
-	public double DevicePixelRatioFScale()
+	public void SetCurrentSection(QDateTimeEdit_Section section)
 	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
+		CQt.QDateTimeEdit_SetCurrentSection((.)this.Ptr, section);
+	}
+	public c_int CurrentSectionIndex()
+	{
+		return CQt.QDateTimeEdit_CurrentSectionIndex((.)this.Ptr);
+	}
+	public void SetCurrentSectionIndex(c_int index)
+	{
+		CQt.QDateTimeEdit_SetCurrentSectionIndex((.)this.Ptr, index);
+	}
+	public QCalendarWidget_Ptr CalendarWidget()
+	{
+		return QCalendarWidget_Ptr(CQt.QDateTimeEdit_CalendarWidget((.)this.Ptr));
+	}
+	public void SetCalendarWidget(IQCalendarWidget calendarWidget)
+	{
+		CQt.QDateTimeEdit_SetCalendarWidget((.)this.Ptr, (.)calendarWidget?.ObjectPtr);
+	}
+	public c_int SectionCount()
+	{
+		return CQt.QDateTimeEdit_SectionCount((.)this.Ptr);
+	}
+	public void SetSelectedSection(QDateTimeEdit_Section section)
+	{
+		CQt.QDateTimeEdit_SetSelectedSection((.)this.Ptr, section);
+	}
+	public void SectionText(String outStr, QDateTimeEdit_Section section)
+	{
+		CQt.QDateTimeEdit_SectionText((.)this.Ptr, section);
+	}
+	public void DisplayFormat(String outStr)
+	{
+		CQt.QDateTimeEdit_DisplayFormat((.)this.Ptr);
+	}
+	public void SetDisplayFormat(String format)
+	{
+		CQt.QDateTimeEdit_SetDisplayFormat((.)this.Ptr, libqt_string(format));
+	}
+	public bool CalendarPopup()
+	{
+		return CQt.QDateTimeEdit_CalendarPopup((.)this.Ptr);
+	}
+	public void SetCalendarPopup(bool enable)
+	{
+		CQt.QDateTimeEdit_SetCalendarPopup((.)this.Ptr, enable);
+	}
+	public Qt_TimeSpec TimeSpec()
+	{
+		return CQt.QDateTimeEdit_TimeSpec((.)this.Ptr);
+	}
+	public void SetTimeSpec(Qt_TimeSpec spec)
+	{
+		CQt.QDateTimeEdit_SetTimeSpec((.)this.Ptr, spec);
+	}
+	public void DateTimeChanged(IQDateTime dateTime)
+	{
+		CQt.QDateTimeEdit_DateTimeChanged((.)this.Ptr, (.)dateTime?.ObjectPtr);
+	}
+	public void TimeChanged(IQTime time)
+	{
+		CQt.QDateTimeEdit_TimeChanged((.)this.Ptr, (.)time?.ObjectPtr);
+	}
+	public void DateChanged(IQDate date)
+	{
+		CQt.QDateTimeEdit_DateChanged((.)this.Ptr, (.)date?.ObjectPtr);
+	}
+	public void SetDateTime(IQDateTime dateTime)
+	{
+		CQt.QDateTimeEdit_SetDateTime((.)this.Ptr, (.)dateTime?.ObjectPtr);
+	}
+	public void SetDate(IQDate date)
+	{
+		CQt.QDateTimeEdit_SetDate((.)this.Ptr, (.)date?.ObjectPtr);
+	}
+	public void SetTime(IQTime time)
+	{
+		CQt.QDateTimeEdit_SetTime((.)this.Ptr, (.)time?.ObjectPtr);
+	}
+	public QDateTime_Ptr DateTimeFromText(String text)
+	{
+		return QDateTime_Ptr(CQt.QDateEdit_DateTimeFromText((.)this.Ptr, libqt_string(text)));
+	}
+	public void TextFromDateTime(String outStr, IQDateTime dt)
+	{
+		CQt.QDateEdit_TextFromDateTime((.)this.Ptr, (.)dt?.ObjectPtr);
 	}
 }
 class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQPaintDevice
 {
 	private QDateEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QDateEdit_userDateChanged,
-		QDateEdit_dateTimeChanged,
-		QDateEdit_timeChanged,
-		QDateEdit_dateChanged,
-		QDateEdit_editingFinished,
-		QDateEdit_windowTitleChanged,
-		QDateEdit_windowIconChanged,
-		QDateEdit_windowIconTextChanged,
-		QDateEdit_customContextMenuRequested,
-		QDateEdit_destroyed,
-		QDateEdit_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QDateEdit_Connect_UserDateChanged(obj.ObjectPtr,  => QtBeef_QDateEdit_userDateChanged);
-		CQt.QDateTimeEdit_Connect_DateTimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_dateTimeChanged);
-		CQt.QDateTimeEdit_Connect_TimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_timeChanged);
-		CQt.QDateTimeEdit_Connect_DateChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_dateChanged);
-		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_editingFinished);
-		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
-		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
-		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
-		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void* date)> OnUserDateChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** dateTime)> OnDateTimeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void* time)> OnTimeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void* date)> OnDateChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QDateEdit_userDateChanged(void* ptr, void* date)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnUserDateChanged.Invoke(date);
-	}
-	static void QtBeef_QDateTimeEdit_dateTimeChanged(void* ptr, void** dateTime)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDateTimeChanged.Invoke(dateTime);
-	}
-	static void QtBeef_QDateTimeEdit_timeChanged(void* ptr, void* time)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTimeChanged.Invoke(time);
-	}
-	static void QtBeef_QDateTimeEdit_dateChanged(void* ptr, void* date)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDateChanged.Invoke(date);
-	}
-	static void QtBeef_QAbstractSpinBox_editingFinished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEditingFinished.Invoke();
-	}
-	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconChanged.Invoke(icon);
-	}
-	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconTextChanged.Invoke(iconText);
-	}
-	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCustomContextMenuRequested.Invoke(pos);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QDateEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QDateEdit_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDateEdit_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate date)
 	{
 		this.ptr = CQt.QDateEdit_new3((.)date?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate date, IQWidget parent)
 	{
 		this.ptr = CQt.QDateEdit_new4((.)date?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDateEdit_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -10235,437 +10509,303 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QDateTime_Ptr DateTime()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.DateTime();
+		return default;
 	}
-	public QDate_Ptr Date()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Date();
+		return default;
 	}
-	public QTime_Ptr Time()
+	public void ObjectName(String outStr)
 	{
-		return this.ptr.Time();
+		this.ptr.ObjectName(outStr);
 	}
-	public QCalendar_Ptr Calendar()
+	public void SetObjectName(IQAnyStringView name)
 	{
-		return this.ptr.Calendar();
+		this.ptr.SetObjectName(name);
 	}
-	public void SetCalendar(IQCalendar calendar)
+	public bool IsWidgetType()
 	{
-		this.ptr.SetCalendar(calendar);
+		return this.ptr.IsWidgetType();
 	}
-	public QDateTime_Ptr MinimumDateTime()
+	public bool IsWindowType()
 	{
-		return this.ptr.MinimumDateTime();
+		return this.ptr.IsWindowType();
 	}
-	public void ClearMinimumDateTime()
+	public bool IsQuickItemType()
 	{
-		this.ptr.ClearMinimumDateTime();
+		return this.ptr.IsQuickItemType();
 	}
-	public void SetMinimumDateTime(IQDateTime dt)
+	public bool SignalsBlocked()
 	{
-		this.ptr.SetMinimumDateTime(dt);
+		return this.ptr.SignalsBlocked();
 	}
-	public QDateTime_Ptr MaximumDateTime()
+	public bool BlockSignals(bool b)
 	{
-		return this.ptr.MaximumDateTime();
+		return this.ptr.BlockSignals(b);
 	}
-	public void ClearMaximumDateTime()
+	public QThread_Ptr Thread()
 	{
-		this.ptr.ClearMaximumDateTime();
+		return this.ptr.Thread();
 	}
-	public void SetMaximumDateTime(IQDateTime dt)
+	public void MoveToThread(IQThread thread)
 	{
-		this.ptr.SetMaximumDateTime(dt);
+		this.ptr.MoveToThread(thread);
 	}
-	public void SetDateTimeRange(IQDateTime min, IQDateTime max)
+	public c_int StartTimer(c_int interval)
 	{
-		this.ptr.SetDateTimeRange(min, max);
+		return this.ptr.StartTimer(interval);
 	}
-	public QDate_Ptr MinimumDate()
+	public c_int StartTimer2(void* time)
 	{
-		return this.ptr.MinimumDate();
+		return this.ptr.StartTimer2(time);
 	}
-	public void SetMinimumDate(IQDate min)
+	public void KillTimer(c_int id)
 	{
-		this.ptr.SetMinimumDate(min);
+		this.ptr.KillTimer(id);
 	}
-	public void ClearMinimumDate()
+	public void** Children()
 	{
-		this.ptr.ClearMinimumDate();
+		return this.ptr.Children();
 	}
-	public QDate_Ptr MaximumDate()
+	public void SetParent(IQObject parent)
 	{
-		return this.ptr.MaximumDate();
+		this.ptr.SetParent(parent);
 	}
-	public void SetMaximumDate(IQDate max)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		this.ptr.SetMaximumDate(max);
+		this.ptr.InstallEventFilter(filterObj);
 	}
-	public void ClearMaximumDate()
+	public void RemoveEventFilter(IQObject obj)
 	{
-		this.ptr.ClearMaximumDate();
+		this.ptr.RemoveEventFilter(obj);
 	}
-	public void SetDateRange(IQDate min, IQDate max)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.SetDateRange(min, max);
+		return this.ptr.Connect(sender, signal, receiver, member);
 	}
-	public QTime_Ptr MinimumTime()
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return this.ptr.MinimumTime();
+		return this.ptr.Connect2(sender, signal, receiver, method);
 	}
-	public void SetMinimumTime(IQTime min)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		this.ptr.SetMinimumTime(min);
+		return this.ptr.Connect3(sender, signal, member);
 	}
-	public void ClearMinimumTime()
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.ClearMinimumTime();
+		return this.ptr.Disconnect(sender, signal, receiver, member);
 	}
-	public QTime_Ptr MaximumTime()
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return this.ptr.MaximumTime();
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
 	}
-	public void SetMaximumTime(IQTime max)
+	public bool Disconnect3()
 	{
-		this.ptr.SetMaximumTime(max);
+		return this.ptr.Disconnect3();
 	}
-	public void ClearMaximumTime()
+	public bool Disconnect4(IQObject receiver)
 	{
-		this.ptr.ClearMaximumTime();
+		return this.ptr.Disconnect4(receiver);
 	}
-	public void SetTimeRange(IQTime min, IQTime max)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		this.ptr.SetTimeRange(min, max);
+		return this.ptr.Disconnect5(param1);
 	}
-	public void* DisplayedSections()
+	public void DumpObjectTree()
 	{
-		return this.ptr.DisplayedSections();
+		this.ptr.DumpObjectTree();
 	}
-	public QDateTimeEdit_Section CurrentSection()
+	public void DumpObjectInfo()
 	{
-		return this.ptr.CurrentSection();
+		this.ptr.DumpObjectInfo();
 	}
-	public QDateTimeEdit_Section SectionAt(c_int index)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return this.ptr.SectionAt(index);
+		return this.ptr.SetProperty(name, value);
 	}
-	public void SetCurrentSection(QDateTimeEdit_Section section)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		this.ptr.SetCurrentSection(section);
+		return this.ptr.Property(name);
 	}
-	public c_int CurrentSectionIndex()
+	public void* DynamicPropertyNames()
 	{
-		return this.ptr.CurrentSectionIndex();
+		return this.ptr.DynamicPropertyNames();
 	}
-	public void SetCurrentSectionIndex(c_int index)
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		this.ptr.SetCurrentSectionIndex(index);
+		return this.ptr.BindingStorage();
 	}
-	public QCalendarWidget_Ptr CalendarWidget()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return this.ptr.CalendarWidget();
+		return this.ptr.BindingStorage2();
 	}
-	public void SetCalendarWidget(IQCalendarWidget calendarWidget)
+	public void Destroyed()
 	{
-		this.ptr.SetCalendarWidget(calendarWidget);
+		this.ptr.Destroyed();
 	}
-	public c_int SectionCount()
+	public QObject_Ptr Parent()
 	{
-		return this.ptr.SectionCount();
+		return this.ptr.Parent();
 	}
-	public void SetSelectedSection(QDateTimeEdit_Section section)
+	public bool Inherits(c_char* classname)
 	{
-		this.ptr.SetSelectedSection(section);
+		return this.ptr.Inherits(classname);
 	}
-	public void SectionText(String outStr, QDateTimeEdit_Section section)
+	public void DeleteLater()
 	{
-		this.ptr.SectionText(outStr, section);
+		this.ptr.DeleteLater();
 	}
-	public void DisplayFormat(String outStr)
+	public QObject_Ptr Sender()
 	{
-		this.ptr.DisplayFormat(outStr);
+		return this.ptr.Sender();
 	}
-	public void SetDisplayFormat(String format)
+	public c_int SenderSignalIndex()
 	{
-		this.ptr.SetDisplayFormat(format);
+		return this.ptr.SenderSignalIndex();
 	}
-	public bool CalendarPopup()
+	public c_int Receivers(c_char* signal)
 	{
-		return this.ptr.CalendarPopup();
+		return this.ptr.Receivers(signal);
 	}
-	public void SetCalendarPopup(bool enable)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		this.ptr.SetCalendarPopup(enable);
+		return this.ptr.IsSignalConnected(signal);
 	}
-	public Qt_TimeSpec TimeSpec()
+	public  virtual void OnTimerEvent(void** event)
 	{
-		return this.ptr.TimeSpec();
 	}
-	public void SetTimeSpec(Qt_TimeSpec spec)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.SetTimeSpec(spec);
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual void OnCustomEvent(void** event)
 	{
-		return this.ptr.SizeHint();
 	}
-	public void Clear()
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.Clear();
 	}
-	public void StepBy(c_int steps)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.StepBy(steps);
 	}
-	public bool Event(IQEvent event)
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		return this.ptr.Event(event);
+		return this.ptr.StartTimer22(interval, timerType);
 	}
-	public void DateTimeChanged(IQDateTime dateTime)
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		this.ptr.DateTimeChanged(dateTime);
+		return this.ptr.StartTimer23(time, timerType);
 	}
-	public void TimeChanged(IQTime time)
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		this.ptr.TimeChanged(time);
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
 	}
-	public void DateChanged(IQDate date)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		this.ptr.DateChanged(date);
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
 	}
-	public void SetDateTime(IQDateTime dateTime)
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		this.ptr.SetDateTime(dateTime);
+		return this.ptr.Connect4(sender, signal, member, type);
 	}
-	public void SetDate(IQDate date)
+	public bool Disconnect1(c_char* signal)
 	{
-		this.ptr.SetDate(date);
+		return this.ptr.Disconnect1(signal);
 	}
-	public void SetTime(IQTime time)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		this.ptr.SetTime(time);
+		return this.ptr.Disconnect22(signal, receiver);
 	}
-	public void KeyPressEvent(IQKeyEvent event)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.KeyPressEvent(event);
+		return this.ptr.Disconnect32(signal, receiver, member);
 	}
-	public void WheelEvent(IQWheelEvent event)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		this.ptr.WheelEvent(event);
+		return this.ptr.Disconnect23(receiver, member);
 	}
-	public void FocusInEvent(IQFocusEvent event)
+	public void Destroyed1(IQObject param1)
 	{
-		this.ptr.FocusInEvent(event);
+		this.ptr.Destroyed1(param1);
 	}
-	public bool FocusNextPrevChild(bool next)
+	public  virtual c_int OnDevType()
 	{
-		return this.ptr.FocusNextPrevChild(next);
+		return default;
 	}
-	public QValidator_State Validate(String input, c_int* pos)
+	public bool PaintingActive()
 	{
-		return this.ptr.Validate(input, pos);
+		return this.ptr.PaintingActive();
 	}
-	public void Fixup(String input)
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
 	{
-		this.ptr.Fixup(input);
+		return default;
 	}
-	public QDateTime_Ptr DateTimeFromText(String text)
+	public c_int Width()
 	{
-		return this.ptr.DateTimeFromText(text);
+		return this.ptr.Width();
 	}
-	public void TextFromDateTime(String outStr, IQDateTime dt)
+	public c_int Height()
 	{
-		this.ptr.TextFromDateTime(outStr, dt);
+		return this.ptr.Height();
 	}
-	public void* StepEnabled()
+	public c_int WidthMM()
 	{
-		return this.ptr.StepEnabled();
+		return this.ptr.WidthMM();
 	}
-	public void MousePressEvent(IQMouseEvent event)
+	public c_int HeightMM()
 	{
-		this.ptr.MousePressEvent(event);
+		return this.ptr.HeightMM();
 	}
-	public void PaintEvent(IQPaintEvent event)
+	public c_int LogicalDpiX()
 	{
-		this.ptr.PaintEvent(event);
+		return this.ptr.LogicalDpiX();
 	}
-	public void InitStyleOption(IQStyleOptionSpinBox option)
+	public c_int LogicalDpiY()
 	{
-		this.ptr.InitStyleOption(option);
+		return this.ptr.LogicalDpiY();
 	}
-	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
+	public c_int PhysicalDpiX()
 	{
-		return this.ptr.ButtonSymbols();
+		return this.ptr.PhysicalDpiX();
 	}
-	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
+	public c_int PhysicalDpiY()
 	{
-		this.ptr.SetButtonSymbols(bs);
+		return this.ptr.PhysicalDpiY();
 	}
-	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
+	public double DevicePixelRatio()
 	{
-		this.ptr.SetCorrectionMode(cm);
+		return this.ptr.DevicePixelRatio();
 	}
-	public QAbstractSpinBox_CorrectionMode CorrectionMode()
+	public double DevicePixelRatioF()
 	{
-		return this.ptr.CorrectionMode();
+		return this.ptr.DevicePixelRatioF();
 	}
-	public bool HasAcceptableInput()
+	public c_int ColorCount()
 	{
-		return this.ptr.HasAcceptableInput();
+		return this.ptr.ColorCount();
 	}
-	public void Text(String outStr)
+	public c_int Depth()
 	{
-		this.ptr.Text(outStr);
+		return this.ptr.Depth();
 	}
-	public void SpecialValueText(String outStr)
+	public double DevicePixelRatioFScale()
 	{
-		this.ptr.SpecialValueText(outStr);
+		return this.ptr.DevicePixelRatioFScale();
 	}
-	public void SetSpecialValueText(String txt)
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
 	{
-		this.ptr.SetSpecialValueText(txt);
+		return default;
 	}
-	public bool Wrapping()
+	public  virtual void OnInitPainter(void** painter)
 	{
-		return this.ptr.Wrapping();
 	}
-	public void SetWrapping(bool w)
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
 	{
-		this.ptr.SetWrapping(w);
+		return default;
 	}
-	public void SetReadOnly(bool r)
+	public  virtual QPainter_Ptr OnSharedPainter()
 	{
-		this.ptr.SetReadOnly(r);
-	}
-	public bool IsReadOnly()
-	{
-		return this.ptr.IsReadOnly();
-	}
-	public void SetKeyboardTracking(bool kt)
-	{
-		this.ptr.SetKeyboardTracking(kt);
-	}
-	public bool KeyboardTracking()
-	{
-		return this.ptr.KeyboardTracking();
-	}
-	public void SetAlignment(void* flag)
-	{
-		this.ptr.SetAlignment(flag);
-	}
-	public void* Alignment()
-	{
-		return this.ptr.Alignment();
-	}
-	public void SetFrame(bool frame)
-	{
-		this.ptr.SetFrame(frame);
-	}
-	public bool HasFrame()
-	{
-		return this.ptr.HasFrame();
-	}
-	public void SetAccelerated(bool on)
-	{
-		this.ptr.SetAccelerated(on);
-	}
-	public bool IsAccelerated()
-	{
-		return this.ptr.IsAccelerated();
-	}
-	public void SetGroupSeparatorShown(bool shown)
-	{
-		this.ptr.SetGroupSeparatorShown(shown);
-	}
-	public bool IsGroupSeparatorShown()
-	{
-		return this.ptr.IsGroupSeparatorShown();
-	}
-	public QSize_Ptr MinimumSizeHint()
-	{
-		return this.ptr.MinimumSizeHint();
-	}
-	public void InterpretText()
-	{
-		this.ptr.InterpretText();
-	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
-	{
-		return this.ptr.InputMethodQuery(param1);
-	}
-	public void StepUp()
-	{
-		this.ptr.StepUp();
-	}
-	public void StepDown()
-	{
-		this.ptr.StepDown();
-	}
-	public void SelectAll()
-	{
-		this.ptr.SelectAll();
-	}
-	public void ResizeEvent(IQResizeEvent event)
-	{
-		this.ptr.ResizeEvent(event);
-	}
-	public void KeyReleaseEvent(IQKeyEvent event)
-	{
-		this.ptr.KeyReleaseEvent(event);
-	}
-	public void FocusOutEvent(IQFocusEvent event)
-	{
-		this.ptr.FocusOutEvent(event);
-	}
-	public void ContextMenuEvent(IQContextMenuEvent event)
-	{
-		this.ptr.ContextMenuEvent(event);
-	}
-	public void ChangeEvent(IQEvent event)
-	{
-		this.ptr.ChangeEvent(event);
-	}
-	public void CloseEvent(IQCloseEvent event)
-	{
-		this.ptr.CloseEvent(event);
-	}
-	public void HideEvent(IQHideEvent event)
-	{
-		this.ptr.HideEvent(event);
-	}
-	public void MouseReleaseEvent(IQMouseEvent event)
-	{
-		this.ptr.MouseReleaseEvent(event);
-	}
-	public void MouseMoveEvent(IQMouseEvent event)
-	{
-		this.ptr.MouseMoveEvent(event);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		this.ptr.TimerEvent(event);
-	}
-	public void ShowEvent(IQShowEvent event)
-	{
-		this.ptr.ShowEvent(event);
-	}
-	public QLineEdit_Ptr LineEdit()
-	{
-		return this.ptr.LineEdit();
-	}
-	public void SetLineEdit(IQLineEdit edit)
-	{
-		this.ptr.SetLineEdit(edit);
-	}
-	public void EditingFinished()
-	{
-		this.ptr.EditingFinished();
-	}
-	public c_int DevType()
-	{
-		return this.ptr.DevType();
+		return default;
 	}
 	public void* WinId()
 	{
@@ -10762,14 +10902,6 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
-	}
-	public c_int Width()
-	{
-		return this.ptr.Width();
-	}
-	public c_int Height()
-	{
-		return this.ptr.Height();
 	}
 	public QRect_Ptr Rect()
 	{
@@ -11335,9 +11467,8 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.Repaint4(param1);
 	}
-	public void SetVisible(bool visible)
+	public  virtual void OnSetVisible(bool visible)
 	{
-		this.ptr.SetVisible(visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -11455,6 +11586,14 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.OverrideWindowState(state);
 	}
+	public  virtual QSize_Ptr OnSizeHint()
+	{
+		return default;
+	}
+	public  virtual QSize_Ptr OnMinimumSizeHint()
+	{
+		return default;
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return this.ptr.SizePolicy();
@@ -11467,13 +11606,13 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.SetSizePolicy2(horizontal, vertical);
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -11506,10 +11645,6 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	public void UpdateGeometry()
 	{
 		this.ptr.UpdateGeometry();
-	}
-	public void SetParent(IQWidget parent)
-	{
-		this.ptr.SetParent(parent);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -11627,10 +11762,6 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		return this.ptr.TestAttribute(param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
 	public void EnsurePolished()
 	{
 		this.ptr.EnsurePolished();
@@ -11683,69 +11814,91 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.CustomContextMenuRequested(pos);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent event)
+	public  virtual void OnMousePressEvent(void** event)
 	{
-		this.ptr.MouseDoubleClickEvent(event);
 	}
-	public void EnterEvent(IQEnterEvent event)
+	public  virtual void OnMouseReleaseEvent(void** event)
 	{
-		this.ptr.EnterEvent(event);
 	}
-	public void LeaveEvent(IQEvent event)
+	public  virtual void OnMouseDoubleClickEvent(void** event)
 	{
-		this.ptr.LeaveEvent(event);
 	}
-	public void MoveEvent(IQMoveEvent event)
+	public  virtual void OnMouseMoveEvent(void** event)
 	{
-		this.ptr.MoveEvent(event);
 	}
-	public void TabletEvent(IQTabletEvent event)
+	public  virtual void OnWheelEvent(void** event)
 	{
-		this.ptr.TabletEvent(event);
 	}
-	public void ActionEvent(IQActionEvent event)
+	public  virtual void OnKeyPressEvent(void** event)
 	{
-		this.ptr.ActionEvent(event);
 	}
-	public void DragEnterEvent(IQDragEnterEvent event)
+	public  virtual void OnKeyReleaseEvent(void** event)
 	{
-		this.ptr.DragEnterEvent(event);
 	}
-	public void DragMoveEvent(IQDragMoveEvent event)
+	public  virtual void OnFocusInEvent(void** event)
 	{
-		this.ptr.DragMoveEvent(event);
 	}
-	public void DragLeaveEvent(IQDragLeaveEvent event)
+	public  virtual void OnFocusOutEvent(void** event)
 	{
-		this.ptr.DragLeaveEvent(event);
 	}
-	public void DropEvent(IQDropEvent event)
+	public  virtual void OnEnterEvent(void** event)
 	{
-		this.ptr.DropEvent(event);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual void OnLeaveEvent(void** event)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public  virtual void OnPaintEvent(void** event)
 	{
-		return this.ptr.Metric(param1);
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnMoveEvent(void** event)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual void OnResizeEvent(void** event)
 	{
-		return this.ptr.Redirected(offset);
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual void OnCloseEvent(void** event)
 	{
-		return this.ptr.SharedPainter();
 	}
-	public void InputMethodEvent(IQInputMethodEvent param1)
+	public  virtual void OnContextMenuEvent(void** event)
 	{
-		this.ptr.InputMethodEvent(param1);
+	}
+	public  virtual void OnTabletEvent(void** event)
+	{
+	}
+	public  virtual void OnActionEvent(void** event)
+	{
+	}
+	public  virtual void OnDragEnterEvent(void** event)
+	{
+	}
+	public  virtual void OnDragMoveEvent(void** event)
+	{
+	}
+	public  virtual void OnDragLeaveEvent(void** event)
+	{
+	}
+	public  virtual void OnDropEvent(void** event)
+	{
+	}
+	public  virtual void OnShowEvent(void** event)
+	{
+	}
+	public  virtual void OnHideEvent(void** event)
+	{
+	}
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
+	{
+		return default;
+	}
+	public  virtual void OnChangeEvent(void** param1)
+	{
+	}
+	public  virtual void OnInputMethodEvent(void** param1)
+	{
+	}
+	public  virtual QVariant_Ptr OnInputMethodQuery(Qt_InputMethodQuery param1)
+	{
+		return default;
 	}
 	public void* InputMethodHints()
 	{
@@ -11766,6 +11919,10 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	public void Destroy()
 	{
 		this.ptr.Destroy();
+	}
+	public  virtual bool OnFocusNextPrevChild(bool next)
+	{
+		return default;
 	}
 	public bool FocusNextChild()
 	{
@@ -11859,265 +12016,344 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 	{
 		this.ptr.Destroy2(destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
 	{
-		return this.ptr.EventFilter(watched, event);
+		return this.ptr.ButtonSymbols();
 	}
-	public void ObjectName(String outStr)
+	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols bs)
 	{
-		this.ptr.ObjectName(outStr);
+		this.ptr.SetButtonSymbols(bs);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetCorrectionMode(QAbstractSpinBox_CorrectionMode cm)
 	{
-		this.ptr.SetObjectName(name);
+		this.ptr.SetCorrectionMode(cm);
 	}
-	public bool IsWidgetType()
+	public QAbstractSpinBox_CorrectionMode CorrectionMode()
 	{
-		return this.ptr.IsWidgetType();
+		return this.ptr.CorrectionMode();
 	}
-	public bool IsWindowType()
+	public bool HasAcceptableInput()
 	{
-		return this.ptr.IsWindowType();
+		return this.ptr.HasAcceptableInput();
 	}
-	public bool IsQuickItemType()
+	public void Text(String outStr)
 	{
-		return this.ptr.IsQuickItemType();
+		this.ptr.Text(outStr);
 	}
-	public bool SignalsBlocked()
+	public void SpecialValueText(String outStr)
 	{
-		return this.ptr.SignalsBlocked();
+		this.ptr.SpecialValueText(outStr);
 	}
-	public bool BlockSignals(bool b)
+	public void SetSpecialValueText(String txt)
 	{
-		return this.ptr.BlockSignals(b);
+		this.ptr.SetSpecialValueText(txt);
 	}
-	public QThread_Ptr Thread()
+	public bool Wrapping()
 	{
-		return this.ptr.Thread();
+		return this.ptr.Wrapping();
 	}
-	public void MoveToThread(IQThread thread)
+	public void SetWrapping(bool w)
 	{
-		this.ptr.MoveToThread(thread);
+		this.ptr.SetWrapping(w);
 	}
-	public c_int StartTimer(c_int interval)
+	public void SetReadOnly(bool r)
 	{
-		return this.ptr.StartTimer(interval);
+		this.ptr.SetReadOnly(r);
 	}
-	public c_int StartTimer2(void* time)
+	public bool IsReadOnly()
 	{
-		return this.ptr.StartTimer2(time);
+		return this.ptr.IsReadOnly();
 	}
-	public void KillTimer(c_int id)
+	public void SetKeyboardTracking(bool kt)
 	{
-		this.ptr.KillTimer(id);
+		this.ptr.SetKeyboardTracking(kt);
 	}
-	public void** Children()
+	public bool KeyboardTracking()
 	{
-		return this.ptr.Children();
+		return this.ptr.KeyboardTracking();
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void SetAlignment(void* flag)
 	{
-		this.ptr.InstallEventFilter(filterObj);
+		this.ptr.SetAlignment(flag);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public void* Alignment()
 	{
-		this.ptr.RemoveEventFilter(obj);
+		return this.ptr.Alignment();
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetFrame(bool frame)
 	{
-		return this.ptr.Connect(sender, signal, receiver, member);
+		this.ptr.SetFrame(frame);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public bool HasFrame()
 	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
+		return this.ptr.HasFrame();
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetAccelerated(bool on)
 	{
-		return this.ptr.Connect3(sender, signal, member);
+		this.ptr.SetAccelerated(on);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public bool IsAccelerated()
 	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
+		return this.ptr.IsAccelerated();
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void SetGroupSeparatorShown(bool shown)
 	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
+		this.ptr.SetGroupSeparatorShown(shown);
 	}
-	public bool Disconnect3()
+	public bool IsGroupSeparatorShown()
 	{
-		return this.ptr.Disconnect3();
+		return this.ptr.IsGroupSeparatorShown();
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void InterpretText()
 	{
-		return this.ptr.Disconnect4(receiver);
+		this.ptr.InterpretText();
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public  virtual QValidator_State OnValidate(libqt_string input, c_int* pos)
 	{
-		return this.ptr.Disconnect5(param1);
+		return default;
 	}
-	public void DumpObjectTree()
+	public  virtual void OnFixup(libqt_string input)
 	{
-		this.ptr.DumpObjectTree();
 	}
-	public void DumpObjectInfo()
+	public  virtual void OnStepBy(c_int steps)
 	{
-		this.ptr.DumpObjectInfo();
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public void StepUp()
 	{
-		return this.ptr.SetProperty(name, value);
+		this.ptr.StepUp();
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public void StepDown()
 	{
-		return this.ptr.Property(name);
+		this.ptr.StepDown();
 	}
-	public void* DynamicPropertyNames()
+	public void SelectAll()
 	{
-		return this.ptr.DynamicPropertyNames();
+		this.ptr.SelectAll();
 	}
-	public QBindingStorage_Ptr BindingStorage()
+	public  virtual void OnClear()
 	{
-		return this.ptr.BindingStorage();
 	}
-	public QBindingStorage_Ptr BindingStorage2()
+	public  virtual void OnInitStyleOption(void** option)
 	{
-		return this.ptr.BindingStorage2();
 	}
-	public void Destroyed()
+	public QLineEdit_Ptr LineEdit()
 	{
-		this.ptr.Destroyed();
+		return this.ptr.LineEdit();
 	}
-	public QObject_Ptr Parent()
+	public void SetLineEdit(IQLineEdit edit)
 	{
-		return this.ptr.Parent();
+		this.ptr.SetLineEdit(edit);
 	}
-	public bool Inherits(c_char* classname)
+	public  virtual void* OnStepEnabled()
 	{
-		return this.ptr.Inherits(classname);
+		return default;
 	}
-	public void DeleteLater()
+	public void EditingFinished()
 	{
-		this.ptr.DeleteLater();
+		this.ptr.EditingFinished();
 	}
-	public QObject_Ptr Sender()
+	public QDateTime_Ptr DateTime()
 	{
-		return this.ptr.Sender();
+		return this.ptr.DateTime();
 	}
-	public c_int SenderSignalIndex()
+	public QDate_Ptr Date()
 	{
-		return this.ptr.SenderSignalIndex();
+		return this.ptr.Date();
 	}
-	public c_int Receivers(c_char* signal)
+	public QTime_Ptr Time()
 	{
-		return this.ptr.Receivers(signal);
+		return this.ptr.Time();
 	}
-	public bool IsSignalConnected(IQMetaMethod signal)
+	public QCalendar_Ptr Calendar()
 	{
-		return this.ptr.IsSignalConnected(signal);
+		return this.ptr.Calendar();
 	}
-	public void ChildEvent(IQChildEvent event)
+	public void SetCalendar(IQCalendar calendar)
 	{
-		this.ptr.ChildEvent(event);
+		this.ptr.SetCalendar(calendar);
 	}
-	public void CustomEvent(IQEvent event)
+	public QDateTime_Ptr MinimumDateTime()
 	{
-		this.ptr.CustomEvent(event);
+		return this.ptr.MinimumDateTime();
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public void ClearMinimumDateTime()
 	{
-		this.ptr.ConnectNotify(signal);
+		this.ptr.ClearMinimumDateTime();
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public void SetMinimumDateTime(IQDateTime dt)
 	{
-		this.ptr.DisconnectNotify(signal);
+		this.ptr.SetMinimumDateTime(dt);
 	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	public QDateTime_Ptr MaximumDateTime()
 	{
-		return this.ptr.StartTimer22(interval, timerType);
+		return this.ptr.MaximumDateTime();
 	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	public void ClearMaximumDateTime()
 	{
-		return this.ptr.StartTimer23(time, timerType);
+		this.ptr.ClearMaximumDateTime();
 	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public void SetMaximumDateTime(IQDateTime dt)
 	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+		this.ptr.SetMaximumDateTime(dt);
 	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public void SetDateTimeRange(IQDateTime min, IQDateTime max)
 	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
+		this.ptr.SetDateTimeRange(min, max);
 	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QDate_Ptr MinimumDate()
 	{
-		return this.ptr.Connect4(sender, signal, member, type);
+		return this.ptr.MinimumDate();
 	}
-	public bool Disconnect1(c_char* signal)
+	public void SetMinimumDate(IQDate min)
 	{
-		return this.ptr.Disconnect1(signal);
+		this.ptr.SetMinimumDate(min);
 	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
+	public void ClearMinimumDate()
 	{
-		return this.ptr.Disconnect22(signal, receiver);
+		this.ptr.ClearMinimumDate();
 	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	public QDate_Ptr MaximumDate()
 	{
-		return this.ptr.Disconnect32(signal, receiver, member);
+		return this.ptr.MaximumDate();
 	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
+	public void SetMaximumDate(IQDate max)
 	{
-		return this.ptr.Disconnect23(receiver, member);
+		this.ptr.SetMaximumDate(max);
 	}
-	public void Destroyed1(IQObject param1)
+	public void ClearMaximumDate()
 	{
-		this.ptr.Destroyed1(param1);
+		this.ptr.ClearMaximumDate();
 	}
-	public bool PaintingActive()
+	public void SetDateRange(IQDate min, IQDate max)
 	{
-		return this.ptr.PaintingActive();
+		this.ptr.SetDateRange(min, max);
 	}
-	public c_int WidthMM()
+	public QTime_Ptr MinimumTime()
 	{
-		return this.ptr.WidthMM();
+		return this.ptr.MinimumTime();
 	}
-	public c_int HeightMM()
+	public void SetMinimumTime(IQTime min)
 	{
-		return this.ptr.HeightMM();
+		this.ptr.SetMinimumTime(min);
 	}
-	public c_int LogicalDpiX()
+	public void ClearMinimumTime()
 	{
-		return this.ptr.LogicalDpiX();
+		this.ptr.ClearMinimumTime();
 	}
-	public c_int LogicalDpiY()
+	public QTime_Ptr MaximumTime()
 	{
-		return this.ptr.LogicalDpiY();
+		return this.ptr.MaximumTime();
 	}
-	public c_int PhysicalDpiX()
+	public void SetMaximumTime(IQTime max)
 	{
-		return this.ptr.PhysicalDpiX();
+		this.ptr.SetMaximumTime(max);
 	}
-	public c_int PhysicalDpiY()
+	public void ClearMaximumTime()
 	{
-		return this.ptr.PhysicalDpiY();
+		this.ptr.ClearMaximumTime();
 	}
-	public double DevicePixelRatio()
+	public void SetTimeRange(IQTime min, IQTime max)
 	{
-		return this.ptr.DevicePixelRatio();
+		this.ptr.SetTimeRange(min, max);
 	}
-	public double DevicePixelRatioF()
+	public void* DisplayedSections()
 	{
-		return this.ptr.DevicePixelRatioF();
+		return this.ptr.DisplayedSections();
 	}
-	public c_int ColorCount()
+	public QDateTimeEdit_Section CurrentSection()
 	{
-		return this.ptr.ColorCount();
+		return this.ptr.CurrentSection();
 	}
-	public c_int Depth()
+	public QDateTimeEdit_Section SectionAt(c_int index)
 	{
-		return this.ptr.Depth();
+		return this.ptr.SectionAt(index);
 	}
-	public double DevicePixelRatioFScale()
+	public void SetCurrentSection(QDateTimeEdit_Section section)
 	{
-		return this.ptr.DevicePixelRatioFScale();
+		this.ptr.SetCurrentSection(section);
+	}
+	public c_int CurrentSectionIndex()
+	{
+		return this.ptr.CurrentSectionIndex();
+	}
+	public void SetCurrentSectionIndex(c_int index)
+	{
+		this.ptr.SetCurrentSectionIndex(index);
+	}
+	public QCalendarWidget_Ptr CalendarWidget()
+	{
+		return this.ptr.CalendarWidget();
+	}
+	public void SetCalendarWidget(IQCalendarWidget calendarWidget)
+	{
+		this.ptr.SetCalendarWidget(calendarWidget);
+	}
+	public c_int SectionCount()
+	{
+		return this.ptr.SectionCount();
+	}
+	public void SetSelectedSection(QDateTimeEdit_Section section)
+	{
+		this.ptr.SetSelectedSection(section);
+	}
+	public void SectionText(String outStr, QDateTimeEdit_Section section)
+	{
+		this.ptr.SectionText(outStr, section);
+	}
+	public void DisplayFormat(String outStr)
+	{
+		this.ptr.DisplayFormat(outStr);
+	}
+	public void SetDisplayFormat(String format)
+	{
+		this.ptr.SetDisplayFormat(format);
+	}
+	public bool CalendarPopup()
+	{
+		return this.ptr.CalendarPopup();
+	}
+	public void SetCalendarPopup(bool enable)
+	{
+		this.ptr.SetCalendarPopup(enable);
+	}
+	public Qt_TimeSpec TimeSpec()
+	{
+		return this.ptr.TimeSpec();
+	}
+	public void SetTimeSpec(Qt_TimeSpec spec)
+	{
+		this.ptr.SetTimeSpec(spec);
+	}
+	public void DateTimeChanged(IQDateTime dateTime)
+	{
+		this.ptr.DateTimeChanged(dateTime);
+	}
+	public void TimeChanged(IQTime time)
+	{
+		this.ptr.TimeChanged(time);
+	}
+	public void DateChanged(IQDate date)
+	{
+		this.ptr.DateChanged(date);
+	}
+	public void SetDateTime(IQDateTime dateTime)
+	{
+		this.ptr.SetDateTime(dateTime);
+	}
+	public void SetDate(IQDate date)
+	{
+		this.ptr.SetDate(date);
+	}
+	public void SetTime(IQTime time)
+	{
+		this.ptr.SetTime(time);
+	}
+	public  virtual QDateTime_Ptr OnDateTimeFromText(libqt_string text)
+	{
+		return default;
+	}
+	public  virtual void OnTextFromDateTime(String outStr, void** dt)
+	{
 	}
 }
 interface IQDateEdit : IQtObjectInterface
@@ -12137,22 +12373,364 @@ extension CQt
 	public static extern void QDateEdit_Delete(QDateEdit_Ptr self);
 	[LinkName("QDateEdit_MetaObject")]
 	public static extern void** QDateEdit_MetaObject(void* self);
+	
+	public function void QDateEdit_OnMetaObject_action(void* self);
+	[LinkName("QDateEdit_OnMetaObject")]
+	public static extern void** QDateEdit_OnMetaObject(void* self, QDateEdit_OnMetaObject_action _action);
 	[LinkName("QDateEdit_Qt_Metacast")]
 	public static extern void* QDateEdit_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QDateEdit_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QDateEdit_OnMetacast")]
+	public static extern void* QDateEdit_OnMetacast(void* self, QDateEdit_OnMetacast_action _action);
 	[LinkName("QDateEdit_Qt_Metacall")]
 	public static extern c_int QDateEdit_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QDateEdit_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QDateEdit_OnMetacall")]
+	public static extern c_int QDateEdit_OnMetacall(void* self, QDateEdit_OnMetacall_action _action);
 	[LinkName("QDateEdit_Tr")]
 	public static extern libqt_string QDateEdit_Tr(c_char* s);
 	[LinkName("QDateEdit_UserDateChanged")]
 	public static extern void QDateEdit_UserDateChanged(void* self, void* date);
 	
-	public function void QDateEdit_userDateChanged_action(void* self, void* date);
+	public function void QDateEdit_Connect_UserDateChanged_action(void* self, void* date);
 	[LinkName("QDateEdit_Connect_UserDateChanged")]
-	public static extern void QDateEdit_Connect_UserDateChanged(void* self, QDateEdit_userDateChanged_action _action);
+	public static extern void QDateEdit_Connect_UserDateChanged(void* self, QDateEdit_Connect_UserDateChanged_action _action);
 	[LinkName("QDateEdit_Tr2")]
 	public static extern libqt_string QDateEdit_Tr2(c_char* s, c_char* c);
 	[LinkName("QDateEdit_Tr3")]
 	public static extern libqt_string QDateEdit_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QDateEdit_Event")]
+	public static extern bool QDateEdit_Event(void* self, void** event);
+	
+	public function void QDateEdit_OnEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnEvent")]
+	public static extern bool QDateEdit_OnEvent(void* self, QDateEdit_OnEvent_action _action);
+	[LinkName("QDateEdit_EventFilter")]
+	public static extern bool QDateEdit_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QDateEdit_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QDateEdit_OnEventFilter")]
+	public static extern bool QDateEdit_OnEventFilter(void* self, QDateEdit_OnEventFilter_action _action);
+	[LinkName("QDateEdit_TimerEvent")]
+	public static extern void QDateEdit_TimerEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnTimerEvent")]
+	public static extern void QDateEdit_OnTimerEvent(void* self, QDateEdit_OnTimerEvent_action _action);
+	[LinkName("QDateEdit_ChildEvent")]
+	public static extern void QDateEdit_ChildEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnChildEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnChildEvent")]
+	public static extern void QDateEdit_OnChildEvent(void* self, QDateEdit_OnChildEvent_action _action);
+	[LinkName("QDateEdit_CustomEvent")]
+	public static extern void QDateEdit_CustomEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnCustomEvent")]
+	public static extern void QDateEdit_OnCustomEvent(void* self, QDateEdit_OnCustomEvent_action _action);
+	[LinkName("QDateEdit_ConnectNotify")]
+	public static extern void QDateEdit_ConnectNotify(void* self, void** signal);
+	
+	public function void QDateEdit_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QDateEdit_OnConnectNotify")]
+	public static extern void QDateEdit_OnConnectNotify(void* self, QDateEdit_OnConnectNotify_action _action);
+	[LinkName("QDateEdit_DisconnectNotify")]
+	public static extern void QDateEdit_DisconnectNotify(void* self, void** signal);
+	
+	public function void QDateEdit_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QDateEdit_OnDisconnectNotify")]
+	public static extern void QDateEdit_OnDisconnectNotify(void* self, QDateEdit_OnDisconnectNotify_action _action);
+	[LinkName("QDateEdit_DevType")]
+	public static extern c_int QDateEdit_DevType(void* self);
+	
+	public function void QDateEdit_OnDevType_action(void* self);
+	[LinkName("QDateEdit_OnDevType")]
+	public static extern c_int QDateEdit_OnDevType(void* self, QDateEdit_OnDevType_action _action);
+	[LinkName("QDateEdit_PaintEngine")]
+	public static extern void** QDateEdit_PaintEngine(void* self);
+	
+	public function void QDateEdit_OnPaintEngine_action(void* self);
+	[LinkName("QDateEdit_OnPaintEngine")]
+	public static extern void** QDateEdit_OnPaintEngine(void* self, QDateEdit_OnPaintEngine_action _action);
+	[LinkName("QDateEdit_Metric")]
+	public static extern c_int QDateEdit_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QDateEdit_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QDateEdit_OnMetric")]
+	public static extern c_int QDateEdit_OnMetric(void* self, QDateEdit_OnMetric_action _action);
+	[LinkName("QDateEdit_InitPainter")]
+	public static extern void QDateEdit_InitPainter(void* self, void** painter);
+	
+	public function void QDateEdit_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QDateEdit_OnInitPainter")]
+	public static extern void QDateEdit_OnInitPainter(void* self, QDateEdit_OnInitPainter_action _action);
+	[LinkName("QDateEdit_Redirected")]
+	public static extern void** QDateEdit_Redirected(void* self, void** offset);
+	
+	public function void QDateEdit_OnRedirected_action(void* self, void** offset);
+	[LinkName("QDateEdit_OnRedirected")]
+	public static extern void** QDateEdit_OnRedirected(void* self, QDateEdit_OnRedirected_action _action);
+	[LinkName("QDateEdit_SharedPainter")]
+	public static extern void** QDateEdit_SharedPainter(void* self);
+	
+	public function void QDateEdit_OnSharedPainter_action(void* self);
+	[LinkName("QDateEdit_OnSharedPainter")]
+	public static extern void** QDateEdit_OnSharedPainter(void* self, QDateEdit_OnSharedPainter_action _action);
+	[LinkName("QDateEdit_SetVisible")]
+	public static extern void QDateEdit_SetVisible(void* self, bool visible);
+	
+	public function void QDateEdit_OnSetVisible_action(void* self, bool visible);
+	[LinkName("QDateEdit_OnSetVisible")]
+	public static extern void QDateEdit_OnSetVisible(void* self, QDateEdit_OnSetVisible_action _action);
+	[LinkName("QDateEdit_SizeHint")]
+	public static extern void* QDateEdit_SizeHint(void* self);
+	
+	public function void QDateEdit_OnSizeHint_action(void* self);
+	[LinkName("QDateEdit_OnSizeHint")]
+	public static extern void* QDateEdit_OnSizeHint(void* self, QDateEdit_OnSizeHint_action _action);
+	[LinkName("QDateEdit_MinimumSizeHint")]
+	public static extern void* QDateEdit_MinimumSizeHint(void* self);
+	
+	public function void QDateEdit_OnMinimumSizeHint_action(void* self);
+	[LinkName("QDateEdit_OnMinimumSizeHint")]
+	public static extern void* QDateEdit_OnMinimumSizeHint(void* self, QDateEdit_OnMinimumSizeHint_action _action);
+	[LinkName("QDateEdit_HeightForWidth")]
+	public static extern c_int QDateEdit_HeightForWidth(void* self, c_int param1);
+	
+	public function void QDateEdit_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QDateEdit_OnHeightForWidth")]
+	public static extern c_int QDateEdit_OnHeightForWidth(void* self, QDateEdit_OnHeightForWidth_action _action);
+	[LinkName("QDateEdit_HasHeightForWidth")]
+	public static extern bool QDateEdit_HasHeightForWidth(void* self);
+	
+	public function void QDateEdit_OnHasHeightForWidth_action(void* self);
+	[LinkName("QDateEdit_OnHasHeightForWidth")]
+	public static extern bool QDateEdit_OnHasHeightForWidth(void* self, QDateEdit_OnHasHeightForWidth_action _action);
+	[LinkName("QDateEdit_MousePressEvent")]
+	public static extern void QDateEdit_MousePressEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnMousePressEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnMousePressEvent")]
+	public static extern void QDateEdit_OnMousePressEvent(void* self, QDateEdit_OnMousePressEvent_action _action);
+	[LinkName("QDateEdit_MouseReleaseEvent")]
+	public static extern void QDateEdit_MouseReleaseEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnMouseReleaseEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnMouseReleaseEvent")]
+	public static extern void QDateEdit_OnMouseReleaseEvent(void* self, QDateEdit_OnMouseReleaseEvent_action _action);
+	[LinkName("QDateEdit_MouseDoubleClickEvent")]
+	public static extern void QDateEdit_MouseDoubleClickEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnMouseDoubleClickEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnMouseDoubleClickEvent")]
+	public static extern void QDateEdit_OnMouseDoubleClickEvent(void* self, QDateEdit_OnMouseDoubleClickEvent_action _action);
+	[LinkName("QDateEdit_MouseMoveEvent")]
+	public static extern void QDateEdit_MouseMoveEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnMouseMoveEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnMouseMoveEvent")]
+	public static extern void QDateEdit_OnMouseMoveEvent(void* self, QDateEdit_OnMouseMoveEvent_action _action);
+	[LinkName("QDateEdit_WheelEvent")]
+	public static extern void QDateEdit_WheelEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnWheelEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnWheelEvent")]
+	public static extern void QDateEdit_OnWheelEvent(void* self, QDateEdit_OnWheelEvent_action _action);
+	[LinkName("QDateEdit_KeyPressEvent")]
+	public static extern void QDateEdit_KeyPressEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnKeyPressEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnKeyPressEvent")]
+	public static extern void QDateEdit_OnKeyPressEvent(void* self, QDateEdit_OnKeyPressEvent_action _action);
+	[LinkName("QDateEdit_KeyReleaseEvent")]
+	public static extern void QDateEdit_KeyReleaseEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnKeyReleaseEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnKeyReleaseEvent")]
+	public static extern void QDateEdit_OnKeyReleaseEvent(void* self, QDateEdit_OnKeyReleaseEvent_action _action);
+	[LinkName("QDateEdit_FocusInEvent")]
+	public static extern void QDateEdit_FocusInEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnFocusInEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnFocusInEvent")]
+	public static extern void QDateEdit_OnFocusInEvent(void* self, QDateEdit_OnFocusInEvent_action _action);
+	[LinkName("QDateEdit_FocusOutEvent")]
+	public static extern void QDateEdit_FocusOutEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnFocusOutEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnFocusOutEvent")]
+	public static extern void QDateEdit_OnFocusOutEvent(void* self, QDateEdit_OnFocusOutEvent_action _action);
+	[LinkName("QDateEdit_EnterEvent")]
+	public static extern void QDateEdit_EnterEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnEnterEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnEnterEvent")]
+	public static extern void QDateEdit_OnEnterEvent(void* self, QDateEdit_OnEnterEvent_action _action);
+	[LinkName("QDateEdit_LeaveEvent")]
+	public static extern void QDateEdit_LeaveEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnLeaveEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnLeaveEvent")]
+	public static extern void QDateEdit_OnLeaveEvent(void* self, QDateEdit_OnLeaveEvent_action _action);
+	[LinkName("QDateEdit_PaintEvent")]
+	public static extern void QDateEdit_PaintEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnPaintEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnPaintEvent")]
+	public static extern void QDateEdit_OnPaintEvent(void* self, QDateEdit_OnPaintEvent_action _action);
+	[LinkName("QDateEdit_MoveEvent")]
+	public static extern void QDateEdit_MoveEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnMoveEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnMoveEvent")]
+	public static extern void QDateEdit_OnMoveEvent(void* self, QDateEdit_OnMoveEvent_action _action);
+	[LinkName("QDateEdit_ResizeEvent")]
+	public static extern void QDateEdit_ResizeEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnResizeEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnResizeEvent")]
+	public static extern void QDateEdit_OnResizeEvent(void* self, QDateEdit_OnResizeEvent_action _action);
+	[LinkName("QDateEdit_CloseEvent")]
+	public static extern void QDateEdit_CloseEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnCloseEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnCloseEvent")]
+	public static extern void QDateEdit_OnCloseEvent(void* self, QDateEdit_OnCloseEvent_action _action);
+	[LinkName("QDateEdit_ContextMenuEvent")]
+	public static extern void QDateEdit_ContextMenuEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnContextMenuEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnContextMenuEvent")]
+	public static extern void QDateEdit_OnContextMenuEvent(void* self, QDateEdit_OnContextMenuEvent_action _action);
+	[LinkName("QDateEdit_TabletEvent")]
+	public static extern void QDateEdit_TabletEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnTabletEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnTabletEvent")]
+	public static extern void QDateEdit_OnTabletEvent(void* self, QDateEdit_OnTabletEvent_action _action);
+	[LinkName("QDateEdit_ActionEvent")]
+	public static extern void QDateEdit_ActionEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnActionEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnActionEvent")]
+	public static extern void QDateEdit_OnActionEvent(void* self, QDateEdit_OnActionEvent_action _action);
+	[LinkName("QDateEdit_DragEnterEvent")]
+	public static extern void QDateEdit_DragEnterEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnDragEnterEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnDragEnterEvent")]
+	public static extern void QDateEdit_OnDragEnterEvent(void* self, QDateEdit_OnDragEnterEvent_action _action);
+	[LinkName("QDateEdit_DragMoveEvent")]
+	public static extern void QDateEdit_DragMoveEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnDragMoveEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnDragMoveEvent")]
+	public static extern void QDateEdit_OnDragMoveEvent(void* self, QDateEdit_OnDragMoveEvent_action _action);
+	[LinkName("QDateEdit_DragLeaveEvent")]
+	public static extern void QDateEdit_DragLeaveEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnDragLeaveEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnDragLeaveEvent")]
+	public static extern void QDateEdit_OnDragLeaveEvent(void* self, QDateEdit_OnDragLeaveEvent_action _action);
+	[LinkName("QDateEdit_DropEvent")]
+	public static extern void QDateEdit_DropEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnDropEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnDropEvent")]
+	public static extern void QDateEdit_OnDropEvent(void* self, QDateEdit_OnDropEvent_action _action);
+	[LinkName("QDateEdit_ShowEvent")]
+	public static extern void QDateEdit_ShowEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnShowEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnShowEvent")]
+	public static extern void QDateEdit_OnShowEvent(void* self, QDateEdit_OnShowEvent_action _action);
+	[LinkName("QDateEdit_HideEvent")]
+	public static extern void QDateEdit_HideEvent(void* self, void** event);
+	
+	public function void QDateEdit_OnHideEvent_action(void* self, void** event);
+	[LinkName("QDateEdit_OnHideEvent")]
+	public static extern void QDateEdit_OnHideEvent(void* self, QDateEdit_OnHideEvent_action _action);
+	[LinkName("QDateEdit_NativeEvent")]
+	public static extern bool QDateEdit_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QDateEdit_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QDateEdit_OnNativeEvent")]
+	public static extern bool QDateEdit_OnNativeEvent(void* self, QDateEdit_OnNativeEvent_action _action);
+	[LinkName("QDateEdit_ChangeEvent")]
+	public static extern void QDateEdit_ChangeEvent(void* self, void** param1);
+	
+	public function void QDateEdit_OnChangeEvent_action(void* self, void** param1);
+	[LinkName("QDateEdit_OnChangeEvent")]
+	public static extern void QDateEdit_OnChangeEvent(void* self, QDateEdit_OnChangeEvent_action _action);
+	[LinkName("QDateEdit_InputMethodEvent")]
+	public static extern void QDateEdit_InputMethodEvent(void* self, void** param1);
+	
+	public function void QDateEdit_OnInputMethodEvent_action(void* self, void** param1);
+	[LinkName("QDateEdit_OnInputMethodEvent")]
+	public static extern void QDateEdit_OnInputMethodEvent(void* self, QDateEdit_OnInputMethodEvent_action _action);
+	[LinkName("QDateEdit_InputMethodQuery")]
+	public static extern void* QDateEdit_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
+	
+	public function void QDateEdit_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
+	[LinkName("QDateEdit_OnInputMethodQuery")]
+	public static extern void* QDateEdit_OnInputMethodQuery(void* self, QDateEdit_OnInputMethodQuery_action _action);
+	[LinkName("QDateEdit_FocusNextPrevChild")]
+	public static extern bool QDateEdit_FocusNextPrevChild(void* self, bool next);
+	
+	public function void QDateEdit_OnFocusNextPrevChild_action(void* self, bool next);
+	[LinkName("QDateEdit_OnFocusNextPrevChild")]
+	public static extern bool QDateEdit_OnFocusNextPrevChild(void* self, QDateEdit_OnFocusNextPrevChild_action _action);
+	[LinkName("QDateEdit_Validate")]
+	public static extern QValidator_State QDateEdit_Validate(void* self, libqt_string input, c_int* pos);
+	
+	public function void QDateEdit_OnValidate_action(void* self, libqt_string input, c_int* pos);
+	[LinkName("QDateEdit_OnValidate")]
+	public static extern QValidator_State QDateEdit_OnValidate(void* self, QDateEdit_OnValidate_action _action);
+	[LinkName("QDateEdit_Fixup")]
+	public static extern void QDateEdit_Fixup(void* self, libqt_string input);
+	
+	public function void QDateEdit_OnFixup_action(void* self, libqt_string input);
+	[LinkName("QDateEdit_OnFixup")]
+	public static extern void QDateEdit_OnFixup(void* self, QDateEdit_OnFixup_action _action);
+	[LinkName("QDateEdit_StepBy")]
+	public static extern void QDateEdit_StepBy(void* self, c_int steps);
+	
+	public function void QDateEdit_OnStepBy_action(void* self, c_int steps);
+	[LinkName("QDateEdit_OnStepBy")]
+	public static extern void QDateEdit_OnStepBy(void* self, QDateEdit_OnStepBy_action _action);
+	[LinkName("QDateEdit_Clear")]
+	public static extern void QDateEdit_Clear(void* self);
+	
+	public function void QDateEdit_OnClear_action(void* self);
+	[LinkName("QDateEdit_OnClear")]
+	public static extern void QDateEdit_OnClear(void* self, QDateEdit_OnClear_action _action);
+	[LinkName("QDateEdit_InitStyleOption")]
+	public static extern void QDateEdit_InitStyleOption(void* self, void** option);
+	
+	public function void QDateEdit_OnInitStyleOption_action(void* self, void** option);
+	[LinkName("QDateEdit_OnInitStyleOption")]
+	public static extern void QDateEdit_OnInitStyleOption(void* self, QDateEdit_OnInitStyleOption_action _action);
+	[LinkName("QDateEdit_StepEnabled")]
+	public static extern void* QDateEdit_StepEnabled(void* self);
+	
+	public function void QDateEdit_OnStepEnabled_action(void* self);
+	[LinkName("QDateEdit_OnStepEnabled")]
+	public static extern void* QDateEdit_OnStepEnabled(void* self, QDateEdit_OnStepEnabled_action _action);
+	[LinkName("QDateEdit_DateTimeFromText")]
+	public static extern void* QDateEdit_DateTimeFromText(void* self, libqt_string text);
+	
+	public function void QDateEdit_OnDateTimeFromText_action(void* self, libqt_string text);
+	[LinkName("QDateEdit_OnDateTimeFromText")]
+	public static extern void* QDateEdit_OnDateTimeFromText(void* self, QDateEdit_OnDateTimeFromText_action _action);
+	[LinkName("QDateEdit_TextFromDateTime")]
+	public static extern libqt_string QDateEdit_TextFromDateTime(void* self, void** dt);
+	
+	public function void QDateEdit_OnTextFromDateTime_action(void* self, void** dt);
+	[LinkName("QDateEdit_OnTextFromDateTime")]
+	public static extern libqt_string QDateEdit_OnTextFromDateTime(void* self, QDateEdit_OnTextFromDateTime_action _action);
 }
 [AllowDuplicates]
 enum QDateTimeEdit_Section

@@ -18,11 +18,11 @@ struct QGesture_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QGesture_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QGesture_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QGesture_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -72,11 +72,11 @@ struct QGesture_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QGesture_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QGesture_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -236,23 +236,23 @@ struct QGesture_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGesture_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGesture_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGesture_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGesture_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGesture_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -299,61 +299,33 @@ class QGesture : IQGesture, IQObject
 {
 	private QGesture_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QGesture_destroyed,
-		QGesture_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QGesture_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGesture_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGesture_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QGesture_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -399,13 +371,13 @@ class QGesture : IQGesture, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -563,25 +535,20 @@ class QGesture : IQGesture, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -637,10 +604,22 @@ extension CQt
 	public static extern void QGesture_Delete(QGesture_Ptr self);
 	[LinkName("QGesture_MetaObject")]
 	public static extern void** QGesture_MetaObject(void* self);
+	
+	public function void QGesture_OnMetaObject_action(void* self);
+	[LinkName("QGesture_OnMetaObject")]
+	public static extern void** QGesture_OnMetaObject(void* self, QGesture_OnMetaObject_action _action);
 	[LinkName("QGesture_Qt_Metacast")]
 	public static extern void* QGesture_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QGesture_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QGesture_OnMetacast")]
+	public static extern void* QGesture_OnMetacast(void* self, QGesture_OnMetacast_action _action);
 	[LinkName("QGesture_Qt_Metacall")]
 	public static extern c_int QGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QGesture_OnMetacall")]
+	public static extern c_int QGesture_OnMetacall(void* self, QGesture_OnMetacall_action _action);
 	[LinkName("QGesture_Tr")]
 	public static extern libqt_string QGesture_Tr(c_char* s);
 	[LinkName("QGesture_GestureType")]
@@ -663,6 +642,48 @@ extension CQt
 	public static extern libqt_string QGesture_Tr2(c_char* s, c_char* c);
 	[LinkName("QGesture_Tr3")]
 	public static extern libqt_string QGesture_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QGesture_Event")]
+	public static extern bool QGesture_Event(void* self, void** event);
+	
+	public function void QGesture_OnEvent_action(void* self, void** event);
+	[LinkName("QGesture_OnEvent")]
+	public static extern bool QGesture_OnEvent(void* self, QGesture_OnEvent_action _action);
+	[LinkName("QGesture_EventFilter")]
+	public static extern bool QGesture_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QGesture_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QGesture_OnEventFilter")]
+	public static extern bool QGesture_OnEventFilter(void* self, QGesture_OnEventFilter_action _action);
+	[LinkName("QGesture_TimerEvent")]
+	public static extern void QGesture_TimerEvent(void* self, void** event);
+	
+	public function void QGesture_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QGesture_OnTimerEvent")]
+	public static extern void QGesture_OnTimerEvent(void* self, QGesture_OnTimerEvent_action _action);
+	[LinkName("QGesture_ChildEvent")]
+	public static extern void QGesture_ChildEvent(void* self, void** event);
+	
+	public function void QGesture_OnChildEvent_action(void* self, void** event);
+	[LinkName("QGesture_OnChildEvent")]
+	public static extern void QGesture_OnChildEvent(void* self, QGesture_OnChildEvent_action _action);
+	[LinkName("QGesture_CustomEvent")]
+	public static extern void QGesture_CustomEvent(void* self, void** event);
+	
+	public function void QGesture_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QGesture_OnCustomEvent")]
+	public static extern void QGesture_OnCustomEvent(void* self, QGesture_OnCustomEvent_action _action);
+	[LinkName("QGesture_ConnectNotify")]
+	public static extern void QGesture_ConnectNotify(void* self, void** signal);
+	
+	public function void QGesture_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QGesture_OnConnectNotify")]
+	public static extern void QGesture_OnConnectNotify(void* self, QGesture_OnConnectNotify_action _action);
+	[LinkName("QGesture_DisconnectNotify")]
+	public static extern void QGesture_DisconnectNotify(void* self, void** signal);
+	
+	public function void QGesture_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QGesture_OnDisconnectNotify")]
+	public static extern void QGesture_OnDisconnectNotify(void* self, QGesture_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QPanGesture
@@ -679,11 +700,11 @@ struct QPanGesture_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QPanGesture_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QPanGesture_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QPanGesture_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -727,45 +748,13 @@ struct QPanGesture_Ptr
 	{
 		CQt.QPanGesture_Tr3(s, c, n);
 	}
-	public Qt_GestureType GestureType()
-	{
-		return CQt.QGesture_GestureType((.)this.Ptr);
-	}
-	public Qt_GestureState State()
-	{
-		return CQt.QGesture_State((.)this.Ptr);
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
-	}
-	public bool HasHotSpot()
-	{
-		return CQt.QGesture_HasHotSpot((.)this.Ptr);
-	}
-	public void UnsetHotSpot()
-	{
-		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QPanGesture_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QPanGesture_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -925,23 +914,23 @@ struct QPanGesture_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPanGesture_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPanGesture_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPanGesture_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPanGesture_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPanGesture_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -983,66 +972,70 @@ struct QPanGesture_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return CQt.QGesture_GestureType((.)this.Ptr);
+	}
+	public Qt_GestureState State()
+	{
+		return CQt.QGesture_State((.)this.Ptr);
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
+	}
+	public bool HasHotSpot()
+	{
+		return CQt.QGesture_HasHotSpot((.)this.Ptr);
+	}
+	public void UnsetHotSpot()
+	{
+		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
+	}
 }
 class QPanGesture : IQPanGesture, IQGesture, IQObject
 {
 	private QPanGesture_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QPanGesture_destroyed,
-		QPanGesture_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QPanGesture_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPanGesture_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QPanGesture_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPanGesture_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -1084,45 +1077,13 @@ class QPanGesture : IQPanGesture, IQGesture, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public Qt_GestureType GestureType()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.GestureType();
+		return default;
 	}
-	public Qt_GestureState State()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.State();
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return this.ptr.HotSpot();
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		this.ptr.SetHotSpot(value);
-	}
-	public bool HasHotSpot()
-	{
-		return this.ptr.HasHotSpot();
-	}
-	public void UnsetHotSpot()
-	{
-		this.ptr.UnsetHotSpot();
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		this.ptr.SetGestureCancelPolicy(policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return this.ptr.GestureCancelPolicy();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1280,25 +1241,20 @@ class QPanGesture : IQPanGesture, IQGesture, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1340,6 +1296,38 @@ class QPanGesture : IQPanGesture, IQGesture, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return this.ptr.GestureType();
+	}
+	public Qt_GestureState State()
+	{
+		return this.ptr.State();
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return this.ptr.HotSpot();
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		this.ptr.SetHotSpot(value);
+	}
+	public bool HasHotSpot()
+	{
+		return this.ptr.HasHotSpot();
+	}
+	public void UnsetHotSpot()
+	{
+		this.ptr.UnsetHotSpot();
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		this.ptr.SetGestureCancelPolicy(policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return this.ptr.GestureCancelPolicy();
+	}
 }
 interface IQPanGesture : IQtObjectInterface
 {
@@ -1354,10 +1342,22 @@ extension CQt
 	public static extern void QPanGesture_Delete(QPanGesture_Ptr self);
 	[LinkName("QPanGesture_MetaObject")]
 	public static extern void** QPanGesture_MetaObject(void* self);
+	
+	public function void QPanGesture_OnMetaObject_action(void* self);
+	[LinkName("QPanGesture_OnMetaObject")]
+	public static extern void** QPanGesture_OnMetaObject(void* self, QPanGesture_OnMetaObject_action _action);
 	[LinkName("QPanGesture_Qt_Metacast")]
 	public static extern void* QPanGesture_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QPanGesture_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QPanGesture_OnMetacast")]
+	public static extern void* QPanGesture_OnMetacast(void* self, QPanGesture_OnMetacast_action _action);
 	[LinkName("QPanGesture_Qt_Metacall")]
 	public static extern c_int QPanGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QPanGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QPanGesture_OnMetacall")]
+	public static extern c_int QPanGesture_OnMetacall(void* self, QPanGesture_OnMetacall_action _action);
 	[LinkName("QPanGesture_Tr")]
 	public static extern libqt_string QPanGesture_Tr(c_char* s);
 	[LinkName("QPanGesture_LastOffset")]
@@ -1378,6 +1378,48 @@ extension CQt
 	public static extern libqt_string QPanGesture_Tr2(c_char* s, c_char* c);
 	[LinkName("QPanGesture_Tr3")]
 	public static extern libqt_string QPanGesture_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QPanGesture_Event")]
+	public static extern bool QPanGesture_Event(void* self, void** event);
+	
+	public function void QPanGesture_OnEvent_action(void* self, void** event);
+	[LinkName("QPanGesture_OnEvent")]
+	public static extern bool QPanGesture_OnEvent(void* self, QPanGesture_OnEvent_action _action);
+	[LinkName("QPanGesture_EventFilter")]
+	public static extern bool QPanGesture_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QPanGesture_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QPanGesture_OnEventFilter")]
+	public static extern bool QPanGesture_OnEventFilter(void* self, QPanGesture_OnEventFilter_action _action);
+	[LinkName("QPanGesture_TimerEvent")]
+	public static extern void QPanGesture_TimerEvent(void* self, void** event);
+	
+	public function void QPanGesture_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QPanGesture_OnTimerEvent")]
+	public static extern void QPanGesture_OnTimerEvent(void* self, QPanGesture_OnTimerEvent_action _action);
+	[LinkName("QPanGesture_ChildEvent")]
+	public static extern void QPanGesture_ChildEvent(void* self, void** event);
+	
+	public function void QPanGesture_OnChildEvent_action(void* self, void** event);
+	[LinkName("QPanGesture_OnChildEvent")]
+	public static extern void QPanGesture_OnChildEvent(void* self, QPanGesture_OnChildEvent_action _action);
+	[LinkName("QPanGesture_CustomEvent")]
+	public static extern void QPanGesture_CustomEvent(void* self, void** event);
+	
+	public function void QPanGesture_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QPanGesture_OnCustomEvent")]
+	public static extern void QPanGesture_OnCustomEvent(void* self, QPanGesture_OnCustomEvent_action _action);
+	[LinkName("QPanGesture_ConnectNotify")]
+	public static extern void QPanGesture_ConnectNotify(void* self, void** signal);
+	
+	public function void QPanGesture_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QPanGesture_OnConnectNotify")]
+	public static extern void QPanGesture_OnConnectNotify(void* self, QPanGesture_OnConnectNotify_action _action);
+	[LinkName("QPanGesture_DisconnectNotify")]
+	public static extern void QPanGesture_DisconnectNotify(void* self, void** signal);
+	
+	public function void QPanGesture_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QPanGesture_OnDisconnectNotify")]
+	public static extern void QPanGesture_OnDisconnectNotify(void* self, QPanGesture_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QPinchGesture
@@ -1394,11 +1436,11 @@ struct QPinchGesture_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QPinchGesture_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QPinchGesture_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QPinchGesture_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -1502,45 +1544,13 @@ struct QPinchGesture_Ptr
 	{
 		CQt.QPinchGesture_Tr3(s, c, n);
 	}
-	public Qt_GestureType GestureType()
-	{
-		return CQt.QGesture_GestureType((.)this.Ptr);
-	}
-	public Qt_GestureState State()
-	{
-		return CQt.QGesture_State((.)this.Ptr);
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
-	}
-	public bool HasHotSpot()
-	{
-		return CQt.QGesture_HasHotSpot((.)this.Ptr);
-	}
-	public void UnsetHotSpot()
-	{
-		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QPinchGesture_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QPinchGesture_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1700,23 +1710,23 @@ struct QPinchGesture_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPinchGesture_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPinchGesture_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPinchGesture_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPinchGesture_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPinchGesture_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1758,66 +1768,70 @@ struct QPinchGesture_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return CQt.QGesture_GestureType((.)this.Ptr);
+	}
+	public Qt_GestureState State()
+	{
+		return CQt.QGesture_State((.)this.Ptr);
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
+	}
+	public bool HasHotSpot()
+	{
+		return CQt.QGesture_HasHotSpot((.)this.Ptr);
+	}
+	public void UnsetHotSpot()
+	{
+		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
+	}
 }
 class QPinchGesture : IQPinchGesture, IQGesture, IQObject
 {
 	private QPinchGesture_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QPinchGesture_destroyed,
-		QPinchGesture_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QPinchGesture_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPinchGesture_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QPinchGesture_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPinchGesture_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -1919,45 +1933,13 @@ class QPinchGesture : IQPinchGesture, IQGesture, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public Qt_GestureType GestureType()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.GestureType();
+		return default;
 	}
-	public Qt_GestureState State()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.State();
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return this.ptr.HotSpot();
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		this.ptr.SetHotSpot(value);
-	}
-	public bool HasHotSpot()
-	{
-		return this.ptr.HasHotSpot();
-	}
-	public void UnsetHotSpot()
-	{
-		this.ptr.UnsetHotSpot();
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		this.ptr.SetGestureCancelPolicy(policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return this.ptr.GestureCancelPolicy();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -2115,25 +2097,20 @@ class QPinchGesture : IQPinchGesture, IQGesture, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -2175,6 +2152,38 @@ class QPinchGesture : IQPinchGesture, IQGesture, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return this.ptr.GestureType();
+	}
+	public Qt_GestureState State()
+	{
+		return this.ptr.State();
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return this.ptr.HotSpot();
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		this.ptr.SetHotSpot(value);
+	}
+	public bool HasHotSpot()
+	{
+		return this.ptr.HasHotSpot();
+	}
+	public void UnsetHotSpot()
+	{
+		this.ptr.UnsetHotSpot();
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		this.ptr.SetGestureCancelPolicy(policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return this.ptr.GestureCancelPolicy();
+	}
 }
 interface IQPinchGesture : IQtObjectInterface
 {
@@ -2189,10 +2198,22 @@ extension CQt
 	public static extern void QPinchGesture_Delete(QPinchGesture_Ptr self);
 	[LinkName("QPinchGesture_MetaObject")]
 	public static extern void** QPinchGesture_MetaObject(void* self);
+	
+	public function void QPinchGesture_OnMetaObject_action(void* self);
+	[LinkName("QPinchGesture_OnMetaObject")]
+	public static extern void** QPinchGesture_OnMetaObject(void* self, QPinchGesture_OnMetaObject_action _action);
 	[LinkName("QPinchGesture_Qt_Metacast")]
 	public static extern void* QPinchGesture_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QPinchGesture_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QPinchGesture_OnMetacast")]
+	public static extern void* QPinchGesture_OnMetacast(void* self, QPinchGesture_OnMetacast_action _action);
 	[LinkName("QPinchGesture_Qt_Metacall")]
 	public static extern c_int QPinchGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QPinchGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QPinchGesture_OnMetacall")]
+	public static extern c_int QPinchGesture_OnMetacall(void* self, QPinchGesture_OnMetacall_action _action);
 	[LinkName("QPinchGesture_Tr")]
 	public static extern libqt_string QPinchGesture_Tr(c_char* s);
 	[LinkName("QPinchGesture_TotalChangeFlags")]
@@ -2243,6 +2264,48 @@ extension CQt
 	public static extern libqt_string QPinchGesture_Tr2(c_char* s, c_char* c);
 	[LinkName("QPinchGesture_Tr3")]
 	public static extern libqt_string QPinchGesture_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QPinchGesture_Event")]
+	public static extern bool QPinchGesture_Event(void* self, void** event);
+	
+	public function void QPinchGesture_OnEvent_action(void* self, void** event);
+	[LinkName("QPinchGesture_OnEvent")]
+	public static extern bool QPinchGesture_OnEvent(void* self, QPinchGesture_OnEvent_action _action);
+	[LinkName("QPinchGesture_EventFilter")]
+	public static extern bool QPinchGesture_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QPinchGesture_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QPinchGesture_OnEventFilter")]
+	public static extern bool QPinchGesture_OnEventFilter(void* self, QPinchGesture_OnEventFilter_action _action);
+	[LinkName("QPinchGesture_TimerEvent")]
+	public static extern void QPinchGesture_TimerEvent(void* self, void** event);
+	
+	public function void QPinchGesture_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QPinchGesture_OnTimerEvent")]
+	public static extern void QPinchGesture_OnTimerEvent(void* self, QPinchGesture_OnTimerEvent_action _action);
+	[LinkName("QPinchGesture_ChildEvent")]
+	public static extern void QPinchGesture_ChildEvent(void* self, void** event);
+	
+	public function void QPinchGesture_OnChildEvent_action(void* self, void** event);
+	[LinkName("QPinchGesture_OnChildEvent")]
+	public static extern void QPinchGesture_OnChildEvent(void* self, QPinchGesture_OnChildEvent_action _action);
+	[LinkName("QPinchGesture_CustomEvent")]
+	public static extern void QPinchGesture_CustomEvent(void* self, void** event);
+	
+	public function void QPinchGesture_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QPinchGesture_OnCustomEvent")]
+	public static extern void QPinchGesture_OnCustomEvent(void* self, QPinchGesture_OnCustomEvent_action _action);
+	[LinkName("QPinchGesture_ConnectNotify")]
+	public static extern void QPinchGesture_ConnectNotify(void* self, void** signal);
+	
+	public function void QPinchGesture_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QPinchGesture_OnConnectNotify")]
+	public static extern void QPinchGesture_OnConnectNotify(void* self, QPinchGesture_OnConnectNotify_action _action);
+	[LinkName("QPinchGesture_DisconnectNotify")]
+	public static extern void QPinchGesture_DisconnectNotify(void* self, void** signal);
+	
+	public function void QPinchGesture_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QPinchGesture_OnDisconnectNotify")]
+	public static extern void QPinchGesture_OnDisconnectNotify(void* self, QPinchGesture_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QSwipeGesture
@@ -2259,11 +2322,11 @@ struct QSwipeGesture_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QSwipeGesture_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QSwipeGesture_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QSwipeGesture_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -2295,45 +2358,13 @@ struct QSwipeGesture_Ptr
 	{
 		CQt.QSwipeGesture_Tr3(s, c, n);
 	}
-	public Qt_GestureType GestureType()
-	{
-		return CQt.QGesture_GestureType((.)this.Ptr);
-	}
-	public Qt_GestureState State()
-	{
-		return CQt.QGesture_State((.)this.Ptr);
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
-	}
-	public bool HasHotSpot()
-	{
-		return CQt.QGesture_HasHotSpot((.)this.Ptr);
-	}
-	public void UnsetHotSpot()
-	{
-		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QSwipeGesture_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QSwipeGesture_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -2493,23 +2524,23 @@ struct QSwipeGesture_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSwipeGesture_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSwipeGesture_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSwipeGesture_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSwipeGesture_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSwipeGesture_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -2551,66 +2582,70 @@ struct QSwipeGesture_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return CQt.QGesture_GestureType((.)this.Ptr);
+	}
+	public Qt_GestureState State()
+	{
+		return CQt.QGesture_State((.)this.Ptr);
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
+	}
+	public bool HasHotSpot()
+	{
+		return CQt.QGesture_HasHotSpot((.)this.Ptr);
+	}
+	public void UnsetHotSpot()
+	{
+		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
+	}
 }
 class QSwipeGesture : IQSwipeGesture, IQGesture, IQObject
 {
 	private QSwipeGesture_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QSwipeGesture_destroyed,
-		QSwipeGesture_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QSwipeGesture_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSwipeGesture_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSwipeGesture_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QSwipeGesture_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -2640,45 +2675,13 @@ class QSwipeGesture : IQSwipeGesture, IQGesture, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public Qt_GestureType GestureType()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.GestureType();
+		return default;
 	}
-	public Qt_GestureState State()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.State();
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return this.ptr.HotSpot();
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		this.ptr.SetHotSpot(value);
-	}
-	public bool HasHotSpot()
-	{
-		return this.ptr.HasHotSpot();
-	}
-	public void UnsetHotSpot()
-	{
-		this.ptr.UnsetHotSpot();
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		this.ptr.SetGestureCancelPolicy(policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return this.ptr.GestureCancelPolicy();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -2836,25 +2839,20 @@ class QSwipeGesture : IQSwipeGesture, IQGesture, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -2896,6 +2894,38 @@ class QSwipeGesture : IQSwipeGesture, IQGesture, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return this.ptr.GestureType();
+	}
+	public Qt_GestureState State()
+	{
+		return this.ptr.State();
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return this.ptr.HotSpot();
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		this.ptr.SetHotSpot(value);
+	}
+	public bool HasHotSpot()
+	{
+		return this.ptr.HasHotSpot();
+	}
+	public void UnsetHotSpot()
+	{
+		this.ptr.UnsetHotSpot();
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		this.ptr.SetGestureCancelPolicy(policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return this.ptr.GestureCancelPolicy();
+	}
 }
 interface IQSwipeGesture : IQtObjectInterface
 {
@@ -2910,10 +2940,22 @@ extension CQt
 	public static extern void QSwipeGesture_Delete(QSwipeGesture_Ptr self);
 	[LinkName("QSwipeGesture_MetaObject")]
 	public static extern void** QSwipeGesture_MetaObject(void* self);
+	
+	public function void QSwipeGesture_OnMetaObject_action(void* self);
+	[LinkName("QSwipeGesture_OnMetaObject")]
+	public static extern void** QSwipeGesture_OnMetaObject(void* self, QSwipeGesture_OnMetaObject_action _action);
 	[LinkName("QSwipeGesture_Qt_Metacast")]
 	public static extern void* QSwipeGesture_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QSwipeGesture_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QSwipeGesture_OnMetacast")]
+	public static extern void* QSwipeGesture_OnMetacast(void* self, QSwipeGesture_OnMetacast_action _action);
 	[LinkName("QSwipeGesture_Qt_Metacall")]
 	public static extern c_int QSwipeGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QSwipeGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QSwipeGesture_OnMetacall")]
+	public static extern c_int QSwipeGesture_OnMetacall(void* self, QSwipeGesture_OnMetacall_action _action);
 	[LinkName("QSwipeGesture_Tr")]
 	public static extern libqt_string QSwipeGesture_Tr(c_char* s);
 	[LinkName("QSwipeGesture_HorizontalDirection")]
@@ -2928,6 +2970,48 @@ extension CQt
 	public static extern libqt_string QSwipeGesture_Tr2(c_char* s, c_char* c);
 	[LinkName("QSwipeGesture_Tr3")]
 	public static extern libqt_string QSwipeGesture_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QSwipeGesture_Event")]
+	public static extern bool QSwipeGesture_Event(void* self, void** event);
+	
+	public function void QSwipeGesture_OnEvent_action(void* self, void** event);
+	[LinkName("QSwipeGesture_OnEvent")]
+	public static extern bool QSwipeGesture_OnEvent(void* self, QSwipeGesture_OnEvent_action _action);
+	[LinkName("QSwipeGesture_EventFilter")]
+	public static extern bool QSwipeGesture_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QSwipeGesture_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QSwipeGesture_OnEventFilter")]
+	public static extern bool QSwipeGesture_OnEventFilter(void* self, QSwipeGesture_OnEventFilter_action _action);
+	[LinkName("QSwipeGesture_TimerEvent")]
+	public static extern void QSwipeGesture_TimerEvent(void* self, void** event);
+	
+	public function void QSwipeGesture_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QSwipeGesture_OnTimerEvent")]
+	public static extern void QSwipeGesture_OnTimerEvent(void* self, QSwipeGesture_OnTimerEvent_action _action);
+	[LinkName("QSwipeGesture_ChildEvent")]
+	public static extern void QSwipeGesture_ChildEvent(void* self, void** event);
+	
+	public function void QSwipeGesture_OnChildEvent_action(void* self, void** event);
+	[LinkName("QSwipeGesture_OnChildEvent")]
+	public static extern void QSwipeGesture_OnChildEvent(void* self, QSwipeGesture_OnChildEvent_action _action);
+	[LinkName("QSwipeGesture_CustomEvent")]
+	public static extern void QSwipeGesture_CustomEvent(void* self, void** event);
+	
+	public function void QSwipeGesture_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QSwipeGesture_OnCustomEvent")]
+	public static extern void QSwipeGesture_OnCustomEvent(void* self, QSwipeGesture_OnCustomEvent_action _action);
+	[LinkName("QSwipeGesture_ConnectNotify")]
+	public static extern void QSwipeGesture_ConnectNotify(void* self, void** signal);
+	
+	public function void QSwipeGesture_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QSwipeGesture_OnConnectNotify")]
+	public static extern void QSwipeGesture_OnConnectNotify(void* self, QSwipeGesture_OnConnectNotify_action _action);
+	[LinkName("QSwipeGesture_DisconnectNotify")]
+	public static extern void QSwipeGesture_DisconnectNotify(void* self, void** signal);
+	
+	public function void QSwipeGesture_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QSwipeGesture_OnDisconnectNotify")]
+	public static extern void QSwipeGesture_OnDisconnectNotify(void* self, QSwipeGesture_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QTapGesture
@@ -2944,11 +3028,11 @@ struct QTapGesture_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QTapGesture_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QTapGesture_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QTapGesture_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -2972,45 +3056,13 @@ struct QTapGesture_Ptr
 	{
 		CQt.QTapGesture_Tr3(s, c, n);
 	}
-	public Qt_GestureType GestureType()
-	{
-		return CQt.QGesture_GestureType((.)this.Ptr);
-	}
-	public Qt_GestureState State()
-	{
-		return CQt.QGesture_State((.)this.Ptr);
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
-	}
-	public bool HasHotSpot()
-	{
-		return CQt.QGesture_HasHotSpot((.)this.Ptr);
-	}
-	public void UnsetHotSpot()
-	{
-		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QTapGesture_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QTapGesture_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -3170,23 +3222,23 @@ struct QTapGesture_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTapGesture_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTapGesture_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTapGesture_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTapGesture_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTapGesture_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -3228,66 +3280,70 @@ struct QTapGesture_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return CQt.QGesture_GestureType((.)this.Ptr);
+	}
+	public Qt_GestureState State()
+	{
+		return CQt.QGesture_State((.)this.Ptr);
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
+	}
+	public bool HasHotSpot()
+	{
+		return CQt.QGesture_HasHotSpot((.)this.Ptr);
+	}
+	public void UnsetHotSpot()
+	{
+		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
+	}
 }
 class QTapGesture : IQTapGesture, IQGesture, IQObject
 {
 	private QTapGesture_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QTapGesture_destroyed,
-		QTapGesture_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QTapGesture_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTapGesture_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QTapGesture_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTapGesture_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -3309,45 +3365,13 @@ class QTapGesture : IQTapGesture, IQGesture, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public Qt_GestureType GestureType()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.GestureType();
+		return default;
 	}
-	public Qt_GestureState State()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.State();
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return this.ptr.HotSpot();
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		this.ptr.SetHotSpot(value);
-	}
-	public bool HasHotSpot()
-	{
-		return this.ptr.HasHotSpot();
-	}
-	public void UnsetHotSpot()
-	{
-		this.ptr.UnsetHotSpot();
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		this.ptr.SetGestureCancelPolicy(policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return this.ptr.GestureCancelPolicy();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -3505,25 +3529,20 @@ class QTapGesture : IQTapGesture, IQGesture, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -3565,6 +3584,38 @@ class QTapGesture : IQTapGesture, IQGesture, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return this.ptr.GestureType();
+	}
+	public Qt_GestureState State()
+	{
+		return this.ptr.State();
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return this.ptr.HotSpot();
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		this.ptr.SetHotSpot(value);
+	}
+	public bool HasHotSpot()
+	{
+		return this.ptr.HasHotSpot();
+	}
+	public void UnsetHotSpot()
+	{
+		this.ptr.UnsetHotSpot();
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		this.ptr.SetGestureCancelPolicy(policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return this.ptr.GestureCancelPolicy();
+	}
 }
 interface IQTapGesture : IQtObjectInterface
 {
@@ -3579,10 +3630,22 @@ extension CQt
 	public static extern void QTapGesture_Delete(QTapGesture_Ptr self);
 	[LinkName("QTapGesture_MetaObject")]
 	public static extern void** QTapGesture_MetaObject(void* self);
+	
+	public function void QTapGesture_OnMetaObject_action(void* self);
+	[LinkName("QTapGesture_OnMetaObject")]
+	public static extern void** QTapGesture_OnMetaObject(void* self, QTapGesture_OnMetaObject_action _action);
 	[LinkName("QTapGesture_Qt_Metacast")]
 	public static extern void* QTapGesture_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QTapGesture_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QTapGesture_OnMetacast")]
+	public static extern void* QTapGesture_OnMetacast(void* self, QTapGesture_OnMetacast_action _action);
 	[LinkName("QTapGesture_Qt_Metacall")]
 	public static extern c_int QTapGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QTapGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QTapGesture_OnMetacall")]
+	public static extern c_int QTapGesture_OnMetacall(void* self, QTapGesture_OnMetacall_action _action);
 	[LinkName("QTapGesture_Tr")]
 	public static extern libqt_string QTapGesture_Tr(c_char* s);
 	[LinkName("QTapGesture_Position")]
@@ -3593,6 +3656,48 @@ extension CQt
 	public static extern libqt_string QTapGesture_Tr2(c_char* s, c_char* c);
 	[LinkName("QTapGesture_Tr3")]
 	public static extern libqt_string QTapGesture_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QTapGesture_Event")]
+	public static extern bool QTapGesture_Event(void* self, void** event);
+	
+	public function void QTapGesture_OnEvent_action(void* self, void** event);
+	[LinkName("QTapGesture_OnEvent")]
+	public static extern bool QTapGesture_OnEvent(void* self, QTapGesture_OnEvent_action _action);
+	[LinkName("QTapGesture_EventFilter")]
+	public static extern bool QTapGesture_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QTapGesture_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QTapGesture_OnEventFilter")]
+	public static extern bool QTapGesture_OnEventFilter(void* self, QTapGesture_OnEventFilter_action _action);
+	[LinkName("QTapGesture_TimerEvent")]
+	public static extern void QTapGesture_TimerEvent(void* self, void** event);
+	
+	public function void QTapGesture_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QTapGesture_OnTimerEvent")]
+	public static extern void QTapGesture_OnTimerEvent(void* self, QTapGesture_OnTimerEvent_action _action);
+	[LinkName("QTapGesture_ChildEvent")]
+	public static extern void QTapGesture_ChildEvent(void* self, void** event);
+	
+	public function void QTapGesture_OnChildEvent_action(void* self, void** event);
+	[LinkName("QTapGesture_OnChildEvent")]
+	public static extern void QTapGesture_OnChildEvent(void* self, QTapGesture_OnChildEvent_action _action);
+	[LinkName("QTapGesture_CustomEvent")]
+	public static extern void QTapGesture_CustomEvent(void* self, void** event);
+	
+	public function void QTapGesture_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QTapGesture_OnCustomEvent")]
+	public static extern void QTapGesture_OnCustomEvent(void* self, QTapGesture_OnCustomEvent_action _action);
+	[LinkName("QTapGesture_ConnectNotify")]
+	public static extern void QTapGesture_ConnectNotify(void* self, void** signal);
+	
+	public function void QTapGesture_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QTapGesture_OnConnectNotify")]
+	public static extern void QTapGesture_OnConnectNotify(void* self, QTapGesture_OnConnectNotify_action _action);
+	[LinkName("QTapGesture_DisconnectNotify")]
+	public static extern void QTapGesture_DisconnectNotify(void* self, void** signal);
+	
+	public function void QTapGesture_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QTapGesture_OnDisconnectNotify")]
+	public static extern void QTapGesture_OnDisconnectNotify(void* self, QTapGesture_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QTapAndHoldGesture
@@ -3609,11 +3714,11 @@ struct QTapAndHoldGesture_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QTapAndHoldGesture_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QTapAndHoldGesture_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QTapAndHoldGesture_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -3645,45 +3750,13 @@ struct QTapAndHoldGesture_Ptr
 	{
 		CQt.QTapAndHoldGesture_Tr3(s, c, n);
 	}
-	public Qt_GestureType GestureType()
-	{
-		return CQt.QGesture_GestureType((.)this.Ptr);
-	}
-	public Qt_GestureState State()
-	{
-		return CQt.QGesture_State((.)this.Ptr);
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
-	}
-	public bool HasHotSpot()
-	{
-		return CQt.QGesture_HasHotSpot((.)this.Ptr);
-	}
-	public void UnsetHotSpot()
-	{
-		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QTapAndHoldGesture_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QTapAndHoldGesture_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -3843,23 +3916,23 @@ struct QTapAndHoldGesture_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTapAndHoldGesture_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTapAndHoldGesture_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTapAndHoldGesture_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTapAndHoldGesture_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTapAndHoldGesture_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -3901,66 +3974,70 @@ struct QTapAndHoldGesture_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return CQt.QGesture_GestureType((.)this.Ptr);
+	}
+	public Qt_GestureState State()
+	{
+		return CQt.QGesture_State((.)this.Ptr);
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return QPointF_Ptr(CQt.QGesture_HotSpot((.)this.Ptr));
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		CQt.QGesture_SetHotSpot((.)this.Ptr, (.)value?.ObjectPtr);
+	}
+	public bool HasHotSpot()
+	{
+		return CQt.QGesture_HasHotSpot((.)this.Ptr);
+	}
+	public void UnsetHotSpot()
+	{
+		CQt.QGesture_UnsetHotSpot((.)this.Ptr);
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		CQt.QGesture_SetGestureCancelPolicy((.)this.Ptr, policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return CQt.QGesture_GestureCancelPolicy((.)this.Ptr);
+	}
 }
 class QTapAndHoldGesture : IQTapAndHoldGesture, IQGesture, IQObject
 {
 	private QTapAndHoldGesture_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QTapAndHoldGesture_destroyed,
-		QTapAndHoldGesture_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QTapAndHoldGesture_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTapAndHoldGesture_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QTapAndHoldGesture_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTapAndHoldGesture_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -3990,45 +4067,13 @@ class QTapAndHoldGesture : IQTapAndHoldGesture, IQGesture, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public Qt_GestureType GestureType()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.GestureType();
+		return default;
 	}
-	public Qt_GestureState State()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.State();
-	}
-	public QPointF_Ptr HotSpot()
-	{
-		return this.ptr.HotSpot();
-	}
-	public void SetHotSpot(IQPointF value)
-	{
-		this.ptr.SetHotSpot(value);
-	}
-	public bool HasHotSpot()
-	{
-		return this.ptr.HasHotSpot();
-	}
-	public void UnsetHotSpot()
-	{
-		this.ptr.UnsetHotSpot();
-	}
-	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
-	{
-		this.ptr.SetGestureCancelPolicy(policy);
-	}
-	public QGesture_GestureCancelPolicy GestureCancelPolicy()
-	{
-		return this.ptr.GestureCancelPolicy();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -4186,25 +4231,20 @@ class QTapAndHoldGesture : IQTapAndHoldGesture, IQGesture, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -4246,6 +4286,38 @@ class QTapAndHoldGesture : IQTapAndHoldGesture, IQGesture, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public Qt_GestureType GestureType()
+	{
+		return this.ptr.GestureType();
+	}
+	public Qt_GestureState State()
+	{
+		return this.ptr.State();
+	}
+	public QPointF_Ptr HotSpot()
+	{
+		return this.ptr.HotSpot();
+	}
+	public void SetHotSpot(IQPointF value)
+	{
+		this.ptr.SetHotSpot(value);
+	}
+	public bool HasHotSpot()
+	{
+		return this.ptr.HasHotSpot();
+	}
+	public void UnsetHotSpot()
+	{
+		this.ptr.UnsetHotSpot();
+	}
+	public void SetGestureCancelPolicy(QGesture_GestureCancelPolicy policy)
+	{
+		this.ptr.SetGestureCancelPolicy(policy);
+	}
+	public QGesture_GestureCancelPolicy GestureCancelPolicy()
+	{
+		return this.ptr.GestureCancelPolicy();
+	}
 }
 interface IQTapAndHoldGesture : IQtObjectInterface
 {
@@ -4260,10 +4332,22 @@ extension CQt
 	public static extern void QTapAndHoldGesture_Delete(QTapAndHoldGesture_Ptr self);
 	[LinkName("QTapAndHoldGesture_MetaObject")]
 	public static extern void** QTapAndHoldGesture_MetaObject(void* self);
+	
+	public function void QTapAndHoldGesture_OnMetaObject_action(void* self);
+	[LinkName("QTapAndHoldGesture_OnMetaObject")]
+	public static extern void** QTapAndHoldGesture_OnMetaObject(void* self, QTapAndHoldGesture_OnMetaObject_action _action);
 	[LinkName("QTapAndHoldGesture_Qt_Metacast")]
 	public static extern void* QTapAndHoldGesture_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QTapAndHoldGesture_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QTapAndHoldGesture_OnMetacast")]
+	public static extern void* QTapAndHoldGesture_OnMetacast(void* self, QTapAndHoldGesture_OnMetacast_action _action);
 	[LinkName("QTapAndHoldGesture_Qt_Metacall")]
 	public static extern c_int QTapAndHoldGesture_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QTapAndHoldGesture_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QTapAndHoldGesture_OnMetacall")]
+	public static extern c_int QTapAndHoldGesture_OnMetacall(void* self, QTapAndHoldGesture_OnMetacall_action _action);
 	[LinkName("QTapAndHoldGesture_Tr")]
 	public static extern libqt_string QTapAndHoldGesture_Tr(c_char* s);
 	[LinkName("QTapAndHoldGesture_Position")]
@@ -4278,6 +4362,48 @@ extension CQt
 	public static extern libqt_string QTapAndHoldGesture_Tr2(c_char* s, c_char* c);
 	[LinkName("QTapAndHoldGesture_Tr3")]
 	public static extern libqt_string QTapAndHoldGesture_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QTapAndHoldGesture_Event")]
+	public static extern bool QTapAndHoldGesture_Event(void* self, void** event);
+	
+	public function void QTapAndHoldGesture_OnEvent_action(void* self, void** event);
+	[LinkName("QTapAndHoldGesture_OnEvent")]
+	public static extern bool QTapAndHoldGesture_OnEvent(void* self, QTapAndHoldGesture_OnEvent_action _action);
+	[LinkName("QTapAndHoldGesture_EventFilter")]
+	public static extern bool QTapAndHoldGesture_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QTapAndHoldGesture_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QTapAndHoldGesture_OnEventFilter")]
+	public static extern bool QTapAndHoldGesture_OnEventFilter(void* self, QTapAndHoldGesture_OnEventFilter_action _action);
+	[LinkName("QTapAndHoldGesture_TimerEvent")]
+	public static extern void QTapAndHoldGesture_TimerEvent(void* self, void** event);
+	
+	public function void QTapAndHoldGesture_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QTapAndHoldGesture_OnTimerEvent")]
+	public static extern void QTapAndHoldGesture_OnTimerEvent(void* self, QTapAndHoldGesture_OnTimerEvent_action _action);
+	[LinkName("QTapAndHoldGesture_ChildEvent")]
+	public static extern void QTapAndHoldGesture_ChildEvent(void* self, void** event);
+	
+	public function void QTapAndHoldGesture_OnChildEvent_action(void* self, void** event);
+	[LinkName("QTapAndHoldGesture_OnChildEvent")]
+	public static extern void QTapAndHoldGesture_OnChildEvent(void* self, QTapAndHoldGesture_OnChildEvent_action _action);
+	[LinkName("QTapAndHoldGesture_CustomEvent")]
+	public static extern void QTapAndHoldGesture_CustomEvent(void* self, void** event);
+	
+	public function void QTapAndHoldGesture_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QTapAndHoldGesture_OnCustomEvent")]
+	public static extern void QTapAndHoldGesture_OnCustomEvent(void* self, QTapAndHoldGesture_OnCustomEvent_action _action);
+	[LinkName("QTapAndHoldGesture_ConnectNotify")]
+	public static extern void QTapAndHoldGesture_ConnectNotify(void* self, void** signal);
+	
+	public function void QTapAndHoldGesture_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QTapAndHoldGesture_OnConnectNotify")]
+	public static extern void QTapAndHoldGesture_OnConnectNotify(void* self, QTapAndHoldGesture_OnConnectNotify_action _action);
+	[LinkName("QTapAndHoldGesture_DisconnectNotify")]
+	public static extern void QTapAndHoldGesture_DisconnectNotify(void* self, void** signal);
+	
+	public function void QTapAndHoldGesture_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QTapAndHoldGesture_OnDisconnectNotify")]
+	public static extern void QTapAndHoldGesture_OnDisconnectNotify(void* self, QTapAndHoldGesture_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QGestureEvent
@@ -4376,7 +4502,7 @@ struct QGestureEvent_Ptr
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+		return QEvent_Ptr(CQt.QGestureEvent_Clone((.)this.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
@@ -4387,29 +4513,17 @@ class QGestureEvent : IQGestureEvent, IQEvent
 {
 	private QGestureEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGestureEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(void** gestures)
 	{
 		this.ptr = CQt.QGestureEvent_new(gestures);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQGestureEvent param1)
 	{
 		this.ptr = CQt.QGestureEvent_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4499,9 +4613,9 @@ class QGestureEvent : IQGestureEvent, IQEvent
 	{
 		return this.ptr.RegisterEventType();
 	}
-	public QEvent_Ptr Clone()
+	public  virtual QEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
@@ -4549,6 +4663,12 @@ extension CQt
 	public static extern void** QGestureEvent_Widget(void* self);
 	[LinkName("QGestureEvent_MapToGraphicsScene")]
 	public static extern void* QGestureEvent_MapToGraphicsScene(void* self, void** gesturePoint);
+	[LinkName("QGestureEvent_Clone")]
+	public static extern void** QGestureEvent_Clone(void* self);
+	
+	public function void QGestureEvent_OnClone_action(void* self);
+	[LinkName("QGestureEvent_OnClone")]
+	public static extern void** QGestureEvent_OnClone(void* self, QGestureEvent_OnClone_action _action);
 }
 [AllowDuplicates]
 enum QGesture_GestureCancelPolicy

@@ -63,39 +63,25 @@ class QTextDocumentFragment : IQTextDocumentFragment
 {
 	private QTextDocumentFragment_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextDocumentFragment_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextDocumentFragment_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextDocument document)
 	{
 		this.ptr = CQt.QTextDocumentFragment_new2((.)document?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextCursor range)
 	{
 		this.ptr = CQt.QTextDocumentFragment_new3((.)range?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextDocumentFragment rhs)
 	{
 		this.ptr = CQt.QTextDocumentFragment_new4((.)rhs?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

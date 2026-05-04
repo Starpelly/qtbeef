@@ -75,29 +75,17 @@ class QTextTableCell : IQTextTableCell
 {
 	private QTextTableCell_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextTableCell_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextTableCell_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextTableCell o)
 	{
 		this.ptr = CQt.QTextTableCell_new2((.)o?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -221,11 +209,11 @@ struct QTextTable_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QTextTable_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QTextTable_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QTextTable_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -317,65 +305,13 @@ struct QTextTable_Ptr
 	{
 		CQt.QTextTable_Tr3(s, c, n);
 	}
-	public void SetFrameFormat(IQTextFrameFormat format)
-	{
-		CQt.QTextFrame_SetFrameFormat((.)this.Ptr, (.)format?.ObjectPtr);
-	}
-	public QTextFrameFormat_Ptr FrameFormat()
-	{
-		return QTextFrameFormat_Ptr(CQt.QTextFrame_FrameFormat((.)this.Ptr));
-	}
-	public QTextCursor_Ptr FirstCursorPosition()
-	{
-		return QTextCursor_Ptr(CQt.QTextFrame_FirstCursorPosition((.)this.Ptr));
-	}
-	public QTextCursor_Ptr LastCursorPosition()
-	{
-		return QTextCursor_Ptr(CQt.QTextFrame_LastCursorPosition((.)this.Ptr));
-	}
-	public c_int FirstPosition()
-	{
-		return CQt.QTextFrame_FirstPosition((.)this.Ptr);
-	}
-	public c_int LastPosition()
-	{
-		return CQt.QTextFrame_LastPosition((.)this.Ptr);
-	}
-	public void* ChildFrames()
-	{
-		return CQt.QTextFrame_ChildFrames((.)this.Ptr);
-	}
-	public QTextFrame_Ptr ParentFrame()
-	{
-		return QTextFrame_Ptr(CQt.QTextFrame_ParentFrame((.)this.Ptr));
-	}
-	public QTextFrame_iterator_Ptr Begin()
-	{
-		return QTextFrame_iterator_Ptr(CQt.QTextFrame_Begin((.)this.Ptr));
-	}
-	public QTextFrame_iterator_Ptr End()
-	{
-		return QTextFrame_iterator_Ptr(CQt.QTextFrame_End((.)this.Ptr));
-	}
-	public c_int FormatIndex()
-	{
-		return CQt.QTextObject_FormatIndex((.)this.Ptr);
-	}
-	public QTextDocument_Ptr Document()
-	{
-		return QTextDocument_Ptr(CQt.QTextObject_Document((.)this.Ptr));
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextObject_ObjectIndex((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QTextTable_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QTextTable_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -535,23 +471,23 @@ struct QTextTable_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextTable_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextTable_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextTable_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTextTable_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTextTable_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -593,61 +529,86 @@ struct QTextTable_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public c_int FormatIndex()
+	{
+		return CQt.QTextObject_FormatIndex((.)this.Ptr);
+	}
+	public QTextDocument_Ptr Document()
+	{
+		return QTextDocument_Ptr(CQt.QTextObject_Document((.)this.Ptr));
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextObject_ObjectIndex((.)this.Ptr);
+	}
+	public void SetFrameFormat(IQTextFrameFormat format)
+	{
+		CQt.QTextFrame_SetFrameFormat((.)this.Ptr, (.)format?.ObjectPtr);
+	}
+	public QTextFrameFormat_Ptr FrameFormat()
+	{
+		return QTextFrameFormat_Ptr(CQt.QTextFrame_FrameFormat((.)this.Ptr));
+	}
+	public QTextCursor_Ptr FirstCursorPosition()
+	{
+		return QTextCursor_Ptr(CQt.QTextFrame_FirstCursorPosition((.)this.Ptr));
+	}
+	public QTextCursor_Ptr LastCursorPosition()
+	{
+		return QTextCursor_Ptr(CQt.QTextFrame_LastCursorPosition((.)this.Ptr));
+	}
+	public c_int FirstPosition()
+	{
+		return CQt.QTextFrame_FirstPosition((.)this.Ptr);
+	}
+	public c_int LastPosition()
+	{
+		return CQt.QTextFrame_LastPosition((.)this.Ptr);
+	}
+	public void* ChildFrames()
+	{
+		return CQt.QTextFrame_ChildFrames((.)this.Ptr);
+	}
+	public QTextFrame_Ptr ParentFrame()
+	{
+		return QTextFrame_Ptr(CQt.QTextFrame_ParentFrame((.)this.Ptr));
+	}
+	public QTextFrame_iterator_Ptr Begin()
+	{
+		return QTextFrame_iterator_Ptr(CQt.QTextFrame_Begin((.)this.Ptr));
+	}
+	public QTextFrame_iterator_Ptr End()
+	{
+		return QTextFrame_iterator_Ptr(CQt.QTextFrame_End((.)this.Ptr));
+	}
 }
 class QTextTable : IQTextTable, IQTextFrame, IQTextObject, IQObject
 {
 	private QTextTable_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QTextTable_destroyed,
-		QTextTable_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QTextTable_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextDocument doc)
 	{
 		this.ptr = CQt.QTextTable_new((.)doc?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTextTable_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -737,65 +698,13 @@ class QTextTable : IQTextTable, IQTextFrame, IQTextObject, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void SetFrameFormat(IQTextFrameFormat format)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.SetFrameFormat(format);
+		return default;
 	}
-	public QTextFrameFormat_Ptr FrameFormat()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.FrameFormat();
-	}
-	public QTextCursor_Ptr FirstCursorPosition()
-	{
-		return this.ptr.FirstCursorPosition();
-	}
-	public QTextCursor_Ptr LastCursorPosition()
-	{
-		return this.ptr.LastCursorPosition();
-	}
-	public c_int FirstPosition()
-	{
-		return this.ptr.FirstPosition();
-	}
-	public c_int LastPosition()
-	{
-		return this.ptr.LastPosition();
-	}
-	public void* ChildFrames()
-	{
-		return this.ptr.ChildFrames();
-	}
-	public QTextFrame_Ptr ParentFrame()
-	{
-		return this.ptr.ParentFrame();
-	}
-	public QTextFrame_iterator_Ptr Begin()
-	{
-		return this.ptr.Begin();
-	}
-	public QTextFrame_iterator_Ptr End()
-	{
-		return this.ptr.End();
-	}
-	public c_int FormatIndex()
-	{
-		return this.ptr.FormatIndex();
-	}
-	public QTextDocument_Ptr Document()
-	{
-		return this.ptr.Document();
-	}
-	public c_int ObjectIndex()
-	{
-		return this.ptr.ObjectIndex();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -953,25 +862,20 @@ class QTextTable : IQTextTable, IQTextFrame, IQTextObject, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1013,6 +917,58 @@ class QTextTable : IQTextTable, IQTextFrame, IQTextObject, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public c_int FormatIndex()
+	{
+		return this.ptr.FormatIndex();
+	}
+	public QTextDocument_Ptr Document()
+	{
+		return this.ptr.Document();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
+	public void SetFrameFormat(IQTextFrameFormat format)
+	{
+		this.ptr.SetFrameFormat(format);
+	}
+	public QTextFrameFormat_Ptr FrameFormat()
+	{
+		return this.ptr.FrameFormat();
+	}
+	public QTextCursor_Ptr FirstCursorPosition()
+	{
+		return this.ptr.FirstCursorPosition();
+	}
+	public QTextCursor_Ptr LastCursorPosition()
+	{
+		return this.ptr.LastCursorPosition();
+	}
+	public c_int FirstPosition()
+	{
+		return this.ptr.FirstPosition();
+	}
+	public c_int LastPosition()
+	{
+		return this.ptr.LastPosition();
+	}
+	public void* ChildFrames()
+	{
+		return this.ptr.ChildFrames();
+	}
+	public QTextFrame_Ptr ParentFrame()
+	{
+		return this.ptr.ParentFrame();
+	}
+	public QTextFrame_iterator_Ptr Begin()
+	{
+		return this.ptr.Begin();
+	}
+	public QTextFrame_iterator_Ptr End()
+	{
+		return this.ptr.End();
+	}
 }
 interface IQTextTable : IQtObjectInterface
 {
@@ -1025,10 +981,22 @@ extension CQt
 	public static extern void QTextTable_Delete(QTextTable_Ptr self);
 	[LinkName("QTextTable_MetaObject")]
 	public static extern void** QTextTable_MetaObject(void* self);
+	
+	public function void QTextTable_OnMetaObject_action(void* self);
+	[LinkName("QTextTable_OnMetaObject")]
+	public static extern void** QTextTable_OnMetaObject(void* self, QTextTable_OnMetaObject_action _action);
 	[LinkName("QTextTable_Qt_Metacast")]
 	public static extern void* QTextTable_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QTextTable_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QTextTable_OnMetacast")]
+	public static extern void* QTextTable_OnMetacast(void* self, QTextTable_OnMetacast_action _action);
 	[LinkName("QTextTable_Qt_Metacall")]
 	public static extern c_int QTextTable_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QTextTable_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QTextTable_OnMetacall")]
+	public static extern c_int QTextTable_OnMetacall(void* self, QTextTable_OnMetacall_action _action);
 	[LinkName("QTextTable_Tr")]
 	public static extern libqt_string QTextTable_Tr(c_char* s);
 	[LinkName("QTextTable_Resize")]
@@ -1073,4 +1041,46 @@ extension CQt
 	public static extern libqt_string QTextTable_Tr2(c_char* s, c_char* c);
 	[LinkName("QTextTable_Tr3")]
 	public static extern libqt_string QTextTable_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QTextTable_Event")]
+	public static extern bool QTextTable_Event(void* self, void** event);
+	
+	public function void QTextTable_OnEvent_action(void* self, void** event);
+	[LinkName("QTextTable_OnEvent")]
+	public static extern bool QTextTable_OnEvent(void* self, QTextTable_OnEvent_action _action);
+	[LinkName("QTextTable_EventFilter")]
+	public static extern bool QTextTable_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QTextTable_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QTextTable_OnEventFilter")]
+	public static extern bool QTextTable_OnEventFilter(void* self, QTextTable_OnEventFilter_action _action);
+	[LinkName("QTextTable_TimerEvent")]
+	public static extern void QTextTable_TimerEvent(void* self, void** event);
+	
+	public function void QTextTable_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QTextTable_OnTimerEvent")]
+	public static extern void QTextTable_OnTimerEvent(void* self, QTextTable_OnTimerEvent_action _action);
+	[LinkName("QTextTable_ChildEvent")]
+	public static extern void QTextTable_ChildEvent(void* self, void** event);
+	
+	public function void QTextTable_OnChildEvent_action(void* self, void** event);
+	[LinkName("QTextTable_OnChildEvent")]
+	public static extern void QTextTable_OnChildEvent(void* self, QTextTable_OnChildEvent_action _action);
+	[LinkName("QTextTable_CustomEvent")]
+	public static extern void QTextTable_CustomEvent(void* self, void** event);
+	
+	public function void QTextTable_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QTextTable_OnCustomEvent")]
+	public static extern void QTextTable_OnCustomEvent(void* self, QTextTable_OnCustomEvent_action _action);
+	[LinkName("QTextTable_ConnectNotify")]
+	public static extern void QTextTable_ConnectNotify(void* self, void** signal);
+	
+	public function void QTextTable_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QTextTable_OnConnectNotify")]
+	public static extern void QTextTable_OnConnectNotify(void* self, QTextTable_OnConnectNotify_action _action);
+	[LinkName("QTextTable_DisconnectNotify")]
+	public static extern void QTextTable_DisconnectNotify(void* self, void** signal);
+	
+	public function void QTextTable_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QTextTable_OnDisconnectNotify")]
+	public static extern void QTextTable_OnDisconnectNotify(void* self, QTextTable_OnDisconnectNotify_action _action);
 }

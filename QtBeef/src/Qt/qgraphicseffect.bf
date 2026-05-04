@@ -18,11 +18,11 @@ struct QGraphicsEffect_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QGraphicsEffect_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QGraphicsEffect_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QGraphicsEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -108,11 +108,11 @@ struct QGraphicsEffect_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsEffect_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsEffect_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -272,23 +272,23 @@ struct QGraphicsEffect_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsEffect_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsEffect_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsEffect_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsEffect_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsEffect_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -335,77 +335,41 @@ class QGraphicsEffect : IQGraphicsEffect, IQObject
 {
 	private QGraphicsEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QGraphicsEffect_enabledChanged,
-		QGraphicsEffect_destroyed,
-		QGraphicsEffect_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEnabledChanged.Invoke(enabled);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QGraphicsEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsEffect_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsEffect_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsEffect_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	public  virtual QRectF_Ptr OnBoundingRectFor(void** sourceRect)
 	{
-		return this.ptr.BoundingRectFor(sourceRect);
+		return default;
 	}
 	public QRectF_Ptr BoundingRect()
 	{
@@ -427,13 +391,11 @@ class QGraphicsEffect : IQGraphicsEffect, IQObject
 	{
 		this.ptr.EnabledChanged(enabled);
 	}
-	public void Draw(IQPainter painter)
+	public  virtual void OnDraw(void** painter)
 	{
-		this.ptr.Draw(painter);
 	}
-	public void SourceChanged(void* flags)
+	public  virtual void OnSourceChanged(void* flags)
 	{
-		this.ptr.SourceChanged(flags);
 	}
 	public void UpdateBoundingRect()
 	{
@@ -479,13 +441,13 @@ class QGraphicsEffect : IQGraphicsEffect, IQObject
 	{
 		return this.ptr.SourcePixmap3(system, offset, mode);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -643,25 +605,20 @@ class QGraphicsEffect : IQGraphicsEffect, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -717,14 +674,30 @@ extension CQt
 	public static extern void QGraphicsEffect_Delete(QGraphicsEffect_Ptr self);
 	[LinkName("QGraphicsEffect_MetaObject")]
 	public static extern void** QGraphicsEffect_MetaObject(void* self);
+	
+	public function void QGraphicsEffect_OnMetaObject_action(void* self);
+	[LinkName("QGraphicsEffect_OnMetaObject")]
+	public static extern void** QGraphicsEffect_OnMetaObject(void* self, QGraphicsEffect_OnMetaObject_action _action);
 	[LinkName("QGraphicsEffect_Qt_Metacast")]
 	public static extern void* QGraphicsEffect_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QGraphicsEffect_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QGraphicsEffect_OnMetacast")]
+	public static extern void* QGraphicsEffect_OnMetacast(void* self, QGraphicsEffect_OnMetacast_action _action);
 	[LinkName("QGraphicsEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QGraphicsEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QGraphicsEffect_OnMetacall")]
+	public static extern c_int QGraphicsEffect_OnMetacall(void* self, QGraphicsEffect_OnMetacall_action _action);
 	[LinkName("QGraphicsEffect_Tr")]
 	public static extern libqt_string QGraphicsEffect_Tr(c_char* s);
 	[LinkName("QGraphicsEffect_BoundingRectFor")]
 	public static extern void* QGraphicsEffect_BoundingRectFor(void* self, void** sourceRect);
+	
+	public function void QGraphicsEffect_OnBoundingRectFor_action(void* self, void** sourceRect);
+	[LinkName("QGraphicsEffect_OnBoundingRectFor")]
+	public static extern void* QGraphicsEffect_OnBoundingRectFor(void* self, QGraphicsEffect_OnBoundingRectFor_action _action);
 	[LinkName("QGraphicsEffect_BoundingRect")]
 	public static extern void* QGraphicsEffect_BoundingRect(void* self);
 	[LinkName("QGraphicsEffect_IsEnabled")]
@@ -736,13 +709,21 @@ extension CQt
 	[LinkName("QGraphicsEffect_EnabledChanged")]
 	public static extern void QGraphicsEffect_EnabledChanged(void* self, bool enabled);
 	
-	public function void QGraphicsEffect_enabledChanged_action(void* self, bool enabled);
+	public function void QGraphicsEffect_Connect_EnabledChanged_action(void* self, bool enabled);
 	[LinkName("QGraphicsEffect_Connect_EnabledChanged")]
-	public static extern void QGraphicsEffect_Connect_EnabledChanged(void* self, QGraphicsEffect_enabledChanged_action _action);
+	public static extern void QGraphicsEffect_Connect_EnabledChanged(void* self, QGraphicsEffect_Connect_EnabledChanged_action _action);
 	[LinkName("QGraphicsEffect_Draw")]
 	public static extern void QGraphicsEffect_Draw(void* self, void** painter);
+	
+	public function void QGraphicsEffect_OnDraw_action(void* self, void** painter);
+	[LinkName("QGraphicsEffect_OnDraw")]
+	public static extern void QGraphicsEffect_OnDraw(void* self, QGraphicsEffect_OnDraw_action _action);
 	[LinkName("QGraphicsEffect_SourceChanged")]
 	public static extern void QGraphicsEffect_SourceChanged(void* self, void* flags);
+	
+	public function void QGraphicsEffect_OnSourceChanged_action(void* self, void* flags);
+	[LinkName("QGraphicsEffect_OnSourceChanged")]
+	public static extern void QGraphicsEffect_OnSourceChanged(void* self, QGraphicsEffect_OnSourceChanged_action _action);
 	[LinkName("QGraphicsEffect_UpdateBoundingRect")]
 	public static extern void QGraphicsEffect_UpdateBoundingRect(void* self);
 	[LinkName("QGraphicsEffect_SourceIsPixmap")]
@@ -765,6 +746,48 @@ extension CQt
 	public static extern void* QGraphicsEffect_SourcePixmap2(void* self, Qt_CoordinateSystem system, void** offset);
 	[LinkName("QGraphicsEffect_SourcePixmap3")]
 	public static extern void* QGraphicsEffect_SourcePixmap3(void* self, Qt_CoordinateSystem system, void** offset, QGraphicsEffect_PixmapPadMode mode);
+	[LinkName("QGraphicsEffect_Event")]
+	public static extern bool QGraphicsEffect_Event(void* self, void** event);
+	
+	public function void QGraphicsEffect_OnEvent_action(void* self, void** event);
+	[LinkName("QGraphicsEffect_OnEvent")]
+	public static extern bool QGraphicsEffect_OnEvent(void* self, QGraphicsEffect_OnEvent_action _action);
+	[LinkName("QGraphicsEffect_EventFilter")]
+	public static extern bool QGraphicsEffect_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QGraphicsEffect_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QGraphicsEffect_OnEventFilter")]
+	public static extern bool QGraphicsEffect_OnEventFilter(void* self, QGraphicsEffect_OnEventFilter_action _action);
+	[LinkName("QGraphicsEffect_TimerEvent")]
+	public static extern void QGraphicsEffect_TimerEvent(void* self, void** event);
+	
+	public function void QGraphicsEffect_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QGraphicsEffect_OnTimerEvent")]
+	public static extern void QGraphicsEffect_OnTimerEvent(void* self, QGraphicsEffect_OnTimerEvent_action _action);
+	[LinkName("QGraphicsEffect_ChildEvent")]
+	public static extern void QGraphicsEffect_ChildEvent(void* self, void** event);
+	
+	public function void QGraphicsEffect_OnChildEvent_action(void* self, void** event);
+	[LinkName("QGraphicsEffect_OnChildEvent")]
+	public static extern void QGraphicsEffect_OnChildEvent(void* self, QGraphicsEffect_OnChildEvent_action _action);
+	[LinkName("QGraphicsEffect_CustomEvent")]
+	public static extern void QGraphicsEffect_CustomEvent(void* self, void** event);
+	
+	public function void QGraphicsEffect_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QGraphicsEffect_OnCustomEvent")]
+	public static extern void QGraphicsEffect_OnCustomEvent(void* self, QGraphicsEffect_OnCustomEvent_action _action);
+	[LinkName("QGraphicsEffect_ConnectNotify")]
+	public static extern void QGraphicsEffect_ConnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsEffect_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsEffect_OnConnectNotify")]
+	public static extern void QGraphicsEffect_OnConnectNotify(void* self, QGraphicsEffect_OnConnectNotify_action _action);
+	[LinkName("QGraphicsEffect_DisconnectNotify")]
+	public static extern void QGraphicsEffect_DisconnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsEffect_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsEffect_OnDisconnectNotify")]
+	public static extern void QGraphicsEffect_OnDisconnectNotify(void* self, QGraphicsEffect_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsColorizeEffect
@@ -781,11 +804,11 @@ struct QGraphicsColorizeEffect_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QGraphicsColorizeEffect_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QGraphicsColorizeEffect_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QGraphicsColorizeEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -829,77 +852,13 @@ struct QGraphicsColorizeEffect_Ptr
 	{
 		CQt.QGraphicsColorizeEffect_Tr3(s, c, n);
 	}
-	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRectFor((.)this.Ptr, (.)sourceRect?.ObjectPtr));
-	}
-	public QRectF_Ptr BoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
-	}
-	public void SetEnabled(bool enable)
-	{
-		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
-	}
-	public void Update()
-	{
-		CQt.QGraphicsEffect_Update((.)this.Ptr);
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		CQt.QGraphicsEffect_SourceChanged((.)this.Ptr, flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
-	}
-	public bool SourceIsPixmap()
-	{
-		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsColorizeEffect_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsColorizeEffect_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1059,23 +1018,23 @@ struct QGraphicsColorizeEffect_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsColorizeEffect_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsColorizeEffect_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsColorizeEffect_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsColorizeEffect_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsColorizeEffect_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1117,90 +1076,102 @@ struct QGraphicsColorizeEffect_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	{
+		return QRectF_Ptr(CQt.QGraphicsColorizeEffect_BoundingRectFor((.)this.Ptr, (.)sourceRect?.ObjectPtr));
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
+	}
+	public void SetEnabled(bool enable)
+	{
+		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
+	}
+	public void Update()
+	{
+		CQt.QGraphicsEffect_Update((.)this.Ptr);
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		CQt.QGraphicsColorizeEffect_SourceChanged((.)this.Ptr, flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
+	}
+	public bool SourceIsPixmap()
+	{
+		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
+	}
 }
 class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQObject
 {
 	private QGraphicsColorizeEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QGraphicsColorizeEffect_colorChanged,
-		QGraphicsColorizeEffect_strengthChanged,
-		QGraphicsColorizeEffect_enabledChanged,
-		QGraphicsColorizeEffect_destroyed,
-		QGraphicsColorizeEffect_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QGraphicsColorizeEffect_Connect_ColorChanged(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_colorChanged);
-		CQt.QGraphicsColorizeEffect_Connect_StrengthChanged(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_strengthChanged);
-		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** color)> OnColorChanged = .() ~ _.Dispose();
-	public Event<delegate void(double strength)> OnStrengthChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QGraphicsColorizeEffect_colorChanged(void* ptr, void** color)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnColorChanged.Invoke(color);
-	}
-	static void QtBeef_QGraphicsColorizeEffect_strengthChanged(void* ptr, double strength)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnStrengthChanged.Invoke(strength);
-	}
-	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEnabledChanged.Invoke(enabled);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QGraphicsColorizeEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsColorizeEffect_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsColorizeEffect_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsColorizeEffect_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -1230,9 +1201,8 @@ class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQOb
 	{
 		this.ptr.StrengthChanged(strength);
 	}
-	public void Draw(IQPainter painter)
+	public  virtual void OnDraw(void** painter)
 	{
-		this.ptr.Draw(painter);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -1242,77 +1212,13 @@ class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQOb
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.BoundingRectFor(sourceRect);
+		return default;
 	}
-	public QRectF_Ptr BoundingRect()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.BoundingRect();
-	}
-	public bool IsEnabled()
-	{
-		return this.ptr.IsEnabled();
-	}
-	public void SetEnabled(bool enable)
-	{
-		this.ptr.SetEnabled(enable);
-	}
-	public void Update()
-	{
-		this.ptr.Update();
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		this.ptr.EnabledChanged(enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		this.ptr.SourceChanged(flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		this.ptr.UpdateBoundingRect();
-	}
-	public bool SourceIsPixmap()
-	{
-		return this.ptr.SourceIsPixmap();
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return this.ptr.SourceBoundingRect();
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		this.ptr.DrawSource(painter);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return this.ptr.SourcePixmap();
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return this.ptr.SourceBoundingRect1(system);
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return this.ptr.SourcePixmap1(system);
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return this.ptr.SourcePixmap2(system, offset);
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return this.ptr.SourcePixmap3(system, offset, mode);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1470,25 +1376,20 @@ class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQOb
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1530,6 +1431,69 @@ class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQOb
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public  virtual QRectF_Ptr OnBoundingRectFor(void** sourceRect)
+	{
+		return default;
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public void SetEnabled(bool enable)
+	{
+		this.ptr.SetEnabled(enable);
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		this.ptr.EnabledChanged(enabled);
+	}
+	public  virtual void OnSourceChanged(void* flags)
+	{
+	}
+	public void UpdateBoundingRect()
+	{
+		this.ptr.UpdateBoundingRect();
+	}
+	public bool SourceIsPixmap()
+	{
+		return this.ptr.SourceIsPixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return this.ptr.SourceBoundingRect();
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		this.ptr.DrawSource(painter);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return this.ptr.SourcePixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourceBoundingRect1(system);
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourcePixmap1(system);
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return this.ptr.SourcePixmap2(system, offset);
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return this.ptr.SourcePixmap3(system, offset, mode);
+	}
 }
 interface IQGraphicsColorizeEffect : IQtObjectInterface
 {
@@ -1544,10 +1508,22 @@ extension CQt
 	public static extern void QGraphicsColorizeEffect_Delete(QGraphicsColorizeEffect_Ptr self);
 	[LinkName("QGraphicsColorizeEffect_MetaObject")]
 	public static extern void** QGraphicsColorizeEffect_MetaObject(void* self);
+	
+	public function void QGraphicsColorizeEffect_OnMetaObject_action(void* self);
+	[LinkName("QGraphicsColorizeEffect_OnMetaObject")]
+	public static extern void** QGraphicsColorizeEffect_OnMetaObject(void* self, QGraphicsColorizeEffect_OnMetaObject_action _action);
 	[LinkName("QGraphicsColorizeEffect_Qt_Metacast")]
 	public static extern void* QGraphicsColorizeEffect_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QGraphicsColorizeEffect_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QGraphicsColorizeEffect_OnMetacast")]
+	public static extern void* QGraphicsColorizeEffect_OnMetacast(void* self, QGraphicsColorizeEffect_OnMetacast_action _action);
 	[LinkName("QGraphicsColorizeEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsColorizeEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QGraphicsColorizeEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QGraphicsColorizeEffect_OnMetacall")]
+	public static extern c_int QGraphicsColorizeEffect_OnMetacall(void* self, QGraphicsColorizeEffect_OnMetacall_action _action);
 	[LinkName("QGraphicsColorizeEffect_Tr")]
 	public static extern libqt_string QGraphicsColorizeEffect_Tr(c_char* s);
 	[LinkName("QGraphicsColorizeEffect_Color")]
@@ -1561,21 +1537,79 @@ extension CQt
 	[LinkName("QGraphicsColorizeEffect_ColorChanged")]
 	public static extern void QGraphicsColorizeEffect_ColorChanged(void* self, void** color);
 	
-	public function void QGraphicsColorizeEffect_colorChanged_action(void* self, void** color);
+	public function void QGraphicsColorizeEffect_Connect_ColorChanged_action(void* self, void** color);
 	[LinkName("QGraphicsColorizeEffect_Connect_ColorChanged")]
-	public static extern void QGraphicsColorizeEffect_Connect_ColorChanged(void* self, QGraphicsColorizeEffect_colorChanged_action _action);
+	public static extern void QGraphicsColorizeEffect_Connect_ColorChanged(void* self, QGraphicsColorizeEffect_Connect_ColorChanged_action _action);
 	[LinkName("QGraphicsColorizeEffect_StrengthChanged")]
 	public static extern void QGraphicsColorizeEffect_StrengthChanged(void* self, double strength);
 	
-	public function void QGraphicsColorizeEffect_strengthChanged_action(void* self, double strength);
+	public function void QGraphicsColorizeEffect_Connect_StrengthChanged_action(void* self, double strength);
 	[LinkName("QGraphicsColorizeEffect_Connect_StrengthChanged")]
-	public static extern void QGraphicsColorizeEffect_Connect_StrengthChanged(void* self, QGraphicsColorizeEffect_strengthChanged_action _action);
+	public static extern void QGraphicsColorizeEffect_Connect_StrengthChanged(void* self, QGraphicsColorizeEffect_Connect_StrengthChanged_action _action);
 	[LinkName("QGraphicsColorizeEffect_Draw")]
 	public static extern void QGraphicsColorizeEffect_Draw(void* self, void** painter);
+	
+	public function void QGraphicsColorizeEffect_OnDraw_action(void* self, void** painter);
+	[LinkName("QGraphicsColorizeEffect_OnDraw")]
+	public static extern void QGraphicsColorizeEffect_OnDraw(void* self, QGraphicsColorizeEffect_OnDraw_action _action);
 	[LinkName("QGraphicsColorizeEffect_Tr2")]
 	public static extern libqt_string QGraphicsColorizeEffect_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsColorizeEffect_Tr3")]
 	public static extern libqt_string QGraphicsColorizeEffect_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QGraphicsColorizeEffect_Event")]
+	public static extern bool QGraphicsColorizeEffect_Event(void* self, void** event);
+	
+	public function void QGraphicsColorizeEffect_OnEvent_action(void* self, void** event);
+	[LinkName("QGraphicsColorizeEffect_OnEvent")]
+	public static extern bool QGraphicsColorizeEffect_OnEvent(void* self, QGraphicsColorizeEffect_OnEvent_action _action);
+	[LinkName("QGraphicsColorizeEffect_EventFilter")]
+	public static extern bool QGraphicsColorizeEffect_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QGraphicsColorizeEffect_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QGraphicsColorizeEffect_OnEventFilter")]
+	public static extern bool QGraphicsColorizeEffect_OnEventFilter(void* self, QGraphicsColorizeEffect_OnEventFilter_action _action);
+	[LinkName("QGraphicsColorizeEffect_TimerEvent")]
+	public static extern void QGraphicsColorizeEffect_TimerEvent(void* self, void** event);
+	
+	public function void QGraphicsColorizeEffect_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QGraphicsColorizeEffect_OnTimerEvent")]
+	public static extern void QGraphicsColorizeEffect_OnTimerEvent(void* self, QGraphicsColorizeEffect_OnTimerEvent_action _action);
+	[LinkName("QGraphicsColorizeEffect_ChildEvent")]
+	public static extern void QGraphicsColorizeEffect_ChildEvent(void* self, void** event);
+	
+	public function void QGraphicsColorizeEffect_OnChildEvent_action(void* self, void** event);
+	[LinkName("QGraphicsColorizeEffect_OnChildEvent")]
+	public static extern void QGraphicsColorizeEffect_OnChildEvent(void* self, QGraphicsColorizeEffect_OnChildEvent_action _action);
+	[LinkName("QGraphicsColorizeEffect_CustomEvent")]
+	public static extern void QGraphicsColorizeEffect_CustomEvent(void* self, void** event);
+	
+	public function void QGraphicsColorizeEffect_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QGraphicsColorizeEffect_OnCustomEvent")]
+	public static extern void QGraphicsColorizeEffect_OnCustomEvent(void* self, QGraphicsColorizeEffect_OnCustomEvent_action _action);
+	[LinkName("QGraphicsColorizeEffect_ConnectNotify")]
+	public static extern void QGraphicsColorizeEffect_ConnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsColorizeEffect_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsColorizeEffect_OnConnectNotify")]
+	public static extern void QGraphicsColorizeEffect_OnConnectNotify(void* self, QGraphicsColorizeEffect_OnConnectNotify_action _action);
+	[LinkName("QGraphicsColorizeEffect_DisconnectNotify")]
+	public static extern void QGraphicsColorizeEffect_DisconnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsColorizeEffect_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsColorizeEffect_OnDisconnectNotify")]
+	public static extern void QGraphicsColorizeEffect_OnDisconnectNotify(void* self, QGraphicsColorizeEffect_OnDisconnectNotify_action _action);
+	[LinkName("QGraphicsColorizeEffect_BoundingRectFor")]
+	public static extern void* QGraphicsColorizeEffect_BoundingRectFor(void* self, void** sourceRect);
+	
+	public function void QGraphicsColorizeEffect_OnBoundingRectFor_action(void* self, void** sourceRect);
+	[LinkName("QGraphicsColorizeEffect_OnBoundingRectFor")]
+	public static extern void* QGraphicsColorizeEffect_OnBoundingRectFor(void* self, QGraphicsColorizeEffect_OnBoundingRectFor_action _action);
+	[LinkName("QGraphicsColorizeEffect_SourceChanged")]
+	public static extern void QGraphicsColorizeEffect_SourceChanged(void* self, void* flags);
+	
+	public function void QGraphicsColorizeEffect_OnSourceChanged_action(void* self, void* flags);
+	[LinkName("QGraphicsColorizeEffect_OnSourceChanged")]
+	public static extern void QGraphicsColorizeEffect_OnSourceChanged(void* self, QGraphicsColorizeEffect_OnSourceChanged_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsBlurEffect
@@ -1592,11 +1626,11 @@ struct QGraphicsBlurEffect_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QGraphicsBlurEffect_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QGraphicsBlurEffect_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QGraphicsBlurEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -1644,73 +1678,13 @@ struct QGraphicsBlurEffect_Ptr
 	{
 		CQt.QGraphicsBlurEffect_Tr3(s, c, n);
 	}
-	public QRectF_Ptr BoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
-	}
-	public void SetEnabled(bool enable)
-	{
-		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
-	}
-	public void Update()
-	{
-		CQt.QGraphicsEffect_Update((.)this.Ptr);
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		CQt.QGraphicsEffect_SourceChanged((.)this.Ptr, flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
-	}
-	public bool SourceIsPixmap()
-	{
-		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsBlurEffect_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsBlurEffect_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1870,23 +1844,23 @@ struct QGraphicsBlurEffect_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsBlurEffect_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsBlurEffect_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsBlurEffect_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsBlurEffect_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsBlurEffect_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1928,98 +1902,106 @@ struct QGraphicsBlurEffect_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
+	}
+	public void SetEnabled(bool enable)
+	{
+		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
+	}
+	public void Update()
+	{
+		CQt.QGraphicsEffect_Update((.)this.Ptr);
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		CQt.QGraphicsBlurEffect_SourceChanged((.)this.Ptr, flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
+	}
+	public bool SourceIsPixmap()
+	{
+		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
+	}
 }
 class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
 {
 	private QGraphicsBlurEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QGraphicsBlurEffect_blurRadiusChanged,
-		QGraphicsBlurEffect_blurHintsChanged,
-		QGraphicsBlurEffect_enabledChanged,
-		QGraphicsBlurEffect_destroyed,
-		QGraphicsBlurEffect_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QGraphicsBlurEffect_Connect_BlurRadiusChanged(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_blurRadiusChanged);
-		CQt.QGraphicsBlurEffect_Connect_BlurHintsChanged(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_blurHintsChanged);
-		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(double blurRadius)> OnBlurRadiusChanged = .() ~ _.Dispose();
-	public Event<delegate void(void* hints)> OnBlurHintsChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QGraphicsBlurEffect_blurRadiusChanged(void* ptr, double blurRadius)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnBlurRadiusChanged.Invoke(blurRadius);
-	}
-	static void QtBeef_QGraphicsBlurEffect_blurHintsChanged(void* ptr, void* hints)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnBlurHintsChanged.Invoke(hints);
-	}
-	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEnabledChanged.Invoke(enabled);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QGraphicsBlurEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsBlurEffect_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsBlurEffect_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsBlurEffect_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public QRectF_Ptr BoundingRectFor(IQRectF rect)
+	public  virtual QRectF_Ptr OnBoundingRectFor(void** rect)
 	{
-		return this.ptr.BoundingRectFor(rect);
+		return default;
 	}
 	public double BlurRadius()
 	{
@@ -2045,9 +2027,8 @@ class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
 	{
 		this.ptr.BlurHintsChanged(hints);
 	}
-	public void Draw(IQPainter painter)
+	public  virtual void OnDraw(void** painter)
 	{
-		this.ptr.Draw(painter);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -2057,73 +2038,13 @@ class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QRectF_Ptr BoundingRect()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.BoundingRect();
+		return default;
 	}
-	public bool IsEnabled()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.IsEnabled();
-	}
-	public void SetEnabled(bool enable)
-	{
-		this.ptr.SetEnabled(enable);
-	}
-	public void Update()
-	{
-		this.ptr.Update();
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		this.ptr.EnabledChanged(enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		this.ptr.SourceChanged(flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		this.ptr.UpdateBoundingRect();
-	}
-	public bool SourceIsPixmap()
-	{
-		return this.ptr.SourceIsPixmap();
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return this.ptr.SourceBoundingRect();
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		this.ptr.DrawSource(painter);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return this.ptr.SourcePixmap();
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return this.ptr.SourceBoundingRect1(system);
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return this.ptr.SourcePixmap1(system);
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return this.ptr.SourcePixmap2(system, offset);
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return this.ptr.SourcePixmap3(system, offset, mode);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -2281,25 +2202,20 @@ class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -2341,6 +2257,65 @@ class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public void SetEnabled(bool enable)
+	{
+		this.ptr.SetEnabled(enable);
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		this.ptr.EnabledChanged(enabled);
+	}
+	public  virtual void OnSourceChanged(void* flags)
+	{
+	}
+	public void UpdateBoundingRect()
+	{
+		this.ptr.UpdateBoundingRect();
+	}
+	public bool SourceIsPixmap()
+	{
+		return this.ptr.SourceIsPixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return this.ptr.SourceBoundingRect();
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		this.ptr.DrawSource(painter);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return this.ptr.SourcePixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourceBoundingRect1(system);
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourcePixmap1(system);
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return this.ptr.SourcePixmap2(system, offset);
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return this.ptr.SourcePixmap3(system, offset, mode);
+	}
 }
 interface IQGraphicsBlurEffect : IQtObjectInterface
 {
@@ -2355,14 +2330,30 @@ extension CQt
 	public static extern void QGraphicsBlurEffect_Delete(QGraphicsBlurEffect_Ptr self);
 	[LinkName("QGraphicsBlurEffect_MetaObject")]
 	public static extern void** QGraphicsBlurEffect_MetaObject(void* self);
+	
+	public function void QGraphicsBlurEffect_OnMetaObject_action(void* self);
+	[LinkName("QGraphicsBlurEffect_OnMetaObject")]
+	public static extern void** QGraphicsBlurEffect_OnMetaObject(void* self, QGraphicsBlurEffect_OnMetaObject_action _action);
 	[LinkName("QGraphicsBlurEffect_Qt_Metacast")]
 	public static extern void* QGraphicsBlurEffect_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QGraphicsBlurEffect_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QGraphicsBlurEffect_OnMetacast")]
+	public static extern void* QGraphicsBlurEffect_OnMetacast(void* self, QGraphicsBlurEffect_OnMetacast_action _action);
 	[LinkName("QGraphicsBlurEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsBlurEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QGraphicsBlurEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QGraphicsBlurEffect_OnMetacall")]
+	public static extern c_int QGraphicsBlurEffect_OnMetacall(void* self, QGraphicsBlurEffect_OnMetacall_action _action);
 	[LinkName("QGraphicsBlurEffect_Tr")]
 	public static extern libqt_string QGraphicsBlurEffect_Tr(c_char* s);
 	[LinkName("QGraphicsBlurEffect_BoundingRectFor")]
 	public static extern void* QGraphicsBlurEffect_BoundingRectFor(void* self, void** rect);
+	
+	public function void QGraphicsBlurEffect_OnBoundingRectFor_action(void* self, void** rect);
+	[LinkName("QGraphicsBlurEffect_OnBoundingRectFor")]
+	public static extern void* QGraphicsBlurEffect_OnBoundingRectFor(void* self, QGraphicsBlurEffect_OnBoundingRectFor_action _action);
 	[LinkName("QGraphicsBlurEffect_BlurRadius")]
 	public static extern double QGraphicsBlurEffect_BlurRadius(void* self);
 	[LinkName("QGraphicsBlurEffect_BlurHints")]
@@ -2374,21 +2365,73 @@ extension CQt
 	[LinkName("QGraphicsBlurEffect_BlurRadiusChanged")]
 	public static extern void QGraphicsBlurEffect_BlurRadiusChanged(void* self, double blurRadius);
 	
-	public function void QGraphicsBlurEffect_blurRadiusChanged_action(void* self, double blurRadius);
+	public function void QGraphicsBlurEffect_Connect_BlurRadiusChanged_action(void* self, double blurRadius);
 	[LinkName("QGraphicsBlurEffect_Connect_BlurRadiusChanged")]
-	public static extern void QGraphicsBlurEffect_Connect_BlurRadiusChanged(void* self, QGraphicsBlurEffect_blurRadiusChanged_action _action);
+	public static extern void QGraphicsBlurEffect_Connect_BlurRadiusChanged(void* self, QGraphicsBlurEffect_Connect_BlurRadiusChanged_action _action);
 	[LinkName("QGraphicsBlurEffect_BlurHintsChanged")]
 	public static extern void QGraphicsBlurEffect_BlurHintsChanged(void* self, void* hints);
 	
-	public function void QGraphicsBlurEffect_blurHintsChanged_action(void* self, void* hints);
+	public function void QGraphicsBlurEffect_Connect_BlurHintsChanged_action(void* self, void* hints);
 	[LinkName("QGraphicsBlurEffect_Connect_BlurHintsChanged")]
-	public static extern void QGraphicsBlurEffect_Connect_BlurHintsChanged(void* self, QGraphicsBlurEffect_blurHintsChanged_action _action);
+	public static extern void QGraphicsBlurEffect_Connect_BlurHintsChanged(void* self, QGraphicsBlurEffect_Connect_BlurHintsChanged_action _action);
 	[LinkName("QGraphicsBlurEffect_Draw")]
 	public static extern void QGraphicsBlurEffect_Draw(void* self, void** painter);
+	
+	public function void QGraphicsBlurEffect_OnDraw_action(void* self, void** painter);
+	[LinkName("QGraphicsBlurEffect_OnDraw")]
+	public static extern void QGraphicsBlurEffect_OnDraw(void* self, QGraphicsBlurEffect_OnDraw_action _action);
 	[LinkName("QGraphicsBlurEffect_Tr2")]
 	public static extern libqt_string QGraphicsBlurEffect_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsBlurEffect_Tr3")]
 	public static extern libqt_string QGraphicsBlurEffect_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QGraphicsBlurEffect_Event")]
+	public static extern bool QGraphicsBlurEffect_Event(void* self, void** event);
+	
+	public function void QGraphicsBlurEffect_OnEvent_action(void* self, void** event);
+	[LinkName("QGraphicsBlurEffect_OnEvent")]
+	public static extern bool QGraphicsBlurEffect_OnEvent(void* self, QGraphicsBlurEffect_OnEvent_action _action);
+	[LinkName("QGraphicsBlurEffect_EventFilter")]
+	public static extern bool QGraphicsBlurEffect_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QGraphicsBlurEffect_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QGraphicsBlurEffect_OnEventFilter")]
+	public static extern bool QGraphicsBlurEffect_OnEventFilter(void* self, QGraphicsBlurEffect_OnEventFilter_action _action);
+	[LinkName("QGraphicsBlurEffect_TimerEvent")]
+	public static extern void QGraphicsBlurEffect_TimerEvent(void* self, void** event);
+	
+	public function void QGraphicsBlurEffect_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QGraphicsBlurEffect_OnTimerEvent")]
+	public static extern void QGraphicsBlurEffect_OnTimerEvent(void* self, QGraphicsBlurEffect_OnTimerEvent_action _action);
+	[LinkName("QGraphicsBlurEffect_ChildEvent")]
+	public static extern void QGraphicsBlurEffect_ChildEvent(void* self, void** event);
+	
+	public function void QGraphicsBlurEffect_OnChildEvent_action(void* self, void** event);
+	[LinkName("QGraphicsBlurEffect_OnChildEvent")]
+	public static extern void QGraphicsBlurEffect_OnChildEvent(void* self, QGraphicsBlurEffect_OnChildEvent_action _action);
+	[LinkName("QGraphicsBlurEffect_CustomEvent")]
+	public static extern void QGraphicsBlurEffect_CustomEvent(void* self, void** event);
+	
+	public function void QGraphicsBlurEffect_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QGraphicsBlurEffect_OnCustomEvent")]
+	public static extern void QGraphicsBlurEffect_OnCustomEvent(void* self, QGraphicsBlurEffect_OnCustomEvent_action _action);
+	[LinkName("QGraphicsBlurEffect_ConnectNotify")]
+	public static extern void QGraphicsBlurEffect_ConnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsBlurEffect_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsBlurEffect_OnConnectNotify")]
+	public static extern void QGraphicsBlurEffect_OnConnectNotify(void* self, QGraphicsBlurEffect_OnConnectNotify_action _action);
+	[LinkName("QGraphicsBlurEffect_DisconnectNotify")]
+	public static extern void QGraphicsBlurEffect_DisconnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsBlurEffect_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsBlurEffect_OnDisconnectNotify")]
+	public static extern void QGraphicsBlurEffect_OnDisconnectNotify(void* self, QGraphicsBlurEffect_OnDisconnectNotify_action _action);
+	[LinkName("QGraphicsBlurEffect_SourceChanged")]
+	public static extern void QGraphicsBlurEffect_SourceChanged(void* self, void* flags);
+	
+	public function void QGraphicsBlurEffect_OnSourceChanged_action(void* self, void* flags);
+	[LinkName("QGraphicsBlurEffect_OnSourceChanged")]
+	public static extern void QGraphicsBlurEffect_OnSourceChanged(void* self, QGraphicsBlurEffect_OnSourceChanged_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsDropShadowEffect
@@ -2405,11 +2448,11 @@ struct QGraphicsDropShadowEffect_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QGraphicsDropShadowEffect_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QGraphicsDropShadowEffect_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QGraphicsDropShadowEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -2493,73 +2536,13 @@ struct QGraphicsDropShadowEffect_Ptr
 	{
 		CQt.QGraphicsDropShadowEffect_Tr3(s, c, n);
 	}
-	public QRectF_Ptr BoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
-	}
-	public void SetEnabled(bool enable)
-	{
-		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
-	}
-	public void Update()
-	{
-		CQt.QGraphicsEffect_Update((.)this.Ptr);
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		CQt.QGraphicsEffect_SourceChanged((.)this.Ptr, flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
-	}
-	public bool SourceIsPixmap()
-	{
-		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsDropShadowEffect_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsDropShadowEffect_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -2719,23 +2702,23 @@ struct QGraphicsDropShadowEffect_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsDropShadowEffect_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsDropShadowEffect_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsDropShadowEffect_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsDropShadowEffect_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsDropShadowEffect_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -2777,106 +2760,106 @@ struct QGraphicsDropShadowEffect_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
+	}
+	public void SetEnabled(bool enable)
+	{
+		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
+	}
+	public void Update()
+	{
+		CQt.QGraphicsEffect_Update((.)this.Ptr);
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		CQt.QGraphicsDropShadowEffect_SourceChanged((.)this.Ptr, flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
+	}
+	public bool SourceIsPixmap()
+	{
+		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
+	}
 }
 class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, IQObject
 {
 	private QGraphicsDropShadowEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QGraphicsDropShadowEffect_offsetChanged,
-		QGraphicsDropShadowEffect_blurRadiusChanged,
-		QGraphicsDropShadowEffect_colorChanged,
-		QGraphicsDropShadowEffect_enabledChanged,
-		QGraphicsDropShadowEffect_destroyed,
-		QGraphicsDropShadowEffect_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QGraphicsDropShadowEffect_Connect_OffsetChanged(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_offsetChanged);
-		CQt.QGraphicsDropShadowEffect_Connect_BlurRadiusChanged(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_blurRadiusChanged);
-		CQt.QGraphicsDropShadowEffect_Connect_ColorChanged(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_colorChanged);
-		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** offset)> OnOffsetChanged = .() ~ _.Dispose();
-	public Event<delegate void(double blurRadius)> OnBlurRadiusChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** color)> OnColorChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QGraphicsDropShadowEffect_offsetChanged(void* ptr, void** offset)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnOffsetChanged.Invoke(offset);
-	}
-	static void QtBeef_QGraphicsDropShadowEffect_blurRadiusChanged(void* ptr, double blurRadius)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnBlurRadiusChanged.Invoke(blurRadius);
-	}
-	static void QtBeef_QGraphicsDropShadowEffect_colorChanged(void* ptr, void** color)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnColorChanged.Invoke(color);
-	}
-	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEnabledChanged.Invoke(enabled);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QGraphicsDropShadowEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsDropShadowEffect_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsDropShadowEffect_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsDropShadowEffect_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public QRectF_Ptr BoundingRectFor(IQRectF rect)
+	public  virtual QRectF_Ptr OnBoundingRectFor(void** rect)
 	{
-		return this.ptr.BoundingRectFor(rect);
+		return default;
 	}
 	public QPointF_Ptr Offset()
 	{
@@ -2938,9 +2921,8 @@ class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, 
 	{
 		this.ptr.ColorChanged(color);
 	}
-	public void Draw(IQPainter painter)
+	public  virtual void OnDraw(void** painter)
 	{
-		this.ptr.Draw(painter);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -2950,73 +2932,13 @@ class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, 
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QRectF_Ptr BoundingRect()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.BoundingRect();
+		return default;
 	}
-	public bool IsEnabled()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.IsEnabled();
-	}
-	public void SetEnabled(bool enable)
-	{
-		this.ptr.SetEnabled(enable);
-	}
-	public void Update()
-	{
-		this.ptr.Update();
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		this.ptr.EnabledChanged(enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		this.ptr.SourceChanged(flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		this.ptr.UpdateBoundingRect();
-	}
-	public bool SourceIsPixmap()
-	{
-		return this.ptr.SourceIsPixmap();
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return this.ptr.SourceBoundingRect();
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		this.ptr.DrawSource(painter);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return this.ptr.SourcePixmap();
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return this.ptr.SourceBoundingRect1(system);
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return this.ptr.SourcePixmap1(system);
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return this.ptr.SourcePixmap2(system, offset);
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return this.ptr.SourcePixmap3(system, offset, mode);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -3174,25 +3096,20 @@ class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, 
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -3234,6 +3151,65 @@ class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, 
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public void SetEnabled(bool enable)
+	{
+		this.ptr.SetEnabled(enable);
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		this.ptr.EnabledChanged(enabled);
+	}
+	public  virtual void OnSourceChanged(void* flags)
+	{
+	}
+	public void UpdateBoundingRect()
+	{
+		this.ptr.UpdateBoundingRect();
+	}
+	public bool SourceIsPixmap()
+	{
+		return this.ptr.SourceIsPixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return this.ptr.SourceBoundingRect();
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		this.ptr.DrawSource(painter);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return this.ptr.SourcePixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourceBoundingRect1(system);
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourcePixmap1(system);
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return this.ptr.SourcePixmap2(system, offset);
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return this.ptr.SourcePixmap3(system, offset, mode);
+	}
 }
 interface IQGraphicsDropShadowEffect : IQtObjectInterface
 {
@@ -3248,14 +3224,30 @@ extension CQt
 	public static extern void QGraphicsDropShadowEffect_Delete(QGraphicsDropShadowEffect_Ptr self);
 	[LinkName("QGraphicsDropShadowEffect_MetaObject")]
 	public static extern void** QGraphicsDropShadowEffect_MetaObject(void* self);
+	
+	public function void QGraphicsDropShadowEffect_OnMetaObject_action(void* self);
+	[LinkName("QGraphicsDropShadowEffect_OnMetaObject")]
+	public static extern void** QGraphicsDropShadowEffect_OnMetaObject(void* self, QGraphicsDropShadowEffect_OnMetaObject_action _action);
 	[LinkName("QGraphicsDropShadowEffect_Qt_Metacast")]
 	public static extern void* QGraphicsDropShadowEffect_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QGraphicsDropShadowEffect_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QGraphicsDropShadowEffect_OnMetacast")]
+	public static extern void* QGraphicsDropShadowEffect_OnMetacast(void* self, QGraphicsDropShadowEffect_OnMetacast_action _action);
 	[LinkName("QGraphicsDropShadowEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsDropShadowEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QGraphicsDropShadowEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QGraphicsDropShadowEffect_OnMetacall")]
+	public static extern c_int QGraphicsDropShadowEffect_OnMetacall(void* self, QGraphicsDropShadowEffect_OnMetacall_action _action);
 	[LinkName("QGraphicsDropShadowEffect_Tr")]
 	public static extern libqt_string QGraphicsDropShadowEffect_Tr(c_char* s);
 	[LinkName("QGraphicsDropShadowEffect_BoundingRectFor")]
 	public static extern void* QGraphicsDropShadowEffect_BoundingRectFor(void* self, void** rect);
+	
+	public function void QGraphicsDropShadowEffect_OnBoundingRectFor_action(void* self, void** rect);
+	[LinkName("QGraphicsDropShadowEffect_OnBoundingRectFor")]
+	public static extern void* QGraphicsDropShadowEffect_OnBoundingRectFor(void* self, QGraphicsDropShadowEffect_OnBoundingRectFor_action _action);
 	[LinkName("QGraphicsDropShadowEffect_Offset")]
 	public static extern void* QGraphicsDropShadowEffect_Offset(void* self);
 	[LinkName("QGraphicsDropShadowEffect_XOffset")]
@@ -3283,27 +3275,79 @@ extension CQt
 	[LinkName("QGraphicsDropShadowEffect_OffsetChanged")]
 	public static extern void QGraphicsDropShadowEffect_OffsetChanged(void* self, void** offset);
 	
-	public function void QGraphicsDropShadowEffect_offsetChanged_action(void* self, void** offset);
+	public function void QGraphicsDropShadowEffect_Connect_OffsetChanged_action(void* self, void** offset);
 	[LinkName("QGraphicsDropShadowEffect_Connect_OffsetChanged")]
-	public static extern void QGraphicsDropShadowEffect_Connect_OffsetChanged(void* self, QGraphicsDropShadowEffect_offsetChanged_action _action);
+	public static extern void QGraphicsDropShadowEffect_Connect_OffsetChanged(void* self, QGraphicsDropShadowEffect_Connect_OffsetChanged_action _action);
 	[LinkName("QGraphicsDropShadowEffect_BlurRadiusChanged")]
 	public static extern void QGraphicsDropShadowEffect_BlurRadiusChanged(void* self, double blurRadius);
 	
-	public function void QGraphicsDropShadowEffect_blurRadiusChanged_action(void* self, double blurRadius);
+	public function void QGraphicsDropShadowEffect_Connect_BlurRadiusChanged_action(void* self, double blurRadius);
 	[LinkName("QGraphicsDropShadowEffect_Connect_BlurRadiusChanged")]
-	public static extern void QGraphicsDropShadowEffect_Connect_BlurRadiusChanged(void* self, QGraphicsDropShadowEffect_blurRadiusChanged_action _action);
+	public static extern void QGraphicsDropShadowEffect_Connect_BlurRadiusChanged(void* self, QGraphicsDropShadowEffect_Connect_BlurRadiusChanged_action _action);
 	[LinkName("QGraphicsDropShadowEffect_ColorChanged")]
 	public static extern void QGraphicsDropShadowEffect_ColorChanged(void* self, void** color);
 	
-	public function void QGraphicsDropShadowEffect_colorChanged_action(void* self, void** color);
+	public function void QGraphicsDropShadowEffect_Connect_ColorChanged_action(void* self, void** color);
 	[LinkName("QGraphicsDropShadowEffect_Connect_ColorChanged")]
-	public static extern void QGraphicsDropShadowEffect_Connect_ColorChanged(void* self, QGraphicsDropShadowEffect_colorChanged_action _action);
+	public static extern void QGraphicsDropShadowEffect_Connect_ColorChanged(void* self, QGraphicsDropShadowEffect_Connect_ColorChanged_action _action);
 	[LinkName("QGraphicsDropShadowEffect_Draw")]
 	public static extern void QGraphicsDropShadowEffect_Draw(void* self, void** painter);
+	
+	public function void QGraphicsDropShadowEffect_OnDraw_action(void* self, void** painter);
+	[LinkName("QGraphicsDropShadowEffect_OnDraw")]
+	public static extern void QGraphicsDropShadowEffect_OnDraw(void* self, QGraphicsDropShadowEffect_OnDraw_action _action);
 	[LinkName("QGraphicsDropShadowEffect_Tr2")]
 	public static extern libqt_string QGraphicsDropShadowEffect_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsDropShadowEffect_Tr3")]
 	public static extern libqt_string QGraphicsDropShadowEffect_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QGraphicsDropShadowEffect_Event")]
+	public static extern bool QGraphicsDropShadowEffect_Event(void* self, void** event);
+	
+	public function void QGraphicsDropShadowEffect_OnEvent_action(void* self, void** event);
+	[LinkName("QGraphicsDropShadowEffect_OnEvent")]
+	public static extern bool QGraphicsDropShadowEffect_OnEvent(void* self, QGraphicsDropShadowEffect_OnEvent_action _action);
+	[LinkName("QGraphicsDropShadowEffect_EventFilter")]
+	public static extern bool QGraphicsDropShadowEffect_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QGraphicsDropShadowEffect_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QGraphicsDropShadowEffect_OnEventFilter")]
+	public static extern bool QGraphicsDropShadowEffect_OnEventFilter(void* self, QGraphicsDropShadowEffect_OnEventFilter_action _action);
+	[LinkName("QGraphicsDropShadowEffect_TimerEvent")]
+	public static extern void QGraphicsDropShadowEffect_TimerEvent(void* self, void** event);
+	
+	public function void QGraphicsDropShadowEffect_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QGraphicsDropShadowEffect_OnTimerEvent")]
+	public static extern void QGraphicsDropShadowEffect_OnTimerEvent(void* self, QGraphicsDropShadowEffect_OnTimerEvent_action _action);
+	[LinkName("QGraphicsDropShadowEffect_ChildEvent")]
+	public static extern void QGraphicsDropShadowEffect_ChildEvent(void* self, void** event);
+	
+	public function void QGraphicsDropShadowEffect_OnChildEvent_action(void* self, void** event);
+	[LinkName("QGraphicsDropShadowEffect_OnChildEvent")]
+	public static extern void QGraphicsDropShadowEffect_OnChildEvent(void* self, QGraphicsDropShadowEffect_OnChildEvent_action _action);
+	[LinkName("QGraphicsDropShadowEffect_CustomEvent")]
+	public static extern void QGraphicsDropShadowEffect_CustomEvent(void* self, void** event);
+	
+	public function void QGraphicsDropShadowEffect_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QGraphicsDropShadowEffect_OnCustomEvent")]
+	public static extern void QGraphicsDropShadowEffect_OnCustomEvent(void* self, QGraphicsDropShadowEffect_OnCustomEvent_action _action);
+	[LinkName("QGraphicsDropShadowEffect_ConnectNotify")]
+	public static extern void QGraphicsDropShadowEffect_ConnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsDropShadowEffect_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsDropShadowEffect_OnConnectNotify")]
+	public static extern void QGraphicsDropShadowEffect_OnConnectNotify(void* self, QGraphicsDropShadowEffect_OnConnectNotify_action _action);
+	[LinkName("QGraphicsDropShadowEffect_DisconnectNotify")]
+	public static extern void QGraphicsDropShadowEffect_DisconnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsDropShadowEffect_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsDropShadowEffect_OnDisconnectNotify")]
+	public static extern void QGraphicsDropShadowEffect_OnDisconnectNotify(void* self, QGraphicsDropShadowEffect_OnDisconnectNotify_action _action);
+	[LinkName("QGraphicsDropShadowEffect_SourceChanged")]
+	public static extern void QGraphicsDropShadowEffect_SourceChanged(void* self, void* flags);
+	
+	public function void QGraphicsDropShadowEffect_OnSourceChanged_action(void* self, void* flags);
+	[LinkName("QGraphicsDropShadowEffect_OnSourceChanged")]
+	public static extern void QGraphicsDropShadowEffect_OnSourceChanged(void* self, QGraphicsDropShadowEffect_OnSourceChanged_action _action);
 }
 // --------------------------------------------------------------
 // QGraphicsOpacityEffect
@@ -3320,11 +3364,11 @@ struct QGraphicsOpacityEffect_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QGraphicsOpacityEffect_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QGraphicsOpacityEffect_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QGraphicsOpacityEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -3368,77 +3412,13 @@ struct QGraphicsOpacityEffect_Ptr
 	{
 		CQt.QGraphicsOpacityEffect_Tr3(s, c, n);
 	}
-	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRectFor((.)this.Ptr, (.)sourceRect?.ObjectPtr));
-	}
-	public QRectF_Ptr BoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
-	}
-	public void SetEnabled(bool enable)
-	{
-		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
-	}
-	public void Update()
-	{
-		CQt.QGraphicsEffect_Update((.)this.Ptr);
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		CQt.QGraphicsEffect_SourceChanged((.)this.Ptr, flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
-	}
-	public bool SourceIsPixmap()
-	{
-		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsOpacityEffect_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QGraphicsOpacityEffect_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -3598,23 +3578,23 @@ struct QGraphicsOpacityEffect_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsOpacityEffect_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsOpacityEffect_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QGraphicsOpacityEffect_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsOpacityEffect_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QGraphicsOpacityEffect_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -3656,90 +3636,102 @@ struct QGraphicsOpacityEffect_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	{
+		return QRectF_Ptr(CQt.QGraphicsOpacityEffect_BoundingRectFor((.)this.Ptr, (.)sourceRect?.ObjectPtr));
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
+	}
+	public void SetEnabled(bool enable)
+	{
+		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
+	}
+	public void Update()
+	{
+		CQt.QGraphicsEffect_Update((.)this.Ptr);
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		CQt.QGraphicsOpacityEffect_SourceChanged((.)this.Ptr, flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
+	}
+	public bool SourceIsPixmap()
+	{
+		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
+	}
 }
 class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObject
 {
 	private QGraphicsOpacityEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QGraphicsOpacityEffect_opacityChanged,
-		QGraphicsOpacityEffect_opacityMaskChanged,
-		QGraphicsOpacityEffect_enabledChanged,
-		QGraphicsOpacityEffect_destroyed,
-		QGraphicsOpacityEffect_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QGraphicsOpacityEffect_Connect_OpacityChanged(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_opacityChanged);
-		CQt.QGraphicsOpacityEffect_Connect_OpacityMaskChanged(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_opacityMaskChanged);
-		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(double opacity)> OnOpacityChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** mask)> OnOpacityMaskChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QGraphicsOpacityEffect_opacityChanged(void* ptr, double opacity)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnOpacityChanged.Invoke(opacity);
-	}
-	static void QtBeef_QGraphicsOpacityEffect_opacityMaskChanged(void* ptr, void** mask)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnOpacityMaskChanged.Invoke(mask);
-	}
-	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEnabledChanged.Invoke(enabled);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QGraphicsOpacityEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsOpacityEffect_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsOpacityEffect_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsOpacityEffect_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -3769,9 +3761,8 @@ class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObje
 	{
 		this.ptr.OpacityMaskChanged(mask);
 	}
-	public void Draw(IQPainter painter)
+	public  virtual void OnDraw(void** painter)
 	{
-		this.ptr.Draw(painter);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -3781,77 +3772,13 @@ class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObje
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.BoundingRectFor(sourceRect);
+		return default;
 	}
-	public QRectF_Ptr BoundingRect()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.BoundingRect();
-	}
-	public bool IsEnabled()
-	{
-		return this.ptr.IsEnabled();
-	}
-	public void SetEnabled(bool enable)
-	{
-		this.ptr.SetEnabled(enable);
-	}
-	public void Update()
-	{
-		this.ptr.Update();
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		this.ptr.EnabledChanged(enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		this.ptr.SourceChanged(flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		this.ptr.UpdateBoundingRect();
-	}
-	public bool SourceIsPixmap()
-	{
-		return this.ptr.SourceIsPixmap();
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return this.ptr.SourceBoundingRect();
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		this.ptr.DrawSource(painter);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return this.ptr.SourcePixmap();
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return this.ptr.SourceBoundingRect1(system);
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return this.ptr.SourcePixmap1(system);
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return this.ptr.SourcePixmap2(system, offset);
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return this.ptr.SourcePixmap3(system, offset, mode);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -4009,25 +3936,20 @@ class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObje
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -4069,6 +3991,69 @@ class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObje
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public  virtual QRectF_Ptr OnBoundingRectFor(void** sourceRect)
+	{
+		return default;
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public void SetEnabled(bool enable)
+	{
+		this.ptr.SetEnabled(enable);
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		this.ptr.EnabledChanged(enabled);
+	}
+	public  virtual void OnSourceChanged(void* flags)
+	{
+	}
+	public void UpdateBoundingRect()
+	{
+		this.ptr.UpdateBoundingRect();
+	}
+	public bool SourceIsPixmap()
+	{
+		return this.ptr.SourceIsPixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return this.ptr.SourceBoundingRect();
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		this.ptr.DrawSource(painter);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return this.ptr.SourcePixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourceBoundingRect1(system);
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourcePixmap1(system);
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return this.ptr.SourcePixmap2(system, offset);
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return this.ptr.SourcePixmap3(system, offset, mode);
+	}
 }
 interface IQGraphicsOpacityEffect : IQtObjectInterface
 {
@@ -4083,10 +4068,22 @@ extension CQt
 	public static extern void QGraphicsOpacityEffect_Delete(QGraphicsOpacityEffect_Ptr self);
 	[LinkName("QGraphicsOpacityEffect_MetaObject")]
 	public static extern void** QGraphicsOpacityEffect_MetaObject(void* self);
+	
+	public function void QGraphicsOpacityEffect_OnMetaObject_action(void* self);
+	[LinkName("QGraphicsOpacityEffect_OnMetaObject")]
+	public static extern void** QGraphicsOpacityEffect_OnMetaObject(void* self, QGraphicsOpacityEffect_OnMetaObject_action _action);
 	[LinkName("QGraphicsOpacityEffect_Qt_Metacast")]
 	public static extern void* QGraphicsOpacityEffect_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QGraphicsOpacityEffect_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QGraphicsOpacityEffect_OnMetacast")]
+	public static extern void* QGraphicsOpacityEffect_OnMetacast(void* self, QGraphicsOpacityEffect_OnMetacast_action _action);
 	[LinkName("QGraphicsOpacityEffect_Qt_Metacall")]
 	public static extern c_int QGraphicsOpacityEffect_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QGraphicsOpacityEffect_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QGraphicsOpacityEffect_OnMetacall")]
+	public static extern c_int QGraphicsOpacityEffect_OnMetacall(void* self, QGraphicsOpacityEffect_OnMetacall_action _action);
 	[LinkName("QGraphicsOpacityEffect_Tr")]
 	public static extern libqt_string QGraphicsOpacityEffect_Tr(c_char* s);
 	[LinkName("QGraphicsOpacityEffect_Opacity")]
@@ -4100,21 +4097,79 @@ extension CQt
 	[LinkName("QGraphicsOpacityEffect_OpacityChanged")]
 	public static extern void QGraphicsOpacityEffect_OpacityChanged(void* self, double opacity);
 	
-	public function void QGraphicsOpacityEffect_opacityChanged_action(void* self, double opacity);
+	public function void QGraphicsOpacityEffect_Connect_OpacityChanged_action(void* self, double opacity);
 	[LinkName("QGraphicsOpacityEffect_Connect_OpacityChanged")]
-	public static extern void QGraphicsOpacityEffect_Connect_OpacityChanged(void* self, QGraphicsOpacityEffect_opacityChanged_action _action);
+	public static extern void QGraphicsOpacityEffect_Connect_OpacityChanged(void* self, QGraphicsOpacityEffect_Connect_OpacityChanged_action _action);
 	[LinkName("QGraphicsOpacityEffect_OpacityMaskChanged")]
 	public static extern void QGraphicsOpacityEffect_OpacityMaskChanged(void* self, void** mask);
 	
-	public function void QGraphicsOpacityEffect_opacityMaskChanged_action(void* self, void** mask);
+	public function void QGraphicsOpacityEffect_Connect_OpacityMaskChanged_action(void* self, void** mask);
 	[LinkName("QGraphicsOpacityEffect_Connect_OpacityMaskChanged")]
-	public static extern void QGraphicsOpacityEffect_Connect_OpacityMaskChanged(void* self, QGraphicsOpacityEffect_opacityMaskChanged_action _action);
+	public static extern void QGraphicsOpacityEffect_Connect_OpacityMaskChanged(void* self, QGraphicsOpacityEffect_Connect_OpacityMaskChanged_action _action);
 	[LinkName("QGraphicsOpacityEffect_Draw")]
 	public static extern void QGraphicsOpacityEffect_Draw(void* self, void** painter);
+	
+	public function void QGraphicsOpacityEffect_OnDraw_action(void* self, void** painter);
+	[LinkName("QGraphicsOpacityEffect_OnDraw")]
+	public static extern void QGraphicsOpacityEffect_OnDraw(void* self, QGraphicsOpacityEffect_OnDraw_action _action);
 	[LinkName("QGraphicsOpacityEffect_Tr2")]
 	public static extern libqt_string QGraphicsOpacityEffect_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsOpacityEffect_Tr3")]
 	public static extern libqt_string QGraphicsOpacityEffect_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QGraphicsOpacityEffect_Event")]
+	public static extern bool QGraphicsOpacityEffect_Event(void* self, void** event);
+	
+	public function void QGraphicsOpacityEffect_OnEvent_action(void* self, void** event);
+	[LinkName("QGraphicsOpacityEffect_OnEvent")]
+	public static extern bool QGraphicsOpacityEffect_OnEvent(void* self, QGraphicsOpacityEffect_OnEvent_action _action);
+	[LinkName("QGraphicsOpacityEffect_EventFilter")]
+	public static extern bool QGraphicsOpacityEffect_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QGraphicsOpacityEffect_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QGraphicsOpacityEffect_OnEventFilter")]
+	public static extern bool QGraphicsOpacityEffect_OnEventFilter(void* self, QGraphicsOpacityEffect_OnEventFilter_action _action);
+	[LinkName("QGraphicsOpacityEffect_TimerEvent")]
+	public static extern void QGraphicsOpacityEffect_TimerEvent(void* self, void** event);
+	
+	public function void QGraphicsOpacityEffect_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QGraphicsOpacityEffect_OnTimerEvent")]
+	public static extern void QGraphicsOpacityEffect_OnTimerEvent(void* self, QGraphicsOpacityEffect_OnTimerEvent_action _action);
+	[LinkName("QGraphicsOpacityEffect_ChildEvent")]
+	public static extern void QGraphicsOpacityEffect_ChildEvent(void* self, void** event);
+	
+	public function void QGraphicsOpacityEffect_OnChildEvent_action(void* self, void** event);
+	[LinkName("QGraphicsOpacityEffect_OnChildEvent")]
+	public static extern void QGraphicsOpacityEffect_OnChildEvent(void* self, QGraphicsOpacityEffect_OnChildEvent_action _action);
+	[LinkName("QGraphicsOpacityEffect_CustomEvent")]
+	public static extern void QGraphicsOpacityEffect_CustomEvent(void* self, void** event);
+	
+	public function void QGraphicsOpacityEffect_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QGraphicsOpacityEffect_OnCustomEvent")]
+	public static extern void QGraphicsOpacityEffect_OnCustomEvent(void* self, QGraphicsOpacityEffect_OnCustomEvent_action _action);
+	[LinkName("QGraphicsOpacityEffect_ConnectNotify")]
+	public static extern void QGraphicsOpacityEffect_ConnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsOpacityEffect_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsOpacityEffect_OnConnectNotify")]
+	public static extern void QGraphicsOpacityEffect_OnConnectNotify(void* self, QGraphicsOpacityEffect_OnConnectNotify_action _action);
+	[LinkName("QGraphicsOpacityEffect_DisconnectNotify")]
+	public static extern void QGraphicsOpacityEffect_DisconnectNotify(void* self, void** signal);
+	
+	public function void QGraphicsOpacityEffect_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QGraphicsOpacityEffect_OnDisconnectNotify")]
+	public static extern void QGraphicsOpacityEffect_OnDisconnectNotify(void* self, QGraphicsOpacityEffect_OnDisconnectNotify_action _action);
+	[LinkName("QGraphicsOpacityEffect_BoundingRectFor")]
+	public static extern void* QGraphicsOpacityEffect_BoundingRectFor(void* self, void** sourceRect);
+	
+	public function void QGraphicsOpacityEffect_OnBoundingRectFor_action(void* self, void** sourceRect);
+	[LinkName("QGraphicsOpacityEffect_OnBoundingRectFor")]
+	public static extern void* QGraphicsOpacityEffect_OnBoundingRectFor(void* self, QGraphicsOpacityEffect_OnBoundingRectFor_action _action);
+	[LinkName("QGraphicsOpacityEffect_SourceChanged")]
+	public static extern void QGraphicsOpacityEffect_SourceChanged(void* self, void* flags);
+	
+	public function void QGraphicsOpacityEffect_OnSourceChanged_action(void* self, void* flags);
+	[LinkName("QGraphicsOpacityEffect_OnSourceChanged")]
+	public static extern void QGraphicsOpacityEffect_OnSourceChanged(void* self, QGraphicsOpacityEffect_OnSourceChanged_action _action);
 }
 [AllowDuplicates]
 enum QGraphicsEffect_ChangeFlag

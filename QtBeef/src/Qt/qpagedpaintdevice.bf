@@ -48,7 +48,7 @@ struct QPagedPaintDevice_Ptr
 	}
 	public c_int DevType()
 	{
-		return CQt.QPaintDevice_DevType((.)this.Ptr);
+		return CQt.QPagedPaintDevice_DevType((.)this.Ptr);
 	}
 	public bool PaintingActive()
 	{
@@ -56,7 +56,7 @@ struct QPagedPaintDevice_Ptr
 	}
 	public QPaintEngine_Ptr PaintEngine()
 	{
-		return QPaintEngine_Ptr(CQt.QPaintDevice_PaintEngine((.)this.Ptr));
+		return QPaintEngine_Ptr(CQt.QPagedPaintDevice_PaintEngine((.)this.Ptr));
 	}
 	public c_int Width()
 	{
@@ -112,86 +112,75 @@ struct QPagedPaintDevice_Ptr
 	}
 	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
 	{
-		return CQt.QPaintDevice_Metric((.)this.Ptr, metric);
+		return CQt.QPagedPaintDevice_Metric((.)this.Ptr, metric);
 	}
 	public void InitPainter(IQPainter painter)
 	{
-		CQt.QPaintDevice_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+		CQt.QPagedPaintDevice_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
 	}
 	public QPaintDevice_Ptr Redirected(IQPoint offset)
 	{
-		return QPaintDevice_Ptr(CQt.QPaintDevice_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+		return QPaintDevice_Ptr(CQt.QPagedPaintDevice_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
 	}
 	public QPainter_Ptr SharedPainter()
 	{
-		return QPainter_Ptr(CQt.QPaintDevice_SharedPainter((.)this.Ptr));
+		return QPainter_Ptr(CQt.QPagedPaintDevice_SharedPainter((.)this.Ptr));
 	}
 }
 class QPagedPaintDevice : IQPagedPaintDevice, IQPaintDevice
 {
 	private QPagedPaintDevice_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPagedPaintDevice_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPagedPaintDevice_Delete(this.ptr);
 	}
-	public bool NewPage()
+	public  virtual bool OnNewPage()
 	{
-		return this.ptr.NewPage();
+		return default;
 	}
-	public bool SetPageLayout(IQPageLayout pageLayout)
+	public  virtual bool OnSetPageLayout(void** pageLayout)
 	{
-		return this.ptr.SetPageLayout(pageLayout);
+		return default;
 	}
-	public bool SetPageSize(IQPageSize pageSize)
+	public  virtual bool OnSetPageSize(void** pageSize)
 	{
-		return this.ptr.SetPageSize(pageSize);
+		return default;
 	}
-	public bool SetPageOrientation(QPageLayout_Orientation orientation)
+	public  virtual bool OnSetPageOrientation(QPageLayout_Orientation orientation)
 	{
-		return this.ptr.SetPageOrientation(orientation);
+		return default;
 	}
-	public bool SetPageMargins(IQMarginsF margins, QPageLayout_Unit units)
+	public  virtual bool OnSetPageMargins(void** margins, QPageLayout_Unit units)
 	{
-		return this.ptr.SetPageMargins(margins, units);
+		return default;
 	}
 	public QPageLayout_Ptr PageLayout()
 	{
 		return this.ptr.PageLayout();
 	}
-	public void SetPageRanges(IQPageRanges ranges)
+	public  virtual void OnSetPageRanges(void** ranges)
 	{
-		this.ptr.SetPageRanges(ranges);
 	}
 	public QPageRanges_Ptr PageRanges()
 	{
 		return this.ptr.PageRanges();
 	}
-	public c_int DevType()
+	public  virtual c_int OnDevType()
 	{
-		return this.ptr.DevType();
+		return default;
 	}
 	public bool PaintingActive()
 	{
 		return this.ptr.PaintingActive();
 	}
-	public QPaintEngine_Ptr PaintEngine()
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
 	{
-		return this.ptr.PaintEngine();
+		return default;
 	}
 	public c_int Width()
 	{
@@ -245,21 +234,20 @@ class QPagedPaintDevice : IQPagedPaintDevice, IQPaintDevice
 	{
 		return this.ptr.DevicePixelRatioFScale();
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
 	{
-		return this.ptr.Metric(metric);
+		return default;
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnInitPainter(void** painter)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
 	{
-		return this.ptr.Redirected(offset);
+		return default;
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual QPainter_Ptr OnSharedPainter()
 	{
-		return this.ptr.SharedPainter();
+		return default;
 	}
 }
 interface IQPagedPaintDevice : IQtObjectInterface
@@ -271,20 +259,80 @@ extension CQt
 	public static extern void QPagedPaintDevice_Delete(QPagedPaintDevice_Ptr self);
 	[LinkName("QPagedPaintDevice_NewPage")]
 	public static extern bool QPagedPaintDevice_NewPage(void* self);
+	
+	public function void QPagedPaintDevice_OnNewPage_action(void* self);
+	[LinkName("QPagedPaintDevice_OnNewPage")]
+	public static extern bool QPagedPaintDevice_OnNewPage(void* self, QPagedPaintDevice_OnNewPage_action _action);
 	[LinkName("QPagedPaintDevice_SetPageLayout")]
 	public static extern bool QPagedPaintDevice_SetPageLayout(void* self, void** pageLayout);
+	
+	public function void QPagedPaintDevice_OnSetPageLayout_action(void* self, void** pageLayout);
+	[LinkName("QPagedPaintDevice_OnSetPageLayout")]
+	public static extern bool QPagedPaintDevice_OnSetPageLayout(void* self, QPagedPaintDevice_OnSetPageLayout_action _action);
 	[LinkName("QPagedPaintDevice_SetPageSize")]
 	public static extern bool QPagedPaintDevice_SetPageSize(void* self, void** pageSize);
+	
+	public function void QPagedPaintDevice_OnSetPageSize_action(void* self, void** pageSize);
+	[LinkName("QPagedPaintDevice_OnSetPageSize")]
+	public static extern bool QPagedPaintDevice_OnSetPageSize(void* self, QPagedPaintDevice_OnSetPageSize_action _action);
 	[LinkName("QPagedPaintDevice_SetPageOrientation")]
 	public static extern bool QPagedPaintDevice_SetPageOrientation(void* self, QPageLayout_Orientation orientation);
+	
+	public function void QPagedPaintDevice_OnSetPageOrientation_action(void* self, QPageLayout_Orientation orientation);
+	[LinkName("QPagedPaintDevice_OnSetPageOrientation")]
+	public static extern bool QPagedPaintDevice_OnSetPageOrientation(void* self, QPagedPaintDevice_OnSetPageOrientation_action _action);
 	[LinkName("QPagedPaintDevice_SetPageMargins")]
 	public static extern bool QPagedPaintDevice_SetPageMargins(void* self, void** margins, QPageLayout_Unit units);
+	
+	public function void QPagedPaintDevice_OnSetPageMargins_action(void* self, void** margins, QPageLayout_Unit units);
+	[LinkName("QPagedPaintDevice_OnSetPageMargins")]
+	public static extern bool QPagedPaintDevice_OnSetPageMargins(void* self, QPagedPaintDevice_OnSetPageMargins_action _action);
 	[LinkName("QPagedPaintDevice_PageLayout")]
 	public static extern void* QPagedPaintDevice_PageLayout(void* self);
 	[LinkName("QPagedPaintDevice_SetPageRanges")]
 	public static extern void QPagedPaintDevice_SetPageRanges(void* self, void** ranges);
+	
+	public function void QPagedPaintDevice_OnSetPageRanges_action(void* self, void** ranges);
+	[LinkName("QPagedPaintDevice_OnSetPageRanges")]
+	public static extern void QPagedPaintDevice_OnSetPageRanges(void* self, QPagedPaintDevice_OnSetPageRanges_action _action);
 	[LinkName("QPagedPaintDevice_PageRanges")]
 	public static extern void* QPagedPaintDevice_PageRanges(void* self);
+	[LinkName("QPagedPaintDevice_DevType")]
+	public static extern c_int QPagedPaintDevice_DevType(void* self);
+	
+	public function void QPagedPaintDevice_OnDevType_action(void* self);
+	[LinkName("QPagedPaintDevice_OnDevType")]
+	public static extern c_int QPagedPaintDevice_OnDevType(void* self, QPagedPaintDevice_OnDevType_action _action);
+	[LinkName("QPagedPaintDevice_PaintEngine")]
+	public static extern void** QPagedPaintDevice_PaintEngine(void* self);
+	
+	public function void QPagedPaintDevice_OnPaintEngine_action(void* self);
+	[LinkName("QPagedPaintDevice_OnPaintEngine")]
+	public static extern void** QPagedPaintDevice_OnPaintEngine(void* self, QPagedPaintDevice_OnPaintEngine_action _action);
+	[LinkName("QPagedPaintDevice_Metric")]
+	public static extern c_int QPagedPaintDevice_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QPagedPaintDevice_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QPagedPaintDevice_OnMetric")]
+	public static extern c_int QPagedPaintDevice_OnMetric(void* self, QPagedPaintDevice_OnMetric_action _action);
+	[LinkName("QPagedPaintDevice_InitPainter")]
+	public static extern void QPagedPaintDevice_InitPainter(void* self, void** painter);
+	
+	public function void QPagedPaintDevice_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QPagedPaintDevice_OnInitPainter")]
+	public static extern void QPagedPaintDevice_OnInitPainter(void* self, QPagedPaintDevice_OnInitPainter_action _action);
+	[LinkName("QPagedPaintDevice_Redirected")]
+	public static extern void** QPagedPaintDevice_Redirected(void* self, void** offset);
+	
+	public function void QPagedPaintDevice_OnRedirected_action(void* self, void** offset);
+	[LinkName("QPagedPaintDevice_OnRedirected")]
+	public static extern void** QPagedPaintDevice_OnRedirected(void* self, QPagedPaintDevice_OnRedirected_action _action);
+	[LinkName("QPagedPaintDevice_SharedPainter")]
+	public static extern void** QPagedPaintDevice_SharedPainter(void* self);
+	
+	public function void QPagedPaintDevice_OnSharedPainter_action(void* self);
+	[LinkName("QPagedPaintDevice_OnSharedPainter")]
+	public static extern void** QPagedPaintDevice_OnSharedPainter(void* self, QPagedPaintDevice_OnSharedPainter_action _action);
 }
 [AllowDuplicates]
 enum QPagedPaintDevice_PdfVersion

@@ -287,74 +287,53 @@ class QFont : IQFont
 {
 	private QFont_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QFont_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFont_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(String family)
 	{
 		this.ptr = CQt.QFont_new2(libqt_string(family));
-		QtBf_ConnectSignals(this);
 	}
 	public this(void** families)
 	{
 		this.ptr = CQt.QFont_new3(families);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFont font, IQPaintDevice pd)
 	{
 		this.ptr = CQt.QFont_new4((.)font?.ObjectPtr, (.)pd?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFont font)
 	{
 		this.ptr = CQt.QFont_new5((.)font?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String family, c_int pointSize)
 	{
 		this.ptr = CQt.QFont_new6(libqt_string(family), pointSize);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String family, c_int pointSize, c_int weight)
 	{
 		this.ptr = CQt.QFont_new7(libqt_string(family), pointSize, weight);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String family, c_int pointSize, c_int weight, bool italic)
 	{
 		this.ptr = CQt.QFont_new8(libqt_string(family), pointSize, weight, italic);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void** families, c_int pointSize)
 	{
 		this.ptr = CQt.QFont_new9(families, pointSize);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void** families, c_int pointSize, c_int weight)
 	{
 		this.ptr = CQt.QFont_new10(families, pointSize, weight);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void** families, c_int pointSize, c_int weight, bool italic)
 	{
 		this.ptr = CQt.QFont_new11(families, pointSize, weight, italic);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

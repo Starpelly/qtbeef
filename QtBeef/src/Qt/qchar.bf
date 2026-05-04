@@ -23,29 +23,17 @@ class QLatin1Char : IQLatin1Char
 {
 	private QLatin1Char_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QLatin1Char_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQLatin1Char other)
 	{
 		this.ptr = CQt.QLatin1Char_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char c)
 	{
 		this.ptr = CQt.QLatin1Char_new3(c);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -246,69 +234,49 @@ class QChar : IQChar
 {
 	private QChar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QChar_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQChar other)
 	{
 		this.ptr = CQt.QChar_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QChar_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_ushort rc)
 	{
 		this.ptr = CQt.QChar_new4(rc);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_uchar c, c_uchar r)
 	{
 		this.ptr = CQt.QChar_new5(c, r);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint rc)
 	{
 		this.ptr = CQt.QChar_new7(rc);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int rc)
 	{
 		this.ptr = CQt.QChar_new8(rc);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QChar_SpecialCharacter s)
 	{
 		this.ptr = CQt.QChar_new9(s);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQLatin1Char ch)
 	{
 		this.ptr = CQt.QChar_new10((.)ch?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char c)
 	{
 		this.ptr = CQt.QChar_new11(c);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_uchar c)
 	{
 		this.ptr = CQt.QChar_new12(c);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

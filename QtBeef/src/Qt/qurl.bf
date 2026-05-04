@@ -339,39 +339,25 @@ class QUrl : IQUrl
 {
 	private QUrl_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QUrl_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUrl_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQUrl copyVal)
 	{
 		this.ptr = CQt.QUrl_new2((.)copyVal?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String url)
 	{
 		this.ptr = CQt.QUrl_new3(libqt_string(url));
-		QtBf_ConnectSignals(this);
 	}
 	public this(String url, QUrl_ParsingMode mode)
 	{
 		this.ptr = CQt.QUrl_new4(libqt_string(url), mode);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

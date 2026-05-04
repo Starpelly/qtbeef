@@ -63,19 +63,9 @@ class QStandardPaths : IQStandardPaths
 {
 	private QStandardPaths_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStandardPaths_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public void WritableLocation(String outStr, QStandardPaths_StandardLocation type)
 	{

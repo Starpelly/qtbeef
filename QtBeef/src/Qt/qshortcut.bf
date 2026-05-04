@@ -18,11 +18,11 @@ struct QShortcut_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QShortcut_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QShortcut_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QShortcut_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -108,7 +108,7 @@ struct QShortcut_Ptr
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QShortcut_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -268,23 +268,23 @@ struct QShortcut_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QShortcut_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QShortcut_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QShortcut_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QShortcut_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QShortcut_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -331,112 +331,61 @@ class QShortcut : IQShortcut, IQObject
 {
 	private QShortcut_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QShortcut_activated,
-		QShortcut_activatedAmbiguously,
-		QShortcut_destroyed,
-		QShortcut_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QShortcut_Connect_Activated(obj.ObjectPtr,  => QtBeef_QShortcut_activated);
-		CQt.QShortcut_Connect_ActivatedAmbiguously(obj.ObjectPtr,  => QtBeef_QShortcut_activatedAmbiguously);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnActivated = .() ~ _.Dispose();
-	public Event<delegate void()> OnActivatedAmbiguously = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QShortcut_activated(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnActivated.Invoke();
-	}
-	static void QtBeef_QShortcut_activatedAmbiguously(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnActivatedAmbiguously.Invoke();
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QShortcut_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QShortcut_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, IQObject parent)
 	{
 		this.ptr = CQt.QShortcut_new2((.)key?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QKeySequence_StandardKey key, IQObject parent)
 	{
 		this.ptr = CQt.QShortcut_new3(key, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, IQObject parent, c_char* member)
 	{
 		this.ptr = CQt.QShortcut_new4((.)key?.ObjectPtr, (.)parent?.ObjectPtr, member);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, IQObject parent, c_char* member, c_char* ambiguousMember)
 	{
 		this.ptr = CQt.QShortcut_new5((.)key?.ObjectPtr, (.)parent?.ObjectPtr, member, ambiguousMember);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, IQObject parent, c_char* member, c_char* ambiguousMember, Qt_ShortcutContext context)
 	{
 		this.ptr = CQt.QShortcut_new6((.)key?.ObjectPtr, (.)parent?.ObjectPtr, member, ambiguousMember, context);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QKeySequence_StandardKey key, IQObject parent, c_char* member)
 	{
 		this.ptr = CQt.QShortcut_new7(key, (.)parent?.ObjectPtr, member);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QKeySequence_StandardKey key, IQObject parent, c_char* member, c_char* ambiguousMember)
 	{
 		this.ptr = CQt.QShortcut_new8(key, (.)parent?.ObjectPtr, member, ambiguousMember);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QKeySequence_StandardKey key, IQObject parent, c_char* member, c_char* ambiguousMember, Qt_ShortcutContext context)
 	{
 		this.ptr = CQt.QShortcut_new9(key, (.)parent?.ObjectPtr, member, ambiguousMember, context);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QShortcut_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -506,9 +455,9 @@ class QShortcut : IQShortcut, IQObject
 	{
 		this.ptr.ActivatedAmbiguously();
 	}
-	public bool Event(IQEvent e)
+	public  virtual bool OnEvent(void** e)
 	{
-		return this.ptr.Event(e);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -518,9 +467,9 @@ class QShortcut : IQShortcut, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -678,25 +627,20 @@ class QShortcut : IQShortcut, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -766,10 +710,22 @@ extension CQt
 	public static extern void QShortcut_Delete(QShortcut_Ptr self);
 	[LinkName("QShortcut_MetaObject")]
 	public static extern void** QShortcut_MetaObject(void* self);
+	
+	public function void QShortcut_OnMetaObject_action(void* self);
+	[LinkName("QShortcut_OnMetaObject")]
+	public static extern void** QShortcut_OnMetaObject(void* self, QShortcut_OnMetaObject_action _action);
 	[LinkName("QShortcut_Qt_Metacast")]
 	public static extern void* QShortcut_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QShortcut_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QShortcut_OnMetacast")]
+	public static extern void* QShortcut_OnMetacast(void* self, QShortcut_OnMetacast_action _action);
 	[LinkName("QShortcut_Qt_Metacall")]
 	public static extern c_int QShortcut_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QShortcut_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QShortcut_OnMetacall")]
+	public static extern c_int QShortcut_OnMetacall(void* self, QShortcut_OnMetacall_action _action);
 	[LinkName("QShortcut_Tr")]
 	public static extern libqt_string QShortcut_Tr(c_char* s);
 	[LinkName("QShortcut_SetKey")]
@@ -803,19 +759,59 @@ extension CQt
 	[LinkName("QShortcut_Activated")]
 	public static extern void QShortcut_Activated(void* self);
 	
-	public function void QShortcut_activated_action(void* self);
+	public function void QShortcut_Connect_Activated_action(void* self);
 	[LinkName("QShortcut_Connect_Activated")]
-	public static extern void QShortcut_Connect_Activated(void* self, QShortcut_activated_action _action);
+	public static extern void QShortcut_Connect_Activated(void* self, QShortcut_Connect_Activated_action _action);
 	[LinkName("QShortcut_ActivatedAmbiguously")]
 	public static extern void QShortcut_ActivatedAmbiguously(void* self);
 	
-	public function void QShortcut_activatedAmbiguously_action(void* self);
+	public function void QShortcut_Connect_ActivatedAmbiguously_action(void* self);
 	[LinkName("QShortcut_Connect_ActivatedAmbiguously")]
-	public static extern void QShortcut_Connect_ActivatedAmbiguously(void* self, QShortcut_activatedAmbiguously_action _action);
+	public static extern void QShortcut_Connect_ActivatedAmbiguously(void* self, QShortcut_Connect_ActivatedAmbiguously_action _action);
 	[LinkName("QShortcut_Event")]
 	public static extern bool QShortcut_Event(void* self, void** e);
+	
+	public function void QShortcut_OnEvent_action(void* self, void** e);
+	[LinkName("QShortcut_OnEvent")]
+	public static extern bool QShortcut_OnEvent(void* self, QShortcut_OnEvent_action _action);
 	[LinkName("QShortcut_Tr2")]
 	public static extern libqt_string QShortcut_Tr2(c_char* s, c_char* c);
 	[LinkName("QShortcut_Tr3")]
 	public static extern libqt_string QShortcut_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QShortcut_EventFilter")]
+	public static extern bool QShortcut_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QShortcut_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QShortcut_OnEventFilter")]
+	public static extern bool QShortcut_OnEventFilter(void* self, QShortcut_OnEventFilter_action _action);
+	[LinkName("QShortcut_TimerEvent")]
+	public static extern void QShortcut_TimerEvent(void* self, void** event);
+	
+	public function void QShortcut_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QShortcut_OnTimerEvent")]
+	public static extern void QShortcut_OnTimerEvent(void* self, QShortcut_OnTimerEvent_action _action);
+	[LinkName("QShortcut_ChildEvent")]
+	public static extern void QShortcut_ChildEvent(void* self, void** event);
+	
+	public function void QShortcut_OnChildEvent_action(void* self, void** event);
+	[LinkName("QShortcut_OnChildEvent")]
+	public static extern void QShortcut_OnChildEvent(void* self, QShortcut_OnChildEvent_action _action);
+	[LinkName("QShortcut_CustomEvent")]
+	public static extern void QShortcut_CustomEvent(void* self, void** event);
+	
+	public function void QShortcut_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QShortcut_OnCustomEvent")]
+	public static extern void QShortcut_OnCustomEvent(void* self, QShortcut_OnCustomEvent_action _action);
+	[LinkName("QShortcut_ConnectNotify")]
+	public static extern void QShortcut_ConnectNotify(void* self, void** signal);
+	
+	public function void QShortcut_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QShortcut_OnConnectNotify")]
+	public static extern void QShortcut_OnConnectNotify(void* self, QShortcut_OnConnectNotify_action _action);
+	[LinkName("QShortcut_DisconnectNotify")]
+	public static extern void QShortcut_DisconnectNotify(void* self, void** signal);
+	
+	public function void QShortcut_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QShortcut_OnDisconnectNotify")]
+	public static extern void QShortcut_OnDisconnectNotify(void* self, QShortcut_OnDisconnectNotify_action _action);
 }

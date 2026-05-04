@@ -39,40 +39,28 @@ class QGestureRecognizer : IQGestureRecognizer
 {
 	private QGestureRecognizer_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGestureRecognizer_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGestureRecognizer_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QGestureRecognizer_Delete(this.ptr);
 	}
-	public QGesture_Ptr Create(IQObject target)
+	public  virtual QGesture_Ptr OnCreate(void** target)
 	{
-		return this.ptr.Create(target);
+		return default;
 	}
-	public void* Recognize(IQGesture state, IQObject watched, IQEvent event)
+	public  virtual void* OnRecognize(void** state, void** watched, void** event)
 	{
-		return this.ptr.Recognize(state, watched, event);
+		return default;
 	}
-	public void Reset(IQGesture state)
+	public  virtual void OnReset(void** state)
 	{
-		this.ptr.Reset(state);
 	}
 	public Qt_GestureType RegisterRecognizer(IQGestureRecognizer recognizer)
 	{
@@ -94,10 +82,22 @@ extension CQt
 	public static extern void QGestureRecognizer_Delete(QGestureRecognizer_Ptr self);
 	[LinkName("QGestureRecognizer_Create")]
 	public static extern void** QGestureRecognizer_Create(void* self, void** target);
+	
+	public function void QGestureRecognizer_OnCreate_action(void* self, void** target);
+	[LinkName("QGestureRecognizer_OnCreate")]
+	public static extern void** QGestureRecognizer_OnCreate(void* self, QGestureRecognizer_OnCreate_action _action);
 	[LinkName("QGestureRecognizer_Recognize")]
 	public static extern void* QGestureRecognizer_Recognize(void* self, void** state, void** watched, void** event);
+	
+	public function void QGestureRecognizer_OnRecognize_action(void* self, void** state, void** watched, void** event);
+	[LinkName("QGestureRecognizer_OnRecognize")]
+	public static extern void* QGestureRecognizer_OnRecognize(void* self, QGestureRecognizer_OnRecognize_action _action);
 	[LinkName("QGestureRecognizer_Reset")]
 	public static extern void QGestureRecognizer_Reset(void* self, void** state);
+	
+	public function void QGestureRecognizer_OnReset_action(void* self, void** state);
+	[LinkName("QGestureRecognizer_OnReset")]
+	public static extern void QGestureRecognizer_OnReset(void* self, QGestureRecognizer_OnReset_action _action);
 	[LinkName("QGestureRecognizer_RegisterRecognizer")]
 	public static extern Qt_GestureType QGestureRecognizer_RegisterRecognizer(void** recognizer);
 	[LinkName("QGestureRecognizer_UnregisterRecognizer")]

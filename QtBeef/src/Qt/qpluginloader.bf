@@ -18,11 +18,11 @@ struct QPluginLoader_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QPluginLoader_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QPluginLoader_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QPluginLoader_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -88,11 +88,11 @@ struct QPluginLoader_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QPluginLoader_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QPluginLoader_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -252,23 +252,23 @@ struct QPluginLoader_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPluginLoader_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPluginLoader_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPluginLoader_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPluginLoader_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPluginLoader_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -315,71 +315,41 @@ class QPluginLoader : IQPluginLoader, IQObject
 {
 	private QPluginLoader_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QPluginLoader_destroyed,
-		QPluginLoader_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QPluginLoader_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPluginLoader_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QPluginLoader_new2(libqt_string(fileName));
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QPluginLoader_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, IQObject parent)
 	{
 		this.ptr = CQt.QPluginLoader_new4(libqt_string(fileName), (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPluginLoader_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -441,13 +411,13 @@ class QPluginLoader : IQPluginLoader, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -605,25 +575,20 @@ class QPluginLoader : IQPluginLoader, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -683,10 +648,22 @@ extension CQt
 	public static extern void QPluginLoader_Delete(QPluginLoader_Ptr self);
 	[LinkName("QPluginLoader_MetaObject")]
 	public static extern void** QPluginLoader_MetaObject(void* self);
+	
+	public function void QPluginLoader_OnMetaObject_action(void* self);
+	[LinkName("QPluginLoader_OnMetaObject")]
+	public static extern void** QPluginLoader_OnMetaObject(void* self, QPluginLoader_OnMetaObject_action _action);
 	[LinkName("QPluginLoader_Qt_Metacast")]
 	public static extern void* QPluginLoader_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QPluginLoader_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QPluginLoader_OnMetacast")]
+	public static extern void* QPluginLoader_OnMetacast(void* self, QPluginLoader_OnMetacast_action _action);
 	[LinkName("QPluginLoader_Qt_Metacall")]
 	public static extern c_int QPluginLoader_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QPluginLoader_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QPluginLoader_OnMetacall")]
+	public static extern c_int QPluginLoader_OnMetacall(void* self, QPluginLoader_OnMetacall_action _action);
 	[LinkName("QPluginLoader_Tr")]
 	public static extern libqt_string QPluginLoader_Tr(c_char* s);
 	[LinkName("QPluginLoader_Instance")]
@@ -717,4 +694,46 @@ extension CQt
 	public static extern libqt_string QPluginLoader_Tr2(c_char* s, c_char* c);
 	[LinkName("QPluginLoader_Tr3")]
 	public static extern libqt_string QPluginLoader_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QPluginLoader_Event")]
+	public static extern bool QPluginLoader_Event(void* self, void** event);
+	
+	public function void QPluginLoader_OnEvent_action(void* self, void** event);
+	[LinkName("QPluginLoader_OnEvent")]
+	public static extern bool QPluginLoader_OnEvent(void* self, QPluginLoader_OnEvent_action _action);
+	[LinkName("QPluginLoader_EventFilter")]
+	public static extern bool QPluginLoader_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QPluginLoader_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QPluginLoader_OnEventFilter")]
+	public static extern bool QPluginLoader_OnEventFilter(void* self, QPluginLoader_OnEventFilter_action _action);
+	[LinkName("QPluginLoader_TimerEvent")]
+	public static extern void QPluginLoader_TimerEvent(void* self, void** event);
+	
+	public function void QPluginLoader_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QPluginLoader_OnTimerEvent")]
+	public static extern void QPluginLoader_OnTimerEvent(void* self, QPluginLoader_OnTimerEvent_action _action);
+	[LinkName("QPluginLoader_ChildEvent")]
+	public static extern void QPluginLoader_ChildEvent(void* self, void** event);
+	
+	public function void QPluginLoader_OnChildEvent_action(void* self, void** event);
+	[LinkName("QPluginLoader_OnChildEvent")]
+	public static extern void QPluginLoader_OnChildEvent(void* self, QPluginLoader_OnChildEvent_action _action);
+	[LinkName("QPluginLoader_CustomEvent")]
+	public static extern void QPluginLoader_CustomEvent(void* self, void** event);
+	
+	public function void QPluginLoader_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QPluginLoader_OnCustomEvent")]
+	public static extern void QPluginLoader_OnCustomEvent(void* self, QPluginLoader_OnCustomEvent_action _action);
+	[LinkName("QPluginLoader_ConnectNotify")]
+	public static extern void QPluginLoader_ConnectNotify(void* self, void** signal);
+	
+	public function void QPluginLoader_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QPluginLoader_OnConnectNotify")]
+	public static extern void QPluginLoader_OnConnectNotify(void* self, QPluginLoader_OnConnectNotify_action _action);
+	[LinkName("QPluginLoader_DisconnectNotify")]
+	public static extern void QPluginLoader_DisconnectNotify(void* self, void** signal);
+	
+	public function void QPluginLoader_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QPluginLoader_OnDisconnectNotify")]
+	public static extern void QPluginLoader_OnDisconnectNotify(void* self, QPluginLoader_OnDisconnectNotify_action _action);
 }

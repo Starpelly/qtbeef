@@ -47,29 +47,17 @@ class QReadWriteLock : IQReadWriteLock
 {
 	private QReadWriteLock_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QReadWriteLock_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QReadWriteLock_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(QReadWriteLock_RecursionMode recursionMode)
 	{
 		this.ptr = CQt.QReadWriteLock_new2(recursionMode);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -158,24 +146,13 @@ class QReadLocker : IQReadLocker
 {
 	private QReadLocker_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QReadLocker_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQReadWriteLock readWriteLock)
 	{
 		this.ptr = CQt.QReadLocker_new((.)readWriteLock?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -238,24 +215,13 @@ class QWriteLocker : IQWriteLocker
 {
 	private QWriteLocker_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QWriteLocker_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQReadWriteLock readWriteLock)
 	{
 		this.ptr = CQt.QWriteLocker_new((.)readWriteLock?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -18,11 +18,11 @@ struct QSortFilterProxyModel_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QSortFilterProxyModel_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QSortFilterProxyModel_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QSortFilterProxyModel_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -318,249 +318,13 @@ struct QSortFilterProxyModel_Ptr
 	{
 		CQt.QSortFilterProxyModel_Tr3(s, c, n);
 	}
-	public QAbstractItemModel_Ptr SourceModel()
-	{
-		return QAbstractItemModel_Ptr(CQt.QAbstractProxyModel_SourceModel((.)this.Ptr));
-	}
-	public bool Submit()
-	{
-		return CQt.QAbstractProxyModel_Submit((.)this.Ptr);
-	}
-	public void Revert()
-	{
-		CQt.QAbstractProxyModel_Revert((.)this.Ptr);
-	}
-	public void* ItemData(IQModelIndex index)
-	{
-		return CQt.QAbstractProxyModel_ItemData((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public bool SetItemData(IQModelIndex index, void** roles)
-	{
-		return CQt.QAbstractProxyModel_SetItemData((.)this.Ptr, (.)index?.ObjectPtr, roles);
-	}
-	public bool ClearItemData(IQModelIndex index)
-	{
-		return CQt.QAbstractProxyModel_ClearItemData((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
-	{
-		return CQt.QAbstractProxyModel_CanDropMimeData((.)this.Ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
-	}
-	public void* SupportedDragActions()
-	{
-		return CQt.QAbstractProxyModel_SupportedDragActions((.)this.Ptr);
-	}
-	public void* RoleNames()
-	{
-		return CQt.QAbstractProxyModel_RoleNames((.)this.Ptr);
-	}
-	public QModelIndex_Ptr CreateSourceIndex(c_int row, c_int col, void* internalPtr)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractProxyModel_CreateSourceIndex((.)this.Ptr, row, col, internalPtr));
-	}
-	public bool HasIndex(c_int row, c_int column)
-	{
-		return CQt.QAbstractItemModel_HasIndex((.)this.Ptr, row, column);
-	}
-	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return CQt.QAbstractItemModel_MoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, count, (.)destinationParent?.ObjectPtr, destinationChild);
-	}
-	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return CQt.QAbstractItemModel_MoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, count, (.)destinationParent?.ObjectPtr, destinationChild);
-	}
-	public bool InsertRow(c_int row)
-	{
-		return CQt.QAbstractItemModel_InsertRow((.)this.Ptr, row);
-	}
-	public bool InsertColumn(c_int column)
-	{
-		return CQt.QAbstractItemModel_InsertColumn((.)this.Ptr, column);
-	}
-	public bool RemoveRow(c_int row)
-	{
-		return CQt.QAbstractItemModel_RemoveRow((.)this.Ptr, row);
-	}
-	public bool RemoveColumn(c_int column)
-	{
-		return CQt.QAbstractItemModel_RemoveColumn((.)this.Ptr, column);
-	}
-	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return CQt.QAbstractItemModel_MoveRow((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, (.)destinationParent?.ObjectPtr, destinationChild);
-	}
-	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return CQt.QAbstractItemModel_MoveColumn((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, (.)destinationParent?.ObjectPtr, destinationChild);
-	}
-	public bool CheckIndex(IQModelIndex index)
-	{
-		return CQt.QAbstractItemModel_CheckIndex((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
-	{
-		CQt.QAbstractItemModel_MultiData((.)this.Ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
-	}
-	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
-	{
-		CQt.QAbstractItemModel_DataChanged((.)this.Ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
-	}
-	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_HeaderDataChanged((.)this.Ptr, orientation, first, last);
-	}
-	public void LayoutChanged()
-	{
-		CQt.QAbstractItemModel_LayoutChanged((.)this.Ptr);
-	}
-	public void LayoutAboutToBeChanged()
-	{
-		CQt.QAbstractItemModel_LayoutAboutToBeChanged((.)this.Ptr);
-	}
-	public void ResetInternalData()
-	{
-		CQt.QAbstractItemModel_ResetInternalData((.)this.Ptr);
-	}
-	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex((.)this.Ptr, row, column));
-	}
-	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex2((.)this.Ptr, row, column, id));
-	}
-	public void EncodeData(void** indexes, IQDataStream stream)
-	{
-		CQt.QAbstractItemModel_EncodeData((.)this.Ptr, indexes, (.)stream?.ObjectPtr);
-	}
-	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
-	{
-		return CQt.QAbstractItemModel_DecodeData((.)this.Ptr, row, column, (.)parent?.ObjectPtr, (.)stream?.ObjectPtr);
-	}
-	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_BeginInsertRows((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
-	}
-	public void EndInsertRows()
-	{
-		CQt.QAbstractItemModel_EndInsertRows((.)this.Ptr);
-	}
-	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_BeginRemoveRows((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
-	}
-	public void EndRemoveRows()
-	{
-		CQt.QAbstractItemModel_EndRemoveRows((.)this.Ptr);
-	}
-	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
-	{
-		return CQt.QAbstractItemModel_BeginMoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationRow);
-	}
-	public void EndMoveRows()
-	{
-		CQt.QAbstractItemModel_EndMoveRows((.)this.Ptr);
-	}
-	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_BeginInsertColumns((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
-	}
-	public void EndInsertColumns()
-	{
-		CQt.QAbstractItemModel_EndInsertColumns((.)this.Ptr);
-	}
-	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_BeginRemoveColumns((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
-	}
-	public void EndRemoveColumns()
-	{
-		CQt.QAbstractItemModel_EndRemoveColumns((.)this.Ptr);
-	}
-	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
-	{
-		return CQt.QAbstractItemModel_BeginMoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationColumn);
-	}
-	public void EndMoveColumns()
-	{
-		CQt.QAbstractItemModel_EndMoveColumns((.)this.Ptr);
-	}
-	public void BeginResetModel()
-	{
-		CQt.QAbstractItemModel_BeginResetModel((.)this.Ptr);
-	}
-	public void EndResetModel()
-	{
-		CQt.QAbstractItemModel_EndResetModel((.)this.Ptr);
-	}
-	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
-	{
-		CQt.QAbstractItemModel_ChangePersistentIndex((.)this.Ptr, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
-	}
-	public void ChangePersistentIndexList(void** from, void** to)
-	{
-		CQt.QAbstractItemModel_ChangePersistentIndexList((.)this.Ptr, from, to);
-	}
-	public void* PersistentIndexList()
-	{
-		return CQt.QAbstractItemModel_PersistentIndexList((.)this.Ptr);
-	}
-	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_HasIndex3((.)this.Ptr, row, column, (.)parent?.ObjectPtr);
-	}
-	public bool InsertRow2(c_int row, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_InsertRow2((.)this.Ptr, row, (.)parent?.ObjectPtr);
-	}
-	public bool InsertColumn2(c_int column, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_InsertColumn2((.)this.Ptr, column, (.)parent?.ObjectPtr);
-	}
-	public bool RemoveRow2(c_int row, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_RemoveRow2((.)this.Ptr, row, (.)parent?.ObjectPtr);
-	}
-	public bool RemoveColumn2(c_int column, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_RemoveColumn2((.)this.Ptr, column, (.)parent?.ObjectPtr);
-	}
-	public bool CheckIndex2(IQModelIndex index, void* options)
-	{
-		return CQt.QAbstractItemModel_CheckIndex2((.)this.Ptr, (.)index?.ObjectPtr, options);
-	}
-	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
-	{
-		CQt.QAbstractItemModel_DataChanged3((.)this.Ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr, roles);
-	}
-	public void LayoutChanged1(void** parents)
-	{
-		CQt.QAbstractItemModel_LayoutChanged1((.)this.Ptr, parents);
-	}
-	public void LayoutChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		CQt.QAbstractItemModel_LayoutChanged2((.)this.Ptr, parents, hint);
-	}
-	public void LayoutAboutToBeChanged1(void** parents)
-	{
-		CQt.QAbstractItemModel_LayoutAboutToBeChanged1((.)this.Ptr, parents);
-	}
-	public void LayoutAboutToBeChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		CQt.QAbstractItemModel_LayoutAboutToBeChanged2((.)this.Ptr, parents, hint);
-	}
-	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex3((.)this.Ptr, row, column, data));
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QSortFilterProxyModel_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QSortFilterProxyModel_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -716,23 +480,23 @@ struct QSortFilterProxyModel_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSortFilterProxyModel_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSortFilterProxyModel_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSortFilterProxyModel_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSortFilterProxyModel_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSortFilterProxyModel_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -774,226 +538,297 @@ struct QSortFilterProxyModel_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public bool HasIndex(c_int row, c_int column)
+	{
+		return CQt.QAbstractItemModel_HasIndex((.)this.Ptr, row, column);
+	}
+	public void* ItemData(IQModelIndex index)
+	{
+		return CQt.QSortFilterProxyModel_ItemData((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public bool SetItemData(IQModelIndex index, void** roles)
+	{
+		return CQt.QSortFilterProxyModel_SetItemData((.)this.Ptr, (.)index?.ObjectPtr, roles);
+	}
+	public bool ClearItemData(IQModelIndex index)
+	{
+		return CQt.QSortFilterProxyModel_ClearItemData((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	{
+		return CQt.QSortFilterProxyModel_CanDropMimeData((.)this.Ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
+	}
+	public void* SupportedDragActions()
+	{
+		return CQt.QSortFilterProxyModel_SupportedDragActions((.)this.Ptr);
+	}
+	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return CQt.QSortFilterProxyModel_MoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, count, (.)destinationParent?.ObjectPtr, destinationChild);
+	}
+	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return CQt.QSortFilterProxyModel_MoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, count, (.)destinationParent?.ObjectPtr, destinationChild);
+	}
+	public bool InsertRow(c_int row)
+	{
+		return CQt.QAbstractItemModel_InsertRow((.)this.Ptr, row);
+	}
+	public bool InsertColumn(c_int column)
+	{
+		return CQt.QAbstractItemModel_InsertColumn((.)this.Ptr, column);
+	}
+	public bool RemoveRow(c_int row)
+	{
+		return CQt.QAbstractItemModel_RemoveRow((.)this.Ptr, row);
+	}
+	public bool RemoveColumn(c_int column)
+	{
+		return CQt.QAbstractItemModel_RemoveColumn((.)this.Ptr, column);
+	}
+	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return CQt.QAbstractItemModel_MoveRow((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, (.)destinationParent?.ObjectPtr, destinationChild);
+	}
+	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return CQt.QAbstractItemModel_MoveColumn((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, (.)destinationParent?.ObjectPtr, destinationChild);
+	}
+	public void* RoleNames()
+	{
+		return CQt.QSortFilterProxyModel_RoleNames((.)this.Ptr);
+	}
+	public bool CheckIndex(IQModelIndex index)
+	{
+		return CQt.QAbstractItemModel_CheckIndex((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
+	{
+		CQt.QSortFilterProxyModel_MultiData((.)this.Ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
+	}
+	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
+	{
+		CQt.QAbstractItemModel_DataChanged((.)this.Ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
+	}
+	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_HeaderDataChanged((.)this.Ptr, orientation, first, last);
+	}
+	public void LayoutChanged()
+	{
+		CQt.QAbstractItemModel_LayoutChanged((.)this.Ptr);
+	}
+	public void LayoutAboutToBeChanged()
+	{
+		CQt.QAbstractItemModel_LayoutAboutToBeChanged((.)this.Ptr);
+	}
+	public bool Submit()
+	{
+		return CQt.QSortFilterProxyModel_Submit((.)this.Ptr);
+	}
+	public void Revert()
+	{
+		CQt.QSortFilterProxyModel_Revert((.)this.Ptr);
+	}
+	public void ResetInternalData()
+	{
+		CQt.QSortFilterProxyModel_ResetInternalData((.)this.Ptr);
+	}
+	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
+	{
+		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex((.)this.Ptr, row, column));
+	}
+	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
+	{
+		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex2((.)this.Ptr, row, column, id));
+	}
+	public void EncodeData(void** indexes, IQDataStream stream)
+	{
+		CQt.QAbstractItemModel_EncodeData((.)this.Ptr, indexes, (.)stream?.ObjectPtr);
+	}
+	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
+	{
+		return CQt.QAbstractItemModel_DecodeData((.)this.Ptr, row, column, (.)parent?.ObjectPtr, (.)stream?.ObjectPtr);
+	}
+	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_BeginInsertRows((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
+	}
+	public void EndInsertRows()
+	{
+		CQt.QAbstractItemModel_EndInsertRows((.)this.Ptr);
+	}
+	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_BeginRemoveRows((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
+	}
+	public void EndRemoveRows()
+	{
+		CQt.QAbstractItemModel_EndRemoveRows((.)this.Ptr);
+	}
+	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
+	{
+		return CQt.QAbstractItemModel_BeginMoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationRow);
+	}
+	public void EndMoveRows()
+	{
+		CQt.QAbstractItemModel_EndMoveRows((.)this.Ptr);
+	}
+	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_BeginInsertColumns((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
+	}
+	public void EndInsertColumns()
+	{
+		CQt.QAbstractItemModel_EndInsertColumns((.)this.Ptr);
+	}
+	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_BeginRemoveColumns((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
+	}
+	public void EndRemoveColumns()
+	{
+		CQt.QAbstractItemModel_EndRemoveColumns((.)this.Ptr);
+	}
+	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
+	{
+		return CQt.QAbstractItemModel_BeginMoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationColumn);
+	}
+	public void EndMoveColumns()
+	{
+		CQt.QAbstractItemModel_EndMoveColumns((.)this.Ptr);
+	}
+	public void BeginResetModel()
+	{
+		CQt.QAbstractItemModel_BeginResetModel((.)this.Ptr);
+	}
+	public void EndResetModel()
+	{
+		CQt.QAbstractItemModel_EndResetModel((.)this.Ptr);
+	}
+	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
+	{
+		CQt.QAbstractItemModel_ChangePersistentIndex((.)this.Ptr, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
+	}
+	public void ChangePersistentIndexList(void** from, void** to)
+	{
+		CQt.QAbstractItemModel_ChangePersistentIndexList((.)this.Ptr, from, to);
+	}
+	public void* PersistentIndexList()
+	{
+		return CQt.QAbstractItemModel_PersistentIndexList((.)this.Ptr);
+	}
+	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_HasIndex3((.)this.Ptr, row, column, (.)parent?.ObjectPtr);
+	}
+	public bool InsertRow2(c_int row, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_InsertRow2((.)this.Ptr, row, (.)parent?.ObjectPtr);
+	}
+	public bool InsertColumn2(c_int column, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_InsertColumn2((.)this.Ptr, column, (.)parent?.ObjectPtr);
+	}
+	public bool RemoveRow2(c_int row, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_RemoveRow2((.)this.Ptr, row, (.)parent?.ObjectPtr);
+	}
+	public bool RemoveColumn2(c_int column, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_RemoveColumn2((.)this.Ptr, column, (.)parent?.ObjectPtr);
+	}
+	public bool CheckIndex2(IQModelIndex index, void* options)
+	{
+		return CQt.QAbstractItemModel_CheckIndex2((.)this.Ptr, (.)index?.ObjectPtr, options);
+	}
+	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
+	{
+		CQt.QAbstractItemModel_DataChanged3((.)this.Ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr, roles);
+	}
+	public void LayoutChanged1(void** parents)
+	{
+		CQt.QAbstractItemModel_LayoutChanged1((.)this.Ptr, parents);
+	}
+	public void LayoutChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		CQt.QAbstractItemModel_LayoutChanged2((.)this.Ptr, parents, hint);
+	}
+	public void LayoutAboutToBeChanged1(void** parents)
+	{
+		CQt.QAbstractItemModel_LayoutAboutToBeChanged1((.)this.Ptr, parents);
+	}
+	public void LayoutAboutToBeChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		CQt.QAbstractItemModel_LayoutAboutToBeChanged2((.)this.Ptr, parents, hint);
+	}
+	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
+	{
+		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex3((.)this.Ptr, row, column, data));
+	}
+	public QAbstractItemModel_Ptr SourceModel()
+	{
+		return QAbstractItemModel_Ptr(CQt.QAbstractProxyModel_SourceModel((.)this.Ptr));
+	}
+	public QModelIndex_Ptr CreateSourceIndex(c_int row, c_int col, void* internalPtr)
+	{
+		return QModelIndex_Ptr(CQt.QAbstractProxyModel_CreateSourceIndex((.)this.Ptr, row, col, internalPtr));
+	}
 }
 class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAbstractItemModel, IQObject
 {
 	private QSortFilterProxyModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QSortFilterProxyModel_dynamicSortFilterChanged,
-		QSortFilterProxyModel_filterCaseSensitivityChanged,
-		QSortFilterProxyModel_sortCaseSensitivityChanged,
-		QSortFilterProxyModel_sortLocaleAwareChanged,
-		QSortFilterProxyModel_sortRoleChanged,
-		QSortFilterProxyModel_filterRoleChanged,
-		QSortFilterProxyModel_recursiveFilteringEnabledChanged,
-		QSortFilterProxyModel_autoAcceptChildRowsChanged,
-		QSortFilterProxyModel_dataChanged,
-		QSortFilterProxyModel_headerDataChanged,
-		QSortFilterProxyModel_layoutChanged,
-		QSortFilterProxyModel_layoutAboutToBeChanged,
-		QSortFilterProxyModel_dataChanged3,
-		QSortFilterProxyModel_layoutChanged1,
-		QSortFilterProxyModel_layoutChanged2,
-		QSortFilterProxyModel_layoutAboutToBeChanged1,
-		QSortFilterProxyModel_layoutAboutToBeChanged2,
-		QSortFilterProxyModel_destroyed,
-		QSortFilterProxyModel_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QSortFilterProxyModel_Connect_DynamicSortFilterChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_dynamicSortFilterChanged);
-		CQt.QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_filterCaseSensitivityChanged);
-		CQt.QSortFilterProxyModel_Connect_SortCaseSensitivityChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_sortCaseSensitivityChanged);
-		CQt.QSortFilterProxyModel_Connect_SortLocaleAwareChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_sortLocaleAwareChanged);
-		CQt.QSortFilterProxyModel_Connect_SortRoleChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_sortRoleChanged);
-		CQt.QSortFilterProxyModel_Connect_FilterRoleChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_filterRoleChanged);
-		CQt.QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_recursiveFilteringEnabledChanged);
-		CQt.QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_autoAcceptChildRowsChanged);
-		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
-		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
-		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
-		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
-		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(bool dynamicSortFilter)> OnDynamicSortFilterChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_CaseSensitivity filterCaseSensitivity)> OnFilterCaseSensitivityChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_CaseSensitivity sortCaseSensitivity)> OnSortCaseSensitivityChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool sortLocaleAware)> OnSortLocaleAwareChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int sortRole)> OnSortRoleChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int filterRole)> OnFilterRoleChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool recursiveFilteringEnabled)> OnRecursiveFilteringEnabledChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool autoAcceptChildRows)> OnAutoAcceptChildRowsChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QSortFilterProxyModel_dynamicSortFilterChanged(void* ptr, bool dynamicSortFilter)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDynamicSortFilterChanged.Invoke(dynamicSortFilter);
-	}
-	static void QtBeef_QSortFilterProxyModel_filterCaseSensitivityChanged(void* ptr, Qt_CaseSensitivity filterCaseSensitivity)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFilterCaseSensitivityChanged.Invoke(filterCaseSensitivity);
-	}
-	static void QtBeef_QSortFilterProxyModel_sortCaseSensitivityChanged(void* ptr, Qt_CaseSensitivity sortCaseSensitivity)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSortCaseSensitivityChanged.Invoke(sortCaseSensitivity);
-	}
-	static void QtBeef_QSortFilterProxyModel_sortLocaleAwareChanged(void* ptr, bool sortLocaleAware)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSortLocaleAwareChanged.Invoke(sortLocaleAware);
-	}
-	static void QtBeef_QSortFilterProxyModel_sortRoleChanged(void* ptr, c_int sortRole)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSortRoleChanged.Invoke(sortRole);
-	}
-	static void QtBeef_QSortFilterProxyModel_filterRoleChanged(void* ptr, c_int filterRole)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFilterRoleChanged.Invoke(filterRole);
-	}
-	static void QtBeef_QSortFilterProxyModel_recursiveFilteringEnabledChanged(void* ptr, bool recursiveFilteringEnabled)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnRecursiveFilteringEnabledChanged.Invoke(recursiveFilteringEnabled);
-	}
-	static void QtBeef_QSortFilterProxyModel_autoAcceptChildRowsChanged(void* ptr, bool autoAcceptChildRows)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAutoAcceptChildRowsChanged.Invoke(autoAcceptChildRows);
-	}
-	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged.Invoke(topLeft, bottomRight);
-	}
-	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QSortFilterProxyModel_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSortFilterProxyModel_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSortFilterProxyModel_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QSortFilterProxyModel_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public void SetSourceModel(IQAbstractItemModel sourceModel)
+	public  virtual void OnSetSourceModel(void** sourceModel)
 	{
-		this.ptr.SetSourceModel(sourceModel);
 	}
-	public QModelIndex_Ptr MapToSource(IQModelIndex proxyIndex)
+	public  virtual QModelIndex_Ptr OnMapToSource(void** proxyIndex)
 	{
-		return this.ptr.MapToSource(proxyIndex);
+		return default;
 	}
-	public QModelIndex_Ptr MapFromSource(IQModelIndex sourceIndex)
+	public  virtual QModelIndex_Ptr OnMapFromSource(void** sourceIndex)
 	{
-		return this.ptr.MapFromSource(sourceIndex);
+		return default;
 	}
-	public QItemSelection_Ptr MapSelectionToSource(IQItemSelection proxySelection)
+	public  virtual QItemSelection_Ptr OnMapSelectionToSource(void** proxySelection)
 	{
-		return this.ptr.MapSelectionToSource(proxySelection);
+		return default;
 	}
-	public QItemSelection_Ptr MapSelectionFromSource(IQItemSelection sourceSelection)
+	public  virtual QItemSelection_Ptr OnMapSelectionFromSource(void** sourceSelection)
 	{
-		return this.ptr.MapSelectionFromSource(sourceSelection);
+		return default;
 	}
 	public QRegularExpression_Ptr FilterRegularExpression()
 	{
@@ -1099,17 +934,17 @@ class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAb
 	{
 		this.ptr.Invalidate();
 	}
-	public bool FilterAcceptsRow(c_int source_row, IQModelIndex source_parent)
+	public  virtual bool OnFilterAcceptsRow(c_int source_row, void** source_parent)
 	{
-		return this.ptr.FilterAcceptsRow(source_row, source_parent);
+		return default;
 	}
-	public bool FilterAcceptsColumn(c_int source_column, IQModelIndex source_parent)
+	public  virtual bool OnFilterAcceptsColumn(c_int source_column, void** source_parent)
 	{
-		return this.ptr.FilterAcceptsColumn(source_column, source_parent);
+		return default;
 	}
-	public bool LessThan(IQModelIndex source_left, IQModelIndex source_right)
+	public  virtual bool OnLessThan(void** source_left, void** source_right)
 	{
-		return this.ptr.LessThan(source_left, source_right);
+		return default;
 	}
 	public void InvalidateFilter()
 	{
@@ -1123,105 +958,103 @@ class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAb
 	{
 		this.ptr.InvalidateColumnsFilter();
 	}
-	public QModelIndex_Ptr Index(c_int row, c_int column, IQModelIndex parent)
+	public  virtual QModelIndex_Ptr OnIndex(c_int row, c_int column, void** parent)
 	{
-		return this.ptr.Index(row, column, parent);
+		return default;
 	}
-	public QModelIndex_Ptr Parent(IQModelIndex child)
+	public  virtual QModelIndex_Ptr OnParent(void** child)
 	{
-		return this.ptr.Parent(child);
+		return default;
 	}
-	public QModelIndex_Ptr Sibling(c_int row, c_int column, IQModelIndex idx)
+	public  virtual QModelIndex_Ptr OnSibling(c_int row, c_int column, void** idx)
 	{
-		return this.ptr.Sibling(row, column, idx);
+		return default;
 	}
-	public c_int RowCount(IQModelIndex parent)
+	public  virtual c_int OnRowCount(void** parent)
 	{
-		return this.ptr.RowCount(parent);
+		return default;
 	}
-	public c_int ColumnCount(IQModelIndex parent)
+	public  virtual c_int OnColumnCount(void** parent)
 	{
-		return this.ptr.ColumnCount(parent);
+		return default;
 	}
-	public bool HasChildren(IQModelIndex parent)
+	public  virtual bool OnHasChildren(void** parent)
 	{
-		return this.ptr.HasChildren(parent);
+		return default;
 	}
-	public QVariant_Ptr Data(IQModelIndex index, c_int role)
+	public  virtual QVariant_Ptr OnData(void** index, c_int role)
 	{
-		return this.ptr.Data(index, role);
+		return default;
 	}
-	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
+	public  virtual bool OnSetData(void** index, void** value, c_int role)
 	{
-		return this.ptr.SetData(index, value, role);
+		return default;
 	}
-	public QVariant_Ptr HeaderData(c_int section, Qt_Orientation orientation, c_int role)
+	public  virtual QVariant_Ptr OnHeaderData(c_int section, Qt_Orientation orientation, c_int role)
 	{
-		return this.ptr.HeaderData(section, orientation, role);
+		return default;
 	}
-	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
+	public  virtual bool OnSetHeaderData(c_int section, Qt_Orientation orientation, void** value, c_int role)
 	{
-		return this.ptr.SetHeaderData(section, orientation, value, role);
+		return default;
 	}
-	public QMimeData_Ptr MimeData(void** indexes)
+	public  virtual QMimeData_Ptr OnMimeData(void** indexes)
 	{
-		return this.ptr.MimeData(indexes);
+		return default;
 	}
-	public bool DropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	public  virtual bool OnDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
 	{
-		return this.ptr.DropMimeData(data, action, row, column, parent);
+		return default;
 	}
-	public bool InsertRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnInsertRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.InsertRows(row, count, parent);
+		return default;
 	}
-	public bool InsertColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnInsertColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.InsertColumns(column, count, parent);
+		return default;
 	}
-	public bool RemoveRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.RemoveRows(row, count, parent);
+		return default;
 	}
-	public bool RemoveColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.RemoveColumns(column, count, parent);
+		return default;
 	}
-	public void FetchMore(IQModelIndex parent)
+	public  virtual void OnFetchMore(void** parent)
 	{
-		this.ptr.FetchMore(parent);
 	}
-	public bool CanFetchMore(IQModelIndex parent)
+	public  virtual bool OnCanFetchMore(void** parent)
 	{
-		return this.ptr.CanFetchMore(parent);
+		return default;
 	}
-	public void* Flags(IQModelIndex index)
+	public  virtual void* OnFlags(void** index)
 	{
-		return this.ptr.Flags(index);
+		return default;
 	}
-	public QModelIndex_Ptr Buddy(IQModelIndex index)
+	public  virtual QModelIndex_Ptr OnBuddy(void** index)
 	{
-		return this.ptr.Buddy(index);
+		return default;
 	}
-	public void* Match(IQModelIndex start, c_int role, IQVariant value, c_int hits, void* flags)
+	public  virtual void* OnMatch(void** start, c_int role, void** value, c_int hits, void* flags)
 	{
-		return this.ptr.Match(start, role, value, hits, flags);
+		return default;
 	}
-	public QSize_Ptr Span(IQModelIndex index)
+	public  virtual QSize_Ptr OnSpan(void** index)
 	{
-		return this.ptr.Span(index);
+		return default;
 	}
-	public void Sort(c_int column, Qt_SortOrder order)
+	public  virtual void OnSort(c_int column, Qt_SortOrder order)
 	{
-		this.ptr.Sort(column, order);
 	}
-	public void* MimeTypes()
+	public  virtual void* OnMimeTypes()
 	{
-		return this.ptr.MimeTypes();
+		return default;
 	}
-	public void* SupportedDropActions()
+	public  virtual void* OnSupportedDropActions()
 	{
-		return this.ptr.SupportedDropActions();
+		return default;
 	}
 	public void DynamicSortFilterChanged(bool dynamicSortFilter)
 	{
@@ -1263,249 +1096,13 @@ class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAb
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QAbstractItemModel_Ptr SourceModel()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.SourceModel();
+		return default;
 	}
-	public bool Submit()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Submit();
-	}
-	public void Revert()
-	{
-		this.ptr.Revert();
-	}
-	public void* ItemData(IQModelIndex index)
-	{
-		return this.ptr.ItemData(index);
-	}
-	public bool SetItemData(IQModelIndex index, void** roles)
-	{
-		return this.ptr.SetItemData(index, roles);
-	}
-	public bool ClearItemData(IQModelIndex index)
-	{
-		return this.ptr.ClearItemData(index);
-	}
-	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
-	{
-		return this.ptr.CanDropMimeData(data, action, row, column, parent);
-	}
-	public void* SupportedDragActions()
-	{
-		return this.ptr.SupportedDragActions();
-	}
-	public void* RoleNames()
-	{
-		return this.ptr.RoleNames();
-	}
-	public QModelIndex_Ptr CreateSourceIndex(c_int row, c_int col, void* internalPtr)
-	{
-		return this.ptr.CreateSourceIndex(row, col, internalPtr);
-	}
-	public bool HasIndex(c_int row, c_int column)
-	{
-		return this.ptr.HasIndex(row, column);
-	}
-	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return this.ptr.MoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
-	}
-	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return this.ptr.MoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
-	}
-	public bool InsertRow(c_int row)
-	{
-		return this.ptr.InsertRow(row);
-	}
-	public bool InsertColumn(c_int column)
-	{
-		return this.ptr.InsertColumn(column);
-	}
-	public bool RemoveRow(c_int row)
-	{
-		return this.ptr.RemoveRow(row);
-	}
-	public bool RemoveColumn(c_int column)
-	{
-		return this.ptr.RemoveColumn(column);
-	}
-	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return this.ptr.MoveRow(sourceParent, sourceRow, destinationParent, destinationChild);
-	}
-	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return this.ptr.MoveColumn(sourceParent, sourceColumn, destinationParent, destinationChild);
-	}
-	public bool CheckIndex(IQModelIndex index)
-	{
-		return this.ptr.CheckIndex(index);
-	}
-	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
-	{
-		this.ptr.MultiData(index, roleDataSpan);
-	}
-	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
-	{
-		this.ptr.DataChanged(topLeft, bottomRight);
-	}
-	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
-	{
-		this.ptr.HeaderDataChanged(orientation, first, last);
-	}
-	public void LayoutChanged()
-	{
-		this.ptr.LayoutChanged();
-	}
-	public void LayoutAboutToBeChanged()
-	{
-		this.ptr.LayoutAboutToBeChanged();
-	}
-	public void ResetInternalData()
-	{
-		this.ptr.ResetInternalData();
-	}
-	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
-	{
-		return this.ptr.CreateIndex(row, column);
-	}
-	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
-	{
-		return this.ptr.CreateIndex2(row, column, id);
-	}
-	public void EncodeData(void** indexes, IQDataStream stream)
-	{
-		this.ptr.EncodeData(indexes, stream);
-	}
-	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
-	{
-		return this.ptr.DecodeData(row, column, parent, stream);
-	}
-	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
-	{
-		this.ptr.BeginInsertRows(parent, first, last);
-	}
-	public void EndInsertRows()
-	{
-		this.ptr.EndInsertRows();
-	}
-	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
-	{
-		this.ptr.BeginRemoveRows(parent, first, last);
-	}
-	public void EndRemoveRows()
-	{
-		this.ptr.EndRemoveRows();
-	}
-	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
-	{
-		return this.ptr.BeginMoveRows(sourceParent, sourceFirst, sourceLast, destinationParent, destinationRow);
-	}
-	public void EndMoveRows()
-	{
-		this.ptr.EndMoveRows();
-	}
-	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
-	{
-		this.ptr.BeginInsertColumns(parent, first, last);
-	}
-	public void EndInsertColumns()
-	{
-		this.ptr.EndInsertColumns();
-	}
-	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
-	{
-		this.ptr.BeginRemoveColumns(parent, first, last);
-	}
-	public void EndRemoveColumns()
-	{
-		this.ptr.EndRemoveColumns();
-	}
-	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
-	{
-		return this.ptr.BeginMoveColumns(sourceParent, sourceFirst, sourceLast, destinationParent, destinationColumn);
-	}
-	public void EndMoveColumns()
-	{
-		this.ptr.EndMoveColumns();
-	}
-	public void BeginResetModel()
-	{
-		this.ptr.BeginResetModel();
-	}
-	public void EndResetModel()
-	{
-		this.ptr.EndResetModel();
-	}
-	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
-	{
-		this.ptr.ChangePersistentIndex(from, to);
-	}
-	public void ChangePersistentIndexList(void** from, void** to)
-	{
-		this.ptr.ChangePersistentIndexList(from, to);
-	}
-	public void* PersistentIndexList()
-	{
-		return this.ptr.PersistentIndexList();
-	}
-	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
-	{
-		return this.ptr.HasIndex3(row, column, parent);
-	}
-	public bool InsertRow2(c_int row, IQModelIndex parent)
-	{
-		return this.ptr.InsertRow2(row, parent);
-	}
-	public bool InsertColumn2(c_int column, IQModelIndex parent)
-	{
-		return this.ptr.InsertColumn2(column, parent);
-	}
-	public bool RemoveRow2(c_int row, IQModelIndex parent)
-	{
-		return this.ptr.RemoveRow2(row, parent);
-	}
-	public bool RemoveColumn2(c_int column, IQModelIndex parent)
-	{
-		return this.ptr.RemoveColumn2(column, parent);
-	}
-	public bool CheckIndex2(IQModelIndex index, void* options)
-	{
-		return this.ptr.CheckIndex2(index, options);
-	}
-	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
-	{
-		this.ptr.DataChanged3(topLeft, bottomRight, roles);
-	}
-	public void LayoutChanged1(void** parents)
-	{
-		this.ptr.LayoutChanged1(parents);
-	}
-	public void LayoutChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		this.ptr.LayoutChanged2(parents, hint);
-	}
-	public void LayoutAboutToBeChanged1(void** parents)
-	{
-		this.ptr.LayoutAboutToBeChanged1(parents);
-	}
-	public void LayoutAboutToBeChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		this.ptr.LayoutAboutToBeChanged2(parents, hint);
-	}
-	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
-	{
-		return this.ptr.CreateIndex3(row, column, data);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1659,25 +1256,20 @@ class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAb
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1719,6 +1311,239 @@ class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAb
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public bool HasIndex(c_int row, c_int column)
+	{
+		return this.ptr.HasIndex(row, column);
+	}
+	public  virtual void* OnItemData(void** index)
+	{
+		return default;
+	}
+	public  virtual bool OnSetItemData(void** index, void** roles)
+	{
+		return default;
+	}
+	public  virtual bool OnClearItemData(void** index)
+	{
+		return default;
+	}
+	public  virtual bool OnCanDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		return default;
+	}
+	public  virtual void* OnSupportedDragActions()
+	{
+		return default;
+	}
+	public  virtual bool OnMoveRows(void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		return default;
+	}
+	public  virtual bool OnMoveColumns(void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
+	{
+		return default;
+	}
+	public bool InsertRow(c_int row)
+	{
+		return this.ptr.InsertRow(row);
+	}
+	public bool InsertColumn(c_int column)
+	{
+		return this.ptr.InsertColumn(column);
+	}
+	public bool RemoveRow(c_int row)
+	{
+		return this.ptr.RemoveRow(row);
+	}
+	public bool RemoveColumn(c_int column)
+	{
+		return this.ptr.RemoveColumn(column);
+	}
+	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return this.ptr.MoveRow(sourceParent, sourceRow, destinationParent, destinationChild);
+	}
+	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return this.ptr.MoveColumn(sourceParent, sourceColumn, destinationParent, destinationChild);
+	}
+	public  virtual void* OnRoleNames()
+	{
+		return default;
+	}
+	public bool CheckIndex(IQModelIndex index)
+	{
+		return this.ptr.CheckIndex(index);
+	}
+	public  virtual void OnMultiData(void** index, void* roleDataSpan)
+	{
+	}
+	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
+	{
+		this.ptr.DataChanged(topLeft, bottomRight);
+	}
+	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
+	{
+		this.ptr.HeaderDataChanged(orientation, first, last);
+	}
+	public void LayoutChanged()
+	{
+		this.ptr.LayoutChanged();
+	}
+	public void LayoutAboutToBeChanged()
+	{
+		this.ptr.LayoutAboutToBeChanged();
+	}
+	public  virtual bool OnSubmit()
+	{
+		return default;
+	}
+	public  virtual void OnRevert()
+	{
+	}
+	public  virtual void OnResetInternalData()
+	{
+	}
+	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
+	{
+		return this.ptr.CreateIndex(row, column);
+	}
+	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
+	{
+		return this.ptr.CreateIndex2(row, column, id);
+	}
+	public void EncodeData(void** indexes, IQDataStream stream)
+	{
+		this.ptr.EncodeData(indexes, stream);
+	}
+	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
+	{
+		return this.ptr.DecodeData(row, column, parent, stream);
+	}
+	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
+	{
+		this.ptr.BeginInsertRows(parent, first, last);
+	}
+	public void EndInsertRows()
+	{
+		this.ptr.EndInsertRows();
+	}
+	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
+	{
+		this.ptr.BeginRemoveRows(parent, first, last);
+	}
+	public void EndRemoveRows()
+	{
+		this.ptr.EndRemoveRows();
+	}
+	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
+	{
+		return this.ptr.BeginMoveRows(sourceParent, sourceFirst, sourceLast, destinationParent, destinationRow);
+	}
+	public void EndMoveRows()
+	{
+		this.ptr.EndMoveRows();
+	}
+	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
+	{
+		this.ptr.BeginInsertColumns(parent, first, last);
+	}
+	public void EndInsertColumns()
+	{
+		this.ptr.EndInsertColumns();
+	}
+	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
+	{
+		this.ptr.BeginRemoveColumns(parent, first, last);
+	}
+	public void EndRemoveColumns()
+	{
+		this.ptr.EndRemoveColumns();
+	}
+	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
+	{
+		return this.ptr.BeginMoveColumns(sourceParent, sourceFirst, sourceLast, destinationParent, destinationColumn);
+	}
+	public void EndMoveColumns()
+	{
+		this.ptr.EndMoveColumns();
+	}
+	public void BeginResetModel()
+	{
+		this.ptr.BeginResetModel();
+	}
+	public void EndResetModel()
+	{
+		this.ptr.EndResetModel();
+	}
+	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
+	{
+		this.ptr.ChangePersistentIndex(from, to);
+	}
+	public void ChangePersistentIndexList(void** from, void** to)
+	{
+		this.ptr.ChangePersistentIndexList(from, to);
+	}
+	public void* PersistentIndexList()
+	{
+		return this.ptr.PersistentIndexList();
+	}
+	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
+	{
+		return this.ptr.HasIndex3(row, column, parent);
+	}
+	public bool InsertRow2(c_int row, IQModelIndex parent)
+	{
+		return this.ptr.InsertRow2(row, parent);
+	}
+	public bool InsertColumn2(c_int column, IQModelIndex parent)
+	{
+		return this.ptr.InsertColumn2(column, parent);
+	}
+	public bool RemoveRow2(c_int row, IQModelIndex parent)
+	{
+		return this.ptr.RemoveRow2(row, parent);
+	}
+	public bool RemoveColumn2(c_int column, IQModelIndex parent)
+	{
+		return this.ptr.RemoveColumn2(column, parent);
+	}
+	public bool CheckIndex2(IQModelIndex index, void* options)
+	{
+		return this.ptr.CheckIndex2(index, options);
+	}
+	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
+	{
+		this.ptr.DataChanged3(topLeft, bottomRight, roles);
+	}
+	public void LayoutChanged1(void** parents)
+	{
+		this.ptr.LayoutChanged1(parents);
+	}
+	public void LayoutChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		this.ptr.LayoutChanged2(parents, hint);
+	}
+	public void LayoutAboutToBeChanged1(void** parents)
+	{
+		this.ptr.LayoutAboutToBeChanged1(parents);
+	}
+	public void LayoutAboutToBeChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		this.ptr.LayoutAboutToBeChanged2(parents, hint);
+	}
+	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
+	{
+		return this.ptr.CreateIndex3(row, column, data);
+	}
+	public QAbstractItemModel_Ptr SourceModel()
+	{
+		return this.ptr.SourceModel();
+	}
+	public QModelIndex_Ptr CreateSourceIndex(c_int row, c_int col, void* internalPtr)
+	{
+		return this.ptr.CreateSourceIndex(row, col, internalPtr);
+	}
 }
 interface IQSortFilterProxyModel : IQtObjectInterface
 {
@@ -1733,22 +1558,54 @@ extension CQt
 	public static extern void QSortFilterProxyModel_Delete(QSortFilterProxyModel_Ptr self);
 	[LinkName("QSortFilterProxyModel_MetaObject")]
 	public static extern void** QSortFilterProxyModel_MetaObject(void* self);
+	
+	public function void QSortFilterProxyModel_OnMetaObject_action(void* self);
+	[LinkName("QSortFilterProxyModel_OnMetaObject")]
+	public static extern void** QSortFilterProxyModel_OnMetaObject(void* self, QSortFilterProxyModel_OnMetaObject_action _action);
 	[LinkName("QSortFilterProxyModel_Qt_Metacast")]
 	public static extern void* QSortFilterProxyModel_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QSortFilterProxyModel_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QSortFilterProxyModel_OnMetacast")]
+	public static extern void* QSortFilterProxyModel_OnMetacast(void* self, QSortFilterProxyModel_OnMetacast_action _action);
 	[LinkName("QSortFilterProxyModel_Qt_Metacall")]
 	public static extern c_int QSortFilterProxyModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QSortFilterProxyModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QSortFilterProxyModel_OnMetacall")]
+	public static extern c_int QSortFilterProxyModel_OnMetacall(void* self, QSortFilterProxyModel_OnMetacall_action _action);
 	[LinkName("QSortFilterProxyModel_Tr")]
 	public static extern libqt_string QSortFilterProxyModel_Tr(c_char* s);
 	[LinkName("QSortFilterProxyModel_SetSourceModel")]
 	public static extern void QSortFilterProxyModel_SetSourceModel(void* self, void** sourceModel);
+	
+	public function void QSortFilterProxyModel_OnSetSourceModel_action(void* self, void** sourceModel);
+	[LinkName("QSortFilterProxyModel_OnSetSourceModel")]
+	public static extern void QSortFilterProxyModel_OnSetSourceModel(void* self, QSortFilterProxyModel_OnSetSourceModel_action _action);
 	[LinkName("QSortFilterProxyModel_MapToSource")]
 	public static extern void* QSortFilterProxyModel_MapToSource(void* self, void** proxyIndex);
+	
+	public function void QSortFilterProxyModel_OnMapToSource_action(void* self, void** proxyIndex);
+	[LinkName("QSortFilterProxyModel_OnMapToSource")]
+	public static extern void* QSortFilterProxyModel_OnMapToSource(void* self, QSortFilterProxyModel_OnMapToSource_action _action);
 	[LinkName("QSortFilterProxyModel_MapFromSource")]
 	public static extern void* QSortFilterProxyModel_MapFromSource(void* self, void** sourceIndex);
+	
+	public function void QSortFilterProxyModel_OnMapFromSource_action(void* self, void** sourceIndex);
+	[LinkName("QSortFilterProxyModel_OnMapFromSource")]
+	public static extern void* QSortFilterProxyModel_OnMapFromSource(void* self, QSortFilterProxyModel_OnMapFromSource_action _action);
 	[LinkName("QSortFilterProxyModel_MapSelectionToSource")]
 	public static extern void* QSortFilterProxyModel_MapSelectionToSource(void* self, void** proxySelection);
+	
+	public function void QSortFilterProxyModel_OnMapSelectionToSource_action(void* self, void** proxySelection);
+	[LinkName("QSortFilterProxyModel_OnMapSelectionToSource")]
+	public static extern void* QSortFilterProxyModel_OnMapSelectionToSource(void* self, QSortFilterProxyModel_OnMapSelectionToSource_action _action);
 	[LinkName("QSortFilterProxyModel_MapSelectionFromSource")]
 	public static extern void* QSortFilterProxyModel_MapSelectionFromSource(void* self, void** sourceSelection);
+	
+	public function void QSortFilterProxyModel_OnMapSelectionFromSource_action(void* self, void** sourceSelection);
+	[LinkName("QSortFilterProxyModel_OnMapSelectionFromSource")]
+	public static extern void* QSortFilterProxyModel_OnMapSelectionFromSource(void* self, QSortFilterProxyModel_OnMapSelectionFromSource_action _action);
 	[LinkName("QSortFilterProxyModel_FilterRegularExpression")]
 	public static extern void* QSortFilterProxyModel_FilterRegularExpression(void* self);
 	[LinkName("QSortFilterProxyModel_FilterKeyColumn")]
@@ -1803,10 +1660,22 @@ extension CQt
 	public static extern void QSortFilterProxyModel_Invalidate(void* self);
 	[LinkName("QSortFilterProxyModel_FilterAcceptsRow")]
 	public static extern bool QSortFilterProxyModel_FilterAcceptsRow(void* self, c_int source_row, void** source_parent);
+	
+	public function void QSortFilterProxyModel_OnFilterAcceptsRow_action(void* self, c_int source_row, void** source_parent);
+	[LinkName("QSortFilterProxyModel_OnFilterAcceptsRow")]
+	public static extern bool QSortFilterProxyModel_OnFilterAcceptsRow(void* self, QSortFilterProxyModel_OnFilterAcceptsRow_action _action);
 	[LinkName("QSortFilterProxyModel_FilterAcceptsColumn")]
 	public static extern bool QSortFilterProxyModel_FilterAcceptsColumn(void* self, c_int source_column, void** source_parent);
+	
+	public function void QSortFilterProxyModel_OnFilterAcceptsColumn_action(void* self, c_int source_column, void** source_parent);
+	[LinkName("QSortFilterProxyModel_OnFilterAcceptsColumn")]
+	public static extern bool QSortFilterProxyModel_OnFilterAcceptsColumn(void* self, QSortFilterProxyModel_OnFilterAcceptsColumn_action _action);
 	[LinkName("QSortFilterProxyModel_LessThan")]
 	public static extern bool QSortFilterProxyModel_LessThan(void* self, void** source_left, void** source_right);
+	
+	public function void QSortFilterProxyModel_OnLessThan_action(void* self, void** source_left, void** source_right);
+	[LinkName("QSortFilterProxyModel_OnLessThan")]
+	public static extern bool QSortFilterProxyModel_OnLessThan(void* self, QSortFilterProxyModel_OnLessThan_action _action);
 	[LinkName("QSortFilterProxyModel_InvalidateFilter")]
 	public static extern void QSortFilterProxyModel_InvalidateFilter(void* self);
 	[LinkName("QSortFilterProxyModel_InvalidateRowsFilter")]
@@ -1815,104 +1684,318 @@ extension CQt
 	public static extern void QSortFilterProxyModel_InvalidateColumnsFilter(void* self);
 	[LinkName("QSortFilterProxyModel_Index")]
 	public static extern void* QSortFilterProxyModel_Index(void* self, c_int row, c_int column, void** parent);
+	
+	public function void QSortFilterProxyModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
+	[LinkName("QSortFilterProxyModel_OnIndex")]
+	public static extern void* QSortFilterProxyModel_OnIndex(void* self, QSortFilterProxyModel_OnIndex_action _action);
 	[LinkName("QSortFilterProxyModel_Parent")]
 	public static extern void* QSortFilterProxyModel_Parent(void* self, void** child);
+	
+	public function void QSortFilterProxyModel_OnParent_action(void* self, void** child);
+	[LinkName("QSortFilterProxyModel_OnParent")]
+	public static extern void* QSortFilterProxyModel_OnParent(void* self, QSortFilterProxyModel_OnParent_action _action);
 	[LinkName("QSortFilterProxyModel_Sibling")]
 	public static extern void* QSortFilterProxyModel_Sibling(void* self, c_int row, c_int column, void** idx);
+	
+	public function void QSortFilterProxyModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
+	[LinkName("QSortFilterProxyModel_OnSibling")]
+	public static extern void* QSortFilterProxyModel_OnSibling(void* self, QSortFilterProxyModel_OnSibling_action _action);
 	[LinkName("QSortFilterProxyModel_RowCount")]
 	public static extern c_int QSortFilterProxyModel_RowCount(void* self, void** parent);
+	
+	public function void QSortFilterProxyModel_OnRowCount_action(void* self, void** parent);
+	[LinkName("QSortFilterProxyModel_OnRowCount")]
+	public static extern c_int QSortFilterProxyModel_OnRowCount(void* self, QSortFilterProxyModel_OnRowCount_action _action);
 	[LinkName("QSortFilterProxyModel_ColumnCount")]
 	public static extern c_int QSortFilterProxyModel_ColumnCount(void* self, void** parent);
+	
+	public function void QSortFilterProxyModel_OnColumnCount_action(void* self, void** parent);
+	[LinkName("QSortFilterProxyModel_OnColumnCount")]
+	public static extern c_int QSortFilterProxyModel_OnColumnCount(void* self, QSortFilterProxyModel_OnColumnCount_action _action);
 	[LinkName("QSortFilterProxyModel_HasChildren")]
 	public static extern bool QSortFilterProxyModel_HasChildren(void* self, void** parent);
+	
+	public function void QSortFilterProxyModel_OnHasChildren_action(void* self, void** parent);
+	[LinkName("QSortFilterProxyModel_OnHasChildren")]
+	public static extern bool QSortFilterProxyModel_OnHasChildren(void* self, QSortFilterProxyModel_OnHasChildren_action _action);
 	[LinkName("QSortFilterProxyModel_Data")]
 	public static extern void* QSortFilterProxyModel_Data(void* self, void** index, c_int role);
+	
+	public function void QSortFilterProxyModel_OnData_action(void* self, void** index, c_int role);
+	[LinkName("QSortFilterProxyModel_OnData")]
+	public static extern void* QSortFilterProxyModel_OnData(void* self, QSortFilterProxyModel_OnData_action _action);
 	[LinkName("QSortFilterProxyModel_SetData")]
 	public static extern bool QSortFilterProxyModel_SetData(void* self, void** index, void** value, c_int role);
+	
+	public function void QSortFilterProxyModel_OnSetData_action(void* self, void** index, void** value, c_int role);
+	[LinkName("QSortFilterProxyModel_OnSetData")]
+	public static extern bool QSortFilterProxyModel_OnSetData(void* self, QSortFilterProxyModel_OnSetData_action _action);
 	[LinkName("QSortFilterProxyModel_HeaderData")]
 	public static extern void* QSortFilterProxyModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	
+	public function void QSortFilterProxyModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	[LinkName("QSortFilterProxyModel_OnHeaderData")]
+	public static extern void* QSortFilterProxyModel_OnHeaderData(void* self, QSortFilterProxyModel_OnHeaderData_action _action);
 	[LinkName("QSortFilterProxyModel_SetHeaderData")]
 	public static extern bool QSortFilterProxyModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	
+	public function void QSortFilterProxyModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	[LinkName("QSortFilterProxyModel_OnSetHeaderData")]
+	public static extern bool QSortFilterProxyModel_OnSetHeaderData(void* self, QSortFilterProxyModel_OnSetHeaderData_action _action);
 	[LinkName("QSortFilterProxyModel_MimeData")]
 	public static extern void** QSortFilterProxyModel_MimeData(void* self, void** indexes);
+	
+	public function void QSortFilterProxyModel_OnMimeData_action(void* self, void** indexes);
+	[LinkName("QSortFilterProxyModel_OnMimeData")]
+	public static extern void** QSortFilterProxyModel_OnMimeData(void* self, QSortFilterProxyModel_OnMimeData_action _action);
 	[LinkName("QSortFilterProxyModel_DropMimeData")]
 	public static extern bool QSortFilterProxyModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QSortFilterProxyModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QSortFilterProxyModel_OnDropMimeData")]
+	public static extern bool QSortFilterProxyModel_OnDropMimeData(void* self, QSortFilterProxyModel_OnDropMimeData_action _action);
 	[LinkName("QSortFilterProxyModel_InsertRows")]
 	public static extern bool QSortFilterProxyModel_InsertRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QSortFilterProxyModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QSortFilterProxyModel_OnInsertRows")]
+	public static extern bool QSortFilterProxyModel_OnInsertRows(void* self, QSortFilterProxyModel_OnInsertRows_action _action);
 	[LinkName("QSortFilterProxyModel_InsertColumns")]
 	public static extern bool QSortFilterProxyModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QSortFilterProxyModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QSortFilterProxyModel_OnInsertColumns")]
+	public static extern bool QSortFilterProxyModel_OnInsertColumns(void* self, QSortFilterProxyModel_OnInsertColumns_action _action);
 	[LinkName("QSortFilterProxyModel_RemoveRows")]
 	public static extern bool QSortFilterProxyModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QSortFilterProxyModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QSortFilterProxyModel_OnRemoveRows")]
+	public static extern bool QSortFilterProxyModel_OnRemoveRows(void* self, QSortFilterProxyModel_OnRemoveRows_action _action);
 	[LinkName("QSortFilterProxyModel_RemoveColumns")]
 	public static extern bool QSortFilterProxyModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QSortFilterProxyModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QSortFilterProxyModel_OnRemoveColumns")]
+	public static extern bool QSortFilterProxyModel_OnRemoveColumns(void* self, QSortFilterProxyModel_OnRemoveColumns_action _action);
 	[LinkName("QSortFilterProxyModel_FetchMore")]
 	public static extern void QSortFilterProxyModel_FetchMore(void* self, void** parent);
+	
+	public function void QSortFilterProxyModel_OnFetchMore_action(void* self, void** parent);
+	[LinkName("QSortFilterProxyModel_OnFetchMore")]
+	public static extern void QSortFilterProxyModel_OnFetchMore(void* self, QSortFilterProxyModel_OnFetchMore_action _action);
 	[LinkName("QSortFilterProxyModel_CanFetchMore")]
 	public static extern bool QSortFilterProxyModel_CanFetchMore(void* self, void** parent);
+	
+	public function void QSortFilterProxyModel_OnCanFetchMore_action(void* self, void** parent);
+	[LinkName("QSortFilterProxyModel_OnCanFetchMore")]
+	public static extern bool QSortFilterProxyModel_OnCanFetchMore(void* self, QSortFilterProxyModel_OnCanFetchMore_action _action);
 	[LinkName("QSortFilterProxyModel_Flags")]
 	public static extern void* QSortFilterProxyModel_Flags(void* self, void** index);
+	
+	public function void QSortFilterProxyModel_OnFlags_action(void* self, void** index);
+	[LinkName("QSortFilterProxyModel_OnFlags")]
+	public static extern void* QSortFilterProxyModel_OnFlags(void* self, QSortFilterProxyModel_OnFlags_action _action);
 	[LinkName("QSortFilterProxyModel_Buddy")]
 	public static extern void* QSortFilterProxyModel_Buddy(void* self, void** index);
+	
+	public function void QSortFilterProxyModel_OnBuddy_action(void* self, void** index);
+	[LinkName("QSortFilterProxyModel_OnBuddy")]
+	public static extern void* QSortFilterProxyModel_OnBuddy(void* self, QSortFilterProxyModel_OnBuddy_action _action);
 	[LinkName("QSortFilterProxyModel_Match")]
 	public static extern void* QSortFilterProxyModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	
+	public function void QSortFilterProxyModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	[LinkName("QSortFilterProxyModel_OnMatch")]
+	public static extern void* QSortFilterProxyModel_OnMatch(void* self, QSortFilterProxyModel_OnMatch_action _action);
 	[LinkName("QSortFilterProxyModel_Span")]
 	public static extern void* QSortFilterProxyModel_Span(void* self, void** index);
+	
+	public function void QSortFilterProxyModel_OnSpan_action(void* self, void** index);
+	[LinkName("QSortFilterProxyModel_OnSpan")]
+	public static extern void* QSortFilterProxyModel_OnSpan(void* self, QSortFilterProxyModel_OnSpan_action _action);
 	[LinkName("QSortFilterProxyModel_Sort")]
 	public static extern void QSortFilterProxyModel_Sort(void* self, c_int column, Qt_SortOrder order);
+	
+	public function void QSortFilterProxyModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
+	[LinkName("QSortFilterProxyModel_OnSort")]
+	public static extern void QSortFilterProxyModel_OnSort(void* self, QSortFilterProxyModel_OnSort_action _action);
 	[LinkName("QSortFilterProxyModel_MimeTypes")]
 	public static extern void* QSortFilterProxyModel_MimeTypes(void* self);
+	
+	public function void QSortFilterProxyModel_OnMimeTypes_action(void* self);
+	[LinkName("QSortFilterProxyModel_OnMimeTypes")]
+	public static extern void* QSortFilterProxyModel_OnMimeTypes(void* self, QSortFilterProxyModel_OnMimeTypes_action _action);
 	[LinkName("QSortFilterProxyModel_SupportedDropActions")]
 	public static extern void* QSortFilterProxyModel_SupportedDropActions(void* self);
+	
+	public function void QSortFilterProxyModel_OnSupportedDropActions_action(void* self);
+	[LinkName("QSortFilterProxyModel_OnSupportedDropActions")]
+	public static extern void* QSortFilterProxyModel_OnSupportedDropActions(void* self, QSortFilterProxyModel_OnSupportedDropActions_action _action);
 	[LinkName("QSortFilterProxyModel_DynamicSortFilterChanged")]
 	public static extern void QSortFilterProxyModel_DynamicSortFilterChanged(void* self, bool dynamicSortFilter);
 	
-	public function void QSortFilterProxyModel_dynamicSortFilterChanged_action(void* self, bool dynamicSortFilter);
+	public function void QSortFilterProxyModel_Connect_DynamicSortFilterChanged_action(void* self, bool dynamicSortFilter);
 	[LinkName("QSortFilterProxyModel_Connect_DynamicSortFilterChanged")]
-	public static extern void QSortFilterProxyModel_Connect_DynamicSortFilterChanged(void* self, QSortFilterProxyModel_dynamicSortFilterChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_DynamicSortFilterChanged(void* self, QSortFilterProxyModel_Connect_DynamicSortFilterChanged_action _action);
 	[LinkName("QSortFilterProxyModel_FilterCaseSensitivityChanged")]
 	public static extern void QSortFilterProxyModel_FilterCaseSensitivityChanged(void* self, Qt_CaseSensitivity filterCaseSensitivity);
 	
-	public function void QSortFilterProxyModel_filterCaseSensitivityChanged_action(void* self, Qt_CaseSensitivity filterCaseSensitivity);
+	public function void QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged_action(void* self, Qt_CaseSensitivity filterCaseSensitivity);
 	[LinkName("QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged")]
-	public static extern void QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged(void* self, QSortFilterProxyModel_filterCaseSensitivityChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged(void* self, QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged_action _action);
 	[LinkName("QSortFilterProxyModel_SortCaseSensitivityChanged")]
 	public static extern void QSortFilterProxyModel_SortCaseSensitivityChanged(void* self, Qt_CaseSensitivity sortCaseSensitivity);
 	
-	public function void QSortFilterProxyModel_sortCaseSensitivityChanged_action(void* self, Qt_CaseSensitivity sortCaseSensitivity);
+	public function void QSortFilterProxyModel_Connect_SortCaseSensitivityChanged_action(void* self, Qt_CaseSensitivity sortCaseSensitivity);
 	[LinkName("QSortFilterProxyModel_Connect_SortCaseSensitivityChanged")]
-	public static extern void QSortFilterProxyModel_Connect_SortCaseSensitivityChanged(void* self, QSortFilterProxyModel_sortCaseSensitivityChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_SortCaseSensitivityChanged(void* self, QSortFilterProxyModel_Connect_SortCaseSensitivityChanged_action _action);
 	[LinkName("QSortFilterProxyModel_SortLocaleAwareChanged")]
 	public static extern void QSortFilterProxyModel_SortLocaleAwareChanged(void* self, bool sortLocaleAware);
 	
-	public function void QSortFilterProxyModel_sortLocaleAwareChanged_action(void* self, bool sortLocaleAware);
+	public function void QSortFilterProxyModel_Connect_SortLocaleAwareChanged_action(void* self, bool sortLocaleAware);
 	[LinkName("QSortFilterProxyModel_Connect_SortLocaleAwareChanged")]
-	public static extern void QSortFilterProxyModel_Connect_SortLocaleAwareChanged(void* self, QSortFilterProxyModel_sortLocaleAwareChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_SortLocaleAwareChanged(void* self, QSortFilterProxyModel_Connect_SortLocaleAwareChanged_action _action);
 	[LinkName("QSortFilterProxyModel_SortRoleChanged")]
 	public static extern void QSortFilterProxyModel_SortRoleChanged(void* self, c_int sortRole);
 	
-	public function void QSortFilterProxyModel_sortRoleChanged_action(void* self, c_int sortRole);
+	public function void QSortFilterProxyModel_Connect_SortRoleChanged_action(void* self, c_int sortRole);
 	[LinkName("QSortFilterProxyModel_Connect_SortRoleChanged")]
-	public static extern void QSortFilterProxyModel_Connect_SortRoleChanged(void* self, QSortFilterProxyModel_sortRoleChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_SortRoleChanged(void* self, QSortFilterProxyModel_Connect_SortRoleChanged_action _action);
 	[LinkName("QSortFilterProxyModel_FilterRoleChanged")]
 	public static extern void QSortFilterProxyModel_FilterRoleChanged(void* self, c_int filterRole);
 	
-	public function void QSortFilterProxyModel_filterRoleChanged_action(void* self, c_int filterRole);
+	public function void QSortFilterProxyModel_Connect_FilterRoleChanged_action(void* self, c_int filterRole);
 	[LinkName("QSortFilterProxyModel_Connect_FilterRoleChanged")]
-	public static extern void QSortFilterProxyModel_Connect_FilterRoleChanged(void* self, QSortFilterProxyModel_filterRoleChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_FilterRoleChanged(void* self, QSortFilterProxyModel_Connect_FilterRoleChanged_action _action);
 	[LinkName("QSortFilterProxyModel_RecursiveFilteringEnabledChanged")]
 	public static extern void QSortFilterProxyModel_RecursiveFilteringEnabledChanged(void* self, bool recursiveFilteringEnabled);
 	
-	public function void QSortFilterProxyModel_recursiveFilteringEnabledChanged_action(void* self, bool recursiveFilteringEnabled);
+	public function void QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged_action(void* self, bool recursiveFilteringEnabled);
 	[LinkName("QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged")]
-	public static extern void QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged(void* self, QSortFilterProxyModel_recursiveFilteringEnabledChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged(void* self, QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged_action _action);
 	[LinkName("QSortFilterProxyModel_AutoAcceptChildRowsChanged")]
 	public static extern void QSortFilterProxyModel_AutoAcceptChildRowsChanged(void* self, bool autoAcceptChildRows);
 	
-	public function void QSortFilterProxyModel_autoAcceptChildRowsChanged_action(void* self, bool autoAcceptChildRows);
+	public function void QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged_action(void* self, bool autoAcceptChildRows);
 	[LinkName("QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged")]
-	public static extern void QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged(void* self, QSortFilterProxyModel_autoAcceptChildRowsChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged(void* self, QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged_action _action);
 	[LinkName("QSortFilterProxyModel_Tr2")]
 	public static extern libqt_string QSortFilterProxyModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QSortFilterProxyModel_Tr3")]
 	public static extern libqt_string QSortFilterProxyModel_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QSortFilterProxyModel_Event")]
+	public static extern bool QSortFilterProxyModel_Event(void* self, void** event);
+	
+	public function void QSortFilterProxyModel_OnEvent_action(void* self, void** event);
+	[LinkName("QSortFilterProxyModel_OnEvent")]
+	public static extern bool QSortFilterProxyModel_OnEvent(void* self, QSortFilterProxyModel_OnEvent_action _action);
+	[LinkName("QSortFilterProxyModel_EventFilter")]
+	public static extern bool QSortFilterProxyModel_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QSortFilterProxyModel_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QSortFilterProxyModel_OnEventFilter")]
+	public static extern bool QSortFilterProxyModel_OnEventFilter(void* self, QSortFilterProxyModel_OnEventFilter_action _action);
+	[LinkName("QSortFilterProxyModel_TimerEvent")]
+	public static extern void QSortFilterProxyModel_TimerEvent(void* self, void** event);
+	
+	public function void QSortFilterProxyModel_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QSortFilterProxyModel_OnTimerEvent")]
+	public static extern void QSortFilterProxyModel_OnTimerEvent(void* self, QSortFilterProxyModel_OnTimerEvent_action _action);
+	[LinkName("QSortFilterProxyModel_ChildEvent")]
+	public static extern void QSortFilterProxyModel_ChildEvent(void* self, void** event);
+	
+	public function void QSortFilterProxyModel_OnChildEvent_action(void* self, void** event);
+	[LinkName("QSortFilterProxyModel_OnChildEvent")]
+	public static extern void QSortFilterProxyModel_OnChildEvent(void* self, QSortFilterProxyModel_OnChildEvent_action _action);
+	[LinkName("QSortFilterProxyModel_CustomEvent")]
+	public static extern void QSortFilterProxyModel_CustomEvent(void* self, void** event);
+	
+	public function void QSortFilterProxyModel_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QSortFilterProxyModel_OnCustomEvent")]
+	public static extern void QSortFilterProxyModel_OnCustomEvent(void* self, QSortFilterProxyModel_OnCustomEvent_action _action);
+	[LinkName("QSortFilterProxyModel_ConnectNotify")]
+	public static extern void QSortFilterProxyModel_ConnectNotify(void* self, void** signal);
+	
+	public function void QSortFilterProxyModel_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QSortFilterProxyModel_OnConnectNotify")]
+	public static extern void QSortFilterProxyModel_OnConnectNotify(void* self, QSortFilterProxyModel_OnConnectNotify_action _action);
+	[LinkName("QSortFilterProxyModel_DisconnectNotify")]
+	public static extern void QSortFilterProxyModel_DisconnectNotify(void* self, void** signal);
+	
+	public function void QSortFilterProxyModel_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QSortFilterProxyModel_OnDisconnectNotify")]
+	public static extern void QSortFilterProxyModel_OnDisconnectNotify(void* self, QSortFilterProxyModel_OnDisconnectNotify_action _action);
+	[LinkName("QSortFilterProxyModel_ItemData")]
+	public static extern void* QSortFilterProxyModel_ItemData(void* self, void** index);
+	
+	public function void QSortFilterProxyModel_OnItemData_action(void* self, void** index);
+	[LinkName("QSortFilterProxyModel_OnItemData")]
+	public static extern void* QSortFilterProxyModel_OnItemData(void* self, QSortFilterProxyModel_OnItemData_action _action);
+	[LinkName("QSortFilterProxyModel_SetItemData")]
+	public static extern bool QSortFilterProxyModel_SetItemData(void* self, void** index, void** roles);
+	
+	public function void QSortFilterProxyModel_OnSetItemData_action(void* self, void** index, void** roles);
+	[LinkName("QSortFilterProxyModel_OnSetItemData")]
+	public static extern bool QSortFilterProxyModel_OnSetItemData(void* self, QSortFilterProxyModel_OnSetItemData_action _action);
+	[LinkName("QSortFilterProxyModel_ClearItemData")]
+	public static extern bool QSortFilterProxyModel_ClearItemData(void* self, void** index);
+	
+	public function void QSortFilterProxyModel_OnClearItemData_action(void* self, void** index);
+	[LinkName("QSortFilterProxyModel_OnClearItemData")]
+	public static extern bool QSortFilterProxyModel_OnClearItemData(void* self, QSortFilterProxyModel_OnClearItemData_action _action);
+	[LinkName("QSortFilterProxyModel_CanDropMimeData")]
+	public static extern bool QSortFilterProxyModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QSortFilterProxyModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QSortFilterProxyModel_OnCanDropMimeData")]
+	public static extern bool QSortFilterProxyModel_OnCanDropMimeData(void* self, QSortFilterProxyModel_OnCanDropMimeData_action _action);
+	[LinkName("QSortFilterProxyModel_SupportedDragActions")]
+	public static extern void* QSortFilterProxyModel_SupportedDragActions(void* self);
+	
+	public function void QSortFilterProxyModel_OnSupportedDragActions_action(void* self);
+	[LinkName("QSortFilterProxyModel_OnSupportedDragActions")]
+	public static extern void* QSortFilterProxyModel_OnSupportedDragActions(void* self, QSortFilterProxyModel_OnSupportedDragActions_action _action);
+	[LinkName("QSortFilterProxyModel_MoveRows")]
+	public static extern bool QSortFilterProxyModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QSortFilterProxyModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QSortFilterProxyModel_OnMoveRows")]
+	public static extern bool QSortFilterProxyModel_OnMoveRows(void* self, QSortFilterProxyModel_OnMoveRows_action _action);
+	[LinkName("QSortFilterProxyModel_MoveColumns")]
+	public static extern bool QSortFilterProxyModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QSortFilterProxyModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QSortFilterProxyModel_OnMoveColumns")]
+	public static extern bool QSortFilterProxyModel_OnMoveColumns(void* self, QSortFilterProxyModel_OnMoveColumns_action _action);
+	[LinkName("QSortFilterProxyModel_RoleNames")]
+	public static extern void* QSortFilterProxyModel_RoleNames(void* self);
+	
+	public function void QSortFilterProxyModel_OnRoleNames_action(void* self);
+	[LinkName("QSortFilterProxyModel_OnRoleNames")]
+	public static extern void* QSortFilterProxyModel_OnRoleNames(void* self, QSortFilterProxyModel_OnRoleNames_action _action);
+	[LinkName("QSortFilterProxyModel_MultiData")]
+	public static extern void QSortFilterProxyModel_MultiData(void* self, void** index, void* roleDataSpan);
+	
+	public function void QSortFilterProxyModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
+	[LinkName("QSortFilterProxyModel_OnMultiData")]
+	public static extern void QSortFilterProxyModel_OnMultiData(void* self, QSortFilterProxyModel_OnMultiData_action _action);
+	[LinkName("QSortFilterProxyModel_Submit")]
+	public static extern bool QSortFilterProxyModel_Submit(void* self);
+	
+	public function void QSortFilterProxyModel_OnSubmit_action(void* self);
+	[LinkName("QSortFilterProxyModel_OnSubmit")]
+	public static extern bool QSortFilterProxyModel_OnSubmit(void* self, QSortFilterProxyModel_OnSubmit_action _action);
+	[LinkName("QSortFilterProxyModel_Revert")]
+	public static extern void QSortFilterProxyModel_Revert(void* self);
+	
+	public function void QSortFilterProxyModel_OnRevert_action(void* self);
+	[LinkName("QSortFilterProxyModel_OnRevert")]
+	public static extern void QSortFilterProxyModel_OnRevert(void* self, QSortFilterProxyModel_OnRevert_action _action);
+	[LinkName("QSortFilterProxyModel_ResetInternalData")]
+	public static extern void QSortFilterProxyModel_ResetInternalData(void* self);
+	
+	public function void QSortFilterProxyModel_OnResetInternalData_action(void* self);
+	[LinkName("QSortFilterProxyModel_OnResetInternalData")]
+	public static extern void QSortFilterProxyModel_OnResetInternalData(void* self, QSortFilterProxyModel_OnResetInternalData_action _action);
 }

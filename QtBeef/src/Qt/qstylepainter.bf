@@ -927,34 +927,21 @@ class QStylePainter : IQStylePainter, IQPainter
 {
 	private QStylePainter_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStylePainter_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget w)
 	{
 		this.ptr = CQt.QStylePainter_new((.)w?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStylePainter_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPaintDevice pd, IQWidget w)
 	{
 		this.ptr = CQt.QStylePainter_new3((.)pd?.ObjectPtr, (.)w?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

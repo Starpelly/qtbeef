@@ -71,34 +71,21 @@ class QPoint : IQPoint
 {
 	private QPoint_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPoint_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint other)
 	{
 		this.ptr = CQt.QPoint_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPoint_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int xpos, c_int ypos)
 	{
 		this.ptr = CQt.QPoint_new4(xpos, ypos);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -269,39 +256,25 @@ class QPointF : IQPointF
 {
 	private QPointF_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPointF_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF other)
 	{
 		this.ptr = CQt.QPointF_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPointF_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint p)
 	{
 		this.ptr = CQt.QPointF_new4((.)p?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(double xpos, double ypos)
 	{
 		this.ptr = CQt.QPointF_new5(xpos, ypos);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

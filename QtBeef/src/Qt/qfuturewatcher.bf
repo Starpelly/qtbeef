@@ -18,11 +18,11 @@ struct QFutureWatcherBase_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QFutureWatcherBase_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QFutureWatcherBase_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QFutureWatcherBase_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -196,7 +196,7 @@ struct QFutureWatcherBase_Ptr
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QFutureWatcherBase_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -356,15 +356,15 @@ struct QFutureWatcherBase_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFutureWatcherBase_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFutureWatcherBase_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFutureWatcherBase_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -411,147 +411,25 @@ class QFutureWatcherBase : IQFutureWatcherBase, IQObject
 {
 	private QFutureWatcherBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QFutureWatcherBase_started,
-		QFutureWatcherBase_finished,
-		QFutureWatcherBase_canceled,
-		QFutureWatcherBase_paused,
-		QFutureWatcherBase_suspending,
-		QFutureWatcherBase_suspended,
-		QFutureWatcherBase_resumed,
-		QFutureWatcherBase_resultReadyAt,
-		QFutureWatcherBase_resultsReadyAt,
-		QFutureWatcherBase_progressRangeChanged,
-		QFutureWatcherBase_progressValueChanged,
-		QFutureWatcherBase_progressTextChanged,
-		QFutureWatcherBase_destroyed,
-		QFutureWatcherBase_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QFutureWatcherBase_Connect_Started(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_started);
-		CQt.QFutureWatcherBase_Connect_Finished(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_finished);
-		CQt.QFutureWatcherBase_Connect_Canceled(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_canceled);
-		CQt.QFutureWatcherBase_Connect_Paused(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_paused);
-		CQt.QFutureWatcherBase_Connect_Suspending(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_suspending);
-		CQt.QFutureWatcherBase_Connect_Suspended(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_suspended);
-		CQt.QFutureWatcherBase_Connect_Resumed(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_resumed);
-		CQt.QFutureWatcherBase_Connect_ResultReadyAt(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_resultReadyAt);
-		CQt.QFutureWatcherBase_Connect_ResultsReadyAt(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_resultsReadyAt);
-		CQt.QFutureWatcherBase_Connect_ProgressRangeChanged(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_progressRangeChanged);
-		CQt.QFutureWatcherBase_Connect_ProgressValueChanged(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_progressValueChanged);
-		CQt.QFutureWatcherBase_Connect_ProgressTextChanged(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_progressTextChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnStarted = .() ~ _.Dispose();
-	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
-	public Event<delegate void()> OnCanceled = .() ~ _.Dispose();
-	public Event<delegate void()> OnPaused = .() ~ _.Dispose();
-	public Event<delegate void()> OnSuspending = .() ~ _.Dispose();
-	public Event<delegate void()> OnSuspended = .() ~ _.Dispose();
-	public Event<delegate void()> OnResumed = .() ~ _.Dispose();
-	public Event<delegate void(c_int resultIndex)> OnResultReadyAt = .() ~ _.Dispose();
-	public Event<delegate void(c_int beginIndex, c_int endIndex)> OnResultsReadyAt = .() ~ _.Dispose();
-	public Event<delegate void(c_int minimum, c_int maximum)> OnProgressRangeChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int progressValue)> OnProgressValueChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string progressText)> OnProgressTextChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QFutureWatcherBase_started(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnStarted.Invoke();
-	}
-	static void QtBeef_QFutureWatcherBase_finished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFinished.Invoke();
-	}
-	static void QtBeef_QFutureWatcherBase_canceled(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCanceled.Invoke();
-	}
-	static void QtBeef_QFutureWatcherBase_paused(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnPaused.Invoke();
-	}
-	static void QtBeef_QFutureWatcherBase_suspending(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSuspending.Invoke();
-	}
-	static void QtBeef_QFutureWatcherBase_suspended(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSuspended.Invoke();
-	}
-	static void QtBeef_QFutureWatcherBase_resumed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnResumed.Invoke();
-	}
-	static void QtBeef_QFutureWatcherBase_resultReadyAt(void* ptr, c_int resultIndex)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnResultReadyAt.Invoke(resultIndex);
-	}
-	static void QtBeef_QFutureWatcherBase_resultsReadyAt(void* ptr, c_int beginIndex, c_int endIndex)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnResultsReadyAt.Invoke(beginIndex, endIndex);
-	}
-	static void QtBeef_QFutureWatcherBase_progressRangeChanged(void* ptr, c_int minimum, c_int maximum)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnProgressRangeChanged.Invoke(minimum, maximum);
-	}
-	static void QtBeef_QFutureWatcherBase_progressValueChanged(void* ptr, c_int progressValue)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnProgressValueChanged.Invoke(progressValue);
-	}
-	static void QtBeef_QFutureWatcherBase_progressTextChanged(void* ptr, libqt_string progressText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnProgressTextChanged.Invoke(progressText);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QFutureWatcherBase_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QFutureWatcherBase_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -609,9 +487,9 @@ class QFutureWatcherBase : IQFutureWatcherBase, IQObject
 	{
 		this.ptr.SetPendingResultsLimit(limit);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
 	public void Started()
 	{
@@ -693,13 +571,11 @@ class QFutureWatcherBase : IQFutureWatcherBase, IQObject
 	{
 		this.ptr.TogglePaused();
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public void ConnectOutputInterface()
 	{
@@ -721,9 +597,9 @@ class QFutureWatcherBase : IQFutureWatcherBase, IQObject
 	{
 		this.ptr.DisconnectOutputInterface1(pendingAssignment);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -881,17 +757,14 @@ class QFutureWatcherBase : IQFutureWatcherBase, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -943,10 +816,22 @@ extension CQt
 	public static extern void QFutureWatcherBase_Delete(QFutureWatcherBase_Ptr self);
 	[LinkName("QFutureWatcherBase_MetaObject")]
 	public static extern void** QFutureWatcherBase_MetaObject(void* self);
+	
+	public function void QFutureWatcherBase_OnMetaObject_action(void* self);
+	[LinkName("QFutureWatcherBase_OnMetaObject")]
+	public static extern void** QFutureWatcherBase_OnMetaObject(void* self, QFutureWatcherBase_OnMetaObject_action _action);
 	[LinkName("QFutureWatcherBase_Qt_Metacast")]
 	public static extern void* QFutureWatcherBase_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QFutureWatcherBase_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QFutureWatcherBase_OnMetacast")]
+	public static extern void* QFutureWatcherBase_OnMetacast(void* self, QFutureWatcherBase_OnMetacast_action _action);
 	[LinkName("QFutureWatcherBase_Qt_Metacall")]
 	public static extern c_int QFutureWatcherBase_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QFutureWatcherBase_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QFutureWatcherBase_OnMetacall")]
+	public static extern c_int QFutureWatcherBase_OnMetacall(void* self, QFutureWatcherBase_OnMetacall_action _action);
 	[LinkName("QFutureWatcherBase_Tr")]
 	public static extern libqt_string QFutureWatcherBase_Tr(c_char* s);
 	[LinkName("QFutureWatcherBase_ProgressValue")]
@@ -977,78 +862,82 @@ extension CQt
 	public static extern void QFutureWatcherBase_SetPendingResultsLimit(void* self, c_int limit);
 	[LinkName("QFutureWatcherBase_Event")]
 	public static extern bool QFutureWatcherBase_Event(void* self, void** event);
+	
+	public function void QFutureWatcherBase_OnEvent_action(void* self, void** event);
+	[LinkName("QFutureWatcherBase_OnEvent")]
+	public static extern bool QFutureWatcherBase_OnEvent(void* self, QFutureWatcherBase_OnEvent_action _action);
 	[LinkName("QFutureWatcherBase_Started")]
 	public static extern void QFutureWatcherBase_Started(void* self);
 	
-	public function void QFutureWatcherBase_started_action(void* self);
+	public function void QFutureWatcherBase_Connect_Started_action(void* self);
 	[LinkName("QFutureWatcherBase_Connect_Started")]
-	public static extern void QFutureWatcherBase_Connect_Started(void* self, QFutureWatcherBase_started_action _action);
+	public static extern void QFutureWatcherBase_Connect_Started(void* self, QFutureWatcherBase_Connect_Started_action _action);
 	[LinkName("QFutureWatcherBase_Finished")]
 	public static extern void QFutureWatcherBase_Finished(void* self);
 	
-	public function void QFutureWatcherBase_finished_action(void* self);
+	public function void QFutureWatcherBase_Connect_Finished_action(void* self);
 	[LinkName("QFutureWatcherBase_Connect_Finished")]
-	public static extern void QFutureWatcherBase_Connect_Finished(void* self, QFutureWatcherBase_finished_action _action);
+	public static extern void QFutureWatcherBase_Connect_Finished(void* self, QFutureWatcherBase_Connect_Finished_action _action);
 	[LinkName("QFutureWatcherBase_Canceled")]
 	public static extern void QFutureWatcherBase_Canceled(void* self);
 	
-	public function void QFutureWatcherBase_canceled_action(void* self);
+	public function void QFutureWatcherBase_Connect_Canceled_action(void* self);
 	[LinkName("QFutureWatcherBase_Connect_Canceled")]
-	public static extern void QFutureWatcherBase_Connect_Canceled(void* self, QFutureWatcherBase_canceled_action _action);
+	public static extern void QFutureWatcherBase_Connect_Canceled(void* self, QFutureWatcherBase_Connect_Canceled_action _action);
 	[LinkName("QFutureWatcherBase_Paused")]
 	public static extern void QFutureWatcherBase_Paused(void* self);
 	
-	public function void QFutureWatcherBase_paused_action(void* self);
+	public function void QFutureWatcherBase_Connect_Paused_action(void* self);
 	[LinkName("QFutureWatcherBase_Connect_Paused")]
-	public static extern void QFutureWatcherBase_Connect_Paused(void* self, QFutureWatcherBase_paused_action _action);
+	public static extern void QFutureWatcherBase_Connect_Paused(void* self, QFutureWatcherBase_Connect_Paused_action _action);
 	[LinkName("QFutureWatcherBase_Suspending")]
 	public static extern void QFutureWatcherBase_Suspending(void* self);
 	
-	public function void QFutureWatcherBase_suspending_action(void* self);
+	public function void QFutureWatcherBase_Connect_Suspending_action(void* self);
 	[LinkName("QFutureWatcherBase_Connect_Suspending")]
-	public static extern void QFutureWatcherBase_Connect_Suspending(void* self, QFutureWatcherBase_suspending_action _action);
+	public static extern void QFutureWatcherBase_Connect_Suspending(void* self, QFutureWatcherBase_Connect_Suspending_action _action);
 	[LinkName("QFutureWatcherBase_Suspended")]
 	public static extern void QFutureWatcherBase_Suspended(void* self);
 	
-	public function void QFutureWatcherBase_suspended_action(void* self);
+	public function void QFutureWatcherBase_Connect_Suspended_action(void* self);
 	[LinkName("QFutureWatcherBase_Connect_Suspended")]
-	public static extern void QFutureWatcherBase_Connect_Suspended(void* self, QFutureWatcherBase_suspended_action _action);
+	public static extern void QFutureWatcherBase_Connect_Suspended(void* self, QFutureWatcherBase_Connect_Suspended_action _action);
 	[LinkName("QFutureWatcherBase_Resumed")]
 	public static extern void QFutureWatcherBase_Resumed(void* self);
 	
-	public function void QFutureWatcherBase_resumed_action(void* self);
+	public function void QFutureWatcherBase_Connect_Resumed_action(void* self);
 	[LinkName("QFutureWatcherBase_Connect_Resumed")]
-	public static extern void QFutureWatcherBase_Connect_Resumed(void* self, QFutureWatcherBase_resumed_action _action);
+	public static extern void QFutureWatcherBase_Connect_Resumed(void* self, QFutureWatcherBase_Connect_Resumed_action _action);
 	[LinkName("QFutureWatcherBase_ResultReadyAt")]
 	public static extern void QFutureWatcherBase_ResultReadyAt(void* self, c_int resultIndex);
 	
-	public function void QFutureWatcherBase_resultReadyAt_action(void* self, c_int resultIndex);
+	public function void QFutureWatcherBase_Connect_ResultReadyAt_action(void* self, c_int resultIndex);
 	[LinkName("QFutureWatcherBase_Connect_ResultReadyAt")]
-	public static extern void QFutureWatcherBase_Connect_ResultReadyAt(void* self, QFutureWatcherBase_resultReadyAt_action _action);
+	public static extern void QFutureWatcherBase_Connect_ResultReadyAt(void* self, QFutureWatcherBase_Connect_ResultReadyAt_action _action);
 	[LinkName("QFutureWatcherBase_ResultsReadyAt")]
 	public static extern void QFutureWatcherBase_ResultsReadyAt(void* self, c_int beginIndex, c_int endIndex);
 	
-	public function void QFutureWatcherBase_resultsReadyAt_action(void* self, c_int beginIndex, c_int endIndex);
+	public function void QFutureWatcherBase_Connect_ResultsReadyAt_action(void* self, c_int beginIndex, c_int endIndex);
 	[LinkName("QFutureWatcherBase_Connect_ResultsReadyAt")]
-	public static extern void QFutureWatcherBase_Connect_ResultsReadyAt(void* self, QFutureWatcherBase_resultsReadyAt_action _action);
+	public static extern void QFutureWatcherBase_Connect_ResultsReadyAt(void* self, QFutureWatcherBase_Connect_ResultsReadyAt_action _action);
 	[LinkName("QFutureWatcherBase_ProgressRangeChanged")]
 	public static extern void QFutureWatcherBase_ProgressRangeChanged(void* self, c_int minimum, c_int maximum);
 	
-	public function void QFutureWatcherBase_progressRangeChanged_action(void* self, c_int minimum, c_int maximum);
+	public function void QFutureWatcherBase_Connect_ProgressRangeChanged_action(void* self, c_int minimum, c_int maximum);
 	[LinkName("QFutureWatcherBase_Connect_ProgressRangeChanged")]
-	public static extern void QFutureWatcherBase_Connect_ProgressRangeChanged(void* self, QFutureWatcherBase_progressRangeChanged_action _action);
+	public static extern void QFutureWatcherBase_Connect_ProgressRangeChanged(void* self, QFutureWatcherBase_Connect_ProgressRangeChanged_action _action);
 	[LinkName("QFutureWatcherBase_ProgressValueChanged")]
 	public static extern void QFutureWatcherBase_ProgressValueChanged(void* self, c_int progressValue);
 	
-	public function void QFutureWatcherBase_progressValueChanged_action(void* self, c_int progressValue);
+	public function void QFutureWatcherBase_Connect_ProgressValueChanged_action(void* self, c_int progressValue);
 	[LinkName("QFutureWatcherBase_Connect_ProgressValueChanged")]
-	public static extern void QFutureWatcherBase_Connect_ProgressValueChanged(void* self, QFutureWatcherBase_progressValueChanged_action _action);
+	public static extern void QFutureWatcherBase_Connect_ProgressValueChanged(void* self, QFutureWatcherBase_Connect_ProgressValueChanged_action _action);
 	[LinkName("QFutureWatcherBase_ProgressTextChanged")]
 	public static extern void QFutureWatcherBase_ProgressTextChanged(void* self, libqt_string progressText);
 	
-	public function void QFutureWatcherBase_progressTextChanged_action(void* self, libqt_string progressText);
+	public function void QFutureWatcherBase_Connect_ProgressTextChanged_action(void* self, libqt_string progressText);
 	[LinkName("QFutureWatcherBase_Connect_ProgressTextChanged")]
-	public static extern void QFutureWatcherBase_Connect_ProgressTextChanged(void* self, QFutureWatcherBase_progressTextChanged_action _action);
+	public static extern void QFutureWatcherBase_Connect_ProgressTextChanged(void* self, QFutureWatcherBase_Connect_ProgressTextChanged_action _action);
 	[LinkName("QFutureWatcherBase_Cancel")]
 	public static extern void QFutureWatcherBase_Cancel(void* self);
 	[LinkName("QFutureWatcherBase_SetSuspended")]
@@ -1067,8 +956,16 @@ extension CQt
 	public static extern void QFutureWatcherBase_TogglePaused(void* self);
 	[LinkName("QFutureWatcherBase_ConnectNotify")]
 	public static extern void QFutureWatcherBase_ConnectNotify(void* self, void** signal);
+	
+	public function void QFutureWatcherBase_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QFutureWatcherBase_OnConnectNotify")]
+	public static extern void QFutureWatcherBase_OnConnectNotify(void* self, QFutureWatcherBase_OnConnectNotify_action _action);
 	[LinkName("QFutureWatcherBase_DisconnectNotify")]
 	public static extern void QFutureWatcherBase_DisconnectNotify(void* self, void** signal);
+	
+	public function void QFutureWatcherBase_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QFutureWatcherBase_OnDisconnectNotify")]
+	public static extern void QFutureWatcherBase_OnDisconnectNotify(void* self, QFutureWatcherBase_OnDisconnectNotify_action _action);
 	[LinkName("QFutureWatcherBase_ConnectOutputInterface")]
 	public static extern void QFutureWatcherBase_ConnectOutputInterface(void* self);
 	[LinkName("QFutureWatcherBase_DisconnectOutputInterface")]
@@ -1079,4 +976,28 @@ extension CQt
 	public static extern libqt_string QFutureWatcherBase_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QFutureWatcherBase_DisconnectOutputInterface1")]
 	public static extern void QFutureWatcherBase_DisconnectOutputInterface1(void* self, bool pendingAssignment);
+	[LinkName("QFutureWatcherBase_EventFilter")]
+	public static extern bool QFutureWatcherBase_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QFutureWatcherBase_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QFutureWatcherBase_OnEventFilter")]
+	public static extern bool QFutureWatcherBase_OnEventFilter(void* self, QFutureWatcherBase_OnEventFilter_action _action);
+	[LinkName("QFutureWatcherBase_TimerEvent")]
+	public static extern void QFutureWatcherBase_TimerEvent(void* self, void** event);
+	
+	public function void QFutureWatcherBase_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QFutureWatcherBase_OnTimerEvent")]
+	public static extern void QFutureWatcherBase_OnTimerEvent(void* self, QFutureWatcherBase_OnTimerEvent_action _action);
+	[LinkName("QFutureWatcherBase_ChildEvent")]
+	public static extern void QFutureWatcherBase_ChildEvent(void* self, void** event);
+	
+	public function void QFutureWatcherBase_OnChildEvent_action(void* self, void** event);
+	[LinkName("QFutureWatcherBase_OnChildEvent")]
+	public static extern void QFutureWatcherBase_OnChildEvent(void* self, QFutureWatcherBase_OnChildEvent_action _action);
+	[LinkName("QFutureWatcherBase_CustomEvent")]
+	public static extern void QFutureWatcherBase_CustomEvent(void* self, void** event);
+	
+	public function void QFutureWatcherBase_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QFutureWatcherBase_OnCustomEvent")]
+	public static extern void QFutureWatcherBase_OnCustomEvent(void* self, QFutureWatcherBase_OnCustomEvent_action _action);
 }

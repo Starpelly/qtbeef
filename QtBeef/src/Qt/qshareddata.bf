@@ -19,29 +19,17 @@ class QSharedData : IQSharedData
 {
 	private QSharedData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QSharedData_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSharedData_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQSharedData param1)
 	{
 		this.ptr = CQt.QSharedData_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -76,29 +64,17 @@ class QAdoptSharedDataTag : IQAdoptSharedDataTag
 {
 	private QAdoptSharedDataTag_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QAdoptSharedDataTag_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQAdoptSharedDataTag other)
 	{
 		this.ptr = CQt.QAdoptSharedDataTag_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAdoptSharedDataTag_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

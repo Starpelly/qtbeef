@@ -18,11 +18,11 @@ struct QFontDialog_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QFontDialog_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QFontDialog_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QFontDialog_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -118,89 +118,305 @@ struct QFontDialog_Ptr
 	{
 		return QFont_Ptr(CQt.QFontDialog_GetFont5(ok, (.)initial?.ObjectPtr, (.)parent?.ObjectPtr, libqt_string(title), options));
 	}
-	public c_int Result()
+	public bool Event(IQEvent event)
 	{
-		return CQt.QDialog_Result((.)this.Ptr);
+		return CQt.QFontDialog_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public QSize_Ptr SizeHint()
+	public void ObjectName(String outStr)
 	{
-		return QSize_Ptr(CQt.QDialog_SizeHint((.)this.Ptr));
+		CQt.QObject_ObjectName((.)this.Ptr);
 	}
-	public QSize_Ptr MinimumSizeHint()
+	public void SetObjectName(IQAnyStringView name)
 	{
-		return QSize_Ptr(CQt.QDialog_MinimumSizeHint((.)this.Ptr));
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
 	}
-	public void SetSizeGripEnabled(bool sizeGripEnabled)
+	public bool IsWidgetType()
 	{
-		CQt.QDialog_SetSizeGripEnabled((.)this.Ptr, sizeGripEnabled);
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
 	}
-	public bool IsSizeGripEnabled()
+	public bool IsWindowType()
 	{
-		return CQt.QDialog_IsSizeGripEnabled((.)this.Ptr);
+		return CQt.QObject_IsWindowType((.)this.Ptr);
 	}
-	public void SetModal(bool modal)
+	public bool IsQuickItemType()
 	{
-		CQt.QDialog_SetModal((.)this.Ptr, modal);
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
 	}
-	public void SetResult(c_int r)
+	public bool SignalsBlocked()
 	{
-		CQt.QDialog_SetResult((.)this.Ptr, r);
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
 	}
-	public void Finished(c_int result)
+	public bool BlockSignals(bool b)
 	{
-		CQt.QDialog_Finished((.)this.Ptr, result);
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
 	}
-	public void Accepted()
+	public QThread_Ptr Thread()
 	{
-		CQt.QDialog_Accepted((.)this.Ptr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
 	}
-	public void Rejected()
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QDialog_Rejected((.)this.Ptr);
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
 	}
-	public void Open()
+	public c_int StartTimer(c_int interval)
 	{
-		CQt.QDialog_Open((.)this.Ptr);
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
 	}
-	public c_int Exec()
+	public c_int StartTimer2(void* time)
 	{
-		return CQt.QDialog_Exec((.)this.Ptr);
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
 	}
-	public void Accept()
+	public void KillTimer(c_int id)
 	{
-		CQt.QDialog_Accept((.)this.Ptr);
+		CQt.QObject_KillTimer((.)this.Ptr, id);
 	}
-	public void Reject()
+	public void** Children()
 	{
-		CQt.QDialog_Reject((.)this.Ptr);
+		return CQt.QObject_Children((.)this.Ptr);
 	}
-	public void KeyPressEvent(IQKeyEvent param1)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QDialog_KeyPressEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
-	public void CloseEvent(IQCloseEvent param1)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QDialog_CloseEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void ShowEvent(IQShowEvent param1)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QDialog_ShowEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
 	}
-	public void ResizeEvent(IQResizeEvent param1)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		CQt.QDialog_ResizeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public void ContextMenuEvent(IQContextMenuEvent param1)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		CQt.QDialog_ContextMenuEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public void AdjustPosition(IQWidget param1)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		CQt.QDialog_AdjustPosition((.)this.Ptr, (.)param1?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QFontDialog_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QFontDialog_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QFontDialog_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QFontDialog_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QFontDialog_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.Ptr);
+		return CQt.QFontDialog_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QFontDialog_PaintEngine((.)this.Ptr));
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QFontDialog_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QFontDialog_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QFontDialog_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QFontDialog_SharedPainter((.)this.Ptr));
 	}
 	public void* WinId()
 	{
@@ -297,14 +513,6 @@ struct QFontDialog_Ptr
 	public QSize_Ptr Size()
 	{
 		return QSize_Ptr(CQt.QWidget_Size((.)this.Ptr));
-	}
-	public c_int Width()
-	{
-		return CQt.QWidget_Width((.)this.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QWidget_Height((.)this.Ptr);
 	}
 	public QRect_Ptr Rect()
 	{
@@ -986,6 +1194,14 @@ struct QFontDialog_Ptr
 	{
 		CQt.QWidget_OverrideWindowState((.)this.Ptr, state);
 	}
+	public QSize_Ptr SizeHint()
+	{
+		return QSize_Ptr(CQt.QFontDialog_SizeHint((.)this.Ptr));
+	}
+	public QSize_Ptr MinimumSizeHint()
+	{
+		return QSize_Ptr(CQt.QFontDialog_MinimumSizeHint((.)this.Ptr));
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return QSizePolicy_Ptr(CQt.QWidget_SizePolicy((.)this.Ptr));
@@ -1000,11 +1216,11 @@ struct QFontDialog_Ptr
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QFontDialog_HeightForWidth((.)this.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.Ptr);
+		return CQt.QFontDialog_HasHeightForWidth((.)this.Ptr);
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -1037,10 +1253,6 @@ struct QFontDialog_Ptr
 	public void UpdateGeometry()
 	{
 		CQt.QWidget_UpdateGeometry((.)this.Ptr);
-	}
-	public void SetParent(IQWidget parent)
-	{
-		CQt.QWidget_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -1158,10 +1370,6 @@ struct QFontDialog_Ptr
 	{
 		return CQt.QWidget_TestAttribute((.)this.Ptr, param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.Ptr));
-	}
 	public void EnsurePolished()
 	{
 		CQt.QWidget_EnsurePolished((.)this.Ptr);
@@ -1214,113 +1422,113 @@ struct QFontDialog_Ptr
 	{
 		CQt.QWidget_CustomContextMenuRequested((.)this.Ptr, (.)pos?.ObjectPtr);
 	}
-	public bool Event(IQEvent event)
-	{
-		return CQt.QWidget_Event((.)this.Ptr, (.)event?.ObjectPtr);
-	}
 	public void MousePressEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MousePressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_MousePressEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseReleaseEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseDoubleClickEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseMoveEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void WheelEvent(IQWheelEvent event)
 	{
-		CQt.QWidget_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyPressEvent(IQKeyEvent event)
+	{
+		CQt.QFontDialog_KeyPressEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QWidget_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QWidget_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QWidget_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void PaintEvent(IQPaintEvent event)
 	{
-		CQt.QWidget_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ResizeEvent(IQResizeEvent event)
+	{
+		CQt.QFontDialog_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CloseEvent(IQCloseEvent event)
+	{
+		CQt.QFontDialog_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ContextMenuEvent(IQContextMenuEvent event)
+	{
+		CQt.QFontDialog_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragEnterEvent(IQDragEnterEvent event)
 	{
-		CQt.QWidget_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragMoveEvent(IQDragMoveEvent event)
 	{
-		CQt.QWidget_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragLeaveEvent(IQDragLeaveEvent event)
 	{
-		CQt.QWidget_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DropEvent(IQDropEvent event)
 	{
-		CQt.QWidget_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ShowEvent(IQShowEvent event)
+	{
+		CQt.QFontDialog_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void HideEvent(IQHideEvent event)
 	{
-		CQt.QWidget_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontDialog_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.Ptr, eventType, message, result);
-	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
-	{
-		return CQt.QWidget_Metric((.)this.Ptr, param1);
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		CQt.QWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.Ptr));
+		return CQt.QFontDialog_NativeEvent((.)this.Ptr, eventType, message, result);
 	}
 	public void InputMethodEvent(IQInputMethodEvent param1)
 	{
-		CQt.QWidget_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QFontDialog_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		return QVariant_Ptr(CQt.QWidget_InputMethodQuery((.)this.Ptr, param1));
+		return QVariant_Ptr(CQt.QFontDialog_InputMethodQuery((.)this.Ptr, param1));
 	}
 	public void* InputMethodHints()
 	{
@@ -1344,7 +1552,7 @@ struct QFontDialog_Ptr
 	}
 	public bool FocusNextPrevChild(bool next)
 	{
-		return CQt.QWidget_FocusNextPrevChild((.)this.Ptr, next);
+		return CQt.QFontDialog_FocusNextPrevChild((.)this.Ptr, next);
 	}
 	public bool FocusNextChild()
 	{
@@ -1438,408 +1646,98 @@ struct QFontDialog_Ptr
 	{
 		CQt.QWidget_Destroy2((.)this.Ptr, destroyWindow, destroySubWindows);
 	}
-	public void ObjectName(String outStr)
+	public c_int Result()
 	{
-		CQt.QObject_ObjectName((.)this.Ptr);
+		return CQt.QDialog_Result((.)this.Ptr);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetSizeGripEnabled(bool sizeGripEnabled)
 	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+		CQt.QDialog_SetSizeGripEnabled((.)this.Ptr, sizeGripEnabled);
 	}
-	public bool IsWidgetType()
+	public bool IsSizeGripEnabled()
 	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
+		return CQt.QDialog_IsSizeGripEnabled((.)this.Ptr);
 	}
-	public bool IsWindowType()
+	public void SetModal(bool modal)
 	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
+		CQt.QDialog_SetModal((.)this.Ptr, modal);
 	}
-	public bool IsQuickItemType()
+	public void SetResult(c_int r)
 	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+		CQt.QDialog_SetResult((.)this.Ptr, r);
 	}
-	public bool SignalsBlocked()
+	public void Finished(c_int result)
 	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+		CQt.QDialog_Finished((.)this.Ptr, result);
 	}
-	public bool BlockSignals(bool b)
+	public void Accepted()
 	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+		CQt.QDialog_Accepted((.)this.Ptr);
 	}
-	public QThread_Ptr Thread()
+	public void Rejected()
 	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+		CQt.QDialog_Rejected((.)this.Ptr);
 	}
-	public void MoveToThread(IQThread thread)
+	public void Open()
 	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+		CQt.QFontDialog_Open((.)this.Ptr);
 	}
-	public c_int StartTimer(c_int interval)
+	public c_int Exec()
 	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+		return CQt.QFontDialog_Exec((.)this.Ptr);
 	}
-	public c_int StartTimer2(void* time)
+	public void Accept()
 	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+		CQt.QFontDialog_Accept((.)this.Ptr);
 	}
-	public void KillTimer(c_int id)
+	public void Reject()
 	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
+		CQt.QFontDialog_Reject((.)this.Ptr);
 	}
-	public void** Children()
+	public void AdjustPosition(IQWidget param1)
 	{
-		return CQt.QObject_Children((.)this.Ptr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public bool PaintingActive()
-	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
-	}
-	public c_int WidthMM()
-	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
-	}
-	public c_int HeightMM()
-	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
-	}
-	public c_int LogicalDpiX()
-	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
-	}
-	public c_int LogicalDpiY()
-	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
-	}
-	public c_int PhysicalDpiX()
-	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
-	}
-	public c_int PhysicalDpiY()
-	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
-	}
-	public double DevicePixelRatio()
-	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
-	}
-	public double DevicePixelRatioF()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
-	}
-	public c_int ColorCount()
-	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
-	}
-	public c_int Depth()
-	{
-		return CQt.QPaintDevice_Depth((.)this.Ptr);
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
+		CQt.QDialog_AdjustPosition((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 }
 class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 {
 	private QFontDialog_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QFontDialog_currentFontChanged,
-		QFontDialog_fontSelected,
-		QFontDialog_finished,
-		QFontDialog_accepted,
-		QFontDialog_rejected,
-		QFontDialog_windowTitleChanged,
-		QFontDialog_windowIconChanged,
-		QFontDialog_windowIconTextChanged,
-		QFontDialog_customContextMenuRequested,
-		QFontDialog_destroyed,
-		QFontDialog_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QFontDialog_Connect_CurrentFontChanged(obj.ObjectPtr,  => QtBeef_QFontDialog_currentFontChanged);
-		CQt.QFontDialog_Connect_FontSelected(obj.ObjectPtr,  => QtBeef_QFontDialog_fontSelected);
-		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_finished);
-		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_accepted);
-		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_rejected);
-		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
-		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
-		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
-		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** font)> OnCurrentFontChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** font)> OnFontSelected = .() ~ _.Dispose();
-	public Event<delegate void(c_int result)> OnFinished = .() ~ _.Dispose();
-	public Event<delegate void()> OnAccepted = .() ~ _.Dispose();
-	public Event<delegate void()> OnRejected = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QFontDialog_currentFontChanged(void* ptr, void** font)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentFontChanged.Invoke(font);
-	}
-	static void QtBeef_QFontDialog_fontSelected(void* ptr, void** font)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFontSelected.Invoke(font);
-	}
-	static void QtBeef_QDialog_finished(void* ptr, c_int result)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFinished.Invoke(result);
-	}
-	static void QtBeef_QDialog_accepted(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAccepted.Invoke();
-	}
-	static void QtBeef_QDialog_rejected(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnRejected.Invoke();
-	}
-	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconChanged.Invoke(icon);
-	}
-	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconTextChanged.Invoke(iconText);
-	}
-	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCustomContextMenuRequested.Invoke(pos);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QFontDialog_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QFontDialog_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFontDialog_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFont initial)
 	{
 		this.ptr = CQt.QFontDialog_new3((.)initial?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFont initial, IQWidget parent)
 	{
 		this.ptr = CQt.QFontDialog_new4((.)initial?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QFontDialog_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -1873,9 +1771,8 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		return this.ptr.Options();
 	}
-	public void SetVisible(bool visible)
+	public  virtual void OnSetVisible(bool visible)
 	{
-		this.ptr.SetVisible(visible);
 	}
 	public QFont_Ptr GetFont(bool* ok)
 	{
@@ -1893,17 +1790,15 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.FontSelected(font);
 	}
-	public void ChangeEvent(IQEvent event)
+	public  virtual void OnChangeEvent(void** event)
 	{
-		this.ptr.ChangeEvent(event);
 	}
-	public void Done(c_int result)
+	public  virtual void OnDone(c_int result)
 	{
-		this.ptr.Done(result);
 	}
-	public bool EventFilter(IQObject object, IQEvent event)
+	public  virtual bool OnEventFilter(void** object, void** event)
 	{
-		return this.ptr.EventFilter(object, event);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -1933,89 +1828,299 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		return this.ptr.GetFont5(ok, initial, parent, title, options);
 	}
-	public c_int Result()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Result();
+		return default;
 	}
-	public QSize_Ptr SizeHint()
+	public void ObjectName(String outStr)
 	{
-		return this.ptr.SizeHint();
+		this.ptr.ObjectName(outStr);
 	}
-	public QSize_Ptr MinimumSizeHint()
+	public void SetObjectName(IQAnyStringView name)
 	{
-		return this.ptr.MinimumSizeHint();
+		this.ptr.SetObjectName(name);
 	}
-	public void SetSizeGripEnabled(bool sizeGripEnabled)
+	public bool IsWidgetType()
 	{
-		this.ptr.SetSizeGripEnabled(sizeGripEnabled);
+		return this.ptr.IsWidgetType();
 	}
-	public bool IsSizeGripEnabled()
+	public bool IsWindowType()
 	{
-		return this.ptr.IsSizeGripEnabled();
+		return this.ptr.IsWindowType();
 	}
-	public void SetModal(bool modal)
+	public bool IsQuickItemType()
 	{
-		this.ptr.SetModal(modal);
+		return this.ptr.IsQuickItemType();
 	}
-	public void SetResult(c_int r)
+	public bool SignalsBlocked()
 	{
-		this.ptr.SetResult(r);
+		return this.ptr.SignalsBlocked();
 	}
-	public void Finished(c_int result)
+	public bool BlockSignals(bool b)
 	{
-		this.ptr.Finished(result);
+		return this.ptr.BlockSignals(b);
 	}
-	public void Accepted()
+	public QThread_Ptr Thread()
 	{
-		this.ptr.Accepted();
+		return this.ptr.Thread();
 	}
-	public void Rejected()
+	public void MoveToThread(IQThread thread)
 	{
-		this.ptr.Rejected();
+		this.ptr.MoveToThread(thread);
 	}
-	public void Open()
+	public c_int StartTimer(c_int interval)
 	{
-		this.ptr.Open();
+		return this.ptr.StartTimer(interval);
 	}
-	public c_int Exec()
+	public c_int StartTimer2(void* time)
 	{
-		return this.ptr.Exec();
+		return this.ptr.StartTimer2(time);
 	}
-	public void Accept()
+	public void KillTimer(c_int id)
 	{
-		this.ptr.Accept();
+		this.ptr.KillTimer(id);
 	}
-	public void Reject()
+	public void** Children()
 	{
-		this.ptr.Reject();
+		return this.ptr.Children();
 	}
-	public void KeyPressEvent(IQKeyEvent param1)
+	public void SetParent(IQObject parent)
 	{
-		this.ptr.KeyPressEvent(param1);
+		this.ptr.SetParent(parent);
 	}
-	public void CloseEvent(IQCloseEvent param1)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		this.ptr.CloseEvent(param1);
+		this.ptr.InstallEventFilter(filterObj);
 	}
-	public void ShowEvent(IQShowEvent param1)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		this.ptr.ShowEvent(param1);
+		this.ptr.RemoveEventFilter(obj);
 	}
-	public void ResizeEvent(IQResizeEvent param1)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.ResizeEvent(param1);
+		return this.ptr.Connect(sender, signal, receiver, member);
 	}
-	public void ContextMenuEvent(IQContextMenuEvent param1)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		this.ptr.ContextMenuEvent(param1);
+		return this.ptr.Connect2(sender, signal, receiver, method);
 	}
-	public void AdjustPosition(IQWidget param1)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		this.ptr.AdjustPosition(param1);
+		return this.ptr.Connect3(sender, signal, member);
 	}
-	public c_int DevType()
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return this.ptr.DevType();
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public  virtual void OnTimerEvent(void** event)
+	{
+	}
+	public  virtual void OnChildEvent(void** event)
+	{
+	}
+	public  virtual void OnCustomEvent(void** event)
+	{
+	}
+	public  virtual void OnConnectNotify(void** signal)
+	{
+	}
+	public  virtual void OnDisconnectNotify(void** signal)
+	{
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+	public  virtual c_int OnDevType()
+	{
+		return default;
+	}
+	public bool PaintingActive()
+	{
+		return this.ptr.PaintingActive();
+	}
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
+	{
+		return default;
+	}
+	public c_int Width()
+	{
+		return this.ptr.Width();
+	}
+	public c_int Height()
+	{
+		return this.ptr.Height();
+	}
+	public c_int WidthMM()
+	{
+		return this.ptr.WidthMM();
+	}
+	public c_int HeightMM()
+	{
+		return this.ptr.HeightMM();
+	}
+	public c_int LogicalDpiX()
+	{
+		return this.ptr.LogicalDpiX();
+	}
+	public c_int LogicalDpiY()
+	{
+		return this.ptr.LogicalDpiY();
+	}
+	public c_int PhysicalDpiX()
+	{
+		return this.ptr.PhysicalDpiX();
+	}
+	public c_int PhysicalDpiY()
+	{
+		return this.ptr.PhysicalDpiY();
+	}
+	public double DevicePixelRatio()
+	{
+		return this.ptr.DevicePixelRatio();
+	}
+	public double DevicePixelRatioF()
+	{
+		return this.ptr.DevicePixelRatioF();
+	}
+	public c_int ColorCount()
+	{
+		return this.ptr.ColorCount();
+	}
+	public c_int Depth()
+	{
+		return this.ptr.Depth();
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return this.ptr.DevicePixelRatioFScale();
+	}
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return default;
+	}
+	public  virtual void OnInitPainter(void** painter)
+	{
+	}
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
+	{
+		return default;
+	}
+	public  virtual QPainter_Ptr OnSharedPainter()
+	{
+		return default;
 	}
 	public void* WinId()
 	{
@@ -2112,14 +2217,6 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
-	}
-	public c_int Width()
-	{
-		return this.ptr.Width();
-	}
-	public c_int Height()
-	{
-		return this.ptr.Height();
 	}
 	public QRect_Ptr Rect()
 	{
@@ -2801,6 +2898,14 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.OverrideWindowState(state);
 	}
+	public  virtual QSize_Ptr OnSizeHint()
+	{
+		return default;
+	}
+	public  virtual QSize_Ptr OnMinimumSizeHint()
+	{
+		return default;
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return this.ptr.SizePolicy();
@@ -2813,13 +2918,13 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.SetSizePolicy2(horizontal, vertical);
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -2852,10 +2957,6 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	public void UpdateGeometry()
 	{
 		this.ptr.UpdateGeometry();
-	}
-	public void SetParent(IQWidget parent)
-	{
-		this.ptr.SetParent(parent);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -2973,10 +3074,6 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		return this.ptr.TestAttribute(param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
 	public void EnsurePolished()
 	{
 		this.ptr.EnsurePolished();
@@ -3029,113 +3126,88 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.CustomContextMenuRequested(pos);
 	}
-	public bool Event(IQEvent event)
+	public  virtual void OnMousePressEvent(void** event)
 	{
-		return this.ptr.Event(event);
 	}
-	public void MousePressEvent(IQMouseEvent event)
+	public  virtual void OnMouseReleaseEvent(void** event)
 	{
-		this.ptr.MousePressEvent(event);
 	}
-	public void MouseReleaseEvent(IQMouseEvent event)
+	public  virtual void OnMouseDoubleClickEvent(void** event)
 	{
-		this.ptr.MouseReleaseEvent(event);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent event)
+	public  virtual void OnMouseMoveEvent(void** event)
 	{
-		this.ptr.MouseDoubleClickEvent(event);
 	}
-	public void MouseMoveEvent(IQMouseEvent event)
+	public  virtual void OnWheelEvent(void** event)
 	{
-		this.ptr.MouseMoveEvent(event);
 	}
-	public void WheelEvent(IQWheelEvent event)
+	public  virtual void OnKeyPressEvent(void** event)
 	{
-		this.ptr.WheelEvent(event);
 	}
-	public void KeyReleaseEvent(IQKeyEvent event)
+	public  virtual void OnKeyReleaseEvent(void** event)
 	{
-		this.ptr.KeyReleaseEvent(event);
 	}
-	public void FocusInEvent(IQFocusEvent event)
+	public  virtual void OnFocusInEvent(void** event)
 	{
-		this.ptr.FocusInEvent(event);
 	}
-	public void FocusOutEvent(IQFocusEvent event)
+	public  virtual void OnFocusOutEvent(void** event)
 	{
-		this.ptr.FocusOutEvent(event);
 	}
-	public void EnterEvent(IQEnterEvent event)
+	public  virtual void OnEnterEvent(void** event)
 	{
-		this.ptr.EnterEvent(event);
 	}
-	public void LeaveEvent(IQEvent event)
+	public  virtual void OnLeaveEvent(void** event)
 	{
-		this.ptr.LeaveEvent(event);
 	}
-	public void PaintEvent(IQPaintEvent event)
+	public  virtual void OnPaintEvent(void** event)
 	{
-		this.ptr.PaintEvent(event);
 	}
-	public void MoveEvent(IQMoveEvent event)
+	public  virtual void OnMoveEvent(void** event)
 	{
-		this.ptr.MoveEvent(event);
 	}
-	public void TabletEvent(IQTabletEvent event)
+	public  virtual void OnResizeEvent(void** event)
 	{
-		this.ptr.TabletEvent(event);
 	}
-	public void ActionEvent(IQActionEvent event)
+	public  virtual void OnCloseEvent(void** event)
 	{
-		this.ptr.ActionEvent(event);
 	}
-	public void DragEnterEvent(IQDragEnterEvent event)
+	public  virtual void OnContextMenuEvent(void** event)
 	{
-		this.ptr.DragEnterEvent(event);
 	}
-	public void DragMoveEvent(IQDragMoveEvent event)
+	public  virtual void OnTabletEvent(void** event)
 	{
-		this.ptr.DragMoveEvent(event);
 	}
-	public void DragLeaveEvent(IQDragLeaveEvent event)
+	public  virtual void OnActionEvent(void** event)
 	{
-		this.ptr.DragLeaveEvent(event);
 	}
-	public void DropEvent(IQDropEvent event)
+	public  virtual void OnDragEnterEvent(void** event)
 	{
-		this.ptr.DropEvent(event);
 	}
-	public void HideEvent(IQHideEvent event)
+	public  virtual void OnDragMoveEvent(void** event)
 	{
-		this.ptr.HideEvent(event);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual void OnDragLeaveEvent(void** event)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public  virtual void OnDropEvent(void** event)
 	{
-		return this.ptr.Metric(param1);
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnShowEvent(void** event)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual void OnHideEvent(void** event)
 	{
-		return this.ptr.Redirected(offset);
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
 	{
-		return this.ptr.SharedPainter();
+		return default;
 	}
-	public void InputMethodEvent(IQInputMethodEvent param1)
+	public  virtual void OnInputMethodEvent(void** param1)
 	{
-		this.ptr.InputMethodEvent(param1);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
+	public  virtual QVariant_Ptr OnInputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		return this.ptr.InputMethodQuery(param1);
+		return default;
 	}
 	public void* InputMethodHints()
 	{
@@ -3157,9 +3229,9 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Destroy();
 	}
-	public bool FocusNextPrevChild(bool next)
+	public  virtual bool OnFocusNextPrevChild(bool next)
 	{
-		return this.ptr.FocusNextPrevChild(next);
+		return default;
 	}
 	public bool FocusNextChild()
 	{
@@ -3253,265 +3325,54 @@ class QFontDialog : IQFontDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Destroy2(destroyWindow, destroySubWindows);
 	}
-	public void ObjectName(String outStr)
+	public c_int Result()
 	{
-		this.ptr.ObjectName(outStr);
+		return this.ptr.Result();
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetSizeGripEnabled(bool sizeGripEnabled)
 	{
-		this.ptr.SetObjectName(name);
+		this.ptr.SetSizeGripEnabled(sizeGripEnabled);
 	}
-	public bool IsWidgetType()
+	public bool IsSizeGripEnabled()
 	{
-		return this.ptr.IsWidgetType();
+		return this.ptr.IsSizeGripEnabled();
 	}
-	public bool IsWindowType()
+	public void SetModal(bool modal)
 	{
-		return this.ptr.IsWindowType();
+		this.ptr.SetModal(modal);
 	}
-	public bool IsQuickItemType()
+	public void SetResult(c_int r)
 	{
-		return this.ptr.IsQuickItemType();
+		this.ptr.SetResult(r);
 	}
-	public bool SignalsBlocked()
+	public void Finished(c_int result)
 	{
-		return this.ptr.SignalsBlocked();
+		this.ptr.Finished(result);
 	}
-	public bool BlockSignals(bool b)
+	public void Accepted()
 	{
-		return this.ptr.BlockSignals(b);
+		this.ptr.Accepted();
 	}
-	public QThread_Ptr Thread()
+	public void Rejected()
 	{
-		return this.ptr.Thread();
+		this.ptr.Rejected();
 	}
-	public void MoveToThread(IQThread thread)
+	public  virtual void OnOpen()
 	{
-		this.ptr.MoveToThread(thread);
 	}
-	public c_int StartTimer(c_int interval)
+	public  virtual c_int OnExec()
 	{
-		return this.ptr.StartTimer(interval);
+		return default;
 	}
-	public c_int StartTimer2(void* time)
+	public  virtual void OnAccept()
 	{
-		return this.ptr.StartTimer2(time);
 	}
-	public void KillTimer(c_int id)
+	public  virtual void OnReject()
 	{
-		this.ptr.KillTimer(id);
 	}
-	public void** Children()
+	public void AdjustPosition(IQWidget param1)
 	{
-		return this.ptr.Children();
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		this.ptr.InstallEventFilter(filterObj);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		this.ptr.RemoveEventFilter(obj);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Connect(sender, signal, receiver, member);
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return this.ptr.Connect3(sender, signal, member);
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
-	}
-	public bool Disconnect3()
-	{
-		return this.ptr.Disconnect3();
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return this.ptr.Disconnect4(receiver);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return this.ptr.Disconnect5(param1);
-	}
-	public void DumpObjectTree()
-	{
-		this.ptr.DumpObjectTree();
-	}
-	public void DumpObjectInfo()
-	{
-		this.ptr.DumpObjectInfo();
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return this.ptr.SetProperty(name, value);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return this.ptr.Property(name);
-	}
-	public void* DynamicPropertyNames()
-	{
-		return this.ptr.DynamicPropertyNames();
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return this.ptr.BindingStorage();
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return this.ptr.BindingStorage2();
-	}
-	public void Destroyed()
-	{
-		this.ptr.Destroyed();
-	}
-	public QObject_Ptr Parent()
-	{
-		return this.ptr.Parent();
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return this.ptr.Inherits(classname);
-	}
-	public void DeleteLater()
-	{
-		this.ptr.DeleteLater();
-	}
-	public QObject_Ptr Sender()
-	{
-		return this.ptr.Sender();
-	}
-	public c_int SenderSignalIndex()
-	{
-		return this.ptr.SenderSignalIndex();
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return this.ptr.Receivers(signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return this.ptr.IsSignalConnected(signal);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		this.ptr.TimerEvent(event);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		this.ptr.ChildEvent(event);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		this.ptr.CustomEvent(event);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.ConnectNotify(signal);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.DisconnectNotify(signal);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer22(interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer23(time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect4(sender, signal, member, type);
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return this.ptr.Disconnect1(signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return this.ptr.Disconnect22(signal, receiver);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect32(signal, receiver, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect23(receiver, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		this.ptr.Destroyed1(param1);
-	}
-	public bool PaintingActive()
-	{
-		return this.ptr.PaintingActive();
-	}
-	public c_int WidthMM()
-	{
-		return this.ptr.WidthMM();
-	}
-	public c_int HeightMM()
-	{
-		return this.ptr.HeightMM();
-	}
-	public c_int LogicalDpiX()
-	{
-		return this.ptr.LogicalDpiX();
-	}
-	public c_int LogicalDpiY()
-	{
-		return this.ptr.LogicalDpiY();
-	}
-	public c_int PhysicalDpiX()
-	{
-		return this.ptr.PhysicalDpiX();
-	}
-	public c_int PhysicalDpiY()
-	{
-		return this.ptr.PhysicalDpiY();
-	}
-	public double DevicePixelRatio()
-	{
-		return this.ptr.DevicePixelRatio();
-	}
-	public double DevicePixelRatioF()
-	{
-		return this.ptr.DevicePixelRatioF();
-	}
-	public c_int ColorCount()
-	{
-		return this.ptr.ColorCount();
-	}
-	public c_int Depth()
-	{
-		return this.ptr.Depth();
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return this.ptr.DevicePixelRatioFScale();
+		this.ptr.AdjustPosition(param1);
 	}
 }
 interface IQFontDialog : IQtObjectInterface
@@ -3531,10 +3392,22 @@ extension CQt
 	public static extern void QFontDialog_Delete(QFontDialog_Ptr self);
 	[LinkName("QFontDialog_MetaObject")]
 	public static extern void** QFontDialog_MetaObject(void* self);
+	
+	public function void QFontDialog_OnMetaObject_action(void* self);
+	[LinkName("QFontDialog_OnMetaObject")]
+	public static extern void** QFontDialog_OnMetaObject(void* self, QFontDialog_OnMetaObject_action _action);
 	[LinkName("QFontDialog_Qt_Metacast")]
 	public static extern void* QFontDialog_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QFontDialog_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QFontDialog_OnMetacast")]
+	public static extern void* QFontDialog_OnMetacast(void* self, QFontDialog_OnMetacast_action _action);
 	[LinkName("QFontDialog_Qt_Metacall")]
 	public static extern c_int QFontDialog_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QFontDialog_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QFontDialog_OnMetacall")]
+	public static extern c_int QFontDialog_OnMetacall(void* self, QFontDialog_OnMetacall_action _action);
 	[LinkName("QFontDialog_Tr")]
 	public static extern libqt_string QFontDialog_Tr(c_char* s);
 	[LinkName("QFontDialog_SetCurrentFont")]
@@ -3553,6 +3426,10 @@ extension CQt
 	public static extern void* QFontDialog_Options(void* self);
 	[LinkName("QFontDialog_SetVisible")]
 	public static extern void QFontDialog_SetVisible(void* self, bool visible);
+	
+	public function void QFontDialog_OnSetVisible_action(void* self, bool visible);
+	[LinkName("QFontDialog_OnSetVisible")]
+	public static extern void QFontDialog_OnSetVisible(void* self, QFontDialog_OnSetVisible_action _action);
 	[LinkName("QFontDialog_GetFont")]
 	public static extern void* QFontDialog_GetFont(bool* ok);
 	[LinkName("QFontDialog_GetFont2")]
@@ -3560,21 +3437,33 @@ extension CQt
 	[LinkName("QFontDialog_CurrentFontChanged")]
 	public static extern void QFontDialog_CurrentFontChanged(void* self, void** font);
 	
-	public function void QFontDialog_currentFontChanged_action(void* self, void** font);
+	public function void QFontDialog_Connect_CurrentFontChanged_action(void* self, void** font);
 	[LinkName("QFontDialog_Connect_CurrentFontChanged")]
-	public static extern void QFontDialog_Connect_CurrentFontChanged(void* self, QFontDialog_currentFontChanged_action _action);
+	public static extern void QFontDialog_Connect_CurrentFontChanged(void* self, QFontDialog_Connect_CurrentFontChanged_action _action);
 	[LinkName("QFontDialog_FontSelected")]
 	public static extern void QFontDialog_FontSelected(void* self, void** font);
 	
-	public function void QFontDialog_fontSelected_action(void* self, void** font);
+	public function void QFontDialog_Connect_FontSelected_action(void* self, void** font);
 	[LinkName("QFontDialog_Connect_FontSelected")]
-	public static extern void QFontDialog_Connect_FontSelected(void* self, QFontDialog_fontSelected_action _action);
+	public static extern void QFontDialog_Connect_FontSelected(void* self, QFontDialog_Connect_FontSelected_action _action);
 	[LinkName("QFontDialog_ChangeEvent")]
 	public static extern void QFontDialog_ChangeEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnChangeEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnChangeEvent")]
+	public static extern void QFontDialog_OnChangeEvent(void* self, QFontDialog_OnChangeEvent_action _action);
 	[LinkName("QFontDialog_Done")]
 	public static extern void QFontDialog_Done(void* self, c_int result);
+	
+	public function void QFontDialog_OnDone_action(void* self, c_int result);
+	[LinkName("QFontDialog_OnDone")]
+	public static extern void QFontDialog_OnDone(void* self, QFontDialog_OnDone_action _action);
 	[LinkName("QFontDialog_EventFilter")]
 	public static extern bool QFontDialog_EventFilter(void* self, void** object, void** event);
+	
+	public function void QFontDialog_OnEventFilter_action(void* self, void** object, void** event);
+	[LinkName("QFontDialog_OnEventFilter")]
+	public static extern bool QFontDialog_OnEventFilter(void* self, QFontDialog_OnEventFilter_action _action);
 	[LinkName("QFontDialog_Tr2")]
 	public static extern libqt_string QFontDialog_Tr2(c_char* s, c_char* c);
 	[LinkName("QFontDialog_Tr3")]
@@ -3589,6 +3478,294 @@ extension CQt
 	public static extern void* QFontDialog_GetFont4(bool* ok, void** initial, void** parent, libqt_string title);
 	[LinkName("QFontDialog_GetFont5")]
 	public static extern void* QFontDialog_GetFont5(bool* ok, void** initial, void** parent, libqt_string title, void* options);
+	[LinkName("QFontDialog_Event")]
+	public static extern bool QFontDialog_Event(void* self, void** event);
+	
+	public function void QFontDialog_OnEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnEvent")]
+	public static extern bool QFontDialog_OnEvent(void* self, QFontDialog_OnEvent_action _action);
+	[LinkName("QFontDialog_TimerEvent")]
+	public static extern void QFontDialog_TimerEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnTimerEvent")]
+	public static extern void QFontDialog_OnTimerEvent(void* self, QFontDialog_OnTimerEvent_action _action);
+	[LinkName("QFontDialog_ChildEvent")]
+	public static extern void QFontDialog_ChildEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnChildEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnChildEvent")]
+	public static extern void QFontDialog_OnChildEvent(void* self, QFontDialog_OnChildEvent_action _action);
+	[LinkName("QFontDialog_CustomEvent")]
+	public static extern void QFontDialog_CustomEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnCustomEvent")]
+	public static extern void QFontDialog_OnCustomEvent(void* self, QFontDialog_OnCustomEvent_action _action);
+	[LinkName("QFontDialog_ConnectNotify")]
+	public static extern void QFontDialog_ConnectNotify(void* self, void** signal);
+	
+	public function void QFontDialog_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QFontDialog_OnConnectNotify")]
+	public static extern void QFontDialog_OnConnectNotify(void* self, QFontDialog_OnConnectNotify_action _action);
+	[LinkName("QFontDialog_DisconnectNotify")]
+	public static extern void QFontDialog_DisconnectNotify(void* self, void** signal);
+	
+	public function void QFontDialog_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QFontDialog_OnDisconnectNotify")]
+	public static extern void QFontDialog_OnDisconnectNotify(void* self, QFontDialog_OnDisconnectNotify_action _action);
+	[LinkName("QFontDialog_DevType")]
+	public static extern c_int QFontDialog_DevType(void* self);
+	
+	public function void QFontDialog_OnDevType_action(void* self);
+	[LinkName("QFontDialog_OnDevType")]
+	public static extern c_int QFontDialog_OnDevType(void* self, QFontDialog_OnDevType_action _action);
+	[LinkName("QFontDialog_PaintEngine")]
+	public static extern void** QFontDialog_PaintEngine(void* self);
+	
+	public function void QFontDialog_OnPaintEngine_action(void* self);
+	[LinkName("QFontDialog_OnPaintEngine")]
+	public static extern void** QFontDialog_OnPaintEngine(void* self, QFontDialog_OnPaintEngine_action _action);
+	[LinkName("QFontDialog_Metric")]
+	public static extern c_int QFontDialog_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QFontDialog_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QFontDialog_OnMetric")]
+	public static extern c_int QFontDialog_OnMetric(void* self, QFontDialog_OnMetric_action _action);
+	[LinkName("QFontDialog_InitPainter")]
+	public static extern void QFontDialog_InitPainter(void* self, void** painter);
+	
+	public function void QFontDialog_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QFontDialog_OnInitPainter")]
+	public static extern void QFontDialog_OnInitPainter(void* self, QFontDialog_OnInitPainter_action _action);
+	[LinkName("QFontDialog_Redirected")]
+	public static extern void** QFontDialog_Redirected(void* self, void** offset);
+	
+	public function void QFontDialog_OnRedirected_action(void* self, void** offset);
+	[LinkName("QFontDialog_OnRedirected")]
+	public static extern void** QFontDialog_OnRedirected(void* self, QFontDialog_OnRedirected_action _action);
+	[LinkName("QFontDialog_SharedPainter")]
+	public static extern void** QFontDialog_SharedPainter(void* self);
+	
+	public function void QFontDialog_OnSharedPainter_action(void* self);
+	[LinkName("QFontDialog_OnSharedPainter")]
+	public static extern void** QFontDialog_OnSharedPainter(void* self, QFontDialog_OnSharedPainter_action _action);
+	[LinkName("QFontDialog_SizeHint")]
+	public static extern void* QFontDialog_SizeHint(void* self);
+	
+	public function void QFontDialog_OnSizeHint_action(void* self);
+	[LinkName("QFontDialog_OnSizeHint")]
+	public static extern void* QFontDialog_OnSizeHint(void* self, QFontDialog_OnSizeHint_action _action);
+	[LinkName("QFontDialog_MinimumSizeHint")]
+	public static extern void* QFontDialog_MinimumSizeHint(void* self);
+	
+	public function void QFontDialog_OnMinimumSizeHint_action(void* self);
+	[LinkName("QFontDialog_OnMinimumSizeHint")]
+	public static extern void* QFontDialog_OnMinimumSizeHint(void* self, QFontDialog_OnMinimumSizeHint_action _action);
+	[LinkName("QFontDialog_HeightForWidth")]
+	public static extern c_int QFontDialog_HeightForWidth(void* self, c_int param1);
+	
+	public function void QFontDialog_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QFontDialog_OnHeightForWidth")]
+	public static extern c_int QFontDialog_OnHeightForWidth(void* self, QFontDialog_OnHeightForWidth_action _action);
+	[LinkName("QFontDialog_HasHeightForWidth")]
+	public static extern bool QFontDialog_HasHeightForWidth(void* self);
+	
+	public function void QFontDialog_OnHasHeightForWidth_action(void* self);
+	[LinkName("QFontDialog_OnHasHeightForWidth")]
+	public static extern bool QFontDialog_OnHasHeightForWidth(void* self, QFontDialog_OnHasHeightForWidth_action _action);
+	[LinkName("QFontDialog_MousePressEvent")]
+	public static extern void QFontDialog_MousePressEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnMousePressEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnMousePressEvent")]
+	public static extern void QFontDialog_OnMousePressEvent(void* self, QFontDialog_OnMousePressEvent_action _action);
+	[LinkName("QFontDialog_MouseReleaseEvent")]
+	public static extern void QFontDialog_MouseReleaseEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnMouseReleaseEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnMouseReleaseEvent")]
+	public static extern void QFontDialog_OnMouseReleaseEvent(void* self, QFontDialog_OnMouseReleaseEvent_action _action);
+	[LinkName("QFontDialog_MouseDoubleClickEvent")]
+	public static extern void QFontDialog_MouseDoubleClickEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnMouseDoubleClickEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnMouseDoubleClickEvent")]
+	public static extern void QFontDialog_OnMouseDoubleClickEvent(void* self, QFontDialog_OnMouseDoubleClickEvent_action _action);
+	[LinkName("QFontDialog_MouseMoveEvent")]
+	public static extern void QFontDialog_MouseMoveEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnMouseMoveEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnMouseMoveEvent")]
+	public static extern void QFontDialog_OnMouseMoveEvent(void* self, QFontDialog_OnMouseMoveEvent_action _action);
+	[LinkName("QFontDialog_WheelEvent")]
+	public static extern void QFontDialog_WheelEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnWheelEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnWheelEvent")]
+	public static extern void QFontDialog_OnWheelEvent(void* self, QFontDialog_OnWheelEvent_action _action);
+	[LinkName("QFontDialog_KeyPressEvent")]
+	public static extern void QFontDialog_KeyPressEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnKeyPressEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnKeyPressEvent")]
+	public static extern void QFontDialog_OnKeyPressEvent(void* self, QFontDialog_OnKeyPressEvent_action _action);
+	[LinkName("QFontDialog_KeyReleaseEvent")]
+	public static extern void QFontDialog_KeyReleaseEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnKeyReleaseEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnKeyReleaseEvent")]
+	public static extern void QFontDialog_OnKeyReleaseEvent(void* self, QFontDialog_OnKeyReleaseEvent_action _action);
+	[LinkName("QFontDialog_FocusInEvent")]
+	public static extern void QFontDialog_FocusInEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnFocusInEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnFocusInEvent")]
+	public static extern void QFontDialog_OnFocusInEvent(void* self, QFontDialog_OnFocusInEvent_action _action);
+	[LinkName("QFontDialog_FocusOutEvent")]
+	public static extern void QFontDialog_FocusOutEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnFocusOutEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnFocusOutEvent")]
+	public static extern void QFontDialog_OnFocusOutEvent(void* self, QFontDialog_OnFocusOutEvent_action _action);
+	[LinkName("QFontDialog_EnterEvent")]
+	public static extern void QFontDialog_EnterEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnEnterEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnEnterEvent")]
+	public static extern void QFontDialog_OnEnterEvent(void* self, QFontDialog_OnEnterEvent_action _action);
+	[LinkName("QFontDialog_LeaveEvent")]
+	public static extern void QFontDialog_LeaveEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnLeaveEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnLeaveEvent")]
+	public static extern void QFontDialog_OnLeaveEvent(void* self, QFontDialog_OnLeaveEvent_action _action);
+	[LinkName("QFontDialog_PaintEvent")]
+	public static extern void QFontDialog_PaintEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnPaintEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnPaintEvent")]
+	public static extern void QFontDialog_OnPaintEvent(void* self, QFontDialog_OnPaintEvent_action _action);
+	[LinkName("QFontDialog_MoveEvent")]
+	public static extern void QFontDialog_MoveEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnMoveEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnMoveEvent")]
+	public static extern void QFontDialog_OnMoveEvent(void* self, QFontDialog_OnMoveEvent_action _action);
+	[LinkName("QFontDialog_ResizeEvent")]
+	public static extern void QFontDialog_ResizeEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnResizeEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnResizeEvent")]
+	public static extern void QFontDialog_OnResizeEvent(void* self, QFontDialog_OnResizeEvent_action _action);
+	[LinkName("QFontDialog_CloseEvent")]
+	public static extern void QFontDialog_CloseEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnCloseEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnCloseEvent")]
+	public static extern void QFontDialog_OnCloseEvent(void* self, QFontDialog_OnCloseEvent_action _action);
+	[LinkName("QFontDialog_ContextMenuEvent")]
+	public static extern void QFontDialog_ContextMenuEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnContextMenuEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnContextMenuEvent")]
+	public static extern void QFontDialog_OnContextMenuEvent(void* self, QFontDialog_OnContextMenuEvent_action _action);
+	[LinkName("QFontDialog_TabletEvent")]
+	public static extern void QFontDialog_TabletEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnTabletEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnTabletEvent")]
+	public static extern void QFontDialog_OnTabletEvent(void* self, QFontDialog_OnTabletEvent_action _action);
+	[LinkName("QFontDialog_ActionEvent")]
+	public static extern void QFontDialog_ActionEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnActionEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnActionEvent")]
+	public static extern void QFontDialog_OnActionEvent(void* self, QFontDialog_OnActionEvent_action _action);
+	[LinkName("QFontDialog_DragEnterEvent")]
+	public static extern void QFontDialog_DragEnterEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnDragEnterEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnDragEnterEvent")]
+	public static extern void QFontDialog_OnDragEnterEvent(void* self, QFontDialog_OnDragEnterEvent_action _action);
+	[LinkName("QFontDialog_DragMoveEvent")]
+	public static extern void QFontDialog_DragMoveEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnDragMoveEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnDragMoveEvent")]
+	public static extern void QFontDialog_OnDragMoveEvent(void* self, QFontDialog_OnDragMoveEvent_action _action);
+	[LinkName("QFontDialog_DragLeaveEvent")]
+	public static extern void QFontDialog_DragLeaveEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnDragLeaveEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnDragLeaveEvent")]
+	public static extern void QFontDialog_OnDragLeaveEvent(void* self, QFontDialog_OnDragLeaveEvent_action _action);
+	[LinkName("QFontDialog_DropEvent")]
+	public static extern void QFontDialog_DropEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnDropEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnDropEvent")]
+	public static extern void QFontDialog_OnDropEvent(void* self, QFontDialog_OnDropEvent_action _action);
+	[LinkName("QFontDialog_ShowEvent")]
+	public static extern void QFontDialog_ShowEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnShowEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnShowEvent")]
+	public static extern void QFontDialog_OnShowEvent(void* self, QFontDialog_OnShowEvent_action _action);
+	[LinkName("QFontDialog_HideEvent")]
+	public static extern void QFontDialog_HideEvent(void* self, void** event);
+	
+	public function void QFontDialog_OnHideEvent_action(void* self, void** event);
+	[LinkName("QFontDialog_OnHideEvent")]
+	public static extern void QFontDialog_OnHideEvent(void* self, QFontDialog_OnHideEvent_action _action);
+	[LinkName("QFontDialog_NativeEvent")]
+	public static extern bool QFontDialog_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QFontDialog_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QFontDialog_OnNativeEvent")]
+	public static extern bool QFontDialog_OnNativeEvent(void* self, QFontDialog_OnNativeEvent_action _action);
+	[LinkName("QFontDialog_InputMethodEvent")]
+	public static extern void QFontDialog_InputMethodEvent(void* self, void** param1);
+	
+	public function void QFontDialog_OnInputMethodEvent_action(void* self, void** param1);
+	[LinkName("QFontDialog_OnInputMethodEvent")]
+	public static extern void QFontDialog_OnInputMethodEvent(void* self, QFontDialog_OnInputMethodEvent_action _action);
+	[LinkName("QFontDialog_InputMethodQuery")]
+	public static extern void* QFontDialog_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
+	
+	public function void QFontDialog_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
+	[LinkName("QFontDialog_OnInputMethodQuery")]
+	public static extern void* QFontDialog_OnInputMethodQuery(void* self, QFontDialog_OnInputMethodQuery_action _action);
+	[LinkName("QFontDialog_FocusNextPrevChild")]
+	public static extern bool QFontDialog_FocusNextPrevChild(void* self, bool next);
+	
+	public function void QFontDialog_OnFocusNextPrevChild_action(void* self, bool next);
+	[LinkName("QFontDialog_OnFocusNextPrevChild")]
+	public static extern bool QFontDialog_OnFocusNextPrevChild(void* self, QFontDialog_OnFocusNextPrevChild_action _action);
+	[LinkName("QFontDialog_Open")]
+	public static extern void QFontDialog_Open(void* self);
+	
+	public function void QFontDialog_OnOpen_action(void* self);
+	[LinkName("QFontDialog_OnOpen")]
+	public static extern void QFontDialog_OnOpen(void* self, QFontDialog_OnOpen_action _action);
+	[LinkName("QFontDialog_Exec")]
+	public static extern c_int QFontDialog_Exec(void* self);
+	
+	public function void QFontDialog_OnExec_action(void* self);
+	[LinkName("QFontDialog_OnExec")]
+	public static extern c_int QFontDialog_OnExec(void* self, QFontDialog_OnExec_action _action);
+	[LinkName("QFontDialog_Accept")]
+	public static extern void QFontDialog_Accept(void* self);
+	
+	public function void QFontDialog_OnAccept_action(void* self);
+	[LinkName("QFontDialog_OnAccept")]
+	public static extern void QFontDialog_OnAccept(void* self, QFontDialog_OnAccept_action _action);
+	[LinkName("QFontDialog_Reject")]
+	public static extern void QFontDialog_Reject(void* self);
+	
+	public function void QFontDialog_OnReject_action(void* self);
+	[LinkName("QFontDialog_OnReject")]
+	public static extern void QFontDialog_OnReject(void* self, QFontDialog_OnReject_action _action);
 }
 [AllowDuplicates]
 enum QFontDialog_FontDialogOption

@@ -23,27 +23,17 @@ class QFactoryInterface : IQFactoryInterface
 {
 	private QFactoryInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QFactoryInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QFactoryInterface_Delete(this.ptr);
 	}
-	public void* Keys()
+	public  virtual void* OnKeys()
 	{
-		return this.ptr.Keys();
+		return default;
 	}
 }
 interface IQFactoryInterface : IQtObjectInterface
@@ -55,4 +45,8 @@ extension CQt
 	public static extern void QFactoryInterface_Delete(QFactoryInterface_Ptr self);
 	[LinkName("QFactoryInterface_Keys")]
 	public static extern void* QFactoryInterface_Keys(void* self);
+	
+	public function void QFactoryInterface_OnKeys_action(void* self);
+	[LinkName("QFactoryInterface_OnKeys")]
+	public static extern void* QFactoryInterface_OnKeys(void* self, QFactoryInterface_OnKeys_action _action);
 }

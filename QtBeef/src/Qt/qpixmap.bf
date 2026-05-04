@@ -336,74 +336,56 @@ struct QPixmap_Ptr
 	}
 	public void InitPainter(IQPainter painter)
 	{
-		CQt.QPaintDevice_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+		CQt.QPixmap_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
 	}
 	public QPaintDevice_Ptr Redirected(IQPoint offset)
 	{
-		return QPaintDevice_Ptr(CQt.QPaintDevice_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+		return QPaintDevice_Ptr(CQt.QPixmap_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
 	}
 	public QPainter_Ptr SharedPainter()
 	{
-		return QPainter_Ptr(CQt.QPaintDevice_SharedPainter((.)this.Ptr));
+		return QPainter_Ptr(CQt.QPixmap_SharedPainter((.)this.Ptr));
 	}
 }
 class QPixmap : IQPixmap, IQPaintDevice
 {
 	private QPixmap_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPixmap_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPixmap_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int w, c_int h)
 	{
 		this.ptr = CQt.QPixmap_new2(w, h);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize param1)
 	{
 		this.ptr = CQt.QPixmap_new3((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QPixmap_new4(libqt_string(fileName));
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char** xpm)
 	{
 		this.ptr = CQt.QPixmap_new5(xpm);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap param1)
 	{
 		this.ptr = CQt.QPixmap_new6((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, c_char* format)
 	{
 		this.ptr = CQt.QPixmap_new7(libqt_string(fileName), format);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, c_char* format, void* flags)
 	{
 		this.ptr = CQt.QPixmap_new8(libqt_string(fileName), format, flags);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -417,9 +399,9 @@ class QPixmap : IQPixmap, IQPaintDevice
 	{
 		return this.ptr.IsNull();
 	}
-	public c_int DevType()
+	public  virtual c_int OnDevType()
 	{
-		return this.ptr.DevType();
+		return default;
 	}
 	public c_int Width()
 	{
@@ -577,13 +559,13 @@ class QPixmap : IQPixmap, IQPaintDevice
 	{
 		return this.ptr.IsQBitmap();
 	}
-	public QPaintEngine_Ptr PaintEngine()
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
 	{
-		return this.ptr.PaintEngine();
+		return default;
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric param1)
 	{
-		return this.ptr.Metric(param1);
+		return default;
 	}
 	public void Fill1(IQColor fillColor)
 	{
@@ -729,17 +711,16 @@ class QPixmap : IQPixmap, IQPaintDevice
 	{
 		return this.ptr.DevicePixelRatioFScale();
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnInitPainter(void** painter)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
 	{
-		return this.ptr.Redirected(offset);
+		return default;
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual QPainter_Ptr OnSharedPainter()
 	{
-		return this.ptr.SharedPainter();
+		return default;
 	}
 }
 interface IQPixmap : IQtObjectInterface
@@ -775,6 +756,10 @@ extension CQt
 	public static extern bool QPixmap_IsNull(void* self);
 	[LinkName("QPixmap_DevType")]
 	public static extern c_int QPixmap_DevType(void* self);
+	
+	public function void QPixmap_OnDevType_action(void* self);
+	[LinkName("QPixmap_OnDevType")]
+	public static extern c_int QPixmap_OnDevType(void* self, QPixmap_OnDevType_action _action);
 	[LinkName("QPixmap_Width")]
 	public static extern c_int QPixmap_Width(void* self);
 	[LinkName("QPixmap_Height")]
@@ -855,10 +840,18 @@ extension CQt
 	public static extern bool QPixmap_IsQBitmap(void* self);
 	[LinkName("QPixmap_PaintEngine")]
 	public static extern void** QPixmap_PaintEngine(void* self);
+	
+	public function void QPixmap_OnPaintEngine_action(void* self);
+	[LinkName("QPixmap_OnPaintEngine")]
+	public static extern void** QPixmap_OnPaintEngine(void* self, QPixmap_OnPaintEngine_action _action);
 	[LinkName("QPixmap_OperatorNot")]
 	public static extern bool QPixmap_OperatorNot(void* self);
 	[LinkName("QPixmap_Metric")]
 	public static extern c_int QPixmap_Metric(void* self, QPaintDevice_PaintDeviceMetric param1);
+	
+	public function void QPixmap_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric param1);
+	[LinkName("QPixmap_OnMetric")]
+	public static extern c_int QPixmap_OnMetric(void* self, QPixmap_OnMetric_action _action);
 	[LinkName("QPixmap_Fill1")]
 	public static extern void QPixmap_Fill1(void* self, void** fillColor);
 	[LinkName("QPixmap_CreateHeuristicMask1")]
@@ -911,4 +904,22 @@ extension CQt
 	public static extern void QPixmap_Scroll7(void* self, c_int dx, c_int dy, c_int x, c_int y, c_int width, c_int height, void** exposed);
 	[LinkName("QPixmap_Scroll4")]
 	public static extern void QPixmap_Scroll4(void* self, c_int dx, c_int dy, void** rect, void** exposed);
+	[LinkName("QPixmap_InitPainter")]
+	public static extern void QPixmap_InitPainter(void* self, void** painter);
+	
+	public function void QPixmap_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QPixmap_OnInitPainter")]
+	public static extern void QPixmap_OnInitPainter(void* self, QPixmap_OnInitPainter_action _action);
+	[LinkName("QPixmap_Redirected")]
+	public static extern void** QPixmap_Redirected(void* self, void** offset);
+	
+	public function void QPixmap_OnRedirected_action(void* self, void** offset);
+	[LinkName("QPixmap_OnRedirected")]
+	public static extern void** QPixmap_OnRedirected(void* self, QPixmap_OnRedirected_action _action);
+	[LinkName("QPixmap_SharedPainter")]
+	public static extern void** QPixmap_SharedPainter(void* self);
+	
+	public function void QPixmap_OnSharedPainter_action(void* self);
+	[LinkName("QPixmap_OnSharedPainter")]
+	public static extern void** QPixmap_OnSharedPainter(void* self, QPixmap_OnSharedPainter_action _action);
 }

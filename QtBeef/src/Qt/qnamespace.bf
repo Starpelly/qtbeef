@@ -35,44 +35,29 @@ class QKeyCombination : IQKeyCombination
 {
 	private QKeyCombination_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QKeyCombination_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeyCombination other)
 	{
 		this.ptr = CQt.QKeyCombination_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QKeyCombination_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* modifiers)
 	{
 		this.ptr = CQt.QKeyCombination_new4(modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Key key)
 	{
 		this.ptr = CQt.QKeyCombination_new7(key);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* modifiers, Qt_Key key)
 	{
 		this.ptr = CQt.QKeyCombination_new8(modifiers, key);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

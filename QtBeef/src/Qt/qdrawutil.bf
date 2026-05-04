@@ -35,39 +35,25 @@ class QTileRules : IQTileRules
 {
 	private QTileRules_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTileRules_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTileRules other)
 	{
 		this.ptr = CQt.QTileRules_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_TileRule horizontalRule, Qt_TileRule verticalRule)
 	{
 		this.ptr = CQt.QTileRules_new3(horizontalRule, verticalRule);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTileRules_new4();
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_TileRule rule)
 	{
 		this.ptr = CQt.QTileRules_new6(rule);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

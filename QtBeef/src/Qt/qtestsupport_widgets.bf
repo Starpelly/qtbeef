@@ -63,24 +63,13 @@ class QTest_QTouchEventWidgetSequence : IQTest_QTouchEventWidgetSequence, IQTest
 {
 	private QTest_QTouchEventWidgetSequence_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTest_QTouchEventWidgetSequence_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTest_QTouchEventWidgetSequence param1)
 	{
 		this.ptr = CQt.QTest_QTouchEventWidgetSequence_new((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -98,13 +87,13 @@ class QTest_QTouchEventWidgetSequence : IQTest_QTouchEventWidgetSequence, IQTest
 	{
 		return this.ptr.Release(touchId, pt);
 	}
-	public QTest_QTouchEventWidgetSequence_Ptr Stationary(c_int touchId)
+	public  virtual QTest_QTouchEventWidgetSequence_Ptr OnStationary(c_int touchId)
 	{
-		return this.ptr.Stationary(touchId);
+		return default;
 	}
-	public bool Commit(bool processEvents)
+	public  virtual bool OnCommit(bool processEvents)
 	{
-		return this.ptr.Commit(processEvents);
+		return default;
 	}
 	public QTest_QTouchEventWidgetSequence_Ptr Press3(c_int touchId, IQPoint pt, IQWidget widget)
 	{
@@ -148,8 +137,16 @@ extension CQt
 	public static extern void** QTest_QTouchEventWidgetSequence_Release(void* self, c_int touchId, void** pt);
 	[LinkName("QTest_QTouchEventWidgetSequence_Stationary")]
 	public static extern void** QTest_QTouchEventWidgetSequence_Stationary(void* self, c_int touchId);
+	
+	public function void QTest_QTouchEventWidgetSequence_OnStationary_action(void* self, c_int touchId);
+	[LinkName("QTest_QTouchEventWidgetSequence_OnStationary")]
+	public static extern void** QTest_QTouchEventWidgetSequence_OnStationary(void* self, QTest_QTouchEventWidgetSequence_OnStationary_action _action);
 	[LinkName("QTest_QTouchEventWidgetSequence_Commit")]
 	public static extern bool QTest_QTouchEventWidgetSequence_Commit(void* self, bool processEvents);
+	
+	public function void QTest_QTouchEventWidgetSequence_OnCommit_action(void* self, bool processEvents);
+	[LinkName("QTest_QTouchEventWidgetSequence_OnCommit")]
+	public static extern bool QTest_QTouchEventWidgetSequence_OnCommit(void* self, QTest_QTouchEventWidgetSequence_OnCommit_action _action);
 	[LinkName("QTest_QTouchEventWidgetSequence_Press3")]
 	public static extern void** QTest_QTouchEventWidgetSequence_Press3(void* self, c_int touchId, void** pt, void** widget);
 	[LinkName("QTest_QTouchEventWidgetSequence_Move3")]

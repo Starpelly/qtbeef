@@ -19,19 +19,9 @@ class QNativeInterface_QGLXContext : IQNativeInterface_QGLXContext
 {
 	private QNativeInterface_QGLXContext_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QNativeInterface_QGLXContext_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 }
 interface IQNativeInterface_QGLXContext : IQtObjectInterface
@@ -76,35 +66,25 @@ class QNativeInterface_QEGLContext : IQNativeInterface_QEGLContext
 {
 	private QNativeInterface_QEGLContext_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QNativeInterface_QEGLContext_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public QOpenGLContext_Ptr FromNative(void* context, void* display)
 	{
 		return this.ptr.FromNative(context, display);
 	}
-	public void* NativeContext()
+	public  virtual void* OnNativeContext()
 	{
-		return this.ptr.NativeContext();
+		return default;
 	}
-	public void* Config()
+	public  virtual void* OnConfig()
 	{
-		return this.ptr.Config();
+		return default;
 	}
-	public void* Display()
+	public  virtual void* OnDisplay()
 	{
-		return this.ptr.Display();
+		return default;
 	}
 	public QOpenGLContext_Ptr FromNative3(void* context, void* display, IQOpenGLContext shareContext)
 	{
@@ -120,10 +100,22 @@ extension CQt
 	public static extern void** QNativeInterface_QEGLContext_FromNative(void* context, void* display);
 	[LinkName("QNativeInterface_QEGLContext_NativeContext")]
 	public static extern void* QNativeInterface_QEGLContext_NativeContext(void* self);
+	
+	public function void QNativeInterface_QEGLContext_OnNativeContext_action(void* self);
+	[LinkName("QNativeInterface_QEGLContext_OnNativeContext")]
+	public static extern void* QNativeInterface_QEGLContext_OnNativeContext(void* self, QNativeInterface_QEGLContext_OnNativeContext_action _action);
 	[LinkName("QNativeInterface_QEGLContext_Config")]
 	public static extern void* QNativeInterface_QEGLContext_Config(void* self);
+	
+	public function void QNativeInterface_QEGLContext_OnConfig_action(void* self);
+	[LinkName("QNativeInterface_QEGLContext_OnConfig")]
+	public static extern void* QNativeInterface_QEGLContext_OnConfig(void* self, QNativeInterface_QEGLContext_OnConfig_action _action);
 	[LinkName("QNativeInterface_QEGLContext_Display")]
 	public static extern void* QNativeInterface_QEGLContext_Display(void* self);
+	
+	public function void QNativeInterface_QEGLContext_OnDisplay_action(void* self);
+	[LinkName("QNativeInterface_QEGLContext_OnDisplay")]
+	public static extern void* QNativeInterface_QEGLContext_OnDisplay(void* self, QNativeInterface_QEGLContext_OnDisplay_action _action);
 	[LinkName("QNativeInterface_QEGLContext_FromNative3")]
 	public static extern void** QNativeInterface_QEGLContext_FromNative3(void* context, void* display, void** shareContext);
 }

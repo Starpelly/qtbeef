@@ -23,44 +23,29 @@ class QStringEncoder : IQStringEncoder
 {
 	private QStringEncoder_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStringEncoder_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStringEncoder_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(QStringConverter_Encoding encoding)
 	{
 		this.ptr = CQt.QStringEncoder_new2(encoding);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* name)
 	{
 		this.ptr = CQt.QStringEncoder_new3(name);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QStringConverter_Encoding encoding, void* flags)
 	{
 		this.ptr = CQt.QStringEncoder_new4(encoding, flags);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* name, void* flags)
 	{
 		this.ptr = CQt.QStringEncoder_new5(name, flags);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -119,44 +104,29 @@ class QStringDecoder : IQStringDecoder
 {
 	private QStringDecoder_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStringDecoder_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QStringConverter_Encoding encoding)
 	{
 		this.ptr = CQt.QStringDecoder_new(encoding);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStringDecoder_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* name)
 	{
 		this.ptr = CQt.QStringDecoder_new3(name);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QStringConverter_Encoding encoding, void* flags)
 	{
 		this.ptr = CQt.QStringDecoder_new4(encoding, flags);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* name, void* f)
 	{
 		this.ptr = CQt.QStringDecoder_new5(name, f);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

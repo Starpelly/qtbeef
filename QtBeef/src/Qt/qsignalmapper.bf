@@ -18,11 +18,11 @@ struct QSignalMapper_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QSignalMapper_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QSignalMapper_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QSignalMapper_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -88,11 +88,11 @@ struct QSignalMapper_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QSignalMapper_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QSignalMapper_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -252,23 +252,23 @@ struct QSignalMapper_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSignalMapper_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSignalMapper_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSignalMapper_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSignalMapper_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSignalMapper_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -315,85 +315,33 @@ class QSignalMapper : IQSignalMapper, IQObject
 {
 	private QSignalMapper_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QSignalMapper_mappedInt,
-		QSignalMapper_mappedString,
-		QSignalMapper_mappedObject,
-		QSignalMapper_destroyed,
-		QSignalMapper_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QSignalMapper_Connect_MappedInt(obj.ObjectPtr,  => QtBeef_QSignalMapper_mappedInt);
-		CQt.QSignalMapper_Connect_MappedString(obj.ObjectPtr,  => QtBeef_QSignalMapper_mappedString);
-		CQt.QSignalMapper_Connect_MappedObject(obj.ObjectPtr,  => QtBeef_QSignalMapper_mappedObject);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(c_int param1)> OnMappedInt = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string param1)> OnMappedString = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnMappedObject = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QSignalMapper_mappedInt(void* ptr, c_int param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnMappedInt.Invoke(param1);
-	}
-	static void QtBeef_QSignalMapper_mappedString(void* ptr, libqt_string param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnMappedString.Invoke(param1);
-	}
-	static void QtBeef_QSignalMapper_mappedObject(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnMappedObject.Invoke(param1);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QSignalMapper_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSignalMapper_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSignalMapper_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QSignalMapper_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -455,13 +403,13 @@ class QSignalMapper : IQSignalMapper, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -619,25 +567,20 @@ class QSignalMapper : IQSignalMapper, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -693,10 +636,22 @@ extension CQt
 	public static extern void QSignalMapper_Delete(QSignalMapper_Ptr self);
 	[LinkName("QSignalMapper_MetaObject")]
 	public static extern void** QSignalMapper_MetaObject(void* self);
+	
+	public function void QSignalMapper_OnMetaObject_action(void* self);
+	[LinkName("QSignalMapper_OnMetaObject")]
+	public static extern void** QSignalMapper_OnMetaObject(void* self, QSignalMapper_OnMetaObject_action _action);
 	[LinkName("QSignalMapper_Qt_Metacast")]
 	public static extern void* QSignalMapper_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QSignalMapper_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QSignalMapper_OnMetacast")]
+	public static extern void* QSignalMapper_OnMetacast(void* self, QSignalMapper_OnMetacast_action _action);
 	[LinkName("QSignalMapper_Qt_Metacall")]
 	public static extern c_int QSignalMapper_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QSignalMapper_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QSignalMapper_OnMetacall")]
+	public static extern c_int QSignalMapper_OnMetacall(void* self, QSignalMapper_OnMetacall_action _action);
 	[LinkName("QSignalMapper_Tr")]
 	public static extern libqt_string QSignalMapper_Tr(c_char* s);
 	[LinkName("QSignalMapper_SetMapping")]
@@ -716,21 +671,21 @@ extension CQt
 	[LinkName("QSignalMapper_MappedInt")]
 	public static extern void QSignalMapper_MappedInt(void* self, c_int param1);
 	
-	public function void QSignalMapper_mappedInt_action(void* self, c_int param1);
+	public function void QSignalMapper_Connect_MappedInt_action(void* self, c_int param1);
 	[LinkName("QSignalMapper_Connect_MappedInt")]
-	public static extern void QSignalMapper_Connect_MappedInt(void* self, QSignalMapper_mappedInt_action _action);
+	public static extern void QSignalMapper_Connect_MappedInt(void* self, QSignalMapper_Connect_MappedInt_action _action);
 	[LinkName("QSignalMapper_MappedString")]
 	public static extern void QSignalMapper_MappedString(void* self, libqt_string param1);
 	
-	public function void QSignalMapper_mappedString_action(void* self, libqt_string param1);
+	public function void QSignalMapper_Connect_MappedString_action(void* self, libqt_string param1);
 	[LinkName("QSignalMapper_Connect_MappedString")]
-	public static extern void QSignalMapper_Connect_MappedString(void* self, QSignalMapper_mappedString_action _action);
+	public static extern void QSignalMapper_Connect_MappedString(void* self, QSignalMapper_Connect_MappedString_action _action);
 	[LinkName("QSignalMapper_MappedObject")]
 	public static extern void QSignalMapper_MappedObject(void* self, void** param1);
 	
-	public function void QSignalMapper_mappedObject_action(void* self, void** param1);
+	public function void QSignalMapper_Connect_MappedObject_action(void* self, void** param1);
 	[LinkName("QSignalMapper_Connect_MappedObject")]
-	public static extern void QSignalMapper_Connect_MappedObject(void* self, QSignalMapper_mappedObject_action _action);
+	public static extern void QSignalMapper_Connect_MappedObject(void* self, QSignalMapper_Connect_MappedObject_action _action);
 	[LinkName("QSignalMapper_Map")]
 	public static extern void QSignalMapper_Map(void* self);
 	[LinkName("QSignalMapper_Map2")]
@@ -739,4 +694,46 @@ extension CQt
 	public static extern libqt_string QSignalMapper_Tr2(c_char* s, c_char* c);
 	[LinkName("QSignalMapper_Tr3")]
 	public static extern libqt_string QSignalMapper_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QSignalMapper_Event")]
+	public static extern bool QSignalMapper_Event(void* self, void** event);
+	
+	public function void QSignalMapper_OnEvent_action(void* self, void** event);
+	[LinkName("QSignalMapper_OnEvent")]
+	public static extern bool QSignalMapper_OnEvent(void* self, QSignalMapper_OnEvent_action _action);
+	[LinkName("QSignalMapper_EventFilter")]
+	public static extern bool QSignalMapper_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QSignalMapper_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QSignalMapper_OnEventFilter")]
+	public static extern bool QSignalMapper_OnEventFilter(void* self, QSignalMapper_OnEventFilter_action _action);
+	[LinkName("QSignalMapper_TimerEvent")]
+	public static extern void QSignalMapper_TimerEvent(void* self, void** event);
+	
+	public function void QSignalMapper_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QSignalMapper_OnTimerEvent")]
+	public static extern void QSignalMapper_OnTimerEvent(void* self, QSignalMapper_OnTimerEvent_action _action);
+	[LinkName("QSignalMapper_ChildEvent")]
+	public static extern void QSignalMapper_ChildEvent(void* self, void** event);
+	
+	public function void QSignalMapper_OnChildEvent_action(void* self, void** event);
+	[LinkName("QSignalMapper_OnChildEvent")]
+	public static extern void QSignalMapper_OnChildEvent(void* self, QSignalMapper_OnChildEvent_action _action);
+	[LinkName("QSignalMapper_CustomEvent")]
+	public static extern void QSignalMapper_CustomEvent(void* self, void** event);
+	
+	public function void QSignalMapper_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QSignalMapper_OnCustomEvent")]
+	public static extern void QSignalMapper_OnCustomEvent(void* self, QSignalMapper_OnCustomEvent_action _action);
+	[LinkName("QSignalMapper_ConnectNotify")]
+	public static extern void QSignalMapper_ConnectNotify(void* self, void** signal);
+	
+	public function void QSignalMapper_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QSignalMapper_OnConnectNotify")]
+	public static extern void QSignalMapper_OnConnectNotify(void* self, QSignalMapper_OnConnectNotify_action _action);
+	[LinkName("QSignalMapper_DisconnectNotify")]
+	public static extern void QSignalMapper_DisconnectNotify(void* self, void** signal);
+	
+	public function void QSignalMapper_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QSignalMapper_OnDisconnectNotify")]
+	public static extern void QSignalMapper_OnDisconnectNotify(void* self, QSignalMapper_OnDisconnectNotify_action _action);
 }

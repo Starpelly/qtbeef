@@ -23,32 +23,21 @@ class QAbstractNativeEventFilter : IQAbstractNativeEventFilter
 {
 	private QAbstractNativeEventFilter_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QAbstractNativeEventFilter_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractNativeEventFilter_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QAbstractNativeEventFilter_Delete(this.ptr);
 	}
-	public bool NativeEventFilter(void** eventType, void* message, void** result)
+	public  virtual bool OnNativeEventFilter(void** eventType, void* message, void** result)
 	{
-		return this.ptr.NativeEventFilter(eventType, message, result);
+		return default;
 	}
 }
 interface IQAbstractNativeEventFilter : IQtObjectInterface
@@ -62,4 +51,8 @@ extension CQt
 	public static extern void QAbstractNativeEventFilter_Delete(QAbstractNativeEventFilter_Ptr self);
 	[LinkName("QAbstractNativeEventFilter_NativeEventFilter")]
 	public static extern bool QAbstractNativeEventFilter_NativeEventFilter(void* self, void** eventType, void* message, void** result);
+	
+	public function void QAbstractNativeEventFilter_OnNativeEventFilter_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QAbstractNativeEventFilter_OnNativeEventFilter")]
+	public static extern bool QAbstractNativeEventFilter_OnNativeEventFilter(void* self, QAbstractNativeEventFilter_OnNativeEventFilter_action _action);
 }

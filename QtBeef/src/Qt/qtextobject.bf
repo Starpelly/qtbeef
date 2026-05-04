@@ -18,11 +18,11 @@ struct QTextObject_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QTextObject_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QTextObject_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QTextObject_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -60,11 +60,11 @@ struct QTextObject_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QTextObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QTextObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -224,23 +224,23 @@ struct QTextObject_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTextObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTextObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -287,47 +287,21 @@ class QTextObject : IQTextObject, IQObject
 {
 	private QTextObject_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QTextObject_destroyed,
-		QTextObject_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QTextObject_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -361,13 +335,13 @@ class QTextObject : IQTextObject, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -525,25 +499,20 @@ class QTextObject : IQTextObject, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -593,10 +562,22 @@ extension CQt
 {
 	[LinkName("QTextObject_MetaObject")]
 	public static extern void** QTextObject_MetaObject(void* self);
+	
+	public function void QTextObject_OnMetaObject_action(void* self);
+	[LinkName("QTextObject_OnMetaObject")]
+	public static extern void** QTextObject_OnMetaObject(void* self, QTextObject_OnMetaObject_action _action);
 	[LinkName("QTextObject_Qt_Metacast")]
 	public static extern void* QTextObject_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QTextObject_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QTextObject_OnMetacast")]
+	public static extern void* QTextObject_OnMetacast(void* self, QTextObject_OnMetacast_action _action);
 	[LinkName("QTextObject_Qt_Metacall")]
 	public static extern c_int QTextObject_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QTextObject_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QTextObject_OnMetacall")]
+	public static extern c_int QTextObject_OnMetacall(void* self, QTextObject_OnMetacall_action _action);
 	[LinkName("QTextObject_Tr")]
 	public static extern libqt_string QTextObject_Tr(c_char* s);
 	[LinkName("QTextObject_SetFormat")]
@@ -613,6 +594,48 @@ extension CQt
 	public static extern libqt_string QTextObject_Tr2(c_char* s, c_char* c);
 	[LinkName("QTextObject_Tr3")]
 	public static extern libqt_string QTextObject_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QTextObject_Event")]
+	public static extern bool QTextObject_Event(void* self, void** event);
+	
+	public function void QTextObject_OnEvent_action(void* self, void** event);
+	[LinkName("QTextObject_OnEvent")]
+	public static extern bool QTextObject_OnEvent(void* self, QTextObject_OnEvent_action _action);
+	[LinkName("QTextObject_EventFilter")]
+	public static extern bool QTextObject_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QTextObject_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QTextObject_OnEventFilter")]
+	public static extern bool QTextObject_OnEventFilter(void* self, QTextObject_OnEventFilter_action _action);
+	[LinkName("QTextObject_TimerEvent")]
+	public static extern void QTextObject_TimerEvent(void* self, void** event);
+	
+	public function void QTextObject_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QTextObject_OnTimerEvent")]
+	public static extern void QTextObject_OnTimerEvent(void* self, QTextObject_OnTimerEvent_action _action);
+	[LinkName("QTextObject_ChildEvent")]
+	public static extern void QTextObject_ChildEvent(void* self, void** event);
+	
+	public function void QTextObject_OnChildEvent_action(void* self, void** event);
+	[LinkName("QTextObject_OnChildEvent")]
+	public static extern void QTextObject_OnChildEvent(void* self, QTextObject_OnChildEvent_action _action);
+	[LinkName("QTextObject_CustomEvent")]
+	public static extern void QTextObject_CustomEvent(void* self, void** event);
+	
+	public function void QTextObject_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QTextObject_OnCustomEvent")]
+	public static extern void QTextObject_OnCustomEvent(void* self, QTextObject_OnCustomEvent_action _action);
+	[LinkName("QTextObject_ConnectNotify")]
+	public static extern void QTextObject_ConnectNotify(void* self, void** signal);
+	
+	public function void QTextObject_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QTextObject_OnConnectNotify")]
+	public static extern void QTextObject_OnConnectNotify(void* self, QTextObject_OnConnectNotify_action _action);
+	[LinkName("QTextObject_DisconnectNotify")]
+	public static extern void QTextObject_DisconnectNotify(void* self, void** signal);
+	
+	public function void QTextObject_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QTextObject_OnDisconnectNotify")]
+	public static extern void QTextObject_OnDisconnectNotify(void* self, QTextObject_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QTextBlockGroup
@@ -629,11 +652,11 @@ struct QTextBlockGroup_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QTextBlockGroup_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QTextBlockGroup_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QTextBlockGroup_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -665,33 +688,13 @@ struct QTextBlockGroup_Ptr
 	{
 		CQt.QTextBlockGroup_Tr3(s, c, n);
 	}
-	public void SetFormat(IQTextFormat format)
-	{
-		CQt.QTextObject_SetFormat((.)this.Ptr, (.)format?.ObjectPtr);
-	}
-	public QTextFormat_Ptr Format()
-	{
-		return QTextFormat_Ptr(CQt.QTextObject_Format((.)this.Ptr));
-	}
-	public c_int FormatIndex()
-	{
-		return CQt.QTextObject_FormatIndex((.)this.Ptr);
-	}
-	public QTextDocument_Ptr Document()
-	{
-		return QTextDocument_Ptr(CQt.QTextObject_Document((.)this.Ptr));
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextObject_ObjectIndex((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QTextBlockGroup_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QTextBlockGroup_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -851,23 +854,23 @@ struct QTextBlockGroup_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextBlockGroup_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextBlockGroup_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextBlockGroup_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTextBlockGroup_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTextBlockGroup_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -909,68 +912,59 @@ struct QTextBlockGroup_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void SetFormat(IQTextFormat format)
+	{
+		CQt.QTextObject_SetFormat((.)this.Ptr, (.)format?.ObjectPtr);
+	}
+	public QTextFormat_Ptr Format()
+	{
+		return QTextFormat_Ptr(CQt.QTextObject_Format((.)this.Ptr));
+	}
+	public c_int FormatIndex()
+	{
+		return CQt.QTextObject_FormatIndex((.)this.Ptr);
+	}
+	public QTextDocument_Ptr Document()
+	{
+		return QTextDocument_Ptr(CQt.QTextObject_Document((.)this.Ptr));
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextObject_ObjectIndex((.)this.Ptr);
+	}
 }
 class QTextBlockGroup : IQTextBlockGroup, IQTextObject, IQObject
 {
 	private QTextBlockGroup_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QTextBlockGroup_destroyed,
-		QTextBlockGroup_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QTextBlockGroup_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public void BlockInserted(IQTextBlock block)
+	public  virtual void OnBlockInserted(void** block)
 	{
-		this.ptr.BlockInserted(block);
 	}
-	public void BlockRemoved(IQTextBlock block)
+	public  virtual void OnBlockRemoved(void** block)
 	{
-		this.ptr.BlockRemoved(block);
 	}
-	public void BlockFormatChanged(IQTextBlock block)
+	public  virtual void OnBlockFormatChanged(void** block)
 	{
-		this.ptr.BlockFormatChanged(block);
 	}
 	public void* BlockList()
 	{
@@ -984,33 +978,13 @@ class QTextBlockGroup : IQTextBlockGroup, IQTextObject, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void SetFormat(IQTextFormat format)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.SetFormat(format);
+		return default;
 	}
-	public QTextFormat_Ptr Format()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Format();
-	}
-	public c_int FormatIndex()
-	{
-		return this.ptr.FormatIndex();
-	}
-	public QTextDocument_Ptr Document()
-	{
-		return this.ptr.Document();
-	}
-	public c_int ObjectIndex()
-	{
-		return this.ptr.ObjectIndex();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1168,25 +1142,20 @@ class QTextBlockGroup : IQTextBlockGroup, IQTextObject, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1228,6 +1197,26 @@ class QTextBlockGroup : IQTextBlockGroup, IQTextObject, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public void SetFormat(IQTextFormat format)
+	{
+		this.ptr.SetFormat(format);
+	}
+	public QTextFormat_Ptr Format()
+	{
+		return this.ptr.Format();
+	}
+	public c_int FormatIndex()
+	{
+		return this.ptr.FormatIndex();
+	}
+	public QTextDocument_Ptr Document()
+	{
+		return this.ptr.Document();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
 }
 interface IQTextBlockGroup : IQtObjectInterface
 {
@@ -1236,24 +1225,90 @@ extension CQt
 {
 	[LinkName("QTextBlockGroup_MetaObject")]
 	public static extern void** QTextBlockGroup_MetaObject(void* self);
+	
+	public function void QTextBlockGroup_OnMetaObject_action(void* self);
+	[LinkName("QTextBlockGroup_OnMetaObject")]
+	public static extern void** QTextBlockGroup_OnMetaObject(void* self, QTextBlockGroup_OnMetaObject_action _action);
 	[LinkName("QTextBlockGroup_Qt_Metacast")]
 	public static extern void* QTextBlockGroup_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QTextBlockGroup_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QTextBlockGroup_OnMetacast")]
+	public static extern void* QTextBlockGroup_OnMetacast(void* self, QTextBlockGroup_OnMetacast_action _action);
 	[LinkName("QTextBlockGroup_Qt_Metacall")]
 	public static extern c_int QTextBlockGroup_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QTextBlockGroup_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QTextBlockGroup_OnMetacall")]
+	public static extern c_int QTextBlockGroup_OnMetacall(void* self, QTextBlockGroup_OnMetacall_action _action);
 	[LinkName("QTextBlockGroup_Tr")]
 	public static extern libqt_string QTextBlockGroup_Tr(c_char* s);
 	[LinkName("QTextBlockGroup_BlockInserted")]
 	public static extern void QTextBlockGroup_BlockInserted(void* self, void** block);
+	
+	public function void QTextBlockGroup_OnBlockInserted_action(void* self, void** block);
+	[LinkName("QTextBlockGroup_OnBlockInserted")]
+	public static extern void QTextBlockGroup_OnBlockInserted(void* self, QTextBlockGroup_OnBlockInserted_action _action);
 	[LinkName("QTextBlockGroup_BlockRemoved")]
 	public static extern void QTextBlockGroup_BlockRemoved(void* self, void** block);
+	
+	public function void QTextBlockGroup_OnBlockRemoved_action(void* self, void** block);
+	[LinkName("QTextBlockGroup_OnBlockRemoved")]
+	public static extern void QTextBlockGroup_OnBlockRemoved(void* self, QTextBlockGroup_OnBlockRemoved_action _action);
 	[LinkName("QTextBlockGroup_BlockFormatChanged")]
 	public static extern void QTextBlockGroup_BlockFormatChanged(void* self, void** block);
+	
+	public function void QTextBlockGroup_OnBlockFormatChanged_action(void* self, void** block);
+	[LinkName("QTextBlockGroup_OnBlockFormatChanged")]
+	public static extern void QTextBlockGroup_OnBlockFormatChanged(void* self, QTextBlockGroup_OnBlockFormatChanged_action _action);
 	[LinkName("QTextBlockGroup_BlockList")]
 	public static extern void* QTextBlockGroup_BlockList(void* self);
 	[LinkName("QTextBlockGroup_Tr2")]
 	public static extern libqt_string QTextBlockGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QTextBlockGroup_Tr3")]
 	public static extern libqt_string QTextBlockGroup_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QTextBlockGroup_Event")]
+	public static extern bool QTextBlockGroup_Event(void* self, void** event);
+	
+	public function void QTextBlockGroup_OnEvent_action(void* self, void** event);
+	[LinkName("QTextBlockGroup_OnEvent")]
+	public static extern bool QTextBlockGroup_OnEvent(void* self, QTextBlockGroup_OnEvent_action _action);
+	[LinkName("QTextBlockGroup_EventFilter")]
+	public static extern bool QTextBlockGroup_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QTextBlockGroup_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QTextBlockGroup_OnEventFilter")]
+	public static extern bool QTextBlockGroup_OnEventFilter(void* self, QTextBlockGroup_OnEventFilter_action _action);
+	[LinkName("QTextBlockGroup_TimerEvent")]
+	public static extern void QTextBlockGroup_TimerEvent(void* self, void** event);
+	
+	public function void QTextBlockGroup_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QTextBlockGroup_OnTimerEvent")]
+	public static extern void QTextBlockGroup_OnTimerEvent(void* self, QTextBlockGroup_OnTimerEvent_action _action);
+	[LinkName("QTextBlockGroup_ChildEvent")]
+	public static extern void QTextBlockGroup_ChildEvent(void* self, void** event);
+	
+	public function void QTextBlockGroup_OnChildEvent_action(void* self, void** event);
+	[LinkName("QTextBlockGroup_OnChildEvent")]
+	public static extern void QTextBlockGroup_OnChildEvent(void* self, QTextBlockGroup_OnChildEvent_action _action);
+	[LinkName("QTextBlockGroup_CustomEvent")]
+	public static extern void QTextBlockGroup_CustomEvent(void* self, void** event);
+	
+	public function void QTextBlockGroup_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QTextBlockGroup_OnCustomEvent")]
+	public static extern void QTextBlockGroup_OnCustomEvent(void* self, QTextBlockGroup_OnCustomEvent_action _action);
+	[LinkName("QTextBlockGroup_ConnectNotify")]
+	public static extern void QTextBlockGroup_ConnectNotify(void* self, void** signal);
+	
+	public function void QTextBlockGroup_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QTextBlockGroup_OnConnectNotify")]
+	public static extern void QTextBlockGroup_OnConnectNotify(void* self, QTextBlockGroup_OnConnectNotify_action _action);
+	[LinkName("QTextBlockGroup_DisconnectNotify")]
+	public static extern void QTextBlockGroup_DisconnectNotify(void* self, void** signal);
+	
+	public function void QTextBlockGroup_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QTextBlockGroup_OnDisconnectNotify")]
+	public static extern void QTextBlockGroup_OnDisconnectNotify(void* self, QTextBlockGroup_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QTextFrame
@@ -1270,11 +1325,11 @@ struct QTextFrame_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QTextFrame_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QTextFrame_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QTextFrame_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -1330,33 +1385,13 @@ struct QTextFrame_Ptr
 	{
 		CQt.QTextFrame_Tr3(s, c, n);
 	}
-	public void SetFormat(IQTextFormat format)
-	{
-		CQt.QTextObject_SetFormat((.)this.Ptr, (.)format?.ObjectPtr);
-	}
-	public QTextFormat_Ptr Format()
-	{
-		return QTextFormat_Ptr(CQt.QTextObject_Format((.)this.Ptr));
-	}
-	public c_int FormatIndex()
-	{
-		return CQt.QTextObject_FormatIndex((.)this.Ptr);
-	}
-	public QTextDocument_Ptr Document()
-	{
-		return QTextDocument_Ptr(CQt.QTextObject_Document((.)this.Ptr));
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextObject_ObjectIndex((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QTextFrame_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QTextFrame_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1516,23 +1551,23 @@ struct QTextFrame_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextFrame_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextFrame_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTextFrame_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTextFrame_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTextFrame_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1574,61 +1609,54 @@ struct QTextFrame_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void SetFormat(IQTextFormat format)
+	{
+		CQt.QTextObject_SetFormat((.)this.Ptr, (.)format?.ObjectPtr);
+	}
+	public QTextFormat_Ptr Format()
+	{
+		return QTextFormat_Ptr(CQt.QTextObject_Format((.)this.Ptr));
+	}
+	public c_int FormatIndex()
+	{
+		return CQt.QTextObject_FormatIndex((.)this.Ptr);
+	}
+	public QTextDocument_Ptr Document()
+	{
+		return QTextDocument_Ptr(CQt.QTextObject_Document((.)this.Ptr));
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextObject_ObjectIndex((.)this.Ptr);
+	}
 }
 class QTextFrame : IQTextFrame, IQTextObject, IQObject
 {
 	private QTextFrame_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QTextFrame_destroyed,
-		QTextFrame_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QTextFrame_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextDocument doc)
 	{
 		this.ptr = CQt.QTextFrame_new((.)doc?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTextFrame_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -1682,33 +1710,13 @@ class QTextFrame : IQTextFrame, IQTextObject, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void SetFormat(IQTextFormat format)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.SetFormat(format);
+		return default;
 	}
-	public QTextFormat_Ptr Format()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Format();
-	}
-	public c_int FormatIndex()
-	{
-		return this.ptr.FormatIndex();
-	}
-	public QTextDocument_Ptr Document()
-	{
-		return this.ptr.Document();
-	}
-	public c_int ObjectIndex()
-	{
-		return this.ptr.ObjectIndex();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1866,25 +1874,20 @@ class QTextFrame : IQTextFrame, IQTextObject, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1926,6 +1929,26 @@ class QTextFrame : IQTextFrame, IQTextObject, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public void SetFormat(IQTextFormat format)
+	{
+		this.ptr.SetFormat(format);
+	}
+	public QTextFormat_Ptr Format()
+	{
+		return this.ptr.Format();
+	}
+	public c_int FormatIndex()
+	{
+		return this.ptr.FormatIndex();
+	}
+	public QTextDocument_Ptr Document()
+	{
+		return this.ptr.Document();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
 }
 interface IQTextFrame : IQtObjectInterface
 {
@@ -1938,10 +1961,22 @@ extension CQt
 	public static extern void QTextFrame_Delete(QTextFrame_Ptr self);
 	[LinkName("QTextFrame_MetaObject")]
 	public static extern void** QTextFrame_MetaObject(void* self);
+	
+	public function void QTextFrame_OnMetaObject_action(void* self);
+	[LinkName("QTextFrame_OnMetaObject")]
+	public static extern void** QTextFrame_OnMetaObject(void* self, QTextFrame_OnMetaObject_action _action);
 	[LinkName("QTextFrame_Qt_Metacast")]
 	public static extern void* QTextFrame_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QTextFrame_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QTextFrame_OnMetacast")]
+	public static extern void* QTextFrame_OnMetacast(void* self, QTextFrame_OnMetacast_action _action);
 	[LinkName("QTextFrame_Qt_Metacall")]
 	public static extern c_int QTextFrame_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QTextFrame_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QTextFrame_OnMetacall")]
+	public static extern c_int QTextFrame_OnMetacall(void* self, QTextFrame_OnMetacall_action _action);
 	[LinkName("QTextFrame_Tr")]
 	public static extern libqt_string QTextFrame_Tr(c_char* s);
 	[LinkName("QTextFrame_SetFrameFormat")]
@@ -1968,6 +2003,48 @@ extension CQt
 	public static extern libqt_string QTextFrame_Tr2(c_char* s, c_char* c);
 	[LinkName("QTextFrame_Tr3")]
 	public static extern libqt_string QTextFrame_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QTextFrame_Event")]
+	public static extern bool QTextFrame_Event(void* self, void** event);
+	
+	public function void QTextFrame_OnEvent_action(void* self, void** event);
+	[LinkName("QTextFrame_OnEvent")]
+	public static extern bool QTextFrame_OnEvent(void* self, QTextFrame_OnEvent_action _action);
+	[LinkName("QTextFrame_EventFilter")]
+	public static extern bool QTextFrame_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QTextFrame_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QTextFrame_OnEventFilter")]
+	public static extern bool QTextFrame_OnEventFilter(void* self, QTextFrame_OnEventFilter_action _action);
+	[LinkName("QTextFrame_TimerEvent")]
+	public static extern void QTextFrame_TimerEvent(void* self, void** event);
+	
+	public function void QTextFrame_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QTextFrame_OnTimerEvent")]
+	public static extern void QTextFrame_OnTimerEvent(void* self, QTextFrame_OnTimerEvent_action _action);
+	[LinkName("QTextFrame_ChildEvent")]
+	public static extern void QTextFrame_ChildEvent(void* self, void** event);
+	
+	public function void QTextFrame_OnChildEvent_action(void* self, void** event);
+	[LinkName("QTextFrame_OnChildEvent")]
+	public static extern void QTextFrame_OnChildEvent(void* self, QTextFrame_OnChildEvent_action _action);
+	[LinkName("QTextFrame_CustomEvent")]
+	public static extern void QTextFrame_CustomEvent(void* self, void** event);
+	
+	public function void QTextFrame_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QTextFrame_OnCustomEvent")]
+	public static extern void QTextFrame_OnCustomEvent(void* self, QTextFrame_OnCustomEvent_action _action);
+	[LinkName("QTextFrame_ConnectNotify")]
+	public static extern void QTextFrame_ConnectNotify(void* self, void** signal);
+	
+	public function void QTextFrame_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QTextFrame_OnConnectNotify")]
+	public static extern void QTextFrame_OnConnectNotify(void* self, QTextFrame_OnConnectNotify_action _action);
+	[LinkName("QTextFrame_DisconnectNotify")]
+	public static extern void QTextFrame_DisconnectNotify(void* self, void** signal);
+	
+	public function void QTextFrame_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QTextFrame_OnDisconnectNotify")]
+	public static extern void QTextFrame_OnDisconnectNotify(void* self, QTextFrame_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QTextBlockUserData
@@ -1985,19 +2062,9 @@ class QTextBlockUserData : IQTextBlockUserData
 {
 	private QTextBlockUserData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextBlockUserData_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2158,29 +2225,17 @@ class QTextBlock : IQTextBlock
 {
 	private QTextBlock_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextBlock_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextBlock_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextBlock o)
 	{
 		this.ptr = CQt.QTextBlock_new2((.)o?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2455,29 +2510,17 @@ class QTextFragment : IQTextFragment
 {
 	private QTextFragment_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextFragment_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextFragment_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextFragment o)
 	{
 		this.ptr = CQt.QTextFragment_new2((.)o?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2604,29 +2647,17 @@ class QTextFrame_iterator : IQTextFrame_iterator
 {
 	private QTextFrame_iterator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextFrame_iterator_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextFrame_iterator other)
 	{
 		this.ptr = CQt.QTextFrame_iterator_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextFrame_iterator_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2725,29 +2756,17 @@ class QTextBlock_iterator : IQTextBlock_iterator
 {
 	private QTextBlock_iterator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextBlock_iterator_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextBlock_iterator other)
 	{
 		this.ptr = CQt.QTextBlock_iterator_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextBlock_iterator_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

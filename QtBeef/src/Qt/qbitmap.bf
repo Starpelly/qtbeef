@@ -50,21 +50,89 @@ struct QBitmap_Ptr
 	{
 		return QBitmap_Ptr(CQt.QBitmap_FromData3((.)size?.ObjectPtr, bits, monoFormat));
 	}
-	public bool IsNull()
-	{
-		return CQt.QPixmap_IsNull((.)this.Ptr);
-	}
 	public c_int DevType()
 	{
-		return CQt.QPixmap_DevType((.)this.Ptr);
+		return CQt.QBitmap_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QBitmap_PaintEngine((.)this.Ptr));
 	}
 	public c_int Width()
 	{
-		return CQt.QPixmap_Width((.)this.Ptr);
+		return CQt.QPaintDevice_Width((.)this.Ptr);
 	}
 	public c_int Height()
 	{
-		return CQt.QPixmap_Height((.)this.Ptr);
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QBitmap_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QBitmap_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QBitmap_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QBitmap_SharedPainter((.)this.Ptr));
+	}
+	public bool IsNull()
+	{
+		return CQt.QPixmap_IsNull((.)this.Ptr);
 	}
 	public QSize_Ptr Size()
 	{
@@ -73,10 +141,6 @@ struct QBitmap_Ptr
 	public QRect_Ptr Rect()
 	{
 		return QRect_Ptr(CQt.QPixmap_Rect((.)this.Ptr));
-	}
-	public c_int Depth()
-	{
-		return CQt.QPixmap_Depth((.)this.Ptr);
 	}
 	public c_int DefaultDepth()
 	{
@@ -93,10 +157,6 @@ struct QBitmap_Ptr
 	public void SetMask(IQBitmap mask)
 	{
 		CQt.QPixmap_SetMask((.)this.Ptr, (.)mask?.ObjectPtr);
-	}
-	public double DevicePixelRatio()
-	{
-		return CQt.QPixmap_DevicePixelRatio((.)this.Ptr);
 	}
 	public void SetDevicePixelRatio(double scaleFactor)
 	{
@@ -206,14 +266,6 @@ struct QBitmap_Ptr
 	{
 		return CQt.QPixmap_IsQBitmap((.)this.Ptr);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QPixmap_PaintEngine((.)this.Ptr));
-	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
-	{
-		return CQt.QPixmap_Metric((.)this.Ptr, param1);
-	}
 	public void Fill1(IQColor fillColor)
 	{
 		CQt.QPixmap_Fill1((.)this.Ptr, (.)fillColor?.ObjectPtr);
@@ -314,111 +366,42 @@ struct QBitmap_Ptr
 	{
 		CQt.QPixmap_Scroll4((.)this.Ptr, dx, dy, (.)rect?.ObjectPtr, (.)exposed?.ObjectPtr);
 	}
-	public bool PaintingActive()
-	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
-	}
-	public c_int WidthMM()
-	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
-	}
-	public c_int HeightMM()
-	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
-	}
-	public c_int LogicalDpiX()
-	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
-	}
-	public c_int LogicalDpiY()
-	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
-	}
-	public c_int PhysicalDpiX()
-	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
-	}
-	public c_int PhysicalDpiY()
-	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
-	}
-	public double DevicePixelRatioF()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
-	}
-	public c_int ColorCount()
-	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		CQt.QPaintDevice_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return QPaintDevice_Ptr(CQt.QPaintDevice_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QPaintDevice_SharedPainter((.)this.Ptr));
-	}
 }
 class QBitmap : IQBitmap, IQPixmap, IQPaintDevice
 {
 	private QBitmap_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QBitmap_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QBitmap_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap param1)
 	{
 		this.ptr = CQt.QBitmap_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int w, c_int h)
 	{
 		this.ptr = CQt.QBitmap_new3(w, h);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize param1)
 	{
 		this.ptr = CQt.QBitmap_new4((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QBitmap_new5(libqt_string(fileName));
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQBitmap param1)
 	{
 		this.ptr = CQt.QBitmap_new6((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, c_char* format)
 	{
 		this.ptr = CQt.QBitmap_new7(libqt_string(fileName), format);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -460,13 +443,17 @@ class QBitmap : IQBitmap, IQPixmap, IQPaintDevice
 	{
 		return this.ptr.FromData3(size, bits, monoFormat);
 	}
-	public bool IsNull()
+	public  virtual c_int OnDevType()
 	{
-		return this.ptr.IsNull();
+		return default;
 	}
-	public c_int DevType()
+	public bool PaintingActive()
 	{
-		return this.ptr.DevType();
+		return this.ptr.PaintingActive();
+	}
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
+	{
+		return default;
 	}
 	public c_int Width()
 	{
@@ -476,6 +463,69 @@ class QBitmap : IQBitmap, IQPixmap, IQPaintDevice
 	{
 		return this.ptr.Height();
 	}
+	public c_int WidthMM()
+	{
+		return this.ptr.WidthMM();
+	}
+	public c_int HeightMM()
+	{
+		return this.ptr.HeightMM();
+	}
+	public c_int LogicalDpiX()
+	{
+		return this.ptr.LogicalDpiX();
+	}
+	public c_int LogicalDpiY()
+	{
+		return this.ptr.LogicalDpiY();
+	}
+	public c_int PhysicalDpiX()
+	{
+		return this.ptr.PhysicalDpiX();
+	}
+	public c_int PhysicalDpiY()
+	{
+		return this.ptr.PhysicalDpiY();
+	}
+	public double DevicePixelRatio()
+	{
+		return this.ptr.DevicePixelRatio();
+	}
+	public double DevicePixelRatioF()
+	{
+		return this.ptr.DevicePixelRatioF();
+	}
+	public c_int ColorCount()
+	{
+		return this.ptr.ColorCount();
+	}
+	public c_int Depth()
+	{
+		return this.ptr.Depth();
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return this.ptr.DevicePixelRatioFScale();
+	}
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return default;
+	}
+	public  virtual void OnInitPainter(void** painter)
+	{
+	}
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
+	{
+		return default;
+	}
+	public  virtual QPainter_Ptr OnSharedPainter()
+	{
+		return default;
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
@@ -483,10 +533,6 @@ class QBitmap : IQBitmap, IQPixmap, IQPaintDevice
 	public QRect_Ptr Rect()
 	{
 		return this.ptr.Rect();
-	}
-	public c_int Depth()
-	{
-		return this.ptr.Depth();
 	}
 	public c_int DefaultDepth()
 	{
@@ -503,10 +549,6 @@ class QBitmap : IQBitmap, IQPixmap, IQPaintDevice
 	public void SetMask(IQBitmap mask)
 	{
 		this.ptr.SetMask(mask);
-	}
-	public double DevicePixelRatio()
-	{
-		return this.ptr.DevicePixelRatio();
 	}
 	public void SetDevicePixelRatio(double scaleFactor)
 	{
@@ -616,14 +658,6 @@ class QBitmap : IQBitmap, IQPixmap, IQPaintDevice
 	{
 		return this.ptr.IsQBitmap();
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
-	{
-		return this.ptr.Metric(param1);
-	}
 	public void Fill1(IQColor fillColor)
 	{
 		this.ptr.Fill1(fillColor);
@@ -724,58 +758,6 @@ class QBitmap : IQBitmap, IQPixmap, IQPaintDevice
 	{
 		this.ptr.Scroll4(dx, dy, rect, exposed);
 	}
-	public bool PaintingActive()
-	{
-		return this.ptr.PaintingActive();
-	}
-	public c_int WidthMM()
-	{
-		return this.ptr.WidthMM();
-	}
-	public c_int HeightMM()
-	{
-		return this.ptr.HeightMM();
-	}
-	public c_int LogicalDpiX()
-	{
-		return this.ptr.LogicalDpiX();
-	}
-	public c_int LogicalDpiY()
-	{
-		return this.ptr.LogicalDpiY();
-	}
-	public c_int PhysicalDpiX()
-	{
-		return this.ptr.PhysicalDpiX();
-	}
-	public c_int PhysicalDpiY()
-	{
-		return this.ptr.PhysicalDpiY();
-	}
-	public double DevicePixelRatioF()
-	{
-		return this.ptr.DevicePixelRatioF();
-	}
-	public c_int ColorCount()
-	{
-		return this.ptr.ColorCount();
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return this.ptr.DevicePixelRatioFScale();
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		this.ptr.InitPainter(painter);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return this.ptr.Redirected(offset);
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return this.ptr.SharedPainter();
-	}
 }
 interface IQBitmap : IQtObjectInterface
 {
@@ -820,4 +802,40 @@ extension CQt
 	public static extern void* QBitmap_FromImage2(void** image, void* flags);
 	[LinkName("QBitmap_FromData3")]
 	public static extern void* QBitmap_FromData3(void** size, c_uchar* bits, QImage_Format monoFormat);
+	[LinkName("QBitmap_DevType")]
+	public static extern c_int QBitmap_DevType(void* self);
+	
+	public function void QBitmap_OnDevType_action(void* self);
+	[LinkName("QBitmap_OnDevType")]
+	public static extern c_int QBitmap_OnDevType(void* self, QBitmap_OnDevType_action _action);
+	[LinkName("QBitmap_PaintEngine")]
+	public static extern void** QBitmap_PaintEngine(void* self);
+	
+	public function void QBitmap_OnPaintEngine_action(void* self);
+	[LinkName("QBitmap_OnPaintEngine")]
+	public static extern void** QBitmap_OnPaintEngine(void* self, QBitmap_OnPaintEngine_action _action);
+	[LinkName("QBitmap_Metric")]
+	public static extern c_int QBitmap_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QBitmap_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QBitmap_OnMetric")]
+	public static extern c_int QBitmap_OnMetric(void* self, QBitmap_OnMetric_action _action);
+	[LinkName("QBitmap_InitPainter")]
+	public static extern void QBitmap_InitPainter(void* self, void** painter);
+	
+	public function void QBitmap_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QBitmap_OnInitPainter")]
+	public static extern void QBitmap_OnInitPainter(void* self, QBitmap_OnInitPainter_action _action);
+	[LinkName("QBitmap_Redirected")]
+	public static extern void** QBitmap_Redirected(void* self, void** offset);
+	
+	public function void QBitmap_OnRedirected_action(void* self, void** offset);
+	[LinkName("QBitmap_OnRedirected")]
+	public static extern void** QBitmap_OnRedirected(void* self, QBitmap_OnRedirected_action _action);
+	[LinkName("QBitmap_SharedPainter")]
+	public static extern void** QBitmap_SharedPainter(void* self);
+	
+	public function void QBitmap_OnSharedPainter_action(void* self);
+	[LinkName("QBitmap_OnSharedPainter")]
+	public static extern void** QBitmap_OnSharedPainter(void* self, QBitmap_OnSharedPainter_action _action);
 }

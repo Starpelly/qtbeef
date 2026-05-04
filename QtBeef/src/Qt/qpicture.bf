@@ -140,49 +140,36 @@ struct QPicture_Ptr
 	}
 	public void InitPainter(IQPainter painter)
 	{
-		CQt.QPaintDevice_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+		CQt.QPicture_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
 	}
 	public QPaintDevice_Ptr Redirected(IQPoint offset)
 	{
-		return QPaintDevice_Ptr(CQt.QPaintDevice_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+		return QPaintDevice_Ptr(CQt.QPicture_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
 	}
 	public QPainter_Ptr SharedPainter()
 	{
-		return QPainter_Ptr(CQt.QPaintDevice_SharedPainter((.)this.Ptr));
+		return QPainter_Ptr(CQt.QPicture_SharedPainter((.)this.Ptr));
 	}
 }
 class QPicture : IQPicture, IQPaintDevice
 {
 	private QPicture_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPicture_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPicture_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPicture param1)
 	{
 		this.ptr = CQt.QPicture_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int formatVersion)
 	{
 		this.ptr = CQt.QPicture_new3(formatVersion);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -192,9 +179,9 @@ class QPicture : IQPicture, IQPaintDevice
 	{
 		return this.ptr.IsNull();
 	}
-	public c_int DevType()
+	public  virtual c_int OnDevType()
 	{
-		return this.ptr.DevType();
+		return default;
 	}
 	public c_uint Size()
 	{
@@ -204,9 +191,8 @@ class QPicture : IQPicture, IQPaintDevice
 	{
 		return this.ptr.Data();
 	}
-	public void SetData(c_char* data, c_uint size)
+	public  virtual void OnSetData(c_char* data, c_uint size)
 	{
-		this.ptr.SetData(data, size);
 	}
 	public bool Play(IQPainter p)
 	{
@@ -248,13 +234,13 @@ class QPicture : IQPicture, IQPaintDevice
 	{
 		return this.ptr.IsDetached();
 	}
-	public QPaintEngine_Ptr PaintEngine()
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
 	{
-		return this.ptr.PaintEngine();
+		return default;
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric m)
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric m)
 	{
-		return this.ptr.Metric(m);
+		return default;
 	}
 	public bool PaintingActive()
 	{
@@ -312,17 +298,16 @@ class QPicture : IQPicture, IQPaintDevice
 	{
 		return this.ptr.DevicePixelRatioFScale();
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnInitPainter(void** painter)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
 	{
-		return this.ptr.Redirected(offset);
+		return default;
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual QPainter_Ptr OnSharedPainter()
 	{
-		return this.ptr.SharedPainter();
+		return default;
 	}
 }
 interface IQPicture : IQtObjectInterface
@@ -342,12 +327,20 @@ extension CQt
 	public static extern bool QPicture_IsNull(void* self);
 	[LinkName("QPicture_DevType")]
 	public static extern c_int QPicture_DevType(void* self);
+	
+	public function void QPicture_OnDevType_action(void* self);
+	[LinkName("QPicture_OnDevType")]
+	public static extern c_int QPicture_OnDevType(void* self, QPicture_OnDevType_action _action);
 	[LinkName("QPicture_Size")]
 	public static extern c_uint QPicture_Size(void* self);
 	[LinkName("QPicture_Data")]
 	public static extern c_char* QPicture_Data(void* self);
 	[LinkName("QPicture_SetData")]
 	public static extern void QPicture_SetData(void* self, c_char* data, c_uint size);
+	
+	public function void QPicture_OnSetData_action(void* self, c_char* data, c_uint size);
+	[LinkName("QPicture_OnSetData")]
+	public static extern void QPicture_OnSetData(void* self, QPicture_OnSetData_action _action);
 	[LinkName("QPicture_Play")]
 	public static extern bool QPicture_Play(void* self, void** p);
 	[LinkName("QPicture_Load")]
@@ -372,6 +365,32 @@ extension CQt
 	public static extern bool QPicture_IsDetached(void* self);
 	[LinkName("QPicture_PaintEngine")]
 	public static extern void** QPicture_PaintEngine(void* self);
+	
+	public function void QPicture_OnPaintEngine_action(void* self);
+	[LinkName("QPicture_OnPaintEngine")]
+	public static extern void** QPicture_OnPaintEngine(void* self, QPicture_OnPaintEngine_action _action);
 	[LinkName("QPicture_Metric")]
 	public static extern c_int QPicture_Metric(void* self, QPaintDevice_PaintDeviceMetric m);
+	
+	public function void QPicture_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric m);
+	[LinkName("QPicture_OnMetric")]
+	public static extern c_int QPicture_OnMetric(void* self, QPicture_OnMetric_action _action);
+	[LinkName("QPicture_InitPainter")]
+	public static extern void QPicture_InitPainter(void* self, void** painter);
+	
+	public function void QPicture_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QPicture_OnInitPainter")]
+	public static extern void QPicture_OnInitPainter(void* self, QPicture_OnInitPainter_action _action);
+	[LinkName("QPicture_Redirected")]
+	public static extern void** QPicture_Redirected(void* self, void** offset);
+	
+	public function void QPicture_OnRedirected_action(void* self, void** offset);
+	[LinkName("QPicture_OnRedirected")]
+	public static extern void** QPicture_OnRedirected(void* self, QPicture_OnRedirected_action _action);
+	[LinkName("QPicture_SharedPainter")]
+	public static extern void** QPicture_SharedPainter(void* self);
+	
+	public function void QPicture_OnSharedPainter_action(void* self);
+	[LinkName("QPicture_OnSharedPainter")]
+	public static extern void** QPicture_OnSharedPainter(void* self, QPicture_OnSharedPainter_action _action);
 }

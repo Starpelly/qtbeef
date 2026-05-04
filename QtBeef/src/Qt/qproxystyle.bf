@@ -18,11 +18,11 @@ struct QProxyStyle_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QProxyStyle_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QProxyStyle_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QProxyStyle_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -142,61 +142,9 @@ struct QProxyStyle_Ptr
 	{
 		CQt.QProxyStyle_Tr3(s, c, n);
 	}
-	public void Name(String outStr)
-	{
-		CQt.QStyle_Name((.)this.Ptr);
-	}
-	public QRect_Ptr VisualRect(Qt_LayoutDirection direction, IQRect boundingRect, IQRect logicalRect)
-	{
-		return QRect_Ptr(CQt.QStyle_VisualRect(direction, (.)boundingRect?.ObjectPtr, (.)logicalRect?.ObjectPtr));
-	}
-	public QPoint_Ptr VisualPos(Qt_LayoutDirection direction, IQRect boundingRect, IQPoint logicalPos)
-	{
-		return QPoint_Ptr(CQt.QStyle_VisualPos(direction, (.)boundingRect?.ObjectPtr, (.)logicalPos?.ObjectPtr));
-	}
-	public c_int SliderPositionFromValue(c_int min, c_int max, c_int val, c_int space)
-	{
-		return CQt.QStyle_SliderPositionFromValue(min, max, val, space);
-	}
-	public c_int SliderValueFromPosition(c_int min, c_int max, c_int pos, c_int space)
-	{
-		return CQt.QStyle_SliderValueFromPosition(min, max, pos, space);
-	}
-	public void* VisualAlignment(Qt_LayoutDirection direction, void* alignment)
-	{
-		return CQt.QStyle_VisualAlignment(direction, alignment);
-	}
-	public QRect_Ptr AlignedRect(Qt_LayoutDirection direction, void* alignment, IQSize size, IQRect rectangle)
-	{
-		return QRect_Ptr(CQt.QStyle_AlignedRect(direction, alignment, (.)size?.ObjectPtr, (.)rectangle?.ObjectPtr));
-	}
-	public c_int CombinedLayoutSpacing(void* controls1, void* controls2, Qt_Orientation orientation)
-	{
-		return CQt.QStyle_CombinedLayoutSpacing((.)this.Ptr, controls1, controls2, orientation);
-	}
-	public QStyle_Ptr Proxy()
-	{
-		return QStyle_Ptr(CQt.QStyle_Proxy((.)this.Ptr));
-	}
-	public c_int SliderPositionFromValue5(c_int min, c_int max, c_int val, c_int space, bool upsideDown)
-	{
-		return CQt.QStyle_SliderPositionFromValue5(min, max, val, space, upsideDown);
-	}
-	public c_int SliderValueFromPosition5(c_int min, c_int max, c_int pos, c_int space, bool upsideDown)
-	{
-		return CQt.QStyle_SliderValueFromPosition5(min, max, pos, space, upsideDown);
-	}
-	public c_int CombinedLayoutSpacing4(void* controls1, void* controls2, Qt_Orientation orientation, IQStyleOption option)
-	{
-		return CQt.QStyle_CombinedLayoutSpacing4((.)this.Ptr, controls1, controls2, orientation, (.)option?.ObjectPtr);
-	}
-	public c_int CombinedLayoutSpacing5(void* controls1, void* controls2, Qt_Orientation orientation, IQStyleOption option, IQWidget widget)
-	{
-		return CQt.QStyle_CombinedLayoutSpacing5((.)this.Ptr, controls1, controls2, orientation, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
-	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QProxyStyle_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -356,23 +304,23 @@ struct QProxyStyle_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QProxyStyle_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QProxyStyle_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QProxyStyle_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QProxyStyle_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QProxyStyle_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -414,71 +362,94 @@ struct QProxyStyle_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void Name(String outStr)
+	{
+		CQt.QStyle_Name((.)this.Ptr);
+	}
+	public QRect_Ptr VisualRect(Qt_LayoutDirection direction, IQRect boundingRect, IQRect logicalRect)
+	{
+		return QRect_Ptr(CQt.QStyle_VisualRect(direction, (.)boundingRect?.ObjectPtr, (.)logicalRect?.ObjectPtr));
+	}
+	public QPoint_Ptr VisualPos(Qt_LayoutDirection direction, IQRect boundingRect, IQPoint logicalPos)
+	{
+		return QPoint_Ptr(CQt.QStyle_VisualPos(direction, (.)boundingRect?.ObjectPtr, (.)logicalPos?.ObjectPtr));
+	}
+	public c_int SliderPositionFromValue(c_int min, c_int max, c_int val, c_int space)
+	{
+		return CQt.QStyle_SliderPositionFromValue(min, max, val, space);
+	}
+	public c_int SliderValueFromPosition(c_int min, c_int max, c_int pos, c_int space)
+	{
+		return CQt.QStyle_SliderValueFromPosition(min, max, pos, space);
+	}
+	public void* VisualAlignment(Qt_LayoutDirection direction, void* alignment)
+	{
+		return CQt.QStyle_VisualAlignment(direction, alignment);
+	}
+	public QRect_Ptr AlignedRect(Qt_LayoutDirection direction, void* alignment, IQSize size, IQRect rectangle)
+	{
+		return QRect_Ptr(CQt.QStyle_AlignedRect(direction, alignment, (.)size?.ObjectPtr, (.)rectangle?.ObjectPtr));
+	}
+	public c_int CombinedLayoutSpacing(void* controls1, void* controls2, Qt_Orientation orientation)
+	{
+		return CQt.QStyle_CombinedLayoutSpacing((.)this.Ptr, controls1, controls2, orientation);
+	}
+	public QStyle_Ptr Proxy()
+	{
+		return QStyle_Ptr(CQt.QStyle_Proxy((.)this.Ptr));
+	}
+	public c_int SliderPositionFromValue5(c_int min, c_int max, c_int val, c_int space, bool upsideDown)
+	{
+		return CQt.QStyle_SliderPositionFromValue5(min, max, val, space, upsideDown);
+	}
+	public c_int SliderValueFromPosition5(c_int min, c_int max, c_int pos, c_int space, bool upsideDown)
+	{
+		return CQt.QStyle_SliderValueFromPosition5(min, max, pos, space, upsideDown);
+	}
+	public c_int CombinedLayoutSpacing4(void* controls1, void* controls2, Qt_Orientation orientation, IQStyleOption option)
+	{
+		return CQt.QStyle_CombinedLayoutSpacing4((.)this.Ptr, controls1, controls2, orientation, (.)option?.ObjectPtr);
+	}
+	public c_int CombinedLayoutSpacing5(void* controls1, void* controls2, Qt_Orientation orientation, IQStyleOption option, IQWidget widget)
+	{
+		return CQt.QStyle_CombinedLayoutSpacing5((.)this.Ptr, controls1, controls2, orientation, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
+	}
 }
 class QProxyStyle : IQProxyStyle, IQCommonStyle, IQStyle, IQObject
 {
 	private QProxyStyle_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QProxyStyle_destroyed,
-		QProxyStyle_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QProxyStyle_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QProxyStyle_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(String key)
 	{
 		this.ptr = CQt.QProxyStyle_new2(libqt_string(key));
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyle style)
 	{
 		this.ptr = CQt.QProxyStyle_new3((.)style?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QProxyStyle_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -492,101 +463,91 @@ class QProxyStyle : IQProxyStyle, IQCommonStyle, IQStyle, IQObject
 	{
 		this.ptr.SetBaseStyle(style);
 	}
-	public void DrawPrimitive(QStyle_PrimitiveElement element, IQStyleOption option, IQPainter painter, IQWidget widget)
+	public  virtual void OnDrawPrimitive(QStyle_PrimitiveElement element, void** option, void** painter, void** widget)
 	{
-		this.ptr.DrawPrimitive(element, option, painter, widget);
 	}
-	public void DrawControl(QStyle_ControlElement element, IQStyleOption option, IQPainter painter, IQWidget widget)
+	public  virtual void OnDrawControl(QStyle_ControlElement element, void** option, void** painter, void** widget)
 	{
-		this.ptr.DrawControl(element, option, painter, widget);
 	}
-	public void DrawComplexControl(QStyle_ComplexControl control, IQStyleOptionComplex option, IQPainter painter, IQWidget widget)
+	public  virtual void OnDrawComplexControl(QStyle_ComplexControl control, void** option, void** painter, void** widget)
 	{
-		this.ptr.DrawComplexControl(control, option, painter, widget);
 	}
-	public void DrawItemText(IQPainter painter, IQRect rect, c_int flags, IQPalette pal, bool enabled, String text, QPalette_ColorRole textRole)
+	public  virtual void OnDrawItemText(void** painter, void** rect, c_int flags, void** pal, bool enabled, libqt_string text, QPalette_ColorRole textRole)
 	{
-		this.ptr.DrawItemText(painter, rect, flags, pal, enabled, text, textRole);
 	}
-	public void DrawItemPixmap(IQPainter painter, IQRect rect, c_int alignment, IQPixmap pixmap)
+	public  virtual void OnDrawItemPixmap(void** painter, void** rect, c_int alignment, void** pixmap)
 	{
-		this.ptr.DrawItemPixmap(painter, rect, alignment, pixmap);
 	}
-	public QSize_Ptr SizeFromContents(QStyle_ContentsType type, IQStyleOption option, IQSize size, IQWidget widget)
+	public  virtual QSize_Ptr OnSizeFromContents(QStyle_ContentsType type, void** option, void** size, void** widget)
 	{
-		return this.ptr.SizeFromContents(type, option, size, widget);
+		return default;
 	}
-	public QRect_Ptr SubElementRect(QStyle_SubElement element, IQStyleOption option, IQWidget widget)
+	public  virtual QRect_Ptr OnSubElementRect(QStyle_SubElement element, void** option, void** widget)
 	{
-		return this.ptr.SubElementRect(element, option, widget);
+		return default;
 	}
-	public QRect_Ptr SubControlRect(QStyle_ComplexControl cc, IQStyleOptionComplex opt, QStyle_SubControl sc, IQWidget widget)
+	public  virtual QRect_Ptr OnSubControlRect(QStyle_ComplexControl cc, void** opt, QStyle_SubControl sc, void** widget)
 	{
-		return this.ptr.SubControlRect(cc, opt, sc, widget);
+		return default;
 	}
-	public QRect_Ptr ItemTextRect(IQFontMetrics fm, IQRect r, c_int flags, bool enabled, String text)
+	public  virtual QRect_Ptr OnItemTextRect(void** fm, void** r, c_int flags, bool enabled, libqt_string text)
 	{
-		return this.ptr.ItemTextRect(fm, r, flags, enabled, text);
+		return default;
 	}
-	public QRect_Ptr ItemPixmapRect(IQRect r, c_int flags, IQPixmap pixmap)
+	public  virtual QRect_Ptr OnItemPixmapRect(void** r, c_int flags, void** pixmap)
 	{
-		return this.ptr.ItemPixmapRect(r, flags, pixmap);
+		return default;
 	}
-	public QStyle_SubControl HitTestComplexControl(QStyle_ComplexControl control, IQStyleOptionComplex option, IQPoint pos, IQWidget widget)
+	public  virtual QStyle_SubControl OnHitTestComplexControl(QStyle_ComplexControl control, void** option, void** pos, void** widget)
 	{
-		return this.ptr.HitTestComplexControl(control, option, pos, widget);
+		return default;
 	}
-	public c_int StyleHint(QStyle_StyleHint hint, IQStyleOption option, IQWidget widget, IQStyleHintReturn returnData)
+	public  virtual c_int OnStyleHint(QStyle_StyleHint hint, void** option, void** widget, void** returnData)
 	{
-		return this.ptr.StyleHint(hint, option, widget, returnData);
+		return default;
 	}
-	public c_int PixelMetric(QStyle_PixelMetric metric, IQStyleOption option, IQWidget widget)
+	public  virtual c_int OnPixelMetric(QStyle_PixelMetric metric, void** option, void** widget)
 	{
-		return this.ptr.PixelMetric(metric, option, widget);
+		return default;
 	}
-	public c_int LayoutSpacing(QSizePolicy_ControlType control1, QSizePolicy_ControlType control2, Qt_Orientation orientation, IQStyleOption option, IQWidget widget)
+	public  virtual c_int OnLayoutSpacing(QSizePolicy_ControlType control1, QSizePolicy_ControlType control2, Qt_Orientation orientation, void** option, void** widget)
 	{
-		return this.ptr.LayoutSpacing(control1, control2, orientation, option, widget);
+		return default;
 	}
-	public QIcon_Ptr StandardIcon(QStyle_StandardPixmap standardIcon, IQStyleOption option, IQWidget widget)
+	public  virtual QIcon_Ptr OnStandardIcon(QStyle_StandardPixmap standardIcon, void** option, void** widget)
 	{
-		return this.ptr.StandardIcon(standardIcon, option, widget);
+		return default;
 	}
-	public QPixmap_Ptr StandardPixmap(QStyle_StandardPixmap standardPixmap, IQStyleOption opt, IQWidget widget)
+	public  virtual QPixmap_Ptr OnStandardPixmap(QStyle_StandardPixmap standardPixmap, void** opt, void** widget)
 	{
-		return this.ptr.StandardPixmap(standardPixmap, opt, widget);
+		return default;
 	}
-	public QPixmap_Ptr GeneratedIconPixmap(QIcon_Mode iconMode, IQPixmap pixmap, IQStyleOption opt)
+	public  virtual QPixmap_Ptr OnGeneratedIconPixmap(QIcon_Mode iconMode, void** pixmap, void** opt)
 	{
-		return this.ptr.GeneratedIconPixmap(iconMode, pixmap, opt);
+		return default;
 	}
-	public QPalette_Ptr StandardPalette()
+	public  virtual QPalette_Ptr OnStandardPalette()
 	{
-		return this.ptr.StandardPalette();
+		return default;
 	}
-	public void Polish(IQWidget widget)
+	public  virtual void OnPolish(void** widget)
 	{
-		this.ptr.Polish(widget);
 	}
-	public void Polish2(IQPalette pal)
+	public  virtual void OnPolish2(void** pal)
 	{
-		this.ptr.Polish2(pal);
 	}
-	public void Polish3(IQApplication app)
+	public  virtual void OnPolish3(void** app)
 	{
-		this.ptr.Polish3(app);
 	}
-	public void Unpolish(IQWidget widget)
+	public  virtual void OnUnpolish(void** widget)
 	{
-		this.ptr.Unpolish(widget);
 	}
-	public void Unpolish2(IQApplication app)
+	public  virtual void OnUnpolish2(void** app)
 	{
-		this.ptr.Unpolish2(app);
 	}
-	public bool Event(IQEvent e)
+	public  virtual bool OnEvent(void** e)
 	{
-		return this.ptr.Event(e);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -596,61 +557,9 @@ class QProxyStyle : IQProxyStyle, IQCommonStyle, IQStyle, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void Name(String outStr)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		this.ptr.Name(outStr);
-	}
-	public QRect_Ptr VisualRect(Qt_LayoutDirection direction, IQRect boundingRect, IQRect logicalRect)
-	{
-		return this.ptr.VisualRect(direction, boundingRect, logicalRect);
-	}
-	public QPoint_Ptr VisualPos(Qt_LayoutDirection direction, IQRect boundingRect, IQPoint logicalPos)
-	{
-		return this.ptr.VisualPos(direction, boundingRect, logicalPos);
-	}
-	public c_int SliderPositionFromValue(c_int min, c_int max, c_int val, c_int space)
-	{
-		return this.ptr.SliderPositionFromValue(min, max, val, space);
-	}
-	public c_int SliderValueFromPosition(c_int min, c_int max, c_int pos, c_int space)
-	{
-		return this.ptr.SliderValueFromPosition(min, max, pos, space);
-	}
-	public void* VisualAlignment(Qt_LayoutDirection direction, void* alignment)
-	{
-		return this.ptr.VisualAlignment(direction, alignment);
-	}
-	public QRect_Ptr AlignedRect(Qt_LayoutDirection direction, void* alignment, IQSize size, IQRect rectangle)
-	{
-		return this.ptr.AlignedRect(direction, alignment, size, rectangle);
-	}
-	public c_int CombinedLayoutSpacing(void* controls1, void* controls2, Qt_Orientation orientation)
-	{
-		return this.ptr.CombinedLayoutSpacing(controls1, controls2, orientation);
-	}
-	public QStyle_Ptr Proxy()
-	{
-		return this.ptr.Proxy();
-	}
-	public c_int SliderPositionFromValue5(c_int min, c_int max, c_int val, c_int space, bool upsideDown)
-	{
-		return this.ptr.SliderPositionFromValue5(min, max, val, space, upsideDown);
-	}
-	public c_int SliderValueFromPosition5(c_int min, c_int max, c_int pos, c_int space, bool upsideDown)
-	{
-		return this.ptr.SliderValueFromPosition5(min, max, pos, space, upsideDown);
-	}
-	public c_int CombinedLayoutSpacing4(void* controls1, void* controls2, Qt_Orientation orientation, IQStyleOption option)
-	{
-		return this.ptr.CombinedLayoutSpacing4(controls1, controls2, orientation, option);
-	}
-	public c_int CombinedLayoutSpacing5(void* controls1, void* controls2, Qt_Orientation orientation, IQStyleOption option, IQWidget widget)
-	{
-		return this.ptr.CombinedLayoutSpacing5(controls1, controls2, orientation, option, widget);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -808,25 +717,20 @@ class QProxyStyle : IQProxyStyle, IQCommonStyle, IQStyle, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -868,6 +772,58 @@ class QProxyStyle : IQProxyStyle, IQCommonStyle, IQStyle, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public void Name(String outStr)
+	{
+		this.ptr.Name(outStr);
+	}
+	public QRect_Ptr VisualRect(Qt_LayoutDirection direction, IQRect boundingRect, IQRect logicalRect)
+	{
+		return this.ptr.VisualRect(direction, boundingRect, logicalRect);
+	}
+	public QPoint_Ptr VisualPos(Qt_LayoutDirection direction, IQRect boundingRect, IQPoint logicalPos)
+	{
+		return this.ptr.VisualPos(direction, boundingRect, logicalPos);
+	}
+	public c_int SliderPositionFromValue(c_int min, c_int max, c_int val, c_int space)
+	{
+		return this.ptr.SliderPositionFromValue(min, max, val, space);
+	}
+	public c_int SliderValueFromPosition(c_int min, c_int max, c_int pos, c_int space)
+	{
+		return this.ptr.SliderValueFromPosition(min, max, pos, space);
+	}
+	public void* VisualAlignment(Qt_LayoutDirection direction, void* alignment)
+	{
+		return this.ptr.VisualAlignment(direction, alignment);
+	}
+	public QRect_Ptr AlignedRect(Qt_LayoutDirection direction, void* alignment, IQSize size, IQRect rectangle)
+	{
+		return this.ptr.AlignedRect(direction, alignment, size, rectangle);
+	}
+	public c_int CombinedLayoutSpacing(void* controls1, void* controls2, Qt_Orientation orientation)
+	{
+		return this.ptr.CombinedLayoutSpacing(controls1, controls2, orientation);
+	}
+	public QStyle_Ptr Proxy()
+	{
+		return this.ptr.Proxy();
+	}
+	public c_int SliderPositionFromValue5(c_int min, c_int max, c_int val, c_int space, bool upsideDown)
+	{
+		return this.ptr.SliderPositionFromValue5(min, max, val, space, upsideDown);
+	}
+	public c_int SliderValueFromPosition5(c_int min, c_int max, c_int pos, c_int space, bool upsideDown)
+	{
+		return this.ptr.SliderValueFromPosition5(min, max, pos, space, upsideDown);
+	}
+	public c_int CombinedLayoutSpacing4(void* controls1, void* controls2, Qt_Orientation orientation, IQStyleOption option)
+	{
+		return this.ptr.CombinedLayoutSpacing4(controls1, controls2, orientation, option);
+	}
+	public c_int CombinedLayoutSpacing5(void* controls1, void* controls2, Qt_Orientation orientation, IQStyleOption option, IQWidget widget)
+	{
+		return this.ptr.CombinedLayoutSpacing5(controls1, controls2, orientation, option, widget);
+	}
 }
 interface IQProxyStyle : IQtObjectInterface
 {
@@ -884,10 +840,22 @@ extension CQt
 	public static extern void QProxyStyle_Delete(QProxyStyle_Ptr self);
 	[LinkName("QProxyStyle_MetaObject")]
 	public static extern void** QProxyStyle_MetaObject(void* self);
+	
+	public function void QProxyStyle_OnMetaObject_action(void* self);
+	[LinkName("QProxyStyle_OnMetaObject")]
+	public static extern void** QProxyStyle_OnMetaObject(void* self, QProxyStyle_OnMetaObject_action _action);
 	[LinkName("QProxyStyle_Qt_Metacast")]
 	public static extern void* QProxyStyle_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QProxyStyle_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QProxyStyle_OnMetacast")]
+	public static extern void* QProxyStyle_OnMetacast(void* self, QProxyStyle_OnMetacast_action _action);
 	[LinkName("QProxyStyle_Qt_Metacall")]
 	public static extern c_int QProxyStyle_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QProxyStyle_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QProxyStyle_OnMetacall")]
+	public static extern c_int QProxyStyle_OnMetacall(void* self, QProxyStyle_OnMetacall_action _action);
 	[LinkName("QProxyStyle_Tr")]
 	public static extern libqt_string QProxyStyle_Tr(c_char* s);
 	[LinkName("QProxyStyle_BaseStyle")]
@@ -896,54 +864,186 @@ extension CQt
 	public static extern void QProxyStyle_SetBaseStyle(void* self, void** style);
 	[LinkName("QProxyStyle_DrawPrimitive")]
 	public static extern void QProxyStyle_DrawPrimitive(void* self, QStyle_PrimitiveElement element, void** option, void** painter, void** widget);
+	
+	public function void QProxyStyle_OnDrawPrimitive_action(void* self, QStyle_PrimitiveElement element, void** option, void** painter, void** widget);
+	[LinkName("QProxyStyle_OnDrawPrimitive")]
+	public static extern void QProxyStyle_OnDrawPrimitive(void* self, QProxyStyle_OnDrawPrimitive_action _action);
 	[LinkName("QProxyStyle_DrawControl")]
 	public static extern void QProxyStyle_DrawControl(void* self, QStyle_ControlElement element, void** option, void** painter, void** widget);
+	
+	public function void QProxyStyle_OnDrawControl_action(void* self, QStyle_ControlElement element, void** option, void** painter, void** widget);
+	[LinkName("QProxyStyle_OnDrawControl")]
+	public static extern void QProxyStyle_OnDrawControl(void* self, QProxyStyle_OnDrawControl_action _action);
 	[LinkName("QProxyStyle_DrawComplexControl")]
 	public static extern void QProxyStyle_DrawComplexControl(void* self, QStyle_ComplexControl control, void** option, void** painter, void** widget);
+	
+	public function void QProxyStyle_OnDrawComplexControl_action(void* self, QStyle_ComplexControl control, void** option, void** painter, void** widget);
+	[LinkName("QProxyStyle_OnDrawComplexControl")]
+	public static extern void QProxyStyle_OnDrawComplexControl(void* self, QProxyStyle_OnDrawComplexControl_action _action);
 	[LinkName("QProxyStyle_DrawItemText")]
 	public static extern void QProxyStyle_DrawItemText(void* self, void** painter, void** rect, c_int flags, void** pal, bool enabled, libqt_string text, QPalette_ColorRole textRole);
+	
+	public function void QProxyStyle_OnDrawItemText_action(void* self, void** painter, void** rect, c_int flags, void** pal, bool enabled, libqt_string text, QPalette_ColorRole textRole);
+	[LinkName("QProxyStyle_OnDrawItemText")]
+	public static extern void QProxyStyle_OnDrawItemText(void* self, QProxyStyle_OnDrawItemText_action _action);
 	[LinkName("QProxyStyle_DrawItemPixmap")]
 	public static extern void QProxyStyle_DrawItemPixmap(void* self, void** painter, void** rect, c_int alignment, void** pixmap);
+	
+	public function void QProxyStyle_OnDrawItemPixmap_action(void* self, void** painter, void** rect, c_int alignment, void** pixmap);
+	[LinkName("QProxyStyle_OnDrawItemPixmap")]
+	public static extern void QProxyStyle_OnDrawItemPixmap(void* self, QProxyStyle_OnDrawItemPixmap_action _action);
 	[LinkName("QProxyStyle_SizeFromContents")]
 	public static extern void* QProxyStyle_SizeFromContents(void* self, QStyle_ContentsType type, void** option, void** size, void** widget);
+	
+	public function void QProxyStyle_OnSizeFromContents_action(void* self, QStyle_ContentsType type, void** option, void** size, void** widget);
+	[LinkName("QProxyStyle_OnSizeFromContents")]
+	public static extern void* QProxyStyle_OnSizeFromContents(void* self, QProxyStyle_OnSizeFromContents_action _action);
 	[LinkName("QProxyStyle_SubElementRect")]
 	public static extern void* QProxyStyle_SubElementRect(void* self, QStyle_SubElement element, void** option, void** widget);
+	
+	public function void QProxyStyle_OnSubElementRect_action(void* self, QStyle_SubElement element, void** option, void** widget);
+	[LinkName("QProxyStyle_OnSubElementRect")]
+	public static extern void* QProxyStyle_OnSubElementRect(void* self, QProxyStyle_OnSubElementRect_action _action);
 	[LinkName("QProxyStyle_SubControlRect")]
 	public static extern void* QProxyStyle_SubControlRect(void* self, QStyle_ComplexControl cc, void** opt, QStyle_SubControl sc, void** widget);
+	
+	public function void QProxyStyle_OnSubControlRect_action(void* self, QStyle_ComplexControl cc, void** opt, QStyle_SubControl sc, void** widget);
+	[LinkName("QProxyStyle_OnSubControlRect")]
+	public static extern void* QProxyStyle_OnSubControlRect(void* self, QProxyStyle_OnSubControlRect_action _action);
 	[LinkName("QProxyStyle_ItemTextRect")]
 	public static extern void* QProxyStyle_ItemTextRect(void* self, void** fm, void** r, c_int flags, bool enabled, libqt_string text);
+	
+	public function void QProxyStyle_OnItemTextRect_action(void* self, void** fm, void** r, c_int flags, bool enabled, libqt_string text);
+	[LinkName("QProxyStyle_OnItemTextRect")]
+	public static extern void* QProxyStyle_OnItemTextRect(void* self, QProxyStyle_OnItemTextRect_action _action);
 	[LinkName("QProxyStyle_ItemPixmapRect")]
 	public static extern void* QProxyStyle_ItemPixmapRect(void* self, void** r, c_int flags, void** pixmap);
+	
+	public function void QProxyStyle_OnItemPixmapRect_action(void* self, void** r, c_int flags, void** pixmap);
+	[LinkName("QProxyStyle_OnItemPixmapRect")]
+	public static extern void* QProxyStyle_OnItemPixmapRect(void* self, QProxyStyle_OnItemPixmapRect_action _action);
 	[LinkName("QProxyStyle_HitTestComplexControl")]
 	public static extern QStyle_SubControl QProxyStyle_HitTestComplexControl(void* self, QStyle_ComplexControl control, void** option, void** pos, void** widget);
+	
+	public function void QProxyStyle_OnHitTestComplexControl_action(void* self, QStyle_ComplexControl control, void** option, void** pos, void** widget);
+	[LinkName("QProxyStyle_OnHitTestComplexControl")]
+	public static extern QStyle_SubControl QProxyStyle_OnHitTestComplexControl(void* self, QProxyStyle_OnHitTestComplexControl_action _action);
 	[LinkName("QProxyStyle_StyleHint")]
 	public static extern c_int QProxyStyle_StyleHint(void* self, QStyle_StyleHint hint, void** option, void** widget, void** returnData);
+	
+	public function void QProxyStyle_OnStyleHint_action(void* self, QStyle_StyleHint hint, void** option, void** widget, void** returnData);
+	[LinkName("QProxyStyle_OnStyleHint")]
+	public static extern c_int QProxyStyle_OnStyleHint(void* self, QProxyStyle_OnStyleHint_action _action);
 	[LinkName("QProxyStyle_PixelMetric")]
 	public static extern c_int QProxyStyle_PixelMetric(void* self, QStyle_PixelMetric metric, void** option, void** widget);
+	
+	public function void QProxyStyle_OnPixelMetric_action(void* self, QStyle_PixelMetric metric, void** option, void** widget);
+	[LinkName("QProxyStyle_OnPixelMetric")]
+	public static extern c_int QProxyStyle_OnPixelMetric(void* self, QProxyStyle_OnPixelMetric_action _action);
 	[LinkName("QProxyStyle_LayoutSpacing")]
 	public static extern c_int QProxyStyle_LayoutSpacing(void* self, QSizePolicy_ControlType control1, QSizePolicy_ControlType control2, Qt_Orientation orientation, void** option, void** widget);
+	
+	public function void QProxyStyle_OnLayoutSpacing_action(void* self, QSizePolicy_ControlType control1, QSizePolicy_ControlType control2, Qt_Orientation orientation, void** option, void** widget);
+	[LinkName("QProxyStyle_OnLayoutSpacing")]
+	public static extern c_int QProxyStyle_OnLayoutSpacing(void* self, QProxyStyle_OnLayoutSpacing_action _action);
 	[LinkName("QProxyStyle_StandardIcon")]
 	public static extern void* QProxyStyle_StandardIcon(void* self, QStyle_StandardPixmap standardIcon, void** option, void** widget);
+	
+	public function void QProxyStyle_OnStandardIcon_action(void* self, QStyle_StandardPixmap standardIcon, void** option, void** widget);
+	[LinkName("QProxyStyle_OnStandardIcon")]
+	public static extern void* QProxyStyle_OnStandardIcon(void* self, QProxyStyle_OnStandardIcon_action _action);
 	[LinkName("QProxyStyle_StandardPixmap")]
 	public static extern void* QProxyStyle_StandardPixmap(void* self, QStyle_StandardPixmap standardPixmap, void** opt, void** widget);
+	
+	public function void QProxyStyle_OnStandardPixmap_action(void* self, QStyle_StandardPixmap standardPixmap, void** opt, void** widget);
+	[LinkName("QProxyStyle_OnStandardPixmap")]
+	public static extern void* QProxyStyle_OnStandardPixmap(void* self, QProxyStyle_OnStandardPixmap_action _action);
 	[LinkName("QProxyStyle_GeneratedIconPixmap")]
 	public static extern void* QProxyStyle_GeneratedIconPixmap(void* self, QIcon_Mode iconMode, void** pixmap, void** opt);
+	
+	public function void QProxyStyle_OnGeneratedIconPixmap_action(void* self, QIcon_Mode iconMode, void** pixmap, void** opt);
+	[LinkName("QProxyStyle_OnGeneratedIconPixmap")]
+	public static extern void* QProxyStyle_OnGeneratedIconPixmap(void* self, QProxyStyle_OnGeneratedIconPixmap_action _action);
 	[LinkName("QProxyStyle_StandardPalette")]
 	public static extern void* QProxyStyle_StandardPalette(void* self);
+	
+	public function void QProxyStyle_OnStandardPalette_action(void* self);
+	[LinkName("QProxyStyle_OnStandardPalette")]
+	public static extern void* QProxyStyle_OnStandardPalette(void* self, QProxyStyle_OnStandardPalette_action _action);
 	[LinkName("QProxyStyle_Polish")]
 	public static extern void QProxyStyle_Polish(void* self, void** widget);
+	
+	public function void QProxyStyle_OnPolish_action(void* self, void** widget);
+	[LinkName("QProxyStyle_OnPolish")]
+	public static extern void QProxyStyle_OnPolish(void* self, QProxyStyle_OnPolish_action _action);
 	[LinkName("QProxyStyle_Polish2")]
 	public static extern void QProxyStyle_Polish2(void* self, void** pal);
+	
+	public function void QProxyStyle_OnPolish2_action(void* self, void** pal);
+	[LinkName("QProxyStyle_OnPolish2")]
+	public static extern void QProxyStyle_OnPolish2(void* self, QProxyStyle_OnPolish2_action _action);
 	[LinkName("QProxyStyle_Polish3")]
 	public static extern void QProxyStyle_Polish3(void* self, void** app);
+	
+	public function void QProxyStyle_OnPolish3_action(void* self, void** app);
+	[LinkName("QProxyStyle_OnPolish3")]
+	public static extern void QProxyStyle_OnPolish3(void* self, QProxyStyle_OnPolish3_action _action);
 	[LinkName("QProxyStyle_Unpolish")]
 	public static extern void QProxyStyle_Unpolish(void* self, void** widget);
+	
+	public function void QProxyStyle_OnUnpolish_action(void* self, void** widget);
+	[LinkName("QProxyStyle_OnUnpolish")]
+	public static extern void QProxyStyle_OnUnpolish(void* self, QProxyStyle_OnUnpolish_action _action);
 	[LinkName("QProxyStyle_Unpolish2")]
 	public static extern void QProxyStyle_Unpolish2(void* self, void** app);
+	
+	public function void QProxyStyle_OnUnpolish2_action(void* self, void** app);
+	[LinkName("QProxyStyle_OnUnpolish2")]
+	public static extern void QProxyStyle_OnUnpolish2(void* self, QProxyStyle_OnUnpolish2_action _action);
 	[LinkName("QProxyStyle_Event")]
 	public static extern bool QProxyStyle_Event(void* self, void** e);
+	
+	public function void QProxyStyle_OnEvent_action(void* self, void** e);
+	[LinkName("QProxyStyle_OnEvent")]
+	public static extern bool QProxyStyle_OnEvent(void* self, QProxyStyle_OnEvent_action _action);
 	[LinkName("QProxyStyle_Tr2")]
 	public static extern libqt_string QProxyStyle_Tr2(c_char* s, c_char* c);
 	[LinkName("QProxyStyle_Tr3")]
 	public static extern libqt_string QProxyStyle_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QProxyStyle_EventFilter")]
+	public static extern bool QProxyStyle_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QProxyStyle_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QProxyStyle_OnEventFilter")]
+	public static extern bool QProxyStyle_OnEventFilter(void* self, QProxyStyle_OnEventFilter_action _action);
+	[LinkName("QProxyStyle_TimerEvent")]
+	public static extern void QProxyStyle_TimerEvent(void* self, void** event);
+	
+	public function void QProxyStyle_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QProxyStyle_OnTimerEvent")]
+	public static extern void QProxyStyle_OnTimerEvent(void* self, QProxyStyle_OnTimerEvent_action _action);
+	[LinkName("QProxyStyle_ChildEvent")]
+	public static extern void QProxyStyle_ChildEvent(void* self, void** event);
+	
+	public function void QProxyStyle_OnChildEvent_action(void* self, void** event);
+	[LinkName("QProxyStyle_OnChildEvent")]
+	public static extern void QProxyStyle_OnChildEvent(void* self, QProxyStyle_OnChildEvent_action _action);
+	[LinkName("QProxyStyle_CustomEvent")]
+	public static extern void QProxyStyle_CustomEvent(void* self, void** event);
+	
+	public function void QProxyStyle_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QProxyStyle_OnCustomEvent")]
+	public static extern void QProxyStyle_OnCustomEvent(void* self, QProxyStyle_OnCustomEvent_action _action);
+	[LinkName("QProxyStyle_ConnectNotify")]
+	public static extern void QProxyStyle_ConnectNotify(void* self, void** signal);
+	
+	public function void QProxyStyle_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QProxyStyle_OnConnectNotify")]
+	public static extern void QProxyStyle_OnConnectNotify(void* self, QProxyStyle_OnConnectNotify_action _action);
+	[LinkName("QProxyStyle_DisconnectNotify")]
+	public static extern void QProxyStyle_DisconnectNotify(void* self, void** signal);
+	
+	public function void QProxyStyle_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QProxyStyle_OnDisconnectNotify")]
+	public static extern void QProxyStyle_OnDisconnectNotify(void* self, QProxyStyle_OnDisconnectNotify_action _action);
 }

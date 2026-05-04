@@ -18,11 +18,11 @@ struct QInputDevice_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QInputDevice_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QInputDevice_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QInputDevice_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -88,11 +88,11 @@ struct QInputDevice_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QInputDevice_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QInputDevice_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -252,23 +252,23 @@ struct QInputDevice_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QInputDevice_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QInputDevice_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QInputDevice_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QInputDevice_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QInputDevice_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -315,84 +315,45 @@ class QInputDevice : IQInputDevice, IQObject
 {
 	private QInputDevice_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QInputDevice_availableVirtualGeometryChanged,
-		QInputDevice_destroyed,
-		QInputDevice_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QInputDevice_Connect_AvailableVirtualGeometryChanged(obj.ObjectPtr,  => QtBeef_QInputDevice_availableVirtualGeometryChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void* area)> OnAvailableVirtualGeometryChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QInputDevice_availableVirtualGeometryChanged(void* ptr, void* area)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAvailableVirtualGeometryChanged.Invoke(area);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QInputDevice_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QInputDevice_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType type)
 	{
 		this.ptr = CQt.QInputDevice_new2(libqt_string(name), systemId, type);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QInputDevice_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType type, String seatName)
 	{
 		this.ptr = CQt.QInputDevice_new4(libqt_string(name), systemId, type, libqt_string(seatName));
-		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType type, String seatName, IQObject parent)
 	{
 		this.ptr = CQt.QInputDevice_new5(libqt_string(name), systemId, type, libqt_string(seatName), (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QInputDevice_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -454,13 +415,13 @@ class QInputDevice : IQInputDevice, IQObject
 	{
 		return this.ptr.PrimaryKeyboard1(seatName);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -618,25 +579,20 @@ class QInputDevice : IQInputDevice, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -698,10 +654,22 @@ extension CQt
 	public static extern void QInputDevice_Delete(QInputDevice_Ptr self);
 	[LinkName("QInputDevice_MetaObject")]
 	public static extern void** QInputDevice_MetaObject(void* self);
+	
+	public function void QInputDevice_OnMetaObject_action(void* self);
+	[LinkName("QInputDevice_OnMetaObject")]
+	public static extern void** QInputDevice_OnMetaObject(void* self, QInputDevice_OnMetaObject_action _action);
 	[LinkName("QInputDevice_Qt_Metacast")]
 	public static extern void* QInputDevice_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QInputDevice_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QInputDevice_OnMetacast")]
+	public static extern void* QInputDevice_OnMetacast(void* self, QInputDevice_OnMetacast_action _action);
 	[LinkName("QInputDevice_Qt_Metacall")]
 	public static extern c_int QInputDevice_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QInputDevice_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QInputDevice_OnMetacall")]
+	public static extern c_int QInputDevice_OnMetacall(void* self, QInputDevice_OnMetacall_action _action);
 	[LinkName("QInputDevice_Tr")]
 	public static extern libqt_string QInputDevice_Tr(c_char* s);
 	[LinkName("QInputDevice_Name")]
@@ -729,15 +697,57 @@ extension CQt
 	[LinkName("QInputDevice_AvailableVirtualGeometryChanged")]
 	public static extern void QInputDevice_AvailableVirtualGeometryChanged(void* self, void* area);
 	
-	public function void QInputDevice_availableVirtualGeometryChanged_action(void* self, void* area);
+	public function void QInputDevice_Connect_AvailableVirtualGeometryChanged_action(void* self, void* area);
 	[LinkName("QInputDevice_Connect_AvailableVirtualGeometryChanged")]
-	public static extern void QInputDevice_Connect_AvailableVirtualGeometryChanged(void* self, QInputDevice_availableVirtualGeometryChanged_action _action);
+	public static extern void QInputDevice_Connect_AvailableVirtualGeometryChanged(void* self, QInputDevice_Connect_AvailableVirtualGeometryChanged_action _action);
 	[LinkName("QInputDevice_Tr2")]
 	public static extern libqt_string QInputDevice_Tr2(c_char* s, c_char* c);
 	[LinkName("QInputDevice_Tr3")]
 	public static extern libqt_string QInputDevice_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QInputDevice_PrimaryKeyboard1")]
 	public static extern void** QInputDevice_PrimaryKeyboard1(libqt_string seatName);
+	[LinkName("QInputDevice_Event")]
+	public static extern bool QInputDevice_Event(void* self, void** event);
+	
+	public function void QInputDevice_OnEvent_action(void* self, void** event);
+	[LinkName("QInputDevice_OnEvent")]
+	public static extern bool QInputDevice_OnEvent(void* self, QInputDevice_OnEvent_action _action);
+	[LinkName("QInputDevice_EventFilter")]
+	public static extern bool QInputDevice_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QInputDevice_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QInputDevice_OnEventFilter")]
+	public static extern bool QInputDevice_OnEventFilter(void* self, QInputDevice_OnEventFilter_action _action);
+	[LinkName("QInputDevice_TimerEvent")]
+	public static extern void QInputDevice_TimerEvent(void* self, void** event);
+	
+	public function void QInputDevice_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QInputDevice_OnTimerEvent")]
+	public static extern void QInputDevice_OnTimerEvent(void* self, QInputDevice_OnTimerEvent_action _action);
+	[LinkName("QInputDevice_ChildEvent")]
+	public static extern void QInputDevice_ChildEvent(void* self, void** event);
+	
+	public function void QInputDevice_OnChildEvent_action(void* self, void** event);
+	[LinkName("QInputDevice_OnChildEvent")]
+	public static extern void QInputDevice_OnChildEvent(void* self, QInputDevice_OnChildEvent_action _action);
+	[LinkName("QInputDevice_CustomEvent")]
+	public static extern void QInputDevice_CustomEvent(void* self, void** event);
+	
+	public function void QInputDevice_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QInputDevice_OnCustomEvent")]
+	public static extern void QInputDevice_OnCustomEvent(void* self, QInputDevice_OnCustomEvent_action _action);
+	[LinkName("QInputDevice_ConnectNotify")]
+	public static extern void QInputDevice_ConnectNotify(void* self, void** signal);
+	
+	public function void QInputDevice_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QInputDevice_OnConnectNotify")]
+	public static extern void QInputDevice_OnConnectNotify(void* self, QInputDevice_OnConnectNotify_action _action);
+	[LinkName("QInputDevice_DisconnectNotify")]
+	public static extern void QInputDevice_DisconnectNotify(void* self, void** signal);
+	
+	public function void QInputDevice_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QInputDevice_OnDisconnectNotify")]
+	public static extern void QInputDevice_OnDisconnectNotify(void* self, QInputDevice_OnDisconnectNotify_action _action);
 }
 [AllowDuplicates]
 enum QInputDevice_DeviceType

@@ -18,11 +18,11 @@ struct QHeaderView_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QHeaderView_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QHeaderView_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QHeaderView_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -490,613 +490,305 @@ struct QHeaderView_Ptr
 	{
 		CQt.QHeaderView_Tr3(s, c, n);
 	}
-	public QAbstractItemModel_Ptr Model()
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return QAbstractItemModel_Ptr(CQt.QAbstractItemView_Model((.)this.Ptr));
+		return CQt.QHeaderView_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public void SetSelectionModel(IQItemSelectionModel selectionModel)
+	public void ObjectName(String outStr)
 	{
-		CQt.QAbstractItemView_SetSelectionModel((.)this.Ptr, (.)selectionModel?.ObjectPtr);
+		CQt.QObject_ObjectName((.)this.Ptr);
 	}
-	public QItemSelectionModel_Ptr SelectionModel()
+	public void SetObjectName(IQAnyStringView name)
 	{
-		return QItemSelectionModel_Ptr(CQt.QAbstractItemView_SelectionModel((.)this.Ptr));
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
 	}
-	public void SetItemDelegate(IQAbstractItemDelegate _delegate)
+	public bool IsWidgetType()
 	{
-		CQt.QAbstractItemView_SetItemDelegate((.)this.Ptr, (.)_delegate?.ObjectPtr);
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
 	}
-	public QAbstractItemDelegate_Ptr ItemDelegate()
+	public bool IsWindowType()
 	{
-		return QAbstractItemDelegate_Ptr(CQt.QAbstractItemView_ItemDelegate((.)this.Ptr));
+		return CQt.QObject_IsWindowType((.)this.Ptr);
 	}
-	public void SetSelectionMode(QAbstractItemView_SelectionMode mode)
+	public bool IsQuickItemType()
 	{
-		CQt.QAbstractItemView_SetSelectionMode((.)this.Ptr, mode);
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
 	}
-	public QAbstractItemView_SelectionMode SelectionMode()
+	public bool SignalsBlocked()
 	{
-		return CQt.QAbstractItemView_SelectionMode((.)this.Ptr);
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
 	}
-	public void SetSelectionBehavior(QAbstractItemView_SelectionBehavior behavior)
+	public bool BlockSignals(bool b)
 	{
-		CQt.QAbstractItemView_SetSelectionBehavior((.)this.Ptr, behavior);
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
 	}
-	public QAbstractItemView_SelectionBehavior SelectionBehavior()
+	public QThread_Ptr Thread()
 	{
-		return CQt.QAbstractItemView_SelectionBehavior((.)this.Ptr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
 	}
-	public QModelIndex_Ptr CurrentIndex()
+	public void MoveToThread(IQThread thread)
 	{
-		return QModelIndex_Ptr(CQt.QAbstractItemView_CurrentIndex((.)this.Ptr));
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
 	}
-	public QModelIndex_Ptr RootIndex()
+	public c_int StartTimer(c_int interval)
 	{
-		return QModelIndex_Ptr(CQt.QAbstractItemView_RootIndex((.)this.Ptr));
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
 	}
-	public void SetEditTriggers(void* triggers)
+	public c_int StartTimer2(void* time)
 	{
-		CQt.QAbstractItemView_SetEditTriggers((.)this.Ptr, triggers);
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
 	}
-	public void* EditTriggers()
+	public void KillTimer(c_int id)
 	{
-		return CQt.QAbstractItemView_EditTriggers((.)this.Ptr);
+		CQt.QObject_KillTimer((.)this.Ptr, id);
 	}
-	public void SetVerticalScrollMode(QAbstractItemView_ScrollMode mode)
+	public void** Children()
 	{
-		CQt.QAbstractItemView_SetVerticalScrollMode((.)this.Ptr, mode);
+		return CQt.QObject_Children((.)this.Ptr);
 	}
-	public QAbstractItemView_ScrollMode VerticalScrollMode()
+	public void SetParent(IQObject parent)
 	{
-		return CQt.QAbstractItemView_VerticalScrollMode((.)this.Ptr);
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
-	public void ResetVerticalScrollMode()
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QAbstractItemView_ResetVerticalScrollMode((.)this.Ptr);
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void SetHorizontalScrollMode(QAbstractItemView_ScrollMode mode)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QAbstractItemView_SetHorizontalScrollMode((.)this.Ptr, mode);
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
 	}
-	public QAbstractItemView_ScrollMode HorizontalScrollMode()
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QAbstractItemView_HorizontalScrollMode((.)this.Ptr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public void ResetHorizontalScrollMode()
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		CQt.QAbstractItemView_ResetHorizontalScrollMode((.)this.Ptr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public void SetAutoScroll(bool enable)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		CQt.QAbstractItemView_SetAutoScroll((.)this.Ptr, enable);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
-	public bool HasAutoScroll()
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QAbstractItemView_HasAutoScroll((.)this.Ptr);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public void SetAutoScrollMargin(c_int margin)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		CQt.QAbstractItemView_SetAutoScrollMargin((.)this.Ptr, margin);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
-	public c_int AutoScrollMargin()
+	public bool Disconnect3()
 	{
-		return CQt.QAbstractItemView_AutoScrollMargin((.)this.Ptr);
+		return CQt.QObject_Disconnect3((.)this.Ptr);
 	}
-	public void SetTabKeyNavigation(bool enable)
+	public bool Disconnect4(IQObject receiver)
 	{
-		CQt.QAbstractItemView_SetTabKeyNavigation((.)this.Ptr, enable);
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool TabKeyNavigation()
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QAbstractItemView_TabKeyNavigation((.)this.Ptr);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
-	public void SetDropIndicatorShown(bool enable)
+	public void DumpObjectTree()
 	{
-		CQt.QAbstractItemView_SetDropIndicatorShown((.)this.Ptr, enable);
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
 	}
-	public bool ShowDropIndicator()
+	public void DumpObjectInfo()
 	{
-		return CQt.QAbstractItemView_ShowDropIndicator((.)this.Ptr);
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
 	}
-	public void SetDragEnabled(bool enable)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		CQt.QAbstractItemView_SetDragEnabled((.)this.Ptr, enable);
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
 	}
-	public bool DragEnabled()
+	public QVariant_Ptr Property(c_char* name)
 	{
-		return CQt.QAbstractItemView_DragEnabled((.)this.Ptr);
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
 	}
-	public void SetDragDropOverwriteMode(bool overwrite)
+	public void* DynamicPropertyNames()
 	{
-		CQt.QAbstractItemView_SetDragDropOverwriteMode((.)this.Ptr, overwrite);
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
 	}
-	public bool DragDropOverwriteMode()
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		return CQt.QAbstractItemView_DragDropOverwriteMode((.)this.Ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
 	}
-	public void SetDragDropMode(QAbstractItemView_DragDropMode behavior)
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		CQt.QAbstractItemView_SetDragDropMode((.)this.Ptr, behavior);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
 	}
-	public QAbstractItemView_DragDropMode DragDropMode()
+	public void Destroyed()
 	{
-		return CQt.QAbstractItemView_DragDropMode((.)this.Ptr);
+		CQt.QObject_Destroyed((.)this.Ptr);
 	}
-	public void SetDefaultDropAction(Qt_DropAction dropAction)
+	public QObject_Ptr Parent()
 	{
-		CQt.QAbstractItemView_SetDefaultDropAction((.)this.Ptr, dropAction);
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
 	}
-	public Qt_DropAction DefaultDropAction()
+	public bool Inherits(c_char* classname)
 	{
-		return CQt.QAbstractItemView_DefaultDropAction((.)this.Ptr);
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
 	}
-	public void SetAlternatingRowColors(bool enable)
+	public void DeleteLater()
 	{
-		CQt.QAbstractItemView_SetAlternatingRowColors((.)this.Ptr, enable);
+		CQt.QObject_DeleteLater((.)this.Ptr);
 	}
-	public bool AlternatingRowColors()
+	public QObject_Ptr Sender()
 	{
-		return CQt.QAbstractItemView_AlternatingRowColors((.)this.Ptr);
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
 	}
-	public void SetIconSize(IQSize size)
+	public c_int SenderSignalIndex()
 	{
-		CQt.QAbstractItemView_SetIconSize((.)this.Ptr, (.)size?.ObjectPtr);
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
 	}
-	public QSize_Ptr IconSize()
+	public c_int Receivers(c_char* signal)
 	{
-		return QSize_Ptr(CQt.QAbstractItemView_IconSize((.)this.Ptr));
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
 	}
-	public void SetTextElideMode(Qt_TextElideMode mode)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		CQt.QAbstractItemView_SetTextElideMode((.)this.Ptr, mode);
-	}
-	public Qt_TextElideMode TextElideMode()
-	{
-		return CQt.QAbstractItemView_TextElideMode((.)this.Ptr);
-	}
-	public void KeyboardSearch(String search)
-	{
-		CQt.QAbstractItemView_KeyboardSearch((.)this.Ptr, libqt_string(search));
-	}
-	public QSize_Ptr SizeHintForIndex(IQModelIndex index)
-	{
-		return QSize_Ptr(CQt.QAbstractItemView_SizeHintForIndex((.)this.Ptr, (.)index?.ObjectPtr));
-	}
-	public c_int SizeHintForRow(c_int row)
-	{
-		return CQt.QAbstractItemView_SizeHintForRow((.)this.Ptr, row);
-	}
-	public c_int SizeHintForColumn(c_int column)
-	{
-		return CQt.QAbstractItemView_SizeHintForColumn((.)this.Ptr, column);
-	}
-	public void OpenPersistentEditor(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_OpenPersistentEditor((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void ClosePersistentEditor(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_ClosePersistentEditor((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public bool IsPersistentEditorOpen(IQModelIndex index)
-	{
-		return CQt.QAbstractItemView_IsPersistentEditorOpen((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void SetIndexWidget(IQModelIndex index, IQWidget widget)
-	{
-		CQt.QAbstractItemView_SetIndexWidget((.)this.Ptr, (.)index?.ObjectPtr, (.)widget?.ObjectPtr);
-	}
-	public QWidget_Ptr IndexWidget(IQModelIndex index)
-	{
-		return QWidget_Ptr(CQt.QAbstractItemView_IndexWidget((.)this.Ptr, (.)index?.ObjectPtr));
-	}
-	public void SetItemDelegateForRow(c_int row, IQAbstractItemDelegate _delegate)
-	{
-		CQt.QAbstractItemView_SetItemDelegateForRow((.)this.Ptr, row, (.)_delegate?.ObjectPtr);
-	}
-	public QAbstractItemDelegate_Ptr ItemDelegateForRow(c_int row)
-	{
-		return QAbstractItemDelegate_Ptr(CQt.QAbstractItemView_ItemDelegateForRow((.)this.Ptr, row));
-	}
-	public void SetItemDelegateForColumn(c_int column, IQAbstractItemDelegate _delegate)
-	{
-		CQt.QAbstractItemView_SetItemDelegateForColumn((.)this.Ptr, column, (.)_delegate?.ObjectPtr);
-	}
-	public QAbstractItemDelegate_Ptr ItemDelegateForColumn(c_int column)
-	{
-		return QAbstractItemDelegate_Ptr(CQt.QAbstractItemView_ItemDelegateForColumn((.)this.Ptr, column));
-	}
-	public QAbstractItemDelegate_Ptr ItemDelegate2(IQModelIndex index)
-	{
-		return QAbstractItemDelegate_Ptr(CQt.QAbstractItemView_ItemDelegate2((.)this.Ptr, (.)index?.ObjectPtr));
-	}
-	public QAbstractItemDelegate_Ptr ItemDelegateForIndex(IQModelIndex index)
-	{
-		return QAbstractItemDelegate_Ptr(CQt.QAbstractItemView_ItemDelegateForIndex((.)this.Ptr, (.)index?.ObjectPtr));
-	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
-	{
-		return QVariant_Ptr(CQt.QAbstractItemView_InputMethodQuery((.)this.Ptr, query));
-	}
-	public void SetRootIndex(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_SetRootIndex((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void SelectAll()
-	{
-		CQt.QAbstractItemView_SelectAll((.)this.Ptr);
-	}
-	public void Edit(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_Edit((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void ClearSelection()
-	{
-		CQt.QAbstractItemView_ClearSelection((.)this.Ptr);
-	}
-	public void SetCurrentIndex(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_SetCurrentIndex((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void ScrollToTop()
-	{
-		CQt.QAbstractItemView_ScrollToTop((.)this.Ptr);
-	}
-	public void ScrollToBottom()
-	{
-		CQt.QAbstractItemView_ScrollToBottom((.)this.Ptr);
-	}
-	public void Update(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_Update((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void RowsAboutToBeRemoved(IQModelIndex parent, c_int start, c_int end)
-	{
-		CQt.QAbstractItemView_RowsAboutToBeRemoved((.)this.Ptr, (.)parent?.ObjectPtr, start, end);
-	}
-	public void SelectionChanged(IQItemSelection selected, IQItemSelection deselected)
-	{
-		CQt.QAbstractItemView_SelectionChanged((.)this.Ptr, (.)selected?.ObjectPtr, (.)deselected?.ObjectPtr);
-	}
-	public void UpdateEditorData()
-	{
-		CQt.QAbstractItemView_UpdateEditorData((.)this.Ptr);
-	}
-	public void UpdateEditorGeometries()
-	{
-		CQt.QAbstractItemView_UpdateEditorGeometries((.)this.Ptr);
-	}
-	public void VerticalScrollbarAction(c_int action)
-	{
-		CQt.QAbstractItemView_VerticalScrollbarAction((.)this.Ptr, action);
-	}
-	public void HorizontalScrollbarAction(c_int action)
-	{
-		CQt.QAbstractItemView_HorizontalScrollbarAction((.)this.Ptr, action);
-	}
-	public void VerticalScrollbarValueChanged(c_int value)
-	{
-		CQt.QAbstractItemView_VerticalScrollbarValueChanged((.)this.Ptr, value);
-	}
-	public void HorizontalScrollbarValueChanged(c_int value)
-	{
-		CQt.QAbstractItemView_HorizontalScrollbarValueChanged((.)this.Ptr, value);
-	}
-	public void CloseEditor(IQWidget editor, QAbstractItemDelegate_EndEditHint hint)
-	{
-		CQt.QAbstractItemView_CloseEditor((.)this.Ptr, (.)editor?.ObjectPtr, hint);
-	}
-	public void CommitData(IQWidget editor)
-	{
-		CQt.QAbstractItemView_CommitData((.)this.Ptr, (.)editor?.ObjectPtr);
-	}
-	public void EditorDestroyed(IQObject editor)
-	{
-		CQt.QAbstractItemView_EditorDestroyed((.)this.Ptr, (.)editor?.ObjectPtr);
-	}
-	public void Pressed(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_Pressed((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void Clicked(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_Clicked((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void DoubleClicked(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_DoubleClicked((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void Activated(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_Activated((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void Entered(IQModelIndex index)
-	{
-		CQt.QAbstractItemView_Entered((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void ViewportEntered()
-	{
-		CQt.QAbstractItemView_ViewportEntered((.)this.Ptr);
-	}
-	public void IconSizeChanged(IQSize size)
-	{
-		CQt.QAbstractItemView_IconSizeChanged((.)this.Ptr, (.)size?.ObjectPtr);
-	}
-	public void* SelectedIndexes()
-	{
-		return CQt.QAbstractItemView_SelectedIndexes((.)this.Ptr);
-	}
-	public bool Edit2(IQModelIndex index, QAbstractItemView_EditTrigger trigger, IQEvent event)
-	{
-		return CQt.QAbstractItemView_Edit2((.)this.Ptr, (.)index?.ObjectPtr, trigger, (.)event?.ObjectPtr);
-	}
-	public void* SelectionCommand(IQModelIndex index, IQEvent event)
-	{
-		return CQt.QAbstractItemView_SelectionCommand((.)this.Ptr, (.)index?.ObjectPtr, (.)event?.ObjectPtr);
-	}
-	public void StartDrag(void* supportedActions)
-	{
-		CQt.QAbstractItemView_StartDrag((.)this.Ptr, supportedActions);
-	}
-	public void InitViewItemOption(IQStyleOptionViewItem option)
-	{
-		CQt.QAbstractItemView_InitViewItemOption((.)this.Ptr, (.)option?.ObjectPtr);
-	}
-	public QAbstractItemView_State State()
-	{
-		return CQt.QAbstractItemView_State((.)this.Ptr);
-	}
-	public void SetState(QAbstractItemView_State state)
-	{
-		CQt.QAbstractItemView_SetState((.)this.Ptr, state);
-	}
-	public void ScheduleDelayedItemsLayout()
-	{
-		CQt.QAbstractItemView_ScheduleDelayedItemsLayout((.)this.Ptr);
-	}
-	public void ExecuteDelayedItemsLayout()
-	{
-		CQt.QAbstractItemView_ExecuteDelayedItemsLayout((.)this.Ptr);
-	}
-	public void SetDirtyRegion(IQRegion region)
-	{
-		CQt.QAbstractItemView_SetDirtyRegion((.)this.Ptr, (.)region?.ObjectPtr);
-	}
-	public void ScrollDirtyRegion(c_int dx, c_int dy)
-	{
-		CQt.QAbstractItemView_ScrollDirtyRegion((.)this.Ptr, dx, dy);
-	}
-	public QPoint_Ptr DirtyRegionOffset()
-	{
-		return QPoint_Ptr(CQt.QAbstractItemView_DirtyRegionOffset((.)this.Ptr));
-	}
-	public void StartAutoScroll()
-	{
-		CQt.QAbstractItemView_StartAutoScroll((.)this.Ptr);
-	}
-	public void StopAutoScroll()
-	{
-		CQt.QAbstractItemView_StopAutoScroll((.)this.Ptr);
-	}
-	public void DoAutoScroll()
-	{
-		CQt.QAbstractItemView_DoAutoScroll((.)this.Ptr);
-	}
-	public bool FocusNextPrevChild(bool next)
-	{
-		return CQt.QAbstractItemView_FocusNextPrevChild((.)this.Ptr, next);
-	}
-	public void DragEnterEvent(IQDragEnterEvent event)
-	{
-		CQt.QAbstractItemView_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void DragMoveEvent(IQDragMoveEvent event)
-	{
-		CQt.QAbstractItemView_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void DragLeaveEvent(IQDragLeaveEvent event)
-	{
-		CQt.QAbstractItemView_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void DropEvent(IQDropEvent event)
-	{
-		CQt.QAbstractItemView_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void FocusInEvent(IQFocusEvent event)
-	{
-		CQt.QAbstractItemView_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void FocusOutEvent(IQFocusEvent event)
-	{
-		CQt.QAbstractItemView_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void KeyPressEvent(IQKeyEvent event)
-	{
-		CQt.QAbstractItemView_KeyPressEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ResizeEvent(IQResizeEvent event)
-	{
-		CQt.QAbstractItemView_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QAbstractItemView_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(IQInputMethodEvent event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QAbstractItemView_InputMethodEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(IQObject object, IQEvent event)
+	public void CustomEvent(IQEvent event)
 	{
-		return CQt.QAbstractItemView_EventFilter((.)this.Ptr, (.)object?.ObjectPtr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public QAbstractItemView_DropIndicatorPosition DropIndicatorPosition()
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		return CQt.QAbstractItemView_DropIndicatorPosition((.)this.Ptr);
+		CQt.QHeaderView_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
-	public QSize_Ptr ViewportSizeHint()
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		return QSize_Ptr(CQt.QAbstractItemView_ViewportSizeHint((.)this.Ptr));
+		CQt.QHeaderView_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
-	public Qt_ScrollBarPolicy VerticalScrollBarPolicy()
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		return CQt.QAbstractScrollArea_VerticalScrollBarPolicy((.)this.Ptr);
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
 	}
-	public void SetVerticalScrollBarPolicy(Qt_ScrollBarPolicy verticalScrollBarPolicy)
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		CQt.QAbstractScrollArea_SetVerticalScrollBarPolicy((.)this.Ptr, verticalScrollBarPolicy);
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
 	}
-	public QScrollBar_Ptr VerticalScrollBar()
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return QScrollBar_Ptr(CQt.QAbstractScrollArea_VerticalScrollBar((.)this.Ptr));
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
 	}
-	public void SetVerticalScrollBar(IQScrollBar scrollbar)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		CQt.QAbstractScrollArea_SetVerticalScrollBar((.)this.Ptr, (.)scrollbar?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
 	}
-	public Qt_ScrollBarPolicy HorizontalScrollBarPolicy()
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QAbstractScrollArea_HorizontalScrollBarPolicy((.)this.Ptr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
 	}
-	public void SetHorizontalScrollBarPolicy(Qt_ScrollBarPolicy horizontalScrollBarPolicy)
+	public bool Disconnect1(c_char* signal)
 	{
-		CQt.QAbstractScrollArea_SetHorizontalScrollBarPolicy((.)this.Ptr, horizontalScrollBarPolicy);
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
 	}
-	public QScrollBar_Ptr HorizontalScrollBar()
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return QScrollBar_Ptr(CQt.QAbstractScrollArea_HorizontalScrollBar((.)this.Ptr));
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public void SetHorizontalScrollBar(IQScrollBar scrollbar)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		CQt.QAbstractScrollArea_SetHorizontalScrollBar((.)this.Ptr, (.)scrollbar?.ObjectPtr);
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QWidget_Ptr CornerWidget()
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return QWidget_Ptr(CQt.QAbstractScrollArea_CornerWidget((.)this.Ptr));
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void SetCornerWidget(IQWidget widget)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QAbstractScrollArea_SetCornerWidget((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public void AddScrollBarWidget(IQWidget widget, void* alignment)
-	{
-		CQt.QAbstractScrollArea_AddScrollBarWidget((.)this.Ptr, (.)widget?.ObjectPtr, alignment);
-	}
-	public void* ScrollBarWidgets(void* alignment)
-	{
-		return CQt.QAbstractScrollArea_ScrollBarWidgets((.)this.Ptr, alignment);
-	}
-	public QWidget_Ptr Viewport()
-	{
-		return QWidget_Ptr(CQt.QAbstractScrollArea_Viewport((.)this.Ptr));
-	}
-	public void SetViewport(IQWidget widget)
-	{
-		CQt.QAbstractScrollArea_SetViewport((.)this.Ptr, (.)widget?.ObjectPtr);
-	}
-	public QSize_Ptr MaximumViewportSize()
-	{
-		return QSize_Ptr(CQt.QAbstractScrollArea_MaximumViewportSize((.)this.Ptr));
-	}
-	public QSize_Ptr MinimumSizeHint()
-	{
-		return QSize_Ptr(CQt.QAbstractScrollArea_MinimumSizeHint((.)this.Ptr));
-	}
-	public void SetupViewport(IQWidget viewport)
-	{
-		CQt.QAbstractScrollArea_SetupViewport((.)this.Ptr, (.)viewport?.ObjectPtr);
-	}
-	public QAbstractScrollArea_SizeAdjustPolicy SizeAdjustPolicy()
-	{
-		return CQt.QAbstractScrollArea_SizeAdjustPolicy((.)this.Ptr);
-	}
-	public void SetSizeAdjustPolicy(QAbstractScrollArea_SizeAdjustPolicy policy)
-	{
-		CQt.QAbstractScrollArea_SetSizeAdjustPolicy((.)this.Ptr, policy);
-	}
-	public void SetViewportMargins(c_int left, c_int top, c_int right, c_int bottom)
-	{
-		CQt.QAbstractScrollArea_SetViewportMargins((.)this.Ptr, left, top, right, bottom);
-	}
-	public void SetViewportMargins2(IQMargins margins)
-	{
-		CQt.QAbstractScrollArea_SetViewportMargins2((.)this.Ptr, (.)margins?.ObjectPtr);
-	}
-	public QMargins_Ptr ViewportMargins()
-	{
-		return QMargins_Ptr(CQt.QAbstractScrollArea_ViewportMargins((.)this.Ptr));
-	}
-	public void WheelEvent(IQWheelEvent param1)
-	{
-		CQt.QAbstractScrollArea_WheelEvent((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public void ContextMenuEvent(IQContextMenuEvent param1)
-	{
-		CQt.QAbstractScrollArea_ContextMenuEvent((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public c_int FrameStyle()
-	{
-		return CQt.QFrame_FrameStyle((.)this.Ptr);
-	}
-	public void SetFrameStyle(c_int frameStyle)
-	{
-		CQt.QFrame_SetFrameStyle((.)this.Ptr, frameStyle);
-	}
-	public c_int FrameWidth()
-	{
-		return CQt.QFrame_FrameWidth((.)this.Ptr);
-	}
-	public QFrame_Shape FrameShape()
-	{
-		return CQt.QFrame_FrameShape((.)this.Ptr);
-	}
-	public void SetFrameShape(QFrame_Shape frameShape)
-	{
-		CQt.QFrame_SetFrameShape((.)this.Ptr, frameShape);
-	}
-	public QFrame_Shadow FrameShadow()
-	{
-		return CQt.QFrame_FrameShadow((.)this.Ptr);
-	}
-	public void SetFrameShadow(QFrame_Shadow frameShadow)
-	{
-		CQt.QFrame_SetFrameShadow((.)this.Ptr, frameShadow);
-	}
-	public c_int LineWidth()
-	{
-		return CQt.QFrame_LineWidth((.)this.Ptr);
-	}
-	public void SetLineWidth(c_int lineWidth)
-	{
-		CQt.QFrame_SetLineWidth((.)this.Ptr, lineWidth);
-	}
-	public c_int MidLineWidth()
-	{
-		return CQt.QFrame_MidLineWidth((.)this.Ptr);
-	}
-	public void SetMidLineWidth(c_int midLineWidth)
-	{
-		CQt.QFrame_SetMidLineWidth((.)this.Ptr, midLineWidth);
-	}
-	public QRect_Ptr FrameRect()
-	{
-		return QRect_Ptr(CQt.QFrame_FrameRect((.)this.Ptr));
-	}
-	public void SetFrameRect(IQRect frameRect)
-	{
-		CQt.QFrame_SetFrameRect((.)this.Ptr, (.)frameRect?.ObjectPtr);
-	}
-	public void ChangeEvent(IQEvent param1)
-	{
-		CQt.QFrame_ChangeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public void DrawFrame(IQPainter param1)
-	{
-		CQt.QFrame_DrawFrame((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.Ptr);
+		return CQt.QHeaderView_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QHeaderView_PaintEngine((.)this.Ptr));
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QHeaderView_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QHeaderView_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QHeaderView_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QHeaderView_SharedPainter((.)this.Ptr));
 	}
 	public void* WinId()
 	{
@@ -1193,14 +885,6 @@ struct QHeaderView_Ptr
 	public QSize_Ptr Size()
 	{
 		return QSize_Ptr(CQt.QWidget_Size((.)this.Ptr));
-	}
-	public c_int Width()
-	{
-		return CQt.QWidget_Width((.)this.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QWidget_Height((.)this.Ptr);
 	}
 	public QRect_Ptr Rect()
 	{
@@ -1734,6 +1418,10 @@ struct QHeaderView_Ptr
 	{
 		return QGraphicsProxyWidget_Ptr(CQt.QWidget_GraphicsProxyWidget((.)this.Ptr));
 	}
+	public void Update()
+	{
+		CQt.QWidget_Update((.)this.Ptr);
+	}
 	public void Repaint()
 	{
 		CQt.QWidget_Repaint((.)this.Ptr);
@@ -1878,6 +1566,10 @@ struct QHeaderView_Ptr
 	{
 		CQt.QWidget_OverrideWindowState((.)this.Ptr, state);
 	}
+	public QSize_Ptr MinimumSizeHint()
+	{
+		return QSize_Ptr(CQt.QHeaderView_MinimumSizeHint((.)this.Ptr));
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return QSizePolicy_Ptr(CQt.QWidget_SizePolicy((.)this.Ptr));
@@ -1892,11 +1584,11 @@ struct QHeaderView_Ptr
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QHeaderView_HeightForWidth((.)this.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.Ptr);
+		return CQt.QHeaderView_HasHeightForWidth((.)this.Ptr);
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -1929,10 +1621,6 @@ struct QHeaderView_Ptr
 	public void UpdateGeometry()
 	{
 		CQt.QWidget_UpdateGeometry((.)this.Ptr);
-	}
-	public void SetParent(IQWidget parent)
-	{
-		CQt.QWidget_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -2050,10 +1738,6 @@ struct QHeaderView_Ptr
 	{
 		return CQt.QWidget_TestAttribute((.)this.Ptr, param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.Ptr));
-	}
 	public void EnsurePolished()
 	{
 		CQt.QWidget_EnsurePolished((.)this.Ptr);
@@ -2106,61 +1790,97 @@ struct QHeaderView_Ptr
 	{
 		CQt.QWidget_CustomContextMenuRequested((.)this.Ptr, (.)pos?.ObjectPtr);
 	}
+	public void WheelEvent(IQWheelEvent event)
+	{
+		CQt.QHeaderView_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyPressEvent(IQKeyEvent event)
+	{
+		CQt.QHeaderView_KeyPressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
 	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QWidget_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void FocusInEvent(IQFocusEvent event)
+	{
+		CQt.QHeaderView_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void FocusOutEvent(IQFocusEvent event)
+	{
+		CQt.QHeaderView_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ResizeEvent(IQResizeEvent event)
+	{
+		CQt.QHeaderView_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CloseEvent(IQCloseEvent event)
 	{
-		CQt.QWidget_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ContextMenuEvent(IQContextMenuEvent event)
+	{
+		CQt.QHeaderView_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void DragEnterEvent(IQDragEnterEvent event)
+	{
+		CQt.QHeaderView_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void DragMoveEvent(IQDragMoveEvent event)
+	{
+		CQt.QHeaderView_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void DragLeaveEvent(IQDragLeaveEvent event)
+	{
+		CQt.QHeaderView_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void DropEvent(IQDropEvent event)
+	{
+		CQt.QHeaderView_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ShowEvent(IQShowEvent event)
 	{
-		CQt.QWidget_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void HideEvent(IQHideEvent event)
 	{
-		CQt.QWidget_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QHeaderView_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.Ptr, eventType, message, result);
+		return CQt.QHeaderView_NativeEvent((.)this.Ptr, eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public void ChangeEvent(IQEvent param1)
 	{
-		return CQt.QWidget_Metric((.)this.Ptr, param1);
+		CQt.QHeaderView_ChangeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
-	public void InitPainter(IQPainter painter)
+	public void InputMethodEvent(IQInputMethodEvent param1)
 	{
-		CQt.QWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+		CQt.QHeaderView_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.Ptr));
+		return QVariant_Ptr(CQt.QHeaderView_InputMethodQuery((.)this.Ptr, param1));
 	}
 	public void* InputMethodHints()
 	{
@@ -2181,6 +1901,10 @@ struct QHeaderView_Ptr
 	public void Destroy()
 	{
 		CQt.QWidget_Destroy((.)this.Ptr);
+	}
+	public bool FocusNextPrevChild(bool next)
+	{
+		return CQt.QHeaderView_FocusNextPrevChild((.)this.Ptr, next);
 	}
 	public bool FocusNextChild()
 	{
@@ -2274,506 +1998,577 @@ struct QHeaderView_Ptr
 	{
 		CQt.QWidget_Destroy2((.)this.Ptr, destroyWindow, destroySubWindows);
 	}
-	public void ObjectName(String outStr)
+	public c_int FrameStyle()
 	{
-		CQt.QObject_ObjectName((.)this.Ptr);
+		return CQt.QFrame_FrameStyle((.)this.Ptr);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetFrameStyle(c_int frameStyle)
 	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+		CQt.QFrame_SetFrameStyle((.)this.Ptr, frameStyle);
 	}
-	public bool IsWidgetType()
+	public c_int FrameWidth()
 	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
+		return CQt.QFrame_FrameWidth((.)this.Ptr);
 	}
-	public bool IsWindowType()
+	public QFrame_Shape FrameShape()
 	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
+		return CQt.QFrame_FrameShape((.)this.Ptr);
 	}
-	public bool IsQuickItemType()
+	public void SetFrameShape(QFrame_Shape frameShape)
 	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+		CQt.QFrame_SetFrameShape((.)this.Ptr, frameShape);
 	}
-	public bool SignalsBlocked()
+	public QFrame_Shadow FrameShadow()
 	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+		return CQt.QFrame_FrameShadow((.)this.Ptr);
 	}
-	public bool BlockSignals(bool b)
+	public void SetFrameShadow(QFrame_Shadow frameShadow)
 	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+		CQt.QFrame_SetFrameShadow((.)this.Ptr, frameShadow);
 	}
-	public QThread_Ptr Thread()
+	public c_int LineWidth()
 	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+		return CQt.QFrame_LineWidth((.)this.Ptr);
 	}
-	public void MoveToThread(IQThread thread)
+	public void SetLineWidth(c_int lineWidth)
 	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+		CQt.QFrame_SetLineWidth((.)this.Ptr, lineWidth);
 	}
-	public c_int StartTimer(c_int interval)
+	public c_int MidLineWidth()
 	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+		return CQt.QFrame_MidLineWidth((.)this.Ptr);
 	}
-	public c_int StartTimer2(void* time)
+	public void SetMidLineWidth(c_int midLineWidth)
 	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+		CQt.QFrame_SetMidLineWidth((.)this.Ptr, midLineWidth);
 	}
-	public void KillTimer(c_int id)
+	public QRect_Ptr FrameRect()
 	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
+		return QRect_Ptr(CQt.QFrame_FrameRect((.)this.Ptr));
 	}
-	public void** Children()
+	public void SetFrameRect(IQRect frameRect)
 	{
-		return CQt.QObject_Children((.)this.Ptr);
+		CQt.QFrame_SetFrameRect((.)this.Ptr, (.)frameRect?.ObjectPtr);
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void DrawFrame(IQPainter param1)
 	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+		CQt.QFrame_DrawFrame((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public Qt_ScrollBarPolicy VerticalScrollBarPolicy()
 	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+		return CQt.QAbstractScrollArea_VerticalScrollBarPolicy((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetVerticalScrollBarPolicy(Qt_ScrollBarPolicy verticalScrollBarPolicy)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+		CQt.QAbstractScrollArea_SetVerticalScrollBarPolicy((.)this.Ptr, verticalScrollBarPolicy);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public QScrollBar_Ptr VerticalScrollBar()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+		return QScrollBar_Ptr(CQt.QAbstractScrollArea_VerticalScrollBar((.)this.Ptr));
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetVerticalScrollBar(IQScrollBar scrollbar)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+		CQt.QAbstractScrollArea_SetVerticalScrollBar((.)this.Ptr, (.)scrollbar?.ObjectPtr);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public Qt_ScrollBarPolicy HorizontalScrollBarPolicy()
 	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+		return CQt.QAbstractScrollArea_HorizontalScrollBarPolicy((.)this.Ptr);
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void SetHorizontalScrollBarPolicy(Qt_ScrollBarPolicy horizontalScrollBarPolicy)
 	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+		CQt.QAbstractScrollArea_SetHorizontalScrollBarPolicy((.)this.Ptr, horizontalScrollBarPolicy);
 	}
-	public bool Disconnect3()
+	public QScrollBar_Ptr HorizontalScrollBar()
 	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
+		return QScrollBar_Ptr(CQt.QAbstractScrollArea_HorizontalScrollBar((.)this.Ptr));
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void SetHorizontalScrollBar(IQScrollBar scrollbar)
 	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+		CQt.QAbstractScrollArea_SetHorizontalScrollBar((.)this.Ptr, (.)scrollbar?.ObjectPtr);
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public QWidget_Ptr CornerWidget()
 	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+		return QWidget_Ptr(CQt.QAbstractScrollArea_CornerWidget((.)this.Ptr));
 	}
-	public void DumpObjectTree()
+	public void SetCornerWidget(IQWidget widget)
 	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
+		CQt.QAbstractScrollArea_SetCornerWidget((.)this.Ptr, (.)widget?.ObjectPtr);
 	}
-	public void DumpObjectInfo()
+	public void AddScrollBarWidget(IQWidget widget, void* alignment)
 	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+		CQt.QAbstractScrollArea_AddScrollBarWidget((.)this.Ptr, (.)widget?.ObjectPtr, alignment);
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public void* ScrollBarWidgets(void* alignment)
 	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+		return CQt.QAbstractScrollArea_ScrollBarWidgets((.)this.Ptr, alignment);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QWidget_Ptr Viewport()
 	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+		return QWidget_Ptr(CQt.QAbstractScrollArea_Viewport((.)this.Ptr));
 	}
-	public void* DynamicPropertyNames()
+	public void SetViewport(IQWidget widget)
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+		CQt.QAbstractScrollArea_SetViewport((.)this.Ptr, (.)widget?.ObjectPtr);
 	}
-	public QBindingStorage_Ptr BindingStorage()
+	public QSize_Ptr MaximumViewportSize()
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+		return QSize_Ptr(CQt.QAbstractScrollArea_MaximumViewportSize((.)this.Ptr));
 	}
-	public QBindingStorage_Ptr BindingStorage2()
+	public void SetupViewport(IQWidget viewport)
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+		CQt.QHeaderView_SetupViewport((.)this.Ptr, (.)viewport?.ObjectPtr);
 	}
-	public void Destroyed()
+	public QAbstractScrollArea_SizeAdjustPolicy SizeAdjustPolicy()
 	{
-		CQt.QObject_Destroyed((.)this.Ptr);
+		return CQt.QAbstractScrollArea_SizeAdjustPolicy((.)this.Ptr);
 	}
-	public QObject_Ptr Parent()
+	public void SetSizeAdjustPolicy(QAbstractScrollArea_SizeAdjustPolicy policy)
 	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+		CQt.QAbstractScrollArea_SetSizeAdjustPolicy((.)this.Ptr, policy);
 	}
-	public bool Inherits(c_char* classname)
+	public void SetViewportMargins(c_int left, c_int top, c_int right, c_int bottom)
 	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
+		CQt.QAbstractScrollArea_SetViewportMargins((.)this.Ptr, left, top, right, bottom);
 	}
-	public void DeleteLater()
+	public void SetViewportMargins2(IQMargins margins)
 	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
+		CQt.QAbstractScrollArea_SetViewportMargins2((.)this.Ptr, (.)margins?.ObjectPtr);
 	}
-	public QObject_Ptr Sender()
+	public QMargins_Ptr ViewportMargins()
 	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+		return QMargins_Ptr(CQt.QAbstractScrollArea_ViewportMargins((.)this.Ptr));
 	}
-	public c_int SenderSignalIndex()
+	public QSize_Ptr ViewportSizeHint()
 	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+		return QSize_Ptr(CQt.QHeaderView_ViewportSizeHint((.)this.Ptr));
 	}
-	public c_int Receivers(c_char* signal)
+	public QAbstractItemModel_Ptr Model()
 	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
+		return QAbstractItemModel_Ptr(CQt.QAbstractItemView_Model((.)this.Ptr));
 	}
-	public bool IsSignalConnected(IQMetaMethod signal)
+	public void SetSelectionModel(IQItemSelectionModel selectionModel)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QHeaderView_SetSelectionModel((.)this.Ptr, (.)selectionModel?.ObjectPtr);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public QItemSelectionModel_Ptr SelectionModel()
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QItemSelectionModel_Ptr(CQt.QAbstractItemView_SelectionModel((.)this.Ptr));
 	}
-	public void CustomEvent(IQEvent event)
+	public void SetItemDelegate(IQAbstractItemDelegate _delegate)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QAbstractItemView_SetItemDelegate((.)this.Ptr, (.)_delegate?.ObjectPtr);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public QAbstractItemDelegate_Ptr ItemDelegate()
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		return QAbstractItemDelegate_Ptr(CQt.QAbstractItemView_ItemDelegate((.)this.Ptr));
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public void SetSelectionMode(QAbstractItemView_SelectionMode mode)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QAbstractItemView_SetSelectionMode((.)this.Ptr, mode);
 	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	public QAbstractItemView_SelectionMode SelectionMode()
 	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+		return CQt.QAbstractItemView_SelectionMode((.)this.Ptr);
 	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	public void SetSelectionBehavior(QAbstractItemView_SelectionBehavior behavior)
 	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+		CQt.QAbstractItemView_SetSelectionBehavior((.)this.Ptr, behavior);
 	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public QAbstractItemView_SelectionBehavior SelectionBehavior()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+		return CQt.QAbstractItemView_SelectionBehavior((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public QModelIndex_Ptr CurrentIndex()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+		return QModelIndex_Ptr(CQt.QAbstractItemView_CurrentIndex((.)this.Ptr));
 	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QModelIndex_Ptr RootIndex()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+		return QModelIndex_Ptr(CQt.QAbstractItemView_RootIndex((.)this.Ptr));
 	}
-	public bool Disconnect1(c_char* signal)
+	public void SetEditTriggers(void* triggers)
 	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+		CQt.QAbstractItemView_SetEditTriggers((.)this.Ptr, triggers);
 	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
+	public void* EditTriggers()
 	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+		return CQt.QAbstractItemView_EditTriggers((.)this.Ptr);
 	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	public void SetVerticalScrollMode(QAbstractItemView_ScrollMode mode)
 	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+		CQt.QAbstractItemView_SetVerticalScrollMode((.)this.Ptr, mode);
 	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
+	public QAbstractItemView_ScrollMode VerticalScrollMode()
 	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+		return CQt.QAbstractItemView_VerticalScrollMode((.)this.Ptr);
 	}
-	public void Destroyed1(IQObject param1)
+	public void ResetVerticalScrollMode()
 	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QAbstractItemView_ResetVerticalScrollMode((.)this.Ptr);
 	}
-	public bool PaintingActive()
+	public void SetHorizontalScrollMode(QAbstractItemView_ScrollMode mode)
 	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+		CQt.QAbstractItemView_SetHorizontalScrollMode((.)this.Ptr, mode);
 	}
-	public c_int WidthMM()
+	public QAbstractItemView_ScrollMode HorizontalScrollMode()
 	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+		return CQt.QAbstractItemView_HorizontalScrollMode((.)this.Ptr);
 	}
-	public c_int HeightMM()
+	public void ResetHorizontalScrollMode()
 	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+		CQt.QAbstractItemView_ResetHorizontalScrollMode((.)this.Ptr);
 	}
-	public c_int LogicalDpiX()
+	public void SetAutoScroll(bool enable)
 	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+		CQt.QAbstractItemView_SetAutoScroll((.)this.Ptr, enable);
 	}
-	public c_int LogicalDpiY()
+	public bool HasAutoScroll()
 	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+		return CQt.QAbstractItemView_HasAutoScroll((.)this.Ptr);
 	}
-	public c_int PhysicalDpiX()
+	public void SetAutoScrollMargin(c_int margin)
 	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+		CQt.QAbstractItemView_SetAutoScrollMargin((.)this.Ptr, margin);
 	}
-	public c_int PhysicalDpiY()
+	public c_int AutoScrollMargin()
 	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+		return CQt.QAbstractItemView_AutoScrollMargin((.)this.Ptr);
 	}
-	public double DevicePixelRatio()
+	public void SetTabKeyNavigation(bool enable)
 	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+		CQt.QAbstractItemView_SetTabKeyNavigation((.)this.Ptr, enable);
 	}
-	public double DevicePixelRatioF()
+	public bool TabKeyNavigation()
 	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+		return CQt.QAbstractItemView_TabKeyNavigation((.)this.Ptr);
 	}
-	public c_int ColorCount()
+	public void SetDropIndicatorShown(bool enable)
 	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+		CQt.QAbstractItemView_SetDropIndicatorShown((.)this.Ptr, enable);
 	}
-	public c_int Depth()
+	public bool ShowDropIndicator()
 	{
-		return CQt.QPaintDevice_Depth((.)this.Ptr);
+		return CQt.QAbstractItemView_ShowDropIndicator((.)this.Ptr);
 	}
-	public double DevicePixelRatioFScale()
+	public void SetDragEnabled(bool enable)
 	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
+		CQt.QAbstractItemView_SetDragEnabled((.)this.Ptr, enable);
+	}
+	public bool DragEnabled()
+	{
+		return CQt.QAbstractItemView_DragEnabled((.)this.Ptr);
+	}
+	public void SetDragDropOverwriteMode(bool overwrite)
+	{
+		CQt.QAbstractItemView_SetDragDropOverwriteMode((.)this.Ptr, overwrite);
+	}
+	public bool DragDropOverwriteMode()
+	{
+		return CQt.QAbstractItemView_DragDropOverwriteMode((.)this.Ptr);
+	}
+	public void SetDragDropMode(QAbstractItemView_DragDropMode behavior)
+	{
+		CQt.QAbstractItemView_SetDragDropMode((.)this.Ptr, behavior);
+	}
+	public QAbstractItemView_DragDropMode DragDropMode()
+	{
+		return CQt.QAbstractItemView_DragDropMode((.)this.Ptr);
+	}
+	public void SetDefaultDropAction(Qt_DropAction dropAction)
+	{
+		CQt.QAbstractItemView_SetDefaultDropAction((.)this.Ptr, dropAction);
+	}
+	public Qt_DropAction DefaultDropAction()
+	{
+		return CQt.QAbstractItemView_DefaultDropAction((.)this.Ptr);
+	}
+	public void SetAlternatingRowColors(bool enable)
+	{
+		CQt.QAbstractItemView_SetAlternatingRowColors((.)this.Ptr, enable);
+	}
+	public bool AlternatingRowColors()
+	{
+		return CQt.QAbstractItemView_AlternatingRowColors((.)this.Ptr);
+	}
+	public void SetIconSize(IQSize size)
+	{
+		CQt.QAbstractItemView_SetIconSize((.)this.Ptr, (.)size?.ObjectPtr);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return QSize_Ptr(CQt.QAbstractItemView_IconSize((.)this.Ptr));
+	}
+	public void SetTextElideMode(Qt_TextElideMode mode)
+	{
+		CQt.QAbstractItemView_SetTextElideMode((.)this.Ptr, mode);
+	}
+	public Qt_TextElideMode TextElideMode()
+	{
+		return CQt.QAbstractItemView_TextElideMode((.)this.Ptr);
+	}
+	public void KeyboardSearch(String search)
+	{
+		CQt.QHeaderView_KeyboardSearch((.)this.Ptr, libqt_string(search));
+	}
+	public QSize_Ptr SizeHintForIndex(IQModelIndex index)
+	{
+		return QSize_Ptr(CQt.QAbstractItemView_SizeHintForIndex((.)this.Ptr, (.)index?.ObjectPtr));
+	}
+	public c_int SizeHintForRow(c_int row)
+	{
+		return CQt.QHeaderView_SizeHintForRow((.)this.Ptr, row);
+	}
+	public c_int SizeHintForColumn(c_int column)
+	{
+		return CQt.QHeaderView_SizeHintForColumn((.)this.Ptr, column);
+	}
+	public void OpenPersistentEditor(IQModelIndex index)
+	{
+		CQt.QAbstractItemView_OpenPersistentEditor((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void ClosePersistentEditor(IQModelIndex index)
+	{
+		CQt.QAbstractItemView_ClosePersistentEditor((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public bool IsPersistentEditorOpen(IQModelIndex index)
+	{
+		return CQt.QAbstractItemView_IsPersistentEditorOpen((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void SetIndexWidget(IQModelIndex index, IQWidget widget)
+	{
+		CQt.QAbstractItemView_SetIndexWidget((.)this.Ptr, (.)index?.ObjectPtr, (.)widget?.ObjectPtr);
+	}
+	public QWidget_Ptr IndexWidget(IQModelIndex index)
+	{
+		return QWidget_Ptr(CQt.QAbstractItemView_IndexWidget((.)this.Ptr, (.)index?.ObjectPtr));
+	}
+	public void SetItemDelegateForRow(c_int row, IQAbstractItemDelegate _delegate)
+	{
+		CQt.QAbstractItemView_SetItemDelegateForRow((.)this.Ptr, row, (.)_delegate?.ObjectPtr);
+	}
+	public QAbstractItemDelegate_Ptr ItemDelegateForRow(c_int row)
+	{
+		return QAbstractItemDelegate_Ptr(CQt.QAbstractItemView_ItemDelegateForRow((.)this.Ptr, row));
+	}
+	public void SetItemDelegateForColumn(c_int column, IQAbstractItemDelegate _delegate)
+	{
+		CQt.QAbstractItemView_SetItemDelegateForColumn((.)this.Ptr, column, (.)_delegate?.ObjectPtr);
+	}
+	public QAbstractItemDelegate_Ptr ItemDelegateForColumn(c_int column)
+	{
+		return QAbstractItemDelegate_Ptr(CQt.QAbstractItemView_ItemDelegateForColumn((.)this.Ptr, column));
+	}
+	public QAbstractItemDelegate_Ptr ItemDelegate2(IQModelIndex index)
+	{
+		return QAbstractItemDelegate_Ptr(CQt.QAbstractItemView_ItemDelegate2((.)this.Ptr, (.)index?.ObjectPtr));
+	}
+	public QAbstractItemDelegate_Ptr ItemDelegateForIndex(IQModelIndex index)
+	{
+		return QAbstractItemDelegate_Ptr(CQt.QHeaderView_ItemDelegateForIndex((.)this.Ptr, (.)index?.ObjectPtr));
+	}
+	public void SetRootIndex(IQModelIndex index)
+	{
+		CQt.QHeaderView_SetRootIndex((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void SelectAll()
+	{
+		CQt.QHeaderView_SelectAll((.)this.Ptr);
+	}
+	public void Edit(IQModelIndex index)
+	{
+		CQt.QAbstractItemView_Edit((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void ClearSelection()
+	{
+		CQt.QAbstractItemView_ClearSelection((.)this.Ptr);
+	}
+	public void SetCurrentIndex(IQModelIndex index)
+	{
+		CQt.QAbstractItemView_SetCurrentIndex((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void ScrollToTop()
+	{
+		CQt.QAbstractItemView_ScrollToTop((.)this.Ptr);
+	}
+	public void ScrollToBottom()
+	{
+		CQt.QAbstractItemView_ScrollToBottom((.)this.Ptr);
+	}
+	public void RowsAboutToBeRemoved(IQModelIndex parent, c_int start, c_int end)
+	{
+		CQt.QHeaderView_RowsAboutToBeRemoved((.)this.Ptr, (.)parent?.ObjectPtr, start, end);
+	}
+	public void SelectionChanged(IQItemSelection selected, IQItemSelection deselected)
+	{
+		CQt.QHeaderView_SelectionChanged((.)this.Ptr, (.)selected?.ObjectPtr, (.)deselected?.ObjectPtr);
+	}
+	public void UpdateEditorData()
+	{
+		CQt.QHeaderView_UpdateEditorData((.)this.Ptr);
+	}
+	public void UpdateEditorGeometries()
+	{
+		CQt.QHeaderView_UpdateEditorGeometries((.)this.Ptr);
+	}
+	public void VerticalScrollbarAction(c_int action)
+	{
+		CQt.QHeaderView_VerticalScrollbarAction((.)this.Ptr, action);
+	}
+	public void HorizontalScrollbarAction(c_int action)
+	{
+		CQt.QHeaderView_HorizontalScrollbarAction((.)this.Ptr, action);
+	}
+	public void VerticalScrollbarValueChanged(c_int value)
+	{
+		CQt.QHeaderView_VerticalScrollbarValueChanged((.)this.Ptr, value);
+	}
+	public void HorizontalScrollbarValueChanged(c_int value)
+	{
+		CQt.QHeaderView_HorizontalScrollbarValueChanged((.)this.Ptr, value);
+	}
+	public void CloseEditor(IQWidget editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		CQt.QHeaderView_CloseEditor((.)this.Ptr, (.)editor?.ObjectPtr, hint);
+	}
+	public void CommitData(IQWidget editor)
+	{
+		CQt.QHeaderView_CommitData((.)this.Ptr, (.)editor?.ObjectPtr);
+	}
+	public void EditorDestroyed(IQObject editor)
+	{
+		CQt.QHeaderView_EditorDestroyed((.)this.Ptr, (.)editor?.ObjectPtr);
+	}
+	public void Pressed(IQModelIndex index)
+	{
+		CQt.QAbstractItemView_Pressed((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void Clicked(IQModelIndex index)
+	{
+		CQt.QAbstractItemView_Clicked((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void DoubleClicked(IQModelIndex index)
+	{
+		CQt.QAbstractItemView_DoubleClicked((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void Activated(IQModelIndex index)
+	{
+		CQt.QAbstractItemView_Activated((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void Entered(IQModelIndex index)
+	{
+		CQt.QAbstractItemView_Entered((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void ViewportEntered()
+	{
+		CQt.QAbstractItemView_ViewportEntered((.)this.Ptr);
+	}
+	public void IconSizeChanged(IQSize size)
+	{
+		CQt.QAbstractItemView_IconSizeChanged((.)this.Ptr, (.)size?.ObjectPtr);
+	}
+	public void* SelectedIndexes()
+	{
+		return CQt.QHeaderView_SelectedIndexes((.)this.Ptr);
+	}
+	public bool Edit2(IQModelIndex index, QAbstractItemView_EditTrigger trigger, IQEvent event)
+	{
+		return CQt.QHeaderView_Edit2((.)this.Ptr, (.)index?.ObjectPtr, trigger, (.)event?.ObjectPtr);
+	}
+	public void* SelectionCommand(IQModelIndex index, IQEvent event)
+	{
+		return CQt.QHeaderView_SelectionCommand((.)this.Ptr, (.)index?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void StartDrag(void* supportedActions)
+	{
+		CQt.QHeaderView_StartDrag((.)this.Ptr, supportedActions);
+	}
+	public void InitViewItemOption(IQStyleOptionViewItem option)
+	{
+		CQt.QHeaderView_InitViewItemOption((.)this.Ptr, (.)option?.ObjectPtr);
+	}
+	public QAbstractItemView_State State()
+	{
+		return CQt.QAbstractItemView_State((.)this.Ptr);
+	}
+	public void SetState(QAbstractItemView_State state)
+	{
+		CQt.QAbstractItemView_SetState((.)this.Ptr, state);
+	}
+	public void ScheduleDelayedItemsLayout()
+	{
+		CQt.QAbstractItemView_ScheduleDelayedItemsLayout((.)this.Ptr);
+	}
+	public void ExecuteDelayedItemsLayout()
+	{
+		CQt.QAbstractItemView_ExecuteDelayedItemsLayout((.)this.Ptr);
+	}
+	public void SetDirtyRegion(IQRegion region)
+	{
+		CQt.QAbstractItemView_SetDirtyRegion((.)this.Ptr, (.)region?.ObjectPtr);
+	}
+	public void ScrollDirtyRegion(c_int dx, c_int dy)
+	{
+		CQt.QAbstractItemView_ScrollDirtyRegion((.)this.Ptr, dx, dy);
+	}
+	public QPoint_Ptr DirtyRegionOffset()
+	{
+		return QPoint_Ptr(CQt.QAbstractItemView_DirtyRegionOffset((.)this.Ptr));
+	}
+	public void StartAutoScroll()
+	{
+		CQt.QAbstractItemView_StartAutoScroll((.)this.Ptr);
+	}
+	public void StopAutoScroll()
+	{
+		CQt.QAbstractItemView_StopAutoScroll((.)this.Ptr);
+	}
+	public void DoAutoScroll()
+	{
+		CQt.QAbstractItemView_DoAutoScroll((.)this.Ptr);
+	}
+	public QAbstractItemView_DropIndicatorPosition DropIndicatorPosition()
+	{
+		return CQt.QAbstractItemView_DropIndicatorPosition((.)this.Ptr);
 	}
 }
 class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFrame, IQWidget, IQObject, IQPaintDevice
 {
 	private QHeaderView_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QHeaderView_sectionMoved,
-		QHeaderView_sectionResized,
-		QHeaderView_sectionPressed,
-		QHeaderView_sectionClicked,
-		QHeaderView_sectionEntered,
-		QHeaderView_sectionDoubleClicked,
-		QHeaderView_sectionCountChanged,
-		QHeaderView_sectionHandleDoubleClicked,
-		QHeaderView_geometriesChanged,
-		QHeaderView_sortIndicatorChanged,
-		QHeaderView_sortIndicatorClearableChanged,
-		QHeaderView_pressed,
-		QHeaderView_clicked,
-		QHeaderView_doubleClicked,
-		QHeaderView_activated,
-		QHeaderView_entered,
-		QHeaderView_viewportEntered,
-		QHeaderView_iconSizeChanged,
-		QHeaderView_windowTitleChanged,
-		QHeaderView_windowIconChanged,
-		QHeaderView_windowIconTextChanged,
-		QHeaderView_customContextMenuRequested,
-		QHeaderView_destroyed,
-		QHeaderView_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QHeaderView_Connect_SectionMoved(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionMoved);
-		CQt.QHeaderView_Connect_SectionResized(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionResized);
-		CQt.QHeaderView_Connect_SectionPressed(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionPressed);
-		CQt.QHeaderView_Connect_SectionClicked(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionClicked);
-		CQt.QHeaderView_Connect_SectionEntered(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionEntered);
-		CQt.QHeaderView_Connect_SectionDoubleClicked(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionDoubleClicked);
-		CQt.QHeaderView_Connect_SectionCountChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionCountChanged);
-		CQt.QHeaderView_Connect_SectionHandleDoubleClicked(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionHandleDoubleClicked);
-		CQt.QHeaderView_Connect_GeometriesChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_geometriesChanged);
-		CQt.QHeaderView_Connect_SortIndicatorChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_sortIndicatorChanged);
-		CQt.QHeaderView_Connect_SortIndicatorClearableChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_sortIndicatorClearableChanged);
-		CQt.QAbstractItemView_Connect_Pressed(obj.ObjectPtr,  => QtBeef_QAbstractItemView_pressed);
-		CQt.QAbstractItemView_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_clicked);
-		CQt.QAbstractItemView_Connect_DoubleClicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_doubleClicked);
-		CQt.QAbstractItemView_Connect_Activated(obj.ObjectPtr,  => QtBeef_QAbstractItemView_activated);
-		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_entered);
-		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_viewportEntered);
-		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_iconSizeChanged);
-		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
-		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
-		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
-		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex)> OnSectionMoved = .() ~ _.Dispose();
-	public Event<delegate void(c_int logicalIndex, c_int oldSize, c_int newSize)> OnSectionResized = .() ~ _.Dispose();
-	public Event<delegate void(c_int logicalIndex)> OnSectionPressed = .() ~ _.Dispose();
-	public Event<delegate void(c_int logicalIndex)> OnSectionClicked = .() ~ _.Dispose();
-	public Event<delegate void(c_int logicalIndex)> OnSectionEntered = .() ~ _.Dispose();
-	public Event<delegate void(c_int logicalIndex)> OnSectionDoubleClicked = .() ~ _.Dispose();
-	public Event<delegate void(c_int oldCount, c_int newCount)> OnSectionCountChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int logicalIndex)> OnSectionHandleDoubleClicked = .() ~ _.Dispose();
-	public Event<delegate void()> OnGeometriesChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int logicalIndex, Qt_SortOrder order)> OnSortIndicatorChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool clearable)> OnSortIndicatorClearableChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** index)> OnPressed = .() ~ _.Dispose();
-	public Event<delegate void(void** index)> OnClicked = .() ~ _.Dispose();
-	public Event<delegate void(void** index)> OnDoubleClicked = .() ~ _.Dispose();
-	public Event<delegate void(void** index)> OnActivated = .() ~ _.Dispose();
-	public Event<delegate void(void** index)> OnEntered = .() ~ _.Dispose();
-	public Event<delegate void()> OnViewportEntered = .() ~ _.Dispose();
-	public Event<delegate void(void** size)> OnIconSizeChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QHeaderView_sectionMoved(void* ptr, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSectionMoved.Invoke(logicalIndex, oldVisualIndex, newVisualIndex);
-	}
-	static void QtBeef_QHeaderView_sectionResized(void* ptr, c_int logicalIndex, c_int oldSize, c_int newSize)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSectionResized.Invoke(logicalIndex, oldSize, newSize);
-	}
-	static void QtBeef_QHeaderView_sectionPressed(void* ptr, c_int logicalIndex)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSectionPressed.Invoke(logicalIndex);
-	}
-	static void QtBeef_QHeaderView_sectionClicked(void* ptr, c_int logicalIndex)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSectionClicked.Invoke(logicalIndex);
-	}
-	static void QtBeef_QHeaderView_sectionEntered(void* ptr, c_int logicalIndex)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSectionEntered.Invoke(logicalIndex);
-	}
-	static void QtBeef_QHeaderView_sectionDoubleClicked(void* ptr, c_int logicalIndex)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSectionDoubleClicked.Invoke(logicalIndex);
-	}
-	static void QtBeef_QHeaderView_sectionCountChanged(void* ptr, c_int oldCount, c_int newCount)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSectionCountChanged.Invoke(oldCount, newCount);
-	}
-	static void QtBeef_QHeaderView_sectionHandleDoubleClicked(void* ptr, c_int logicalIndex)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSectionHandleDoubleClicked.Invoke(logicalIndex);
-	}
-	static void QtBeef_QHeaderView_geometriesChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnGeometriesChanged.Invoke();
-	}
-	static void QtBeef_QHeaderView_sortIndicatorChanged(void* ptr, c_int logicalIndex, Qt_SortOrder order)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSortIndicatorChanged.Invoke(logicalIndex, order);
-	}
-	static void QtBeef_QHeaderView_sortIndicatorClearableChanged(void* ptr, bool clearable)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSortIndicatorClearableChanged.Invoke(clearable);
-	}
-	static void QtBeef_QAbstractItemView_pressed(void* ptr, void** index)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnPressed.Invoke(index);
-	}
-	static void QtBeef_QAbstractItemView_clicked(void* ptr, void** index)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnClicked.Invoke(index);
-	}
-	static void QtBeef_QAbstractItemView_doubleClicked(void* ptr, void** index)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDoubleClicked.Invoke(index);
-	}
-	static void QtBeef_QAbstractItemView_activated(void* ptr, void** index)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnActivated.Invoke(index);
-	}
-	static void QtBeef_QAbstractItemView_entered(void* ptr, void** index)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEntered.Invoke(index);
-	}
-	static void QtBeef_QAbstractItemView_viewportEntered(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnViewportEntered.Invoke();
-	}
-	static void QtBeef_QAbstractItemView_iconSizeChanged(void* ptr, void** size)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnIconSizeChanged.Invoke(size);
-	}
-	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconChanged.Invoke(icon);
-	}
-	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconTextChanged.Invoke(iconText);
-	}
-	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCustomContextMenuRequested.Invoke(pos);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QHeaderView_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation)
 	{
 		this.ptr = CQt.QHeaderView_new(orientation);
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation, IQWidget parent)
 	{
 		this.ptr = CQt.QHeaderView_new2(orientation, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QHeaderView_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public void SetModel(IQAbstractItemModel model)
+	public  virtual void OnSetModel(void** model)
 	{
-		this.ptr.SetModel(model);
 	}
 	public Qt_Orientation Orientation()
 	{
@@ -2787,13 +2582,12 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		return this.ptr.Length();
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual QSize_Ptr OnSizeHint()
 	{
-		return this.ptr.SizeHint();
+		return default;
 	}
-	public void SetVisible(bool v)
+	public  virtual void OnSetVisible(bool v)
 	{
-		this.ptr.SetVisible(v);
 	}
 	public c_int SectionSizeHint(c_int logicalIndex)
 	{
@@ -3011,9 +2805,8 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		this.ptr.SetDefaultAlignment(alignment);
 	}
-	public void DoItemsLayout()
+	public  virtual void OnDoItemsLayout()
 	{
-		this.ptr.DoItemsLayout();
 	}
 	public bool SectionsMoved()
 	{
@@ -3031,9 +2824,8 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		return this.ptr.RestoreState(state);
 	}
-	public void Reset()
+	public  virtual void OnReset()
 	{
-		this.ptr.Reset();
 	}
 	public void SetOffset(c_int offset)
 	{
@@ -3123,105 +2915,90 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		this.ptr.InitializeSections2(start, end);
 	}
-	public void CurrentChanged(IQModelIndex current, IQModelIndex old)
+	public  virtual void OnCurrentChanged(void** current, void** old)
 	{
-		this.ptr.CurrentChanged(current, old);
 	}
-	public bool Event(IQEvent e)
+	public  virtual bool OnEvent(void** e)
 	{
-		return this.ptr.Event(e);
+		return default;
 	}
-	public void PaintEvent(IQPaintEvent e)
+	public  virtual void OnPaintEvent(void** e)
 	{
-		this.ptr.PaintEvent(e);
 	}
-	public void MousePressEvent(IQMouseEvent e)
+	public  virtual void OnMousePressEvent(void** e)
 	{
-		this.ptr.MousePressEvent(e);
 	}
-	public void MouseMoveEvent(IQMouseEvent e)
+	public  virtual void OnMouseMoveEvent(void** e)
 	{
-		this.ptr.MouseMoveEvent(e);
 	}
-	public void MouseReleaseEvent(IQMouseEvent e)
+	public  virtual void OnMouseReleaseEvent(void** e)
 	{
-		this.ptr.MouseReleaseEvent(e);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent e)
+	public  virtual void OnMouseDoubleClickEvent(void** e)
 	{
-		this.ptr.MouseDoubleClickEvent(e);
 	}
-	public bool ViewportEvent(IQEvent e)
+	public  virtual bool OnViewportEvent(void** e)
 	{
-		return this.ptr.ViewportEvent(e);
+		return default;
 	}
-	public void PaintSection(IQPainter painter, IQRect rect, c_int logicalIndex)
+	public  virtual void OnPaintSection(void** painter, void** rect, c_int logicalIndex)
 	{
-		this.ptr.PaintSection(painter, rect, logicalIndex);
 	}
-	public QSize_Ptr SectionSizeFromContents(c_int logicalIndex)
+	public  virtual QSize_Ptr OnSectionSizeFromContents(c_int logicalIndex)
 	{
-		return this.ptr.SectionSizeFromContents(logicalIndex);
+		return default;
 	}
-	public c_int HorizontalOffset()
+	public  virtual c_int OnHorizontalOffset()
 	{
-		return this.ptr.HorizontalOffset();
+		return default;
 	}
-	public c_int VerticalOffset()
+	public  virtual c_int OnVerticalOffset()
 	{
-		return this.ptr.VerticalOffset();
+		return default;
 	}
-	public void UpdateGeometries()
+	public  virtual void OnUpdateGeometries()
 	{
-		this.ptr.UpdateGeometries();
 	}
-	public void ScrollContentsBy(c_int dx, c_int dy)
+	public  virtual void OnScrollContentsBy(c_int dx, c_int dy)
 	{
-		this.ptr.ScrollContentsBy(dx, dy);
 	}
-	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
+	public  virtual void OnDataChanged(void** topLeft, void** bottomRight, void** roles)
 	{
-		this.ptr.DataChanged(topLeft, bottomRight, roles);
 	}
-	public void RowsInserted(IQModelIndex parent, c_int start, c_int end)
+	public  virtual void OnRowsInserted(void** parent, c_int start, c_int end)
 	{
-		this.ptr.RowsInserted(parent, start, end);
 	}
-	public QRect_Ptr VisualRect(IQModelIndex index)
+	public  virtual QRect_Ptr OnVisualRect(void** index)
 	{
-		return this.ptr.VisualRect(index);
+		return default;
 	}
-	public void ScrollTo(IQModelIndex index, QAbstractItemView_ScrollHint hint)
+	public  virtual void OnScrollTo(void** index, QAbstractItemView_ScrollHint hint)
 	{
-		this.ptr.ScrollTo(index, hint);
 	}
-	public QModelIndex_Ptr IndexAt(IQPoint p)
+	public  virtual QModelIndex_Ptr OnIndexAt(void** p)
 	{
-		return this.ptr.IndexAt(p);
+		return default;
 	}
-	public bool IsIndexHidden(IQModelIndex index)
+	public  virtual bool OnIsIndexHidden(void** index)
 	{
-		return this.ptr.IsIndexHidden(index);
+		return default;
 	}
-	public QModelIndex_Ptr MoveCursor(QAbstractItemView_CursorAction param1, void* param2)
+	public  virtual QModelIndex_Ptr OnMoveCursor(QAbstractItemView_CursorAction param1, void* param2)
 	{
-		return this.ptr.MoveCursor(param1, param2);
+		return default;
 	}
-	public void SetSelection(IQRect rect, void* flags)
+	public  virtual void OnSetSelection(void** rect, void* flags)
 	{
-		this.ptr.SetSelection(rect, flags);
 	}
-	public QRegion_Ptr VisualRegionForSelection(IQItemSelection selection)
+	public  virtual QRegion_Ptr OnVisualRegionForSelection(void** selection)
 	{
-		return this.ptr.VisualRegionForSelection(selection);
+		return default;
 	}
-	public void InitStyleOptionForIndex(IQStyleOptionHeader option, c_int logicalIndex)
+	public  virtual void OnInitStyleOptionForIndex(void** option, c_int logicalIndex)
 	{
-		this.ptr.InitStyleOptionForIndex(option, logicalIndex);
 	}
-	public void InitStyleOption(IQStyleOptionHeader option)
+	public  virtual void OnInitStyleOption(void** option)
 	{
-		this.ptr.InitStyleOption(option);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -3231,613 +3008,299 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QAbstractItemModel_Ptr Model()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Model();
+		return default;
 	}
-	public void SetSelectionModel(IQItemSelectionModel selectionModel)
+	public void ObjectName(String outStr)
 	{
-		this.ptr.SetSelectionModel(selectionModel);
+		this.ptr.ObjectName(outStr);
 	}
-	public QItemSelectionModel_Ptr SelectionModel()
+	public void SetObjectName(IQAnyStringView name)
 	{
-		return this.ptr.SelectionModel();
+		this.ptr.SetObjectName(name);
 	}
-	public void SetItemDelegate(IQAbstractItemDelegate _delegate)
+	public bool IsWidgetType()
 	{
-		this.ptr.SetItemDelegate(_delegate);
+		return this.ptr.IsWidgetType();
 	}
-	public QAbstractItemDelegate_Ptr ItemDelegate()
+	public bool IsWindowType()
 	{
-		return this.ptr.ItemDelegate();
+		return this.ptr.IsWindowType();
 	}
-	public void SetSelectionMode(QAbstractItemView_SelectionMode mode)
+	public bool IsQuickItemType()
 	{
-		this.ptr.SetSelectionMode(mode);
+		return this.ptr.IsQuickItemType();
 	}
-	public QAbstractItemView_SelectionMode SelectionMode()
+	public bool SignalsBlocked()
 	{
-		return this.ptr.SelectionMode();
+		return this.ptr.SignalsBlocked();
 	}
-	public void SetSelectionBehavior(QAbstractItemView_SelectionBehavior behavior)
+	public bool BlockSignals(bool b)
 	{
-		this.ptr.SetSelectionBehavior(behavior);
+		return this.ptr.BlockSignals(b);
 	}
-	public QAbstractItemView_SelectionBehavior SelectionBehavior()
+	public QThread_Ptr Thread()
 	{
-		return this.ptr.SelectionBehavior();
+		return this.ptr.Thread();
 	}
-	public QModelIndex_Ptr CurrentIndex()
+	public void MoveToThread(IQThread thread)
 	{
-		return this.ptr.CurrentIndex();
+		this.ptr.MoveToThread(thread);
 	}
-	public QModelIndex_Ptr RootIndex()
+	public c_int StartTimer(c_int interval)
 	{
-		return this.ptr.RootIndex();
+		return this.ptr.StartTimer(interval);
 	}
-	public void SetEditTriggers(void* triggers)
+	public c_int StartTimer2(void* time)
 	{
-		this.ptr.SetEditTriggers(triggers);
+		return this.ptr.StartTimer2(time);
 	}
-	public void* EditTriggers()
+	public void KillTimer(c_int id)
 	{
-		return this.ptr.EditTriggers();
+		this.ptr.KillTimer(id);
 	}
-	public void SetVerticalScrollMode(QAbstractItemView_ScrollMode mode)
+	public void** Children()
 	{
-		this.ptr.SetVerticalScrollMode(mode);
+		return this.ptr.Children();
 	}
-	public QAbstractItemView_ScrollMode VerticalScrollMode()
+	public void SetParent(IQObject parent)
 	{
-		return this.ptr.VerticalScrollMode();
+		this.ptr.SetParent(parent);
 	}
-	public void ResetVerticalScrollMode()
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		this.ptr.ResetVerticalScrollMode();
+		this.ptr.InstallEventFilter(filterObj);
 	}
-	public void SetHorizontalScrollMode(QAbstractItemView_ScrollMode mode)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		this.ptr.SetHorizontalScrollMode(mode);
+		this.ptr.RemoveEventFilter(obj);
 	}
-	public QAbstractItemView_ScrollMode HorizontalScrollMode()
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return this.ptr.HorizontalScrollMode();
+		return this.ptr.Connect(sender, signal, receiver, member);
 	}
-	public void ResetHorizontalScrollMode()
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		this.ptr.ResetHorizontalScrollMode();
+		return this.ptr.Connect2(sender, signal, receiver, method);
 	}
-	public void SetAutoScroll(bool enable)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		this.ptr.SetAutoScroll(enable);
+		return this.ptr.Connect3(sender, signal, member);
 	}
-	public bool HasAutoScroll()
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return this.ptr.HasAutoScroll();
+		return this.ptr.Disconnect(sender, signal, receiver, member);
 	}
-	public void SetAutoScrollMargin(c_int margin)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		this.ptr.SetAutoScrollMargin(margin);
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
 	}
-	public c_int AutoScrollMargin()
+	public bool Disconnect3()
 	{
-		return this.ptr.AutoScrollMargin();
+		return this.ptr.Disconnect3();
 	}
-	public void SetTabKeyNavigation(bool enable)
+	public bool Disconnect4(IQObject receiver)
 	{
-		this.ptr.SetTabKeyNavigation(enable);
+		return this.ptr.Disconnect4(receiver);
 	}
-	public bool TabKeyNavigation()
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return this.ptr.TabKeyNavigation();
+		return this.ptr.Disconnect5(param1);
 	}
-	public void SetDropIndicatorShown(bool enable)
+	public void DumpObjectTree()
 	{
-		this.ptr.SetDropIndicatorShown(enable);
+		this.ptr.DumpObjectTree();
 	}
-	public bool ShowDropIndicator()
+	public void DumpObjectInfo()
 	{
-		return this.ptr.ShowDropIndicator();
+		this.ptr.DumpObjectInfo();
 	}
-	public void SetDragEnabled(bool enable)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		this.ptr.SetDragEnabled(enable);
+		return this.ptr.SetProperty(name, value);
 	}
-	public bool DragEnabled()
+	public QVariant_Ptr Property(c_char* name)
 	{
-		return this.ptr.DragEnabled();
+		return this.ptr.Property(name);
 	}
-	public void SetDragDropOverwriteMode(bool overwrite)
+	public void* DynamicPropertyNames()
 	{
-		this.ptr.SetDragDropOverwriteMode(overwrite);
+		return this.ptr.DynamicPropertyNames();
 	}
-	public bool DragDropOverwriteMode()
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		return this.ptr.DragDropOverwriteMode();
+		return this.ptr.BindingStorage();
 	}
-	public void SetDragDropMode(QAbstractItemView_DragDropMode behavior)
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		this.ptr.SetDragDropMode(behavior);
+		return this.ptr.BindingStorage2();
 	}
-	public QAbstractItemView_DragDropMode DragDropMode()
+	public void Destroyed()
 	{
-		return this.ptr.DragDropMode();
+		this.ptr.Destroyed();
 	}
-	public void SetDefaultDropAction(Qt_DropAction dropAction)
+	public QObject_Ptr Parent()
 	{
-		this.ptr.SetDefaultDropAction(dropAction);
+		return this.ptr.Parent();
 	}
-	public Qt_DropAction DefaultDropAction()
+	public bool Inherits(c_char* classname)
 	{
-		return this.ptr.DefaultDropAction();
+		return this.ptr.Inherits(classname);
 	}
-	public void SetAlternatingRowColors(bool enable)
+	public void DeleteLater()
 	{
-		this.ptr.SetAlternatingRowColors(enable);
+		this.ptr.DeleteLater();
 	}
-	public bool AlternatingRowColors()
+	public QObject_Ptr Sender()
 	{
-		return this.ptr.AlternatingRowColors();
+		return this.ptr.Sender();
 	}
-	public void SetIconSize(IQSize size)
+	public c_int SenderSignalIndex()
 	{
-		this.ptr.SetIconSize(size);
+		return this.ptr.SenderSignalIndex();
 	}
-	public QSize_Ptr IconSize()
+	public c_int Receivers(c_char* signal)
 	{
-		return this.ptr.IconSize();
+		return this.ptr.Receivers(signal);
 	}
-	public void SetTextElideMode(Qt_TextElideMode mode)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		this.ptr.SetTextElideMode(mode);
+		return this.ptr.IsSignalConnected(signal);
 	}
-	public Qt_TextElideMode TextElideMode()
+	public  virtual void OnTimerEvent(void** event)
 	{
-		return this.ptr.TextElideMode();
 	}
-	public void KeyboardSearch(String search)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.KeyboardSearch(search);
 	}
-	public QSize_Ptr SizeHintForIndex(IQModelIndex index)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		return this.ptr.SizeHintForIndex(index);
 	}
-	public c_int SizeHintForRow(c_int row)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		return this.ptr.SizeHintForRow(row);
 	}
-	public c_int SizeHintForColumn(c_int column)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		return this.ptr.SizeHintForColumn(column);
 	}
-	public void OpenPersistentEditor(IQModelIndex index)
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		this.ptr.OpenPersistentEditor(index);
+		return this.ptr.StartTimer22(interval, timerType);
 	}
-	public void ClosePersistentEditor(IQModelIndex index)
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		this.ptr.ClosePersistentEditor(index);
+		return this.ptr.StartTimer23(time, timerType);
 	}
-	public bool IsPersistentEditorOpen(IQModelIndex index)
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return this.ptr.IsPersistentEditorOpen(index);
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
 	}
-	public void SetIndexWidget(IQModelIndex index, IQWidget widget)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		this.ptr.SetIndexWidget(index, widget);
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
 	}
-	public QWidget_Ptr IndexWidget(IQModelIndex index)
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return this.ptr.IndexWidget(index);
+		return this.ptr.Connect4(sender, signal, member, type);
 	}
-	public void SetItemDelegateForRow(c_int row, IQAbstractItemDelegate _delegate)
+	public bool Disconnect1(c_char* signal)
 	{
-		this.ptr.SetItemDelegateForRow(row, _delegate);
+		return this.ptr.Disconnect1(signal);
 	}
-	public QAbstractItemDelegate_Ptr ItemDelegateForRow(c_int row)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return this.ptr.ItemDelegateForRow(row);
+		return this.ptr.Disconnect22(signal, receiver);
 	}
-	public void SetItemDelegateForColumn(c_int column, IQAbstractItemDelegate _delegate)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.SetItemDelegateForColumn(column, _delegate);
+		return this.ptr.Disconnect32(signal, receiver, member);
 	}
-	public QAbstractItemDelegate_Ptr ItemDelegateForColumn(c_int column)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return this.ptr.ItemDelegateForColumn(column);
+		return this.ptr.Disconnect23(receiver, member);
 	}
-	public QAbstractItemDelegate_Ptr ItemDelegate2(IQModelIndex index)
+	public void Destroyed1(IQObject param1)
 	{
-		return this.ptr.ItemDelegate2(index);
+		this.ptr.Destroyed1(param1);
 	}
-	public QAbstractItemDelegate_Ptr ItemDelegateForIndex(IQModelIndex index)
+	public  virtual c_int OnDevType()
 	{
-		return this.ptr.ItemDelegateForIndex(index);
+		return default;
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public bool PaintingActive()
 	{
-		return this.ptr.InputMethodQuery(query);
+		return this.ptr.PaintingActive();
 	}
-	public void SetRootIndex(IQModelIndex index)
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
 	{
-		this.ptr.SetRootIndex(index);
+		return default;
 	}
-	public void SelectAll()
+	public c_int Width()
 	{
-		this.ptr.SelectAll();
+		return this.ptr.Width();
 	}
-	public void Edit(IQModelIndex index)
+	public c_int Height()
 	{
-		this.ptr.Edit(index);
+		return this.ptr.Height();
 	}
-	public void ClearSelection()
+	public c_int WidthMM()
 	{
-		this.ptr.ClearSelection();
+		return this.ptr.WidthMM();
 	}
-	public void SetCurrentIndex(IQModelIndex index)
+	public c_int HeightMM()
 	{
-		this.ptr.SetCurrentIndex(index);
+		return this.ptr.HeightMM();
 	}
-	public void ScrollToTop()
+	public c_int LogicalDpiX()
 	{
-		this.ptr.ScrollToTop();
+		return this.ptr.LogicalDpiX();
 	}
-	public void ScrollToBottom()
+	public c_int LogicalDpiY()
 	{
-		this.ptr.ScrollToBottom();
+		return this.ptr.LogicalDpiY();
 	}
-	public void Update(IQModelIndex index)
+	public c_int PhysicalDpiX()
 	{
-		this.ptr.Update(index);
+		return this.ptr.PhysicalDpiX();
 	}
-	public void RowsAboutToBeRemoved(IQModelIndex parent, c_int start, c_int end)
+	public c_int PhysicalDpiY()
 	{
-		this.ptr.RowsAboutToBeRemoved(parent, start, end);
+		return this.ptr.PhysicalDpiY();
 	}
-	public void SelectionChanged(IQItemSelection selected, IQItemSelection deselected)
+	public double DevicePixelRatio()
 	{
-		this.ptr.SelectionChanged(selected, deselected);
+		return this.ptr.DevicePixelRatio();
 	}
-	public void UpdateEditorData()
+	public double DevicePixelRatioF()
 	{
-		this.ptr.UpdateEditorData();
+		return this.ptr.DevicePixelRatioF();
 	}
-	public void UpdateEditorGeometries()
+	public c_int ColorCount()
 	{
-		this.ptr.UpdateEditorGeometries();
+		return this.ptr.ColorCount();
 	}
-	public void VerticalScrollbarAction(c_int action)
+	public c_int Depth()
 	{
-		this.ptr.VerticalScrollbarAction(action);
+		return this.ptr.Depth();
 	}
-	public void HorizontalScrollbarAction(c_int action)
+	public double DevicePixelRatioFScale()
 	{
-		this.ptr.HorizontalScrollbarAction(action);
+		return this.ptr.DevicePixelRatioFScale();
 	}
-	public void VerticalScrollbarValueChanged(c_int value)
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
 	{
-		this.ptr.VerticalScrollbarValueChanged(value);
+		return default;
 	}
-	public void HorizontalScrollbarValueChanged(c_int value)
+	public  virtual void OnInitPainter(void** painter)
 	{
-		this.ptr.HorizontalScrollbarValueChanged(value);
 	}
-	public void CloseEditor(IQWidget editor, QAbstractItemDelegate_EndEditHint hint)
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
 	{
-		this.ptr.CloseEditor(editor, hint);
+		return default;
 	}
-	public void CommitData(IQWidget editor)
+	public  virtual QPainter_Ptr OnSharedPainter()
 	{
-		this.ptr.CommitData(editor);
-	}
-	public void EditorDestroyed(IQObject editor)
-	{
-		this.ptr.EditorDestroyed(editor);
-	}
-	public void Pressed(IQModelIndex index)
-	{
-		this.ptr.Pressed(index);
-	}
-	public void Clicked(IQModelIndex index)
-	{
-		this.ptr.Clicked(index);
-	}
-	public void DoubleClicked(IQModelIndex index)
-	{
-		this.ptr.DoubleClicked(index);
-	}
-	public void Activated(IQModelIndex index)
-	{
-		this.ptr.Activated(index);
-	}
-	public void Entered(IQModelIndex index)
-	{
-		this.ptr.Entered(index);
-	}
-	public void ViewportEntered()
-	{
-		this.ptr.ViewportEntered();
-	}
-	public void IconSizeChanged(IQSize size)
-	{
-		this.ptr.IconSizeChanged(size);
-	}
-	public void* SelectedIndexes()
-	{
-		return this.ptr.SelectedIndexes();
-	}
-	public bool Edit2(IQModelIndex index, QAbstractItemView_EditTrigger trigger, IQEvent event)
-	{
-		return this.ptr.Edit2(index, trigger, event);
-	}
-	public void* SelectionCommand(IQModelIndex index, IQEvent event)
-	{
-		return this.ptr.SelectionCommand(index, event);
-	}
-	public void StartDrag(void* supportedActions)
-	{
-		this.ptr.StartDrag(supportedActions);
-	}
-	public void InitViewItemOption(IQStyleOptionViewItem option)
-	{
-		this.ptr.InitViewItemOption(option);
-	}
-	public QAbstractItemView_State State()
-	{
-		return this.ptr.State();
-	}
-	public void SetState(QAbstractItemView_State state)
-	{
-		this.ptr.SetState(state);
-	}
-	public void ScheduleDelayedItemsLayout()
-	{
-		this.ptr.ScheduleDelayedItemsLayout();
-	}
-	public void ExecuteDelayedItemsLayout()
-	{
-		this.ptr.ExecuteDelayedItemsLayout();
-	}
-	public void SetDirtyRegion(IQRegion region)
-	{
-		this.ptr.SetDirtyRegion(region);
-	}
-	public void ScrollDirtyRegion(c_int dx, c_int dy)
-	{
-		this.ptr.ScrollDirtyRegion(dx, dy);
-	}
-	public QPoint_Ptr DirtyRegionOffset()
-	{
-		return this.ptr.DirtyRegionOffset();
-	}
-	public void StartAutoScroll()
-	{
-		this.ptr.StartAutoScroll();
-	}
-	public void StopAutoScroll()
-	{
-		this.ptr.StopAutoScroll();
-	}
-	public void DoAutoScroll()
-	{
-		this.ptr.DoAutoScroll();
-	}
-	public bool FocusNextPrevChild(bool next)
-	{
-		return this.ptr.FocusNextPrevChild(next);
-	}
-	public void DragEnterEvent(IQDragEnterEvent event)
-	{
-		this.ptr.DragEnterEvent(event);
-	}
-	public void DragMoveEvent(IQDragMoveEvent event)
-	{
-		this.ptr.DragMoveEvent(event);
-	}
-	public void DragLeaveEvent(IQDragLeaveEvent event)
-	{
-		this.ptr.DragLeaveEvent(event);
-	}
-	public void DropEvent(IQDropEvent event)
-	{
-		this.ptr.DropEvent(event);
-	}
-	public void FocusInEvent(IQFocusEvent event)
-	{
-		this.ptr.FocusInEvent(event);
-	}
-	public void FocusOutEvent(IQFocusEvent event)
-	{
-		this.ptr.FocusOutEvent(event);
-	}
-	public void KeyPressEvent(IQKeyEvent event)
-	{
-		this.ptr.KeyPressEvent(event);
-	}
-	public void ResizeEvent(IQResizeEvent event)
-	{
-		this.ptr.ResizeEvent(event);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		this.ptr.TimerEvent(event);
-	}
-	public void InputMethodEvent(IQInputMethodEvent event)
-	{
-		this.ptr.InputMethodEvent(event);
-	}
-	public bool EventFilter(IQObject object, IQEvent event)
-	{
-		return this.ptr.EventFilter(object, event);
-	}
-	public QAbstractItemView_DropIndicatorPosition DropIndicatorPosition()
-	{
-		return this.ptr.DropIndicatorPosition();
-	}
-	public QSize_Ptr ViewportSizeHint()
-	{
-		return this.ptr.ViewportSizeHint();
-	}
-	public Qt_ScrollBarPolicy VerticalScrollBarPolicy()
-	{
-		return this.ptr.VerticalScrollBarPolicy();
-	}
-	public void SetVerticalScrollBarPolicy(Qt_ScrollBarPolicy verticalScrollBarPolicy)
-	{
-		this.ptr.SetVerticalScrollBarPolicy(verticalScrollBarPolicy);
-	}
-	public QScrollBar_Ptr VerticalScrollBar()
-	{
-		return this.ptr.VerticalScrollBar();
-	}
-	public void SetVerticalScrollBar(IQScrollBar scrollbar)
-	{
-		this.ptr.SetVerticalScrollBar(scrollbar);
-	}
-	public Qt_ScrollBarPolicy HorizontalScrollBarPolicy()
-	{
-		return this.ptr.HorizontalScrollBarPolicy();
-	}
-	public void SetHorizontalScrollBarPolicy(Qt_ScrollBarPolicy horizontalScrollBarPolicy)
-	{
-		this.ptr.SetHorizontalScrollBarPolicy(horizontalScrollBarPolicy);
-	}
-	public QScrollBar_Ptr HorizontalScrollBar()
-	{
-		return this.ptr.HorizontalScrollBar();
-	}
-	public void SetHorizontalScrollBar(IQScrollBar scrollbar)
-	{
-		this.ptr.SetHorizontalScrollBar(scrollbar);
-	}
-	public QWidget_Ptr CornerWidget()
-	{
-		return this.ptr.CornerWidget();
-	}
-	public void SetCornerWidget(IQWidget widget)
-	{
-		this.ptr.SetCornerWidget(widget);
-	}
-	public void AddScrollBarWidget(IQWidget widget, void* alignment)
-	{
-		this.ptr.AddScrollBarWidget(widget, alignment);
-	}
-	public void* ScrollBarWidgets(void* alignment)
-	{
-		return this.ptr.ScrollBarWidgets(alignment);
-	}
-	public QWidget_Ptr Viewport()
-	{
-		return this.ptr.Viewport();
-	}
-	public void SetViewport(IQWidget widget)
-	{
-		this.ptr.SetViewport(widget);
-	}
-	public QSize_Ptr MaximumViewportSize()
-	{
-		return this.ptr.MaximumViewportSize();
-	}
-	public QSize_Ptr MinimumSizeHint()
-	{
-		return this.ptr.MinimumSizeHint();
-	}
-	public void SetupViewport(IQWidget viewport)
-	{
-		this.ptr.SetupViewport(viewport);
-	}
-	public QAbstractScrollArea_SizeAdjustPolicy SizeAdjustPolicy()
-	{
-		return this.ptr.SizeAdjustPolicy();
-	}
-	public void SetSizeAdjustPolicy(QAbstractScrollArea_SizeAdjustPolicy policy)
-	{
-		this.ptr.SetSizeAdjustPolicy(policy);
-	}
-	public void SetViewportMargins(c_int left, c_int top, c_int right, c_int bottom)
-	{
-		this.ptr.SetViewportMargins(left, top, right, bottom);
-	}
-	public void SetViewportMargins2(IQMargins margins)
-	{
-		this.ptr.SetViewportMargins2(margins);
-	}
-	public QMargins_Ptr ViewportMargins()
-	{
-		return this.ptr.ViewportMargins();
-	}
-	public void WheelEvent(IQWheelEvent param1)
-	{
-		this.ptr.WheelEvent(param1);
-	}
-	public void ContextMenuEvent(IQContextMenuEvent param1)
-	{
-		this.ptr.ContextMenuEvent(param1);
-	}
-	public c_int FrameStyle()
-	{
-		return this.ptr.FrameStyle();
-	}
-	public void SetFrameStyle(c_int frameStyle)
-	{
-		this.ptr.SetFrameStyle(frameStyle);
-	}
-	public c_int FrameWidth()
-	{
-		return this.ptr.FrameWidth();
-	}
-	public QFrame_Shape FrameShape()
-	{
-		return this.ptr.FrameShape();
-	}
-	public void SetFrameShape(QFrame_Shape frameShape)
-	{
-		this.ptr.SetFrameShape(frameShape);
-	}
-	public QFrame_Shadow FrameShadow()
-	{
-		return this.ptr.FrameShadow();
-	}
-	public void SetFrameShadow(QFrame_Shadow frameShadow)
-	{
-		this.ptr.SetFrameShadow(frameShadow);
-	}
-	public c_int LineWidth()
-	{
-		return this.ptr.LineWidth();
-	}
-	public void SetLineWidth(c_int lineWidth)
-	{
-		this.ptr.SetLineWidth(lineWidth);
-	}
-	public c_int MidLineWidth()
-	{
-		return this.ptr.MidLineWidth();
-	}
-	public void SetMidLineWidth(c_int midLineWidth)
-	{
-		this.ptr.SetMidLineWidth(midLineWidth);
-	}
-	public QRect_Ptr FrameRect()
-	{
-		return this.ptr.FrameRect();
-	}
-	public void SetFrameRect(IQRect frameRect)
-	{
-		this.ptr.SetFrameRect(frameRect);
-	}
-	public void ChangeEvent(IQEvent param1)
-	{
-		this.ptr.ChangeEvent(param1);
-	}
-	public void DrawFrame(IQPainter param1)
-	{
-		this.ptr.DrawFrame(param1);
-	}
-	public c_int DevType()
-	{
-		return this.ptr.DevType();
+		return default;
 	}
 	public void* WinId()
 	{
@@ -3934,14 +3397,6 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
-	}
-	public c_int Width()
-	{
-		return this.ptr.Width();
-	}
-	public c_int Height()
-	{
-		return this.ptr.Height();
 	}
 	public QRect_Ptr Rect()
 	{
@@ -4475,6 +3930,10 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		return this.ptr.GraphicsProxyWidget();
 	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
 	public void Repaint()
 	{
 		this.ptr.Repaint();
@@ -4619,6 +4078,10 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		this.ptr.OverrideWindowState(state);
 	}
+	public  virtual QSize_Ptr OnMinimumSizeHint()
+	{
+		return default;
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return this.ptr.SizePolicy();
@@ -4631,13 +4094,13 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		this.ptr.SetSizePolicy2(horizontal, vertical);
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -4670,10 +4133,6 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	public void UpdateGeometry()
 	{
 		this.ptr.UpdateGeometry();
-	}
-	public void SetParent(IQWidget parent)
-	{
-		this.ptr.SetParent(parent);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -4791,10 +4250,6 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		return this.ptr.TestAttribute(param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
 	public void EnsurePolished()
 	{
 		this.ptr.EnsurePolished();
@@ -4847,61 +4302,76 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		this.ptr.CustomContextMenuRequested(pos);
 	}
-	public void KeyReleaseEvent(IQKeyEvent event)
+	public  virtual void OnWheelEvent(void** event)
 	{
-		this.ptr.KeyReleaseEvent(event);
 	}
-	public void EnterEvent(IQEnterEvent event)
+	public  virtual void OnKeyPressEvent(void** event)
 	{
-		this.ptr.EnterEvent(event);
 	}
-	public void LeaveEvent(IQEvent event)
+	public  virtual void OnKeyReleaseEvent(void** event)
 	{
-		this.ptr.LeaveEvent(event);
 	}
-	public void MoveEvent(IQMoveEvent event)
+	public  virtual void OnFocusInEvent(void** event)
 	{
-		this.ptr.MoveEvent(event);
 	}
-	public void CloseEvent(IQCloseEvent event)
+	public  virtual void OnFocusOutEvent(void** event)
 	{
-		this.ptr.CloseEvent(event);
 	}
-	public void TabletEvent(IQTabletEvent event)
+	public  virtual void OnEnterEvent(void** event)
 	{
-		this.ptr.TabletEvent(event);
 	}
-	public void ActionEvent(IQActionEvent event)
+	public  virtual void OnLeaveEvent(void** event)
 	{
-		this.ptr.ActionEvent(event);
 	}
-	public void ShowEvent(IQShowEvent event)
+	public  virtual void OnMoveEvent(void** event)
 	{
-		this.ptr.ShowEvent(event);
 	}
-	public void HideEvent(IQHideEvent event)
+	public  virtual void OnResizeEvent(void** event)
 	{
-		this.ptr.HideEvent(event);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual void OnCloseEvent(void** event)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public  virtual void OnContextMenuEvent(void** event)
 	{
-		return this.ptr.Metric(param1);
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnTabletEvent(void** event)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual void OnActionEvent(void** event)
 	{
-		return this.ptr.Redirected(offset);
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual void OnDragEnterEvent(void** event)
 	{
-		return this.ptr.SharedPainter();
+	}
+	public  virtual void OnDragMoveEvent(void** event)
+	{
+	}
+	public  virtual void OnDragLeaveEvent(void** event)
+	{
+	}
+	public  virtual void OnDropEvent(void** event)
+	{
+	}
+	public  virtual void OnShowEvent(void** event)
+	{
+	}
+	public  virtual void OnHideEvent(void** event)
+	{
+	}
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
+	{
+		return default;
+	}
+	public  virtual void OnChangeEvent(void** param1)
+	{
+	}
+	public  virtual void OnInputMethodEvent(void** param1)
+	{
+	}
+	public  virtual QVariant_Ptr OnInputMethodQuery(Qt_InputMethodQuery param1)
+	{
+		return default;
 	}
 	public void* InputMethodHints()
 	{
@@ -4922,6 +4392,10 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	public void Destroy()
 	{
 		this.ptr.Destroy();
+	}
+	public  virtual bool OnFocusNextPrevChild(bool next)
+	{
+		return default;
 	}
 	public bool FocusNextChild()
 	{
@@ -5015,261 +4489,519 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 	{
 		this.ptr.Destroy2(destroyWindow, destroySubWindows);
 	}
-	public void ObjectName(String outStr)
+	public c_int FrameStyle()
 	{
-		this.ptr.ObjectName(outStr);
+		return this.ptr.FrameStyle();
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetFrameStyle(c_int frameStyle)
 	{
-		this.ptr.SetObjectName(name);
+		this.ptr.SetFrameStyle(frameStyle);
 	}
-	public bool IsWidgetType()
+	public c_int FrameWidth()
 	{
-		return this.ptr.IsWidgetType();
+		return this.ptr.FrameWidth();
 	}
-	public bool IsWindowType()
+	public QFrame_Shape FrameShape()
 	{
-		return this.ptr.IsWindowType();
+		return this.ptr.FrameShape();
 	}
-	public bool IsQuickItemType()
+	public void SetFrameShape(QFrame_Shape frameShape)
 	{
-		return this.ptr.IsQuickItemType();
+		this.ptr.SetFrameShape(frameShape);
 	}
-	public bool SignalsBlocked()
+	public QFrame_Shadow FrameShadow()
 	{
-		return this.ptr.SignalsBlocked();
+		return this.ptr.FrameShadow();
 	}
-	public bool BlockSignals(bool b)
+	public void SetFrameShadow(QFrame_Shadow frameShadow)
 	{
-		return this.ptr.BlockSignals(b);
+		this.ptr.SetFrameShadow(frameShadow);
 	}
-	public QThread_Ptr Thread()
+	public c_int LineWidth()
 	{
-		return this.ptr.Thread();
+		return this.ptr.LineWidth();
 	}
-	public void MoveToThread(IQThread thread)
+	public void SetLineWidth(c_int lineWidth)
 	{
-		this.ptr.MoveToThread(thread);
+		this.ptr.SetLineWidth(lineWidth);
 	}
-	public c_int StartTimer(c_int interval)
+	public c_int MidLineWidth()
 	{
-		return this.ptr.StartTimer(interval);
+		return this.ptr.MidLineWidth();
 	}
-	public c_int StartTimer2(void* time)
+	public void SetMidLineWidth(c_int midLineWidth)
 	{
-		return this.ptr.StartTimer2(time);
+		this.ptr.SetMidLineWidth(midLineWidth);
 	}
-	public void KillTimer(c_int id)
+	public QRect_Ptr FrameRect()
 	{
-		this.ptr.KillTimer(id);
+		return this.ptr.FrameRect();
 	}
-	public void** Children()
+	public void SetFrameRect(IQRect frameRect)
 	{
-		return this.ptr.Children();
+		this.ptr.SetFrameRect(frameRect);
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void DrawFrame(IQPainter param1)
 	{
-		this.ptr.InstallEventFilter(filterObj);
+		this.ptr.DrawFrame(param1);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public Qt_ScrollBarPolicy VerticalScrollBarPolicy()
 	{
-		this.ptr.RemoveEventFilter(obj);
+		return this.ptr.VerticalScrollBarPolicy();
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetVerticalScrollBarPolicy(Qt_ScrollBarPolicy verticalScrollBarPolicy)
 	{
-		return this.ptr.Connect(sender, signal, receiver, member);
+		this.ptr.SetVerticalScrollBarPolicy(verticalScrollBarPolicy);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public QScrollBar_Ptr VerticalScrollBar()
 	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
+		return this.ptr.VerticalScrollBar();
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetVerticalScrollBar(IQScrollBar scrollbar)
 	{
-		return this.ptr.Connect3(sender, signal, member);
+		this.ptr.SetVerticalScrollBar(scrollbar);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public Qt_ScrollBarPolicy HorizontalScrollBarPolicy()
 	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
+		return this.ptr.HorizontalScrollBarPolicy();
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void SetHorizontalScrollBarPolicy(Qt_ScrollBarPolicy horizontalScrollBarPolicy)
 	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
+		this.ptr.SetHorizontalScrollBarPolicy(horizontalScrollBarPolicy);
 	}
-	public bool Disconnect3()
+	public QScrollBar_Ptr HorizontalScrollBar()
 	{
-		return this.ptr.Disconnect3();
+		return this.ptr.HorizontalScrollBar();
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void SetHorizontalScrollBar(IQScrollBar scrollbar)
 	{
-		return this.ptr.Disconnect4(receiver);
+		this.ptr.SetHorizontalScrollBar(scrollbar);
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public QWidget_Ptr CornerWidget()
 	{
-		return this.ptr.Disconnect5(param1);
+		return this.ptr.CornerWidget();
 	}
-	public void DumpObjectTree()
+	public void SetCornerWidget(IQWidget widget)
 	{
-		this.ptr.DumpObjectTree();
+		this.ptr.SetCornerWidget(widget);
 	}
-	public void DumpObjectInfo()
+	public void AddScrollBarWidget(IQWidget widget, void* alignment)
 	{
-		this.ptr.DumpObjectInfo();
+		this.ptr.AddScrollBarWidget(widget, alignment);
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public void* ScrollBarWidgets(void* alignment)
 	{
-		return this.ptr.SetProperty(name, value);
+		return this.ptr.ScrollBarWidgets(alignment);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QWidget_Ptr Viewport()
 	{
-		return this.ptr.Property(name);
+		return this.ptr.Viewport();
 	}
-	public void* DynamicPropertyNames()
+	public void SetViewport(IQWidget widget)
 	{
-		return this.ptr.DynamicPropertyNames();
+		this.ptr.SetViewport(widget);
 	}
-	public QBindingStorage_Ptr BindingStorage()
+	public QSize_Ptr MaximumViewportSize()
 	{
-		return this.ptr.BindingStorage();
+		return this.ptr.MaximumViewportSize();
 	}
-	public QBindingStorage_Ptr BindingStorage2()
+	public  virtual void OnSetupViewport(void** viewport)
 	{
-		return this.ptr.BindingStorage2();
 	}
-	public void Destroyed()
+	public QAbstractScrollArea_SizeAdjustPolicy SizeAdjustPolicy()
 	{
-		this.ptr.Destroyed();
+		return this.ptr.SizeAdjustPolicy();
 	}
-	public QObject_Ptr Parent()
+	public void SetSizeAdjustPolicy(QAbstractScrollArea_SizeAdjustPolicy policy)
 	{
-		return this.ptr.Parent();
+		this.ptr.SetSizeAdjustPolicy(policy);
 	}
-	public bool Inherits(c_char* classname)
+	public void SetViewportMargins(c_int left, c_int top, c_int right, c_int bottom)
 	{
-		return this.ptr.Inherits(classname);
+		this.ptr.SetViewportMargins(left, top, right, bottom);
 	}
-	public void DeleteLater()
+	public void SetViewportMargins2(IQMargins margins)
 	{
-		this.ptr.DeleteLater();
+		this.ptr.SetViewportMargins2(margins);
 	}
-	public QObject_Ptr Sender()
+	public QMargins_Ptr ViewportMargins()
 	{
-		return this.ptr.Sender();
+		return this.ptr.ViewportMargins();
 	}
-	public c_int SenderSignalIndex()
+	public  virtual QSize_Ptr OnViewportSizeHint()
 	{
-		return this.ptr.SenderSignalIndex();
+		return default;
 	}
-	public c_int Receivers(c_char* signal)
+	public QAbstractItemModel_Ptr Model()
 	{
-		return this.ptr.Receivers(signal);
+		return this.ptr.Model();
 	}
-	public bool IsSignalConnected(IQMetaMethod signal)
+	public  virtual void OnSetSelectionModel(void** selectionModel)
 	{
-		return this.ptr.IsSignalConnected(signal);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public QItemSelectionModel_Ptr SelectionModel()
 	{
-		this.ptr.ChildEvent(event);
+		return this.ptr.SelectionModel();
 	}
-	public void CustomEvent(IQEvent event)
+	public void SetItemDelegate(IQAbstractItemDelegate _delegate)
 	{
-		this.ptr.CustomEvent(event);
+		this.ptr.SetItemDelegate(_delegate);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public QAbstractItemDelegate_Ptr ItemDelegate()
 	{
-		this.ptr.ConnectNotify(signal);
+		return this.ptr.ItemDelegate();
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public void SetSelectionMode(QAbstractItemView_SelectionMode mode)
 	{
-		this.ptr.DisconnectNotify(signal);
+		this.ptr.SetSelectionMode(mode);
 	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	public QAbstractItemView_SelectionMode SelectionMode()
 	{
-		return this.ptr.StartTimer22(interval, timerType);
+		return this.ptr.SelectionMode();
 	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	public void SetSelectionBehavior(QAbstractItemView_SelectionBehavior behavior)
 	{
-		return this.ptr.StartTimer23(time, timerType);
+		this.ptr.SetSelectionBehavior(behavior);
 	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public QAbstractItemView_SelectionBehavior SelectionBehavior()
 	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+		return this.ptr.SelectionBehavior();
 	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public QModelIndex_Ptr CurrentIndex()
 	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
+		return this.ptr.CurrentIndex();
 	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QModelIndex_Ptr RootIndex()
 	{
-		return this.ptr.Connect4(sender, signal, member, type);
+		return this.ptr.RootIndex();
 	}
-	public bool Disconnect1(c_char* signal)
+	public void SetEditTriggers(void* triggers)
 	{
-		return this.ptr.Disconnect1(signal);
+		this.ptr.SetEditTriggers(triggers);
 	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
+	public void* EditTriggers()
 	{
-		return this.ptr.Disconnect22(signal, receiver);
+		return this.ptr.EditTriggers();
 	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	public void SetVerticalScrollMode(QAbstractItemView_ScrollMode mode)
 	{
-		return this.ptr.Disconnect32(signal, receiver, member);
+		this.ptr.SetVerticalScrollMode(mode);
 	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
+	public QAbstractItemView_ScrollMode VerticalScrollMode()
 	{
-		return this.ptr.Disconnect23(receiver, member);
+		return this.ptr.VerticalScrollMode();
 	}
-	public void Destroyed1(IQObject param1)
+	public void ResetVerticalScrollMode()
 	{
-		this.ptr.Destroyed1(param1);
+		this.ptr.ResetVerticalScrollMode();
 	}
-	public bool PaintingActive()
+	public void SetHorizontalScrollMode(QAbstractItemView_ScrollMode mode)
 	{
-		return this.ptr.PaintingActive();
+		this.ptr.SetHorizontalScrollMode(mode);
 	}
-	public c_int WidthMM()
+	public QAbstractItemView_ScrollMode HorizontalScrollMode()
 	{
-		return this.ptr.WidthMM();
+		return this.ptr.HorizontalScrollMode();
 	}
-	public c_int HeightMM()
+	public void ResetHorizontalScrollMode()
 	{
-		return this.ptr.HeightMM();
+		this.ptr.ResetHorizontalScrollMode();
 	}
-	public c_int LogicalDpiX()
+	public void SetAutoScroll(bool enable)
 	{
-		return this.ptr.LogicalDpiX();
+		this.ptr.SetAutoScroll(enable);
 	}
-	public c_int LogicalDpiY()
+	public bool HasAutoScroll()
 	{
-		return this.ptr.LogicalDpiY();
+		return this.ptr.HasAutoScroll();
 	}
-	public c_int PhysicalDpiX()
+	public void SetAutoScrollMargin(c_int margin)
 	{
-		return this.ptr.PhysicalDpiX();
+		this.ptr.SetAutoScrollMargin(margin);
 	}
-	public c_int PhysicalDpiY()
+	public c_int AutoScrollMargin()
 	{
-		return this.ptr.PhysicalDpiY();
+		return this.ptr.AutoScrollMargin();
 	}
-	public double DevicePixelRatio()
+	public void SetTabKeyNavigation(bool enable)
 	{
-		return this.ptr.DevicePixelRatio();
+		this.ptr.SetTabKeyNavigation(enable);
 	}
-	public double DevicePixelRatioF()
+	public bool TabKeyNavigation()
 	{
-		return this.ptr.DevicePixelRatioF();
+		return this.ptr.TabKeyNavigation();
 	}
-	public c_int ColorCount()
+	public void SetDropIndicatorShown(bool enable)
 	{
-		return this.ptr.ColorCount();
+		this.ptr.SetDropIndicatorShown(enable);
 	}
-	public c_int Depth()
+	public bool ShowDropIndicator()
 	{
-		return this.ptr.Depth();
+		return this.ptr.ShowDropIndicator();
 	}
-	public double DevicePixelRatioFScale()
+	public void SetDragEnabled(bool enable)
 	{
-		return this.ptr.DevicePixelRatioFScale();
+		this.ptr.SetDragEnabled(enable);
+	}
+	public bool DragEnabled()
+	{
+		return this.ptr.DragEnabled();
+	}
+	public void SetDragDropOverwriteMode(bool overwrite)
+	{
+		this.ptr.SetDragDropOverwriteMode(overwrite);
+	}
+	public bool DragDropOverwriteMode()
+	{
+		return this.ptr.DragDropOverwriteMode();
+	}
+	public void SetDragDropMode(QAbstractItemView_DragDropMode behavior)
+	{
+		this.ptr.SetDragDropMode(behavior);
+	}
+	public QAbstractItemView_DragDropMode DragDropMode()
+	{
+		return this.ptr.DragDropMode();
+	}
+	public void SetDefaultDropAction(Qt_DropAction dropAction)
+	{
+		this.ptr.SetDefaultDropAction(dropAction);
+	}
+	public Qt_DropAction DefaultDropAction()
+	{
+		return this.ptr.DefaultDropAction();
+	}
+	public void SetAlternatingRowColors(bool enable)
+	{
+		this.ptr.SetAlternatingRowColors(enable);
+	}
+	public bool AlternatingRowColors()
+	{
+		return this.ptr.AlternatingRowColors();
+	}
+	public void SetIconSize(IQSize size)
+	{
+		this.ptr.SetIconSize(size);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return this.ptr.IconSize();
+	}
+	public void SetTextElideMode(Qt_TextElideMode mode)
+	{
+		this.ptr.SetTextElideMode(mode);
+	}
+	public Qt_TextElideMode TextElideMode()
+	{
+		return this.ptr.TextElideMode();
+	}
+	public  virtual void OnKeyboardSearch(libqt_string search)
+	{
+	}
+	public QSize_Ptr SizeHintForIndex(IQModelIndex index)
+	{
+		return this.ptr.SizeHintForIndex(index);
+	}
+	public  virtual c_int OnSizeHintForRow(c_int row)
+	{
+		return default;
+	}
+	public  virtual c_int OnSizeHintForColumn(c_int column)
+	{
+		return default;
+	}
+	public void OpenPersistentEditor(IQModelIndex index)
+	{
+		this.ptr.OpenPersistentEditor(index);
+	}
+	public void ClosePersistentEditor(IQModelIndex index)
+	{
+		this.ptr.ClosePersistentEditor(index);
+	}
+	public bool IsPersistentEditorOpen(IQModelIndex index)
+	{
+		return this.ptr.IsPersistentEditorOpen(index);
+	}
+	public void SetIndexWidget(IQModelIndex index, IQWidget widget)
+	{
+		this.ptr.SetIndexWidget(index, widget);
+	}
+	public QWidget_Ptr IndexWidget(IQModelIndex index)
+	{
+		return this.ptr.IndexWidget(index);
+	}
+	public void SetItemDelegateForRow(c_int row, IQAbstractItemDelegate _delegate)
+	{
+		this.ptr.SetItemDelegateForRow(row, _delegate);
+	}
+	public QAbstractItemDelegate_Ptr ItemDelegateForRow(c_int row)
+	{
+		return this.ptr.ItemDelegateForRow(row);
+	}
+	public void SetItemDelegateForColumn(c_int column, IQAbstractItemDelegate _delegate)
+	{
+		this.ptr.SetItemDelegateForColumn(column, _delegate);
+	}
+	public QAbstractItemDelegate_Ptr ItemDelegateForColumn(c_int column)
+	{
+		return this.ptr.ItemDelegateForColumn(column);
+	}
+	public QAbstractItemDelegate_Ptr ItemDelegate2(IQModelIndex index)
+	{
+		return this.ptr.ItemDelegate2(index);
+	}
+	public  virtual QAbstractItemDelegate_Ptr OnItemDelegateForIndex(void** index)
+	{
+		return default;
+	}
+	public  virtual void OnSetRootIndex(void** index)
+	{
+	}
+	public  virtual void OnSelectAll()
+	{
+	}
+	public void Edit(IQModelIndex index)
+	{
+		this.ptr.Edit(index);
+	}
+	public void ClearSelection()
+	{
+		this.ptr.ClearSelection();
+	}
+	public void SetCurrentIndex(IQModelIndex index)
+	{
+		this.ptr.SetCurrentIndex(index);
+	}
+	public void ScrollToTop()
+	{
+		this.ptr.ScrollToTop();
+	}
+	public void ScrollToBottom()
+	{
+		this.ptr.ScrollToBottom();
+	}
+	public  virtual void OnRowsAboutToBeRemoved(void** parent, c_int start, c_int end)
+	{
+	}
+	public  virtual void OnSelectionChanged(void** selected, void** deselected)
+	{
+	}
+	public  virtual void OnUpdateEditorData()
+	{
+	}
+	public  virtual void OnUpdateEditorGeometries()
+	{
+	}
+	public  virtual void OnVerticalScrollbarAction(c_int action)
+	{
+	}
+	public  virtual void OnHorizontalScrollbarAction(c_int action)
+	{
+	}
+	public  virtual void OnVerticalScrollbarValueChanged(c_int value)
+	{
+	}
+	public  virtual void OnHorizontalScrollbarValueChanged(c_int value)
+	{
+	}
+	public  virtual void OnCloseEditor(void** editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+	}
+	public  virtual void OnCommitData(void** editor)
+	{
+	}
+	public  virtual void OnEditorDestroyed(void** editor)
+	{
+	}
+	public void Pressed(IQModelIndex index)
+	{
+		this.ptr.Pressed(index);
+	}
+	public void Clicked(IQModelIndex index)
+	{
+		this.ptr.Clicked(index);
+	}
+	public void DoubleClicked(IQModelIndex index)
+	{
+		this.ptr.DoubleClicked(index);
+	}
+	public void Activated(IQModelIndex index)
+	{
+		this.ptr.Activated(index);
+	}
+	public void Entered(IQModelIndex index)
+	{
+		this.ptr.Entered(index);
+	}
+	public void ViewportEntered()
+	{
+		this.ptr.ViewportEntered();
+	}
+	public void IconSizeChanged(IQSize size)
+	{
+		this.ptr.IconSizeChanged(size);
+	}
+	public  virtual void* OnSelectedIndexes()
+	{
+		return default;
+	}
+	public  virtual bool OnEdit2(void** index, QAbstractItemView_EditTrigger trigger, void** event)
+	{
+		return default;
+	}
+	public  virtual void* OnSelectionCommand(void** index, void** event)
+	{
+		return default;
+	}
+	public  virtual void OnStartDrag(void* supportedActions)
+	{
+	}
+	public  virtual void OnInitViewItemOption(void** option)
+	{
+	}
+	public QAbstractItemView_State State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(QAbstractItemView_State state)
+	{
+		this.ptr.SetState(state);
+	}
+	public void ScheduleDelayedItemsLayout()
+	{
+		this.ptr.ScheduleDelayedItemsLayout();
+	}
+	public void ExecuteDelayedItemsLayout()
+	{
+		this.ptr.ExecuteDelayedItemsLayout();
+	}
+	public void SetDirtyRegion(IQRegion region)
+	{
+		this.ptr.SetDirtyRegion(region);
+	}
+	public void ScrollDirtyRegion(c_int dx, c_int dy)
+	{
+		this.ptr.ScrollDirtyRegion(dx, dy);
+	}
+	public QPoint_Ptr DirtyRegionOffset()
+	{
+		return this.ptr.DirtyRegionOffset();
+	}
+	public void StartAutoScroll()
+	{
+		this.ptr.StartAutoScroll();
+	}
+	public void StopAutoScroll()
+	{
+		this.ptr.StopAutoScroll();
+	}
+	public void DoAutoScroll()
+	{
+		this.ptr.DoAutoScroll();
+	}
+	public QAbstractItemView_DropIndicatorPosition DropIndicatorPosition()
+	{
+		return this.ptr.DropIndicatorPosition();
 	}
 }
 interface IQHeaderView : IQtObjectInterface
@@ -5285,14 +5017,30 @@ extension CQt
 	public static extern void QHeaderView_Delete(QHeaderView_Ptr self);
 	[LinkName("QHeaderView_MetaObject")]
 	public static extern void** QHeaderView_MetaObject(void* self);
+	
+	public function void QHeaderView_OnMetaObject_action(void* self);
+	[LinkName("QHeaderView_OnMetaObject")]
+	public static extern void** QHeaderView_OnMetaObject(void* self, QHeaderView_OnMetaObject_action _action);
 	[LinkName("QHeaderView_Qt_Metacast")]
 	public static extern void* QHeaderView_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QHeaderView_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QHeaderView_OnMetacast")]
+	public static extern void* QHeaderView_OnMetacast(void* self, QHeaderView_OnMetacast_action _action);
 	[LinkName("QHeaderView_Qt_Metacall")]
 	public static extern c_int QHeaderView_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QHeaderView_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QHeaderView_OnMetacall")]
+	public static extern c_int QHeaderView_OnMetacall(void* self, QHeaderView_OnMetacall_action _action);
 	[LinkName("QHeaderView_Tr")]
 	public static extern libqt_string QHeaderView_Tr(c_char* s);
 	[LinkName("QHeaderView_SetModel")]
 	public static extern void QHeaderView_SetModel(void* self, void** model);
+	
+	public function void QHeaderView_OnSetModel_action(void* self, void** model);
+	[LinkName("QHeaderView_OnSetModel")]
+	public static extern void QHeaderView_OnSetModel(void* self, QHeaderView_OnSetModel_action _action);
 	[LinkName("QHeaderView_Orientation")]
 	public static extern Qt_Orientation QHeaderView_Orientation(void* self);
 	[LinkName("QHeaderView_Offset")]
@@ -5301,8 +5049,16 @@ extension CQt
 	public static extern c_int QHeaderView_Length(void* self);
 	[LinkName("QHeaderView_SizeHint")]
 	public static extern void* QHeaderView_SizeHint(void* self);
+	
+	public function void QHeaderView_OnSizeHint_action(void* self);
+	[LinkName("QHeaderView_OnSizeHint")]
+	public static extern void* QHeaderView_OnSizeHint(void* self, QHeaderView_OnSizeHint_action _action);
 	[LinkName("QHeaderView_SetVisible")]
 	public static extern void QHeaderView_SetVisible(void* self, bool v);
+	
+	public function void QHeaderView_OnSetVisible_action(void* self, bool v);
+	[LinkName("QHeaderView_OnSetVisible")]
+	public static extern void QHeaderView_OnSetVisible(void* self, QHeaderView_OnSetVisible_action _action);
 	[LinkName("QHeaderView_SectionSizeHint")]
 	public static extern c_int QHeaderView_SectionSizeHint(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_VisualIndexAt")]
@@ -5413,6 +5169,10 @@ extension CQt
 	public static extern void QHeaderView_SetDefaultAlignment(void* self, void* alignment);
 	[LinkName("QHeaderView_DoItemsLayout")]
 	public static extern void QHeaderView_DoItemsLayout(void* self);
+	
+	public function void QHeaderView_OnDoItemsLayout_action(void* self);
+	[LinkName("QHeaderView_OnDoItemsLayout")]
+	public static extern void QHeaderView_OnDoItemsLayout(void* self, QHeaderView_OnDoItemsLayout_action _action);
 	[LinkName("QHeaderView_SectionsMoved")]
 	public static extern bool QHeaderView_SectionsMoved(void* self);
 	[LinkName("QHeaderView_SectionsHidden")]
@@ -5423,6 +5183,10 @@ extension CQt
 	public static extern bool QHeaderView_RestoreState(void* self, void** state);
 	[LinkName("QHeaderView_Reset")]
 	public static extern void QHeaderView_Reset(void* self);
+	
+	public function void QHeaderView_OnReset_action(void* self);
+	[LinkName("QHeaderView_OnReset")]
+	public static extern void QHeaderView_OnReset(void* self, QHeaderView_OnReset_action _action);
 	[LinkName("QHeaderView_SetOffset")]
 	public static extern void QHeaderView_SetOffset(void* self, c_int offset);
 	[LinkName("QHeaderView_SetOffsetToSectionPosition")]
@@ -5434,69 +5198,69 @@ extension CQt
 	[LinkName("QHeaderView_SectionMoved")]
 	public static extern void QHeaderView_SectionMoved(void* self, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex);
 	
-	public function void QHeaderView_sectionMoved_action(void* self, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex);
+	public function void QHeaderView_Connect_SectionMoved_action(void* self, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex);
 	[LinkName("QHeaderView_Connect_SectionMoved")]
-	public static extern void QHeaderView_Connect_SectionMoved(void* self, QHeaderView_sectionMoved_action _action);
+	public static extern void QHeaderView_Connect_SectionMoved(void* self, QHeaderView_Connect_SectionMoved_action _action);
 	[LinkName("QHeaderView_SectionResized")]
 	public static extern void QHeaderView_SectionResized(void* self, c_int logicalIndex, c_int oldSize, c_int newSize);
 	
-	public function void QHeaderView_sectionResized_action(void* self, c_int logicalIndex, c_int oldSize, c_int newSize);
+	public function void QHeaderView_Connect_SectionResized_action(void* self, c_int logicalIndex, c_int oldSize, c_int newSize);
 	[LinkName("QHeaderView_Connect_SectionResized")]
-	public static extern void QHeaderView_Connect_SectionResized(void* self, QHeaderView_sectionResized_action _action);
+	public static extern void QHeaderView_Connect_SectionResized(void* self, QHeaderView_Connect_SectionResized_action _action);
 	[LinkName("QHeaderView_SectionPressed")]
 	public static extern void QHeaderView_SectionPressed(void* self, c_int logicalIndex);
 	
-	public function void QHeaderView_sectionPressed_action(void* self, c_int logicalIndex);
+	public function void QHeaderView_Connect_SectionPressed_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionPressed")]
-	public static extern void QHeaderView_Connect_SectionPressed(void* self, QHeaderView_sectionPressed_action _action);
+	public static extern void QHeaderView_Connect_SectionPressed(void* self, QHeaderView_Connect_SectionPressed_action _action);
 	[LinkName("QHeaderView_SectionClicked")]
 	public static extern void QHeaderView_SectionClicked(void* self, c_int logicalIndex);
 	
-	public function void QHeaderView_sectionClicked_action(void* self, c_int logicalIndex);
+	public function void QHeaderView_Connect_SectionClicked_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionClicked")]
-	public static extern void QHeaderView_Connect_SectionClicked(void* self, QHeaderView_sectionClicked_action _action);
+	public static extern void QHeaderView_Connect_SectionClicked(void* self, QHeaderView_Connect_SectionClicked_action _action);
 	[LinkName("QHeaderView_SectionEntered")]
 	public static extern void QHeaderView_SectionEntered(void* self, c_int logicalIndex);
 	
-	public function void QHeaderView_sectionEntered_action(void* self, c_int logicalIndex);
+	public function void QHeaderView_Connect_SectionEntered_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionEntered")]
-	public static extern void QHeaderView_Connect_SectionEntered(void* self, QHeaderView_sectionEntered_action _action);
+	public static extern void QHeaderView_Connect_SectionEntered(void* self, QHeaderView_Connect_SectionEntered_action _action);
 	[LinkName("QHeaderView_SectionDoubleClicked")]
 	public static extern void QHeaderView_SectionDoubleClicked(void* self, c_int logicalIndex);
 	
-	public function void QHeaderView_sectionDoubleClicked_action(void* self, c_int logicalIndex);
+	public function void QHeaderView_Connect_SectionDoubleClicked_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionDoubleClicked")]
-	public static extern void QHeaderView_Connect_SectionDoubleClicked(void* self, QHeaderView_sectionDoubleClicked_action _action);
+	public static extern void QHeaderView_Connect_SectionDoubleClicked(void* self, QHeaderView_Connect_SectionDoubleClicked_action _action);
 	[LinkName("QHeaderView_SectionCountChanged")]
 	public static extern void QHeaderView_SectionCountChanged(void* self, c_int oldCount, c_int newCount);
 	
-	public function void QHeaderView_sectionCountChanged_action(void* self, c_int oldCount, c_int newCount);
+	public function void QHeaderView_Connect_SectionCountChanged_action(void* self, c_int oldCount, c_int newCount);
 	[LinkName("QHeaderView_Connect_SectionCountChanged")]
-	public static extern void QHeaderView_Connect_SectionCountChanged(void* self, QHeaderView_sectionCountChanged_action _action);
+	public static extern void QHeaderView_Connect_SectionCountChanged(void* self, QHeaderView_Connect_SectionCountChanged_action _action);
 	[LinkName("QHeaderView_SectionHandleDoubleClicked")]
 	public static extern void QHeaderView_SectionHandleDoubleClicked(void* self, c_int logicalIndex);
 	
-	public function void QHeaderView_sectionHandleDoubleClicked_action(void* self, c_int logicalIndex);
+	public function void QHeaderView_Connect_SectionHandleDoubleClicked_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionHandleDoubleClicked")]
-	public static extern void QHeaderView_Connect_SectionHandleDoubleClicked(void* self, QHeaderView_sectionHandleDoubleClicked_action _action);
+	public static extern void QHeaderView_Connect_SectionHandleDoubleClicked(void* self, QHeaderView_Connect_SectionHandleDoubleClicked_action _action);
 	[LinkName("QHeaderView_GeometriesChanged")]
 	public static extern void QHeaderView_GeometriesChanged(void* self);
 	
-	public function void QHeaderView_geometriesChanged_action(void* self);
+	public function void QHeaderView_Connect_GeometriesChanged_action(void* self);
 	[LinkName("QHeaderView_Connect_GeometriesChanged")]
-	public static extern void QHeaderView_Connect_GeometriesChanged(void* self, QHeaderView_geometriesChanged_action _action);
+	public static extern void QHeaderView_Connect_GeometriesChanged(void* self, QHeaderView_Connect_GeometriesChanged_action _action);
 	[LinkName("QHeaderView_SortIndicatorChanged")]
 	public static extern void QHeaderView_SortIndicatorChanged(void* self, c_int logicalIndex, Qt_SortOrder order);
 	
-	public function void QHeaderView_sortIndicatorChanged_action(void* self, c_int logicalIndex, Qt_SortOrder order);
+	public function void QHeaderView_Connect_SortIndicatorChanged_action(void* self, c_int logicalIndex, Qt_SortOrder order);
 	[LinkName("QHeaderView_Connect_SortIndicatorChanged")]
-	public static extern void QHeaderView_Connect_SortIndicatorChanged(void* self, QHeaderView_sortIndicatorChanged_action _action);
+	public static extern void QHeaderView_Connect_SortIndicatorChanged(void* self, QHeaderView_Connect_SortIndicatorChanged_action _action);
 	[LinkName("QHeaderView_SortIndicatorClearableChanged")]
 	public static extern void QHeaderView_SortIndicatorClearableChanged(void* self, bool clearable);
 	
-	public function void QHeaderView_sortIndicatorClearableChanged_action(void* self, bool clearable);
+	public function void QHeaderView_Connect_SortIndicatorClearableChanged_action(void* self, bool clearable);
 	[LinkName("QHeaderView_Connect_SortIndicatorClearableChanged")]
-	public static extern void QHeaderView_Connect_SortIndicatorClearableChanged(void* self, QHeaderView_sortIndicatorClearableChanged_action _action);
+	public static extern void QHeaderView_Connect_SortIndicatorClearableChanged(void* self, QHeaderView_Connect_SortIndicatorClearableChanged_action _action);
 	[LinkName("QHeaderView_UpdateSection")]
 	public static extern void QHeaderView_UpdateSection(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_ResizeSections2")]
@@ -5513,58 +5277,542 @@ extension CQt
 	public static extern void QHeaderView_InitializeSections2(void* self, c_int start, c_int end);
 	[LinkName("QHeaderView_CurrentChanged")]
 	public static extern void QHeaderView_CurrentChanged(void* self, void** current, void** old);
+	
+	public function void QHeaderView_OnCurrentChanged_action(void* self, void** current, void** old);
+	[LinkName("QHeaderView_OnCurrentChanged")]
+	public static extern void QHeaderView_OnCurrentChanged(void* self, QHeaderView_OnCurrentChanged_action _action);
 	[LinkName("QHeaderView_Event")]
 	public static extern bool QHeaderView_Event(void* self, void** e);
+	
+	public function void QHeaderView_OnEvent_action(void* self, void** e);
+	[LinkName("QHeaderView_OnEvent")]
+	public static extern bool QHeaderView_OnEvent(void* self, QHeaderView_OnEvent_action _action);
 	[LinkName("QHeaderView_PaintEvent")]
 	public static extern void QHeaderView_PaintEvent(void* self, void** e);
+	
+	public function void QHeaderView_OnPaintEvent_action(void* self, void** e);
+	[LinkName("QHeaderView_OnPaintEvent")]
+	public static extern void QHeaderView_OnPaintEvent(void* self, QHeaderView_OnPaintEvent_action _action);
 	[LinkName("QHeaderView_MousePressEvent")]
 	public static extern void QHeaderView_MousePressEvent(void* self, void** e);
+	
+	public function void QHeaderView_OnMousePressEvent_action(void* self, void** e);
+	[LinkName("QHeaderView_OnMousePressEvent")]
+	public static extern void QHeaderView_OnMousePressEvent(void* self, QHeaderView_OnMousePressEvent_action _action);
 	[LinkName("QHeaderView_MouseMoveEvent")]
 	public static extern void QHeaderView_MouseMoveEvent(void* self, void** e);
+	
+	public function void QHeaderView_OnMouseMoveEvent_action(void* self, void** e);
+	[LinkName("QHeaderView_OnMouseMoveEvent")]
+	public static extern void QHeaderView_OnMouseMoveEvent(void* self, QHeaderView_OnMouseMoveEvent_action _action);
 	[LinkName("QHeaderView_MouseReleaseEvent")]
 	public static extern void QHeaderView_MouseReleaseEvent(void* self, void** e);
+	
+	public function void QHeaderView_OnMouseReleaseEvent_action(void* self, void** e);
+	[LinkName("QHeaderView_OnMouseReleaseEvent")]
+	public static extern void QHeaderView_OnMouseReleaseEvent(void* self, QHeaderView_OnMouseReleaseEvent_action _action);
 	[LinkName("QHeaderView_MouseDoubleClickEvent")]
 	public static extern void QHeaderView_MouseDoubleClickEvent(void* self, void** e);
+	
+	public function void QHeaderView_OnMouseDoubleClickEvent_action(void* self, void** e);
+	[LinkName("QHeaderView_OnMouseDoubleClickEvent")]
+	public static extern void QHeaderView_OnMouseDoubleClickEvent(void* self, QHeaderView_OnMouseDoubleClickEvent_action _action);
 	[LinkName("QHeaderView_ViewportEvent")]
 	public static extern bool QHeaderView_ViewportEvent(void* self, void** e);
+	
+	public function void QHeaderView_OnViewportEvent_action(void* self, void** e);
+	[LinkName("QHeaderView_OnViewportEvent")]
+	public static extern bool QHeaderView_OnViewportEvent(void* self, QHeaderView_OnViewportEvent_action _action);
 	[LinkName("QHeaderView_PaintSection")]
 	public static extern void QHeaderView_PaintSection(void* self, void** painter, void** rect, c_int logicalIndex);
+	
+	public function void QHeaderView_OnPaintSection_action(void* self, void** painter, void** rect, c_int logicalIndex);
+	[LinkName("QHeaderView_OnPaintSection")]
+	public static extern void QHeaderView_OnPaintSection(void* self, QHeaderView_OnPaintSection_action _action);
 	[LinkName("QHeaderView_SectionSizeFromContents")]
 	public static extern void* QHeaderView_SectionSizeFromContents(void* self, c_int logicalIndex);
+	
+	public function void QHeaderView_OnSectionSizeFromContents_action(void* self, c_int logicalIndex);
+	[LinkName("QHeaderView_OnSectionSizeFromContents")]
+	public static extern void* QHeaderView_OnSectionSizeFromContents(void* self, QHeaderView_OnSectionSizeFromContents_action _action);
 	[LinkName("QHeaderView_HorizontalOffset")]
 	public static extern c_int QHeaderView_HorizontalOffset(void* self);
+	
+	public function void QHeaderView_OnHorizontalOffset_action(void* self);
+	[LinkName("QHeaderView_OnHorizontalOffset")]
+	public static extern c_int QHeaderView_OnHorizontalOffset(void* self, QHeaderView_OnHorizontalOffset_action _action);
 	[LinkName("QHeaderView_VerticalOffset")]
 	public static extern c_int QHeaderView_VerticalOffset(void* self);
+	
+	public function void QHeaderView_OnVerticalOffset_action(void* self);
+	[LinkName("QHeaderView_OnVerticalOffset")]
+	public static extern c_int QHeaderView_OnVerticalOffset(void* self, QHeaderView_OnVerticalOffset_action _action);
 	[LinkName("QHeaderView_UpdateGeometries")]
 	public static extern void QHeaderView_UpdateGeometries(void* self);
+	
+	public function void QHeaderView_OnUpdateGeometries_action(void* self);
+	[LinkName("QHeaderView_OnUpdateGeometries")]
+	public static extern void QHeaderView_OnUpdateGeometries(void* self, QHeaderView_OnUpdateGeometries_action _action);
 	[LinkName("QHeaderView_ScrollContentsBy")]
 	public static extern void QHeaderView_ScrollContentsBy(void* self, c_int dx, c_int dy);
+	
+	public function void QHeaderView_OnScrollContentsBy_action(void* self, c_int dx, c_int dy);
+	[LinkName("QHeaderView_OnScrollContentsBy")]
+	public static extern void QHeaderView_OnScrollContentsBy(void* self, QHeaderView_OnScrollContentsBy_action _action);
 	[LinkName("QHeaderView_DataChanged")]
 	public static extern void QHeaderView_DataChanged(void* self, void** topLeft, void** bottomRight, void** roles);
+	
+	public function void QHeaderView_OnDataChanged_action(void* self, void** topLeft, void** bottomRight, void** roles);
+	[LinkName("QHeaderView_OnDataChanged")]
+	public static extern void QHeaderView_OnDataChanged(void* self, QHeaderView_OnDataChanged_action _action);
 	[LinkName("QHeaderView_RowsInserted")]
 	public static extern void QHeaderView_RowsInserted(void* self, void** parent, c_int start, c_int end);
+	
+	public function void QHeaderView_OnRowsInserted_action(void* self, void** parent, c_int start, c_int end);
+	[LinkName("QHeaderView_OnRowsInserted")]
+	public static extern void QHeaderView_OnRowsInserted(void* self, QHeaderView_OnRowsInserted_action _action);
 	[LinkName("QHeaderView_VisualRect")]
 	public static extern void* QHeaderView_VisualRect(void* self, void** index);
+	
+	public function void QHeaderView_OnVisualRect_action(void* self, void** index);
+	[LinkName("QHeaderView_OnVisualRect")]
+	public static extern void* QHeaderView_OnVisualRect(void* self, QHeaderView_OnVisualRect_action _action);
 	[LinkName("QHeaderView_ScrollTo")]
 	public static extern void QHeaderView_ScrollTo(void* self, void** index, QAbstractItemView_ScrollHint hint);
+	
+	public function void QHeaderView_OnScrollTo_action(void* self, void** index, QAbstractItemView_ScrollHint hint);
+	[LinkName("QHeaderView_OnScrollTo")]
+	public static extern void QHeaderView_OnScrollTo(void* self, QHeaderView_OnScrollTo_action _action);
 	[LinkName("QHeaderView_IndexAt")]
 	public static extern void* QHeaderView_IndexAt(void* self, void** p);
+	
+	public function void QHeaderView_OnIndexAt_action(void* self, void** p);
+	[LinkName("QHeaderView_OnIndexAt")]
+	public static extern void* QHeaderView_OnIndexAt(void* self, QHeaderView_OnIndexAt_action _action);
 	[LinkName("QHeaderView_IsIndexHidden")]
 	public static extern bool QHeaderView_IsIndexHidden(void* self, void** index);
+	
+	public function void QHeaderView_OnIsIndexHidden_action(void* self, void** index);
+	[LinkName("QHeaderView_OnIsIndexHidden")]
+	public static extern bool QHeaderView_OnIsIndexHidden(void* self, QHeaderView_OnIsIndexHidden_action _action);
 	[LinkName("QHeaderView_MoveCursor")]
 	public static extern void* QHeaderView_MoveCursor(void* self, QAbstractItemView_CursorAction param1, void* param2);
+	
+	public function void QHeaderView_OnMoveCursor_action(void* self, QAbstractItemView_CursorAction param1, void* param2);
+	[LinkName("QHeaderView_OnMoveCursor")]
+	public static extern void* QHeaderView_OnMoveCursor(void* self, QHeaderView_OnMoveCursor_action _action);
 	[LinkName("QHeaderView_SetSelection")]
 	public static extern void QHeaderView_SetSelection(void* self, void** rect, void* flags);
+	
+	public function void QHeaderView_OnSetSelection_action(void* self, void** rect, void* flags);
+	[LinkName("QHeaderView_OnSetSelection")]
+	public static extern void QHeaderView_OnSetSelection(void* self, QHeaderView_OnSetSelection_action _action);
 	[LinkName("QHeaderView_VisualRegionForSelection")]
 	public static extern void* QHeaderView_VisualRegionForSelection(void* self, void** selection);
+	
+	public function void QHeaderView_OnVisualRegionForSelection_action(void* self, void** selection);
+	[LinkName("QHeaderView_OnVisualRegionForSelection")]
+	public static extern void* QHeaderView_OnVisualRegionForSelection(void* self, QHeaderView_OnVisualRegionForSelection_action _action);
 	[LinkName("QHeaderView_InitStyleOptionForIndex")]
 	public static extern void QHeaderView_InitStyleOptionForIndex(void* self, void** option, c_int logicalIndex);
+	
+	public function void QHeaderView_OnInitStyleOptionForIndex_action(void* self, void** option, c_int logicalIndex);
+	[LinkName("QHeaderView_OnInitStyleOptionForIndex")]
+	public static extern void QHeaderView_OnInitStyleOptionForIndex(void* self, QHeaderView_OnInitStyleOptionForIndex_action _action);
 	[LinkName("QHeaderView_InitStyleOption")]
 	public static extern void QHeaderView_InitStyleOption(void* self, void** option);
+	
+	public function void QHeaderView_OnInitStyleOption_action(void* self, void** option);
+	[LinkName("QHeaderView_OnInitStyleOption")]
+	public static extern void QHeaderView_OnInitStyleOption(void* self, QHeaderView_OnInitStyleOption_action _action);
 	[LinkName("QHeaderView_Tr2")]
 	public static extern libqt_string QHeaderView_Tr2(c_char* s, c_char* c);
 	[LinkName("QHeaderView_Tr3")]
 	public static extern libqt_string QHeaderView_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QHeaderView_EventFilter")]
+	public static extern bool QHeaderView_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QHeaderView_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QHeaderView_OnEventFilter")]
+	public static extern bool QHeaderView_OnEventFilter(void* self, QHeaderView_OnEventFilter_action _action);
+	[LinkName("QHeaderView_TimerEvent")]
+	public static extern void QHeaderView_TimerEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnTimerEvent")]
+	public static extern void QHeaderView_OnTimerEvent(void* self, QHeaderView_OnTimerEvent_action _action);
+	[LinkName("QHeaderView_ChildEvent")]
+	public static extern void QHeaderView_ChildEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnChildEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnChildEvent")]
+	public static extern void QHeaderView_OnChildEvent(void* self, QHeaderView_OnChildEvent_action _action);
+	[LinkName("QHeaderView_CustomEvent")]
+	public static extern void QHeaderView_CustomEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnCustomEvent")]
+	public static extern void QHeaderView_OnCustomEvent(void* self, QHeaderView_OnCustomEvent_action _action);
+	[LinkName("QHeaderView_ConnectNotify")]
+	public static extern void QHeaderView_ConnectNotify(void* self, void** signal);
+	
+	public function void QHeaderView_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QHeaderView_OnConnectNotify")]
+	public static extern void QHeaderView_OnConnectNotify(void* self, QHeaderView_OnConnectNotify_action _action);
+	[LinkName("QHeaderView_DisconnectNotify")]
+	public static extern void QHeaderView_DisconnectNotify(void* self, void** signal);
+	
+	public function void QHeaderView_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QHeaderView_OnDisconnectNotify")]
+	public static extern void QHeaderView_OnDisconnectNotify(void* self, QHeaderView_OnDisconnectNotify_action _action);
+	[LinkName("QHeaderView_DevType")]
+	public static extern c_int QHeaderView_DevType(void* self);
+	
+	public function void QHeaderView_OnDevType_action(void* self);
+	[LinkName("QHeaderView_OnDevType")]
+	public static extern c_int QHeaderView_OnDevType(void* self, QHeaderView_OnDevType_action _action);
+	[LinkName("QHeaderView_PaintEngine")]
+	public static extern void** QHeaderView_PaintEngine(void* self);
+	
+	public function void QHeaderView_OnPaintEngine_action(void* self);
+	[LinkName("QHeaderView_OnPaintEngine")]
+	public static extern void** QHeaderView_OnPaintEngine(void* self, QHeaderView_OnPaintEngine_action _action);
+	[LinkName("QHeaderView_Metric")]
+	public static extern c_int QHeaderView_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QHeaderView_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QHeaderView_OnMetric")]
+	public static extern c_int QHeaderView_OnMetric(void* self, QHeaderView_OnMetric_action _action);
+	[LinkName("QHeaderView_InitPainter")]
+	public static extern void QHeaderView_InitPainter(void* self, void** painter);
+	
+	public function void QHeaderView_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QHeaderView_OnInitPainter")]
+	public static extern void QHeaderView_OnInitPainter(void* self, QHeaderView_OnInitPainter_action _action);
+	[LinkName("QHeaderView_Redirected")]
+	public static extern void** QHeaderView_Redirected(void* self, void** offset);
+	
+	public function void QHeaderView_OnRedirected_action(void* self, void** offset);
+	[LinkName("QHeaderView_OnRedirected")]
+	public static extern void** QHeaderView_OnRedirected(void* self, QHeaderView_OnRedirected_action _action);
+	[LinkName("QHeaderView_SharedPainter")]
+	public static extern void** QHeaderView_SharedPainter(void* self);
+	
+	public function void QHeaderView_OnSharedPainter_action(void* self);
+	[LinkName("QHeaderView_OnSharedPainter")]
+	public static extern void** QHeaderView_OnSharedPainter(void* self, QHeaderView_OnSharedPainter_action _action);
+	[LinkName("QHeaderView_MinimumSizeHint")]
+	public static extern void* QHeaderView_MinimumSizeHint(void* self);
+	
+	public function void QHeaderView_OnMinimumSizeHint_action(void* self);
+	[LinkName("QHeaderView_OnMinimumSizeHint")]
+	public static extern void* QHeaderView_OnMinimumSizeHint(void* self, QHeaderView_OnMinimumSizeHint_action _action);
+	[LinkName("QHeaderView_HeightForWidth")]
+	public static extern c_int QHeaderView_HeightForWidth(void* self, c_int param1);
+	
+	public function void QHeaderView_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QHeaderView_OnHeightForWidth")]
+	public static extern c_int QHeaderView_OnHeightForWidth(void* self, QHeaderView_OnHeightForWidth_action _action);
+	[LinkName("QHeaderView_HasHeightForWidth")]
+	public static extern bool QHeaderView_HasHeightForWidth(void* self);
+	
+	public function void QHeaderView_OnHasHeightForWidth_action(void* self);
+	[LinkName("QHeaderView_OnHasHeightForWidth")]
+	public static extern bool QHeaderView_OnHasHeightForWidth(void* self, QHeaderView_OnHasHeightForWidth_action _action);
+	[LinkName("QHeaderView_WheelEvent")]
+	public static extern void QHeaderView_WheelEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnWheelEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnWheelEvent")]
+	public static extern void QHeaderView_OnWheelEvent(void* self, QHeaderView_OnWheelEvent_action _action);
+	[LinkName("QHeaderView_KeyPressEvent")]
+	public static extern void QHeaderView_KeyPressEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnKeyPressEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnKeyPressEvent")]
+	public static extern void QHeaderView_OnKeyPressEvent(void* self, QHeaderView_OnKeyPressEvent_action _action);
+	[LinkName("QHeaderView_KeyReleaseEvent")]
+	public static extern void QHeaderView_KeyReleaseEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnKeyReleaseEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnKeyReleaseEvent")]
+	public static extern void QHeaderView_OnKeyReleaseEvent(void* self, QHeaderView_OnKeyReleaseEvent_action _action);
+	[LinkName("QHeaderView_FocusInEvent")]
+	public static extern void QHeaderView_FocusInEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnFocusInEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnFocusInEvent")]
+	public static extern void QHeaderView_OnFocusInEvent(void* self, QHeaderView_OnFocusInEvent_action _action);
+	[LinkName("QHeaderView_FocusOutEvent")]
+	public static extern void QHeaderView_FocusOutEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnFocusOutEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnFocusOutEvent")]
+	public static extern void QHeaderView_OnFocusOutEvent(void* self, QHeaderView_OnFocusOutEvent_action _action);
+	[LinkName("QHeaderView_EnterEvent")]
+	public static extern void QHeaderView_EnterEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnEnterEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnEnterEvent")]
+	public static extern void QHeaderView_OnEnterEvent(void* self, QHeaderView_OnEnterEvent_action _action);
+	[LinkName("QHeaderView_LeaveEvent")]
+	public static extern void QHeaderView_LeaveEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnLeaveEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnLeaveEvent")]
+	public static extern void QHeaderView_OnLeaveEvent(void* self, QHeaderView_OnLeaveEvent_action _action);
+	[LinkName("QHeaderView_MoveEvent")]
+	public static extern void QHeaderView_MoveEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnMoveEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnMoveEvent")]
+	public static extern void QHeaderView_OnMoveEvent(void* self, QHeaderView_OnMoveEvent_action _action);
+	[LinkName("QHeaderView_ResizeEvent")]
+	public static extern void QHeaderView_ResizeEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnResizeEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnResizeEvent")]
+	public static extern void QHeaderView_OnResizeEvent(void* self, QHeaderView_OnResizeEvent_action _action);
+	[LinkName("QHeaderView_CloseEvent")]
+	public static extern void QHeaderView_CloseEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnCloseEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnCloseEvent")]
+	public static extern void QHeaderView_OnCloseEvent(void* self, QHeaderView_OnCloseEvent_action _action);
+	[LinkName("QHeaderView_ContextMenuEvent")]
+	public static extern void QHeaderView_ContextMenuEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnContextMenuEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnContextMenuEvent")]
+	public static extern void QHeaderView_OnContextMenuEvent(void* self, QHeaderView_OnContextMenuEvent_action _action);
+	[LinkName("QHeaderView_TabletEvent")]
+	public static extern void QHeaderView_TabletEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnTabletEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnTabletEvent")]
+	public static extern void QHeaderView_OnTabletEvent(void* self, QHeaderView_OnTabletEvent_action _action);
+	[LinkName("QHeaderView_ActionEvent")]
+	public static extern void QHeaderView_ActionEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnActionEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnActionEvent")]
+	public static extern void QHeaderView_OnActionEvent(void* self, QHeaderView_OnActionEvent_action _action);
+	[LinkName("QHeaderView_DragEnterEvent")]
+	public static extern void QHeaderView_DragEnterEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnDragEnterEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnDragEnterEvent")]
+	public static extern void QHeaderView_OnDragEnterEvent(void* self, QHeaderView_OnDragEnterEvent_action _action);
+	[LinkName("QHeaderView_DragMoveEvent")]
+	public static extern void QHeaderView_DragMoveEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnDragMoveEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnDragMoveEvent")]
+	public static extern void QHeaderView_OnDragMoveEvent(void* self, QHeaderView_OnDragMoveEvent_action _action);
+	[LinkName("QHeaderView_DragLeaveEvent")]
+	public static extern void QHeaderView_DragLeaveEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnDragLeaveEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnDragLeaveEvent")]
+	public static extern void QHeaderView_OnDragLeaveEvent(void* self, QHeaderView_OnDragLeaveEvent_action _action);
+	[LinkName("QHeaderView_DropEvent")]
+	public static extern void QHeaderView_DropEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnDropEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnDropEvent")]
+	public static extern void QHeaderView_OnDropEvent(void* self, QHeaderView_OnDropEvent_action _action);
+	[LinkName("QHeaderView_ShowEvent")]
+	public static extern void QHeaderView_ShowEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnShowEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnShowEvent")]
+	public static extern void QHeaderView_OnShowEvent(void* self, QHeaderView_OnShowEvent_action _action);
+	[LinkName("QHeaderView_HideEvent")]
+	public static extern void QHeaderView_HideEvent(void* self, void** event);
+	
+	public function void QHeaderView_OnHideEvent_action(void* self, void** event);
+	[LinkName("QHeaderView_OnHideEvent")]
+	public static extern void QHeaderView_OnHideEvent(void* self, QHeaderView_OnHideEvent_action _action);
+	[LinkName("QHeaderView_NativeEvent")]
+	public static extern bool QHeaderView_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QHeaderView_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QHeaderView_OnNativeEvent")]
+	public static extern bool QHeaderView_OnNativeEvent(void* self, QHeaderView_OnNativeEvent_action _action);
+	[LinkName("QHeaderView_ChangeEvent")]
+	public static extern void QHeaderView_ChangeEvent(void* self, void** param1);
+	
+	public function void QHeaderView_OnChangeEvent_action(void* self, void** param1);
+	[LinkName("QHeaderView_OnChangeEvent")]
+	public static extern void QHeaderView_OnChangeEvent(void* self, QHeaderView_OnChangeEvent_action _action);
+	[LinkName("QHeaderView_InputMethodEvent")]
+	public static extern void QHeaderView_InputMethodEvent(void* self, void** param1);
+	
+	public function void QHeaderView_OnInputMethodEvent_action(void* self, void** param1);
+	[LinkName("QHeaderView_OnInputMethodEvent")]
+	public static extern void QHeaderView_OnInputMethodEvent(void* self, QHeaderView_OnInputMethodEvent_action _action);
+	[LinkName("QHeaderView_InputMethodQuery")]
+	public static extern void* QHeaderView_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
+	
+	public function void QHeaderView_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
+	[LinkName("QHeaderView_OnInputMethodQuery")]
+	public static extern void* QHeaderView_OnInputMethodQuery(void* self, QHeaderView_OnInputMethodQuery_action _action);
+	[LinkName("QHeaderView_FocusNextPrevChild")]
+	public static extern bool QHeaderView_FocusNextPrevChild(void* self, bool next);
+	
+	public function void QHeaderView_OnFocusNextPrevChild_action(void* self, bool next);
+	[LinkName("QHeaderView_OnFocusNextPrevChild")]
+	public static extern bool QHeaderView_OnFocusNextPrevChild(void* self, QHeaderView_OnFocusNextPrevChild_action _action);
+	[LinkName("QHeaderView_SetupViewport")]
+	public static extern void QHeaderView_SetupViewport(void* self, void** viewport);
+	
+	public function void QHeaderView_OnSetupViewport_action(void* self, void** viewport);
+	[LinkName("QHeaderView_OnSetupViewport")]
+	public static extern void QHeaderView_OnSetupViewport(void* self, QHeaderView_OnSetupViewport_action _action);
+	[LinkName("QHeaderView_ViewportSizeHint")]
+	public static extern void* QHeaderView_ViewportSizeHint(void* self);
+	
+	public function void QHeaderView_OnViewportSizeHint_action(void* self);
+	[LinkName("QHeaderView_OnViewportSizeHint")]
+	public static extern void* QHeaderView_OnViewportSizeHint(void* self, QHeaderView_OnViewportSizeHint_action _action);
+	[LinkName("QHeaderView_SetSelectionModel")]
+	public static extern void QHeaderView_SetSelectionModel(void* self, void** selectionModel);
+	
+	public function void QHeaderView_OnSetSelectionModel_action(void* self, void** selectionModel);
+	[LinkName("QHeaderView_OnSetSelectionModel")]
+	public static extern void QHeaderView_OnSetSelectionModel(void* self, QHeaderView_OnSetSelectionModel_action _action);
+	[LinkName("QHeaderView_KeyboardSearch")]
+	public static extern void QHeaderView_KeyboardSearch(void* self, libqt_string search);
+	
+	public function void QHeaderView_OnKeyboardSearch_action(void* self, libqt_string search);
+	[LinkName("QHeaderView_OnKeyboardSearch")]
+	public static extern void QHeaderView_OnKeyboardSearch(void* self, QHeaderView_OnKeyboardSearch_action _action);
+	[LinkName("QHeaderView_SizeHintForRow")]
+	public static extern c_int QHeaderView_SizeHintForRow(void* self, c_int row);
+	
+	public function void QHeaderView_OnSizeHintForRow_action(void* self, c_int row);
+	[LinkName("QHeaderView_OnSizeHintForRow")]
+	public static extern c_int QHeaderView_OnSizeHintForRow(void* self, QHeaderView_OnSizeHintForRow_action _action);
+	[LinkName("QHeaderView_SizeHintForColumn")]
+	public static extern c_int QHeaderView_SizeHintForColumn(void* self, c_int column);
+	
+	public function void QHeaderView_OnSizeHintForColumn_action(void* self, c_int column);
+	[LinkName("QHeaderView_OnSizeHintForColumn")]
+	public static extern c_int QHeaderView_OnSizeHintForColumn(void* self, QHeaderView_OnSizeHintForColumn_action _action);
+	[LinkName("QHeaderView_ItemDelegateForIndex")]
+	public static extern void** QHeaderView_ItemDelegateForIndex(void* self, void** index);
+	
+	public function void QHeaderView_OnItemDelegateForIndex_action(void* self, void** index);
+	[LinkName("QHeaderView_OnItemDelegateForIndex")]
+	public static extern void** QHeaderView_OnItemDelegateForIndex(void* self, QHeaderView_OnItemDelegateForIndex_action _action);
+	[LinkName("QHeaderView_SetRootIndex")]
+	public static extern void QHeaderView_SetRootIndex(void* self, void** index);
+	
+	public function void QHeaderView_OnSetRootIndex_action(void* self, void** index);
+	[LinkName("QHeaderView_OnSetRootIndex")]
+	public static extern void QHeaderView_OnSetRootIndex(void* self, QHeaderView_OnSetRootIndex_action _action);
+	[LinkName("QHeaderView_SelectAll")]
+	public static extern void QHeaderView_SelectAll(void* self);
+	
+	public function void QHeaderView_OnSelectAll_action(void* self);
+	[LinkName("QHeaderView_OnSelectAll")]
+	public static extern void QHeaderView_OnSelectAll(void* self, QHeaderView_OnSelectAll_action _action);
+	[LinkName("QHeaderView_RowsAboutToBeRemoved")]
+	public static extern void QHeaderView_RowsAboutToBeRemoved(void* self, void** parent, c_int start, c_int end);
+	
+	public function void QHeaderView_OnRowsAboutToBeRemoved_action(void* self, void** parent, c_int start, c_int end);
+	[LinkName("QHeaderView_OnRowsAboutToBeRemoved")]
+	public static extern void QHeaderView_OnRowsAboutToBeRemoved(void* self, QHeaderView_OnRowsAboutToBeRemoved_action _action);
+	[LinkName("QHeaderView_SelectionChanged")]
+	public static extern void QHeaderView_SelectionChanged(void* self, void** selected, void** deselected);
+	
+	public function void QHeaderView_OnSelectionChanged_action(void* self, void** selected, void** deselected);
+	[LinkName("QHeaderView_OnSelectionChanged")]
+	public static extern void QHeaderView_OnSelectionChanged(void* self, QHeaderView_OnSelectionChanged_action _action);
+	[LinkName("QHeaderView_UpdateEditorData")]
+	public static extern void QHeaderView_UpdateEditorData(void* self);
+	
+	public function void QHeaderView_OnUpdateEditorData_action(void* self);
+	[LinkName("QHeaderView_OnUpdateEditorData")]
+	public static extern void QHeaderView_OnUpdateEditorData(void* self, QHeaderView_OnUpdateEditorData_action _action);
+	[LinkName("QHeaderView_UpdateEditorGeometries")]
+	public static extern void QHeaderView_UpdateEditorGeometries(void* self);
+	
+	public function void QHeaderView_OnUpdateEditorGeometries_action(void* self);
+	[LinkName("QHeaderView_OnUpdateEditorGeometries")]
+	public static extern void QHeaderView_OnUpdateEditorGeometries(void* self, QHeaderView_OnUpdateEditorGeometries_action _action);
+	[LinkName("QHeaderView_VerticalScrollbarAction")]
+	public static extern void QHeaderView_VerticalScrollbarAction(void* self, c_int action);
+	
+	public function void QHeaderView_OnVerticalScrollbarAction_action(void* self, c_int action);
+	[LinkName("QHeaderView_OnVerticalScrollbarAction")]
+	public static extern void QHeaderView_OnVerticalScrollbarAction(void* self, QHeaderView_OnVerticalScrollbarAction_action _action);
+	[LinkName("QHeaderView_HorizontalScrollbarAction")]
+	public static extern void QHeaderView_HorizontalScrollbarAction(void* self, c_int action);
+	
+	public function void QHeaderView_OnHorizontalScrollbarAction_action(void* self, c_int action);
+	[LinkName("QHeaderView_OnHorizontalScrollbarAction")]
+	public static extern void QHeaderView_OnHorizontalScrollbarAction(void* self, QHeaderView_OnHorizontalScrollbarAction_action _action);
+	[LinkName("QHeaderView_VerticalScrollbarValueChanged")]
+	public static extern void QHeaderView_VerticalScrollbarValueChanged(void* self, c_int value);
+	
+	public function void QHeaderView_OnVerticalScrollbarValueChanged_action(void* self, c_int value);
+	[LinkName("QHeaderView_OnVerticalScrollbarValueChanged")]
+	public static extern void QHeaderView_OnVerticalScrollbarValueChanged(void* self, QHeaderView_OnVerticalScrollbarValueChanged_action _action);
+	[LinkName("QHeaderView_HorizontalScrollbarValueChanged")]
+	public static extern void QHeaderView_HorizontalScrollbarValueChanged(void* self, c_int value);
+	
+	public function void QHeaderView_OnHorizontalScrollbarValueChanged_action(void* self, c_int value);
+	[LinkName("QHeaderView_OnHorizontalScrollbarValueChanged")]
+	public static extern void QHeaderView_OnHorizontalScrollbarValueChanged(void* self, QHeaderView_OnHorizontalScrollbarValueChanged_action _action);
+	[LinkName("QHeaderView_CloseEditor")]
+	public static extern void QHeaderView_CloseEditor(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
+	
+	public function void QHeaderView_OnCloseEditor_action(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
+	[LinkName("QHeaderView_OnCloseEditor")]
+	public static extern void QHeaderView_OnCloseEditor(void* self, QHeaderView_OnCloseEditor_action _action);
+	[LinkName("QHeaderView_CommitData")]
+	public static extern void QHeaderView_CommitData(void* self, void** editor);
+	
+	public function void QHeaderView_OnCommitData_action(void* self, void** editor);
+	[LinkName("QHeaderView_OnCommitData")]
+	public static extern void QHeaderView_OnCommitData(void* self, QHeaderView_OnCommitData_action _action);
+	[LinkName("QHeaderView_EditorDestroyed")]
+	public static extern void QHeaderView_EditorDestroyed(void* self, void** editor);
+	
+	public function void QHeaderView_OnEditorDestroyed_action(void* self, void** editor);
+	[LinkName("QHeaderView_OnEditorDestroyed")]
+	public static extern void QHeaderView_OnEditorDestroyed(void* self, QHeaderView_OnEditorDestroyed_action _action);
+	[LinkName("QHeaderView_SelectedIndexes")]
+	public static extern void* QHeaderView_SelectedIndexes(void* self);
+	
+	public function void QHeaderView_OnSelectedIndexes_action(void* self);
+	[LinkName("QHeaderView_OnSelectedIndexes")]
+	public static extern void* QHeaderView_OnSelectedIndexes(void* self, QHeaderView_OnSelectedIndexes_action _action);
+	[LinkName("QHeaderView_Edit2")]
+	public static extern bool QHeaderView_Edit2(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
+	
+	public function void QHeaderView_OnEdit2_action(void* self, void** index, QAbstractItemView_EditTrigger trigger, void** event);
+	[LinkName("QHeaderView_OnEdit2")]
+	public static extern bool QHeaderView_OnEdit2(void* self, QHeaderView_OnEdit2_action _action);
+	[LinkName("QHeaderView_SelectionCommand")]
+	public static extern void* QHeaderView_SelectionCommand(void* self, void** index, void** event);
+	
+	public function void QHeaderView_OnSelectionCommand_action(void* self, void** index, void** event);
+	[LinkName("QHeaderView_OnSelectionCommand")]
+	public static extern void* QHeaderView_OnSelectionCommand(void* self, QHeaderView_OnSelectionCommand_action _action);
+	[LinkName("QHeaderView_StartDrag")]
+	public static extern void QHeaderView_StartDrag(void* self, void* supportedActions);
+	
+	public function void QHeaderView_OnStartDrag_action(void* self, void* supportedActions);
+	[LinkName("QHeaderView_OnStartDrag")]
+	public static extern void QHeaderView_OnStartDrag(void* self, QHeaderView_OnStartDrag_action _action);
+	[LinkName("QHeaderView_InitViewItemOption")]
+	public static extern void QHeaderView_InitViewItemOption(void* self, void** option);
+	
+	public function void QHeaderView_OnInitViewItemOption_action(void* self, void** option);
+	[LinkName("QHeaderView_OnInitViewItemOption")]
+	public static extern void QHeaderView_OnInitViewItemOption(void* self, QHeaderView_OnInitViewItemOption_action _action);
 }
 [AllowDuplicates]
 enum QHeaderView_ResizeMode

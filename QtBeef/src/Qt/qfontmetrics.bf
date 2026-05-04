@@ -183,34 +183,21 @@ class QFontMetrics : IQFontMetrics
 {
 	private QFontMetrics_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QFontMetrics_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFont param1)
 	{
 		this.ptr = CQt.QFontMetrics_new((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFont font, IQPaintDevice pd)
 	{
 		this.ptr = CQt.QFontMetrics_new2((.)font?.ObjectPtr, (.)pd?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFontMetrics param1)
 	{
 		this.ptr = CQt.QFontMetrics_new3((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -655,39 +642,25 @@ class QFontMetricsF : IQFontMetricsF
 {
 	private QFontMetricsF_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QFontMetricsF_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFont font)
 	{
 		this.ptr = CQt.QFontMetricsF_new((.)font?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFont font, IQPaintDevice pd)
 	{
 		this.ptr = CQt.QFontMetricsF_new2((.)font?.ObjectPtr, (.)pd?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFontMetrics param1)
 	{
 		this.ptr = CQt.QFontMetricsF_new3((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQFontMetricsF param1)
 	{
 		this.ptr = CQt.QFontMetricsF_new4((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

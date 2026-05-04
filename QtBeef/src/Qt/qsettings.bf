@@ -18,11 +18,11 @@ struct QSettings_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QSettings_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QSettings_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QSettings_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -172,7 +172,7 @@ struct QSettings_Ptr
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QSettings_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -332,23 +332,23 @@ struct QSettings_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSettings_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSettings_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSettings_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSettings_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSettings_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -395,126 +395,85 @@ class QSettings : IQSettings, IQObject
 {
 	private QSettings_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QSettings_destroyed,
-		QSettings_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QSettings_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(String organization)
 	{
 		this.ptr = CQt.QSettings_new(libqt_string(organization));
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope, String organization)
 	{
 		this.ptr = CQt.QSettings_new2(_scope, libqt_string(organization));
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* format, void* _scope, String organization)
 	{
 		this.ptr = CQt.QSettings_new3(format, _scope, libqt_string(organization));
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void* format)
 	{
 		this.ptr = CQt.QSettings_new4(libqt_string(fileName), format);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSettings_new5();
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope)
 	{
 		this.ptr = CQt.QSettings_new6(_scope);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String organization, String application)
 	{
 		this.ptr = CQt.QSettings_new7(libqt_string(organization), libqt_string(application));
-		QtBf_ConnectSignals(this);
 	}
 	public this(String organization, String application, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new8(libqt_string(organization), libqt_string(application), (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope, String organization, String application)
 	{
 		this.ptr = CQt.QSettings_new9(_scope, libqt_string(organization), libqt_string(application));
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope, String organization, String application, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new10(_scope, libqt_string(organization), libqt_string(application), (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* format, void* _scope, String organization, String application)
 	{
 		this.ptr = CQt.QSettings_new11(format, _scope, libqt_string(organization), libqt_string(application));
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* format, void* _scope, String organization, String application, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new12(format, _scope, libqt_string(organization), libqt_string(application), (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void* format, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new13(libqt_string(fileName), format, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new14((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new15(_scope, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QSettings_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -644,9 +603,9 @@ class QSettings : IQSettings, IQObject
 	{
 		this.ptr.SetPath(format, _scope, path);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -660,9 +619,9 @@ class QSettings : IQSettings, IQObject
 	{
 		this.ptr.BeginWriteArray2(prefix, size);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -820,25 +779,20 @@ class QSettings : IQSettings, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -920,10 +874,22 @@ extension CQt
 	public static extern void QSettings_Delete(QSettings_Ptr self);
 	[LinkName("QSettings_MetaObject")]
 	public static extern void** QSettings_MetaObject(void* self);
+	
+	public function void QSettings_OnMetaObject_action(void* self);
+	[LinkName("QSettings_OnMetaObject")]
+	public static extern void** QSettings_OnMetaObject(void* self, QSettings_OnMetaObject_action _action);
 	[LinkName("QSettings_Qt_Metacast")]
 	public static extern void* QSettings_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QSettings_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QSettings_OnMetacast")]
+	public static extern void* QSettings_OnMetacast(void* self, QSettings_OnMetacast_action _action);
 	[LinkName("QSettings_Qt_Metacall")]
 	public static extern c_int QSettings_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QSettings_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QSettings_OnMetacall")]
+	public static extern c_int QSettings_OnMetacall(void* self, QSettings_OnMetacall_action _action);
 	[LinkName("QSettings_Tr")]
 	public static extern libqt_string QSettings_Tr(c_char* s);
 	[LinkName("QSettings_Clear")]
@@ -990,12 +956,52 @@ extension CQt
 	public static extern void QSettings_SetPath(void* format, void* _scope, libqt_string path);
 	[LinkName("QSettings_Event")]
 	public static extern bool QSettings_Event(void* self, void** event);
+	
+	public function void QSettings_OnEvent_action(void* self, void** event);
+	[LinkName("QSettings_OnEvent")]
+	public static extern bool QSettings_OnEvent(void* self, QSettings_OnEvent_action _action);
 	[LinkName("QSettings_Tr2")]
 	public static extern libqt_string QSettings_Tr2(c_char* s, c_char* c);
 	[LinkName("QSettings_Tr3")]
 	public static extern libqt_string QSettings_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QSettings_BeginWriteArray2")]
 	public static extern void QSettings_BeginWriteArray2(void* self, void* prefix, c_int size);
+	[LinkName("QSettings_EventFilter")]
+	public static extern bool QSettings_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QSettings_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QSettings_OnEventFilter")]
+	public static extern bool QSettings_OnEventFilter(void* self, QSettings_OnEventFilter_action _action);
+	[LinkName("QSettings_TimerEvent")]
+	public static extern void QSettings_TimerEvent(void* self, void** event);
+	
+	public function void QSettings_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QSettings_OnTimerEvent")]
+	public static extern void QSettings_OnTimerEvent(void* self, QSettings_OnTimerEvent_action _action);
+	[LinkName("QSettings_ChildEvent")]
+	public static extern void QSettings_ChildEvent(void* self, void** event);
+	
+	public function void QSettings_OnChildEvent_action(void* self, void** event);
+	[LinkName("QSettings_OnChildEvent")]
+	public static extern void QSettings_OnChildEvent(void* self, QSettings_OnChildEvent_action _action);
+	[LinkName("QSettings_CustomEvent")]
+	public static extern void QSettings_CustomEvent(void* self, void** event);
+	
+	public function void QSettings_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QSettings_OnCustomEvent")]
+	public static extern void QSettings_OnCustomEvent(void* self, QSettings_OnCustomEvent_action _action);
+	[LinkName("QSettings_ConnectNotify")]
+	public static extern void QSettings_ConnectNotify(void* self, void** signal);
+	
+	public function void QSettings_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QSettings_OnConnectNotify")]
+	public static extern void QSettings_OnConnectNotify(void* self, QSettings_OnConnectNotify_action _action);
+	[LinkName("QSettings_DisconnectNotify")]
+	public static extern void QSettings_DisconnectNotify(void* self, void** signal);
+	
+	public function void QSettings_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QSettings_OnDisconnectNotify")]
+	public static extern void QSettings_OnDisconnectNotify(void* self, QSettings_OnDisconnectNotify_action _action);
 }
 [AllowDuplicates]
 enum QSettings_Status

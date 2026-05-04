@@ -18,11 +18,11 @@ struct QMimeData_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QMimeData_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QMimeData_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QMimeData_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -128,11 +128,11 @@ struct QMimeData_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QMimeData_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QMimeData_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -292,23 +292,23 @@ struct QMimeData_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QMimeData_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QMimeData_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QMimeData_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QMimeData_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QMimeData_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -355,56 +355,29 @@ class QMimeData : IQMimeData, IQObject
 {
 	private QMimeData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QMimeData_destroyed,
-		QMimeData_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QMimeData_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMimeData_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QMimeData_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -482,21 +455,21 @@ class QMimeData : IQMimeData, IQObject
 	{
 		this.ptr.RemoveFormat(mimetype);
 	}
-	public bool HasFormat(String mimetype)
+	public  virtual bool OnHasFormat(libqt_string mimetype)
 	{
-		return this.ptr.HasFormat(mimetype);
+		return default;
 	}
-	public void* Formats()
+	public  virtual void* OnFormats()
 	{
-		return this.ptr.Formats();
+		return default;
 	}
 	public void Clear()
 	{
 		this.ptr.Clear();
 	}
-	public QVariant_Ptr RetrieveData(String mimetype, IQMetaType preferredType)
+	public  virtual QVariant_Ptr OnRetrieveData(libqt_string mimetype, void* preferredType)
 	{
-		return this.ptr.RetrieveData(mimetype, preferredType);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -506,13 +479,13 @@ class QMimeData : IQMimeData, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -670,25 +643,20 @@ class QMimeData : IQMimeData, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -742,10 +710,22 @@ extension CQt
 	public static extern void QMimeData_Delete(QMimeData_Ptr self);
 	[LinkName("QMimeData_MetaObject")]
 	public static extern void** QMimeData_MetaObject(void* self);
+	
+	public function void QMimeData_OnMetaObject_action(void* self);
+	[LinkName("QMimeData_OnMetaObject")]
+	public static extern void** QMimeData_OnMetaObject(void* self, QMimeData_OnMetaObject_action _action);
 	[LinkName("QMimeData_Qt_Metacast")]
 	public static extern void* QMimeData_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QMimeData_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QMimeData_OnMetacast")]
+	public static extern void* QMimeData_OnMetacast(void* self, QMimeData_OnMetacast_action _action);
 	[LinkName("QMimeData_Qt_Metacall")]
 	public static extern c_int QMimeData_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QMimeData_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QMimeData_OnMetacall")]
+	public static extern c_int QMimeData_OnMetacall(void* self, QMimeData_OnMetacall_action _action);
 	[LinkName("QMimeData_Tr")]
 	public static extern libqt_string QMimeData_Tr(c_char* s);
 	[LinkName("QMimeData_Urls")]
@@ -786,14 +766,68 @@ extension CQt
 	public static extern void QMimeData_RemoveFormat(void* self, libqt_string mimetype);
 	[LinkName("QMimeData_HasFormat")]
 	public static extern bool QMimeData_HasFormat(void* self, libqt_string mimetype);
+	
+	public function void QMimeData_OnHasFormat_action(void* self, libqt_string mimetype);
+	[LinkName("QMimeData_OnHasFormat")]
+	public static extern bool QMimeData_OnHasFormat(void* self, QMimeData_OnHasFormat_action _action);
 	[LinkName("QMimeData_Formats")]
 	public static extern void* QMimeData_Formats(void* self);
+	
+	public function void QMimeData_OnFormats_action(void* self);
+	[LinkName("QMimeData_OnFormats")]
+	public static extern void* QMimeData_OnFormats(void* self, QMimeData_OnFormats_action _action);
 	[LinkName("QMimeData_Clear")]
 	public static extern void QMimeData_Clear(void* self);
 	[LinkName("QMimeData_RetrieveData")]
 	public static extern void* QMimeData_RetrieveData(void* self, libqt_string mimetype, void* preferredType);
+	
+	public function void QMimeData_OnRetrieveData_action(void* self, libqt_string mimetype, void* preferredType);
+	[LinkName("QMimeData_OnRetrieveData")]
+	public static extern void* QMimeData_OnRetrieveData(void* self, QMimeData_OnRetrieveData_action _action);
 	[LinkName("QMimeData_Tr2")]
 	public static extern libqt_string QMimeData_Tr2(c_char* s, c_char* c);
 	[LinkName("QMimeData_Tr3")]
 	public static extern libqt_string QMimeData_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QMimeData_Event")]
+	public static extern bool QMimeData_Event(void* self, void** event);
+	
+	public function void QMimeData_OnEvent_action(void* self, void** event);
+	[LinkName("QMimeData_OnEvent")]
+	public static extern bool QMimeData_OnEvent(void* self, QMimeData_OnEvent_action _action);
+	[LinkName("QMimeData_EventFilter")]
+	public static extern bool QMimeData_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QMimeData_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QMimeData_OnEventFilter")]
+	public static extern bool QMimeData_OnEventFilter(void* self, QMimeData_OnEventFilter_action _action);
+	[LinkName("QMimeData_TimerEvent")]
+	public static extern void QMimeData_TimerEvent(void* self, void** event);
+	
+	public function void QMimeData_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QMimeData_OnTimerEvent")]
+	public static extern void QMimeData_OnTimerEvent(void* self, QMimeData_OnTimerEvent_action _action);
+	[LinkName("QMimeData_ChildEvent")]
+	public static extern void QMimeData_ChildEvent(void* self, void** event);
+	
+	public function void QMimeData_OnChildEvent_action(void* self, void** event);
+	[LinkName("QMimeData_OnChildEvent")]
+	public static extern void QMimeData_OnChildEvent(void* self, QMimeData_OnChildEvent_action _action);
+	[LinkName("QMimeData_CustomEvent")]
+	public static extern void QMimeData_CustomEvent(void* self, void** event);
+	
+	public function void QMimeData_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QMimeData_OnCustomEvent")]
+	public static extern void QMimeData_OnCustomEvent(void* self, QMimeData_OnCustomEvent_action _action);
+	[LinkName("QMimeData_ConnectNotify")]
+	public static extern void QMimeData_ConnectNotify(void* self, void** signal);
+	
+	public function void QMimeData_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QMimeData_OnConnectNotify")]
+	public static extern void QMimeData_OnConnectNotify(void* self, QMimeData_OnConnectNotify_action _action);
+	[LinkName("QMimeData_DisconnectNotify")]
+	public static extern void QMimeData_DisconnectNotify(void* self, void** signal);
+	
+	public function void QMimeData_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QMimeData_OnDisconnectNotify")]
+	public static extern void QMimeData_OnDisconnectNotify(void* self, QMimeData_OnDisconnectNotify_action _action);
 }

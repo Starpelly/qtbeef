@@ -18,11 +18,11 @@ struct QWindow_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QWindow_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QWindow_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QWindow_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -648,7 +648,7 @@ struct QWindow_Ptr
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QWindow_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -800,23 +800,23 @@ struct QWindow_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QWindow_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QWindow_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QWindow_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QWindow_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QWindow_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -871,218 +871,37 @@ class QWindow : IQWindow, IQObject, IQSurface
 {
 	private QWindow_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QWindow_screenChanged,
-		QWindow_modalityChanged,
-		QWindow_windowStateChanged,
-		QWindow_windowTitleChanged,
-		QWindow_xChanged,
-		QWindow_yChanged,
-		QWindow_widthChanged,
-		QWindow_heightChanged,
-		QWindow_minimumWidthChanged,
-		QWindow_minimumHeightChanged,
-		QWindow_maximumWidthChanged,
-		QWindow_maximumHeightChanged,
-		QWindow_visibleChanged,
-		QWindow_visibilityChanged,
-		QWindow_activeChanged,
-		QWindow_contentOrientationChanged,
-		QWindow_focusObjectChanged,
-		QWindow_opacityChanged,
-		QWindow_transientParentChanged,
-		QWindow_destroyed,
-		QWindow_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QWindow_Connect_ScreenChanged(obj.ObjectPtr,  => QtBeef_QWindow_screenChanged);
-		CQt.QWindow_Connect_ModalityChanged(obj.ObjectPtr,  => QtBeef_QWindow_modalityChanged);
-		CQt.QWindow_Connect_WindowStateChanged(obj.ObjectPtr,  => QtBeef_QWindow_windowStateChanged);
-		CQt.QWindow_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWindow_windowTitleChanged);
-		CQt.QWindow_Connect_XChanged(obj.ObjectPtr,  => QtBeef_QWindow_xChanged);
-		CQt.QWindow_Connect_YChanged(obj.ObjectPtr,  => QtBeef_QWindow_yChanged);
-		CQt.QWindow_Connect_WidthChanged(obj.ObjectPtr,  => QtBeef_QWindow_widthChanged);
-		CQt.QWindow_Connect_HeightChanged(obj.ObjectPtr,  => QtBeef_QWindow_heightChanged);
-		CQt.QWindow_Connect_MinimumWidthChanged(obj.ObjectPtr,  => QtBeef_QWindow_minimumWidthChanged);
-		CQt.QWindow_Connect_MinimumHeightChanged(obj.ObjectPtr,  => QtBeef_QWindow_minimumHeightChanged);
-		CQt.QWindow_Connect_MaximumWidthChanged(obj.ObjectPtr,  => QtBeef_QWindow_maximumWidthChanged);
-		CQt.QWindow_Connect_MaximumHeightChanged(obj.ObjectPtr,  => QtBeef_QWindow_maximumHeightChanged);
-		CQt.QWindow_Connect_VisibleChanged(obj.ObjectPtr,  => QtBeef_QWindow_visibleChanged);
-		CQt.QWindow_Connect_VisibilityChanged(obj.ObjectPtr,  => QtBeef_QWindow_visibilityChanged);
-		CQt.QWindow_Connect_ActiveChanged(obj.ObjectPtr,  => QtBeef_QWindow_activeChanged);
-		CQt.QWindow_Connect_ContentOrientationChanged(obj.ObjectPtr,  => QtBeef_QWindow_contentOrientationChanged);
-		CQt.QWindow_Connect_FocusObjectChanged(obj.ObjectPtr,  => QtBeef_QWindow_focusObjectChanged);
-		CQt.QWindow_Connect_OpacityChanged(obj.ObjectPtr,  => QtBeef_QWindow_opacityChanged);
-		CQt.QWindow_Connect_TransientParentChanged(obj.ObjectPtr,  => QtBeef_QWindow_transientParentChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** screen)> OnScreenChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_WindowModality modality)> OnModalityChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_WindowState windowState)> OnWindowStateChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int arg)> OnXChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int arg)> OnYChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int arg)> OnWidthChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int arg)> OnHeightChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int arg)> OnMinimumWidthChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int arg)> OnMinimumHeightChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int arg)> OnMaximumWidthChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int arg)> OnMaximumHeightChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool arg)> OnVisibleChanged = .() ~ _.Dispose();
-	public Event<delegate void(QWindow_Visibility visibility)> OnVisibilityChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnActiveChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_ScreenOrientation orientation)> OnContentOrientationChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** object)> OnFocusObjectChanged = .() ~ _.Dispose();
-	public Event<delegate void(double opacity)> OnOpacityChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** transientParent)> OnTransientParentChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QWindow_screenChanged(void* ptr, void** screen)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnScreenChanged.Invoke(screen);
-	}
-	static void QtBeef_QWindow_modalityChanged(void* ptr, Qt_WindowModality modality)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnModalityChanged.Invoke(modality);
-	}
-	static void QtBeef_QWindow_windowStateChanged(void* ptr, Qt_WindowState windowState)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowStateChanged.Invoke(windowState);
-	}
-	static void QtBeef_QWindow_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWindow_xChanged(void* ptr, c_int arg)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnXChanged.Invoke(arg);
-	}
-	static void QtBeef_QWindow_yChanged(void* ptr, c_int arg)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnYChanged.Invoke(arg);
-	}
-	static void QtBeef_QWindow_widthChanged(void* ptr, c_int arg)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWidthChanged.Invoke(arg);
-	}
-	static void QtBeef_QWindow_heightChanged(void* ptr, c_int arg)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnHeightChanged.Invoke(arg);
-	}
-	static void QtBeef_QWindow_minimumWidthChanged(void* ptr, c_int arg)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnMinimumWidthChanged.Invoke(arg);
-	}
-	static void QtBeef_QWindow_minimumHeightChanged(void* ptr, c_int arg)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnMinimumHeightChanged.Invoke(arg);
-	}
-	static void QtBeef_QWindow_maximumWidthChanged(void* ptr, c_int arg)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnMaximumWidthChanged.Invoke(arg);
-	}
-	static void QtBeef_QWindow_maximumHeightChanged(void* ptr, c_int arg)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnMaximumHeightChanged.Invoke(arg);
-	}
-	static void QtBeef_QWindow_visibleChanged(void* ptr, bool arg)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnVisibleChanged.Invoke(arg);
-	}
-	static void QtBeef_QWindow_visibilityChanged(void* ptr, QWindow_Visibility visibility)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnVisibilityChanged.Invoke(visibility);
-	}
-	static void QtBeef_QWindow_activeChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnActiveChanged.Invoke();
-	}
-	static void QtBeef_QWindow_contentOrientationChanged(void* ptr, Qt_ScreenOrientation orientation)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnContentOrientationChanged.Invoke(orientation);
-	}
-	static void QtBeef_QWindow_focusObjectChanged(void* ptr, void** object)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFocusObjectChanged.Invoke(object);
-	}
-	static void QtBeef_QWindow_opacityChanged(void* ptr, double opacity)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnOpacityChanged.Invoke(opacity);
-	}
-	static void QtBeef_QWindow_transientParentChanged(void* ptr, void** transientParent)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTransientParentChanged.Invoke(transientParent);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QWindow_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QWindow_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWindow parent)
 	{
 		this.ptr = CQt.QWindow_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQScreen screen)
 	{
 		this.ptr = CQt.QWindow_new3((.)screen?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QWindow_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -1092,9 +911,9 @@ class QWindow : IQWindow, IQObject, IQSurface
 	{
 		this.ptr.SetSurfaceType(surfaceType);
 	}
-	public QSurface_SurfaceType SurfaceType()
+	public  virtual QSurface_SurfaceType OnSurfaceType()
 	{
-		return this.ptr.SurfaceType();
+		return default;
 	}
 	public bool IsVisible()
 	{
@@ -1144,9 +963,9 @@ class QWindow : IQWindow, IQObject, IQSurface
 	{
 		this.ptr.SetFormat(format);
 	}
-	public QSurfaceFormat_Ptr Format()
+	public  virtual QSurfaceFormat_Ptr OnFormat()
 	{
-		return this.ptr.Format();
+		return default;
 	}
 	public QSurfaceFormat_Ptr RequestedFormat()
 	{
@@ -1320,9 +1139,9 @@ class QWindow : IQWindow, IQObject, IQSurface
 	{
 		return this.ptr.Y();
 	}
-	public QSize_Ptr Size()
+	public  virtual QSize_Ptr OnSize()
 	{
-		return this.ptr.Size();
+		return default;
 	}
 	public QPoint_Ptr Position()
 	{
@@ -1380,13 +1199,13 @@ class QWindow : IQWindow, IQObject, IQSurface
 	{
 		this.ptr.SetScreen(screen);
 	}
-	public QAccessibleInterface_Ptr AccessibleRoot()
+	public  virtual QAccessibleInterface_Ptr OnAccessibleRoot()
 	{
-		return this.ptr.AccessibleRoot();
+		return default;
 	}
-	public QObject_Ptr FocusObject()
+	public  virtual QObject_Ptr OnFocusObject()
 	{
-		return this.ptr.FocusObject();
+		return default;
 	}
 	public QPointF_Ptr MapToGlobal(IQPointF pos)
 	{
@@ -1604,85 +1423,67 @@ class QWindow : IQWindow, IQObject, IQSurface
 	{
 		this.ptr.TransientParentChanged(transientParent);
 	}
-	public void ExposeEvent(IQExposeEvent param1)
+	public  virtual void OnExposeEvent(void** param1)
 	{
-		this.ptr.ExposeEvent(param1);
 	}
-	public void ResizeEvent(IQResizeEvent param1)
+	public  virtual void OnResizeEvent(void** param1)
 	{
-		this.ptr.ResizeEvent(param1);
 	}
-	public void PaintEvent(IQPaintEvent param1)
+	public  virtual void OnPaintEvent(void** param1)
 	{
-		this.ptr.PaintEvent(param1);
 	}
-	public void MoveEvent(IQMoveEvent param1)
+	public  virtual void OnMoveEvent(void** param1)
 	{
-		this.ptr.MoveEvent(param1);
 	}
-	public void FocusInEvent(IQFocusEvent param1)
+	public  virtual void OnFocusInEvent(void** param1)
 	{
-		this.ptr.FocusInEvent(param1);
 	}
-	public void FocusOutEvent(IQFocusEvent param1)
+	public  virtual void OnFocusOutEvent(void** param1)
 	{
-		this.ptr.FocusOutEvent(param1);
 	}
-	public void ShowEvent(IQShowEvent param1)
+	public  virtual void OnShowEvent(void** param1)
 	{
-		this.ptr.ShowEvent(param1);
 	}
-	public void HideEvent(IQHideEvent param1)
+	public  virtual void OnHideEvent(void** param1)
 	{
-		this.ptr.HideEvent(param1);
 	}
-	public void CloseEvent(IQCloseEvent param1)
+	public  virtual void OnCloseEvent(void** param1)
 	{
-		this.ptr.CloseEvent(param1);
 	}
-	public bool Event(IQEvent param1)
+	public  virtual bool OnEvent(void** param1)
 	{
-		return this.ptr.Event(param1);
+		return default;
 	}
-	public void KeyPressEvent(IQKeyEvent param1)
+	public  virtual void OnKeyPressEvent(void** param1)
 	{
-		this.ptr.KeyPressEvent(param1);
 	}
-	public void KeyReleaseEvent(IQKeyEvent param1)
+	public  virtual void OnKeyReleaseEvent(void** param1)
 	{
-		this.ptr.KeyReleaseEvent(param1);
 	}
-	public void MousePressEvent(IQMouseEvent param1)
+	public  virtual void OnMousePressEvent(void** param1)
 	{
-		this.ptr.MousePressEvent(param1);
 	}
-	public void MouseReleaseEvent(IQMouseEvent param1)
+	public  virtual void OnMouseReleaseEvent(void** param1)
 	{
-		this.ptr.MouseReleaseEvent(param1);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent param1)
+	public  virtual void OnMouseDoubleClickEvent(void** param1)
 	{
-		this.ptr.MouseDoubleClickEvent(param1);
 	}
-	public void MouseMoveEvent(IQMouseEvent param1)
+	public  virtual void OnMouseMoveEvent(void** param1)
 	{
-		this.ptr.MouseMoveEvent(param1);
 	}
-	public void WheelEvent(IQWheelEvent param1)
+	public  virtual void OnWheelEvent(void** param1)
 	{
-		this.ptr.WheelEvent(param1);
 	}
-	public void TouchEvent(IQTouchEvent param1)
+	public  virtual void OnTouchEvent(void** param1)
 	{
-		this.ptr.TouchEvent(param1);
 	}
-	public void TabletEvent(IQTabletEvent param1)
+	public  virtual void OnTabletEvent(void** param1)
 	{
-		this.ptr.TabletEvent(param1);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -1704,9 +1505,9 @@ class QWindow : IQWindow, IQObject, IQSurface
 	{
 		return this.ptr.IsAncestorOf2(child, mode);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1856,25 +1657,20 @@ class QWindow : IQWindow, IQObject, IQSurface
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1940,16 +1736,32 @@ extension CQt
 	public static extern void QWindow_Delete(QWindow_Ptr self);
 	[LinkName("QWindow_MetaObject")]
 	public static extern void** QWindow_MetaObject(void* self);
+	
+	public function void QWindow_OnMetaObject_action(void* self);
+	[LinkName("QWindow_OnMetaObject")]
+	public static extern void** QWindow_OnMetaObject(void* self, QWindow_OnMetaObject_action _action);
 	[LinkName("QWindow_Qt_Metacast")]
 	public static extern void* QWindow_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QWindow_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QWindow_OnMetacast")]
+	public static extern void* QWindow_OnMetacast(void* self, QWindow_OnMetacast_action _action);
 	[LinkName("QWindow_Qt_Metacall")]
 	public static extern c_int QWindow_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QWindow_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QWindow_OnMetacall")]
+	public static extern c_int QWindow_OnMetacall(void* self, QWindow_OnMetacall_action _action);
 	[LinkName("QWindow_Tr")]
 	public static extern libqt_string QWindow_Tr(c_char* s);
 	[LinkName("QWindow_SetSurfaceType")]
 	public static extern void QWindow_SetSurfaceType(void* self, QSurface_SurfaceType surfaceType);
 	[LinkName("QWindow_SurfaceType")]
 	public static extern QSurface_SurfaceType QWindow_SurfaceType(void* self);
+	
+	public function void QWindow_OnSurfaceType_action(void* self);
+	[LinkName("QWindow_OnSurfaceType")]
+	public static extern QSurface_SurfaceType QWindow_OnSurfaceType(void* self, QWindow_OnSurfaceType_action _action);
 	[LinkName("QWindow_IsVisible")]
 	public static extern bool QWindow_IsVisible(void* self);
 	[LinkName("QWindow_Visibility")]
@@ -1976,6 +1788,10 @@ extension CQt
 	public static extern void QWindow_SetFormat(void* self, void** format);
 	[LinkName("QWindow_Format")]
 	public static extern void* QWindow_Format(void* self);
+	
+	public function void QWindow_OnFormat_action(void* self);
+	[LinkName("QWindow_OnFormat")]
+	public static extern void* QWindow_OnFormat(void* self, QWindow_OnFormat_action _action);
 	[LinkName("QWindow_RequestedFormat")]
 	public static extern void* QWindow_RequestedFormat(void* self);
 	[LinkName("QWindow_SetFlags")]
@@ -2064,6 +1880,10 @@ extension CQt
 	public static extern c_int QWindow_Y(void* self);
 	[LinkName("QWindow_Size")]
 	public static extern void* QWindow_Size(void* self);
+	
+	public function void QWindow_OnSize_action(void* self);
+	[LinkName("QWindow_OnSize")]
+	public static extern void* QWindow_OnSize(void* self, QWindow_OnSize_action _action);
 	[LinkName("QWindow_Position")]
 	public static extern void* QWindow_Position(void* self);
 	[LinkName("QWindow_SetPosition")]
@@ -2094,8 +1914,16 @@ extension CQt
 	public static extern void QWindow_SetScreen(void* self, void** screen);
 	[LinkName("QWindow_AccessibleRoot")]
 	public static extern void** QWindow_AccessibleRoot(void* self);
+	
+	public function void QWindow_OnAccessibleRoot_action(void* self);
+	[LinkName("QWindow_OnAccessibleRoot")]
+	public static extern void** QWindow_OnAccessibleRoot(void* self, QWindow_OnAccessibleRoot_action _action);
 	[LinkName("QWindow_FocusObject")]
 	public static extern void** QWindow_FocusObject(void* self);
+	
+	public function void QWindow_OnFocusObject_action(void* self);
+	[LinkName("QWindow_OnFocusObject")]
+	public static extern void** QWindow_OnFocusObject(void* self, QWindow_OnFocusObject_action _action);
 	[LinkName("QWindow_MapToGlobal")]
 	public static extern void* QWindow_MapToGlobal(void* self, void** pos);
 	[LinkName("QWindow_MapFromGlobal")]
@@ -2169,157 +1997,237 @@ extension CQt
 	[LinkName("QWindow_ScreenChanged")]
 	public static extern void QWindow_ScreenChanged(void* self, void** screen);
 	
-	public function void QWindow_screenChanged_action(void* self, void** screen);
+	public function void QWindow_Connect_ScreenChanged_action(void* self, void** screen);
 	[LinkName("QWindow_Connect_ScreenChanged")]
-	public static extern void QWindow_Connect_ScreenChanged(void* self, QWindow_screenChanged_action _action);
+	public static extern void QWindow_Connect_ScreenChanged(void* self, QWindow_Connect_ScreenChanged_action _action);
 	[LinkName("QWindow_ModalityChanged")]
 	public static extern void QWindow_ModalityChanged(void* self, Qt_WindowModality modality);
 	
-	public function void QWindow_modalityChanged_action(void* self, Qt_WindowModality modality);
+	public function void QWindow_Connect_ModalityChanged_action(void* self, Qt_WindowModality modality);
 	[LinkName("QWindow_Connect_ModalityChanged")]
-	public static extern void QWindow_Connect_ModalityChanged(void* self, QWindow_modalityChanged_action _action);
+	public static extern void QWindow_Connect_ModalityChanged(void* self, QWindow_Connect_ModalityChanged_action _action);
 	[LinkName("QWindow_WindowStateChanged")]
 	public static extern void QWindow_WindowStateChanged(void* self, Qt_WindowState windowState);
 	
-	public function void QWindow_windowStateChanged_action(void* self, Qt_WindowState windowState);
+	public function void QWindow_Connect_WindowStateChanged_action(void* self, Qt_WindowState windowState);
 	[LinkName("QWindow_Connect_WindowStateChanged")]
-	public static extern void QWindow_Connect_WindowStateChanged(void* self, QWindow_windowStateChanged_action _action);
+	public static extern void QWindow_Connect_WindowStateChanged(void* self, QWindow_Connect_WindowStateChanged_action _action);
 	[LinkName("QWindow_WindowTitleChanged")]
 	public static extern void QWindow_WindowTitleChanged(void* self, libqt_string title);
 	
-	public function void QWindow_windowTitleChanged_action(void* self, libqt_string title);
+	public function void QWindow_Connect_WindowTitleChanged_action(void* self, libqt_string title);
 	[LinkName("QWindow_Connect_WindowTitleChanged")]
-	public static extern void QWindow_Connect_WindowTitleChanged(void* self, QWindow_windowTitleChanged_action _action);
+	public static extern void QWindow_Connect_WindowTitleChanged(void* self, QWindow_Connect_WindowTitleChanged_action _action);
 	[LinkName("QWindow_XChanged")]
 	public static extern void QWindow_XChanged(void* self, c_int arg);
 	
-	public function void QWindow_xChanged_action(void* self, c_int arg);
+	public function void QWindow_Connect_XChanged_action(void* self, c_int arg);
 	[LinkName("QWindow_Connect_XChanged")]
-	public static extern void QWindow_Connect_XChanged(void* self, QWindow_xChanged_action _action);
+	public static extern void QWindow_Connect_XChanged(void* self, QWindow_Connect_XChanged_action _action);
 	[LinkName("QWindow_YChanged")]
 	public static extern void QWindow_YChanged(void* self, c_int arg);
 	
-	public function void QWindow_yChanged_action(void* self, c_int arg);
+	public function void QWindow_Connect_YChanged_action(void* self, c_int arg);
 	[LinkName("QWindow_Connect_YChanged")]
-	public static extern void QWindow_Connect_YChanged(void* self, QWindow_yChanged_action _action);
+	public static extern void QWindow_Connect_YChanged(void* self, QWindow_Connect_YChanged_action _action);
 	[LinkName("QWindow_WidthChanged")]
 	public static extern void QWindow_WidthChanged(void* self, c_int arg);
 	
-	public function void QWindow_widthChanged_action(void* self, c_int arg);
+	public function void QWindow_Connect_WidthChanged_action(void* self, c_int arg);
 	[LinkName("QWindow_Connect_WidthChanged")]
-	public static extern void QWindow_Connect_WidthChanged(void* self, QWindow_widthChanged_action _action);
+	public static extern void QWindow_Connect_WidthChanged(void* self, QWindow_Connect_WidthChanged_action _action);
 	[LinkName("QWindow_HeightChanged")]
 	public static extern void QWindow_HeightChanged(void* self, c_int arg);
 	
-	public function void QWindow_heightChanged_action(void* self, c_int arg);
+	public function void QWindow_Connect_HeightChanged_action(void* self, c_int arg);
 	[LinkName("QWindow_Connect_HeightChanged")]
-	public static extern void QWindow_Connect_HeightChanged(void* self, QWindow_heightChanged_action _action);
+	public static extern void QWindow_Connect_HeightChanged(void* self, QWindow_Connect_HeightChanged_action _action);
 	[LinkName("QWindow_MinimumWidthChanged")]
 	public static extern void QWindow_MinimumWidthChanged(void* self, c_int arg);
 	
-	public function void QWindow_minimumWidthChanged_action(void* self, c_int arg);
+	public function void QWindow_Connect_MinimumWidthChanged_action(void* self, c_int arg);
 	[LinkName("QWindow_Connect_MinimumWidthChanged")]
-	public static extern void QWindow_Connect_MinimumWidthChanged(void* self, QWindow_minimumWidthChanged_action _action);
+	public static extern void QWindow_Connect_MinimumWidthChanged(void* self, QWindow_Connect_MinimumWidthChanged_action _action);
 	[LinkName("QWindow_MinimumHeightChanged")]
 	public static extern void QWindow_MinimumHeightChanged(void* self, c_int arg);
 	
-	public function void QWindow_minimumHeightChanged_action(void* self, c_int arg);
+	public function void QWindow_Connect_MinimumHeightChanged_action(void* self, c_int arg);
 	[LinkName("QWindow_Connect_MinimumHeightChanged")]
-	public static extern void QWindow_Connect_MinimumHeightChanged(void* self, QWindow_minimumHeightChanged_action _action);
+	public static extern void QWindow_Connect_MinimumHeightChanged(void* self, QWindow_Connect_MinimumHeightChanged_action _action);
 	[LinkName("QWindow_MaximumWidthChanged")]
 	public static extern void QWindow_MaximumWidthChanged(void* self, c_int arg);
 	
-	public function void QWindow_maximumWidthChanged_action(void* self, c_int arg);
+	public function void QWindow_Connect_MaximumWidthChanged_action(void* self, c_int arg);
 	[LinkName("QWindow_Connect_MaximumWidthChanged")]
-	public static extern void QWindow_Connect_MaximumWidthChanged(void* self, QWindow_maximumWidthChanged_action _action);
+	public static extern void QWindow_Connect_MaximumWidthChanged(void* self, QWindow_Connect_MaximumWidthChanged_action _action);
 	[LinkName("QWindow_MaximumHeightChanged")]
 	public static extern void QWindow_MaximumHeightChanged(void* self, c_int arg);
 	
-	public function void QWindow_maximumHeightChanged_action(void* self, c_int arg);
+	public function void QWindow_Connect_MaximumHeightChanged_action(void* self, c_int arg);
 	[LinkName("QWindow_Connect_MaximumHeightChanged")]
-	public static extern void QWindow_Connect_MaximumHeightChanged(void* self, QWindow_maximumHeightChanged_action _action);
+	public static extern void QWindow_Connect_MaximumHeightChanged(void* self, QWindow_Connect_MaximumHeightChanged_action _action);
 	[LinkName("QWindow_VisibleChanged")]
 	public static extern void QWindow_VisibleChanged(void* self, bool arg);
 	
-	public function void QWindow_visibleChanged_action(void* self, bool arg);
+	public function void QWindow_Connect_VisibleChanged_action(void* self, bool arg);
 	[LinkName("QWindow_Connect_VisibleChanged")]
-	public static extern void QWindow_Connect_VisibleChanged(void* self, QWindow_visibleChanged_action _action);
+	public static extern void QWindow_Connect_VisibleChanged(void* self, QWindow_Connect_VisibleChanged_action _action);
 	[LinkName("QWindow_VisibilityChanged")]
 	public static extern void QWindow_VisibilityChanged(void* self, QWindow_Visibility visibility);
 	
-	public function void QWindow_visibilityChanged_action(void* self, QWindow_Visibility visibility);
+	public function void QWindow_Connect_VisibilityChanged_action(void* self, QWindow_Visibility visibility);
 	[LinkName("QWindow_Connect_VisibilityChanged")]
-	public static extern void QWindow_Connect_VisibilityChanged(void* self, QWindow_visibilityChanged_action _action);
+	public static extern void QWindow_Connect_VisibilityChanged(void* self, QWindow_Connect_VisibilityChanged_action _action);
 	[LinkName("QWindow_ActiveChanged")]
 	public static extern void QWindow_ActiveChanged(void* self);
 	
-	public function void QWindow_activeChanged_action(void* self);
+	public function void QWindow_Connect_ActiveChanged_action(void* self);
 	[LinkName("QWindow_Connect_ActiveChanged")]
-	public static extern void QWindow_Connect_ActiveChanged(void* self, QWindow_activeChanged_action _action);
+	public static extern void QWindow_Connect_ActiveChanged(void* self, QWindow_Connect_ActiveChanged_action _action);
 	[LinkName("QWindow_ContentOrientationChanged")]
 	public static extern void QWindow_ContentOrientationChanged(void* self, Qt_ScreenOrientation orientation);
 	
-	public function void QWindow_contentOrientationChanged_action(void* self, Qt_ScreenOrientation orientation);
+	public function void QWindow_Connect_ContentOrientationChanged_action(void* self, Qt_ScreenOrientation orientation);
 	[LinkName("QWindow_Connect_ContentOrientationChanged")]
-	public static extern void QWindow_Connect_ContentOrientationChanged(void* self, QWindow_contentOrientationChanged_action _action);
+	public static extern void QWindow_Connect_ContentOrientationChanged(void* self, QWindow_Connect_ContentOrientationChanged_action _action);
 	[LinkName("QWindow_FocusObjectChanged")]
 	public static extern void QWindow_FocusObjectChanged(void* self, void** object);
 	
-	public function void QWindow_focusObjectChanged_action(void* self, void** object);
+	public function void QWindow_Connect_FocusObjectChanged_action(void* self, void** object);
 	[LinkName("QWindow_Connect_FocusObjectChanged")]
-	public static extern void QWindow_Connect_FocusObjectChanged(void* self, QWindow_focusObjectChanged_action _action);
+	public static extern void QWindow_Connect_FocusObjectChanged(void* self, QWindow_Connect_FocusObjectChanged_action _action);
 	[LinkName("QWindow_OpacityChanged")]
 	public static extern void QWindow_OpacityChanged(void* self, double opacity);
 	
-	public function void QWindow_opacityChanged_action(void* self, double opacity);
+	public function void QWindow_Connect_OpacityChanged_action(void* self, double opacity);
 	[LinkName("QWindow_Connect_OpacityChanged")]
-	public static extern void QWindow_Connect_OpacityChanged(void* self, QWindow_opacityChanged_action _action);
+	public static extern void QWindow_Connect_OpacityChanged(void* self, QWindow_Connect_OpacityChanged_action _action);
 	[LinkName("QWindow_TransientParentChanged")]
 	public static extern void QWindow_TransientParentChanged(void* self, void** transientParent);
 	
-	public function void QWindow_transientParentChanged_action(void* self, void** transientParent);
+	public function void QWindow_Connect_TransientParentChanged_action(void* self, void** transientParent);
 	[LinkName("QWindow_Connect_TransientParentChanged")]
-	public static extern void QWindow_Connect_TransientParentChanged(void* self, QWindow_transientParentChanged_action _action);
+	public static extern void QWindow_Connect_TransientParentChanged(void* self, QWindow_Connect_TransientParentChanged_action _action);
 	[LinkName("QWindow_ExposeEvent")]
 	public static extern void QWindow_ExposeEvent(void* self, void** param1);
+	
+	public function void QWindow_OnExposeEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnExposeEvent")]
+	public static extern void QWindow_OnExposeEvent(void* self, QWindow_OnExposeEvent_action _action);
 	[LinkName("QWindow_ResizeEvent")]
 	public static extern void QWindow_ResizeEvent(void* self, void** param1);
+	
+	public function void QWindow_OnResizeEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnResizeEvent")]
+	public static extern void QWindow_OnResizeEvent(void* self, QWindow_OnResizeEvent_action _action);
 	[LinkName("QWindow_PaintEvent")]
 	public static extern void QWindow_PaintEvent(void* self, void** param1);
+	
+	public function void QWindow_OnPaintEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnPaintEvent")]
+	public static extern void QWindow_OnPaintEvent(void* self, QWindow_OnPaintEvent_action _action);
 	[LinkName("QWindow_MoveEvent")]
 	public static extern void QWindow_MoveEvent(void* self, void** param1);
+	
+	public function void QWindow_OnMoveEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnMoveEvent")]
+	public static extern void QWindow_OnMoveEvent(void* self, QWindow_OnMoveEvent_action _action);
 	[LinkName("QWindow_FocusInEvent")]
 	public static extern void QWindow_FocusInEvent(void* self, void** param1);
+	
+	public function void QWindow_OnFocusInEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnFocusInEvent")]
+	public static extern void QWindow_OnFocusInEvent(void* self, QWindow_OnFocusInEvent_action _action);
 	[LinkName("QWindow_FocusOutEvent")]
 	public static extern void QWindow_FocusOutEvent(void* self, void** param1);
+	
+	public function void QWindow_OnFocusOutEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnFocusOutEvent")]
+	public static extern void QWindow_OnFocusOutEvent(void* self, QWindow_OnFocusOutEvent_action _action);
 	[LinkName("QWindow_ShowEvent")]
 	public static extern void QWindow_ShowEvent(void* self, void** param1);
+	
+	public function void QWindow_OnShowEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnShowEvent")]
+	public static extern void QWindow_OnShowEvent(void* self, QWindow_OnShowEvent_action _action);
 	[LinkName("QWindow_HideEvent")]
 	public static extern void QWindow_HideEvent(void* self, void** param1);
+	
+	public function void QWindow_OnHideEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnHideEvent")]
+	public static extern void QWindow_OnHideEvent(void* self, QWindow_OnHideEvent_action _action);
 	[LinkName("QWindow_CloseEvent")]
 	public static extern void QWindow_CloseEvent(void* self, void** param1);
+	
+	public function void QWindow_OnCloseEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnCloseEvent")]
+	public static extern void QWindow_OnCloseEvent(void* self, QWindow_OnCloseEvent_action _action);
 	[LinkName("QWindow_Event")]
 	public static extern bool QWindow_Event(void* self, void** param1);
+	
+	public function void QWindow_OnEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnEvent")]
+	public static extern bool QWindow_OnEvent(void* self, QWindow_OnEvent_action _action);
 	[LinkName("QWindow_KeyPressEvent")]
 	public static extern void QWindow_KeyPressEvent(void* self, void** param1);
+	
+	public function void QWindow_OnKeyPressEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnKeyPressEvent")]
+	public static extern void QWindow_OnKeyPressEvent(void* self, QWindow_OnKeyPressEvent_action _action);
 	[LinkName("QWindow_KeyReleaseEvent")]
 	public static extern void QWindow_KeyReleaseEvent(void* self, void** param1);
+	
+	public function void QWindow_OnKeyReleaseEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnKeyReleaseEvent")]
+	public static extern void QWindow_OnKeyReleaseEvent(void* self, QWindow_OnKeyReleaseEvent_action _action);
 	[LinkName("QWindow_MousePressEvent")]
 	public static extern void QWindow_MousePressEvent(void* self, void** param1);
+	
+	public function void QWindow_OnMousePressEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnMousePressEvent")]
+	public static extern void QWindow_OnMousePressEvent(void* self, QWindow_OnMousePressEvent_action _action);
 	[LinkName("QWindow_MouseReleaseEvent")]
 	public static extern void QWindow_MouseReleaseEvent(void* self, void** param1);
+	
+	public function void QWindow_OnMouseReleaseEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnMouseReleaseEvent")]
+	public static extern void QWindow_OnMouseReleaseEvent(void* self, QWindow_OnMouseReleaseEvent_action _action);
 	[LinkName("QWindow_MouseDoubleClickEvent")]
 	public static extern void QWindow_MouseDoubleClickEvent(void* self, void** param1);
+	
+	public function void QWindow_OnMouseDoubleClickEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnMouseDoubleClickEvent")]
+	public static extern void QWindow_OnMouseDoubleClickEvent(void* self, QWindow_OnMouseDoubleClickEvent_action _action);
 	[LinkName("QWindow_MouseMoveEvent")]
 	public static extern void QWindow_MouseMoveEvent(void* self, void** param1);
+	
+	public function void QWindow_OnMouseMoveEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnMouseMoveEvent")]
+	public static extern void QWindow_OnMouseMoveEvent(void* self, QWindow_OnMouseMoveEvent_action _action);
 	[LinkName("QWindow_WheelEvent")]
 	public static extern void QWindow_WheelEvent(void* self, void** param1);
+	
+	public function void QWindow_OnWheelEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnWheelEvent")]
+	public static extern void QWindow_OnWheelEvent(void* self, QWindow_OnWheelEvent_action _action);
 	[LinkName("QWindow_TouchEvent")]
 	public static extern void QWindow_TouchEvent(void* self, void** param1);
+	
+	public function void QWindow_OnTouchEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnTouchEvent")]
+	public static extern void QWindow_OnTouchEvent(void* self, QWindow_OnTouchEvent_action _action);
 	[LinkName("QWindow_TabletEvent")]
 	public static extern void QWindow_TabletEvent(void* self, void** param1);
+	
+	public function void QWindow_OnTabletEvent_action(void* self, void** param1);
+	[LinkName("QWindow_OnTabletEvent")]
+	public static extern void QWindow_OnTabletEvent(void* self, QWindow_OnTabletEvent_action _action);
 	[LinkName("QWindow_NativeEvent")]
 	public static extern bool QWindow_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QWindow_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QWindow_OnNativeEvent")]
+	public static extern bool QWindow_OnNativeEvent(void* self, QWindow_OnNativeEvent_action _action);
 	[LinkName("QWindow_Tr2")]
 	public static extern libqt_string QWindow_Tr2(c_char* s, c_char* c);
 	[LinkName("QWindow_Tr3")]
@@ -2330,6 +2238,42 @@ extension CQt
 	public static extern void QWindow_SetFlag2(void* self, Qt_WindowType param1, bool on);
 	[LinkName("QWindow_IsAncestorOf2")]
 	public static extern bool QWindow_IsAncestorOf2(void* self, void** child, QWindow_AncestorMode mode);
+	[LinkName("QWindow_EventFilter")]
+	public static extern bool QWindow_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QWindow_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QWindow_OnEventFilter")]
+	public static extern bool QWindow_OnEventFilter(void* self, QWindow_OnEventFilter_action _action);
+	[LinkName("QWindow_TimerEvent")]
+	public static extern void QWindow_TimerEvent(void* self, void** event);
+	
+	public function void QWindow_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QWindow_OnTimerEvent")]
+	public static extern void QWindow_OnTimerEvent(void* self, QWindow_OnTimerEvent_action _action);
+	[LinkName("QWindow_ChildEvent")]
+	public static extern void QWindow_ChildEvent(void* self, void** event);
+	
+	public function void QWindow_OnChildEvent_action(void* self, void** event);
+	[LinkName("QWindow_OnChildEvent")]
+	public static extern void QWindow_OnChildEvent(void* self, QWindow_OnChildEvent_action _action);
+	[LinkName("QWindow_CustomEvent")]
+	public static extern void QWindow_CustomEvent(void* self, void** event);
+	
+	public function void QWindow_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QWindow_OnCustomEvent")]
+	public static extern void QWindow_OnCustomEvent(void* self, QWindow_OnCustomEvent_action _action);
+	[LinkName("QWindow_ConnectNotify")]
+	public static extern void QWindow_ConnectNotify(void* self, void** signal);
+	
+	public function void QWindow_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QWindow_OnConnectNotify")]
+	public static extern void QWindow_OnConnectNotify(void* self, QWindow_OnConnectNotify_action _action);
+	[LinkName("QWindow_DisconnectNotify")]
+	public static extern void QWindow_DisconnectNotify(void* self, void** signal);
+	
+	public function void QWindow_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QWindow_OnDisconnectNotify")]
+	public static extern void QWindow_OnDisconnectNotify(void* self, QWindow_OnDisconnectNotify_action _action);
 }
 [AllowDuplicates]
 enum QWindow_Visibility

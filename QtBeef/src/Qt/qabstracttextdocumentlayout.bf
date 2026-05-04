@@ -18,11 +18,11 @@ struct QAbstractTextDocumentLayout_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QAbstractTextDocumentLayout_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QAbstractTextDocumentLayout_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QAbstractTextDocumentLayout_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -152,11 +152,11 @@ struct QAbstractTextDocumentLayout_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QAbstractTextDocumentLayout_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QAbstractTextDocumentLayout_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -316,23 +316,23 @@ struct QAbstractTextDocumentLayout_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -379,108 +379,40 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 {
 	private QAbstractTextDocumentLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QAbstractTextDocumentLayout_update,
-		QAbstractTextDocumentLayout_updateBlock,
-		QAbstractTextDocumentLayout_documentSizeChanged,
-		QAbstractTextDocumentLayout_pageCountChanged,
-		QAbstractTextDocumentLayout_update1,
-		QAbstractTextDocumentLayout_destroyed,
-		QAbstractTextDocumentLayout_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QAbstractTextDocumentLayout_Connect_Update(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_update);
-		CQt.QAbstractTextDocumentLayout_Connect_UpdateBlock(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_updateBlock);
-		CQt.QAbstractTextDocumentLayout_Connect_DocumentSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_documentSizeChanged);
-		CQt.QAbstractTextDocumentLayout_Connect_PageCountChanged(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_pageCountChanged);
-		CQt.QAbstractTextDocumentLayout_Connect_Update1(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_update1);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnUpdate = .() ~ _.Dispose();
-	public Event<delegate void(void** block)> OnUpdateBlock = .() ~ _.Dispose();
-	public Event<delegate void(void** newSize)> OnDocumentSizeChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int newPages)> OnPageCountChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnUpdate1 = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QAbstractTextDocumentLayout_update(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnUpdate.Invoke();
-	}
-	static void QtBeef_QAbstractTextDocumentLayout_updateBlock(void* ptr, void** block)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnUpdateBlock.Invoke(block);
-	}
-	static void QtBeef_QAbstractTextDocumentLayout_documentSizeChanged(void* ptr, void** newSize)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDocumentSizeChanged.Invoke(newSize);
-	}
-	static void QtBeef_QAbstractTextDocumentLayout_pageCountChanged(void* ptr, c_int newPages)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnPageCountChanged.Invoke(newPages);
-	}
-	static void QtBeef_QAbstractTextDocumentLayout_update1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnUpdate1.Invoke(param1);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QAbstractTextDocumentLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextDocument doc)
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_new((.)doc?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QAbstractTextDocumentLayout_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public void Draw(IQPainter painter, IQAbstractTextDocumentLayout_PaintContext context)
+	public  virtual void OnDraw(void** painter, void** context)
 	{
-		this.ptr.Draw(painter, context);
 	}
-	public c_int HitTest(IQPointF point, Qt_HitTestAccuracy accuracy)
+	public  virtual c_int OnHitTest(void** point, Qt_HitTestAccuracy accuracy)
 	{
-		return this.ptr.HitTest(point, accuracy);
+		return default;
 	}
 	public void AnchorAt(String outStr, IQPointF pos)
 	{
@@ -498,21 +430,21 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 	{
 		return this.ptr.BlockWithMarkerAt(pos);
 	}
-	public c_int PageCount()
+	public  virtual c_int OnPageCount()
 	{
-		return this.ptr.PageCount();
+		return default;
 	}
-	public QSizeF_Ptr DocumentSize()
+	public  virtual QSizeF_Ptr OnDocumentSize()
 	{
-		return this.ptr.DocumentSize();
+		return default;
 	}
-	public QRectF_Ptr FrameBoundingRect(IQTextFrame frame)
+	public  virtual QRectF_Ptr OnFrameBoundingRect(void** frame)
 	{
-		return this.ptr.FrameBoundingRect(frame);
+		return default;
 	}
-	public QRectF_Ptr BlockBoundingRect(IQTextBlock block)
+	public  virtual QRectF_Ptr OnBlockBoundingRect(void** block)
 	{
-		return this.ptr.BlockBoundingRect(block);
+		return default;
 	}
 	public void SetPaintDevice(IQPaintDevice device)
 	{
@@ -554,21 +486,17 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 	{
 		this.ptr.PageCountChanged(newPages);
 	}
-	public void DocumentChanged(c_int from, c_int charsRemoved, c_int charsAdded)
+	public  virtual void OnDocumentChanged(c_int from, c_int charsRemoved, c_int charsAdded)
 	{
-		this.ptr.DocumentChanged(from, charsRemoved, charsAdded);
 	}
-	public void ResizeInlineObject(IQTextInlineObject item, c_int posInDocument, IQTextFormat format)
+	public  virtual void OnResizeInlineObject(void* item, c_int posInDocument, void** format)
 	{
-		this.ptr.ResizeInlineObject(item, posInDocument, format);
 	}
-	public void PositionInlineObject(IQTextInlineObject item, c_int posInDocument, IQTextFormat format)
+	public  virtual void OnPositionInlineObject(void* item, c_int posInDocument, void** format)
 	{
-		this.ptr.PositionInlineObject(item, posInDocument, format);
 	}
-	public void DrawInlineObject(IQPainter painter, IQRectF rect, IQTextInlineObject object, c_int posInDocument, IQTextFormat format)
+	public  virtual void OnDrawInlineObject(void** painter, void** rect, void* object, c_int posInDocument, void** format)
 	{
-		this.ptr.DrawInlineObject(painter, rect, object, posInDocument, format);
 	}
 	public c_int FormatIndex(c_int pos)
 	{
@@ -594,13 +522,13 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 	{
 		this.ptr.Update1(param1);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -758,25 +686,20 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -830,16 +753,36 @@ extension CQt
 	public static extern void QAbstractTextDocumentLayout_Delete(QAbstractTextDocumentLayout_Ptr self);
 	[LinkName("QAbstractTextDocumentLayout_MetaObject")]
 	public static extern void** QAbstractTextDocumentLayout_MetaObject(void* self);
+	
+	public function void QAbstractTextDocumentLayout_OnMetaObject_action(void* self);
+	[LinkName("QAbstractTextDocumentLayout_OnMetaObject")]
+	public static extern void** QAbstractTextDocumentLayout_OnMetaObject(void* self, QAbstractTextDocumentLayout_OnMetaObject_action _action);
 	[LinkName("QAbstractTextDocumentLayout_Qt_Metacast")]
 	public static extern void* QAbstractTextDocumentLayout_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QAbstractTextDocumentLayout_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QAbstractTextDocumentLayout_OnMetacast")]
+	public static extern void* QAbstractTextDocumentLayout_OnMetacast(void* self, QAbstractTextDocumentLayout_OnMetacast_action _action);
 	[LinkName("QAbstractTextDocumentLayout_Qt_Metacall")]
 	public static extern c_int QAbstractTextDocumentLayout_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QAbstractTextDocumentLayout_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QAbstractTextDocumentLayout_OnMetacall")]
+	public static extern c_int QAbstractTextDocumentLayout_OnMetacall(void* self, QAbstractTextDocumentLayout_OnMetacall_action _action);
 	[LinkName("QAbstractTextDocumentLayout_Tr")]
 	public static extern libqt_string QAbstractTextDocumentLayout_Tr(c_char* s);
 	[LinkName("QAbstractTextDocumentLayout_Draw")]
 	public static extern void QAbstractTextDocumentLayout_Draw(void* self, void** painter, void** context);
+	
+	public function void QAbstractTextDocumentLayout_OnDraw_action(void* self, void** painter, void** context);
+	[LinkName("QAbstractTextDocumentLayout_OnDraw")]
+	public static extern void QAbstractTextDocumentLayout_OnDraw(void* self, QAbstractTextDocumentLayout_OnDraw_action _action);
 	[LinkName("QAbstractTextDocumentLayout_HitTest")]
 	public static extern c_int QAbstractTextDocumentLayout_HitTest(void* self, void** point, Qt_HitTestAccuracy accuracy);
+	
+	public function void QAbstractTextDocumentLayout_OnHitTest_action(void* self, void** point, Qt_HitTestAccuracy accuracy);
+	[LinkName("QAbstractTextDocumentLayout_OnHitTest")]
+	public static extern c_int QAbstractTextDocumentLayout_OnHitTest(void* self, QAbstractTextDocumentLayout_OnHitTest_action _action);
 	[LinkName("QAbstractTextDocumentLayout_AnchorAt")]
 	public static extern libqt_string QAbstractTextDocumentLayout_AnchorAt(void* self, void** pos);
 	[LinkName("QAbstractTextDocumentLayout_ImageAt")]
@@ -850,12 +793,28 @@ extension CQt
 	public static extern void* QAbstractTextDocumentLayout_BlockWithMarkerAt(void* self, void** pos);
 	[LinkName("QAbstractTextDocumentLayout_PageCount")]
 	public static extern c_int QAbstractTextDocumentLayout_PageCount(void* self);
+	
+	public function void QAbstractTextDocumentLayout_OnPageCount_action(void* self);
+	[LinkName("QAbstractTextDocumentLayout_OnPageCount")]
+	public static extern c_int QAbstractTextDocumentLayout_OnPageCount(void* self, QAbstractTextDocumentLayout_OnPageCount_action _action);
 	[LinkName("QAbstractTextDocumentLayout_DocumentSize")]
 	public static extern void* QAbstractTextDocumentLayout_DocumentSize(void* self);
+	
+	public function void QAbstractTextDocumentLayout_OnDocumentSize_action(void* self);
+	[LinkName("QAbstractTextDocumentLayout_OnDocumentSize")]
+	public static extern void* QAbstractTextDocumentLayout_OnDocumentSize(void* self, QAbstractTextDocumentLayout_OnDocumentSize_action _action);
 	[LinkName("QAbstractTextDocumentLayout_FrameBoundingRect")]
 	public static extern void* QAbstractTextDocumentLayout_FrameBoundingRect(void* self, void** frame);
+	
+	public function void QAbstractTextDocumentLayout_OnFrameBoundingRect_action(void* self, void** frame);
+	[LinkName("QAbstractTextDocumentLayout_OnFrameBoundingRect")]
+	public static extern void* QAbstractTextDocumentLayout_OnFrameBoundingRect(void* self, QAbstractTextDocumentLayout_OnFrameBoundingRect_action _action);
 	[LinkName("QAbstractTextDocumentLayout_BlockBoundingRect")]
 	public static extern void* QAbstractTextDocumentLayout_BlockBoundingRect(void* self, void** block);
+	
+	public function void QAbstractTextDocumentLayout_OnBlockBoundingRect_action(void* self, void** block);
+	[LinkName("QAbstractTextDocumentLayout_OnBlockBoundingRect")]
+	public static extern void* QAbstractTextDocumentLayout_OnBlockBoundingRect(void* self, QAbstractTextDocumentLayout_OnBlockBoundingRect_action _action);
 	[LinkName("QAbstractTextDocumentLayout_SetPaintDevice")]
 	public static extern void QAbstractTextDocumentLayout_SetPaintDevice(void* self, void** device);
 	[LinkName("QAbstractTextDocumentLayout_PaintDevice")]
@@ -871,35 +830,51 @@ extension CQt
 	[LinkName("QAbstractTextDocumentLayout_Update")]
 	public static extern void QAbstractTextDocumentLayout_Update(void* self);
 	
-	public function void QAbstractTextDocumentLayout_update_action(void* self);
+	public function void QAbstractTextDocumentLayout_Connect_Update_action(void* self);
 	[LinkName("QAbstractTextDocumentLayout_Connect_Update")]
-	public static extern void QAbstractTextDocumentLayout_Connect_Update(void* self, QAbstractTextDocumentLayout_update_action _action);
+	public static extern void QAbstractTextDocumentLayout_Connect_Update(void* self, QAbstractTextDocumentLayout_Connect_Update_action _action);
 	[LinkName("QAbstractTextDocumentLayout_UpdateBlock")]
 	public static extern void QAbstractTextDocumentLayout_UpdateBlock(void* self, void** block);
 	
-	public function void QAbstractTextDocumentLayout_updateBlock_action(void* self, void** block);
+	public function void QAbstractTextDocumentLayout_Connect_UpdateBlock_action(void* self, void** block);
 	[LinkName("QAbstractTextDocumentLayout_Connect_UpdateBlock")]
-	public static extern void QAbstractTextDocumentLayout_Connect_UpdateBlock(void* self, QAbstractTextDocumentLayout_updateBlock_action _action);
+	public static extern void QAbstractTextDocumentLayout_Connect_UpdateBlock(void* self, QAbstractTextDocumentLayout_Connect_UpdateBlock_action _action);
 	[LinkName("QAbstractTextDocumentLayout_DocumentSizeChanged")]
 	public static extern void QAbstractTextDocumentLayout_DocumentSizeChanged(void* self, void** newSize);
 	
-	public function void QAbstractTextDocumentLayout_documentSizeChanged_action(void* self, void** newSize);
+	public function void QAbstractTextDocumentLayout_Connect_DocumentSizeChanged_action(void* self, void** newSize);
 	[LinkName("QAbstractTextDocumentLayout_Connect_DocumentSizeChanged")]
-	public static extern void QAbstractTextDocumentLayout_Connect_DocumentSizeChanged(void* self, QAbstractTextDocumentLayout_documentSizeChanged_action _action);
+	public static extern void QAbstractTextDocumentLayout_Connect_DocumentSizeChanged(void* self, QAbstractTextDocumentLayout_Connect_DocumentSizeChanged_action _action);
 	[LinkName("QAbstractTextDocumentLayout_PageCountChanged")]
 	public static extern void QAbstractTextDocumentLayout_PageCountChanged(void* self, c_int newPages);
 	
-	public function void QAbstractTextDocumentLayout_pageCountChanged_action(void* self, c_int newPages);
+	public function void QAbstractTextDocumentLayout_Connect_PageCountChanged_action(void* self, c_int newPages);
 	[LinkName("QAbstractTextDocumentLayout_Connect_PageCountChanged")]
-	public static extern void QAbstractTextDocumentLayout_Connect_PageCountChanged(void* self, QAbstractTextDocumentLayout_pageCountChanged_action _action);
+	public static extern void QAbstractTextDocumentLayout_Connect_PageCountChanged(void* self, QAbstractTextDocumentLayout_Connect_PageCountChanged_action _action);
 	[LinkName("QAbstractTextDocumentLayout_DocumentChanged")]
 	public static extern void QAbstractTextDocumentLayout_DocumentChanged(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
+	
+	public function void QAbstractTextDocumentLayout_OnDocumentChanged_action(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
+	[LinkName("QAbstractTextDocumentLayout_OnDocumentChanged")]
+	public static extern void QAbstractTextDocumentLayout_OnDocumentChanged(void* self, QAbstractTextDocumentLayout_OnDocumentChanged_action _action);
 	[LinkName("QAbstractTextDocumentLayout_ResizeInlineObject")]
 	public static extern void QAbstractTextDocumentLayout_ResizeInlineObject(void* self, void* item, c_int posInDocument, void** format);
+	
+	public function void QAbstractTextDocumentLayout_OnResizeInlineObject_action(void* self, void* item, c_int posInDocument, void** format);
+	[LinkName("QAbstractTextDocumentLayout_OnResizeInlineObject")]
+	public static extern void QAbstractTextDocumentLayout_OnResizeInlineObject(void* self, QAbstractTextDocumentLayout_OnResizeInlineObject_action _action);
 	[LinkName("QAbstractTextDocumentLayout_PositionInlineObject")]
 	public static extern void QAbstractTextDocumentLayout_PositionInlineObject(void* self, void* item, c_int posInDocument, void** format);
+	
+	public function void QAbstractTextDocumentLayout_OnPositionInlineObject_action(void* self, void* item, c_int posInDocument, void** format);
+	[LinkName("QAbstractTextDocumentLayout_OnPositionInlineObject")]
+	public static extern void QAbstractTextDocumentLayout_OnPositionInlineObject(void* self, QAbstractTextDocumentLayout_OnPositionInlineObject_action _action);
 	[LinkName("QAbstractTextDocumentLayout_DrawInlineObject")]
 	public static extern void QAbstractTextDocumentLayout_DrawInlineObject(void* self, void** painter, void** rect, void* object, c_int posInDocument, void** format);
+	
+	public function void QAbstractTextDocumentLayout_OnDrawInlineObject_action(void* self, void** painter, void** rect, void* object, c_int posInDocument, void** format);
+	[LinkName("QAbstractTextDocumentLayout_OnDrawInlineObject")]
+	public static extern void QAbstractTextDocumentLayout_OnDrawInlineObject(void* self, QAbstractTextDocumentLayout_OnDrawInlineObject_action _action);
 	[LinkName("QAbstractTextDocumentLayout_FormatIndex")]
 	public static extern c_int QAbstractTextDocumentLayout_FormatIndex(void* self, c_int pos);
 	[LinkName("QAbstractTextDocumentLayout_Format")]
@@ -913,9 +888,51 @@ extension CQt
 	[LinkName("QAbstractTextDocumentLayout_Update1")]
 	public static extern void QAbstractTextDocumentLayout_Update1(void* self, void** param1);
 	
-	public function void QAbstractTextDocumentLayout_update1_action(void* self, void** param1);
+	public function void QAbstractTextDocumentLayout_Connect_Update1_action(void* self, void** param1);
 	[LinkName("QAbstractTextDocumentLayout_Connect_Update1")]
-	public static extern void QAbstractTextDocumentLayout_Connect_Update1(void* self, QAbstractTextDocumentLayout_update1_action _action);
+	public static extern void QAbstractTextDocumentLayout_Connect_Update1(void* self, QAbstractTextDocumentLayout_Connect_Update1_action _action);
+	[LinkName("QAbstractTextDocumentLayout_Event")]
+	public static extern bool QAbstractTextDocumentLayout_Event(void* self, void** event);
+	
+	public function void QAbstractTextDocumentLayout_OnEvent_action(void* self, void** event);
+	[LinkName("QAbstractTextDocumentLayout_OnEvent")]
+	public static extern bool QAbstractTextDocumentLayout_OnEvent(void* self, QAbstractTextDocumentLayout_OnEvent_action _action);
+	[LinkName("QAbstractTextDocumentLayout_EventFilter")]
+	public static extern bool QAbstractTextDocumentLayout_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QAbstractTextDocumentLayout_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QAbstractTextDocumentLayout_OnEventFilter")]
+	public static extern bool QAbstractTextDocumentLayout_OnEventFilter(void* self, QAbstractTextDocumentLayout_OnEventFilter_action _action);
+	[LinkName("QAbstractTextDocumentLayout_TimerEvent")]
+	public static extern void QAbstractTextDocumentLayout_TimerEvent(void* self, void** event);
+	
+	public function void QAbstractTextDocumentLayout_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QAbstractTextDocumentLayout_OnTimerEvent")]
+	public static extern void QAbstractTextDocumentLayout_OnTimerEvent(void* self, QAbstractTextDocumentLayout_OnTimerEvent_action _action);
+	[LinkName("QAbstractTextDocumentLayout_ChildEvent")]
+	public static extern void QAbstractTextDocumentLayout_ChildEvent(void* self, void** event);
+	
+	public function void QAbstractTextDocumentLayout_OnChildEvent_action(void* self, void** event);
+	[LinkName("QAbstractTextDocumentLayout_OnChildEvent")]
+	public static extern void QAbstractTextDocumentLayout_OnChildEvent(void* self, QAbstractTextDocumentLayout_OnChildEvent_action _action);
+	[LinkName("QAbstractTextDocumentLayout_CustomEvent")]
+	public static extern void QAbstractTextDocumentLayout_CustomEvent(void* self, void** event);
+	
+	public function void QAbstractTextDocumentLayout_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QAbstractTextDocumentLayout_OnCustomEvent")]
+	public static extern void QAbstractTextDocumentLayout_OnCustomEvent(void* self, QAbstractTextDocumentLayout_OnCustomEvent_action _action);
+	[LinkName("QAbstractTextDocumentLayout_ConnectNotify")]
+	public static extern void QAbstractTextDocumentLayout_ConnectNotify(void* self, void** signal);
+	
+	public function void QAbstractTextDocumentLayout_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QAbstractTextDocumentLayout_OnConnectNotify")]
+	public static extern void QAbstractTextDocumentLayout_OnConnectNotify(void* self, QAbstractTextDocumentLayout_OnConnectNotify_action _action);
+	[LinkName("QAbstractTextDocumentLayout_DisconnectNotify")]
+	public static extern void QAbstractTextDocumentLayout_DisconnectNotify(void* self, void** signal);
+	
+	public function void QAbstractTextDocumentLayout_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QAbstractTextDocumentLayout_OnDisconnectNotify")]
+	public static extern void QAbstractTextDocumentLayout_OnDisconnectNotify(void* self, QAbstractTextDocumentLayout_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QTextObjectInterface
@@ -941,31 +958,20 @@ class QTextObjectInterface : IQTextObjectInterface
 {
 	private QTextObjectInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextObjectInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTextObjectInterface_Delete(this.ptr);
 	}
-	public QSizeF_Ptr IntrinsicSize(IQTextDocument doc, c_int posInDocument, IQTextFormat format)
+	public  virtual QSizeF_Ptr OnIntrinsicSize(void** doc, c_int posInDocument, void** format)
 	{
-		return this.ptr.IntrinsicSize(doc, posInDocument, format);
+		return default;
 	}
-	public void DrawObject(IQPainter painter, IQRectF rect, IQTextDocument doc, c_int posInDocument, IQTextFormat format)
+	public  virtual void OnDrawObject(void** painter, void** rect, void** doc, c_int posInDocument, void** format)
 	{
-		this.ptr.DrawObject(painter, rect, doc, posInDocument, format);
 	}
 }
 interface IQTextObjectInterface : IQtObjectInterface
@@ -977,8 +983,16 @@ extension CQt
 	public static extern void QTextObjectInterface_Delete(QTextObjectInterface_Ptr self);
 	[LinkName("QTextObjectInterface_IntrinsicSize")]
 	public static extern void* QTextObjectInterface_IntrinsicSize(void* self, void** doc, c_int posInDocument, void** format);
+	
+	public function void QTextObjectInterface_OnIntrinsicSize_action(void* self, void** doc, c_int posInDocument, void** format);
+	[LinkName("QTextObjectInterface_OnIntrinsicSize")]
+	public static extern void* QTextObjectInterface_OnIntrinsicSize(void* self, QTextObjectInterface_OnIntrinsicSize_action _action);
 	[LinkName("QTextObjectInterface_DrawObject")]
 	public static extern void QTextObjectInterface_DrawObject(void* self, void** painter, void** rect, void** doc, c_int posInDocument, void** format);
+	
+	public function void QTextObjectInterface_OnDrawObject_action(void* self, void** painter, void** rect, void** doc, c_int posInDocument, void** format);
+	[LinkName("QTextObjectInterface_OnDrawObject")]
+	public static extern void QTextObjectInterface_OnDrawObject(void* self, QTextObjectInterface_OnDrawObject_action _action);
 	[LinkName("QTextObjectInterface_OperatorAssign")]
 	public static extern void QTextObjectInterface_OperatorAssign(void* self, void** param1);
 }
@@ -1014,24 +1028,13 @@ class QAbstractTextDocumentLayout_Selection : IQAbstractTextDocumentLayout_Selec
 {
 	private QAbstractTextDocumentLayout_Selection_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QAbstractTextDocumentLayout_Selection_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractTextDocumentLayout_Selection param1)
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_Selection_new((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1122,29 +1125,17 @@ class QAbstractTextDocumentLayout_PaintContext : IQAbstractTextDocumentLayout_Pa
 {
 	private QAbstractTextDocumentLayout_PaintContext_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QAbstractTextDocumentLayout_PaintContext_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_PaintContext_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractTextDocumentLayout_PaintContext param1)
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_PaintContext_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

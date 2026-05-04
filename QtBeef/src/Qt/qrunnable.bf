@@ -35,32 +35,20 @@ class QRunnable : IQRunnable
 {
 	private QRunnable_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QRunnable_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRunnable_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QRunnable_Delete(this.ptr);
 	}
-	public void Run()
+	public  virtual void OnRun()
 	{
-		this.ptr.Run();
 	}
 	public QRunnable_Ptr Create(void* functionToRun)
 	{
@@ -86,6 +74,10 @@ extension CQt
 	public static extern void QRunnable_Delete(QRunnable_Ptr self);
 	[LinkName("QRunnable_Run")]
 	public static extern void QRunnable_Run(void* self);
+	
+	public function void QRunnable_OnRun_action(void* self);
+	[LinkName("QRunnable_OnRun")]
+	public static extern void QRunnable_OnRun(void* self, QRunnable_OnRun_action _action);
 	[LinkName("QRunnable_Create")]
 	public static extern void** QRunnable_Create(void* functionToRun);
 	[LinkName("QRunnable_AutoDelete")]

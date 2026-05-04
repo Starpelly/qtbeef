@@ -18,11 +18,11 @@ struct QFileDialog_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QFileDialog_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QFileDialog_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QFileDialog_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -462,89 +462,309 @@ struct QFileDialog_Ptr
 	{
 		CQt.QFileDialog_SaveFileContent2(fileContent, libqt_string(fileNameHint));
 	}
-	public c_int Result()
+	public bool Event(IQEvent event)
 	{
-		return CQt.QDialog_Result((.)this.Ptr);
+		return CQt.QFileDialog_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public QSize_Ptr SizeHint()
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return QSize_Ptr(CQt.QDialog_SizeHint((.)this.Ptr));
+		return CQt.QFileDialog_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public QSize_Ptr MinimumSizeHint()
+	public void ObjectName(String outStr)
 	{
-		return QSize_Ptr(CQt.QDialog_MinimumSizeHint((.)this.Ptr));
+		CQt.QObject_ObjectName((.)this.Ptr);
 	}
-	public void SetSizeGripEnabled(bool sizeGripEnabled)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QDialog_SetSizeGripEnabled((.)this.Ptr, sizeGripEnabled);
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
 	}
-	public bool IsSizeGripEnabled()
+	public bool IsWidgetType()
 	{
-		return CQt.QDialog_IsSizeGripEnabled((.)this.Ptr);
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
 	}
-	public void SetModal(bool modal)
+	public bool IsWindowType()
 	{
-		CQt.QDialog_SetModal((.)this.Ptr, modal);
+		return CQt.QObject_IsWindowType((.)this.Ptr);
 	}
-	public void SetResult(c_int r)
+	public bool IsQuickItemType()
 	{
-		CQt.QDialog_SetResult((.)this.Ptr, r);
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
 	}
-	public void Finished(c_int result)
+	public bool SignalsBlocked()
 	{
-		CQt.QDialog_Finished((.)this.Ptr, result);
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
 	}
-	public void Accepted()
+	public bool BlockSignals(bool b)
 	{
-		CQt.QDialog_Accepted((.)this.Ptr);
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
 	}
-	public void Rejected()
+	public QThread_Ptr Thread()
 	{
-		CQt.QDialog_Rejected((.)this.Ptr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
 	}
-	public void Open()
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QDialog_Open((.)this.Ptr);
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
 	}
-	public c_int Exec()
+	public c_int StartTimer(c_int interval)
 	{
-		return CQt.QDialog_Exec((.)this.Ptr);
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
 	}
-	public void Reject()
+	public c_int StartTimer2(void* time)
 	{
-		CQt.QDialog_Reject((.)this.Ptr);
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
 	}
-	public void KeyPressEvent(IQKeyEvent param1)
+	public void KillTimer(c_int id)
 	{
-		CQt.QDialog_KeyPressEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_KillTimer((.)this.Ptr, id);
 	}
-	public void CloseEvent(IQCloseEvent param1)
+	public void** Children()
 	{
-		CQt.QDialog_CloseEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		return CQt.QObject_Children((.)this.Ptr);
 	}
-	public void ShowEvent(IQShowEvent param1)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QDialog_ShowEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
-	public void ResizeEvent(IQResizeEvent param1)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QDialog_ResizeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void ContextMenuEvent(IQContextMenuEvent param1)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QDialog_ContextMenuEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
 	}
-	public bool EventFilter(IQObject param1, IQEvent param2)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QDialog_EventFilter((.)this.Ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public void AdjustPosition(IQWidget param1)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		CQt.QDialog_AdjustPosition((.)this.Ptr, (.)param1?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QFileDialog_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QFileDialog_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QFileDialog_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QFileDialog_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QFileDialog_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.Ptr);
+		return CQt.QFileDialog_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QFileDialog_PaintEngine((.)this.Ptr));
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QFileDialog_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QFileDialog_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QFileDialog_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QFileDialog_SharedPainter((.)this.Ptr));
 	}
 	public void* WinId()
 	{
@@ -641,14 +861,6 @@ struct QFileDialog_Ptr
 	public QSize_Ptr Size()
 	{
 		return QSize_Ptr(CQt.QWidget_Size((.)this.Ptr));
-	}
-	public c_int Width()
-	{
-		return CQt.QWidget_Width((.)this.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QWidget_Height((.)this.Ptr);
 	}
 	public QRect_Ptr Rect()
 	{
@@ -1330,6 +1542,14 @@ struct QFileDialog_Ptr
 	{
 		CQt.QWidget_OverrideWindowState((.)this.Ptr, state);
 	}
+	public QSize_Ptr SizeHint()
+	{
+		return QSize_Ptr(CQt.QFileDialog_SizeHint((.)this.Ptr));
+	}
+	public QSize_Ptr MinimumSizeHint()
+	{
+		return QSize_Ptr(CQt.QFileDialog_MinimumSizeHint((.)this.Ptr));
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return QSizePolicy_Ptr(CQt.QWidget_SizePolicy((.)this.Ptr));
@@ -1344,11 +1564,11 @@ struct QFileDialog_Ptr
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QFileDialog_HeightForWidth((.)this.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.Ptr);
+		return CQt.QFileDialog_HasHeightForWidth((.)this.Ptr);
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -1381,10 +1601,6 @@ struct QFileDialog_Ptr
 	public void UpdateGeometry()
 	{
 		CQt.QWidget_UpdateGeometry((.)this.Ptr);
-	}
-	public void SetParent(IQWidget parent)
-	{
-		CQt.QWidget_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -1502,10 +1718,6 @@ struct QFileDialog_Ptr
 	{
 		return CQt.QWidget_TestAttribute((.)this.Ptr, param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.Ptr));
-	}
 	public void EnsurePolished()
 	{
 		CQt.QWidget_EnsurePolished((.)this.Ptr);
@@ -1558,113 +1770,113 @@ struct QFileDialog_Ptr
 	{
 		CQt.QWidget_CustomContextMenuRequested((.)this.Ptr, (.)pos?.ObjectPtr);
 	}
-	public bool Event(IQEvent event)
-	{
-		return CQt.QWidget_Event((.)this.Ptr, (.)event?.ObjectPtr);
-	}
 	public void MousePressEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MousePressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_MousePressEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseReleaseEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseDoubleClickEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseMoveEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void WheelEvent(IQWheelEvent event)
 	{
-		CQt.QWidget_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyPressEvent(IQKeyEvent event)
+	{
+		CQt.QFileDialog_KeyPressEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QWidget_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QWidget_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QWidget_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void PaintEvent(IQPaintEvent event)
 	{
-		CQt.QWidget_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ResizeEvent(IQResizeEvent event)
+	{
+		CQt.QFileDialog_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CloseEvent(IQCloseEvent event)
+	{
+		CQt.QFileDialog_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ContextMenuEvent(IQContextMenuEvent event)
+	{
+		CQt.QFileDialog_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragEnterEvent(IQDragEnterEvent event)
 	{
-		CQt.QWidget_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragMoveEvent(IQDragMoveEvent event)
 	{
-		CQt.QWidget_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragLeaveEvent(IQDragLeaveEvent event)
 	{
-		CQt.QWidget_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DropEvent(IQDropEvent event)
 	{
-		CQt.QWidget_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ShowEvent(IQShowEvent event)
+	{
+		CQt.QFileDialog_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void HideEvent(IQHideEvent event)
 	{
-		CQt.QWidget_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFileDialog_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.Ptr, eventType, message, result);
-	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
-	{
-		return CQt.QWidget_Metric((.)this.Ptr, param1);
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		CQt.QWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.Ptr));
+		return CQt.QFileDialog_NativeEvent((.)this.Ptr, eventType, message, result);
 	}
 	public void InputMethodEvent(IQInputMethodEvent param1)
 	{
-		CQt.QWidget_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QFileDialog_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		return QVariant_Ptr(CQt.QWidget_InputMethodQuery((.)this.Ptr, param1));
+		return QVariant_Ptr(CQt.QFileDialog_InputMethodQuery((.)this.Ptr, param1));
 	}
 	public void* InputMethodHints()
 	{
@@ -1688,7 +1900,7 @@ struct QFileDialog_Ptr
 	}
 	public bool FocusNextPrevChild(bool next)
 	{
-		return CQt.QWidget_FocusNextPrevChild((.)this.Ptr, next);
+		return CQt.QFileDialog_FocusNextPrevChild((.)this.Ptr, next);
 	}
 	public bool FocusNextChild()
 	{
@@ -1782,474 +1994,102 @@ struct QFileDialog_Ptr
 	{
 		CQt.QWidget_Destroy2((.)this.Ptr, destroyWindow, destroySubWindows);
 	}
-	public void ObjectName(String outStr)
+	public c_int Result()
 	{
-		CQt.QObject_ObjectName((.)this.Ptr);
+		return CQt.QDialog_Result((.)this.Ptr);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetSizeGripEnabled(bool sizeGripEnabled)
 	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+		CQt.QDialog_SetSizeGripEnabled((.)this.Ptr, sizeGripEnabled);
 	}
-	public bool IsWidgetType()
+	public bool IsSizeGripEnabled()
 	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
+		return CQt.QDialog_IsSizeGripEnabled((.)this.Ptr);
 	}
-	public bool IsWindowType()
+	public void SetModal(bool modal)
 	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
+		CQt.QDialog_SetModal((.)this.Ptr, modal);
 	}
-	public bool IsQuickItemType()
+	public void SetResult(c_int r)
 	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+		CQt.QDialog_SetResult((.)this.Ptr, r);
 	}
-	public bool SignalsBlocked()
+	public void Finished(c_int result)
 	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+		CQt.QDialog_Finished((.)this.Ptr, result);
 	}
-	public bool BlockSignals(bool b)
+	public void Accepted()
 	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+		CQt.QDialog_Accepted((.)this.Ptr);
 	}
-	public QThread_Ptr Thread()
+	public void Rejected()
 	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+		CQt.QDialog_Rejected((.)this.Ptr);
 	}
-	public void MoveToThread(IQThread thread)
+	public void Open()
 	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+		CQt.QFileDialog_Open((.)this.Ptr);
 	}
-	public c_int StartTimer(c_int interval)
+	public c_int Exec()
 	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+		return CQt.QFileDialog_Exec((.)this.Ptr);
 	}
-	public c_int StartTimer2(void* time)
+	public void Reject()
 	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+		CQt.QFileDialog_Reject((.)this.Ptr);
 	}
-	public void KillTimer(c_int id)
+	public void AdjustPosition(IQWidget param1)
 	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.Ptr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public bool PaintingActive()
-	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
-	}
-	public c_int WidthMM()
-	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
-	}
-	public c_int HeightMM()
-	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
-	}
-	public c_int LogicalDpiX()
-	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
-	}
-	public c_int LogicalDpiY()
-	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
-	}
-	public c_int PhysicalDpiX()
-	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
-	}
-	public c_int PhysicalDpiY()
-	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
-	}
-	public double DevicePixelRatio()
-	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
-	}
-	public double DevicePixelRatioF()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
-	}
-	public c_int ColorCount()
-	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
-	}
-	public c_int Depth()
-	{
-		return CQt.QPaintDevice_Depth((.)this.Ptr);
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
+		CQt.QDialog_AdjustPosition((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 }
 class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 {
 	private QFileDialog_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QFileDialog_fileSelected,
-		QFileDialog_filesSelected,
-		QFileDialog_currentChanged,
-		QFileDialog_directoryEntered,
-		QFileDialog_urlSelected,
-		QFileDialog_urlsSelected,
-		QFileDialog_currentUrlChanged,
-		QFileDialog_directoryUrlEntered,
-		QFileDialog_filterSelected,
-		QFileDialog_finished,
-		QFileDialog_accepted,
-		QFileDialog_rejected,
-		QFileDialog_windowTitleChanged,
-		QFileDialog_windowIconChanged,
-		QFileDialog_windowIconTextChanged,
-		QFileDialog_customContextMenuRequested,
-		QFileDialog_destroyed,
-		QFileDialog_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QFileDialog_Connect_FileSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_fileSelected);
-		CQt.QFileDialog_Connect_FilesSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_filesSelected);
-		CQt.QFileDialog_Connect_CurrentChanged(obj.ObjectPtr,  => QtBeef_QFileDialog_currentChanged);
-		CQt.QFileDialog_Connect_DirectoryEntered(obj.ObjectPtr,  => QtBeef_QFileDialog_directoryEntered);
-		CQt.QFileDialog_Connect_UrlSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_urlSelected);
-		CQt.QFileDialog_Connect_UrlsSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_urlsSelected);
-		CQt.QFileDialog_Connect_CurrentUrlChanged(obj.ObjectPtr,  => QtBeef_QFileDialog_currentUrlChanged);
-		CQt.QFileDialog_Connect_DirectoryUrlEntered(obj.ObjectPtr,  => QtBeef_QFileDialog_directoryUrlEntered);
-		CQt.QFileDialog_Connect_FilterSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_filterSelected);
-		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_finished);
-		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_accepted);
-		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_rejected);
-		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
-		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
-		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
-		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(libqt_string file)> OnFileSelected = .() ~ _.Dispose();
-	public Event<delegate void(void** files)> OnFilesSelected = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string path)> OnCurrentChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string directory)> OnDirectoryEntered = .() ~ _.Dispose();
-	public Event<delegate void(void** url)> OnUrlSelected = .() ~ _.Dispose();
-	public Event<delegate void(void** urls)> OnUrlsSelected = .() ~ _.Dispose();
-	public Event<delegate void(void** url)> OnCurrentUrlChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** directory)> OnDirectoryUrlEntered = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string filter)> OnFilterSelected = .() ~ _.Dispose();
-	public Event<delegate void(c_int result)> OnFinished = .() ~ _.Dispose();
-	public Event<delegate void()> OnAccepted = .() ~ _.Dispose();
-	public Event<delegate void()> OnRejected = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QFileDialog_fileSelected(void* ptr, libqt_string file)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFileSelected.Invoke(file);
-	}
-	static void QtBeef_QFileDialog_filesSelected(void* ptr, void** files)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFilesSelected.Invoke(files);
-	}
-	static void QtBeef_QFileDialog_currentChanged(void* ptr, libqt_string path)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentChanged.Invoke(path);
-	}
-	static void QtBeef_QFileDialog_directoryEntered(void* ptr, libqt_string directory)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDirectoryEntered.Invoke(directory);
-	}
-	static void QtBeef_QFileDialog_urlSelected(void* ptr, void** url)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnUrlSelected.Invoke(url);
-	}
-	static void QtBeef_QFileDialog_urlsSelected(void* ptr, void** urls)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnUrlsSelected.Invoke(urls);
-	}
-	static void QtBeef_QFileDialog_currentUrlChanged(void* ptr, void** url)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentUrlChanged.Invoke(url);
-	}
-	static void QtBeef_QFileDialog_directoryUrlEntered(void* ptr, void** directory)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDirectoryUrlEntered.Invoke(directory);
-	}
-	static void QtBeef_QFileDialog_filterSelected(void* ptr, libqt_string filter)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFilterSelected.Invoke(filter);
-	}
-	static void QtBeef_QDialog_finished(void* ptr, c_int result)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFinished.Invoke(result);
-	}
-	static void QtBeef_QDialog_accepted(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAccepted.Invoke();
-	}
-	static void QtBeef_QDialog_rejected(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnRejected.Invoke();
-	}
-	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconChanged.Invoke(icon);
-	}
-	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconTextChanged.Invoke(iconText);
-	}
-	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCustomContextMenuRequested.Invoke(pos);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QFileDialog_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QFileDialog_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* f)
 	{
 		this.ptr = CQt.QFileDialog_new2((.)parent?.ObjectPtr, f);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFileDialog_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, String caption)
 	{
 		this.ptr = CQt.QFileDialog_new4((.)parent?.ObjectPtr, libqt_string(caption));
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, String caption, String directory)
 	{
 		this.ptr = CQt.QFileDialog_new5((.)parent?.ObjectPtr, libqt_string(caption), libqt_string(directory));
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, String caption, String directory, String filter)
 	{
 		this.ptr = CQt.QFileDialog_new6((.)parent?.ObjectPtr, libqt_string(caption), libqt_string(directory), libqt_string(filter));
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QFileDialog_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -2447,9 +2287,8 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		return this.ptr.Options();
 	}
-	public void SetVisible(bool visible)
+	public  virtual void OnSetVisible(bool visible)
 	{
-		this.ptr.SetVisible(visible);
 	}
 	public void FileSelected(String file)
 	{
@@ -2527,17 +2366,14 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.SaveFileContent(fileContent);
 	}
-	public void Done(c_int result)
+	public  virtual void OnDone(c_int result)
 	{
-		this.ptr.Done(result);
 	}
-	public void Accept()
+	public  virtual void OnAccept()
 	{
-		this.ptr.Accept();
 	}
-	public void ChangeEvent(IQEvent e)
+	public  virtual void OnChangeEvent(void** e)
 	{
-		this.ptr.ChangeEvent(e);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -2687,89 +2523,303 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.SaveFileContent2(fileContent, fileNameHint);
 	}
-	public c_int Result()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Result();
+		return default;
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.SizeHint();
+		return default;
 	}
-	public QSize_Ptr MinimumSizeHint()
+	public void ObjectName(String outStr)
 	{
-		return this.ptr.MinimumSizeHint();
+		this.ptr.ObjectName(outStr);
 	}
-	public void SetSizeGripEnabled(bool sizeGripEnabled)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		this.ptr.SetSizeGripEnabled(sizeGripEnabled);
+		this.ptr.SetObjectName(name);
 	}
-	public bool IsSizeGripEnabled()
+	public bool IsWidgetType()
 	{
-		return this.ptr.IsSizeGripEnabled();
+		return this.ptr.IsWidgetType();
 	}
-	public void SetModal(bool modal)
+	public bool IsWindowType()
 	{
-		this.ptr.SetModal(modal);
+		return this.ptr.IsWindowType();
 	}
-	public void SetResult(c_int r)
+	public bool IsQuickItemType()
 	{
-		this.ptr.SetResult(r);
+		return this.ptr.IsQuickItemType();
 	}
-	public void Finished(c_int result)
+	public bool SignalsBlocked()
 	{
-		this.ptr.Finished(result);
+		return this.ptr.SignalsBlocked();
 	}
-	public void Accepted()
+	public bool BlockSignals(bool b)
 	{
-		this.ptr.Accepted();
+		return this.ptr.BlockSignals(b);
 	}
-	public void Rejected()
+	public QThread_Ptr Thread()
 	{
-		this.ptr.Rejected();
+		return this.ptr.Thread();
 	}
-	public void Open()
+	public void MoveToThread(IQThread thread)
 	{
-		this.ptr.Open();
+		this.ptr.MoveToThread(thread);
 	}
-	public c_int Exec()
+	public c_int StartTimer(c_int interval)
 	{
-		return this.ptr.Exec();
+		return this.ptr.StartTimer(interval);
 	}
-	public void Reject()
+	public c_int StartTimer2(void* time)
 	{
-		this.ptr.Reject();
+		return this.ptr.StartTimer2(time);
 	}
-	public void KeyPressEvent(IQKeyEvent param1)
+	public void KillTimer(c_int id)
 	{
-		this.ptr.KeyPressEvent(param1);
+		this.ptr.KillTimer(id);
 	}
-	public void CloseEvent(IQCloseEvent param1)
+	public void** Children()
 	{
-		this.ptr.CloseEvent(param1);
+		return this.ptr.Children();
 	}
-	public void ShowEvent(IQShowEvent param1)
+	public void SetParent(IQObject parent)
 	{
-		this.ptr.ShowEvent(param1);
+		this.ptr.SetParent(parent);
 	}
-	public void ResizeEvent(IQResizeEvent param1)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		this.ptr.ResizeEvent(param1);
+		this.ptr.InstallEventFilter(filterObj);
 	}
-	public void ContextMenuEvent(IQContextMenuEvent param1)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		this.ptr.ContextMenuEvent(param1);
+		this.ptr.RemoveEventFilter(obj);
 	}
-	public bool EventFilter(IQObject param1, IQEvent param2)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return this.ptr.EventFilter(param1, param2);
+		return this.ptr.Connect(sender, signal, receiver, member);
 	}
-	public void AdjustPosition(IQWidget param1)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		this.ptr.AdjustPosition(param1);
+		return this.ptr.Connect2(sender, signal, receiver, method);
 	}
-	public c_int DevType()
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return this.ptr.DevType();
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public  virtual void OnTimerEvent(void** event)
+	{
+	}
+	public  virtual void OnChildEvent(void** event)
+	{
+	}
+	public  virtual void OnCustomEvent(void** event)
+	{
+	}
+	public  virtual void OnConnectNotify(void** signal)
+	{
+	}
+	public  virtual void OnDisconnectNotify(void** signal)
+	{
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+	public  virtual c_int OnDevType()
+	{
+		return default;
+	}
+	public bool PaintingActive()
+	{
+		return this.ptr.PaintingActive();
+	}
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
+	{
+		return default;
+	}
+	public c_int Width()
+	{
+		return this.ptr.Width();
+	}
+	public c_int Height()
+	{
+		return this.ptr.Height();
+	}
+	public c_int WidthMM()
+	{
+		return this.ptr.WidthMM();
+	}
+	public c_int HeightMM()
+	{
+		return this.ptr.HeightMM();
+	}
+	public c_int LogicalDpiX()
+	{
+		return this.ptr.LogicalDpiX();
+	}
+	public c_int LogicalDpiY()
+	{
+		return this.ptr.LogicalDpiY();
+	}
+	public c_int PhysicalDpiX()
+	{
+		return this.ptr.PhysicalDpiX();
+	}
+	public c_int PhysicalDpiY()
+	{
+		return this.ptr.PhysicalDpiY();
+	}
+	public double DevicePixelRatio()
+	{
+		return this.ptr.DevicePixelRatio();
+	}
+	public double DevicePixelRatioF()
+	{
+		return this.ptr.DevicePixelRatioF();
+	}
+	public c_int ColorCount()
+	{
+		return this.ptr.ColorCount();
+	}
+	public c_int Depth()
+	{
+		return this.ptr.Depth();
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return this.ptr.DevicePixelRatioFScale();
+	}
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return default;
+	}
+	public  virtual void OnInitPainter(void** painter)
+	{
+	}
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
+	{
+		return default;
+	}
+	public  virtual QPainter_Ptr OnSharedPainter()
+	{
+		return default;
 	}
 	public void* WinId()
 	{
@@ -2866,14 +2916,6 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
-	}
-	public c_int Width()
-	{
-		return this.ptr.Width();
-	}
-	public c_int Height()
-	{
-		return this.ptr.Height();
 	}
 	public QRect_Ptr Rect()
 	{
@@ -3555,6 +3597,14 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.OverrideWindowState(state);
 	}
+	public  virtual QSize_Ptr OnSizeHint()
+	{
+		return default;
+	}
+	public  virtual QSize_Ptr OnMinimumSizeHint()
+	{
+		return default;
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return this.ptr.SizePolicy();
@@ -3567,13 +3617,13 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.SetSizePolicy2(horizontal, vertical);
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -3606,10 +3656,6 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	public void UpdateGeometry()
 	{
 		this.ptr.UpdateGeometry();
-	}
-	public void SetParent(IQWidget parent)
-	{
-		this.ptr.SetParent(parent);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -3727,10 +3773,6 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		return this.ptr.TestAttribute(param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
 	public void EnsurePolished()
 	{
 		this.ptr.EnsurePolished();
@@ -3783,113 +3825,88 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.CustomContextMenuRequested(pos);
 	}
-	public bool Event(IQEvent event)
+	public  virtual void OnMousePressEvent(void** event)
 	{
-		return this.ptr.Event(event);
 	}
-	public void MousePressEvent(IQMouseEvent event)
+	public  virtual void OnMouseReleaseEvent(void** event)
 	{
-		this.ptr.MousePressEvent(event);
 	}
-	public void MouseReleaseEvent(IQMouseEvent event)
+	public  virtual void OnMouseDoubleClickEvent(void** event)
 	{
-		this.ptr.MouseReleaseEvent(event);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent event)
+	public  virtual void OnMouseMoveEvent(void** event)
 	{
-		this.ptr.MouseDoubleClickEvent(event);
 	}
-	public void MouseMoveEvent(IQMouseEvent event)
+	public  virtual void OnWheelEvent(void** event)
 	{
-		this.ptr.MouseMoveEvent(event);
 	}
-	public void WheelEvent(IQWheelEvent event)
+	public  virtual void OnKeyPressEvent(void** event)
 	{
-		this.ptr.WheelEvent(event);
 	}
-	public void KeyReleaseEvent(IQKeyEvent event)
+	public  virtual void OnKeyReleaseEvent(void** event)
 	{
-		this.ptr.KeyReleaseEvent(event);
 	}
-	public void FocusInEvent(IQFocusEvent event)
+	public  virtual void OnFocusInEvent(void** event)
 	{
-		this.ptr.FocusInEvent(event);
 	}
-	public void FocusOutEvent(IQFocusEvent event)
+	public  virtual void OnFocusOutEvent(void** event)
 	{
-		this.ptr.FocusOutEvent(event);
 	}
-	public void EnterEvent(IQEnterEvent event)
+	public  virtual void OnEnterEvent(void** event)
 	{
-		this.ptr.EnterEvent(event);
 	}
-	public void LeaveEvent(IQEvent event)
+	public  virtual void OnLeaveEvent(void** event)
 	{
-		this.ptr.LeaveEvent(event);
 	}
-	public void PaintEvent(IQPaintEvent event)
+	public  virtual void OnPaintEvent(void** event)
 	{
-		this.ptr.PaintEvent(event);
 	}
-	public void MoveEvent(IQMoveEvent event)
+	public  virtual void OnMoveEvent(void** event)
 	{
-		this.ptr.MoveEvent(event);
 	}
-	public void TabletEvent(IQTabletEvent event)
+	public  virtual void OnResizeEvent(void** event)
 	{
-		this.ptr.TabletEvent(event);
 	}
-	public void ActionEvent(IQActionEvent event)
+	public  virtual void OnCloseEvent(void** event)
 	{
-		this.ptr.ActionEvent(event);
 	}
-	public void DragEnterEvent(IQDragEnterEvent event)
+	public  virtual void OnContextMenuEvent(void** event)
 	{
-		this.ptr.DragEnterEvent(event);
 	}
-	public void DragMoveEvent(IQDragMoveEvent event)
+	public  virtual void OnTabletEvent(void** event)
 	{
-		this.ptr.DragMoveEvent(event);
 	}
-	public void DragLeaveEvent(IQDragLeaveEvent event)
+	public  virtual void OnActionEvent(void** event)
 	{
-		this.ptr.DragLeaveEvent(event);
 	}
-	public void DropEvent(IQDropEvent event)
+	public  virtual void OnDragEnterEvent(void** event)
 	{
-		this.ptr.DropEvent(event);
 	}
-	public void HideEvent(IQHideEvent event)
+	public  virtual void OnDragMoveEvent(void** event)
 	{
-		this.ptr.HideEvent(event);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual void OnDragLeaveEvent(void** event)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public  virtual void OnDropEvent(void** event)
 	{
-		return this.ptr.Metric(param1);
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnShowEvent(void** event)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual void OnHideEvent(void** event)
 	{
-		return this.ptr.Redirected(offset);
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
 	{
-		return this.ptr.SharedPainter();
+		return default;
 	}
-	public void InputMethodEvent(IQInputMethodEvent param1)
+	public  virtual void OnInputMethodEvent(void** param1)
 	{
-		this.ptr.InputMethodEvent(param1);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
+	public  virtual QVariant_Ptr OnInputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		return this.ptr.InputMethodQuery(param1);
+		return default;
 	}
 	public void* InputMethodHints()
 	{
@@ -3911,9 +3928,9 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Destroy();
 	}
-	public bool FocusNextPrevChild(bool next)
+	public  virtual bool OnFocusNextPrevChild(bool next)
 	{
-		return this.ptr.FocusNextPrevChild(next);
+		return default;
 	}
 	public bool FocusNextChild()
 	{
@@ -4007,265 +4024,51 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Destroy2(destroyWindow, destroySubWindows);
 	}
-	public void ObjectName(String outStr)
+	public c_int Result()
 	{
-		this.ptr.ObjectName(outStr);
+		return this.ptr.Result();
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public void SetSizeGripEnabled(bool sizeGripEnabled)
 	{
-		this.ptr.SetObjectName(name);
+		this.ptr.SetSizeGripEnabled(sizeGripEnabled);
 	}
-	public bool IsWidgetType()
+	public bool IsSizeGripEnabled()
 	{
-		return this.ptr.IsWidgetType();
+		return this.ptr.IsSizeGripEnabled();
 	}
-	public bool IsWindowType()
+	public void SetModal(bool modal)
 	{
-		return this.ptr.IsWindowType();
+		this.ptr.SetModal(modal);
 	}
-	public bool IsQuickItemType()
+	public void SetResult(c_int r)
 	{
-		return this.ptr.IsQuickItemType();
+		this.ptr.SetResult(r);
 	}
-	public bool SignalsBlocked()
+	public void Finished(c_int result)
 	{
-		return this.ptr.SignalsBlocked();
+		this.ptr.Finished(result);
 	}
-	public bool BlockSignals(bool b)
+	public void Accepted()
 	{
-		return this.ptr.BlockSignals(b);
+		this.ptr.Accepted();
 	}
-	public QThread_Ptr Thread()
+	public void Rejected()
 	{
-		return this.ptr.Thread();
+		this.ptr.Rejected();
 	}
-	public void MoveToThread(IQThread thread)
+	public  virtual void OnOpen()
 	{
-		this.ptr.MoveToThread(thread);
 	}
-	public c_int StartTimer(c_int interval)
+	public  virtual c_int OnExec()
 	{
-		return this.ptr.StartTimer(interval);
+		return default;
 	}
-	public c_int StartTimer2(void* time)
+	public  virtual void OnReject()
 	{
-		return this.ptr.StartTimer2(time);
 	}
-	public void KillTimer(c_int id)
+	public void AdjustPosition(IQWidget param1)
 	{
-		this.ptr.KillTimer(id);
-	}
-	public void** Children()
-	{
-		return this.ptr.Children();
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		this.ptr.InstallEventFilter(filterObj);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		this.ptr.RemoveEventFilter(obj);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Connect(sender, signal, receiver, member);
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return this.ptr.Connect3(sender, signal, member);
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
-	}
-	public bool Disconnect3()
-	{
-		return this.ptr.Disconnect3();
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return this.ptr.Disconnect4(receiver);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return this.ptr.Disconnect5(param1);
-	}
-	public void DumpObjectTree()
-	{
-		this.ptr.DumpObjectTree();
-	}
-	public void DumpObjectInfo()
-	{
-		this.ptr.DumpObjectInfo();
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return this.ptr.SetProperty(name, value);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return this.ptr.Property(name);
-	}
-	public void* DynamicPropertyNames()
-	{
-		return this.ptr.DynamicPropertyNames();
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return this.ptr.BindingStorage();
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return this.ptr.BindingStorage2();
-	}
-	public void Destroyed()
-	{
-		this.ptr.Destroyed();
-	}
-	public QObject_Ptr Parent()
-	{
-		return this.ptr.Parent();
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return this.ptr.Inherits(classname);
-	}
-	public void DeleteLater()
-	{
-		this.ptr.DeleteLater();
-	}
-	public QObject_Ptr Sender()
-	{
-		return this.ptr.Sender();
-	}
-	public c_int SenderSignalIndex()
-	{
-		return this.ptr.SenderSignalIndex();
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return this.ptr.Receivers(signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return this.ptr.IsSignalConnected(signal);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		this.ptr.TimerEvent(event);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		this.ptr.ChildEvent(event);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		this.ptr.CustomEvent(event);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.ConnectNotify(signal);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.DisconnectNotify(signal);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer22(interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer23(time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect4(sender, signal, member, type);
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return this.ptr.Disconnect1(signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return this.ptr.Disconnect22(signal, receiver);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect32(signal, receiver, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect23(receiver, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		this.ptr.Destroyed1(param1);
-	}
-	public bool PaintingActive()
-	{
-		return this.ptr.PaintingActive();
-	}
-	public c_int WidthMM()
-	{
-		return this.ptr.WidthMM();
-	}
-	public c_int HeightMM()
-	{
-		return this.ptr.HeightMM();
-	}
-	public c_int LogicalDpiX()
-	{
-		return this.ptr.LogicalDpiX();
-	}
-	public c_int LogicalDpiY()
-	{
-		return this.ptr.LogicalDpiY();
-	}
-	public c_int PhysicalDpiX()
-	{
-		return this.ptr.PhysicalDpiX();
-	}
-	public c_int PhysicalDpiY()
-	{
-		return this.ptr.PhysicalDpiY();
-	}
-	public double DevicePixelRatio()
-	{
-		return this.ptr.DevicePixelRatio();
-	}
-	public double DevicePixelRatioF()
-	{
-		return this.ptr.DevicePixelRatioF();
-	}
-	public c_int ColorCount()
-	{
-		return this.ptr.ColorCount();
-	}
-	public c_int Depth()
-	{
-		return this.ptr.Depth();
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return this.ptr.DevicePixelRatioFScale();
+		this.ptr.AdjustPosition(param1);
 	}
 }
 interface IQFileDialog : IQtObjectInterface
@@ -4289,10 +4092,22 @@ extension CQt
 	public static extern void QFileDialog_Delete(QFileDialog_Ptr self);
 	[LinkName("QFileDialog_MetaObject")]
 	public static extern void** QFileDialog_MetaObject(void* self);
+	
+	public function void QFileDialog_OnMetaObject_action(void* self);
+	[LinkName("QFileDialog_OnMetaObject")]
+	public static extern void** QFileDialog_OnMetaObject(void* self, QFileDialog_OnMetaObject_action _action);
 	[LinkName("QFileDialog_Qt_Metacast")]
 	public static extern void* QFileDialog_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QFileDialog_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QFileDialog_OnMetacast")]
+	public static extern void* QFileDialog_OnMetacast(void* self, QFileDialog_OnMetacast_action _action);
 	[LinkName("QFileDialog_Qt_Metacall")]
 	public static extern c_int QFileDialog_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QFileDialog_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QFileDialog_OnMetacall")]
+	public static extern c_int QFileDialog_OnMetacall(void* self, QFileDialog_OnMetacall_action _action);
 	[LinkName("QFileDialog_Tr")]
 	public static extern libqt_string QFileDialog_Tr(c_char* s);
 	[LinkName("QFileDialog_SetDirectory")]
@@ -4393,60 +4208,64 @@ extension CQt
 	public static extern void* QFileDialog_Options(void* self);
 	[LinkName("QFileDialog_SetVisible")]
 	public static extern void QFileDialog_SetVisible(void* self, bool visible);
+	
+	public function void QFileDialog_OnSetVisible_action(void* self, bool visible);
+	[LinkName("QFileDialog_OnSetVisible")]
+	public static extern void QFileDialog_OnSetVisible(void* self, QFileDialog_OnSetVisible_action _action);
 	[LinkName("QFileDialog_FileSelected")]
 	public static extern void QFileDialog_FileSelected(void* self, libqt_string file);
 	
-	public function void QFileDialog_fileSelected_action(void* self, libqt_string file);
+	public function void QFileDialog_Connect_FileSelected_action(void* self, libqt_string file);
 	[LinkName("QFileDialog_Connect_FileSelected")]
-	public static extern void QFileDialog_Connect_FileSelected(void* self, QFileDialog_fileSelected_action _action);
+	public static extern void QFileDialog_Connect_FileSelected(void* self, QFileDialog_Connect_FileSelected_action _action);
 	[LinkName("QFileDialog_FilesSelected")]
 	public static extern void QFileDialog_FilesSelected(void* self, void** files);
 	
-	public function void QFileDialog_filesSelected_action(void* self, void** files);
+	public function void QFileDialog_Connect_FilesSelected_action(void* self, void** files);
 	[LinkName("QFileDialog_Connect_FilesSelected")]
-	public static extern void QFileDialog_Connect_FilesSelected(void* self, QFileDialog_filesSelected_action _action);
+	public static extern void QFileDialog_Connect_FilesSelected(void* self, QFileDialog_Connect_FilesSelected_action _action);
 	[LinkName("QFileDialog_CurrentChanged")]
 	public static extern void QFileDialog_CurrentChanged(void* self, libqt_string path);
 	
-	public function void QFileDialog_currentChanged_action(void* self, libqt_string path);
+	public function void QFileDialog_Connect_CurrentChanged_action(void* self, libqt_string path);
 	[LinkName("QFileDialog_Connect_CurrentChanged")]
-	public static extern void QFileDialog_Connect_CurrentChanged(void* self, QFileDialog_currentChanged_action _action);
+	public static extern void QFileDialog_Connect_CurrentChanged(void* self, QFileDialog_Connect_CurrentChanged_action _action);
 	[LinkName("QFileDialog_DirectoryEntered")]
 	public static extern void QFileDialog_DirectoryEntered(void* self, libqt_string directory);
 	
-	public function void QFileDialog_directoryEntered_action(void* self, libqt_string directory);
+	public function void QFileDialog_Connect_DirectoryEntered_action(void* self, libqt_string directory);
 	[LinkName("QFileDialog_Connect_DirectoryEntered")]
-	public static extern void QFileDialog_Connect_DirectoryEntered(void* self, QFileDialog_directoryEntered_action _action);
+	public static extern void QFileDialog_Connect_DirectoryEntered(void* self, QFileDialog_Connect_DirectoryEntered_action _action);
 	[LinkName("QFileDialog_UrlSelected")]
 	public static extern void QFileDialog_UrlSelected(void* self, void** url);
 	
-	public function void QFileDialog_urlSelected_action(void* self, void** url);
+	public function void QFileDialog_Connect_UrlSelected_action(void* self, void** url);
 	[LinkName("QFileDialog_Connect_UrlSelected")]
-	public static extern void QFileDialog_Connect_UrlSelected(void* self, QFileDialog_urlSelected_action _action);
+	public static extern void QFileDialog_Connect_UrlSelected(void* self, QFileDialog_Connect_UrlSelected_action _action);
 	[LinkName("QFileDialog_UrlsSelected")]
 	public static extern void QFileDialog_UrlsSelected(void* self, void** urls);
 	
-	public function void QFileDialog_urlsSelected_action(void* self, void** urls);
+	public function void QFileDialog_Connect_UrlsSelected_action(void* self, void** urls);
 	[LinkName("QFileDialog_Connect_UrlsSelected")]
-	public static extern void QFileDialog_Connect_UrlsSelected(void* self, QFileDialog_urlsSelected_action _action);
+	public static extern void QFileDialog_Connect_UrlsSelected(void* self, QFileDialog_Connect_UrlsSelected_action _action);
 	[LinkName("QFileDialog_CurrentUrlChanged")]
 	public static extern void QFileDialog_CurrentUrlChanged(void* self, void** url);
 	
-	public function void QFileDialog_currentUrlChanged_action(void* self, void** url);
+	public function void QFileDialog_Connect_CurrentUrlChanged_action(void* self, void** url);
 	[LinkName("QFileDialog_Connect_CurrentUrlChanged")]
-	public static extern void QFileDialog_Connect_CurrentUrlChanged(void* self, QFileDialog_currentUrlChanged_action _action);
+	public static extern void QFileDialog_Connect_CurrentUrlChanged(void* self, QFileDialog_Connect_CurrentUrlChanged_action _action);
 	[LinkName("QFileDialog_DirectoryUrlEntered")]
 	public static extern void QFileDialog_DirectoryUrlEntered(void* self, void** directory);
 	
-	public function void QFileDialog_directoryUrlEntered_action(void* self, void** directory);
+	public function void QFileDialog_Connect_DirectoryUrlEntered_action(void* self, void** directory);
 	[LinkName("QFileDialog_Connect_DirectoryUrlEntered")]
-	public static extern void QFileDialog_Connect_DirectoryUrlEntered(void* self, QFileDialog_directoryUrlEntered_action _action);
+	public static extern void QFileDialog_Connect_DirectoryUrlEntered(void* self, QFileDialog_Connect_DirectoryUrlEntered_action _action);
 	[LinkName("QFileDialog_FilterSelected")]
 	public static extern void QFileDialog_FilterSelected(void* self, libqt_string filter);
 	
-	public function void QFileDialog_filterSelected_action(void* self, libqt_string filter);
+	public function void QFileDialog_Connect_FilterSelected_action(void* self, libqt_string filter);
 	[LinkName("QFileDialog_Connect_FilterSelected")]
-	public static extern void QFileDialog_Connect_FilterSelected(void* self, QFileDialog_filterSelected_action _action);
+	public static extern void QFileDialog_Connect_FilterSelected(void* self, QFileDialog_Connect_FilterSelected_action _action);
 	[LinkName("QFileDialog_GetOpenFileName")]
 	public static extern libqt_string QFileDialog_GetOpenFileName();
 	[LinkName("QFileDialog_GetOpenFileUrl")]
@@ -4469,10 +4288,22 @@ extension CQt
 	public static extern void QFileDialog_SaveFileContent(void** fileContent);
 	[LinkName("QFileDialog_Done")]
 	public static extern void QFileDialog_Done(void* self, c_int result);
+	
+	public function void QFileDialog_OnDone_action(void* self, c_int result);
+	[LinkName("QFileDialog_OnDone")]
+	public static extern void QFileDialog_OnDone(void* self, QFileDialog_OnDone_action _action);
 	[LinkName("QFileDialog_Accept")]
 	public static extern void QFileDialog_Accept(void* self);
+	
+	public function void QFileDialog_OnAccept_action(void* self);
+	[LinkName("QFileDialog_OnAccept")]
+	public static extern void QFileDialog_OnAccept(void* self, QFileDialog_OnAccept_action _action);
 	[LinkName("QFileDialog_ChangeEvent")]
 	public static extern void QFileDialog_ChangeEvent(void* self, void** e);
+	
+	public function void QFileDialog_OnChangeEvent_action(void* self, void** e);
+	[LinkName("QFileDialog_OnChangeEvent")]
+	public static extern void QFileDialog_OnChangeEvent(void* self, QFileDialog_OnChangeEvent_action _action);
 	[LinkName("QFileDialog_Tr2")]
 	public static extern libqt_string QFileDialog_Tr2(c_char* s, c_char* c);
 	[LinkName("QFileDialog_Tr3")]
@@ -4547,6 +4378,294 @@ extension CQt
 	public static extern void* QFileDialog_GetOpenFileUrls4(void** parent, libqt_string caption, void** dir, libqt_string filter);
 	[LinkName("QFileDialog_SaveFileContent2")]
 	public static extern void QFileDialog_SaveFileContent2(void** fileContent, libqt_string fileNameHint);
+	[LinkName("QFileDialog_Event")]
+	public static extern bool QFileDialog_Event(void* self, void** event);
+	
+	public function void QFileDialog_OnEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnEvent")]
+	public static extern bool QFileDialog_OnEvent(void* self, QFileDialog_OnEvent_action _action);
+	[LinkName("QFileDialog_EventFilter")]
+	public static extern bool QFileDialog_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QFileDialog_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QFileDialog_OnEventFilter")]
+	public static extern bool QFileDialog_OnEventFilter(void* self, QFileDialog_OnEventFilter_action _action);
+	[LinkName("QFileDialog_TimerEvent")]
+	public static extern void QFileDialog_TimerEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnTimerEvent")]
+	public static extern void QFileDialog_OnTimerEvent(void* self, QFileDialog_OnTimerEvent_action _action);
+	[LinkName("QFileDialog_ChildEvent")]
+	public static extern void QFileDialog_ChildEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnChildEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnChildEvent")]
+	public static extern void QFileDialog_OnChildEvent(void* self, QFileDialog_OnChildEvent_action _action);
+	[LinkName("QFileDialog_CustomEvent")]
+	public static extern void QFileDialog_CustomEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnCustomEvent")]
+	public static extern void QFileDialog_OnCustomEvent(void* self, QFileDialog_OnCustomEvent_action _action);
+	[LinkName("QFileDialog_ConnectNotify")]
+	public static extern void QFileDialog_ConnectNotify(void* self, void** signal);
+	
+	public function void QFileDialog_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QFileDialog_OnConnectNotify")]
+	public static extern void QFileDialog_OnConnectNotify(void* self, QFileDialog_OnConnectNotify_action _action);
+	[LinkName("QFileDialog_DisconnectNotify")]
+	public static extern void QFileDialog_DisconnectNotify(void* self, void** signal);
+	
+	public function void QFileDialog_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QFileDialog_OnDisconnectNotify")]
+	public static extern void QFileDialog_OnDisconnectNotify(void* self, QFileDialog_OnDisconnectNotify_action _action);
+	[LinkName("QFileDialog_DevType")]
+	public static extern c_int QFileDialog_DevType(void* self);
+	
+	public function void QFileDialog_OnDevType_action(void* self);
+	[LinkName("QFileDialog_OnDevType")]
+	public static extern c_int QFileDialog_OnDevType(void* self, QFileDialog_OnDevType_action _action);
+	[LinkName("QFileDialog_PaintEngine")]
+	public static extern void** QFileDialog_PaintEngine(void* self);
+	
+	public function void QFileDialog_OnPaintEngine_action(void* self);
+	[LinkName("QFileDialog_OnPaintEngine")]
+	public static extern void** QFileDialog_OnPaintEngine(void* self, QFileDialog_OnPaintEngine_action _action);
+	[LinkName("QFileDialog_Metric")]
+	public static extern c_int QFileDialog_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QFileDialog_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QFileDialog_OnMetric")]
+	public static extern c_int QFileDialog_OnMetric(void* self, QFileDialog_OnMetric_action _action);
+	[LinkName("QFileDialog_InitPainter")]
+	public static extern void QFileDialog_InitPainter(void* self, void** painter);
+	
+	public function void QFileDialog_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QFileDialog_OnInitPainter")]
+	public static extern void QFileDialog_OnInitPainter(void* self, QFileDialog_OnInitPainter_action _action);
+	[LinkName("QFileDialog_Redirected")]
+	public static extern void** QFileDialog_Redirected(void* self, void** offset);
+	
+	public function void QFileDialog_OnRedirected_action(void* self, void** offset);
+	[LinkName("QFileDialog_OnRedirected")]
+	public static extern void** QFileDialog_OnRedirected(void* self, QFileDialog_OnRedirected_action _action);
+	[LinkName("QFileDialog_SharedPainter")]
+	public static extern void** QFileDialog_SharedPainter(void* self);
+	
+	public function void QFileDialog_OnSharedPainter_action(void* self);
+	[LinkName("QFileDialog_OnSharedPainter")]
+	public static extern void** QFileDialog_OnSharedPainter(void* self, QFileDialog_OnSharedPainter_action _action);
+	[LinkName("QFileDialog_SizeHint")]
+	public static extern void* QFileDialog_SizeHint(void* self);
+	
+	public function void QFileDialog_OnSizeHint_action(void* self);
+	[LinkName("QFileDialog_OnSizeHint")]
+	public static extern void* QFileDialog_OnSizeHint(void* self, QFileDialog_OnSizeHint_action _action);
+	[LinkName("QFileDialog_MinimumSizeHint")]
+	public static extern void* QFileDialog_MinimumSizeHint(void* self);
+	
+	public function void QFileDialog_OnMinimumSizeHint_action(void* self);
+	[LinkName("QFileDialog_OnMinimumSizeHint")]
+	public static extern void* QFileDialog_OnMinimumSizeHint(void* self, QFileDialog_OnMinimumSizeHint_action _action);
+	[LinkName("QFileDialog_HeightForWidth")]
+	public static extern c_int QFileDialog_HeightForWidth(void* self, c_int param1);
+	
+	public function void QFileDialog_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QFileDialog_OnHeightForWidth")]
+	public static extern c_int QFileDialog_OnHeightForWidth(void* self, QFileDialog_OnHeightForWidth_action _action);
+	[LinkName("QFileDialog_HasHeightForWidth")]
+	public static extern bool QFileDialog_HasHeightForWidth(void* self);
+	
+	public function void QFileDialog_OnHasHeightForWidth_action(void* self);
+	[LinkName("QFileDialog_OnHasHeightForWidth")]
+	public static extern bool QFileDialog_OnHasHeightForWidth(void* self, QFileDialog_OnHasHeightForWidth_action _action);
+	[LinkName("QFileDialog_MousePressEvent")]
+	public static extern void QFileDialog_MousePressEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnMousePressEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnMousePressEvent")]
+	public static extern void QFileDialog_OnMousePressEvent(void* self, QFileDialog_OnMousePressEvent_action _action);
+	[LinkName("QFileDialog_MouseReleaseEvent")]
+	public static extern void QFileDialog_MouseReleaseEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnMouseReleaseEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnMouseReleaseEvent")]
+	public static extern void QFileDialog_OnMouseReleaseEvent(void* self, QFileDialog_OnMouseReleaseEvent_action _action);
+	[LinkName("QFileDialog_MouseDoubleClickEvent")]
+	public static extern void QFileDialog_MouseDoubleClickEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnMouseDoubleClickEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnMouseDoubleClickEvent")]
+	public static extern void QFileDialog_OnMouseDoubleClickEvent(void* self, QFileDialog_OnMouseDoubleClickEvent_action _action);
+	[LinkName("QFileDialog_MouseMoveEvent")]
+	public static extern void QFileDialog_MouseMoveEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnMouseMoveEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnMouseMoveEvent")]
+	public static extern void QFileDialog_OnMouseMoveEvent(void* self, QFileDialog_OnMouseMoveEvent_action _action);
+	[LinkName("QFileDialog_WheelEvent")]
+	public static extern void QFileDialog_WheelEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnWheelEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnWheelEvent")]
+	public static extern void QFileDialog_OnWheelEvent(void* self, QFileDialog_OnWheelEvent_action _action);
+	[LinkName("QFileDialog_KeyPressEvent")]
+	public static extern void QFileDialog_KeyPressEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnKeyPressEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnKeyPressEvent")]
+	public static extern void QFileDialog_OnKeyPressEvent(void* self, QFileDialog_OnKeyPressEvent_action _action);
+	[LinkName("QFileDialog_KeyReleaseEvent")]
+	public static extern void QFileDialog_KeyReleaseEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnKeyReleaseEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnKeyReleaseEvent")]
+	public static extern void QFileDialog_OnKeyReleaseEvent(void* self, QFileDialog_OnKeyReleaseEvent_action _action);
+	[LinkName("QFileDialog_FocusInEvent")]
+	public static extern void QFileDialog_FocusInEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnFocusInEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnFocusInEvent")]
+	public static extern void QFileDialog_OnFocusInEvent(void* self, QFileDialog_OnFocusInEvent_action _action);
+	[LinkName("QFileDialog_FocusOutEvent")]
+	public static extern void QFileDialog_FocusOutEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnFocusOutEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnFocusOutEvent")]
+	public static extern void QFileDialog_OnFocusOutEvent(void* self, QFileDialog_OnFocusOutEvent_action _action);
+	[LinkName("QFileDialog_EnterEvent")]
+	public static extern void QFileDialog_EnterEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnEnterEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnEnterEvent")]
+	public static extern void QFileDialog_OnEnterEvent(void* self, QFileDialog_OnEnterEvent_action _action);
+	[LinkName("QFileDialog_LeaveEvent")]
+	public static extern void QFileDialog_LeaveEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnLeaveEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnLeaveEvent")]
+	public static extern void QFileDialog_OnLeaveEvent(void* self, QFileDialog_OnLeaveEvent_action _action);
+	[LinkName("QFileDialog_PaintEvent")]
+	public static extern void QFileDialog_PaintEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnPaintEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnPaintEvent")]
+	public static extern void QFileDialog_OnPaintEvent(void* self, QFileDialog_OnPaintEvent_action _action);
+	[LinkName("QFileDialog_MoveEvent")]
+	public static extern void QFileDialog_MoveEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnMoveEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnMoveEvent")]
+	public static extern void QFileDialog_OnMoveEvent(void* self, QFileDialog_OnMoveEvent_action _action);
+	[LinkName("QFileDialog_ResizeEvent")]
+	public static extern void QFileDialog_ResizeEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnResizeEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnResizeEvent")]
+	public static extern void QFileDialog_OnResizeEvent(void* self, QFileDialog_OnResizeEvent_action _action);
+	[LinkName("QFileDialog_CloseEvent")]
+	public static extern void QFileDialog_CloseEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnCloseEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnCloseEvent")]
+	public static extern void QFileDialog_OnCloseEvent(void* self, QFileDialog_OnCloseEvent_action _action);
+	[LinkName("QFileDialog_ContextMenuEvent")]
+	public static extern void QFileDialog_ContextMenuEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnContextMenuEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnContextMenuEvent")]
+	public static extern void QFileDialog_OnContextMenuEvent(void* self, QFileDialog_OnContextMenuEvent_action _action);
+	[LinkName("QFileDialog_TabletEvent")]
+	public static extern void QFileDialog_TabletEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnTabletEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnTabletEvent")]
+	public static extern void QFileDialog_OnTabletEvent(void* self, QFileDialog_OnTabletEvent_action _action);
+	[LinkName("QFileDialog_ActionEvent")]
+	public static extern void QFileDialog_ActionEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnActionEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnActionEvent")]
+	public static extern void QFileDialog_OnActionEvent(void* self, QFileDialog_OnActionEvent_action _action);
+	[LinkName("QFileDialog_DragEnterEvent")]
+	public static extern void QFileDialog_DragEnterEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnDragEnterEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnDragEnterEvent")]
+	public static extern void QFileDialog_OnDragEnterEvent(void* self, QFileDialog_OnDragEnterEvent_action _action);
+	[LinkName("QFileDialog_DragMoveEvent")]
+	public static extern void QFileDialog_DragMoveEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnDragMoveEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnDragMoveEvent")]
+	public static extern void QFileDialog_OnDragMoveEvent(void* self, QFileDialog_OnDragMoveEvent_action _action);
+	[LinkName("QFileDialog_DragLeaveEvent")]
+	public static extern void QFileDialog_DragLeaveEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnDragLeaveEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnDragLeaveEvent")]
+	public static extern void QFileDialog_OnDragLeaveEvent(void* self, QFileDialog_OnDragLeaveEvent_action _action);
+	[LinkName("QFileDialog_DropEvent")]
+	public static extern void QFileDialog_DropEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnDropEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnDropEvent")]
+	public static extern void QFileDialog_OnDropEvent(void* self, QFileDialog_OnDropEvent_action _action);
+	[LinkName("QFileDialog_ShowEvent")]
+	public static extern void QFileDialog_ShowEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnShowEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnShowEvent")]
+	public static extern void QFileDialog_OnShowEvent(void* self, QFileDialog_OnShowEvent_action _action);
+	[LinkName("QFileDialog_HideEvent")]
+	public static extern void QFileDialog_HideEvent(void* self, void** event);
+	
+	public function void QFileDialog_OnHideEvent_action(void* self, void** event);
+	[LinkName("QFileDialog_OnHideEvent")]
+	public static extern void QFileDialog_OnHideEvent(void* self, QFileDialog_OnHideEvent_action _action);
+	[LinkName("QFileDialog_NativeEvent")]
+	public static extern bool QFileDialog_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QFileDialog_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QFileDialog_OnNativeEvent")]
+	public static extern bool QFileDialog_OnNativeEvent(void* self, QFileDialog_OnNativeEvent_action _action);
+	[LinkName("QFileDialog_InputMethodEvent")]
+	public static extern void QFileDialog_InputMethodEvent(void* self, void** param1);
+	
+	public function void QFileDialog_OnInputMethodEvent_action(void* self, void** param1);
+	[LinkName("QFileDialog_OnInputMethodEvent")]
+	public static extern void QFileDialog_OnInputMethodEvent(void* self, QFileDialog_OnInputMethodEvent_action _action);
+	[LinkName("QFileDialog_InputMethodQuery")]
+	public static extern void* QFileDialog_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
+	
+	public function void QFileDialog_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
+	[LinkName("QFileDialog_OnInputMethodQuery")]
+	public static extern void* QFileDialog_OnInputMethodQuery(void* self, QFileDialog_OnInputMethodQuery_action _action);
+	[LinkName("QFileDialog_FocusNextPrevChild")]
+	public static extern bool QFileDialog_FocusNextPrevChild(void* self, bool next);
+	
+	public function void QFileDialog_OnFocusNextPrevChild_action(void* self, bool next);
+	[LinkName("QFileDialog_OnFocusNextPrevChild")]
+	public static extern bool QFileDialog_OnFocusNextPrevChild(void* self, QFileDialog_OnFocusNextPrevChild_action _action);
+	[LinkName("QFileDialog_Open")]
+	public static extern void QFileDialog_Open(void* self);
+	
+	public function void QFileDialog_OnOpen_action(void* self);
+	[LinkName("QFileDialog_OnOpen")]
+	public static extern void QFileDialog_OnOpen(void* self, QFileDialog_OnOpen_action _action);
+	[LinkName("QFileDialog_Exec")]
+	public static extern c_int QFileDialog_Exec(void* self);
+	
+	public function void QFileDialog_OnExec_action(void* self);
+	[LinkName("QFileDialog_OnExec")]
+	public static extern c_int QFileDialog_OnExec(void* self, QFileDialog_OnExec_action _action);
+	[LinkName("QFileDialog_Reject")]
+	public static extern void QFileDialog_Reject(void* self);
+	
+	public function void QFileDialog_OnReject_action(void* self);
+	[LinkName("QFileDialog_OnReject")]
+	public static extern void QFileDialog_OnReject(void* self, QFileDialog_OnReject_action _action);
 }
 [AllowDuplicates]
 enum QFileDialog_ViewMode

@@ -31,29 +31,17 @@ class QPointingDeviceUniqueId : IQPointingDeviceUniqueId
 {
 	private QPointingDeviceUniqueId_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPointingDeviceUniqueId_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointingDeviceUniqueId other)
 	{
 		this.ptr = CQt.QPointingDeviceUniqueId_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPointingDeviceUniqueId_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -109,11 +97,11 @@ struct QPointingDevice_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QPointingDevice_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QPointingDevice_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QPointingDevice_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -169,61 +157,13 @@ struct QPointingDevice_Ptr
 	{
 		return QPointingDevice_Ptr(CQt.QPointingDevice_PrimaryPointingDevice1(libqt_string(seatName)));
 	}
-	public void Name(String outStr)
-	{
-		CQt.QInputDevice_Name((.)this.Ptr);
-	}
-	public QInputDevice_DeviceType Type()
-	{
-		return CQt.QInputDevice_Type((.)this.Ptr);
-	}
-	public void* Capabilities()
-	{
-		return CQt.QInputDevice_Capabilities((.)this.Ptr);
-	}
-	public bool HasCapability(QInputDevice_Capability cap)
-	{
-		return CQt.QInputDevice_HasCapability((.)this.Ptr, cap);
-	}
-	public c_longlong SystemId()
-	{
-		return CQt.QInputDevice_SystemId((.)this.Ptr);
-	}
-	public void SeatName(String outStr)
-	{
-		CQt.QInputDevice_SeatName((.)this.Ptr);
-	}
-	public QRect_Ptr AvailableVirtualGeometry()
-	{
-		return QRect_Ptr(CQt.QInputDevice_AvailableVirtualGeometry((.)this.Ptr));
-	}
-	public void* SeatNames()
-	{
-		return CQt.QInputDevice_SeatNames();
-	}
-	public void* Devices()
-	{
-		return CQt.QInputDevice_Devices();
-	}
-	public QInputDevice_Ptr PrimaryKeyboard()
-	{
-		return QInputDevice_Ptr(CQt.QInputDevice_PrimaryKeyboard());
-	}
-	public void AvailableVirtualGeometryChanged(IQRect area)
-	{
-		CQt.QInputDevice_AvailableVirtualGeometryChanged((.)this.Ptr, (.)area?.ObjectPtr);
-	}
-	public QInputDevice_Ptr PrimaryKeyboard1(String seatName)
-	{
-		return QInputDevice_Ptr(CQt.QInputDevice_PrimaryKeyboard1(libqt_string(seatName)));
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QPointingDevice_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QPointingDevice_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -383,23 +323,23 @@ struct QPointingDevice_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPointingDevice_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPointingDevice_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPointingDevice_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPointingDevice_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPointingDevice_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -441,102 +381,102 @@ struct QPointingDevice_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void Name(String outStr)
+	{
+		CQt.QInputDevice_Name((.)this.Ptr);
+	}
+	public QInputDevice_DeviceType Type()
+	{
+		return CQt.QInputDevice_Type((.)this.Ptr);
+	}
+	public void* Capabilities()
+	{
+		return CQt.QInputDevice_Capabilities((.)this.Ptr);
+	}
+	public bool HasCapability(QInputDevice_Capability cap)
+	{
+		return CQt.QInputDevice_HasCapability((.)this.Ptr, cap);
+	}
+	public c_longlong SystemId()
+	{
+		return CQt.QInputDevice_SystemId((.)this.Ptr);
+	}
+	public void SeatName(String outStr)
+	{
+		CQt.QInputDevice_SeatName((.)this.Ptr);
+	}
+	public QRect_Ptr AvailableVirtualGeometry()
+	{
+		return QRect_Ptr(CQt.QInputDevice_AvailableVirtualGeometry((.)this.Ptr));
+	}
+	public void* SeatNames()
+	{
+		return CQt.QInputDevice_SeatNames();
+	}
+	public void* Devices()
+	{
+		return CQt.QInputDevice_Devices();
+	}
+	public QInputDevice_Ptr PrimaryKeyboard()
+	{
+		return QInputDevice_Ptr(CQt.QInputDevice_PrimaryKeyboard());
+	}
+	public void AvailableVirtualGeometryChanged(IQRect area)
+	{
+		CQt.QInputDevice_AvailableVirtualGeometryChanged((.)this.Ptr, (.)area?.ObjectPtr);
+	}
+	public QInputDevice_Ptr PrimaryKeyboard1(String seatName)
+	{
+		return QInputDevice_Ptr(CQt.QInputDevice_PrimaryKeyboard1(libqt_string(seatName)));
+	}
 }
 class QPointingDevice : IQPointingDevice, IQInputDevice, IQObject
 {
 	private QPointingDevice_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QPointingDevice_grabChanged,
-		QPointingDevice_availableVirtualGeometryChanged,
-		QPointingDevice_destroyed,
-		QPointingDevice_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QPointingDevice_Connect_GrabChanged(obj.ObjectPtr,  => QtBeef_QPointingDevice_grabChanged);
-		CQt.QInputDevice_Connect_AvailableVirtualGeometryChanged(obj.ObjectPtr,  => QtBeef_QInputDevice_availableVirtualGeometryChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point)> OnGrabChanged = .() ~ _.Dispose();
-	public Event<delegate void(void* area)> OnAvailableVirtualGeometryChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QPointingDevice_grabChanged(void* ptr, void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnGrabChanged.Invoke(grabber, transition, event, point);
-	}
-	static void QtBeef_QInputDevice_availableVirtualGeometryChanged(void* ptr, void* area)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAvailableVirtualGeometryChanged.Invoke(area);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QPointingDevice_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPointingDevice_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType devType, QPointingDevice_PointerType pType, void* caps, c_int maxPoints, c_int buttonCount)
 	{
 		this.ptr = CQt.QPointingDevice_new2(libqt_string(name), systemId, devType, pType, caps, maxPoints, buttonCount);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QPointingDevice_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType devType, QPointingDevice_PointerType pType, void* caps, c_int maxPoints, c_int buttonCount, String seatName)
 	{
 		this.ptr = CQt.QPointingDevice_new4(libqt_string(name), systemId, devType, pType, caps, maxPoints, buttonCount, libqt_string(seatName));
-		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType devType, QPointingDevice_PointerType pType, void* caps, c_int maxPoints, c_int buttonCount, String seatName, IQPointingDeviceUniqueId uniqueId)
 	{
 		this.ptr = CQt.QPointingDevice_new5(libqt_string(name), systemId, devType, pType, caps, maxPoints, buttonCount, libqt_string(seatName), (.)uniqueId?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType devType, QPointingDevice_PointerType pType, void* caps, c_int maxPoints, c_int buttonCount, String seatName, IQPointingDeviceUniqueId uniqueId, IQObject parent)
 	{
 		this.ptr = CQt.QPointingDevice_new6(libqt_string(name), systemId, devType, pType, caps, maxPoints, buttonCount, libqt_string(seatName), (.)uniqueId?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPointingDevice_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -590,61 +530,13 @@ class QPointingDevice : IQPointingDevice, IQInputDevice, IQObject
 	{
 		return this.ptr.PrimaryPointingDevice1(seatName);
 	}
-	public void Name(String outStr)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.Name(outStr);
+		return default;
 	}
-	public QInputDevice_DeviceType Type()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Type();
-	}
-	public void* Capabilities()
-	{
-		return this.ptr.Capabilities();
-	}
-	public bool HasCapability(QInputDevice_Capability cap)
-	{
-		return this.ptr.HasCapability(cap);
-	}
-	public c_longlong SystemId()
-	{
-		return this.ptr.SystemId();
-	}
-	public void SeatName(String outStr)
-	{
-		this.ptr.SeatName(outStr);
-	}
-	public QRect_Ptr AvailableVirtualGeometry()
-	{
-		return this.ptr.AvailableVirtualGeometry();
-	}
-	public void* SeatNames()
-	{
-		return this.ptr.SeatNames();
-	}
-	public void* Devices()
-	{
-		return this.ptr.Devices();
-	}
-	public QInputDevice_Ptr PrimaryKeyboard()
-	{
-		return this.ptr.PrimaryKeyboard();
-	}
-	public void AvailableVirtualGeometryChanged(IQRect area)
-	{
-		this.ptr.AvailableVirtualGeometryChanged(area);
-	}
-	public QInputDevice_Ptr PrimaryKeyboard1(String seatName)
-	{
-		return this.ptr.PrimaryKeyboard1(seatName);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -802,25 +694,20 @@ class QPointingDevice : IQPointingDevice, IQInputDevice, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -862,6 +749,54 @@ class QPointingDevice : IQPointingDevice, IQInputDevice, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public void Name(String outStr)
+	{
+		this.ptr.Name(outStr);
+	}
+	public QInputDevice_DeviceType Type()
+	{
+		return this.ptr.Type();
+	}
+	public void* Capabilities()
+	{
+		return this.ptr.Capabilities();
+	}
+	public bool HasCapability(QInputDevice_Capability cap)
+	{
+		return this.ptr.HasCapability(cap);
+	}
+	public c_longlong SystemId()
+	{
+		return this.ptr.SystemId();
+	}
+	public void SeatName(String outStr)
+	{
+		this.ptr.SeatName(outStr);
+	}
+	public QRect_Ptr AvailableVirtualGeometry()
+	{
+		return this.ptr.AvailableVirtualGeometry();
+	}
+	public void* SeatNames()
+	{
+		return this.ptr.SeatNames();
+	}
+	public void* Devices()
+	{
+		return this.ptr.Devices();
+	}
+	public QInputDevice_Ptr PrimaryKeyboard()
+	{
+		return this.ptr.PrimaryKeyboard();
+	}
+	public void AvailableVirtualGeometryChanged(IQRect area)
+	{
+		this.ptr.AvailableVirtualGeometryChanged(area);
+	}
+	public QInputDevice_Ptr PrimaryKeyboard1(String seatName)
+	{
+		return this.ptr.PrimaryKeyboard1(seatName);
+	}
 }
 interface IQPointingDevice : IQtObjectInterface
 {
@@ -884,10 +819,22 @@ extension CQt
 	public static extern void QPointingDevice_Delete(QPointingDevice_Ptr self);
 	[LinkName("QPointingDevice_MetaObject")]
 	public static extern void** QPointingDevice_MetaObject(void* self);
+	
+	public function void QPointingDevice_OnMetaObject_action(void* self);
+	[LinkName("QPointingDevice_OnMetaObject")]
+	public static extern void** QPointingDevice_OnMetaObject(void* self, QPointingDevice_OnMetaObject_action _action);
 	[LinkName("QPointingDevice_Qt_Metacast")]
 	public static extern void* QPointingDevice_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QPointingDevice_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QPointingDevice_OnMetacast")]
+	public static extern void* QPointingDevice_OnMetacast(void* self, QPointingDevice_OnMetacast_action _action);
 	[LinkName("QPointingDevice_Qt_Metacall")]
 	public static extern c_int QPointingDevice_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QPointingDevice_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QPointingDevice_OnMetacall")]
+	public static extern c_int QPointingDevice_OnMetacall(void* self, QPointingDevice_OnMetacall_action _action);
 	[LinkName("QPointingDevice_Tr")]
 	public static extern libqt_string QPointingDevice_Tr(c_char* s);
 	[LinkName("QPointingDevice_SetType")]
@@ -911,15 +858,57 @@ extension CQt
 	[LinkName("QPointingDevice_GrabChanged")]
 	public static extern void QPointingDevice_GrabChanged(void* self, void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point);
 	
-	public function void QPointingDevice_grabChanged_action(void* self, void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point);
+	public function void QPointingDevice_Connect_GrabChanged_action(void* self, void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point);
 	[LinkName("QPointingDevice_Connect_GrabChanged")]
-	public static extern void QPointingDevice_Connect_GrabChanged(void* self, QPointingDevice_grabChanged_action _action);
+	public static extern void QPointingDevice_Connect_GrabChanged(void* self, QPointingDevice_Connect_GrabChanged_action _action);
 	[LinkName("QPointingDevice_Tr2")]
 	public static extern libqt_string QPointingDevice_Tr2(c_char* s, c_char* c);
 	[LinkName("QPointingDevice_Tr3")]
 	public static extern libqt_string QPointingDevice_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QPointingDevice_PrimaryPointingDevice1")]
 	public static extern void** QPointingDevice_PrimaryPointingDevice1(libqt_string seatName);
+	[LinkName("QPointingDevice_Event")]
+	public static extern bool QPointingDevice_Event(void* self, void** event);
+	
+	public function void QPointingDevice_OnEvent_action(void* self, void** event);
+	[LinkName("QPointingDevice_OnEvent")]
+	public static extern bool QPointingDevice_OnEvent(void* self, QPointingDevice_OnEvent_action _action);
+	[LinkName("QPointingDevice_EventFilter")]
+	public static extern bool QPointingDevice_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QPointingDevice_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QPointingDevice_OnEventFilter")]
+	public static extern bool QPointingDevice_OnEventFilter(void* self, QPointingDevice_OnEventFilter_action _action);
+	[LinkName("QPointingDevice_TimerEvent")]
+	public static extern void QPointingDevice_TimerEvent(void* self, void** event);
+	
+	public function void QPointingDevice_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QPointingDevice_OnTimerEvent")]
+	public static extern void QPointingDevice_OnTimerEvent(void* self, QPointingDevice_OnTimerEvent_action _action);
+	[LinkName("QPointingDevice_ChildEvent")]
+	public static extern void QPointingDevice_ChildEvent(void* self, void** event);
+	
+	public function void QPointingDevice_OnChildEvent_action(void* self, void** event);
+	[LinkName("QPointingDevice_OnChildEvent")]
+	public static extern void QPointingDevice_OnChildEvent(void* self, QPointingDevice_OnChildEvent_action _action);
+	[LinkName("QPointingDevice_CustomEvent")]
+	public static extern void QPointingDevice_CustomEvent(void* self, void** event);
+	
+	public function void QPointingDevice_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QPointingDevice_OnCustomEvent")]
+	public static extern void QPointingDevice_OnCustomEvent(void* self, QPointingDevice_OnCustomEvent_action _action);
+	[LinkName("QPointingDevice_ConnectNotify")]
+	public static extern void QPointingDevice_ConnectNotify(void* self, void** signal);
+	
+	public function void QPointingDevice_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QPointingDevice_OnConnectNotify")]
+	public static extern void QPointingDevice_OnConnectNotify(void* self, QPointingDevice_OnConnectNotify_action _action);
+	[LinkName("QPointingDevice_DisconnectNotify")]
+	public static extern void QPointingDevice_DisconnectNotify(void* self, void** signal);
+	
+	public function void QPointingDevice_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QPointingDevice_OnDisconnectNotify")]
+	public static extern void QPointingDevice_OnDisconnectNotify(void* self, QPointingDevice_OnDisconnectNotify_action _action);
 }
 [AllowDuplicates]
 enum QPointingDevice_PointerType

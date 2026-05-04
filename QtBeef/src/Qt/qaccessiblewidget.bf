@@ -100,15 +100,15 @@ struct QAccessibleWidget_Ptr
 	}
 	public QObject_Ptr Object()
 	{
-		return QObject_Ptr(CQt.QAccessibleObject_Object((.)this.Ptr));
-	}
-	public void SetText(QAccessible_Text t, String text)
-	{
-		CQt.QAccessibleObject_SetText((.)this.Ptr, t, libqt_string(text));
+		return QObject_Ptr(CQt.QAccessibleWidget_Object((.)this.Ptr));
 	}
 	public QAccessibleInterface_Ptr ChildAt(c_int x, c_int y)
 	{
-		return QAccessibleInterface_Ptr(CQt.QAccessibleObject_ChildAt((.)this.Ptr, x, y));
+		return QAccessibleInterface_Ptr(CQt.QAccessibleWidget_ChildAt((.)this.Ptr, x, y));
+	}
+	public void SetText(QAccessible_Text t, String text)
+	{
+		CQt.QAccessibleWidget_SetText((.)this.Ptr, t, libqt_string(text));
 	}
 	public QAccessibleTextInterface_Ptr TextInterface()
 	{
@@ -144,7 +144,7 @@ struct QAccessibleWidget_Ptr
 	}
 	public void Virtual_hook(c_int id, void* data)
 	{
-		CQt.QAccessibleInterface_Virtual_Hook((.)this.Ptr, id, data);
+		CQt.QAccessibleWidget_Virtual_Hook((.)this.Ptr, id, data);
 	}
 	public void Tr(String outStr, c_char* sourceText)
 	{
@@ -152,11 +152,11 @@ struct QAccessibleWidget_Ptr
 	}
 	public void LocalizedActionName(String outStr, String name)
 	{
-		CQt.QAccessibleActionInterface_LocalizedActionName((.)this.Ptr, libqt_string(name));
+		CQt.QAccessibleWidget_LocalizedActionName((.)this.Ptr, libqt_string(name));
 	}
 	public void LocalizedActionDescription(String outStr, String name)
 	{
-		CQt.QAccessibleActionInterface_LocalizedActionDescription((.)this.Ptr, libqt_string(name));
+		CQt.QAccessibleWidget_LocalizedActionDescription((.)this.Ptr, libqt_string(name));
 	}
 	public void PressAction(String outStr)
 	{
@@ -219,106 +219,91 @@ class QAccessibleWidget : IQAccessibleWidget, IQAccessibleObject, IQAccessibleIn
 {
 	private QAccessibleWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QAccessibleWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget o)
 	{
 		this.ptr = CQt.QAccessibleWidget_new((.)o?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget o, QAccessible_Role r)
 	{
 		this.ptr = CQt.QAccessibleWidget_new2((.)o?.ObjectPtr, r);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget o, QAccessible_Role r, String name)
 	{
 		this.ptr = CQt.QAccessibleWidget_new3((.)o?.ObjectPtr, r, libqt_string(name));
-		QtBf_ConnectSignals(this);
 	}
-	public bool IsValid()
+	public  virtual bool OnIsValid()
 	{
-		return this.ptr.IsValid();
+		return default;
 	}
-	public QWindow_Ptr Window()
+	public  virtual QWindow_Ptr OnWindow()
 	{
-		return this.ptr.Window();
+		return default;
 	}
-	public c_int ChildCount()
+	public  virtual c_int OnChildCount()
 	{
-		return this.ptr.ChildCount();
+		return default;
 	}
-	public c_int IndexOfChild(IQAccessibleInterface child)
+	public  virtual c_int OnIndexOfChild(void** child)
 	{
-		return this.ptr.IndexOfChild(child);
+		return default;
 	}
-	public void* Relations(void* match)
+	public  virtual void* OnRelations(void* match)
 	{
-		return this.ptr.Relations(match);
+		return default;
 	}
-	public QAccessibleInterface_Ptr FocusChild()
+	public  virtual QAccessibleInterface_Ptr OnFocusChild()
 	{
-		return this.ptr.FocusChild();
+		return default;
 	}
-	public QRect_Ptr Rect()
+	public  virtual QRect_Ptr OnRect()
 	{
-		return this.ptr.Rect();
+		return default;
 	}
-	public QAccessibleInterface_Ptr Parent()
+	public  virtual QAccessibleInterface_Ptr OnParent()
 	{
-		return this.ptr.Parent();
+		return default;
 	}
-	public QAccessibleInterface_Ptr Child(c_int index)
+	public  virtual QAccessibleInterface_Ptr OnChild(c_int index)
 	{
-		return this.ptr.Child(index);
+		return default;
 	}
-	public void Text(String outStr, QAccessible_Text t)
+	public  virtual void OnText(String outStr, QAccessible_Text t)
 	{
-		this.ptr.Text(outStr, t);
 	}
-	public QAccessible_Role Role()
+	public  virtual QAccessible_Role OnRole()
 	{
-		return this.ptr.Role();
+		return default;
 	}
-	public QAccessible_State_Ptr State()
+	public  virtual QAccessible_State_Ptr OnState()
 	{
-		return this.ptr.State();
+		return default;
 	}
-	public QColor_Ptr ForegroundColor()
+	public  virtual QColor_Ptr OnForegroundColor()
 	{
-		return this.ptr.ForegroundColor();
+		return default;
 	}
-	public QColor_Ptr BackgroundColor()
+	public  virtual QColor_Ptr OnBackgroundColor()
 	{
-		return this.ptr.BackgroundColor();
+		return default;
 	}
-	public void* Interface_cast(QAccessible_InterfaceType t)
+	public  virtual void* OnInterface_cast(QAccessible_InterfaceType t)
 	{
-		return this.ptr.Interface_cast(t);
+		return default;
 	}
-	public void* ActionNames()
+	public  virtual void* OnActionNames()
 	{
-		return this.ptr.ActionNames();
+		return default;
 	}
-	public void DoAction(String actionName)
+	public  virtual void OnDoAction(libqt_string actionName)
 	{
-		this.ptr.DoAction(actionName);
 	}
-	public void* KeyBindingsForAction(String actionName)
+	public  virtual void* OnKeyBindingsForAction(libqt_string actionName)
 	{
-		return this.ptr.KeyBindingsForAction(actionName);
+		return default;
 	}
 	public QWidget_Ptr Widget()
 	{
@@ -332,17 +317,16 @@ class QAccessibleWidget : IQAccessibleWidget, IQAccessibleObject, IQAccessibleIn
 	{
 		this.ptr.AddControllingSignal(signal);
 	}
-	public QObject_Ptr Object()
+	public  virtual QObject_Ptr OnObject()
 	{
-		return this.ptr.Object();
+		return default;
 	}
-	public void SetText(QAccessible_Text t, String text)
+	public  virtual QAccessibleInterface_Ptr OnChildAt(c_int x, c_int y)
 	{
-		this.ptr.SetText(t, text);
+		return default;
 	}
-	public QAccessibleInterface_Ptr ChildAt(c_int x, c_int y)
+	public  virtual void OnSetText(QAccessible_Text t, libqt_string text)
 	{
-		return this.ptr.ChildAt(x, y);
 	}
 	public QAccessibleTextInterface_Ptr TextInterface()
 	{
@@ -376,21 +360,18 @@ class QAccessibleWidget : IQAccessibleWidget, IQAccessibleObject, IQAccessibleIn
 	{
 		return this.ptr.HyperlinkInterface();
 	}
-	public void Virtual_hook(c_int id, void* data)
+	public  virtual void OnVirtual_hook(c_int id, void* data)
 	{
-		this.ptr.Virtual_hook(id, data);
 	}
 	public void Tr(String outStr, c_char* sourceText)
 	{
 		this.ptr.Tr(outStr, sourceText);
 	}
-	public void LocalizedActionName(String outStr, String name)
+	public  virtual void OnLocalizedActionName(String outStr, libqt_string name)
 	{
-		this.ptr.LocalizedActionName(outStr, name);
 	}
-	public void LocalizedActionDescription(String outStr, String name)
+	public  virtual void OnLocalizedActionDescription(String outStr, libqt_string name)
 	{
-		this.ptr.LocalizedActionDescription(outStr, name);
 	}
 	public void PressAction(String outStr)
 	{
@@ -462,44 +443,152 @@ extension CQt
 	public static extern QAccessibleWidget_Ptr QAccessibleWidget_new3(void** o, QAccessible_Role r, libqt_string name);
 	[LinkName("QAccessibleWidget_IsValid")]
 	public static extern bool QAccessibleWidget_IsValid(void* self);
+	
+	public function void QAccessibleWidget_OnIsValid_action(void* self);
+	[LinkName("QAccessibleWidget_OnIsValid")]
+	public static extern bool QAccessibleWidget_OnIsValid(void* self, QAccessibleWidget_OnIsValid_action _action);
 	[LinkName("QAccessibleWidget_Window")]
 	public static extern void** QAccessibleWidget_Window(void* self);
+	
+	public function void QAccessibleWidget_OnWindow_action(void* self);
+	[LinkName("QAccessibleWidget_OnWindow")]
+	public static extern void** QAccessibleWidget_OnWindow(void* self, QAccessibleWidget_OnWindow_action _action);
 	[LinkName("QAccessibleWidget_ChildCount")]
 	public static extern c_int QAccessibleWidget_ChildCount(void* self);
+	
+	public function void QAccessibleWidget_OnChildCount_action(void* self);
+	[LinkName("QAccessibleWidget_OnChildCount")]
+	public static extern c_int QAccessibleWidget_OnChildCount(void* self, QAccessibleWidget_OnChildCount_action _action);
 	[LinkName("QAccessibleWidget_IndexOfChild")]
 	public static extern c_int QAccessibleWidget_IndexOfChild(void* self, void** child);
+	
+	public function void QAccessibleWidget_OnIndexOfChild_action(void* self, void** child);
+	[LinkName("QAccessibleWidget_OnIndexOfChild")]
+	public static extern c_int QAccessibleWidget_OnIndexOfChild(void* self, QAccessibleWidget_OnIndexOfChild_action _action);
 	[LinkName("QAccessibleWidget_Relations")]
 	public static extern void* QAccessibleWidget_Relations(void* self, void* match);
+	
+	public function void QAccessibleWidget_OnRelations_action(void* self, void* match);
+	[LinkName("QAccessibleWidget_OnRelations")]
+	public static extern void* QAccessibleWidget_OnRelations(void* self, QAccessibleWidget_OnRelations_action _action);
 	[LinkName("QAccessibleWidget_FocusChild")]
 	public static extern void** QAccessibleWidget_FocusChild(void* self);
+	
+	public function void QAccessibleWidget_OnFocusChild_action(void* self);
+	[LinkName("QAccessibleWidget_OnFocusChild")]
+	public static extern void** QAccessibleWidget_OnFocusChild(void* self, QAccessibleWidget_OnFocusChild_action _action);
 	[LinkName("QAccessibleWidget_Rect")]
 	public static extern void* QAccessibleWidget_Rect(void* self);
+	
+	public function void QAccessibleWidget_OnRect_action(void* self);
+	[LinkName("QAccessibleWidget_OnRect")]
+	public static extern void* QAccessibleWidget_OnRect(void* self, QAccessibleWidget_OnRect_action _action);
 	[LinkName("QAccessibleWidget_Parent")]
 	public static extern void** QAccessibleWidget_Parent(void* self);
+	
+	public function void QAccessibleWidget_OnParent_action(void* self);
+	[LinkName("QAccessibleWidget_OnParent")]
+	public static extern void** QAccessibleWidget_OnParent(void* self, QAccessibleWidget_OnParent_action _action);
 	[LinkName("QAccessibleWidget_Child")]
 	public static extern void** QAccessibleWidget_Child(void* self, c_int index);
+	
+	public function void QAccessibleWidget_OnChild_action(void* self, c_int index);
+	[LinkName("QAccessibleWidget_OnChild")]
+	public static extern void** QAccessibleWidget_OnChild(void* self, QAccessibleWidget_OnChild_action _action);
 	[LinkName("QAccessibleWidget_Text")]
 	public static extern libqt_string QAccessibleWidget_Text(void* self, QAccessible_Text t);
+	
+	public function void QAccessibleWidget_OnText_action(void* self, QAccessible_Text t);
+	[LinkName("QAccessibleWidget_OnText")]
+	public static extern libqt_string QAccessibleWidget_OnText(void* self, QAccessibleWidget_OnText_action _action);
 	[LinkName("QAccessibleWidget_Role")]
 	public static extern QAccessible_Role QAccessibleWidget_Role(void* self);
+	
+	public function void QAccessibleWidget_OnRole_action(void* self);
+	[LinkName("QAccessibleWidget_OnRole")]
+	public static extern QAccessible_Role QAccessibleWidget_OnRole(void* self, QAccessibleWidget_OnRole_action _action);
 	[LinkName("QAccessibleWidget_State")]
 	public static extern void* QAccessibleWidget_State(void* self);
+	
+	public function void QAccessibleWidget_OnState_action(void* self);
+	[LinkName("QAccessibleWidget_OnState")]
+	public static extern void* QAccessibleWidget_OnState(void* self, QAccessibleWidget_OnState_action _action);
 	[LinkName("QAccessibleWidget_ForegroundColor")]
 	public static extern void* QAccessibleWidget_ForegroundColor(void* self);
+	
+	public function void QAccessibleWidget_OnForegroundColor_action(void* self);
+	[LinkName("QAccessibleWidget_OnForegroundColor")]
+	public static extern void* QAccessibleWidget_OnForegroundColor(void* self, QAccessibleWidget_OnForegroundColor_action _action);
 	[LinkName("QAccessibleWidget_BackgroundColor")]
 	public static extern void* QAccessibleWidget_BackgroundColor(void* self);
+	
+	public function void QAccessibleWidget_OnBackgroundColor_action(void* self);
+	[LinkName("QAccessibleWidget_OnBackgroundColor")]
+	public static extern void* QAccessibleWidget_OnBackgroundColor(void* self, QAccessibleWidget_OnBackgroundColor_action _action);
 	[LinkName("QAccessibleWidget_Interface_Cast")]
 	public static extern void* QAccessibleWidget_Interface_Cast(void* self, QAccessible_InterfaceType t);
+	
+	public function void QAccessibleWidget_OnInterface_Cast_action(void* self, QAccessible_InterfaceType t);
+	[LinkName("QAccessibleWidget_OnInterface_Cast")]
+	public static extern void* QAccessibleWidget_OnInterface_Cast(void* self, QAccessibleWidget_OnInterface_Cast_action _action);
 	[LinkName("QAccessibleWidget_ActionNames")]
 	public static extern void* QAccessibleWidget_ActionNames(void* self);
+	
+	public function void QAccessibleWidget_OnActionNames_action(void* self);
+	[LinkName("QAccessibleWidget_OnActionNames")]
+	public static extern void* QAccessibleWidget_OnActionNames(void* self, QAccessibleWidget_OnActionNames_action _action);
 	[LinkName("QAccessibleWidget_DoAction")]
 	public static extern void QAccessibleWidget_DoAction(void* self, libqt_string actionName);
+	
+	public function void QAccessibleWidget_OnDoAction_action(void* self, libqt_string actionName);
+	[LinkName("QAccessibleWidget_OnDoAction")]
+	public static extern void QAccessibleWidget_OnDoAction(void* self, QAccessibleWidget_OnDoAction_action _action);
 	[LinkName("QAccessibleWidget_KeyBindingsForAction")]
 	public static extern void* QAccessibleWidget_KeyBindingsForAction(void* self, libqt_string actionName);
+	
+	public function void QAccessibleWidget_OnKeyBindingsForAction_action(void* self, libqt_string actionName);
+	[LinkName("QAccessibleWidget_OnKeyBindingsForAction")]
+	public static extern void* QAccessibleWidget_OnKeyBindingsForAction(void* self, QAccessibleWidget_OnKeyBindingsForAction_action _action);
 	[LinkName("QAccessibleWidget_Widget")]
 	public static extern void** QAccessibleWidget_Widget(void* self);
 	[LinkName("QAccessibleWidget_ParentObject")]
 	public static extern void** QAccessibleWidget_ParentObject(void* self);
 	[LinkName("QAccessibleWidget_AddControllingSignal")]
 	public static extern void QAccessibleWidget_AddControllingSignal(void* self, libqt_string signal);
+	[LinkName("QAccessibleWidget_Object")]
+	public static extern void** QAccessibleWidget_Object(void* self);
+	
+	public function void QAccessibleWidget_OnObject_action(void* self);
+	[LinkName("QAccessibleWidget_OnObject")]
+	public static extern void** QAccessibleWidget_OnObject(void* self, QAccessibleWidget_OnObject_action _action);
+	[LinkName("QAccessibleWidget_ChildAt")]
+	public static extern void** QAccessibleWidget_ChildAt(void* self, c_int x, c_int y);
+	
+	public function void QAccessibleWidget_OnChildAt_action(void* self, c_int x, c_int y);
+	[LinkName("QAccessibleWidget_OnChildAt")]
+	public static extern void** QAccessibleWidget_OnChildAt(void* self, QAccessibleWidget_OnChildAt_action _action);
+	[LinkName("QAccessibleWidget_SetText")]
+	public static extern void QAccessibleWidget_SetText(void* self, QAccessible_Text t, libqt_string text);
+	
+	public function void QAccessibleWidget_OnSetText_action(void* self, QAccessible_Text t, libqt_string text);
+	[LinkName("QAccessibleWidget_OnSetText")]
+	public static extern void QAccessibleWidget_OnSetText(void* self, QAccessibleWidget_OnSetText_action _action);
+	[LinkName("QAccessibleWidget_Virtual_Hook")]
+	public static extern void QAccessibleWidget_Virtual_Hook(void* self, c_int id, void* data);
+	
+	public function void QAccessibleWidget_OnVirtual_Hook_action(void* self, c_int id, void* data);
+	[LinkName("QAccessibleWidget_OnVirtual_Hook")]
+	public static extern void QAccessibleWidget_OnVirtual_Hook(void* self, QAccessibleWidget_OnVirtual_Hook_action _action);
+	[LinkName("QAccessibleWidget_LocalizedActionName")]
+	public static extern libqt_string QAccessibleWidget_LocalizedActionName(void* self, libqt_string name);
+	
+	public function void QAccessibleWidget_OnLocalizedActionName_action(void* self, libqt_string name);
+	[LinkName("QAccessibleWidget_OnLocalizedActionName")]
+	public static extern libqt_string QAccessibleWidget_OnLocalizedActionName(void* self, QAccessibleWidget_OnLocalizedActionName_action _action);
+	[LinkName("QAccessibleWidget_LocalizedActionDescription")]
+	public static extern libqt_string QAccessibleWidget_LocalizedActionDescription(void* self, libqt_string name);
+	
+	public function void QAccessibleWidget_OnLocalizedActionDescription_action(void* self, libqt_string name);
+	[LinkName("QAccessibleWidget_OnLocalizedActionDescription")]
+	public static extern libqt_string QAccessibleWidget_OnLocalizedActionDescription(void* self, QAccessibleWidget_OnLocalizedActionDescription_action _action);
 }

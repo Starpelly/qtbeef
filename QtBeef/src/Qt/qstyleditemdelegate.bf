@@ -18,11 +18,11 @@ struct QStyledItemDelegate_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QStyledItemDelegate_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QStyledItemDelegate_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QStyledItemDelegate_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -86,37 +86,9 @@ struct QStyledItemDelegate_Ptr
 	{
 		CQt.QStyledItemDelegate_Tr3(s, c, n);
 	}
-	public void DestroyEditor(IQWidget editor, IQModelIndex index)
-	{
-		CQt.QAbstractItemDelegate_DestroyEditor((.)this.Ptr, (.)editor?.ObjectPtr, (.)index?.ObjectPtr);
-	}
-	public bool HelpEvent(IQHelpEvent event, IQAbstractItemView view, IQStyleOptionViewItem option, IQModelIndex index)
-	{
-		return CQt.QAbstractItemDelegate_HelpEvent((.)this.Ptr, (.)event?.ObjectPtr, (.)view?.ObjectPtr, (.)option?.ObjectPtr, (.)index?.ObjectPtr);
-	}
-	public void* PaintingRoles()
-	{
-		return CQt.QAbstractItemDelegate_PaintingRoles((.)this.Ptr);
-	}
-	public void CommitData(IQWidget editor)
-	{
-		CQt.QAbstractItemDelegate_CommitData((.)this.Ptr, (.)editor?.ObjectPtr);
-	}
-	public void CloseEditor(IQWidget editor)
-	{
-		CQt.QAbstractItemDelegate_CloseEditor((.)this.Ptr, (.)editor?.ObjectPtr);
-	}
-	public void SizeHintChanged(IQModelIndex param1)
-	{
-		CQt.QAbstractItemDelegate_SizeHintChanged((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public void CloseEditor2(IQWidget editor, QAbstractItemDelegate_EndEditHint hint)
-	{
-		CQt.QAbstractItemDelegate_CloseEditor2((.)this.Ptr, (.)editor?.ObjectPtr, hint);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QStyledItemDelegate_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -276,23 +248,23 @@ struct QStyledItemDelegate_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QStyledItemDelegate_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QStyledItemDelegate_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QStyledItemDelegate_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QStyledItemDelegate_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QStyledItemDelegate_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -334,126 +306,90 @@ struct QStyledItemDelegate_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void DestroyEditor(IQWidget editor, IQModelIndex index)
+	{
+		CQt.QStyledItemDelegate_DestroyEditor((.)this.Ptr, (.)editor?.ObjectPtr, (.)index?.ObjectPtr);
+	}
+	public bool HelpEvent(IQHelpEvent event, IQAbstractItemView view, IQStyleOptionViewItem option, IQModelIndex index)
+	{
+		return CQt.QStyledItemDelegate_HelpEvent((.)this.Ptr, (.)event?.ObjectPtr, (.)view?.ObjectPtr, (.)option?.ObjectPtr, (.)index?.ObjectPtr);
+	}
+	public void* PaintingRoles()
+	{
+		return CQt.QStyledItemDelegate_PaintingRoles((.)this.Ptr);
+	}
+	public void CommitData(IQWidget editor)
+	{
+		CQt.QAbstractItemDelegate_CommitData((.)this.Ptr, (.)editor?.ObjectPtr);
+	}
+	public void CloseEditor(IQWidget editor)
+	{
+		CQt.QAbstractItemDelegate_CloseEditor((.)this.Ptr, (.)editor?.ObjectPtr);
+	}
+	public void SizeHintChanged(IQModelIndex param1)
+	{
+		CQt.QAbstractItemDelegate_SizeHintChanged((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+	public void CloseEditor2(IQWidget editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		CQt.QAbstractItemDelegate_CloseEditor2((.)this.Ptr, (.)editor?.ObjectPtr, hint);
+	}
 }
 class QStyledItemDelegate : IQStyledItemDelegate, IQAbstractItemDelegate, IQObject
 {
 	private QStyledItemDelegate_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QStyledItemDelegate_commitData,
-		QStyledItemDelegate_closeEditor,
-		QStyledItemDelegate_sizeHintChanged,
-		QStyledItemDelegate_closeEditor2,
-		QStyledItemDelegate_destroyed,
-		QStyledItemDelegate_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QAbstractItemDelegate_Connect_CommitData(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_commitData);
-		CQt.QAbstractItemDelegate_Connect_CloseEditor(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_closeEditor);
-		CQt.QAbstractItemDelegate_Connect_SizeHintChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_sizeHintChanged);
-		CQt.QAbstractItemDelegate_Connect_CloseEditor2(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_closeEditor2);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** editor)> OnCommitData = .() ~ _.Dispose();
-	public Event<delegate void(void** editor)> OnCloseEditor = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnSizeHintChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** editor, QAbstractItemDelegate_EndEditHint hint)> OnCloseEditor2 = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QAbstractItemDelegate_commitData(void* ptr, void** editor)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCommitData.Invoke(editor);
-	}
-	static void QtBeef_QAbstractItemDelegate_closeEditor(void* ptr, void** editor)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCloseEditor.Invoke(editor);
-	}
-	static void QtBeef_QAbstractItemDelegate_sizeHintChanged(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSizeHintChanged.Invoke(param1);
-	}
-	static void QtBeef_QAbstractItemDelegate_closeEditor2(void* ptr, void** editor, QAbstractItemDelegate_EndEditHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCloseEditor2.Invoke(editor, hint);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QStyledItemDelegate_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyledItemDelegate_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QStyledItemDelegate_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QStyledItemDelegate_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public void Paint(IQPainter painter, IQStyleOptionViewItem option, IQModelIndex index)
+	public  virtual void OnPaint(void** painter, void** option, void** index)
 	{
-		this.ptr.Paint(painter, option, index);
 	}
-	public QSize_Ptr SizeHint(IQStyleOptionViewItem option, IQModelIndex index)
+	public  virtual QSize_Ptr OnSizeHint(void** option, void** index)
 	{
-		return this.ptr.SizeHint(option, index);
+		return default;
 	}
-	public QWidget_Ptr CreateEditor(IQWidget parent, IQStyleOptionViewItem option, IQModelIndex index)
+	public  virtual QWidget_Ptr OnCreateEditor(void** parent, void** option, void** index)
 	{
-		return this.ptr.CreateEditor(parent, option, index);
+		return default;
 	}
-	public void SetEditorData(IQWidget editor, IQModelIndex index)
+	public  virtual void OnSetEditorData(void** editor, void** index)
 	{
-		this.ptr.SetEditorData(editor, index);
 	}
-	public void SetModelData(IQWidget editor, IQAbstractItemModel model, IQModelIndex index)
+	public  virtual void OnSetModelData(void** editor, void** model, void** index)
 	{
-		this.ptr.SetModelData(editor, model, index);
 	}
-	public void UpdateEditorGeometry(IQWidget editor, IQStyleOptionViewItem option, IQModelIndex index)
+	public  virtual void OnUpdateEditorGeometry(void** editor, void** option, void** index)
 	{
-		this.ptr.UpdateEditorGeometry(editor, option, index);
 	}
 	public QItemEditorFactory_Ptr ItemEditorFactory()
 	{
@@ -463,21 +399,19 @@ class QStyledItemDelegate : IQStyledItemDelegate, IQAbstractItemDelegate, IQObje
 	{
 		this.ptr.SetItemEditorFactory(factory);
 	}
-	public void DisplayText(String outStr, IQVariant value, IQLocale locale)
+	public  virtual void OnDisplayText(String outStr, void** value, void** locale)
 	{
-		this.ptr.DisplayText(outStr, value, locale);
 	}
-	public void InitStyleOption(IQStyleOptionViewItem option, IQModelIndex index)
+	public  virtual void OnInitStyleOption(void** option, void** index)
 	{
-		this.ptr.InitStyleOption(option, index);
 	}
-	public bool EventFilter(IQObject object, IQEvent event)
+	public  virtual bool OnEventFilter(void** object, void** event)
 	{
-		return this.ptr.EventFilter(object, event);
+		return default;
 	}
-	public bool EditorEvent(IQEvent event, IQAbstractItemModel model, IQStyleOptionViewItem option, IQModelIndex index)
+	public  virtual bool OnEditorEvent(void** event, void** model, void** option, void** index)
 	{
-		return this.ptr.EditorEvent(event, model, option, index);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -487,37 +421,9 @@ class QStyledItemDelegate : IQStyledItemDelegate, IQAbstractItemDelegate, IQObje
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void DestroyEditor(IQWidget editor, IQModelIndex index)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.DestroyEditor(editor, index);
-	}
-	public bool HelpEvent(IQHelpEvent event, IQAbstractItemView view, IQStyleOptionViewItem option, IQModelIndex index)
-	{
-		return this.ptr.HelpEvent(event, view, option, index);
-	}
-	public void* PaintingRoles()
-	{
-		return this.ptr.PaintingRoles();
-	}
-	public void CommitData(IQWidget editor)
-	{
-		this.ptr.CommitData(editor);
-	}
-	public void CloseEditor(IQWidget editor)
-	{
-		this.ptr.CloseEditor(editor);
-	}
-	public void SizeHintChanged(IQModelIndex param1)
-	{
-		this.ptr.SizeHintChanged(param1);
-	}
-	public void CloseEditor2(IQWidget editor, QAbstractItemDelegate_EndEditHint hint)
-	{
-		this.ptr.CloseEditor2(editor, hint);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -675,25 +581,20 @@ class QStyledItemDelegate : IQStyledItemDelegate, IQAbstractItemDelegate, IQObje
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -735,6 +636,33 @@ class QStyledItemDelegate : IQStyledItemDelegate, IQAbstractItemDelegate, IQObje
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public  virtual void OnDestroyEditor(void** editor, void** index)
+	{
+	}
+	public  virtual bool OnHelpEvent(void** event, void** view, void** option, void** index)
+	{
+		return default;
+	}
+	public  virtual void* OnPaintingRoles()
+	{
+		return default;
+	}
+	public void CommitData(IQWidget editor)
+	{
+		this.ptr.CommitData(editor);
+	}
+	public void CloseEditor(IQWidget editor)
+	{
+		this.ptr.CloseEditor(editor);
+	}
+	public void SizeHintChanged(IQModelIndex param1)
+	{
+		this.ptr.SizeHintChanged(param1);
+	}
+	public void CloseEditor2(IQWidget editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		this.ptr.CloseEditor2(editor, hint);
+	}
 }
 interface IQStyledItemDelegate : IQtObjectInterface
 {
@@ -749,38 +677,144 @@ extension CQt
 	public static extern void QStyledItemDelegate_Delete(QStyledItemDelegate_Ptr self);
 	[LinkName("QStyledItemDelegate_MetaObject")]
 	public static extern void** QStyledItemDelegate_MetaObject(void* self);
+	
+	public function void QStyledItemDelegate_OnMetaObject_action(void* self);
+	[LinkName("QStyledItemDelegate_OnMetaObject")]
+	public static extern void** QStyledItemDelegate_OnMetaObject(void* self, QStyledItemDelegate_OnMetaObject_action _action);
 	[LinkName("QStyledItemDelegate_Qt_Metacast")]
 	public static extern void* QStyledItemDelegate_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QStyledItemDelegate_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QStyledItemDelegate_OnMetacast")]
+	public static extern void* QStyledItemDelegate_OnMetacast(void* self, QStyledItemDelegate_OnMetacast_action _action);
 	[LinkName("QStyledItemDelegate_Qt_Metacall")]
 	public static extern c_int QStyledItemDelegate_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QStyledItemDelegate_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QStyledItemDelegate_OnMetacall")]
+	public static extern c_int QStyledItemDelegate_OnMetacall(void* self, QStyledItemDelegate_OnMetacall_action _action);
 	[LinkName("QStyledItemDelegate_Tr")]
 	public static extern libqt_string QStyledItemDelegate_Tr(c_char* s);
 	[LinkName("QStyledItemDelegate_Paint")]
 	public static extern void QStyledItemDelegate_Paint(void* self, void** painter, void** option, void** index);
+	
+	public function void QStyledItemDelegate_OnPaint_action(void* self, void** painter, void** option, void** index);
+	[LinkName("QStyledItemDelegate_OnPaint")]
+	public static extern void QStyledItemDelegate_OnPaint(void* self, QStyledItemDelegate_OnPaint_action _action);
 	[LinkName("QStyledItemDelegate_SizeHint")]
 	public static extern void* QStyledItemDelegate_SizeHint(void* self, void** option, void** index);
+	
+	public function void QStyledItemDelegate_OnSizeHint_action(void* self, void** option, void** index);
+	[LinkName("QStyledItemDelegate_OnSizeHint")]
+	public static extern void* QStyledItemDelegate_OnSizeHint(void* self, QStyledItemDelegate_OnSizeHint_action _action);
 	[LinkName("QStyledItemDelegate_CreateEditor")]
 	public static extern void** QStyledItemDelegate_CreateEditor(void* self, void** parent, void** option, void** index);
+	
+	public function void QStyledItemDelegate_OnCreateEditor_action(void* self, void** parent, void** option, void** index);
+	[LinkName("QStyledItemDelegate_OnCreateEditor")]
+	public static extern void** QStyledItemDelegate_OnCreateEditor(void* self, QStyledItemDelegate_OnCreateEditor_action _action);
 	[LinkName("QStyledItemDelegate_SetEditorData")]
 	public static extern void QStyledItemDelegate_SetEditorData(void* self, void** editor, void** index);
+	
+	public function void QStyledItemDelegate_OnSetEditorData_action(void* self, void** editor, void** index);
+	[LinkName("QStyledItemDelegate_OnSetEditorData")]
+	public static extern void QStyledItemDelegate_OnSetEditorData(void* self, QStyledItemDelegate_OnSetEditorData_action _action);
 	[LinkName("QStyledItemDelegate_SetModelData")]
 	public static extern void QStyledItemDelegate_SetModelData(void* self, void** editor, void** model, void** index);
+	
+	public function void QStyledItemDelegate_OnSetModelData_action(void* self, void** editor, void** model, void** index);
+	[LinkName("QStyledItemDelegate_OnSetModelData")]
+	public static extern void QStyledItemDelegate_OnSetModelData(void* self, QStyledItemDelegate_OnSetModelData_action _action);
 	[LinkName("QStyledItemDelegate_UpdateEditorGeometry")]
 	public static extern void QStyledItemDelegate_UpdateEditorGeometry(void* self, void** editor, void** option, void** index);
+	
+	public function void QStyledItemDelegate_OnUpdateEditorGeometry_action(void* self, void** editor, void** option, void** index);
+	[LinkName("QStyledItemDelegate_OnUpdateEditorGeometry")]
+	public static extern void QStyledItemDelegate_OnUpdateEditorGeometry(void* self, QStyledItemDelegate_OnUpdateEditorGeometry_action _action);
 	[LinkName("QStyledItemDelegate_ItemEditorFactory")]
 	public static extern void** QStyledItemDelegate_ItemEditorFactory(void* self);
 	[LinkName("QStyledItemDelegate_SetItemEditorFactory")]
 	public static extern void QStyledItemDelegate_SetItemEditorFactory(void* self, void** factory);
 	[LinkName("QStyledItemDelegate_DisplayText")]
 	public static extern libqt_string QStyledItemDelegate_DisplayText(void* self, void** value, void** locale);
+	
+	public function void QStyledItemDelegate_OnDisplayText_action(void* self, void** value, void** locale);
+	[LinkName("QStyledItemDelegate_OnDisplayText")]
+	public static extern libqt_string QStyledItemDelegate_OnDisplayText(void* self, QStyledItemDelegate_OnDisplayText_action _action);
 	[LinkName("QStyledItemDelegate_InitStyleOption")]
 	public static extern void QStyledItemDelegate_InitStyleOption(void* self, void** option, void** index);
+	
+	public function void QStyledItemDelegate_OnInitStyleOption_action(void* self, void** option, void** index);
+	[LinkName("QStyledItemDelegate_OnInitStyleOption")]
+	public static extern void QStyledItemDelegate_OnInitStyleOption(void* self, QStyledItemDelegate_OnInitStyleOption_action _action);
 	[LinkName("QStyledItemDelegate_EventFilter")]
 	public static extern bool QStyledItemDelegate_EventFilter(void* self, void** object, void** event);
+	
+	public function void QStyledItemDelegate_OnEventFilter_action(void* self, void** object, void** event);
+	[LinkName("QStyledItemDelegate_OnEventFilter")]
+	public static extern bool QStyledItemDelegate_OnEventFilter(void* self, QStyledItemDelegate_OnEventFilter_action _action);
 	[LinkName("QStyledItemDelegate_EditorEvent")]
 	public static extern bool QStyledItemDelegate_EditorEvent(void* self, void** event, void** model, void** option, void** index);
+	
+	public function void QStyledItemDelegate_OnEditorEvent_action(void* self, void** event, void** model, void** option, void** index);
+	[LinkName("QStyledItemDelegate_OnEditorEvent")]
+	public static extern bool QStyledItemDelegate_OnEditorEvent(void* self, QStyledItemDelegate_OnEditorEvent_action _action);
 	[LinkName("QStyledItemDelegate_Tr2")]
 	public static extern libqt_string QStyledItemDelegate_Tr2(c_char* s, c_char* c);
 	[LinkName("QStyledItemDelegate_Tr3")]
 	public static extern libqt_string QStyledItemDelegate_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QStyledItemDelegate_Event")]
+	public static extern bool QStyledItemDelegate_Event(void* self, void** event);
+	
+	public function void QStyledItemDelegate_OnEvent_action(void* self, void** event);
+	[LinkName("QStyledItemDelegate_OnEvent")]
+	public static extern bool QStyledItemDelegate_OnEvent(void* self, QStyledItemDelegate_OnEvent_action _action);
+	[LinkName("QStyledItemDelegate_TimerEvent")]
+	public static extern void QStyledItemDelegate_TimerEvent(void* self, void** event);
+	
+	public function void QStyledItemDelegate_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QStyledItemDelegate_OnTimerEvent")]
+	public static extern void QStyledItemDelegate_OnTimerEvent(void* self, QStyledItemDelegate_OnTimerEvent_action _action);
+	[LinkName("QStyledItemDelegate_ChildEvent")]
+	public static extern void QStyledItemDelegate_ChildEvent(void* self, void** event);
+	
+	public function void QStyledItemDelegate_OnChildEvent_action(void* self, void** event);
+	[LinkName("QStyledItemDelegate_OnChildEvent")]
+	public static extern void QStyledItemDelegate_OnChildEvent(void* self, QStyledItemDelegate_OnChildEvent_action _action);
+	[LinkName("QStyledItemDelegate_CustomEvent")]
+	public static extern void QStyledItemDelegate_CustomEvent(void* self, void** event);
+	
+	public function void QStyledItemDelegate_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QStyledItemDelegate_OnCustomEvent")]
+	public static extern void QStyledItemDelegate_OnCustomEvent(void* self, QStyledItemDelegate_OnCustomEvent_action _action);
+	[LinkName("QStyledItemDelegate_ConnectNotify")]
+	public static extern void QStyledItemDelegate_ConnectNotify(void* self, void** signal);
+	
+	public function void QStyledItemDelegate_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QStyledItemDelegate_OnConnectNotify")]
+	public static extern void QStyledItemDelegate_OnConnectNotify(void* self, QStyledItemDelegate_OnConnectNotify_action _action);
+	[LinkName("QStyledItemDelegate_DisconnectNotify")]
+	public static extern void QStyledItemDelegate_DisconnectNotify(void* self, void** signal);
+	
+	public function void QStyledItemDelegate_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QStyledItemDelegate_OnDisconnectNotify")]
+	public static extern void QStyledItemDelegate_OnDisconnectNotify(void* self, QStyledItemDelegate_OnDisconnectNotify_action _action);
+	[LinkName("QStyledItemDelegate_DestroyEditor")]
+	public static extern void QStyledItemDelegate_DestroyEditor(void* self, void** editor, void** index);
+	
+	public function void QStyledItemDelegate_OnDestroyEditor_action(void* self, void** editor, void** index);
+	[LinkName("QStyledItemDelegate_OnDestroyEditor")]
+	public static extern void QStyledItemDelegate_OnDestroyEditor(void* self, QStyledItemDelegate_OnDestroyEditor_action _action);
+	[LinkName("QStyledItemDelegate_HelpEvent")]
+	public static extern bool QStyledItemDelegate_HelpEvent(void* self, void** event, void** view, void** option, void** index);
+	
+	public function void QStyledItemDelegate_OnHelpEvent_action(void* self, void** event, void** view, void** option, void** index);
+	[LinkName("QStyledItemDelegate_OnHelpEvent")]
+	public static extern bool QStyledItemDelegate_OnHelpEvent(void* self, QStyledItemDelegate_OnHelpEvent_action _action);
+	[LinkName("QStyledItemDelegate_PaintingRoles")]
+	public static extern void* QStyledItemDelegate_PaintingRoles(void* self);
+	
+	public function void QStyledItemDelegate_OnPaintingRoles_action(void* self);
+	[LinkName("QStyledItemDelegate_OnPaintingRoles")]
+	public static extern void* QStyledItemDelegate_OnPaintingRoles(void* self, QStyledItemDelegate_OnPaintingRoles_action _action);
 }

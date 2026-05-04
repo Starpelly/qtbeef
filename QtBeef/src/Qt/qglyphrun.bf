@@ -115,29 +115,17 @@ class QGlyphRun : IQGlyphRun
 {
 	private QGlyphRun_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGlyphRun_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGlyphRun_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQGlyphRun other)
 	{
 		this.ptr = CQt.QGlyphRun_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

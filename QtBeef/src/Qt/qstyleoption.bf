@@ -87,39 +87,25 @@ class QStyleOption : IQStyleOption
 {
 	private QStyleOption_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOption_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOption_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOption other)
 	{
 		this.ptr = CQt.QStyleOption_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version)
 	{
 		this.ptr = CQt.QStyleOption_new3(version);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version, c_int type)
 	{
 		this.ptr = CQt.QStyleOption_new4(version, type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -338,29 +324,17 @@ class QStyleOptionFocusRect : IQStyleOptionFocusRect, IQStyleOption
 {
 	private QStyleOptionFocusRect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionFocusRect_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionFocusRect_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionFocusRect other)
 	{
 		this.ptr = CQt.QStyleOptionFocusRect_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -577,29 +551,17 @@ class QStyleOptionFrame : IQStyleOptionFrame, IQStyleOption
 {
 	private QStyleOptionFrame_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionFrame_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionFrame_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionFrame other)
 	{
 		this.ptr = CQt.QStyleOptionFrame_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -884,29 +846,17 @@ class QStyleOptionTabWidgetFrame : IQStyleOptionTabWidgetFrame, IQStyleOption
 {
 	private QStyleOptionTabWidgetFrame_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionTabWidgetFrame_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTabWidgetFrame_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionTabWidgetFrame other)
 	{
 		this.ptr = CQt.QStyleOptionTabWidgetFrame_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1207,29 +1157,17 @@ class QStyleOptionTabBarBase : IQStyleOptionTabBarBase, IQStyleOption
 {
 	private QStyleOptionTabBarBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionTabBarBase_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTabBarBase_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionTabBarBase other)
 	{
 		this.ptr = CQt.QStyleOptionTabBarBase_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1522,29 +1460,17 @@ class QStyleOptionHeader : IQStyleOptionHeader, IQStyleOption
 {
 	private QStyleOptionHeader_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionHeader_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionHeader_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionHeader other)
 	{
 		this.ptr = CQt.QStyleOptionHeader_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1776,6 +1702,74 @@ struct QStyleOptionHeaderV2_Ptr
 	{
 		CQt.QStyleOptionHeaderV2_SetUnused((.)this.Ptr, unused);
 	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
 	public c_int Section()
 	{
 		return CQt.QStyleOptionHeader_Section((.)this.Ptr);
@@ -1848,102 +1842,22 @@ struct QStyleOptionHeaderV2_Ptr
 	{
 		CQt.QStyleOptionHeader_SetOrientation((.)this.Ptr, orientation);
 	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
-	}
 }
 class QStyleOptionHeaderV2 : IQStyleOptionHeaderV2, IQStyleOptionHeader, IQStyleOption
 {
 	private QStyleOptionHeaderV2_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionHeaderV2_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionHeaderV2_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionHeaderV2 other)
 	{
 		this.ptr = CQt.QStyleOptionHeaderV2_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1972,6 +1886,74 @@ class QStyleOptionHeaderV2 : IQStyleOptionHeaderV2, IQStyleOptionHeader, IQStyle
 	public void SetUnused(c_int unused)
 	{
 		this.ptr.SetUnused(unused);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
 	}
 	public c_int Section()
 	{
@@ -2044,74 +2026,6 @@ class QStyleOptionHeaderV2 : IQStyleOptionHeaderV2, IQStyleOptionHeader, IQStyle
 	public void SetOrientation(Qt_Orientation orientation)
 	{
 		this.ptr.SetOrientation(orientation);
-	}
-	public c_int Version()
-	{
-		return this.ptr.Version();
-	}
-	public void SetVersion(c_int version)
-	{
-		this.ptr.SetVersion(version);
-	}
-	public c_int Type()
-	{
-		return this.ptr.Type();
-	}
-	public void SetType(c_int type)
-	{
-		this.ptr.SetType(type);
-	}
-	public void* State()
-	{
-		return this.ptr.State();
-	}
-	public void SetState(void* state)
-	{
-		this.ptr.SetState(state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return this.ptr.Direction();
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		this.ptr.SetDirection(direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return this.ptr.Rect();
-	}
-	public void SetRect(IQRect rect)
-	{
-		this.ptr.SetRect(rect);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return this.ptr.FontMetrics();
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		this.ptr.SetFontMetrics(fontMetrics);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return this.ptr.Palette();
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		this.ptr.SetPalette(palette);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return this.ptr.StyleObject();
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		this.ptr.SetStyleObject(styleObject);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		this.ptr.InitFrom(w);
 	}
 }
 interface IQStyleOptionHeaderV2 : IQtObjectInterface
@@ -2256,29 +2170,17 @@ class QStyleOptionButton : IQStyleOptionButton, IQStyleOption
 {
 	private QStyleOptionButton_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionButton_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionButton_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionButton other)
 	{
 		this.ptr = CQt.QStyleOptionButton_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2603,29 +2505,17 @@ class QStyleOptionTab : IQStyleOptionTab, IQStyleOption
 {
 	private QStyleOptionTab_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionTab_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTab_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionTab other)
 	{
 		this.ptr = CQt.QStyleOptionTab_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3002,29 +2892,17 @@ class QStyleOptionToolBar : IQStyleOptionToolBar, IQStyleOption
 {
 	private QStyleOptionToolBar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionToolBar_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionToolBar_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionToolBar other)
 	{
 		this.ptr = CQt.QStyleOptionToolBar_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3333,29 +3211,17 @@ class QStyleOptionProgressBar : IQStyleOptionProgressBar, IQStyleOption
 {
 	private QStyleOptionProgressBar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionProgressBar_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionProgressBar_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionProgressBar other)
 	{
 		this.ptr = CQt.QStyleOptionProgressBar_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3704,29 +3570,17 @@ class QStyleOptionMenuItem : IQStyleOptionMenuItem, IQStyleOption
 {
 	private QStyleOptionMenuItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionMenuItem_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionMenuItem_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionMenuItem other)
 	{
 		this.ptr = CQt.QStyleOptionMenuItem_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4059,29 +3913,17 @@ class QStyleOptionDockWidget : IQStyleOptionDockWidget, IQStyleOption
 {
 	private QStyleOptionDockWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionDockWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionDockWidget_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionDockWidget other)
 	{
 		this.ptr = CQt.QStyleOptionDockWidget_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4442,29 +4284,17 @@ class QStyleOptionViewItem : IQStyleOptionViewItem, IQStyleOption
 {
 	private QStyleOptionViewItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionViewItem_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionViewItem_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionViewItem other)
 	{
 		this.ptr = CQt.QStyleOptionViewItem_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4861,29 +4691,17 @@ class QStyleOptionToolBox : IQStyleOptionToolBox, IQStyleOption
 {
 	private QStyleOptionToolBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionToolBox_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionToolBox_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionToolBox other)
 	{
 		this.ptr = CQt.QStyleOptionToolBox_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5120,29 +4938,17 @@ class QStyleOptionRubberBand : IQStyleOptionRubberBand, IQStyleOption
 {
 	private QStyleOptionRubberBand_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionRubberBand_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionRubberBand_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionRubberBand other)
 	{
 		this.ptr = CQt.QStyleOptionRubberBand_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5355,39 +5161,25 @@ class QStyleOptionComplex : IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionComplex_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionComplex_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionComplex_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionComplex other)
 	{
 		this.ptr = CQt.QStyleOptionComplex_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version)
 	{
 		this.ptr = CQt.QStyleOptionComplex_new3(version);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version, c_int type)
 	{
 		this.ptr = CQt.QStyleOptionComplex_new4(version, type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5619,22 +5411,6 @@ struct QStyleOptionSlider_Ptr
 	{
 		CQt.QStyleOptionSlider_SetKeyboardModifiers((.)this.Ptr, keyboardModifiers);
 	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
-	}
 	public c_int Version()
 	{
 		return CQt.QStyleOption_Version((.)this.Ptr);
@@ -5703,34 +5479,38 @@ struct QStyleOptionSlider_Ptr
 	{
 		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
 	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
 }
 class QStyleOptionSlider : IQStyleOptionSlider, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionSlider_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionSlider_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionSlider_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionSlider other)
 	{
 		this.ptr = CQt.QStyleOptionSlider_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5840,22 +5620,6 @@ class QStyleOptionSlider : IQStyleOptionSlider, IQStyleOptionComplex, IQStyleOpt
 	{
 		this.ptr.SetKeyboardModifiers(keyboardModifiers);
 	}
-	public void* SubControls()
-	{
-		return this.ptr.SubControls();
-	}
-	public void SetSubControls(void* subControls)
-	{
-		this.ptr.SetSubControls(subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return this.ptr.ActiveSubControls();
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		this.ptr.SetActiveSubControls(activeSubControls);
-	}
 	public c_int Version()
 	{
 		return this.ptr.Version();
@@ -5923,6 +5687,22 @@ class QStyleOptionSlider : IQStyleOptionSlider, IQStyleOptionComplex, IQStyleOpt
 	public void InitFrom(IQWidget w)
 	{
 		this.ptr.InitFrom(w);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 }
 interface IQStyleOptionSlider : IQtObjectInterface
@@ -6026,22 +5806,6 @@ struct QStyleOptionSpinBox_Ptr
 	{
 		CQt.QStyleOptionSpinBox_SetFrame((.)this.Ptr, frame);
 	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
-	}
 	public c_int Version()
 	{
 		return CQt.QStyleOption_Version((.)this.Ptr);
@@ -6110,34 +5874,38 @@ struct QStyleOptionSpinBox_Ptr
 	{
 		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
 	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
 }
 class QStyleOptionSpinBox : IQStyleOptionSpinBox, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionSpinBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionSpinBox_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionSpinBox_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionSpinBox other)
 	{
 		this.ptr = CQt.QStyleOptionSpinBox_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6166,22 +5934,6 @@ class QStyleOptionSpinBox : IQStyleOptionSpinBox, IQStyleOptionComplex, IQStyleO
 	public void SetFrame(bool frame)
 	{
 		this.ptr.SetFrame(frame);
-	}
-	public void* SubControls()
-	{
-		return this.ptr.SubControls();
-	}
-	public void SetSubControls(void* subControls)
-	{
-		this.ptr.SetSubControls(subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return this.ptr.ActiveSubControls();
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 	public c_int Version()
 	{
@@ -6250,6 +6002,22 @@ class QStyleOptionSpinBox : IQStyleOptionSpinBox, IQStyleOptionComplex, IQStyleO
 	public void InitFrom(IQWidget w)
 	{
 		this.ptr.InitFrom(w);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 }
 interface IQStyleOptionSpinBox : IQtObjectInterface
@@ -6353,22 +6121,6 @@ struct QStyleOptionToolButton_Ptr
 	{
 		CQt.QStyleOptionToolButton_SetFont((.)this.Ptr, (.)font?.ObjectPtr);
 	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
-	}
 	public c_int Version()
 	{
 		return CQt.QStyleOption_Version((.)this.Ptr);
@@ -6437,34 +6189,38 @@ struct QStyleOptionToolButton_Ptr
 	{
 		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
 	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
 }
 class QStyleOptionToolButton : IQStyleOptionToolButton, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionToolButton_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionToolButton_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionToolButton_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionToolButton other)
 	{
 		this.ptr = CQt.QStyleOptionToolButton_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6534,22 +6290,6 @@ class QStyleOptionToolButton : IQStyleOptionToolButton, IQStyleOptionComplex, IQ
 	{
 		this.ptr.SetFont(font);
 	}
-	public void* SubControls()
-	{
-		return this.ptr.SubControls();
-	}
-	public void SetSubControls(void* subControls)
-	{
-		this.ptr.SetSubControls(subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return this.ptr.ActiveSubControls();
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		this.ptr.SetActiveSubControls(activeSubControls);
-	}
 	public c_int Version()
 	{
 		return this.ptr.Version();
@@ -6617,6 +6357,22 @@ class QStyleOptionToolButton : IQStyleOptionToolButton, IQStyleOptionComplex, IQ
 	public void InitFrom(IQWidget w)
 	{
 		this.ptr.InitFrom(w);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 }
 interface IQStyleOptionToolButton : IQtObjectInterface
@@ -6732,22 +6488,6 @@ struct QStyleOptionComboBox_Ptr
 	{
 		CQt.QStyleOptionComboBox_SetTextAlignment((.)this.Ptr, textAlignment);
 	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
-	}
 	public c_int Version()
 	{
 		return CQt.QStyleOption_Version((.)this.Ptr);
@@ -6816,34 +6556,38 @@ struct QStyleOptionComboBox_Ptr
 	{
 		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
 	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
 }
 class QStyleOptionComboBox : IQStyleOptionComboBox, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionComboBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionComboBox_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionComboBox_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionComboBox other)
 	{
 		this.ptr = CQt.QStyleOptionComboBox_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6904,22 +6648,6 @@ class QStyleOptionComboBox : IQStyleOptionComboBox, IQStyleOptionComplex, IQStyl
 	public void SetTextAlignment(void* textAlignment)
 	{
 		this.ptr.SetTextAlignment(textAlignment);
-	}
-	public void* SubControls()
-	{
-		return this.ptr.SubControls();
-	}
-	public void SetSubControls(void* subControls)
-	{
-		this.ptr.SetSubControls(subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return this.ptr.ActiveSubControls();
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 	public c_int Version()
 	{
@@ -6988,6 +6716,22 @@ class QStyleOptionComboBox : IQStyleOptionComboBox, IQStyleOptionComplex, IQStyl
 	public void InitFrom(IQWidget w)
 	{
 		this.ptr.InitFrom(w);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 }
 interface IQStyleOptionComboBox : IQtObjectInterface
@@ -7075,22 +6819,6 @@ struct QStyleOptionTitleBar_Ptr
 	{
 		CQt.QStyleOptionTitleBar_SetTitleBarFlags((.)this.Ptr, titleBarFlags);
 	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
-	}
 	public c_int Version()
 	{
 		return CQt.QStyleOption_Version((.)this.Ptr);
@@ -7159,34 +6887,38 @@ struct QStyleOptionTitleBar_Ptr
 	{
 		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
 	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
 }
 class QStyleOptionTitleBar : IQStyleOptionTitleBar, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionTitleBar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionTitleBar_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTitleBar_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionTitleBar other)
 	{
 		this.ptr = CQt.QStyleOptionTitleBar_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7223,22 +6955,6 @@ class QStyleOptionTitleBar : IQStyleOptionTitleBar, IQStyleOptionComplex, IQStyl
 	public void SetTitleBarFlags(void* titleBarFlags)
 	{
 		this.ptr.SetTitleBarFlags(titleBarFlags);
-	}
-	public void* SubControls()
-	{
-		return this.ptr.SubControls();
-	}
-	public void SetSubControls(void* subControls)
-	{
-		this.ptr.SetSubControls(subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return this.ptr.ActiveSubControls();
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 	public c_int Version()
 	{
@@ -7307,6 +7023,22 @@ class QStyleOptionTitleBar : IQStyleOptionTitleBar, IQStyleOptionComplex, IQStyl
 	public void InitFrom(IQWidget w)
 	{
 		this.ptr.InitFrom(w);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 }
 interface IQStyleOptionTitleBar : IQtObjectInterface
@@ -7398,22 +7130,6 @@ struct QStyleOptionGroupBox_Ptr
 	{
 		CQt.QStyleOptionGroupBox_SetMidLineWidth((.)this.Ptr, midLineWidth);
 	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
-	}
 	public c_int Version()
 	{
 		return CQt.QStyleOption_Version((.)this.Ptr);
@@ -7482,34 +7198,38 @@ struct QStyleOptionGroupBox_Ptr
 	{
 		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
 	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
 }
 class QStyleOptionGroupBox : IQStyleOptionGroupBox, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionGroupBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionGroupBox_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionGroupBox_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionGroupBox other)
 	{
 		this.ptr = CQt.QStyleOptionGroupBox_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7562,22 +7282,6 @@ class QStyleOptionGroupBox : IQStyleOptionGroupBox, IQStyleOptionComplex, IQStyl
 	public void SetMidLineWidth(c_int midLineWidth)
 	{
 		this.ptr.SetMidLineWidth(midLineWidth);
-	}
-	public void* SubControls()
-	{
-		return this.ptr.SubControls();
-	}
-	public void SetSubControls(void* subControls)
-	{
-		this.ptr.SetSubControls(subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return this.ptr.ActiveSubControls();
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 	public c_int Version()
 	{
@@ -7646,6 +7350,22 @@ class QStyleOptionGroupBox : IQStyleOptionGroupBox, IQStyleOptionComplex, IQStyl
 	public void InitFrom(IQWidget w)
 	{
 		this.ptr.InitFrom(w);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 }
 interface IQStyleOptionGroupBox : IQtObjectInterface
@@ -7705,22 +7425,6 @@ struct QStyleOptionSizeGrip_Ptr
 	{
 		CQt.QStyleOptionSizeGrip_SetCorner((.)this.Ptr, corner);
 	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
-	}
 	public c_int Version()
 	{
 		return CQt.QStyleOption_Version((.)this.Ptr);
@@ -7789,34 +7493,38 @@ struct QStyleOptionSizeGrip_Ptr
 	{
 		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
 	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
 }
 class QStyleOptionSizeGrip : IQStyleOptionSizeGrip, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionSizeGrip_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionSizeGrip_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionSizeGrip_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionSizeGrip other)
 	{
 		this.ptr = CQt.QStyleOptionSizeGrip_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7829,22 +7537,6 @@ class QStyleOptionSizeGrip : IQStyleOptionSizeGrip, IQStyleOptionComplex, IQStyl
 	public void SetCorner(Qt_Corner corner)
 	{
 		this.ptr.SetCorner(corner);
-	}
-	public void* SubControls()
-	{
-		return this.ptr.SubControls();
-	}
-	public void SetSubControls(void* subControls)
-	{
-		this.ptr.SetSubControls(subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return this.ptr.ActiveSubControls();
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 	public c_int Version()
 	{
@@ -7913,6 +7605,22 @@ class QStyleOptionSizeGrip : IQStyleOptionSizeGrip, IQStyleOptionComplex, IQStyl
 	public void InitFrom(IQWidget w)
 	{
 		this.ptr.InitFrom(w);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 }
 interface IQStyleOptionSizeGrip : IQtObjectInterface
@@ -8029,29 +7737,17 @@ class QStyleOptionGraphicsItem : IQStyleOptionGraphicsItem, IQStyleOption
 {
 	private QStyleOptionGraphicsItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleOptionGraphicsItem_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionGraphicsItem_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionGraphicsItem other)
 	{
 		this.ptr = CQt.QStyleOptionGraphicsItem_new2((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8190,39 +7886,25 @@ class QStyleHintReturn : IQStyleHintReturn
 {
 	private QStyleHintReturn_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleHintReturn_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleHintReturn_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleHintReturn param1)
 	{
 		this.ptr = CQt.QStyleHintReturn_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version)
 	{
 		this.ptr = CQt.QStyleHintReturn_new3(version);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version, c_int type)
 	{
 		this.ptr = CQt.QStyleHintReturn_new4(version, type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8311,29 +7993,17 @@ class QStyleHintReturnMask : IQStyleHintReturnMask, IQStyleHintReturn
 {
 	private QStyleHintReturnMask_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleHintReturnMask_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleHintReturnMask_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleHintReturnMask param1)
 	{
 		this.ptr = CQt.QStyleHintReturnMask_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8422,29 +8092,17 @@ class QStyleHintReturnVariant : IQStyleHintReturnVariant, IQStyleHintReturn
 {
 	private QStyleHintReturnVariant_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStyleHintReturnVariant_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleHintReturnVariant_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleHintReturnVariant param1)
 	{
 		this.ptr = CQt.QStyleHintReturnVariant_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

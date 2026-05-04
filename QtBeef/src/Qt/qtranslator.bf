@@ -18,11 +18,11 @@ struct QTranslator_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QTranslator_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QTranslator_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QTranslator_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -96,11 +96,11 @@ struct QTranslator_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QTranslator_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QTranslator_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -260,23 +260,23 @@ struct QTranslator_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTranslator_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTranslator_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTranslator_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTranslator_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTranslator_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -323,73 +323,44 @@ class QTranslator : IQTranslator, IQObject
 {
 	private QTranslator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QTranslator_destroyed,
-		QTranslator_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QTranslator_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTranslator_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QTranslator_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTranslator_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public void Translate(String outStr, c_char* context, c_char* sourceText, c_char* disambiguation, c_int n)
+	public  virtual void OnTranslate(String outStr, c_char* context, c_char* sourceText, c_char* disambiguation, c_int n)
 	{
-		this.ptr.Translate(outStr, context, sourceText, disambiguation, n);
 	}
-	public bool IsEmpty()
+	public  virtual bool OnIsEmpty()
 	{
-		return this.ptr.IsEmpty();
+		return default;
 	}
 	public void Language(String outStr)
 	{
@@ -447,13 +418,13 @@ class QTranslator : IQTranslator, IQObject
 	{
 		return this.ptr.Load34(data, lenVal, directory);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -611,25 +582,20 @@ class QTranslator : IQTranslator, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -685,16 +651,36 @@ extension CQt
 	public static extern void QTranslator_Delete(QTranslator_Ptr self);
 	[LinkName("QTranslator_MetaObject")]
 	public static extern void** QTranslator_MetaObject(void* self);
+	
+	public function void QTranslator_OnMetaObject_action(void* self);
+	[LinkName("QTranslator_OnMetaObject")]
+	public static extern void** QTranslator_OnMetaObject(void* self, QTranslator_OnMetaObject_action _action);
 	[LinkName("QTranslator_Qt_Metacast")]
 	public static extern void* QTranslator_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QTranslator_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QTranslator_OnMetacast")]
+	public static extern void* QTranslator_OnMetacast(void* self, QTranslator_OnMetacast_action _action);
 	[LinkName("QTranslator_Qt_Metacall")]
 	public static extern c_int QTranslator_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QTranslator_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QTranslator_OnMetacall")]
+	public static extern c_int QTranslator_OnMetacall(void* self, QTranslator_OnMetacall_action _action);
 	[LinkName("QTranslator_Tr")]
 	public static extern libqt_string QTranslator_Tr(c_char* s);
 	[LinkName("QTranslator_Translate")]
 	public static extern libqt_string QTranslator_Translate(void* self, c_char* context, c_char* sourceText, c_char* disambiguation, c_int n);
+	
+	public function void QTranslator_OnTranslate_action(void* self, c_char* context, c_char* sourceText, c_char* disambiguation, c_int n);
+	[LinkName("QTranslator_OnTranslate")]
+	public static extern libqt_string QTranslator_OnTranslate(void* self, QTranslator_OnTranslate_action _action);
 	[LinkName("QTranslator_IsEmpty")]
 	public static extern bool QTranslator_IsEmpty(void* self);
+	
+	public function void QTranslator_OnIsEmpty_action(void* self);
+	[LinkName("QTranslator_OnIsEmpty")]
+	public static extern bool QTranslator_OnIsEmpty(void* self, QTranslator_OnIsEmpty_action _action);
 	[LinkName("QTranslator_Language")]
 	public static extern libqt_string QTranslator_Language(void* self);
 	[LinkName("QTranslator_FilePath")]
@@ -723,4 +709,46 @@ extension CQt
 	public static extern bool QTranslator_Load5(void* self, void** locale, libqt_string filename, libqt_string prefix, libqt_string directory, libqt_string suffix);
 	[LinkName("QTranslator_Load34")]
 	public static extern bool QTranslator_Load34(void* self, c_uchar* data, c_int lenVal, libqt_string directory);
+	[LinkName("QTranslator_Event")]
+	public static extern bool QTranslator_Event(void* self, void** event);
+	
+	public function void QTranslator_OnEvent_action(void* self, void** event);
+	[LinkName("QTranslator_OnEvent")]
+	public static extern bool QTranslator_OnEvent(void* self, QTranslator_OnEvent_action _action);
+	[LinkName("QTranslator_EventFilter")]
+	public static extern bool QTranslator_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QTranslator_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QTranslator_OnEventFilter")]
+	public static extern bool QTranslator_OnEventFilter(void* self, QTranslator_OnEventFilter_action _action);
+	[LinkName("QTranslator_TimerEvent")]
+	public static extern void QTranslator_TimerEvent(void* self, void** event);
+	
+	public function void QTranslator_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QTranslator_OnTimerEvent")]
+	public static extern void QTranslator_OnTimerEvent(void* self, QTranslator_OnTimerEvent_action _action);
+	[LinkName("QTranslator_ChildEvent")]
+	public static extern void QTranslator_ChildEvent(void* self, void** event);
+	
+	public function void QTranslator_OnChildEvent_action(void* self, void** event);
+	[LinkName("QTranslator_OnChildEvent")]
+	public static extern void QTranslator_OnChildEvent(void* self, QTranslator_OnChildEvent_action _action);
+	[LinkName("QTranslator_CustomEvent")]
+	public static extern void QTranslator_CustomEvent(void* self, void** event);
+	
+	public function void QTranslator_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QTranslator_OnCustomEvent")]
+	public static extern void QTranslator_OnCustomEvent(void* self, QTranslator_OnCustomEvent_action _action);
+	[LinkName("QTranslator_ConnectNotify")]
+	public static extern void QTranslator_ConnectNotify(void* self, void** signal);
+	
+	public function void QTranslator_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QTranslator_OnConnectNotify")]
+	public static extern void QTranslator_OnConnectNotify(void* self, QTranslator_OnConnectNotify_action _action);
+	[LinkName("QTranslator_DisconnectNotify")]
+	public static extern void QTranslator_DisconnectNotify(void* self, void** signal);
+	
+	public function void QTranslator_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QTranslator_OnDisconnectNotify")]
+	public static extern void QTranslator_OnDisconnectNotify(void* self, QTranslator_OnDisconnectNotify_action _action);
 }

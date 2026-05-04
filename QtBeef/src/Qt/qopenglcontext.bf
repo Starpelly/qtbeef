@@ -18,11 +18,11 @@ struct QOpenGLContextGroup_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QOpenGLContextGroup_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QOpenGLContextGroup_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QOpenGLContextGroup_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -48,11 +48,11 @@ struct QOpenGLContextGroup_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QOpenGLContextGroup_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QOpenGLContextGroup_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -212,23 +212,23 @@ struct QOpenGLContextGroup_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QOpenGLContextGroup_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QOpenGLContextGroup_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QOpenGLContextGroup_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QOpenGLContextGroup_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QOpenGLContextGroup_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -275,51 +275,25 @@ class QOpenGLContextGroup : IQOpenGLContextGroup, IQObject
 {
 	private QOpenGLContextGroup_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QOpenGLContextGroup_destroyed,
-		QOpenGLContextGroup_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QOpenGLContextGroup_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QOpenGLContextGroup_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -341,13 +315,13 @@ class QOpenGLContextGroup : IQOpenGLContextGroup, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -505,25 +479,20 @@ class QOpenGLContextGroup : IQOpenGLContextGroup, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -575,10 +544,22 @@ extension CQt
 	public static extern void QOpenGLContextGroup_Delete(QOpenGLContextGroup_Ptr self);
 	[LinkName("QOpenGLContextGroup_MetaObject")]
 	public static extern void** QOpenGLContextGroup_MetaObject(void* self);
+	
+	public function void QOpenGLContextGroup_OnMetaObject_action(void* self);
+	[LinkName("QOpenGLContextGroup_OnMetaObject")]
+	public static extern void** QOpenGLContextGroup_OnMetaObject(void* self, QOpenGLContextGroup_OnMetaObject_action _action);
 	[LinkName("QOpenGLContextGroup_Qt_Metacast")]
 	public static extern void* QOpenGLContextGroup_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QOpenGLContextGroup_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QOpenGLContextGroup_OnMetacast")]
+	public static extern void* QOpenGLContextGroup_OnMetacast(void* self, QOpenGLContextGroup_OnMetacast_action _action);
 	[LinkName("QOpenGLContextGroup_Qt_Metacall")]
 	public static extern c_int QOpenGLContextGroup_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QOpenGLContextGroup_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QOpenGLContextGroup_OnMetacall")]
+	public static extern c_int QOpenGLContextGroup_OnMetacall(void* self, QOpenGLContextGroup_OnMetacall_action _action);
 	[LinkName("QOpenGLContextGroup_Tr")]
 	public static extern libqt_string QOpenGLContextGroup_Tr(c_char* s);
 	[LinkName("QOpenGLContextGroup_Shares")]
@@ -589,6 +570,48 @@ extension CQt
 	public static extern libqt_string QOpenGLContextGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QOpenGLContextGroup_Tr3")]
 	public static extern libqt_string QOpenGLContextGroup_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QOpenGLContextGroup_Event")]
+	public static extern bool QOpenGLContextGroup_Event(void* self, void** event);
+	
+	public function void QOpenGLContextGroup_OnEvent_action(void* self, void** event);
+	[LinkName("QOpenGLContextGroup_OnEvent")]
+	public static extern bool QOpenGLContextGroup_OnEvent(void* self, QOpenGLContextGroup_OnEvent_action _action);
+	[LinkName("QOpenGLContextGroup_EventFilter")]
+	public static extern bool QOpenGLContextGroup_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QOpenGLContextGroup_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QOpenGLContextGroup_OnEventFilter")]
+	public static extern bool QOpenGLContextGroup_OnEventFilter(void* self, QOpenGLContextGroup_OnEventFilter_action _action);
+	[LinkName("QOpenGLContextGroup_TimerEvent")]
+	public static extern void QOpenGLContextGroup_TimerEvent(void* self, void** event);
+	
+	public function void QOpenGLContextGroup_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QOpenGLContextGroup_OnTimerEvent")]
+	public static extern void QOpenGLContextGroup_OnTimerEvent(void* self, QOpenGLContextGroup_OnTimerEvent_action _action);
+	[LinkName("QOpenGLContextGroup_ChildEvent")]
+	public static extern void QOpenGLContextGroup_ChildEvent(void* self, void** event);
+	
+	public function void QOpenGLContextGroup_OnChildEvent_action(void* self, void** event);
+	[LinkName("QOpenGLContextGroup_OnChildEvent")]
+	public static extern void QOpenGLContextGroup_OnChildEvent(void* self, QOpenGLContextGroup_OnChildEvent_action _action);
+	[LinkName("QOpenGLContextGroup_CustomEvent")]
+	public static extern void QOpenGLContextGroup_CustomEvent(void* self, void** event);
+	
+	public function void QOpenGLContextGroup_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QOpenGLContextGroup_OnCustomEvent")]
+	public static extern void QOpenGLContextGroup_OnCustomEvent(void* self, QOpenGLContextGroup_OnCustomEvent_action _action);
+	[LinkName("QOpenGLContextGroup_ConnectNotify")]
+	public static extern void QOpenGLContextGroup_ConnectNotify(void* self, void** signal);
+	
+	public function void QOpenGLContextGroup_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QOpenGLContextGroup_OnConnectNotify")]
+	public static extern void QOpenGLContextGroup_OnConnectNotify(void* self, QOpenGLContextGroup_OnConnectNotify_action _action);
+	[LinkName("QOpenGLContextGroup_DisconnectNotify")]
+	public static extern void QOpenGLContextGroup_DisconnectNotify(void* self, void** signal);
+	
+	public function void QOpenGLContextGroup_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QOpenGLContextGroup_OnDisconnectNotify")]
+	public static extern void QOpenGLContextGroup_OnDisconnectNotify(void* self, QOpenGLContextGroup_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QOpenGLContext
@@ -605,11 +628,11 @@ struct QOpenGLContext_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QOpenGLContext_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QOpenGLContext_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QOpenGLContext_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -739,11 +762,11 @@ struct QOpenGLContext_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QOpenGLContext_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QOpenGLContext_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -903,23 +926,23 @@ struct QOpenGLContext_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QOpenGLContext_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QOpenGLContext_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QOpenGLContext_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QOpenGLContext_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QOpenGLContext_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -966,69 +989,33 @@ class QOpenGLContext : IQOpenGLContext, IQObject
 {
 	private QOpenGLContext_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QOpenGLContext_aboutToBeDestroyed,
-		QOpenGLContext_destroyed,
-		QOpenGLContext_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QOpenGLContext_Connect_AboutToBeDestroyed(obj.ObjectPtr,  => QtBeef_QOpenGLContext_aboutToBeDestroyed);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnAboutToBeDestroyed = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QOpenGLContext_aboutToBeDestroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAboutToBeDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QOpenGLContext_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QOpenGLContext_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QOpenGLContext_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QOpenGLContext_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -1154,13 +1141,13 @@ class QOpenGLContext : IQOpenGLContext, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1318,25 +1305,20 @@ class QOpenGLContext : IQOpenGLContext, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1392,10 +1374,22 @@ extension CQt
 	public static extern void QOpenGLContext_Delete(QOpenGLContext_Ptr self);
 	[LinkName("QOpenGLContext_MetaObject")]
 	public static extern void** QOpenGLContext_MetaObject(void* self);
+	
+	public function void QOpenGLContext_OnMetaObject_action(void* self);
+	[LinkName("QOpenGLContext_OnMetaObject")]
+	public static extern void** QOpenGLContext_OnMetaObject(void* self, QOpenGLContext_OnMetaObject_action _action);
 	[LinkName("QOpenGLContext_Qt_Metacast")]
 	public static extern void* QOpenGLContext_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QOpenGLContext_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QOpenGLContext_OnMetacast")]
+	public static extern void* QOpenGLContext_OnMetacast(void* self, QOpenGLContext_OnMetacast_action _action);
 	[LinkName("QOpenGLContext_Qt_Metacall")]
 	public static extern c_int QOpenGLContext_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QOpenGLContext_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QOpenGLContext_OnMetacall")]
+	public static extern c_int QOpenGLContext_OnMetacall(void* self, QOpenGLContext_OnMetacall_action _action);
 	[LinkName("QOpenGLContext_Tr")]
 	public static extern libqt_string QOpenGLContext_Tr(c_char* s);
 	[LinkName("QOpenGLContext_SetFormat")]
@@ -1455,13 +1449,55 @@ extension CQt
 	[LinkName("QOpenGLContext_AboutToBeDestroyed")]
 	public static extern void QOpenGLContext_AboutToBeDestroyed(void* self);
 	
-	public function void QOpenGLContext_aboutToBeDestroyed_action(void* self);
+	public function void QOpenGLContext_Connect_AboutToBeDestroyed_action(void* self);
 	[LinkName("QOpenGLContext_Connect_AboutToBeDestroyed")]
-	public static extern void QOpenGLContext_Connect_AboutToBeDestroyed(void* self, QOpenGLContext_aboutToBeDestroyed_action _action);
+	public static extern void QOpenGLContext_Connect_AboutToBeDestroyed(void* self, QOpenGLContext_Connect_AboutToBeDestroyed_action _action);
 	[LinkName("QOpenGLContext_Tr2")]
 	public static extern libqt_string QOpenGLContext_Tr2(c_char* s, c_char* c);
 	[LinkName("QOpenGLContext_Tr3")]
 	public static extern libqt_string QOpenGLContext_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QOpenGLContext_Event")]
+	public static extern bool QOpenGLContext_Event(void* self, void** event);
+	
+	public function void QOpenGLContext_OnEvent_action(void* self, void** event);
+	[LinkName("QOpenGLContext_OnEvent")]
+	public static extern bool QOpenGLContext_OnEvent(void* self, QOpenGLContext_OnEvent_action _action);
+	[LinkName("QOpenGLContext_EventFilter")]
+	public static extern bool QOpenGLContext_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QOpenGLContext_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QOpenGLContext_OnEventFilter")]
+	public static extern bool QOpenGLContext_OnEventFilter(void* self, QOpenGLContext_OnEventFilter_action _action);
+	[LinkName("QOpenGLContext_TimerEvent")]
+	public static extern void QOpenGLContext_TimerEvent(void* self, void** event);
+	
+	public function void QOpenGLContext_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QOpenGLContext_OnTimerEvent")]
+	public static extern void QOpenGLContext_OnTimerEvent(void* self, QOpenGLContext_OnTimerEvent_action _action);
+	[LinkName("QOpenGLContext_ChildEvent")]
+	public static extern void QOpenGLContext_ChildEvent(void* self, void** event);
+	
+	public function void QOpenGLContext_OnChildEvent_action(void* self, void** event);
+	[LinkName("QOpenGLContext_OnChildEvent")]
+	public static extern void QOpenGLContext_OnChildEvent(void* self, QOpenGLContext_OnChildEvent_action _action);
+	[LinkName("QOpenGLContext_CustomEvent")]
+	public static extern void QOpenGLContext_CustomEvent(void* self, void** event);
+	
+	public function void QOpenGLContext_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QOpenGLContext_OnCustomEvent")]
+	public static extern void QOpenGLContext_OnCustomEvent(void* self, QOpenGLContext_OnCustomEvent_action _action);
+	[LinkName("QOpenGLContext_ConnectNotify")]
+	public static extern void QOpenGLContext_ConnectNotify(void* self, void** signal);
+	
+	public function void QOpenGLContext_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QOpenGLContext_OnConnectNotify")]
+	public static extern void QOpenGLContext_OnConnectNotify(void* self, QOpenGLContext_OnConnectNotify_action _action);
+	[LinkName("QOpenGLContext_DisconnectNotify")]
+	public static extern void QOpenGLContext_DisconnectNotify(void* self, void** signal);
+	
+	public function void QOpenGLContext_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QOpenGLContext_OnDisconnectNotify")]
+	public static extern void QOpenGLContext_OnDisconnectNotify(void* self, QOpenGLContext_OnDisconnectNotify_action _action);
 }
 [AllowDuplicates]
 enum QOpenGLContext_OpenGLModuleType

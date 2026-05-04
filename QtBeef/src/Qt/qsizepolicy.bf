@@ -95,39 +95,25 @@ class QSizePolicy : IQSizePolicy
 {
 	private QSizePolicy_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QSizePolicy_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQSizePolicy other)
 	{
 		this.ptr = CQt.QSizePolicy_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSizePolicy_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(QSizePolicy_Policy horizontal, QSizePolicy_Policy vertical)
 	{
 		this.ptr = CQt.QSizePolicy_new4(horizontal, vertical);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QSizePolicy_Policy horizontal, QSizePolicy_Policy vertical, QSizePolicy_ControlType type)
 	{
 		this.ptr = CQt.QSizePolicy_new6(horizontal, vertical, type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -114,42 +114,6 @@ struct QGraphicsLinearLayout_Ptr
 	{
 		CQt.QGraphicsLinearLayout_Dump1((.)this.Ptr, indent);
 	}
-	public void SetContentsMargins(double left, double top, double right, double bottom)
-	{
-		CQt.QGraphicsLayout_SetContentsMargins((.)this.Ptr, left, top, right, bottom);
-	}
-	public void GetContentsMargins(double* left, double* top, double* right, double* bottom)
-	{
-		CQt.QGraphicsLayout_GetContentsMargins((.)this.Ptr, left, top, right, bottom);
-	}
-	public void Activate()
-	{
-		CQt.QGraphicsLayout_Activate((.)this.Ptr);
-	}
-	public bool IsActivated()
-	{
-		return CQt.QGraphicsLayout_IsActivated((.)this.Ptr);
-	}
-	public void UpdateGeometry()
-	{
-		CQt.QGraphicsLayout_UpdateGeometry((.)this.Ptr);
-	}
-	public void WidgetEvent(IQEvent e)
-	{
-		CQt.QGraphicsLayout_WidgetEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void SetInstantInvalidatePropagation(bool enable)
-	{
-		CQt.QGraphicsLayout_SetInstantInvalidatePropagation(enable);
-	}
-	public bool InstantInvalidatePropagation()
-	{
-		return CQt.QGraphicsLayout_InstantInvalidatePropagation();
-	}
-	public void AddChildLayoutItem(IQGraphicsLayoutItem layoutItem)
-	{
-		CQt.QGraphicsLayout_AddChildLayoutItem((.)this.Ptr, (.)layoutItem?.ObjectPtr);
-	}
 	public void SetSizePolicy(IQSizePolicy policy)
 	{
 		CQt.QGraphicsLayoutItem_SetSizePolicy((.)this.Ptr, (.)policy?.ObjectPtr);
@@ -250,6 +214,10 @@ struct QGraphicsLinearLayout_Ptr
 	{
 		return QRectF_Ptr(CQt.QGraphicsLayoutItem_Geometry((.)this.Ptr));
 	}
+	public void GetContentsMargins(double* left, double* top, double* right, double* bottom)
+	{
+		CQt.QGraphicsLinearLayout_GetContentsMargins((.)this.Ptr, left, top, right, bottom);
+	}
 	public QRectF_Ptr ContentsRect()
 	{
 		return QRectF_Ptr(CQt.QGraphicsLayoutItem_ContentsRect((.)this.Ptr));
@@ -258,9 +226,13 @@ struct QGraphicsLinearLayout_Ptr
 	{
 		return QSizeF_Ptr(CQt.QGraphicsLayoutItem_EffectiveSizeHint((.)this.Ptr, which));
 	}
+	public void UpdateGeometry()
+	{
+		CQt.QGraphicsLinearLayout_UpdateGeometry((.)this.Ptr);
+	}
 	public bool IsEmpty()
 	{
-		return CQt.QGraphicsLayoutItem_IsEmpty((.)this.Ptr);
+		return CQt.QGraphicsLinearLayout_IsEmpty((.)this.Ptr);
 	}
 	public QGraphicsLayoutItem_Ptr ParentLayoutItem()
 	{
@@ -298,44 +270,58 @@ struct QGraphicsLinearLayout_Ptr
 	{
 		return QSizeF_Ptr(CQt.QGraphicsLayoutItem_EffectiveSizeHint2((.)this.Ptr, which, (.)constraint?.ObjectPtr));
 	}
+	public void SetContentsMargins(double left, double top, double right, double bottom)
+	{
+		CQt.QGraphicsLayout_SetContentsMargins((.)this.Ptr, left, top, right, bottom);
+	}
+	public void Activate()
+	{
+		CQt.QGraphicsLayout_Activate((.)this.Ptr);
+	}
+	public bool IsActivated()
+	{
+		return CQt.QGraphicsLayout_IsActivated((.)this.Ptr);
+	}
+	public void WidgetEvent(IQEvent e)
+	{
+		CQt.QGraphicsLinearLayout_WidgetEvent((.)this.Ptr, (.)e?.ObjectPtr);
+	}
+	public void SetInstantInvalidatePropagation(bool enable)
+	{
+		CQt.QGraphicsLayout_SetInstantInvalidatePropagation(enable);
+	}
+	public bool InstantInvalidatePropagation()
+	{
+		return CQt.QGraphicsLayout_InstantInvalidatePropagation();
+	}
+	public void AddChildLayoutItem(IQGraphicsLayoutItem layoutItem)
+	{
+		CQt.QGraphicsLayout_AddChildLayoutItem((.)this.Ptr, (.)layoutItem?.ObjectPtr);
+	}
 }
 class QGraphicsLinearLayout : IQGraphicsLinearLayout, IQGraphicsLayout, IQGraphicsLayoutItem
 {
 	private QGraphicsLinearLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QGraphicsLinearLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsLinearLayout_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation)
 	{
 		this.ptr = CQt.QGraphicsLinearLayout_new2(orientation);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsLayoutItem parent)
 	{
 		this.ptr = CQt.QGraphicsLinearLayout_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation, IQGraphicsLayoutItem parent)
 	{
 		this.ptr = CQt.QGraphicsLinearLayout_new4(orientation, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -369,9 +355,8 @@ class QGraphicsLinearLayout : IQGraphicsLinearLayout, IQGraphicsLayout, IQGraphi
 	{
 		this.ptr.RemoveItem(item);
 	}
-	public void RemoveAt(c_int index)
+	public  virtual void OnRemoveAt(c_int index)
 	{
-		this.ptr.RemoveAt(index);
 	}
 	public void SetSpacing(double spacing)
 	{
@@ -405,25 +390,23 @@ class QGraphicsLinearLayout : IQGraphicsLinearLayout, IQGraphicsLayout, IQGraphi
 	{
 		return this.ptr.Alignment(item);
 	}
-	public void SetGeometry(IQRectF rect)
+	public  virtual void OnSetGeometry(void** rect)
 	{
-		this.ptr.SetGeometry(rect);
 	}
-	public c_int Count()
+	public  virtual c_int OnCount()
 	{
-		return this.ptr.Count();
+		return default;
 	}
-	public QGraphicsLayoutItem_Ptr ItemAt(c_int index)
+	public  virtual QGraphicsLayoutItem_Ptr OnItemAt(c_int index)
 	{
-		return this.ptr.ItemAt(index);
+		return default;
 	}
-	public void Invalidate()
+	public  virtual void OnInvalidate()
 	{
-		this.ptr.Invalidate();
 	}
-	public QSizeF_Ptr SizeHint(Qt_SizeHint which, IQSizeF constraint)
+	public  virtual QSizeF_Ptr OnSizeHint(Qt_SizeHint which, void** constraint)
 	{
-		return this.ptr.SizeHint(which, constraint);
+		return default;
 	}
 	public void Dump()
 	{
@@ -440,42 +423,6 @@ class QGraphicsLinearLayout : IQGraphicsLinearLayout, IQGraphicsLayout, IQGraphi
 	public void Dump1(c_int indent)
 	{
 		this.ptr.Dump1(indent);
-	}
-	public void SetContentsMargins(double left, double top, double right, double bottom)
-	{
-		this.ptr.SetContentsMargins(left, top, right, bottom);
-	}
-	public void GetContentsMargins(double* left, double* top, double* right, double* bottom)
-	{
-		this.ptr.GetContentsMargins(left, top, right, bottom);
-	}
-	public void Activate()
-	{
-		this.ptr.Activate();
-	}
-	public bool IsActivated()
-	{
-		return this.ptr.IsActivated();
-	}
-	public void UpdateGeometry()
-	{
-		this.ptr.UpdateGeometry();
-	}
-	public void WidgetEvent(IQEvent e)
-	{
-		this.ptr.WidgetEvent(e);
-	}
-	public void SetInstantInvalidatePropagation(bool enable)
-	{
-		this.ptr.SetInstantInvalidatePropagation(enable);
-	}
-	public bool InstantInvalidatePropagation()
-	{
-		return this.ptr.InstantInvalidatePropagation();
-	}
-	public void AddChildLayoutItem(IQGraphicsLayoutItem layoutItem)
-	{
-		this.ptr.AddChildLayoutItem(layoutItem);
 	}
 	public void SetSizePolicy(IQSizePolicy policy)
 	{
@@ -577,6 +524,9 @@ class QGraphicsLinearLayout : IQGraphicsLinearLayout, IQGraphicsLayout, IQGraphi
 	{
 		return this.ptr.Geometry();
 	}
+	public  virtual void OnGetContentsMargins(double* left, double* top, double* right, double* bottom)
+	{
+	}
 	public QRectF_Ptr ContentsRect()
 	{
 		return this.ptr.ContentsRect();
@@ -585,9 +535,12 @@ class QGraphicsLinearLayout : IQGraphicsLinearLayout, IQGraphicsLayout, IQGraphi
 	{
 		return this.ptr.EffectiveSizeHint(which);
 	}
-	public bool IsEmpty()
+	public  virtual void OnUpdateGeometry()
 	{
-		return this.ptr.IsEmpty();
+	}
+	public  virtual bool OnIsEmpty()
+	{
+		return default;
 	}
 	public QGraphicsLayoutItem_Ptr ParentLayoutItem()
 	{
@@ -625,6 +578,33 @@ class QGraphicsLinearLayout : IQGraphicsLinearLayout, IQGraphicsLayout, IQGraphi
 	{
 		return this.ptr.EffectiveSizeHint2(which, constraint);
 	}
+	public void SetContentsMargins(double left, double top, double right, double bottom)
+	{
+		this.ptr.SetContentsMargins(left, top, right, bottom);
+	}
+	public void Activate()
+	{
+		this.ptr.Activate();
+	}
+	public bool IsActivated()
+	{
+		return this.ptr.IsActivated();
+	}
+	public  virtual void OnWidgetEvent(void** e)
+	{
+	}
+	public void SetInstantInvalidatePropagation(bool enable)
+	{
+		this.ptr.SetInstantInvalidatePropagation(enable);
+	}
+	public bool InstantInvalidatePropagation()
+	{
+		return this.ptr.InstantInvalidatePropagation();
+	}
+	public void AddChildLayoutItem(IQGraphicsLayoutItem layoutItem)
+	{
+		this.ptr.AddChildLayoutItem(layoutItem);
+	}
 }
 interface IQGraphicsLinearLayout : IQtObjectInterface
 {
@@ -657,6 +637,10 @@ extension CQt
 	public static extern void QGraphicsLinearLayout_RemoveItem(void* self, void** item);
 	[LinkName("QGraphicsLinearLayout_RemoveAt")]
 	public static extern void QGraphicsLinearLayout_RemoveAt(void* self, c_int index);
+	
+	public function void QGraphicsLinearLayout_OnRemoveAt_action(void* self, c_int index);
+	[LinkName("QGraphicsLinearLayout_OnRemoveAt")]
+	public static extern void QGraphicsLinearLayout_OnRemoveAt(void* self, QGraphicsLinearLayout_OnRemoveAt_action _action);
 	[LinkName("QGraphicsLinearLayout_SetSpacing")]
 	public static extern void QGraphicsLinearLayout_SetSpacing(void* self, double spacing);
 	[LinkName("QGraphicsLinearLayout_Spacing")]
@@ -675,14 +659,34 @@ extension CQt
 	public static extern void* QGraphicsLinearLayout_Alignment(void* self, void** item);
 	[LinkName("QGraphicsLinearLayout_SetGeometry")]
 	public static extern void QGraphicsLinearLayout_SetGeometry(void* self, void** rect);
+	
+	public function void QGraphicsLinearLayout_OnSetGeometry_action(void* self, void** rect);
+	[LinkName("QGraphicsLinearLayout_OnSetGeometry")]
+	public static extern void QGraphicsLinearLayout_OnSetGeometry(void* self, QGraphicsLinearLayout_OnSetGeometry_action _action);
 	[LinkName("QGraphicsLinearLayout_Count")]
 	public static extern c_int QGraphicsLinearLayout_Count(void* self);
+	
+	public function void QGraphicsLinearLayout_OnCount_action(void* self);
+	[LinkName("QGraphicsLinearLayout_OnCount")]
+	public static extern c_int QGraphicsLinearLayout_OnCount(void* self, QGraphicsLinearLayout_OnCount_action _action);
 	[LinkName("QGraphicsLinearLayout_ItemAt")]
 	public static extern void** QGraphicsLinearLayout_ItemAt(void* self, c_int index);
+	
+	public function void QGraphicsLinearLayout_OnItemAt_action(void* self, c_int index);
+	[LinkName("QGraphicsLinearLayout_OnItemAt")]
+	public static extern void** QGraphicsLinearLayout_OnItemAt(void* self, QGraphicsLinearLayout_OnItemAt_action _action);
 	[LinkName("QGraphicsLinearLayout_Invalidate")]
 	public static extern void QGraphicsLinearLayout_Invalidate(void* self);
+	
+	public function void QGraphicsLinearLayout_OnInvalidate_action(void* self);
+	[LinkName("QGraphicsLinearLayout_OnInvalidate")]
+	public static extern void QGraphicsLinearLayout_OnInvalidate(void* self, QGraphicsLinearLayout_OnInvalidate_action _action);
 	[LinkName("QGraphicsLinearLayout_SizeHint")]
 	public static extern void* QGraphicsLinearLayout_SizeHint(void* self, Qt_SizeHint which, void** constraint);
+	
+	public function void QGraphicsLinearLayout_OnSizeHint_action(void* self, Qt_SizeHint which, void** constraint);
+	[LinkName("QGraphicsLinearLayout_OnSizeHint")]
+	public static extern void* QGraphicsLinearLayout_OnSizeHint(void* self, QGraphicsLinearLayout_OnSizeHint_action _action);
 	[LinkName("QGraphicsLinearLayout_Dump")]
 	public static extern void QGraphicsLinearLayout_Dump(void* self);
 	[LinkName("QGraphicsLinearLayout_AddStretch1")]
@@ -691,4 +695,28 @@ extension CQt
 	public static extern void QGraphicsLinearLayout_InsertStretch2(void* self, c_int index, c_int stretch);
 	[LinkName("QGraphicsLinearLayout_Dump1")]
 	public static extern void QGraphicsLinearLayout_Dump1(void* self, c_int indent);
+	[LinkName("QGraphicsLinearLayout_GetContentsMargins")]
+	public static extern void QGraphicsLinearLayout_GetContentsMargins(void* self, double* left, double* top, double* right, double* bottom);
+	
+	public function void QGraphicsLinearLayout_OnGetContentsMargins_action(void* self, double* left, double* top, double* right, double* bottom);
+	[LinkName("QGraphicsLinearLayout_OnGetContentsMargins")]
+	public static extern void QGraphicsLinearLayout_OnGetContentsMargins(void* self, QGraphicsLinearLayout_OnGetContentsMargins_action _action);
+	[LinkName("QGraphicsLinearLayout_UpdateGeometry")]
+	public static extern void QGraphicsLinearLayout_UpdateGeometry(void* self);
+	
+	public function void QGraphicsLinearLayout_OnUpdateGeometry_action(void* self);
+	[LinkName("QGraphicsLinearLayout_OnUpdateGeometry")]
+	public static extern void QGraphicsLinearLayout_OnUpdateGeometry(void* self, QGraphicsLinearLayout_OnUpdateGeometry_action _action);
+	[LinkName("QGraphicsLinearLayout_IsEmpty")]
+	public static extern bool QGraphicsLinearLayout_IsEmpty(void* self);
+	
+	public function void QGraphicsLinearLayout_OnIsEmpty_action(void* self);
+	[LinkName("QGraphicsLinearLayout_OnIsEmpty")]
+	public static extern bool QGraphicsLinearLayout_OnIsEmpty(void* self, QGraphicsLinearLayout_OnIsEmpty_action _action);
+	[LinkName("QGraphicsLinearLayout_WidgetEvent")]
+	public static extern void QGraphicsLinearLayout_WidgetEvent(void* self, void** e);
+	
+	public function void QGraphicsLinearLayout_OnWidgetEvent_action(void* self, void** e);
+	[LinkName("QGraphicsLinearLayout_OnWidgetEvent")]
+	public static extern void QGraphicsLinearLayout_OnWidgetEvent(void* self, QGraphicsLinearLayout_OnWidgetEvent_action _action);
 }

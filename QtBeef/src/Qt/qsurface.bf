@@ -39,19 +39,9 @@ class QSurface : IQSurface
 {
 	private QSurface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QSurface_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -61,21 +51,21 @@ class QSurface : IQSurface
 	{
 		return this.ptr.SurfaceClass();
 	}
-	public QSurfaceFormat_Ptr Format()
+	public  virtual QSurfaceFormat_Ptr OnFormat()
 	{
-		return this.ptr.Format();
+		return default;
 	}
-	public QSurface_SurfaceType SurfaceType()
+	public  virtual QSurface_SurfaceType OnSurfaceType()
 	{
-		return this.ptr.SurfaceType();
+		return default;
 	}
 	public bool SupportsOpenGL()
 	{
 		return this.ptr.SupportsOpenGL();
 	}
-	public QSize_Ptr Size()
+	public  virtual QSize_Ptr OnSize()
 	{
-		return this.ptr.Size();
+		return default;
 	}
 }
 interface IQSurface : IQtObjectInterface
@@ -89,12 +79,24 @@ extension CQt
 	public static extern QSurface_SurfaceClass QSurface_SurfaceClass(void* self);
 	[LinkName("QSurface_Format")]
 	public static extern void* QSurface_Format(void* self);
+	
+	public function void QSurface_OnFormat_action(void* self);
+	[LinkName("QSurface_OnFormat")]
+	public static extern void* QSurface_OnFormat(void* self, QSurface_OnFormat_action _action);
 	[LinkName("QSurface_SurfaceType")]
 	public static extern QSurface_SurfaceType QSurface_SurfaceType(void* self);
+	
+	public function void QSurface_OnSurfaceType_action(void* self);
+	[LinkName("QSurface_OnSurfaceType")]
+	public static extern QSurface_SurfaceType QSurface_OnSurfaceType(void* self, QSurface_OnSurfaceType_action _action);
 	[LinkName("QSurface_SupportsOpenGL")]
 	public static extern bool QSurface_SupportsOpenGL(void* self);
 	[LinkName("QSurface_Size")]
 	public static extern void* QSurface_Size(void* self);
+	
+	public function void QSurface_OnSize_action(void* self);
+	[LinkName("QSurface_OnSize")]
+	public static extern void* QSurface_OnSize(void* self, QSurface_OnSize_action _action);
 	[LinkName("QSurface_OperatorAssign")]
 	public static extern void QSurface_OperatorAssign(void* self, void** param1);
 }

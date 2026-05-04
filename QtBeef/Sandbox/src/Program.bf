@@ -46,9 +46,11 @@ class Program
 				a.SetMenuRole(.AboutQtRole);
 				help.AddAction(a);
 
+				/*
 				a.OnTriggered.Add(new () => {
 					CQt.QApplication_AboutQt();
 				});
+				*/
 
 				SetMenuBar(m_menubar);
 			}
@@ -58,7 +60,7 @@ class Program
 			button.Move(32, 32);
 			button.SetCursor(new QCursor(.PointingHandCursor));
 
-			button.OnPressed.Add(new () => tt());
+			// button.OnPressed.Add(new () => tt());
 
 			m_toolbar = new QToolBar(this);
 			m_toolbar.SetIconSize(scope QSize(32, 32));
@@ -96,6 +98,11 @@ class Program
 
 			QGroupBox bottomRightGroupBox ~ delete _;
 
+			static void wheelevent(void* self, void** d)
+			{
+				Console.WriteLine("ass");
+			}
+
 			public this(IQWidget parent) : base(parent)
 			{
 				createTopLeftGroupBox();
@@ -108,9 +115,13 @@ class Program
 				progressBar.SetValue(40);
 
 				let text = new QLabel("Hello from Beef!");
+				let rect = new Rectangle(this);
+
+				// CQt.QLabel_OnMouseMoveEvent(text.ObjectPtr, => wheelevent);
 
 				QGridLayout mainLayout = new QGridLayout();
 				mainLayout.AddWidget(text);
+				mainLayout.AddWidget(rect);
 				mainLayout.AddWidget2(topLeftGroupBox, 1, 0);
 				mainLayout.AddWidget2(topRightGroupBox, 1, 1);
 				mainLayout.AddWidget2(bottomLeftTabWidget, 2, 0);
@@ -206,6 +217,24 @@ class Program
 				bottomLeftTabWidget.AddTab(tab2, "Text Edit");
 			}
 
+			class Rectangle : QWidget
+			{
+				public this(IQWidget parent) : base(parent)
+				{
+					Resize(100, 100);
+				}
+
+				public override void OnPaintEvent(void**)
+				{
+					let p = scope QPainter(this);
+
+					p.SetPen3(.NoPen);
+
+					p.SetBrush(scope QBrush());
+					p.DrawRect(scope QRectF(0, 0, this.Width(), this.Height()));
+				}
+			}
+
 			void createBottomRightGroupBox()
 			{
 				bottomRightGroupBox = new QGroupBox("Group 3");
@@ -239,7 +268,7 @@ class Program
 
 				let withIcon = new QToolButton();
 				let style = new QStyle(.(CQt.QApplication_Style()));
-				withIcon.SetIcon(new QIcon(style.StandardIcon(.SP_ComputerIcon, opt, this)));
+				// withIcon.SetIcon(new QIcon(style.StandardIcon(.SP_ComputerIcon, opt, this)));
 
 				let hbox = new QHBoxLayout();
 				hbox.AddWidget(toolButton);
@@ -287,9 +316,11 @@ class Program
 				a.SetMenuRole(.AboutQtRole);
 				help.AddAction(a);
 
+				/*
 				a.OnTriggered.Add(new () => {
 					CQt.QApplication_AboutQt();
 				});
+				*/
 
 				SetMenuBar(m_menubar);
 			}

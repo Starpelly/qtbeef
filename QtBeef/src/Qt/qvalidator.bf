@@ -18,11 +18,11 @@ struct QValidator_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QValidator_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QValidator_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QValidator_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -60,11 +60,11 @@ struct QValidator_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QValidator_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QValidator_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -224,23 +224,23 @@ struct QValidator_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QValidator_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QValidator_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QValidator_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QValidator_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QValidator_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -287,69 +287,33 @@ class QValidator : IQValidator, IQObject
 {
 	private QValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QValidator_changed,
-		QValidator_destroyed,
-		QValidator_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_changed);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QValidator_changed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnChanged.Invoke();
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QValidator_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QValidator_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QValidator_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -363,13 +327,12 @@ class QValidator : IQValidator, IQObject
 	{
 		return this.ptr.Locale();
 	}
-	public QValidator_State Validate(String param1, c_int* param2)
+	public  virtual QValidator_State OnValidate(libqt_string param1, c_int* param2)
 	{
-		return this.ptr.Validate(param1, param2);
+		return default;
 	}
-	public void Fixup(String param1)
+	public  virtual void OnFixup(libqt_string param1)
 	{
-		this.ptr.Fixup(param1);
 	}
 	public void Changed()
 	{
@@ -383,13 +346,13 @@ class QValidator : IQValidator, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -547,25 +510,20 @@ class QValidator : IQValidator, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -621,10 +579,22 @@ extension CQt
 	public static extern void QValidator_Delete(QValidator_Ptr self);
 	[LinkName("QValidator_MetaObject")]
 	public static extern void** QValidator_MetaObject(void* self);
+	
+	public function void QValidator_OnMetaObject_action(void* self);
+	[LinkName("QValidator_OnMetaObject")]
+	public static extern void** QValidator_OnMetaObject(void* self, QValidator_OnMetaObject_action _action);
 	[LinkName("QValidator_Qt_Metacast")]
 	public static extern void* QValidator_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QValidator_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QValidator_OnMetacast")]
+	public static extern void* QValidator_OnMetacast(void* self, QValidator_OnMetacast_action _action);
 	[LinkName("QValidator_Qt_Metacall")]
 	public static extern c_int QValidator_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QValidator_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QValidator_OnMetacall")]
+	public static extern c_int QValidator_OnMetacall(void* self, QValidator_OnMetacall_action _action);
 	[LinkName("QValidator_Tr")]
 	public static extern libqt_string QValidator_Tr(c_char* s);
 	[LinkName("QValidator_SetLocale")]
@@ -633,18 +603,68 @@ extension CQt
 	public static extern void* QValidator_Locale(void* self);
 	[LinkName("QValidator_Validate")]
 	public static extern QValidator_State QValidator_Validate(void* self, libqt_string param1, c_int* param2);
+	
+	public function void QValidator_OnValidate_action(void* self, libqt_string param1, c_int* param2);
+	[LinkName("QValidator_OnValidate")]
+	public static extern QValidator_State QValidator_OnValidate(void* self, QValidator_OnValidate_action _action);
 	[LinkName("QValidator_Fixup")]
 	public static extern void QValidator_Fixup(void* self, libqt_string param1);
+	
+	public function void QValidator_OnFixup_action(void* self, libqt_string param1);
+	[LinkName("QValidator_OnFixup")]
+	public static extern void QValidator_OnFixup(void* self, QValidator_OnFixup_action _action);
 	[LinkName("QValidator_Changed")]
 	public static extern void QValidator_Changed(void* self);
 	
-	public function void QValidator_changed_action(void* self);
+	public function void QValidator_Connect_Changed_action(void* self);
 	[LinkName("QValidator_Connect_Changed")]
-	public static extern void QValidator_Connect_Changed(void* self, QValidator_changed_action _action);
+	public static extern void QValidator_Connect_Changed(void* self, QValidator_Connect_Changed_action _action);
 	[LinkName("QValidator_Tr2")]
 	public static extern libqt_string QValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QValidator_Tr3")]
 	public static extern libqt_string QValidator_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QValidator_Event")]
+	public static extern bool QValidator_Event(void* self, void** event);
+	
+	public function void QValidator_OnEvent_action(void* self, void** event);
+	[LinkName("QValidator_OnEvent")]
+	public static extern bool QValidator_OnEvent(void* self, QValidator_OnEvent_action _action);
+	[LinkName("QValidator_EventFilter")]
+	public static extern bool QValidator_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QValidator_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QValidator_OnEventFilter")]
+	public static extern bool QValidator_OnEventFilter(void* self, QValidator_OnEventFilter_action _action);
+	[LinkName("QValidator_TimerEvent")]
+	public static extern void QValidator_TimerEvent(void* self, void** event);
+	
+	public function void QValidator_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QValidator_OnTimerEvent")]
+	public static extern void QValidator_OnTimerEvent(void* self, QValidator_OnTimerEvent_action _action);
+	[LinkName("QValidator_ChildEvent")]
+	public static extern void QValidator_ChildEvent(void* self, void** event);
+	
+	public function void QValidator_OnChildEvent_action(void* self, void** event);
+	[LinkName("QValidator_OnChildEvent")]
+	public static extern void QValidator_OnChildEvent(void* self, QValidator_OnChildEvent_action _action);
+	[LinkName("QValidator_CustomEvent")]
+	public static extern void QValidator_CustomEvent(void* self, void** event);
+	
+	public function void QValidator_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QValidator_OnCustomEvent")]
+	public static extern void QValidator_OnCustomEvent(void* self, QValidator_OnCustomEvent_action _action);
+	[LinkName("QValidator_ConnectNotify")]
+	public static extern void QValidator_ConnectNotify(void* self, void** signal);
+	
+	public function void QValidator_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QValidator_OnConnectNotify")]
+	public static extern void QValidator_OnConnectNotify(void* self, QValidator_OnConnectNotify_action _action);
+	[LinkName("QValidator_DisconnectNotify")]
+	public static extern void QValidator_DisconnectNotify(void* self, void** signal);
+	
+	public function void QValidator_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QValidator_OnDisconnectNotify")]
+	public static extern void QValidator_OnDisconnectNotify(void* self, QValidator_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QIntValidator
@@ -661,11 +681,11 @@ struct QIntValidator_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QIntValidator_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QIntValidator_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QIntValidator_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -717,25 +737,13 @@ struct QIntValidator_Ptr
 	{
 		CQt.QIntValidator_Tr3(s, c, n);
 	}
-	public void SetLocale(IQLocale locale)
-	{
-		CQt.QValidator_SetLocale((.)this.Ptr, (.)locale?.ObjectPtr);
-	}
-	public QLocale_Ptr Locale()
-	{
-		return QLocale_Ptr(CQt.QValidator_Locale((.)this.Ptr));
-	}
-	public void Changed()
-	{
-		CQt.QValidator_Changed((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QIntValidator_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QIntValidator_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -895,23 +903,23 @@ struct QIntValidator_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QIntValidator_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QIntValidator_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QIntValidator_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QIntValidator_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QIntValidator_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -953,112 +961,69 @@ struct QIntValidator_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void SetLocale(IQLocale locale)
+	{
+		CQt.QValidator_SetLocale((.)this.Ptr, (.)locale?.ObjectPtr);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return QLocale_Ptr(CQt.QValidator_Locale((.)this.Ptr));
+	}
+	public void Changed()
+	{
+		CQt.QValidator_Changed((.)this.Ptr);
+	}
 }
 class QIntValidator : IQIntValidator, IQValidator, IQObject
 {
 	private QIntValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QIntValidator_bottomChanged,
-		QIntValidator_topChanged,
-		QIntValidator_changed,
-		QIntValidator_destroyed,
-		QIntValidator_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QIntValidator_Connect_BottomChanged(obj.ObjectPtr,  => QtBeef_QIntValidator_bottomChanged);
-		CQt.QIntValidator_Connect_TopChanged(obj.ObjectPtr,  => QtBeef_QIntValidator_topChanged);
-		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_changed);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(c_int bottom)> OnBottomChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int top)> OnTopChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QIntValidator_bottomChanged(void* ptr, c_int bottom)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnBottomChanged.Invoke(bottom);
-	}
-	static void QtBeef_QIntValidator_topChanged(void* ptr, c_int top)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTopChanged.Invoke(top);
-	}
-	static void QtBeef_QValidator_changed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnChanged.Invoke();
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QIntValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIntValidator_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int bottom, c_int top)
 	{
 		this.ptr = CQt.QIntValidator_new2(bottom, top);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QIntValidator_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int bottom, c_int top, IQObject parent)
 	{
 		this.ptr = CQt.QIntValidator_new4(bottom, top, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QIntValidator_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public QValidator_State Validate(String param1, c_int* param2)
+	public  virtual QValidator_State OnValidate(libqt_string param1, c_int* param2)
 	{
-		return this.ptr.Validate(param1, param2);
+		return default;
 	}
-	public void Fixup(String input)
+	public  virtual void OnFixup(libqt_string input)
 	{
-		this.ptr.Fixup(input);
 	}
 	public void SetBottom(c_int bottom)
 	{
@@ -1096,25 +1061,13 @@ class QIntValidator : IQIntValidator, IQValidator, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void SetLocale(IQLocale locale)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.SetLocale(locale);
+		return default;
 	}
-	public QLocale_Ptr Locale()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Locale();
-	}
-	public void Changed()
-	{
-		this.ptr.Changed();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1272,25 +1225,20 @@ class QIntValidator : IQIntValidator, IQValidator, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1332,6 +1280,18 @@ class QIntValidator : IQIntValidator, IQValidator, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public void SetLocale(IQLocale locale)
+	{
+		this.ptr.SetLocale(locale);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return this.ptr.Locale();
+	}
+	public void Changed()
+	{
+		this.ptr.Changed();
+	}
 }
 interface IQIntValidator : IQtObjectInterface
 {
@@ -1350,16 +1310,36 @@ extension CQt
 	public static extern void QIntValidator_Delete(QIntValidator_Ptr self);
 	[LinkName("QIntValidator_MetaObject")]
 	public static extern void** QIntValidator_MetaObject(void* self);
+	
+	public function void QIntValidator_OnMetaObject_action(void* self);
+	[LinkName("QIntValidator_OnMetaObject")]
+	public static extern void** QIntValidator_OnMetaObject(void* self, QIntValidator_OnMetaObject_action _action);
 	[LinkName("QIntValidator_Qt_Metacast")]
 	public static extern void* QIntValidator_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QIntValidator_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QIntValidator_OnMetacast")]
+	public static extern void* QIntValidator_OnMetacast(void* self, QIntValidator_OnMetacast_action _action);
 	[LinkName("QIntValidator_Qt_Metacall")]
 	public static extern c_int QIntValidator_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QIntValidator_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QIntValidator_OnMetacall")]
+	public static extern c_int QIntValidator_OnMetacall(void* self, QIntValidator_OnMetacall_action _action);
 	[LinkName("QIntValidator_Tr")]
 	public static extern libqt_string QIntValidator_Tr(c_char* s);
 	[LinkName("QIntValidator_Validate")]
 	public static extern QValidator_State QIntValidator_Validate(void* self, libqt_string param1, c_int* param2);
+	
+	public function void QIntValidator_OnValidate_action(void* self, libqt_string param1, c_int* param2);
+	[LinkName("QIntValidator_OnValidate")]
+	public static extern QValidator_State QIntValidator_OnValidate(void* self, QIntValidator_OnValidate_action _action);
 	[LinkName("QIntValidator_Fixup")]
 	public static extern void QIntValidator_Fixup(void* self, libqt_string input);
+	
+	public function void QIntValidator_OnFixup_action(void* self, libqt_string input);
+	[LinkName("QIntValidator_OnFixup")]
+	public static extern void QIntValidator_OnFixup(void* self, QIntValidator_OnFixup_action _action);
 	[LinkName("QIntValidator_SetBottom")]
 	public static extern void QIntValidator_SetBottom(void* self, c_int bottom);
 	[LinkName("QIntValidator_SetTop")]
@@ -1373,19 +1353,61 @@ extension CQt
 	[LinkName("QIntValidator_BottomChanged")]
 	public static extern void QIntValidator_BottomChanged(void* self, c_int bottom);
 	
-	public function void QIntValidator_bottomChanged_action(void* self, c_int bottom);
+	public function void QIntValidator_Connect_BottomChanged_action(void* self, c_int bottom);
 	[LinkName("QIntValidator_Connect_BottomChanged")]
-	public static extern void QIntValidator_Connect_BottomChanged(void* self, QIntValidator_bottomChanged_action _action);
+	public static extern void QIntValidator_Connect_BottomChanged(void* self, QIntValidator_Connect_BottomChanged_action _action);
 	[LinkName("QIntValidator_TopChanged")]
 	public static extern void QIntValidator_TopChanged(void* self, c_int top);
 	
-	public function void QIntValidator_topChanged_action(void* self, c_int top);
+	public function void QIntValidator_Connect_TopChanged_action(void* self, c_int top);
 	[LinkName("QIntValidator_Connect_TopChanged")]
-	public static extern void QIntValidator_Connect_TopChanged(void* self, QIntValidator_topChanged_action _action);
+	public static extern void QIntValidator_Connect_TopChanged(void* self, QIntValidator_Connect_TopChanged_action _action);
 	[LinkName("QIntValidator_Tr2")]
 	public static extern libqt_string QIntValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QIntValidator_Tr3")]
 	public static extern libqt_string QIntValidator_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QIntValidator_Event")]
+	public static extern bool QIntValidator_Event(void* self, void** event);
+	
+	public function void QIntValidator_OnEvent_action(void* self, void** event);
+	[LinkName("QIntValidator_OnEvent")]
+	public static extern bool QIntValidator_OnEvent(void* self, QIntValidator_OnEvent_action _action);
+	[LinkName("QIntValidator_EventFilter")]
+	public static extern bool QIntValidator_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QIntValidator_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QIntValidator_OnEventFilter")]
+	public static extern bool QIntValidator_OnEventFilter(void* self, QIntValidator_OnEventFilter_action _action);
+	[LinkName("QIntValidator_TimerEvent")]
+	public static extern void QIntValidator_TimerEvent(void* self, void** event);
+	
+	public function void QIntValidator_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QIntValidator_OnTimerEvent")]
+	public static extern void QIntValidator_OnTimerEvent(void* self, QIntValidator_OnTimerEvent_action _action);
+	[LinkName("QIntValidator_ChildEvent")]
+	public static extern void QIntValidator_ChildEvent(void* self, void** event);
+	
+	public function void QIntValidator_OnChildEvent_action(void* self, void** event);
+	[LinkName("QIntValidator_OnChildEvent")]
+	public static extern void QIntValidator_OnChildEvent(void* self, QIntValidator_OnChildEvent_action _action);
+	[LinkName("QIntValidator_CustomEvent")]
+	public static extern void QIntValidator_CustomEvent(void* self, void** event);
+	
+	public function void QIntValidator_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QIntValidator_OnCustomEvent")]
+	public static extern void QIntValidator_OnCustomEvent(void* self, QIntValidator_OnCustomEvent_action _action);
+	[LinkName("QIntValidator_ConnectNotify")]
+	public static extern void QIntValidator_ConnectNotify(void* self, void** signal);
+	
+	public function void QIntValidator_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QIntValidator_OnConnectNotify")]
+	public static extern void QIntValidator_OnConnectNotify(void* self, QIntValidator_OnConnectNotify_action _action);
+	[LinkName("QIntValidator_DisconnectNotify")]
+	public static extern void QIntValidator_DisconnectNotify(void* self, void** signal);
+	
+	public function void QIntValidator_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QIntValidator_OnDisconnectNotify")]
+	public static extern void QIntValidator_OnDisconnectNotify(void* self, QIntValidator_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QDoubleValidator
@@ -1402,11 +1424,11 @@ struct QDoubleValidator_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QDoubleValidator_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QDoubleValidator_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QDoubleValidator_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -1486,25 +1508,13 @@ struct QDoubleValidator_Ptr
 	{
 		CQt.QDoubleValidator_Tr3(s, c, n);
 	}
-	public void SetLocale(IQLocale locale)
-	{
-		CQt.QValidator_SetLocale((.)this.Ptr, (.)locale?.ObjectPtr);
-	}
-	public QLocale_Ptr Locale()
-	{
-		return QLocale_Ptr(CQt.QValidator_Locale((.)this.Ptr));
-	}
-	public void Changed()
-	{
-		CQt.QValidator_Changed((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QDoubleValidator_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QDoubleValidator_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1664,23 +1674,23 @@ struct QDoubleValidator_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDoubleValidator_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDoubleValidator_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDoubleValidator_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QDoubleValidator_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QDoubleValidator_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1722,128 +1732,69 @@ struct QDoubleValidator_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void SetLocale(IQLocale locale)
+	{
+		CQt.QValidator_SetLocale((.)this.Ptr, (.)locale?.ObjectPtr);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return QLocale_Ptr(CQt.QValidator_Locale((.)this.Ptr));
+	}
+	public void Changed()
+	{
+		CQt.QValidator_Changed((.)this.Ptr);
+	}
 }
 class QDoubleValidator : IQDoubleValidator, IQValidator, IQObject
 {
 	private QDoubleValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QDoubleValidator_bottomChanged,
-		QDoubleValidator_topChanged,
-		QDoubleValidator_decimalsChanged,
-		QDoubleValidator_notationChanged,
-		QDoubleValidator_changed,
-		QDoubleValidator_destroyed,
-		QDoubleValidator_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QDoubleValidator_Connect_BottomChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_bottomChanged);
-		CQt.QDoubleValidator_Connect_TopChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_topChanged);
-		CQt.QDoubleValidator_Connect_DecimalsChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_decimalsChanged);
-		CQt.QDoubleValidator_Connect_NotationChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_notationChanged);
-		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_changed);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(double bottom)> OnBottomChanged = .() ~ _.Dispose();
-	public Event<delegate void(double top)> OnTopChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int decimals)> OnDecimalsChanged = .() ~ _.Dispose();
-	public Event<delegate void(QDoubleValidator_Notation notation)> OnNotationChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QDoubleValidator_bottomChanged(void* ptr, double bottom)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnBottomChanged.Invoke(bottom);
-	}
-	static void QtBeef_QDoubleValidator_topChanged(void* ptr, double top)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTopChanged.Invoke(top);
-	}
-	static void QtBeef_QDoubleValidator_decimalsChanged(void* ptr, c_int decimals)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDecimalsChanged.Invoke(decimals);
-	}
-	static void QtBeef_QDoubleValidator_notationChanged(void* ptr, QDoubleValidator_Notation notation)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnNotationChanged.Invoke(notation);
-	}
-	static void QtBeef_QValidator_changed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnChanged.Invoke();
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QDoubleValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDoubleValidator_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(double bottom, double top, c_int decimals)
 	{
 		this.ptr = CQt.QDoubleValidator_new2(bottom, top, decimals);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QDoubleValidator_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(double bottom, double top, c_int decimals, IQObject parent)
 	{
 		this.ptr = CQt.QDoubleValidator_new4(bottom, top, decimals, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDoubleValidator_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public QValidator_State Validate(String param1, c_int* param2)
+	public  virtual QValidator_State OnValidate(libqt_string param1, c_int* param2)
 	{
-		return this.ptr.Validate(param1, param2);
+		return default;
 	}
-	public void Fixup(String input)
+	public  virtual void OnFixup(libqt_string input)
 	{
-		this.ptr.Fixup(input);
 	}
 	public void SetRange(double bottom, double top, c_int decimals)
 	{
@@ -1909,25 +1860,13 @@ class QDoubleValidator : IQDoubleValidator, IQValidator, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void SetLocale(IQLocale locale)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.SetLocale(locale);
+		return default;
 	}
-	public QLocale_Ptr Locale()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Locale();
-	}
-	public void Changed()
-	{
-		this.ptr.Changed();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -2085,25 +2024,20 @@ class QDoubleValidator : IQDoubleValidator, IQValidator, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -2145,6 +2079,18 @@ class QDoubleValidator : IQDoubleValidator, IQValidator, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public void SetLocale(IQLocale locale)
+	{
+		this.ptr.SetLocale(locale);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return this.ptr.Locale();
+	}
+	public void Changed()
+	{
+		this.ptr.Changed();
+	}
 }
 interface IQDoubleValidator : IQtObjectInterface
 {
@@ -2163,16 +2109,36 @@ extension CQt
 	public static extern void QDoubleValidator_Delete(QDoubleValidator_Ptr self);
 	[LinkName("QDoubleValidator_MetaObject")]
 	public static extern void** QDoubleValidator_MetaObject(void* self);
+	
+	public function void QDoubleValidator_OnMetaObject_action(void* self);
+	[LinkName("QDoubleValidator_OnMetaObject")]
+	public static extern void** QDoubleValidator_OnMetaObject(void* self, QDoubleValidator_OnMetaObject_action _action);
 	[LinkName("QDoubleValidator_Qt_Metacast")]
 	public static extern void* QDoubleValidator_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QDoubleValidator_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QDoubleValidator_OnMetacast")]
+	public static extern void* QDoubleValidator_OnMetacast(void* self, QDoubleValidator_OnMetacast_action _action);
 	[LinkName("QDoubleValidator_Qt_Metacall")]
 	public static extern c_int QDoubleValidator_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QDoubleValidator_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QDoubleValidator_OnMetacall")]
+	public static extern c_int QDoubleValidator_OnMetacall(void* self, QDoubleValidator_OnMetacall_action _action);
 	[LinkName("QDoubleValidator_Tr")]
 	public static extern libqt_string QDoubleValidator_Tr(c_char* s);
 	[LinkName("QDoubleValidator_Validate")]
 	public static extern QValidator_State QDoubleValidator_Validate(void* self, libqt_string param1, c_int* param2);
+	
+	public function void QDoubleValidator_OnValidate_action(void* self, libqt_string param1, c_int* param2);
+	[LinkName("QDoubleValidator_OnValidate")]
+	public static extern QValidator_State QDoubleValidator_OnValidate(void* self, QDoubleValidator_OnValidate_action _action);
 	[LinkName("QDoubleValidator_Fixup")]
 	public static extern void QDoubleValidator_Fixup(void* self, libqt_string input);
+	
+	public function void QDoubleValidator_OnFixup_action(void* self, libqt_string input);
+	[LinkName("QDoubleValidator_OnFixup")]
+	public static extern void QDoubleValidator_OnFixup(void* self, QDoubleValidator_OnFixup_action _action);
 	[LinkName("QDoubleValidator_SetRange")]
 	public static extern void QDoubleValidator_SetRange(void* self, double bottom, double top, c_int decimals);
 	[LinkName("QDoubleValidator_SetRange2")]
@@ -2196,31 +2162,73 @@ extension CQt
 	[LinkName("QDoubleValidator_BottomChanged")]
 	public static extern void QDoubleValidator_BottomChanged(void* self, double bottom);
 	
-	public function void QDoubleValidator_bottomChanged_action(void* self, double bottom);
+	public function void QDoubleValidator_Connect_BottomChanged_action(void* self, double bottom);
 	[LinkName("QDoubleValidator_Connect_BottomChanged")]
-	public static extern void QDoubleValidator_Connect_BottomChanged(void* self, QDoubleValidator_bottomChanged_action _action);
+	public static extern void QDoubleValidator_Connect_BottomChanged(void* self, QDoubleValidator_Connect_BottomChanged_action _action);
 	[LinkName("QDoubleValidator_TopChanged")]
 	public static extern void QDoubleValidator_TopChanged(void* self, double top);
 	
-	public function void QDoubleValidator_topChanged_action(void* self, double top);
+	public function void QDoubleValidator_Connect_TopChanged_action(void* self, double top);
 	[LinkName("QDoubleValidator_Connect_TopChanged")]
-	public static extern void QDoubleValidator_Connect_TopChanged(void* self, QDoubleValidator_topChanged_action _action);
+	public static extern void QDoubleValidator_Connect_TopChanged(void* self, QDoubleValidator_Connect_TopChanged_action _action);
 	[LinkName("QDoubleValidator_DecimalsChanged")]
 	public static extern void QDoubleValidator_DecimalsChanged(void* self, c_int decimals);
 	
-	public function void QDoubleValidator_decimalsChanged_action(void* self, c_int decimals);
+	public function void QDoubleValidator_Connect_DecimalsChanged_action(void* self, c_int decimals);
 	[LinkName("QDoubleValidator_Connect_DecimalsChanged")]
-	public static extern void QDoubleValidator_Connect_DecimalsChanged(void* self, QDoubleValidator_decimalsChanged_action _action);
+	public static extern void QDoubleValidator_Connect_DecimalsChanged(void* self, QDoubleValidator_Connect_DecimalsChanged_action _action);
 	[LinkName("QDoubleValidator_NotationChanged")]
 	public static extern void QDoubleValidator_NotationChanged(void* self, QDoubleValidator_Notation notation);
 	
-	public function void QDoubleValidator_notationChanged_action(void* self, QDoubleValidator_Notation notation);
+	public function void QDoubleValidator_Connect_NotationChanged_action(void* self, QDoubleValidator_Notation notation);
 	[LinkName("QDoubleValidator_Connect_NotationChanged")]
-	public static extern void QDoubleValidator_Connect_NotationChanged(void* self, QDoubleValidator_notationChanged_action _action);
+	public static extern void QDoubleValidator_Connect_NotationChanged(void* self, QDoubleValidator_Connect_NotationChanged_action _action);
 	[LinkName("QDoubleValidator_Tr2")]
 	public static extern libqt_string QDoubleValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QDoubleValidator_Tr3")]
 	public static extern libqt_string QDoubleValidator_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QDoubleValidator_Event")]
+	public static extern bool QDoubleValidator_Event(void* self, void** event);
+	
+	public function void QDoubleValidator_OnEvent_action(void* self, void** event);
+	[LinkName("QDoubleValidator_OnEvent")]
+	public static extern bool QDoubleValidator_OnEvent(void* self, QDoubleValidator_OnEvent_action _action);
+	[LinkName("QDoubleValidator_EventFilter")]
+	public static extern bool QDoubleValidator_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QDoubleValidator_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QDoubleValidator_OnEventFilter")]
+	public static extern bool QDoubleValidator_OnEventFilter(void* self, QDoubleValidator_OnEventFilter_action _action);
+	[LinkName("QDoubleValidator_TimerEvent")]
+	public static extern void QDoubleValidator_TimerEvent(void* self, void** event);
+	
+	public function void QDoubleValidator_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QDoubleValidator_OnTimerEvent")]
+	public static extern void QDoubleValidator_OnTimerEvent(void* self, QDoubleValidator_OnTimerEvent_action _action);
+	[LinkName("QDoubleValidator_ChildEvent")]
+	public static extern void QDoubleValidator_ChildEvent(void* self, void** event);
+	
+	public function void QDoubleValidator_OnChildEvent_action(void* self, void** event);
+	[LinkName("QDoubleValidator_OnChildEvent")]
+	public static extern void QDoubleValidator_OnChildEvent(void* self, QDoubleValidator_OnChildEvent_action _action);
+	[LinkName("QDoubleValidator_CustomEvent")]
+	public static extern void QDoubleValidator_CustomEvent(void* self, void** event);
+	
+	public function void QDoubleValidator_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QDoubleValidator_OnCustomEvent")]
+	public static extern void QDoubleValidator_OnCustomEvent(void* self, QDoubleValidator_OnCustomEvent_action _action);
+	[LinkName("QDoubleValidator_ConnectNotify")]
+	public static extern void QDoubleValidator_ConnectNotify(void* self, void** signal);
+	
+	public function void QDoubleValidator_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QDoubleValidator_OnConnectNotify")]
+	public static extern void QDoubleValidator_OnConnectNotify(void* self, QDoubleValidator_OnConnectNotify_action _action);
+	[LinkName("QDoubleValidator_DisconnectNotify")]
+	public static extern void QDoubleValidator_DisconnectNotify(void* self, void** signal);
+	
+	public function void QDoubleValidator_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QDoubleValidator_OnDisconnectNotify")]
+	public static extern void QDoubleValidator_OnDisconnectNotify(void* self, QDoubleValidator_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QRegularExpressionValidator
@@ -2237,11 +2245,11 @@ struct QRegularExpressionValidator_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QRegularExpressionValidator_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QRegularExpressionValidator_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QRegularExpressionValidator_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -2273,29 +2281,13 @@ struct QRegularExpressionValidator_Ptr
 	{
 		CQt.QRegularExpressionValidator_Tr3(s, c, n);
 	}
-	public void SetLocale(IQLocale locale)
-	{
-		CQt.QValidator_SetLocale((.)this.Ptr, (.)locale?.ObjectPtr);
-	}
-	public QLocale_Ptr Locale()
-	{
-		return QLocale_Ptr(CQt.QValidator_Locale((.)this.Ptr));
-	}
-	public void Fixup(String param1)
-	{
-		CQt.QValidator_Fixup((.)this.Ptr, libqt_string(param1));
-	}
-	public void Changed()
-	{
-		CQt.QValidator_Changed((.)this.Ptr);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QRegularExpressionValidator_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QRegularExpressionValidator_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -2455,23 +2447,23 @@ struct QRegularExpressionValidator_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QRegularExpressionValidator_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QRegularExpressionValidator_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QRegularExpressionValidator_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QRegularExpressionValidator_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QRegularExpressionValidator_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -2513,100 +2505,70 @@ struct QRegularExpressionValidator_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void SetLocale(IQLocale locale)
+	{
+		CQt.QValidator_SetLocale((.)this.Ptr, (.)locale?.ObjectPtr);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return QLocale_Ptr(CQt.QValidator_Locale((.)this.Ptr));
+	}
+	public void Fixup(String param1)
+	{
+		CQt.QRegularExpressionValidator_Fixup((.)this.Ptr, libqt_string(param1));
+	}
+	public void Changed()
+	{
+		CQt.QValidator_Changed((.)this.Ptr);
+	}
 }
 class QRegularExpressionValidator : IQRegularExpressionValidator, IQValidator, IQObject
 {
 	private QRegularExpressionValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QRegularExpressionValidator_regularExpressionChanged,
-		QRegularExpressionValidator_changed,
-		QRegularExpressionValidator_destroyed,
-		QRegularExpressionValidator_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QRegularExpressionValidator_Connect_RegularExpressionChanged(obj.ObjectPtr,  => QtBeef_QRegularExpressionValidator_regularExpressionChanged);
-		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_changed);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** re)> OnRegularExpressionChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QRegularExpressionValidator_regularExpressionChanged(void* ptr, void** re)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnRegularExpressionChanged.Invoke(re);
-	}
-	static void QtBeef_QValidator_changed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnChanged.Invoke();
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QRegularExpressionValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpression re)
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new2((.)re?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpression re, IQObject parent)
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new4((.)re?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QRegularExpressionValidator_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public QValidator_State Validate(String input, c_int* pos)
+	public  virtual QValidator_State OnValidate(libqt_string input, c_int* pos)
 	{
-		return this.ptr.Validate(input, pos);
+		return default;
 	}
 	public QRegularExpression_Ptr RegularExpression()
 	{
@@ -2628,29 +2590,13 @@ class QRegularExpressionValidator : IQRegularExpressionValidator, IQValidator, I
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void SetLocale(IQLocale locale)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.SetLocale(locale);
+		return default;
 	}
-	public QLocale_Ptr Locale()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Locale();
-	}
-	public void Fixup(String param1)
-	{
-		this.ptr.Fixup(param1);
-	}
-	public void Changed()
-	{
-		this.ptr.Changed();
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -2808,25 +2754,20 @@ class QRegularExpressionValidator : IQRegularExpressionValidator, IQValidator, I
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -2868,6 +2809,21 @@ class QRegularExpressionValidator : IQRegularExpressionValidator, IQValidator, I
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public void SetLocale(IQLocale locale)
+	{
+		this.ptr.SetLocale(locale);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return this.ptr.Locale();
+	}
+	public  virtual void OnFixup(libqt_string param1)
+	{
+	}
+	public void Changed()
+	{
+		this.ptr.Changed();
+	}
 }
 interface IQRegularExpressionValidator : IQtObjectInterface
 {
@@ -2886,14 +2842,30 @@ extension CQt
 	public static extern void QRegularExpressionValidator_Delete(QRegularExpressionValidator_Ptr self);
 	[LinkName("QRegularExpressionValidator_MetaObject")]
 	public static extern void** QRegularExpressionValidator_MetaObject(void* self);
+	
+	public function void QRegularExpressionValidator_OnMetaObject_action(void* self);
+	[LinkName("QRegularExpressionValidator_OnMetaObject")]
+	public static extern void** QRegularExpressionValidator_OnMetaObject(void* self, QRegularExpressionValidator_OnMetaObject_action _action);
 	[LinkName("QRegularExpressionValidator_Qt_Metacast")]
 	public static extern void* QRegularExpressionValidator_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QRegularExpressionValidator_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QRegularExpressionValidator_OnMetacast")]
+	public static extern void* QRegularExpressionValidator_OnMetacast(void* self, QRegularExpressionValidator_OnMetacast_action _action);
 	[LinkName("QRegularExpressionValidator_Qt_Metacall")]
 	public static extern c_int QRegularExpressionValidator_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QRegularExpressionValidator_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QRegularExpressionValidator_OnMetacall")]
+	public static extern c_int QRegularExpressionValidator_OnMetacall(void* self, QRegularExpressionValidator_OnMetacall_action _action);
 	[LinkName("QRegularExpressionValidator_Tr")]
 	public static extern libqt_string QRegularExpressionValidator_Tr(c_char* s);
 	[LinkName("QRegularExpressionValidator_Validate")]
 	public static extern QValidator_State QRegularExpressionValidator_Validate(void* self, libqt_string input, c_int* pos);
+	
+	public function void QRegularExpressionValidator_OnValidate_action(void* self, libqt_string input, c_int* pos);
+	[LinkName("QRegularExpressionValidator_OnValidate")]
+	public static extern QValidator_State QRegularExpressionValidator_OnValidate(void* self, QRegularExpressionValidator_OnValidate_action _action);
 	[LinkName("QRegularExpressionValidator_RegularExpression")]
 	public static extern void* QRegularExpressionValidator_RegularExpression(void* self);
 	[LinkName("QRegularExpressionValidator_SetRegularExpression")]
@@ -2901,13 +2873,61 @@ extension CQt
 	[LinkName("QRegularExpressionValidator_RegularExpressionChanged")]
 	public static extern void QRegularExpressionValidator_RegularExpressionChanged(void* self, void** re);
 	
-	public function void QRegularExpressionValidator_regularExpressionChanged_action(void* self, void** re);
+	public function void QRegularExpressionValidator_Connect_RegularExpressionChanged_action(void* self, void** re);
 	[LinkName("QRegularExpressionValidator_Connect_RegularExpressionChanged")]
-	public static extern void QRegularExpressionValidator_Connect_RegularExpressionChanged(void* self, QRegularExpressionValidator_regularExpressionChanged_action _action);
+	public static extern void QRegularExpressionValidator_Connect_RegularExpressionChanged(void* self, QRegularExpressionValidator_Connect_RegularExpressionChanged_action _action);
 	[LinkName("QRegularExpressionValidator_Tr2")]
 	public static extern libqt_string QRegularExpressionValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QRegularExpressionValidator_Tr3")]
 	public static extern libqt_string QRegularExpressionValidator_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QRegularExpressionValidator_Event")]
+	public static extern bool QRegularExpressionValidator_Event(void* self, void** event);
+	
+	public function void QRegularExpressionValidator_OnEvent_action(void* self, void** event);
+	[LinkName("QRegularExpressionValidator_OnEvent")]
+	public static extern bool QRegularExpressionValidator_OnEvent(void* self, QRegularExpressionValidator_OnEvent_action _action);
+	[LinkName("QRegularExpressionValidator_EventFilter")]
+	public static extern bool QRegularExpressionValidator_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QRegularExpressionValidator_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QRegularExpressionValidator_OnEventFilter")]
+	public static extern bool QRegularExpressionValidator_OnEventFilter(void* self, QRegularExpressionValidator_OnEventFilter_action _action);
+	[LinkName("QRegularExpressionValidator_TimerEvent")]
+	public static extern void QRegularExpressionValidator_TimerEvent(void* self, void** event);
+	
+	public function void QRegularExpressionValidator_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QRegularExpressionValidator_OnTimerEvent")]
+	public static extern void QRegularExpressionValidator_OnTimerEvent(void* self, QRegularExpressionValidator_OnTimerEvent_action _action);
+	[LinkName("QRegularExpressionValidator_ChildEvent")]
+	public static extern void QRegularExpressionValidator_ChildEvent(void* self, void** event);
+	
+	public function void QRegularExpressionValidator_OnChildEvent_action(void* self, void** event);
+	[LinkName("QRegularExpressionValidator_OnChildEvent")]
+	public static extern void QRegularExpressionValidator_OnChildEvent(void* self, QRegularExpressionValidator_OnChildEvent_action _action);
+	[LinkName("QRegularExpressionValidator_CustomEvent")]
+	public static extern void QRegularExpressionValidator_CustomEvent(void* self, void** event);
+	
+	public function void QRegularExpressionValidator_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QRegularExpressionValidator_OnCustomEvent")]
+	public static extern void QRegularExpressionValidator_OnCustomEvent(void* self, QRegularExpressionValidator_OnCustomEvent_action _action);
+	[LinkName("QRegularExpressionValidator_ConnectNotify")]
+	public static extern void QRegularExpressionValidator_ConnectNotify(void* self, void** signal);
+	
+	public function void QRegularExpressionValidator_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QRegularExpressionValidator_OnConnectNotify")]
+	public static extern void QRegularExpressionValidator_OnConnectNotify(void* self, QRegularExpressionValidator_OnConnectNotify_action _action);
+	[LinkName("QRegularExpressionValidator_DisconnectNotify")]
+	public static extern void QRegularExpressionValidator_DisconnectNotify(void* self, void** signal);
+	
+	public function void QRegularExpressionValidator_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QRegularExpressionValidator_OnDisconnectNotify")]
+	public static extern void QRegularExpressionValidator_OnDisconnectNotify(void* self, QRegularExpressionValidator_OnDisconnectNotify_action _action);
+	[LinkName("QRegularExpressionValidator_Fixup")]
+	public static extern void QRegularExpressionValidator_Fixup(void* self, libqt_string param1);
+	
+	public function void QRegularExpressionValidator_OnFixup_action(void* self, libqt_string param1);
+	[LinkName("QRegularExpressionValidator_OnFixup")]
+	public static extern void QRegularExpressionValidator_OnFixup(void* self, QRegularExpressionValidator_OnFixup_action _action);
 }
 [AllowDuplicates]
 enum QValidator_State

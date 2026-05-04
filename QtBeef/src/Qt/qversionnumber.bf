@@ -79,49 +79,33 @@ class QVersionNumber : IQVersionNumber
 {
 	private QVersionNumber_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QVersionNumber_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QVersionNumber_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(void** seg)
 	{
 		this.ptr = CQt.QVersionNumber_new2(seg);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int maj)
 	{
 		this.ptr = CQt.QVersionNumber_new3(maj);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int maj, c_int min)
 	{
 		this.ptr = CQt.QVersionNumber_new4(maj, min);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int maj, c_int min, c_int mic)
 	{
 		this.ptr = CQt.QVersionNumber_new5(maj, min, mic);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQVersionNumber param1)
 	{
 		this.ptr = CQt.QVersionNumber_new6((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -278,29 +262,17 @@ class QTypeRevision : IQTypeRevision
 {
 	private QTypeRevision_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTypeRevision_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTypeRevision other)
 	{
 		this.ptr = CQt.QTypeRevision_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTypeRevision_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

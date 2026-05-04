@@ -14,6 +14,7 @@ class WriteClass
         PtrStruct,
         CApi,
         BfObject,
+        BfObject_Virtual,
         SignalEvent,
     }
 
@@ -233,14 +234,34 @@ class WriteClass
         return name;
     }
 
-    private string cppMethodNameToBfMethodName(CppClass _class, CppMethod method, Stage stage, bool isSignal)
+    private string cppMethodNameToBfMethodNameStr(string name)
+    {
+        if (name.StartsWith("qt_"))
+            name = name.Remove(0, 3);
+
+        name = cppNameToBf(name);
+
+        foreach (var replace in m_operatorReplacerHash)
+        {
+            name = name.Replace(replace.Key, replace.Value);
+        }
+
+        return name;
+    }
+
+    private string cppMethodNameToBfMethodName(CppClass _class, CppMethod method, Stage stage, SignalVirtualKind kind)
     {
         var bfClassName = cppNameToBf(_class.ClassName);
         var outStr = string.Empty;
 
         if (stage == Stage.CApi)
         {
-            if (isSignal)
+            if (kind == SignalVirtualKind.Virtual)
+            {
+                outStr = $"{bfClassName}_On{toPascalCase(cppMethodNameToBfMethodNameStr(method.MethodName))}";
+
+            }
+            else if (kind == SignalVirtualKind.Signal)
             {
                 outStr = $"{bfClassName}_Connect_{method.MethodName}";
             }
@@ -279,9 +300,11 @@ class WriteClass
         return outStr;
     }
 
-    private string buildBfParameters(CppClass _class, CppMethod method, Stage stage, bool isMethod, bool isSignal)
+    private string buildBfParameters(CppClass _class, CppMethod method, Stage stage, bool isMethod, SignalVirtualKind kind)
     {
         var parameters = new StringCodeBuilder();
+
+        bool isSignal = kind != SignalVirtualKind.None;
 
         if (stage == Stage.CApi)
         {
@@ -305,7 +328,7 @@ class WriteClass
         {
             if (isSignal)
             {
-                parameters.Append($"{getSignalFunctionTypedefName(_class, method)} _action");
+                parameters.Append($"{getSignalFunctionTypedefName(_class, method, kind)} _action");
                 return parameters.Code;
             }
         }
@@ -321,7 +344,11 @@ class WriteClass
 
         foreach (var param in method.Parameters)
         {
-            var bfTypeName = getBfTypeName(param, isSignal ? Stage.CApi : stage);
+            var bfTypeNameStage = isSignal ? Stage.CApi : stage;
+            if (stage == Stage.BfObject_Virtual)
+                bfTypeNameStage = Stage.CApi;
+
+            var bfTypeName = getBfTypeName(param, bfTypeNameStage);
 
             if (stage == Stage.BfObject)
             {
@@ -351,14 +378,23 @@ class WriteClass
         return Regex.Replace(name, @"\b\p{Ll}", match => match.Value.ToUpper());
     }
 
-    string getSignalFunctionTypedefName(CppClass _class, CppMethod method)
+    enum SignalVirtualKind
     {
-        return $"{cppNameToBf(_class.ClassName)}_{method.MethodName}_action";
+        None,
+        Signal,
+        Virtual
     }
 
-    private string buildBfArguments(CppClass _class, CppMethod method, Stage stage, bool isMethod, bool isSignal)
+    string getSignalFunctionTypedefName(CppClass _class, CppMethod method, SignalVirtualKind kind)
+    {
+        return $"{cppMethodNameToBfMethodName(_class, method, Stage.CApi, kind)}_action";
+    }
+
+    private string buildBfArguments(CppClass _class, CppMethod method, Stage stage, bool isMethod, SignalVirtualKind signalKind)
     {
         var parameters = new StringCodeBuilder();
+
+        var isSignal = signalKind != SignalVirtualKind.None;
 
         if (stage == Stage.CApi)
         {
@@ -384,7 +420,7 @@ class WriteClass
 
             if (isSignal)
             {
-                parameters.Append($" => {getSignalCallFunctionName(_class, method)}");
+                parameters.Append($" => {getSignalCallFunctionName(_class, method, signalKind)}");
                 return parameters.Code;
             }
         }
@@ -393,6 +429,16 @@ class WriteClass
             if (isMethod && !method.IsStatic)
             {
                 parameters.Append("(.)this.Ptr");
+                if (method.Parameters.Length > 0)
+                    parameters.Append(", ");
+            }
+        }
+
+        if (signalKind == SignalVirtualKind.Virtual)
+        {
+            if (method.ReturnType.ParameterType == "QString")
+            {
+                parameters.Append("scope .()");
                 if (method.Parameters.Length > 0)
                     parameters.Append(", ");
             }
@@ -408,7 +454,6 @@ class WriteClass
             if (stage == Stage.BfObject)
             {
                 var bfTypeName = getBfTypeName(cppParam, stage);
-
 
                 if (cppParam.ByRef)
                 {
@@ -432,9 +477,17 @@ class WriteClass
         return parameters.Code;
     }
 
-    string getSignalCallFunctionName(CppClass cppClass, CppMethod method)
+    string getSignalCallFunctionName(CppClass cppClass, CppMethod method, SignalVirtualKind kind)
     {
-        return $"QtBeef_{cppNameToBf(cppClass.ClassName)}_{method.MethodName}";
+        if (cppClass.ClassName == "QGraphicsLayout")
+        {
+            if (method.MethodName == "itemAt")
+            {
+                var a = 0;
+            }
+        }
+
+        return $"QtBeef_{cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, kind)}";
     }
 
     public string WriteBfFile()
@@ -453,8 +506,19 @@ class WriteClass
             foreach (var cppClass in this.Header.Classes)
             {
                 var inheritedClasses = new List<CppClass>();
+                var allMethods = new List<(CppClass, CppMethod)>();
+                var seenMethods = new HashSet<string>();
 
-                void gatherInherited(CppClass @class)
+                foreach (var method in cppClass.Methods)
+                {
+                    if (!seenMethods.Contains(method.MethodName))
+                    {
+                        seenMethods.Add(method.MethodName);
+                        allMethods.Add((cppClass, method));
+                    }
+                }
+
+                void gatherInherited(CppClass @class, CppClass originClass)
                 {
                     if (@class.DirectInherits != null)
                     {
@@ -465,30 +529,54 @@ class WriteClass
                                 continue;
 
                             var implStr = impl.Replace("::", "_");
-
                             var foundClass = m_apiState.RegisteredClasses[implStr];
                             inheritedClasses.Add(foundClass);
+                            gatherInherited(foundClass, originClass); // pass originClass down
 
-                            gatherInherited(foundClass);
+                            foreach (var method in foundClass.Methods)
+                            {
+                                if (method.IsVirtual)
+                                {
+                                    if (!seenMethods.Contains(method.MethodName))
+                                    {
+                                        seenMethods.Add(method.MethodName);
+                                        allMethods.Add((originClass, method));
+                                    }
+                                }
+                                else
+                                {
+                                    if (!seenMethods.Contains(method.MethodName))
+                                    {
+                                        seenMethods.Add(method.MethodName);
+                                        allMethods.Add((foundClass, method));
+                                    }
+                                }
+                            }
                         }
                     }
                 }
 
-                gatherInherited(cppClass);
+                gatherInherited(cppClass, cppClass);
 
-                void genMethod(CppClass cppClass, CppMethod method, bool isHandle, Stage stage)
+                if (cppClass.ClassName == "QLabel")
+                {
+                    var a = 0;
+                }
+
+
+                void genMethod(CppClass cppClass, CppMethod method, bool isHandle, Stage stage, bool isVirtual)
                 {
                     // @TODO - maybe(?)
                     if (method.MethodName.StartsWith("operator"))
                         return;
 
-                    var bfMethodName = Regex.Replace(method.MethodName, @"\b\p{Ll}", match => match.Value.ToUpper());
+                    var bfMethodName = Regex.Replace(cppMethodNameToBfMethodNameStr(method.MethodName), @"\b\p{Ll}", match => match.Value.ToUpper());
 
-                    var bfParameters = buildBfParameters(cppClass, method, Stage.BfObject, true, false);
+                    var bfParameters = buildBfParameters(cppClass, method, (isVirtual) ? Stage.BfObject_Virtual : Stage.BfObject, true, SignalVirtualKind.None);
                     var bfArguments = string.Empty;
                     if (isHandle)
                     {
-                        bfArguments = buildBfArguments(cppClass, method, Stage.BfObject, true, false);
+                        bfArguments = buildBfArguments(cppClass, method, Stage.BfObject, true, SignalVirtualKind.None);
                     }
                     else
                     {
@@ -530,7 +618,18 @@ class WriteClass
                     if (bfMethodName == "ToString" && stage == Stage.BfObject && method.Parameters.Length == 0)
                         newType = "new ";
 
-                    code.AppendLine($"public {newType}{returnType} {bfMethodName}({bfParameters})");
+                    var methodKind = "";
+                    if (stage == Stage.BfObject && isVirtual)
+                    {
+                        if (method.IsVirtual)
+                        {
+                            methodKind = " virtual ";
+                        }
+
+                        bfMethodName = $"On{bfMethodName}";
+                    }
+
+                    code.AppendLine($"public {newType}{methodKind}{returnType} {bfMethodName}({bfParameters})");
                     code.AppendLine("{");
                     code.IncreaseTab();
                     {
@@ -538,12 +637,27 @@ class WriteClass
 
                         if (isHandle)
                         {
-                            var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, false);
+                            var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, SignalVirtualKind.None);
                             call = $"CQt.{linkName}({bfArguments})";
                         }
                         else
                         {
-                            call = $"this.ptr.{bfMethodName}({bfArguments})";
+                            if (isVirtual)
+                            {
+                                // call = $"this.{bfMethodName}({bfArguments})";
+                                if (returnType == "void")
+                                {
+                                    call = "return default";
+                                }
+                                else
+                                {
+                                    call = "default";
+                                }
+                            }
+                            else
+                            {
+                                call = $"this.ptr.{bfMethodName}({bfArguments})";
+                            }
                         }
 
                         if (returnType != "void")
@@ -559,6 +673,7 @@ class WriteClass
                         }
                         else
                         {
+                            if (!isVirtual)
                             code.AppendLine($"{call};");
                         }
                     }
@@ -592,10 +707,11 @@ class WriteClass
 
                     var toCheck = new List<CppMethod>();
 
+                    /*
                     // Normal methods
                     foreach (var method in cppClass.Methods)
                     {
-                        genMethod(cppClass, method, true, Stage.PtrStruct);
+                        genMethod(cppClass, method, true, Stage.PtrStruct, false);
                     }
                     toCheck.AddRange(cppClass.Methods);
 
@@ -606,10 +722,16 @@ class WriteClass
                             if (toCheck.Any(c => c.MethodName == method.MethodName))
                                 continue;
 
-                            genMethod(inheritedClass, method, true, Stage.PtrStruct);
+                            genMethod(inheritedClass, method, true, Stage.PtrStruct, false);
                         }
 
                         toCheck.AddRange(inheritedClass.Methods);
+                    }
+                    */
+
+                    foreach (var method in allMethods)
+                    {
+                        genMethod(method.Item1, method.Item2, true, Stage.PtrStruct, false);
                     }
                 }
                 code.DecreaseTab();
@@ -640,32 +762,81 @@ class WriteClass
                     code.AppendLine("public void* ObjectPtr => ptr.Ptr;");
 
                     var allSignals = new List<(CppClass @class, CppMethod @method)>();
+                    var allVirtualMethods = new List<(CppClass @class, CppMethod @method)>();
+
+
 
                     {
                         var created = new List<string>();
+                        var masterClass = cppClass;
 
-                        void collectSignals(CppClass cppClass)
+                        void collectSignals(CppClass cppClass, bool signals)
                         {
+                            /*
                             foreach (var method in cppClass.Methods)
                             {
-                                if (method.IsSignal)
+                                if (signals)
                                 {
-                                    if (created.Contains(method.MethodName))
-                                        continue;
+                                    if (method.IsSignal)
+                                    {
+                                        if (created.Contains(method.MethodName))
+                                            continue;
 
-                                    allSignals.Add((cppClass, method));
-                                    created.Add(method.MethodName);
+                                        allSignals.Add((cppClass, method));
+                                        created.Add(method.MethodName);
+                                    }
+                                }
+                                else
+                                {
+                                    if (method.IsVirtual)
+                                    {
+if (masterClass.ClassName == "QGestureEvent")
+{
+    if (method.MethodName == "setAccepted")
+    {
+        var a = 0;
+    }
+}
+
+                                        if (created.Contains(method.MethodName))
+                                            continue;
+
+                                        allVirtualMethods.Add((masterClass, method));
+                                        created.Add(method.MethodName);
+                                    }
+                                }
+                            }
+                            */
+
+                            foreach (var method in allMethods)
+                            {
+                                if (method.Item2.IsSignal)
+                                {
+                                    if (signals)
+                                        allSignals.Add((method.Item1, method.Item2));
+                                    else
+                                        allVirtualMethods.Add((method.Item1, method.Item2));
                                 }
                             }
                         }
 
-                        collectSignals(cppClass);
+                        collectSignals(cppClass, true);
                         foreach (var inherited in  inheritedClasses)
                         {
-                            collectSignals(inherited);
+                            collectSignals(inherited, true);
                         }
+
+                        created.Clear();
+
+                        collectSignals(cppClass, false);
+                        foreach (var inherited in inheritedClasses)
+                        {
+                            collectSignals(inherited, false);
+                        }
+
                     }
 
+                    /*
                     code.AppendEmptyLine();
                     code.AppendLine("enum ObjectSignalType");
                     code.AppendLine("{");
@@ -680,8 +851,9 @@ class WriteClass
                     code.DecreaseTab();
                     code.AppendLine("}");
                     code.AppendEmptyLine();
+                    */
 
-
+#if false
                     code.AppendLine("static void QtBf_ConnectSignals(Self obj)");
                     code.AppendLine("{");
                     code.IncreaseTab();
@@ -690,9 +862,22 @@ class WriteClass
 
                         foreach (var signal in allSignals)
                         {
-                            var signalName = cppMethodNameToBfMethodName(signal.@class, signal.method, Stage.CApi, true);
+                            var signalName = cppMethodNameToBfMethodName(signal.@class, signal.method, Stage.CApi, SignalVirtualKind.Signal);
                             // var signalParameters = buildBfParameters(cppClass, signal, Stage.CApi, true, true);
-                            var signalArguments = buildBfArguments(signal.@class, signal.method, Stage.CApi, true, true);
+                            var signalArguments = buildBfArguments(signal.@class, signal.method, Stage.CApi, true, SignalVirtualKind.Signal);
+
+                            code.AppendLine($"CQt.{signalName}({signalArguments});");
+                        }
+
+                        foreach (var signal in allVirtualMethods)
+                        {
+                            // @TEMP
+                            if (signal.method.MethodName.StartsWith("operator"))
+                                continue;
+
+                            var signalName = cppMethodNameToBfMethodName(signal.@class, signal.method, Stage.CApi, SignalVirtualKind.Virtual);
+                            // var signalParameters = buildBfParameters(cppClass, signal, Stage.CApi, true, true);
+                            var signalArguments = buildBfArguments(signal.@class, signal.method, Stage.CApi, true, SignalVirtualKind.Virtual);
 
                             code.AppendLine($"CQt.{signalName}({signalArguments});");
                         }
@@ -718,28 +903,50 @@ class WriteClass
 
                     foreach (var signal in allSignals)
                     {
-                        var parameters = buildBfParameters(signal.@class, signal.method, Stage.SignalEvent, true, true);
+                        var parameters = buildBfParameters(signal.@class, signal.method, Stage.SignalEvent, true, SignalVirtualKind.Signal);
                         code.AppendLine($"public Event<delegate void({parameters})> On{toPascalCase(signal.method.MethodName)} = .() ~ _.Dispose();");
                     }
 
                     foreach (var signal in allSignals)
                     {
-                        var parameters = buildBfParameters(signal.@class, signal.method, Stage.BfObject, true, true);
-                        var arguments = buildBfArguments(signal.@class, signal.method, Stage.SignalEvent, true, true);
-                        code.AppendLine($"static void {getSignalCallFunctionName(signal.@class, signal.method)}({parameters})");
+                        var parameters = buildBfParameters(signal.@class, signal.method, Stage.BfObject, true, SignalVirtualKind.Signal);
+                        var arguments = buildBfArguments(signal.@class, signal.method, Stage.SignalEvent, true, SignalVirtualKind.Signal);
+
+                        code.AppendLine($"static void {getSignalCallFunctionName(signal.@class, signal.method, SignalVirtualKind.Signal)}({parameters})");
                         code.AppendLine("{");
                         code.IncreaseTab();
                         {
                             code.AppendLine("let obj = CQt.ObjectHandleMap[ptr] as Self;");
-                            code.AppendLine($"obj.On{toPascalCase(signal.method.MethodName)}.Invoke({arguments});");
+                            code.AppendLine($"obj.On{toPascalCase(cppMethodNameToBfMethodNameStr(signal.method.MethodName))}.Invoke({arguments});");
                         }
                         code.DecreaseTab();
                         code.AppendLine("}");
                     }
 
+                    foreach (var method in allVirtualMethods)
+                    {
+                        if (method.method.MethodName.StartsWith("operator"))
+                            continue;
+
+                        var parameters = buildBfParameters(method.@class, method.method, Stage.BfObject, true, SignalVirtualKind.Virtual);
+                        var arguments = buildBfArguments(method.@class, method.method, Stage.SignalEvent, true, SignalVirtualKind.Virtual);
+
+                        code.AppendLine($"static void {getSignalCallFunctionName(method.@class, method.method, SignalVirtualKind.Virtual)}({parameters})");
+                        code.AppendLine("{");
+                        code.IncreaseTab();
+                        {
+                            // code.AppendLine("let obj = CQt.ObjectHandleMap[ptr] as Self;");
+                            // code.AppendLine($"obj.On{toPascalCase(cppMethodNameToBfMethodNameStr(method.method.MethodName))}({arguments});");
+                        }
+                        code.DecreaseTab();
+                        code.AppendLine("}");
+
+                    }
+#endif
+
                     void emitConnectSignalsCall()
                     {
-                        code.AppendLine("QtBf_ConnectSignals(this);");
+                        // code.AppendLine("QtBf_ConnectSignals(this);");
                     }
 
                     // Default constructor Object(ObjectHandle ptr)
@@ -763,8 +970,8 @@ class WriteClass
                             if (cppClass.Ctors[i].IsMoveCtor)
                                 continue;
 
-                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.BfObject, false, false);
-                            var arguments = buildBfArguments(cppClass, cppClass.Ctors[i], Stage.BfObject, false, false);
+                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.BfObject, false, SignalVirtualKind.None);
+                            var arguments = buildBfArguments(cppClass, cppClass.Ctors[i], Stage.BfObject, false, SignalVirtualKind.None);
 
                             // @HACK
                             // Some class have constructors that have identical types, for some reason?
@@ -810,14 +1017,19 @@ class WriteClass
                         code.AppendLine("}");
                     }
 
-                    
-
                     var toCheck = new List<CppMethod>();
 
                     // Normal methods
+#if false
                     foreach (var method in cppClass.Methods)
                     {
-                        genMethod(cppClass, method, false, Stage.BfObject);
+                        genMethod(cppClass, method, false, Stage.BfObject, false);
+                        /*
+                        if (method.IsVirtual)
+                        {
+                            genMethod(cppClass, method, false, Stage.BfObject, true);
+                        }
+                        */
                     }
                     toCheck.AddRange(cppClass.Methods);
 
@@ -828,10 +1040,28 @@ class WriteClass
                             if (toCheck.Any(c => c.MethodName == method.MethodName))
                                 continue;
 
-                            genMethod(inheritedClass, method, false, Stage.BfObject);
+                            genMethod(inheritedClass, method, false, Stage.BfObject, false);
+
+                            /*
+                            if (method.IsVirtual)
+                            {
+                                genMethod(cppClass, method, false, Stage.BfObject, true);
+                            }
+                            */
                         }
 
                         toCheck.AddRange(inheritedClass.Methods);
+                    }
+
+                    foreach (var method in allVirtualMethods)
+                    {
+                        genMethod(method.@class, method.method, false, Stage.BfObject, true);
+                    }
+#endif
+
+                    foreach (var method in allMethods)
+                    {
+                        genMethod(method.Item1, method.Item2, false, Stage.BfObject, method.Item2.IsVirtual);
                     }
                 }
                 code.DecreaseTab();
@@ -871,7 +1101,7 @@ class WriteClass
                     {
                         for (var i = 0; i < cppClass.Ctors.Length; i++)
                         {
-                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.CApi, false, false);
+                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.CApi, false, SignalVirtualKind.None);
 
                             code.AppendLine($"[LinkName(\"{methodPrefix}_new{maybeSuffix(i)}\")]");
                             code.AppendLine($"public static extern {bfClassName}_Ptr {methodPrefix}_new{maybeSuffix(i)}({parameters});");
@@ -887,11 +1117,10 @@ class WriteClass
                         code.AppendLine($"public static extern void {linkName}({bfClassName}_Ptr self);");
                     }
 
-                    // Normal methods
-                    foreach (var method in cppClass.Methods)
+                    void genBinding(CppClass cppClass, CppMethod method)
                     {
-                        var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, false);
-                        var parameters = buildBfParameters(cppClass, method, Stage.CApi, true, false);
+                        var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, SignalVirtualKind.None);
+                        var parameters = buildBfParameters(cppClass, method, Stage.CApi, true, SignalVirtualKind.None);
 
                         // Non signaled
                         {
@@ -910,18 +1139,50 @@ class WriteClass
                          */
 
 
-                        if (method.IsSignal)
+                        if (method.IsSignal || method.IsVirtual)
                         {
+                            var kind = method.IsVirtual ? SignalVirtualKind.Virtual : SignalVirtualKind.Signal;
+
                             code.AppendEmptyLine();
 
-                            code.AppendLine($"public function void {getSignalFunctionTypedefName(cppClass, method)}({parameters});");
+                            code.AppendLine($"public function void {getSignalFunctionTypedefName(cppClass, method, kind)}({parameters});");
 
-                            var signalName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, true);
-                            var signalParameters = buildBfParameters(cppClass, method, Stage.CApi, true, true);
+                            var signalName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, kind);
+                            var signalParameters = buildBfParameters(cppClass, method, Stage.CApi, true, kind);
 
                             code.AppendLine($"[LinkName(\"{signalName}\")]");
                             code.AppendLine($"public static extern {getBfTypeName(method.ReturnType, Stage.CApi)} {signalName}({signalParameters});");
                         }
+                    }
+
+                    var toCheck = new List<CppMethod>();
+
+                    /*
+                    // Normal methods
+                    foreach (var method in cppClass.Methods)
+                    {
+                        genBinding(cppClass, method);
+                    }
+                    toCheck.AddRange(cppClass.Methods);
+
+                    foreach (var inheritedClass in inheritedClasses)
+                    {
+                        foreach (var method in inheritedClass.Methods)
+                        {
+                            if (toCheck.Any(c => c.MethodName == method.MethodName))
+                                continue;
+
+                            genBinding(cppClass, method);
+                        }
+
+                        toCheck.AddRange(inheritedClass.Methods);
+                    }
+                    */
+
+                    foreach (var method in allMethods)
+                    {
+                        if (method.Item1 == cppClass)
+                        genBinding(method.Item1, method.Item2);
                     }
                 }
                 code.DecreaseTab();

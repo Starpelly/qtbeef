@@ -43,24 +43,13 @@ class QTextItem : IQTextItem
 {
 	private QTextItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextItem_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextItem other)
 	{
 		this.ptr = CQt.QTextItem_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -283,29 +272,17 @@ class QPaintEngine : IQPaintEngine
 {
 	private QPaintEngine_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPaintEngine_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPaintEngine_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* features)
 	{
 		this.ptr = CQt.QPaintEngine_new2(features);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -319,77 +296,61 @@ class QPaintEngine : IQPaintEngine
 	{
 		this.ptr.SetActive(newState);
 	}
-	public bool Begin(IQPaintDevice pdev)
+	public  virtual bool OnBegin(void** pdev)
 	{
-		return this.ptr.Begin(pdev);
+		return default;
 	}
-	public bool End()
+	public  virtual bool OnEnd()
 	{
-		return this.ptr.End();
+		return default;
 	}
-	public void UpdateState(IQPaintEngineState state)
+	public  virtual void OnUpdateState(void** state)
 	{
-		this.ptr.UpdateState(state);
 	}
-	public void DrawRects(IQRect rects, c_int rectCount)
+	public  virtual void OnDrawRects(void** rects, c_int rectCount)
 	{
-		this.ptr.DrawRects(rects, rectCount);
 	}
-	public void DrawRects2(IQRectF rects, c_int rectCount)
+	public  virtual void OnDrawRects2(void** rects, c_int rectCount)
 	{
-		this.ptr.DrawRects2(rects, rectCount);
 	}
-	public void DrawLines(IQLine lines, c_int lineCount)
+	public  virtual void OnDrawLines(void** lines, c_int lineCount)
 	{
-		this.ptr.DrawLines(lines, lineCount);
 	}
-	public void DrawLines2(IQLineF lines, c_int lineCount)
+	public  virtual void OnDrawLines2(void** lines, c_int lineCount)
 	{
-		this.ptr.DrawLines2(lines, lineCount);
 	}
-	public void DrawEllipse(IQRectF r)
+	public  virtual void OnDrawEllipse(void** r)
 	{
-		this.ptr.DrawEllipse(r);
 	}
-	public void DrawEllipse2(IQRect r)
+	public  virtual void OnDrawEllipse2(void** r)
 	{
-		this.ptr.DrawEllipse2(r);
 	}
-	public void DrawPath(IQPainterPath path)
+	public  virtual void OnDrawPath(void** path)
 	{
-		this.ptr.DrawPath(path);
 	}
-	public void DrawPoints(IQPointF points, c_int pointCount)
+	public  virtual void OnDrawPoints(void** points, c_int pointCount)
 	{
-		this.ptr.DrawPoints(points, pointCount);
 	}
-	public void DrawPoints2(IQPoint points, c_int pointCount)
+	public  virtual void OnDrawPoints2(void** points, c_int pointCount)
 	{
-		this.ptr.DrawPoints2(points, pointCount);
 	}
-	public void DrawPolygon(IQPointF points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
+	public  virtual void OnDrawPolygon(void** points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
 	{
-		this.ptr.DrawPolygon(points, pointCount, mode);
 	}
-	public void DrawPolygon2(IQPoint points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
+	public  virtual void OnDrawPolygon2(void** points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
 	{
-		this.ptr.DrawPolygon2(points, pointCount, mode);
 	}
-	public void DrawPixmap(IQRectF r, IQPixmap pm, IQRectF sr)
+	public  virtual void OnDrawPixmap(void** r, void** pm, void** sr)
 	{
-		this.ptr.DrawPixmap(r, pm, sr);
 	}
-	public void DrawTextItem(IQPointF p, IQTextItem textItem)
+	public  virtual void OnDrawTextItem(void** p, void** textItem)
 	{
-		this.ptr.DrawTextItem(p, textItem);
 	}
-	public void DrawTiledPixmap(IQRectF r, IQPixmap pixmap, IQPointF s)
+	public  virtual void OnDrawTiledPixmap(void** r, void** pixmap, void** s)
 	{
-		this.ptr.DrawTiledPixmap(r, pixmap, s);
 	}
-	public void DrawImage(IQRectF r, IQImage pm, IQRectF sr, void* flags)
+	public  virtual void OnDrawImage(void** r, void** pm, void** sr, void* flags)
 	{
-		this.ptr.DrawImage(r, pm, sr, flags);
 	}
 	public void SetPaintDevice(IQPaintDevice device)
 	{
@@ -415,13 +376,13 @@ class QPaintEngine : IQPaintEngine
 	{
 		return this.ptr.SystemRect();
 	}
-	public QPoint_Ptr CoordinateOffset()
+	public  virtual QPoint_Ptr OnCoordinateOffset()
 	{
-		return this.ptr.CoordinateOffset();
+		return default;
 	}
-	public QPaintEngine_Type Type()
+	public  virtual QPaintEngine_Type OnType()
 	{
-		return this.ptr.Type();
+		return default;
 	}
 	public void Fix_neg_rect(c_int* x, c_int* y, c_int* w, c_int* h)
 	{
@@ -455,13 +416,13 @@ class QPaintEngine : IQPaintEngine
 	{
 		return this.ptr.IsExtended();
 	}
-	public QPixmap_Ptr CreatePixmap(IQSize size)
+	public  virtual QPixmap_Ptr OnCreatePixmap(void* size)
 	{
-		return this.ptr.CreatePixmap(size);
+		return default;
 	}
-	public QPixmap_Ptr CreatePixmapFromImage(IQImage image, void* flags)
+	public  virtual QPixmap_Ptr OnCreatePixmapFromImage(void* image, void* flags)
 	{
-		return this.ptr.CreatePixmapFromImage(image, flags);
+		return default;
 	}
 }
 interface IQPaintEngine : IQtObjectInterface
@@ -481,40 +442,112 @@ extension CQt
 	public static extern void QPaintEngine_SetActive(void* self, bool newState);
 	[LinkName("QPaintEngine_Begin")]
 	public static extern bool QPaintEngine_Begin(void* self, void** pdev);
+	
+	public function void QPaintEngine_OnBegin_action(void* self, void** pdev);
+	[LinkName("QPaintEngine_OnBegin")]
+	public static extern bool QPaintEngine_OnBegin(void* self, QPaintEngine_OnBegin_action _action);
 	[LinkName("QPaintEngine_End")]
 	public static extern bool QPaintEngine_End(void* self);
+	
+	public function void QPaintEngine_OnEnd_action(void* self);
+	[LinkName("QPaintEngine_OnEnd")]
+	public static extern bool QPaintEngine_OnEnd(void* self, QPaintEngine_OnEnd_action _action);
 	[LinkName("QPaintEngine_UpdateState")]
 	public static extern void QPaintEngine_UpdateState(void* self, void** state);
+	
+	public function void QPaintEngine_OnUpdateState_action(void* self, void** state);
+	[LinkName("QPaintEngine_OnUpdateState")]
+	public static extern void QPaintEngine_OnUpdateState(void* self, QPaintEngine_OnUpdateState_action _action);
 	[LinkName("QPaintEngine_DrawRects")]
 	public static extern void QPaintEngine_DrawRects(void* self, void** rects, c_int rectCount);
+	
+	public function void QPaintEngine_OnDrawRects_action(void* self, void** rects, c_int rectCount);
+	[LinkName("QPaintEngine_OnDrawRects")]
+	public static extern void QPaintEngine_OnDrawRects(void* self, QPaintEngine_OnDrawRects_action _action);
 	[LinkName("QPaintEngine_DrawRects2")]
 	public static extern void QPaintEngine_DrawRects2(void* self, void** rects, c_int rectCount);
+	
+	public function void QPaintEngine_OnDrawRects2_action(void* self, void** rects, c_int rectCount);
+	[LinkName("QPaintEngine_OnDrawRects2")]
+	public static extern void QPaintEngine_OnDrawRects2(void* self, QPaintEngine_OnDrawRects2_action _action);
 	[LinkName("QPaintEngine_DrawLines")]
 	public static extern void QPaintEngine_DrawLines(void* self, void** lines, c_int lineCount);
+	
+	public function void QPaintEngine_OnDrawLines_action(void* self, void** lines, c_int lineCount);
+	[LinkName("QPaintEngine_OnDrawLines")]
+	public static extern void QPaintEngine_OnDrawLines(void* self, QPaintEngine_OnDrawLines_action _action);
 	[LinkName("QPaintEngine_DrawLines2")]
 	public static extern void QPaintEngine_DrawLines2(void* self, void** lines, c_int lineCount);
+	
+	public function void QPaintEngine_OnDrawLines2_action(void* self, void** lines, c_int lineCount);
+	[LinkName("QPaintEngine_OnDrawLines2")]
+	public static extern void QPaintEngine_OnDrawLines2(void* self, QPaintEngine_OnDrawLines2_action _action);
 	[LinkName("QPaintEngine_DrawEllipse")]
 	public static extern void QPaintEngine_DrawEllipse(void* self, void** r);
+	
+	public function void QPaintEngine_OnDrawEllipse_action(void* self, void** r);
+	[LinkName("QPaintEngine_OnDrawEllipse")]
+	public static extern void QPaintEngine_OnDrawEllipse(void* self, QPaintEngine_OnDrawEllipse_action _action);
 	[LinkName("QPaintEngine_DrawEllipse2")]
 	public static extern void QPaintEngine_DrawEllipse2(void* self, void** r);
+	
+	public function void QPaintEngine_OnDrawEllipse2_action(void* self, void** r);
+	[LinkName("QPaintEngine_OnDrawEllipse2")]
+	public static extern void QPaintEngine_OnDrawEllipse2(void* self, QPaintEngine_OnDrawEllipse2_action _action);
 	[LinkName("QPaintEngine_DrawPath")]
 	public static extern void QPaintEngine_DrawPath(void* self, void** path);
+	
+	public function void QPaintEngine_OnDrawPath_action(void* self, void** path);
+	[LinkName("QPaintEngine_OnDrawPath")]
+	public static extern void QPaintEngine_OnDrawPath(void* self, QPaintEngine_OnDrawPath_action _action);
 	[LinkName("QPaintEngine_DrawPoints")]
 	public static extern void QPaintEngine_DrawPoints(void* self, void** points, c_int pointCount);
+	
+	public function void QPaintEngine_OnDrawPoints_action(void* self, void** points, c_int pointCount);
+	[LinkName("QPaintEngine_OnDrawPoints")]
+	public static extern void QPaintEngine_OnDrawPoints(void* self, QPaintEngine_OnDrawPoints_action _action);
 	[LinkName("QPaintEngine_DrawPoints2")]
 	public static extern void QPaintEngine_DrawPoints2(void* self, void** points, c_int pointCount);
+	
+	public function void QPaintEngine_OnDrawPoints2_action(void* self, void** points, c_int pointCount);
+	[LinkName("QPaintEngine_OnDrawPoints2")]
+	public static extern void QPaintEngine_OnDrawPoints2(void* self, QPaintEngine_OnDrawPoints2_action _action);
 	[LinkName("QPaintEngine_DrawPolygon")]
 	public static extern void QPaintEngine_DrawPolygon(void* self, void** points, c_int pointCount, QPaintEngine_PolygonDrawMode mode);
+	
+	public function void QPaintEngine_OnDrawPolygon_action(void* self, void** points, c_int pointCount, QPaintEngine_PolygonDrawMode mode);
+	[LinkName("QPaintEngine_OnDrawPolygon")]
+	public static extern void QPaintEngine_OnDrawPolygon(void* self, QPaintEngine_OnDrawPolygon_action _action);
 	[LinkName("QPaintEngine_DrawPolygon2")]
 	public static extern void QPaintEngine_DrawPolygon2(void* self, void** points, c_int pointCount, QPaintEngine_PolygonDrawMode mode);
+	
+	public function void QPaintEngine_OnDrawPolygon2_action(void* self, void** points, c_int pointCount, QPaintEngine_PolygonDrawMode mode);
+	[LinkName("QPaintEngine_OnDrawPolygon2")]
+	public static extern void QPaintEngine_OnDrawPolygon2(void* self, QPaintEngine_OnDrawPolygon2_action _action);
 	[LinkName("QPaintEngine_DrawPixmap")]
 	public static extern void QPaintEngine_DrawPixmap(void* self, void** r, void** pm, void** sr);
+	
+	public function void QPaintEngine_OnDrawPixmap_action(void* self, void** r, void** pm, void** sr);
+	[LinkName("QPaintEngine_OnDrawPixmap")]
+	public static extern void QPaintEngine_OnDrawPixmap(void* self, QPaintEngine_OnDrawPixmap_action _action);
 	[LinkName("QPaintEngine_DrawTextItem")]
 	public static extern void QPaintEngine_DrawTextItem(void* self, void** p, void** textItem);
+	
+	public function void QPaintEngine_OnDrawTextItem_action(void* self, void** p, void** textItem);
+	[LinkName("QPaintEngine_OnDrawTextItem")]
+	public static extern void QPaintEngine_OnDrawTextItem(void* self, QPaintEngine_OnDrawTextItem_action _action);
 	[LinkName("QPaintEngine_DrawTiledPixmap")]
 	public static extern void QPaintEngine_DrawTiledPixmap(void* self, void** r, void** pixmap, void** s);
+	
+	public function void QPaintEngine_OnDrawTiledPixmap_action(void* self, void** r, void** pixmap, void** s);
+	[LinkName("QPaintEngine_OnDrawTiledPixmap")]
+	public static extern void QPaintEngine_OnDrawTiledPixmap(void* self, QPaintEngine_OnDrawTiledPixmap_action _action);
 	[LinkName("QPaintEngine_DrawImage")]
 	public static extern void QPaintEngine_DrawImage(void* self, void** r, void** pm, void** sr, void* flags);
+	
+	public function void QPaintEngine_OnDrawImage_action(void* self, void** r, void** pm, void** sr, void* flags);
+	[LinkName("QPaintEngine_OnDrawImage")]
+	public static extern void QPaintEngine_OnDrawImage(void* self, QPaintEngine_OnDrawImage_action _action);
 	[LinkName("QPaintEngine_SetPaintDevice")]
 	public static extern void QPaintEngine_SetPaintDevice(void* self, void** device);
 	[LinkName("QPaintEngine_PaintDevice")]
@@ -529,8 +562,16 @@ extension CQt
 	public static extern void* QPaintEngine_SystemRect(void* self);
 	[LinkName("QPaintEngine_CoordinateOffset")]
 	public static extern void* QPaintEngine_CoordinateOffset(void* self);
+	
+	public function void QPaintEngine_OnCoordinateOffset_action(void* self);
+	[LinkName("QPaintEngine_OnCoordinateOffset")]
+	public static extern void* QPaintEngine_OnCoordinateOffset(void* self, QPaintEngine_OnCoordinateOffset_action _action);
 	[LinkName("QPaintEngine_Type")]
 	public static extern QPaintEngine_Type QPaintEngine_Type(void* self);
+	
+	public function void QPaintEngine_OnType_action(void* self);
+	[LinkName("QPaintEngine_OnType")]
+	public static extern QPaintEngine_Type QPaintEngine_OnType(void* self, QPaintEngine_OnType_action _action);
 	[LinkName("QPaintEngine_Fix_Neg_Rect")]
 	public static extern void QPaintEngine_Fix_Neg_Rect(void* self, c_int* x, c_int* y, c_int* w, c_int* h);
 	[LinkName("QPaintEngine_TestDirty")]
@@ -549,8 +590,16 @@ extension CQt
 	public static extern bool QPaintEngine_IsExtended(void* self);
 	[LinkName("QPaintEngine_CreatePixmap")]
 	public static extern void* QPaintEngine_CreatePixmap(void* self, void* size);
+	
+	public function void QPaintEngine_OnCreatePixmap_action(void* self, void* size);
+	[LinkName("QPaintEngine_OnCreatePixmap")]
+	public static extern void* QPaintEngine_OnCreatePixmap(void* self, QPaintEngine_OnCreatePixmap_action _action);
 	[LinkName("QPaintEngine_CreatePixmapFromImage")]
 	public static extern void* QPaintEngine_CreatePixmapFromImage(void* self, void* image, void* flags);
+	
+	public function void QPaintEngine_OnCreatePixmapFromImage_action(void* self, void* image, void* flags);
+	[LinkName("QPaintEngine_OnCreatePixmapFromImage")]
+	public static extern void* QPaintEngine_OnCreatePixmapFromImage(void* self, QPaintEngine_OnCreatePixmapFromImage_action _action);
 }
 // --------------------------------------------------------------
 // QPaintEngineState
@@ -640,24 +689,13 @@ class QPaintEngineState : IQPaintEngineState
 {
 	private QPaintEngineState_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPaintEngineState_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPaintEngineState other)
 	{
 		this.ptr = CQt.QPaintEngineState_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -18,11 +18,11 @@ struct QButtonGroup_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QButtonGroup_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QButtonGroup_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QButtonGroup_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -116,11 +116,11 @@ struct QButtonGroup_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QButtonGroup_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QButtonGroup_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -280,23 +280,23 @@ struct QButtonGroup_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QButtonGroup_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QButtonGroup_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QButtonGroup_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QButtonGroup_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QButtonGroup_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -343,125 +343,33 @@ class QButtonGroup : IQButtonGroup, IQObject
 {
 	private QButtonGroup_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QButtonGroup_buttonClicked,
-		QButtonGroup_buttonPressed,
-		QButtonGroup_buttonReleased,
-		QButtonGroup_buttonToggled,
-		QButtonGroup_idClicked,
-		QButtonGroup_idPressed,
-		QButtonGroup_idReleased,
-		QButtonGroup_idToggled,
-		QButtonGroup_destroyed,
-		QButtonGroup_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QButtonGroup_Connect_ButtonClicked(obj.ObjectPtr,  => QtBeef_QButtonGroup_buttonClicked);
-		CQt.QButtonGroup_Connect_ButtonPressed(obj.ObjectPtr,  => QtBeef_QButtonGroup_buttonPressed);
-		CQt.QButtonGroup_Connect_ButtonReleased(obj.ObjectPtr,  => QtBeef_QButtonGroup_buttonReleased);
-		CQt.QButtonGroup_Connect_ButtonToggled(obj.ObjectPtr,  => QtBeef_QButtonGroup_buttonToggled);
-		CQt.QButtonGroup_Connect_IdClicked(obj.ObjectPtr,  => QtBeef_QButtonGroup_idClicked);
-		CQt.QButtonGroup_Connect_IdPressed(obj.ObjectPtr,  => QtBeef_QButtonGroup_idPressed);
-		CQt.QButtonGroup_Connect_IdReleased(obj.ObjectPtr,  => QtBeef_QButtonGroup_idReleased);
-		CQt.QButtonGroup_Connect_IdToggled(obj.ObjectPtr,  => QtBeef_QButtonGroup_idToggled);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** param1)> OnButtonClicked = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnButtonPressed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnButtonReleased = .() ~ _.Dispose();
-	public Event<delegate void(void** param1, bool param2)> OnButtonToggled = .() ~ _.Dispose();
-	public Event<delegate void(c_int param1)> OnIdClicked = .() ~ _.Dispose();
-	public Event<delegate void(c_int param1)> OnIdPressed = .() ~ _.Dispose();
-	public Event<delegate void(c_int param1)> OnIdReleased = .() ~ _.Dispose();
-	public Event<delegate void(c_int param1, bool param2)> OnIdToggled = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QButtonGroup_buttonClicked(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnButtonClicked.Invoke(param1);
-	}
-	static void QtBeef_QButtonGroup_buttonPressed(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnButtonPressed.Invoke(param1);
-	}
-	static void QtBeef_QButtonGroup_buttonReleased(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnButtonReleased.Invoke(param1);
-	}
-	static void QtBeef_QButtonGroup_buttonToggled(void* ptr, void** param1, bool param2)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnButtonToggled.Invoke(param1, param2);
-	}
-	static void QtBeef_QButtonGroup_idClicked(void* ptr, c_int param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnIdClicked.Invoke(param1);
-	}
-	static void QtBeef_QButtonGroup_idPressed(void* ptr, c_int param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnIdPressed.Invoke(param1);
-	}
-	static void QtBeef_QButtonGroup_idReleased(void* ptr, c_int param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnIdReleased.Invoke(param1);
-	}
-	static void QtBeef_QButtonGroup_idToggled(void* ptr, c_int param1, bool param2)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnIdToggled.Invoke(param1, param2);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QButtonGroup_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QButtonGroup_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QButtonGroup_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QButtonGroup_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -551,13 +459,13 @@ class QButtonGroup : IQButtonGroup, IQObject
 	{
 		this.ptr.AddButton2(param1, id);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -715,25 +623,20 @@ class QButtonGroup : IQButtonGroup, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -789,10 +692,22 @@ extension CQt
 	public static extern void QButtonGroup_Delete(QButtonGroup_Ptr self);
 	[LinkName("QButtonGroup_MetaObject")]
 	public static extern void** QButtonGroup_MetaObject(void* self);
+	
+	public function void QButtonGroup_OnMetaObject_action(void* self);
+	[LinkName("QButtonGroup_OnMetaObject")]
+	public static extern void** QButtonGroup_OnMetaObject(void* self, QButtonGroup_OnMetaObject_action _action);
 	[LinkName("QButtonGroup_Qt_Metacast")]
 	public static extern void* QButtonGroup_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QButtonGroup_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QButtonGroup_OnMetacast")]
+	public static extern void* QButtonGroup_OnMetacast(void* self, QButtonGroup_OnMetacast_action _action);
 	[LinkName("QButtonGroup_Qt_Metacall")]
 	public static extern c_int QButtonGroup_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QButtonGroup_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QButtonGroup_OnMetacall")]
+	public static extern c_int QButtonGroup_OnMetacall(void* self, QButtonGroup_OnMetacall_action _action);
 	[LinkName("QButtonGroup_Tr")]
 	public static extern libqt_string QButtonGroup_Tr(c_char* s);
 	[LinkName("QButtonGroup_SetExclusive")]
@@ -818,55 +733,97 @@ extension CQt
 	[LinkName("QButtonGroup_ButtonClicked")]
 	public static extern void QButtonGroup_ButtonClicked(void* self, void** param1);
 	
-	public function void QButtonGroup_buttonClicked_action(void* self, void** param1);
+	public function void QButtonGroup_Connect_ButtonClicked_action(void* self, void** param1);
 	[LinkName("QButtonGroup_Connect_ButtonClicked")]
-	public static extern void QButtonGroup_Connect_ButtonClicked(void* self, QButtonGroup_buttonClicked_action _action);
+	public static extern void QButtonGroup_Connect_ButtonClicked(void* self, QButtonGroup_Connect_ButtonClicked_action _action);
 	[LinkName("QButtonGroup_ButtonPressed")]
 	public static extern void QButtonGroup_ButtonPressed(void* self, void** param1);
 	
-	public function void QButtonGroup_buttonPressed_action(void* self, void** param1);
+	public function void QButtonGroup_Connect_ButtonPressed_action(void* self, void** param1);
 	[LinkName("QButtonGroup_Connect_ButtonPressed")]
-	public static extern void QButtonGroup_Connect_ButtonPressed(void* self, QButtonGroup_buttonPressed_action _action);
+	public static extern void QButtonGroup_Connect_ButtonPressed(void* self, QButtonGroup_Connect_ButtonPressed_action _action);
 	[LinkName("QButtonGroup_ButtonReleased")]
 	public static extern void QButtonGroup_ButtonReleased(void* self, void** param1);
 	
-	public function void QButtonGroup_buttonReleased_action(void* self, void** param1);
+	public function void QButtonGroup_Connect_ButtonReleased_action(void* self, void** param1);
 	[LinkName("QButtonGroup_Connect_ButtonReleased")]
-	public static extern void QButtonGroup_Connect_ButtonReleased(void* self, QButtonGroup_buttonReleased_action _action);
+	public static extern void QButtonGroup_Connect_ButtonReleased(void* self, QButtonGroup_Connect_ButtonReleased_action _action);
 	[LinkName("QButtonGroup_ButtonToggled")]
 	public static extern void QButtonGroup_ButtonToggled(void* self, void** param1, bool param2);
 	
-	public function void QButtonGroup_buttonToggled_action(void* self, void** param1, bool param2);
+	public function void QButtonGroup_Connect_ButtonToggled_action(void* self, void** param1, bool param2);
 	[LinkName("QButtonGroup_Connect_ButtonToggled")]
-	public static extern void QButtonGroup_Connect_ButtonToggled(void* self, QButtonGroup_buttonToggled_action _action);
+	public static extern void QButtonGroup_Connect_ButtonToggled(void* self, QButtonGroup_Connect_ButtonToggled_action _action);
 	[LinkName("QButtonGroup_IdClicked")]
 	public static extern void QButtonGroup_IdClicked(void* self, c_int param1);
 	
-	public function void QButtonGroup_idClicked_action(void* self, c_int param1);
+	public function void QButtonGroup_Connect_IdClicked_action(void* self, c_int param1);
 	[LinkName("QButtonGroup_Connect_IdClicked")]
-	public static extern void QButtonGroup_Connect_IdClicked(void* self, QButtonGroup_idClicked_action _action);
+	public static extern void QButtonGroup_Connect_IdClicked(void* self, QButtonGroup_Connect_IdClicked_action _action);
 	[LinkName("QButtonGroup_IdPressed")]
 	public static extern void QButtonGroup_IdPressed(void* self, c_int param1);
 	
-	public function void QButtonGroup_idPressed_action(void* self, c_int param1);
+	public function void QButtonGroup_Connect_IdPressed_action(void* self, c_int param1);
 	[LinkName("QButtonGroup_Connect_IdPressed")]
-	public static extern void QButtonGroup_Connect_IdPressed(void* self, QButtonGroup_idPressed_action _action);
+	public static extern void QButtonGroup_Connect_IdPressed(void* self, QButtonGroup_Connect_IdPressed_action _action);
 	[LinkName("QButtonGroup_IdReleased")]
 	public static extern void QButtonGroup_IdReleased(void* self, c_int param1);
 	
-	public function void QButtonGroup_idReleased_action(void* self, c_int param1);
+	public function void QButtonGroup_Connect_IdReleased_action(void* self, c_int param1);
 	[LinkName("QButtonGroup_Connect_IdReleased")]
-	public static extern void QButtonGroup_Connect_IdReleased(void* self, QButtonGroup_idReleased_action _action);
+	public static extern void QButtonGroup_Connect_IdReleased(void* self, QButtonGroup_Connect_IdReleased_action _action);
 	[LinkName("QButtonGroup_IdToggled")]
 	public static extern void QButtonGroup_IdToggled(void* self, c_int param1, bool param2);
 	
-	public function void QButtonGroup_idToggled_action(void* self, c_int param1, bool param2);
+	public function void QButtonGroup_Connect_IdToggled_action(void* self, c_int param1, bool param2);
 	[LinkName("QButtonGroup_Connect_IdToggled")]
-	public static extern void QButtonGroup_Connect_IdToggled(void* self, QButtonGroup_idToggled_action _action);
+	public static extern void QButtonGroup_Connect_IdToggled(void* self, QButtonGroup_Connect_IdToggled_action _action);
 	[LinkName("QButtonGroup_Tr2")]
 	public static extern libqt_string QButtonGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QButtonGroup_Tr3")]
 	public static extern libqt_string QButtonGroup_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QButtonGroup_AddButton2")]
 	public static extern void QButtonGroup_AddButton2(void* self, void** param1, c_int id);
+	[LinkName("QButtonGroup_Event")]
+	public static extern bool QButtonGroup_Event(void* self, void** event);
+	
+	public function void QButtonGroup_OnEvent_action(void* self, void** event);
+	[LinkName("QButtonGroup_OnEvent")]
+	public static extern bool QButtonGroup_OnEvent(void* self, QButtonGroup_OnEvent_action _action);
+	[LinkName("QButtonGroup_EventFilter")]
+	public static extern bool QButtonGroup_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QButtonGroup_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QButtonGroup_OnEventFilter")]
+	public static extern bool QButtonGroup_OnEventFilter(void* self, QButtonGroup_OnEventFilter_action _action);
+	[LinkName("QButtonGroup_TimerEvent")]
+	public static extern void QButtonGroup_TimerEvent(void* self, void** event);
+	
+	public function void QButtonGroup_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QButtonGroup_OnTimerEvent")]
+	public static extern void QButtonGroup_OnTimerEvent(void* self, QButtonGroup_OnTimerEvent_action _action);
+	[LinkName("QButtonGroup_ChildEvent")]
+	public static extern void QButtonGroup_ChildEvent(void* self, void** event);
+	
+	public function void QButtonGroup_OnChildEvent_action(void* self, void** event);
+	[LinkName("QButtonGroup_OnChildEvent")]
+	public static extern void QButtonGroup_OnChildEvent(void* self, QButtonGroup_OnChildEvent_action _action);
+	[LinkName("QButtonGroup_CustomEvent")]
+	public static extern void QButtonGroup_CustomEvent(void* self, void** event);
+	
+	public function void QButtonGroup_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QButtonGroup_OnCustomEvent")]
+	public static extern void QButtonGroup_OnCustomEvent(void* self, QButtonGroup_OnCustomEvent_action _action);
+	[LinkName("QButtonGroup_ConnectNotify")]
+	public static extern void QButtonGroup_ConnectNotify(void* self, void** signal);
+	
+	public function void QButtonGroup_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QButtonGroup_OnConnectNotify")]
+	public static extern void QButtonGroup_OnConnectNotify(void* self, QButtonGroup_OnConnectNotify_action _action);
+	[LinkName("QButtonGroup_DisconnectNotify")]
+	public static extern void QButtonGroup_DisconnectNotify(void* self, void** signal);
+	
+	public function void QButtonGroup_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QButtonGroup_OnDisconnectNotify")]
+	public static extern void QButtonGroup_OnDisconnectNotify(void* self, QButtonGroup_OnDisconnectNotify_action _action);
 }

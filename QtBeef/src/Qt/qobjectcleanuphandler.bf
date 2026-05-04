@@ -18,11 +18,11 @@ struct QObjectCleanupHandler_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QObjectCleanupHandler_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QObjectCleanupHandler_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QObjectCleanupHandler_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -56,11 +56,11 @@ struct QObjectCleanupHandler_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QObjectCleanupHandler_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QObjectCleanupHandler_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -220,23 +220,23 @@ struct QObjectCleanupHandler_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QObjectCleanupHandler_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QObjectCleanupHandler_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QObjectCleanupHandler_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QObjectCleanupHandler_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QObjectCleanupHandler_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -283,56 +283,29 @@ class QObjectCleanupHandler : IQObjectCleanupHandler, IQObject
 {
 	private QObjectCleanupHandler_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QObjectCleanupHandler_destroyed,
-		QObjectCleanupHandler_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QObjectCleanupHandler_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QObjectCleanupHandler_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QObjectCleanupHandler_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -362,13 +335,13 @@ class QObjectCleanupHandler : IQObjectCleanupHandler, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -526,25 +499,20 @@ class QObjectCleanupHandler : IQObjectCleanupHandler, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -598,10 +566,22 @@ extension CQt
 	public static extern void QObjectCleanupHandler_Delete(QObjectCleanupHandler_Ptr self);
 	[LinkName("QObjectCleanupHandler_MetaObject")]
 	public static extern void** QObjectCleanupHandler_MetaObject(void* self);
+	
+	public function void QObjectCleanupHandler_OnMetaObject_action(void* self);
+	[LinkName("QObjectCleanupHandler_OnMetaObject")]
+	public static extern void** QObjectCleanupHandler_OnMetaObject(void* self, QObjectCleanupHandler_OnMetaObject_action _action);
 	[LinkName("QObjectCleanupHandler_Qt_Metacast")]
 	public static extern void* QObjectCleanupHandler_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QObjectCleanupHandler_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QObjectCleanupHandler_OnMetacast")]
+	public static extern void* QObjectCleanupHandler_OnMetacast(void* self, QObjectCleanupHandler_OnMetacast_action _action);
 	[LinkName("QObjectCleanupHandler_Qt_Metacall")]
 	public static extern c_int QObjectCleanupHandler_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QObjectCleanupHandler_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QObjectCleanupHandler_OnMetacall")]
+	public static extern c_int QObjectCleanupHandler_OnMetacall(void* self, QObjectCleanupHandler_OnMetacall_action _action);
 	[LinkName("QObjectCleanupHandler_Tr")]
 	public static extern libqt_string QObjectCleanupHandler_Tr(c_char* s);
 	[LinkName("QObjectCleanupHandler_Add")]
@@ -616,4 +596,46 @@ extension CQt
 	public static extern libqt_string QObjectCleanupHandler_Tr2(c_char* s, c_char* c);
 	[LinkName("QObjectCleanupHandler_Tr3")]
 	public static extern libqt_string QObjectCleanupHandler_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QObjectCleanupHandler_Event")]
+	public static extern bool QObjectCleanupHandler_Event(void* self, void** event);
+	
+	public function void QObjectCleanupHandler_OnEvent_action(void* self, void** event);
+	[LinkName("QObjectCleanupHandler_OnEvent")]
+	public static extern bool QObjectCleanupHandler_OnEvent(void* self, QObjectCleanupHandler_OnEvent_action _action);
+	[LinkName("QObjectCleanupHandler_EventFilter")]
+	public static extern bool QObjectCleanupHandler_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QObjectCleanupHandler_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QObjectCleanupHandler_OnEventFilter")]
+	public static extern bool QObjectCleanupHandler_OnEventFilter(void* self, QObjectCleanupHandler_OnEventFilter_action _action);
+	[LinkName("QObjectCleanupHandler_TimerEvent")]
+	public static extern void QObjectCleanupHandler_TimerEvent(void* self, void** event);
+	
+	public function void QObjectCleanupHandler_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QObjectCleanupHandler_OnTimerEvent")]
+	public static extern void QObjectCleanupHandler_OnTimerEvent(void* self, QObjectCleanupHandler_OnTimerEvent_action _action);
+	[LinkName("QObjectCleanupHandler_ChildEvent")]
+	public static extern void QObjectCleanupHandler_ChildEvent(void* self, void** event);
+	
+	public function void QObjectCleanupHandler_OnChildEvent_action(void* self, void** event);
+	[LinkName("QObjectCleanupHandler_OnChildEvent")]
+	public static extern void QObjectCleanupHandler_OnChildEvent(void* self, QObjectCleanupHandler_OnChildEvent_action _action);
+	[LinkName("QObjectCleanupHandler_CustomEvent")]
+	public static extern void QObjectCleanupHandler_CustomEvent(void* self, void** event);
+	
+	public function void QObjectCleanupHandler_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QObjectCleanupHandler_OnCustomEvent")]
+	public static extern void QObjectCleanupHandler_OnCustomEvent(void* self, QObjectCleanupHandler_OnCustomEvent_action _action);
+	[LinkName("QObjectCleanupHandler_ConnectNotify")]
+	public static extern void QObjectCleanupHandler_ConnectNotify(void* self, void** signal);
+	
+	public function void QObjectCleanupHandler_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QObjectCleanupHandler_OnConnectNotify")]
+	public static extern void QObjectCleanupHandler_OnConnectNotify(void* self, QObjectCleanupHandler_OnConnectNotify_action _action);
+	[LinkName("QObjectCleanupHandler_DisconnectNotify")]
+	public static extern void QObjectCleanupHandler_DisconnectNotify(void* self, void** signal);
+	
+	public function void QObjectCleanupHandler_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QObjectCleanupHandler_OnDisconnectNotify")]
+	public static extern void QObjectCleanupHandler_OnDisconnectNotify(void* self, QObjectCleanupHandler_OnDisconnectNotify_action _action);
 }

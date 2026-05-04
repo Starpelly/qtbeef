@@ -18,11 +18,11 @@ struct QCalendarWidget_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QCalendarWidget_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QCalendarWidget_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QCalendarWidget_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -258,9 +258,301 @@ struct QCalendarWidget_Ptr
 	{
 		CQt.QCalendarWidget_Tr3(s, c, n);
 	}
+	public void ObjectName(String outStr)
+	{
+		CQt.QObject_ObjectName((.)this.Ptr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.Ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.Ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.Ptr);
+	}
+	public void SetParent(IQObject parent)
+	{
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QCalendarWidget_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QCalendarWidget_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QCalendarWidget_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QCalendarWidget_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QCalendarWidget_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.Ptr);
+		return CQt.QCalendarWidget_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QCalendarWidget_PaintEngine((.)this.Ptr));
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QCalendarWidget_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QCalendarWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QCalendarWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QCalendarWidget_SharedPainter((.)this.Ptr));
 	}
 	public void* WinId()
 	{
@@ -357,14 +649,6 @@ struct QCalendarWidget_Ptr
 	public QSize_Ptr Size()
 	{
 		return QSize_Ptr(CQt.QWidget_Size((.)this.Ptr));
-	}
-	public c_int Width()
-	{
-		return CQt.QWidget_Width((.)this.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QWidget_Height((.)this.Ptr);
 	}
 	public QRect_Ptr Rect()
 	{
@@ -932,7 +1216,7 @@ struct QCalendarWidget_Ptr
 	}
 	public void SetVisible(bool visible)
 	{
-		CQt.QWidget_SetVisible((.)this.Ptr, visible);
+		CQt.QCalendarWidget_SetVisible((.)this.Ptr, visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -1064,11 +1348,11 @@ struct QCalendarWidget_Ptr
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QCalendarWidget_HeightForWidth((.)this.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.Ptr);
+		return CQt.QCalendarWidget_HasHeightForWidth((.)this.Ptr);
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -1101,10 +1385,6 @@ struct QCalendarWidget_Ptr
 	public void UpdateGeometry()
 	{
 		CQt.QWidget_UpdateGeometry((.)this.Ptr);
-	}
-	public void SetParent(IQWidget parent)
-	{
-		CQt.QWidget_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -1222,10 +1502,6 @@ struct QCalendarWidget_Ptr
 	{
 		return CQt.QWidget_TestAttribute((.)this.Ptr, param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.Ptr));
-	}
 	public void EnsurePolished()
 	{
 		CQt.QWidget_EnsurePolished((.)this.Ptr);
@@ -1280,119 +1556,103 @@ struct QCalendarWidget_Ptr
 	}
 	public void MouseReleaseEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseDoubleClickEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseMoveEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void WheelEvent(IQWheelEvent event)
 	{
-		CQt.QWidget_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QWidget_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QWidget_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QWidget_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void PaintEvent(IQPaintEvent event)
 	{
-		CQt.QWidget_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CloseEvent(IQCloseEvent event)
 	{
-		CQt.QWidget_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ContextMenuEvent(IQContextMenuEvent event)
 	{
-		CQt.QWidget_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragEnterEvent(IQDragEnterEvent event)
 	{
-		CQt.QWidget_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragMoveEvent(IQDragMoveEvent event)
 	{
-		CQt.QWidget_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragLeaveEvent(IQDragLeaveEvent event)
 	{
-		CQt.QWidget_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DropEvent(IQDropEvent event)
 	{
-		CQt.QWidget_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ShowEvent(IQShowEvent event)
 	{
-		CQt.QWidget_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void HideEvent(IQHideEvent event)
 	{
-		CQt.QWidget_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QCalendarWidget_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.Ptr, eventType, message, result);
+		return CQt.QCalendarWidget_NativeEvent((.)this.Ptr, eventType, message, result);
 	}
 	public void ChangeEvent(IQEvent param1)
 	{
-		CQt.QWidget_ChangeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
-	{
-		return CQt.QWidget_Metric((.)this.Ptr, param1);
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		CQt.QWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.Ptr));
+		CQt.QCalendarWidget_ChangeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void InputMethodEvent(IQInputMethodEvent param1)
 	{
-		CQt.QWidget_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QCalendarWidget_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		return QVariant_Ptr(CQt.QWidget_InputMethodQuery((.)this.Ptr, param1));
+		return QVariant_Ptr(CQt.QCalendarWidget_InputMethodQuery((.)this.Ptr, param1));
 	}
 	public void* InputMethodHints()
 	{
@@ -1416,7 +1676,7 @@ struct QCalendarWidget_Ptr
 	}
 	public bool FocusNextPrevChild(bool next)
 	{
-		return CQt.QWidget_FocusNextPrevChild((.)this.Ptr, next);
+		return CQt.QCalendarWidget_FocusNextPrevChild((.)this.Ptr, next);
 	}
 	public bool FocusNextChild()
 	{
@@ -1510,402 +1770,50 @@ struct QCalendarWidget_Ptr
 	{
 		CQt.QWidget_Destroy2((.)this.Ptr, destroyWindow, destroySubWindows);
 	}
-	public void ObjectName(String outStr)
-	{
-		CQt.QObject_ObjectName((.)this.Ptr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
-	}
-	public bool IsWidgetType()
-	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
-	}
-	public bool IsWindowType()
-	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
-	}
-	public bool IsQuickItemType()
-	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
-	}
-	public bool SignalsBlocked()
-	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
-	}
-	public bool BlockSignals(bool b)
-	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
-	}
-	public void KillTimer(c_int id)
-	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.Ptr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public bool PaintingActive()
-	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
-	}
-	public c_int WidthMM()
-	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
-	}
-	public c_int HeightMM()
-	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
-	}
-	public c_int LogicalDpiX()
-	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
-	}
-	public c_int LogicalDpiY()
-	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
-	}
-	public c_int PhysicalDpiX()
-	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
-	}
-	public c_int PhysicalDpiY()
-	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
-	}
-	public double DevicePixelRatio()
-	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
-	}
-	public double DevicePixelRatioF()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
-	}
-	public c_int ColorCount()
-	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
-	}
-	public c_int Depth()
-	{
-		return CQt.QPaintDevice_Depth((.)this.Ptr);
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
-	}
 }
 class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 {
 	private QCalendarWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QCalendarWidget_selectionChanged,
-		QCalendarWidget_clicked,
-		QCalendarWidget_activated,
-		QCalendarWidget_currentPageChanged,
-		QCalendarWidget_windowTitleChanged,
-		QCalendarWidget_windowIconChanged,
-		QCalendarWidget_windowIconTextChanged,
-		QCalendarWidget_customContextMenuRequested,
-		QCalendarWidget_destroyed,
-		QCalendarWidget_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QCalendarWidget_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QCalendarWidget_selectionChanged);
-		CQt.QCalendarWidget_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QCalendarWidget_clicked);
-		CQt.QCalendarWidget_Connect_Activated(obj.ObjectPtr,  => QtBeef_QCalendarWidget_activated);
-		CQt.QCalendarWidget_Connect_CurrentPageChanged(obj.ObjectPtr,  => QtBeef_QCalendarWidget_currentPageChanged);
-		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
-		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
-		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
-		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
-	public Event<delegate void(void* date)> OnClicked = .() ~ _.Dispose();
-	public Event<delegate void(void* date)> OnActivated = .() ~ _.Dispose();
-	public Event<delegate void(c_int year, c_int month)> OnCurrentPageChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QCalendarWidget_selectionChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSelectionChanged.Invoke();
-	}
-	static void QtBeef_QCalendarWidget_clicked(void* ptr, void* date)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnClicked.Invoke(date);
-	}
-	static void QtBeef_QCalendarWidget_activated(void* ptr, void* date)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnActivated.Invoke(date);
-	}
-	static void QtBeef_QCalendarWidget_currentPageChanged(void* ptr, c_int year, c_int month)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentPageChanged.Invoke(year, month);
-	}
-	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconChanged.Invoke(icon);
-	}
-	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconTextChanged.Invoke(iconText);
-	}
-	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCustomContextMenuRequested.Invoke(pos);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QCalendarWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QCalendarWidget_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCalendarWidget_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QCalendarWidget_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual QSize_Ptr OnSizeHint()
 	{
-		return this.ptr.SizeHint();
+		return default;
 	}
-	public QSize_Ptr MinimumSizeHint()
+	public  virtual QSize_Ptr OnMinimumSizeHint()
 	{
-		return this.ptr.MinimumSizeHint();
+		return default;
 	}
 	public QDate_Ptr SelectedDate()
 	{
@@ -2027,29 +1935,25 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.SetDateEditAcceptDelay(delay);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
-	public void MousePressEvent(IQMouseEvent event)
+	public  virtual void OnMousePressEvent(void** event)
 	{
-		this.ptr.MousePressEvent(event);
 	}
-	public void ResizeEvent(IQResizeEvent event)
+	public  virtual void OnResizeEvent(void** event)
 	{
-		this.ptr.ResizeEvent(event);
 	}
-	public void KeyPressEvent(IQKeyEvent event)
+	public  virtual void OnKeyPressEvent(void** event)
 	{
-		this.ptr.KeyPressEvent(event);
 	}
-	public void PaintCell(IQPainter painter, IQRect rect, IQDate date)
+	public  virtual void OnPaintCell(void** painter, void** rect, void* date)
 	{
-		this.ptr.PaintCell(painter, rect, date);
 	}
 	public void UpdateCell(IQDate date)
 	{
@@ -2127,9 +2031,295 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public c_int DevType()
+	public void ObjectName(String outStr)
 	{
-		return this.ptr.DevType();
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public  virtual void OnTimerEvent(void** event)
+	{
+	}
+	public  virtual void OnChildEvent(void** event)
+	{
+	}
+	public  virtual void OnCustomEvent(void** event)
+	{
+	}
+	public  virtual void OnConnectNotify(void** signal)
+	{
+	}
+	public  virtual void OnDisconnectNotify(void** signal)
+	{
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+	public  virtual c_int OnDevType()
+	{
+		return default;
+	}
+	public bool PaintingActive()
+	{
+		return this.ptr.PaintingActive();
+	}
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
+	{
+		return default;
+	}
+	public c_int Width()
+	{
+		return this.ptr.Width();
+	}
+	public c_int Height()
+	{
+		return this.ptr.Height();
+	}
+	public c_int WidthMM()
+	{
+		return this.ptr.WidthMM();
+	}
+	public c_int HeightMM()
+	{
+		return this.ptr.HeightMM();
+	}
+	public c_int LogicalDpiX()
+	{
+		return this.ptr.LogicalDpiX();
+	}
+	public c_int LogicalDpiY()
+	{
+		return this.ptr.LogicalDpiY();
+	}
+	public c_int PhysicalDpiX()
+	{
+		return this.ptr.PhysicalDpiX();
+	}
+	public c_int PhysicalDpiY()
+	{
+		return this.ptr.PhysicalDpiY();
+	}
+	public double DevicePixelRatio()
+	{
+		return this.ptr.DevicePixelRatio();
+	}
+	public double DevicePixelRatioF()
+	{
+		return this.ptr.DevicePixelRatioF();
+	}
+	public c_int ColorCount()
+	{
+		return this.ptr.ColorCount();
+	}
+	public c_int Depth()
+	{
+		return this.ptr.Depth();
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return this.ptr.DevicePixelRatioFScale();
+	}
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return default;
+	}
+	public  virtual void OnInitPainter(void** painter)
+	{
+	}
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
+	{
+		return default;
+	}
+	public  virtual QPainter_Ptr OnSharedPainter()
+	{
+		return default;
 	}
 	public void* WinId()
 	{
@@ -2226,14 +2416,6 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
-	}
-	public c_int Width()
-	{
-		return this.ptr.Width();
-	}
-	public c_int Height()
-	{
-		return this.ptr.Height();
 	}
 	public QRect_Ptr Rect()
 	{
@@ -2799,9 +2981,8 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Repaint4(param1);
 	}
-	public void SetVisible(bool visible)
+	public  virtual void OnSetVisible(bool visible)
 	{
-		this.ptr.SetVisible(visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -2931,13 +3112,13 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.SetSizePolicy2(horizontal, vertical);
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -2970,10 +3151,6 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	public void UpdateGeometry()
 	{
 		this.ptr.UpdateGeometry();
-	}
-	public void SetParent(IQWidget parent)
-	{
-		this.ptr.SetParent(parent);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -3091,10 +3268,6 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	{
 		return this.ptr.TestAttribute(param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
 	public void EnsurePolished()
 	{
 		this.ptr.EnsurePolished();
@@ -3147,121 +3320,82 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.CustomContextMenuRequested(pos);
 	}
-	public void MouseReleaseEvent(IQMouseEvent event)
+	public  virtual void OnMouseReleaseEvent(void** event)
 	{
-		this.ptr.MouseReleaseEvent(event);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent event)
+	public  virtual void OnMouseDoubleClickEvent(void** event)
 	{
-		this.ptr.MouseDoubleClickEvent(event);
 	}
-	public void MouseMoveEvent(IQMouseEvent event)
+	public  virtual void OnMouseMoveEvent(void** event)
 	{
-		this.ptr.MouseMoveEvent(event);
 	}
-	public void WheelEvent(IQWheelEvent event)
+	public  virtual void OnWheelEvent(void** event)
 	{
-		this.ptr.WheelEvent(event);
 	}
-	public void KeyReleaseEvent(IQKeyEvent event)
+	public  virtual void OnKeyReleaseEvent(void** event)
 	{
-		this.ptr.KeyReleaseEvent(event);
 	}
-	public void FocusInEvent(IQFocusEvent event)
+	public  virtual void OnFocusInEvent(void** event)
 	{
-		this.ptr.FocusInEvent(event);
 	}
-	public void FocusOutEvent(IQFocusEvent event)
+	public  virtual void OnFocusOutEvent(void** event)
 	{
-		this.ptr.FocusOutEvent(event);
 	}
-	public void EnterEvent(IQEnterEvent event)
+	public  virtual void OnEnterEvent(void** event)
 	{
-		this.ptr.EnterEvent(event);
 	}
-	public void LeaveEvent(IQEvent event)
+	public  virtual void OnLeaveEvent(void** event)
 	{
-		this.ptr.LeaveEvent(event);
 	}
-	public void PaintEvent(IQPaintEvent event)
+	public  virtual void OnPaintEvent(void** event)
 	{
-		this.ptr.PaintEvent(event);
 	}
-	public void MoveEvent(IQMoveEvent event)
+	public  virtual void OnMoveEvent(void** event)
 	{
-		this.ptr.MoveEvent(event);
 	}
-	public void CloseEvent(IQCloseEvent event)
+	public  virtual void OnCloseEvent(void** event)
 	{
-		this.ptr.CloseEvent(event);
 	}
-	public void ContextMenuEvent(IQContextMenuEvent event)
+	public  virtual void OnContextMenuEvent(void** event)
 	{
-		this.ptr.ContextMenuEvent(event);
 	}
-	public void TabletEvent(IQTabletEvent event)
+	public  virtual void OnTabletEvent(void** event)
 	{
-		this.ptr.TabletEvent(event);
 	}
-	public void ActionEvent(IQActionEvent event)
+	public  virtual void OnActionEvent(void** event)
 	{
-		this.ptr.ActionEvent(event);
 	}
-	public void DragEnterEvent(IQDragEnterEvent event)
+	public  virtual void OnDragEnterEvent(void** event)
 	{
-		this.ptr.DragEnterEvent(event);
 	}
-	public void DragMoveEvent(IQDragMoveEvent event)
+	public  virtual void OnDragMoveEvent(void** event)
 	{
-		this.ptr.DragMoveEvent(event);
 	}
-	public void DragLeaveEvent(IQDragLeaveEvent event)
+	public  virtual void OnDragLeaveEvent(void** event)
 	{
-		this.ptr.DragLeaveEvent(event);
 	}
-	public void DropEvent(IQDropEvent event)
+	public  virtual void OnDropEvent(void** event)
 	{
-		this.ptr.DropEvent(event);
 	}
-	public void ShowEvent(IQShowEvent event)
+	public  virtual void OnShowEvent(void** event)
 	{
-		this.ptr.ShowEvent(event);
 	}
-	public void HideEvent(IQHideEvent event)
+	public  virtual void OnHideEvent(void** event)
 	{
-		this.ptr.HideEvent(event);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
+		return default;
 	}
-	public void ChangeEvent(IQEvent param1)
+	public  virtual void OnChangeEvent(void** param1)
 	{
-		this.ptr.ChangeEvent(param1);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public  virtual void OnInputMethodEvent(void** param1)
 	{
-		return this.ptr.Metric(param1);
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual QVariant_Ptr OnInputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		this.ptr.InitPainter(painter);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return this.ptr.Redirected(offset);
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return this.ptr.SharedPainter();
-	}
-	public void InputMethodEvent(IQInputMethodEvent param1)
-	{
-		this.ptr.InputMethodEvent(param1);
-	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
-	{
-		return this.ptr.InputMethodQuery(param1);
+		return default;
 	}
 	public void* InputMethodHints()
 	{
@@ -3283,9 +3417,9 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Destroy();
 	}
-	public bool FocusNextPrevChild(bool next)
+	public  virtual bool OnFocusNextPrevChild(bool next)
 	{
-		return this.ptr.FocusNextPrevChild(next);
+		return default;
 	}
 	public bool FocusNextChild()
 	{
@@ -3379,266 +3513,6 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Destroy2(destroyWindow, destroySubWindows);
 	}
-	public void ObjectName(String outStr)
-	{
-		this.ptr.ObjectName(outStr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		this.ptr.SetObjectName(name);
-	}
-	public bool IsWidgetType()
-	{
-		return this.ptr.IsWidgetType();
-	}
-	public bool IsWindowType()
-	{
-		return this.ptr.IsWindowType();
-	}
-	public bool IsQuickItemType()
-	{
-		return this.ptr.IsQuickItemType();
-	}
-	public bool SignalsBlocked()
-	{
-		return this.ptr.SignalsBlocked();
-	}
-	public bool BlockSignals(bool b)
-	{
-		return this.ptr.BlockSignals(b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return this.ptr.Thread();
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		this.ptr.MoveToThread(thread);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return this.ptr.StartTimer(interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return this.ptr.StartTimer2(time);
-	}
-	public void KillTimer(c_int id)
-	{
-		this.ptr.KillTimer(id);
-	}
-	public void** Children()
-	{
-		return this.ptr.Children();
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		this.ptr.InstallEventFilter(filterObj);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		this.ptr.RemoveEventFilter(obj);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Connect(sender, signal, receiver, member);
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return this.ptr.Connect3(sender, signal, member);
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
-	}
-	public bool Disconnect3()
-	{
-		return this.ptr.Disconnect3();
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return this.ptr.Disconnect4(receiver);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return this.ptr.Disconnect5(param1);
-	}
-	public void DumpObjectTree()
-	{
-		this.ptr.DumpObjectTree();
-	}
-	public void DumpObjectInfo()
-	{
-		this.ptr.DumpObjectInfo();
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return this.ptr.SetProperty(name, value);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return this.ptr.Property(name);
-	}
-	public void* DynamicPropertyNames()
-	{
-		return this.ptr.DynamicPropertyNames();
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return this.ptr.BindingStorage();
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return this.ptr.BindingStorage2();
-	}
-	public void Destroyed()
-	{
-		this.ptr.Destroyed();
-	}
-	public QObject_Ptr Parent()
-	{
-		return this.ptr.Parent();
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return this.ptr.Inherits(classname);
-	}
-	public void DeleteLater()
-	{
-		this.ptr.DeleteLater();
-	}
-	public QObject_Ptr Sender()
-	{
-		return this.ptr.Sender();
-	}
-	public c_int SenderSignalIndex()
-	{
-		return this.ptr.SenderSignalIndex();
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return this.ptr.Receivers(signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return this.ptr.IsSignalConnected(signal);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		this.ptr.TimerEvent(event);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		this.ptr.ChildEvent(event);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		this.ptr.CustomEvent(event);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.ConnectNotify(signal);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.DisconnectNotify(signal);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer22(interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer23(time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect4(sender, signal, member, type);
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return this.ptr.Disconnect1(signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return this.ptr.Disconnect22(signal, receiver);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect32(signal, receiver, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect23(receiver, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		this.ptr.Destroyed1(param1);
-	}
-	public bool PaintingActive()
-	{
-		return this.ptr.PaintingActive();
-	}
-	public c_int WidthMM()
-	{
-		return this.ptr.WidthMM();
-	}
-	public c_int HeightMM()
-	{
-		return this.ptr.HeightMM();
-	}
-	public c_int LogicalDpiX()
-	{
-		return this.ptr.LogicalDpiX();
-	}
-	public c_int LogicalDpiY()
-	{
-		return this.ptr.LogicalDpiY();
-	}
-	public c_int PhysicalDpiX()
-	{
-		return this.ptr.PhysicalDpiX();
-	}
-	public c_int PhysicalDpiY()
-	{
-		return this.ptr.PhysicalDpiY();
-	}
-	public double DevicePixelRatio()
-	{
-		return this.ptr.DevicePixelRatio();
-	}
-	public double DevicePixelRatioF()
-	{
-		return this.ptr.DevicePixelRatioF();
-	}
-	public c_int ColorCount()
-	{
-		return this.ptr.ColorCount();
-	}
-	public c_int Depth()
-	{
-		return this.ptr.Depth();
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return this.ptr.DevicePixelRatioFScale();
-	}
 }
 interface IQCalendarWidget : IQtObjectInterface
 {
@@ -3653,16 +3527,36 @@ extension CQt
 	public static extern void QCalendarWidget_Delete(QCalendarWidget_Ptr self);
 	[LinkName("QCalendarWidget_MetaObject")]
 	public static extern void** QCalendarWidget_MetaObject(void* self);
+	
+	public function void QCalendarWidget_OnMetaObject_action(void* self);
+	[LinkName("QCalendarWidget_OnMetaObject")]
+	public static extern void** QCalendarWidget_OnMetaObject(void* self, QCalendarWidget_OnMetaObject_action _action);
 	[LinkName("QCalendarWidget_Qt_Metacast")]
 	public static extern void* QCalendarWidget_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QCalendarWidget_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QCalendarWidget_OnMetacast")]
+	public static extern void* QCalendarWidget_OnMetacast(void* self, QCalendarWidget_OnMetacast_action _action);
 	[LinkName("QCalendarWidget_Qt_Metacall")]
 	public static extern c_int QCalendarWidget_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QCalendarWidget_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QCalendarWidget_OnMetacall")]
+	public static extern c_int QCalendarWidget_OnMetacall(void* self, QCalendarWidget_OnMetacall_action _action);
 	[LinkName("QCalendarWidget_Tr")]
 	public static extern libqt_string QCalendarWidget_Tr(c_char* s);
 	[LinkName("QCalendarWidget_SizeHint")]
 	public static extern void* QCalendarWidget_SizeHint(void* self);
+	
+	public function void QCalendarWidget_OnSizeHint_action(void* self);
+	[LinkName("QCalendarWidget_OnSizeHint")]
+	public static extern void* QCalendarWidget_OnSizeHint(void* self, QCalendarWidget_OnSizeHint_action _action);
 	[LinkName("QCalendarWidget_MinimumSizeHint")]
 	public static extern void* QCalendarWidget_MinimumSizeHint(void* self);
+	
+	public function void QCalendarWidget_OnMinimumSizeHint_action(void* self);
+	[LinkName("QCalendarWidget_OnMinimumSizeHint")]
+	public static extern void* QCalendarWidget_OnMinimumSizeHint(void* self, QCalendarWidget_OnMinimumSizeHint_action _action);
 	[LinkName("QCalendarWidget_SelectedDate")]
 	public static extern void* QCalendarWidget_SelectedDate(void* self);
 	[LinkName("QCalendarWidget_YearShown")]
@@ -3725,16 +3619,40 @@ extension CQt
 	public static extern void QCalendarWidget_SetDateEditAcceptDelay(void* self, c_int delay);
 	[LinkName("QCalendarWidget_Event")]
 	public static extern bool QCalendarWidget_Event(void* self, void** event);
+	
+	public function void QCalendarWidget_OnEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnEvent")]
+	public static extern bool QCalendarWidget_OnEvent(void* self, QCalendarWidget_OnEvent_action _action);
 	[LinkName("QCalendarWidget_EventFilter")]
 	public static extern bool QCalendarWidget_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QCalendarWidget_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QCalendarWidget_OnEventFilter")]
+	public static extern bool QCalendarWidget_OnEventFilter(void* self, QCalendarWidget_OnEventFilter_action _action);
 	[LinkName("QCalendarWidget_MousePressEvent")]
 	public static extern void QCalendarWidget_MousePressEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnMousePressEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnMousePressEvent")]
+	public static extern void QCalendarWidget_OnMousePressEvent(void* self, QCalendarWidget_OnMousePressEvent_action _action);
 	[LinkName("QCalendarWidget_ResizeEvent")]
 	public static extern void QCalendarWidget_ResizeEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnResizeEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnResizeEvent")]
+	public static extern void QCalendarWidget_OnResizeEvent(void* self, QCalendarWidget_OnResizeEvent_action _action);
 	[LinkName("QCalendarWidget_KeyPressEvent")]
 	public static extern void QCalendarWidget_KeyPressEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnKeyPressEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnKeyPressEvent")]
+	public static extern void QCalendarWidget_OnKeyPressEvent(void* self, QCalendarWidget_OnKeyPressEvent_action _action);
 	[LinkName("QCalendarWidget_PaintCell")]
 	public static extern void QCalendarWidget_PaintCell(void* self, void** painter, void** rect, void* date);
+	
+	public function void QCalendarWidget_OnPaintCell_action(void* self, void** painter, void** rect, void* date);
+	[LinkName("QCalendarWidget_OnPaintCell")]
+	public static extern void QCalendarWidget_OnPaintCell(void* self, QCalendarWidget_OnPaintCell_action _action);
 	[LinkName("QCalendarWidget_UpdateCell")]
 	public static extern void QCalendarWidget_UpdateCell(void* self, void* date);
 	[LinkName("QCalendarWidget_UpdateCells")]
@@ -3764,31 +3682,271 @@ extension CQt
 	[LinkName("QCalendarWidget_SelectionChanged")]
 	public static extern void QCalendarWidget_SelectionChanged(void* self);
 	
-	public function void QCalendarWidget_selectionChanged_action(void* self);
+	public function void QCalendarWidget_Connect_SelectionChanged_action(void* self);
 	[LinkName("QCalendarWidget_Connect_SelectionChanged")]
-	public static extern void QCalendarWidget_Connect_SelectionChanged(void* self, QCalendarWidget_selectionChanged_action _action);
+	public static extern void QCalendarWidget_Connect_SelectionChanged(void* self, QCalendarWidget_Connect_SelectionChanged_action _action);
 	[LinkName("QCalendarWidget_Clicked")]
 	public static extern void QCalendarWidget_Clicked(void* self, void* date);
 	
-	public function void QCalendarWidget_clicked_action(void* self, void* date);
+	public function void QCalendarWidget_Connect_Clicked_action(void* self, void* date);
 	[LinkName("QCalendarWidget_Connect_Clicked")]
-	public static extern void QCalendarWidget_Connect_Clicked(void* self, QCalendarWidget_clicked_action _action);
+	public static extern void QCalendarWidget_Connect_Clicked(void* self, QCalendarWidget_Connect_Clicked_action _action);
 	[LinkName("QCalendarWidget_Activated")]
 	public static extern void QCalendarWidget_Activated(void* self, void* date);
 	
-	public function void QCalendarWidget_activated_action(void* self, void* date);
+	public function void QCalendarWidget_Connect_Activated_action(void* self, void* date);
 	[LinkName("QCalendarWidget_Connect_Activated")]
-	public static extern void QCalendarWidget_Connect_Activated(void* self, QCalendarWidget_activated_action _action);
+	public static extern void QCalendarWidget_Connect_Activated(void* self, QCalendarWidget_Connect_Activated_action _action);
 	[LinkName("QCalendarWidget_CurrentPageChanged")]
 	public static extern void QCalendarWidget_CurrentPageChanged(void* self, c_int year, c_int month);
 	
-	public function void QCalendarWidget_currentPageChanged_action(void* self, c_int year, c_int month);
+	public function void QCalendarWidget_Connect_CurrentPageChanged_action(void* self, c_int year, c_int month);
 	[LinkName("QCalendarWidget_Connect_CurrentPageChanged")]
-	public static extern void QCalendarWidget_Connect_CurrentPageChanged(void* self, QCalendarWidget_currentPageChanged_action _action);
+	public static extern void QCalendarWidget_Connect_CurrentPageChanged(void* self, QCalendarWidget_Connect_CurrentPageChanged_action _action);
 	[LinkName("QCalendarWidget_Tr2")]
 	public static extern libqt_string QCalendarWidget_Tr2(c_char* s, c_char* c);
 	[LinkName("QCalendarWidget_Tr3")]
 	public static extern libqt_string QCalendarWidget_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QCalendarWidget_TimerEvent")]
+	public static extern void QCalendarWidget_TimerEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnTimerEvent")]
+	public static extern void QCalendarWidget_OnTimerEvent(void* self, QCalendarWidget_OnTimerEvent_action _action);
+	[LinkName("QCalendarWidget_ChildEvent")]
+	public static extern void QCalendarWidget_ChildEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnChildEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnChildEvent")]
+	public static extern void QCalendarWidget_OnChildEvent(void* self, QCalendarWidget_OnChildEvent_action _action);
+	[LinkName("QCalendarWidget_CustomEvent")]
+	public static extern void QCalendarWidget_CustomEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnCustomEvent")]
+	public static extern void QCalendarWidget_OnCustomEvent(void* self, QCalendarWidget_OnCustomEvent_action _action);
+	[LinkName("QCalendarWidget_ConnectNotify")]
+	public static extern void QCalendarWidget_ConnectNotify(void* self, void** signal);
+	
+	public function void QCalendarWidget_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QCalendarWidget_OnConnectNotify")]
+	public static extern void QCalendarWidget_OnConnectNotify(void* self, QCalendarWidget_OnConnectNotify_action _action);
+	[LinkName("QCalendarWidget_DisconnectNotify")]
+	public static extern void QCalendarWidget_DisconnectNotify(void* self, void** signal);
+	
+	public function void QCalendarWidget_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QCalendarWidget_OnDisconnectNotify")]
+	public static extern void QCalendarWidget_OnDisconnectNotify(void* self, QCalendarWidget_OnDisconnectNotify_action _action);
+	[LinkName("QCalendarWidget_DevType")]
+	public static extern c_int QCalendarWidget_DevType(void* self);
+	
+	public function void QCalendarWidget_OnDevType_action(void* self);
+	[LinkName("QCalendarWidget_OnDevType")]
+	public static extern c_int QCalendarWidget_OnDevType(void* self, QCalendarWidget_OnDevType_action _action);
+	[LinkName("QCalendarWidget_PaintEngine")]
+	public static extern void** QCalendarWidget_PaintEngine(void* self);
+	
+	public function void QCalendarWidget_OnPaintEngine_action(void* self);
+	[LinkName("QCalendarWidget_OnPaintEngine")]
+	public static extern void** QCalendarWidget_OnPaintEngine(void* self, QCalendarWidget_OnPaintEngine_action _action);
+	[LinkName("QCalendarWidget_Metric")]
+	public static extern c_int QCalendarWidget_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QCalendarWidget_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QCalendarWidget_OnMetric")]
+	public static extern c_int QCalendarWidget_OnMetric(void* self, QCalendarWidget_OnMetric_action _action);
+	[LinkName("QCalendarWidget_InitPainter")]
+	public static extern void QCalendarWidget_InitPainter(void* self, void** painter);
+	
+	public function void QCalendarWidget_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QCalendarWidget_OnInitPainter")]
+	public static extern void QCalendarWidget_OnInitPainter(void* self, QCalendarWidget_OnInitPainter_action _action);
+	[LinkName("QCalendarWidget_Redirected")]
+	public static extern void** QCalendarWidget_Redirected(void* self, void** offset);
+	
+	public function void QCalendarWidget_OnRedirected_action(void* self, void** offset);
+	[LinkName("QCalendarWidget_OnRedirected")]
+	public static extern void** QCalendarWidget_OnRedirected(void* self, QCalendarWidget_OnRedirected_action _action);
+	[LinkName("QCalendarWidget_SharedPainter")]
+	public static extern void** QCalendarWidget_SharedPainter(void* self);
+	
+	public function void QCalendarWidget_OnSharedPainter_action(void* self);
+	[LinkName("QCalendarWidget_OnSharedPainter")]
+	public static extern void** QCalendarWidget_OnSharedPainter(void* self, QCalendarWidget_OnSharedPainter_action _action);
+	[LinkName("QCalendarWidget_SetVisible")]
+	public static extern void QCalendarWidget_SetVisible(void* self, bool visible);
+	
+	public function void QCalendarWidget_OnSetVisible_action(void* self, bool visible);
+	[LinkName("QCalendarWidget_OnSetVisible")]
+	public static extern void QCalendarWidget_OnSetVisible(void* self, QCalendarWidget_OnSetVisible_action _action);
+	[LinkName("QCalendarWidget_HeightForWidth")]
+	public static extern c_int QCalendarWidget_HeightForWidth(void* self, c_int param1);
+	
+	public function void QCalendarWidget_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QCalendarWidget_OnHeightForWidth")]
+	public static extern c_int QCalendarWidget_OnHeightForWidth(void* self, QCalendarWidget_OnHeightForWidth_action _action);
+	[LinkName("QCalendarWidget_HasHeightForWidth")]
+	public static extern bool QCalendarWidget_HasHeightForWidth(void* self);
+	
+	public function void QCalendarWidget_OnHasHeightForWidth_action(void* self);
+	[LinkName("QCalendarWidget_OnHasHeightForWidth")]
+	public static extern bool QCalendarWidget_OnHasHeightForWidth(void* self, QCalendarWidget_OnHasHeightForWidth_action _action);
+	[LinkName("QCalendarWidget_MouseReleaseEvent")]
+	public static extern void QCalendarWidget_MouseReleaseEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnMouseReleaseEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnMouseReleaseEvent")]
+	public static extern void QCalendarWidget_OnMouseReleaseEvent(void* self, QCalendarWidget_OnMouseReleaseEvent_action _action);
+	[LinkName("QCalendarWidget_MouseDoubleClickEvent")]
+	public static extern void QCalendarWidget_MouseDoubleClickEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnMouseDoubleClickEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnMouseDoubleClickEvent")]
+	public static extern void QCalendarWidget_OnMouseDoubleClickEvent(void* self, QCalendarWidget_OnMouseDoubleClickEvent_action _action);
+	[LinkName("QCalendarWidget_MouseMoveEvent")]
+	public static extern void QCalendarWidget_MouseMoveEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnMouseMoveEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnMouseMoveEvent")]
+	public static extern void QCalendarWidget_OnMouseMoveEvent(void* self, QCalendarWidget_OnMouseMoveEvent_action _action);
+	[LinkName("QCalendarWidget_WheelEvent")]
+	public static extern void QCalendarWidget_WheelEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnWheelEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnWheelEvent")]
+	public static extern void QCalendarWidget_OnWheelEvent(void* self, QCalendarWidget_OnWheelEvent_action _action);
+	[LinkName("QCalendarWidget_KeyReleaseEvent")]
+	public static extern void QCalendarWidget_KeyReleaseEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnKeyReleaseEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnKeyReleaseEvent")]
+	public static extern void QCalendarWidget_OnKeyReleaseEvent(void* self, QCalendarWidget_OnKeyReleaseEvent_action _action);
+	[LinkName("QCalendarWidget_FocusInEvent")]
+	public static extern void QCalendarWidget_FocusInEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnFocusInEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnFocusInEvent")]
+	public static extern void QCalendarWidget_OnFocusInEvent(void* self, QCalendarWidget_OnFocusInEvent_action _action);
+	[LinkName("QCalendarWidget_FocusOutEvent")]
+	public static extern void QCalendarWidget_FocusOutEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnFocusOutEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnFocusOutEvent")]
+	public static extern void QCalendarWidget_OnFocusOutEvent(void* self, QCalendarWidget_OnFocusOutEvent_action _action);
+	[LinkName("QCalendarWidget_EnterEvent")]
+	public static extern void QCalendarWidget_EnterEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnEnterEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnEnterEvent")]
+	public static extern void QCalendarWidget_OnEnterEvent(void* self, QCalendarWidget_OnEnterEvent_action _action);
+	[LinkName("QCalendarWidget_LeaveEvent")]
+	public static extern void QCalendarWidget_LeaveEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnLeaveEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnLeaveEvent")]
+	public static extern void QCalendarWidget_OnLeaveEvent(void* self, QCalendarWidget_OnLeaveEvent_action _action);
+	[LinkName("QCalendarWidget_PaintEvent")]
+	public static extern void QCalendarWidget_PaintEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnPaintEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnPaintEvent")]
+	public static extern void QCalendarWidget_OnPaintEvent(void* self, QCalendarWidget_OnPaintEvent_action _action);
+	[LinkName("QCalendarWidget_MoveEvent")]
+	public static extern void QCalendarWidget_MoveEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnMoveEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnMoveEvent")]
+	public static extern void QCalendarWidget_OnMoveEvent(void* self, QCalendarWidget_OnMoveEvent_action _action);
+	[LinkName("QCalendarWidget_CloseEvent")]
+	public static extern void QCalendarWidget_CloseEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnCloseEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnCloseEvent")]
+	public static extern void QCalendarWidget_OnCloseEvent(void* self, QCalendarWidget_OnCloseEvent_action _action);
+	[LinkName("QCalendarWidget_ContextMenuEvent")]
+	public static extern void QCalendarWidget_ContextMenuEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnContextMenuEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnContextMenuEvent")]
+	public static extern void QCalendarWidget_OnContextMenuEvent(void* self, QCalendarWidget_OnContextMenuEvent_action _action);
+	[LinkName("QCalendarWidget_TabletEvent")]
+	public static extern void QCalendarWidget_TabletEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnTabletEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnTabletEvent")]
+	public static extern void QCalendarWidget_OnTabletEvent(void* self, QCalendarWidget_OnTabletEvent_action _action);
+	[LinkName("QCalendarWidget_ActionEvent")]
+	public static extern void QCalendarWidget_ActionEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnActionEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnActionEvent")]
+	public static extern void QCalendarWidget_OnActionEvent(void* self, QCalendarWidget_OnActionEvent_action _action);
+	[LinkName("QCalendarWidget_DragEnterEvent")]
+	public static extern void QCalendarWidget_DragEnterEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnDragEnterEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnDragEnterEvent")]
+	public static extern void QCalendarWidget_OnDragEnterEvent(void* self, QCalendarWidget_OnDragEnterEvent_action _action);
+	[LinkName("QCalendarWidget_DragMoveEvent")]
+	public static extern void QCalendarWidget_DragMoveEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnDragMoveEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnDragMoveEvent")]
+	public static extern void QCalendarWidget_OnDragMoveEvent(void* self, QCalendarWidget_OnDragMoveEvent_action _action);
+	[LinkName("QCalendarWidget_DragLeaveEvent")]
+	public static extern void QCalendarWidget_DragLeaveEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnDragLeaveEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnDragLeaveEvent")]
+	public static extern void QCalendarWidget_OnDragLeaveEvent(void* self, QCalendarWidget_OnDragLeaveEvent_action _action);
+	[LinkName("QCalendarWidget_DropEvent")]
+	public static extern void QCalendarWidget_DropEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnDropEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnDropEvent")]
+	public static extern void QCalendarWidget_OnDropEvent(void* self, QCalendarWidget_OnDropEvent_action _action);
+	[LinkName("QCalendarWidget_ShowEvent")]
+	public static extern void QCalendarWidget_ShowEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnShowEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnShowEvent")]
+	public static extern void QCalendarWidget_OnShowEvent(void* self, QCalendarWidget_OnShowEvent_action _action);
+	[LinkName("QCalendarWidget_HideEvent")]
+	public static extern void QCalendarWidget_HideEvent(void* self, void** event);
+	
+	public function void QCalendarWidget_OnHideEvent_action(void* self, void** event);
+	[LinkName("QCalendarWidget_OnHideEvent")]
+	public static extern void QCalendarWidget_OnHideEvent(void* self, QCalendarWidget_OnHideEvent_action _action);
+	[LinkName("QCalendarWidget_NativeEvent")]
+	public static extern bool QCalendarWidget_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QCalendarWidget_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QCalendarWidget_OnNativeEvent")]
+	public static extern bool QCalendarWidget_OnNativeEvent(void* self, QCalendarWidget_OnNativeEvent_action _action);
+	[LinkName("QCalendarWidget_ChangeEvent")]
+	public static extern void QCalendarWidget_ChangeEvent(void* self, void** param1);
+	
+	public function void QCalendarWidget_OnChangeEvent_action(void* self, void** param1);
+	[LinkName("QCalendarWidget_OnChangeEvent")]
+	public static extern void QCalendarWidget_OnChangeEvent(void* self, QCalendarWidget_OnChangeEvent_action _action);
+	[LinkName("QCalendarWidget_InputMethodEvent")]
+	public static extern void QCalendarWidget_InputMethodEvent(void* self, void** param1);
+	
+	public function void QCalendarWidget_OnInputMethodEvent_action(void* self, void** param1);
+	[LinkName("QCalendarWidget_OnInputMethodEvent")]
+	public static extern void QCalendarWidget_OnInputMethodEvent(void* self, QCalendarWidget_OnInputMethodEvent_action _action);
+	[LinkName("QCalendarWidget_InputMethodQuery")]
+	public static extern void* QCalendarWidget_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
+	
+	public function void QCalendarWidget_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
+	[LinkName("QCalendarWidget_OnInputMethodQuery")]
+	public static extern void* QCalendarWidget_OnInputMethodQuery(void* self, QCalendarWidget_OnInputMethodQuery_action _action);
+	[LinkName("QCalendarWidget_FocusNextPrevChild")]
+	public static extern bool QCalendarWidget_FocusNextPrevChild(void* self, bool next);
+	
+	public function void QCalendarWidget_OnFocusNextPrevChild_action(void* self, bool next);
+	[LinkName("QCalendarWidget_OnFocusNextPrevChild")]
+	public static extern bool QCalendarWidget_OnFocusNextPrevChild(void* self, QCalendarWidget_OnFocusNextPrevChild_action _action);
 }
 [AllowDuplicates]
 enum QCalendarWidget_HorizontalHeaderFormat

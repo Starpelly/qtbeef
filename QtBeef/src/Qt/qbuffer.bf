@@ -18,11 +18,11 @@ struct QBuffer_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QBuffer_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QBuffer_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QBuffer_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -102,205 +102,13 @@ struct QBuffer_Ptr
 	{
 		CQt.QBuffer_Tr3(s, c, n);
 	}
-	public void* OpenMode()
-	{
-		return CQt.QIODevice_OpenMode((.)this.Ptr);
-	}
-	public void SetTextModeEnabled(bool enabled)
-	{
-		CQt.QIODevice_SetTextModeEnabled((.)this.Ptr, enabled);
-	}
-	public bool IsTextModeEnabled()
-	{
-		return CQt.QIODevice_IsTextModeEnabled((.)this.Ptr);
-	}
-	public bool IsOpen()
-	{
-		return CQt.QIODevice_IsOpen((.)this.Ptr);
-	}
-	public bool IsReadable()
-	{
-		return CQt.QIODevice_IsReadable((.)this.Ptr);
-	}
-	public bool IsWritable()
-	{
-		return CQt.QIODevice_IsWritable((.)this.Ptr);
-	}
-	public bool IsSequential()
-	{
-		return CQt.QIODevice_IsSequential((.)this.Ptr);
-	}
-	public c_int ReadChannelCount()
-	{
-		return CQt.QIODevice_ReadChannelCount((.)this.Ptr);
-	}
-	public c_int WriteChannelCount()
-	{
-		return CQt.QIODevice_WriteChannelCount((.)this.Ptr);
-	}
-	public c_int CurrentReadChannel()
-	{
-		return CQt.QIODevice_CurrentReadChannel((.)this.Ptr);
-	}
-	public void SetCurrentReadChannel(c_int channel)
-	{
-		CQt.QIODevice_SetCurrentReadChannel((.)this.Ptr, channel);
-	}
-	public c_int CurrentWriteChannel()
-	{
-		return CQt.QIODevice_CurrentWriteChannel((.)this.Ptr);
-	}
-	public void SetCurrentWriteChannel(c_int channel)
-	{
-		CQt.QIODevice_SetCurrentWriteChannel((.)this.Ptr, channel);
-	}
-	public bool Reset()
-	{
-		return CQt.QIODevice_Reset((.)this.Ptr);
-	}
-	public c_longlong BytesAvailable()
-	{
-		return CQt.QIODevice_BytesAvailable((.)this.Ptr);
-	}
-	public c_longlong BytesToWrite()
-	{
-		return CQt.QIODevice_BytesToWrite((.)this.Ptr);
-	}
-	public c_longlong Read(c_char* data, c_longlong maxlen)
-	{
-		return CQt.QIODevice_Read((.)this.Ptr, data, maxlen);
-	}
-	public void* Read2(c_longlong maxlen)
-	{
-		return CQt.QIODevice_Read2((.)this.Ptr, maxlen);
-	}
-	public void* ReadAll()
-	{
-		return CQt.QIODevice_ReadAll((.)this.Ptr);
-	}
-	public c_longlong ReadLine(c_char* data, c_longlong maxlen)
-	{
-		return CQt.QIODevice_ReadLine((.)this.Ptr, data, maxlen);
-	}
-	public void* ReadLine2()
-	{
-		return CQt.QIODevice_ReadLine2((.)this.Ptr);
-	}
-	public void StartTransaction()
-	{
-		CQt.QIODevice_StartTransaction((.)this.Ptr);
-	}
-	public void CommitTransaction()
-	{
-		CQt.QIODevice_CommitTransaction((.)this.Ptr);
-	}
-	public void RollbackTransaction()
-	{
-		CQt.QIODevice_RollbackTransaction((.)this.Ptr);
-	}
-	public bool IsTransactionStarted()
-	{
-		return CQt.QIODevice_IsTransactionStarted((.)this.Ptr);
-	}
-	public c_longlong Write(c_char* data, c_longlong lenVal)
-	{
-		return CQt.QIODevice_Write((.)this.Ptr, data, lenVal);
-	}
-	public c_longlong Write2(c_char* data)
-	{
-		return CQt.QIODevice_Write2((.)this.Ptr, data);
-	}
-	public c_longlong Write3(void** data)
-	{
-		return CQt.QIODevice_Write3((.)this.Ptr, data);
-	}
-	public c_longlong Peek(c_char* data, c_longlong maxlen)
-	{
-		return CQt.QIODevice_Peek((.)this.Ptr, data, maxlen);
-	}
-	public void* Peek2(c_longlong maxlen)
-	{
-		return CQt.QIODevice_Peek2((.)this.Ptr, maxlen);
-	}
-	public c_longlong Skip(c_longlong maxSize)
-	{
-		return CQt.QIODevice_Skip((.)this.Ptr, maxSize);
-	}
-	public bool WaitForReadyRead(c_int msecs)
-	{
-		return CQt.QIODevice_WaitForReadyRead((.)this.Ptr, msecs);
-	}
-	public bool WaitForBytesWritten(c_int msecs)
-	{
-		return CQt.QIODevice_WaitForBytesWritten((.)this.Ptr, msecs);
-	}
-	public void UngetChar(c_char c)
-	{
-		CQt.QIODevice_UngetChar((.)this.Ptr, c);
-	}
-	public bool PutChar(c_char c)
-	{
-		return CQt.QIODevice_PutChar((.)this.Ptr, c);
-	}
-	public bool GetChar(c_char* c)
-	{
-		return CQt.QIODevice_GetChar((.)this.Ptr, c);
-	}
-	public void ErrorString(String outStr)
-	{
-		CQt.QIODevice_ErrorString((.)this.Ptr);
-	}
-	public void ReadyRead()
-	{
-		CQt.QIODevice_ReadyRead((.)this.Ptr);
-	}
-	public void ChannelReadyRead(c_int channel)
-	{
-		CQt.QIODevice_ChannelReadyRead((.)this.Ptr, channel);
-	}
-	public void BytesWritten(c_longlong bytes)
-	{
-		CQt.QIODevice_BytesWritten((.)this.Ptr, bytes);
-	}
-	public void ChannelBytesWritten(c_int channel, c_longlong bytes)
-	{
-		CQt.QIODevice_ChannelBytesWritten((.)this.Ptr, channel, bytes);
-	}
-	public void AboutToClose()
-	{
-		CQt.QIODevice_AboutToClose((.)this.Ptr);
-	}
-	public void ReadChannelFinished()
-	{
-		CQt.QIODevice_ReadChannelFinished((.)this.Ptr);
-	}
-	public c_longlong ReadLineData(c_char* data, c_longlong maxlen)
-	{
-		return CQt.QIODevice_ReadLineData((.)this.Ptr, data, maxlen);
-	}
-	public c_longlong SkipData(c_longlong maxSize)
-	{
-		return CQt.QIODevice_SkipData((.)this.Ptr, maxSize);
-	}
-	public void SetOpenMode(void* openMode)
-	{
-		CQt.QIODevice_SetOpenMode((.)this.Ptr, openMode);
-	}
-	public void SetErrorString(String errorString)
-	{
-		CQt.QIODevice_SetErrorString((.)this.Ptr, libqt_string(errorString));
-	}
-	public void* ReadLine1(c_longlong maxlen)
-	{
-		return CQt.QIODevice_ReadLine1((.)this.Ptr, maxlen);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QBuffer_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QBuffer_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -460,15 +268,15 @@ struct QBuffer_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QBuffer_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QBuffer_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QBuffer_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -510,114 +318,230 @@ struct QBuffer_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void* OpenMode()
+	{
+		return CQt.QIODevice_OpenMode((.)this.Ptr);
+	}
+	public void SetTextModeEnabled(bool enabled)
+	{
+		CQt.QIODevice_SetTextModeEnabled((.)this.Ptr, enabled);
+	}
+	public bool IsTextModeEnabled()
+	{
+		return CQt.QIODevice_IsTextModeEnabled((.)this.Ptr);
+	}
+	public bool IsOpen()
+	{
+		return CQt.QIODevice_IsOpen((.)this.Ptr);
+	}
+	public bool IsReadable()
+	{
+		return CQt.QIODevice_IsReadable((.)this.Ptr);
+	}
+	public bool IsWritable()
+	{
+		return CQt.QIODevice_IsWritable((.)this.Ptr);
+	}
+	public bool IsSequential()
+	{
+		return CQt.QBuffer_IsSequential((.)this.Ptr);
+	}
+	public c_int ReadChannelCount()
+	{
+		return CQt.QIODevice_ReadChannelCount((.)this.Ptr);
+	}
+	public c_int WriteChannelCount()
+	{
+		return CQt.QIODevice_WriteChannelCount((.)this.Ptr);
+	}
+	public c_int CurrentReadChannel()
+	{
+		return CQt.QIODevice_CurrentReadChannel((.)this.Ptr);
+	}
+	public void SetCurrentReadChannel(c_int channel)
+	{
+		CQt.QIODevice_SetCurrentReadChannel((.)this.Ptr, channel);
+	}
+	public c_int CurrentWriteChannel()
+	{
+		return CQt.QIODevice_CurrentWriteChannel((.)this.Ptr);
+	}
+	public void SetCurrentWriteChannel(c_int channel)
+	{
+		CQt.QIODevice_SetCurrentWriteChannel((.)this.Ptr, channel);
+	}
+	public bool Reset()
+	{
+		return CQt.QBuffer_Reset((.)this.Ptr);
+	}
+	public c_longlong BytesAvailable()
+	{
+		return CQt.QBuffer_BytesAvailable((.)this.Ptr);
+	}
+	public c_longlong BytesToWrite()
+	{
+		return CQt.QBuffer_BytesToWrite((.)this.Ptr);
+	}
+	public c_longlong Read(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QIODevice_Read((.)this.Ptr, data, maxlen);
+	}
+	public void* Read2(c_longlong maxlen)
+	{
+		return CQt.QIODevice_Read2((.)this.Ptr, maxlen);
+	}
+	public void* ReadAll()
+	{
+		return CQt.QIODevice_ReadAll((.)this.Ptr);
+	}
+	public c_longlong ReadLine(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QIODevice_ReadLine((.)this.Ptr, data, maxlen);
+	}
+	public void* ReadLine2()
+	{
+		return CQt.QIODevice_ReadLine2((.)this.Ptr);
+	}
+	public void StartTransaction()
+	{
+		CQt.QIODevice_StartTransaction((.)this.Ptr);
+	}
+	public void CommitTransaction()
+	{
+		CQt.QIODevice_CommitTransaction((.)this.Ptr);
+	}
+	public void RollbackTransaction()
+	{
+		CQt.QIODevice_RollbackTransaction((.)this.Ptr);
+	}
+	public bool IsTransactionStarted()
+	{
+		return CQt.QIODevice_IsTransactionStarted((.)this.Ptr);
+	}
+	public c_longlong Write(c_char* data, c_longlong lenVal)
+	{
+		return CQt.QIODevice_Write((.)this.Ptr, data, lenVal);
+	}
+	public c_longlong Write2(c_char* data)
+	{
+		return CQt.QIODevice_Write2((.)this.Ptr, data);
+	}
+	public c_longlong Write3(void** data)
+	{
+		return CQt.QIODevice_Write3((.)this.Ptr, data);
+	}
+	public c_longlong Peek(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QIODevice_Peek((.)this.Ptr, data, maxlen);
+	}
+	public void* Peek2(c_longlong maxlen)
+	{
+		return CQt.QIODevice_Peek2((.)this.Ptr, maxlen);
+	}
+	public c_longlong Skip(c_longlong maxSize)
+	{
+		return CQt.QIODevice_Skip((.)this.Ptr, maxSize);
+	}
+	public bool WaitForReadyRead(c_int msecs)
+	{
+		return CQt.QBuffer_WaitForReadyRead((.)this.Ptr, msecs);
+	}
+	public bool WaitForBytesWritten(c_int msecs)
+	{
+		return CQt.QBuffer_WaitForBytesWritten((.)this.Ptr, msecs);
+	}
+	public void UngetChar(c_char c)
+	{
+		CQt.QIODevice_UngetChar((.)this.Ptr, c);
+	}
+	public bool PutChar(c_char c)
+	{
+		return CQt.QIODevice_PutChar((.)this.Ptr, c);
+	}
+	public bool GetChar(c_char* c)
+	{
+		return CQt.QIODevice_GetChar((.)this.Ptr, c);
+	}
+	public void ErrorString(String outStr)
+	{
+		CQt.QIODevice_ErrorString((.)this.Ptr);
+	}
+	public void ReadyRead()
+	{
+		CQt.QIODevice_ReadyRead((.)this.Ptr);
+	}
+	public void ChannelReadyRead(c_int channel)
+	{
+		CQt.QIODevice_ChannelReadyRead((.)this.Ptr, channel);
+	}
+	public void BytesWritten(c_longlong bytes)
+	{
+		CQt.QIODevice_BytesWritten((.)this.Ptr, bytes);
+	}
+	public void ChannelBytesWritten(c_int channel, c_longlong bytes)
+	{
+		CQt.QIODevice_ChannelBytesWritten((.)this.Ptr, channel, bytes);
+	}
+	public void AboutToClose()
+	{
+		CQt.QIODevice_AboutToClose((.)this.Ptr);
+	}
+	public void ReadChannelFinished()
+	{
+		CQt.QIODevice_ReadChannelFinished((.)this.Ptr);
+	}
+	public c_longlong ReadLineData(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QBuffer_ReadLineData((.)this.Ptr, data, maxlen);
+	}
+	public c_longlong SkipData(c_longlong maxSize)
+	{
+		return CQt.QBuffer_SkipData((.)this.Ptr, maxSize);
+	}
+	public void SetOpenMode(void* openMode)
+	{
+		CQt.QIODevice_SetOpenMode((.)this.Ptr, openMode);
+	}
+	public void SetErrorString(String errorString)
+	{
+		CQt.QIODevice_SetErrorString((.)this.Ptr, libqt_string(errorString));
+	}
+	public void* ReadLine1(c_longlong maxlen)
+	{
+		return CQt.QIODevice_ReadLine1((.)this.Ptr, maxlen);
+	}
 }
 class QBuffer : IQBuffer, IQIODevice, IQObject, IQIODeviceBase
 {
 	private QBuffer_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QBuffer_readyRead,
-		QBuffer_channelReadyRead,
-		QBuffer_bytesWritten,
-		QBuffer_channelBytesWritten,
-		QBuffer_aboutToClose,
-		QBuffer_readChannelFinished,
-		QBuffer_destroyed,
-		QBuffer_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QIODevice_Connect_ReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_readyRead);
-		CQt.QIODevice_Connect_ChannelReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_channelReadyRead);
-		CQt.QIODevice_Connect_BytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_bytesWritten);
-		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_channelBytesWritten);
-		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_aboutToClose);
-		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_readChannelFinished);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnReadyRead = .() ~ _.Dispose();
-	public Event<delegate void(c_int channel)> OnChannelReadyRead = .() ~ _.Dispose();
-	public Event<delegate void(c_longlong bytes)> OnBytesWritten = .() ~ _.Dispose();
-	public Event<delegate void(c_int channel, c_longlong bytes)> OnChannelBytesWritten = .() ~ _.Dispose();
-	public Event<delegate void()> OnAboutToClose = .() ~ _.Dispose();
-	public Event<delegate void()> OnReadChannelFinished = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QIODevice_readyRead(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnReadyRead.Invoke();
-	}
-	static void QtBeef_QIODevice_channelReadyRead(void* ptr, c_int channel)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnChannelReadyRead.Invoke(channel);
-	}
-	static void QtBeef_QIODevice_bytesWritten(void* ptr, c_longlong bytes)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnBytesWritten.Invoke(bytes);
-	}
-	static void QtBeef_QIODevice_channelBytesWritten(void* ptr, c_int channel, c_longlong bytes)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnChannelBytesWritten.Invoke(channel, bytes);
-	}
-	static void QtBeef_QIODevice_aboutToClose(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAboutToClose.Invoke();
-	}
-	static void QtBeef_QIODevice_readChannelFinished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnReadChannelFinished.Invoke();
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QBuffer_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QBuffer_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QBuffer_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QBuffer_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -643,49 +567,46 @@ class QBuffer : IQBuffer, IQIODevice, IQObject, IQIODeviceBase
 	{
 		return this.ptr.Data();
 	}
-	public bool Open(void* openMode)
+	public  virtual bool OnOpen(void* openMode)
 	{
-		return this.ptr.Open(openMode);
+		return default;
 	}
-	public void Close()
+	public  virtual void OnClose()
 	{
-		this.ptr.Close();
 	}
-	public c_longlong Size()
+	public  virtual c_longlong OnSize()
 	{
-		return this.ptr.Size();
+		return default;
 	}
-	public c_longlong Pos()
+	public  virtual c_longlong OnPos()
 	{
-		return this.ptr.Pos();
+		return default;
 	}
-	public bool Seek(c_longlong off)
+	public  virtual bool OnSeek(c_longlong off)
 	{
-		return this.ptr.Seek(off);
+		return default;
 	}
-	public bool AtEnd()
+	public  virtual bool OnAtEnd()
 	{
-		return this.ptr.AtEnd();
+		return default;
 	}
-	public bool CanReadLine()
+	public  virtual bool OnCanReadLine()
 	{
-		return this.ptr.CanReadLine();
+		return default;
 	}
-	public void ConnectNotify(IQMetaMethod param1)
+	public  virtual void OnConnectNotify(void** param1)
 	{
-		this.ptr.ConnectNotify(param1);
 	}
-	public void DisconnectNotify(IQMetaMethod param1)
+	public  virtual void OnDisconnectNotify(void** param1)
 	{
-		this.ptr.DisconnectNotify(param1);
 	}
-	public c_longlong ReadData(c_char* data, c_longlong maxlen)
+	public  virtual c_longlong OnReadData(c_char* data, c_longlong maxlen)
 	{
-		return this.ptr.ReadData(data, maxlen);
+		return default;
 	}
-	public c_longlong WriteData(c_char* data, c_longlong lenVal)
+	public  virtual c_longlong OnWriteData(c_char* data, c_longlong lenVal)
 	{
-		return this.ptr.WriteData(data, lenVal);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -695,205 +616,13 @@ class QBuffer : IQBuffer, IQIODevice, IQObject, IQIODeviceBase
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void* OpenMode()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.OpenMode();
+		return default;
 	}
-	public void SetTextModeEnabled(bool enabled)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		this.ptr.SetTextModeEnabled(enabled);
-	}
-	public bool IsTextModeEnabled()
-	{
-		return this.ptr.IsTextModeEnabled();
-	}
-	public bool IsOpen()
-	{
-		return this.ptr.IsOpen();
-	}
-	public bool IsReadable()
-	{
-		return this.ptr.IsReadable();
-	}
-	public bool IsWritable()
-	{
-		return this.ptr.IsWritable();
-	}
-	public bool IsSequential()
-	{
-		return this.ptr.IsSequential();
-	}
-	public c_int ReadChannelCount()
-	{
-		return this.ptr.ReadChannelCount();
-	}
-	public c_int WriteChannelCount()
-	{
-		return this.ptr.WriteChannelCount();
-	}
-	public c_int CurrentReadChannel()
-	{
-		return this.ptr.CurrentReadChannel();
-	}
-	public void SetCurrentReadChannel(c_int channel)
-	{
-		this.ptr.SetCurrentReadChannel(channel);
-	}
-	public c_int CurrentWriteChannel()
-	{
-		return this.ptr.CurrentWriteChannel();
-	}
-	public void SetCurrentWriteChannel(c_int channel)
-	{
-		this.ptr.SetCurrentWriteChannel(channel);
-	}
-	public bool Reset()
-	{
-		return this.ptr.Reset();
-	}
-	public c_longlong BytesAvailable()
-	{
-		return this.ptr.BytesAvailable();
-	}
-	public c_longlong BytesToWrite()
-	{
-		return this.ptr.BytesToWrite();
-	}
-	public c_longlong Read(c_char* data, c_longlong maxlen)
-	{
-		return this.ptr.Read(data, maxlen);
-	}
-	public void* Read2(c_longlong maxlen)
-	{
-		return this.ptr.Read2(maxlen);
-	}
-	public void* ReadAll()
-	{
-		return this.ptr.ReadAll();
-	}
-	public c_longlong ReadLine(c_char* data, c_longlong maxlen)
-	{
-		return this.ptr.ReadLine(data, maxlen);
-	}
-	public void* ReadLine2()
-	{
-		return this.ptr.ReadLine2();
-	}
-	public void StartTransaction()
-	{
-		this.ptr.StartTransaction();
-	}
-	public void CommitTransaction()
-	{
-		this.ptr.CommitTransaction();
-	}
-	public void RollbackTransaction()
-	{
-		this.ptr.RollbackTransaction();
-	}
-	public bool IsTransactionStarted()
-	{
-		return this.ptr.IsTransactionStarted();
-	}
-	public c_longlong Write(c_char* data, c_longlong lenVal)
-	{
-		return this.ptr.Write(data, lenVal);
-	}
-	public c_longlong Write2(c_char* data)
-	{
-		return this.ptr.Write2(data);
-	}
-	public c_longlong Write3(void** data)
-	{
-		return this.ptr.Write3(data);
-	}
-	public c_longlong Peek(c_char* data, c_longlong maxlen)
-	{
-		return this.ptr.Peek(data, maxlen);
-	}
-	public void* Peek2(c_longlong maxlen)
-	{
-		return this.ptr.Peek2(maxlen);
-	}
-	public c_longlong Skip(c_longlong maxSize)
-	{
-		return this.ptr.Skip(maxSize);
-	}
-	public bool WaitForReadyRead(c_int msecs)
-	{
-		return this.ptr.WaitForReadyRead(msecs);
-	}
-	public bool WaitForBytesWritten(c_int msecs)
-	{
-		return this.ptr.WaitForBytesWritten(msecs);
-	}
-	public void UngetChar(c_char c)
-	{
-		this.ptr.UngetChar(c);
-	}
-	public bool PutChar(c_char c)
-	{
-		return this.ptr.PutChar(c);
-	}
-	public bool GetChar(c_char* c)
-	{
-		return this.ptr.GetChar(c);
-	}
-	public void ErrorString(String outStr)
-	{
-		this.ptr.ErrorString(outStr);
-	}
-	public void ReadyRead()
-	{
-		this.ptr.ReadyRead();
-	}
-	public void ChannelReadyRead(c_int channel)
-	{
-		this.ptr.ChannelReadyRead(channel);
-	}
-	public void BytesWritten(c_longlong bytes)
-	{
-		this.ptr.BytesWritten(bytes);
-	}
-	public void ChannelBytesWritten(c_int channel, c_longlong bytes)
-	{
-		this.ptr.ChannelBytesWritten(channel, bytes);
-	}
-	public void AboutToClose()
-	{
-		this.ptr.AboutToClose();
-	}
-	public void ReadChannelFinished()
-	{
-		this.ptr.ReadChannelFinished();
-	}
-	public c_longlong ReadLineData(c_char* data, c_longlong maxlen)
-	{
-		return this.ptr.ReadLineData(data, maxlen);
-	}
-	public c_longlong SkipData(c_longlong maxSize)
-	{
-		return this.ptr.SkipData(maxSize);
-	}
-	public void SetOpenMode(void* openMode)
-	{
-		this.ptr.SetOpenMode(openMode);
-	}
-	public void SetErrorString(String errorString)
-	{
-		this.ptr.SetErrorString(errorString);
-	}
-	public void* ReadLine1(c_longlong maxlen)
-	{
-		return this.ptr.ReadLine1(maxlen);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1051,17 +780,14 @@ class QBuffer : IQBuffer, IQIODevice, IQObject, IQIODeviceBase
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1103,6 +829,198 @@ class QBuffer : IQBuffer, IQIODevice, IQObject, IQIODeviceBase
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public void* OpenMode()
+	{
+		return this.ptr.OpenMode();
+	}
+	public void SetTextModeEnabled(bool enabled)
+	{
+		this.ptr.SetTextModeEnabled(enabled);
+	}
+	public bool IsTextModeEnabled()
+	{
+		return this.ptr.IsTextModeEnabled();
+	}
+	public bool IsOpen()
+	{
+		return this.ptr.IsOpen();
+	}
+	public bool IsReadable()
+	{
+		return this.ptr.IsReadable();
+	}
+	public bool IsWritable()
+	{
+		return this.ptr.IsWritable();
+	}
+	public  virtual bool OnIsSequential()
+	{
+		return default;
+	}
+	public c_int ReadChannelCount()
+	{
+		return this.ptr.ReadChannelCount();
+	}
+	public c_int WriteChannelCount()
+	{
+		return this.ptr.WriteChannelCount();
+	}
+	public c_int CurrentReadChannel()
+	{
+		return this.ptr.CurrentReadChannel();
+	}
+	public void SetCurrentReadChannel(c_int channel)
+	{
+		this.ptr.SetCurrentReadChannel(channel);
+	}
+	public c_int CurrentWriteChannel()
+	{
+		return this.ptr.CurrentWriteChannel();
+	}
+	public void SetCurrentWriteChannel(c_int channel)
+	{
+		this.ptr.SetCurrentWriteChannel(channel);
+	}
+	public  virtual bool OnReset()
+	{
+		return default;
+	}
+	public  virtual c_longlong OnBytesAvailable()
+	{
+		return default;
+	}
+	public  virtual c_longlong OnBytesToWrite()
+	{
+		return default;
+	}
+	public c_longlong Read(c_char* data, c_longlong maxlen)
+	{
+		return this.ptr.Read(data, maxlen);
+	}
+	public void* Read2(c_longlong maxlen)
+	{
+		return this.ptr.Read2(maxlen);
+	}
+	public void* ReadAll()
+	{
+		return this.ptr.ReadAll();
+	}
+	public c_longlong ReadLine(c_char* data, c_longlong maxlen)
+	{
+		return this.ptr.ReadLine(data, maxlen);
+	}
+	public void* ReadLine2()
+	{
+		return this.ptr.ReadLine2();
+	}
+	public void StartTransaction()
+	{
+		this.ptr.StartTransaction();
+	}
+	public void CommitTransaction()
+	{
+		this.ptr.CommitTransaction();
+	}
+	public void RollbackTransaction()
+	{
+		this.ptr.RollbackTransaction();
+	}
+	public bool IsTransactionStarted()
+	{
+		return this.ptr.IsTransactionStarted();
+	}
+	public c_longlong Write(c_char* data, c_longlong lenVal)
+	{
+		return this.ptr.Write(data, lenVal);
+	}
+	public c_longlong Write2(c_char* data)
+	{
+		return this.ptr.Write2(data);
+	}
+	public c_longlong Write3(void** data)
+	{
+		return this.ptr.Write3(data);
+	}
+	public c_longlong Peek(c_char* data, c_longlong maxlen)
+	{
+		return this.ptr.Peek(data, maxlen);
+	}
+	public void* Peek2(c_longlong maxlen)
+	{
+		return this.ptr.Peek2(maxlen);
+	}
+	public c_longlong Skip(c_longlong maxSize)
+	{
+		return this.ptr.Skip(maxSize);
+	}
+	public  virtual bool OnWaitForReadyRead(c_int msecs)
+	{
+		return default;
+	}
+	public  virtual bool OnWaitForBytesWritten(c_int msecs)
+	{
+		return default;
+	}
+	public void UngetChar(c_char c)
+	{
+		this.ptr.UngetChar(c);
+	}
+	public bool PutChar(c_char c)
+	{
+		return this.ptr.PutChar(c);
+	}
+	public bool GetChar(c_char* c)
+	{
+		return this.ptr.GetChar(c);
+	}
+	public void ErrorString(String outStr)
+	{
+		this.ptr.ErrorString(outStr);
+	}
+	public void ReadyRead()
+	{
+		this.ptr.ReadyRead();
+	}
+	public void ChannelReadyRead(c_int channel)
+	{
+		this.ptr.ChannelReadyRead(channel);
+	}
+	public void BytesWritten(c_longlong bytes)
+	{
+		this.ptr.BytesWritten(bytes);
+	}
+	public void ChannelBytesWritten(c_int channel, c_longlong bytes)
+	{
+		this.ptr.ChannelBytesWritten(channel, bytes);
+	}
+	public void AboutToClose()
+	{
+		this.ptr.AboutToClose();
+	}
+	public void ReadChannelFinished()
+	{
+		this.ptr.ReadChannelFinished();
+	}
+	public  virtual c_longlong OnReadLineData(c_char* data, c_longlong maxlen)
+	{
+		return default;
+	}
+	public  virtual c_longlong OnSkipData(c_longlong maxSize)
+	{
+		return default;
+	}
+	public void SetOpenMode(void* openMode)
+	{
+		this.ptr.SetOpenMode(openMode);
+	}
+	public void SetErrorString(String errorString)
+	{
+		this.ptr.SetErrorString(errorString);
+	}
+	public void* ReadLine1(c_longlong maxlen)
+	{
+		return this.ptr.ReadLine1(maxlen);
+	}
 }
 interface IQBuffer : IQtObjectInterface
 {
@@ -1117,10 +1035,22 @@ extension CQt
 	public static extern void QBuffer_Delete(QBuffer_Ptr self);
 	[LinkName("QBuffer_MetaObject")]
 	public static extern void** QBuffer_MetaObject(void* self);
+	
+	public function void QBuffer_OnMetaObject_action(void* self);
+	[LinkName("QBuffer_OnMetaObject")]
+	public static extern void** QBuffer_OnMetaObject(void* self, QBuffer_OnMetaObject_action _action);
 	[LinkName("QBuffer_Qt_Metacast")]
 	public static extern void* QBuffer_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QBuffer_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QBuffer_OnMetacast")]
+	public static extern void* QBuffer_OnMetacast(void* self, QBuffer_OnMetacast_action _action);
 	[LinkName("QBuffer_Qt_Metacall")]
 	public static extern c_int QBuffer_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QBuffer_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QBuffer_OnMetacall")]
+	public static extern c_int QBuffer_OnMetacall(void* self, QBuffer_OnMetacall_action _action);
 	[LinkName("QBuffer_Tr")]
 	public static extern libqt_string QBuffer_Tr(c_char* s);
 	[LinkName("QBuffer_Buffer")]
@@ -1135,28 +1065,150 @@ extension CQt
 	public static extern void** QBuffer_Data(void* self);
 	[LinkName("QBuffer_Open")]
 	public static extern bool QBuffer_Open(void* self, void* openMode);
+	
+	public function void QBuffer_OnOpen_action(void* self, void* openMode);
+	[LinkName("QBuffer_OnOpen")]
+	public static extern bool QBuffer_OnOpen(void* self, QBuffer_OnOpen_action _action);
 	[LinkName("QBuffer_Close")]
 	public static extern void QBuffer_Close(void* self);
+	
+	public function void QBuffer_OnClose_action(void* self);
+	[LinkName("QBuffer_OnClose")]
+	public static extern void QBuffer_OnClose(void* self, QBuffer_OnClose_action _action);
 	[LinkName("QBuffer_Size")]
 	public static extern c_longlong QBuffer_Size(void* self);
+	
+	public function void QBuffer_OnSize_action(void* self);
+	[LinkName("QBuffer_OnSize")]
+	public static extern c_longlong QBuffer_OnSize(void* self, QBuffer_OnSize_action _action);
 	[LinkName("QBuffer_Pos")]
 	public static extern c_longlong QBuffer_Pos(void* self);
+	
+	public function void QBuffer_OnPos_action(void* self);
+	[LinkName("QBuffer_OnPos")]
+	public static extern c_longlong QBuffer_OnPos(void* self, QBuffer_OnPos_action _action);
 	[LinkName("QBuffer_Seek")]
 	public static extern bool QBuffer_Seek(void* self, c_longlong off);
+	
+	public function void QBuffer_OnSeek_action(void* self, c_longlong off);
+	[LinkName("QBuffer_OnSeek")]
+	public static extern bool QBuffer_OnSeek(void* self, QBuffer_OnSeek_action _action);
 	[LinkName("QBuffer_AtEnd")]
 	public static extern bool QBuffer_AtEnd(void* self);
+	
+	public function void QBuffer_OnAtEnd_action(void* self);
+	[LinkName("QBuffer_OnAtEnd")]
+	public static extern bool QBuffer_OnAtEnd(void* self, QBuffer_OnAtEnd_action _action);
 	[LinkName("QBuffer_CanReadLine")]
 	public static extern bool QBuffer_CanReadLine(void* self);
+	
+	public function void QBuffer_OnCanReadLine_action(void* self);
+	[LinkName("QBuffer_OnCanReadLine")]
+	public static extern bool QBuffer_OnCanReadLine(void* self, QBuffer_OnCanReadLine_action _action);
 	[LinkName("QBuffer_ConnectNotify")]
 	public static extern void QBuffer_ConnectNotify(void* self, void** param1);
+	
+	public function void QBuffer_OnConnectNotify_action(void* self, void** param1);
+	[LinkName("QBuffer_OnConnectNotify")]
+	public static extern void QBuffer_OnConnectNotify(void* self, QBuffer_OnConnectNotify_action _action);
 	[LinkName("QBuffer_DisconnectNotify")]
 	public static extern void QBuffer_DisconnectNotify(void* self, void** param1);
+	
+	public function void QBuffer_OnDisconnectNotify_action(void* self, void** param1);
+	[LinkName("QBuffer_OnDisconnectNotify")]
+	public static extern void QBuffer_OnDisconnectNotify(void* self, QBuffer_OnDisconnectNotify_action _action);
 	[LinkName("QBuffer_ReadData")]
 	public static extern c_longlong QBuffer_ReadData(void* self, c_char* data, c_longlong maxlen);
+	
+	public function void QBuffer_OnReadData_action(void* self, c_char* data, c_longlong maxlen);
+	[LinkName("QBuffer_OnReadData")]
+	public static extern c_longlong QBuffer_OnReadData(void* self, QBuffer_OnReadData_action _action);
 	[LinkName("QBuffer_WriteData")]
 	public static extern c_longlong QBuffer_WriteData(void* self, c_char* data, c_longlong lenVal);
+	
+	public function void QBuffer_OnWriteData_action(void* self, c_char* data, c_longlong lenVal);
+	[LinkName("QBuffer_OnWriteData")]
+	public static extern c_longlong QBuffer_OnWriteData(void* self, QBuffer_OnWriteData_action _action);
 	[LinkName("QBuffer_Tr2")]
 	public static extern libqt_string QBuffer_Tr2(c_char* s, c_char* c);
 	[LinkName("QBuffer_Tr3")]
 	public static extern libqt_string QBuffer_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QBuffer_Event")]
+	public static extern bool QBuffer_Event(void* self, void** event);
+	
+	public function void QBuffer_OnEvent_action(void* self, void** event);
+	[LinkName("QBuffer_OnEvent")]
+	public static extern bool QBuffer_OnEvent(void* self, QBuffer_OnEvent_action _action);
+	[LinkName("QBuffer_EventFilter")]
+	public static extern bool QBuffer_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QBuffer_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QBuffer_OnEventFilter")]
+	public static extern bool QBuffer_OnEventFilter(void* self, QBuffer_OnEventFilter_action _action);
+	[LinkName("QBuffer_TimerEvent")]
+	public static extern void QBuffer_TimerEvent(void* self, void** event);
+	
+	public function void QBuffer_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QBuffer_OnTimerEvent")]
+	public static extern void QBuffer_OnTimerEvent(void* self, QBuffer_OnTimerEvent_action _action);
+	[LinkName("QBuffer_ChildEvent")]
+	public static extern void QBuffer_ChildEvent(void* self, void** event);
+	
+	public function void QBuffer_OnChildEvent_action(void* self, void** event);
+	[LinkName("QBuffer_OnChildEvent")]
+	public static extern void QBuffer_OnChildEvent(void* self, QBuffer_OnChildEvent_action _action);
+	[LinkName("QBuffer_CustomEvent")]
+	public static extern void QBuffer_CustomEvent(void* self, void** event);
+	
+	public function void QBuffer_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QBuffer_OnCustomEvent")]
+	public static extern void QBuffer_OnCustomEvent(void* self, QBuffer_OnCustomEvent_action _action);
+	[LinkName("QBuffer_IsSequential")]
+	public static extern bool QBuffer_IsSequential(void* self);
+	
+	public function void QBuffer_OnIsSequential_action(void* self);
+	[LinkName("QBuffer_OnIsSequential")]
+	public static extern bool QBuffer_OnIsSequential(void* self, QBuffer_OnIsSequential_action _action);
+	[LinkName("QBuffer_Reset")]
+	public static extern bool QBuffer_Reset(void* self);
+	
+	public function void QBuffer_OnReset_action(void* self);
+	[LinkName("QBuffer_OnReset")]
+	public static extern bool QBuffer_OnReset(void* self, QBuffer_OnReset_action _action);
+	[LinkName("QBuffer_BytesAvailable")]
+	public static extern c_longlong QBuffer_BytesAvailable(void* self);
+	
+	public function void QBuffer_OnBytesAvailable_action(void* self);
+	[LinkName("QBuffer_OnBytesAvailable")]
+	public static extern c_longlong QBuffer_OnBytesAvailable(void* self, QBuffer_OnBytesAvailable_action _action);
+	[LinkName("QBuffer_BytesToWrite")]
+	public static extern c_longlong QBuffer_BytesToWrite(void* self);
+	
+	public function void QBuffer_OnBytesToWrite_action(void* self);
+	[LinkName("QBuffer_OnBytesToWrite")]
+	public static extern c_longlong QBuffer_OnBytesToWrite(void* self, QBuffer_OnBytesToWrite_action _action);
+	[LinkName("QBuffer_WaitForReadyRead")]
+	public static extern bool QBuffer_WaitForReadyRead(void* self, c_int msecs);
+	
+	public function void QBuffer_OnWaitForReadyRead_action(void* self, c_int msecs);
+	[LinkName("QBuffer_OnWaitForReadyRead")]
+	public static extern bool QBuffer_OnWaitForReadyRead(void* self, QBuffer_OnWaitForReadyRead_action _action);
+	[LinkName("QBuffer_WaitForBytesWritten")]
+	public static extern bool QBuffer_WaitForBytesWritten(void* self, c_int msecs);
+	
+	public function void QBuffer_OnWaitForBytesWritten_action(void* self, c_int msecs);
+	[LinkName("QBuffer_OnWaitForBytesWritten")]
+	public static extern bool QBuffer_OnWaitForBytesWritten(void* self, QBuffer_OnWaitForBytesWritten_action _action);
+	[LinkName("QBuffer_ReadLineData")]
+	public static extern c_longlong QBuffer_ReadLineData(void* self, c_char* data, c_longlong maxlen);
+	
+	public function void QBuffer_OnReadLineData_action(void* self, c_char* data, c_longlong maxlen);
+	[LinkName("QBuffer_OnReadLineData")]
+	public static extern c_longlong QBuffer_OnReadLineData(void* self, QBuffer_OnReadLineData_action _action);
+	[LinkName("QBuffer_SkipData")]
+	public static extern c_longlong QBuffer_SkipData(void* self, c_longlong maxSize);
+	
+	public function void QBuffer_OnSkipData_action(void* self, c_longlong maxSize);
+	[LinkName("QBuffer_OnSkipData")]
+	public static extern c_longlong QBuffer_OnSkipData(void* self, QBuffer_OnSkipData_action _action);
 }

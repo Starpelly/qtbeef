@@ -18,11 +18,11 @@ struct QFormLayout_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QFormLayout_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QFormLayout_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QFormLayout_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -274,173 +274,13 @@ struct QFormLayout_Ptr
 	{
 		CQt.QFormLayout_Tr3(s, c, n);
 	}
-	public void SetContentsMargins(c_int left, c_int top, c_int right, c_int bottom)
-	{
-		CQt.QLayout_SetContentsMargins((.)this.Ptr, left, top, right, bottom);
-	}
-	public void SetContentsMargins2(IQMargins margins)
-	{
-		CQt.QLayout_SetContentsMargins2((.)this.Ptr, (.)margins?.ObjectPtr);
-	}
-	public void UnsetContentsMargins()
-	{
-		CQt.QLayout_UnsetContentsMargins((.)this.Ptr);
-	}
-	public void GetContentsMargins(c_int* left, c_int* top, c_int* right, c_int* bottom)
-	{
-		CQt.QLayout_GetContentsMargins((.)this.Ptr, left, top, right, bottom);
-	}
-	public QMargins_Ptr ContentsMargins()
-	{
-		return QMargins_Ptr(CQt.QLayout_ContentsMargins((.)this.Ptr));
-	}
-	public QRect_Ptr ContentsRect()
-	{
-		return QRect_Ptr(CQt.QLayout_ContentsRect((.)this.Ptr));
-	}
-	public bool SetAlignment(IQWidget w, void* alignment)
-	{
-		return CQt.QLayout_SetAlignment((.)this.Ptr, (.)w?.ObjectPtr, alignment);
-	}
-	public bool SetAlignment2(IQLayout l, void* alignment)
-	{
-		return CQt.QLayout_SetAlignment2((.)this.Ptr, (.)l?.ObjectPtr, alignment);
-	}
-	public void SetSizeConstraint(QLayout_SizeConstraint sizeConstraint)
-	{
-		CQt.QLayout_SetSizeConstraint((.)this.Ptr, sizeConstraint);
-	}
-	public QLayout_SizeConstraint SizeConstraint()
-	{
-		return CQt.QLayout_SizeConstraint((.)this.Ptr);
-	}
-	public void SetMenuBar(IQWidget w)
-	{
-		CQt.QLayout_SetMenuBar((.)this.Ptr, (.)w?.ObjectPtr);
-	}
-	public QWidget_Ptr MenuBar()
-	{
-		return QWidget_Ptr(CQt.QLayout_MenuBar((.)this.Ptr));
-	}
-	public QWidget_Ptr ParentWidget()
-	{
-		return QWidget_Ptr(CQt.QLayout_ParentWidget((.)this.Ptr));
-	}
-	public QRect_Ptr Geometry()
-	{
-		return QRect_Ptr(CQt.QLayout_Geometry((.)this.Ptr));
-	}
-	public bool Activate()
-	{
-		return CQt.QLayout_Activate((.)this.Ptr);
-	}
-	public void Update()
-	{
-		CQt.QLayout_Update((.)this.Ptr);
-	}
-	public void AddWidget(IQWidget w)
-	{
-		CQt.QLayout_AddWidget((.)this.Ptr, (.)w?.ObjectPtr);
-	}
-	public void RemoveWidget(IQWidget w)
-	{
-		CQt.QLayout_RemoveWidget((.)this.Ptr, (.)w?.ObjectPtr);
-	}
-	public void RemoveItem(IQLayoutItem param1)
-	{
-		CQt.QLayout_RemoveItem((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public QSize_Ptr MaximumSize()
-	{
-		return QSize_Ptr(CQt.QLayout_MaximumSize((.)this.Ptr));
-	}
-	public c_int IndexOf(IQWidget param1)
-	{
-		return CQt.QLayout_IndexOf((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public c_int IndexOf2(IQLayoutItem param1)
-	{
-		return CQt.QLayout_IndexOf2((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QLayout_IsEmpty((.)this.Ptr);
-	}
-	public void* ControlTypes()
-	{
-		return CQt.QLayout_ControlTypes((.)this.Ptr);
-	}
-	public QLayoutItem_Ptr ReplaceWidget(IQWidget from, IQWidget to, void* options)
-	{
-		return QLayoutItem_Ptr(CQt.QLayout_ReplaceWidget((.)this.Ptr, (.)from?.ObjectPtr, (.)to?.ObjectPtr, options));
-	}
-	public c_int TotalMinimumHeightForWidth(c_int w)
-	{
-		return CQt.QLayout_TotalMinimumHeightForWidth((.)this.Ptr, w);
-	}
-	public c_int TotalHeightForWidth(c_int w)
-	{
-		return CQt.QLayout_TotalHeightForWidth((.)this.Ptr, w);
-	}
-	public QSize_Ptr TotalMinimumSize()
-	{
-		return QSize_Ptr(CQt.QLayout_TotalMinimumSize((.)this.Ptr));
-	}
-	public QSize_Ptr TotalMaximumSize()
-	{
-		return QSize_Ptr(CQt.QLayout_TotalMaximumSize((.)this.Ptr));
-	}
-	public QSize_Ptr TotalSizeHint()
-	{
-		return QSize_Ptr(CQt.QLayout_TotalSizeHint((.)this.Ptr));
-	}
-	public QLayout_Ptr Layout()
-	{
-		return QLayout_Ptr(CQt.QLayout_Layout((.)this.Ptr));
-	}
-	public void SetEnabled(bool enabled)
-	{
-		CQt.QLayout_SetEnabled((.)this.Ptr, enabled);
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QLayout_IsEnabled((.)this.Ptr);
-	}
-	public QSize_Ptr ClosestAcceptableSize(IQWidget w, IQSize s)
-	{
-		return QSize_Ptr(CQt.QLayout_ClosestAcceptableSize((.)w?.ObjectPtr, (.)s?.ObjectPtr));
-	}
-	public void WidgetEvent(IQEvent param1)
-	{
-		CQt.QLayout_WidgetEvent((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent e)
-	{
-		CQt.QLayout_ChildEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void AddChildLayout(IQLayout l)
-	{
-		CQt.QLayout_AddChildLayout((.)this.Ptr, (.)l?.ObjectPtr);
-	}
-	public void AddChildWidget(IQWidget w)
-	{
-		CQt.QLayout_AddChildWidget((.)this.Ptr, (.)w?.ObjectPtr);
-	}
-	public bool AdoptLayout(IQLayout layout)
-	{
-		return CQt.QLayout_AdoptLayout((.)this.Ptr, (.)layout?.ObjectPtr);
-	}
-	public QRect_Ptr AlignmentRect(IQRect param1)
-	{
-		return QRect_Ptr(CQt.QLayout_AlignmentRect((.)this.Ptr, (.)param1?.ObjectPtr));
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QFormLayout_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QFormLayout_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -600,19 +440,23 @@ struct QFormLayout_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFormLayout_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QFormLayout_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFormLayout_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QFormLayout_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QFormLayout_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -654,82 +498,210 @@ struct QFormLayout_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public QSize_Ptr MaximumSize()
+	{
+		return QSize_Ptr(CQt.QFormLayout_MaximumSize((.)this.Ptr));
+	}
+	public QRect_Ptr Geometry()
+	{
+		return QRect_Ptr(CQt.QFormLayout_Geometry((.)this.Ptr));
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QFormLayout_IsEmpty((.)this.Ptr);
+	}
 	public c_int MinimumHeightForWidth(c_int param1)
 	{
-		return CQt.QLayoutItem_MinimumHeightForWidth((.)this.Ptr, param1);
+		return CQt.QFormLayout_MinimumHeightForWidth((.)this.Ptr, param1);
 	}
 	public QWidget_Ptr Widget()
 	{
-		return QWidget_Ptr(CQt.QLayoutItem_Widget((.)this.Ptr));
+		return QWidget_Ptr(CQt.QFormLayout_Widget((.)this.Ptr));
+	}
+	public QLayout_Ptr Layout()
+	{
+		return QLayout_Ptr(CQt.QFormLayout_Layout((.)this.Ptr));
 	}
 	public QSpacerItem_Ptr SpacerItem()
 	{
-		return QSpacerItem_Ptr(CQt.QLayoutItem_SpacerItem((.)this.Ptr));
+		return QSpacerItem_Ptr(CQt.QFormLayout_SpacerItem((.)this.Ptr));
 	}
 	public void* Alignment()
 	{
 		return CQt.QLayoutItem_Alignment((.)this.Ptr);
+	}
+	public void SetAlignment(void* a)
+	{
+		CQt.QLayoutItem_SetAlignment((.)this.Ptr, a);
+	}
+	public void* ControlTypes()
+	{
+		return CQt.QFormLayout_ControlTypes((.)this.Ptr);
+	}
+	public void SetContentsMargins(c_int left, c_int top, c_int right, c_int bottom)
+	{
+		CQt.QLayout_SetContentsMargins((.)this.Ptr, left, top, right, bottom);
+	}
+	public void SetContentsMargins2(IQMargins margins)
+	{
+		CQt.QLayout_SetContentsMargins2((.)this.Ptr, (.)margins?.ObjectPtr);
+	}
+	public void UnsetContentsMargins()
+	{
+		CQt.QLayout_UnsetContentsMargins((.)this.Ptr);
+	}
+	public void GetContentsMargins(c_int* left, c_int* top, c_int* right, c_int* bottom)
+	{
+		CQt.QLayout_GetContentsMargins((.)this.Ptr, left, top, right, bottom);
+	}
+	public QMargins_Ptr ContentsMargins()
+	{
+		return QMargins_Ptr(CQt.QLayout_ContentsMargins((.)this.Ptr));
+	}
+	public QRect_Ptr ContentsRect()
+	{
+		return QRect_Ptr(CQt.QLayout_ContentsRect((.)this.Ptr));
+	}
+	public bool SetAlignment2(IQLayout l, void* alignment)
+	{
+		return CQt.QLayout_SetAlignment2((.)this.Ptr, (.)l?.ObjectPtr, alignment);
+	}
+	public void SetSizeConstraint(QLayout_SizeConstraint sizeConstraint)
+	{
+		CQt.QLayout_SetSizeConstraint((.)this.Ptr, sizeConstraint);
+	}
+	public QLayout_SizeConstraint SizeConstraint()
+	{
+		return CQt.QLayout_SizeConstraint((.)this.Ptr);
+	}
+	public void SetMenuBar(IQWidget w)
+	{
+		CQt.QLayout_SetMenuBar((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+	public QWidget_Ptr MenuBar()
+	{
+		return QWidget_Ptr(CQt.QLayout_MenuBar((.)this.Ptr));
+	}
+	public QWidget_Ptr ParentWidget()
+	{
+		return QWidget_Ptr(CQt.QLayout_ParentWidget((.)this.Ptr));
+	}
+	public bool Activate()
+	{
+		return CQt.QLayout_Activate((.)this.Ptr);
+	}
+	public void Update()
+	{
+		CQt.QLayout_Update((.)this.Ptr);
+	}
+	public void AddWidget(IQWidget w)
+	{
+		CQt.QLayout_AddWidget((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+	public void RemoveWidget(IQWidget w)
+	{
+		CQt.QLayout_RemoveWidget((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+	public void RemoveItem(IQLayoutItem param1)
+	{
+		CQt.QLayout_RemoveItem((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+	public c_int IndexOf(IQWidget param1)
+	{
+		return CQt.QFormLayout_IndexOf((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+	public c_int IndexOf2(IQLayoutItem param1)
+	{
+		return CQt.QFormLayout_IndexOf2((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+	public QLayoutItem_Ptr ReplaceWidget(IQWidget from, IQWidget to, void* options)
+	{
+		return QLayoutItem_Ptr(CQt.QFormLayout_ReplaceWidget((.)this.Ptr, (.)from?.ObjectPtr, (.)to?.ObjectPtr, options));
+	}
+	public c_int TotalMinimumHeightForWidth(c_int w)
+	{
+		return CQt.QLayout_TotalMinimumHeightForWidth((.)this.Ptr, w);
+	}
+	public c_int TotalHeightForWidth(c_int w)
+	{
+		return CQt.QLayout_TotalHeightForWidth((.)this.Ptr, w);
+	}
+	public QSize_Ptr TotalMinimumSize()
+	{
+		return QSize_Ptr(CQt.QLayout_TotalMinimumSize((.)this.Ptr));
+	}
+	public QSize_Ptr TotalMaximumSize()
+	{
+		return QSize_Ptr(CQt.QLayout_TotalMaximumSize((.)this.Ptr));
+	}
+	public QSize_Ptr TotalSizeHint()
+	{
+		return QSize_Ptr(CQt.QLayout_TotalSizeHint((.)this.Ptr));
+	}
+	public void SetEnabled(bool enabled)
+	{
+		CQt.QLayout_SetEnabled((.)this.Ptr, enabled);
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QLayout_IsEnabled((.)this.Ptr);
+	}
+	public QSize_Ptr ClosestAcceptableSize(IQWidget w, IQSize s)
+	{
+		return QSize_Ptr(CQt.QLayout_ClosestAcceptableSize((.)w?.ObjectPtr, (.)s?.ObjectPtr));
+	}
+	public void WidgetEvent(IQEvent param1)
+	{
+		CQt.QLayout_WidgetEvent((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+	public void AddChildLayout(IQLayout l)
+	{
+		CQt.QLayout_AddChildLayout((.)this.Ptr, (.)l?.ObjectPtr);
+	}
+	public void AddChildWidget(IQWidget w)
+	{
+		CQt.QLayout_AddChildWidget((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+	public bool AdoptLayout(IQLayout layout)
+	{
+		return CQt.QLayout_AdoptLayout((.)this.Ptr, (.)layout?.ObjectPtr);
+	}
+	public QRect_Ptr AlignmentRect(IQRect param1)
+	{
+		return QRect_Ptr(CQt.QLayout_AlignmentRect((.)this.Ptr, (.)param1?.ObjectPtr));
 	}
 }
 class QFormLayout : IQFormLayout, IQLayout, IQObject, IQLayoutItem
 {
 	private QFormLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QFormLayout_destroyed,
-		QFormLayout_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QFormLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QFormLayout_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFormLayout_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QFormLayout_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -783,13 +755,12 @@ class QFormLayout : IQFormLayout, IQLayout, IQObject, IQLayoutItem
 	{
 		return this.ptr.VerticalSpacing();
 	}
-	public c_int Spacing()
+	public  virtual c_int OnSpacing()
 	{
-		return this.ptr.Spacing();
+		return default;
 	}
-	public void SetSpacing(c_int spacing)
+	public  virtual void OnSetSpacing(c_int spacing)
 	{
-		this.ptr.SetSpacing(spacing);
 	}
 	public void AddRow(IQWidget label, IQWidget field)
 	{
@@ -923,49 +894,46 @@ class QFormLayout : IQFormLayout, IQLayout, IQObject, IQLayoutItem
 	{
 		return this.ptr.LabelForField2(field);
 	}
-	public void AddItem(IQLayoutItem item)
+	public  virtual void OnAddItem(void** item)
 	{
-		this.ptr.AddItem(item);
 	}
-	public QLayoutItem_Ptr ItemAt2(c_int index)
+	public  virtual QLayoutItem_Ptr OnItemAt2(c_int index)
 	{
-		return this.ptr.ItemAt2(index);
+		return default;
 	}
-	public QLayoutItem_Ptr TakeAt(c_int index)
+	public  virtual QLayoutItem_Ptr OnTakeAt(c_int index)
 	{
-		return this.ptr.TakeAt(index);
+		return default;
 	}
-	public void SetGeometry(IQRect rect)
+	public  virtual void OnSetGeometry(void** rect)
 	{
-		this.ptr.SetGeometry(rect);
 	}
-	public QSize_Ptr MinimumSize()
+	public  virtual QSize_Ptr OnMinimumSize()
 	{
-		return this.ptr.MinimumSize();
+		return default;
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual QSize_Ptr OnSizeHint()
 	{
-		return this.ptr.SizeHint();
+		return default;
 	}
-	public void Invalidate()
+	public  virtual void OnInvalidate()
 	{
-		this.ptr.Invalidate();
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
-	public c_int HeightForWidth(c_int width)
+	public  virtual c_int OnHeightForWidth(c_int width)
 	{
-		return this.ptr.HeightForWidth(width);
+		return default;
 	}
-	public void* ExpandingDirections()
+	public  virtual void* OnExpandingDirections()
 	{
-		return this.ptr.ExpandingDirections();
+		return default;
 	}
-	public c_int Count()
+	public  virtual c_int OnCount()
 	{
-		return this.ptr.Count();
+		return default;
 	}
 	public c_int RowCount()
 	{
@@ -979,173 +947,13 @@ class QFormLayout : IQFormLayout, IQLayout, IQObject, IQLayoutItem
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void SetContentsMargins(c_int left, c_int top, c_int right, c_int bottom)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.SetContentsMargins(left, top, right, bottom);
+		return default;
 	}
-	public void SetContentsMargins2(IQMargins margins)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		this.ptr.SetContentsMargins2(margins);
-	}
-	public void UnsetContentsMargins()
-	{
-		this.ptr.UnsetContentsMargins();
-	}
-	public void GetContentsMargins(c_int* left, c_int* top, c_int* right, c_int* bottom)
-	{
-		this.ptr.GetContentsMargins(left, top, right, bottom);
-	}
-	public QMargins_Ptr ContentsMargins()
-	{
-		return this.ptr.ContentsMargins();
-	}
-	public QRect_Ptr ContentsRect()
-	{
-		return this.ptr.ContentsRect();
-	}
-	public bool SetAlignment(IQWidget w, void* alignment)
-	{
-		return this.ptr.SetAlignment(w, alignment);
-	}
-	public bool SetAlignment2(IQLayout l, void* alignment)
-	{
-		return this.ptr.SetAlignment2(l, alignment);
-	}
-	public void SetSizeConstraint(QLayout_SizeConstraint sizeConstraint)
-	{
-		this.ptr.SetSizeConstraint(sizeConstraint);
-	}
-	public QLayout_SizeConstraint SizeConstraint()
-	{
-		return this.ptr.SizeConstraint();
-	}
-	public void SetMenuBar(IQWidget w)
-	{
-		this.ptr.SetMenuBar(w);
-	}
-	public QWidget_Ptr MenuBar()
-	{
-		return this.ptr.MenuBar();
-	}
-	public QWidget_Ptr ParentWidget()
-	{
-		return this.ptr.ParentWidget();
-	}
-	public QRect_Ptr Geometry()
-	{
-		return this.ptr.Geometry();
-	}
-	public bool Activate()
-	{
-		return this.ptr.Activate();
-	}
-	public void Update()
-	{
-		this.ptr.Update();
-	}
-	public void AddWidget(IQWidget w)
-	{
-		this.ptr.AddWidget(w);
-	}
-	public void RemoveWidget(IQWidget w)
-	{
-		this.ptr.RemoveWidget(w);
-	}
-	public void RemoveItem(IQLayoutItem param1)
-	{
-		this.ptr.RemoveItem(param1);
-	}
-	public QSize_Ptr MaximumSize()
-	{
-		return this.ptr.MaximumSize();
-	}
-	public c_int IndexOf(IQWidget param1)
-	{
-		return this.ptr.IndexOf(param1);
-	}
-	public c_int IndexOf2(IQLayoutItem param1)
-	{
-		return this.ptr.IndexOf2(param1);
-	}
-	public bool IsEmpty()
-	{
-		return this.ptr.IsEmpty();
-	}
-	public void* ControlTypes()
-	{
-		return this.ptr.ControlTypes();
-	}
-	public QLayoutItem_Ptr ReplaceWidget(IQWidget from, IQWidget to, void* options)
-	{
-		return this.ptr.ReplaceWidget(from, to, options);
-	}
-	public c_int TotalMinimumHeightForWidth(c_int w)
-	{
-		return this.ptr.TotalMinimumHeightForWidth(w);
-	}
-	public c_int TotalHeightForWidth(c_int w)
-	{
-		return this.ptr.TotalHeightForWidth(w);
-	}
-	public QSize_Ptr TotalMinimumSize()
-	{
-		return this.ptr.TotalMinimumSize();
-	}
-	public QSize_Ptr TotalMaximumSize()
-	{
-		return this.ptr.TotalMaximumSize();
-	}
-	public QSize_Ptr TotalSizeHint()
-	{
-		return this.ptr.TotalSizeHint();
-	}
-	public QLayout_Ptr Layout()
-	{
-		return this.ptr.Layout();
-	}
-	public void SetEnabled(bool enabled)
-	{
-		this.ptr.SetEnabled(enabled);
-	}
-	public bool IsEnabled()
-	{
-		return this.ptr.IsEnabled();
-	}
-	public QSize_Ptr ClosestAcceptableSize(IQWidget w, IQSize s)
-	{
-		return this.ptr.ClosestAcceptableSize(w, s);
-	}
-	public void WidgetEvent(IQEvent param1)
-	{
-		this.ptr.WidgetEvent(param1);
-	}
-	public void ChildEvent(IQChildEvent e)
-	{
-		this.ptr.ChildEvent(e);
-	}
-	public void AddChildLayout(IQLayout l)
-	{
-		this.ptr.AddChildLayout(l);
-	}
-	public void AddChildWidget(IQWidget w)
-	{
-		this.ptr.AddChildWidget(w);
-	}
-	public bool AdoptLayout(IQLayout layout)
-	{
-		return this.ptr.AdoptLayout(layout);
-	}
-	public QRect_Ptr AlignmentRect(IQRect param1)
-	{
-		return this.ptr.AlignmentRect(param1);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1303,21 +1111,20 @@ class QFormLayout : IQFormLayout, IQLayout, IQObject, IQLayoutItem
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
+	}
+	public  virtual void OnDisconnectNotify(void** signal)
+	{
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1359,21 +1166,177 @@ class QFormLayout : IQFormLayout, IQLayout, IQObject, IQLayoutItem
 	{
 		this.ptr.Destroyed1(param1);
 	}
-	public c_int MinimumHeightForWidth(c_int param1)
+	public  virtual QSize_Ptr OnMaximumSize()
 	{
-		return this.ptr.MinimumHeightForWidth(param1);
+		return default;
 	}
-	public QWidget_Ptr Widget()
+	public  virtual QRect_Ptr OnGeometry()
 	{
-		return this.ptr.Widget();
+		return default;
 	}
-	public QSpacerItem_Ptr SpacerItem()
+	public  virtual bool OnIsEmpty()
 	{
-		return this.ptr.SpacerItem();
+		return default;
+	}
+	public  virtual c_int OnMinimumHeightForWidth(c_int param1)
+	{
+		return default;
+	}
+	public  virtual QWidget_Ptr OnWidget()
+	{
+		return default;
+	}
+	public  virtual QLayout_Ptr OnLayout()
+	{
+		return default;
+	}
+	public  virtual QSpacerItem_Ptr OnSpacerItem()
+	{
+		return default;
 	}
 	public void* Alignment()
 	{
 		return this.ptr.Alignment();
+	}
+	public void SetAlignment(void* a)
+	{
+		this.ptr.SetAlignment(a);
+	}
+	public  virtual void* OnControlTypes()
+	{
+		return default;
+	}
+	public void SetContentsMargins(c_int left, c_int top, c_int right, c_int bottom)
+	{
+		this.ptr.SetContentsMargins(left, top, right, bottom);
+	}
+	public void SetContentsMargins2(IQMargins margins)
+	{
+		this.ptr.SetContentsMargins2(margins);
+	}
+	public void UnsetContentsMargins()
+	{
+		this.ptr.UnsetContentsMargins();
+	}
+	public void GetContentsMargins(c_int* left, c_int* top, c_int* right, c_int* bottom)
+	{
+		this.ptr.GetContentsMargins(left, top, right, bottom);
+	}
+	public QMargins_Ptr ContentsMargins()
+	{
+		return this.ptr.ContentsMargins();
+	}
+	public QRect_Ptr ContentsRect()
+	{
+		return this.ptr.ContentsRect();
+	}
+	public bool SetAlignment2(IQLayout l, void* alignment)
+	{
+		return this.ptr.SetAlignment2(l, alignment);
+	}
+	public void SetSizeConstraint(QLayout_SizeConstraint sizeConstraint)
+	{
+		this.ptr.SetSizeConstraint(sizeConstraint);
+	}
+	public QLayout_SizeConstraint SizeConstraint()
+	{
+		return this.ptr.SizeConstraint();
+	}
+	public void SetMenuBar(IQWidget w)
+	{
+		this.ptr.SetMenuBar(w);
+	}
+	public QWidget_Ptr MenuBar()
+	{
+		return this.ptr.MenuBar();
+	}
+	public QWidget_Ptr ParentWidget()
+	{
+		return this.ptr.ParentWidget();
+	}
+	public bool Activate()
+	{
+		return this.ptr.Activate();
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void AddWidget(IQWidget w)
+	{
+		this.ptr.AddWidget(w);
+	}
+	public void RemoveWidget(IQWidget w)
+	{
+		this.ptr.RemoveWidget(w);
+	}
+	public void RemoveItem(IQLayoutItem param1)
+	{
+		this.ptr.RemoveItem(param1);
+	}
+	public  virtual c_int OnIndexOf(void** param1)
+	{
+		return default;
+	}
+	public  virtual c_int OnIndexOf2(void** param1)
+	{
+		return default;
+	}
+	public  virtual QLayoutItem_Ptr OnReplaceWidget(void** from, void** to, void* options)
+	{
+		return default;
+	}
+	public c_int TotalMinimumHeightForWidth(c_int w)
+	{
+		return this.ptr.TotalMinimumHeightForWidth(w);
+	}
+	public c_int TotalHeightForWidth(c_int w)
+	{
+		return this.ptr.TotalHeightForWidth(w);
+	}
+	public QSize_Ptr TotalMinimumSize()
+	{
+		return this.ptr.TotalMinimumSize();
+	}
+	public QSize_Ptr TotalMaximumSize()
+	{
+		return this.ptr.TotalMaximumSize();
+	}
+	public QSize_Ptr TotalSizeHint()
+	{
+		return this.ptr.TotalSizeHint();
+	}
+	public void SetEnabled(bool enabled)
+	{
+		this.ptr.SetEnabled(enabled);
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public QSize_Ptr ClosestAcceptableSize(IQWidget w, IQSize s)
+	{
+		return this.ptr.ClosestAcceptableSize(w, s);
+	}
+	public void WidgetEvent(IQEvent param1)
+	{
+		this.ptr.WidgetEvent(param1);
+	}
+	public void AddChildLayout(IQLayout l)
+	{
+		this.ptr.AddChildLayout(l);
+	}
+	public void AddChildWidget(IQWidget w)
+	{
+		this.ptr.AddChildWidget(w);
+	}
+	public bool AdoptLayout(IQLayout layout)
+	{
+		return this.ptr.AdoptLayout(layout);
+	}
+	public QRect_Ptr AlignmentRect(IQRect param1)
+	{
+		return this.ptr.AlignmentRect(param1);
 	}
 }
 interface IQFormLayout : IQtObjectInterface
@@ -1389,10 +1352,22 @@ extension CQt
 	public static extern void QFormLayout_Delete(QFormLayout_Ptr self);
 	[LinkName("QFormLayout_MetaObject")]
 	public static extern void** QFormLayout_MetaObject(void* self);
+	
+	public function void QFormLayout_OnMetaObject_action(void* self);
+	[LinkName("QFormLayout_OnMetaObject")]
+	public static extern void** QFormLayout_OnMetaObject(void* self, QFormLayout_OnMetaObject_action _action);
 	[LinkName("QFormLayout_Qt_Metacast")]
 	public static extern void* QFormLayout_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QFormLayout_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QFormLayout_OnMetacast")]
+	public static extern void* QFormLayout_OnMetacast(void* self, QFormLayout_OnMetacast_action _action);
 	[LinkName("QFormLayout_Qt_Metacall")]
 	public static extern c_int QFormLayout_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QFormLayout_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QFormLayout_OnMetacall")]
+	public static extern c_int QFormLayout_OnMetacall(void* self, QFormLayout_OnMetacall_action _action);
 	[LinkName("QFormLayout_Tr")]
 	public static extern libqt_string QFormLayout_Tr(c_char* s);
 	[LinkName("QFormLayout_SetFieldGrowthPolicy")]
@@ -1421,8 +1396,16 @@ extension CQt
 	public static extern c_int QFormLayout_VerticalSpacing(void* self);
 	[LinkName("QFormLayout_Spacing")]
 	public static extern c_int QFormLayout_Spacing(void* self);
+	
+	public function void QFormLayout_OnSpacing_action(void* self);
+	[LinkName("QFormLayout_OnSpacing")]
+	public static extern c_int QFormLayout_OnSpacing(void* self, QFormLayout_OnSpacing_action _action);
 	[LinkName("QFormLayout_SetSpacing")]
 	public static extern void QFormLayout_SetSpacing(void* self, c_int spacing);
+	
+	public function void QFormLayout_OnSetSpacing_action(void* self, c_int spacing);
+	[LinkName("QFormLayout_OnSetSpacing")]
+	public static extern void QFormLayout_OnSetSpacing(void* self, QFormLayout_OnSetSpacing_action _action);
 	[LinkName("QFormLayout_AddRow")]
 	public static extern void QFormLayout_AddRow(void* self, void** label, void** field);
 	[LinkName("QFormLayout_AddRow2")]
@@ -1491,32 +1474,184 @@ extension CQt
 	public static extern void** QFormLayout_LabelForField2(void* self, void** field);
 	[LinkName("QFormLayout_AddItem")]
 	public static extern void QFormLayout_AddItem(void* self, void** item);
+	
+	public function void QFormLayout_OnAddItem_action(void* self, void** item);
+	[LinkName("QFormLayout_OnAddItem")]
+	public static extern void QFormLayout_OnAddItem(void* self, QFormLayout_OnAddItem_action _action);
 	[LinkName("QFormLayout_ItemAt2")]
 	public static extern void** QFormLayout_ItemAt2(void* self, c_int index);
+	
+	public function void QFormLayout_OnItemAt2_action(void* self, c_int index);
+	[LinkName("QFormLayout_OnItemAt2")]
+	public static extern void** QFormLayout_OnItemAt2(void* self, QFormLayout_OnItemAt2_action _action);
 	[LinkName("QFormLayout_TakeAt")]
 	public static extern void** QFormLayout_TakeAt(void* self, c_int index);
+	
+	public function void QFormLayout_OnTakeAt_action(void* self, c_int index);
+	[LinkName("QFormLayout_OnTakeAt")]
+	public static extern void** QFormLayout_OnTakeAt(void* self, QFormLayout_OnTakeAt_action _action);
 	[LinkName("QFormLayout_SetGeometry")]
 	public static extern void QFormLayout_SetGeometry(void* self, void** rect);
+	
+	public function void QFormLayout_OnSetGeometry_action(void* self, void** rect);
+	[LinkName("QFormLayout_OnSetGeometry")]
+	public static extern void QFormLayout_OnSetGeometry(void* self, QFormLayout_OnSetGeometry_action _action);
 	[LinkName("QFormLayout_MinimumSize")]
 	public static extern void* QFormLayout_MinimumSize(void* self);
+	
+	public function void QFormLayout_OnMinimumSize_action(void* self);
+	[LinkName("QFormLayout_OnMinimumSize")]
+	public static extern void* QFormLayout_OnMinimumSize(void* self, QFormLayout_OnMinimumSize_action _action);
 	[LinkName("QFormLayout_SizeHint")]
 	public static extern void* QFormLayout_SizeHint(void* self);
+	
+	public function void QFormLayout_OnSizeHint_action(void* self);
+	[LinkName("QFormLayout_OnSizeHint")]
+	public static extern void* QFormLayout_OnSizeHint(void* self, QFormLayout_OnSizeHint_action _action);
 	[LinkName("QFormLayout_Invalidate")]
 	public static extern void QFormLayout_Invalidate(void* self);
+	
+	public function void QFormLayout_OnInvalidate_action(void* self);
+	[LinkName("QFormLayout_OnInvalidate")]
+	public static extern void QFormLayout_OnInvalidate(void* self, QFormLayout_OnInvalidate_action _action);
 	[LinkName("QFormLayout_HasHeightForWidth")]
 	public static extern bool QFormLayout_HasHeightForWidth(void* self);
+	
+	public function void QFormLayout_OnHasHeightForWidth_action(void* self);
+	[LinkName("QFormLayout_OnHasHeightForWidth")]
+	public static extern bool QFormLayout_OnHasHeightForWidth(void* self, QFormLayout_OnHasHeightForWidth_action _action);
 	[LinkName("QFormLayout_HeightForWidth")]
 	public static extern c_int QFormLayout_HeightForWidth(void* self, c_int width);
+	
+	public function void QFormLayout_OnHeightForWidth_action(void* self, c_int width);
+	[LinkName("QFormLayout_OnHeightForWidth")]
+	public static extern c_int QFormLayout_OnHeightForWidth(void* self, QFormLayout_OnHeightForWidth_action _action);
 	[LinkName("QFormLayout_ExpandingDirections")]
 	public static extern void* QFormLayout_ExpandingDirections(void* self);
+	
+	public function void QFormLayout_OnExpandingDirections_action(void* self);
+	[LinkName("QFormLayout_OnExpandingDirections")]
+	public static extern void* QFormLayout_OnExpandingDirections(void* self, QFormLayout_OnExpandingDirections_action _action);
 	[LinkName("QFormLayout_Count")]
 	public static extern c_int QFormLayout_Count(void* self);
+	
+	public function void QFormLayout_OnCount_action(void* self);
+	[LinkName("QFormLayout_OnCount")]
+	public static extern c_int QFormLayout_OnCount(void* self, QFormLayout_OnCount_action _action);
 	[LinkName("QFormLayout_RowCount")]
 	public static extern c_int QFormLayout_RowCount(void* self);
 	[LinkName("QFormLayout_Tr2")]
 	public static extern libqt_string QFormLayout_Tr2(c_char* s, c_char* c);
 	[LinkName("QFormLayout_Tr3")]
 	public static extern libqt_string QFormLayout_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QFormLayout_Event")]
+	public static extern bool QFormLayout_Event(void* self, void** event);
+	
+	public function void QFormLayout_OnEvent_action(void* self, void** event);
+	[LinkName("QFormLayout_OnEvent")]
+	public static extern bool QFormLayout_OnEvent(void* self, QFormLayout_OnEvent_action _action);
+	[LinkName("QFormLayout_EventFilter")]
+	public static extern bool QFormLayout_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QFormLayout_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QFormLayout_OnEventFilter")]
+	public static extern bool QFormLayout_OnEventFilter(void* self, QFormLayout_OnEventFilter_action _action);
+	[LinkName("QFormLayout_TimerEvent")]
+	public static extern void QFormLayout_TimerEvent(void* self, void** event);
+	
+	public function void QFormLayout_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QFormLayout_OnTimerEvent")]
+	public static extern void QFormLayout_OnTimerEvent(void* self, QFormLayout_OnTimerEvent_action _action);
+	[LinkName("QFormLayout_ChildEvent")]
+	public static extern void QFormLayout_ChildEvent(void* self, void** event);
+	
+	public function void QFormLayout_OnChildEvent_action(void* self, void** event);
+	[LinkName("QFormLayout_OnChildEvent")]
+	public static extern void QFormLayout_OnChildEvent(void* self, QFormLayout_OnChildEvent_action _action);
+	[LinkName("QFormLayout_CustomEvent")]
+	public static extern void QFormLayout_CustomEvent(void* self, void** event);
+	
+	public function void QFormLayout_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QFormLayout_OnCustomEvent")]
+	public static extern void QFormLayout_OnCustomEvent(void* self, QFormLayout_OnCustomEvent_action _action);
+	[LinkName("QFormLayout_ConnectNotify")]
+	public static extern void QFormLayout_ConnectNotify(void* self, void** signal);
+	
+	public function void QFormLayout_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QFormLayout_OnConnectNotify")]
+	public static extern void QFormLayout_OnConnectNotify(void* self, QFormLayout_OnConnectNotify_action _action);
+	[LinkName("QFormLayout_DisconnectNotify")]
+	public static extern void QFormLayout_DisconnectNotify(void* self, void** signal);
+	
+	public function void QFormLayout_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QFormLayout_OnDisconnectNotify")]
+	public static extern void QFormLayout_OnDisconnectNotify(void* self, QFormLayout_OnDisconnectNotify_action _action);
+	[LinkName("QFormLayout_MaximumSize")]
+	public static extern void* QFormLayout_MaximumSize(void* self);
+	
+	public function void QFormLayout_OnMaximumSize_action(void* self);
+	[LinkName("QFormLayout_OnMaximumSize")]
+	public static extern void* QFormLayout_OnMaximumSize(void* self, QFormLayout_OnMaximumSize_action _action);
+	[LinkName("QFormLayout_Geometry")]
+	public static extern void* QFormLayout_Geometry(void* self);
+	
+	public function void QFormLayout_OnGeometry_action(void* self);
+	[LinkName("QFormLayout_OnGeometry")]
+	public static extern void* QFormLayout_OnGeometry(void* self, QFormLayout_OnGeometry_action _action);
+	[LinkName("QFormLayout_IsEmpty")]
+	public static extern bool QFormLayout_IsEmpty(void* self);
+	
+	public function void QFormLayout_OnIsEmpty_action(void* self);
+	[LinkName("QFormLayout_OnIsEmpty")]
+	public static extern bool QFormLayout_OnIsEmpty(void* self, QFormLayout_OnIsEmpty_action _action);
+	[LinkName("QFormLayout_MinimumHeightForWidth")]
+	public static extern c_int QFormLayout_MinimumHeightForWidth(void* self, c_int param1);
+	
+	public function void QFormLayout_OnMinimumHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QFormLayout_OnMinimumHeightForWidth")]
+	public static extern c_int QFormLayout_OnMinimumHeightForWidth(void* self, QFormLayout_OnMinimumHeightForWidth_action _action);
+	[LinkName("QFormLayout_Widget")]
+	public static extern void** QFormLayout_Widget(void* self);
+	
+	public function void QFormLayout_OnWidget_action(void* self);
+	[LinkName("QFormLayout_OnWidget")]
+	public static extern void** QFormLayout_OnWidget(void* self, QFormLayout_OnWidget_action _action);
+	[LinkName("QFormLayout_Layout")]
+	public static extern void** QFormLayout_Layout(void* self);
+	
+	public function void QFormLayout_OnLayout_action(void* self);
+	[LinkName("QFormLayout_OnLayout")]
+	public static extern void** QFormLayout_OnLayout(void* self, QFormLayout_OnLayout_action _action);
+	[LinkName("QFormLayout_SpacerItem")]
+	public static extern void** QFormLayout_SpacerItem(void* self);
+	
+	public function void QFormLayout_OnSpacerItem_action(void* self);
+	[LinkName("QFormLayout_OnSpacerItem")]
+	public static extern void** QFormLayout_OnSpacerItem(void* self, QFormLayout_OnSpacerItem_action _action);
+	[LinkName("QFormLayout_ControlTypes")]
+	public static extern void* QFormLayout_ControlTypes(void* self);
+	
+	public function void QFormLayout_OnControlTypes_action(void* self);
+	[LinkName("QFormLayout_OnControlTypes")]
+	public static extern void* QFormLayout_OnControlTypes(void* self, QFormLayout_OnControlTypes_action _action);
+	[LinkName("QFormLayout_IndexOf")]
+	public static extern c_int QFormLayout_IndexOf(void* self, void** param1);
+	
+	public function void QFormLayout_OnIndexOf_action(void* self, void** param1);
+	[LinkName("QFormLayout_OnIndexOf")]
+	public static extern c_int QFormLayout_OnIndexOf(void* self, QFormLayout_OnIndexOf_action _action);
+	[LinkName("QFormLayout_IndexOf2")]
+	public static extern c_int QFormLayout_IndexOf2(void* self, void** param1);
+	
+	public function void QFormLayout_OnIndexOf2_action(void* self, void** param1);
+	[LinkName("QFormLayout_OnIndexOf2")]
+	public static extern c_int QFormLayout_OnIndexOf2(void* self, QFormLayout_OnIndexOf2_action _action);
+	[LinkName("QFormLayout_ReplaceWidget")]
+	public static extern void** QFormLayout_ReplaceWidget(void* self, void** from, void** to, void* options);
+	
+	public function void QFormLayout_OnReplaceWidget_action(void* self, void** from, void** to, void* options);
+	[LinkName("QFormLayout_OnReplaceWidget")]
+	public static extern void** QFormLayout_OnReplaceWidget(void* self, QFormLayout_OnReplaceWidget_action _action);
 }
 // --------------------------------------------------------------
 // QFormLayout::TakeRowResult
@@ -1550,19 +1685,9 @@ class QFormLayout_TakeRowResult : IQFormLayout_TakeRowResult
 {
 	private QFormLayout_TakeRowResult_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QFormLayout_TakeRowResult_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

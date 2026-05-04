@@ -35,29 +35,17 @@ class QScrollerProperties : IQScrollerProperties
 {
 	private QScrollerProperties_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QScrollerProperties_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QScrollerProperties_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQScrollerProperties sp)
 	{
 		this.ptr = CQt.QScrollerProperties_new2((.)sp?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

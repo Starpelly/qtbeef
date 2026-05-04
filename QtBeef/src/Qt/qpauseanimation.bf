@@ -18,11 +18,11 @@ struct QPauseAnimation_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QPauseAnimation_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QPauseAnimation_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QPauseAnimation_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -54,101 +54,9 @@ struct QPauseAnimation_Ptr
 	{
 		CQt.QPauseAnimation_Tr3(s, c, n);
 	}
-	public QAbstractAnimation_State State()
-	{
-		return CQt.QAbstractAnimation_State((.)this.Ptr);
-	}
-	public QAnimationGroup_Ptr Group()
-	{
-		return QAnimationGroup_Ptr(CQt.QAbstractAnimation_Group((.)this.Ptr));
-	}
-	public QAbstractAnimation_Direction Direction()
-	{
-		return CQt.QAbstractAnimation_Direction((.)this.Ptr);
-	}
-	public void SetDirection(QAbstractAnimation_Direction direction)
-	{
-		CQt.QAbstractAnimation_SetDirection((.)this.Ptr, direction);
-	}
-	public c_int CurrentTime()
-	{
-		return CQt.QAbstractAnimation_CurrentTime((.)this.Ptr);
-	}
-	public c_int CurrentLoopTime()
-	{
-		return CQt.QAbstractAnimation_CurrentLoopTime((.)this.Ptr);
-	}
-	public c_int LoopCount()
-	{
-		return CQt.QAbstractAnimation_LoopCount((.)this.Ptr);
-	}
-	public void SetLoopCount(c_int loopCount)
-	{
-		CQt.QAbstractAnimation_SetLoopCount((.)this.Ptr, loopCount);
-	}
-	public c_int CurrentLoop()
-	{
-		return CQt.QAbstractAnimation_CurrentLoop((.)this.Ptr);
-	}
-	public c_int TotalDuration()
-	{
-		return CQt.QAbstractAnimation_TotalDuration((.)this.Ptr);
-	}
-	public void Finished()
-	{
-		CQt.QAbstractAnimation_Finished((.)this.Ptr);
-	}
-	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		CQt.QAbstractAnimation_StateChanged((.)this.Ptr, newState, oldState);
-	}
-	public void CurrentLoopChanged(c_int currentLoop)
-	{
-		CQt.QAbstractAnimation_CurrentLoopChanged((.)this.Ptr, currentLoop);
-	}
-	public void DirectionChanged(QAbstractAnimation_Direction param1)
-	{
-		CQt.QAbstractAnimation_DirectionChanged((.)this.Ptr, param1);
-	}
-	public void Start()
-	{
-		CQt.QAbstractAnimation_Start((.)this.Ptr);
-	}
-	public void Pause()
-	{
-		CQt.QAbstractAnimation_Pause((.)this.Ptr);
-	}
-	public void Resume()
-	{
-		CQt.QAbstractAnimation_Resume((.)this.Ptr);
-	}
-	public void SetPaused(bool paused)
-	{
-		CQt.QAbstractAnimation_SetPaused((.)this.Ptr, paused);
-	}
-	public void Stop()
-	{
-		CQt.QAbstractAnimation_Stop((.)this.Ptr);
-	}
-	public void SetCurrentTime(c_int msecs)
-	{
-		CQt.QAbstractAnimation_SetCurrentTime((.)this.Ptr, msecs);
-	}
-	public void UpdateState(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		CQt.QAbstractAnimation_UpdateState((.)this.Ptr, newState, oldState);
-	}
-	public void UpdateDirection(QAbstractAnimation_Direction direction)
-	{
-		CQt.QAbstractAnimation_UpdateDirection((.)this.Ptr, direction);
-	}
-	public void Start1(QAbstractAnimation_DeletionPolicy policy)
-	{
-		CQt.QAbstractAnimation_Start1((.)this.Ptr, policy);
-	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QPauseAnimation_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -308,23 +216,23 @@ struct QPauseAnimation_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPauseAnimation_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPauseAnimation_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QPauseAnimation_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPauseAnimation_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QPauseAnimation_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -366,128 +274,157 @@ struct QPauseAnimation_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public QAbstractAnimation_State State()
+	{
+		return CQt.QAbstractAnimation_State((.)this.Ptr);
+	}
+	public QAnimationGroup_Ptr Group()
+	{
+		return QAnimationGroup_Ptr(CQt.QAbstractAnimation_Group((.)this.Ptr));
+	}
+	public QAbstractAnimation_Direction Direction()
+	{
+		return CQt.QAbstractAnimation_Direction((.)this.Ptr);
+	}
+	public void SetDirection(QAbstractAnimation_Direction direction)
+	{
+		CQt.QAbstractAnimation_SetDirection((.)this.Ptr, direction);
+	}
+	public c_int CurrentTime()
+	{
+		return CQt.QAbstractAnimation_CurrentTime((.)this.Ptr);
+	}
+	public c_int CurrentLoopTime()
+	{
+		return CQt.QAbstractAnimation_CurrentLoopTime((.)this.Ptr);
+	}
+	public c_int LoopCount()
+	{
+		return CQt.QAbstractAnimation_LoopCount((.)this.Ptr);
+	}
+	public void SetLoopCount(c_int loopCount)
+	{
+		CQt.QAbstractAnimation_SetLoopCount((.)this.Ptr, loopCount);
+	}
+	public c_int CurrentLoop()
+	{
+		return CQt.QAbstractAnimation_CurrentLoop((.)this.Ptr);
+	}
+	public c_int TotalDuration()
+	{
+		return CQt.QAbstractAnimation_TotalDuration((.)this.Ptr);
+	}
+	public void Finished()
+	{
+		CQt.QAbstractAnimation_Finished((.)this.Ptr);
+	}
+	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		CQt.QAbstractAnimation_StateChanged((.)this.Ptr, newState, oldState);
+	}
+	public void CurrentLoopChanged(c_int currentLoop)
+	{
+		CQt.QAbstractAnimation_CurrentLoopChanged((.)this.Ptr, currentLoop);
+	}
+	public void DirectionChanged(QAbstractAnimation_Direction param1)
+	{
+		CQt.QAbstractAnimation_DirectionChanged((.)this.Ptr, param1);
+	}
+	public void Start()
+	{
+		CQt.QAbstractAnimation_Start((.)this.Ptr);
+	}
+	public void Pause()
+	{
+		CQt.QAbstractAnimation_Pause((.)this.Ptr);
+	}
+	public void Resume()
+	{
+		CQt.QAbstractAnimation_Resume((.)this.Ptr);
+	}
+	public void SetPaused(bool paused)
+	{
+		CQt.QAbstractAnimation_SetPaused((.)this.Ptr, paused);
+	}
+	public void Stop()
+	{
+		CQt.QAbstractAnimation_Stop((.)this.Ptr);
+	}
+	public void SetCurrentTime(c_int msecs)
+	{
+		CQt.QAbstractAnimation_SetCurrentTime((.)this.Ptr, msecs);
+	}
+	public void UpdateState(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		CQt.QPauseAnimation_UpdateState((.)this.Ptr, newState, oldState);
+	}
+	public void UpdateDirection(QAbstractAnimation_Direction direction)
+	{
+		CQt.QPauseAnimation_UpdateDirection((.)this.Ptr, direction);
+	}
+	public void Start1(QAbstractAnimation_DeletionPolicy policy)
+	{
+		CQt.QAbstractAnimation_Start1((.)this.Ptr, policy);
+	}
 }
 class QPauseAnimation : IQPauseAnimation, IQAbstractAnimation, IQObject
 {
 	private QPauseAnimation_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QPauseAnimation_finished,
-		QPauseAnimation_stateChanged,
-		QPauseAnimation_currentLoopChanged,
-		QPauseAnimation_directionChanged,
-		QPauseAnimation_destroyed,
-		QPauseAnimation_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QAbstractAnimation_Connect_Finished(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_finished);
-		CQt.QAbstractAnimation_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_stateChanged);
-		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_currentLoopChanged);
-		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_directionChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
-	public Event<delegate void(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)> OnStateChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int currentLoop)> OnCurrentLoopChanged = .() ~ _.Dispose();
-	public Event<delegate void(QAbstractAnimation_Direction param1)> OnDirectionChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QAbstractAnimation_finished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFinished.Invoke();
-	}
-	static void QtBeef_QAbstractAnimation_stateChanged(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnStateChanged.Invoke(newState, oldState);
-	}
-	static void QtBeef_QAbstractAnimation_currentLoopChanged(void* ptr, c_int currentLoop)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentLoopChanged.Invoke(currentLoop);
-	}
-	static void QtBeef_QAbstractAnimation_directionChanged(void* ptr, QAbstractAnimation_Direction param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDirectionChanged.Invoke(param1);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QPauseAnimation_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPauseAnimation_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int msecs)
 	{
 		this.ptr = CQt.QPauseAnimation_new2(msecs);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QPauseAnimation_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int msecs, IQObject parent)
 	{
 		this.ptr = CQt.QPauseAnimation_new4(msecs, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPauseAnimation_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public c_int Duration()
+	public  virtual c_int OnDuration()
 	{
-		return this.ptr.Duration();
+		return default;
 	}
 	public void SetDuration(c_int msecs)
 	{
 		this.ptr.SetDuration(msecs);
 	}
-	public bool Event(IQEvent e)
+	public  virtual bool OnEvent(void** e)
 	{
-		return this.ptr.Event(e);
+		return default;
 	}
-	public void UpdateCurrentTime(c_int param1)
+	public  virtual void OnUpdateCurrentTime(c_int param1)
 	{
-		this.ptr.UpdateCurrentTime(param1);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -497,101 +434,9 @@ class QPauseAnimation : IQPauseAnimation, IQAbstractAnimation, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QAbstractAnimation_State State()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.State();
-	}
-	public QAnimationGroup_Ptr Group()
-	{
-		return this.ptr.Group();
-	}
-	public QAbstractAnimation_Direction Direction()
-	{
-		return this.ptr.Direction();
-	}
-	public void SetDirection(QAbstractAnimation_Direction direction)
-	{
-		this.ptr.SetDirection(direction);
-	}
-	public c_int CurrentTime()
-	{
-		return this.ptr.CurrentTime();
-	}
-	public c_int CurrentLoopTime()
-	{
-		return this.ptr.CurrentLoopTime();
-	}
-	public c_int LoopCount()
-	{
-		return this.ptr.LoopCount();
-	}
-	public void SetLoopCount(c_int loopCount)
-	{
-		this.ptr.SetLoopCount(loopCount);
-	}
-	public c_int CurrentLoop()
-	{
-		return this.ptr.CurrentLoop();
-	}
-	public c_int TotalDuration()
-	{
-		return this.ptr.TotalDuration();
-	}
-	public void Finished()
-	{
-		this.ptr.Finished();
-	}
-	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		this.ptr.StateChanged(newState, oldState);
-	}
-	public void CurrentLoopChanged(c_int currentLoop)
-	{
-		this.ptr.CurrentLoopChanged(currentLoop);
-	}
-	public void DirectionChanged(QAbstractAnimation_Direction param1)
-	{
-		this.ptr.DirectionChanged(param1);
-	}
-	public void Start()
-	{
-		this.ptr.Start();
-	}
-	public void Pause()
-	{
-		this.ptr.Pause();
-	}
-	public void Resume()
-	{
-		this.ptr.Resume();
-	}
-	public void SetPaused(bool paused)
-	{
-		this.ptr.SetPaused(paused);
-	}
-	public void Stop()
-	{
-		this.ptr.Stop();
-	}
-	public void SetCurrentTime(c_int msecs)
-	{
-		this.ptr.SetCurrentTime(msecs);
-	}
-	public void UpdateState(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		this.ptr.UpdateState(newState, oldState);
-	}
-	public void UpdateDirection(QAbstractAnimation_Direction direction)
-	{
-		this.ptr.UpdateDirection(direction);
-	}
-	public void Start1(QAbstractAnimation_DeletionPolicy policy)
-	{
-		this.ptr.Start1(policy);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -749,25 +594,20 @@ class QPauseAnimation : IQPauseAnimation, IQAbstractAnimation, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -809,6 +649,96 @@ class QPauseAnimation : IQPauseAnimation, IQAbstractAnimation, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public QAbstractAnimation_State State()
+	{
+		return this.ptr.State();
+	}
+	public QAnimationGroup_Ptr Group()
+	{
+		return this.ptr.Group();
+	}
+	public QAbstractAnimation_Direction Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(QAbstractAnimation_Direction direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public c_int CurrentTime()
+	{
+		return this.ptr.CurrentTime();
+	}
+	public c_int CurrentLoopTime()
+	{
+		return this.ptr.CurrentLoopTime();
+	}
+	public c_int LoopCount()
+	{
+		return this.ptr.LoopCount();
+	}
+	public void SetLoopCount(c_int loopCount)
+	{
+		this.ptr.SetLoopCount(loopCount);
+	}
+	public c_int CurrentLoop()
+	{
+		return this.ptr.CurrentLoop();
+	}
+	public c_int TotalDuration()
+	{
+		return this.ptr.TotalDuration();
+	}
+	public void Finished()
+	{
+		this.ptr.Finished();
+	}
+	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		this.ptr.StateChanged(newState, oldState);
+	}
+	public void CurrentLoopChanged(c_int currentLoop)
+	{
+		this.ptr.CurrentLoopChanged(currentLoop);
+	}
+	public void DirectionChanged(QAbstractAnimation_Direction param1)
+	{
+		this.ptr.DirectionChanged(param1);
+	}
+	public void Start()
+	{
+		this.ptr.Start();
+	}
+	public void Pause()
+	{
+		this.ptr.Pause();
+	}
+	public void Resume()
+	{
+		this.ptr.Resume();
+	}
+	public void SetPaused(bool paused)
+	{
+		this.ptr.SetPaused(paused);
+	}
+	public void Stop()
+	{
+		this.ptr.Stop();
+	}
+	public void SetCurrentTime(c_int msecs)
+	{
+		this.ptr.SetCurrentTime(msecs);
+	}
+	public  virtual void OnUpdateState(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+	}
+	public  virtual void OnUpdateDirection(QAbstractAnimation_Direction direction)
+	{
+	}
+	public void Start1(QAbstractAnimation_DeletionPolicy policy)
+	{
+		this.ptr.Start1(policy);
+	}
 }
 interface IQPauseAnimation : IQtObjectInterface
 {
@@ -827,22 +757,94 @@ extension CQt
 	public static extern void QPauseAnimation_Delete(QPauseAnimation_Ptr self);
 	[LinkName("QPauseAnimation_MetaObject")]
 	public static extern void** QPauseAnimation_MetaObject(void* self);
+	
+	public function void QPauseAnimation_OnMetaObject_action(void* self);
+	[LinkName("QPauseAnimation_OnMetaObject")]
+	public static extern void** QPauseAnimation_OnMetaObject(void* self, QPauseAnimation_OnMetaObject_action _action);
 	[LinkName("QPauseAnimation_Qt_Metacast")]
 	public static extern void* QPauseAnimation_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QPauseAnimation_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QPauseAnimation_OnMetacast")]
+	public static extern void* QPauseAnimation_OnMetacast(void* self, QPauseAnimation_OnMetacast_action _action);
 	[LinkName("QPauseAnimation_Qt_Metacall")]
 	public static extern c_int QPauseAnimation_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QPauseAnimation_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QPauseAnimation_OnMetacall")]
+	public static extern c_int QPauseAnimation_OnMetacall(void* self, QPauseAnimation_OnMetacall_action _action);
 	[LinkName("QPauseAnimation_Tr")]
 	public static extern libqt_string QPauseAnimation_Tr(c_char* s);
 	[LinkName("QPauseAnimation_Duration")]
 	public static extern c_int QPauseAnimation_Duration(void* self);
+	
+	public function void QPauseAnimation_OnDuration_action(void* self);
+	[LinkName("QPauseAnimation_OnDuration")]
+	public static extern c_int QPauseAnimation_OnDuration(void* self, QPauseAnimation_OnDuration_action _action);
 	[LinkName("QPauseAnimation_SetDuration")]
 	public static extern void QPauseAnimation_SetDuration(void* self, c_int msecs);
 	[LinkName("QPauseAnimation_Event")]
 	public static extern bool QPauseAnimation_Event(void* self, void** e);
+	
+	public function void QPauseAnimation_OnEvent_action(void* self, void** e);
+	[LinkName("QPauseAnimation_OnEvent")]
+	public static extern bool QPauseAnimation_OnEvent(void* self, QPauseAnimation_OnEvent_action _action);
 	[LinkName("QPauseAnimation_UpdateCurrentTime")]
 	public static extern void QPauseAnimation_UpdateCurrentTime(void* self, c_int param1);
+	
+	public function void QPauseAnimation_OnUpdateCurrentTime_action(void* self, c_int param1);
+	[LinkName("QPauseAnimation_OnUpdateCurrentTime")]
+	public static extern void QPauseAnimation_OnUpdateCurrentTime(void* self, QPauseAnimation_OnUpdateCurrentTime_action _action);
 	[LinkName("QPauseAnimation_Tr2")]
 	public static extern libqt_string QPauseAnimation_Tr2(c_char* s, c_char* c);
 	[LinkName("QPauseAnimation_Tr3")]
 	public static extern libqt_string QPauseAnimation_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QPauseAnimation_EventFilter")]
+	public static extern bool QPauseAnimation_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QPauseAnimation_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QPauseAnimation_OnEventFilter")]
+	public static extern bool QPauseAnimation_OnEventFilter(void* self, QPauseAnimation_OnEventFilter_action _action);
+	[LinkName("QPauseAnimation_TimerEvent")]
+	public static extern void QPauseAnimation_TimerEvent(void* self, void** event);
+	
+	public function void QPauseAnimation_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QPauseAnimation_OnTimerEvent")]
+	public static extern void QPauseAnimation_OnTimerEvent(void* self, QPauseAnimation_OnTimerEvent_action _action);
+	[LinkName("QPauseAnimation_ChildEvent")]
+	public static extern void QPauseAnimation_ChildEvent(void* self, void** event);
+	
+	public function void QPauseAnimation_OnChildEvent_action(void* self, void** event);
+	[LinkName("QPauseAnimation_OnChildEvent")]
+	public static extern void QPauseAnimation_OnChildEvent(void* self, QPauseAnimation_OnChildEvent_action _action);
+	[LinkName("QPauseAnimation_CustomEvent")]
+	public static extern void QPauseAnimation_CustomEvent(void* self, void** event);
+	
+	public function void QPauseAnimation_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QPauseAnimation_OnCustomEvent")]
+	public static extern void QPauseAnimation_OnCustomEvent(void* self, QPauseAnimation_OnCustomEvent_action _action);
+	[LinkName("QPauseAnimation_ConnectNotify")]
+	public static extern void QPauseAnimation_ConnectNotify(void* self, void** signal);
+	
+	public function void QPauseAnimation_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QPauseAnimation_OnConnectNotify")]
+	public static extern void QPauseAnimation_OnConnectNotify(void* self, QPauseAnimation_OnConnectNotify_action _action);
+	[LinkName("QPauseAnimation_DisconnectNotify")]
+	public static extern void QPauseAnimation_DisconnectNotify(void* self, void** signal);
+	
+	public function void QPauseAnimation_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QPauseAnimation_OnDisconnectNotify")]
+	public static extern void QPauseAnimation_OnDisconnectNotify(void* self, QPauseAnimation_OnDisconnectNotify_action _action);
+	[LinkName("QPauseAnimation_UpdateState")]
+	public static extern void QPauseAnimation_UpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
+	
+	public function void QPauseAnimation_OnUpdateState_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
+	[LinkName("QPauseAnimation_OnUpdateState")]
+	public static extern void QPauseAnimation_OnUpdateState(void* self, QPauseAnimation_OnUpdateState_action _action);
+	[LinkName("QPauseAnimation_UpdateDirection")]
+	public static extern void QPauseAnimation_UpdateDirection(void* self, QAbstractAnimation_Direction direction);
+	
+	public function void QPauseAnimation_OnUpdateDirection_action(void* self, QAbstractAnimation_Direction direction);
+	[LinkName("QPauseAnimation_OnUpdateDirection")]
+	public static extern void QPauseAnimation_OnUpdateDirection(void* self, QPauseAnimation_OnUpdateDirection_action _action);
 }

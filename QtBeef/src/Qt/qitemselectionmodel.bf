@@ -91,39 +91,25 @@ class QItemSelectionRange : IQItemSelectionRange
 {
 	private QItemSelectionRange_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QItemSelectionRange_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QItemSelectionRange_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex topL, IQModelIndex bottomR)
 	{
 		this.ptr = CQt.QItemSelectionRange_new2((.)topL?.ObjectPtr, (.)bottomR?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex index)
 	{
 		this.ptr = CQt.QItemSelectionRange_new3((.)index?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQItemSelectionRange param1)
 	{
 		this.ptr = CQt.QItemSelectionRange_new4((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -273,11 +259,11 @@ struct QItemSelectionModel_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QItemSelectionModel_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QItemSelectionModel_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QItemSelectionModel_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -427,11 +413,11 @@ struct QItemSelectionModel_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QItemSelectionModel_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QItemSelectionModel_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -591,23 +577,23 @@ struct QItemSelectionModel_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QItemSelectionModel_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QItemSelectionModel_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QItemSelectionModel_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QItemSelectionModel_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QItemSelectionModel_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -654,106 +640,37 @@ class QItemSelectionModel : IQItemSelectionModel, IQObject
 {
 	private QItemSelectionModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QItemSelectionModel_selectionChanged,
-		QItemSelectionModel_currentChanged,
-		QItemSelectionModel_currentRowChanged,
-		QItemSelectionModel_currentColumnChanged,
-		QItemSelectionModel_modelChanged,
-		QItemSelectionModel_destroyed,
-		QItemSelectionModel_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QItemSelectionModel_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_selectionChanged);
-		CQt.QItemSelectionModel_Connect_CurrentChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_currentChanged);
-		CQt.QItemSelectionModel_Connect_CurrentRowChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_currentRowChanged);
-		CQt.QItemSelectionModel_Connect_CurrentColumnChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_currentColumnChanged);
-		CQt.QItemSelectionModel_Connect_ModelChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_modelChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** selected, void** deselected)> OnSelectionChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** current, void** previous)> OnCurrentChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** current, void** previous)> OnCurrentRowChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** current, void** previous)> OnCurrentColumnChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** model)> OnModelChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QItemSelectionModel_selectionChanged(void* ptr, void** selected, void** deselected)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSelectionChanged.Invoke(selected, deselected);
-	}
-	static void QtBeef_QItemSelectionModel_currentChanged(void* ptr, void** current, void** previous)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentChanged.Invoke(current, previous);
-	}
-	static void QtBeef_QItemSelectionModel_currentRowChanged(void* ptr, void** current, void** previous)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentRowChanged.Invoke(current, previous);
-	}
-	static void QtBeef_QItemSelectionModel_currentColumnChanged(void* ptr, void** current, void** previous)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentColumnChanged.Invoke(current, previous);
-	}
-	static void QtBeef_QItemSelectionModel_modelChanged(void* ptr, void** model)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnModelChanged.Invoke(model);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QItemSelectionModel_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QItemSelectionModel_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractItemModel model, IQObject parent)
 	{
 		this.ptr = CQt.QItemSelectionModel_new2((.)model?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractItemModel model)
 	{
 		this.ptr = CQt.QItemSelectionModel_new3((.)model?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QItemSelectionModel_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -815,33 +732,27 @@ class QItemSelectionModel : IQItemSelectionModel, IQObject
 	{
 		this.ptr.SetModel(model);
 	}
-	public void SetCurrentIndex(IQModelIndex index, void* command)
+	public  virtual void OnSetCurrentIndex(void** index, void* command)
 	{
-		this.ptr.SetCurrentIndex(index, command);
 	}
-	public void Select(IQModelIndex index, void* command)
+	public  virtual void OnSelect(void** index, void* command)
 	{
-		this.ptr.Select(index, command);
 	}
-	public void Select2(IQItemSelection selection, void* command)
+	public  virtual void OnSelect2(void** selection, void* command)
 	{
-		this.ptr.Select2(selection, command);
 	}
-	public void Clear()
+	public  virtual void OnClear()
 	{
-		this.ptr.Clear();
 	}
-	public void Reset()
+	public  virtual void OnReset()
 	{
-		this.ptr.Reset();
 	}
 	public void ClearSelection()
 	{
 		this.ptr.ClearSelection();
 	}
-	public void ClearCurrentIndex()
+	public  virtual void OnClearCurrentIndex()
 	{
-		this.ptr.ClearCurrentIndex();
 	}
 	public void SelectionChanged(IQItemSelection selected, IQItemSelection deselected)
 	{
@@ -899,13 +810,13 @@ class QItemSelectionModel : IQItemSelectionModel, IQObject
 	{
 		return this.ptr.SelectedColumns1(row);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1063,25 +974,20 @@ class QItemSelectionModel : IQItemSelectionModel, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1139,10 +1045,22 @@ extension CQt
 	public static extern void QItemSelectionModel_Delete(QItemSelectionModel_Ptr self);
 	[LinkName("QItemSelectionModel_MetaObject")]
 	public static extern void** QItemSelectionModel_MetaObject(void* self);
+	
+	public function void QItemSelectionModel_OnMetaObject_action(void* self);
+	[LinkName("QItemSelectionModel_OnMetaObject")]
+	public static extern void** QItemSelectionModel_OnMetaObject(void* self, QItemSelectionModel_OnMetaObject_action _action);
 	[LinkName("QItemSelectionModel_Qt_Metacast")]
 	public static extern void* QItemSelectionModel_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QItemSelectionModel_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QItemSelectionModel_OnMetacast")]
+	public static extern void* QItemSelectionModel_OnMetacast(void* self, QItemSelectionModel_OnMetacast_action _action);
 	[LinkName("QItemSelectionModel_Qt_Metacall")]
 	public static extern c_int QItemSelectionModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QItemSelectionModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QItemSelectionModel_OnMetacall")]
+	public static extern c_int QItemSelectionModel_OnMetacall(void* self, QItemSelectionModel_OnMetacall_action _action);
 	[LinkName("QItemSelectionModel_Tr")]
 	public static extern libqt_string QItemSelectionModel_Tr(c_char* s);
 	[LinkName("QItemSelectionModel_CurrentIndex")]
@@ -1175,48 +1093,72 @@ extension CQt
 	public static extern void QItemSelectionModel_SetModel(void* self, void** model);
 	[LinkName("QItemSelectionModel_SetCurrentIndex")]
 	public static extern void QItemSelectionModel_SetCurrentIndex(void* self, void** index, void* command);
+	
+	public function void QItemSelectionModel_OnSetCurrentIndex_action(void* self, void** index, void* command);
+	[LinkName("QItemSelectionModel_OnSetCurrentIndex")]
+	public static extern void QItemSelectionModel_OnSetCurrentIndex(void* self, QItemSelectionModel_OnSetCurrentIndex_action _action);
 	[LinkName("QItemSelectionModel_Select")]
 	public static extern void QItemSelectionModel_Select(void* self, void** index, void* command);
+	
+	public function void QItemSelectionModel_OnSelect_action(void* self, void** index, void* command);
+	[LinkName("QItemSelectionModel_OnSelect")]
+	public static extern void QItemSelectionModel_OnSelect(void* self, QItemSelectionModel_OnSelect_action _action);
 	[LinkName("QItemSelectionModel_Select2")]
 	public static extern void QItemSelectionModel_Select2(void* self, void** selection, void* command);
+	
+	public function void QItemSelectionModel_OnSelect2_action(void* self, void** selection, void* command);
+	[LinkName("QItemSelectionModel_OnSelect2")]
+	public static extern void QItemSelectionModel_OnSelect2(void* self, QItemSelectionModel_OnSelect2_action _action);
 	[LinkName("QItemSelectionModel_Clear")]
 	public static extern void QItemSelectionModel_Clear(void* self);
+	
+	public function void QItemSelectionModel_OnClear_action(void* self);
+	[LinkName("QItemSelectionModel_OnClear")]
+	public static extern void QItemSelectionModel_OnClear(void* self, QItemSelectionModel_OnClear_action _action);
 	[LinkName("QItemSelectionModel_Reset")]
 	public static extern void QItemSelectionModel_Reset(void* self);
+	
+	public function void QItemSelectionModel_OnReset_action(void* self);
+	[LinkName("QItemSelectionModel_OnReset")]
+	public static extern void QItemSelectionModel_OnReset(void* self, QItemSelectionModel_OnReset_action _action);
 	[LinkName("QItemSelectionModel_ClearSelection")]
 	public static extern void QItemSelectionModel_ClearSelection(void* self);
 	[LinkName("QItemSelectionModel_ClearCurrentIndex")]
 	public static extern void QItemSelectionModel_ClearCurrentIndex(void* self);
+	
+	public function void QItemSelectionModel_OnClearCurrentIndex_action(void* self);
+	[LinkName("QItemSelectionModel_OnClearCurrentIndex")]
+	public static extern void QItemSelectionModel_OnClearCurrentIndex(void* self, QItemSelectionModel_OnClearCurrentIndex_action _action);
 	[LinkName("QItemSelectionModel_SelectionChanged")]
 	public static extern void QItemSelectionModel_SelectionChanged(void* self, void** selected, void** deselected);
 	
-	public function void QItemSelectionModel_selectionChanged_action(void* self, void** selected, void** deselected);
+	public function void QItemSelectionModel_Connect_SelectionChanged_action(void* self, void** selected, void** deselected);
 	[LinkName("QItemSelectionModel_Connect_SelectionChanged")]
-	public static extern void QItemSelectionModel_Connect_SelectionChanged(void* self, QItemSelectionModel_selectionChanged_action _action);
+	public static extern void QItemSelectionModel_Connect_SelectionChanged(void* self, QItemSelectionModel_Connect_SelectionChanged_action _action);
 	[LinkName("QItemSelectionModel_CurrentChanged")]
 	public static extern void QItemSelectionModel_CurrentChanged(void* self, void** current, void** previous);
 	
-	public function void QItemSelectionModel_currentChanged_action(void* self, void** current, void** previous);
+	public function void QItemSelectionModel_Connect_CurrentChanged_action(void* self, void** current, void** previous);
 	[LinkName("QItemSelectionModel_Connect_CurrentChanged")]
-	public static extern void QItemSelectionModel_Connect_CurrentChanged(void* self, QItemSelectionModel_currentChanged_action _action);
+	public static extern void QItemSelectionModel_Connect_CurrentChanged(void* self, QItemSelectionModel_Connect_CurrentChanged_action _action);
 	[LinkName("QItemSelectionModel_CurrentRowChanged")]
 	public static extern void QItemSelectionModel_CurrentRowChanged(void* self, void** current, void** previous);
 	
-	public function void QItemSelectionModel_currentRowChanged_action(void* self, void** current, void** previous);
+	public function void QItemSelectionModel_Connect_CurrentRowChanged_action(void* self, void** current, void** previous);
 	[LinkName("QItemSelectionModel_Connect_CurrentRowChanged")]
-	public static extern void QItemSelectionModel_Connect_CurrentRowChanged(void* self, QItemSelectionModel_currentRowChanged_action _action);
+	public static extern void QItemSelectionModel_Connect_CurrentRowChanged(void* self, QItemSelectionModel_Connect_CurrentRowChanged_action _action);
 	[LinkName("QItemSelectionModel_CurrentColumnChanged")]
 	public static extern void QItemSelectionModel_CurrentColumnChanged(void* self, void** current, void** previous);
 	
-	public function void QItemSelectionModel_currentColumnChanged_action(void* self, void** current, void** previous);
+	public function void QItemSelectionModel_Connect_CurrentColumnChanged_action(void* self, void** current, void** previous);
 	[LinkName("QItemSelectionModel_Connect_CurrentColumnChanged")]
-	public static extern void QItemSelectionModel_Connect_CurrentColumnChanged(void* self, QItemSelectionModel_currentColumnChanged_action _action);
+	public static extern void QItemSelectionModel_Connect_CurrentColumnChanged(void* self, QItemSelectionModel_Connect_CurrentColumnChanged_action _action);
 	[LinkName("QItemSelectionModel_ModelChanged")]
 	public static extern void QItemSelectionModel_ModelChanged(void* self, void** model);
 	
-	public function void QItemSelectionModel_modelChanged_action(void* self, void** model);
+	public function void QItemSelectionModel_Connect_ModelChanged_action(void* self, void** model);
 	[LinkName("QItemSelectionModel_Connect_ModelChanged")]
-	public static extern void QItemSelectionModel_Connect_ModelChanged(void* self, QItemSelectionModel_modelChanged_action _action);
+	public static extern void QItemSelectionModel_Connect_ModelChanged(void* self, QItemSelectionModel_Connect_ModelChanged_action _action);
 	[LinkName("QItemSelectionModel_EmitSelectionChanged")]
 	public static extern void QItemSelectionModel_EmitSelectionChanged(void* self, void** newSelection, void** oldSelection);
 	[LinkName("QItemSelectionModel_Tr2")]
@@ -1235,6 +1177,48 @@ extension CQt
 	public static extern void* QItemSelectionModel_SelectedRows1(void* self, c_int column);
 	[LinkName("QItemSelectionModel_SelectedColumns1")]
 	public static extern void* QItemSelectionModel_SelectedColumns1(void* self, c_int row);
+	[LinkName("QItemSelectionModel_Event")]
+	public static extern bool QItemSelectionModel_Event(void* self, void** event);
+	
+	public function void QItemSelectionModel_OnEvent_action(void* self, void** event);
+	[LinkName("QItemSelectionModel_OnEvent")]
+	public static extern bool QItemSelectionModel_OnEvent(void* self, QItemSelectionModel_OnEvent_action _action);
+	[LinkName("QItemSelectionModel_EventFilter")]
+	public static extern bool QItemSelectionModel_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QItemSelectionModel_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QItemSelectionModel_OnEventFilter")]
+	public static extern bool QItemSelectionModel_OnEventFilter(void* self, QItemSelectionModel_OnEventFilter_action _action);
+	[LinkName("QItemSelectionModel_TimerEvent")]
+	public static extern void QItemSelectionModel_TimerEvent(void* self, void** event);
+	
+	public function void QItemSelectionModel_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QItemSelectionModel_OnTimerEvent")]
+	public static extern void QItemSelectionModel_OnTimerEvent(void* self, QItemSelectionModel_OnTimerEvent_action _action);
+	[LinkName("QItemSelectionModel_ChildEvent")]
+	public static extern void QItemSelectionModel_ChildEvent(void* self, void** event);
+	
+	public function void QItemSelectionModel_OnChildEvent_action(void* self, void** event);
+	[LinkName("QItemSelectionModel_OnChildEvent")]
+	public static extern void QItemSelectionModel_OnChildEvent(void* self, QItemSelectionModel_OnChildEvent_action _action);
+	[LinkName("QItemSelectionModel_CustomEvent")]
+	public static extern void QItemSelectionModel_CustomEvent(void* self, void** event);
+	
+	public function void QItemSelectionModel_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QItemSelectionModel_OnCustomEvent")]
+	public static extern void QItemSelectionModel_OnCustomEvent(void* self, QItemSelectionModel_OnCustomEvent_action _action);
+	[LinkName("QItemSelectionModel_ConnectNotify")]
+	public static extern void QItemSelectionModel_ConnectNotify(void* self, void** signal);
+	
+	public function void QItemSelectionModel_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QItemSelectionModel_OnConnectNotify")]
+	public static extern void QItemSelectionModel_OnConnectNotify(void* self, QItemSelectionModel_OnConnectNotify_action _action);
+	[LinkName("QItemSelectionModel_DisconnectNotify")]
+	public static extern void QItemSelectionModel_DisconnectNotify(void* self, void** signal);
+	
+	public function void QItemSelectionModel_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QItemSelectionModel_OnDisconnectNotify")]
+	public static extern void QItemSelectionModel_OnDisconnectNotify(void* self, QItemSelectionModel_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QItemSelection
@@ -1272,34 +1256,21 @@ class QItemSelection : IQItemSelection
 {
 	private QItemSelection_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QItemSelection_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
 		this.ptr = CQt.QItemSelection_new((.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QItemSelection_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQItemSelection param1)
 	{
 		this.ptr = CQt.QItemSelection_new3((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

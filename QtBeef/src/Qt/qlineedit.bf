@@ -18,11 +18,11 @@ struct QLineEdit_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QLineEdit_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QLineEdit_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QLineEdit_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -426,9 +426,301 @@ struct QLineEdit_Ptr
 	{
 		CQt.QLineEdit_CursorBackward2((.)this.Ptr, mark, steps);
 	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return CQt.QLineEdit_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void ObjectName(String outStr)
+	{
+		CQt.QObject_ObjectName((.)this.Ptr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.Ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.Ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.Ptr);
+	}
+	public void SetParent(IQObject parent)
+	{
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QLineEdit_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QLineEdit_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QLineEdit_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QLineEdit_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.Ptr);
+		return CQt.QLineEdit_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QLineEdit_PaintEngine((.)this.Ptr));
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QLineEdit_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QLineEdit_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QLineEdit_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QLineEdit_SharedPainter((.)this.Ptr));
 	}
 	public void* WinId()
 	{
@@ -525,14 +817,6 @@ struct QLineEdit_Ptr
 	public QSize_Ptr Size()
 	{
 		return QSize_Ptr(CQt.QWidget_Size((.)this.Ptr));
-	}
-	public c_int Width()
-	{
-		return CQt.QWidget_Width((.)this.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QWidget_Height((.)this.Ptr);
 	}
 	public QRect_Ptr Rect()
 	{
@@ -1100,7 +1384,7 @@ struct QLineEdit_Ptr
 	}
 	public void SetVisible(bool visible)
 	{
-		CQt.QWidget_SetVisible((.)this.Ptr, visible);
+		CQt.QLineEdit_SetVisible((.)this.Ptr, visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -1232,11 +1516,11 @@ struct QLineEdit_Ptr
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QLineEdit_HeightForWidth((.)this.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.Ptr);
+		return CQt.QLineEdit_HasHeightForWidth((.)this.Ptr);
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -1269,10 +1553,6 @@ struct QLineEdit_Ptr
 	public void UpdateGeometry()
 	{
 		CQt.QWidget_UpdateGeometry((.)this.Ptr);
-	}
-	public void SetParent(IQWidget parent)
-	{
-		CQt.QWidget_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -1382,10 +1662,6 @@ struct QLineEdit_Ptr
 	{
 		return CQt.QWidget_TestAttribute((.)this.Ptr, param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.Ptr));
-	}
 	public void EnsurePolished()
 	{
 		CQt.QWidget_EnsurePolished((.)this.Ptr);
@@ -1440,63 +1716,47 @@ struct QLineEdit_Ptr
 	}
 	public void WheelEvent(IQWheelEvent event)
 	{
-		CQt.QWidget_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ResizeEvent(IQResizeEvent event)
 	{
-		CQt.QWidget_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CloseEvent(IQCloseEvent event)
 	{
-		CQt.QWidget_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ShowEvent(IQShowEvent event)
 	{
-		CQt.QWidget_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void HideEvent(IQHideEvent event)
 	{
-		CQt.QWidget_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QLineEdit_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.Ptr, eventType, message, result);
-	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
-	{
-		return CQt.QWidget_Metric((.)this.Ptr, param1);
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		CQt.QWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.Ptr));
+		return CQt.QLineEdit_NativeEvent((.)this.Ptr, eventType, message, result);
 	}
 	public void* InputMethodHints()
 	{
@@ -1520,7 +1780,7 @@ struct QLineEdit_Ptr
 	}
 	public bool FocusNextPrevChild(bool next)
 	{
-		return CQt.QWidget_FocusNextPrevChild((.)this.Ptr, next);
+		return CQt.QLineEdit_FocusNextPrevChild((.)this.Ptr, next);
 	}
 	public bool FocusNextChild()
 	{
@@ -1614,424 +1874,46 @@ struct QLineEdit_Ptr
 	{
 		CQt.QWidget_Destroy2((.)this.Ptr, destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
-	}
-	public void ObjectName(String outStr)
-	{
-		CQt.QObject_ObjectName((.)this.Ptr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
-	}
-	public bool IsWidgetType()
-	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
-	}
-	public bool IsWindowType()
-	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
-	}
-	public bool IsQuickItemType()
-	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
-	}
-	public bool SignalsBlocked()
-	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
-	}
-	public bool BlockSignals(bool b)
-	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
-	}
-	public void KillTimer(c_int id)
-	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.Ptr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public bool PaintingActive()
-	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
-	}
-	public c_int WidthMM()
-	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
-	}
-	public c_int HeightMM()
-	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
-	}
-	public c_int LogicalDpiX()
-	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
-	}
-	public c_int LogicalDpiY()
-	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
-	}
-	public c_int PhysicalDpiX()
-	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
-	}
-	public c_int PhysicalDpiY()
-	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
-	}
-	public double DevicePixelRatio()
-	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
-	}
-	public double DevicePixelRatioF()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
-	}
-	public c_int ColorCount()
-	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
-	}
-	public c_int Depth()
-	{
-		return CQt.QPaintDevice_Depth((.)this.Ptr);
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
-	}
 }
 class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 {
 	private QLineEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QLineEdit_textChanged,
-		QLineEdit_textEdited,
-		QLineEdit_cursorPositionChanged,
-		QLineEdit_returnPressed,
-		QLineEdit_editingFinished,
-		QLineEdit_selectionChanged,
-		QLineEdit_inputRejected,
-		QLineEdit_windowTitleChanged,
-		QLineEdit_windowIconChanged,
-		QLineEdit_windowIconTextChanged,
-		QLineEdit_customContextMenuRequested,
-		QLineEdit_destroyed,
-		QLineEdit_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QLineEdit_Connect_TextChanged(obj.ObjectPtr,  => QtBeef_QLineEdit_textChanged);
-		CQt.QLineEdit_Connect_TextEdited(obj.ObjectPtr,  => QtBeef_QLineEdit_textEdited);
-		CQt.QLineEdit_Connect_CursorPositionChanged(obj.ObjectPtr,  => QtBeef_QLineEdit_cursorPositionChanged);
-		CQt.QLineEdit_Connect_ReturnPressed(obj.ObjectPtr,  => QtBeef_QLineEdit_returnPressed);
-		CQt.QLineEdit_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QLineEdit_editingFinished);
-		CQt.QLineEdit_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QLineEdit_selectionChanged);
-		CQt.QLineEdit_Connect_InputRejected(obj.ObjectPtr,  => QtBeef_QLineEdit_inputRejected);
-		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
-		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
-		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
-		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(libqt_string param1)> OnTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string param1)> OnTextEdited = .() ~ _.Dispose();
-	public Event<delegate void(c_int param1, c_int param2)> OnCursorPositionChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnReturnPressed = .() ~ _.Dispose();
-	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
-	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnInputRejected = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QLineEdit_textChanged(void* ptr, libqt_string param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTextChanged.Invoke(param1);
-	}
-	static void QtBeef_QLineEdit_textEdited(void* ptr, libqt_string param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTextEdited.Invoke(param1);
-	}
-	static void QtBeef_QLineEdit_cursorPositionChanged(void* ptr, c_int param1, c_int param2)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCursorPositionChanged.Invoke(param1, param2);
-	}
-	static void QtBeef_QLineEdit_returnPressed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnReturnPressed.Invoke();
-	}
-	static void QtBeef_QLineEdit_editingFinished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEditingFinished.Invoke();
-	}
-	static void QtBeef_QLineEdit_selectionChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSelectionChanged.Invoke();
-	}
-	static void QtBeef_QLineEdit_inputRejected(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnInputRejected.Invoke();
-	}
-	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconChanged.Invoke(icon);
-	}
-	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconTextChanged.Invoke(iconText);
-	}
-	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCustomContextMenuRequested.Invoke(pos);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QLineEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QLineEdit_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLineEdit_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public this(String param1)
 	{
 		this.ptr = CQt.QLineEdit_new3(libqt_string(param1));
-		QtBf_ConnectSignals(this);
 	}
 	public this(String param1, IQWidget parent)
 	{
 		this.ptr = CQt.QLineEdit_new4(libqt_string(param1), (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QLineEdit_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -2109,13 +1991,13 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		return this.ptr.Completer();
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual QSize_Ptr OnSizeHint()
 	{
-		return this.ptr.SizeHint();
+		return default;
 	}
-	public QSize_Ptr MinimumSizeHint()
+	public  virtual QSize_Ptr OnMinimumSizeHint()
 	{
-		return this.ptr.MinimumSizeHint();
+		return default;
 	}
 	public c_int CursorPosition()
 	{
@@ -2329,89 +2211,71 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.InputRejected();
 	}
-	public void MousePressEvent(IQMouseEvent param1)
+	public  virtual void OnMousePressEvent(void** param1)
 	{
-		this.ptr.MousePressEvent(param1);
 	}
-	public void MouseMoveEvent(IQMouseEvent param1)
+	public  virtual void OnMouseMoveEvent(void** param1)
 	{
-		this.ptr.MouseMoveEvent(param1);
 	}
-	public void MouseReleaseEvent(IQMouseEvent param1)
+	public  virtual void OnMouseReleaseEvent(void** param1)
 	{
-		this.ptr.MouseReleaseEvent(param1);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent param1)
+	public  virtual void OnMouseDoubleClickEvent(void** param1)
 	{
-		this.ptr.MouseDoubleClickEvent(param1);
 	}
-	public void KeyPressEvent(IQKeyEvent param1)
+	public  virtual void OnKeyPressEvent(void** param1)
 	{
-		this.ptr.KeyPressEvent(param1);
 	}
-	public void KeyReleaseEvent(IQKeyEvent param1)
+	public  virtual void OnKeyReleaseEvent(void** param1)
 	{
-		this.ptr.KeyReleaseEvent(param1);
 	}
-	public void FocusInEvent(IQFocusEvent param1)
+	public  virtual void OnFocusInEvent(void** param1)
 	{
-		this.ptr.FocusInEvent(param1);
 	}
-	public void FocusOutEvent(IQFocusEvent param1)
+	public  virtual void OnFocusOutEvent(void** param1)
 	{
-		this.ptr.FocusOutEvent(param1);
 	}
-	public void PaintEvent(IQPaintEvent param1)
+	public  virtual void OnPaintEvent(void** param1)
 	{
-		this.ptr.PaintEvent(param1);
 	}
-	public void DragEnterEvent(IQDragEnterEvent param1)
+	public  virtual void OnDragEnterEvent(void** param1)
 	{
-		this.ptr.DragEnterEvent(param1);
 	}
-	public void DragMoveEvent(IQDragMoveEvent e)
+	public  virtual void OnDragMoveEvent(void** e)
 	{
-		this.ptr.DragMoveEvent(e);
 	}
-	public void DragLeaveEvent(IQDragLeaveEvent e)
+	public  virtual void OnDragLeaveEvent(void** e)
 	{
-		this.ptr.DragLeaveEvent(e);
 	}
-	public void DropEvent(IQDropEvent param1)
+	public  virtual void OnDropEvent(void** param1)
 	{
-		this.ptr.DropEvent(param1);
 	}
-	public void ChangeEvent(IQEvent param1)
+	public  virtual void OnChangeEvent(void** param1)
 	{
-		this.ptr.ChangeEvent(param1);
 	}
-	public void ContextMenuEvent(IQContextMenuEvent param1)
+	public  virtual void OnContextMenuEvent(void** param1)
 	{
-		this.ptr.ContextMenuEvent(param1);
 	}
-	public void InputMethodEvent(IQInputMethodEvent param1)
+	public  virtual void OnInputMethodEvent(void** param1)
 	{
-		this.ptr.InputMethodEvent(param1);
 	}
-	public void InitStyleOption(IQStyleOptionFrame option)
+	public  virtual void OnInitStyleOption(void** option)
 	{
-		this.ptr.InitStyleOption(option);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
+	public  virtual QVariant_Ptr OnInputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		return this.ptr.InputMethodQuery(param1);
+		return default;
 	}
 	public QVariant_Ptr InputMethodQuery2(Qt_InputMethodQuery property, IQVariant argument)
 	{
 		return this.ptr.InputMethodQuery2(property, argument);
 	}
-	public void TimerEvent(IQTimerEvent param1)
+	public  virtual void OnTimerEvent(void** param1)
 	{
-		this.ptr.TimerEvent(param1);
 	}
-	public bool Event(IQEvent param1)
+	public  virtual bool OnEvent(void** param1)
 	{
-		return this.ptr.Event(param1);
+		return default;
 	}
 	public QRect_Ptr CursorRect()
 	{
@@ -2433,9 +2297,296 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.CursorBackward2(mark, steps);
 	}
-	public c_int DevType()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.DevType();
+		return default;
+	}
+	public void ObjectName(String outStr)
+	{
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public  virtual void OnChildEvent(void** event)
+	{
+	}
+	public  virtual void OnCustomEvent(void** event)
+	{
+	}
+	public  virtual void OnConnectNotify(void** signal)
+	{
+	}
+	public  virtual void OnDisconnectNotify(void** signal)
+	{
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+	public  virtual c_int OnDevType()
+	{
+		return default;
+	}
+	public bool PaintingActive()
+	{
+		return this.ptr.PaintingActive();
+	}
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
+	{
+		return default;
+	}
+	public c_int Width()
+	{
+		return this.ptr.Width();
+	}
+	public c_int Height()
+	{
+		return this.ptr.Height();
+	}
+	public c_int WidthMM()
+	{
+		return this.ptr.WidthMM();
+	}
+	public c_int HeightMM()
+	{
+		return this.ptr.HeightMM();
+	}
+	public c_int LogicalDpiX()
+	{
+		return this.ptr.LogicalDpiX();
+	}
+	public c_int LogicalDpiY()
+	{
+		return this.ptr.LogicalDpiY();
+	}
+	public c_int PhysicalDpiX()
+	{
+		return this.ptr.PhysicalDpiX();
+	}
+	public c_int PhysicalDpiY()
+	{
+		return this.ptr.PhysicalDpiY();
+	}
+	public double DevicePixelRatio()
+	{
+		return this.ptr.DevicePixelRatio();
+	}
+	public double DevicePixelRatioF()
+	{
+		return this.ptr.DevicePixelRatioF();
+	}
+	public c_int ColorCount()
+	{
+		return this.ptr.ColorCount();
+	}
+	public c_int Depth()
+	{
+		return this.ptr.Depth();
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return this.ptr.DevicePixelRatioFScale();
+	}
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return default;
+	}
+	public  virtual void OnInitPainter(void** painter)
+	{
+	}
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
+	{
+		return default;
+	}
+	public  virtual QPainter_Ptr OnSharedPainter()
+	{
+		return default;
 	}
 	public void* WinId()
 	{
@@ -2532,14 +2683,6 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
-	}
-	public c_int Width()
-	{
-		return this.ptr.Width();
-	}
-	public c_int Height()
-	{
-		return this.ptr.Height();
 	}
 	public QRect_Ptr Rect()
 	{
@@ -3105,9 +3248,8 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Repaint4(param1);
 	}
-	public void SetVisible(bool visible)
+	public  virtual void OnSetVisible(bool visible)
 	{
-		this.ptr.SetVisible(visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -3237,13 +3379,13 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.SetSizePolicy2(horizontal, vertical);
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -3276,10 +3418,6 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	public void UpdateGeometry()
 	{
 		this.ptr.UpdateGeometry();
-	}
-	public void SetParent(IQWidget parent)
-	{
-		this.ptr.SetParent(parent);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -3389,10 +3527,6 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		return this.ptr.TestAttribute(param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
 	public void EnsurePolished()
 	{
 		this.ptr.EnsurePolished();
@@ -3445,65 +3579,39 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.CustomContextMenuRequested(pos);
 	}
-	public void WheelEvent(IQWheelEvent event)
+	public  virtual void OnWheelEvent(void** event)
 	{
-		this.ptr.WheelEvent(event);
 	}
-	public void EnterEvent(IQEnterEvent event)
+	public  virtual void OnEnterEvent(void** event)
 	{
-		this.ptr.EnterEvent(event);
 	}
-	public void LeaveEvent(IQEvent event)
+	public  virtual void OnLeaveEvent(void** event)
 	{
-		this.ptr.LeaveEvent(event);
 	}
-	public void MoveEvent(IQMoveEvent event)
+	public  virtual void OnMoveEvent(void** event)
 	{
-		this.ptr.MoveEvent(event);
 	}
-	public void ResizeEvent(IQResizeEvent event)
+	public  virtual void OnResizeEvent(void** event)
 	{
-		this.ptr.ResizeEvent(event);
 	}
-	public void CloseEvent(IQCloseEvent event)
+	public  virtual void OnCloseEvent(void** event)
 	{
-		this.ptr.CloseEvent(event);
 	}
-	public void TabletEvent(IQTabletEvent event)
+	public  virtual void OnTabletEvent(void** event)
 	{
-		this.ptr.TabletEvent(event);
 	}
-	public void ActionEvent(IQActionEvent event)
+	public  virtual void OnActionEvent(void** event)
 	{
-		this.ptr.ActionEvent(event);
 	}
-	public void ShowEvent(IQShowEvent event)
+	public  virtual void OnShowEvent(void** event)
 	{
-		this.ptr.ShowEvent(event);
 	}
-	public void HideEvent(IQHideEvent event)
+	public  virtual void OnHideEvent(void** event)
 	{
-		this.ptr.HideEvent(event);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
-	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
-	{
-		return this.ptr.Metric(param1);
-	}
-	public void InitPainter(IQPainter painter)
-	{
-		this.ptr.InitPainter(painter);
-	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
-	{
-		return this.ptr.Redirected(offset);
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return this.ptr.SharedPainter();
+		return default;
 	}
 	public void* InputMethodHints()
 	{
@@ -3525,9 +3633,9 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Destroy();
 	}
-	public bool FocusNextPrevChild(bool next)
+	public  virtual bool OnFocusNextPrevChild(bool next)
 	{
-		return this.ptr.FocusNextPrevChild(next);
+		return default;
 	}
 	public bool FocusNextChild()
 	{
@@ -3621,266 +3729,6 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 	{
 		this.ptr.Destroy2(destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
-	}
-	public void ObjectName(String outStr)
-	{
-		this.ptr.ObjectName(outStr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		this.ptr.SetObjectName(name);
-	}
-	public bool IsWidgetType()
-	{
-		return this.ptr.IsWidgetType();
-	}
-	public bool IsWindowType()
-	{
-		return this.ptr.IsWindowType();
-	}
-	public bool IsQuickItemType()
-	{
-		return this.ptr.IsQuickItemType();
-	}
-	public bool SignalsBlocked()
-	{
-		return this.ptr.SignalsBlocked();
-	}
-	public bool BlockSignals(bool b)
-	{
-		return this.ptr.BlockSignals(b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return this.ptr.Thread();
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		this.ptr.MoveToThread(thread);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return this.ptr.StartTimer(interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return this.ptr.StartTimer2(time);
-	}
-	public void KillTimer(c_int id)
-	{
-		this.ptr.KillTimer(id);
-	}
-	public void** Children()
-	{
-		return this.ptr.Children();
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		this.ptr.InstallEventFilter(filterObj);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		this.ptr.RemoveEventFilter(obj);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Connect(sender, signal, receiver, member);
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return this.ptr.Connect3(sender, signal, member);
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
-	}
-	public bool Disconnect3()
-	{
-		return this.ptr.Disconnect3();
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return this.ptr.Disconnect4(receiver);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return this.ptr.Disconnect5(param1);
-	}
-	public void DumpObjectTree()
-	{
-		this.ptr.DumpObjectTree();
-	}
-	public void DumpObjectInfo()
-	{
-		this.ptr.DumpObjectInfo();
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return this.ptr.SetProperty(name, value);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return this.ptr.Property(name);
-	}
-	public void* DynamicPropertyNames()
-	{
-		return this.ptr.DynamicPropertyNames();
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return this.ptr.BindingStorage();
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return this.ptr.BindingStorage2();
-	}
-	public void Destroyed()
-	{
-		this.ptr.Destroyed();
-	}
-	public QObject_Ptr Parent()
-	{
-		return this.ptr.Parent();
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return this.ptr.Inherits(classname);
-	}
-	public void DeleteLater()
-	{
-		this.ptr.DeleteLater();
-	}
-	public QObject_Ptr Sender()
-	{
-		return this.ptr.Sender();
-	}
-	public c_int SenderSignalIndex()
-	{
-		return this.ptr.SenderSignalIndex();
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return this.ptr.Receivers(signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return this.ptr.IsSignalConnected(signal);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		this.ptr.ChildEvent(event);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		this.ptr.CustomEvent(event);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.ConnectNotify(signal);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.DisconnectNotify(signal);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer22(interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer23(time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect4(sender, signal, member, type);
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return this.ptr.Disconnect1(signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return this.ptr.Disconnect22(signal, receiver);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect32(signal, receiver, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect23(receiver, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		this.ptr.Destroyed1(param1);
-	}
-	public bool PaintingActive()
-	{
-		return this.ptr.PaintingActive();
-	}
-	public c_int WidthMM()
-	{
-		return this.ptr.WidthMM();
-	}
-	public c_int HeightMM()
-	{
-		return this.ptr.HeightMM();
-	}
-	public c_int LogicalDpiX()
-	{
-		return this.ptr.LogicalDpiX();
-	}
-	public c_int LogicalDpiY()
-	{
-		return this.ptr.LogicalDpiY();
-	}
-	public c_int PhysicalDpiX()
-	{
-		return this.ptr.PhysicalDpiX();
-	}
-	public c_int PhysicalDpiY()
-	{
-		return this.ptr.PhysicalDpiY();
-	}
-	public double DevicePixelRatio()
-	{
-		return this.ptr.DevicePixelRatio();
-	}
-	public double DevicePixelRatioF()
-	{
-		return this.ptr.DevicePixelRatioF();
-	}
-	public c_int ColorCount()
-	{
-		return this.ptr.ColorCount();
-	}
-	public c_int Depth()
-	{
-		return this.ptr.Depth();
-	}
-	public double DevicePixelRatioFScale()
-	{
-		return this.ptr.DevicePixelRatioFScale();
-	}
 }
 interface IQLineEdit : IQtObjectInterface
 {
@@ -3899,10 +3747,22 @@ extension CQt
 	public static extern void QLineEdit_Delete(QLineEdit_Ptr self);
 	[LinkName("QLineEdit_MetaObject")]
 	public static extern void** QLineEdit_MetaObject(void* self);
+	
+	public function void QLineEdit_OnMetaObject_action(void* self);
+	[LinkName("QLineEdit_OnMetaObject")]
+	public static extern void** QLineEdit_OnMetaObject(void* self, QLineEdit_OnMetaObject_action _action);
 	[LinkName("QLineEdit_Qt_Metacast")]
 	public static extern void* QLineEdit_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QLineEdit_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QLineEdit_OnMetacast")]
+	public static extern void* QLineEdit_OnMetacast(void* self, QLineEdit_OnMetacast_action _action);
 	[LinkName("QLineEdit_Qt_Metacall")]
 	public static extern c_int QLineEdit_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QLineEdit_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QLineEdit_OnMetacall")]
+	public static extern c_int QLineEdit_OnMetacall(void* self, QLineEdit_OnMetacall_action _action);
 	[LinkName("QLineEdit_Tr")]
 	public static extern libqt_string QLineEdit_Tr(c_char* s);
 	[LinkName("QLineEdit_Text")]
@@ -3943,8 +3803,16 @@ extension CQt
 	public static extern void** QLineEdit_Completer(void* self);
 	[LinkName("QLineEdit_SizeHint")]
 	public static extern void* QLineEdit_SizeHint(void* self);
+	
+	public function void QLineEdit_OnSizeHint_action(void* self);
+	[LinkName("QLineEdit_OnSizeHint")]
+	public static extern void* QLineEdit_OnSizeHint(void* self, QLineEdit_OnSizeHint_action _action);
 	[LinkName("QLineEdit_MinimumSizeHint")]
 	public static extern void* QLineEdit_MinimumSizeHint(void* self);
+	
+	public function void QLineEdit_OnMinimumSizeHint_action(void* self);
+	[LinkName("QLineEdit_OnMinimumSizeHint")]
+	public static extern void* QLineEdit_OnMinimumSizeHint(void* self, QLineEdit_OnMinimumSizeHint_action _action);
 	[LinkName("QLineEdit_CursorPosition")]
 	public static extern c_int QLineEdit_CursorPosition(void* self);
 	[LinkName("QLineEdit_SetCursorPosition")]
@@ -4040,87 +3908,167 @@ extension CQt
 	[LinkName("QLineEdit_TextChanged")]
 	public static extern void QLineEdit_TextChanged(void* self, libqt_string param1);
 	
-	public function void QLineEdit_textChanged_action(void* self, libqt_string param1);
+	public function void QLineEdit_Connect_TextChanged_action(void* self, libqt_string param1);
 	[LinkName("QLineEdit_Connect_TextChanged")]
-	public static extern void QLineEdit_Connect_TextChanged(void* self, QLineEdit_textChanged_action _action);
+	public static extern void QLineEdit_Connect_TextChanged(void* self, QLineEdit_Connect_TextChanged_action _action);
 	[LinkName("QLineEdit_TextEdited")]
 	public static extern void QLineEdit_TextEdited(void* self, libqt_string param1);
 	
-	public function void QLineEdit_textEdited_action(void* self, libqt_string param1);
+	public function void QLineEdit_Connect_TextEdited_action(void* self, libqt_string param1);
 	[LinkName("QLineEdit_Connect_TextEdited")]
-	public static extern void QLineEdit_Connect_TextEdited(void* self, QLineEdit_textEdited_action _action);
+	public static extern void QLineEdit_Connect_TextEdited(void* self, QLineEdit_Connect_TextEdited_action _action);
 	[LinkName("QLineEdit_CursorPositionChanged")]
 	public static extern void QLineEdit_CursorPositionChanged(void* self, c_int param1, c_int param2);
 	
-	public function void QLineEdit_cursorPositionChanged_action(void* self, c_int param1, c_int param2);
+	public function void QLineEdit_Connect_CursorPositionChanged_action(void* self, c_int param1, c_int param2);
 	[LinkName("QLineEdit_Connect_CursorPositionChanged")]
-	public static extern void QLineEdit_Connect_CursorPositionChanged(void* self, QLineEdit_cursorPositionChanged_action _action);
+	public static extern void QLineEdit_Connect_CursorPositionChanged(void* self, QLineEdit_Connect_CursorPositionChanged_action _action);
 	[LinkName("QLineEdit_ReturnPressed")]
 	public static extern void QLineEdit_ReturnPressed(void* self);
 	
-	public function void QLineEdit_returnPressed_action(void* self);
+	public function void QLineEdit_Connect_ReturnPressed_action(void* self);
 	[LinkName("QLineEdit_Connect_ReturnPressed")]
-	public static extern void QLineEdit_Connect_ReturnPressed(void* self, QLineEdit_returnPressed_action _action);
+	public static extern void QLineEdit_Connect_ReturnPressed(void* self, QLineEdit_Connect_ReturnPressed_action _action);
 	[LinkName("QLineEdit_EditingFinished")]
 	public static extern void QLineEdit_EditingFinished(void* self);
 	
-	public function void QLineEdit_editingFinished_action(void* self);
+	public function void QLineEdit_Connect_EditingFinished_action(void* self);
 	[LinkName("QLineEdit_Connect_EditingFinished")]
-	public static extern void QLineEdit_Connect_EditingFinished(void* self, QLineEdit_editingFinished_action _action);
+	public static extern void QLineEdit_Connect_EditingFinished(void* self, QLineEdit_Connect_EditingFinished_action _action);
 	[LinkName("QLineEdit_SelectionChanged")]
 	public static extern void QLineEdit_SelectionChanged(void* self);
 	
-	public function void QLineEdit_selectionChanged_action(void* self);
+	public function void QLineEdit_Connect_SelectionChanged_action(void* self);
 	[LinkName("QLineEdit_Connect_SelectionChanged")]
-	public static extern void QLineEdit_Connect_SelectionChanged(void* self, QLineEdit_selectionChanged_action _action);
+	public static extern void QLineEdit_Connect_SelectionChanged(void* self, QLineEdit_Connect_SelectionChanged_action _action);
 	[LinkName("QLineEdit_InputRejected")]
 	public static extern void QLineEdit_InputRejected(void* self);
 	
-	public function void QLineEdit_inputRejected_action(void* self);
+	public function void QLineEdit_Connect_InputRejected_action(void* self);
 	[LinkName("QLineEdit_Connect_InputRejected")]
-	public static extern void QLineEdit_Connect_InputRejected(void* self, QLineEdit_inputRejected_action _action);
+	public static extern void QLineEdit_Connect_InputRejected(void* self, QLineEdit_Connect_InputRejected_action _action);
 	[LinkName("QLineEdit_MousePressEvent")]
 	public static extern void QLineEdit_MousePressEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnMousePressEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnMousePressEvent")]
+	public static extern void QLineEdit_OnMousePressEvent(void* self, QLineEdit_OnMousePressEvent_action _action);
 	[LinkName("QLineEdit_MouseMoveEvent")]
 	public static extern void QLineEdit_MouseMoveEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnMouseMoveEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnMouseMoveEvent")]
+	public static extern void QLineEdit_OnMouseMoveEvent(void* self, QLineEdit_OnMouseMoveEvent_action _action);
 	[LinkName("QLineEdit_MouseReleaseEvent")]
 	public static extern void QLineEdit_MouseReleaseEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnMouseReleaseEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnMouseReleaseEvent")]
+	public static extern void QLineEdit_OnMouseReleaseEvent(void* self, QLineEdit_OnMouseReleaseEvent_action _action);
 	[LinkName("QLineEdit_MouseDoubleClickEvent")]
 	public static extern void QLineEdit_MouseDoubleClickEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnMouseDoubleClickEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnMouseDoubleClickEvent")]
+	public static extern void QLineEdit_OnMouseDoubleClickEvent(void* self, QLineEdit_OnMouseDoubleClickEvent_action _action);
 	[LinkName("QLineEdit_KeyPressEvent")]
 	public static extern void QLineEdit_KeyPressEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnKeyPressEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnKeyPressEvent")]
+	public static extern void QLineEdit_OnKeyPressEvent(void* self, QLineEdit_OnKeyPressEvent_action _action);
 	[LinkName("QLineEdit_KeyReleaseEvent")]
 	public static extern void QLineEdit_KeyReleaseEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnKeyReleaseEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnKeyReleaseEvent")]
+	public static extern void QLineEdit_OnKeyReleaseEvent(void* self, QLineEdit_OnKeyReleaseEvent_action _action);
 	[LinkName("QLineEdit_FocusInEvent")]
 	public static extern void QLineEdit_FocusInEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnFocusInEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnFocusInEvent")]
+	public static extern void QLineEdit_OnFocusInEvent(void* self, QLineEdit_OnFocusInEvent_action _action);
 	[LinkName("QLineEdit_FocusOutEvent")]
 	public static extern void QLineEdit_FocusOutEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnFocusOutEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnFocusOutEvent")]
+	public static extern void QLineEdit_OnFocusOutEvent(void* self, QLineEdit_OnFocusOutEvent_action _action);
 	[LinkName("QLineEdit_PaintEvent")]
 	public static extern void QLineEdit_PaintEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnPaintEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnPaintEvent")]
+	public static extern void QLineEdit_OnPaintEvent(void* self, QLineEdit_OnPaintEvent_action _action);
 	[LinkName("QLineEdit_DragEnterEvent")]
 	public static extern void QLineEdit_DragEnterEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnDragEnterEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnDragEnterEvent")]
+	public static extern void QLineEdit_OnDragEnterEvent(void* self, QLineEdit_OnDragEnterEvent_action _action);
 	[LinkName("QLineEdit_DragMoveEvent")]
 	public static extern void QLineEdit_DragMoveEvent(void* self, void** e);
+	
+	public function void QLineEdit_OnDragMoveEvent_action(void* self, void** e);
+	[LinkName("QLineEdit_OnDragMoveEvent")]
+	public static extern void QLineEdit_OnDragMoveEvent(void* self, QLineEdit_OnDragMoveEvent_action _action);
 	[LinkName("QLineEdit_DragLeaveEvent")]
 	public static extern void QLineEdit_DragLeaveEvent(void* self, void** e);
+	
+	public function void QLineEdit_OnDragLeaveEvent_action(void* self, void** e);
+	[LinkName("QLineEdit_OnDragLeaveEvent")]
+	public static extern void QLineEdit_OnDragLeaveEvent(void* self, QLineEdit_OnDragLeaveEvent_action _action);
 	[LinkName("QLineEdit_DropEvent")]
 	public static extern void QLineEdit_DropEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnDropEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnDropEvent")]
+	public static extern void QLineEdit_OnDropEvent(void* self, QLineEdit_OnDropEvent_action _action);
 	[LinkName("QLineEdit_ChangeEvent")]
 	public static extern void QLineEdit_ChangeEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnChangeEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnChangeEvent")]
+	public static extern void QLineEdit_OnChangeEvent(void* self, QLineEdit_OnChangeEvent_action _action);
 	[LinkName("QLineEdit_ContextMenuEvent")]
 	public static extern void QLineEdit_ContextMenuEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnContextMenuEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnContextMenuEvent")]
+	public static extern void QLineEdit_OnContextMenuEvent(void* self, QLineEdit_OnContextMenuEvent_action _action);
 	[LinkName("QLineEdit_InputMethodEvent")]
 	public static extern void QLineEdit_InputMethodEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnInputMethodEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnInputMethodEvent")]
+	public static extern void QLineEdit_OnInputMethodEvent(void* self, QLineEdit_OnInputMethodEvent_action _action);
 	[LinkName("QLineEdit_InitStyleOption")]
 	public static extern void QLineEdit_InitStyleOption(void* self, void** option);
+	
+	public function void QLineEdit_OnInitStyleOption_action(void* self, void** option);
+	[LinkName("QLineEdit_OnInitStyleOption")]
+	public static extern void QLineEdit_OnInitStyleOption(void* self, QLineEdit_OnInitStyleOption_action _action);
 	[LinkName("QLineEdit_InputMethodQuery")]
 	public static extern void* QLineEdit_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
+	
+	public function void QLineEdit_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
+	[LinkName("QLineEdit_OnInputMethodQuery")]
+	public static extern void* QLineEdit_OnInputMethodQuery(void* self, QLineEdit_OnInputMethodQuery_action _action);
 	[LinkName("QLineEdit_InputMethodQuery2")]
 	public static extern void* QLineEdit_InputMethodQuery2(void* self, Qt_InputMethodQuery property, void* argument);
 	[LinkName("QLineEdit_TimerEvent")]
 	public static extern void QLineEdit_TimerEvent(void* self, void** param1);
+	
+	public function void QLineEdit_OnTimerEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnTimerEvent")]
+	public static extern void QLineEdit_OnTimerEvent(void* self, QLineEdit_OnTimerEvent_action _action);
 	[LinkName("QLineEdit_Event")]
 	public static extern bool QLineEdit_Event(void* self, void** param1);
+	
+	public function void QLineEdit_OnEvent_action(void* self, void** param1);
+	[LinkName("QLineEdit_OnEvent")]
+	public static extern bool QLineEdit_OnEvent(void* self, QLineEdit_OnEvent_action _action);
 	[LinkName("QLineEdit_CursorRect")]
 	public static extern void* QLineEdit_CursorRect(void* self);
 	[LinkName("QLineEdit_Tr2")]
@@ -4131,6 +4079,162 @@ extension CQt
 	public static extern void QLineEdit_CursorForward2(void* self, bool mark, c_int steps);
 	[LinkName("QLineEdit_CursorBackward2")]
 	public static extern void QLineEdit_CursorBackward2(void* self, bool mark, c_int steps);
+	[LinkName("QLineEdit_EventFilter")]
+	public static extern bool QLineEdit_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QLineEdit_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QLineEdit_OnEventFilter")]
+	public static extern bool QLineEdit_OnEventFilter(void* self, QLineEdit_OnEventFilter_action _action);
+	[LinkName("QLineEdit_ChildEvent")]
+	public static extern void QLineEdit_ChildEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnChildEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnChildEvent")]
+	public static extern void QLineEdit_OnChildEvent(void* self, QLineEdit_OnChildEvent_action _action);
+	[LinkName("QLineEdit_CustomEvent")]
+	public static extern void QLineEdit_CustomEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnCustomEvent")]
+	public static extern void QLineEdit_OnCustomEvent(void* self, QLineEdit_OnCustomEvent_action _action);
+	[LinkName("QLineEdit_ConnectNotify")]
+	public static extern void QLineEdit_ConnectNotify(void* self, void** signal);
+	
+	public function void QLineEdit_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QLineEdit_OnConnectNotify")]
+	public static extern void QLineEdit_OnConnectNotify(void* self, QLineEdit_OnConnectNotify_action _action);
+	[LinkName("QLineEdit_DisconnectNotify")]
+	public static extern void QLineEdit_DisconnectNotify(void* self, void** signal);
+	
+	public function void QLineEdit_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QLineEdit_OnDisconnectNotify")]
+	public static extern void QLineEdit_OnDisconnectNotify(void* self, QLineEdit_OnDisconnectNotify_action _action);
+	[LinkName("QLineEdit_DevType")]
+	public static extern c_int QLineEdit_DevType(void* self);
+	
+	public function void QLineEdit_OnDevType_action(void* self);
+	[LinkName("QLineEdit_OnDevType")]
+	public static extern c_int QLineEdit_OnDevType(void* self, QLineEdit_OnDevType_action _action);
+	[LinkName("QLineEdit_PaintEngine")]
+	public static extern void** QLineEdit_PaintEngine(void* self);
+	
+	public function void QLineEdit_OnPaintEngine_action(void* self);
+	[LinkName("QLineEdit_OnPaintEngine")]
+	public static extern void** QLineEdit_OnPaintEngine(void* self, QLineEdit_OnPaintEngine_action _action);
+	[LinkName("QLineEdit_Metric")]
+	public static extern c_int QLineEdit_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QLineEdit_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QLineEdit_OnMetric")]
+	public static extern c_int QLineEdit_OnMetric(void* self, QLineEdit_OnMetric_action _action);
+	[LinkName("QLineEdit_InitPainter")]
+	public static extern void QLineEdit_InitPainter(void* self, void** painter);
+	
+	public function void QLineEdit_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QLineEdit_OnInitPainter")]
+	public static extern void QLineEdit_OnInitPainter(void* self, QLineEdit_OnInitPainter_action _action);
+	[LinkName("QLineEdit_Redirected")]
+	public static extern void** QLineEdit_Redirected(void* self, void** offset);
+	
+	public function void QLineEdit_OnRedirected_action(void* self, void** offset);
+	[LinkName("QLineEdit_OnRedirected")]
+	public static extern void** QLineEdit_OnRedirected(void* self, QLineEdit_OnRedirected_action _action);
+	[LinkName("QLineEdit_SharedPainter")]
+	public static extern void** QLineEdit_SharedPainter(void* self);
+	
+	public function void QLineEdit_OnSharedPainter_action(void* self);
+	[LinkName("QLineEdit_OnSharedPainter")]
+	public static extern void** QLineEdit_OnSharedPainter(void* self, QLineEdit_OnSharedPainter_action _action);
+	[LinkName("QLineEdit_SetVisible")]
+	public static extern void QLineEdit_SetVisible(void* self, bool visible);
+	
+	public function void QLineEdit_OnSetVisible_action(void* self, bool visible);
+	[LinkName("QLineEdit_OnSetVisible")]
+	public static extern void QLineEdit_OnSetVisible(void* self, QLineEdit_OnSetVisible_action _action);
+	[LinkName("QLineEdit_HeightForWidth")]
+	public static extern c_int QLineEdit_HeightForWidth(void* self, c_int param1);
+	
+	public function void QLineEdit_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QLineEdit_OnHeightForWidth")]
+	public static extern c_int QLineEdit_OnHeightForWidth(void* self, QLineEdit_OnHeightForWidth_action _action);
+	[LinkName("QLineEdit_HasHeightForWidth")]
+	public static extern bool QLineEdit_HasHeightForWidth(void* self);
+	
+	public function void QLineEdit_OnHasHeightForWidth_action(void* self);
+	[LinkName("QLineEdit_OnHasHeightForWidth")]
+	public static extern bool QLineEdit_OnHasHeightForWidth(void* self, QLineEdit_OnHasHeightForWidth_action _action);
+	[LinkName("QLineEdit_WheelEvent")]
+	public static extern void QLineEdit_WheelEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnWheelEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnWheelEvent")]
+	public static extern void QLineEdit_OnWheelEvent(void* self, QLineEdit_OnWheelEvent_action _action);
+	[LinkName("QLineEdit_EnterEvent")]
+	public static extern void QLineEdit_EnterEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnEnterEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnEnterEvent")]
+	public static extern void QLineEdit_OnEnterEvent(void* self, QLineEdit_OnEnterEvent_action _action);
+	[LinkName("QLineEdit_LeaveEvent")]
+	public static extern void QLineEdit_LeaveEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnLeaveEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnLeaveEvent")]
+	public static extern void QLineEdit_OnLeaveEvent(void* self, QLineEdit_OnLeaveEvent_action _action);
+	[LinkName("QLineEdit_MoveEvent")]
+	public static extern void QLineEdit_MoveEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnMoveEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnMoveEvent")]
+	public static extern void QLineEdit_OnMoveEvent(void* self, QLineEdit_OnMoveEvent_action _action);
+	[LinkName("QLineEdit_ResizeEvent")]
+	public static extern void QLineEdit_ResizeEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnResizeEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnResizeEvent")]
+	public static extern void QLineEdit_OnResizeEvent(void* self, QLineEdit_OnResizeEvent_action _action);
+	[LinkName("QLineEdit_CloseEvent")]
+	public static extern void QLineEdit_CloseEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnCloseEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnCloseEvent")]
+	public static extern void QLineEdit_OnCloseEvent(void* self, QLineEdit_OnCloseEvent_action _action);
+	[LinkName("QLineEdit_TabletEvent")]
+	public static extern void QLineEdit_TabletEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnTabletEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnTabletEvent")]
+	public static extern void QLineEdit_OnTabletEvent(void* self, QLineEdit_OnTabletEvent_action _action);
+	[LinkName("QLineEdit_ActionEvent")]
+	public static extern void QLineEdit_ActionEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnActionEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnActionEvent")]
+	public static extern void QLineEdit_OnActionEvent(void* self, QLineEdit_OnActionEvent_action _action);
+	[LinkName("QLineEdit_ShowEvent")]
+	public static extern void QLineEdit_ShowEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnShowEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnShowEvent")]
+	public static extern void QLineEdit_OnShowEvent(void* self, QLineEdit_OnShowEvent_action _action);
+	[LinkName("QLineEdit_HideEvent")]
+	public static extern void QLineEdit_HideEvent(void* self, void** event);
+	
+	public function void QLineEdit_OnHideEvent_action(void* self, void** event);
+	[LinkName("QLineEdit_OnHideEvent")]
+	public static extern void QLineEdit_OnHideEvent(void* self, QLineEdit_OnHideEvent_action _action);
+	[LinkName("QLineEdit_NativeEvent")]
+	public static extern bool QLineEdit_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QLineEdit_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QLineEdit_OnNativeEvent")]
+	public static extern bool QLineEdit_OnNativeEvent(void* self, QLineEdit_OnNativeEvent_action _action);
+	[LinkName("QLineEdit_FocusNextPrevChild")]
+	public static extern bool QLineEdit_FocusNextPrevChild(void* self, bool next);
+	
+	public function void QLineEdit_OnFocusNextPrevChild_action(void* self, bool next);
+	[LinkName("QLineEdit_OnFocusNextPrevChild")]
+	public static extern bool QLineEdit_OnFocusNextPrevChild(void* self, QLineEdit_OnFocusNextPrevChild_action _action);
 }
 [AllowDuplicates]
 enum QLineEdit_ActionPosition

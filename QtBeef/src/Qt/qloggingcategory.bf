@@ -55,24 +55,13 @@ class QLoggingCategory : IQLoggingCategory
 {
 	private QLoggingCategory_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QLoggingCategory_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* category)
 	{
 		this.ptr = CQt.QLoggingCategory_new(category);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

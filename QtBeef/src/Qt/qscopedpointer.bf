@@ -23,24 +23,13 @@ class QScopedPointerPodDeleter : IQScopedPointerPodDeleter
 {
 	private QScopedPointerPodDeleter_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QScopedPointerPodDeleter_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQScopedPointerPodDeleter other)
 	{
 		this.ptr = CQt.QScopedPointerPodDeleter_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

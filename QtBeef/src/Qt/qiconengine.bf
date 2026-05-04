@@ -75,84 +75,67 @@ class QIconEngine : IQIconEngine
 {
 	private QIconEngine_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QIconEngine_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIconEngine_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QIconEngine_Delete(this.ptr);
 	}
-	public void Paint(IQPainter painter, IQRect rect, QIcon_Mode mode, QIcon_State state)
+	public  virtual void OnPaint(void** painter, void** rect, QIcon_Mode mode, QIcon_State state)
 	{
-		this.ptr.Paint(painter, rect, mode, state);
 	}
-	public QSize_Ptr ActualSize(IQSize size, QIcon_Mode mode, QIcon_State state)
+	public  virtual QSize_Ptr OnActualSize(void** size, QIcon_Mode mode, QIcon_State state)
 	{
-		return this.ptr.ActualSize(size, mode, state);
+		return default;
 	}
-	public QPixmap_Ptr Pixmap(IQSize size, QIcon_Mode mode, QIcon_State state)
+	public  virtual QPixmap_Ptr OnPixmap(void** size, QIcon_Mode mode, QIcon_State state)
 	{
-		return this.ptr.Pixmap(size, mode, state);
+		return default;
 	}
-	public void AddPixmap(IQPixmap pixmap, QIcon_Mode mode, QIcon_State state)
+	public  virtual void OnAddPixmap(void** pixmap, QIcon_Mode mode, QIcon_State state)
 	{
-		this.ptr.AddPixmap(pixmap, mode, state);
 	}
-	public void AddFile(String fileName, IQSize size, QIcon_Mode mode, QIcon_State state)
+	public  virtual void OnAddFile(libqt_string fileName, void** size, QIcon_Mode mode, QIcon_State state)
 	{
-		this.ptr.AddFile(fileName, size, mode, state);
 	}
-	public void Key(String outStr)
+	public  virtual void OnKey(String outStr)
 	{
-		this.ptr.Key(outStr);
 	}
-	public QIconEngine_Ptr Clone()
+	public  virtual QIconEngine_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
-	public bool Read(IQDataStream _in)
+	public  virtual bool OnRead(void** _in)
 	{
-		return this.ptr.Read(_in);
+		return default;
 	}
-	public bool Write(IQDataStream _out)
+	public  virtual bool OnWrite(void** _out)
 	{
-		return this.ptr.Write(_out);
+		return default;
 	}
-	public void* AvailableSizes(QIcon_Mode mode, QIcon_State state)
+	public  virtual void* OnAvailableSizes(QIcon_Mode mode, QIcon_State state)
 	{
-		return this.ptr.AvailableSizes(mode, state);
+		return default;
 	}
-	public void IconName(String outStr)
+	public  virtual void OnIconName(String outStr)
 	{
-		this.ptr.IconName(outStr);
 	}
-	public bool IsNull()
+	public  virtual bool OnIsNull()
 	{
-		return this.ptr.IsNull();
+		return default;
 	}
-	public QPixmap_Ptr ScaledPixmap(IQSize size, QIcon_Mode mode, QIcon_State state, double scale)
+	public  virtual QPixmap_Ptr OnScaledPixmap(void** size, QIcon_Mode mode, QIcon_State state, double scale)
 	{
-		return this.ptr.ScaledPixmap(size, mode, state, scale);
+		return default;
 	}
-	public void Virtual_hook(c_int id, void* data)
+	public  virtual void OnVirtual_hook(c_int id, void* data)
 	{
-		this.ptr.Virtual_hook(id, data);
 	}
 }
 interface IQIconEngine : IQtObjectInterface
@@ -166,32 +149,88 @@ extension CQt
 	public static extern void QIconEngine_Delete(QIconEngine_Ptr self);
 	[LinkName("QIconEngine_Paint")]
 	public static extern void QIconEngine_Paint(void* self, void** painter, void** rect, QIcon_Mode mode, QIcon_State state);
+	
+	public function void QIconEngine_OnPaint_action(void* self, void** painter, void** rect, QIcon_Mode mode, QIcon_State state);
+	[LinkName("QIconEngine_OnPaint")]
+	public static extern void QIconEngine_OnPaint(void* self, QIconEngine_OnPaint_action _action);
 	[LinkName("QIconEngine_ActualSize")]
 	public static extern void* QIconEngine_ActualSize(void* self, void** size, QIcon_Mode mode, QIcon_State state);
+	
+	public function void QIconEngine_OnActualSize_action(void* self, void** size, QIcon_Mode mode, QIcon_State state);
+	[LinkName("QIconEngine_OnActualSize")]
+	public static extern void* QIconEngine_OnActualSize(void* self, QIconEngine_OnActualSize_action _action);
 	[LinkName("QIconEngine_Pixmap")]
 	public static extern void* QIconEngine_Pixmap(void* self, void** size, QIcon_Mode mode, QIcon_State state);
+	
+	public function void QIconEngine_OnPixmap_action(void* self, void** size, QIcon_Mode mode, QIcon_State state);
+	[LinkName("QIconEngine_OnPixmap")]
+	public static extern void* QIconEngine_OnPixmap(void* self, QIconEngine_OnPixmap_action _action);
 	[LinkName("QIconEngine_AddPixmap")]
 	public static extern void QIconEngine_AddPixmap(void* self, void** pixmap, QIcon_Mode mode, QIcon_State state);
+	
+	public function void QIconEngine_OnAddPixmap_action(void* self, void** pixmap, QIcon_Mode mode, QIcon_State state);
+	[LinkName("QIconEngine_OnAddPixmap")]
+	public static extern void QIconEngine_OnAddPixmap(void* self, QIconEngine_OnAddPixmap_action _action);
 	[LinkName("QIconEngine_AddFile")]
 	public static extern void QIconEngine_AddFile(void* self, libqt_string fileName, void** size, QIcon_Mode mode, QIcon_State state);
+	
+	public function void QIconEngine_OnAddFile_action(void* self, libqt_string fileName, void** size, QIcon_Mode mode, QIcon_State state);
+	[LinkName("QIconEngine_OnAddFile")]
+	public static extern void QIconEngine_OnAddFile(void* self, QIconEngine_OnAddFile_action _action);
 	[LinkName("QIconEngine_Key")]
 	public static extern libqt_string QIconEngine_Key(void* self);
+	
+	public function void QIconEngine_OnKey_action(void* self);
+	[LinkName("QIconEngine_OnKey")]
+	public static extern libqt_string QIconEngine_OnKey(void* self, QIconEngine_OnKey_action _action);
 	[LinkName("QIconEngine_Clone")]
 	public static extern void** QIconEngine_Clone(void* self);
+	
+	public function void QIconEngine_OnClone_action(void* self);
+	[LinkName("QIconEngine_OnClone")]
+	public static extern void** QIconEngine_OnClone(void* self, QIconEngine_OnClone_action _action);
 	[LinkName("QIconEngine_Read")]
 	public static extern bool QIconEngine_Read(void* self, void** _in);
+	
+	public function void QIconEngine_OnRead_action(void* self, void** _in);
+	[LinkName("QIconEngine_OnRead")]
+	public static extern bool QIconEngine_OnRead(void* self, QIconEngine_OnRead_action _action);
 	[LinkName("QIconEngine_Write")]
 	public static extern bool QIconEngine_Write(void* self, void** _out);
+	
+	public function void QIconEngine_OnWrite_action(void* self, void** _out);
+	[LinkName("QIconEngine_OnWrite")]
+	public static extern bool QIconEngine_OnWrite(void* self, QIconEngine_OnWrite_action _action);
 	[LinkName("QIconEngine_AvailableSizes")]
 	public static extern void* QIconEngine_AvailableSizes(void* self, QIcon_Mode mode, QIcon_State state);
+	
+	public function void QIconEngine_OnAvailableSizes_action(void* self, QIcon_Mode mode, QIcon_State state);
+	[LinkName("QIconEngine_OnAvailableSizes")]
+	public static extern void* QIconEngine_OnAvailableSizes(void* self, QIconEngine_OnAvailableSizes_action _action);
 	[LinkName("QIconEngine_IconName")]
 	public static extern libqt_string QIconEngine_IconName(void* self);
+	
+	public function void QIconEngine_OnIconName_action(void* self);
+	[LinkName("QIconEngine_OnIconName")]
+	public static extern libqt_string QIconEngine_OnIconName(void* self, QIconEngine_OnIconName_action _action);
 	[LinkName("QIconEngine_IsNull")]
 	public static extern bool QIconEngine_IsNull(void* self);
+	
+	public function void QIconEngine_OnIsNull_action(void* self);
+	[LinkName("QIconEngine_OnIsNull")]
+	public static extern bool QIconEngine_OnIsNull(void* self, QIconEngine_OnIsNull_action _action);
 	[LinkName("QIconEngine_ScaledPixmap")]
 	public static extern void* QIconEngine_ScaledPixmap(void* self, void** size, QIcon_Mode mode, QIcon_State state, double scale);
+	
+	public function void QIconEngine_OnScaledPixmap_action(void* self, void** size, QIcon_Mode mode, QIcon_State state, double scale);
+	[LinkName("QIconEngine_OnScaledPixmap")]
+	public static extern void* QIconEngine_OnScaledPixmap(void* self, QIconEngine_OnScaledPixmap_action _action);
 	[LinkName("QIconEngine_Virtual_Hook")]
 	public static extern void QIconEngine_Virtual_Hook(void* self, c_int id, void* data);
+	
+	public function void QIconEngine_OnVirtual_Hook_action(void* self, c_int id, void* data);
+	[LinkName("QIconEngine_OnVirtual_Hook")]
+	public static extern void QIconEngine_OnVirtual_Hook(void* self, QIconEngine_OnVirtual_Hook_action _action);
 }
 // --------------------------------------------------------------
 // QIconEngine::ScaledPixmapArgument
@@ -249,24 +288,13 @@ class QIconEngine_ScaledPixmapArgument : IQIconEngine_ScaledPixmapArgument
 {
 	private QIconEngine_ScaledPixmapArgument_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QIconEngine_ScaledPixmapArgument_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQIconEngine_ScaledPixmapArgument param1)
 	{
 		this.ptr = CQt.QIconEngine_ScaledPixmapArgument_new((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -18,11 +18,11 @@ struct QClipboard_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QClipboard_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QClipboard_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QClipboard_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -156,11 +156,11 @@ struct QClipboard_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QClipboard_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QClipboard_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -320,23 +320,23 @@ struct QClipboard_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QClipboard_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QClipboard_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QClipboard_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QClipboard_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QClipboard_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -383,79 +383,21 @@ class QClipboard : IQClipboard, IQObject
 {
 	private QClipboard_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QClipboard_changed,
-		QClipboard_selectionChanged,
-		QClipboard_findBufferChanged,
-		QClipboard_dataChanged,
-		QClipboard_destroyed,
-		QClipboard_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QClipboard_Connect_Changed(obj.ObjectPtr,  => QtBeef_QClipboard_changed);
-		CQt.QClipboard_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QClipboard_selectionChanged);
-		CQt.QClipboard_Connect_FindBufferChanged(obj.ObjectPtr,  => QtBeef_QClipboard_findBufferChanged);
-		CQt.QClipboard_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QClipboard_dataChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(QClipboard_Mode mode)> OnChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnFindBufferChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDataChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QClipboard_changed(void* ptr, QClipboard_Mode mode)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnChanged.Invoke(mode);
-	}
-	static void QtBeef_QClipboard_selectionChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnSelectionChanged.Invoke();
-	}
-	static void QtBeef_QClipboard_findBufferChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFindBufferChanged.Invoke();
-	}
-	static void QtBeef_QClipboard_dataChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged.Invoke();
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QClipboard_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -585,13 +527,13 @@ class QClipboard : IQClipboard, IQObject
 	{
 		this.ptr.SetPixmap2(param1, mode);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -749,25 +691,20 @@ class QClipboard : IQClipboard, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -817,10 +754,22 @@ extension CQt
 {
 	[LinkName("QClipboard_MetaObject")]
 	public static extern void** QClipboard_MetaObject(void* self);
+	
+	public function void QClipboard_OnMetaObject_action(void* self);
+	[LinkName("QClipboard_OnMetaObject")]
+	public static extern void** QClipboard_OnMetaObject(void* self, QClipboard_OnMetaObject_action _action);
 	[LinkName("QClipboard_Qt_Metacast")]
 	public static extern void* QClipboard_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QClipboard_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QClipboard_OnMetacast")]
+	public static extern void* QClipboard_OnMetacast(void* self, QClipboard_OnMetacast_action _action);
 	[LinkName("QClipboard_Qt_Metacall")]
 	public static extern c_int QClipboard_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QClipboard_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QClipboard_OnMetacall")]
+	public static extern c_int QClipboard_OnMetacall(void* self, QClipboard_OnMetacall_action _action);
 	[LinkName("QClipboard_Tr")]
 	public static extern libqt_string QClipboard_Tr(c_char* s);
 	[LinkName("QClipboard_Clear")]
@@ -856,27 +805,27 @@ extension CQt
 	[LinkName("QClipboard_Changed")]
 	public static extern void QClipboard_Changed(void* self, QClipboard_Mode mode);
 	
-	public function void QClipboard_changed_action(void* self, QClipboard_Mode mode);
+	public function void QClipboard_Connect_Changed_action(void* self, QClipboard_Mode mode);
 	[LinkName("QClipboard_Connect_Changed")]
-	public static extern void QClipboard_Connect_Changed(void* self, QClipboard_changed_action _action);
+	public static extern void QClipboard_Connect_Changed(void* self, QClipboard_Connect_Changed_action _action);
 	[LinkName("QClipboard_SelectionChanged")]
 	public static extern void QClipboard_SelectionChanged(void* self);
 	
-	public function void QClipboard_selectionChanged_action(void* self);
+	public function void QClipboard_Connect_SelectionChanged_action(void* self);
 	[LinkName("QClipboard_Connect_SelectionChanged")]
-	public static extern void QClipboard_Connect_SelectionChanged(void* self, QClipboard_selectionChanged_action _action);
+	public static extern void QClipboard_Connect_SelectionChanged(void* self, QClipboard_Connect_SelectionChanged_action _action);
 	[LinkName("QClipboard_FindBufferChanged")]
 	public static extern void QClipboard_FindBufferChanged(void* self);
 	
-	public function void QClipboard_findBufferChanged_action(void* self);
+	public function void QClipboard_Connect_FindBufferChanged_action(void* self);
 	[LinkName("QClipboard_Connect_FindBufferChanged")]
-	public static extern void QClipboard_Connect_FindBufferChanged(void* self, QClipboard_findBufferChanged_action _action);
+	public static extern void QClipboard_Connect_FindBufferChanged(void* self, QClipboard_Connect_FindBufferChanged_action _action);
 	[LinkName("QClipboard_DataChanged")]
 	public static extern void QClipboard_DataChanged(void* self);
 	
-	public function void QClipboard_dataChanged_action(void* self);
+	public function void QClipboard_Connect_DataChanged_action(void* self);
 	[LinkName("QClipboard_Connect_DataChanged")]
-	public static extern void QClipboard_Connect_DataChanged(void* self, QClipboard_dataChanged_action _action);
+	public static extern void QClipboard_Connect_DataChanged(void* self, QClipboard_Connect_DataChanged_action _action);
 	[LinkName("QClipboard_Tr2")]
 	public static extern libqt_string QClipboard_Tr2(c_char* s, c_char* c);
 	[LinkName("QClipboard_Tr3")]
@@ -901,6 +850,48 @@ extension CQt
 	public static extern void QClipboard_SetImage2(void* self, void** param1, QClipboard_Mode mode);
 	[LinkName("QClipboard_SetPixmap2")]
 	public static extern void QClipboard_SetPixmap2(void* self, void** param1, QClipboard_Mode mode);
+	[LinkName("QClipboard_Event")]
+	public static extern bool QClipboard_Event(void* self, void** event);
+	
+	public function void QClipboard_OnEvent_action(void* self, void** event);
+	[LinkName("QClipboard_OnEvent")]
+	public static extern bool QClipboard_OnEvent(void* self, QClipboard_OnEvent_action _action);
+	[LinkName("QClipboard_EventFilter")]
+	public static extern bool QClipboard_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QClipboard_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QClipboard_OnEventFilter")]
+	public static extern bool QClipboard_OnEventFilter(void* self, QClipboard_OnEventFilter_action _action);
+	[LinkName("QClipboard_TimerEvent")]
+	public static extern void QClipboard_TimerEvent(void* self, void** event);
+	
+	public function void QClipboard_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QClipboard_OnTimerEvent")]
+	public static extern void QClipboard_OnTimerEvent(void* self, QClipboard_OnTimerEvent_action _action);
+	[LinkName("QClipboard_ChildEvent")]
+	public static extern void QClipboard_ChildEvent(void* self, void** event);
+	
+	public function void QClipboard_OnChildEvent_action(void* self, void** event);
+	[LinkName("QClipboard_OnChildEvent")]
+	public static extern void QClipboard_OnChildEvent(void* self, QClipboard_OnChildEvent_action _action);
+	[LinkName("QClipboard_CustomEvent")]
+	public static extern void QClipboard_CustomEvent(void* self, void** event);
+	
+	public function void QClipboard_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QClipboard_OnCustomEvent")]
+	public static extern void QClipboard_OnCustomEvent(void* self, QClipboard_OnCustomEvent_action _action);
+	[LinkName("QClipboard_ConnectNotify")]
+	public static extern void QClipboard_ConnectNotify(void* self, void** signal);
+	
+	public function void QClipboard_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QClipboard_OnConnectNotify")]
+	public static extern void QClipboard_OnConnectNotify(void* self, QClipboard_OnConnectNotify_action _action);
+	[LinkName("QClipboard_DisconnectNotify")]
+	public static extern void QClipboard_DisconnectNotify(void* self, void** signal);
+	
+	public function void QClipboard_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QClipboard_OnDisconnectNotify")]
+	public static extern void QClipboard_OnDisconnectNotify(void* self, QClipboard_OnDisconnectNotify_action _action);
 }
 [AllowDuplicates]
 enum QClipboard_Mode

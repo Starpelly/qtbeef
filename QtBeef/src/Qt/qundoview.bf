@@ -18,11 +18,11 @@ struct QUndoView_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QUndoView_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QUndoView_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QUndoView_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -75,65 +75,49 @@ class QUndoView : IQUndoView
 {
 	private QUndoView_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QUndoView_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QUndoView_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUndoView_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoStack stack)
 	{
 		this.ptr = CQt.QUndoView_new3((.)stack?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoGroup group)
 	{
 		this.ptr = CQt.QUndoView_new4((.)group?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoStack stack, IQWidget parent)
 	{
 		this.ptr = CQt.QUndoView_new5((.)stack?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoGroup group, IQWidget parent)
 	{
 		this.ptr = CQt.QUndoView_new6((.)group?.ObjectPtr, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QUndoView_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -201,10 +185,22 @@ extension CQt
 	public static extern void QUndoView_Delete(QUndoView_Ptr self);
 	[LinkName("QUndoView_MetaObject")]
 	public static extern void** QUndoView_MetaObject(void* self);
+	
+	public function void QUndoView_OnMetaObject_action(void* self);
+	[LinkName("QUndoView_OnMetaObject")]
+	public static extern void** QUndoView_OnMetaObject(void* self, QUndoView_OnMetaObject_action _action);
 	[LinkName("QUndoView_Qt_Metacast")]
 	public static extern void* QUndoView_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QUndoView_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QUndoView_OnMetacast")]
+	public static extern void* QUndoView_OnMetacast(void* self, QUndoView_OnMetacast_action _action);
 	[LinkName("QUndoView_Qt_Metacall")]
 	public static extern c_int QUndoView_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QUndoView_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QUndoView_OnMetacall")]
+	public static extern c_int QUndoView_OnMetacall(void* self, QUndoView_OnMetacall_action _action);
 	[LinkName("QUndoView_Tr")]
 	public static extern libqt_string QUndoView_Tr(c_char* s);
 	[LinkName("QUndoView_Stack")]

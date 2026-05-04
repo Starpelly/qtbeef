@@ -18,11 +18,11 @@ struct QParallelAnimationGroup_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QParallelAnimationGroup_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QParallelAnimationGroup_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QParallelAnimationGroup_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -58,125 +58,9 @@ struct QParallelAnimationGroup_Ptr
 	{
 		CQt.QParallelAnimationGroup_Tr3(s, c, n);
 	}
-	public QAbstractAnimation_Ptr AnimationAt(c_int index)
-	{
-		return QAbstractAnimation_Ptr(CQt.QAnimationGroup_AnimationAt((.)this.Ptr, index));
-	}
-	public c_int AnimationCount()
-	{
-		return CQt.QAnimationGroup_AnimationCount((.)this.Ptr);
-	}
-	public c_int IndexOfAnimation(IQAbstractAnimation animation)
-	{
-		return CQt.QAnimationGroup_IndexOfAnimation((.)this.Ptr, (.)animation?.ObjectPtr);
-	}
-	public void AddAnimation(IQAbstractAnimation animation)
-	{
-		CQt.QAnimationGroup_AddAnimation((.)this.Ptr, (.)animation?.ObjectPtr);
-	}
-	public void InsertAnimation(c_int index, IQAbstractAnimation animation)
-	{
-		CQt.QAnimationGroup_InsertAnimation((.)this.Ptr, index, (.)animation?.ObjectPtr);
-	}
-	public void RemoveAnimation(IQAbstractAnimation animation)
-	{
-		CQt.QAnimationGroup_RemoveAnimation((.)this.Ptr, (.)animation?.ObjectPtr);
-	}
-	public QAbstractAnimation_Ptr TakeAnimation(c_int index)
-	{
-		return QAbstractAnimation_Ptr(CQt.QAnimationGroup_TakeAnimation((.)this.Ptr, index));
-	}
-	public void Clear()
-	{
-		CQt.QAnimationGroup_Clear((.)this.Ptr);
-	}
-	public QAbstractAnimation_State State()
-	{
-		return CQt.QAbstractAnimation_State((.)this.Ptr);
-	}
-	public QAnimationGroup_Ptr Group()
-	{
-		return QAnimationGroup_Ptr(CQt.QAbstractAnimation_Group((.)this.Ptr));
-	}
-	public QAbstractAnimation_Direction Direction()
-	{
-		return CQt.QAbstractAnimation_Direction((.)this.Ptr);
-	}
-	public void SetDirection(QAbstractAnimation_Direction direction)
-	{
-		CQt.QAbstractAnimation_SetDirection((.)this.Ptr, direction);
-	}
-	public c_int CurrentTime()
-	{
-		return CQt.QAbstractAnimation_CurrentTime((.)this.Ptr);
-	}
-	public c_int CurrentLoopTime()
-	{
-		return CQt.QAbstractAnimation_CurrentLoopTime((.)this.Ptr);
-	}
-	public c_int LoopCount()
-	{
-		return CQt.QAbstractAnimation_LoopCount((.)this.Ptr);
-	}
-	public void SetLoopCount(c_int loopCount)
-	{
-		CQt.QAbstractAnimation_SetLoopCount((.)this.Ptr, loopCount);
-	}
-	public c_int CurrentLoop()
-	{
-		return CQt.QAbstractAnimation_CurrentLoop((.)this.Ptr);
-	}
-	public c_int TotalDuration()
-	{
-		return CQt.QAbstractAnimation_TotalDuration((.)this.Ptr);
-	}
-	public void Finished()
-	{
-		CQt.QAbstractAnimation_Finished((.)this.Ptr);
-	}
-	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		CQt.QAbstractAnimation_StateChanged((.)this.Ptr, newState, oldState);
-	}
-	public void CurrentLoopChanged(c_int currentLoop)
-	{
-		CQt.QAbstractAnimation_CurrentLoopChanged((.)this.Ptr, currentLoop);
-	}
-	public void DirectionChanged(QAbstractAnimation_Direction param1)
-	{
-		CQt.QAbstractAnimation_DirectionChanged((.)this.Ptr, param1);
-	}
-	public void Start()
-	{
-		CQt.QAbstractAnimation_Start((.)this.Ptr);
-	}
-	public void Pause()
-	{
-		CQt.QAbstractAnimation_Pause((.)this.Ptr);
-	}
-	public void Resume()
-	{
-		CQt.QAbstractAnimation_Resume((.)this.Ptr);
-	}
-	public void SetPaused(bool paused)
-	{
-		CQt.QAbstractAnimation_SetPaused((.)this.Ptr, paused);
-	}
-	public void Stop()
-	{
-		CQt.QAbstractAnimation_Stop((.)this.Ptr);
-	}
-	public void SetCurrentTime(c_int msecs)
-	{
-		CQt.QAbstractAnimation_SetCurrentTime((.)this.Ptr, msecs);
-	}
-	public void Start1(QAbstractAnimation_DeletionPolicy policy)
-	{
-		CQt.QAbstractAnimation_Start1((.)this.Ptr, policy);
-	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QParallelAnimationGroup_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -336,23 +220,23 @@ struct QParallelAnimationGroup_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QParallelAnimationGroup_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QParallelAnimationGroup_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QParallelAnimationGroup_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QParallelAnimationGroup_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QParallelAnimationGroup_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -394,122 +278,175 @@ struct QParallelAnimationGroup_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public QAbstractAnimation_State State()
+	{
+		return CQt.QAbstractAnimation_State((.)this.Ptr);
+	}
+	public QAnimationGroup_Ptr Group()
+	{
+		return QAnimationGroup_Ptr(CQt.QAbstractAnimation_Group((.)this.Ptr));
+	}
+	public QAbstractAnimation_Direction Direction()
+	{
+		return CQt.QAbstractAnimation_Direction((.)this.Ptr);
+	}
+	public void SetDirection(QAbstractAnimation_Direction direction)
+	{
+		CQt.QAbstractAnimation_SetDirection((.)this.Ptr, direction);
+	}
+	public c_int CurrentTime()
+	{
+		return CQt.QAbstractAnimation_CurrentTime((.)this.Ptr);
+	}
+	public c_int CurrentLoopTime()
+	{
+		return CQt.QAbstractAnimation_CurrentLoopTime((.)this.Ptr);
+	}
+	public c_int LoopCount()
+	{
+		return CQt.QAbstractAnimation_LoopCount((.)this.Ptr);
+	}
+	public void SetLoopCount(c_int loopCount)
+	{
+		CQt.QAbstractAnimation_SetLoopCount((.)this.Ptr, loopCount);
+	}
+	public c_int CurrentLoop()
+	{
+		return CQt.QAbstractAnimation_CurrentLoop((.)this.Ptr);
+	}
+	public c_int TotalDuration()
+	{
+		return CQt.QAbstractAnimation_TotalDuration((.)this.Ptr);
+	}
+	public void Finished()
+	{
+		CQt.QAbstractAnimation_Finished((.)this.Ptr);
+	}
+	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		CQt.QAbstractAnimation_StateChanged((.)this.Ptr, newState, oldState);
+	}
+	public void CurrentLoopChanged(c_int currentLoop)
+	{
+		CQt.QAbstractAnimation_CurrentLoopChanged((.)this.Ptr, currentLoop);
+	}
+	public void DirectionChanged(QAbstractAnimation_Direction param1)
+	{
+		CQt.QAbstractAnimation_DirectionChanged((.)this.Ptr, param1);
+	}
+	public void Start()
+	{
+		CQt.QAbstractAnimation_Start((.)this.Ptr);
+	}
+	public void Pause()
+	{
+		CQt.QAbstractAnimation_Pause((.)this.Ptr);
+	}
+	public void Resume()
+	{
+		CQt.QAbstractAnimation_Resume((.)this.Ptr);
+	}
+	public void SetPaused(bool paused)
+	{
+		CQt.QAbstractAnimation_SetPaused((.)this.Ptr, paused);
+	}
+	public void Stop()
+	{
+		CQt.QAbstractAnimation_Stop((.)this.Ptr);
+	}
+	public void SetCurrentTime(c_int msecs)
+	{
+		CQt.QAbstractAnimation_SetCurrentTime((.)this.Ptr, msecs);
+	}
+	public void Start1(QAbstractAnimation_DeletionPolicy policy)
+	{
+		CQt.QAbstractAnimation_Start1((.)this.Ptr, policy);
+	}
+	public QAbstractAnimation_Ptr AnimationAt(c_int index)
+	{
+		return QAbstractAnimation_Ptr(CQt.QAnimationGroup_AnimationAt((.)this.Ptr, index));
+	}
+	public c_int AnimationCount()
+	{
+		return CQt.QAnimationGroup_AnimationCount((.)this.Ptr);
+	}
+	public c_int IndexOfAnimation(IQAbstractAnimation animation)
+	{
+		return CQt.QAnimationGroup_IndexOfAnimation((.)this.Ptr, (.)animation?.ObjectPtr);
+	}
+	public void AddAnimation(IQAbstractAnimation animation)
+	{
+		CQt.QAnimationGroup_AddAnimation((.)this.Ptr, (.)animation?.ObjectPtr);
+	}
+	public void InsertAnimation(c_int index, IQAbstractAnimation animation)
+	{
+		CQt.QAnimationGroup_InsertAnimation((.)this.Ptr, index, (.)animation?.ObjectPtr);
+	}
+	public void RemoveAnimation(IQAbstractAnimation animation)
+	{
+		CQt.QAnimationGroup_RemoveAnimation((.)this.Ptr, (.)animation?.ObjectPtr);
+	}
+	public QAbstractAnimation_Ptr TakeAnimation(c_int index)
+	{
+		return QAbstractAnimation_Ptr(CQt.QAnimationGroup_TakeAnimation((.)this.Ptr, index));
+	}
+	public void Clear()
+	{
+		CQt.QAnimationGroup_Clear((.)this.Ptr);
+	}
 }
 class QParallelAnimationGroup : IQParallelAnimationGroup, IQAnimationGroup, IQAbstractAnimation, IQObject
 {
 	private QParallelAnimationGroup_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QParallelAnimationGroup_finished,
-		QParallelAnimationGroup_stateChanged,
-		QParallelAnimationGroup_currentLoopChanged,
-		QParallelAnimationGroup_directionChanged,
-		QParallelAnimationGroup_destroyed,
-		QParallelAnimationGroup_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QAbstractAnimation_Connect_Finished(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_finished);
-		CQt.QAbstractAnimation_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_stateChanged);
-		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_currentLoopChanged);
-		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_directionChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
-	public Event<delegate void(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)> OnStateChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int currentLoop)> OnCurrentLoopChanged = .() ~ _.Dispose();
-	public Event<delegate void(QAbstractAnimation_Direction param1)> OnDirectionChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QAbstractAnimation_finished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFinished.Invoke();
-	}
-	static void QtBeef_QAbstractAnimation_stateChanged(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnStateChanged.Invoke(newState, oldState);
-	}
-	static void QtBeef_QAbstractAnimation_currentLoopChanged(void* ptr, c_int currentLoop)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentLoopChanged.Invoke(currentLoop);
-	}
-	static void QtBeef_QAbstractAnimation_directionChanged(void* ptr, QAbstractAnimation_Direction param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDirectionChanged.Invoke(param1);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QParallelAnimationGroup_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QParallelAnimationGroup_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QParallelAnimationGroup_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QParallelAnimationGroup_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public c_int Duration()
+	public  virtual c_int OnDuration()
 	{
-		return this.ptr.Duration();
+		return default;
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public void UpdateCurrentTime(c_int currentTime)
+	public  virtual void OnUpdateCurrentTime(c_int currentTime)
 	{
-		this.ptr.UpdateCurrentTime(currentTime);
 	}
-	public void UpdateState(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	public  virtual void OnUpdateState(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
 	{
-		this.ptr.UpdateState(newState, oldState);
 	}
-	public void UpdateDirection(QAbstractAnimation_Direction direction)
+	public  virtual void OnUpdateDirection(QAbstractAnimation_Direction direction)
 	{
-		this.ptr.UpdateDirection(direction);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -519,125 +456,9 @@ class QParallelAnimationGroup : IQParallelAnimationGroup, IQAnimationGroup, IQAb
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QAbstractAnimation_Ptr AnimationAt(c_int index)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.AnimationAt(index);
-	}
-	public c_int AnimationCount()
-	{
-		return this.ptr.AnimationCount();
-	}
-	public c_int IndexOfAnimation(IQAbstractAnimation animation)
-	{
-		return this.ptr.IndexOfAnimation(animation);
-	}
-	public void AddAnimation(IQAbstractAnimation animation)
-	{
-		this.ptr.AddAnimation(animation);
-	}
-	public void InsertAnimation(c_int index, IQAbstractAnimation animation)
-	{
-		this.ptr.InsertAnimation(index, animation);
-	}
-	public void RemoveAnimation(IQAbstractAnimation animation)
-	{
-		this.ptr.RemoveAnimation(animation);
-	}
-	public QAbstractAnimation_Ptr TakeAnimation(c_int index)
-	{
-		return this.ptr.TakeAnimation(index);
-	}
-	public void Clear()
-	{
-		this.ptr.Clear();
-	}
-	public QAbstractAnimation_State State()
-	{
-		return this.ptr.State();
-	}
-	public QAnimationGroup_Ptr Group()
-	{
-		return this.ptr.Group();
-	}
-	public QAbstractAnimation_Direction Direction()
-	{
-		return this.ptr.Direction();
-	}
-	public void SetDirection(QAbstractAnimation_Direction direction)
-	{
-		this.ptr.SetDirection(direction);
-	}
-	public c_int CurrentTime()
-	{
-		return this.ptr.CurrentTime();
-	}
-	public c_int CurrentLoopTime()
-	{
-		return this.ptr.CurrentLoopTime();
-	}
-	public c_int LoopCount()
-	{
-		return this.ptr.LoopCount();
-	}
-	public void SetLoopCount(c_int loopCount)
-	{
-		this.ptr.SetLoopCount(loopCount);
-	}
-	public c_int CurrentLoop()
-	{
-		return this.ptr.CurrentLoop();
-	}
-	public c_int TotalDuration()
-	{
-		return this.ptr.TotalDuration();
-	}
-	public void Finished()
-	{
-		this.ptr.Finished();
-	}
-	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		this.ptr.StateChanged(newState, oldState);
-	}
-	public void CurrentLoopChanged(c_int currentLoop)
-	{
-		this.ptr.CurrentLoopChanged(currentLoop);
-	}
-	public void DirectionChanged(QAbstractAnimation_Direction param1)
-	{
-		this.ptr.DirectionChanged(param1);
-	}
-	public void Start()
-	{
-		this.ptr.Start();
-	}
-	public void Pause()
-	{
-		this.ptr.Pause();
-	}
-	public void Resume()
-	{
-		this.ptr.Resume();
-	}
-	public void SetPaused(bool paused)
-	{
-		this.ptr.SetPaused(paused);
-	}
-	public void Stop()
-	{
-		this.ptr.Stop();
-	}
-	public void SetCurrentTime(c_int msecs)
-	{
-		this.ptr.SetCurrentTime(msecs);
-	}
-	public void Start1(QAbstractAnimation_DeletionPolicy policy)
-	{
-		this.ptr.Start1(policy);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -795,25 +616,20 @@ class QParallelAnimationGroup : IQParallelAnimationGroup, IQAnimationGroup, IQAb
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -855,6 +671,122 @@ class QParallelAnimationGroup : IQParallelAnimationGroup, IQAnimationGroup, IQAb
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public QAbstractAnimation_State State()
+	{
+		return this.ptr.State();
+	}
+	public QAnimationGroup_Ptr Group()
+	{
+		return this.ptr.Group();
+	}
+	public QAbstractAnimation_Direction Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(QAbstractAnimation_Direction direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public c_int CurrentTime()
+	{
+		return this.ptr.CurrentTime();
+	}
+	public c_int CurrentLoopTime()
+	{
+		return this.ptr.CurrentLoopTime();
+	}
+	public c_int LoopCount()
+	{
+		return this.ptr.LoopCount();
+	}
+	public void SetLoopCount(c_int loopCount)
+	{
+		this.ptr.SetLoopCount(loopCount);
+	}
+	public c_int CurrentLoop()
+	{
+		return this.ptr.CurrentLoop();
+	}
+	public c_int TotalDuration()
+	{
+		return this.ptr.TotalDuration();
+	}
+	public void Finished()
+	{
+		this.ptr.Finished();
+	}
+	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		this.ptr.StateChanged(newState, oldState);
+	}
+	public void CurrentLoopChanged(c_int currentLoop)
+	{
+		this.ptr.CurrentLoopChanged(currentLoop);
+	}
+	public void DirectionChanged(QAbstractAnimation_Direction param1)
+	{
+		this.ptr.DirectionChanged(param1);
+	}
+	public void Start()
+	{
+		this.ptr.Start();
+	}
+	public void Pause()
+	{
+		this.ptr.Pause();
+	}
+	public void Resume()
+	{
+		this.ptr.Resume();
+	}
+	public void SetPaused(bool paused)
+	{
+		this.ptr.SetPaused(paused);
+	}
+	public void Stop()
+	{
+		this.ptr.Stop();
+	}
+	public void SetCurrentTime(c_int msecs)
+	{
+		this.ptr.SetCurrentTime(msecs);
+	}
+	public void Start1(QAbstractAnimation_DeletionPolicy policy)
+	{
+		this.ptr.Start1(policy);
+	}
+	public QAbstractAnimation_Ptr AnimationAt(c_int index)
+	{
+		return this.ptr.AnimationAt(index);
+	}
+	public c_int AnimationCount()
+	{
+		return this.ptr.AnimationCount();
+	}
+	public c_int IndexOfAnimation(IQAbstractAnimation animation)
+	{
+		return this.ptr.IndexOfAnimation(animation);
+	}
+	public void AddAnimation(IQAbstractAnimation animation)
+	{
+		this.ptr.AddAnimation(animation);
+	}
+	public void InsertAnimation(c_int index, IQAbstractAnimation animation)
+	{
+		this.ptr.InsertAnimation(index, animation);
+	}
+	public void RemoveAnimation(IQAbstractAnimation animation)
+	{
+		this.ptr.RemoveAnimation(animation);
+	}
+	public QAbstractAnimation_Ptr TakeAnimation(c_int index)
+	{
+		return this.ptr.TakeAnimation(index);
+	}
+	public void Clear()
+	{
+		this.ptr.Clear();
+	}
 }
 interface IQParallelAnimationGroup : IQtObjectInterface
 {
@@ -869,24 +801,92 @@ extension CQt
 	public static extern void QParallelAnimationGroup_Delete(QParallelAnimationGroup_Ptr self);
 	[LinkName("QParallelAnimationGroup_MetaObject")]
 	public static extern void** QParallelAnimationGroup_MetaObject(void* self);
+	
+	public function void QParallelAnimationGroup_OnMetaObject_action(void* self);
+	[LinkName("QParallelAnimationGroup_OnMetaObject")]
+	public static extern void** QParallelAnimationGroup_OnMetaObject(void* self, QParallelAnimationGroup_OnMetaObject_action _action);
 	[LinkName("QParallelAnimationGroup_Qt_Metacast")]
 	public static extern void* QParallelAnimationGroup_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QParallelAnimationGroup_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QParallelAnimationGroup_OnMetacast")]
+	public static extern void* QParallelAnimationGroup_OnMetacast(void* self, QParallelAnimationGroup_OnMetacast_action _action);
 	[LinkName("QParallelAnimationGroup_Qt_Metacall")]
 	public static extern c_int QParallelAnimationGroup_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QParallelAnimationGroup_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QParallelAnimationGroup_OnMetacall")]
+	public static extern c_int QParallelAnimationGroup_OnMetacall(void* self, QParallelAnimationGroup_OnMetacall_action _action);
 	[LinkName("QParallelAnimationGroup_Tr")]
 	public static extern libqt_string QParallelAnimationGroup_Tr(c_char* s);
 	[LinkName("QParallelAnimationGroup_Duration")]
 	public static extern c_int QParallelAnimationGroup_Duration(void* self);
+	
+	public function void QParallelAnimationGroup_OnDuration_action(void* self);
+	[LinkName("QParallelAnimationGroup_OnDuration")]
+	public static extern c_int QParallelAnimationGroup_OnDuration(void* self, QParallelAnimationGroup_OnDuration_action _action);
 	[LinkName("QParallelAnimationGroup_Event")]
 	public static extern bool QParallelAnimationGroup_Event(void* self, void** event);
+	
+	public function void QParallelAnimationGroup_OnEvent_action(void* self, void** event);
+	[LinkName("QParallelAnimationGroup_OnEvent")]
+	public static extern bool QParallelAnimationGroup_OnEvent(void* self, QParallelAnimationGroup_OnEvent_action _action);
 	[LinkName("QParallelAnimationGroup_UpdateCurrentTime")]
 	public static extern void QParallelAnimationGroup_UpdateCurrentTime(void* self, c_int currentTime);
+	
+	public function void QParallelAnimationGroup_OnUpdateCurrentTime_action(void* self, c_int currentTime);
+	[LinkName("QParallelAnimationGroup_OnUpdateCurrentTime")]
+	public static extern void QParallelAnimationGroup_OnUpdateCurrentTime(void* self, QParallelAnimationGroup_OnUpdateCurrentTime_action _action);
 	[LinkName("QParallelAnimationGroup_UpdateState")]
 	public static extern void QParallelAnimationGroup_UpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
+	
+	public function void QParallelAnimationGroup_OnUpdateState_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
+	[LinkName("QParallelAnimationGroup_OnUpdateState")]
+	public static extern void QParallelAnimationGroup_OnUpdateState(void* self, QParallelAnimationGroup_OnUpdateState_action _action);
 	[LinkName("QParallelAnimationGroup_UpdateDirection")]
 	public static extern void QParallelAnimationGroup_UpdateDirection(void* self, QAbstractAnimation_Direction direction);
+	
+	public function void QParallelAnimationGroup_OnUpdateDirection_action(void* self, QAbstractAnimation_Direction direction);
+	[LinkName("QParallelAnimationGroup_OnUpdateDirection")]
+	public static extern void QParallelAnimationGroup_OnUpdateDirection(void* self, QParallelAnimationGroup_OnUpdateDirection_action _action);
 	[LinkName("QParallelAnimationGroup_Tr2")]
 	public static extern libqt_string QParallelAnimationGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QParallelAnimationGroup_Tr3")]
 	public static extern libqt_string QParallelAnimationGroup_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QParallelAnimationGroup_EventFilter")]
+	public static extern bool QParallelAnimationGroup_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QParallelAnimationGroup_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QParallelAnimationGroup_OnEventFilter")]
+	public static extern bool QParallelAnimationGroup_OnEventFilter(void* self, QParallelAnimationGroup_OnEventFilter_action _action);
+	[LinkName("QParallelAnimationGroup_TimerEvent")]
+	public static extern void QParallelAnimationGroup_TimerEvent(void* self, void** event);
+	
+	public function void QParallelAnimationGroup_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QParallelAnimationGroup_OnTimerEvent")]
+	public static extern void QParallelAnimationGroup_OnTimerEvent(void* self, QParallelAnimationGroup_OnTimerEvent_action _action);
+	[LinkName("QParallelAnimationGroup_ChildEvent")]
+	public static extern void QParallelAnimationGroup_ChildEvent(void* self, void** event);
+	
+	public function void QParallelAnimationGroup_OnChildEvent_action(void* self, void** event);
+	[LinkName("QParallelAnimationGroup_OnChildEvent")]
+	public static extern void QParallelAnimationGroup_OnChildEvent(void* self, QParallelAnimationGroup_OnChildEvent_action _action);
+	[LinkName("QParallelAnimationGroup_CustomEvent")]
+	public static extern void QParallelAnimationGroup_CustomEvent(void* self, void** event);
+	
+	public function void QParallelAnimationGroup_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QParallelAnimationGroup_OnCustomEvent")]
+	public static extern void QParallelAnimationGroup_OnCustomEvent(void* self, QParallelAnimationGroup_OnCustomEvent_action _action);
+	[LinkName("QParallelAnimationGroup_ConnectNotify")]
+	public static extern void QParallelAnimationGroup_ConnectNotify(void* self, void** signal);
+	
+	public function void QParallelAnimationGroup_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QParallelAnimationGroup_OnConnectNotify")]
+	public static extern void QParallelAnimationGroup_OnConnectNotify(void* self, QParallelAnimationGroup_OnConnectNotify_action _action);
+	[LinkName("QParallelAnimationGroup_DisconnectNotify")]
+	public static extern void QParallelAnimationGroup_DisconnectNotify(void* self, void** signal);
+	
+	public function void QParallelAnimationGroup_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QParallelAnimationGroup_OnDisconnectNotify")]
+	public static extern void QParallelAnimationGroup_OnDisconnectNotify(void* self, QParallelAnimationGroup_OnDisconnectNotify_action _action);
 }

@@ -18,11 +18,11 @@ struct QIdentityProxyModel_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QIdentityProxyModel_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QIdentityProxyModel_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QIdentityProxyModel_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -114,293 +114,13 @@ struct QIdentityProxyModel_Ptr
 	{
 		CQt.QIdentityProxyModel_Tr3(s, c, n);
 	}
-	public QAbstractItemModel_Ptr SourceModel()
-	{
-		return QAbstractItemModel_Ptr(CQt.QAbstractProxyModel_SourceModel((.)this.Ptr));
-	}
-	public bool Submit()
-	{
-		return CQt.QAbstractProxyModel_Submit((.)this.Ptr);
-	}
-	public void Revert()
-	{
-		CQt.QAbstractProxyModel_Revert((.)this.Ptr);
-	}
-	public QVariant_Ptr Data(IQModelIndex proxyIndex, c_int role)
-	{
-		return QVariant_Ptr(CQt.QAbstractProxyModel_Data((.)this.Ptr, (.)proxyIndex?.ObjectPtr, role));
-	}
-	public void* ItemData(IQModelIndex index)
-	{
-		return CQt.QAbstractProxyModel_ItemData((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void* Flags(IQModelIndex index)
-	{
-		return CQt.QAbstractProxyModel_Flags((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
-	{
-		return CQt.QAbstractProxyModel_SetData((.)this.Ptr, (.)index?.ObjectPtr, (.)value?.ObjectPtr, role);
-	}
-	public bool SetItemData(IQModelIndex index, void** roles)
-	{
-		return CQt.QAbstractProxyModel_SetItemData((.)this.Ptr, (.)index?.ObjectPtr, roles);
-	}
-	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
-	{
-		return CQt.QAbstractProxyModel_SetHeaderData((.)this.Ptr, section, orientation, (.)value?.ObjectPtr, role);
-	}
-	public bool ClearItemData(IQModelIndex index)
-	{
-		return CQt.QAbstractProxyModel_ClearItemData((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public QModelIndex_Ptr Buddy(IQModelIndex index)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractProxyModel_Buddy((.)this.Ptr, (.)index?.ObjectPtr));
-	}
-	public bool CanFetchMore(IQModelIndex parent)
-	{
-		return CQt.QAbstractProxyModel_CanFetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
-	}
-	public void FetchMore(IQModelIndex parent)
-	{
-		CQt.QAbstractProxyModel_FetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
-	}
-	public void Sort(c_int column, Qt_SortOrder order)
-	{
-		CQt.QAbstractProxyModel_Sort((.)this.Ptr, column, order);
-	}
-	public QSize_Ptr Span(IQModelIndex index)
-	{
-		return QSize_Ptr(CQt.QAbstractProxyModel_Span((.)this.Ptr, (.)index?.ObjectPtr));
-	}
-	public bool HasChildren(IQModelIndex parent)
-	{
-		return CQt.QAbstractProxyModel_HasChildren((.)this.Ptr, (.)parent?.ObjectPtr);
-	}
-	public QMimeData_Ptr MimeData(void** indexes)
-	{
-		return QMimeData_Ptr(CQt.QAbstractProxyModel_MimeData((.)this.Ptr, indexes));
-	}
-	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
-	{
-		return CQt.QAbstractProxyModel_CanDropMimeData((.)this.Ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
-	}
-	public void* MimeTypes()
-	{
-		return CQt.QAbstractProxyModel_MimeTypes((.)this.Ptr);
-	}
-	public void* SupportedDragActions()
-	{
-		return CQt.QAbstractProxyModel_SupportedDragActions((.)this.Ptr);
-	}
-	public void* SupportedDropActions()
-	{
-		return CQt.QAbstractProxyModel_SupportedDropActions((.)this.Ptr);
-	}
-	public void* RoleNames()
-	{
-		return CQt.QAbstractProxyModel_RoleNames((.)this.Ptr);
-	}
-	public QModelIndex_Ptr CreateSourceIndex(c_int row, c_int col, void* internalPtr)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractProxyModel_CreateSourceIndex((.)this.Ptr, row, col, internalPtr));
-	}
-	public bool HasIndex(c_int row, c_int column)
-	{
-		return CQt.QAbstractItemModel_HasIndex((.)this.Ptr, row, column);
-	}
-	public bool InsertRow(c_int row)
-	{
-		return CQt.QAbstractItemModel_InsertRow((.)this.Ptr, row);
-	}
-	public bool InsertColumn(c_int column)
-	{
-		return CQt.QAbstractItemModel_InsertColumn((.)this.Ptr, column);
-	}
-	public bool RemoveRow(c_int row)
-	{
-		return CQt.QAbstractItemModel_RemoveRow((.)this.Ptr, row);
-	}
-	public bool RemoveColumn(c_int column)
-	{
-		return CQt.QAbstractItemModel_RemoveColumn((.)this.Ptr, column);
-	}
-	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return CQt.QAbstractItemModel_MoveRow((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, (.)destinationParent?.ObjectPtr, destinationChild);
-	}
-	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return CQt.QAbstractItemModel_MoveColumn((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, (.)destinationParent?.ObjectPtr, destinationChild);
-	}
-	public bool CheckIndex(IQModelIndex index)
-	{
-		return CQt.QAbstractItemModel_CheckIndex((.)this.Ptr, (.)index?.ObjectPtr);
-	}
-	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
-	{
-		CQt.QAbstractItemModel_MultiData((.)this.Ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
-	}
-	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
-	{
-		CQt.QAbstractItemModel_DataChanged((.)this.Ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
-	}
-	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_HeaderDataChanged((.)this.Ptr, orientation, first, last);
-	}
-	public void LayoutChanged()
-	{
-		CQt.QAbstractItemModel_LayoutChanged((.)this.Ptr);
-	}
-	public void LayoutAboutToBeChanged()
-	{
-		CQt.QAbstractItemModel_LayoutAboutToBeChanged((.)this.Ptr);
-	}
-	public void ResetInternalData()
-	{
-		CQt.QAbstractItemModel_ResetInternalData((.)this.Ptr);
-	}
-	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex((.)this.Ptr, row, column));
-	}
-	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex2((.)this.Ptr, row, column, id));
-	}
-	public void EncodeData(void** indexes, IQDataStream stream)
-	{
-		CQt.QAbstractItemModel_EncodeData((.)this.Ptr, indexes, (.)stream?.ObjectPtr);
-	}
-	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
-	{
-		return CQt.QAbstractItemModel_DecodeData((.)this.Ptr, row, column, (.)parent?.ObjectPtr, (.)stream?.ObjectPtr);
-	}
-	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_BeginInsertRows((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
-	}
-	public void EndInsertRows()
-	{
-		CQt.QAbstractItemModel_EndInsertRows((.)this.Ptr);
-	}
-	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_BeginRemoveRows((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
-	}
-	public void EndRemoveRows()
-	{
-		CQt.QAbstractItemModel_EndRemoveRows((.)this.Ptr);
-	}
-	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
-	{
-		return CQt.QAbstractItemModel_BeginMoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationRow);
-	}
-	public void EndMoveRows()
-	{
-		CQt.QAbstractItemModel_EndMoveRows((.)this.Ptr);
-	}
-	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_BeginInsertColumns((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
-	}
-	public void EndInsertColumns()
-	{
-		CQt.QAbstractItemModel_EndInsertColumns((.)this.Ptr);
-	}
-	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
-	{
-		CQt.QAbstractItemModel_BeginRemoveColumns((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
-	}
-	public void EndRemoveColumns()
-	{
-		CQt.QAbstractItemModel_EndRemoveColumns((.)this.Ptr);
-	}
-	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
-	{
-		return CQt.QAbstractItemModel_BeginMoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationColumn);
-	}
-	public void EndMoveColumns()
-	{
-		CQt.QAbstractItemModel_EndMoveColumns((.)this.Ptr);
-	}
-	public void BeginResetModel()
-	{
-		CQt.QAbstractItemModel_BeginResetModel((.)this.Ptr);
-	}
-	public void EndResetModel()
-	{
-		CQt.QAbstractItemModel_EndResetModel((.)this.Ptr);
-	}
-	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
-	{
-		CQt.QAbstractItemModel_ChangePersistentIndex((.)this.Ptr, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
-	}
-	public void ChangePersistentIndexList(void** from, void** to)
-	{
-		CQt.QAbstractItemModel_ChangePersistentIndexList((.)this.Ptr, from, to);
-	}
-	public void* PersistentIndexList()
-	{
-		return CQt.QAbstractItemModel_PersistentIndexList((.)this.Ptr);
-	}
-	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_HasIndex3((.)this.Ptr, row, column, (.)parent?.ObjectPtr);
-	}
-	public bool InsertRow2(c_int row, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_InsertRow2((.)this.Ptr, row, (.)parent?.ObjectPtr);
-	}
-	public bool InsertColumn2(c_int column, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_InsertColumn2((.)this.Ptr, column, (.)parent?.ObjectPtr);
-	}
-	public bool RemoveRow2(c_int row, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_RemoveRow2((.)this.Ptr, row, (.)parent?.ObjectPtr);
-	}
-	public bool RemoveColumn2(c_int column, IQModelIndex parent)
-	{
-		return CQt.QAbstractItemModel_RemoveColumn2((.)this.Ptr, column, (.)parent?.ObjectPtr);
-	}
-	public bool CheckIndex2(IQModelIndex index, void* options)
-	{
-		return CQt.QAbstractItemModel_CheckIndex2((.)this.Ptr, (.)index?.ObjectPtr, options);
-	}
-	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
-	{
-		CQt.QAbstractItemModel_DataChanged3((.)this.Ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr, roles);
-	}
-	public void LayoutChanged1(void** parents)
-	{
-		CQt.QAbstractItemModel_LayoutChanged1((.)this.Ptr, parents);
-	}
-	public void LayoutChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		CQt.QAbstractItemModel_LayoutChanged2((.)this.Ptr, parents, hint);
-	}
-	public void LayoutAboutToBeChanged1(void** parents)
-	{
-		CQt.QAbstractItemModel_LayoutAboutToBeChanged1((.)this.Ptr, parents);
-	}
-	public void LayoutAboutToBeChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		CQt.QAbstractItemModel_LayoutAboutToBeChanged2((.)this.Ptr, parents, hint);
-	}
-	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex3((.)this.Ptr, row, column, data));
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QIdentityProxyModel_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QIdentityProxyModel_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -556,23 +276,23 @@ struct QIdentityProxyModel_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QIdentityProxyModel_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QIdentityProxyModel_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QIdentityProxyModel_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QIdentityProxyModel_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QIdentityProxyModel_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -614,218 +334,397 @@ struct QIdentityProxyModel_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public bool HasIndex(c_int row, c_int column)
+	{
+		return CQt.QAbstractItemModel_HasIndex((.)this.Ptr, row, column);
+	}
+	public bool HasChildren(IQModelIndex parent)
+	{
+		return CQt.QIdentityProxyModel_HasChildren((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public QVariant_Ptr Data(IQModelIndex index, c_int role)
+	{
+		return QVariant_Ptr(CQt.QIdentityProxyModel_Data((.)this.Ptr, (.)index?.ObjectPtr, role));
+	}
+	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
+	{
+		return CQt.QIdentityProxyModel_SetData((.)this.Ptr, (.)index?.ObjectPtr, (.)value?.ObjectPtr, role);
+	}
+	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
+	{
+		return CQt.QIdentityProxyModel_SetHeaderData((.)this.Ptr, section, orientation, (.)value?.ObjectPtr, role);
+	}
+	public void* ItemData(IQModelIndex index)
+	{
+		return CQt.QIdentityProxyModel_ItemData((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public bool SetItemData(IQModelIndex index, void** roles)
+	{
+		return CQt.QIdentityProxyModel_SetItemData((.)this.Ptr, (.)index?.ObjectPtr, roles);
+	}
+	public bool ClearItemData(IQModelIndex index)
+	{
+		return CQt.QIdentityProxyModel_ClearItemData((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void* MimeTypes()
+	{
+		return CQt.QIdentityProxyModel_MimeTypes((.)this.Ptr);
+	}
+	public QMimeData_Ptr MimeData(void** indexes)
+	{
+		return QMimeData_Ptr(CQt.QIdentityProxyModel_MimeData((.)this.Ptr, indexes));
+	}
+	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	{
+		return CQt.QIdentityProxyModel_CanDropMimeData((.)this.Ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
+	}
+	public void* SupportedDropActions()
+	{
+		return CQt.QIdentityProxyModel_SupportedDropActions((.)this.Ptr);
+	}
+	public void* SupportedDragActions()
+	{
+		return CQt.QIdentityProxyModel_SupportedDragActions((.)this.Ptr);
+	}
+	public bool InsertRow(c_int row)
+	{
+		return CQt.QAbstractItemModel_InsertRow((.)this.Ptr, row);
+	}
+	public bool InsertColumn(c_int column)
+	{
+		return CQt.QAbstractItemModel_InsertColumn((.)this.Ptr, column);
+	}
+	public bool RemoveRow(c_int row)
+	{
+		return CQt.QAbstractItemModel_RemoveRow((.)this.Ptr, row);
+	}
+	public bool RemoveColumn(c_int column)
+	{
+		return CQt.QAbstractItemModel_RemoveColumn((.)this.Ptr, column);
+	}
+	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return CQt.QAbstractItemModel_MoveRow((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, (.)destinationParent?.ObjectPtr, destinationChild);
+	}
+	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return CQt.QAbstractItemModel_MoveColumn((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, (.)destinationParent?.ObjectPtr, destinationChild);
+	}
+	public void FetchMore(IQModelIndex parent)
+	{
+		CQt.QIdentityProxyModel_FetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public bool CanFetchMore(IQModelIndex parent)
+	{
+		return CQt.QIdentityProxyModel_CanFetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void* Flags(IQModelIndex index)
+	{
+		return CQt.QIdentityProxyModel_Flags((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void Sort(c_int column, Qt_SortOrder order)
+	{
+		CQt.QIdentityProxyModel_Sort((.)this.Ptr, column, order);
+	}
+	public QModelIndex_Ptr Buddy(IQModelIndex index)
+	{
+		return QModelIndex_Ptr(CQt.QIdentityProxyModel_Buddy((.)this.Ptr, (.)index?.ObjectPtr));
+	}
+	public QSize_Ptr Span(IQModelIndex index)
+	{
+		return QSize_Ptr(CQt.QIdentityProxyModel_Span((.)this.Ptr, (.)index?.ObjectPtr));
+	}
+	public void* RoleNames()
+	{
+		return CQt.QIdentityProxyModel_RoleNames((.)this.Ptr);
+	}
+	public bool CheckIndex(IQModelIndex index)
+	{
+		return CQt.QAbstractItemModel_CheckIndex((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
+	{
+		CQt.QIdentityProxyModel_MultiData((.)this.Ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
+	}
+	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
+	{
+		CQt.QAbstractItemModel_DataChanged((.)this.Ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
+	}
+	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_HeaderDataChanged((.)this.Ptr, orientation, first, last);
+	}
+	public void LayoutChanged()
+	{
+		CQt.QAbstractItemModel_LayoutChanged((.)this.Ptr);
+	}
+	public void LayoutAboutToBeChanged()
+	{
+		CQt.QAbstractItemModel_LayoutAboutToBeChanged((.)this.Ptr);
+	}
+	public bool Submit()
+	{
+		return CQt.QIdentityProxyModel_Submit((.)this.Ptr);
+	}
+	public void Revert()
+	{
+		CQt.QIdentityProxyModel_Revert((.)this.Ptr);
+	}
+	public void ResetInternalData()
+	{
+		CQt.QIdentityProxyModel_ResetInternalData((.)this.Ptr);
+	}
+	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
+	{
+		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex((.)this.Ptr, row, column));
+	}
+	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
+	{
+		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex2((.)this.Ptr, row, column, id));
+	}
+	public void EncodeData(void** indexes, IQDataStream stream)
+	{
+		CQt.QAbstractItemModel_EncodeData((.)this.Ptr, indexes, (.)stream?.ObjectPtr);
+	}
+	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
+	{
+		return CQt.QAbstractItemModel_DecodeData((.)this.Ptr, row, column, (.)parent?.ObjectPtr, (.)stream?.ObjectPtr);
+	}
+	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_BeginInsertRows((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
+	}
+	public void EndInsertRows()
+	{
+		CQt.QAbstractItemModel_EndInsertRows((.)this.Ptr);
+	}
+	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_BeginRemoveRows((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
+	}
+	public void EndRemoveRows()
+	{
+		CQt.QAbstractItemModel_EndRemoveRows((.)this.Ptr);
+	}
+	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
+	{
+		return CQt.QAbstractItemModel_BeginMoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationRow);
+	}
+	public void EndMoveRows()
+	{
+		CQt.QAbstractItemModel_EndMoveRows((.)this.Ptr);
+	}
+	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_BeginInsertColumns((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
+	}
+	public void EndInsertColumns()
+	{
+		CQt.QAbstractItemModel_EndInsertColumns((.)this.Ptr);
+	}
+	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
+	{
+		CQt.QAbstractItemModel_BeginRemoveColumns((.)this.Ptr, (.)parent?.ObjectPtr, first, last);
+	}
+	public void EndRemoveColumns()
+	{
+		CQt.QAbstractItemModel_EndRemoveColumns((.)this.Ptr);
+	}
+	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
+	{
+		return CQt.QAbstractItemModel_BeginMoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationColumn);
+	}
+	public void EndMoveColumns()
+	{
+		CQt.QAbstractItemModel_EndMoveColumns((.)this.Ptr);
+	}
+	public void BeginResetModel()
+	{
+		CQt.QAbstractItemModel_BeginResetModel((.)this.Ptr);
+	}
+	public void EndResetModel()
+	{
+		CQt.QAbstractItemModel_EndResetModel((.)this.Ptr);
+	}
+	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
+	{
+		CQt.QAbstractItemModel_ChangePersistentIndex((.)this.Ptr, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
+	}
+	public void ChangePersistentIndexList(void** from, void** to)
+	{
+		CQt.QAbstractItemModel_ChangePersistentIndexList((.)this.Ptr, from, to);
+	}
+	public void* PersistentIndexList()
+	{
+		return CQt.QAbstractItemModel_PersistentIndexList((.)this.Ptr);
+	}
+	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_HasIndex3((.)this.Ptr, row, column, (.)parent?.ObjectPtr);
+	}
+	public bool InsertRow2(c_int row, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_InsertRow2((.)this.Ptr, row, (.)parent?.ObjectPtr);
+	}
+	public bool InsertColumn2(c_int column, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_InsertColumn2((.)this.Ptr, column, (.)parent?.ObjectPtr);
+	}
+	public bool RemoveRow2(c_int row, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_RemoveRow2((.)this.Ptr, row, (.)parent?.ObjectPtr);
+	}
+	public bool RemoveColumn2(c_int column, IQModelIndex parent)
+	{
+		return CQt.QAbstractItemModel_RemoveColumn2((.)this.Ptr, column, (.)parent?.ObjectPtr);
+	}
+	public bool CheckIndex2(IQModelIndex index, void* options)
+	{
+		return CQt.QAbstractItemModel_CheckIndex2((.)this.Ptr, (.)index?.ObjectPtr, options);
+	}
+	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
+	{
+		CQt.QAbstractItemModel_DataChanged3((.)this.Ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr, roles);
+	}
+	public void LayoutChanged1(void** parents)
+	{
+		CQt.QAbstractItemModel_LayoutChanged1((.)this.Ptr, parents);
+	}
+	public void LayoutChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		CQt.QAbstractItemModel_LayoutChanged2((.)this.Ptr, parents, hint);
+	}
+	public void LayoutAboutToBeChanged1(void** parents)
+	{
+		CQt.QAbstractItemModel_LayoutAboutToBeChanged1((.)this.Ptr, parents);
+	}
+	public void LayoutAboutToBeChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		CQt.QAbstractItemModel_LayoutAboutToBeChanged2((.)this.Ptr, parents, hint);
+	}
+	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
+	{
+		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex3((.)this.Ptr, row, column, data));
+	}
+	public QAbstractItemModel_Ptr SourceModel()
+	{
+		return QAbstractItemModel_Ptr(CQt.QAbstractProxyModel_SourceModel((.)this.Ptr));
+	}
+	public QModelIndex_Ptr CreateSourceIndex(c_int row, c_int col, void* internalPtr)
+	{
+		return QModelIndex_Ptr(CQt.QAbstractProxyModel_CreateSourceIndex((.)this.Ptr, row, col, internalPtr));
+	}
 }
 class QIdentityProxyModel : IQIdentityProxyModel, IQAbstractProxyModel, IQAbstractItemModel, IQObject
 {
 	private QIdentityProxyModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QIdentityProxyModel_dataChanged,
-		QIdentityProxyModel_headerDataChanged,
-		QIdentityProxyModel_layoutChanged,
-		QIdentityProxyModel_layoutAboutToBeChanged,
-		QIdentityProxyModel_dataChanged3,
-		QIdentityProxyModel_layoutChanged1,
-		QIdentityProxyModel_layoutChanged2,
-		QIdentityProxyModel_layoutAboutToBeChanged1,
-		QIdentityProxyModel_layoutAboutToBeChanged2,
-		QIdentityProxyModel_destroyed,
-		QIdentityProxyModel_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
-		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
-		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
-		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
-		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged.Invoke(topLeft, bottomRight);
-	}
-	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QIdentityProxyModel_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIdentityProxyModel_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QIdentityProxyModel_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QIdentityProxyModel_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public c_int ColumnCount(IQModelIndex parent)
+	public  virtual c_int OnColumnCount(void** parent)
 	{
-		return this.ptr.ColumnCount(parent);
+		return default;
 	}
-	public QModelIndex_Ptr Index(c_int row, c_int column, IQModelIndex parent)
+	public  virtual QModelIndex_Ptr OnIndex(c_int row, c_int column, void** parent)
 	{
-		return this.ptr.Index(row, column, parent);
+		return default;
 	}
-	public QModelIndex_Ptr MapFromSource(IQModelIndex sourceIndex)
+	public  virtual QModelIndex_Ptr OnMapFromSource(void** sourceIndex)
 	{
-		return this.ptr.MapFromSource(sourceIndex);
+		return default;
 	}
-	public QModelIndex_Ptr MapToSource(IQModelIndex proxyIndex)
+	public  virtual QModelIndex_Ptr OnMapToSource(void** proxyIndex)
 	{
-		return this.ptr.MapToSource(proxyIndex);
+		return default;
 	}
-	public QModelIndex_Ptr Parent(IQModelIndex child)
+	public  virtual QModelIndex_Ptr OnParent(void** child)
 	{
-		return this.ptr.Parent(child);
+		return default;
 	}
-	public c_int RowCount(IQModelIndex parent)
+	public  virtual c_int OnRowCount(void** parent)
 	{
-		return this.ptr.RowCount(parent);
+		return default;
 	}
-	public QVariant_Ptr HeaderData(c_int section, Qt_Orientation orientation, c_int role)
+	public  virtual QVariant_Ptr OnHeaderData(c_int section, Qt_Orientation orientation, c_int role)
 	{
-		return this.ptr.HeaderData(section, orientation, role);
+		return default;
 	}
-	public bool DropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	public  virtual bool OnDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
 	{
-		return this.ptr.DropMimeData(data, action, row, column, parent);
+		return default;
 	}
-	public QModelIndex_Ptr Sibling(c_int row, c_int column, IQModelIndex idx)
+	public  virtual QModelIndex_Ptr OnSibling(c_int row, c_int column, void** idx)
 	{
-		return this.ptr.Sibling(row, column, idx);
+		return default;
 	}
-	public QItemSelection_Ptr MapSelectionFromSource(IQItemSelection selection)
+	public  virtual QItemSelection_Ptr OnMapSelectionFromSource(void** selection)
 	{
-		return this.ptr.MapSelectionFromSource(selection);
+		return default;
 	}
-	public QItemSelection_Ptr MapSelectionToSource(IQItemSelection selection)
+	public  virtual QItemSelection_Ptr OnMapSelectionToSource(void** selection)
 	{
-		return this.ptr.MapSelectionToSource(selection);
+		return default;
 	}
-	public void* Match(IQModelIndex start, c_int role, IQVariant value, c_int hits, void* flags)
+	public  virtual void* OnMatch(void** start, c_int role, void** value, c_int hits, void* flags)
 	{
-		return this.ptr.Match(start, role, value, hits, flags);
+		return default;
 	}
-	public void SetSourceModel(IQAbstractItemModel sourceModel)
+	public  virtual void OnSetSourceModel(void** sourceModel)
 	{
-		this.ptr.SetSourceModel(sourceModel);
 	}
-	public bool InsertColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnInsertColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.InsertColumns(column, count, parent);
+		return default;
 	}
-	public bool InsertRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnInsertRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.InsertRows(row, count, parent);
+		return default;
 	}
-	public bool RemoveColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.RemoveColumns(column, count, parent);
+		return default;
 	}
-	public bool RemoveRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.RemoveRows(row, count, parent);
+		return default;
 	}
-	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
+	public  virtual bool OnMoveRows(void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
 	{
-		return this.ptr.MoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+		return default;
 	}
-	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
+	public  virtual bool OnMoveColumns(void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
 	{
-		return this.ptr.MoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -835,293 +734,13 @@ class QIdentityProxyModel : IQIdentityProxyModel, IQAbstractProxyModel, IQAbstra
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QAbstractItemModel_Ptr SourceModel()
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.SourceModel();
+		return default;
 	}
-	public bool Submit()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.Submit();
-	}
-	public void Revert()
-	{
-		this.ptr.Revert();
-	}
-	public QVariant_Ptr Data(IQModelIndex proxyIndex, c_int role)
-	{
-		return this.ptr.Data(proxyIndex, role);
-	}
-	public void* ItemData(IQModelIndex index)
-	{
-		return this.ptr.ItemData(index);
-	}
-	public void* Flags(IQModelIndex index)
-	{
-		return this.ptr.Flags(index);
-	}
-	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
-	{
-		return this.ptr.SetData(index, value, role);
-	}
-	public bool SetItemData(IQModelIndex index, void** roles)
-	{
-		return this.ptr.SetItemData(index, roles);
-	}
-	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
-	{
-		return this.ptr.SetHeaderData(section, orientation, value, role);
-	}
-	public bool ClearItemData(IQModelIndex index)
-	{
-		return this.ptr.ClearItemData(index);
-	}
-	public QModelIndex_Ptr Buddy(IQModelIndex index)
-	{
-		return this.ptr.Buddy(index);
-	}
-	public bool CanFetchMore(IQModelIndex parent)
-	{
-		return this.ptr.CanFetchMore(parent);
-	}
-	public void FetchMore(IQModelIndex parent)
-	{
-		this.ptr.FetchMore(parent);
-	}
-	public void Sort(c_int column, Qt_SortOrder order)
-	{
-		this.ptr.Sort(column, order);
-	}
-	public QSize_Ptr Span(IQModelIndex index)
-	{
-		return this.ptr.Span(index);
-	}
-	public bool HasChildren(IQModelIndex parent)
-	{
-		return this.ptr.HasChildren(parent);
-	}
-	public QMimeData_Ptr MimeData(void** indexes)
-	{
-		return this.ptr.MimeData(indexes);
-	}
-	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
-	{
-		return this.ptr.CanDropMimeData(data, action, row, column, parent);
-	}
-	public void* MimeTypes()
-	{
-		return this.ptr.MimeTypes();
-	}
-	public void* SupportedDragActions()
-	{
-		return this.ptr.SupportedDragActions();
-	}
-	public void* SupportedDropActions()
-	{
-		return this.ptr.SupportedDropActions();
-	}
-	public void* RoleNames()
-	{
-		return this.ptr.RoleNames();
-	}
-	public QModelIndex_Ptr CreateSourceIndex(c_int row, c_int col, void* internalPtr)
-	{
-		return this.ptr.CreateSourceIndex(row, col, internalPtr);
-	}
-	public bool HasIndex(c_int row, c_int column)
-	{
-		return this.ptr.HasIndex(row, column);
-	}
-	public bool InsertRow(c_int row)
-	{
-		return this.ptr.InsertRow(row);
-	}
-	public bool InsertColumn(c_int column)
-	{
-		return this.ptr.InsertColumn(column);
-	}
-	public bool RemoveRow(c_int row)
-	{
-		return this.ptr.RemoveRow(row);
-	}
-	public bool RemoveColumn(c_int column)
-	{
-		return this.ptr.RemoveColumn(column);
-	}
-	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return this.ptr.MoveRow(sourceParent, sourceRow, destinationParent, destinationChild);
-	}
-	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return this.ptr.MoveColumn(sourceParent, sourceColumn, destinationParent, destinationChild);
-	}
-	public bool CheckIndex(IQModelIndex index)
-	{
-		return this.ptr.CheckIndex(index);
-	}
-	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
-	{
-		this.ptr.MultiData(index, roleDataSpan);
-	}
-	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
-	{
-		this.ptr.DataChanged(topLeft, bottomRight);
-	}
-	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
-	{
-		this.ptr.HeaderDataChanged(orientation, first, last);
-	}
-	public void LayoutChanged()
-	{
-		this.ptr.LayoutChanged();
-	}
-	public void LayoutAboutToBeChanged()
-	{
-		this.ptr.LayoutAboutToBeChanged();
-	}
-	public void ResetInternalData()
-	{
-		this.ptr.ResetInternalData();
-	}
-	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
-	{
-		return this.ptr.CreateIndex(row, column);
-	}
-	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
-	{
-		return this.ptr.CreateIndex2(row, column, id);
-	}
-	public void EncodeData(void** indexes, IQDataStream stream)
-	{
-		this.ptr.EncodeData(indexes, stream);
-	}
-	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
-	{
-		return this.ptr.DecodeData(row, column, parent, stream);
-	}
-	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
-	{
-		this.ptr.BeginInsertRows(parent, first, last);
-	}
-	public void EndInsertRows()
-	{
-		this.ptr.EndInsertRows();
-	}
-	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
-	{
-		this.ptr.BeginRemoveRows(parent, first, last);
-	}
-	public void EndRemoveRows()
-	{
-		this.ptr.EndRemoveRows();
-	}
-	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
-	{
-		return this.ptr.BeginMoveRows(sourceParent, sourceFirst, sourceLast, destinationParent, destinationRow);
-	}
-	public void EndMoveRows()
-	{
-		this.ptr.EndMoveRows();
-	}
-	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
-	{
-		this.ptr.BeginInsertColumns(parent, first, last);
-	}
-	public void EndInsertColumns()
-	{
-		this.ptr.EndInsertColumns();
-	}
-	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
-	{
-		this.ptr.BeginRemoveColumns(parent, first, last);
-	}
-	public void EndRemoveColumns()
-	{
-		this.ptr.EndRemoveColumns();
-	}
-	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
-	{
-		return this.ptr.BeginMoveColumns(sourceParent, sourceFirst, sourceLast, destinationParent, destinationColumn);
-	}
-	public void EndMoveColumns()
-	{
-		this.ptr.EndMoveColumns();
-	}
-	public void BeginResetModel()
-	{
-		this.ptr.BeginResetModel();
-	}
-	public void EndResetModel()
-	{
-		this.ptr.EndResetModel();
-	}
-	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
-	{
-		this.ptr.ChangePersistentIndex(from, to);
-	}
-	public void ChangePersistentIndexList(void** from, void** to)
-	{
-		this.ptr.ChangePersistentIndexList(from, to);
-	}
-	public void* PersistentIndexList()
-	{
-		return this.ptr.PersistentIndexList();
-	}
-	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
-	{
-		return this.ptr.HasIndex3(row, column, parent);
-	}
-	public bool InsertRow2(c_int row, IQModelIndex parent)
-	{
-		return this.ptr.InsertRow2(row, parent);
-	}
-	public bool InsertColumn2(c_int column, IQModelIndex parent)
-	{
-		return this.ptr.InsertColumn2(column, parent);
-	}
-	public bool RemoveRow2(c_int row, IQModelIndex parent)
-	{
-		return this.ptr.RemoveRow2(row, parent);
-	}
-	public bool RemoveColumn2(c_int column, IQModelIndex parent)
-	{
-		return this.ptr.RemoveColumn2(column, parent);
-	}
-	public bool CheckIndex2(IQModelIndex index, void* options)
-	{
-		return this.ptr.CheckIndex2(index, options);
-	}
-	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
-	{
-		this.ptr.DataChanged3(topLeft, bottomRight, roles);
-	}
-	public void LayoutChanged1(void** parents)
-	{
-		this.ptr.LayoutChanged1(parents);
-	}
-	public void LayoutChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		this.ptr.LayoutChanged2(parents, hint);
-	}
-	public void LayoutAboutToBeChanged1(void** parents)
-	{
-		this.ptr.LayoutAboutToBeChanged1(parents);
-	}
-	public void LayoutAboutToBeChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		this.ptr.LayoutAboutToBeChanged2(parents, hint);
-	}
-	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
-	{
-		return this.ptr.CreateIndex3(row, column, data);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1275,25 +894,20 @@ class QIdentityProxyModel : IQIdentityProxyModel, IQAbstractProxyModel, IQAbstra
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1335,6 +949,281 @@ class QIdentityProxyModel : IQIdentityProxyModel, IQAbstractProxyModel, IQAbstra
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public bool HasIndex(c_int row, c_int column)
+	{
+		return this.ptr.HasIndex(row, column);
+	}
+	public  virtual bool OnHasChildren(void** parent)
+	{
+		return default;
+	}
+	public  virtual QVariant_Ptr OnData(void** index, c_int role)
+	{
+		return default;
+	}
+	public  virtual bool OnSetData(void** index, void** value, c_int role)
+	{
+		return default;
+	}
+	public  virtual bool OnSetHeaderData(c_int section, Qt_Orientation orientation, void** value, c_int role)
+	{
+		return default;
+	}
+	public  virtual void* OnItemData(void** index)
+	{
+		return default;
+	}
+	public  virtual bool OnSetItemData(void** index, void** roles)
+	{
+		return default;
+	}
+	public  virtual bool OnClearItemData(void** index)
+	{
+		return default;
+	}
+	public  virtual void* OnMimeTypes()
+	{
+		return default;
+	}
+	public  virtual QMimeData_Ptr OnMimeData(void** indexes)
+	{
+		return default;
+	}
+	public  virtual bool OnCanDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
+	{
+		return default;
+	}
+	public  virtual void* OnSupportedDropActions()
+	{
+		return default;
+	}
+	public  virtual void* OnSupportedDragActions()
+	{
+		return default;
+	}
+	public bool InsertRow(c_int row)
+	{
+		return this.ptr.InsertRow(row);
+	}
+	public bool InsertColumn(c_int column)
+	{
+		return this.ptr.InsertColumn(column);
+	}
+	public bool RemoveRow(c_int row)
+	{
+		return this.ptr.RemoveRow(row);
+	}
+	public bool RemoveColumn(c_int column)
+	{
+		return this.ptr.RemoveColumn(column);
+	}
+	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return this.ptr.MoveRow(sourceParent, sourceRow, destinationParent, destinationChild);
+	}
+	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
+	{
+		return this.ptr.MoveColumn(sourceParent, sourceColumn, destinationParent, destinationChild);
+	}
+	public  virtual void OnFetchMore(void** parent)
+	{
+	}
+	public  virtual bool OnCanFetchMore(void** parent)
+	{
+		return default;
+	}
+	public  virtual void* OnFlags(void** index)
+	{
+		return default;
+	}
+	public  virtual void OnSort(c_int column, Qt_SortOrder order)
+	{
+	}
+	public  virtual QModelIndex_Ptr OnBuddy(void** index)
+	{
+		return default;
+	}
+	public  virtual QSize_Ptr OnSpan(void** index)
+	{
+		return default;
+	}
+	public  virtual void* OnRoleNames()
+	{
+		return default;
+	}
+	public bool CheckIndex(IQModelIndex index)
+	{
+		return this.ptr.CheckIndex(index);
+	}
+	public  virtual void OnMultiData(void** index, void* roleDataSpan)
+	{
+	}
+	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
+	{
+		this.ptr.DataChanged(topLeft, bottomRight);
+	}
+	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
+	{
+		this.ptr.HeaderDataChanged(orientation, first, last);
+	}
+	public void LayoutChanged()
+	{
+		this.ptr.LayoutChanged();
+	}
+	public void LayoutAboutToBeChanged()
+	{
+		this.ptr.LayoutAboutToBeChanged();
+	}
+	public  virtual bool OnSubmit()
+	{
+		return default;
+	}
+	public  virtual void OnRevert()
+	{
+	}
+	public  virtual void OnResetInternalData()
+	{
+	}
+	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
+	{
+		return this.ptr.CreateIndex(row, column);
+	}
+	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
+	{
+		return this.ptr.CreateIndex2(row, column, id);
+	}
+	public void EncodeData(void** indexes, IQDataStream stream)
+	{
+		this.ptr.EncodeData(indexes, stream);
+	}
+	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
+	{
+		return this.ptr.DecodeData(row, column, parent, stream);
+	}
+	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
+	{
+		this.ptr.BeginInsertRows(parent, first, last);
+	}
+	public void EndInsertRows()
+	{
+		this.ptr.EndInsertRows();
+	}
+	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
+	{
+		this.ptr.BeginRemoveRows(parent, first, last);
+	}
+	public void EndRemoveRows()
+	{
+		this.ptr.EndRemoveRows();
+	}
+	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
+	{
+		return this.ptr.BeginMoveRows(sourceParent, sourceFirst, sourceLast, destinationParent, destinationRow);
+	}
+	public void EndMoveRows()
+	{
+		this.ptr.EndMoveRows();
+	}
+	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
+	{
+		this.ptr.BeginInsertColumns(parent, first, last);
+	}
+	public void EndInsertColumns()
+	{
+		this.ptr.EndInsertColumns();
+	}
+	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
+	{
+		this.ptr.BeginRemoveColumns(parent, first, last);
+	}
+	public void EndRemoveColumns()
+	{
+		this.ptr.EndRemoveColumns();
+	}
+	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
+	{
+		return this.ptr.BeginMoveColumns(sourceParent, sourceFirst, sourceLast, destinationParent, destinationColumn);
+	}
+	public void EndMoveColumns()
+	{
+		this.ptr.EndMoveColumns();
+	}
+	public void BeginResetModel()
+	{
+		this.ptr.BeginResetModel();
+	}
+	public void EndResetModel()
+	{
+		this.ptr.EndResetModel();
+	}
+	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
+	{
+		this.ptr.ChangePersistentIndex(from, to);
+	}
+	public void ChangePersistentIndexList(void** from, void** to)
+	{
+		this.ptr.ChangePersistentIndexList(from, to);
+	}
+	public void* PersistentIndexList()
+	{
+		return this.ptr.PersistentIndexList();
+	}
+	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
+	{
+		return this.ptr.HasIndex3(row, column, parent);
+	}
+	public bool InsertRow2(c_int row, IQModelIndex parent)
+	{
+		return this.ptr.InsertRow2(row, parent);
+	}
+	public bool InsertColumn2(c_int column, IQModelIndex parent)
+	{
+		return this.ptr.InsertColumn2(column, parent);
+	}
+	public bool RemoveRow2(c_int row, IQModelIndex parent)
+	{
+		return this.ptr.RemoveRow2(row, parent);
+	}
+	public bool RemoveColumn2(c_int column, IQModelIndex parent)
+	{
+		return this.ptr.RemoveColumn2(column, parent);
+	}
+	public bool CheckIndex2(IQModelIndex index, void* options)
+	{
+		return this.ptr.CheckIndex2(index, options);
+	}
+	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
+	{
+		this.ptr.DataChanged3(topLeft, bottomRight, roles);
+	}
+	public void LayoutChanged1(void** parents)
+	{
+		this.ptr.LayoutChanged1(parents);
+	}
+	public void LayoutChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		this.ptr.LayoutChanged2(parents, hint);
+	}
+	public void LayoutAboutToBeChanged1(void** parents)
+	{
+		this.ptr.LayoutAboutToBeChanged1(parents);
+	}
+	public void LayoutAboutToBeChanged2(void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		this.ptr.LayoutAboutToBeChanged2(parents, hint);
+	}
+	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
+	{
+		return this.ptr.CreateIndex3(row, column, data);
+	}
+	public QAbstractItemModel_Ptr SourceModel()
+	{
+		return this.ptr.SourceModel();
+	}
+	public QModelIndex_Ptr CreateSourceIndex(c_int row, c_int col, void* internalPtr)
+	{
+		return this.ptr.CreateSourceIndex(row, col, internalPtr);
+	}
 }
 interface IQIdentityProxyModel : IQtObjectInterface
 {
@@ -1349,52 +1238,320 @@ extension CQt
 	public static extern void QIdentityProxyModel_Delete(QIdentityProxyModel_Ptr self);
 	[LinkName("QIdentityProxyModel_MetaObject")]
 	public static extern void** QIdentityProxyModel_MetaObject(void* self);
+	
+	public function void QIdentityProxyModel_OnMetaObject_action(void* self);
+	[LinkName("QIdentityProxyModel_OnMetaObject")]
+	public static extern void** QIdentityProxyModel_OnMetaObject(void* self, QIdentityProxyModel_OnMetaObject_action _action);
 	[LinkName("QIdentityProxyModel_Qt_Metacast")]
 	public static extern void* QIdentityProxyModel_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QIdentityProxyModel_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QIdentityProxyModel_OnMetacast")]
+	public static extern void* QIdentityProxyModel_OnMetacast(void* self, QIdentityProxyModel_OnMetacast_action _action);
 	[LinkName("QIdentityProxyModel_Qt_Metacall")]
 	public static extern c_int QIdentityProxyModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QIdentityProxyModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QIdentityProxyModel_OnMetacall")]
+	public static extern c_int QIdentityProxyModel_OnMetacall(void* self, QIdentityProxyModel_OnMetacall_action _action);
 	[LinkName("QIdentityProxyModel_Tr")]
 	public static extern libqt_string QIdentityProxyModel_Tr(c_char* s);
 	[LinkName("QIdentityProxyModel_ColumnCount")]
 	public static extern c_int QIdentityProxyModel_ColumnCount(void* self, void** parent);
+	
+	public function void QIdentityProxyModel_OnColumnCount_action(void* self, void** parent);
+	[LinkName("QIdentityProxyModel_OnColumnCount")]
+	public static extern c_int QIdentityProxyModel_OnColumnCount(void* self, QIdentityProxyModel_OnColumnCount_action _action);
 	[LinkName("QIdentityProxyModel_Index")]
 	public static extern void* QIdentityProxyModel_Index(void* self, c_int row, c_int column, void** parent);
+	
+	public function void QIdentityProxyModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
+	[LinkName("QIdentityProxyModel_OnIndex")]
+	public static extern void* QIdentityProxyModel_OnIndex(void* self, QIdentityProxyModel_OnIndex_action _action);
 	[LinkName("QIdentityProxyModel_MapFromSource")]
 	public static extern void* QIdentityProxyModel_MapFromSource(void* self, void** sourceIndex);
+	
+	public function void QIdentityProxyModel_OnMapFromSource_action(void* self, void** sourceIndex);
+	[LinkName("QIdentityProxyModel_OnMapFromSource")]
+	public static extern void* QIdentityProxyModel_OnMapFromSource(void* self, QIdentityProxyModel_OnMapFromSource_action _action);
 	[LinkName("QIdentityProxyModel_MapToSource")]
 	public static extern void* QIdentityProxyModel_MapToSource(void* self, void** proxyIndex);
+	
+	public function void QIdentityProxyModel_OnMapToSource_action(void* self, void** proxyIndex);
+	[LinkName("QIdentityProxyModel_OnMapToSource")]
+	public static extern void* QIdentityProxyModel_OnMapToSource(void* self, QIdentityProxyModel_OnMapToSource_action _action);
 	[LinkName("QIdentityProxyModel_Parent")]
 	public static extern void* QIdentityProxyModel_Parent(void* self, void** child);
+	
+	public function void QIdentityProxyModel_OnParent_action(void* self, void** child);
+	[LinkName("QIdentityProxyModel_OnParent")]
+	public static extern void* QIdentityProxyModel_OnParent(void* self, QIdentityProxyModel_OnParent_action _action);
 	[LinkName("QIdentityProxyModel_RowCount")]
 	public static extern c_int QIdentityProxyModel_RowCount(void* self, void** parent);
+	
+	public function void QIdentityProxyModel_OnRowCount_action(void* self, void** parent);
+	[LinkName("QIdentityProxyModel_OnRowCount")]
+	public static extern c_int QIdentityProxyModel_OnRowCount(void* self, QIdentityProxyModel_OnRowCount_action _action);
 	[LinkName("QIdentityProxyModel_HeaderData")]
 	public static extern void* QIdentityProxyModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	
+	public function void QIdentityProxyModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	[LinkName("QIdentityProxyModel_OnHeaderData")]
+	public static extern void* QIdentityProxyModel_OnHeaderData(void* self, QIdentityProxyModel_OnHeaderData_action _action);
 	[LinkName("QIdentityProxyModel_DropMimeData")]
 	public static extern bool QIdentityProxyModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QIdentityProxyModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QIdentityProxyModel_OnDropMimeData")]
+	public static extern bool QIdentityProxyModel_OnDropMimeData(void* self, QIdentityProxyModel_OnDropMimeData_action _action);
 	[LinkName("QIdentityProxyModel_Sibling")]
 	public static extern void* QIdentityProxyModel_Sibling(void* self, c_int row, c_int column, void** idx);
+	
+	public function void QIdentityProxyModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
+	[LinkName("QIdentityProxyModel_OnSibling")]
+	public static extern void* QIdentityProxyModel_OnSibling(void* self, QIdentityProxyModel_OnSibling_action _action);
 	[LinkName("QIdentityProxyModel_MapSelectionFromSource")]
 	public static extern void* QIdentityProxyModel_MapSelectionFromSource(void* self, void** selection);
+	
+	public function void QIdentityProxyModel_OnMapSelectionFromSource_action(void* self, void** selection);
+	[LinkName("QIdentityProxyModel_OnMapSelectionFromSource")]
+	public static extern void* QIdentityProxyModel_OnMapSelectionFromSource(void* self, QIdentityProxyModel_OnMapSelectionFromSource_action _action);
 	[LinkName("QIdentityProxyModel_MapSelectionToSource")]
 	public static extern void* QIdentityProxyModel_MapSelectionToSource(void* self, void** selection);
+	
+	public function void QIdentityProxyModel_OnMapSelectionToSource_action(void* self, void** selection);
+	[LinkName("QIdentityProxyModel_OnMapSelectionToSource")]
+	public static extern void* QIdentityProxyModel_OnMapSelectionToSource(void* self, QIdentityProxyModel_OnMapSelectionToSource_action _action);
 	[LinkName("QIdentityProxyModel_Match")]
 	public static extern void* QIdentityProxyModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	
+	public function void QIdentityProxyModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	[LinkName("QIdentityProxyModel_OnMatch")]
+	public static extern void* QIdentityProxyModel_OnMatch(void* self, QIdentityProxyModel_OnMatch_action _action);
 	[LinkName("QIdentityProxyModel_SetSourceModel")]
 	public static extern void QIdentityProxyModel_SetSourceModel(void* self, void** sourceModel);
+	
+	public function void QIdentityProxyModel_OnSetSourceModel_action(void* self, void** sourceModel);
+	[LinkName("QIdentityProxyModel_OnSetSourceModel")]
+	public static extern void QIdentityProxyModel_OnSetSourceModel(void* self, QIdentityProxyModel_OnSetSourceModel_action _action);
 	[LinkName("QIdentityProxyModel_InsertColumns")]
 	public static extern bool QIdentityProxyModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QIdentityProxyModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QIdentityProxyModel_OnInsertColumns")]
+	public static extern bool QIdentityProxyModel_OnInsertColumns(void* self, QIdentityProxyModel_OnInsertColumns_action _action);
 	[LinkName("QIdentityProxyModel_InsertRows")]
 	public static extern bool QIdentityProxyModel_InsertRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QIdentityProxyModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QIdentityProxyModel_OnInsertRows")]
+	public static extern bool QIdentityProxyModel_OnInsertRows(void* self, QIdentityProxyModel_OnInsertRows_action _action);
 	[LinkName("QIdentityProxyModel_RemoveColumns")]
 	public static extern bool QIdentityProxyModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QIdentityProxyModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QIdentityProxyModel_OnRemoveColumns")]
+	public static extern bool QIdentityProxyModel_OnRemoveColumns(void* self, QIdentityProxyModel_OnRemoveColumns_action _action);
 	[LinkName("QIdentityProxyModel_RemoveRows")]
 	public static extern bool QIdentityProxyModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QIdentityProxyModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QIdentityProxyModel_OnRemoveRows")]
+	public static extern bool QIdentityProxyModel_OnRemoveRows(void* self, QIdentityProxyModel_OnRemoveRows_action _action);
 	[LinkName("QIdentityProxyModel_MoveRows")]
 	public static extern bool QIdentityProxyModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QIdentityProxyModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QIdentityProxyModel_OnMoveRows")]
+	public static extern bool QIdentityProxyModel_OnMoveRows(void* self, QIdentityProxyModel_OnMoveRows_action _action);
 	[LinkName("QIdentityProxyModel_MoveColumns")]
 	public static extern bool QIdentityProxyModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QIdentityProxyModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QIdentityProxyModel_OnMoveColumns")]
+	public static extern bool QIdentityProxyModel_OnMoveColumns(void* self, QIdentityProxyModel_OnMoveColumns_action _action);
 	[LinkName("QIdentityProxyModel_Tr2")]
 	public static extern libqt_string QIdentityProxyModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QIdentityProxyModel_Tr3")]
 	public static extern libqt_string QIdentityProxyModel_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QIdentityProxyModel_Event")]
+	public static extern bool QIdentityProxyModel_Event(void* self, void** event);
+	
+	public function void QIdentityProxyModel_OnEvent_action(void* self, void** event);
+	[LinkName("QIdentityProxyModel_OnEvent")]
+	public static extern bool QIdentityProxyModel_OnEvent(void* self, QIdentityProxyModel_OnEvent_action _action);
+	[LinkName("QIdentityProxyModel_EventFilter")]
+	public static extern bool QIdentityProxyModel_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QIdentityProxyModel_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QIdentityProxyModel_OnEventFilter")]
+	public static extern bool QIdentityProxyModel_OnEventFilter(void* self, QIdentityProxyModel_OnEventFilter_action _action);
+	[LinkName("QIdentityProxyModel_TimerEvent")]
+	public static extern void QIdentityProxyModel_TimerEvent(void* self, void** event);
+	
+	public function void QIdentityProxyModel_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QIdentityProxyModel_OnTimerEvent")]
+	public static extern void QIdentityProxyModel_OnTimerEvent(void* self, QIdentityProxyModel_OnTimerEvent_action _action);
+	[LinkName("QIdentityProxyModel_ChildEvent")]
+	public static extern void QIdentityProxyModel_ChildEvent(void* self, void** event);
+	
+	public function void QIdentityProxyModel_OnChildEvent_action(void* self, void** event);
+	[LinkName("QIdentityProxyModel_OnChildEvent")]
+	public static extern void QIdentityProxyModel_OnChildEvent(void* self, QIdentityProxyModel_OnChildEvent_action _action);
+	[LinkName("QIdentityProxyModel_CustomEvent")]
+	public static extern void QIdentityProxyModel_CustomEvent(void* self, void** event);
+	
+	public function void QIdentityProxyModel_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QIdentityProxyModel_OnCustomEvent")]
+	public static extern void QIdentityProxyModel_OnCustomEvent(void* self, QIdentityProxyModel_OnCustomEvent_action _action);
+	[LinkName("QIdentityProxyModel_ConnectNotify")]
+	public static extern void QIdentityProxyModel_ConnectNotify(void* self, void** signal);
+	
+	public function void QIdentityProxyModel_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QIdentityProxyModel_OnConnectNotify")]
+	public static extern void QIdentityProxyModel_OnConnectNotify(void* self, QIdentityProxyModel_OnConnectNotify_action _action);
+	[LinkName("QIdentityProxyModel_DisconnectNotify")]
+	public static extern void QIdentityProxyModel_DisconnectNotify(void* self, void** signal);
+	
+	public function void QIdentityProxyModel_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QIdentityProxyModel_OnDisconnectNotify")]
+	public static extern void QIdentityProxyModel_OnDisconnectNotify(void* self, QIdentityProxyModel_OnDisconnectNotify_action _action);
+	[LinkName("QIdentityProxyModel_HasChildren")]
+	public static extern bool QIdentityProxyModel_HasChildren(void* self, void** parent);
+	
+	public function void QIdentityProxyModel_OnHasChildren_action(void* self, void** parent);
+	[LinkName("QIdentityProxyModel_OnHasChildren")]
+	public static extern bool QIdentityProxyModel_OnHasChildren(void* self, QIdentityProxyModel_OnHasChildren_action _action);
+	[LinkName("QIdentityProxyModel_Data")]
+	public static extern void* QIdentityProxyModel_Data(void* self, void** index, c_int role);
+	
+	public function void QIdentityProxyModel_OnData_action(void* self, void** index, c_int role);
+	[LinkName("QIdentityProxyModel_OnData")]
+	public static extern void* QIdentityProxyModel_OnData(void* self, QIdentityProxyModel_OnData_action _action);
+	[LinkName("QIdentityProxyModel_SetData")]
+	public static extern bool QIdentityProxyModel_SetData(void* self, void** index, void** value, c_int role);
+	
+	public function void QIdentityProxyModel_OnSetData_action(void* self, void** index, void** value, c_int role);
+	[LinkName("QIdentityProxyModel_OnSetData")]
+	public static extern bool QIdentityProxyModel_OnSetData(void* self, QIdentityProxyModel_OnSetData_action _action);
+	[LinkName("QIdentityProxyModel_SetHeaderData")]
+	public static extern bool QIdentityProxyModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	
+	public function void QIdentityProxyModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	[LinkName("QIdentityProxyModel_OnSetHeaderData")]
+	public static extern bool QIdentityProxyModel_OnSetHeaderData(void* self, QIdentityProxyModel_OnSetHeaderData_action _action);
+	[LinkName("QIdentityProxyModel_ItemData")]
+	public static extern void* QIdentityProxyModel_ItemData(void* self, void** index);
+	
+	public function void QIdentityProxyModel_OnItemData_action(void* self, void** index);
+	[LinkName("QIdentityProxyModel_OnItemData")]
+	public static extern void* QIdentityProxyModel_OnItemData(void* self, QIdentityProxyModel_OnItemData_action _action);
+	[LinkName("QIdentityProxyModel_SetItemData")]
+	public static extern bool QIdentityProxyModel_SetItemData(void* self, void** index, void** roles);
+	
+	public function void QIdentityProxyModel_OnSetItemData_action(void* self, void** index, void** roles);
+	[LinkName("QIdentityProxyModel_OnSetItemData")]
+	public static extern bool QIdentityProxyModel_OnSetItemData(void* self, QIdentityProxyModel_OnSetItemData_action _action);
+	[LinkName("QIdentityProxyModel_ClearItemData")]
+	public static extern bool QIdentityProxyModel_ClearItemData(void* self, void** index);
+	
+	public function void QIdentityProxyModel_OnClearItemData_action(void* self, void** index);
+	[LinkName("QIdentityProxyModel_OnClearItemData")]
+	public static extern bool QIdentityProxyModel_OnClearItemData(void* self, QIdentityProxyModel_OnClearItemData_action _action);
+	[LinkName("QIdentityProxyModel_MimeTypes")]
+	public static extern void* QIdentityProxyModel_MimeTypes(void* self);
+	
+	public function void QIdentityProxyModel_OnMimeTypes_action(void* self);
+	[LinkName("QIdentityProxyModel_OnMimeTypes")]
+	public static extern void* QIdentityProxyModel_OnMimeTypes(void* self, QIdentityProxyModel_OnMimeTypes_action _action);
+	[LinkName("QIdentityProxyModel_MimeData")]
+	public static extern void** QIdentityProxyModel_MimeData(void* self, void** indexes);
+	
+	public function void QIdentityProxyModel_OnMimeData_action(void* self, void** indexes);
+	[LinkName("QIdentityProxyModel_OnMimeData")]
+	public static extern void** QIdentityProxyModel_OnMimeData(void* self, QIdentityProxyModel_OnMimeData_action _action);
+	[LinkName("QIdentityProxyModel_CanDropMimeData")]
+	public static extern bool QIdentityProxyModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QIdentityProxyModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QIdentityProxyModel_OnCanDropMimeData")]
+	public static extern bool QIdentityProxyModel_OnCanDropMimeData(void* self, QIdentityProxyModel_OnCanDropMimeData_action _action);
+	[LinkName("QIdentityProxyModel_SupportedDropActions")]
+	public static extern void* QIdentityProxyModel_SupportedDropActions(void* self);
+	
+	public function void QIdentityProxyModel_OnSupportedDropActions_action(void* self);
+	[LinkName("QIdentityProxyModel_OnSupportedDropActions")]
+	public static extern void* QIdentityProxyModel_OnSupportedDropActions(void* self, QIdentityProxyModel_OnSupportedDropActions_action _action);
+	[LinkName("QIdentityProxyModel_SupportedDragActions")]
+	public static extern void* QIdentityProxyModel_SupportedDragActions(void* self);
+	
+	public function void QIdentityProxyModel_OnSupportedDragActions_action(void* self);
+	[LinkName("QIdentityProxyModel_OnSupportedDragActions")]
+	public static extern void* QIdentityProxyModel_OnSupportedDragActions(void* self, QIdentityProxyModel_OnSupportedDragActions_action _action);
+	[LinkName("QIdentityProxyModel_FetchMore")]
+	public static extern void QIdentityProxyModel_FetchMore(void* self, void** parent);
+	
+	public function void QIdentityProxyModel_OnFetchMore_action(void* self, void** parent);
+	[LinkName("QIdentityProxyModel_OnFetchMore")]
+	public static extern void QIdentityProxyModel_OnFetchMore(void* self, QIdentityProxyModel_OnFetchMore_action _action);
+	[LinkName("QIdentityProxyModel_CanFetchMore")]
+	public static extern bool QIdentityProxyModel_CanFetchMore(void* self, void** parent);
+	
+	public function void QIdentityProxyModel_OnCanFetchMore_action(void* self, void** parent);
+	[LinkName("QIdentityProxyModel_OnCanFetchMore")]
+	public static extern bool QIdentityProxyModel_OnCanFetchMore(void* self, QIdentityProxyModel_OnCanFetchMore_action _action);
+	[LinkName("QIdentityProxyModel_Flags")]
+	public static extern void* QIdentityProxyModel_Flags(void* self, void** index);
+	
+	public function void QIdentityProxyModel_OnFlags_action(void* self, void** index);
+	[LinkName("QIdentityProxyModel_OnFlags")]
+	public static extern void* QIdentityProxyModel_OnFlags(void* self, QIdentityProxyModel_OnFlags_action _action);
+	[LinkName("QIdentityProxyModel_Sort")]
+	public static extern void QIdentityProxyModel_Sort(void* self, c_int column, Qt_SortOrder order);
+	
+	public function void QIdentityProxyModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
+	[LinkName("QIdentityProxyModel_OnSort")]
+	public static extern void QIdentityProxyModel_OnSort(void* self, QIdentityProxyModel_OnSort_action _action);
+	[LinkName("QIdentityProxyModel_Buddy")]
+	public static extern void* QIdentityProxyModel_Buddy(void* self, void** index);
+	
+	public function void QIdentityProxyModel_OnBuddy_action(void* self, void** index);
+	[LinkName("QIdentityProxyModel_OnBuddy")]
+	public static extern void* QIdentityProxyModel_OnBuddy(void* self, QIdentityProxyModel_OnBuddy_action _action);
+	[LinkName("QIdentityProxyModel_Span")]
+	public static extern void* QIdentityProxyModel_Span(void* self, void** index);
+	
+	public function void QIdentityProxyModel_OnSpan_action(void* self, void** index);
+	[LinkName("QIdentityProxyModel_OnSpan")]
+	public static extern void* QIdentityProxyModel_OnSpan(void* self, QIdentityProxyModel_OnSpan_action _action);
+	[LinkName("QIdentityProxyModel_RoleNames")]
+	public static extern void* QIdentityProxyModel_RoleNames(void* self);
+	
+	public function void QIdentityProxyModel_OnRoleNames_action(void* self);
+	[LinkName("QIdentityProxyModel_OnRoleNames")]
+	public static extern void* QIdentityProxyModel_OnRoleNames(void* self, QIdentityProxyModel_OnRoleNames_action _action);
+	[LinkName("QIdentityProxyModel_MultiData")]
+	public static extern void QIdentityProxyModel_MultiData(void* self, void** index, void* roleDataSpan);
+	
+	public function void QIdentityProxyModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
+	[LinkName("QIdentityProxyModel_OnMultiData")]
+	public static extern void QIdentityProxyModel_OnMultiData(void* self, QIdentityProxyModel_OnMultiData_action _action);
+	[LinkName("QIdentityProxyModel_Submit")]
+	public static extern bool QIdentityProxyModel_Submit(void* self);
+	
+	public function void QIdentityProxyModel_OnSubmit_action(void* self);
+	[LinkName("QIdentityProxyModel_OnSubmit")]
+	public static extern bool QIdentityProxyModel_OnSubmit(void* self, QIdentityProxyModel_OnSubmit_action _action);
+	[LinkName("QIdentityProxyModel_Revert")]
+	public static extern void QIdentityProxyModel_Revert(void* self);
+	
+	public function void QIdentityProxyModel_OnRevert_action(void* self);
+	[LinkName("QIdentityProxyModel_OnRevert")]
+	public static extern void QIdentityProxyModel_OnRevert(void* self, QIdentityProxyModel_OnRevert_action _action);
+	[LinkName("QIdentityProxyModel_ResetInternalData")]
+	public static extern void QIdentityProxyModel_ResetInternalData(void* self);
+	
+	public function void QIdentityProxyModel_OnResetInternalData_action(void* self);
+	[LinkName("QIdentityProxyModel_OnResetInternalData")]
+	public static extern void QIdentityProxyModel_OnResetInternalData(void* self, QIdentityProxyModel_OnResetInternalData_action _action);
 }

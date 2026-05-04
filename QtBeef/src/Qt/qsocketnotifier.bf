@@ -18,11 +18,11 @@ struct QSocketNotifier_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QSocketNotifier_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QSocketNotifier_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QSocketNotifier_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -68,7 +68,7 @@ struct QSocketNotifier_Ptr
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QSocketNotifier_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -228,23 +228,23 @@ struct QSocketNotifier_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSocketNotifier_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSocketNotifier_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QSocketNotifier_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSocketNotifier_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QSocketNotifier_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -291,71 +291,41 @@ class QSocketNotifier : IQSocketNotifier, IQObject
 {
 	private QSocketNotifier_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QSocketNotifier_destroyed,
-		QSocketNotifier_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QSocketNotifier_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QSocketNotifier_Type param1)
 	{
 		this.ptr = CQt.QSocketNotifier_new(param1);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* socket, QSocketNotifier_Type param2)
 	{
 		this.ptr = CQt.QSocketNotifier_new2(socket, param2);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QSocketNotifier_Type param1, IQObject parent)
 	{
 		this.ptr = CQt.QSocketNotifier_new3(param1, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* socket, QSocketNotifier_Type param2, IQObject parent)
 	{
 		this.ptr = CQt.QSocketNotifier_new4(socket, param2, (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QSocketNotifier_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -385,9 +355,9 @@ class QSocketNotifier : IQSocketNotifier, IQObject
 	{
 		this.ptr.SetEnabled(enabled);
 	}
-	public bool Event(IQEvent param1)
+	public  virtual bool OnEvent(void** param1)
 	{
-		return this.ptr.Event(param1);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -397,9 +367,9 @@ class QSocketNotifier : IQSocketNotifier, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -557,25 +527,20 @@ class QSocketNotifier : IQSocketNotifier, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -635,10 +600,22 @@ extension CQt
 	public static extern void QSocketNotifier_Delete(QSocketNotifier_Ptr self);
 	[LinkName("QSocketNotifier_MetaObject")]
 	public static extern void** QSocketNotifier_MetaObject(void* self);
+	
+	public function void QSocketNotifier_OnMetaObject_action(void* self);
+	[LinkName("QSocketNotifier_OnMetaObject")]
+	public static extern void** QSocketNotifier_OnMetaObject(void* self, QSocketNotifier_OnMetaObject_action _action);
 	[LinkName("QSocketNotifier_Qt_Metacast")]
 	public static extern void* QSocketNotifier_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QSocketNotifier_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QSocketNotifier_OnMetacast")]
+	public static extern void* QSocketNotifier_OnMetacast(void* self, QSocketNotifier_OnMetacast_action _action);
 	[LinkName("QSocketNotifier_Qt_Metacall")]
 	public static extern c_int QSocketNotifier_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QSocketNotifier_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QSocketNotifier_OnMetacall")]
+	public static extern c_int QSocketNotifier_OnMetacall(void* self, QSocketNotifier_OnMetacall_action _action);
 	[LinkName("QSocketNotifier_Tr")]
 	public static extern libqt_string QSocketNotifier_Tr(c_char* s);
 	[LinkName("QSocketNotifier_SetSocket")]
@@ -655,10 +632,50 @@ extension CQt
 	public static extern void QSocketNotifier_SetEnabled(void* self, bool enabled);
 	[LinkName("QSocketNotifier_Event")]
 	public static extern bool QSocketNotifier_Event(void* self, void** param1);
+	
+	public function void QSocketNotifier_OnEvent_action(void* self, void** param1);
+	[LinkName("QSocketNotifier_OnEvent")]
+	public static extern bool QSocketNotifier_OnEvent(void* self, QSocketNotifier_OnEvent_action _action);
 	[LinkName("QSocketNotifier_Tr2")]
 	public static extern libqt_string QSocketNotifier_Tr2(c_char* s, c_char* c);
 	[LinkName("QSocketNotifier_Tr3")]
 	public static extern libqt_string QSocketNotifier_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QSocketNotifier_EventFilter")]
+	public static extern bool QSocketNotifier_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QSocketNotifier_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QSocketNotifier_OnEventFilter")]
+	public static extern bool QSocketNotifier_OnEventFilter(void* self, QSocketNotifier_OnEventFilter_action _action);
+	[LinkName("QSocketNotifier_TimerEvent")]
+	public static extern void QSocketNotifier_TimerEvent(void* self, void** event);
+	
+	public function void QSocketNotifier_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QSocketNotifier_OnTimerEvent")]
+	public static extern void QSocketNotifier_OnTimerEvent(void* self, QSocketNotifier_OnTimerEvent_action _action);
+	[LinkName("QSocketNotifier_ChildEvent")]
+	public static extern void QSocketNotifier_ChildEvent(void* self, void** event);
+	
+	public function void QSocketNotifier_OnChildEvent_action(void* self, void** event);
+	[LinkName("QSocketNotifier_OnChildEvent")]
+	public static extern void QSocketNotifier_OnChildEvent(void* self, QSocketNotifier_OnChildEvent_action _action);
+	[LinkName("QSocketNotifier_CustomEvent")]
+	public static extern void QSocketNotifier_CustomEvent(void* self, void** event);
+	
+	public function void QSocketNotifier_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QSocketNotifier_OnCustomEvent")]
+	public static extern void QSocketNotifier_OnCustomEvent(void* self, QSocketNotifier_OnCustomEvent_action _action);
+	[LinkName("QSocketNotifier_ConnectNotify")]
+	public static extern void QSocketNotifier_ConnectNotify(void* self, void** signal);
+	
+	public function void QSocketNotifier_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QSocketNotifier_OnConnectNotify")]
+	public static extern void QSocketNotifier_OnConnectNotify(void* self, QSocketNotifier_OnConnectNotify_action _action);
+	[LinkName("QSocketNotifier_DisconnectNotify")]
+	public static extern void QSocketNotifier_DisconnectNotify(void* self, void** signal);
+	
+	public function void QSocketNotifier_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QSocketNotifier_OnDisconnectNotify")]
+	public static extern void QSocketNotifier_OnDisconnectNotify(void* self, QSocketNotifier_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QSocketDescriptor
@@ -680,34 +697,21 @@ class QSocketDescriptor : IQSocketDescriptor
 {
 	private QSocketDescriptor_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QSocketDescriptor_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQSocketDescriptor other)
 	{
 		this.ptr = CQt.QSocketDescriptor_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSocketDescriptor_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int descriptor)
 	{
 		this.ptr = CQt.QSocketDescriptor_new5(descriptor);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -63,51 +63,35 @@ class QUndoCommand : IQUndoCommand
 {
 	private QUndoCommand_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QUndoCommand_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUndoCommand_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QUndoCommand_new2(libqt_string(text));
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoCommand parent)
 	{
 		this.ptr = CQt.QUndoCommand_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQUndoCommand parent)
 	{
 		this.ptr = CQt.QUndoCommand_new4(libqt_string(text), (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QUndoCommand_Delete(this.ptr);
 	}
-	public void Undo()
+	public  virtual void OnUndo()
 	{
-		this.ptr.Undo();
 	}
-	public void Redo()
+	public  virtual void OnRedo()
 	{
-		this.ptr.Redo();
 	}
 	public void Text(String outStr)
 	{
@@ -129,13 +113,13 @@ class QUndoCommand : IQUndoCommand
 	{
 		this.ptr.SetObsolete(obsolete);
 	}
-	public c_int Id()
+	public  virtual c_int OnId()
 	{
-		return this.ptr.Id();
+		return default;
 	}
-	public bool MergeWith(IQUndoCommand other)
+	public  virtual bool OnMergeWith(void** other)
 	{
-		return this.ptr.MergeWith(other);
+		return default;
 	}
 	public c_int ChildCount()
 	{
@@ -163,8 +147,16 @@ extension CQt
 	public static extern void QUndoCommand_Delete(QUndoCommand_Ptr self);
 	[LinkName("QUndoCommand_Undo")]
 	public static extern void QUndoCommand_Undo(void* self);
+	
+	public function void QUndoCommand_OnUndo_action(void* self);
+	[LinkName("QUndoCommand_OnUndo")]
+	public static extern void QUndoCommand_OnUndo(void* self, QUndoCommand_OnUndo_action _action);
 	[LinkName("QUndoCommand_Redo")]
 	public static extern void QUndoCommand_Redo(void* self);
+	
+	public function void QUndoCommand_OnRedo_action(void* self);
+	[LinkName("QUndoCommand_OnRedo")]
+	public static extern void QUndoCommand_OnRedo(void* self, QUndoCommand_OnRedo_action _action);
 	[LinkName("QUndoCommand_Text")]
 	public static extern libqt_string QUndoCommand_Text(void* self);
 	[LinkName("QUndoCommand_ActionText")]
@@ -177,8 +169,16 @@ extension CQt
 	public static extern void QUndoCommand_SetObsolete(void* self, bool obsolete);
 	[LinkName("QUndoCommand_Id")]
 	public static extern c_int QUndoCommand_Id(void* self);
+	
+	public function void QUndoCommand_OnId_action(void* self);
+	[LinkName("QUndoCommand_OnId")]
+	public static extern c_int QUndoCommand_OnId(void* self, QUndoCommand_OnId_action _action);
 	[LinkName("QUndoCommand_MergeWith")]
 	public static extern bool QUndoCommand_MergeWith(void* self, void** other);
+	
+	public function void QUndoCommand_OnMergeWith_action(void* self, void** other);
+	[LinkName("QUndoCommand_OnMergeWith")]
+	public static extern bool QUndoCommand_OnMergeWith(void* self, QUndoCommand_OnMergeWith_action _action);
 	[LinkName("QUndoCommand_ChildCount")]
 	public static extern c_int QUndoCommand_ChildCount(void* self);
 	[LinkName("QUndoCommand_Child")]
@@ -199,11 +199,11 @@ struct QUndoStack_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QUndoStack_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QUndoStack_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QUndoStack_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -357,11 +357,11 @@ struct QUndoStack_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QUndoStack_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QUndoStack_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -521,23 +521,23 @@ struct QUndoStack_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QUndoStack_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QUndoStack_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QUndoStack_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QUndoStack_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QUndoStack_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -584,109 +584,33 @@ class QUndoStack : IQUndoStack, IQObject
 {
 	private QUndoStack_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QUndoStack_indexChanged,
-		QUndoStack_cleanChanged,
-		QUndoStack_canUndoChanged,
-		QUndoStack_canRedoChanged,
-		QUndoStack_undoTextChanged,
-		QUndoStack_redoTextChanged,
-		QUndoStack_destroyed,
-		QUndoStack_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QUndoStack_Connect_IndexChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_indexChanged);
-		CQt.QUndoStack_Connect_CleanChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_cleanChanged);
-		CQt.QUndoStack_Connect_CanUndoChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_canUndoChanged);
-		CQt.QUndoStack_Connect_CanRedoChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_canRedoChanged);
-		CQt.QUndoStack_Connect_UndoTextChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_undoTextChanged);
-		CQt.QUndoStack_Connect_RedoTextChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_redoTextChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(c_int idx)> OnIndexChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool clean)> OnCleanChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool canUndo)> OnCanUndoChanged = .() ~ _.Dispose();
-	public Event<delegate void(bool canRedo)> OnCanRedoChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string undoText)> OnUndoTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string redoText)> OnRedoTextChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QUndoStack_indexChanged(void* ptr, c_int idx)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnIndexChanged.Invoke(idx);
-	}
-	static void QtBeef_QUndoStack_cleanChanged(void* ptr, bool clean)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCleanChanged.Invoke(clean);
-	}
-	static void QtBeef_QUndoStack_canUndoChanged(void* ptr, bool canUndo)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCanUndoChanged.Invoke(canUndo);
-	}
-	static void QtBeef_QUndoStack_canRedoChanged(void* ptr, bool canRedo)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCanRedoChanged.Invoke(canRedo);
-	}
-	static void QtBeef_QUndoStack_undoTextChanged(void* ptr, libqt_string undoText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnUndoTextChanged.Invoke(undoText);
-	}
-	static void QtBeef_QUndoStack_redoTextChanged(void* ptr, libqt_string redoText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnRedoTextChanged.Invoke(redoText);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QUndoStack_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUndoStack_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QUndoStack_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QUndoStack_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -836,13 +760,13 @@ class QUndoStack : IQUndoStack, IQObject
 	{
 		this.ptr.SetActive1(active);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1000,25 +924,20 @@ class QUndoStack : IQUndoStack, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1074,10 +993,22 @@ extension CQt
 	public static extern void QUndoStack_Delete(QUndoStack_Ptr self);
 	[LinkName("QUndoStack_MetaObject")]
 	public static extern void** QUndoStack_MetaObject(void* self);
+	
+	public function void QUndoStack_OnMetaObject_action(void* self);
+	[LinkName("QUndoStack_OnMetaObject")]
+	public static extern void** QUndoStack_OnMetaObject(void* self, QUndoStack_OnMetaObject_action _action);
 	[LinkName("QUndoStack_Qt_Metacast")]
 	public static extern void* QUndoStack_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QUndoStack_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QUndoStack_OnMetacast")]
+	public static extern void* QUndoStack_OnMetacast(void* self, QUndoStack_OnMetacast_action _action);
 	[LinkName("QUndoStack_Qt_Metacall")]
 	public static extern c_int QUndoStack_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QUndoStack_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QUndoStack_OnMetacall")]
+	public static extern c_int QUndoStack_OnMetacall(void* self, QUndoStack_OnMetacall_action _action);
 	[LinkName("QUndoStack_Tr")]
 	public static extern libqt_string QUndoStack_Tr(c_char* s);
 	[LinkName("QUndoStack_Clear")]
@@ -1133,39 +1064,39 @@ extension CQt
 	[LinkName("QUndoStack_IndexChanged")]
 	public static extern void QUndoStack_IndexChanged(void* self, c_int idx);
 	
-	public function void QUndoStack_indexChanged_action(void* self, c_int idx);
+	public function void QUndoStack_Connect_IndexChanged_action(void* self, c_int idx);
 	[LinkName("QUndoStack_Connect_IndexChanged")]
-	public static extern void QUndoStack_Connect_IndexChanged(void* self, QUndoStack_indexChanged_action _action);
+	public static extern void QUndoStack_Connect_IndexChanged(void* self, QUndoStack_Connect_IndexChanged_action _action);
 	[LinkName("QUndoStack_CleanChanged")]
 	public static extern void QUndoStack_CleanChanged(void* self, bool clean);
 	
-	public function void QUndoStack_cleanChanged_action(void* self, bool clean);
+	public function void QUndoStack_Connect_CleanChanged_action(void* self, bool clean);
 	[LinkName("QUndoStack_Connect_CleanChanged")]
-	public static extern void QUndoStack_Connect_CleanChanged(void* self, QUndoStack_cleanChanged_action _action);
+	public static extern void QUndoStack_Connect_CleanChanged(void* self, QUndoStack_Connect_CleanChanged_action _action);
 	[LinkName("QUndoStack_CanUndoChanged")]
 	public static extern void QUndoStack_CanUndoChanged(void* self, bool canUndo);
 	
-	public function void QUndoStack_canUndoChanged_action(void* self, bool canUndo);
+	public function void QUndoStack_Connect_CanUndoChanged_action(void* self, bool canUndo);
 	[LinkName("QUndoStack_Connect_CanUndoChanged")]
-	public static extern void QUndoStack_Connect_CanUndoChanged(void* self, QUndoStack_canUndoChanged_action _action);
+	public static extern void QUndoStack_Connect_CanUndoChanged(void* self, QUndoStack_Connect_CanUndoChanged_action _action);
 	[LinkName("QUndoStack_CanRedoChanged")]
 	public static extern void QUndoStack_CanRedoChanged(void* self, bool canRedo);
 	
-	public function void QUndoStack_canRedoChanged_action(void* self, bool canRedo);
+	public function void QUndoStack_Connect_CanRedoChanged_action(void* self, bool canRedo);
 	[LinkName("QUndoStack_Connect_CanRedoChanged")]
-	public static extern void QUndoStack_Connect_CanRedoChanged(void* self, QUndoStack_canRedoChanged_action _action);
+	public static extern void QUndoStack_Connect_CanRedoChanged(void* self, QUndoStack_Connect_CanRedoChanged_action _action);
 	[LinkName("QUndoStack_UndoTextChanged")]
 	public static extern void QUndoStack_UndoTextChanged(void* self, libqt_string undoText);
 	
-	public function void QUndoStack_undoTextChanged_action(void* self, libqt_string undoText);
+	public function void QUndoStack_Connect_UndoTextChanged_action(void* self, libqt_string undoText);
 	[LinkName("QUndoStack_Connect_UndoTextChanged")]
-	public static extern void QUndoStack_Connect_UndoTextChanged(void* self, QUndoStack_undoTextChanged_action _action);
+	public static extern void QUndoStack_Connect_UndoTextChanged(void* self, QUndoStack_Connect_UndoTextChanged_action _action);
 	[LinkName("QUndoStack_RedoTextChanged")]
 	public static extern void QUndoStack_RedoTextChanged(void* self, libqt_string redoText);
 	
-	public function void QUndoStack_redoTextChanged_action(void* self, libqt_string redoText);
+	public function void QUndoStack_Connect_RedoTextChanged_action(void* self, libqt_string redoText);
 	[LinkName("QUndoStack_Connect_RedoTextChanged")]
-	public static extern void QUndoStack_Connect_RedoTextChanged(void* self, QUndoStack_redoTextChanged_action _action);
+	public static extern void QUndoStack_Connect_RedoTextChanged(void* self, QUndoStack_Connect_RedoTextChanged_action _action);
 	[LinkName("QUndoStack_Tr2")]
 	public static extern libqt_string QUndoStack_Tr2(c_char* s, c_char* c);
 	[LinkName("QUndoStack_Tr3")]
@@ -1176,4 +1107,46 @@ extension CQt
 	public static extern void** QUndoStack_CreateRedoAction2(void* self, void** parent, libqt_string prefix);
 	[LinkName("QUndoStack_SetActive1")]
 	public static extern void QUndoStack_SetActive1(void* self, bool active);
+	[LinkName("QUndoStack_Event")]
+	public static extern bool QUndoStack_Event(void* self, void** event);
+	
+	public function void QUndoStack_OnEvent_action(void* self, void** event);
+	[LinkName("QUndoStack_OnEvent")]
+	public static extern bool QUndoStack_OnEvent(void* self, QUndoStack_OnEvent_action _action);
+	[LinkName("QUndoStack_EventFilter")]
+	public static extern bool QUndoStack_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QUndoStack_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QUndoStack_OnEventFilter")]
+	public static extern bool QUndoStack_OnEventFilter(void* self, QUndoStack_OnEventFilter_action _action);
+	[LinkName("QUndoStack_TimerEvent")]
+	public static extern void QUndoStack_TimerEvent(void* self, void** event);
+	
+	public function void QUndoStack_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QUndoStack_OnTimerEvent")]
+	public static extern void QUndoStack_OnTimerEvent(void* self, QUndoStack_OnTimerEvent_action _action);
+	[LinkName("QUndoStack_ChildEvent")]
+	public static extern void QUndoStack_ChildEvent(void* self, void** event);
+	
+	public function void QUndoStack_OnChildEvent_action(void* self, void** event);
+	[LinkName("QUndoStack_OnChildEvent")]
+	public static extern void QUndoStack_OnChildEvent(void* self, QUndoStack_OnChildEvent_action _action);
+	[LinkName("QUndoStack_CustomEvent")]
+	public static extern void QUndoStack_CustomEvent(void* self, void** event);
+	
+	public function void QUndoStack_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QUndoStack_OnCustomEvent")]
+	public static extern void QUndoStack_OnCustomEvent(void* self, QUndoStack_OnCustomEvent_action _action);
+	[LinkName("QUndoStack_ConnectNotify")]
+	public static extern void QUndoStack_ConnectNotify(void* self, void** signal);
+	
+	public function void QUndoStack_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QUndoStack_OnConnectNotify")]
+	public static extern void QUndoStack_OnConnectNotify(void* self, QUndoStack_OnConnectNotify_action _action);
+	[LinkName("QUndoStack_DisconnectNotify")]
+	public static extern void QUndoStack_DisconnectNotify(void* self, void** signal);
+	
+	public function void QUndoStack_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QUndoStack_OnDisconnectNotify")]
+	public static extern void QUndoStack_OnDisconnectNotify(void* self, QUndoStack_OnDisconnectNotify_action _action);
 }

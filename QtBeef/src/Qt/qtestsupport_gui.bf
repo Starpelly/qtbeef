@@ -63,19 +63,9 @@ class QTest_QTouchEventSequence : IQTest_QTouchEventSequence
 {
 	private QTest_QTouchEventSequence_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTest_QTouchEventSequence_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -93,13 +83,13 @@ class QTest_QTouchEventSequence : IQTest_QTouchEventSequence
 	{
 		return this.ptr.Release(touchId, pt);
 	}
-	public QTest_QTouchEventSequence_Ptr Stationary(c_int touchId)
+	public  virtual QTest_QTouchEventSequence_Ptr OnStationary(c_int touchId)
 	{
-		return this.ptr.Stationary(touchId);
+		return default;
 	}
-	public bool Commit(bool processEvents)
+	public  virtual bool OnCommit(bool processEvents)
 	{
-		return this.ptr.Commit(processEvents);
+		return default;
 	}
 	public QPoint_Ptr MapToScreen(IQWindow window, IQPoint pt)
 	{
@@ -141,8 +131,16 @@ extension CQt
 	public static extern void** QTest_QTouchEventSequence_Release(void* self, c_int touchId, void** pt);
 	[LinkName("QTest_QTouchEventSequence_Stationary")]
 	public static extern void** QTest_QTouchEventSequence_Stationary(void* self, c_int touchId);
+	
+	public function void QTest_QTouchEventSequence_OnStationary_action(void* self, c_int touchId);
+	[LinkName("QTest_QTouchEventSequence_OnStationary")]
+	public static extern void** QTest_QTouchEventSequence_OnStationary(void* self, QTest_QTouchEventSequence_OnStationary_action _action);
 	[LinkName("QTest_QTouchEventSequence_Commit")]
 	public static extern bool QTest_QTouchEventSequence_Commit(void* self, bool processEvents);
+	
+	public function void QTest_QTouchEventSequence_OnCommit_action(void* self, bool processEvents);
+	[LinkName("QTest_QTouchEventSequence_OnCommit")]
+	public static extern bool QTest_QTouchEventSequence_OnCommit(void* self, QTest_QTouchEventSequence_OnCommit_action _action);
 	[LinkName("QTest_QTouchEventSequence_MapToScreen")]
 	public static extern void* QTest_QTouchEventSequence_MapToScreen(void* self, void** window, void** pt);
 	[LinkName("QTest_QTouchEventSequence_Point")]

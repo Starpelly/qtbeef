@@ -18,11 +18,11 @@ struct QVariantAnimation_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QVariantAnimation_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QVariantAnimation_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QVariantAnimation_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -114,97 +114,9 @@ struct QVariantAnimation_Ptr
 	{
 		CQt.QVariantAnimation_Tr3(s, c, n);
 	}
-	public QAbstractAnimation_State State()
-	{
-		return CQt.QAbstractAnimation_State((.)this.Ptr);
-	}
-	public QAnimationGroup_Ptr Group()
-	{
-		return QAnimationGroup_Ptr(CQt.QAbstractAnimation_Group((.)this.Ptr));
-	}
-	public QAbstractAnimation_Direction Direction()
-	{
-		return CQt.QAbstractAnimation_Direction((.)this.Ptr);
-	}
-	public void SetDirection(QAbstractAnimation_Direction direction)
-	{
-		CQt.QAbstractAnimation_SetDirection((.)this.Ptr, direction);
-	}
-	public c_int CurrentTime()
-	{
-		return CQt.QAbstractAnimation_CurrentTime((.)this.Ptr);
-	}
-	public c_int CurrentLoopTime()
-	{
-		return CQt.QAbstractAnimation_CurrentLoopTime((.)this.Ptr);
-	}
-	public c_int LoopCount()
-	{
-		return CQt.QAbstractAnimation_LoopCount((.)this.Ptr);
-	}
-	public void SetLoopCount(c_int loopCount)
-	{
-		CQt.QAbstractAnimation_SetLoopCount((.)this.Ptr, loopCount);
-	}
-	public c_int CurrentLoop()
-	{
-		return CQt.QAbstractAnimation_CurrentLoop((.)this.Ptr);
-	}
-	public c_int TotalDuration()
-	{
-		return CQt.QAbstractAnimation_TotalDuration((.)this.Ptr);
-	}
-	public void Finished()
-	{
-		CQt.QAbstractAnimation_Finished((.)this.Ptr);
-	}
-	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		CQt.QAbstractAnimation_StateChanged((.)this.Ptr, newState, oldState);
-	}
-	public void CurrentLoopChanged(c_int currentLoop)
-	{
-		CQt.QAbstractAnimation_CurrentLoopChanged((.)this.Ptr, currentLoop);
-	}
-	public void DirectionChanged(QAbstractAnimation_Direction param1)
-	{
-		CQt.QAbstractAnimation_DirectionChanged((.)this.Ptr, param1);
-	}
-	public void Start()
-	{
-		CQt.QAbstractAnimation_Start((.)this.Ptr);
-	}
-	public void Pause()
-	{
-		CQt.QAbstractAnimation_Pause((.)this.Ptr);
-	}
-	public void Resume()
-	{
-		CQt.QAbstractAnimation_Resume((.)this.Ptr);
-	}
-	public void SetPaused(bool paused)
-	{
-		CQt.QAbstractAnimation_SetPaused((.)this.Ptr, paused);
-	}
-	public void Stop()
-	{
-		CQt.QAbstractAnimation_Stop((.)this.Ptr);
-	}
-	public void SetCurrentTime(c_int msecs)
-	{
-		CQt.QAbstractAnimation_SetCurrentTime((.)this.Ptr, msecs);
-	}
-	public void UpdateDirection(QAbstractAnimation_Direction direction)
-	{
-		CQt.QAbstractAnimation_UpdateDirection((.)this.Ptr, direction);
-	}
-	public void Start1(QAbstractAnimation_DeletionPolicy policy)
-	{
-		CQt.QAbstractAnimation_Start1((.)this.Ptr, policy);
-	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QVariantAnimation_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -364,23 +276,23 @@ struct QVariantAnimation_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QVariantAnimation_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QVariantAnimation_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QVariantAnimation_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QVariantAnimation_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QVariantAnimation_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -422,106 +334,126 @@ struct QVariantAnimation_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public QAbstractAnimation_State State()
+	{
+		return CQt.QAbstractAnimation_State((.)this.Ptr);
+	}
+	public QAnimationGroup_Ptr Group()
+	{
+		return QAnimationGroup_Ptr(CQt.QAbstractAnimation_Group((.)this.Ptr));
+	}
+	public QAbstractAnimation_Direction Direction()
+	{
+		return CQt.QAbstractAnimation_Direction((.)this.Ptr);
+	}
+	public void SetDirection(QAbstractAnimation_Direction direction)
+	{
+		CQt.QAbstractAnimation_SetDirection((.)this.Ptr, direction);
+	}
+	public c_int CurrentTime()
+	{
+		return CQt.QAbstractAnimation_CurrentTime((.)this.Ptr);
+	}
+	public c_int CurrentLoopTime()
+	{
+		return CQt.QAbstractAnimation_CurrentLoopTime((.)this.Ptr);
+	}
+	public c_int LoopCount()
+	{
+		return CQt.QAbstractAnimation_LoopCount((.)this.Ptr);
+	}
+	public void SetLoopCount(c_int loopCount)
+	{
+		CQt.QAbstractAnimation_SetLoopCount((.)this.Ptr, loopCount);
+	}
+	public c_int CurrentLoop()
+	{
+		return CQt.QAbstractAnimation_CurrentLoop((.)this.Ptr);
+	}
+	public c_int TotalDuration()
+	{
+		return CQt.QAbstractAnimation_TotalDuration((.)this.Ptr);
+	}
+	public void Finished()
+	{
+		CQt.QAbstractAnimation_Finished((.)this.Ptr);
+	}
+	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		CQt.QAbstractAnimation_StateChanged((.)this.Ptr, newState, oldState);
+	}
+	public void CurrentLoopChanged(c_int currentLoop)
+	{
+		CQt.QAbstractAnimation_CurrentLoopChanged((.)this.Ptr, currentLoop);
+	}
+	public void DirectionChanged(QAbstractAnimation_Direction param1)
+	{
+		CQt.QAbstractAnimation_DirectionChanged((.)this.Ptr, param1);
+	}
+	public void Start()
+	{
+		CQt.QAbstractAnimation_Start((.)this.Ptr);
+	}
+	public void Pause()
+	{
+		CQt.QAbstractAnimation_Pause((.)this.Ptr);
+	}
+	public void Resume()
+	{
+		CQt.QAbstractAnimation_Resume((.)this.Ptr);
+	}
+	public void SetPaused(bool paused)
+	{
+		CQt.QAbstractAnimation_SetPaused((.)this.Ptr, paused);
+	}
+	public void Stop()
+	{
+		CQt.QAbstractAnimation_Stop((.)this.Ptr);
+	}
+	public void SetCurrentTime(c_int msecs)
+	{
+		CQt.QAbstractAnimation_SetCurrentTime((.)this.Ptr, msecs);
+	}
+	public void UpdateDirection(QAbstractAnimation_Direction direction)
+	{
+		CQt.QVariantAnimation_UpdateDirection((.)this.Ptr, direction);
+	}
+	public void Start1(QAbstractAnimation_DeletionPolicy policy)
+	{
+		CQt.QAbstractAnimation_Start1((.)this.Ptr, policy);
+	}
 }
 class QVariantAnimation : IQVariantAnimation, IQAbstractAnimation, IQObject
 {
 	private QVariantAnimation_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QVariantAnimation_valueChanged,
-		QVariantAnimation_finished,
-		QVariantAnimation_stateChanged,
-		QVariantAnimation_currentLoopChanged,
-		QVariantAnimation_directionChanged,
-		QVariantAnimation_destroyed,
-		QVariantAnimation_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QVariantAnimation_Connect_ValueChanged(obj.ObjectPtr,  => QtBeef_QVariantAnimation_valueChanged);
-		CQt.QAbstractAnimation_Connect_Finished(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_finished);
-		CQt.QAbstractAnimation_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_stateChanged);
-		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_currentLoopChanged);
-		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_directionChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** value)> OnValueChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
-	public Event<delegate void(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)> OnStateChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int currentLoop)> OnCurrentLoopChanged = .() ~ _.Dispose();
-	public Event<delegate void(QAbstractAnimation_Direction param1)> OnDirectionChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QVariantAnimation_valueChanged(void* ptr, void** value)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnValueChanged.Invoke(value);
-	}
-	static void QtBeef_QAbstractAnimation_finished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnFinished.Invoke();
-	}
-	static void QtBeef_QAbstractAnimation_stateChanged(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnStateChanged.Invoke(newState, oldState);
-	}
-	static void QtBeef_QAbstractAnimation_currentLoopChanged(void* ptr, c_int currentLoop)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentLoopChanged.Invoke(currentLoop);
-	}
-	static void QtBeef_QAbstractAnimation_directionChanged(void* ptr, QAbstractAnimation_Direction param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDirectionChanged.Invoke(param1);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QVariantAnimation_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QVariantAnimation_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QVariantAnimation_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QVariantAnimation_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -563,9 +495,9 @@ class QVariantAnimation : IQVariantAnimation, IQAbstractAnimation, IQObject
 	{
 		return this.ptr.CurrentValue();
 	}
-	public c_int Duration()
+	public  virtual c_int OnDuration()
 	{
-		return this.ptr.Duration();
+		return default;
 	}
 	public void SetDuration(c_int msecs)
 	{
@@ -583,25 +515,22 @@ class QVariantAnimation : IQVariantAnimation, IQAbstractAnimation, IQObject
 	{
 		this.ptr.ValueChanged(value);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public void UpdateCurrentTime(c_int param1)
+	public  virtual void OnUpdateCurrentTime(c_int param1)
 	{
-		this.ptr.UpdateCurrentTime(param1);
 	}
-	public void UpdateState(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	public  virtual void OnUpdateState(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
 	{
-		this.ptr.UpdateState(newState, oldState);
 	}
-	public void UpdateCurrentValue(IQVariant value)
+	public  virtual void OnUpdateCurrentValue(void** value)
 	{
-		this.ptr.UpdateCurrentValue(value);
 	}
-	public QVariant_Ptr Interpolated(IQVariant from, IQVariant to, double progress)
+	public  virtual QVariant_Ptr OnInterpolated(void** from, void** to, double progress)
 	{
-		return this.ptr.Interpolated(from, to, progress);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -611,97 +540,9 @@ class QVariantAnimation : IQVariantAnimation, IQAbstractAnimation, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public QAbstractAnimation_State State()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.State();
-	}
-	public QAnimationGroup_Ptr Group()
-	{
-		return this.ptr.Group();
-	}
-	public QAbstractAnimation_Direction Direction()
-	{
-		return this.ptr.Direction();
-	}
-	public void SetDirection(QAbstractAnimation_Direction direction)
-	{
-		this.ptr.SetDirection(direction);
-	}
-	public c_int CurrentTime()
-	{
-		return this.ptr.CurrentTime();
-	}
-	public c_int CurrentLoopTime()
-	{
-		return this.ptr.CurrentLoopTime();
-	}
-	public c_int LoopCount()
-	{
-		return this.ptr.LoopCount();
-	}
-	public void SetLoopCount(c_int loopCount)
-	{
-		this.ptr.SetLoopCount(loopCount);
-	}
-	public c_int CurrentLoop()
-	{
-		return this.ptr.CurrentLoop();
-	}
-	public c_int TotalDuration()
-	{
-		return this.ptr.TotalDuration();
-	}
-	public void Finished()
-	{
-		this.ptr.Finished();
-	}
-	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
-	{
-		this.ptr.StateChanged(newState, oldState);
-	}
-	public void CurrentLoopChanged(c_int currentLoop)
-	{
-		this.ptr.CurrentLoopChanged(currentLoop);
-	}
-	public void DirectionChanged(QAbstractAnimation_Direction param1)
-	{
-		this.ptr.DirectionChanged(param1);
-	}
-	public void Start()
-	{
-		this.ptr.Start();
-	}
-	public void Pause()
-	{
-		this.ptr.Pause();
-	}
-	public void Resume()
-	{
-		this.ptr.Resume();
-	}
-	public void SetPaused(bool paused)
-	{
-		this.ptr.SetPaused(paused);
-	}
-	public void Stop()
-	{
-		this.ptr.Stop();
-	}
-	public void SetCurrentTime(c_int msecs)
-	{
-		this.ptr.SetCurrentTime(msecs);
-	}
-	public void UpdateDirection(QAbstractAnimation_Direction direction)
-	{
-		this.ptr.UpdateDirection(direction);
-	}
-	public void Start1(QAbstractAnimation_DeletionPolicy policy)
-	{
-		this.ptr.Start1(policy);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -859,25 +700,20 @@ class QVariantAnimation : IQVariantAnimation, IQAbstractAnimation, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -919,6 +755,93 @@ class QVariantAnimation : IQVariantAnimation, IQAbstractAnimation, IQObject
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public QAbstractAnimation_State State()
+	{
+		return this.ptr.State();
+	}
+	public QAnimationGroup_Ptr Group()
+	{
+		return this.ptr.Group();
+	}
+	public QAbstractAnimation_Direction Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(QAbstractAnimation_Direction direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public c_int CurrentTime()
+	{
+		return this.ptr.CurrentTime();
+	}
+	public c_int CurrentLoopTime()
+	{
+		return this.ptr.CurrentLoopTime();
+	}
+	public c_int LoopCount()
+	{
+		return this.ptr.LoopCount();
+	}
+	public void SetLoopCount(c_int loopCount)
+	{
+		this.ptr.SetLoopCount(loopCount);
+	}
+	public c_int CurrentLoop()
+	{
+		return this.ptr.CurrentLoop();
+	}
+	public c_int TotalDuration()
+	{
+		return this.ptr.TotalDuration();
+	}
+	public void Finished()
+	{
+		this.ptr.Finished();
+	}
+	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		this.ptr.StateChanged(newState, oldState);
+	}
+	public void CurrentLoopChanged(c_int currentLoop)
+	{
+		this.ptr.CurrentLoopChanged(currentLoop);
+	}
+	public void DirectionChanged(QAbstractAnimation_Direction param1)
+	{
+		this.ptr.DirectionChanged(param1);
+	}
+	public void Start()
+	{
+		this.ptr.Start();
+	}
+	public void Pause()
+	{
+		this.ptr.Pause();
+	}
+	public void Resume()
+	{
+		this.ptr.Resume();
+	}
+	public void SetPaused(bool paused)
+	{
+		this.ptr.SetPaused(paused);
+	}
+	public void Stop()
+	{
+		this.ptr.Stop();
+	}
+	public void SetCurrentTime(c_int msecs)
+	{
+		this.ptr.SetCurrentTime(msecs);
+	}
+	public  virtual void OnUpdateDirection(QAbstractAnimation_Direction direction)
+	{
+	}
+	public void Start1(QAbstractAnimation_DeletionPolicy policy)
+	{
+		this.ptr.Start1(policy);
+	}
 }
 interface IQVariantAnimation : IQtObjectInterface
 {
@@ -933,10 +856,22 @@ extension CQt
 	public static extern void QVariantAnimation_Delete(QVariantAnimation_Ptr self);
 	[LinkName("QVariantAnimation_MetaObject")]
 	public static extern void** QVariantAnimation_MetaObject(void* self);
+	
+	public function void QVariantAnimation_OnMetaObject_action(void* self);
+	[LinkName("QVariantAnimation_OnMetaObject")]
+	public static extern void** QVariantAnimation_OnMetaObject(void* self, QVariantAnimation_OnMetaObject_action _action);
 	[LinkName("QVariantAnimation_Qt_Metacast")]
 	public static extern void* QVariantAnimation_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QVariantAnimation_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QVariantAnimation_OnMetacast")]
+	public static extern void* QVariantAnimation_OnMetacast(void* self, QVariantAnimation_OnMetacast_action _action);
 	[LinkName("QVariantAnimation_Qt_Metacall")]
 	public static extern c_int QVariantAnimation_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QVariantAnimation_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QVariantAnimation_OnMetacall")]
+	public static extern c_int QVariantAnimation_OnMetacall(void* self, QVariantAnimation_OnMetacall_action _action);
 	[LinkName("QVariantAnimation_Tr")]
 	public static extern libqt_string QVariantAnimation_Tr(c_char* s);
 	[LinkName("QVariantAnimation_StartValue")]
@@ -959,6 +894,10 @@ extension CQt
 	public static extern void* QVariantAnimation_CurrentValue(void* self);
 	[LinkName("QVariantAnimation_Duration")]
 	public static extern c_int QVariantAnimation_Duration(void* self);
+	
+	public function void QVariantAnimation_OnDuration_action(void* self);
+	[LinkName("QVariantAnimation_OnDuration")]
+	public static extern c_int QVariantAnimation_OnDuration(void* self, QVariantAnimation_OnDuration_action _action);
 	[LinkName("QVariantAnimation_SetDuration")]
 	public static extern void QVariantAnimation_SetDuration(void* self, c_int msecs);
 	[LinkName("QVariantAnimation_EasingCurve")]
@@ -968,21 +907,83 @@ extension CQt
 	[LinkName("QVariantAnimation_ValueChanged")]
 	public static extern void QVariantAnimation_ValueChanged(void* self, void** value);
 	
-	public function void QVariantAnimation_valueChanged_action(void* self, void** value);
+	public function void QVariantAnimation_Connect_ValueChanged_action(void* self, void** value);
 	[LinkName("QVariantAnimation_Connect_ValueChanged")]
-	public static extern void QVariantAnimation_Connect_ValueChanged(void* self, QVariantAnimation_valueChanged_action _action);
+	public static extern void QVariantAnimation_Connect_ValueChanged(void* self, QVariantAnimation_Connect_ValueChanged_action _action);
 	[LinkName("QVariantAnimation_Event")]
 	public static extern bool QVariantAnimation_Event(void* self, void** event);
+	
+	public function void QVariantAnimation_OnEvent_action(void* self, void** event);
+	[LinkName("QVariantAnimation_OnEvent")]
+	public static extern bool QVariantAnimation_OnEvent(void* self, QVariantAnimation_OnEvent_action _action);
 	[LinkName("QVariantAnimation_UpdateCurrentTime")]
 	public static extern void QVariantAnimation_UpdateCurrentTime(void* self, c_int param1);
+	
+	public function void QVariantAnimation_OnUpdateCurrentTime_action(void* self, c_int param1);
+	[LinkName("QVariantAnimation_OnUpdateCurrentTime")]
+	public static extern void QVariantAnimation_OnUpdateCurrentTime(void* self, QVariantAnimation_OnUpdateCurrentTime_action _action);
 	[LinkName("QVariantAnimation_UpdateState")]
 	public static extern void QVariantAnimation_UpdateState(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
+	
+	public function void QVariantAnimation_OnUpdateState_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
+	[LinkName("QVariantAnimation_OnUpdateState")]
+	public static extern void QVariantAnimation_OnUpdateState(void* self, QVariantAnimation_OnUpdateState_action _action);
 	[LinkName("QVariantAnimation_UpdateCurrentValue")]
 	public static extern void QVariantAnimation_UpdateCurrentValue(void* self, void** value);
+	
+	public function void QVariantAnimation_OnUpdateCurrentValue_action(void* self, void** value);
+	[LinkName("QVariantAnimation_OnUpdateCurrentValue")]
+	public static extern void QVariantAnimation_OnUpdateCurrentValue(void* self, QVariantAnimation_OnUpdateCurrentValue_action _action);
 	[LinkName("QVariantAnimation_Interpolated")]
 	public static extern void* QVariantAnimation_Interpolated(void* self, void** from, void** to, double progress);
+	
+	public function void QVariantAnimation_OnInterpolated_action(void* self, void** from, void** to, double progress);
+	[LinkName("QVariantAnimation_OnInterpolated")]
+	public static extern void* QVariantAnimation_OnInterpolated(void* self, QVariantAnimation_OnInterpolated_action _action);
 	[LinkName("QVariantAnimation_Tr2")]
 	public static extern libqt_string QVariantAnimation_Tr2(c_char* s, c_char* c);
 	[LinkName("QVariantAnimation_Tr3")]
 	public static extern libqt_string QVariantAnimation_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QVariantAnimation_EventFilter")]
+	public static extern bool QVariantAnimation_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QVariantAnimation_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QVariantAnimation_OnEventFilter")]
+	public static extern bool QVariantAnimation_OnEventFilter(void* self, QVariantAnimation_OnEventFilter_action _action);
+	[LinkName("QVariantAnimation_TimerEvent")]
+	public static extern void QVariantAnimation_TimerEvent(void* self, void** event);
+	
+	public function void QVariantAnimation_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QVariantAnimation_OnTimerEvent")]
+	public static extern void QVariantAnimation_OnTimerEvent(void* self, QVariantAnimation_OnTimerEvent_action _action);
+	[LinkName("QVariantAnimation_ChildEvent")]
+	public static extern void QVariantAnimation_ChildEvent(void* self, void** event);
+	
+	public function void QVariantAnimation_OnChildEvent_action(void* self, void** event);
+	[LinkName("QVariantAnimation_OnChildEvent")]
+	public static extern void QVariantAnimation_OnChildEvent(void* self, QVariantAnimation_OnChildEvent_action _action);
+	[LinkName("QVariantAnimation_CustomEvent")]
+	public static extern void QVariantAnimation_CustomEvent(void* self, void** event);
+	
+	public function void QVariantAnimation_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QVariantAnimation_OnCustomEvent")]
+	public static extern void QVariantAnimation_OnCustomEvent(void* self, QVariantAnimation_OnCustomEvent_action _action);
+	[LinkName("QVariantAnimation_ConnectNotify")]
+	public static extern void QVariantAnimation_ConnectNotify(void* self, void** signal);
+	
+	public function void QVariantAnimation_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QVariantAnimation_OnConnectNotify")]
+	public static extern void QVariantAnimation_OnConnectNotify(void* self, QVariantAnimation_OnConnectNotify_action _action);
+	[LinkName("QVariantAnimation_DisconnectNotify")]
+	public static extern void QVariantAnimation_DisconnectNotify(void* self, void** signal);
+	
+	public function void QVariantAnimation_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QVariantAnimation_OnDisconnectNotify")]
+	public static extern void QVariantAnimation_OnDisconnectNotify(void* self, QVariantAnimation_OnDisconnectNotify_action _action);
+	[LinkName("QVariantAnimation_UpdateDirection")]
+	public static extern void QVariantAnimation_UpdateDirection(void* self, QAbstractAnimation_Direction direction);
+	
+	public function void QVariantAnimation_OnUpdateDirection_action(void* self, QAbstractAnimation_Direction direction);
+	[LinkName("QVariantAnimation_OnUpdateDirection")]
+	public static extern void QVariantAnimation_OnUpdateDirection(void* self, QVariantAnimation_OnUpdateDirection_action _action);
 }

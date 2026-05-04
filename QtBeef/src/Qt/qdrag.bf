@@ -18,11 +18,11 @@ struct QDrag_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QDrag_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QDrag_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QDrag_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -112,11 +112,11 @@ struct QDrag_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QDrag_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QDrag_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -276,23 +276,23 @@ struct QDrag_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDrag_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDrag_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QDrag_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QDrag_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QDrag_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -339,72 +339,29 @@ class QDrag : IQDrag, IQObject
 {
 	private QDrag_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QDrag_actionChanged,
-		QDrag_targetChanged,
-		QDrag_destroyed,
-		QDrag_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QDrag_Connect_ActionChanged(obj.ObjectPtr,  => QtBeef_QDrag_actionChanged);
-		CQt.QDrag_Connect_TargetChanged(obj.ObjectPtr,  => QtBeef_QDrag_targetChanged);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(Qt_DropAction action)> OnActionChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** newTarget)> OnTargetChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QDrag_actionChanged(void* ptr, Qt_DropAction action)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnActionChanged.Invoke(action);
-	}
-	static void QtBeef_QDrag_targetChanged(void* ptr, void** newTarget)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTargetChanged.Invoke(newTarget);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QDrag_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject dragSource)
 	{
 		this.ptr = CQt.QDrag_new((.)dragSource?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDrag_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -490,13 +447,13 @@ class QDrag : IQDrag, IQObject
 	{
 		return this.ptr.Exec1(supportedActions);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -654,25 +611,20 @@ class QDrag : IQDrag, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -726,10 +678,22 @@ extension CQt
 	public static extern void QDrag_Delete(QDrag_Ptr self);
 	[LinkName("QDrag_MetaObject")]
 	public static extern void** QDrag_MetaObject(void* self);
+	
+	public function void QDrag_OnMetaObject_action(void* self);
+	[LinkName("QDrag_OnMetaObject")]
+	public static extern void** QDrag_OnMetaObject(void* self, QDrag_OnMetaObject_action _action);
 	[LinkName("QDrag_Qt_Metacast")]
 	public static extern void* QDrag_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QDrag_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QDrag_OnMetacast")]
+	public static extern void* QDrag_OnMetacast(void* self, QDrag_OnMetacast_action _action);
 	[LinkName("QDrag_Qt_Metacall")]
 	public static extern c_int QDrag_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QDrag_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QDrag_OnMetacall")]
+	public static extern c_int QDrag_OnMetacall(void* self, QDrag_OnMetacall_action _action);
 	[LinkName("QDrag_Tr")]
 	public static extern libqt_string QDrag_Tr(c_char* s);
 	[LinkName("QDrag_SetMimeData")]
@@ -765,19 +729,61 @@ extension CQt
 	[LinkName("QDrag_ActionChanged")]
 	public static extern void QDrag_ActionChanged(void* self, Qt_DropAction action);
 	
-	public function void QDrag_actionChanged_action(void* self, Qt_DropAction action);
+	public function void QDrag_Connect_ActionChanged_action(void* self, Qt_DropAction action);
 	[LinkName("QDrag_Connect_ActionChanged")]
-	public static extern void QDrag_Connect_ActionChanged(void* self, QDrag_actionChanged_action _action);
+	public static extern void QDrag_Connect_ActionChanged(void* self, QDrag_Connect_ActionChanged_action _action);
 	[LinkName("QDrag_TargetChanged")]
 	public static extern void QDrag_TargetChanged(void* self, void** newTarget);
 	
-	public function void QDrag_targetChanged_action(void* self, void** newTarget);
+	public function void QDrag_Connect_TargetChanged_action(void* self, void** newTarget);
 	[LinkName("QDrag_Connect_TargetChanged")]
-	public static extern void QDrag_Connect_TargetChanged(void* self, QDrag_targetChanged_action _action);
+	public static extern void QDrag_Connect_TargetChanged(void* self, QDrag_Connect_TargetChanged_action _action);
 	[LinkName("QDrag_Tr2")]
 	public static extern libqt_string QDrag_Tr2(c_char* s, c_char* c);
 	[LinkName("QDrag_Tr3")]
 	public static extern libqt_string QDrag_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QDrag_Exec1")]
 	public static extern Qt_DropAction QDrag_Exec1(void* self, void* supportedActions);
+	[LinkName("QDrag_Event")]
+	public static extern bool QDrag_Event(void* self, void** event);
+	
+	public function void QDrag_OnEvent_action(void* self, void** event);
+	[LinkName("QDrag_OnEvent")]
+	public static extern bool QDrag_OnEvent(void* self, QDrag_OnEvent_action _action);
+	[LinkName("QDrag_EventFilter")]
+	public static extern bool QDrag_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QDrag_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QDrag_OnEventFilter")]
+	public static extern bool QDrag_OnEventFilter(void* self, QDrag_OnEventFilter_action _action);
+	[LinkName("QDrag_TimerEvent")]
+	public static extern void QDrag_TimerEvent(void* self, void** event);
+	
+	public function void QDrag_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QDrag_OnTimerEvent")]
+	public static extern void QDrag_OnTimerEvent(void* self, QDrag_OnTimerEvent_action _action);
+	[LinkName("QDrag_ChildEvent")]
+	public static extern void QDrag_ChildEvent(void* self, void** event);
+	
+	public function void QDrag_OnChildEvent_action(void* self, void** event);
+	[LinkName("QDrag_OnChildEvent")]
+	public static extern void QDrag_OnChildEvent(void* self, QDrag_OnChildEvent_action _action);
+	[LinkName("QDrag_CustomEvent")]
+	public static extern void QDrag_CustomEvent(void* self, void** event);
+	
+	public function void QDrag_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QDrag_OnCustomEvent")]
+	public static extern void QDrag_OnCustomEvent(void* self, QDrag_OnCustomEvent_action _action);
+	[LinkName("QDrag_ConnectNotify")]
+	public static extern void QDrag_ConnectNotify(void* self, void** signal);
+	
+	public function void QDrag_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QDrag_OnConnectNotify")]
+	public static extern void QDrag_OnConnectNotify(void* self, QDrag_OnConnectNotify_action _action);
+	[LinkName("QDrag_DisconnectNotify")]
+	public static extern void QDrag_DisconnectNotify(void* self, void** signal);
+	
+	public function void QDrag_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QDrag_OnDisconnectNotify")]
+	public static extern void QDrag_OnDisconnectNotify(void* self, QDrag_OnDisconnectNotify_action _action);
 }

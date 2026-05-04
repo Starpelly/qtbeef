@@ -18,11 +18,11 @@ struct QObject_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QObject_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QObject_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QObject_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -267,73 +267,45 @@ class QObject : IQObject
 {
 	private QObject_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QObject_destroyed,
-		QObject_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QObject_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QObject_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QObject_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QObject_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -491,25 +463,20 @@ class QObject : IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -573,16 +540,36 @@ extension CQt
 	public static extern void QObject_Delete(QObject_Ptr self);
 	[LinkName("QObject_MetaObject")]
 	public static extern void** QObject_MetaObject(void* self);
+	
+	public function void QObject_OnMetaObject_action(void* self);
+	[LinkName("QObject_OnMetaObject")]
+	public static extern void** QObject_OnMetaObject(void* self, QObject_OnMetaObject_action _action);
 	[LinkName("QObject_Qt_Metacast")]
 	public static extern void* QObject_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QObject_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QObject_OnMetacast")]
+	public static extern void* QObject_OnMetacast(void* self, QObject_OnMetacast_action _action);
 	[LinkName("QObject_Qt_Metacall")]
 	public static extern c_int QObject_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QObject_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QObject_OnMetacall")]
+	public static extern c_int QObject_OnMetacall(void* self, QObject_OnMetacall_action _action);
 	[LinkName("QObject_Tr")]
 	public static extern libqt_string QObject_Tr(c_char* s);
 	[LinkName("QObject_Event")]
 	public static extern bool QObject_Event(void* self, void** event);
+	
+	public function void QObject_OnEvent_action(void* self, void** event);
+	[LinkName("QObject_OnEvent")]
+	public static extern bool QObject_OnEvent(void* self, QObject_OnEvent_action _action);
 	[LinkName("QObject_EventFilter")]
 	public static extern bool QObject_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QObject_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QObject_OnEventFilter")]
+	public static extern bool QObject_OnEventFilter(void* self, QObject_OnEventFilter_action _action);
 	[LinkName("QObject_ObjectName")]
 	public static extern libqt_string QObject_ObjectName(void* self);
 	[LinkName("QObject_SetObjectName")]
@@ -648,9 +635,9 @@ extension CQt
 	[LinkName("QObject_Destroyed")]
 	public static extern void QObject_Destroyed(void* self);
 	
-	public function void QObject_destroyed_action(void* self);
+	public function void QObject_Connect_Destroyed_action(void* self);
 	[LinkName("QObject_Connect_Destroyed")]
-	public static extern void QObject_Connect_Destroyed(void* self, QObject_destroyed_action _action);
+	public static extern void QObject_Connect_Destroyed(void* self, QObject_Connect_Destroyed_action _action);
 	[LinkName("QObject_Parent")]
 	public static extern void** QObject_Parent(void* self);
 	[LinkName("QObject_Inherits")]
@@ -667,14 +654,34 @@ extension CQt
 	public static extern bool QObject_IsSignalConnected(void* self, void** signal);
 	[LinkName("QObject_TimerEvent")]
 	public static extern void QObject_TimerEvent(void* self, void** event);
+	
+	public function void QObject_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QObject_OnTimerEvent")]
+	public static extern void QObject_OnTimerEvent(void* self, QObject_OnTimerEvent_action _action);
 	[LinkName("QObject_ChildEvent")]
 	public static extern void QObject_ChildEvent(void* self, void** event);
+	
+	public function void QObject_OnChildEvent_action(void* self, void** event);
+	[LinkName("QObject_OnChildEvent")]
+	public static extern void QObject_OnChildEvent(void* self, QObject_OnChildEvent_action _action);
 	[LinkName("QObject_CustomEvent")]
 	public static extern void QObject_CustomEvent(void* self, void** event);
+	
+	public function void QObject_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QObject_OnCustomEvent")]
+	public static extern void QObject_OnCustomEvent(void* self, QObject_OnCustomEvent_action _action);
 	[LinkName("QObject_ConnectNotify")]
 	public static extern void QObject_ConnectNotify(void* self, void** signal);
+	
+	public function void QObject_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QObject_OnConnectNotify")]
+	public static extern void QObject_OnConnectNotify(void* self, QObject_OnConnectNotify_action _action);
 	[LinkName("QObject_DisconnectNotify")]
 	public static extern void QObject_DisconnectNotify(void* self, void** signal);
+	
+	public function void QObject_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QObject_OnDisconnectNotify")]
+	public static extern void QObject_OnDisconnectNotify(void* self, QObject_OnDisconnectNotify_action _action);
 	[LinkName("QObject_Tr2")]
 	public static extern libqt_string QObject_Tr2(c_char* s, c_char* c);
 	[LinkName("QObject_Tr3")]
@@ -700,9 +707,9 @@ extension CQt
 	[LinkName("QObject_Destroyed1")]
 	public static extern void QObject_Destroyed1(void* self, void** param1);
 	
-	public function void QObject_destroyed1_action(void* self, void** param1);
+	public function void QObject_Connect_Destroyed1_action(void* self, void** param1);
 	[LinkName("QObject_Connect_Destroyed1")]
-	public static extern void QObject_Connect_Destroyed1(void* self, QObject_destroyed1_action _action);
+	public static extern void QObject_Connect_Destroyed1(void* self, QObject_Connect_Destroyed1_action _action);
 }
 // --------------------------------------------------------------
 // QSignalBlocker
@@ -728,24 +735,13 @@ class QSignalBlocker : IQSignalBlocker
 {
 	private QSignalBlocker_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QSignalBlocker_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject o)
 	{
 		this.ptr = CQt.QSignalBlocker_new((.)o?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

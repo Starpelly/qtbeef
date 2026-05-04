@@ -119,59 +119,41 @@ class QPen : IQPen
 {
 	private QPen_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPen_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPen_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_PenStyle param1)
 	{
 		this.ptr = CQt.QPen_new2(param1);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQColor color)
 	{
 		this.ptr = CQt.QPen_new3((.)color?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQBrush brush, double width)
 	{
 		this.ptr = CQt.QPen_new4((.)brush?.ObjectPtr, width);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPen pen)
 	{
 		this.ptr = CQt.QPen_new5((.)pen?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQBrush brush, double width, Qt_PenStyle s)
 	{
 		this.ptr = CQt.QPen_new6((.)brush?.ObjectPtr, width, s);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQBrush brush, double width, Qt_PenStyle s, Qt_PenCapStyle c)
 	{
 		this.ptr = CQt.QPen_new7((.)brush?.ObjectPtr, width, s, c);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQBrush brush, double width, Qt_PenStyle s, Qt_PenCapStyle c, Qt_PenJoinStyle j)
 	{
 		this.ptr = CQt.QPen_new8((.)brush?.ObjectPtr, width, s, c, j);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

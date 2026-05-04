@@ -55,39 +55,25 @@ class QTextDocumentWriter : IQTextDocumentWriter
 {
 	private QTextDocumentWriter_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTextDocumentWriter_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextDocumentWriter_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device, void** format)
 	{
 		this.ptr = CQt.QTextDocumentWriter_new2((.)device?.ObjectPtr, format);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QTextDocumentWriter_new3(libqt_string(fileName));
-		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void** format)
 	{
 		this.ptr = CQt.QTextDocumentWriter_new4(libqt_string(fileName), format);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

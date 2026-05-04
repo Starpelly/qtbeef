@@ -52,7 +52,7 @@ struct QInputEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QInputEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -91,37 +91,25 @@ class QInputEvent : IQInputEvent, IQEvent
 {
 	private QInputEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QInputEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQInputDevice m_dev)
 	{
 		this.ptr = CQt.QInputEvent_new(type, (.)m_dev?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQInputDevice m_dev, void* modifiers)
 	{
 		this.ptr = CQt.QInputEvent_new2(type, (.)m_dev?.ObjectPtr, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QInputEvent_Delete(this.ptr);
 	}
-	public QInputEvent_Ptr Clone()
+	public  virtual QInputEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QInputDevice_Ptr Device()
 	{
@@ -143,9 +131,8 @@ class QInputEvent : IQInputEvent, IQEvent
 	{
 		return this.ptr.Timestamp();
 	}
-	public void SetTimestamp(c_ulonglong timestamp)
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
 	{
-		this.ptr.SetTimestamp(timestamp);
 	}
 	public QEvent_Type Type()
 	{
@@ -155,9 +142,8 @@ class QInputEvent : IQInputEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -205,6 +191,10 @@ extension CQt
 	public static extern void QInputEvent_Delete(QInputEvent_Ptr self);
 	[LinkName("QInputEvent_Clone")]
 	public static extern void** QInputEvent_Clone(void* self);
+	
+	public function void QInputEvent_OnClone_action(void* self);
+	[LinkName("QInputEvent_OnClone")]
+	public static extern void** QInputEvent_OnClone(void* self, QInputEvent_OnClone_action _action);
 	[LinkName("QInputEvent_Device")]
 	public static extern void** QInputEvent_Device(void* self);
 	[LinkName("QInputEvent_DeviceType")]
@@ -217,6 +207,16 @@ extension CQt
 	public static extern c_ulonglong QInputEvent_Timestamp(void* self);
 	[LinkName("QInputEvent_SetTimestamp")]
 	public static extern void QInputEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QInputEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QInputEvent_OnSetTimestamp")]
+	public static extern void QInputEvent_OnSetTimestamp(void* self, QInputEvent_OnSetTimestamp_action _action);
+	[LinkName("QInputEvent_SetAccepted")]
+	public static extern void QInputEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QInputEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QInputEvent_OnSetAccepted")]
+	public static extern void QInputEvent_OnSetAccepted(void* self, QInputEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QPointerEvent
@@ -305,26 +305,6 @@ struct QPointerEvent_Ptr
 	{
 		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
 	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -365,47 +345,54 @@ struct QPointerEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
 }
 class QPointerEvent : IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QPointerEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPointerEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointingDevice dev)
 	{
 		this.ptr = CQt.QPointerEvent_new(type, (.)dev?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointingDevice dev, void* modifiers)
 	{
 		this.ptr = CQt.QPointerEvent_new2(type, (.)dev?.ObjectPtr, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointingDevice dev, void* modifiers, void** points)
 	{
 		this.ptr = CQt.QPointerEvent_new3(type, (.)dev?.ObjectPtr, modifiers, points);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPointerEvent_Delete(this.ptr);
 	}
-	public QPointerEvent_Ptr Clone()
+	public  virtual QPointerEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPointingDevice_Ptr PointingDevice()
 	{
@@ -415,9 +402,8 @@ class QPointerEvent : IQPointerEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.PointerType();
 	}
-	public void SetTimestamp(c_ulonglong timestamp)
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
 	{
-		this.ptr.SetTimestamp(timestamp);
 	}
 	public void* PointCount()
 	{
@@ -439,25 +425,24 @@ class QPointerEvent : IQPointerEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.AllPointsGrabbed();
 	}
-	public bool IsBeginEvent()
+	public  virtual bool OnIsBeginEvent()
 	{
-		return this.ptr.IsBeginEvent();
+		return default;
 	}
-	public bool IsUpdateEvent()
+	public  virtual bool OnIsUpdateEvent()
 	{
-		return this.ptr.IsUpdateEvent();
+		return default;
 	}
-	public bool IsEndEvent()
+	public  virtual bool OnIsEndEvent()
 	{
-		return this.ptr.IsEndEvent();
+		return default;
 	}
 	public bool AllPointsAccepted()
 	{
 		return this.ptr.AllPointsAccepted();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
 	{
@@ -478,26 +463,6 @@ class QPointerEvent : IQPointerEvent, IQInputEvent, IQEvent
 	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
 	{
 		return this.ptr.RemovePassiveGrabber(point, grabber);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
 	}
 	public QEvent_Type Type()
 	{
@@ -539,6 +504,26 @@ class QPointerEvent : IQPointerEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
 }
 interface IQPointerEvent : IQtObjectInterface
 {
@@ -555,12 +540,20 @@ extension CQt
 	public static extern void QPointerEvent_Delete(QPointerEvent_Ptr self);
 	[LinkName("QPointerEvent_Clone")]
 	public static extern void** QPointerEvent_Clone(void* self);
+	
+	public function void QPointerEvent_OnClone_action(void* self);
+	[LinkName("QPointerEvent_OnClone")]
+	public static extern void** QPointerEvent_OnClone(void* self, QPointerEvent_OnClone_action _action);
 	[LinkName("QPointerEvent_PointingDevice")]
 	public static extern void** QPointerEvent_PointingDevice(void* self);
 	[LinkName("QPointerEvent_PointerType")]
 	public static extern QPointingDevice_PointerType QPointerEvent_PointerType(void* self);
 	[LinkName("QPointerEvent_SetTimestamp")]
 	public static extern void QPointerEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QPointerEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QPointerEvent_OnSetTimestamp")]
+	public static extern void QPointerEvent_OnSetTimestamp(void* self, QPointerEvent_OnSetTimestamp_action _action);
 	[LinkName("QPointerEvent_PointCount")]
 	public static extern void* QPointerEvent_PointCount(void* self);
 	[LinkName("QPointerEvent_Point")]
@@ -573,14 +566,30 @@ extension CQt
 	public static extern bool QPointerEvent_AllPointsGrabbed(void* self);
 	[LinkName("QPointerEvent_IsBeginEvent")]
 	public static extern bool QPointerEvent_IsBeginEvent(void* self);
+	
+	public function void QPointerEvent_OnIsBeginEvent_action(void* self);
+	[LinkName("QPointerEvent_OnIsBeginEvent")]
+	public static extern bool QPointerEvent_OnIsBeginEvent(void* self, QPointerEvent_OnIsBeginEvent_action _action);
 	[LinkName("QPointerEvent_IsUpdateEvent")]
 	public static extern bool QPointerEvent_IsUpdateEvent(void* self);
+	
+	public function void QPointerEvent_OnIsUpdateEvent_action(void* self);
+	[LinkName("QPointerEvent_OnIsUpdateEvent")]
+	public static extern bool QPointerEvent_OnIsUpdateEvent(void* self, QPointerEvent_OnIsUpdateEvent_action _action);
 	[LinkName("QPointerEvent_IsEndEvent")]
 	public static extern bool QPointerEvent_IsEndEvent(void* self);
+	
+	public function void QPointerEvent_OnIsEndEvent_action(void* self);
+	[LinkName("QPointerEvent_OnIsEndEvent")]
+	public static extern bool QPointerEvent_OnIsEndEvent(void* self, QPointerEvent_OnIsEndEvent_action _action);
 	[LinkName("QPointerEvent_AllPointsAccepted")]
 	public static extern bool QPointerEvent_AllPointsAccepted(void* self);
 	[LinkName("QPointerEvent_SetAccepted")]
 	public static extern void QPointerEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QPointerEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QPointerEvent_OnSetAccepted")]
+	public static extern void QPointerEvent_OnSetAccepted(void* self, QPointerEvent_OnSetAccepted_action _action);
 	[LinkName("QPointerEvent_ExclusiveGrabber")]
 	public static extern void** QPointerEvent_ExclusiveGrabber(void* self, void** point);
 	[LinkName("QPointerEvent_SetExclusiveGrabber")]
@@ -647,86 +656,6 @@ struct QSinglePointEvent_Ptr
 	{
 		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
 	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return CQt.QPointerEvent_PointerType((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QPointerEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
-	public void* PointCount()
-	{
-		return CQt.QPointerEvent_PointCount((.)this.Ptr);
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
-	}
-	public void** Points()
-	{
-		return CQt.QPointerEvent_Points((.)this.Ptr);
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
-	}
-	public bool AllPointsGrabbed()
-	{
-		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
-	}
-	public bool AllPointsAccepted()
-	{
-		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QPointerEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -734,6 +663,10 @@ struct QSinglePointEvent_Ptr
 	public bool Spontaneous()
 	{
 		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QSinglePointEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -767,32 +700,98 @@ struct QSinglePointEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QSinglePointEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.Ptr);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.Ptr);
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.Ptr);
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
 }
 class QSinglePointEvent : IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QSinglePointEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QSinglePointEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QSinglePointEvent_Delete(this.ptr);
 	}
-	public QSinglePointEvent_Ptr Clone()
+	public  virtual QSinglePointEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public Qt_MouseButton Button()
 	{
@@ -814,17 +813,17 @@ class QSinglePointEvent : IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEv
 	{
 		return this.ptr.GlobalPosition();
 	}
-	public bool IsBeginEvent()
+	public  virtual bool OnIsBeginEvent()
 	{
-		return this.ptr.IsBeginEvent();
+		return default;
 	}
-	public bool IsUpdateEvent()
+	public  virtual bool OnIsUpdateEvent()
 	{
-		return this.ptr.IsUpdateEvent();
+		return default;
 	}
-	public bool IsEndEvent()
+	public  virtual bool OnIsEndEvent()
 	{
-		return this.ptr.IsEndEvent();
+		return default;
 	}
 	public QObject_Ptr ExclusivePointGrabber()
 	{
@@ -834,86 +833,6 @@ class QSinglePointEvent : IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEv
 	{
 		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
 	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return this.ptr.PointingDevice();
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return this.ptr.PointerType();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
-	public void* PointCount()
-	{
-		return this.ptr.PointCount();
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return this.ptr.Point(i);
-	}
-	public void** Points()
-	{
-		return this.ptr.Points();
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return this.ptr.PointById(id);
-	}
-	public bool AllPointsGrabbed()
-	{
-		return this.ptr.AllPointsGrabbed();
-	}
-	public bool AllPointsAccepted()
-	{
-		return this.ptr.AllPointsAccepted();
-	}
-	public void SetAccepted(bool accepted)
-	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return this.ptr.ExclusiveGrabber(point);
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		this.ptr.ClearPassiveGrabbers(point);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.AddPassiveGrabber(point, grabber);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.RemovePassiveGrabber(point, grabber);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -921,6 +840,9 @@ class QSinglePointEvent : IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEv
 	public bool Spontaneous()
 	{
 		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
 	}
 	public bool IsAccepted()
 	{
@@ -954,6 +876,81 @@ class QSinglePointEvent : IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEv
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return this.ptr.PointingDevice();
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return this.ptr.PointerType();
+	}
+	public void* PointCount()
+	{
+		return this.ptr.PointCount();
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return this.ptr.Point(i);
+	}
+	public void** Points()
+	{
+		return this.ptr.Points();
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return this.ptr.PointById(id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return this.ptr.AllPointsGrabbed();
+	}
+	public bool AllPointsAccepted()
+	{
+		return this.ptr.AllPointsAccepted();
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return this.ptr.ExclusiveGrabber(point);
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		this.ptr.ClearPassiveGrabbers(point);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.AddPassiveGrabber(point, grabber);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.RemovePassiveGrabber(point, grabber);
+	}
 }
 interface IQSinglePointEvent : IQtObjectInterface
 {
@@ -964,6 +961,10 @@ extension CQt
 	public static extern void QSinglePointEvent_Delete(QSinglePointEvent_Ptr self);
 	[LinkName("QSinglePointEvent_Clone")]
 	public static extern void** QSinglePointEvent_Clone(void* self);
+	
+	public function void QSinglePointEvent_OnClone_action(void* self);
+	[LinkName("QSinglePointEvent_OnClone")]
+	public static extern void** QSinglePointEvent_OnClone(void* self, QSinglePointEvent_OnClone_action _action);
 	[LinkName("QSinglePointEvent_Button")]
 	public static extern Qt_MouseButton QSinglePointEvent_Button(void* self);
 	[LinkName("QSinglePointEvent_Buttons")]
@@ -976,14 +977,38 @@ extension CQt
 	public static extern void* QSinglePointEvent_GlobalPosition(void* self);
 	[LinkName("QSinglePointEvent_IsBeginEvent")]
 	public static extern bool QSinglePointEvent_IsBeginEvent(void* self);
+	
+	public function void QSinglePointEvent_OnIsBeginEvent_action(void* self);
+	[LinkName("QSinglePointEvent_OnIsBeginEvent")]
+	public static extern bool QSinglePointEvent_OnIsBeginEvent(void* self, QSinglePointEvent_OnIsBeginEvent_action _action);
 	[LinkName("QSinglePointEvent_IsUpdateEvent")]
 	public static extern bool QSinglePointEvent_IsUpdateEvent(void* self);
+	
+	public function void QSinglePointEvent_OnIsUpdateEvent_action(void* self);
+	[LinkName("QSinglePointEvent_OnIsUpdateEvent")]
+	public static extern bool QSinglePointEvent_OnIsUpdateEvent(void* self, QSinglePointEvent_OnIsUpdateEvent_action _action);
 	[LinkName("QSinglePointEvent_IsEndEvent")]
 	public static extern bool QSinglePointEvent_IsEndEvent(void* self);
+	
+	public function void QSinglePointEvent_OnIsEndEvent_action(void* self);
+	[LinkName("QSinglePointEvent_OnIsEndEvent")]
+	public static extern bool QSinglePointEvent_OnIsEndEvent(void* self, QSinglePointEvent_OnIsEndEvent_action _action);
 	[LinkName("QSinglePointEvent_ExclusivePointGrabber")]
 	public static extern void** QSinglePointEvent_ExclusivePointGrabber(void* self);
 	[LinkName("QSinglePointEvent_SetExclusivePointGrabber")]
 	public static extern void QSinglePointEvent_SetExclusivePointGrabber(void* self, void** exclusiveGrabber);
+	[LinkName("QSinglePointEvent_SetAccepted")]
+	public static extern void QSinglePointEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QSinglePointEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QSinglePointEvent_OnSetAccepted")]
+	public static extern void QSinglePointEvent_OnSetAccepted(void* self, QSinglePointEvent_OnSetAccepted_action _action);
+	[LinkName("QSinglePointEvent_SetTimestamp")]
+	public static extern void QSinglePointEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QSinglePointEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QSinglePointEvent_OnSetTimestamp")]
+	public static extern void QSinglePointEvent_OnSetTimestamp(void* self, QSinglePointEvent_OnSetTimestamp_action _action);
 }
 // --------------------------------------------------------------
 // QEnterEvent
@@ -1036,126 +1061,6 @@ struct QEnterEvent_Ptr
 	{
 		return QPointF_Ptr(CQt.QEnterEvent_ScreenPos((.)this.Ptr));
 	}
-	public Qt_MouseButton Button()
-	{
-		return CQt.QSinglePointEvent_Button((.)this.Ptr);
-	}
-	public void* Buttons()
-	{
-		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
-	}
-	public QPointF_Ptr Position()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
-	}
-	public bool IsBeginEvent()
-	{
-		return CQt.QSinglePointEvent_IsBeginEvent((.)this.Ptr);
-	}
-	public bool IsUpdateEvent()
-	{
-		return CQt.QSinglePointEvent_IsUpdateEvent((.)this.Ptr);
-	}
-	public bool IsEndEvent()
-	{
-		return CQt.QSinglePointEvent_IsEndEvent((.)this.Ptr);
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return CQt.QPointerEvent_PointerType((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QPointerEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
-	public void* PointCount()
-	{
-		return CQt.QPointerEvent_PointCount((.)this.Ptr);
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
-	}
-	public void** Points()
-	{
-		return CQt.QPointerEvent_Points((.)this.Ptr);
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
-	}
-	public bool AllPointsGrabbed()
-	{
-		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
-	}
-	public bool AllPointsAccepted()
-	{
-		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QPointerEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -1163,6 +1068,10 @@ struct QEnterEvent_Ptr
 	public bool Spontaneous()
 	{
 		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEnterEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -1196,42 +1105,146 @@ struct QEnterEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QEnterEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.Ptr);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.Ptr);
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.Ptr);
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QEnterEvent_IsBeginEvent((.)this.Ptr);
+	}
+	public bool IsUpdateEvent()
+	{
+		return CQt.QEnterEvent_IsUpdateEvent((.)this.Ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QEnterEvent_IsEndEvent((.)this.Ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.Ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
+	}
 }
 class QEnterEvent : IQEnterEvent, IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QEnterEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QEnterEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF localPos, IQPointF scenePos, IQPointF globalPos)
 	{
 		this.ptr = CQt.QEnterEvent_new((.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF localPos, IQPointF scenePos, IQPointF globalPos, IQPointingDevice device)
 	{
 		this.ptr = CQt.QEnterEvent_new2((.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QEnterEvent_Delete(this.ptr);
 	}
-	public QEnterEvent_Ptr Clone()
+	public  virtual QEnterEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPoint_Ptr Pos()
 	{
@@ -1269,126 +1282,6 @@ class QEnterEvent : IQEnterEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	{
 		return this.ptr.ScreenPos();
 	}
-	public Qt_MouseButton Button()
-	{
-		return this.ptr.Button();
-	}
-	public void* Buttons()
-	{
-		return this.ptr.Buttons();
-	}
-	public QPointF_Ptr Position()
-	{
-		return this.ptr.Position();
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return this.ptr.ScenePosition();
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return this.ptr.GlobalPosition();
-	}
-	public bool IsBeginEvent()
-	{
-		return this.ptr.IsBeginEvent();
-	}
-	public bool IsUpdateEvent()
-	{
-		return this.ptr.IsUpdateEvent();
-	}
-	public bool IsEndEvent()
-	{
-		return this.ptr.IsEndEvent();
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return this.ptr.ExclusivePointGrabber();
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return this.ptr.PointingDevice();
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return this.ptr.PointerType();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
-	public void* PointCount()
-	{
-		return this.ptr.PointCount();
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return this.ptr.Point(i);
-	}
-	public void** Points()
-	{
-		return this.ptr.Points();
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return this.ptr.PointById(id);
-	}
-	public bool AllPointsGrabbed()
-	{
-		return this.ptr.AllPointsGrabbed();
-	}
-	public bool AllPointsAccepted()
-	{
-		return this.ptr.AllPointsAccepted();
-	}
-	public void SetAccepted(bool accepted)
-	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return this.ptr.ExclusiveGrabber(point);
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		this.ptr.ClearPassiveGrabbers(point);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.AddPassiveGrabber(point, grabber);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.RemovePassiveGrabber(point, grabber);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -1396,6 +1289,9 @@ class QEnterEvent : IQEnterEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	public bool Spontaneous()
 	{
 		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
 	}
 	public bool IsAccepted()
 	{
@@ -1429,6 +1325,121 @@ class QEnterEvent : IQEnterEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return this.ptr.PointingDevice();
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return this.ptr.PointerType();
+	}
+	public void* PointCount()
+	{
+		return this.ptr.PointCount();
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return this.ptr.Point(i);
+	}
+	public void** Points()
+	{
+		return this.ptr.Points();
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return this.ptr.PointById(id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return this.ptr.AllPointsGrabbed();
+	}
+	public  virtual bool OnIsBeginEvent()
+	{
+		return default;
+	}
+	public  virtual bool OnIsUpdateEvent()
+	{
+		return default;
+	}
+	public  virtual bool OnIsEndEvent()
+	{
+		return default;
+	}
+	public bool AllPointsAccepted()
+	{
+		return this.ptr.AllPointsAccepted();
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return this.ptr.ExclusiveGrabber(point);
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		this.ptr.ClearPassiveGrabbers(point);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.AddPassiveGrabber(point, grabber);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.RemovePassiveGrabber(point, grabber);
+	}
+	public Qt_MouseButton Button()
+	{
+		return this.ptr.Button();
+	}
+	public void* Buttons()
+	{
+		return this.ptr.Buttons();
+	}
+	public QPointF_Ptr Position()
+	{
+		return this.ptr.Position();
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return this.ptr.ScenePosition();
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return this.ptr.GlobalPosition();
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return this.ptr.ExclusivePointGrabber();
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
+	}
 }
 interface IQEnterEvent : IQtObjectInterface
 {
@@ -1443,6 +1454,10 @@ extension CQt
 	public static extern void QEnterEvent_Delete(QEnterEvent_Ptr self);
 	[LinkName("QEnterEvent_Clone")]
 	public static extern void** QEnterEvent_Clone(void* self);
+	
+	public function void QEnterEvent_OnClone_action(void* self);
+	[LinkName("QEnterEvent_OnClone")]
+	public static extern void** QEnterEvent_OnClone(void* self, QEnterEvent_OnClone_action _action);
 	[LinkName("QEnterEvent_Pos")]
 	public static extern void* QEnterEvent_Pos(void* self);
 	[LinkName("QEnterEvent_GlobalPos")]
@@ -1461,6 +1476,36 @@ extension CQt
 	public static extern void* QEnterEvent_WindowPos(void* self);
 	[LinkName("QEnterEvent_ScreenPos")]
 	public static extern void* QEnterEvent_ScreenPos(void* self);
+	[LinkName("QEnterEvent_SetAccepted")]
+	public static extern void QEnterEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QEnterEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QEnterEvent_OnSetAccepted")]
+	public static extern void QEnterEvent_OnSetAccepted(void* self, QEnterEvent_OnSetAccepted_action _action);
+	[LinkName("QEnterEvent_SetTimestamp")]
+	public static extern void QEnterEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QEnterEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QEnterEvent_OnSetTimestamp")]
+	public static extern void QEnterEvent_OnSetTimestamp(void* self, QEnterEvent_OnSetTimestamp_action _action);
+	[LinkName("QEnterEvent_IsBeginEvent")]
+	public static extern bool QEnterEvent_IsBeginEvent(void* self);
+	
+	public function void QEnterEvent_OnIsBeginEvent_action(void* self);
+	[LinkName("QEnterEvent_OnIsBeginEvent")]
+	public static extern bool QEnterEvent_OnIsBeginEvent(void* self, QEnterEvent_OnIsBeginEvent_action _action);
+	[LinkName("QEnterEvent_IsUpdateEvent")]
+	public static extern bool QEnterEvent_IsUpdateEvent(void* self);
+	
+	public function void QEnterEvent_OnIsUpdateEvent_action(void* self);
+	[LinkName("QEnterEvent_OnIsUpdateEvent")]
+	public static extern bool QEnterEvent_OnIsUpdateEvent(void* self, QEnterEvent_OnIsUpdateEvent_action _action);
+	[LinkName("QEnterEvent_IsEndEvent")]
+	public static extern bool QEnterEvent_IsEndEvent(void* self);
+	
+	public function void QEnterEvent_OnIsEndEvent_action(void* self);
+	[LinkName("QEnterEvent_OnIsEndEvent")]
+	public static extern bool QEnterEvent_OnIsEndEvent(void* self, QEnterEvent_OnIsEndEvent_action _action);
 }
 // --------------------------------------------------------------
 // QMouseEvent
@@ -1521,126 +1566,6 @@ struct QMouseEvent_Ptr
 	{
 		return CQt.QMouseEvent_Flags((.)this.Ptr);
 	}
-	public Qt_MouseButton Button()
-	{
-		return CQt.QSinglePointEvent_Button((.)this.Ptr);
-	}
-	public void* Buttons()
-	{
-		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
-	}
-	public QPointF_Ptr Position()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
-	}
-	public bool IsBeginEvent()
-	{
-		return CQt.QSinglePointEvent_IsBeginEvent((.)this.Ptr);
-	}
-	public bool IsUpdateEvent()
-	{
-		return CQt.QSinglePointEvent_IsUpdateEvent((.)this.Ptr);
-	}
-	public bool IsEndEvent()
-	{
-		return CQt.QSinglePointEvent_IsEndEvent((.)this.Ptr);
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return CQt.QPointerEvent_PointerType((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QPointerEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
-	public void* PointCount()
-	{
-		return CQt.QPointerEvent_PointCount((.)this.Ptr);
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
-	}
-	public void** Points()
-	{
-		return CQt.QPointerEvent_Points((.)this.Ptr);
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
-	}
-	public bool AllPointsGrabbed()
-	{
-		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
-	}
-	public bool AllPointsAccepted()
-	{
-		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QPointerEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -1648,6 +1573,10 @@ struct QMouseEvent_Ptr
 	public bool Spontaneous()
 	{
 		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QMouseEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -1681,72 +1610,170 @@ struct QMouseEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QMouseEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.Ptr);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.Ptr);
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.Ptr);
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QMouseEvent_IsBeginEvent((.)this.Ptr);
+	}
+	public bool IsUpdateEvent()
+	{
+		return CQt.QMouseEvent_IsUpdateEvent((.)this.Ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QMouseEvent_IsEndEvent((.)this.Ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.Ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
+	}
 }
 class QMouseEvent : IQMouseEvent, IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QMouseEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QMouseEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, Qt_MouseButton button, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QMouseEvent_new(type, (.)localPos?.ObjectPtr, button, buttons, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QMouseEvent_new2(type, (.)localPos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QMouseEvent_new3(type, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers, Qt_MouseEventSource source)
 	{
 		this.ptr = CQt.QMouseEvent_new4(type, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers, source);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, Qt_MouseButton button, void* buttons, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QMouseEvent_new5(type, (.)localPos?.ObjectPtr, button, buttons, modifiers, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QMouseEvent_new6(type, (.)localPos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QMouseEvent_new7(type, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers, Qt_MouseEventSource source, IQPointingDevice device)
 	{
 		this.ptr = CQt.QMouseEvent_new8(type, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers, source, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QMouseEvent_Delete(this.ptr);
 	}
-	public QMouseEvent_Ptr Clone()
+	public  virtual QMouseEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPoint_Ptr Pos()
 	{
@@ -1792,126 +1819,6 @@ class QMouseEvent : IQMouseEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	{
 		return this.ptr.Flags();
 	}
-	public Qt_MouseButton Button()
-	{
-		return this.ptr.Button();
-	}
-	public void* Buttons()
-	{
-		return this.ptr.Buttons();
-	}
-	public QPointF_Ptr Position()
-	{
-		return this.ptr.Position();
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return this.ptr.ScenePosition();
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return this.ptr.GlobalPosition();
-	}
-	public bool IsBeginEvent()
-	{
-		return this.ptr.IsBeginEvent();
-	}
-	public bool IsUpdateEvent()
-	{
-		return this.ptr.IsUpdateEvent();
-	}
-	public bool IsEndEvent()
-	{
-		return this.ptr.IsEndEvent();
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return this.ptr.ExclusivePointGrabber();
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return this.ptr.PointingDevice();
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return this.ptr.PointerType();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
-	public void* PointCount()
-	{
-		return this.ptr.PointCount();
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return this.ptr.Point(i);
-	}
-	public void** Points()
-	{
-		return this.ptr.Points();
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return this.ptr.PointById(id);
-	}
-	public bool AllPointsGrabbed()
-	{
-		return this.ptr.AllPointsGrabbed();
-	}
-	public bool AllPointsAccepted()
-	{
-		return this.ptr.AllPointsAccepted();
-	}
-	public void SetAccepted(bool accepted)
-	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return this.ptr.ExclusiveGrabber(point);
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		this.ptr.ClearPassiveGrabbers(point);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.AddPassiveGrabber(point, grabber);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.RemovePassiveGrabber(point, grabber);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -1919,6 +1826,9 @@ class QMouseEvent : IQMouseEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	public bool Spontaneous()
 	{
 		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
 	}
 	public bool IsAccepted()
 	{
@@ -1952,6 +1862,121 @@ class QMouseEvent : IQMouseEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return this.ptr.PointingDevice();
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return this.ptr.PointerType();
+	}
+	public void* PointCount()
+	{
+		return this.ptr.PointCount();
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return this.ptr.Point(i);
+	}
+	public void** Points()
+	{
+		return this.ptr.Points();
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return this.ptr.PointById(id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return this.ptr.AllPointsGrabbed();
+	}
+	public  virtual bool OnIsBeginEvent()
+	{
+		return default;
+	}
+	public  virtual bool OnIsUpdateEvent()
+	{
+		return default;
+	}
+	public  virtual bool OnIsEndEvent()
+	{
+		return default;
+	}
+	public bool AllPointsAccepted()
+	{
+		return this.ptr.AllPointsAccepted();
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return this.ptr.ExclusiveGrabber(point);
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		this.ptr.ClearPassiveGrabbers(point);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.AddPassiveGrabber(point, grabber);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.RemovePassiveGrabber(point, grabber);
+	}
+	public Qt_MouseButton Button()
+	{
+		return this.ptr.Button();
+	}
+	public void* Buttons()
+	{
+		return this.ptr.Buttons();
+	}
+	public QPointF_Ptr Position()
+	{
+		return this.ptr.Position();
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return this.ptr.ScenePosition();
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return this.ptr.GlobalPosition();
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return this.ptr.ExclusivePointGrabber();
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
+	}
 }
 interface IQMouseEvent : IQtObjectInterface
 {
@@ -1978,6 +2003,10 @@ extension CQt
 	public static extern void QMouseEvent_Delete(QMouseEvent_Ptr self);
 	[LinkName("QMouseEvent_Clone")]
 	public static extern void** QMouseEvent_Clone(void* self);
+	
+	public function void QMouseEvent_OnClone_action(void* self);
+	[LinkName("QMouseEvent_OnClone")]
+	public static extern void** QMouseEvent_OnClone(void* self, QMouseEvent_OnClone_action _action);
 	[LinkName("QMouseEvent_Pos")]
 	public static extern void* QMouseEvent_Pos(void* self);
 	[LinkName("QMouseEvent_GlobalPos")]
@@ -2000,6 +2029,36 @@ extension CQt
 	public static extern Qt_MouseEventSource QMouseEvent_Source(void* self);
 	[LinkName("QMouseEvent_Flags")]
 	public static extern void* QMouseEvent_Flags(void* self);
+	[LinkName("QMouseEvent_SetAccepted")]
+	public static extern void QMouseEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QMouseEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QMouseEvent_OnSetAccepted")]
+	public static extern void QMouseEvent_OnSetAccepted(void* self, QMouseEvent_OnSetAccepted_action _action);
+	[LinkName("QMouseEvent_SetTimestamp")]
+	public static extern void QMouseEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QMouseEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QMouseEvent_OnSetTimestamp")]
+	public static extern void QMouseEvent_OnSetTimestamp(void* self, QMouseEvent_OnSetTimestamp_action _action);
+	[LinkName("QMouseEvent_IsBeginEvent")]
+	public static extern bool QMouseEvent_IsBeginEvent(void* self);
+	
+	public function void QMouseEvent_OnIsBeginEvent_action(void* self);
+	[LinkName("QMouseEvent_OnIsBeginEvent")]
+	public static extern bool QMouseEvent_OnIsBeginEvent(void* self, QMouseEvent_OnIsBeginEvent_action _action);
+	[LinkName("QMouseEvent_IsUpdateEvent")]
+	public static extern bool QMouseEvent_IsUpdateEvent(void* self);
+	
+	public function void QMouseEvent_OnIsUpdateEvent_action(void* self);
+	[LinkName("QMouseEvent_OnIsUpdateEvent")]
+	public static extern bool QMouseEvent_OnIsUpdateEvent(void* self, QMouseEvent_OnIsUpdateEvent_action _action);
+	[LinkName("QMouseEvent_IsEndEvent")]
+	public static extern bool QMouseEvent_IsEndEvent(void* self);
+	
+	public function void QMouseEvent_OnIsEndEvent_action(void* self);
+	[LinkName("QMouseEvent_OnIsEndEvent")]
+	public static extern bool QMouseEvent_OnIsEndEvent(void* self, QMouseEvent_OnIsEndEvent_action _action);
 }
 // --------------------------------------------------------------
 // QHoverEvent
@@ -2036,122 +2095,6 @@ struct QHoverEvent_Ptr
 	{
 		return QPointF_Ptr(CQt.QHoverEvent_OldPosF((.)this.Ptr));
 	}
-	public Qt_MouseButton Button()
-	{
-		return CQt.QSinglePointEvent_Button((.)this.Ptr);
-	}
-	public void* Buttons()
-	{
-		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
-	}
-	public QPointF_Ptr Position()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
-	}
-	public bool IsBeginEvent()
-	{
-		return CQt.QSinglePointEvent_IsBeginEvent((.)this.Ptr);
-	}
-	public bool IsEndEvent()
-	{
-		return CQt.QSinglePointEvent_IsEndEvent((.)this.Ptr);
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return CQt.QPointerEvent_PointerType((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QPointerEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
-	public void* PointCount()
-	{
-		return CQt.QPointerEvent_PointCount((.)this.Ptr);
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
-	}
-	public void** Points()
-	{
-		return CQt.QPointerEvent_Points((.)this.Ptr);
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
-	}
-	public bool AllPointsGrabbed()
-	{
-		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
-	}
-	public bool AllPointsAccepted()
-	{
-		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QPointerEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -2159,6 +2102,10 @@ struct QHoverEvent_Ptr
 	public bool Spontaneous()
 	{
 		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QHoverEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -2192,62 +2139,158 @@ struct QHoverEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QHoverEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.Ptr);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.Ptr);
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.Ptr);
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QHoverEvent_IsBeginEvent((.)this.Ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QHoverEvent_IsEndEvent((.)this.Ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.Ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
+	}
 }
 class QHoverEvent : IQHoverEvent, IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QHoverEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QHoverEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF scenePos, IQPointF globalPos, IQPointF oldPos)
 	{
 		this.ptr = CQt.QHoverEvent_new(type, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)oldPos?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF pos, IQPointF oldPos)
 	{
 		this.ptr = CQt.QHoverEvent_new2(type, (.)pos?.ObjectPtr, (.)oldPos?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF scenePos, IQPointF globalPos, IQPointF oldPos, void* modifiers)
 	{
 		this.ptr = CQt.QHoverEvent_new3(type, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)oldPos?.ObjectPtr, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF scenePos, IQPointF globalPos, IQPointF oldPos, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QHoverEvent_new4(type, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)oldPos?.ObjectPtr, modifiers, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF pos, IQPointF oldPos, void* modifiers)
 	{
 		this.ptr = CQt.QHoverEvent_new5(type, (.)pos?.ObjectPtr, (.)oldPos?.ObjectPtr, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF pos, IQPointF oldPos, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QHoverEvent_new6(type, (.)pos?.ObjectPtr, (.)oldPos?.ObjectPtr, modifiers, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QHoverEvent_Delete(this.ptr);
 	}
-	public QHoverEvent_Ptr Clone()
+	public  virtual QHoverEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPoint_Ptr Pos()
 	{
@@ -2257,9 +2300,9 @@ class QHoverEvent : IQHoverEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	{
 		return this.ptr.PosF();
 	}
-	public bool IsUpdateEvent()
+	public  virtual bool OnIsUpdateEvent()
 	{
-		return this.ptr.IsUpdateEvent();
+		return default;
 	}
 	public QPoint_Ptr OldPos()
 	{
@@ -2269,122 +2312,6 @@ class QHoverEvent : IQHoverEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	{
 		return this.ptr.OldPosF();
 	}
-	public Qt_MouseButton Button()
-	{
-		return this.ptr.Button();
-	}
-	public void* Buttons()
-	{
-		return this.ptr.Buttons();
-	}
-	public QPointF_Ptr Position()
-	{
-		return this.ptr.Position();
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return this.ptr.ScenePosition();
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return this.ptr.GlobalPosition();
-	}
-	public bool IsBeginEvent()
-	{
-		return this.ptr.IsBeginEvent();
-	}
-	public bool IsEndEvent()
-	{
-		return this.ptr.IsEndEvent();
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return this.ptr.ExclusivePointGrabber();
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return this.ptr.PointingDevice();
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return this.ptr.PointerType();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
-	public void* PointCount()
-	{
-		return this.ptr.PointCount();
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return this.ptr.Point(i);
-	}
-	public void** Points()
-	{
-		return this.ptr.Points();
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return this.ptr.PointById(id);
-	}
-	public bool AllPointsGrabbed()
-	{
-		return this.ptr.AllPointsGrabbed();
-	}
-	public bool AllPointsAccepted()
-	{
-		return this.ptr.AllPointsAccepted();
-	}
-	public void SetAccepted(bool accepted)
-	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return this.ptr.ExclusiveGrabber(point);
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		this.ptr.ClearPassiveGrabbers(point);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.AddPassiveGrabber(point, grabber);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.RemovePassiveGrabber(point, grabber);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -2392,6 +2319,9 @@ class QHoverEvent : IQHoverEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	public bool Spontaneous()
 	{
 		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
 	}
 	public bool IsAccepted()
 	{
@@ -2425,6 +2355,117 @@ class QHoverEvent : IQHoverEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return this.ptr.PointingDevice();
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return this.ptr.PointerType();
+	}
+	public void* PointCount()
+	{
+		return this.ptr.PointCount();
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return this.ptr.Point(i);
+	}
+	public void** Points()
+	{
+		return this.ptr.Points();
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return this.ptr.PointById(id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return this.ptr.AllPointsGrabbed();
+	}
+	public  virtual bool OnIsBeginEvent()
+	{
+		return default;
+	}
+	public  virtual bool OnIsEndEvent()
+	{
+		return default;
+	}
+	public bool AllPointsAccepted()
+	{
+		return this.ptr.AllPointsAccepted();
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return this.ptr.ExclusiveGrabber(point);
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		this.ptr.ClearPassiveGrabbers(point);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.AddPassiveGrabber(point, grabber);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.RemovePassiveGrabber(point, grabber);
+	}
+	public Qt_MouseButton Button()
+	{
+		return this.ptr.Button();
+	}
+	public void* Buttons()
+	{
+		return this.ptr.Buttons();
+	}
+	public QPointF_Ptr Position()
+	{
+		return this.ptr.Position();
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return this.ptr.ScenePosition();
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return this.ptr.GlobalPosition();
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return this.ptr.ExclusivePointGrabber();
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
+	}
 }
 interface IQHoverEvent : IQtObjectInterface
 {
@@ -2447,16 +2488,48 @@ extension CQt
 	public static extern void QHoverEvent_Delete(QHoverEvent_Ptr self);
 	[LinkName("QHoverEvent_Clone")]
 	public static extern void** QHoverEvent_Clone(void* self);
+	
+	public function void QHoverEvent_OnClone_action(void* self);
+	[LinkName("QHoverEvent_OnClone")]
+	public static extern void** QHoverEvent_OnClone(void* self, QHoverEvent_OnClone_action _action);
 	[LinkName("QHoverEvent_Pos")]
 	public static extern void* QHoverEvent_Pos(void* self);
 	[LinkName("QHoverEvent_PosF")]
 	public static extern void* QHoverEvent_PosF(void* self);
 	[LinkName("QHoverEvent_IsUpdateEvent")]
 	public static extern bool QHoverEvent_IsUpdateEvent(void* self);
+	
+	public function void QHoverEvent_OnIsUpdateEvent_action(void* self);
+	[LinkName("QHoverEvent_OnIsUpdateEvent")]
+	public static extern bool QHoverEvent_OnIsUpdateEvent(void* self, QHoverEvent_OnIsUpdateEvent_action _action);
 	[LinkName("QHoverEvent_OldPos")]
 	public static extern void* QHoverEvent_OldPos(void* self);
 	[LinkName("QHoverEvent_OldPosF")]
 	public static extern void* QHoverEvent_OldPosF(void* self);
+	[LinkName("QHoverEvent_SetAccepted")]
+	public static extern void QHoverEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QHoverEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QHoverEvent_OnSetAccepted")]
+	public static extern void QHoverEvent_OnSetAccepted(void* self, QHoverEvent_OnSetAccepted_action _action);
+	[LinkName("QHoverEvent_SetTimestamp")]
+	public static extern void QHoverEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QHoverEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QHoverEvent_OnSetTimestamp")]
+	public static extern void QHoverEvent_OnSetTimestamp(void* self, QHoverEvent_OnSetTimestamp_action _action);
+	[LinkName("QHoverEvent_IsBeginEvent")]
+	public static extern bool QHoverEvent_IsBeginEvent(void* self);
+	
+	public function void QHoverEvent_OnIsBeginEvent_action(void* self);
+	[LinkName("QHoverEvent_OnIsBeginEvent")]
+	public static extern bool QHoverEvent_OnIsBeginEvent(void* self, QHoverEvent_OnIsBeginEvent_action _action);
+	[LinkName("QHoverEvent_IsEndEvent")]
+	public static extern bool QHoverEvent_IsEndEvent(void* self);
+	
+	public function void QHoverEvent_OnIsEndEvent_action(void* self);
+	[LinkName("QHoverEvent_OnIsEndEvent")]
+	public static extern bool QHoverEvent_OnIsEndEvent(void* self, QHoverEvent_OnIsEndEvent_action _action);
 }
 // --------------------------------------------------------------
 // QWheelEvent
@@ -2513,114 +2586,6 @@ struct QWheelEvent_Ptr
 	{
 		return CQt.QWheelEvent_Source((.)this.Ptr);
 	}
-	public Qt_MouseButton Button()
-	{
-		return CQt.QSinglePointEvent_Button((.)this.Ptr);
-	}
-	public void* Buttons()
-	{
-		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
-	}
-	public QPointF_Ptr Position()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return CQt.QPointerEvent_PointerType((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QPointerEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
-	public void* PointCount()
-	{
-		return CQt.QPointerEvent_PointCount((.)this.Ptr);
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
-	}
-	public void** Points()
-	{
-		return CQt.QPointerEvent_Points((.)this.Ptr);
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
-	}
-	public bool AllPointsGrabbed()
-	{
-		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
-	}
-	public bool AllPointsAccepted()
-	{
-		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QPointerEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -2628,6 +2593,10 @@ struct QWheelEvent_Ptr
 	public bool Spontaneous()
 	{
 		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QWheelEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -2661,47 +2630,138 @@ struct QWheelEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QWheelEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.Ptr);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.Ptr);
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.Ptr);
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.Ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
+	}
 }
 class QWheelEvent : IQWheelEvent, IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QWheelEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QWheelEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, IQPointF globalPos, IQPoint pixelDelta, IQPoint angleDelta, void* buttons, void* modifiers, Qt_ScrollPhase phase, bool inverted)
 	{
 		this.ptr = CQt.QWheelEvent_new((.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)pixelDelta?.ObjectPtr, (.)angleDelta?.ObjectPtr, buttons, modifiers, phase, inverted);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, IQPointF globalPos, IQPoint pixelDelta, IQPoint angleDelta, void* buttons, void* modifiers, Qt_ScrollPhase phase, bool inverted, Qt_MouseEventSource source)
 	{
 		this.ptr = CQt.QWheelEvent_new2((.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)pixelDelta?.ObjectPtr, (.)angleDelta?.ObjectPtr, buttons, modifiers, phase, inverted, source);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, IQPointF globalPos, IQPoint pixelDelta, IQPoint angleDelta, void* buttons, void* modifiers, Qt_ScrollPhase phase, bool inverted, Qt_MouseEventSource source, IQPointingDevice device)
 	{
 		this.ptr = CQt.QWheelEvent_new3((.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)pixelDelta?.ObjectPtr, (.)angleDelta?.ObjectPtr, buttons, modifiers, phase, inverted, source, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QWheelEvent_Delete(this.ptr);
 	}
-	public QWheelEvent_Ptr Clone()
+	public  virtual QWheelEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPoint_Ptr PixelDelta()
 	{
@@ -2727,129 +2787,21 @@ class QWheelEvent : IQWheelEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	{
 		return this.ptr.HasPixelDelta();
 	}
-	public bool IsBeginEvent()
+	public  virtual bool OnIsBeginEvent()
 	{
-		return this.ptr.IsBeginEvent();
+		return default;
 	}
-	public bool IsUpdateEvent()
+	public  virtual bool OnIsUpdateEvent()
 	{
-		return this.ptr.IsUpdateEvent();
+		return default;
 	}
-	public bool IsEndEvent()
+	public  virtual bool OnIsEndEvent()
 	{
-		return this.ptr.IsEndEvent();
+		return default;
 	}
 	public Qt_MouseEventSource Source()
 	{
 		return this.ptr.Source();
-	}
-	public Qt_MouseButton Button()
-	{
-		return this.ptr.Button();
-	}
-	public void* Buttons()
-	{
-		return this.ptr.Buttons();
-	}
-	public QPointF_Ptr Position()
-	{
-		return this.ptr.Position();
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return this.ptr.ScenePosition();
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return this.ptr.GlobalPosition();
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return this.ptr.ExclusivePointGrabber();
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return this.ptr.PointingDevice();
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return this.ptr.PointerType();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
-	public void* PointCount()
-	{
-		return this.ptr.PointCount();
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return this.ptr.Point(i);
-	}
-	public void** Points()
-	{
-		return this.ptr.Points();
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return this.ptr.PointById(id);
-	}
-	public bool AllPointsGrabbed()
-	{
-		return this.ptr.AllPointsGrabbed();
-	}
-	public bool AllPointsAccepted()
-	{
-		return this.ptr.AllPointsAccepted();
-	}
-	public void SetAccepted(bool accepted)
-	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return this.ptr.ExclusiveGrabber(point);
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		this.ptr.ClearPassiveGrabbers(point);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.AddPassiveGrabber(point, grabber);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.RemovePassiveGrabber(point, grabber);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
 	}
 	public QEvent_Type Type()
 	{
@@ -2858,6 +2810,9 @@ class QWheelEvent : IQWheelEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	public bool Spontaneous()
 	{
 		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
 	}
 	public bool IsAccepted()
 	{
@@ -2891,6 +2846,109 @@ class QWheelEvent : IQWheelEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return this.ptr.PointingDevice();
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return this.ptr.PointerType();
+	}
+	public void* PointCount()
+	{
+		return this.ptr.PointCount();
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return this.ptr.Point(i);
+	}
+	public void** Points()
+	{
+		return this.ptr.Points();
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return this.ptr.PointById(id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return this.ptr.AllPointsGrabbed();
+	}
+	public bool AllPointsAccepted()
+	{
+		return this.ptr.AllPointsAccepted();
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return this.ptr.ExclusiveGrabber(point);
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		this.ptr.ClearPassiveGrabbers(point);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.AddPassiveGrabber(point, grabber);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.RemovePassiveGrabber(point, grabber);
+	}
+	public Qt_MouseButton Button()
+	{
+		return this.ptr.Button();
+	}
+	public void* Buttons()
+	{
+		return this.ptr.Buttons();
+	}
+	public QPointF_Ptr Position()
+	{
+		return this.ptr.Position();
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return this.ptr.ScenePosition();
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return this.ptr.GlobalPosition();
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return this.ptr.ExclusivePointGrabber();
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
+	}
 }
 interface IQWheelEvent : IQtObjectInterface
 {
@@ -2907,6 +2965,10 @@ extension CQt
 	public static extern void QWheelEvent_Delete(QWheelEvent_Ptr self);
 	[LinkName("QWheelEvent_Clone")]
 	public static extern void** QWheelEvent_Clone(void* self);
+	
+	public function void QWheelEvent_OnClone_action(void* self);
+	[LinkName("QWheelEvent_OnClone")]
+	public static extern void** QWheelEvent_OnClone(void* self, QWheelEvent_OnClone_action _action);
 	[LinkName("QWheelEvent_PixelDelta")]
 	public static extern void* QWheelEvent_PixelDelta(void* self);
 	[LinkName("QWheelEvent_AngleDelta")]
@@ -2921,12 +2983,36 @@ extension CQt
 	public static extern bool QWheelEvent_HasPixelDelta(void* self);
 	[LinkName("QWheelEvent_IsBeginEvent")]
 	public static extern bool QWheelEvent_IsBeginEvent(void* self);
+	
+	public function void QWheelEvent_OnIsBeginEvent_action(void* self);
+	[LinkName("QWheelEvent_OnIsBeginEvent")]
+	public static extern bool QWheelEvent_OnIsBeginEvent(void* self, QWheelEvent_OnIsBeginEvent_action _action);
 	[LinkName("QWheelEvent_IsUpdateEvent")]
 	public static extern bool QWheelEvent_IsUpdateEvent(void* self);
+	
+	public function void QWheelEvent_OnIsUpdateEvent_action(void* self);
+	[LinkName("QWheelEvent_OnIsUpdateEvent")]
+	public static extern bool QWheelEvent_OnIsUpdateEvent(void* self, QWheelEvent_OnIsUpdateEvent_action _action);
 	[LinkName("QWheelEvent_IsEndEvent")]
 	public static extern bool QWheelEvent_IsEndEvent(void* self);
+	
+	public function void QWheelEvent_OnIsEndEvent_action(void* self);
+	[LinkName("QWheelEvent_OnIsEndEvent")]
+	public static extern bool QWheelEvent_OnIsEndEvent(void* self, QWheelEvent_OnIsEndEvent_action _action);
 	[LinkName("QWheelEvent_Source")]
 	public static extern Qt_MouseEventSource QWheelEvent_Source(void* self);
+	[LinkName("QWheelEvent_SetAccepted")]
+	public static extern void QWheelEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QWheelEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QWheelEvent_OnSetAccepted")]
+	public static extern void QWheelEvent_OnSetAccepted(void* self, QWheelEvent_OnSetAccepted_action _action);
+	[LinkName("QWheelEvent_SetTimestamp")]
+	public static extern void QWheelEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QWheelEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QWheelEvent_OnSetTimestamp")]
+	public static extern void QWheelEvent_OnSetTimestamp(void* self, QWheelEvent_OnSetTimestamp_action _action);
 }
 // --------------------------------------------------------------
 // QTabletEvent
@@ -3011,126 +3097,6 @@ struct QTabletEvent_Ptr
 	{
 		return CQt.QTabletEvent_YTilt((.)this.Ptr);
 	}
-	public Qt_MouseButton Button()
-	{
-		return CQt.QSinglePointEvent_Button((.)this.Ptr);
-	}
-	public void* Buttons()
-	{
-		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
-	}
-	public QPointF_Ptr Position()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
-	}
-	public bool IsBeginEvent()
-	{
-		return CQt.QSinglePointEvent_IsBeginEvent((.)this.Ptr);
-	}
-	public bool IsUpdateEvent()
-	{
-		return CQt.QSinglePointEvent_IsUpdateEvent((.)this.Ptr);
-	}
-	public bool IsEndEvent()
-	{
-		return CQt.QSinglePointEvent_IsEndEvent((.)this.Ptr);
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return CQt.QPointerEvent_PointerType((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QPointerEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
-	public void* PointCount()
-	{
-		return CQt.QPointerEvent_PointCount((.)this.Ptr);
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
-	}
-	public void** Points()
-	{
-		return CQt.QPointerEvent_Points((.)this.Ptr);
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
-	}
-	public bool AllPointsGrabbed()
-	{
-		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
-	}
-	public bool AllPointsAccepted()
-	{
-		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QPointerEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -3138,6 +3104,10 @@ struct QTabletEvent_Ptr
 	public bool Spontaneous()
 	{
 		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QTabletEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -3171,37 +3141,142 @@ struct QTabletEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QTabletEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.Ptr);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.Ptr);
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.Ptr);
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QTabletEvent_IsBeginEvent((.)this.Ptr);
+	}
+	public bool IsUpdateEvent()
+	{
+		return CQt.QTabletEvent_IsUpdateEvent((.)this.Ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QTabletEvent_IsEndEvent((.)this.Ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.Ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
+	}
 }
 class QTabletEvent : IQTabletEvent, IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QTabletEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTabletEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type t, IQPointingDevice device, IQPointF pos, IQPointF globalPos, double pressure, float xTilt, float yTilt, float tangentialPressure, double rotation, float z, void* keyState, Qt_MouseButton button, void* buttons)
 	{
 		this.ptr = CQt.QTabletEvent_new(t, (.)device?.ObjectPtr, (.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, pressure, xTilt, yTilt, tangentialPressure, rotation, z, keyState, button, buttons);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTabletEvent_Delete(this.ptr);
 	}
-	public QTabletEvent_Ptr Clone()
+	public  virtual QTabletEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPoint_Ptr Pos()
 	{
@@ -3271,126 +3346,6 @@ class QTabletEvent : IQTabletEvent, IQSinglePointEvent, IQPointerEvent, IQInputE
 	{
 		return this.ptr.YTilt();
 	}
-	public Qt_MouseButton Button()
-	{
-		return this.ptr.Button();
-	}
-	public void* Buttons()
-	{
-		return this.ptr.Buttons();
-	}
-	public QPointF_Ptr Position()
-	{
-		return this.ptr.Position();
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return this.ptr.ScenePosition();
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return this.ptr.GlobalPosition();
-	}
-	public bool IsBeginEvent()
-	{
-		return this.ptr.IsBeginEvent();
-	}
-	public bool IsUpdateEvent()
-	{
-		return this.ptr.IsUpdateEvent();
-	}
-	public bool IsEndEvent()
-	{
-		return this.ptr.IsEndEvent();
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return this.ptr.ExclusivePointGrabber();
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return this.ptr.PointingDevice();
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return this.ptr.PointerType();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
-	public void* PointCount()
-	{
-		return this.ptr.PointCount();
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return this.ptr.Point(i);
-	}
-	public void** Points()
-	{
-		return this.ptr.Points();
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return this.ptr.PointById(id);
-	}
-	public bool AllPointsGrabbed()
-	{
-		return this.ptr.AllPointsGrabbed();
-	}
-	public bool AllPointsAccepted()
-	{
-		return this.ptr.AllPointsAccepted();
-	}
-	public void SetAccepted(bool accepted)
-	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return this.ptr.ExclusiveGrabber(point);
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		this.ptr.ClearPassiveGrabbers(point);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.AddPassiveGrabber(point, grabber);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.RemovePassiveGrabber(point, grabber);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -3398,6 +3353,9 @@ class QTabletEvent : IQTabletEvent, IQSinglePointEvent, IQPointerEvent, IQInputE
 	public bool Spontaneous()
 	{
 		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
 	}
 	public bool IsAccepted()
 	{
@@ -3431,6 +3389,121 @@ class QTabletEvent : IQTabletEvent, IQSinglePointEvent, IQPointerEvent, IQInputE
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return this.ptr.PointingDevice();
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return this.ptr.PointerType();
+	}
+	public void* PointCount()
+	{
+		return this.ptr.PointCount();
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return this.ptr.Point(i);
+	}
+	public void** Points()
+	{
+		return this.ptr.Points();
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return this.ptr.PointById(id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return this.ptr.AllPointsGrabbed();
+	}
+	public  virtual bool OnIsBeginEvent()
+	{
+		return default;
+	}
+	public  virtual bool OnIsUpdateEvent()
+	{
+		return default;
+	}
+	public  virtual bool OnIsEndEvent()
+	{
+		return default;
+	}
+	public bool AllPointsAccepted()
+	{
+		return this.ptr.AllPointsAccepted();
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return this.ptr.ExclusiveGrabber(point);
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		this.ptr.ClearPassiveGrabbers(point);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.AddPassiveGrabber(point, grabber);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.RemovePassiveGrabber(point, grabber);
+	}
+	public Qt_MouseButton Button()
+	{
+		return this.ptr.Button();
+	}
+	public void* Buttons()
+	{
+		return this.ptr.Buttons();
+	}
+	public QPointF_Ptr Position()
+	{
+		return this.ptr.Position();
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return this.ptr.ScenePosition();
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return this.ptr.GlobalPosition();
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return this.ptr.ExclusivePointGrabber();
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
+	}
 }
 interface IQTabletEvent : IQtObjectInterface
 {
@@ -3443,6 +3516,10 @@ extension CQt
 	public static extern void QTabletEvent_Delete(QTabletEvent_Ptr self);
 	[LinkName("QTabletEvent_Clone")]
 	public static extern void** QTabletEvent_Clone(void* self);
+	
+	public function void QTabletEvent_OnClone_action(void* self);
+	[LinkName("QTabletEvent_OnClone")]
+	public static extern void** QTabletEvent_OnClone(void* self, QTabletEvent_OnClone_action _action);
 	[LinkName("QTabletEvent_Pos")]
 	public static extern void* QTabletEvent_Pos(void* self);
 	[LinkName("QTabletEvent_GlobalPos")]
@@ -3477,6 +3554,36 @@ extension CQt
 	public static extern double QTabletEvent_XTilt(void* self);
 	[LinkName("QTabletEvent_YTilt")]
 	public static extern double QTabletEvent_YTilt(void* self);
+	[LinkName("QTabletEvent_SetAccepted")]
+	public static extern void QTabletEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QTabletEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QTabletEvent_OnSetAccepted")]
+	public static extern void QTabletEvent_OnSetAccepted(void* self, QTabletEvent_OnSetAccepted_action _action);
+	[LinkName("QTabletEvent_SetTimestamp")]
+	public static extern void QTabletEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QTabletEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QTabletEvent_OnSetTimestamp")]
+	public static extern void QTabletEvent_OnSetTimestamp(void* self, QTabletEvent_OnSetTimestamp_action _action);
+	[LinkName("QTabletEvent_IsBeginEvent")]
+	public static extern bool QTabletEvent_IsBeginEvent(void* self);
+	
+	public function void QTabletEvent_OnIsBeginEvent_action(void* self);
+	[LinkName("QTabletEvent_OnIsBeginEvent")]
+	public static extern bool QTabletEvent_OnIsBeginEvent(void* self, QTabletEvent_OnIsBeginEvent_action _action);
+	[LinkName("QTabletEvent_IsUpdateEvent")]
+	public static extern bool QTabletEvent_IsUpdateEvent(void* self);
+	
+	public function void QTabletEvent_OnIsUpdateEvent_action(void* self);
+	[LinkName("QTabletEvent_OnIsUpdateEvent")]
+	public static extern bool QTabletEvent_OnIsUpdateEvent(void* self, QTabletEvent_OnIsUpdateEvent_action _action);
+	[LinkName("QTabletEvent_IsEndEvent")]
+	public static extern bool QTabletEvent_IsEndEvent(void* self);
+	
+	public function void QTabletEvent_OnIsEndEvent_action(void* self);
+	[LinkName("QTabletEvent_OnIsEndEvent")]
+	public static extern bool QTabletEvent_OnIsEndEvent(void* self, QTabletEvent_OnIsEndEvent_action _action);
 }
 // --------------------------------------------------------------
 // QNativeGestureEvent
@@ -3529,126 +3636,6 @@ struct QNativeGestureEvent_Ptr
 	{
 		return QPointF_Ptr(CQt.QNativeGestureEvent_ScreenPos((.)this.Ptr));
 	}
-	public Qt_MouseButton Button()
-	{
-		return CQt.QSinglePointEvent_Button((.)this.Ptr);
-	}
-	public void* Buttons()
-	{
-		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
-	}
-	public QPointF_Ptr Position()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
-	}
-	public bool IsBeginEvent()
-	{
-		return CQt.QSinglePointEvent_IsBeginEvent((.)this.Ptr);
-	}
-	public bool IsUpdateEvent()
-	{
-		return CQt.QSinglePointEvent_IsUpdateEvent((.)this.Ptr);
-	}
-	public bool IsEndEvent()
-	{
-		return CQt.QSinglePointEvent_IsEndEvent((.)this.Ptr);
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return CQt.QPointerEvent_PointerType((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QPointerEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
-	public void* PointCount()
-	{
-		return CQt.QPointerEvent_PointCount((.)this.Ptr);
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
-	}
-	public void** Points()
-	{
-		return CQt.QPointerEvent_Points((.)this.Ptr);
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
-	}
-	public bool AllPointsGrabbed()
-	{
-		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
-	}
-	public bool AllPointsAccepted()
-	{
-		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QPointerEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -3656,6 +3643,10 @@ struct QNativeGestureEvent_Ptr
 	public bool Spontaneous()
 	{
 		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QNativeGestureEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -3689,47 +3680,150 @@ struct QNativeGestureEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QNativeGestureEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.Ptr);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.Ptr);
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.Ptr);
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QNativeGestureEvent_IsBeginEvent((.)this.Ptr);
+	}
+	public bool IsUpdateEvent()
+	{
+		return CQt.QNativeGestureEvent_IsUpdateEvent((.)this.Ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QNativeGestureEvent_IsEndEvent((.)this.Ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.Ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.Ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_Position((.)this.Ptr));
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_ScenePosition((.)this.Ptr));
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return QPointF_Ptr(CQt.QSinglePointEvent_GlobalPosition((.)this.Ptr));
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return QObject_Ptr(CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.Ptr));
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.Ptr, (.)exclusiveGrabber?.ObjectPtr);
+	}
 }
 class QNativeGestureEvent : IQNativeGestureEvent, IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QNativeGestureEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QNativeGestureEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_NativeGestureType type, IQPointingDevice dev, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, double value, c_ulonglong sequenceId, c_ulonglong intArgument)
 	{
 		this.ptr = CQt.QNativeGestureEvent_new(type, (.)dev?.ObjectPtr, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, value, sequenceId, intArgument);
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_NativeGestureType type, IQPointingDevice dev, c_int fingerCount, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, double value, IQPointF delta)
 	{
 		this.ptr = CQt.QNativeGestureEvent_new2(type, (.)dev?.ObjectPtr, fingerCount, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, value, (.)delta?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_NativeGestureType type, IQPointingDevice dev, c_int fingerCount, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, double value, IQPointF delta, c_ulonglong sequenceId)
 	{
 		this.ptr = CQt.QNativeGestureEvent_new3(type, (.)dev?.ObjectPtr, fingerCount, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, value, (.)delta?.ObjectPtr, sequenceId);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QNativeGestureEvent_Delete(this.ptr);
 	}
-	public QNativeGestureEvent_Ptr Clone()
+	public  virtual QNativeGestureEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public Qt_NativeGestureType GestureType()
 	{
@@ -3767,126 +3861,6 @@ class QNativeGestureEvent : IQNativeGestureEvent, IQSinglePointEvent, IQPointerE
 	{
 		return this.ptr.ScreenPos();
 	}
-	public Qt_MouseButton Button()
-	{
-		return this.ptr.Button();
-	}
-	public void* Buttons()
-	{
-		return this.ptr.Buttons();
-	}
-	public QPointF_Ptr Position()
-	{
-		return this.ptr.Position();
-	}
-	public QPointF_Ptr ScenePosition()
-	{
-		return this.ptr.ScenePosition();
-	}
-	public QPointF_Ptr GlobalPosition()
-	{
-		return this.ptr.GlobalPosition();
-	}
-	public bool IsBeginEvent()
-	{
-		return this.ptr.IsBeginEvent();
-	}
-	public bool IsUpdateEvent()
-	{
-		return this.ptr.IsUpdateEvent();
-	}
-	public bool IsEndEvent()
-	{
-		return this.ptr.IsEndEvent();
-	}
-	public QObject_Ptr ExclusivePointGrabber()
-	{
-		return this.ptr.ExclusivePointGrabber();
-	}
-	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return this.ptr.PointingDevice();
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return this.ptr.PointerType();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
-	public void* PointCount()
-	{
-		return this.ptr.PointCount();
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return this.ptr.Point(i);
-	}
-	public void** Points()
-	{
-		return this.ptr.Points();
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return this.ptr.PointById(id);
-	}
-	public bool AllPointsGrabbed()
-	{
-		return this.ptr.AllPointsGrabbed();
-	}
-	public bool AllPointsAccepted()
-	{
-		return this.ptr.AllPointsAccepted();
-	}
-	public void SetAccepted(bool accepted)
-	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return this.ptr.ExclusiveGrabber(point);
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		this.ptr.ClearPassiveGrabbers(point);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.AddPassiveGrabber(point, grabber);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.RemovePassiveGrabber(point, grabber);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -3894,6 +3868,9 @@ class QNativeGestureEvent : IQNativeGestureEvent, IQSinglePointEvent, IQPointerE
 	public bool Spontaneous()
 	{
 		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
 	}
 	public bool IsAccepted()
 	{
@@ -3927,6 +3904,121 @@ class QNativeGestureEvent : IQNativeGestureEvent, IQSinglePointEvent, IQPointerE
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return this.ptr.PointingDevice();
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return this.ptr.PointerType();
+	}
+	public void* PointCount()
+	{
+		return this.ptr.PointCount();
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return this.ptr.Point(i);
+	}
+	public void** Points()
+	{
+		return this.ptr.Points();
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return this.ptr.PointById(id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return this.ptr.AllPointsGrabbed();
+	}
+	public  virtual bool OnIsBeginEvent()
+	{
+		return default;
+	}
+	public  virtual bool OnIsUpdateEvent()
+	{
+		return default;
+	}
+	public  virtual bool OnIsEndEvent()
+	{
+		return default;
+	}
+	public bool AllPointsAccepted()
+	{
+		return this.ptr.AllPointsAccepted();
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return this.ptr.ExclusiveGrabber(point);
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		this.ptr.ClearPassiveGrabbers(point);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.AddPassiveGrabber(point, grabber);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.RemovePassiveGrabber(point, grabber);
+	}
+	public Qt_MouseButton Button()
+	{
+		return this.ptr.Button();
+	}
+	public void* Buttons()
+	{
+		return this.ptr.Buttons();
+	}
+	public QPointF_Ptr Position()
+	{
+		return this.ptr.Position();
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return this.ptr.ScenePosition();
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return this.ptr.GlobalPosition();
+	}
+	public QObject_Ptr ExclusivePointGrabber()
+	{
+		return this.ptr.ExclusivePointGrabber();
+	}
+	public void SetExclusivePointGrabber(IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusivePointGrabber(exclusiveGrabber);
+	}
 }
 interface IQNativeGestureEvent : IQtObjectInterface
 {
@@ -3943,6 +4035,10 @@ extension CQt
 	public static extern void QNativeGestureEvent_Delete(QNativeGestureEvent_Ptr self);
 	[LinkName("QNativeGestureEvent_Clone")]
 	public static extern void** QNativeGestureEvent_Clone(void* self);
+	
+	public function void QNativeGestureEvent_OnClone_action(void* self);
+	[LinkName("QNativeGestureEvent_OnClone")]
+	public static extern void** QNativeGestureEvent_OnClone(void* self, QNativeGestureEvent_OnClone_action _action);
 	[LinkName("QNativeGestureEvent_GestureType")]
 	public static extern Qt_NativeGestureType QNativeGestureEvent_GestureType(void* self);
 	[LinkName("QNativeGestureEvent_FingerCount")]
@@ -3961,6 +4057,36 @@ extension CQt
 	public static extern void* QNativeGestureEvent_WindowPos(void* self);
 	[LinkName("QNativeGestureEvent_ScreenPos")]
 	public static extern void* QNativeGestureEvent_ScreenPos(void* self);
+	[LinkName("QNativeGestureEvent_SetAccepted")]
+	public static extern void QNativeGestureEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QNativeGestureEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QNativeGestureEvent_OnSetAccepted")]
+	public static extern void QNativeGestureEvent_OnSetAccepted(void* self, QNativeGestureEvent_OnSetAccepted_action _action);
+	[LinkName("QNativeGestureEvent_SetTimestamp")]
+	public static extern void QNativeGestureEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QNativeGestureEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QNativeGestureEvent_OnSetTimestamp")]
+	public static extern void QNativeGestureEvent_OnSetTimestamp(void* self, QNativeGestureEvent_OnSetTimestamp_action _action);
+	[LinkName("QNativeGestureEvent_IsBeginEvent")]
+	public static extern bool QNativeGestureEvent_IsBeginEvent(void* self);
+	
+	public function void QNativeGestureEvent_OnIsBeginEvent_action(void* self);
+	[LinkName("QNativeGestureEvent_OnIsBeginEvent")]
+	public static extern bool QNativeGestureEvent_OnIsBeginEvent(void* self, QNativeGestureEvent_OnIsBeginEvent_action _action);
+	[LinkName("QNativeGestureEvent_IsUpdateEvent")]
+	public static extern bool QNativeGestureEvent_IsUpdateEvent(void* self);
+	
+	public function void QNativeGestureEvent_OnIsUpdateEvent_action(void* self);
+	[LinkName("QNativeGestureEvent_OnIsUpdateEvent")]
+	public static extern bool QNativeGestureEvent_OnIsUpdateEvent(void* self, QNativeGestureEvent_OnIsUpdateEvent_action _action);
+	[LinkName("QNativeGestureEvent_IsEndEvent")]
+	public static extern bool QNativeGestureEvent_IsEndEvent(void* self);
+	
+	public function void QNativeGestureEvent_OnIsEndEvent_action(void* self);
+	[LinkName("QNativeGestureEvent_OnIsEndEvent")]
+	public static extern bool QNativeGestureEvent_OnIsEndEvent(void* self, QNativeGestureEvent_OnIsEndEvent_action _action);
 }
 // --------------------------------------------------------------
 // QKeyEvent
@@ -4017,26 +4143,6 @@ struct QKeyEvent_Ptr
 	{
 		return CQt.QKeyEvent_NativeModifiers((.)this.Ptr);
 	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QInputEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -4047,7 +4153,7 @@ struct QKeyEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QKeyEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4081,77 +4187,78 @@ struct QKeyEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QKeyEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
 }
 class QKeyEvent : IQKeyEvent, IQInputEvent, IQEvent
 {
 	private QKeyEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QKeyEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers)
 	{
 		this.ptr = CQt.QKeyEvent_new(type, key, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers)
 	{
 		this.ptr = CQt.QKeyEvent_new2(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, String text)
 	{
 		this.ptr = CQt.QKeyEvent_new3(type, key, modifiers, libqt_string(text));
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, String text, bool autorep)
 	{
 		this.ptr = CQt.QKeyEvent_new4(type, key, modifiers, libqt_string(text), autorep);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, String text, bool autorep, c_ushort count)
 	{
 		this.ptr = CQt.QKeyEvent_new5(type, key, modifiers, libqt_string(text), autorep, count);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers, String text)
 	{
 		this.ptr = CQt.QKeyEvent_new6(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, libqt_string(text));
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers, String text, bool autorep)
 	{
 		this.ptr = CQt.QKeyEvent_new7(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, libqt_string(text), autorep);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers, String text, bool autorep, c_ushort count)
 	{
 		this.ptr = CQt.QKeyEvent_new8(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, libqt_string(text), autorep, count);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers, String text, bool autorep, c_ushort count, IQInputDevice device)
 	{
 		this.ptr = CQt.QKeyEvent_new9(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, libqt_string(text), autorep, count, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QKeyEvent_Delete(this.ptr);
 	}
-	public QKeyEvent_Ptr Clone()
+	public  virtual QKeyEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int Key()
 	{
@@ -4193,26 +4300,6 @@ class QKeyEvent : IQKeyEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.NativeModifiers();
 	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -4221,9 +4308,8 @@ class QKeyEvent : IQKeyEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4257,6 +4343,25 @@ class QKeyEvent : IQKeyEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
 }
 interface IQKeyEvent : IQtObjectInterface
 {
@@ -4285,6 +4390,10 @@ extension CQt
 	public static extern void QKeyEvent_Delete(QKeyEvent_Ptr self);
 	[LinkName("QKeyEvent_Clone")]
 	public static extern void** QKeyEvent_Clone(void* self);
+	
+	public function void QKeyEvent_OnClone_action(void* self);
+	[LinkName("QKeyEvent_OnClone")]
+	public static extern void** QKeyEvent_OnClone(void* self, QKeyEvent_OnClone_action _action);
 	[LinkName("QKeyEvent_Key")]
 	public static extern c_int QKeyEvent_Key(void* self);
 	[LinkName("QKeyEvent_Matches")]
@@ -4305,6 +4414,18 @@ extension CQt
 	public static extern c_uint QKeyEvent_NativeVirtualKey(void* self);
 	[LinkName("QKeyEvent_NativeModifiers")]
 	public static extern c_uint QKeyEvent_NativeModifiers(void* self);
+	[LinkName("QKeyEvent_SetAccepted")]
+	public static extern void QKeyEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QKeyEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QKeyEvent_OnSetAccepted")]
+	public static extern void QKeyEvent_OnSetAccepted(void* self, QKeyEvent_OnSetAccepted_action _action);
+	[LinkName("QKeyEvent_SetTimestamp")]
+	public static extern void QKeyEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QKeyEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QKeyEvent_OnSetTimestamp")]
+	public static extern void QKeyEvent_OnSetTimestamp(void* self, QKeyEvent_OnSetTimestamp_action _action);
 }
 // --------------------------------------------------------------
 // QFocusEvent
@@ -4343,7 +4464,7 @@ struct QFocusEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QFocusEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4382,37 +4503,25 @@ class QFocusEvent : IQFocusEvent, IQEvent
 {
 	private QFocusEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QFocusEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QFocusEvent_new(type);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, Qt_FocusReason reason)
 	{
 		this.ptr = CQt.QFocusEvent_new2(type, reason);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QFocusEvent_Delete(this.ptr);
 	}
-	public QFocusEvent_Ptr Clone()
+	public  virtual QFocusEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public bool GotFocus()
 	{
@@ -4434,9 +4543,8 @@ class QFocusEvent : IQFocusEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4484,12 +4592,22 @@ extension CQt
 	public static extern void QFocusEvent_Delete(QFocusEvent_Ptr self);
 	[LinkName("QFocusEvent_Clone")]
 	public static extern void** QFocusEvent_Clone(void* self);
+	
+	public function void QFocusEvent_OnClone_action(void* self);
+	[LinkName("QFocusEvent_OnClone")]
+	public static extern void** QFocusEvent_OnClone(void* self, QFocusEvent_OnClone_action _action);
 	[LinkName("QFocusEvent_GotFocus")]
 	public static extern bool QFocusEvent_GotFocus(void* self);
 	[LinkName("QFocusEvent_LostFocus")]
 	public static extern bool QFocusEvent_LostFocus(void* self);
 	[LinkName("QFocusEvent_Reason")]
 	public static extern Qt_FocusReason QFocusEvent_Reason(void* self);
+	[LinkName("QFocusEvent_SetAccepted")]
+	public static extern void QFocusEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QFocusEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QFocusEvent_OnSetAccepted")]
+	public static extern void QFocusEvent_OnSetAccepted(void* self, QFocusEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QPaintEvent
@@ -4524,7 +4642,7 @@ struct QPaintEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QPaintEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4563,37 +4681,25 @@ class QPaintEvent : IQPaintEvent, IQEvent
 {
 	private QPaintEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPaintEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegion paintRegion)
 	{
 		this.ptr = CQt.QPaintEvent_new((.)paintRegion?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQRect paintRect)
 	{
 		this.ptr = CQt.QPaintEvent_new2((.)paintRect?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPaintEvent_Delete(this.ptr);
 	}
-	public QPaintEvent_Ptr Clone()
+	public  virtual QPaintEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QRect_Ptr Rect()
 	{
@@ -4611,9 +4717,8 @@ class QPaintEvent : IQPaintEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4661,10 +4766,20 @@ extension CQt
 	public static extern void QPaintEvent_Delete(QPaintEvent_Ptr self);
 	[LinkName("QPaintEvent_Clone")]
 	public static extern void** QPaintEvent_Clone(void* self);
+	
+	public function void QPaintEvent_OnClone_action(void* self);
+	[LinkName("QPaintEvent_OnClone")]
+	public static extern void** QPaintEvent_OnClone(void* self, QPaintEvent_OnClone_action _action);
 	[LinkName("QPaintEvent_Rect")]
 	public static extern void** QPaintEvent_Rect(void* self);
 	[LinkName("QPaintEvent_Region")]
 	public static extern void** QPaintEvent_Region(void* self);
+	[LinkName("QPaintEvent_SetAccepted")]
+	public static extern void QPaintEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QPaintEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QPaintEvent_OnSetAccepted")]
+	public static extern void QPaintEvent_OnSetAccepted(void* self, QPaintEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QMoveEvent
@@ -4699,7 +4814,7 @@ struct QMoveEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QMoveEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4738,32 +4853,21 @@ class QMoveEvent : IQMoveEvent, IQEvent
 {
 	private QMoveEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QMoveEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pos, IQPoint oldPos)
 	{
 		this.ptr = CQt.QMoveEvent_new((.)pos?.ObjectPtr, (.)oldPos?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QMoveEvent_Delete(this.ptr);
 	}
-	public QMoveEvent_Ptr Clone()
+	public  virtual QMoveEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPoint_Ptr Pos()
 	{
@@ -4781,9 +4885,8 @@ class QMoveEvent : IQMoveEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4829,10 +4932,20 @@ extension CQt
 	public static extern void QMoveEvent_Delete(QMoveEvent_Ptr self);
 	[LinkName("QMoveEvent_Clone")]
 	public static extern void** QMoveEvent_Clone(void* self);
+	
+	public function void QMoveEvent_OnClone_action(void* self);
+	[LinkName("QMoveEvent_OnClone")]
+	public static extern void** QMoveEvent_OnClone(void* self, QMoveEvent_OnClone_action _action);
 	[LinkName("QMoveEvent_Pos")]
 	public static extern void** QMoveEvent_Pos(void* self);
 	[LinkName("QMoveEvent_OldPos")]
 	public static extern void** QMoveEvent_OldPos(void* self);
+	[LinkName("QMoveEvent_SetAccepted")]
+	public static extern void QMoveEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QMoveEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QMoveEvent_OnSetAccepted")]
+	public static extern void QMoveEvent_OnSetAccepted(void* self, QMoveEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QExposeEvent
@@ -4863,7 +4976,7 @@ struct QExposeEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QExposeEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4902,32 +5015,21 @@ class QExposeEvent : IQExposeEvent, IQEvent
 {
 	private QExposeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QExposeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegion m_region)
 	{
 		this.ptr = CQt.QExposeEvent_new((.)m_region?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QExposeEvent_Delete(this.ptr);
 	}
-	public QExposeEvent_Ptr Clone()
+	public  virtual QExposeEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QRegion_Ptr Region()
 	{
@@ -4941,9 +5043,8 @@ class QExposeEvent : IQExposeEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -4989,8 +5090,18 @@ extension CQt
 	public static extern void QExposeEvent_Delete(QExposeEvent_Ptr self);
 	[LinkName("QExposeEvent_Clone")]
 	public static extern void** QExposeEvent_Clone(void* self);
+	
+	public function void QExposeEvent_OnClone_action(void* self);
+	[LinkName("QExposeEvent_OnClone")]
+	public static extern void** QExposeEvent_OnClone(void* self, QExposeEvent_OnClone_action _action);
 	[LinkName("QExposeEvent_Region")]
 	public static extern void** QExposeEvent_Region(void* self);
+	[LinkName("QExposeEvent_SetAccepted")]
+	public static extern void QExposeEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QExposeEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QExposeEvent_OnSetAccepted")]
+	public static extern void QExposeEvent_OnSetAccepted(void* self, QExposeEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QPlatformSurfaceEvent
@@ -5021,7 +5132,7 @@ struct QPlatformSurfaceEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QPlatformSurfaceEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5060,32 +5171,21 @@ class QPlatformSurfaceEvent : IQPlatformSurfaceEvent, IQEvent
 {
 	private QPlatformSurfaceEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPlatformSurfaceEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QPlatformSurfaceEvent_SurfaceEventType surfaceEventType)
 	{
 		this.ptr = CQt.QPlatformSurfaceEvent_new(surfaceEventType);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPlatformSurfaceEvent_Delete(this.ptr);
 	}
-	public QPlatformSurfaceEvent_Ptr Clone()
+	public  virtual QPlatformSurfaceEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPlatformSurfaceEvent_SurfaceEventType SurfaceEventType()
 	{
@@ -5099,9 +5199,8 @@ class QPlatformSurfaceEvent : IQPlatformSurfaceEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5147,8 +5246,18 @@ extension CQt
 	public static extern void QPlatformSurfaceEvent_Delete(QPlatformSurfaceEvent_Ptr self);
 	[LinkName("QPlatformSurfaceEvent_Clone")]
 	public static extern void** QPlatformSurfaceEvent_Clone(void* self);
+	
+	public function void QPlatformSurfaceEvent_OnClone_action(void* self);
+	[LinkName("QPlatformSurfaceEvent_OnClone")]
+	public static extern void** QPlatformSurfaceEvent_OnClone(void* self, QPlatformSurfaceEvent_OnClone_action _action);
 	[LinkName("QPlatformSurfaceEvent_SurfaceEventType")]
 	public static extern QPlatformSurfaceEvent_SurfaceEventType QPlatformSurfaceEvent_SurfaceEventType(void* self);
+	[LinkName("QPlatformSurfaceEvent_SetAccepted")]
+	public static extern void QPlatformSurfaceEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QPlatformSurfaceEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QPlatformSurfaceEvent_OnSetAccepted")]
+	public static extern void QPlatformSurfaceEvent_OnSetAccepted(void* self, QPlatformSurfaceEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QResizeEvent
@@ -5183,7 +5292,7 @@ struct QResizeEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QResizeEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5222,32 +5331,21 @@ class QResizeEvent : IQResizeEvent, IQEvent
 {
 	private QResizeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QResizeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize size, IQSize oldSize)
 	{
 		this.ptr = CQt.QResizeEvent_new((.)size?.ObjectPtr, (.)oldSize?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QResizeEvent_Delete(this.ptr);
 	}
-	public QResizeEvent_Ptr Clone()
+	public  virtual QResizeEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QSize_Ptr Size()
 	{
@@ -5265,9 +5363,8 @@ class QResizeEvent : IQResizeEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5313,10 +5410,20 @@ extension CQt
 	public static extern void QResizeEvent_Delete(QResizeEvent_Ptr self);
 	[LinkName("QResizeEvent_Clone")]
 	public static extern void** QResizeEvent_Clone(void* self);
+	
+	public function void QResizeEvent_OnClone_action(void* self);
+	[LinkName("QResizeEvent_OnClone")]
+	public static extern void** QResizeEvent_OnClone(void* self, QResizeEvent_OnClone_action _action);
 	[LinkName("QResizeEvent_Size")]
 	public static extern void** QResizeEvent_Size(void* self);
 	[LinkName("QResizeEvent_OldSize")]
 	public static extern void** QResizeEvent_OldSize(void* self);
+	[LinkName("QResizeEvent_SetAccepted")]
+	public static extern void QResizeEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QResizeEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QResizeEvent_OnSetAccepted")]
+	public static extern void QResizeEvent_OnSetAccepted(void* self, QResizeEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QCloseEvent
@@ -5343,7 +5450,7 @@ struct QCloseEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QCloseEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5382,32 +5489,21 @@ class QCloseEvent : IQCloseEvent, IQEvent
 {
 	private QCloseEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QCloseEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCloseEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QCloseEvent_Delete(this.ptr);
 	}
-	public QCloseEvent_Ptr Clone()
+	public  virtual QCloseEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QEvent_Type Type()
 	{
@@ -5417,9 +5513,8 @@ class QCloseEvent : IQCloseEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5465,6 +5560,16 @@ extension CQt
 	public static extern void QCloseEvent_Delete(QCloseEvent_Ptr self);
 	[LinkName("QCloseEvent_Clone")]
 	public static extern void** QCloseEvent_Clone(void* self);
+	
+	public function void QCloseEvent_OnClone_action(void* self);
+	[LinkName("QCloseEvent_OnClone")]
+	public static extern void** QCloseEvent_OnClone(void* self, QCloseEvent_OnClone_action _action);
+	[LinkName("QCloseEvent_SetAccepted")]
+	public static extern void QCloseEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QCloseEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QCloseEvent_OnSetAccepted")]
+	public static extern void QCloseEvent_OnSetAccepted(void* self, QCloseEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QIconDragEvent
@@ -5491,7 +5596,7 @@ struct QIconDragEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QIconDragEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5530,32 +5635,21 @@ class QIconDragEvent : IQIconDragEvent, IQEvent
 {
 	private QIconDragEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QIconDragEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIconDragEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QIconDragEvent_Delete(this.ptr);
 	}
-	public QIconDragEvent_Ptr Clone()
+	public  virtual QIconDragEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QEvent_Type Type()
 	{
@@ -5565,9 +5659,8 @@ class QIconDragEvent : IQIconDragEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5613,6 +5706,16 @@ extension CQt
 	public static extern void QIconDragEvent_Delete(QIconDragEvent_Ptr self);
 	[LinkName("QIconDragEvent_Clone")]
 	public static extern void** QIconDragEvent_Clone(void* self);
+	
+	public function void QIconDragEvent_OnClone_action(void* self);
+	[LinkName("QIconDragEvent_OnClone")]
+	public static extern void** QIconDragEvent_OnClone(void* self, QIconDragEvent_OnClone_action _action);
+	[LinkName("QIconDragEvent_SetAccepted")]
+	public static extern void QIconDragEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QIconDragEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QIconDragEvent_OnSetAccepted")]
+	public static extern void QIconDragEvent_OnSetAccepted(void* self, QIconDragEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QShowEvent
@@ -5639,7 +5742,7 @@ struct QShowEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QShowEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5678,32 +5781,21 @@ class QShowEvent : IQShowEvent, IQEvent
 {
 	private QShowEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QShowEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QShowEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QShowEvent_Delete(this.ptr);
 	}
-	public QShowEvent_Ptr Clone()
+	public  virtual QShowEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QEvent_Type Type()
 	{
@@ -5713,9 +5805,8 @@ class QShowEvent : IQShowEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5761,6 +5852,16 @@ extension CQt
 	public static extern void QShowEvent_Delete(QShowEvent_Ptr self);
 	[LinkName("QShowEvent_Clone")]
 	public static extern void** QShowEvent_Clone(void* self);
+	
+	public function void QShowEvent_OnClone_action(void* self);
+	[LinkName("QShowEvent_OnClone")]
+	public static extern void** QShowEvent_OnClone(void* self, QShowEvent_OnClone_action _action);
+	[LinkName("QShowEvent_SetAccepted")]
+	public static extern void QShowEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QShowEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QShowEvent_OnSetAccepted")]
+	public static extern void QShowEvent_OnSetAccepted(void* self, QShowEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QHideEvent
@@ -5787,7 +5888,7 @@ struct QHideEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QHideEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5826,32 +5927,21 @@ class QHideEvent : IQHideEvent, IQEvent
 {
 	private QHideEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QHideEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QHideEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QHideEvent_Delete(this.ptr);
 	}
-	public QHideEvent_Ptr Clone()
+	public  virtual QHideEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QEvent_Type Type()
 	{
@@ -5861,9 +5951,8 @@ class QHideEvent : IQHideEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -5909,6 +5998,16 @@ extension CQt
 	public static extern void QHideEvent_Delete(QHideEvent_Ptr self);
 	[LinkName("QHideEvent_Clone")]
 	public static extern void** QHideEvent_Clone(void* self);
+	
+	public function void QHideEvent_OnClone_action(void* self);
+	[LinkName("QHideEvent_OnClone")]
+	public static extern void** QHideEvent_OnClone(void* self, QHideEvent_OnClone_action _action);
+	[LinkName("QHideEvent_SetAccepted")]
+	public static extern void QHideEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QHideEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QHideEvent_OnSetAccepted")]
+	public static extern void QHideEvent_OnSetAccepted(void* self, QHideEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QContextMenuEvent
@@ -5953,30 +6052,6 @@ struct QContextMenuEvent_Ptr
 	{
 		return CQt.QContextMenuEvent_Reason((.)this.Ptr);
 	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QInputEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -5987,7 +6062,7 @@ struct QContextMenuEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QContextMenuEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -6021,47 +6096,58 @@ struct QContextMenuEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QContextMenuEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
 }
 class QContextMenuEvent : IQContextMenuEvent, IQInputEvent, IQEvent
 {
 	private QContextMenuEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QContextMenuEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QContextMenuEvent_Reason reason, IQPoint pos, IQPoint globalPos)
 	{
 		this.ptr = CQt.QContextMenuEvent_new(reason, (.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QContextMenuEvent_Reason reason, IQPoint pos)
 	{
 		this.ptr = CQt.QContextMenuEvent_new2(reason, (.)pos?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QContextMenuEvent_Reason reason, IQPoint pos, IQPoint globalPos, void* modifiers)
 	{
 		this.ptr = CQt.QContextMenuEvent_new3(reason, (.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QContextMenuEvent_Delete(this.ptr);
 	}
-	public QContextMenuEvent_Ptr Clone()
+	public  virtual QContextMenuEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int X()
 	{
@@ -6091,30 +6177,6 @@ class QContextMenuEvent : IQContextMenuEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.Reason();
 	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
 	public QEvent_Type Type()
 	{
 		return this.ptr.Type();
@@ -6123,9 +6185,8 @@ class QContextMenuEvent : IQContextMenuEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -6159,6 +6220,29 @@ class QContextMenuEvent : IQContextMenuEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
 }
 interface IQContextMenuEvent : IQtObjectInterface
 {
@@ -6175,6 +6259,10 @@ extension CQt
 	public static extern void QContextMenuEvent_Delete(QContextMenuEvent_Ptr self);
 	[LinkName("QContextMenuEvent_Clone")]
 	public static extern void** QContextMenuEvent_Clone(void* self);
+	
+	public function void QContextMenuEvent_OnClone_action(void* self);
+	[LinkName("QContextMenuEvent_OnClone")]
+	public static extern void** QContextMenuEvent_OnClone(void* self, QContextMenuEvent_OnClone_action _action);
 	[LinkName("QContextMenuEvent_X")]
 	public static extern c_int QContextMenuEvent_X(void* self);
 	[LinkName("QContextMenuEvent_Y")]
@@ -6189,6 +6277,18 @@ extension CQt
 	public static extern void** QContextMenuEvent_GlobalPos(void* self);
 	[LinkName("QContextMenuEvent_Reason")]
 	public static extern QContextMenuEvent_Reason QContextMenuEvent_Reason(void* self);
+	[LinkName("QContextMenuEvent_SetAccepted")]
+	public static extern void QContextMenuEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QContextMenuEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QContextMenuEvent_OnSetAccepted")]
+	public static extern void QContextMenuEvent_OnSetAccepted(void* self, QContextMenuEvent_OnSetAccepted_action _action);
+	[LinkName("QContextMenuEvent_SetTimestamp")]
+	public static extern void QContextMenuEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QContextMenuEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QContextMenuEvent_OnSetTimestamp")]
+	public static extern void QContextMenuEvent_OnSetTimestamp(void* self, QContextMenuEvent_OnSetTimestamp_action _action);
 }
 // --------------------------------------------------------------
 // QInputMethodEvent
@@ -6247,7 +6347,7 @@ struct QInputMethodEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QInputMethodEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -6286,37 +6386,25 @@ class QInputMethodEvent : IQInputMethodEvent, IQEvent
 {
 	private QInputMethodEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QInputMethodEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QInputMethodEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(String preeditText, void** attributes)
 	{
 		this.ptr = CQt.QInputMethodEvent_new2(libqt_string(preeditText), attributes);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QInputMethodEvent_Delete(this.ptr);
 	}
-	public QInputMethodEvent_Ptr Clone()
+	public  virtual QInputMethodEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public void SetCommitString(String commitString)
 	{
@@ -6358,9 +6446,8 @@ class QInputMethodEvent : IQInputMethodEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -6408,6 +6495,10 @@ extension CQt
 	public static extern void QInputMethodEvent_Delete(QInputMethodEvent_Ptr self);
 	[LinkName("QInputMethodEvent_Clone")]
 	public static extern void** QInputMethodEvent_Clone(void* self);
+	
+	public function void QInputMethodEvent_OnClone_action(void* self);
+	[LinkName("QInputMethodEvent_OnClone")]
+	public static extern void** QInputMethodEvent_OnClone(void* self, QInputMethodEvent_OnClone_action _action);
 	[LinkName("QInputMethodEvent_SetCommitString")]
 	public static extern void QInputMethodEvent_SetCommitString(void* self, libqt_string commitString);
 	[LinkName("QInputMethodEvent_Attributes")]
@@ -6424,6 +6515,12 @@ extension CQt
 	public static extern void QInputMethodEvent_SetCommitString2(void* self, libqt_string commitString, c_int replaceFrom);
 	[LinkName("QInputMethodEvent_SetCommitString3")]
 	public static extern void QInputMethodEvent_SetCommitString3(void* self, libqt_string commitString, c_int replaceFrom, c_int replaceLength);
+	[LinkName("QInputMethodEvent_SetAccepted")]
+	public static extern void QInputMethodEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QInputMethodEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QInputMethodEvent_OnSetAccepted")]
+	public static extern void QInputMethodEvent_OnSetAccepted(void* self, QInputMethodEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QInputMethodQueryEvent
@@ -6462,7 +6559,7 @@ struct QInputMethodQueryEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QInputMethodQueryEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -6501,32 +6598,21 @@ class QInputMethodQueryEvent : IQInputMethodQueryEvent, IQEvent
 {
 	private QInputMethodQueryEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QInputMethodQueryEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* queries)
 	{
 		this.ptr = CQt.QInputMethodQueryEvent_new(queries);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QInputMethodQueryEvent_Delete(this.ptr);
 	}
-	public QInputMethodQueryEvent_Ptr Clone()
+	public  virtual QInputMethodQueryEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public void* Queries()
 	{
@@ -6548,9 +6634,8 @@ class QInputMethodQueryEvent : IQInputMethodQueryEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -6596,12 +6681,22 @@ extension CQt
 	public static extern void QInputMethodQueryEvent_Delete(QInputMethodQueryEvent_Ptr self);
 	[LinkName("QInputMethodQueryEvent_Clone")]
 	public static extern void** QInputMethodQueryEvent_Clone(void* self);
+	
+	public function void QInputMethodQueryEvent_OnClone_action(void* self);
+	[LinkName("QInputMethodQueryEvent_OnClone")]
+	public static extern void** QInputMethodQueryEvent_OnClone(void* self, QInputMethodQueryEvent_OnClone_action _action);
 	[LinkName("QInputMethodQueryEvent_Queries")]
 	public static extern void* QInputMethodQueryEvent_Queries(void* self);
 	[LinkName("QInputMethodQueryEvent_SetValue")]
 	public static extern void QInputMethodQueryEvent_SetValue(void* self, Qt_InputMethodQuery query, void** value);
 	[LinkName("QInputMethodQueryEvent_Value")]
 	public static extern void* QInputMethodQueryEvent_Value(void* self, Qt_InputMethodQuery query);
+	[LinkName("QInputMethodQueryEvent_SetAccepted")]
+	public static extern void QInputMethodQueryEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QInputMethodQueryEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QInputMethodQueryEvent_OnSetAccepted")]
+	public static extern void QInputMethodQueryEvent_OnSetAccepted(void* self, QInputMethodQueryEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QDropEvent
@@ -6684,7 +6779,7 @@ struct QDropEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QDropEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -6723,37 +6818,25 @@ class QDropEvent : IQDropEvent, IQEvent
 {
 	private QDropEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QDropEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, void* actions, IQMimeData data, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QDropEvent_new((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, void* actions, IQMimeData data, void* buttons, void* modifiers, QEvent_Type type)
 	{
 		this.ptr = CQt.QDropEvent_new2((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers, type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDropEvent_Delete(this.ptr);
 	}
-	public QDropEvent_Ptr Clone()
+	public  virtual QDropEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPoint_Ptr Pos()
 	{
@@ -6819,9 +6902,8 @@ class QDropEvent : IQDropEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -6869,6 +6951,10 @@ extension CQt
 	public static extern void QDropEvent_Delete(QDropEvent_Ptr self);
 	[LinkName("QDropEvent_Clone")]
 	public static extern void** QDropEvent_Clone(void* self);
+	
+	public function void QDropEvent_OnClone_action(void* self);
+	[LinkName("QDropEvent_OnClone")]
+	public static extern void** QDropEvent_OnClone(void* self, QDropEvent_OnClone_action _action);
 	[LinkName("QDropEvent_Pos")]
 	public static extern void* QDropEvent_Pos(void* self);
 	[LinkName("QDropEvent_PosF")]
@@ -6897,6 +6983,12 @@ extension CQt
 	public static extern void** QDropEvent_Source(void* self);
 	[LinkName("QDropEvent_MimeData")]
 	public static extern void** QDropEvent_MimeData(void* self);
+	[LinkName("QDropEvent_SetAccepted")]
+	public static extern void QDropEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QDropEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QDropEvent_OnSetAccepted")]
+	public static extern void QDropEvent_OnSetAccepted(void* self, QDropEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QDragMoveEvent
@@ -6933,6 +7025,42 @@ struct QDragMoveEvent_Ptr
 	{
 		CQt.QDragMoveEvent_Ignore2((.)this.Ptr, (.)r?.ObjectPtr);
 	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QDragMoveEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
 	public QPoint_Ptr Pos()
 	{
 		return QPoint_Ptr(CQt.QDropEvent_Pos((.)this.Ptr));
@@ -6989,78 +7117,30 @@ struct QDragMoveEvent_Ptr
 	{
 		return QMimeData_Ptr(CQt.QDropEvent_MimeData((.)this.Ptr));
 	}
-	public QEvent_Type Type()
-	{
-		return CQt.QEvent_Type((.)this.Ptr);
-	}
-	public bool Spontaneous()
-	{
-		return CQt.QEvent_Spontaneous((.)this.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public bool IsAccepted()
-	{
-		return CQt.QEvent_IsAccepted((.)this.Ptr);
-	}
-	public bool IsInputEvent()
-	{
-		return CQt.QEvent_IsInputEvent((.)this.Ptr);
-	}
-	public bool IsPointerEvent()
-	{
-		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
-	}
-	public bool IsSinglePointEvent()
-	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
-	}
-	public c_int RegisterEventType()
-	{
-		return CQt.QEvent_RegisterEventType();
-	}
-	public c_int RegisterEventType1(c_int hint)
-	{
-		return CQt.QEvent_RegisterEventType1(hint);
-	}
 }
 class QDragMoveEvent : IQDragMoveEvent, IQDropEvent, IQEvent
 {
 	private QDragMoveEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QDragMoveEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pos, void* actions, IQMimeData data, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QDragMoveEvent_new((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pos, void* actions, IQMimeData data, void* buttons, void* modifiers, QEvent_Type type)
 	{
 		this.ptr = CQt.QDragMoveEvent_new2((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers, type);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDragMoveEvent_Delete(this.ptr);
 	}
-	public QDragMoveEvent_Ptr Clone()
+	public  virtual QDragMoveEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QRect_Ptr AnswerRect()
 	{
@@ -7081,6 +7161,41 @@ class QDragMoveEvent : IQDragMoveEvent, IQDropEvent, IQEvent
 	public void Ignore2(IQRect r)
 	{
 		this.ptr.Ignore2(r);
+	}
+	public QEvent_Type Type()
+	{
+		return this.ptr.Type();
+	}
+	public bool Spontaneous()
+	{
+		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
+	}
+	public bool IsAccepted()
+	{
+		return this.ptr.IsAccepted();
+	}
+	public bool IsInputEvent()
+	{
+		return this.ptr.IsInputEvent();
+	}
+	public bool IsPointerEvent()
+	{
+		return this.ptr.IsPointerEvent();
+	}
+	public bool IsSinglePointEvent()
+	{
+		return this.ptr.IsSinglePointEvent();
+	}
+	public c_int RegisterEventType()
+	{
+		return this.ptr.RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return this.ptr.RegisterEventType1(hint);
 	}
 	public QPoint_Ptr Pos()
 	{
@@ -7138,42 +7253,6 @@ class QDragMoveEvent : IQDragMoveEvent, IQDropEvent, IQEvent
 	{
 		return this.ptr.MimeData();
 	}
-	public QEvent_Type Type()
-	{
-		return this.ptr.Type();
-	}
-	public bool Spontaneous()
-	{
-		return this.ptr.Spontaneous();
-	}
-	public void SetAccepted(bool accepted)
-	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public bool IsAccepted()
-	{
-		return this.ptr.IsAccepted();
-	}
-	public bool IsInputEvent()
-	{
-		return this.ptr.IsInputEvent();
-	}
-	public bool IsPointerEvent()
-	{
-		return this.ptr.IsPointerEvent();
-	}
-	public bool IsSinglePointEvent()
-	{
-		return this.ptr.IsSinglePointEvent();
-	}
-	public c_int RegisterEventType()
-	{
-		return this.ptr.RegisterEventType();
-	}
-	public c_int RegisterEventType1(c_int hint)
-	{
-		return this.ptr.RegisterEventType1(hint);
-	}
 }
 interface IQDragMoveEvent : IQtObjectInterface
 {
@@ -7188,6 +7267,10 @@ extension CQt
 	public static extern void QDragMoveEvent_Delete(QDragMoveEvent_Ptr self);
 	[LinkName("QDragMoveEvent_Clone")]
 	public static extern void** QDragMoveEvent_Clone(void* self);
+	
+	public function void QDragMoveEvent_OnClone_action(void* self);
+	[LinkName("QDragMoveEvent_OnClone")]
+	public static extern void** QDragMoveEvent_OnClone(void* self, QDragMoveEvent_OnClone_action _action);
 	[LinkName("QDragMoveEvent_AnswerRect")]
 	public static extern void* QDragMoveEvent_AnswerRect(void* self);
 	[LinkName("QDragMoveEvent_Accept")]
@@ -7198,6 +7281,12 @@ extension CQt
 	public static extern void QDragMoveEvent_Accept2(void* self, void** r);
 	[LinkName("QDragMoveEvent_Ignore2")]
 	public static extern void QDragMoveEvent_Ignore2(void* self, void** r);
+	[LinkName("QDragMoveEvent_SetAccepted")]
+	public static extern void QDragMoveEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QDragMoveEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QDragMoveEvent_OnSetAccepted")]
+	public static extern void QDragMoveEvent_OnSetAccepted(void* self, QDragMoveEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QDragEnterEvent
@@ -7214,25 +7303,49 @@ struct QDragEnterEvent_Ptr
 	{
 		return QDragEnterEvent_Ptr(CQt.QDragEnterEvent_Clone((.)this.Ptr));
 	}
-	public QRect_Ptr AnswerRect()
+	public QEvent_Type Type()
 	{
-		return QRect_Ptr(CQt.QDragMoveEvent_AnswerRect((.)this.Ptr));
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QDragEnterEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
 	}
 	public void Accept()
 	{
-		CQt.QDragMoveEvent_Accept((.)this.Ptr);
+		CQt.QEvent_Accept((.)this.Ptr);
 	}
 	public void Ignore()
 	{
-		CQt.QDragMoveEvent_Ignore((.)this.Ptr);
+		CQt.QEvent_Ignore((.)this.Ptr);
 	}
-	public void Accept2(IQRect r)
+	public bool IsInputEvent()
 	{
-		CQt.QDragMoveEvent_Accept2((.)this.Ptr, (.)r?.ObjectPtr);
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
 	}
-	public void Ignore2(IQRect r)
+	public bool IsPointerEvent()
 	{
-		CQt.QDragMoveEvent_Ignore2((.)this.Ptr, (.)r?.ObjectPtr);
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 	public QPoint_Ptr Pos()
 	{
@@ -7290,77 +7403,53 @@ struct QDragEnterEvent_Ptr
 	{
 		return QMimeData_Ptr(CQt.QDropEvent_MimeData((.)this.Ptr));
 	}
-	public QEvent_Type Type()
+	public QRect_Ptr AnswerRect()
 	{
-		return CQt.QEvent_Type((.)this.Ptr);
+		return QRect_Ptr(CQt.QDragMoveEvent_AnswerRect((.)this.Ptr));
 	}
-	public bool Spontaneous()
+	public void Accept2(IQRect r)
 	{
-		return CQt.QEvent_Spontaneous((.)this.Ptr);
+		CQt.QDragMoveEvent_Accept2((.)this.Ptr, (.)r?.ObjectPtr);
 	}
-	public void SetAccepted(bool accepted)
+	public void Ignore2(IQRect r)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public bool IsAccepted()
-	{
-		return CQt.QEvent_IsAccepted((.)this.Ptr);
-	}
-	public bool IsInputEvent()
-	{
-		return CQt.QEvent_IsInputEvent((.)this.Ptr);
-	}
-	public bool IsPointerEvent()
-	{
-		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
-	}
-	public bool IsSinglePointEvent()
-	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
-	}
-	public c_int RegisterEventType()
-	{
-		return CQt.QEvent_RegisterEventType();
-	}
-	public c_int RegisterEventType1(c_int hint)
-	{
-		return CQt.QEvent_RegisterEventType1(hint);
+		CQt.QDragMoveEvent_Ignore2((.)this.Ptr, (.)r?.ObjectPtr);
 	}
 }
 class QDragEnterEvent : IQDragEnterEvent, IQDragMoveEvent, IQDropEvent, IQEvent
 {
 	private QDragEnterEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QDragEnterEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pos, void* actions, IQMimeData data, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QDragEnterEvent_new((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDragEnterEvent_Delete(this.ptr);
 	}
-	public QDragEnterEvent_Ptr Clone()
+	public  virtual QDragEnterEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
-	public QRect_Ptr AnswerRect()
+	public QEvent_Type Type()
 	{
-		return this.ptr.AnswerRect();
+		return this.ptr.Type();
+	}
+	public bool Spontaneous()
+	{
+		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
+	}
+	public bool IsAccepted()
+	{
+		return this.ptr.IsAccepted();
 	}
 	public void Accept()
 	{
@@ -7370,13 +7459,25 @@ class QDragEnterEvent : IQDragEnterEvent, IQDragMoveEvent, IQDropEvent, IQEvent
 	{
 		this.ptr.Ignore();
 	}
-	public void Accept2(IQRect r)
+	public bool IsInputEvent()
 	{
-		this.ptr.Accept2(r);
+		return this.ptr.IsInputEvent();
 	}
-	public void Ignore2(IQRect r)
+	public bool IsPointerEvent()
 	{
-		this.ptr.Ignore2(r);
+		return this.ptr.IsPointerEvent();
+	}
+	public bool IsSinglePointEvent()
+	{
+		return this.ptr.IsSinglePointEvent();
+	}
+	public c_int RegisterEventType()
+	{
+		return this.ptr.RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return this.ptr.RegisterEventType1(hint);
 	}
 	public QPoint_Ptr Pos()
 	{
@@ -7434,41 +7535,17 @@ class QDragEnterEvent : IQDragEnterEvent, IQDragMoveEvent, IQDropEvent, IQEvent
 	{
 		return this.ptr.MimeData();
 	}
-	public QEvent_Type Type()
+	public QRect_Ptr AnswerRect()
 	{
-		return this.ptr.Type();
+		return this.ptr.AnswerRect();
 	}
-	public bool Spontaneous()
+	public void Accept2(IQRect r)
 	{
-		return this.ptr.Spontaneous();
+		this.ptr.Accept2(r);
 	}
-	public void SetAccepted(bool accepted)
+	public void Ignore2(IQRect r)
 	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public bool IsAccepted()
-	{
-		return this.ptr.IsAccepted();
-	}
-	public bool IsInputEvent()
-	{
-		return this.ptr.IsInputEvent();
-	}
-	public bool IsPointerEvent()
-	{
-		return this.ptr.IsPointerEvent();
-	}
-	public bool IsSinglePointEvent()
-	{
-		return this.ptr.IsSinglePointEvent();
-	}
-	public c_int RegisterEventType()
-	{
-		return this.ptr.RegisterEventType();
-	}
-	public c_int RegisterEventType1(c_int hint)
-	{
-		return this.ptr.RegisterEventType1(hint);
+		this.ptr.Ignore2(r);
 	}
 }
 interface IQDragEnterEvent : IQtObjectInterface
@@ -7482,6 +7559,16 @@ extension CQt
 	public static extern void QDragEnterEvent_Delete(QDragEnterEvent_Ptr self);
 	[LinkName("QDragEnterEvent_Clone")]
 	public static extern void** QDragEnterEvent_Clone(void* self);
+	
+	public function void QDragEnterEvent_OnClone_action(void* self);
+	[LinkName("QDragEnterEvent_OnClone")]
+	public static extern void** QDragEnterEvent_OnClone(void* self, QDragEnterEvent_OnClone_action _action);
+	[LinkName("QDragEnterEvent_SetAccepted")]
+	public static extern void QDragEnterEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QDragEnterEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QDragEnterEvent_OnSetAccepted")]
+	public static extern void QDragEnterEvent_OnSetAccepted(void* self, QDragEnterEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QDragLeaveEvent
@@ -7508,7 +7595,7 @@ struct QDragLeaveEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QDragLeaveEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -7547,32 +7634,21 @@ class QDragLeaveEvent : IQDragLeaveEvent, IQEvent
 {
 	private QDragLeaveEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QDragLeaveEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDragLeaveEvent_new();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QDragLeaveEvent_Delete(this.ptr);
 	}
-	public QDragLeaveEvent_Ptr Clone()
+	public  virtual QDragLeaveEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QEvent_Type Type()
 	{
@@ -7582,9 +7658,8 @@ class QDragLeaveEvent : IQDragLeaveEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -7630,6 +7705,16 @@ extension CQt
 	public static extern void QDragLeaveEvent_Delete(QDragLeaveEvent_Ptr self);
 	[LinkName("QDragLeaveEvent_Clone")]
 	public static extern void** QDragLeaveEvent_Clone(void* self);
+	
+	public function void QDragLeaveEvent_OnClone_action(void* self);
+	[LinkName("QDragLeaveEvent_OnClone")]
+	public static extern void** QDragLeaveEvent_OnClone(void* self, QDragLeaveEvent_OnClone_action _action);
+	[LinkName("QDragLeaveEvent_SetAccepted")]
+	public static extern void QDragLeaveEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QDragLeaveEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QDragLeaveEvent_OnSetAccepted")]
+	public static extern void QDragLeaveEvent_OnSetAccepted(void* self, QDragLeaveEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QHelpEvent
@@ -7680,7 +7765,7 @@ struct QHelpEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QHelpEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -7719,32 +7804,21 @@ class QHelpEvent : IQHelpEvent, IQEvent
 {
 	private QHelpEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QHelpEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPoint pos, IQPoint globalPos)
 	{
 		this.ptr = CQt.QHelpEvent_new(type, (.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QHelpEvent_Delete(this.ptr);
 	}
-	public QHelpEvent_Ptr Clone()
+	public  virtual QHelpEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public c_int X()
 	{
@@ -7778,9 +7852,8 @@ class QHelpEvent : IQHelpEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -7826,6 +7899,10 @@ extension CQt
 	public static extern void QHelpEvent_Delete(QHelpEvent_Ptr self);
 	[LinkName("QHelpEvent_Clone")]
 	public static extern void** QHelpEvent_Clone(void* self);
+	
+	public function void QHelpEvent_OnClone_action(void* self);
+	[LinkName("QHelpEvent_OnClone")]
+	public static extern void** QHelpEvent_OnClone(void* self, QHelpEvent_OnClone_action _action);
 	[LinkName("QHelpEvent_X")]
 	public static extern c_int QHelpEvent_X(void* self);
 	[LinkName("QHelpEvent_Y")]
@@ -7838,6 +7915,12 @@ extension CQt
 	public static extern void** QHelpEvent_Pos(void* self);
 	[LinkName("QHelpEvent_GlobalPos")]
 	public static extern void** QHelpEvent_GlobalPos(void* self);
+	[LinkName("QHelpEvent_SetAccepted")]
+	public static extern void QHelpEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QHelpEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QHelpEvent_OnSetAccepted")]
+	public static extern void QHelpEvent_OnSetAccepted(void* self, QHelpEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QStatusTipEvent
@@ -7868,7 +7951,7 @@ struct QStatusTipEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QStatusTipEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -7907,32 +7990,21 @@ class QStatusTipEvent : IQStatusTipEvent, IQEvent
 {
 	private QStatusTipEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QStatusTipEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(String tip)
 	{
 		this.ptr = CQt.QStatusTipEvent_new(libqt_string(tip));
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QStatusTipEvent_Delete(this.ptr);
 	}
-	public QStatusTipEvent_Ptr Clone()
+	public  virtual QStatusTipEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public void Tip(String outStr)
 	{
@@ -7946,9 +8018,8 @@ class QStatusTipEvent : IQStatusTipEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -7994,8 +8065,18 @@ extension CQt
 	public static extern void QStatusTipEvent_Delete(QStatusTipEvent_Ptr self);
 	[LinkName("QStatusTipEvent_Clone")]
 	public static extern void** QStatusTipEvent_Clone(void* self);
+	
+	public function void QStatusTipEvent_OnClone_action(void* self);
+	[LinkName("QStatusTipEvent_OnClone")]
+	public static extern void** QStatusTipEvent_OnClone(void* self, QStatusTipEvent_OnClone_action _action);
 	[LinkName("QStatusTipEvent_Tip")]
 	public static extern libqt_string QStatusTipEvent_Tip(void* self);
+	[LinkName("QStatusTipEvent_SetAccepted")]
+	public static extern void QStatusTipEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QStatusTipEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QStatusTipEvent_OnSetAccepted")]
+	public static extern void QStatusTipEvent_OnSetAccepted(void* self, QStatusTipEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QWhatsThisClickedEvent
@@ -8026,7 +8107,7 @@ struct QWhatsThisClickedEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QWhatsThisClickedEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8065,32 +8146,21 @@ class QWhatsThisClickedEvent : IQWhatsThisClickedEvent, IQEvent
 {
 	private QWhatsThisClickedEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QWhatsThisClickedEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(String href)
 	{
 		this.ptr = CQt.QWhatsThisClickedEvent_new(libqt_string(href));
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QWhatsThisClickedEvent_Delete(this.ptr);
 	}
-	public QWhatsThisClickedEvent_Ptr Clone()
+	public  virtual QWhatsThisClickedEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public void Href(String outStr)
 	{
@@ -8104,9 +8174,8 @@ class QWhatsThisClickedEvent : IQWhatsThisClickedEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8152,8 +8221,18 @@ extension CQt
 	public static extern void QWhatsThisClickedEvent_Delete(QWhatsThisClickedEvent_Ptr self);
 	[LinkName("QWhatsThisClickedEvent_Clone")]
 	public static extern void** QWhatsThisClickedEvent_Clone(void* self);
+	
+	public function void QWhatsThisClickedEvent_OnClone_action(void* self);
+	[LinkName("QWhatsThisClickedEvent_OnClone")]
+	public static extern void** QWhatsThisClickedEvent_OnClone(void* self, QWhatsThisClickedEvent_OnClone_action _action);
 	[LinkName("QWhatsThisClickedEvent_Href")]
 	public static extern libqt_string QWhatsThisClickedEvent_Href(void* self);
+	[LinkName("QWhatsThisClickedEvent_SetAccepted")]
+	public static extern void QWhatsThisClickedEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QWhatsThisClickedEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QWhatsThisClickedEvent_OnSetAccepted")]
+	public static extern void QWhatsThisClickedEvent_OnSetAccepted(void* self, QWhatsThisClickedEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QActionEvent
@@ -8188,7 +8267,7 @@ struct QActionEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QActionEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8227,37 +8306,25 @@ class QActionEvent : IQActionEvent, IQEvent
 {
 	private QActionEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QActionEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int type, IQAction action)
 	{
 		this.ptr = CQt.QActionEvent_new(type, (.)action?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int type, IQAction action, IQAction before)
 	{
 		this.ptr = CQt.QActionEvent_new2(type, (.)action?.ObjectPtr, (.)before?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QActionEvent_Delete(this.ptr);
 	}
-	public QActionEvent_Ptr Clone()
+	public  virtual QActionEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QAction_Ptr Action()
 	{
@@ -8275,9 +8342,8 @@ class QActionEvent : IQActionEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8325,10 +8391,20 @@ extension CQt
 	public static extern void QActionEvent_Delete(QActionEvent_Ptr self);
 	[LinkName("QActionEvent_Clone")]
 	public static extern void** QActionEvent_Clone(void* self);
+	
+	public function void QActionEvent_OnClone_action(void* self);
+	[LinkName("QActionEvent_OnClone")]
+	public static extern void** QActionEvent_OnClone(void* self, QActionEvent_OnClone_action _action);
 	[LinkName("QActionEvent_Action")]
 	public static extern void** QActionEvent_Action(void* self);
 	[LinkName("QActionEvent_Before")]
 	public static extern void** QActionEvent_Before(void* self);
+	[LinkName("QActionEvent_SetAccepted")]
+	public static extern void QActionEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QActionEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QActionEvent_OnSetAccepted")]
+	public static extern void QActionEvent_OnSetAccepted(void* self, QActionEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QFileOpenEvent
@@ -8367,7 +8443,7 @@ struct QFileOpenEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QFileOpenEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8406,37 +8482,25 @@ class QFileOpenEvent : IQFileOpenEvent, IQEvent
 {
 	private QFileOpenEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QFileOpenEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(String file)
 	{
 		this.ptr = CQt.QFileOpenEvent_new(libqt_string(file));
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQUrl url)
 	{
 		this.ptr = CQt.QFileOpenEvent_new2((.)url?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QFileOpenEvent_Delete(this.ptr);
 	}
-	public QFileOpenEvent_Ptr Clone()
+	public  virtual QFileOpenEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public void File(String outStr)
 	{
@@ -8458,9 +8522,8 @@ class QFileOpenEvent : IQFileOpenEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8508,12 +8571,22 @@ extension CQt
 	public static extern void QFileOpenEvent_Delete(QFileOpenEvent_Ptr self);
 	[LinkName("QFileOpenEvent_Clone")]
 	public static extern void** QFileOpenEvent_Clone(void* self);
+	
+	public function void QFileOpenEvent_OnClone_action(void* self);
+	[LinkName("QFileOpenEvent_OnClone")]
+	public static extern void** QFileOpenEvent_OnClone(void* self, QFileOpenEvent_OnClone_action _action);
 	[LinkName("QFileOpenEvent_File")]
 	public static extern libqt_string QFileOpenEvent_File(void* self);
 	[LinkName("QFileOpenEvent_Url")]
 	public static extern void* QFileOpenEvent_Url(void* self);
 	[LinkName("QFileOpenEvent_OpenFile")]
 	public static extern bool QFileOpenEvent_OpenFile(void* self, void** file, void* flags);
+	[LinkName("QFileOpenEvent_SetAccepted")]
+	public static extern void QFileOpenEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QFileOpenEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QFileOpenEvent_OnSetAccepted")]
+	public static extern void QFileOpenEvent_OnSetAccepted(void* self, QFileOpenEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QToolBarChangeEvent
@@ -8544,7 +8617,7 @@ struct QToolBarChangeEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QToolBarChangeEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8583,32 +8656,21 @@ class QToolBarChangeEvent : IQToolBarChangeEvent, IQEvent
 {
 	private QToolBarChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QToolBarChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(bool t)
 	{
 		this.ptr = CQt.QToolBarChangeEvent_new(t);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QToolBarChangeEvent_Delete(this.ptr);
 	}
-	public QToolBarChangeEvent_Ptr Clone()
+	public  virtual QToolBarChangeEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public bool Toggle()
 	{
@@ -8622,9 +8684,8 @@ class QToolBarChangeEvent : IQToolBarChangeEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8670,8 +8731,18 @@ extension CQt
 	public static extern void QToolBarChangeEvent_Delete(QToolBarChangeEvent_Ptr self);
 	[LinkName("QToolBarChangeEvent_Clone")]
 	public static extern void** QToolBarChangeEvent_Clone(void* self);
+	
+	public function void QToolBarChangeEvent_OnClone_action(void* self);
+	[LinkName("QToolBarChangeEvent_OnClone")]
+	public static extern void** QToolBarChangeEvent_OnClone(void* self, QToolBarChangeEvent_OnClone_action _action);
 	[LinkName("QToolBarChangeEvent_Toggle")]
 	public static extern bool QToolBarChangeEvent_Toggle(void* self);
+	[LinkName("QToolBarChangeEvent_SetAccepted")]
+	public static extern void QToolBarChangeEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QToolBarChangeEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QToolBarChangeEvent_OnSetAccepted")]
+	public static extern void QToolBarChangeEvent_OnSetAccepted(void* self, QToolBarChangeEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QShortcutEvent
@@ -8710,7 +8781,7 @@ struct QShortcutEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QShortcutEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8749,37 +8820,25 @@ class QShortcutEvent : IQShortcutEvent, IQEvent
 {
 	private QShortcutEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QShortcutEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, c_int id)
 	{
 		this.ptr = CQt.QShortcutEvent_new((.)key?.ObjectPtr, id);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, c_int id, bool ambiguous)
 	{
 		this.ptr = CQt.QShortcutEvent_new2((.)key?.ObjectPtr, id, ambiguous);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QShortcutEvent_Delete(this.ptr);
 	}
-	public QShortcutEvent_Ptr Clone()
+	public  virtual QShortcutEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QKeySequence_Ptr Key()
 	{
@@ -8801,9 +8860,8 @@ class QShortcutEvent : IQShortcutEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8851,12 +8909,22 @@ extension CQt
 	public static extern void QShortcutEvent_Delete(QShortcutEvent_Ptr self);
 	[LinkName("QShortcutEvent_Clone")]
 	public static extern void** QShortcutEvent_Clone(void* self);
+	
+	public function void QShortcutEvent_OnClone_action(void* self);
+	[LinkName("QShortcutEvent_OnClone")]
+	public static extern void** QShortcutEvent_OnClone(void* self, QShortcutEvent_OnClone_action _action);
 	[LinkName("QShortcutEvent_Key")]
 	public static extern void** QShortcutEvent_Key(void* self);
 	[LinkName("QShortcutEvent_ShortcutId")]
 	public static extern c_int QShortcutEvent_ShortcutId(void* self);
 	[LinkName("QShortcutEvent_IsAmbiguous")]
 	public static extern bool QShortcutEvent_IsAmbiguous(void* self);
+	[LinkName("QShortcutEvent_SetAccepted")]
+	public static extern void QShortcutEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QShortcutEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QShortcutEvent_OnSetAccepted")]
+	public static extern void QShortcutEvent_OnSetAccepted(void* self, QShortcutEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QWindowStateChangeEvent
@@ -8891,7 +8959,7 @@ struct QWindowStateChangeEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QWindowStateChangeEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -8930,37 +8998,25 @@ class QWindowStateChangeEvent : IQWindowStateChangeEvent, IQEvent
 {
 	private QWindowStateChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QWindowStateChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* oldState)
 	{
 		this.ptr = CQt.QWindowStateChangeEvent_new(oldState);
-		QtBf_ConnectSignals(this);
 	}
 	public this(void* oldState, bool isOverride)
 	{
 		this.ptr = CQt.QWindowStateChangeEvent_new2(oldState, isOverride);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QWindowStateChangeEvent_Delete(this.ptr);
 	}
-	public QWindowStateChangeEvent_Ptr Clone()
+	public  virtual QWindowStateChangeEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public void* OldState()
 	{
@@ -8978,9 +9034,8 @@ class QWindowStateChangeEvent : IQWindowStateChangeEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -9028,10 +9083,20 @@ extension CQt
 	public static extern void QWindowStateChangeEvent_Delete(QWindowStateChangeEvent_Ptr self);
 	[LinkName("QWindowStateChangeEvent_Clone")]
 	public static extern void** QWindowStateChangeEvent_Clone(void* self);
+	
+	public function void QWindowStateChangeEvent_OnClone_action(void* self);
+	[LinkName("QWindowStateChangeEvent_OnClone")]
+	public static extern void** QWindowStateChangeEvent_OnClone(void* self, QWindowStateChangeEvent_OnClone_action _action);
 	[LinkName("QWindowStateChangeEvent_OldState")]
 	public static extern void* QWindowStateChangeEvent_OldState(void* self);
 	[LinkName("QWindowStateChangeEvent_IsOverride")]
 	public static extern bool QWindowStateChangeEvent_IsOverride(void* self);
+	[LinkName("QWindowStateChangeEvent_SetAccepted")]
+	public static extern void QWindowStateChangeEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QWindowStateChangeEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QWindowStateChangeEvent_OnSetAccepted")]
+	public static extern void QWindowStateChangeEvent_OnSetAccepted(void* self, QWindowStateChangeEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QTouchEvent
@@ -9072,86 +9137,6 @@ struct QTouchEvent_Ptr
 	{
 		return CQt.QTouchEvent_IsEndEvent((.)this.Ptr);
 	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return CQt.QPointerEvent_PointerType((.)this.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		CQt.QPointerEvent_SetTimestamp((.)this.Ptr, timestamp);
-	}
-	public void* PointCount()
-	{
-		return CQt.QPointerEvent_PointCount((.)this.Ptr);
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
-	}
-	public void** Points()
-	{
-		return CQt.QPointerEvent_Points((.)this.Ptr);
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
-	}
-	public bool AllPointsGrabbed()
-	{
-		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
-	}
-	public bool AllPointsAccepted()
-	{
-		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QPointerEvent_SetAccepted((.)this.Ptr, accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return CQt.QInputEvent_DeviceType((.)this.Ptr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QInputEvent_Modifiers((.)this.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QInputEvent_Timestamp((.)this.Ptr);
-	}
 	public QEvent_Type Type()
 	{
 		return CQt.QEvent_Type((.)this.Ptr);
@@ -9159,6 +9144,10 @@ struct QTouchEvent_Ptr
 	public bool Spontaneous()
 	{
 		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QTouchEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -9192,62 +9181,122 @@ struct QTouchEvent_Ptr
 	{
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return QInputDevice_Ptr(CQt.QInputEvent_Device((.)this.Ptr));
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.Ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QTouchEvent_SetTimestamp((.)this.Ptr, timestamp);
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return QPointingDevice_Ptr(CQt.QPointerEvent_PointingDevice((.)this.Ptr));
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.Ptr);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.Ptr);
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_Point((.)this.Ptr, i));
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.Ptr);
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return QEventPoint_Ptr(CQt.QPointerEvent_PointById((.)this.Ptr, id));
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.Ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.Ptr);
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return QObject_Ptr(CQt.QPointerEvent_ExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)exclusiveGrabber?.ObjectPtr);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.Ptr, (.)point?.ObjectPtr);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.Ptr, (.)point?.ObjectPtr, (.)grabber?.ObjectPtr);
+	}
 }
 class QTouchEvent : IQTouchEvent, IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QTouchEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QTouchEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType)
 	{
 		this.ptr = CQt.QTouchEvent_new(eventType);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device, void* modifiers, void* touchPointStates)
 	{
 		this.ptr = CQt.QTouchEvent_new2(eventType, (.)device?.ObjectPtr, modifiers, touchPointStates);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device)
 	{
 		this.ptr = CQt.QTouchEvent_new3(eventType, (.)device?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device, void* modifiers)
 	{
 		this.ptr = CQt.QTouchEvent_new4(eventType, (.)device?.ObjectPtr, modifiers);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device, void* modifiers, void** touchPoints)
 	{
 		this.ptr = CQt.QTouchEvent_new5(eventType, (.)device?.ObjectPtr, modifiers, touchPoints);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device, void* modifiers, void* touchPointStates, void** touchPoints)
 	{
 		this.ptr = CQt.QTouchEvent_new6(eventType, (.)device?.ObjectPtr, modifiers, touchPointStates, touchPoints);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTouchEvent_Delete(this.ptr);
 	}
-	public QTouchEvent_Ptr Clone()
+	public  virtual QTouchEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QObject_Ptr Target()
 	{
@@ -9261,97 +9310,17 @@ class QTouchEvent : IQTouchEvent, IQPointerEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.TouchPoints();
 	}
-	public bool IsBeginEvent()
+	public  virtual bool OnIsBeginEvent()
 	{
-		return this.ptr.IsBeginEvent();
+		return default;
 	}
-	public bool IsUpdateEvent()
+	public  virtual bool OnIsUpdateEvent()
 	{
-		return this.ptr.IsUpdateEvent();
+		return default;
 	}
-	public bool IsEndEvent()
+	public  virtual bool OnIsEndEvent()
 	{
-		return this.ptr.IsEndEvent();
-	}
-	public QPointingDevice_Ptr PointingDevice()
-	{
-		return this.ptr.PointingDevice();
-	}
-	public QPointingDevice_PointerType PointerType()
-	{
-		return this.ptr.PointerType();
-	}
-	public void SetTimestamp(c_ulonglong timestamp)
-	{
-		this.ptr.SetTimestamp(timestamp);
-	}
-	public void* PointCount()
-	{
-		return this.ptr.PointCount();
-	}
-	public QEventPoint_Ptr Point(void* i)
-	{
-		return this.ptr.Point(i);
-	}
-	public void** Points()
-	{
-		return this.ptr.Points();
-	}
-	public QEventPoint_Ptr PointById(c_int id)
-	{
-		return this.ptr.PointById(id);
-	}
-	public bool AllPointsGrabbed()
-	{
-		return this.ptr.AllPointsGrabbed();
-	}
-	public bool AllPointsAccepted()
-	{
-		return this.ptr.AllPointsAccepted();
-	}
-	public void SetAccepted(bool accepted)
-	{
-		this.ptr.SetAccepted(accepted);
-	}
-	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
-	{
-		return this.ptr.ExclusiveGrabber(point);
-	}
-	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
-	{
-		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
-	}
-	public void ClearPassiveGrabbers(IQEventPoint point)
-	{
-		this.ptr.ClearPassiveGrabbers(point);
-	}
-	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.AddPassiveGrabber(point, grabber);
-	}
-	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
-	{
-		return this.ptr.RemovePassiveGrabber(point, grabber);
-	}
-	public QInputDevice_Ptr Device()
-	{
-		return this.ptr.Device();
-	}
-	public QInputDevice_DeviceType DeviceType()
-	{
-		return this.ptr.DeviceType();
-	}
-	public void* Modifiers()
-	{
-		return this.ptr.Modifiers();
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		this.ptr.SetModifiers(modifiers);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return this.ptr.Timestamp();
+		return default;
 	}
 	public QEvent_Type Type()
 	{
@@ -9360,6 +9329,9 @@ class QTouchEvent : IQTouchEvent, IQPointerEvent, IQInputEvent, IQEvent
 	public bool Spontaneous()
 	{
 		return this.ptr.Spontaneous();
+	}
+	public  virtual void OnSetAccepted(bool accepted)
+	{
 	}
 	public bool IsAccepted()
 	{
@@ -9393,6 +9365,81 @@ class QTouchEvent : IQTouchEvent, IQPointerEvent, IQInputEvent, IQEvent
 	{
 		return this.ptr.RegisterEventType1(hint);
 	}
+	public QInputDevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return this.ptr.DeviceType();
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public  virtual void OnSetTimestamp(c_ulonglong timestamp)
+	{
+	}
+	public QPointingDevice_Ptr PointingDevice()
+	{
+		return this.ptr.PointingDevice();
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return this.ptr.PointerType();
+	}
+	public void* PointCount()
+	{
+		return this.ptr.PointCount();
+	}
+	public QEventPoint_Ptr Point(void* i)
+	{
+		return this.ptr.Point(i);
+	}
+	public void** Points()
+	{
+		return this.ptr.Points();
+	}
+	public QEventPoint_Ptr PointById(c_int id)
+	{
+		return this.ptr.PointById(id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return this.ptr.AllPointsGrabbed();
+	}
+	public bool AllPointsAccepted()
+	{
+		return this.ptr.AllPointsAccepted();
+	}
+	public QObject_Ptr ExclusiveGrabber(IQEventPoint point)
+	{
+		return this.ptr.ExclusiveGrabber(point);
+	}
+	public void SetExclusiveGrabber(IQEventPoint point, IQObject exclusiveGrabber)
+	{
+		this.ptr.SetExclusiveGrabber(point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(IQEventPoint point)
+	{
+		this.ptr.ClearPassiveGrabbers(point);
+	}
+	public bool AddPassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.AddPassiveGrabber(point, grabber);
+	}
+	public bool RemovePassiveGrabber(IQEventPoint point, IQObject grabber)
+	{
+		return this.ptr.RemovePassiveGrabber(point, grabber);
+	}
 }
 interface IQTouchEvent : IQtObjectInterface
 {
@@ -9415,6 +9462,10 @@ extension CQt
 	public static extern void QTouchEvent_Delete(QTouchEvent_Ptr self);
 	[LinkName("QTouchEvent_Clone")]
 	public static extern void** QTouchEvent_Clone(void* self);
+	
+	public function void QTouchEvent_OnClone_action(void* self);
+	[LinkName("QTouchEvent_OnClone")]
+	public static extern void** QTouchEvent_OnClone(void* self, QTouchEvent_OnClone_action _action);
 	[LinkName("QTouchEvent_Target")]
 	public static extern void** QTouchEvent_Target(void* self);
 	[LinkName("QTouchEvent_TouchPointStates")]
@@ -9423,10 +9474,34 @@ extension CQt
 	public static extern void** QTouchEvent_TouchPoints(void* self);
 	[LinkName("QTouchEvent_IsBeginEvent")]
 	public static extern bool QTouchEvent_IsBeginEvent(void* self);
+	
+	public function void QTouchEvent_OnIsBeginEvent_action(void* self);
+	[LinkName("QTouchEvent_OnIsBeginEvent")]
+	public static extern bool QTouchEvent_OnIsBeginEvent(void* self, QTouchEvent_OnIsBeginEvent_action _action);
 	[LinkName("QTouchEvent_IsUpdateEvent")]
 	public static extern bool QTouchEvent_IsUpdateEvent(void* self);
+	
+	public function void QTouchEvent_OnIsUpdateEvent_action(void* self);
+	[LinkName("QTouchEvent_OnIsUpdateEvent")]
+	public static extern bool QTouchEvent_OnIsUpdateEvent(void* self, QTouchEvent_OnIsUpdateEvent_action _action);
 	[LinkName("QTouchEvent_IsEndEvent")]
 	public static extern bool QTouchEvent_IsEndEvent(void* self);
+	
+	public function void QTouchEvent_OnIsEndEvent_action(void* self);
+	[LinkName("QTouchEvent_OnIsEndEvent")]
+	public static extern bool QTouchEvent_OnIsEndEvent(void* self, QTouchEvent_OnIsEndEvent_action _action);
+	[LinkName("QTouchEvent_SetAccepted")]
+	public static extern void QTouchEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QTouchEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QTouchEvent_OnSetAccepted")]
+	public static extern void QTouchEvent_OnSetAccepted(void* self, QTouchEvent_OnSetAccepted_action _action);
+	[LinkName("QTouchEvent_SetTimestamp")]
+	public static extern void QTouchEvent_SetTimestamp(void* self, c_ulonglong timestamp);
+	
+	public function void QTouchEvent_OnSetTimestamp_action(void* self, c_ulonglong timestamp);
+	[LinkName("QTouchEvent_OnSetTimestamp")]
+	public static extern void QTouchEvent_OnSetTimestamp(void* self, QTouchEvent_OnSetTimestamp_action _action);
 }
 // --------------------------------------------------------------
 // QScrollPrepareEvent
@@ -9481,7 +9556,7 @@ struct QScrollPrepareEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QScrollPrepareEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -9520,32 +9595,21 @@ class QScrollPrepareEvent : IQScrollPrepareEvent, IQEvent
 {
 	private QScrollPrepareEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QScrollPrepareEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF startPos)
 	{
 		this.ptr = CQt.QScrollPrepareEvent_new((.)startPos?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QScrollPrepareEvent_Delete(this.ptr);
 	}
-	public QScrollPrepareEvent_Ptr Clone()
+	public  virtual QScrollPrepareEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPointF_Ptr StartPos()
 	{
@@ -9583,9 +9647,8 @@ class QScrollPrepareEvent : IQScrollPrepareEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -9631,6 +9694,10 @@ extension CQt
 	public static extern void QScrollPrepareEvent_Delete(QScrollPrepareEvent_Ptr self);
 	[LinkName("QScrollPrepareEvent_Clone")]
 	public static extern void** QScrollPrepareEvent_Clone(void* self);
+	
+	public function void QScrollPrepareEvent_OnClone_action(void* self);
+	[LinkName("QScrollPrepareEvent_OnClone")]
+	public static extern void** QScrollPrepareEvent_OnClone(void* self, QScrollPrepareEvent_OnClone_action _action);
 	[LinkName("QScrollPrepareEvent_StartPos")]
 	public static extern void* QScrollPrepareEvent_StartPos(void* self);
 	[LinkName("QScrollPrepareEvent_ViewportSize")]
@@ -9645,6 +9712,12 @@ extension CQt
 	public static extern void QScrollPrepareEvent_SetContentPosRange(void* self, void** rect);
 	[LinkName("QScrollPrepareEvent_SetContentPos")]
 	public static extern void QScrollPrepareEvent_SetContentPos(void* self, void** pos);
+	[LinkName("QScrollPrepareEvent_SetAccepted")]
+	public static extern void QScrollPrepareEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QScrollPrepareEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QScrollPrepareEvent_OnSetAccepted")]
+	public static extern void QScrollPrepareEvent_OnSetAccepted(void* self, QScrollPrepareEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QScrollEvent
@@ -9683,7 +9756,7 @@ struct QScrollEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QScrollEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -9722,32 +9795,21 @@ class QScrollEvent : IQScrollEvent, IQEvent
 {
 	private QScrollEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QScrollEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF contentPos, IQPointF overshoot, QScrollEvent_ScrollState scrollState)
 	{
 		this.ptr = CQt.QScrollEvent_new((.)contentPos?.ObjectPtr, (.)overshoot?.ObjectPtr, scrollState);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QScrollEvent_Delete(this.ptr);
 	}
-	public QScrollEvent_Ptr Clone()
+	public  virtual QScrollEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QPointF_Ptr ContentPos()
 	{
@@ -9769,9 +9831,8 @@ class QScrollEvent : IQScrollEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -9817,12 +9878,22 @@ extension CQt
 	public static extern void QScrollEvent_Delete(QScrollEvent_Ptr self);
 	[LinkName("QScrollEvent_Clone")]
 	public static extern void** QScrollEvent_Clone(void* self);
+	
+	public function void QScrollEvent_OnClone_action(void* self);
+	[LinkName("QScrollEvent_OnClone")]
+	public static extern void** QScrollEvent_OnClone(void* self, QScrollEvent_OnClone_action _action);
 	[LinkName("QScrollEvent_ContentPos")]
 	public static extern void* QScrollEvent_ContentPos(void* self);
 	[LinkName("QScrollEvent_OvershootDistance")]
 	public static extern void* QScrollEvent_OvershootDistance(void* self);
 	[LinkName("QScrollEvent_ScrollState")]
 	public static extern QScrollEvent_ScrollState QScrollEvent_ScrollState(void* self);
+	[LinkName("QScrollEvent_SetAccepted")]
+	public static extern void QScrollEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QScrollEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QScrollEvent_OnSetAccepted")]
+	public static extern void QScrollEvent_OnSetAccepted(void* self, QScrollEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QScreenOrientationChangeEvent
@@ -9857,7 +9928,7 @@ struct QScreenOrientationChangeEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QScreenOrientationChangeEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -9896,32 +9967,21 @@ class QScreenOrientationChangeEvent : IQScreenOrientationChangeEvent, IQEvent
 {
 	private QScreenOrientationChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QScreenOrientationChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQScreen screen, Qt_ScreenOrientation orientation)
 	{
 		this.ptr = CQt.QScreenOrientationChangeEvent_new((.)screen?.ObjectPtr, orientation);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QScreenOrientationChangeEvent_Delete(this.ptr);
 	}
-	public QScreenOrientationChangeEvent_Ptr Clone()
+	public  virtual QScreenOrientationChangeEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public QScreen_Ptr Screen()
 	{
@@ -9939,9 +9999,8 @@ class QScreenOrientationChangeEvent : IQScreenOrientationChangeEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -9987,10 +10046,20 @@ extension CQt
 	public static extern void QScreenOrientationChangeEvent_Delete(QScreenOrientationChangeEvent_Ptr self);
 	[LinkName("QScreenOrientationChangeEvent_Clone")]
 	public static extern void** QScreenOrientationChangeEvent_Clone(void* self);
+	
+	public function void QScreenOrientationChangeEvent_OnClone_action(void* self);
+	[LinkName("QScreenOrientationChangeEvent_OnClone")]
+	public static extern void** QScreenOrientationChangeEvent_OnClone(void* self, QScreenOrientationChangeEvent_OnClone_action _action);
 	[LinkName("QScreenOrientationChangeEvent_Screen")]
 	public static extern void** QScreenOrientationChangeEvent_Screen(void* self);
 	[LinkName("QScreenOrientationChangeEvent_Orientation")]
 	public static extern Qt_ScreenOrientation QScreenOrientationChangeEvent_Orientation(void* self);
+	[LinkName("QScreenOrientationChangeEvent_SetAccepted")]
+	public static extern void QScreenOrientationChangeEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QScreenOrientationChangeEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QScreenOrientationChangeEvent_OnSetAccepted")]
+	public static extern void QScreenOrientationChangeEvent_OnSetAccepted(void* self, QScreenOrientationChangeEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QApplicationStateChangeEvent
@@ -10021,7 +10090,7 @@ struct QApplicationStateChangeEvent_Ptr
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+		CQt.QApplicationStateChangeEvent_SetAccepted((.)this.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -10060,32 +10129,21 @@ class QApplicationStateChangeEvent : IQApplicationStateChangeEvent, IQEvent
 {
 	private QApplicationStateChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QApplicationStateChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_ApplicationState state)
 	{
 		this.ptr = CQt.QApplicationStateChangeEvent_new(state);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QApplicationStateChangeEvent_Delete(this.ptr);
 	}
-	public QApplicationStateChangeEvent_Ptr Clone()
+	public  virtual QApplicationStateChangeEvent_Ptr OnClone()
 	{
-		return this.ptr.Clone();
+		return default;
 	}
 	public Qt_ApplicationState ApplicationState()
 	{
@@ -10099,9 +10157,8 @@ class QApplicationStateChangeEvent : IQApplicationStateChangeEvent, IQEvent
 	{
 		return this.ptr.Spontaneous();
 	}
-	public void SetAccepted(bool accepted)
+	public  virtual void OnSetAccepted(bool accepted)
 	{
-		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
@@ -10147,8 +10204,18 @@ extension CQt
 	public static extern void QApplicationStateChangeEvent_Delete(QApplicationStateChangeEvent_Ptr self);
 	[LinkName("QApplicationStateChangeEvent_Clone")]
 	public static extern void** QApplicationStateChangeEvent_Clone(void* self);
+	
+	public function void QApplicationStateChangeEvent_OnClone_action(void* self);
+	[LinkName("QApplicationStateChangeEvent_OnClone")]
+	public static extern void** QApplicationStateChangeEvent_OnClone(void* self, QApplicationStateChangeEvent_OnClone_action _action);
 	[LinkName("QApplicationStateChangeEvent_ApplicationState")]
 	public static extern Qt_ApplicationState QApplicationStateChangeEvent_ApplicationState(void* self);
+	[LinkName("QApplicationStateChangeEvent_SetAccepted")]
+	public static extern void QApplicationStateChangeEvent_SetAccepted(void* self, bool accepted);
+	
+	public function void QApplicationStateChangeEvent_OnSetAccepted_action(void* self, bool accepted);
+	[LinkName("QApplicationStateChangeEvent_OnSetAccepted")]
+	public static extern void QApplicationStateChangeEvent_OnSetAccepted(void* self, QApplicationStateChangeEvent_OnSetAccepted_action _action);
 }
 // --------------------------------------------------------------
 // QInputMethodEvent::Attribute
@@ -10198,34 +10265,21 @@ class QInputMethodEvent_Attribute : IQInputMethodEvent_Attribute
 {
 	private QInputMethodEvent_Attribute_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QInputMethodEvent_Attribute_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(QInputMethodEvent_AttributeType typ, c_int s, c_int l, IQVariant val)
 	{
 		this.ptr = CQt.QInputMethodEvent_Attribute_new(typ, s, l, (.)val?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(QInputMethodEvent_AttributeType typ, c_int s, c_int l)
 	{
 		this.ptr = CQt.QInputMethodEvent_Attribute_new2(typ, s, l);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQInputMethodEvent_Attribute param1)
 	{
 		this.ptr = CQt.QInputMethodEvent_Attribute_new3((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -18,11 +18,11 @@ struct QFontComboBox_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QFontComboBox_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QFontComboBox_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QFontComboBox_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -98,401 +98,305 @@ struct QFontComboBox_Ptr
 	{
 		CQt.QFontComboBox_Tr3(s, c, n);
 	}
-	public c_int MaxVisibleItems()
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QComboBox_MaxVisibleItems((.)this.Ptr);
+		return CQt.QFontComboBox_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public void SetMaxVisibleItems(c_int maxItems)
+	public void ObjectName(String outStr)
 	{
-		CQt.QComboBox_SetMaxVisibleItems((.)this.Ptr, maxItems);
+		CQt.QObject_ObjectName((.)this.Ptr);
 	}
-	public c_int Count()
+	public void SetObjectName(IQAnyStringView name)
 	{
-		return CQt.QComboBox_Count((.)this.Ptr);
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
 	}
-	public void SetMaxCount(c_int max)
+	public bool IsWidgetType()
 	{
-		CQt.QComboBox_SetMaxCount((.)this.Ptr, max);
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
 	}
-	public c_int MaxCount()
+	public bool IsWindowType()
 	{
-		return CQt.QComboBox_MaxCount((.)this.Ptr);
+		return CQt.QObject_IsWindowType((.)this.Ptr);
 	}
-	public bool DuplicatesEnabled()
+	public bool IsQuickItemType()
 	{
-		return CQt.QComboBox_DuplicatesEnabled((.)this.Ptr);
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
 	}
-	public void SetDuplicatesEnabled(bool enable)
+	public bool SignalsBlocked()
 	{
-		CQt.QComboBox_SetDuplicatesEnabled((.)this.Ptr, enable);
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
 	}
-	public void SetFrame(bool frame)
+	public bool BlockSignals(bool b)
 	{
-		CQt.QComboBox_SetFrame((.)this.Ptr, frame);
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
 	}
-	public bool HasFrame()
+	public QThread_Ptr Thread()
 	{
-		return CQt.QComboBox_HasFrame((.)this.Ptr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
 	}
-	public c_int FindText(String text)
+	public void MoveToThread(IQThread thread)
 	{
-		return CQt.QComboBox_FindText((.)this.Ptr, libqt_string(text));
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
 	}
-	public c_int FindData(IQVariant data)
+	public c_int StartTimer(c_int interval)
 	{
-		return CQt.QComboBox_FindData((.)this.Ptr, (.)data?.ObjectPtr);
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
 	}
-	public QComboBox_InsertPolicy InsertPolicy()
+	public c_int StartTimer2(void* time)
 	{
-		return CQt.QComboBox_InsertPolicy((.)this.Ptr);
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
 	}
-	public void SetInsertPolicy(QComboBox_InsertPolicy policy)
+	public void KillTimer(c_int id)
 	{
-		CQt.QComboBox_SetInsertPolicy((.)this.Ptr, policy);
+		CQt.QObject_KillTimer((.)this.Ptr, id);
 	}
-	public QComboBox_SizeAdjustPolicy SizeAdjustPolicy()
+	public void** Children()
 	{
-		return CQt.QComboBox_SizeAdjustPolicy((.)this.Ptr);
+		return CQt.QObject_Children((.)this.Ptr);
 	}
-	public void SetSizeAdjustPolicy(QComboBox_SizeAdjustPolicy policy)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QComboBox_SetSizeAdjustPolicy((.)this.Ptr, policy);
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
-	public c_int MinimumContentsLength()
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		return CQt.QComboBox_MinimumContentsLength((.)this.Ptr);
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void SetMinimumContentsLength(c_int characters)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QComboBox_SetMinimumContentsLength((.)this.Ptr, characters);
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
 	}
-	public QSize_Ptr IconSize()
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return QSize_Ptr(CQt.QComboBox_IconSize((.)this.Ptr));
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public void SetIconSize(IQSize size)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		CQt.QComboBox_SetIconSize((.)this.Ptr, (.)size?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public void SetPlaceholderText(String placeholderText)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		CQt.QComboBox_SetPlaceholderText((.)this.Ptr, libqt_string(placeholderText));
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
-	public void PlaceholderText(String outStr)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		CQt.QComboBox_PlaceholderText((.)this.Ptr);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool IsEditable()
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QComboBox_IsEditable((.)this.Ptr);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
-	public void SetEditable(bool editable)
+	public bool Disconnect3()
 	{
-		CQt.QComboBox_SetEditable((.)this.Ptr, editable);
+		return CQt.QObject_Disconnect3((.)this.Ptr);
 	}
-	public void SetLineEdit(IQLineEdit edit)
+	public bool Disconnect4(IQObject receiver)
 	{
-		CQt.QComboBox_SetLineEdit((.)this.Ptr, (.)edit?.ObjectPtr);
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
 	}
-	public QLineEdit_Ptr LineEdit()
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return QLineEdit_Ptr(CQt.QComboBox_LineEdit((.)this.Ptr));
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
-	public void SetValidator(IQValidator v)
+	public void DumpObjectTree()
 	{
-		CQt.QComboBox_SetValidator((.)this.Ptr, (.)v?.ObjectPtr);
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
 	}
-	public QValidator_Ptr Validator()
+	public void DumpObjectInfo()
 	{
-		return QValidator_Ptr(CQt.QComboBox_Validator((.)this.Ptr));
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
 	}
-	public void SetCompleter(IQCompleter c)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		CQt.QComboBox_SetCompleter((.)this.Ptr, (.)c?.ObjectPtr);
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
 	}
-	public QCompleter_Ptr Completer()
+	public QVariant_Ptr Property(c_char* name)
 	{
-		return QCompleter_Ptr(CQt.QComboBox_Completer((.)this.Ptr));
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
 	}
-	public QAbstractItemDelegate_Ptr ItemDelegate()
+	public void* DynamicPropertyNames()
 	{
-		return QAbstractItemDelegate_Ptr(CQt.QComboBox_ItemDelegate((.)this.Ptr));
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
 	}
-	public void SetItemDelegate(IQAbstractItemDelegate _delegate)
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		CQt.QComboBox_SetItemDelegate((.)this.Ptr, (.)_delegate?.ObjectPtr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
 	}
-	public QAbstractItemModel_Ptr Model()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return QAbstractItemModel_Ptr(CQt.QComboBox_Model((.)this.Ptr));
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
 	}
-	public void SetModel(IQAbstractItemModel model)
+	public void Destroyed()
 	{
-		CQt.QComboBox_SetModel((.)this.Ptr, (.)model?.ObjectPtr);
+		CQt.QObject_Destroyed((.)this.Ptr);
 	}
-	public QModelIndex_Ptr RootModelIndex()
+	public QObject_Ptr Parent()
 	{
-		return QModelIndex_Ptr(CQt.QComboBox_RootModelIndex((.)this.Ptr));
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
 	}
-	public void SetRootModelIndex(IQModelIndex index)
+	public bool Inherits(c_char* classname)
 	{
-		CQt.QComboBox_SetRootModelIndex((.)this.Ptr, (.)index?.ObjectPtr);
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
 	}
-	public c_int ModelColumn()
+	public void DeleteLater()
 	{
-		return CQt.QComboBox_ModelColumn((.)this.Ptr);
+		CQt.QObject_DeleteLater((.)this.Ptr);
 	}
-	public void SetModelColumn(c_int visibleColumn)
+	public QObject_Ptr Sender()
 	{
-		CQt.QComboBox_SetModelColumn((.)this.Ptr, visibleColumn);
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
 	}
-	public c_int CurrentIndex()
+	public c_int SenderSignalIndex()
 	{
-		return CQt.QComboBox_CurrentIndex((.)this.Ptr);
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
 	}
-	public void CurrentText(String outStr)
+	public c_int Receivers(c_char* signal)
 	{
-		CQt.QComboBox_CurrentText((.)this.Ptr);
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
 	}
-	public QVariant_Ptr CurrentData()
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return QVariant_Ptr(CQt.QComboBox_CurrentData((.)this.Ptr));
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
-	public void ItemText(String outStr, c_int index)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QComboBox_ItemText((.)this.Ptr, index);
+		CQt.QFontComboBox_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public QIcon_Ptr ItemIcon(c_int index)
+	public void ChildEvent(IQChildEvent event)
 	{
-		return QIcon_Ptr(CQt.QComboBox_ItemIcon((.)this.Ptr, index));
+		CQt.QFontComboBox_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr ItemData(c_int index)
+	public void CustomEvent(IQEvent event)
 	{
-		return QVariant_Ptr(CQt.QComboBox_ItemData((.)this.Ptr, index));
+		CQt.QFontComboBox_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
-	public void AddItem(String text)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QComboBox_AddItem((.)this.Ptr, libqt_string(text));
+		CQt.QFontComboBox_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
-	public void AddItem2(IQIcon icon, String text)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QComboBox_AddItem2((.)this.Ptr, (.)icon?.ObjectPtr, libqt_string(text));
+		CQt.QFontComboBox_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
-	public void AddItems(void** texts)
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		CQt.QComboBox_AddItems((.)this.Ptr, texts);
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
 	}
-	public void InsertItem(c_int index, String text)
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		CQt.QComboBox_InsertItem((.)this.Ptr, index, libqt_string(text));
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
 	}
-	public void InsertItem2(c_int index, IQIcon icon, String text)
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		CQt.QComboBox_InsertItem2((.)this.Ptr, index, (.)icon?.ObjectPtr, libqt_string(text));
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
 	}
-	public void InsertItems(c_int index, void** texts)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		CQt.QComboBox_InsertItems((.)this.Ptr, index, texts);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
 	}
-	public void InsertSeparator(c_int index)
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		CQt.QComboBox_InsertSeparator((.)this.Ptr, index);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
 	}
-	public void RemoveItem(c_int index)
+	public bool Disconnect1(c_char* signal)
 	{
-		CQt.QComboBox_RemoveItem((.)this.Ptr, index);
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
 	}
-	public void SetItemText(c_int index, String text)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		CQt.QComboBox_SetItemText((.)this.Ptr, index, libqt_string(text));
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public void SetItemIcon(c_int index, IQIcon icon)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		CQt.QComboBox_SetItemIcon((.)this.Ptr, index, (.)icon?.ObjectPtr);
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public void SetItemData(c_int index, IQVariant value)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		CQt.QComboBox_SetItemData((.)this.Ptr, index, (.)value?.ObjectPtr);
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public QAbstractItemView_Ptr View()
+	public void Destroyed1(IQObject param1)
 	{
-		return QAbstractItemView_Ptr(CQt.QComboBox_View((.)this.Ptr));
-	}
-	public void SetView(IQAbstractItemView itemView)
-	{
-		CQt.QComboBox_SetView((.)this.Ptr, (.)itemView?.ObjectPtr);
-	}
-	public QSize_Ptr MinimumSizeHint()
-	{
-		return QSize_Ptr(CQt.QComboBox_MinimumSizeHint((.)this.Ptr));
-	}
-	public void ShowPopup()
-	{
-		CQt.QComboBox_ShowPopup((.)this.Ptr);
-	}
-	public void HidePopup()
-	{
-		CQt.QComboBox_HidePopup((.)this.Ptr);
-	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
-	{
-		return QVariant_Ptr(CQt.QComboBox_InputMethodQuery((.)this.Ptr, param1));
-	}
-	public QVariant_Ptr InputMethodQuery2(Qt_InputMethodQuery query, IQVariant argument)
-	{
-		return QVariant_Ptr(CQt.QComboBox_InputMethodQuery2((.)this.Ptr, query, (.)argument?.ObjectPtr));
-	}
-	public void Clear()
-	{
-		CQt.QComboBox_Clear((.)this.Ptr);
-	}
-	public void ClearEditText()
-	{
-		CQt.QComboBox_ClearEditText((.)this.Ptr);
-	}
-	public void SetEditText(String text)
-	{
-		CQt.QComboBox_SetEditText((.)this.Ptr, libqt_string(text));
-	}
-	public void SetCurrentIndex(c_int index)
-	{
-		CQt.QComboBox_SetCurrentIndex((.)this.Ptr, index);
-	}
-	public void SetCurrentText(String text)
-	{
-		CQt.QComboBox_SetCurrentText((.)this.Ptr, libqt_string(text));
-	}
-	public void EditTextChanged(String param1)
-	{
-		CQt.QComboBox_EditTextChanged((.)this.Ptr, libqt_string(param1));
-	}
-	public void Activated(c_int index)
-	{
-		CQt.QComboBox_Activated((.)this.Ptr, index);
-	}
-	public void TextActivated(String param1)
-	{
-		CQt.QComboBox_TextActivated((.)this.Ptr, libqt_string(param1));
-	}
-	public void Highlighted(c_int index)
-	{
-		CQt.QComboBox_Highlighted((.)this.Ptr, index);
-	}
-	public void TextHighlighted(String param1)
-	{
-		CQt.QComboBox_TextHighlighted((.)this.Ptr, libqt_string(param1));
-	}
-	public void CurrentIndexChanged(c_int index)
-	{
-		CQt.QComboBox_CurrentIndexChanged((.)this.Ptr, index);
-	}
-	public void CurrentTextChanged(String param1)
-	{
-		CQt.QComboBox_CurrentTextChanged((.)this.Ptr, libqt_string(param1));
-	}
-	public void FocusInEvent(IQFocusEvent e)
-	{
-		CQt.QComboBox_FocusInEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void FocusOutEvent(IQFocusEvent e)
-	{
-		CQt.QComboBox_FocusOutEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void ChangeEvent(IQEvent e)
-	{
-		CQt.QComboBox_ChangeEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void ResizeEvent(IQResizeEvent e)
-	{
-		CQt.QComboBox_ResizeEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void PaintEvent(IQPaintEvent e)
-	{
-		CQt.QComboBox_PaintEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void ShowEvent(IQShowEvent e)
-	{
-		CQt.QComboBox_ShowEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void HideEvent(IQHideEvent e)
-	{
-		CQt.QComboBox_HideEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void MousePressEvent(IQMouseEvent e)
-	{
-		CQt.QComboBox_MousePressEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void MouseReleaseEvent(IQMouseEvent e)
-	{
-		CQt.QComboBox_MouseReleaseEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void KeyPressEvent(IQKeyEvent e)
-	{
-		CQt.QComboBox_KeyPressEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void KeyReleaseEvent(IQKeyEvent e)
-	{
-		CQt.QComboBox_KeyReleaseEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void WheelEvent(IQWheelEvent e)
-	{
-		CQt.QComboBox_WheelEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void ContextMenuEvent(IQContextMenuEvent e)
-	{
-		CQt.QComboBox_ContextMenuEvent((.)this.Ptr, (.)e?.ObjectPtr);
-	}
-	public void InputMethodEvent(IQInputMethodEvent param1)
-	{
-		CQt.QComboBox_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
-	public void InitStyleOption(IQStyleOptionComboBox option)
-	{
-		CQt.QComboBox_InitStyleOption((.)this.Ptr, (.)option?.ObjectPtr);
-	}
-	public c_int FindText2(String text, void* flags)
-	{
-		return CQt.QComboBox_FindText2((.)this.Ptr, libqt_string(text), flags);
-	}
-	public c_int FindData2(IQVariant data, c_int role)
-	{
-		return CQt.QComboBox_FindData2((.)this.Ptr, (.)data?.ObjectPtr, role);
-	}
-	public c_int FindData3(IQVariant data, c_int role, void* flags)
-	{
-		return CQt.QComboBox_FindData3((.)this.Ptr, (.)data?.ObjectPtr, role, flags);
-	}
-	public QVariant_Ptr CurrentData1(c_int role)
-	{
-		return QVariant_Ptr(CQt.QComboBox_CurrentData1((.)this.Ptr, role));
-	}
-	public QVariant_Ptr ItemData2(c_int index, c_int role)
-	{
-		return QVariant_Ptr(CQt.QComboBox_ItemData2((.)this.Ptr, index, role));
-	}
-	public void AddItem22(String text, IQVariant userData)
-	{
-		CQt.QComboBox_AddItem22((.)this.Ptr, libqt_string(text), (.)userData?.ObjectPtr);
-	}
-	public void AddItem3(IQIcon icon, String text, IQVariant userData)
-	{
-		CQt.QComboBox_AddItem3((.)this.Ptr, (.)icon?.ObjectPtr, libqt_string(text), (.)userData?.ObjectPtr);
-	}
-	public void InsertItem3(c_int index, String text, IQVariant userData)
-	{
-		CQt.QComboBox_InsertItem3((.)this.Ptr, index, libqt_string(text), (.)userData?.ObjectPtr);
-	}
-	public void InsertItem4(c_int index, IQIcon icon, String text, IQVariant userData)
-	{
-		CQt.QComboBox_InsertItem4((.)this.Ptr, index, (.)icon?.ObjectPtr, libqt_string(text), (.)userData?.ObjectPtr);
-	}
-	public void SetItemData3(c_int index, IQVariant value, c_int role)
-	{
-		CQt.QComboBox_SetItemData3((.)this.Ptr, index, (.)value?.ObjectPtr, role);
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.Ptr);
+		return CQt.QFontComboBox_DevType((.)this.Ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+	}
+	public QPaintEngine_Ptr PaintEngine()
+	{
+		return QPaintEngine_Ptr(CQt.QFontComboBox_PaintEngine((.)this.Ptr));
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.Ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.Ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QFontComboBox_Metric((.)this.Ptr, metric);
+	}
+	public void InitPainter(IQPainter painter)
+	{
+		CQt.QFontComboBox_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	{
+		return QPaintDevice_Ptr(CQt.QFontComboBox_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
+	}
+	public QPainter_Ptr SharedPainter()
+	{
+		return QPainter_Ptr(CQt.QFontComboBox_SharedPainter((.)this.Ptr));
 	}
 	public void* WinId()
 	{
@@ -589,14 +493,6 @@ struct QFontComboBox_Ptr
 	public QSize_Ptr Size()
 	{
 		return QSize_Ptr(CQt.QWidget_Size((.)this.Ptr));
-	}
-	public c_int Width()
-	{
-		return CQt.QWidget_Width((.)this.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QWidget_Height((.)this.Ptr);
 	}
 	public QRect_Ptr Rect()
 	{
@@ -1164,7 +1060,7 @@ struct QFontComboBox_Ptr
 	}
 	public void SetVisible(bool visible)
 	{
-		CQt.QWidget_SetVisible((.)this.Ptr, visible);
+		CQt.QFontComboBox_SetVisible((.)this.Ptr, visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -1282,6 +1178,10 @@ struct QFontComboBox_Ptr
 	{
 		CQt.QWidget_OverrideWindowState((.)this.Ptr, state);
 	}
+	public QSize_Ptr MinimumSizeHint()
+	{
+		return QSize_Ptr(CQt.QFontComboBox_MinimumSizeHint((.)this.Ptr));
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return QSizePolicy_Ptr(CQt.QWidget_SizePolicy((.)this.Ptr));
@@ -1296,11 +1196,11 @@ struct QFontComboBox_Ptr
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.Ptr, param1);
+		return CQt.QFontComboBox_HeightForWidth((.)this.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.Ptr);
+		return CQt.QFontComboBox_HasHeightForWidth((.)this.Ptr);
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -1333,10 +1233,6 @@ struct QFontComboBox_Ptr
 	public void UpdateGeometry()
 	{
 		CQt.QWidget_UpdateGeometry((.)this.Ptr);
-	}
-	public void SetParent(IQWidget parent)
-	{
-		CQt.QWidget_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -1454,10 +1350,6 @@ struct QFontComboBox_Ptr
 	{
 		return CQt.QWidget_TestAttribute((.)this.Ptr, param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.Ptr));
-	}
 	public void EnsurePolished()
 	{
 		CQt.QWidget_EnsurePolished((.)this.Ptr);
@@ -1510,73 +1402,117 @@ struct QFontComboBox_Ptr
 	{
 		CQt.QWidget_CustomContextMenuRequested((.)this.Ptr, (.)pos?.ObjectPtr);
 	}
+	public void MousePressEvent(IQMouseEvent event)
+	{
+		CQt.QFontComboBox_MousePressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void MouseReleaseEvent(IQMouseEvent event)
+	{
+		CQt.QFontComboBox_MouseReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
 	public void MouseDoubleClickEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_MouseDoubleClickEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseMoveEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_MouseMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void WheelEvent(IQWheelEvent event)
+	{
+		CQt.QFontComboBox_WheelEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyPressEvent(IQKeyEvent event)
+	{
+		CQt.QFontComboBox_KeyPressEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void KeyReleaseEvent(IQKeyEvent event)
+	{
+		CQt.QFontComboBox_KeyReleaseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void FocusInEvent(IQFocusEvent event)
+	{
+		CQt.QFontComboBox_FocusInEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void FocusOutEvent(IQFocusEvent event)
+	{
+		CQt.QFontComboBox_FocusOutEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_EnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_LeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void PaintEvent(IQPaintEvent event)
+	{
+		CQt.QFontComboBox_PaintEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_MoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ResizeEvent(IQResizeEvent event)
+	{
+		CQt.QFontComboBox_ResizeEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CloseEvent(IQCloseEvent event)
 	{
-		CQt.QWidget_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_CloseEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ContextMenuEvent(IQContextMenuEvent event)
+	{
+		CQt.QFontComboBox_ContextMenuEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_TabletEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_ActionEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragEnterEvent(IQDragEnterEvent event)
 	{
-		CQt.QWidget_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_DragEnterEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragMoveEvent(IQDragMoveEvent event)
 	{
-		CQt.QWidget_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_DragMoveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragLeaveEvent(IQDragLeaveEvent event)
 	{
-		CQt.QWidget_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_DragLeaveEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DropEvent(IQDropEvent event)
 	{
-		CQt.QWidget_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QFontComboBox_DropEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ShowEvent(IQShowEvent event)
+	{
+		CQt.QFontComboBox_ShowEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void HideEvent(IQHideEvent event)
+	{
+		CQt.QFontComboBox_HideEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.Ptr, eventType, message, result);
+		return CQt.QFontComboBox_NativeEvent((.)this.Ptr, eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public void ChangeEvent(IQEvent param1)
 	{
-		return CQt.QWidget_Metric((.)this.Ptr, param1);
+		CQt.QFontComboBox_ChangeEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
-	public void InitPainter(IQPainter painter)
+	public void InputMethodEvent(IQInputMethodEvent param1)
 	{
-		CQt.QWidget_InitPainter((.)this.Ptr, (.)painter?.ObjectPtr);
+		CQt.QFontComboBox_InputMethodEvent((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.Ptr, (.)offset?.ObjectPtr));
-	}
-	public QPainter_Ptr SharedPainter()
-	{
-		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.Ptr));
+		return QVariant_Ptr(CQt.QFontComboBox_InputMethodQuery((.)this.Ptr, param1));
 	}
 	public void* InputMethodHints()
 	{
@@ -1600,7 +1536,7 @@ struct QFontComboBox_Ptr
 	}
 	public bool FocusNextPrevChild(bool next)
 	{
-		return CQt.QWidget_FocusNextPrevChild((.)this.Ptr, next);
+		return CQt.QFontComboBox_FocusNextPrevChild((.)this.Ptr, next);
 	}
 	public bool FocusNextChild()
 	{
@@ -1694,426 +1630,366 @@ struct QFontComboBox_Ptr
 	{
 		CQt.QWidget_Destroy2((.)this.Ptr, destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public c_int MaxVisibleItems()
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QComboBox_MaxVisibleItems((.)this.Ptr);
 	}
-	public void ObjectName(String outStr)
+	public void SetMaxVisibleItems(c_int maxItems)
 	{
-		CQt.QObject_ObjectName((.)this.Ptr);
+		CQt.QComboBox_SetMaxVisibleItems((.)this.Ptr, maxItems);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public c_int Count()
 	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+		return CQt.QComboBox_Count((.)this.Ptr);
 	}
-	public bool IsWidgetType()
+	public void SetMaxCount(c_int max)
 	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
+		CQt.QComboBox_SetMaxCount((.)this.Ptr, max);
 	}
-	public bool IsWindowType()
+	public c_int MaxCount()
 	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
+		return CQt.QComboBox_MaxCount((.)this.Ptr);
 	}
-	public bool IsQuickItemType()
+	public bool DuplicatesEnabled()
 	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+		return CQt.QComboBox_DuplicatesEnabled((.)this.Ptr);
 	}
-	public bool SignalsBlocked()
+	public void SetDuplicatesEnabled(bool enable)
 	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+		CQt.QComboBox_SetDuplicatesEnabled((.)this.Ptr, enable);
 	}
-	public bool BlockSignals(bool b)
+	public void SetFrame(bool frame)
 	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+		CQt.QComboBox_SetFrame((.)this.Ptr, frame);
 	}
-	public QThread_Ptr Thread()
+	public bool HasFrame()
 	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+		return CQt.QComboBox_HasFrame((.)this.Ptr);
 	}
-	public void MoveToThread(IQThread thread)
+	public c_int FindText(String text)
 	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+		return CQt.QComboBox_FindText((.)this.Ptr, libqt_string(text));
 	}
-	public c_int StartTimer(c_int interval)
+	public c_int FindData(IQVariant data)
 	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+		return CQt.QComboBox_FindData((.)this.Ptr, (.)data?.ObjectPtr);
 	}
-	public c_int StartTimer2(void* time)
+	public QComboBox_InsertPolicy InsertPolicy()
 	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+		return CQt.QComboBox_InsertPolicy((.)this.Ptr);
 	}
-	public void KillTimer(c_int id)
+	public void SetInsertPolicy(QComboBox_InsertPolicy policy)
 	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
+		CQt.QComboBox_SetInsertPolicy((.)this.Ptr, policy);
 	}
-	public void** Children()
+	public QComboBox_SizeAdjustPolicy SizeAdjustPolicy()
 	{
-		return CQt.QObject_Children((.)this.Ptr);
+		return CQt.QComboBox_SizeAdjustPolicy((.)this.Ptr);
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void SetSizeAdjustPolicy(QComboBox_SizeAdjustPolicy policy)
 	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+		CQt.QComboBox_SetSizeAdjustPolicy((.)this.Ptr, policy);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public c_int MinimumContentsLength()
 	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+		return CQt.QComboBox_MinimumContentsLength((.)this.Ptr);
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetMinimumContentsLength(c_int characters)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+		CQt.QComboBox_SetMinimumContentsLength((.)this.Ptr, characters);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public QSize_Ptr IconSize()
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+		return QSize_Ptr(CQt.QComboBox_IconSize((.)this.Ptr));
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetIconSize(IQSize size)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+		CQt.QComboBox_SetIconSize((.)this.Ptr, (.)size?.ObjectPtr);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetPlaceholderText(String placeholderText)
 	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+		CQt.QComboBox_SetPlaceholderText((.)this.Ptr, libqt_string(placeholderText));
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void PlaceholderText(String outStr)
 	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+		CQt.QComboBox_PlaceholderText((.)this.Ptr);
 	}
-	public bool Disconnect3()
+	public bool IsEditable()
 	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
+		return CQt.QComboBox_IsEditable((.)this.Ptr);
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void SetEditable(bool editable)
 	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+		CQt.QComboBox_SetEditable((.)this.Ptr, editable);
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public void SetLineEdit(IQLineEdit edit)
 	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+		CQt.QComboBox_SetLineEdit((.)this.Ptr, (.)edit?.ObjectPtr);
 	}
-	public void DumpObjectTree()
+	public QLineEdit_Ptr LineEdit()
 	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
+		return QLineEdit_Ptr(CQt.QComboBox_LineEdit((.)this.Ptr));
 	}
-	public void DumpObjectInfo()
+	public void SetValidator(IQValidator v)
 	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+		CQt.QComboBox_SetValidator((.)this.Ptr, (.)v?.ObjectPtr);
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public QValidator_Ptr Validator()
 	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+		return QValidator_Ptr(CQt.QComboBox_Validator((.)this.Ptr));
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public void SetCompleter(IQCompleter c)
 	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+		CQt.QComboBox_SetCompleter((.)this.Ptr, (.)c?.ObjectPtr);
 	}
-	public void* DynamicPropertyNames()
+	public QCompleter_Ptr Completer()
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+		return QCompleter_Ptr(CQt.QComboBox_Completer((.)this.Ptr));
 	}
-	public QBindingStorage_Ptr BindingStorage()
+	public QAbstractItemDelegate_Ptr ItemDelegate()
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+		return QAbstractItemDelegate_Ptr(CQt.QComboBox_ItemDelegate((.)this.Ptr));
 	}
-	public QBindingStorage_Ptr BindingStorage2()
+	public void SetItemDelegate(IQAbstractItemDelegate _delegate)
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+		CQt.QComboBox_SetItemDelegate((.)this.Ptr, (.)_delegate?.ObjectPtr);
 	}
-	public void Destroyed()
+	public QAbstractItemModel_Ptr Model()
 	{
-		CQt.QObject_Destroyed((.)this.Ptr);
+		return QAbstractItemModel_Ptr(CQt.QComboBox_Model((.)this.Ptr));
 	}
-	public QObject_Ptr Parent()
+	public void SetModel(IQAbstractItemModel model)
 	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+		CQt.QFontComboBox_SetModel((.)this.Ptr, (.)model?.ObjectPtr);
 	}
-	public bool Inherits(c_char* classname)
+	public QModelIndex_Ptr RootModelIndex()
 	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
+		return QModelIndex_Ptr(CQt.QComboBox_RootModelIndex((.)this.Ptr));
 	}
-	public void DeleteLater()
+	public void SetRootModelIndex(IQModelIndex index)
 	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
+		CQt.QComboBox_SetRootModelIndex((.)this.Ptr, (.)index?.ObjectPtr);
 	}
-	public QObject_Ptr Sender()
+	public c_int ModelColumn()
 	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+		return CQt.QComboBox_ModelColumn((.)this.Ptr);
 	}
-	public c_int SenderSignalIndex()
+	public void SetModelColumn(c_int visibleColumn)
 	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+		CQt.QComboBox_SetModelColumn((.)this.Ptr, visibleColumn);
 	}
-	public c_int Receivers(c_char* signal)
+	public c_int CurrentIndex()
 	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
+		return CQt.QComboBox_CurrentIndex((.)this.Ptr);
 	}
-	public bool IsSignalConnected(IQMetaMethod signal)
+	public void CurrentText(String outStr)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QComboBox_CurrentText((.)this.Ptr);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public QVariant_Ptr CurrentData()
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QVariant_Ptr(CQt.QComboBox_CurrentData((.)this.Ptr));
 	}
-	public void ChildEvent(IQChildEvent event)
+	public void ItemText(String outStr, c_int index)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QComboBox_ItemText((.)this.Ptr, index);
 	}
-	public void CustomEvent(IQEvent event)
+	public QIcon_Ptr ItemIcon(c_int index)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		return QIcon_Ptr(CQt.QComboBox_ItemIcon((.)this.Ptr, index));
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public QVariant_Ptr ItemData(c_int index)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		return QVariant_Ptr(CQt.QComboBox_ItemData((.)this.Ptr, index));
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public void AddItem(String text)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QComboBox_AddItem((.)this.Ptr, libqt_string(text));
 	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	public void AddItem2(IQIcon icon, String text)
 	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+		CQt.QComboBox_AddItem2((.)this.Ptr, (.)icon?.ObjectPtr, libqt_string(text));
 	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	public void AddItems(void** texts)
 	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+		CQt.QComboBox_AddItems((.)this.Ptr, texts);
 	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public void InsertItem(c_int index, String text)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+		CQt.QComboBox_InsertItem((.)this.Ptr, index, libqt_string(text));
 	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public void InsertItem2(c_int index, IQIcon icon, String text)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+		CQt.QComboBox_InsertItem2((.)this.Ptr, index, (.)icon?.ObjectPtr, libqt_string(text));
 	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public void InsertItems(c_int index, void** texts)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+		CQt.QComboBox_InsertItems((.)this.Ptr, index, texts);
 	}
-	public bool Disconnect1(c_char* signal)
+	public void InsertSeparator(c_int index)
 	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+		CQt.QComboBox_InsertSeparator((.)this.Ptr, index);
 	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
+	public void RemoveItem(c_int index)
 	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+		CQt.QComboBox_RemoveItem((.)this.Ptr, index);
 	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	public void SetItemText(c_int index, String text)
 	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+		CQt.QComboBox_SetItemText((.)this.Ptr, index, libqt_string(text));
 	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
+	public void SetItemIcon(c_int index, IQIcon icon)
 	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+		CQt.QComboBox_SetItemIcon((.)this.Ptr, index, (.)icon?.ObjectPtr);
 	}
-	public void Destroyed1(IQObject param1)
+	public void SetItemData(c_int index, IQVariant value)
 	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+		CQt.QComboBox_SetItemData((.)this.Ptr, index, (.)value?.ObjectPtr);
 	}
-	public bool PaintingActive()
+	public QAbstractItemView_Ptr View()
 	{
-		return CQt.QPaintDevice_PaintingActive((.)this.Ptr);
+		return QAbstractItemView_Ptr(CQt.QComboBox_View((.)this.Ptr));
 	}
-	public c_int WidthMM()
+	public void SetView(IQAbstractItemView itemView)
 	{
-		return CQt.QPaintDevice_WidthMM((.)this.Ptr);
+		CQt.QComboBox_SetView((.)this.Ptr, (.)itemView?.ObjectPtr);
 	}
-	public c_int HeightMM()
+	public void ShowPopup()
 	{
-		return CQt.QPaintDevice_HeightMM((.)this.Ptr);
+		CQt.QFontComboBox_ShowPopup((.)this.Ptr);
 	}
-	public c_int LogicalDpiX()
+	public void HidePopup()
 	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.Ptr);
+		CQt.QFontComboBox_HidePopup((.)this.Ptr);
 	}
-	public c_int LogicalDpiY()
+	public QVariant_Ptr InputMethodQuery2(Qt_InputMethodQuery query, IQVariant argument)
 	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.Ptr);
+		return QVariant_Ptr(CQt.QComboBox_InputMethodQuery2((.)this.Ptr, query, (.)argument?.ObjectPtr));
 	}
-	public c_int PhysicalDpiX()
+	public void Clear()
 	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.Ptr);
+		CQt.QComboBox_Clear((.)this.Ptr);
 	}
-	public c_int PhysicalDpiY()
+	public void ClearEditText()
 	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.Ptr);
+		CQt.QComboBox_ClearEditText((.)this.Ptr);
 	}
-	public double DevicePixelRatio()
+	public void SetEditText(String text)
 	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.Ptr);
+		CQt.QComboBox_SetEditText((.)this.Ptr, libqt_string(text));
 	}
-	public double DevicePixelRatioF()
+	public void SetCurrentIndex(c_int index)
 	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.Ptr);
+		CQt.QComboBox_SetCurrentIndex((.)this.Ptr, index);
 	}
-	public c_int ColorCount()
+	public void SetCurrentText(String text)
 	{
-		return CQt.QPaintDevice_ColorCount((.)this.Ptr);
+		CQt.QComboBox_SetCurrentText((.)this.Ptr, libqt_string(text));
 	}
-	public c_int Depth()
+	public void EditTextChanged(String param1)
 	{
-		return CQt.QPaintDevice_Depth((.)this.Ptr);
+		CQt.QComboBox_EditTextChanged((.)this.Ptr, libqt_string(param1));
 	}
-	public double DevicePixelRatioFScale()
+	public void Activated(c_int index)
 	{
-		return CQt.QPaintDevice_DevicePixelRatioFScale();
+		CQt.QComboBox_Activated((.)this.Ptr, index);
+	}
+	public void TextActivated(String param1)
+	{
+		CQt.QComboBox_TextActivated((.)this.Ptr, libqt_string(param1));
+	}
+	public void Highlighted(c_int index)
+	{
+		CQt.QComboBox_Highlighted((.)this.Ptr, index);
+	}
+	public void TextHighlighted(String param1)
+	{
+		CQt.QComboBox_TextHighlighted((.)this.Ptr, libqt_string(param1));
+	}
+	public void CurrentIndexChanged(c_int index)
+	{
+		CQt.QComboBox_CurrentIndexChanged((.)this.Ptr, index);
+	}
+	public void CurrentTextChanged(String param1)
+	{
+		CQt.QComboBox_CurrentTextChanged((.)this.Ptr, libqt_string(param1));
+	}
+	public void InitStyleOption(IQStyleOptionComboBox option)
+	{
+		CQt.QFontComboBox_InitStyleOption((.)this.Ptr, (.)option?.ObjectPtr);
+	}
+	public c_int FindText2(String text, void* flags)
+	{
+		return CQt.QComboBox_FindText2((.)this.Ptr, libqt_string(text), flags);
+	}
+	public c_int FindData2(IQVariant data, c_int role)
+	{
+		return CQt.QComboBox_FindData2((.)this.Ptr, (.)data?.ObjectPtr, role);
+	}
+	public c_int FindData3(IQVariant data, c_int role, void* flags)
+	{
+		return CQt.QComboBox_FindData3((.)this.Ptr, (.)data?.ObjectPtr, role, flags);
+	}
+	public QVariant_Ptr CurrentData1(c_int role)
+	{
+		return QVariant_Ptr(CQt.QComboBox_CurrentData1((.)this.Ptr, role));
+	}
+	public QVariant_Ptr ItemData2(c_int index, c_int role)
+	{
+		return QVariant_Ptr(CQt.QComboBox_ItemData2((.)this.Ptr, index, role));
+	}
+	public void AddItem22(String text, IQVariant userData)
+	{
+		CQt.QComboBox_AddItem22((.)this.Ptr, libqt_string(text), (.)userData?.ObjectPtr);
+	}
+	public void AddItem3(IQIcon icon, String text, IQVariant userData)
+	{
+		CQt.QComboBox_AddItem3((.)this.Ptr, (.)icon?.ObjectPtr, libqt_string(text), (.)userData?.ObjectPtr);
+	}
+	public void InsertItem3(c_int index, String text, IQVariant userData)
+	{
+		CQt.QComboBox_InsertItem3((.)this.Ptr, index, libqt_string(text), (.)userData?.ObjectPtr);
+	}
+	public void InsertItem4(c_int index, IQIcon icon, String text, IQVariant userData)
+	{
+		CQt.QComboBox_InsertItem4((.)this.Ptr, index, (.)icon?.ObjectPtr, libqt_string(text), (.)userData?.ObjectPtr);
+	}
+	public void SetItemData3(c_int index, IQVariant value, c_int role)
+	{
+		CQt.QComboBox_SetItemData3((.)this.Ptr, index, (.)value?.ObjectPtr, role);
 	}
 }
 class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDevice
 {
 	private QFontComboBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QFontComboBox_currentFontChanged,
-		QFontComboBox_editTextChanged,
-		QFontComboBox_activated,
-		QFontComboBox_textActivated,
-		QFontComboBox_highlighted,
-		QFontComboBox_textHighlighted,
-		QFontComboBox_currentIndexChanged,
-		QFontComboBox_currentTextChanged,
-		QFontComboBox_windowTitleChanged,
-		QFontComboBox_windowIconChanged,
-		QFontComboBox_windowIconTextChanged,
-		QFontComboBox_customContextMenuRequested,
-		QFontComboBox_destroyed,
-		QFontComboBox_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QFontComboBox_Connect_CurrentFontChanged(obj.ObjectPtr,  => QtBeef_QFontComboBox_currentFontChanged);
-		CQt.QComboBox_Connect_EditTextChanged(obj.ObjectPtr,  => QtBeef_QComboBox_editTextChanged);
-		CQt.QComboBox_Connect_Activated(obj.ObjectPtr,  => QtBeef_QComboBox_activated);
-		CQt.QComboBox_Connect_TextActivated(obj.ObjectPtr,  => QtBeef_QComboBox_textActivated);
-		CQt.QComboBox_Connect_Highlighted(obj.ObjectPtr,  => QtBeef_QComboBox_highlighted);
-		CQt.QComboBox_Connect_TextHighlighted(obj.ObjectPtr,  => QtBeef_QComboBox_textHighlighted);
-		CQt.QComboBox_Connect_CurrentIndexChanged(obj.ObjectPtr,  => QtBeef_QComboBox_currentIndexChanged);
-		CQt.QComboBox_Connect_CurrentTextChanged(obj.ObjectPtr,  => QtBeef_QComboBox_currentTextChanged);
-		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
-		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
-		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
-		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** f)> OnCurrentFontChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string param1)> OnEditTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(c_int index)> OnActivated = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string param1)> OnTextActivated = .() ~ _.Dispose();
-	public Event<delegate void(c_int index)> OnHighlighted = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string param1)> OnTextHighlighted = .() ~ _.Dispose();
-	public Event<delegate void(c_int index)> OnCurrentIndexChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string param1)> OnCurrentTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
-	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QFontComboBox_currentFontChanged(void* ptr, void** f)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentFontChanged.Invoke(f);
-	}
-	static void QtBeef_QComboBox_editTextChanged(void* ptr, libqt_string param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnEditTextChanged.Invoke(param1);
-	}
-	static void QtBeef_QComboBox_activated(void* ptr, c_int index)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnActivated.Invoke(index);
-	}
-	static void QtBeef_QComboBox_textActivated(void* ptr, libqt_string param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTextActivated.Invoke(param1);
-	}
-	static void QtBeef_QComboBox_highlighted(void* ptr, c_int index)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnHighlighted.Invoke(index);
-	}
-	static void QtBeef_QComboBox_textHighlighted(void* ptr, libqt_string param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnTextHighlighted.Invoke(param1);
-	}
-	static void QtBeef_QComboBox_currentIndexChanged(void* ptr, c_int index)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentIndexChanged.Invoke(index);
-	}
-	static void QtBeef_QComboBox_currentTextChanged(void* ptr, libqt_string param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCurrentTextChanged.Invoke(param1);
-	}
-	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowTitleChanged.Invoke(title);
-	}
-	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconChanged.Invoke(icon);
-	}
-	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnWindowIconTextChanged.Invoke(iconText);
-	}
-	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnCustomContextMenuRequested.Invoke(pos);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QFontComboBox_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QFontComboBox_new((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFontComboBox_new2();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QFontComboBox_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -2139,9 +2015,9 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		return this.ptr.CurrentFont();
 	}
-	public QSize_Ptr SizeHint()
+	public  virtual QSize_Ptr OnSizeHint()
 	{
-		return this.ptr.SizeHint();
+		return default;
 	}
 	public void SetSampleTextForSystem(QFontDatabase_WritingSystem writingSystem, String sampleText)
 	{
@@ -2175,9 +2051,9 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		this.ptr.CurrentFontChanged(f);
 	}
-	public bool Event(IQEvent e)
+	public  virtual bool OnEvent(void** e)
 	{
-		return this.ptr.Event(e);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -2187,401 +2063,299 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public c_int MaxVisibleItems()
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.MaxVisibleItems();
+		return default;
 	}
-	public void SetMaxVisibleItems(c_int maxItems)
+	public void ObjectName(String outStr)
 	{
-		this.ptr.SetMaxVisibleItems(maxItems);
+		this.ptr.ObjectName(outStr);
 	}
-	public c_int Count()
+	public void SetObjectName(IQAnyStringView name)
 	{
-		return this.ptr.Count();
+		this.ptr.SetObjectName(name);
 	}
-	public void SetMaxCount(c_int max)
+	public bool IsWidgetType()
 	{
-		this.ptr.SetMaxCount(max);
+		return this.ptr.IsWidgetType();
 	}
-	public c_int MaxCount()
+	public bool IsWindowType()
 	{
-		return this.ptr.MaxCount();
+		return this.ptr.IsWindowType();
 	}
-	public bool DuplicatesEnabled()
+	public bool IsQuickItemType()
 	{
-		return this.ptr.DuplicatesEnabled();
+		return this.ptr.IsQuickItemType();
 	}
-	public void SetDuplicatesEnabled(bool enable)
+	public bool SignalsBlocked()
 	{
-		this.ptr.SetDuplicatesEnabled(enable);
+		return this.ptr.SignalsBlocked();
 	}
-	public void SetFrame(bool frame)
+	public bool BlockSignals(bool b)
 	{
-		this.ptr.SetFrame(frame);
+		return this.ptr.BlockSignals(b);
 	}
-	public bool HasFrame()
+	public QThread_Ptr Thread()
 	{
-		return this.ptr.HasFrame();
+		return this.ptr.Thread();
 	}
-	public c_int FindText(String text)
+	public void MoveToThread(IQThread thread)
 	{
-		return this.ptr.FindText(text);
+		this.ptr.MoveToThread(thread);
 	}
-	public c_int FindData(IQVariant data)
+	public c_int StartTimer(c_int interval)
 	{
-		return this.ptr.FindData(data);
+		return this.ptr.StartTimer(interval);
 	}
-	public QComboBox_InsertPolicy InsertPolicy()
+	public c_int StartTimer2(void* time)
 	{
-		return this.ptr.InsertPolicy();
+		return this.ptr.StartTimer2(time);
 	}
-	public void SetInsertPolicy(QComboBox_InsertPolicy policy)
+	public void KillTimer(c_int id)
 	{
-		this.ptr.SetInsertPolicy(policy);
+		this.ptr.KillTimer(id);
 	}
-	public QComboBox_SizeAdjustPolicy SizeAdjustPolicy()
+	public void** Children()
 	{
-		return this.ptr.SizeAdjustPolicy();
+		return this.ptr.Children();
 	}
-	public void SetSizeAdjustPolicy(QComboBox_SizeAdjustPolicy policy)
+	public void SetParent(IQObject parent)
 	{
-		this.ptr.SetSizeAdjustPolicy(policy);
+		this.ptr.SetParent(parent);
 	}
-	public c_int MinimumContentsLength()
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		return this.ptr.MinimumContentsLength();
+		this.ptr.InstallEventFilter(filterObj);
 	}
-	public void SetMinimumContentsLength(c_int characters)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		this.ptr.SetMinimumContentsLength(characters);
+		this.ptr.RemoveEventFilter(obj);
 	}
-	public QSize_Ptr IconSize()
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return this.ptr.IconSize();
+		return this.ptr.Connect(sender, signal, receiver, member);
 	}
-	public void SetIconSize(IQSize size)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		this.ptr.SetIconSize(size);
+		return this.ptr.Connect2(sender, signal, receiver, method);
 	}
-	public void SetPlaceholderText(String placeholderText)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		this.ptr.SetPlaceholderText(placeholderText);
+		return this.ptr.Connect3(sender, signal, member);
 	}
-	public void PlaceholderText(String outStr)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.PlaceholderText(outStr);
+		return this.ptr.Disconnect(sender, signal, receiver, member);
 	}
-	public bool IsEditable()
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return this.ptr.IsEditable();
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
 	}
-	public void SetEditable(bool editable)
+	public bool Disconnect3()
 	{
-		this.ptr.SetEditable(editable);
+		return this.ptr.Disconnect3();
 	}
-	public void SetLineEdit(IQLineEdit edit)
+	public bool Disconnect4(IQObject receiver)
 	{
-		this.ptr.SetLineEdit(edit);
+		return this.ptr.Disconnect4(receiver);
 	}
-	public QLineEdit_Ptr LineEdit()
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return this.ptr.LineEdit();
+		return this.ptr.Disconnect5(param1);
 	}
-	public void SetValidator(IQValidator v)
+	public void DumpObjectTree()
 	{
-		this.ptr.SetValidator(v);
+		this.ptr.DumpObjectTree();
 	}
-	public QValidator_Ptr Validator()
+	public void DumpObjectInfo()
 	{
-		return this.ptr.Validator();
+		this.ptr.DumpObjectInfo();
 	}
-	public void SetCompleter(IQCompleter c)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		this.ptr.SetCompleter(c);
+		return this.ptr.SetProperty(name, value);
 	}
-	public QCompleter_Ptr Completer()
+	public QVariant_Ptr Property(c_char* name)
 	{
-		return this.ptr.Completer();
+		return this.ptr.Property(name);
 	}
-	public QAbstractItemDelegate_Ptr ItemDelegate()
+	public void* DynamicPropertyNames()
 	{
-		return this.ptr.ItemDelegate();
+		return this.ptr.DynamicPropertyNames();
 	}
-	public void SetItemDelegate(IQAbstractItemDelegate _delegate)
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		this.ptr.SetItemDelegate(_delegate);
+		return this.ptr.BindingStorage();
 	}
-	public QAbstractItemModel_Ptr Model()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return this.ptr.Model();
+		return this.ptr.BindingStorage2();
 	}
-	public void SetModel(IQAbstractItemModel model)
+	public void Destroyed()
 	{
-		this.ptr.SetModel(model);
+		this.ptr.Destroyed();
 	}
-	public QModelIndex_Ptr RootModelIndex()
+	public QObject_Ptr Parent()
 	{
-		return this.ptr.RootModelIndex();
+		return this.ptr.Parent();
 	}
-	public void SetRootModelIndex(IQModelIndex index)
+	public bool Inherits(c_char* classname)
 	{
-		this.ptr.SetRootModelIndex(index);
+		return this.ptr.Inherits(classname);
 	}
-	public c_int ModelColumn()
+	public void DeleteLater()
 	{
-		return this.ptr.ModelColumn();
+		this.ptr.DeleteLater();
 	}
-	public void SetModelColumn(c_int visibleColumn)
+	public QObject_Ptr Sender()
 	{
-		this.ptr.SetModelColumn(visibleColumn);
+		return this.ptr.Sender();
 	}
-	public c_int CurrentIndex()
+	public c_int SenderSignalIndex()
 	{
-		return this.ptr.CurrentIndex();
+		return this.ptr.SenderSignalIndex();
 	}
-	public void CurrentText(String outStr)
+	public c_int Receivers(c_char* signal)
 	{
-		this.ptr.CurrentText(outStr);
+		return this.ptr.Receivers(signal);
 	}
-	public QVariant_Ptr CurrentData()
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return this.ptr.CurrentData();
+		return this.ptr.IsSignalConnected(signal);
 	}
-	public void ItemText(String outStr, c_int index)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.ItemText(outStr, index);
 	}
-	public QIcon_Ptr ItemIcon(c_int index)
+	public  virtual void OnChildEvent(void** event)
 	{
-		return this.ptr.ItemIcon(index);
 	}
-	public QVariant_Ptr ItemData(c_int index)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		return this.ptr.ItemData(index);
 	}
-	public void AddItem(String text)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.AddItem(text);
 	}
-	public void AddItem2(IQIcon icon, String text)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.AddItem2(icon, text);
 	}
-	public void AddItems(void** texts)
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		this.ptr.AddItems(texts);
+		return this.ptr.StartTimer22(interval, timerType);
 	}
-	public void InsertItem(c_int index, String text)
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		this.ptr.InsertItem(index, text);
+		return this.ptr.StartTimer23(time, timerType);
 	}
-	public void InsertItem2(c_int index, IQIcon icon, String text)
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		this.ptr.InsertItem2(index, icon, text);
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
 	}
-	public void InsertItems(c_int index, void** texts)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		this.ptr.InsertItems(index, texts);
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
 	}
-	public void InsertSeparator(c_int index)
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		this.ptr.InsertSeparator(index);
+		return this.ptr.Connect4(sender, signal, member, type);
 	}
-	public void RemoveItem(c_int index)
+	public bool Disconnect1(c_char* signal)
 	{
-		this.ptr.RemoveItem(index);
+		return this.ptr.Disconnect1(signal);
 	}
-	public void SetItemText(c_int index, String text)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		this.ptr.SetItemText(index, text);
+		return this.ptr.Disconnect22(signal, receiver);
 	}
-	public void SetItemIcon(c_int index, IQIcon icon)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		this.ptr.SetItemIcon(index, icon);
+		return this.ptr.Disconnect32(signal, receiver, member);
 	}
-	public void SetItemData(c_int index, IQVariant value)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		this.ptr.SetItemData(index, value);
+		return this.ptr.Disconnect23(receiver, member);
 	}
-	public QAbstractItemView_Ptr View()
+	public void Destroyed1(IQObject param1)
 	{
-		return this.ptr.View();
+		this.ptr.Destroyed1(param1);
 	}
-	public void SetView(IQAbstractItemView itemView)
+	public  virtual c_int OnDevType()
 	{
-		this.ptr.SetView(itemView);
+		return default;
 	}
-	public QSize_Ptr MinimumSizeHint()
+	public bool PaintingActive()
 	{
-		return this.ptr.MinimumSizeHint();
+		return this.ptr.PaintingActive();
 	}
-	public void ShowPopup()
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
 	{
-		this.ptr.ShowPopup();
+		return default;
 	}
-	public void HidePopup()
+	public c_int Width()
 	{
-		this.ptr.HidePopup();
+		return this.ptr.Width();
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
+	public c_int Height()
 	{
-		return this.ptr.InputMethodQuery(param1);
+		return this.ptr.Height();
 	}
-	public QVariant_Ptr InputMethodQuery2(Qt_InputMethodQuery query, IQVariant argument)
+	public c_int WidthMM()
 	{
-		return this.ptr.InputMethodQuery2(query, argument);
+		return this.ptr.WidthMM();
 	}
-	public void Clear()
+	public c_int HeightMM()
 	{
-		this.ptr.Clear();
+		return this.ptr.HeightMM();
 	}
-	public void ClearEditText()
+	public c_int LogicalDpiX()
 	{
-		this.ptr.ClearEditText();
+		return this.ptr.LogicalDpiX();
 	}
-	public void SetEditText(String text)
+	public c_int LogicalDpiY()
 	{
-		this.ptr.SetEditText(text);
+		return this.ptr.LogicalDpiY();
 	}
-	public void SetCurrentIndex(c_int index)
+	public c_int PhysicalDpiX()
 	{
-		this.ptr.SetCurrentIndex(index);
+		return this.ptr.PhysicalDpiX();
 	}
-	public void SetCurrentText(String text)
+	public c_int PhysicalDpiY()
 	{
-		this.ptr.SetCurrentText(text);
+		return this.ptr.PhysicalDpiY();
 	}
-	public void EditTextChanged(String param1)
+	public double DevicePixelRatio()
 	{
-		this.ptr.EditTextChanged(param1);
+		return this.ptr.DevicePixelRatio();
 	}
-	public void Activated(c_int index)
+	public double DevicePixelRatioF()
 	{
-		this.ptr.Activated(index);
+		return this.ptr.DevicePixelRatioF();
 	}
-	public void TextActivated(String param1)
+	public c_int ColorCount()
 	{
-		this.ptr.TextActivated(param1);
+		return this.ptr.ColorCount();
 	}
-	public void Highlighted(c_int index)
+	public c_int Depth()
 	{
-		this.ptr.Highlighted(index);
+		return this.ptr.Depth();
 	}
-	public void TextHighlighted(String param1)
+	public double DevicePixelRatioFScale()
 	{
-		this.ptr.TextHighlighted(param1);
+		return this.ptr.DevicePixelRatioFScale();
 	}
-	public void CurrentIndexChanged(c_int index)
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
 	{
-		this.ptr.CurrentIndexChanged(index);
+		return default;
 	}
-	public void CurrentTextChanged(String param1)
+	public  virtual void OnInitPainter(void** painter)
 	{
-		this.ptr.CurrentTextChanged(param1);
 	}
-	public void FocusInEvent(IQFocusEvent e)
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
 	{
-		this.ptr.FocusInEvent(e);
+		return default;
 	}
-	public void FocusOutEvent(IQFocusEvent e)
+	public  virtual QPainter_Ptr OnSharedPainter()
 	{
-		this.ptr.FocusOutEvent(e);
-	}
-	public void ChangeEvent(IQEvent e)
-	{
-		this.ptr.ChangeEvent(e);
-	}
-	public void ResizeEvent(IQResizeEvent e)
-	{
-		this.ptr.ResizeEvent(e);
-	}
-	public void PaintEvent(IQPaintEvent e)
-	{
-		this.ptr.PaintEvent(e);
-	}
-	public void ShowEvent(IQShowEvent e)
-	{
-		this.ptr.ShowEvent(e);
-	}
-	public void HideEvent(IQHideEvent e)
-	{
-		this.ptr.HideEvent(e);
-	}
-	public void MousePressEvent(IQMouseEvent e)
-	{
-		this.ptr.MousePressEvent(e);
-	}
-	public void MouseReleaseEvent(IQMouseEvent e)
-	{
-		this.ptr.MouseReleaseEvent(e);
-	}
-	public void KeyPressEvent(IQKeyEvent e)
-	{
-		this.ptr.KeyPressEvent(e);
-	}
-	public void KeyReleaseEvent(IQKeyEvent e)
-	{
-		this.ptr.KeyReleaseEvent(e);
-	}
-	public void WheelEvent(IQWheelEvent e)
-	{
-		this.ptr.WheelEvent(e);
-	}
-	public void ContextMenuEvent(IQContextMenuEvent e)
-	{
-		this.ptr.ContextMenuEvent(e);
-	}
-	public void InputMethodEvent(IQInputMethodEvent param1)
-	{
-		this.ptr.InputMethodEvent(param1);
-	}
-	public void InitStyleOption(IQStyleOptionComboBox option)
-	{
-		this.ptr.InitStyleOption(option);
-	}
-	public c_int FindText2(String text, void* flags)
-	{
-		return this.ptr.FindText2(text, flags);
-	}
-	public c_int FindData2(IQVariant data, c_int role)
-	{
-		return this.ptr.FindData2(data, role);
-	}
-	public c_int FindData3(IQVariant data, c_int role, void* flags)
-	{
-		return this.ptr.FindData3(data, role, flags);
-	}
-	public QVariant_Ptr CurrentData1(c_int role)
-	{
-		return this.ptr.CurrentData1(role);
-	}
-	public QVariant_Ptr ItemData2(c_int index, c_int role)
-	{
-		return this.ptr.ItemData2(index, role);
-	}
-	public void AddItem22(String text, IQVariant userData)
-	{
-		this.ptr.AddItem22(text, userData);
-	}
-	public void AddItem3(IQIcon icon, String text, IQVariant userData)
-	{
-		this.ptr.AddItem3(icon, text, userData);
-	}
-	public void InsertItem3(c_int index, String text, IQVariant userData)
-	{
-		this.ptr.InsertItem3(index, text, userData);
-	}
-	public void InsertItem4(c_int index, IQIcon icon, String text, IQVariant userData)
-	{
-		this.ptr.InsertItem4(index, icon, text, userData);
-	}
-	public void SetItemData3(c_int index, IQVariant value, c_int role)
-	{
-		this.ptr.SetItemData3(index, value, role);
-	}
-	public c_int DevType()
-	{
-		return this.ptr.DevType();
+		return default;
 	}
 	public void* WinId()
 	{
@@ -2678,14 +2452,6 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	public QSize_Ptr Size()
 	{
 		return this.ptr.Size();
-	}
-	public c_int Width()
-	{
-		return this.ptr.Width();
-	}
-	public c_int Height()
-	{
-		return this.ptr.Height();
 	}
 	public QRect_Ptr Rect()
 	{
@@ -3251,9 +3017,8 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		this.ptr.Repaint4(param1);
 	}
-	public void SetVisible(bool visible)
+	public  virtual void OnSetVisible(bool visible)
 	{
-		this.ptr.SetVisible(visible);
 	}
 	public void SetHidden(bool hidden)
 	{
@@ -3371,6 +3136,10 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		this.ptr.OverrideWindowState(state);
 	}
+	public  virtual QSize_Ptr OnMinimumSizeHint()
+	{
+		return default;
+	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
 		return this.ptr.SizePolicy();
@@ -3383,13 +3152,13 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		this.ptr.SetSizePolicy2(horizontal, vertical);
 	}
-	public c_int HeightForWidth(c_int param1)
+	public  virtual c_int OnHeightForWidth(c_int param1)
 	{
-		return this.ptr.HeightForWidth(param1);
+		return default;
 	}
-	public bool HasHeightForWidth()
+	public  virtual bool OnHasHeightForWidth()
 	{
-		return this.ptr.HasHeightForWidth();
+		return default;
 	}
 	public QRegion_Ptr VisibleRegion()
 	{
@@ -3422,10 +3191,6 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	public void UpdateGeometry()
 	{
 		this.ptr.UpdateGeometry();
-	}
-	public void SetParent(IQWidget parent)
-	{
-		this.ptr.SetParent(parent);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
@@ -3543,10 +3308,6 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		return this.ptr.TestAttribute(param1);
 	}
-	public QPaintEngine_Ptr PaintEngine()
-	{
-		return this.ptr.PaintEngine();
-	}
 	public void EnsurePolished()
 	{
 		this.ptr.EnsurePolished();
@@ -3599,73 +3360,91 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		this.ptr.CustomContextMenuRequested(pos);
 	}
-	public void MouseDoubleClickEvent(IQMouseEvent event)
+	public  virtual void OnMousePressEvent(void** event)
 	{
-		this.ptr.MouseDoubleClickEvent(event);
 	}
-	public void MouseMoveEvent(IQMouseEvent event)
+	public  virtual void OnMouseReleaseEvent(void** event)
 	{
-		this.ptr.MouseMoveEvent(event);
 	}
-	public void EnterEvent(IQEnterEvent event)
+	public  virtual void OnMouseDoubleClickEvent(void** event)
 	{
-		this.ptr.EnterEvent(event);
 	}
-	public void LeaveEvent(IQEvent event)
+	public  virtual void OnMouseMoveEvent(void** event)
 	{
-		this.ptr.LeaveEvent(event);
 	}
-	public void MoveEvent(IQMoveEvent event)
+	public  virtual void OnWheelEvent(void** event)
 	{
-		this.ptr.MoveEvent(event);
 	}
-	public void CloseEvent(IQCloseEvent event)
+	public  virtual void OnKeyPressEvent(void** event)
 	{
-		this.ptr.CloseEvent(event);
 	}
-	public void TabletEvent(IQTabletEvent event)
+	public  virtual void OnKeyReleaseEvent(void** event)
 	{
-		this.ptr.TabletEvent(event);
 	}
-	public void ActionEvent(IQActionEvent event)
+	public  virtual void OnFocusInEvent(void** event)
 	{
-		this.ptr.ActionEvent(event);
 	}
-	public void DragEnterEvent(IQDragEnterEvent event)
+	public  virtual void OnFocusOutEvent(void** event)
 	{
-		this.ptr.DragEnterEvent(event);
 	}
-	public void DragMoveEvent(IQDragMoveEvent event)
+	public  virtual void OnEnterEvent(void** event)
 	{
-		this.ptr.DragMoveEvent(event);
 	}
-	public void DragLeaveEvent(IQDragLeaveEvent event)
+	public  virtual void OnLeaveEvent(void** event)
 	{
-		this.ptr.DragLeaveEvent(event);
 	}
-	public void DropEvent(IQDropEvent event)
+	public  virtual void OnPaintEvent(void** event)
 	{
-		this.ptr.DropEvent(event);
 	}
-	public bool NativeEvent(void** eventType, void* message, void** result)
+	public  virtual void OnMoveEvent(void** event)
 	{
-		return this.ptr.NativeEvent(eventType, message, result);
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
+	public  virtual void OnResizeEvent(void** event)
 	{
-		return this.ptr.Metric(param1);
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnCloseEvent(void** event)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual void OnContextMenuEvent(void** event)
 	{
-		return this.ptr.Redirected(offset);
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual void OnTabletEvent(void** event)
 	{
-		return this.ptr.SharedPainter();
+	}
+	public  virtual void OnActionEvent(void** event)
+	{
+	}
+	public  virtual void OnDragEnterEvent(void** event)
+	{
+	}
+	public  virtual void OnDragMoveEvent(void** event)
+	{
+	}
+	public  virtual void OnDragLeaveEvent(void** event)
+	{
+	}
+	public  virtual void OnDropEvent(void** event)
+	{
+	}
+	public  virtual void OnShowEvent(void** event)
+	{
+	}
+	public  virtual void OnHideEvent(void** event)
+	{
+	}
+	public  virtual bool OnNativeEvent(void** eventType, void* message, void** result)
+	{
+		return default;
+	}
+	public  virtual void OnChangeEvent(void** param1)
+	{
+	}
+	public  virtual void OnInputMethodEvent(void** param1)
+	{
+	}
+	public  virtual QVariant_Ptr OnInputMethodQuery(Qt_InputMethodQuery param1)
+	{
+		return default;
 	}
 	public void* InputMethodHints()
 	{
@@ -3687,9 +3466,9 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		this.ptr.Destroy();
 	}
-	public bool FocusNextPrevChild(bool next)
+	public  virtual bool OnFocusNextPrevChild(bool next)
 	{
-		return this.ptr.FocusNextPrevChild(next);
+		return default;
 	}
 	public bool FocusNextChild()
 	{
@@ -3783,269 +3562,329 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 	{
 		this.ptr.Destroy2(destroyWindow, destroySubWindows);
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public c_int MaxVisibleItems()
 	{
-		return this.ptr.EventFilter(watched, event);
+		return this.ptr.MaxVisibleItems();
 	}
-	public void ObjectName(String outStr)
+	public void SetMaxVisibleItems(c_int maxItems)
 	{
-		this.ptr.ObjectName(outStr);
+		this.ptr.SetMaxVisibleItems(maxItems);
 	}
-	public void SetObjectName(IQAnyStringView name)
+	public c_int Count()
 	{
-		this.ptr.SetObjectName(name);
+		return this.ptr.Count();
 	}
-	public bool IsWidgetType()
+	public void SetMaxCount(c_int max)
 	{
-		return this.ptr.IsWidgetType();
+		this.ptr.SetMaxCount(max);
 	}
-	public bool IsWindowType()
+	public c_int MaxCount()
 	{
-		return this.ptr.IsWindowType();
+		return this.ptr.MaxCount();
 	}
-	public bool IsQuickItemType()
+	public bool DuplicatesEnabled()
 	{
-		return this.ptr.IsQuickItemType();
+		return this.ptr.DuplicatesEnabled();
 	}
-	public bool SignalsBlocked()
+	public void SetDuplicatesEnabled(bool enable)
 	{
-		return this.ptr.SignalsBlocked();
+		this.ptr.SetDuplicatesEnabled(enable);
 	}
-	public bool BlockSignals(bool b)
+	public void SetFrame(bool frame)
 	{
-		return this.ptr.BlockSignals(b);
+		this.ptr.SetFrame(frame);
 	}
-	public QThread_Ptr Thread()
+	public bool HasFrame()
 	{
-		return this.ptr.Thread();
+		return this.ptr.HasFrame();
 	}
-	public void MoveToThread(IQThread thread)
+	public c_int FindText(String text)
 	{
-		this.ptr.MoveToThread(thread);
+		return this.ptr.FindText(text);
 	}
-	public c_int StartTimer(c_int interval)
+	public c_int FindData(IQVariant data)
 	{
-		return this.ptr.StartTimer(interval);
+		return this.ptr.FindData(data);
 	}
-	public c_int StartTimer2(void* time)
+	public QComboBox_InsertPolicy InsertPolicy()
 	{
-		return this.ptr.StartTimer2(time);
+		return this.ptr.InsertPolicy();
 	}
-	public void KillTimer(c_int id)
+	public void SetInsertPolicy(QComboBox_InsertPolicy policy)
 	{
-		this.ptr.KillTimer(id);
+		this.ptr.SetInsertPolicy(policy);
 	}
-	public void** Children()
+	public QComboBox_SizeAdjustPolicy SizeAdjustPolicy()
 	{
-		return this.ptr.Children();
+		return this.ptr.SizeAdjustPolicy();
 	}
-	public void InstallEventFilter(IQObject filterObj)
+	public void SetSizeAdjustPolicy(QComboBox_SizeAdjustPolicy policy)
 	{
-		this.ptr.InstallEventFilter(filterObj);
+		this.ptr.SetSizeAdjustPolicy(policy);
 	}
-	public void RemoveEventFilter(IQObject obj)
+	public c_int MinimumContentsLength()
 	{
-		this.ptr.RemoveEventFilter(obj);
+		return this.ptr.MinimumContentsLength();
 	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetMinimumContentsLength(c_int characters)
 	{
-		return this.ptr.Connect(sender, signal, receiver, member);
+		this.ptr.SetMinimumContentsLength(characters);
 	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public QSize_Ptr IconSize()
 	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
+		return this.ptr.IconSize();
 	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	public void SetIconSize(IQSize size)
 	{
-		return this.ptr.Connect3(sender, signal, member);
+		this.ptr.SetIconSize(size);
 	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public void SetPlaceholderText(String placeholderText)
 	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
+		this.ptr.SetPlaceholderText(placeholderText);
 	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	public void PlaceholderText(String outStr)
 	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
+		this.ptr.PlaceholderText(outStr);
 	}
-	public bool Disconnect3()
+	public bool IsEditable()
 	{
-		return this.ptr.Disconnect3();
+		return this.ptr.IsEditable();
 	}
-	public bool Disconnect4(IQObject receiver)
+	public void SetEditable(bool editable)
 	{
-		return this.ptr.Disconnect4(receiver);
+		this.ptr.SetEditable(editable);
 	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
+	public void SetLineEdit(IQLineEdit edit)
 	{
-		return this.ptr.Disconnect5(param1);
+		this.ptr.SetLineEdit(edit);
 	}
-	public void DumpObjectTree()
+	public QLineEdit_Ptr LineEdit()
 	{
-		this.ptr.DumpObjectTree();
+		return this.ptr.LineEdit();
 	}
-	public void DumpObjectInfo()
+	public void SetValidator(IQValidator v)
 	{
-		this.ptr.DumpObjectInfo();
+		this.ptr.SetValidator(v);
 	}
-	public bool SetProperty(c_char* name, IQVariant value)
+	public QValidator_Ptr Validator()
 	{
-		return this.ptr.SetProperty(name, value);
+		return this.ptr.Validator();
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public void SetCompleter(IQCompleter c)
 	{
-		return this.ptr.Property(name);
+		this.ptr.SetCompleter(c);
 	}
-	public void* DynamicPropertyNames()
+	public QCompleter_Ptr Completer()
 	{
-		return this.ptr.DynamicPropertyNames();
+		return this.ptr.Completer();
 	}
-	public QBindingStorage_Ptr BindingStorage()
+	public QAbstractItemDelegate_Ptr ItemDelegate()
 	{
-		return this.ptr.BindingStorage();
+		return this.ptr.ItemDelegate();
 	}
-	public QBindingStorage_Ptr BindingStorage2()
+	public void SetItemDelegate(IQAbstractItemDelegate _delegate)
 	{
-		return this.ptr.BindingStorage2();
+		this.ptr.SetItemDelegate(_delegate);
 	}
-	public void Destroyed()
+	public QAbstractItemModel_Ptr Model()
 	{
-		this.ptr.Destroyed();
+		return this.ptr.Model();
 	}
-	public QObject_Ptr Parent()
+	public  virtual void OnSetModel(void** model)
 	{
-		return this.ptr.Parent();
 	}
-	public bool Inherits(c_char* classname)
+	public QModelIndex_Ptr RootModelIndex()
 	{
-		return this.ptr.Inherits(classname);
+		return this.ptr.RootModelIndex();
 	}
-	public void DeleteLater()
+	public void SetRootModelIndex(IQModelIndex index)
 	{
-		this.ptr.DeleteLater();
+		this.ptr.SetRootModelIndex(index);
 	}
-	public QObject_Ptr Sender()
+	public c_int ModelColumn()
 	{
-		return this.ptr.Sender();
+		return this.ptr.ModelColumn();
 	}
-	public c_int SenderSignalIndex()
+	public void SetModelColumn(c_int visibleColumn)
 	{
-		return this.ptr.SenderSignalIndex();
+		this.ptr.SetModelColumn(visibleColumn);
 	}
-	public c_int Receivers(c_char* signal)
+	public c_int CurrentIndex()
 	{
-		return this.ptr.Receivers(signal);
+		return this.ptr.CurrentIndex();
 	}
-	public bool IsSignalConnected(IQMetaMethod signal)
+	public void CurrentText(String outStr)
 	{
-		return this.ptr.IsSignalConnected(signal);
+		this.ptr.CurrentText(outStr);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public QVariant_Ptr CurrentData()
 	{
-		this.ptr.TimerEvent(event);
+		return this.ptr.CurrentData();
 	}
-	public void ChildEvent(IQChildEvent event)
+	public void ItemText(String outStr, c_int index)
 	{
-		this.ptr.ChildEvent(event);
+		this.ptr.ItemText(outStr, index);
 	}
-	public void CustomEvent(IQEvent event)
+	public QIcon_Ptr ItemIcon(c_int index)
 	{
-		this.ptr.CustomEvent(event);
+		return this.ptr.ItemIcon(index);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public QVariant_Ptr ItemData(c_int index)
 	{
-		this.ptr.ConnectNotify(signal);
+		return this.ptr.ItemData(index);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public void AddItem(String text)
 	{
-		this.ptr.DisconnectNotify(signal);
+		this.ptr.AddItem(text);
 	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	public void AddItem2(IQIcon icon, String text)
 	{
-		return this.ptr.StartTimer22(interval, timerType);
+		this.ptr.AddItem2(icon, text);
 	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	public void AddItems(void** texts)
 	{
-		return this.ptr.StartTimer23(time, timerType);
+		this.ptr.AddItems(texts);
 	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public void InsertItem(c_int index, String text)
 	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+		this.ptr.InsertItem(index, text);
 	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public void InsertItem2(c_int index, IQIcon icon, String text)
 	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
+		this.ptr.InsertItem2(index, icon, text);
 	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public void InsertItems(c_int index, void** texts)
 	{
-		return this.ptr.Connect4(sender, signal, member, type);
+		this.ptr.InsertItems(index, texts);
 	}
-	public bool Disconnect1(c_char* signal)
+	public void InsertSeparator(c_int index)
 	{
-		return this.ptr.Disconnect1(signal);
+		this.ptr.InsertSeparator(index);
 	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
+	public void RemoveItem(c_int index)
 	{
-		return this.ptr.Disconnect22(signal, receiver);
+		this.ptr.RemoveItem(index);
 	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	public void SetItemText(c_int index, String text)
 	{
-		return this.ptr.Disconnect32(signal, receiver, member);
+		this.ptr.SetItemText(index, text);
 	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
+	public void SetItemIcon(c_int index, IQIcon icon)
 	{
-		return this.ptr.Disconnect23(receiver, member);
+		this.ptr.SetItemIcon(index, icon);
 	}
-	public void Destroyed1(IQObject param1)
+	public void SetItemData(c_int index, IQVariant value)
 	{
-		this.ptr.Destroyed1(param1);
+		this.ptr.SetItemData(index, value);
 	}
-	public bool PaintingActive()
+	public QAbstractItemView_Ptr View()
 	{
-		return this.ptr.PaintingActive();
+		return this.ptr.View();
 	}
-	public c_int WidthMM()
+	public void SetView(IQAbstractItemView itemView)
 	{
-		return this.ptr.WidthMM();
+		this.ptr.SetView(itemView);
 	}
-	public c_int HeightMM()
+	public  virtual void OnShowPopup()
 	{
-		return this.ptr.HeightMM();
 	}
-	public c_int LogicalDpiX()
+	public  virtual void OnHidePopup()
 	{
-		return this.ptr.LogicalDpiX();
 	}
-	public c_int LogicalDpiY()
+	public QVariant_Ptr InputMethodQuery2(Qt_InputMethodQuery query, IQVariant argument)
 	{
-		return this.ptr.LogicalDpiY();
+		return this.ptr.InputMethodQuery2(query, argument);
 	}
-	public c_int PhysicalDpiX()
+	public void Clear()
 	{
-		return this.ptr.PhysicalDpiX();
+		this.ptr.Clear();
 	}
-	public c_int PhysicalDpiY()
+	public void ClearEditText()
 	{
-		return this.ptr.PhysicalDpiY();
+		this.ptr.ClearEditText();
 	}
-	public double DevicePixelRatio()
+	public void SetEditText(String text)
 	{
-		return this.ptr.DevicePixelRatio();
+		this.ptr.SetEditText(text);
 	}
-	public double DevicePixelRatioF()
+	public void SetCurrentIndex(c_int index)
 	{
-		return this.ptr.DevicePixelRatioF();
+		this.ptr.SetCurrentIndex(index);
 	}
-	public c_int ColorCount()
+	public void SetCurrentText(String text)
 	{
-		return this.ptr.ColorCount();
+		this.ptr.SetCurrentText(text);
 	}
-	public c_int Depth()
+	public void EditTextChanged(String param1)
 	{
-		return this.ptr.Depth();
+		this.ptr.EditTextChanged(param1);
 	}
-	public double DevicePixelRatioFScale()
+	public void Activated(c_int index)
 	{
-		return this.ptr.DevicePixelRatioFScale();
+		this.ptr.Activated(index);
+	}
+	public void TextActivated(String param1)
+	{
+		this.ptr.TextActivated(param1);
+	}
+	public void Highlighted(c_int index)
+	{
+		this.ptr.Highlighted(index);
+	}
+	public void TextHighlighted(String param1)
+	{
+		this.ptr.TextHighlighted(param1);
+	}
+	public void CurrentIndexChanged(c_int index)
+	{
+		this.ptr.CurrentIndexChanged(index);
+	}
+	public void CurrentTextChanged(String param1)
+	{
+		this.ptr.CurrentTextChanged(param1);
+	}
+	public  virtual void OnInitStyleOption(void** option)
+	{
+	}
+	public c_int FindText2(String text, void* flags)
+	{
+		return this.ptr.FindText2(text, flags);
+	}
+	public c_int FindData2(IQVariant data, c_int role)
+	{
+		return this.ptr.FindData2(data, role);
+	}
+	public c_int FindData3(IQVariant data, c_int role, void* flags)
+	{
+		return this.ptr.FindData3(data, role, flags);
+	}
+	public QVariant_Ptr CurrentData1(c_int role)
+	{
+		return this.ptr.CurrentData1(role);
+	}
+	public QVariant_Ptr ItemData2(c_int index, c_int role)
+	{
+		return this.ptr.ItemData2(index, role);
+	}
+	public void AddItem22(String text, IQVariant userData)
+	{
+		this.ptr.AddItem22(text, userData);
+	}
+	public void AddItem3(IQIcon icon, String text, IQVariant userData)
+	{
+		this.ptr.AddItem3(icon, text, userData);
+	}
+	public void InsertItem3(c_int index, String text, IQVariant userData)
+	{
+		this.ptr.InsertItem3(index, text, userData);
+	}
+	public void InsertItem4(c_int index, IQIcon icon, String text, IQVariant userData)
+	{
+		this.ptr.InsertItem4(index, icon, text, userData);
+	}
+	public void SetItemData3(c_int index, IQVariant value, c_int role)
+	{
+		this.ptr.SetItemData3(index, value, role);
 	}
 }
 interface IQFontComboBox : IQtObjectInterface
@@ -4061,10 +3900,22 @@ extension CQt
 	public static extern void QFontComboBox_Delete(QFontComboBox_Ptr self);
 	[LinkName("QFontComboBox_MetaObject")]
 	public static extern void** QFontComboBox_MetaObject(void* self);
+	
+	public function void QFontComboBox_OnMetaObject_action(void* self);
+	[LinkName("QFontComboBox_OnMetaObject")]
+	public static extern void** QFontComboBox_OnMetaObject(void* self, QFontComboBox_OnMetaObject_action _action);
 	[LinkName("QFontComboBox_Qt_Metacast")]
 	public static extern void* QFontComboBox_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QFontComboBox_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QFontComboBox_OnMetacast")]
+	public static extern void* QFontComboBox_OnMetacast(void* self, QFontComboBox_OnMetacast_action _action);
 	[LinkName("QFontComboBox_Qt_Metacall")]
 	public static extern c_int QFontComboBox_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QFontComboBox_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QFontComboBox_OnMetacall")]
+	public static extern c_int QFontComboBox_OnMetacall(void* self, QFontComboBox_OnMetacall_action _action);
 	[LinkName("QFontComboBox_Tr")]
 	public static extern libqt_string QFontComboBox_Tr(c_char* s);
 	[LinkName("QFontComboBox_SetWritingSystem")]
@@ -4079,6 +3930,10 @@ extension CQt
 	public static extern void* QFontComboBox_CurrentFont(void* self);
 	[LinkName("QFontComboBox_SizeHint")]
 	public static extern void* QFontComboBox_SizeHint(void* self);
+	
+	public function void QFontComboBox_OnSizeHint_action(void* self);
+	[LinkName("QFontComboBox_OnSizeHint")]
+	public static extern void* QFontComboBox_OnSizeHint(void* self, QFontComboBox_OnSizeHint_action _action);
 	[LinkName("QFontComboBox_SetSampleTextForSystem")]
 	public static extern void QFontComboBox_SetSampleTextForSystem(void* self, QFontDatabase_WritingSystem writingSystem, libqt_string sampleText);
 	[LinkName("QFontComboBox_SampleTextForSystem")]
@@ -4096,15 +3951,313 @@ extension CQt
 	[LinkName("QFontComboBox_CurrentFontChanged")]
 	public static extern void QFontComboBox_CurrentFontChanged(void* self, void** f);
 	
-	public function void QFontComboBox_currentFontChanged_action(void* self, void** f);
+	public function void QFontComboBox_Connect_CurrentFontChanged_action(void* self, void** f);
 	[LinkName("QFontComboBox_Connect_CurrentFontChanged")]
-	public static extern void QFontComboBox_Connect_CurrentFontChanged(void* self, QFontComboBox_currentFontChanged_action _action);
+	public static extern void QFontComboBox_Connect_CurrentFontChanged(void* self, QFontComboBox_Connect_CurrentFontChanged_action _action);
 	[LinkName("QFontComboBox_Event")]
 	public static extern bool QFontComboBox_Event(void* self, void** e);
+	
+	public function void QFontComboBox_OnEvent_action(void* self, void** e);
+	[LinkName("QFontComboBox_OnEvent")]
+	public static extern bool QFontComboBox_OnEvent(void* self, QFontComboBox_OnEvent_action _action);
 	[LinkName("QFontComboBox_Tr2")]
 	public static extern libqt_string QFontComboBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QFontComboBox_Tr3")]
 	public static extern libqt_string QFontComboBox_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QFontComboBox_EventFilter")]
+	public static extern bool QFontComboBox_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QFontComboBox_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QFontComboBox_OnEventFilter")]
+	public static extern bool QFontComboBox_OnEventFilter(void* self, QFontComboBox_OnEventFilter_action _action);
+	[LinkName("QFontComboBox_TimerEvent")]
+	public static extern void QFontComboBox_TimerEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnTimerEvent")]
+	public static extern void QFontComboBox_OnTimerEvent(void* self, QFontComboBox_OnTimerEvent_action _action);
+	[LinkName("QFontComboBox_ChildEvent")]
+	public static extern void QFontComboBox_ChildEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnChildEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnChildEvent")]
+	public static extern void QFontComboBox_OnChildEvent(void* self, QFontComboBox_OnChildEvent_action _action);
+	[LinkName("QFontComboBox_CustomEvent")]
+	public static extern void QFontComboBox_CustomEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnCustomEvent")]
+	public static extern void QFontComboBox_OnCustomEvent(void* self, QFontComboBox_OnCustomEvent_action _action);
+	[LinkName("QFontComboBox_ConnectNotify")]
+	public static extern void QFontComboBox_ConnectNotify(void* self, void** signal);
+	
+	public function void QFontComboBox_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QFontComboBox_OnConnectNotify")]
+	public static extern void QFontComboBox_OnConnectNotify(void* self, QFontComboBox_OnConnectNotify_action _action);
+	[LinkName("QFontComboBox_DisconnectNotify")]
+	public static extern void QFontComboBox_DisconnectNotify(void* self, void** signal);
+	
+	public function void QFontComboBox_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QFontComboBox_OnDisconnectNotify")]
+	public static extern void QFontComboBox_OnDisconnectNotify(void* self, QFontComboBox_OnDisconnectNotify_action _action);
+	[LinkName("QFontComboBox_DevType")]
+	public static extern c_int QFontComboBox_DevType(void* self);
+	
+	public function void QFontComboBox_OnDevType_action(void* self);
+	[LinkName("QFontComboBox_OnDevType")]
+	public static extern c_int QFontComboBox_OnDevType(void* self, QFontComboBox_OnDevType_action _action);
+	[LinkName("QFontComboBox_PaintEngine")]
+	public static extern void** QFontComboBox_PaintEngine(void* self);
+	
+	public function void QFontComboBox_OnPaintEngine_action(void* self);
+	[LinkName("QFontComboBox_OnPaintEngine")]
+	public static extern void** QFontComboBox_OnPaintEngine(void* self, QFontComboBox_OnPaintEngine_action _action);
+	[LinkName("QFontComboBox_Metric")]
+	public static extern c_int QFontComboBox_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QFontComboBox_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QFontComboBox_OnMetric")]
+	public static extern c_int QFontComboBox_OnMetric(void* self, QFontComboBox_OnMetric_action _action);
+	[LinkName("QFontComboBox_InitPainter")]
+	public static extern void QFontComboBox_InitPainter(void* self, void** painter);
+	
+	public function void QFontComboBox_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QFontComboBox_OnInitPainter")]
+	public static extern void QFontComboBox_OnInitPainter(void* self, QFontComboBox_OnInitPainter_action _action);
+	[LinkName("QFontComboBox_Redirected")]
+	public static extern void** QFontComboBox_Redirected(void* self, void** offset);
+	
+	public function void QFontComboBox_OnRedirected_action(void* self, void** offset);
+	[LinkName("QFontComboBox_OnRedirected")]
+	public static extern void** QFontComboBox_OnRedirected(void* self, QFontComboBox_OnRedirected_action _action);
+	[LinkName("QFontComboBox_SharedPainter")]
+	public static extern void** QFontComboBox_SharedPainter(void* self);
+	
+	public function void QFontComboBox_OnSharedPainter_action(void* self);
+	[LinkName("QFontComboBox_OnSharedPainter")]
+	public static extern void** QFontComboBox_OnSharedPainter(void* self, QFontComboBox_OnSharedPainter_action _action);
+	[LinkName("QFontComboBox_SetVisible")]
+	public static extern void QFontComboBox_SetVisible(void* self, bool visible);
+	
+	public function void QFontComboBox_OnSetVisible_action(void* self, bool visible);
+	[LinkName("QFontComboBox_OnSetVisible")]
+	public static extern void QFontComboBox_OnSetVisible(void* self, QFontComboBox_OnSetVisible_action _action);
+	[LinkName("QFontComboBox_MinimumSizeHint")]
+	public static extern void* QFontComboBox_MinimumSizeHint(void* self);
+	
+	public function void QFontComboBox_OnMinimumSizeHint_action(void* self);
+	[LinkName("QFontComboBox_OnMinimumSizeHint")]
+	public static extern void* QFontComboBox_OnMinimumSizeHint(void* self, QFontComboBox_OnMinimumSizeHint_action _action);
+	[LinkName("QFontComboBox_HeightForWidth")]
+	public static extern c_int QFontComboBox_HeightForWidth(void* self, c_int param1);
+	
+	public function void QFontComboBox_OnHeightForWidth_action(void* self, c_int param1);
+	[LinkName("QFontComboBox_OnHeightForWidth")]
+	public static extern c_int QFontComboBox_OnHeightForWidth(void* self, QFontComboBox_OnHeightForWidth_action _action);
+	[LinkName("QFontComboBox_HasHeightForWidth")]
+	public static extern bool QFontComboBox_HasHeightForWidth(void* self);
+	
+	public function void QFontComboBox_OnHasHeightForWidth_action(void* self);
+	[LinkName("QFontComboBox_OnHasHeightForWidth")]
+	public static extern bool QFontComboBox_OnHasHeightForWidth(void* self, QFontComboBox_OnHasHeightForWidth_action _action);
+	[LinkName("QFontComboBox_MousePressEvent")]
+	public static extern void QFontComboBox_MousePressEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnMousePressEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnMousePressEvent")]
+	public static extern void QFontComboBox_OnMousePressEvent(void* self, QFontComboBox_OnMousePressEvent_action _action);
+	[LinkName("QFontComboBox_MouseReleaseEvent")]
+	public static extern void QFontComboBox_MouseReleaseEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnMouseReleaseEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnMouseReleaseEvent")]
+	public static extern void QFontComboBox_OnMouseReleaseEvent(void* self, QFontComboBox_OnMouseReleaseEvent_action _action);
+	[LinkName("QFontComboBox_MouseDoubleClickEvent")]
+	public static extern void QFontComboBox_MouseDoubleClickEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnMouseDoubleClickEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnMouseDoubleClickEvent")]
+	public static extern void QFontComboBox_OnMouseDoubleClickEvent(void* self, QFontComboBox_OnMouseDoubleClickEvent_action _action);
+	[LinkName("QFontComboBox_MouseMoveEvent")]
+	public static extern void QFontComboBox_MouseMoveEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnMouseMoveEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnMouseMoveEvent")]
+	public static extern void QFontComboBox_OnMouseMoveEvent(void* self, QFontComboBox_OnMouseMoveEvent_action _action);
+	[LinkName("QFontComboBox_WheelEvent")]
+	public static extern void QFontComboBox_WheelEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnWheelEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnWheelEvent")]
+	public static extern void QFontComboBox_OnWheelEvent(void* self, QFontComboBox_OnWheelEvent_action _action);
+	[LinkName("QFontComboBox_KeyPressEvent")]
+	public static extern void QFontComboBox_KeyPressEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnKeyPressEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnKeyPressEvent")]
+	public static extern void QFontComboBox_OnKeyPressEvent(void* self, QFontComboBox_OnKeyPressEvent_action _action);
+	[LinkName("QFontComboBox_KeyReleaseEvent")]
+	public static extern void QFontComboBox_KeyReleaseEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnKeyReleaseEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnKeyReleaseEvent")]
+	public static extern void QFontComboBox_OnKeyReleaseEvent(void* self, QFontComboBox_OnKeyReleaseEvent_action _action);
+	[LinkName("QFontComboBox_FocusInEvent")]
+	public static extern void QFontComboBox_FocusInEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnFocusInEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnFocusInEvent")]
+	public static extern void QFontComboBox_OnFocusInEvent(void* self, QFontComboBox_OnFocusInEvent_action _action);
+	[LinkName("QFontComboBox_FocusOutEvent")]
+	public static extern void QFontComboBox_FocusOutEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnFocusOutEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnFocusOutEvent")]
+	public static extern void QFontComboBox_OnFocusOutEvent(void* self, QFontComboBox_OnFocusOutEvent_action _action);
+	[LinkName("QFontComboBox_EnterEvent")]
+	public static extern void QFontComboBox_EnterEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnEnterEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnEnterEvent")]
+	public static extern void QFontComboBox_OnEnterEvent(void* self, QFontComboBox_OnEnterEvent_action _action);
+	[LinkName("QFontComboBox_LeaveEvent")]
+	public static extern void QFontComboBox_LeaveEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnLeaveEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnLeaveEvent")]
+	public static extern void QFontComboBox_OnLeaveEvent(void* self, QFontComboBox_OnLeaveEvent_action _action);
+	[LinkName("QFontComboBox_PaintEvent")]
+	public static extern void QFontComboBox_PaintEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnPaintEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnPaintEvent")]
+	public static extern void QFontComboBox_OnPaintEvent(void* self, QFontComboBox_OnPaintEvent_action _action);
+	[LinkName("QFontComboBox_MoveEvent")]
+	public static extern void QFontComboBox_MoveEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnMoveEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnMoveEvent")]
+	public static extern void QFontComboBox_OnMoveEvent(void* self, QFontComboBox_OnMoveEvent_action _action);
+	[LinkName("QFontComboBox_ResizeEvent")]
+	public static extern void QFontComboBox_ResizeEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnResizeEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnResizeEvent")]
+	public static extern void QFontComboBox_OnResizeEvent(void* self, QFontComboBox_OnResizeEvent_action _action);
+	[LinkName("QFontComboBox_CloseEvent")]
+	public static extern void QFontComboBox_CloseEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnCloseEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnCloseEvent")]
+	public static extern void QFontComboBox_OnCloseEvent(void* self, QFontComboBox_OnCloseEvent_action _action);
+	[LinkName("QFontComboBox_ContextMenuEvent")]
+	public static extern void QFontComboBox_ContextMenuEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnContextMenuEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnContextMenuEvent")]
+	public static extern void QFontComboBox_OnContextMenuEvent(void* self, QFontComboBox_OnContextMenuEvent_action _action);
+	[LinkName("QFontComboBox_TabletEvent")]
+	public static extern void QFontComboBox_TabletEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnTabletEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnTabletEvent")]
+	public static extern void QFontComboBox_OnTabletEvent(void* self, QFontComboBox_OnTabletEvent_action _action);
+	[LinkName("QFontComboBox_ActionEvent")]
+	public static extern void QFontComboBox_ActionEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnActionEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnActionEvent")]
+	public static extern void QFontComboBox_OnActionEvent(void* self, QFontComboBox_OnActionEvent_action _action);
+	[LinkName("QFontComboBox_DragEnterEvent")]
+	public static extern void QFontComboBox_DragEnterEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnDragEnterEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnDragEnterEvent")]
+	public static extern void QFontComboBox_OnDragEnterEvent(void* self, QFontComboBox_OnDragEnterEvent_action _action);
+	[LinkName("QFontComboBox_DragMoveEvent")]
+	public static extern void QFontComboBox_DragMoveEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnDragMoveEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnDragMoveEvent")]
+	public static extern void QFontComboBox_OnDragMoveEvent(void* self, QFontComboBox_OnDragMoveEvent_action _action);
+	[LinkName("QFontComboBox_DragLeaveEvent")]
+	public static extern void QFontComboBox_DragLeaveEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnDragLeaveEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnDragLeaveEvent")]
+	public static extern void QFontComboBox_OnDragLeaveEvent(void* self, QFontComboBox_OnDragLeaveEvent_action _action);
+	[LinkName("QFontComboBox_DropEvent")]
+	public static extern void QFontComboBox_DropEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnDropEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnDropEvent")]
+	public static extern void QFontComboBox_OnDropEvent(void* self, QFontComboBox_OnDropEvent_action _action);
+	[LinkName("QFontComboBox_ShowEvent")]
+	public static extern void QFontComboBox_ShowEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnShowEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnShowEvent")]
+	public static extern void QFontComboBox_OnShowEvent(void* self, QFontComboBox_OnShowEvent_action _action);
+	[LinkName("QFontComboBox_HideEvent")]
+	public static extern void QFontComboBox_HideEvent(void* self, void** event);
+	
+	public function void QFontComboBox_OnHideEvent_action(void* self, void** event);
+	[LinkName("QFontComboBox_OnHideEvent")]
+	public static extern void QFontComboBox_OnHideEvent(void* self, QFontComboBox_OnHideEvent_action _action);
+	[LinkName("QFontComboBox_NativeEvent")]
+	public static extern bool QFontComboBox_NativeEvent(void* self, void** eventType, void* message, void** result);
+	
+	public function void QFontComboBox_OnNativeEvent_action(void* self, void** eventType, void* message, void** result);
+	[LinkName("QFontComboBox_OnNativeEvent")]
+	public static extern bool QFontComboBox_OnNativeEvent(void* self, QFontComboBox_OnNativeEvent_action _action);
+	[LinkName("QFontComboBox_ChangeEvent")]
+	public static extern void QFontComboBox_ChangeEvent(void* self, void** param1);
+	
+	public function void QFontComboBox_OnChangeEvent_action(void* self, void** param1);
+	[LinkName("QFontComboBox_OnChangeEvent")]
+	public static extern void QFontComboBox_OnChangeEvent(void* self, QFontComboBox_OnChangeEvent_action _action);
+	[LinkName("QFontComboBox_InputMethodEvent")]
+	public static extern void QFontComboBox_InputMethodEvent(void* self, void** param1);
+	
+	public function void QFontComboBox_OnInputMethodEvent_action(void* self, void** param1);
+	[LinkName("QFontComboBox_OnInputMethodEvent")]
+	public static extern void QFontComboBox_OnInputMethodEvent(void* self, QFontComboBox_OnInputMethodEvent_action _action);
+	[LinkName("QFontComboBox_InputMethodQuery")]
+	public static extern void* QFontComboBox_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
+	
+	public function void QFontComboBox_OnInputMethodQuery_action(void* self, Qt_InputMethodQuery param1);
+	[LinkName("QFontComboBox_OnInputMethodQuery")]
+	public static extern void* QFontComboBox_OnInputMethodQuery(void* self, QFontComboBox_OnInputMethodQuery_action _action);
+	[LinkName("QFontComboBox_FocusNextPrevChild")]
+	public static extern bool QFontComboBox_FocusNextPrevChild(void* self, bool next);
+	
+	public function void QFontComboBox_OnFocusNextPrevChild_action(void* self, bool next);
+	[LinkName("QFontComboBox_OnFocusNextPrevChild")]
+	public static extern bool QFontComboBox_OnFocusNextPrevChild(void* self, QFontComboBox_OnFocusNextPrevChild_action _action);
+	[LinkName("QFontComboBox_SetModel")]
+	public static extern void QFontComboBox_SetModel(void* self, void** model);
+	
+	public function void QFontComboBox_OnSetModel_action(void* self, void** model);
+	[LinkName("QFontComboBox_OnSetModel")]
+	public static extern void QFontComboBox_OnSetModel(void* self, QFontComboBox_OnSetModel_action _action);
+	[LinkName("QFontComboBox_ShowPopup")]
+	public static extern void QFontComboBox_ShowPopup(void* self);
+	
+	public function void QFontComboBox_OnShowPopup_action(void* self);
+	[LinkName("QFontComboBox_OnShowPopup")]
+	public static extern void QFontComboBox_OnShowPopup(void* self, QFontComboBox_OnShowPopup_action _action);
+	[LinkName("QFontComboBox_HidePopup")]
+	public static extern void QFontComboBox_HidePopup(void* self);
+	
+	public function void QFontComboBox_OnHidePopup_action(void* self);
+	[LinkName("QFontComboBox_OnHidePopup")]
+	public static extern void QFontComboBox_OnHidePopup(void* self, QFontComboBox_OnHidePopup_action _action);
+	[LinkName("QFontComboBox_InitStyleOption")]
+	public static extern void QFontComboBox_InitStyleOption(void* self, void** option);
+	
+	public function void QFontComboBox_OnInitStyleOption_action(void* self, void** option);
+	[LinkName("QFontComboBox_OnInitStyleOption")]
+	public static extern void QFontComboBox_OnInitStyleOption(void* self, QFontComboBox_OnInitStyleOption_action _action);
 }
 [AllowDuplicates]
 enum QFontComboBox_FontFilter

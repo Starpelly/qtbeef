@@ -18,11 +18,11 @@ struct QTemporaryFile_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QTemporaryFile_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QTemporaryFile_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QTemporaryFile_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -78,373 +78,13 @@ struct QTemporaryFile_Ptr
 	{
 		CQt.QTemporaryFile_Tr3(s, c, n);
 	}
-	public void SetFileName(String name)
-	{
-		CQt.QFile_SetFileName((.)this.Ptr, libqt_string(name));
-	}
-	public void* EncodeName(String fileName)
-	{
-		return CQt.QFile_EncodeName(libqt_string(fileName));
-	}
-	public void DecodeName(String outStr, void** localFileName)
-	{
-		CQt.QFile_DecodeName(localFileName);
-	}
-	public void DecodeName2(String outStr, c_char* localFileName)
-	{
-		CQt.QFile_DecodeName2(localFileName);
-	}
-	public bool Exists()
-	{
-		return CQt.QFile_Exists((.)this.Ptr);
-	}
-	public bool Exists2(String fileName)
-	{
-		return CQt.QFile_Exists2(libqt_string(fileName));
-	}
-	public void SymLinkTarget(String outStr)
-	{
-		CQt.QFile_SymLinkTarget((.)this.Ptr);
-	}
-	public void SymLinkTarget2(String outStr, String fileName)
-	{
-		CQt.QFile_SymLinkTarget2(libqt_string(fileName));
-	}
-	public bool Remove()
-	{
-		return CQt.QFile_Remove((.)this.Ptr);
-	}
-	public bool Remove2(String fileName)
-	{
-		return CQt.QFile_Remove2(libqt_string(fileName));
-	}
-	public bool MoveToTrash()
-	{
-		return CQt.QFile_MoveToTrash((.)this.Ptr);
-	}
-	public bool MoveToTrash2(String fileName)
-	{
-		return CQt.QFile_MoveToTrash2(libqt_string(fileName));
-	}
-	public bool Rename2(String oldName, String newName)
-	{
-		return CQt.QFile_Rename2(libqt_string(oldName), libqt_string(newName));
-	}
-	public bool Link(String newName)
-	{
-		return CQt.QFile_Link((.)this.Ptr, libqt_string(newName));
-	}
-	public bool Link2(String fileName, String newName)
-	{
-		return CQt.QFile_Link2(libqt_string(fileName), libqt_string(newName));
-	}
-	public bool Copy(String newName)
-	{
-		return CQt.QFile_Copy((.)this.Ptr, libqt_string(newName));
-	}
-	public bool Copy2(String fileName, String newName)
-	{
-		return CQt.QFile_Copy2(libqt_string(fileName), libqt_string(newName));
-	}
-	public bool Open4(c_int fd, void* ioFlags)
-	{
-		return CQt.QFile_Open4((.)this.Ptr, fd, ioFlags);
-	}
-	public c_longlong Size()
-	{
-		return CQt.QFile_Size((.)this.Ptr);
-	}
-	public bool Resize(c_longlong sz)
-	{
-		return CQt.QFile_Resize((.)this.Ptr, sz);
-	}
-	public bool Resize2(String filename, c_longlong sz)
-	{
-		return CQt.QFile_Resize2(libqt_string(filename), sz);
-	}
-	public void* Permissions()
-	{
-		return CQt.QFile_Permissions((.)this.Ptr);
-	}
-	public void* Permissions2(String filename)
-	{
-		return CQt.QFile_Permissions2(libqt_string(filename));
-	}
-	public bool SetPermissions(void* permissionSpec)
-	{
-		return CQt.QFile_SetPermissions((.)this.Ptr, permissionSpec);
-	}
-	public bool SetPermissions2(String filename, void* permissionSpec)
-	{
-		return CQt.QFile_SetPermissions2(libqt_string(filename), permissionSpec);
-	}
-	public bool Open33(c_int fd, void* ioFlags, void* handleFlags)
-	{
-		return CQt.QFile_Open33((.)this.Ptr, fd, ioFlags, handleFlags);
-	}
-	public QFileDevice_FileError Error()
-	{
-		return CQt.QFileDevice_Error((.)this.Ptr);
-	}
-	public void UnsetError()
-	{
-		CQt.QFileDevice_UnsetError((.)this.Ptr);
-	}
-	public void Close()
-	{
-		CQt.QFileDevice_Close((.)this.Ptr);
-	}
-	public bool IsSequential()
-	{
-		return CQt.QFileDevice_IsSequential((.)this.Ptr);
-	}
-	public c_int Handle()
-	{
-		return CQt.QFileDevice_Handle((.)this.Ptr);
-	}
-	public c_longlong Pos()
-	{
-		return CQt.QFileDevice_Pos((.)this.Ptr);
-	}
-	public bool Seek(c_longlong offset)
-	{
-		return CQt.QFileDevice_Seek((.)this.Ptr, offset);
-	}
-	public bool AtEnd()
-	{
-		return CQt.QFileDevice_AtEnd((.)this.Ptr);
-	}
-	public bool Flush()
-	{
-		return CQt.QFileDevice_Flush((.)this.Ptr);
-	}
-	public c_uchar* Map(c_longlong offset, c_longlong size)
-	{
-		return CQt.QFileDevice_Map((.)this.Ptr, offset, size);
-	}
-	public bool Unmap(c_uchar* address)
-	{
-		return CQt.QFileDevice_Unmap((.)this.Ptr, address);
-	}
-	public QDateTime_Ptr FileTime(QFileDevice_FileTime time)
-	{
-		return QDateTime_Ptr(CQt.QFileDevice_FileTime((.)this.Ptr, time));
-	}
-	public bool SetFileTime(IQDateTime newDate, QFileDevice_FileTime fileTime)
-	{
-		return CQt.QFileDevice_SetFileTime((.)this.Ptr, (.)newDate?.ObjectPtr, fileTime);
-	}
-	public c_longlong ReadData(c_char* data, c_longlong maxlen)
-	{
-		return CQt.QFileDevice_ReadData((.)this.Ptr, data, maxlen);
-	}
-	public c_longlong WriteData(c_char* data, c_longlong lenVal)
-	{
-		return CQt.QFileDevice_WriteData((.)this.Ptr, data, lenVal);
-	}
-	public c_longlong ReadLineData(c_char* data, c_longlong maxlen)
-	{
-		return CQt.QFileDevice_ReadLineData((.)this.Ptr, data, maxlen);
-	}
-	public c_uchar* Map3(c_longlong offset, c_longlong size, void* flags)
-	{
-		return CQt.QFileDevice_Map3((.)this.Ptr, offset, size, flags);
-	}
-	public void* OpenMode()
-	{
-		return CQt.QIODevice_OpenMode((.)this.Ptr);
-	}
-	public void SetTextModeEnabled(bool enabled)
-	{
-		CQt.QIODevice_SetTextModeEnabled((.)this.Ptr, enabled);
-	}
-	public bool IsTextModeEnabled()
-	{
-		return CQt.QIODevice_IsTextModeEnabled((.)this.Ptr);
-	}
-	public bool IsOpen()
-	{
-		return CQt.QIODevice_IsOpen((.)this.Ptr);
-	}
-	public bool IsReadable()
-	{
-		return CQt.QIODevice_IsReadable((.)this.Ptr);
-	}
-	public bool IsWritable()
-	{
-		return CQt.QIODevice_IsWritable((.)this.Ptr);
-	}
-	public c_int ReadChannelCount()
-	{
-		return CQt.QIODevice_ReadChannelCount((.)this.Ptr);
-	}
-	public c_int WriteChannelCount()
-	{
-		return CQt.QIODevice_WriteChannelCount((.)this.Ptr);
-	}
-	public c_int CurrentReadChannel()
-	{
-		return CQt.QIODevice_CurrentReadChannel((.)this.Ptr);
-	}
-	public void SetCurrentReadChannel(c_int channel)
-	{
-		CQt.QIODevice_SetCurrentReadChannel((.)this.Ptr, channel);
-	}
-	public c_int CurrentWriteChannel()
-	{
-		return CQt.QIODevice_CurrentWriteChannel((.)this.Ptr);
-	}
-	public void SetCurrentWriteChannel(c_int channel)
-	{
-		CQt.QIODevice_SetCurrentWriteChannel((.)this.Ptr, channel);
-	}
-	public bool Reset()
-	{
-		return CQt.QIODevice_Reset((.)this.Ptr);
-	}
-	public c_longlong BytesAvailable()
-	{
-		return CQt.QIODevice_BytesAvailable((.)this.Ptr);
-	}
-	public c_longlong BytesToWrite()
-	{
-		return CQt.QIODevice_BytesToWrite((.)this.Ptr);
-	}
-	public c_longlong Read(c_char* data, c_longlong maxlen)
-	{
-		return CQt.QIODevice_Read((.)this.Ptr, data, maxlen);
-	}
-	public void* Read2(c_longlong maxlen)
-	{
-		return CQt.QIODevice_Read2((.)this.Ptr, maxlen);
-	}
-	public void* ReadAll()
-	{
-		return CQt.QIODevice_ReadAll((.)this.Ptr);
-	}
-	public c_longlong ReadLine(c_char* data, c_longlong maxlen)
-	{
-		return CQt.QIODevice_ReadLine((.)this.Ptr, data, maxlen);
-	}
-	public void* ReadLine2()
-	{
-		return CQt.QIODevice_ReadLine2((.)this.Ptr);
-	}
-	public bool CanReadLine()
-	{
-		return CQt.QIODevice_CanReadLine((.)this.Ptr);
-	}
-	public void StartTransaction()
-	{
-		CQt.QIODevice_StartTransaction((.)this.Ptr);
-	}
-	public void CommitTransaction()
-	{
-		CQt.QIODevice_CommitTransaction((.)this.Ptr);
-	}
-	public void RollbackTransaction()
-	{
-		CQt.QIODevice_RollbackTransaction((.)this.Ptr);
-	}
-	public bool IsTransactionStarted()
-	{
-		return CQt.QIODevice_IsTransactionStarted((.)this.Ptr);
-	}
-	public c_longlong Write(c_char* data, c_longlong lenVal)
-	{
-		return CQt.QIODevice_Write((.)this.Ptr, data, lenVal);
-	}
-	public c_longlong Write2(c_char* data)
-	{
-		return CQt.QIODevice_Write2((.)this.Ptr, data);
-	}
-	public c_longlong Write3(void** data)
-	{
-		return CQt.QIODevice_Write3((.)this.Ptr, data);
-	}
-	public c_longlong Peek(c_char* data, c_longlong maxlen)
-	{
-		return CQt.QIODevice_Peek((.)this.Ptr, data, maxlen);
-	}
-	public void* Peek2(c_longlong maxlen)
-	{
-		return CQt.QIODevice_Peek2((.)this.Ptr, maxlen);
-	}
-	public c_longlong Skip(c_longlong maxSize)
-	{
-		return CQt.QIODevice_Skip((.)this.Ptr, maxSize);
-	}
-	public bool WaitForReadyRead(c_int msecs)
-	{
-		return CQt.QIODevice_WaitForReadyRead((.)this.Ptr, msecs);
-	}
-	public bool WaitForBytesWritten(c_int msecs)
-	{
-		return CQt.QIODevice_WaitForBytesWritten((.)this.Ptr, msecs);
-	}
-	public void UngetChar(c_char c)
-	{
-		CQt.QIODevice_UngetChar((.)this.Ptr, c);
-	}
-	public bool PutChar(c_char c)
-	{
-		return CQt.QIODevice_PutChar((.)this.Ptr, c);
-	}
-	public bool GetChar(c_char* c)
-	{
-		return CQt.QIODevice_GetChar((.)this.Ptr, c);
-	}
-	public void ErrorString(String outStr)
-	{
-		CQt.QIODevice_ErrorString((.)this.Ptr);
-	}
-	public void ReadyRead()
-	{
-		CQt.QIODevice_ReadyRead((.)this.Ptr);
-	}
-	public void ChannelReadyRead(c_int channel)
-	{
-		CQt.QIODevice_ChannelReadyRead((.)this.Ptr, channel);
-	}
-	public void BytesWritten(c_longlong bytes)
-	{
-		CQt.QIODevice_BytesWritten((.)this.Ptr, bytes);
-	}
-	public void ChannelBytesWritten(c_int channel, c_longlong bytes)
-	{
-		CQt.QIODevice_ChannelBytesWritten((.)this.Ptr, channel, bytes);
-	}
-	public void AboutToClose()
-	{
-		CQt.QIODevice_AboutToClose((.)this.Ptr);
-	}
-	public void ReadChannelFinished()
-	{
-		CQt.QIODevice_ReadChannelFinished((.)this.Ptr);
-	}
-	public c_longlong SkipData(c_longlong maxSize)
-	{
-		return CQt.QIODevice_SkipData((.)this.Ptr, maxSize);
-	}
-	public void SetOpenMode(void* openMode)
-	{
-		CQt.QIODevice_SetOpenMode((.)this.Ptr, openMode);
-	}
-	public void SetErrorString(String errorString)
-	{
-		CQt.QIODevice_SetErrorString((.)this.Ptr, libqt_string(errorString));
-	}
-	public void* ReadLine1(c_longlong maxlen)
-	{
-		return CQt.QIODevice_ReadLine1((.)this.Ptr, maxlen);
-	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QTemporaryFile_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QTemporaryFile_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -604,23 +244,23 @@ struct QTemporaryFile_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTemporaryFile_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTemporaryFile_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QTemporaryFile_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTemporaryFile_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QTemporaryFile_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -662,124 +302,406 @@ struct QTemporaryFile_Ptr
 	{
 		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
+	public void* OpenMode()
+	{
+		return CQt.QIODevice_OpenMode((.)this.Ptr);
+	}
+	public void SetTextModeEnabled(bool enabled)
+	{
+		CQt.QIODevice_SetTextModeEnabled((.)this.Ptr, enabled);
+	}
+	public bool IsTextModeEnabled()
+	{
+		return CQt.QIODevice_IsTextModeEnabled((.)this.Ptr);
+	}
+	public bool IsOpen()
+	{
+		return CQt.QIODevice_IsOpen((.)this.Ptr);
+	}
+	public bool IsReadable()
+	{
+		return CQt.QIODevice_IsReadable((.)this.Ptr);
+	}
+	public bool IsWritable()
+	{
+		return CQt.QIODevice_IsWritable((.)this.Ptr);
+	}
+	public bool IsSequential()
+	{
+		return CQt.QTemporaryFile_IsSequential((.)this.Ptr);
+	}
+	public c_int ReadChannelCount()
+	{
+		return CQt.QIODevice_ReadChannelCount((.)this.Ptr);
+	}
+	public c_int WriteChannelCount()
+	{
+		return CQt.QIODevice_WriteChannelCount((.)this.Ptr);
+	}
+	public c_int CurrentReadChannel()
+	{
+		return CQt.QIODevice_CurrentReadChannel((.)this.Ptr);
+	}
+	public void SetCurrentReadChannel(c_int channel)
+	{
+		CQt.QIODevice_SetCurrentReadChannel((.)this.Ptr, channel);
+	}
+	public c_int CurrentWriteChannel()
+	{
+		return CQt.QIODevice_CurrentWriteChannel((.)this.Ptr);
+	}
+	public void SetCurrentWriteChannel(c_int channel)
+	{
+		CQt.QIODevice_SetCurrentWriteChannel((.)this.Ptr, channel);
+	}
+	public void Close()
+	{
+		CQt.QTemporaryFile_Close((.)this.Ptr);
+	}
+	public c_longlong Pos()
+	{
+		return CQt.QTemporaryFile_Pos((.)this.Ptr);
+	}
+	public c_longlong Size()
+	{
+		return CQt.QTemporaryFile_Size((.)this.Ptr);
+	}
+	public bool Seek(c_longlong pos)
+	{
+		return CQt.QTemporaryFile_Seek((.)this.Ptr, pos);
+	}
+	public bool AtEnd()
+	{
+		return CQt.QTemporaryFile_AtEnd((.)this.Ptr);
+	}
+	public bool Reset()
+	{
+		return CQt.QTemporaryFile_Reset((.)this.Ptr);
+	}
+	public c_longlong BytesAvailable()
+	{
+		return CQt.QTemporaryFile_BytesAvailable((.)this.Ptr);
+	}
+	public c_longlong BytesToWrite()
+	{
+		return CQt.QTemporaryFile_BytesToWrite((.)this.Ptr);
+	}
+	public c_longlong Read(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QIODevice_Read((.)this.Ptr, data, maxlen);
+	}
+	public void* Read2(c_longlong maxlen)
+	{
+		return CQt.QIODevice_Read2((.)this.Ptr, maxlen);
+	}
+	public void* ReadAll()
+	{
+		return CQt.QIODevice_ReadAll((.)this.Ptr);
+	}
+	public c_longlong ReadLine(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QIODevice_ReadLine((.)this.Ptr, data, maxlen);
+	}
+	public void* ReadLine2()
+	{
+		return CQt.QIODevice_ReadLine2((.)this.Ptr);
+	}
+	public bool CanReadLine()
+	{
+		return CQt.QTemporaryFile_CanReadLine((.)this.Ptr);
+	}
+	public void StartTransaction()
+	{
+		CQt.QIODevice_StartTransaction((.)this.Ptr);
+	}
+	public void CommitTransaction()
+	{
+		CQt.QIODevice_CommitTransaction((.)this.Ptr);
+	}
+	public void RollbackTransaction()
+	{
+		CQt.QIODevice_RollbackTransaction((.)this.Ptr);
+	}
+	public bool IsTransactionStarted()
+	{
+		return CQt.QIODevice_IsTransactionStarted((.)this.Ptr);
+	}
+	public c_longlong Write(c_char* data, c_longlong lenVal)
+	{
+		return CQt.QIODevice_Write((.)this.Ptr, data, lenVal);
+	}
+	public c_longlong Write2(c_char* data)
+	{
+		return CQt.QIODevice_Write2((.)this.Ptr, data);
+	}
+	public c_longlong Write3(void** data)
+	{
+		return CQt.QIODevice_Write3((.)this.Ptr, data);
+	}
+	public c_longlong Peek(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QIODevice_Peek((.)this.Ptr, data, maxlen);
+	}
+	public void* Peek2(c_longlong maxlen)
+	{
+		return CQt.QIODevice_Peek2((.)this.Ptr, maxlen);
+	}
+	public c_longlong Skip(c_longlong maxSize)
+	{
+		return CQt.QIODevice_Skip((.)this.Ptr, maxSize);
+	}
+	public bool WaitForReadyRead(c_int msecs)
+	{
+		return CQt.QTemporaryFile_WaitForReadyRead((.)this.Ptr, msecs);
+	}
+	public bool WaitForBytesWritten(c_int msecs)
+	{
+		return CQt.QTemporaryFile_WaitForBytesWritten((.)this.Ptr, msecs);
+	}
+	public void UngetChar(c_char c)
+	{
+		CQt.QIODevice_UngetChar((.)this.Ptr, c);
+	}
+	public bool PutChar(c_char c)
+	{
+		return CQt.QIODevice_PutChar((.)this.Ptr, c);
+	}
+	public bool GetChar(c_char* c)
+	{
+		return CQt.QIODevice_GetChar((.)this.Ptr, c);
+	}
+	public void ErrorString(String outStr)
+	{
+		CQt.QIODevice_ErrorString((.)this.Ptr);
+	}
+	public void ReadyRead()
+	{
+		CQt.QIODevice_ReadyRead((.)this.Ptr);
+	}
+	public void ChannelReadyRead(c_int channel)
+	{
+		CQt.QIODevice_ChannelReadyRead((.)this.Ptr, channel);
+	}
+	public void BytesWritten(c_longlong bytes)
+	{
+		CQt.QIODevice_BytesWritten((.)this.Ptr, bytes);
+	}
+	public void ChannelBytesWritten(c_int channel, c_longlong bytes)
+	{
+		CQt.QIODevice_ChannelBytesWritten((.)this.Ptr, channel, bytes);
+	}
+	public void AboutToClose()
+	{
+		CQt.QIODevice_AboutToClose((.)this.Ptr);
+	}
+	public void ReadChannelFinished()
+	{
+		CQt.QIODevice_ReadChannelFinished((.)this.Ptr);
+	}
+	public c_longlong ReadData(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QTemporaryFile_ReadData((.)this.Ptr, data, maxlen);
+	}
+	public c_longlong ReadLineData(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QTemporaryFile_ReadLineData((.)this.Ptr, data, maxlen);
+	}
+	public c_longlong SkipData(c_longlong maxSize)
+	{
+		return CQt.QTemporaryFile_SkipData((.)this.Ptr, maxSize);
+	}
+	public c_longlong WriteData(c_char* data, c_longlong lenVal)
+	{
+		return CQt.QTemporaryFile_WriteData((.)this.Ptr, data, lenVal);
+	}
+	public void SetOpenMode(void* openMode)
+	{
+		CQt.QIODevice_SetOpenMode((.)this.Ptr, openMode);
+	}
+	public void SetErrorString(String errorString)
+	{
+		CQt.QIODevice_SetErrorString((.)this.Ptr, libqt_string(errorString));
+	}
+	public void* ReadLine1(c_longlong maxlen)
+	{
+		return CQt.QIODevice_ReadLine1((.)this.Ptr, maxlen);
+	}
+	public QFileDevice_FileError Error()
+	{
+		return CQt.QFileDevice_Error((.)this.Ptr);
+	}
+	public void UnsetError()
+	{
+		CQt.QFileDevice_UnsetError((.)this.Ptr);
+	}
+	public c_int Handle()
+	{
+		return CQt.QFileDevice_Handle((.)this.Ptr);
+	}
+	public bool Flush()
+	{
+		return CQt.QFileDevice_Flush((.)this.Ptr);
+	}
+	public bool Resize(c_longlong sz)
+	{
+		return CQt.QTemporaryFile_Resize((.)this.Ptr, sz);
+	}
+	public void* Permissions()
+	{
+		return CQt.QTemporaryFile_Permissions((.)this.Ptr);
+	}
+	public bool SetPermissions(void* permissionSpec)
+	{
+		return CQt.QTemporaryFile_SetPermissions((.)this.Ptr, permissionSpec);
+	}
+	public c_uchar* Map(c_longlong offset, c_longlong size)
+	{
+		return CQt.QFileDevice_Map((.)this.Ptr, offset, size);
+	}
+	public bool Unmap(c_uchar* address)
+	{
+		return CQt.QFileDevice_Unmap((.)this.Ptr, address);
+	}
+	public QDateTime_Ptr FileTime(QFileDevice_FileTime time)
+	{
+		return QDateTime_Ptr(CQt.QFileDevice_FileTime((.)this.Ptr, time));
+	}
+	public bool SetFileTime(IQDateTime newDate, QFileDevice_FileTime fileTime)
+	{
+		return CQt.QFileDevice_SetFileTime((.)this.Ptr, (.)newDate?.ObjectPtr, fileTime);
+	}
+	public c_uchar* Map3(c_longlong offset, c_longlong size, void* flags)
+	{
+		return CQt.QFileDevice_Map3((.)this.Ptr, offset, size, flags);
+	}
+	public void SetFileName(String name)
+	{
+		CQt.QFile_SetFileName((.)this.Ptr, libqt_string(name));
+	}
+	public void* EncodeName(String fileName)
+	{
+		return CQt.QFile_EncodeName(libqt_string(fileName));
+	}
+	public void DecodeName(String outStr, void** localFileName)
+	{
+		CQt.QFile_DecodeName(localFileName);
+	}
+	public void DecodeName2(String outStr, c_char* localFileName)
+	{
+		CQt.QFile_DecodeName2(localFileName);
+	}
+	public bool Exists()
+	{
+		return CQt.QFile_Exists((.)this.Ptr);
+	}
+	public bool Exists2(String fileName)
+	{
+		return CQt.QFile_Exists2(libqt_string(fileName));
+	}
+	public void SymLinkTarget(String outStr)
+	{
+		CQt.QFile_SymLinkTarget((.)this.Ptr);
+	}
+	public void SymLinkTarget2(String outStr, String fileName)
+	{
+		CQt.QFile_SymLinkTarget2(libqt_string(fileName));
+	}
+	public bool Remove()
+	{
+		return CQt.QFile_Remove((.)this.Ptr);
+	}
+	public bool Remove2(String fileName)
+	{
+		return CQt.QFile_Remove2(libqt_string(fileName));
+	}
+	public bool MoveToTrash()
+	{
+		return CQt.QFile_MoveToTrash((.)this.Ptr);
+	}
+	public bool MoveToTrash2(String fileName)
+	{
+		return CQt.QFile_MoveToTrash2(libqt_string(fileName));
+	}
+	public bool Rename2(String oldName, String newName)
+	{
+		return CQt.QFile_Rename2(libqt_string(oldName), libqt_string(newName));
+	}
+	public bool Link(String newName)
+	{
+		return CQt.QFile_Link((.)this.Ptr, libqt_string(newName));
+	}
+	public bool Link2(String fileName, String newName)
+	{
+		return CQt.QFile_Link2(libqt_string(fileName), libqt_string(newName));
+	}
+	public bool Copy(String newName)
+	{
+		return CQt.QFile_Copy((.)this.Ptr, libqt_string(newName));
+	}
+	public bool Copy2(String fileName, String newName)
+	{
+		return CQt.QFile_Copy2(libqt_string(fileName), libqt_string(newName));
+	}
+	public bool Open4(c_int fd, void* ioFlags)
+	{
+		return CQt.QFile_Open4((.)this.Ptr, fd, ioFlags);
+	}
+	public bool Resize2(String filename, c_longlong sz)
+	{
+		return CQt.QFile_Resize2(libqt_string(filename), sz);
+	}
+	public void* Permissions2(String filename)
+	{
+		return CQt.QFile_Permissions2(libqt_string(filename));
+	}
+	public bool SetPermissions2(String filename, void* permissionSpec)
+	{
+		return CQt.QFile_SetPermissions2(libqt_string(filename), permissionSpec);
+	}
+	public bool Open33(c_int fd, void* ioFlags, void* handleFlags)
+	{
+		return CQt.QFile_Open33((.)this.Ptr, fd, ioFlags, handleFlags);
+	}
 }
 class QTemporaryFile : IQTemporaryFile, IQFile, IQFileDevice, IQIODevice, IQObject, IQIODeviceBase
 {
 	private QTemporaryFile_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QTemporaryFile_readyRead,
-		QTemporaryFile_channelReadyRead,
-		QTemporaryFile_bytesWritten,
-		QTemporaryFile_channelBytesWritten,
-		QTemporaryFile_aboutToClose,
-		QTemporaryFile_readChannelFinished,
-		QTemporaryFile_destroyed,
-		QTemporaryFile_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QIODevice_Connect_ReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_readyRead);
-		CQt.QIODevice_Connect_ChannelReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_channelReadyRead);
-		CQt.QIODevice_Connect_BytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_bytesWritten);
-		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_channelBytesWritten);
-		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_aboutToClose);
-		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_readChannelFinished);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void()> OnReadyRead = .() ~ _.Dispose();
-	public Event<delegate void(c_int channel)> OnChannelReadyRead = .() ~ _.Dispose();
-	public Event<delegate void(c_longlong bytes)> OnBytesWritten = .() ~ _.Dispose();
-	public Event<delegate void(c_int channel, c_longlong bytes)> OnChannelBytesWritten = .() ~ _.Dispose();
-	public Event<delegate void()> OnAboutToClose = .() ~ _.Dispose();
-	public Event<delegate void()> OnReadChannelFinished = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QIODevice_readyRead(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnReadyRead.Invoke();
-	}
-	static void QtBeef_QIODevice_channelReadyRead(void* ptr, c_int channel)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnChannelReadyRead.Invoke(channel);
-	}
-	static void QtBeef_QIODevice_bytesWritten(void* ptr, c_longlong bytes)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnBytesWritten.Invoke(bytes);
-	}
-	static void QtBeef_QIODevice_channelBytesWritten(void* ptr, c_int channel, c_longlong bytes)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnChannelBytesWritten.Invoke(channel, bytes);
-	}
-	static void QtBeef_QIODevice_aboutToClose(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnAboutToClose.Invoke();
-	}
-	static void QtBeef_QIODevice_readChannelFinished(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnReadChannelFinished.Invoke();
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QTemporaryFile_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTemporaryFile_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(String templateName)
 	{
 		this.ptr = CQt.QTemporaryFile_new2(libqt_string(templateName));
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QTemporaryFile_new3((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(String templateName, IQObject parent)
 	{
 		this.ptr = CQt.QTemporaryFile_new4(libqt_string(templateName), (.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QTemporaryFile_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -797,9 +719,8 @@ class QTemporaryFile : IQTemporaryFile, IQFile, IQFileDevice, IQIODevice, IQObje
 	{
 		return this.ptr.Open();
 	}
-	public void FileName(String outStr)
+	public  virtual void OnFileName(String outStr)
 	{
-		this.ptr.FileName(outStr);
 	}
 	public void FileTemplate(String outStr)
 	{
@@ -821,9 +742,9 @@ class QTemporaryFile : IQTemporaryFile, IQFile, IQFileDevice, IQIODevice, IQObje
 	{
 		return this.ptr.CreateNativeFile2(file);
 	}
-	public bool Open2(void* flags)
+	public  virtual bool OnOpen2(void* flags)
 	{
-		return this.ptr.Open2(flags);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -833,373 +754,13 @@ class QTemporaryFile : IQTemporaryFile, IQFile, IQFileDevice, IQIODevice, IQObje
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
-	public void SetFileName(String name)
+	public  virtual bool OnEvent(void** event)
 	{
-		this.ptr.SetFileName(name);
+		return default;
 	}
-	public void* EncodeName(String fileName)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EncodeName(fileName);
-	}
-	public void DecodeName(String outStr, void** localFileName)
-	{
-		this.ptr.DecodeName(outStr, localFileName);
-	}
-	public void DecodeName2(String outStr, c_char* localFileName)
-	{
-		this.ptr.DecodeName2(outStr, localFileName);
-	}
-	public bool Exists()
-	{
-		return this.ptr.Exists();
-	}
-	public bool Exists2(String fileName)
-	{
-		return this.ptr.Exists2(fileName);
-	}
-	public void SymLinkTarget(String outStr)
-	{
-		this.ptr.SymLinkTarget(outStr);
-	}
-	public void SymLinkTarget2(String outStr, String fileName)
-	{
-		this.ptr.SymLinkTarget2(outStr, fileName);
-	}
-	public bool Remove()
-	{
-		return this.ptr.Remove();
-	}
-	public bool Remove2(String fileName)
-	{
-		return this.ptr.Remove2(fileName);
-	}
-	public bool MoveToTrash()
-	{
-		return this.ptr.MoveToTrash();
-	}
-	public bool MoveToTrash2(String fileName)
-	{
-		return this.ptr.MoveToTrash2(fileName);
-	}
-	public bool Rename2(String oldName, String newName)
-	{
-		return this.ptr.Rename2(oldName, newName);
-	}
-	public bool Link(String newName)
-	{
-		return this.ptr.Link(newName);
-	}
-	public bool Link2(String fileName, String newName)
-	{
-		return this.ptr.Link2(fileName, newName);
-	}
-	public bool Copy(String newName)
-	{
-		return this.ptr.Copy(newName);
-	}
-	public bool Copy2(String fileName, String newName)
-	{
-		return this.ptr.Copy2(fileName, newName);
-	}
-	public bool Open4(c_int fd, void* ioFlags)
-	{
-		return this.ptr.Open4(fd, ioFlags);
-	}
-	public c_longlong Size()
-	{
-		return this.ptr.Size();
-	}
-	public bool Resize(c_longlong sz)
-	{
-		return this.ptr.Resize(sz);
-	}
-	public bool Resize2(String filename, c_longlong sz)
-	{
-		return this.ptr.Resize2(filename, sz);
-	}
-	public void* Permissions()
-	{
-		return this.ptr.Permissions();
-	}
-	public void* Permissions2(String filename)
-	{
-		return this.ptr.Permissions2(filename);
-	}
-	public bool SetPermissions(void* permissionSpec)
-	{
-		return this.ptr.SetPermissions(permissionSpec);
-	}
-	public bool SetPermissions2(String filename, void* permissionSpec)
-	{
-		return this.ptr.SetPermissions2(filename, permissionSpec);
-	}
-	public bool Open33(c_int fd, void* ioFlags, void* handleFlags)
-	{
-		return this.ptr.Open33(fd, ioFlags, handleFlags);
-	}
-	public QFileDevice_FileError Error()
-	{
-		return this.ptr.Error();
-	}
-	public void UnsetError()
-	{
-		this.ptr.UnsetError();
-	}
-	public void Close()
-	{
-		this.ptr.Close();
-	}
-	public bool IsSequential()
-	{
-		return this.ptr.IsSequential();
-	}
-	public c_int Handle()
-	{
-		return this.ptr.Handle();
-	}
-	public c_longlong Pos()
-	{
-		return this.ptr.Pos();
-	}
-	public bool Seek(c_longlong offset)
-	{
-		return this.ptr.Seek(offset);
-	}
-	public bool AtEnd()
-	{
-		return this.ptr.AtEnd();
-	}
-	public bool Flush()
-	{
-		return this.ptr.Flush();
-	}
-	public c_uchar* Map(c_longlong offset, c_longlong size)
-	{
-		return this.ptr.Map(offset, size);
-	}
-	public bool Unmap(c_uchar* address)
-	{
-		return this.ptr.Unmap(address);
-	}
-	public QDateTime_Ptr FileTime(QFileDevice_FileTime time)
-	{
-		return this.ptr.FileTime(time);
-	}
-	public bool SetFileTime(IQDateTime newDate, QFileDevice_FileTime fileTime)
-	{
-		return this.ptr.SetFileTime(newDate, fileTime);
-	}
-	public c_longlong ReadData(c_char* data, c_longlong maxlen)
-	{
-		return this.ptr.ReadData(data, maxlen);
-	}
-	public c_longlong WriteData(c_char* data, c_longlong lenVal)
-	{
-		return this.ptr.WriteData(data, lenVal);
-	}
-	public c_longlong ReadLineData(c_char* data, c_longlong maxlen)
-	{
-		return this.ptr.ReadLineData(data, maxlen);
-	}
-	public c_uchar* Map3(c_longlong offset, c_longlong size, void* flags)
-	{
-		return this.ptr.Map3(offset, size, flags);
-	}
-	public void* OpenMode()
-	{
-		return this.ptr.OpenMode();
-	}
-	public void SetTextModeEnabled(bool enabled)
-	{
-		this.ptr.SetTextModeEnabled(enabled);
-	}
-	public bool IsTextModeEnabled()
-	{
-		return this.ptr.IsTextModeEnabled();
-	}
-	public bool IsOpen()
-	{
-		return this.ptr.IsOpen();
-	}
-	public bool IsReadable()
-	{
-		return this.ptr.IsReadable();
-	}
-	public bool IsWritable()
-	{
-		return this.ptr.IsWritable();
-	}
-	public c_int ReadChannelCount()
-	{
-		return this.ptr.ReadChannelCount();
-	}
-	public c_int WriteChannelCount()
-	{
-		return this.ptr.WriteChannelCount();
-	}
-	public c_int CurrentReadChannel()
-	{
-		return this.ptr.CurrentReadChannel();
-	}
-	public void SetCurrentReadChannel(c_int channel)
-	{
-		this.ptr.SetCurrentReadChannel(channel);
-	}
-	public c_int CurrentWriteChannel()
-	{
-		return this.ptr.CurrentWriteChannel();
-	}
-	public void SetCurrentWriteChannel(c_int channel)
-	{
-		this.ptr.SetCurrentWriteChannel(channel);
-	}
-	public bool Reset()
-	{
-		return this.ptr.Reset();
-	}
-	public c_longlong BytesAvailable()
-	{
-		return this.ptr.BytesAvailable();
-	}
-	public c_longlong BytesToWrite()
-	{
-		return this.ptr.BytesToWrite();
-	}
-	public c_longlong Read(c_char* data, c_longlong maxlen)
-	{
-		return this.ptr.Read(data, maxlen);
-	}
-	public void* Read2(c_longlong maxlen)
-	{
-		return this.ptr.Read2(maxlen);
-	}
-	public void* ReadAll()
-	{
-		return this.ptr.ReadAll();
-	}
-	public c_longlong ReadLine(c_char* data, c_longlong maxlen)
-	{
-		return this.ptr.ReadLine(data, maxlen);
-	}
-	public void* ReadLine2()
-	{
-		return this.ptr.ReadLine2();
-	}
-	public bool CanReadLine()
-	{
-		return this.ptr.CanReadLine();
-	}
-	public void StartTransaction()
-	{
-		this.ptr.StartTransaction();
-	}
-	public void CommitTransaction()
-	{
-		this.ptr.CommitTransaction();
-	}
-	public void RollbackTransaction()
-	{
-		this.ptr.RollbackTransaction();
-	}
-	public bool IsTransactionStarted()
-	{
-		return this.ptr.IsTransactionStarted();
-	}
-	public c_longlong Write(c_char* data, c_longlong lenVal)
-	{
-		return this.ptr.Write(data, lenVal);
-	}
-	public c_longlong Write2(c_char* data)
-	{
-		return this.ptr.Write2(data);
-	}
-	public c_longlong Write3(void** data)
-	{
-		return this.ptr.Write3(data);
-	}
-	public c_longlong Peek(c_char* data, c_longlong maxlen)
-	{
-		return this.ptr.Peek(data, maxlen);
-	}
-	public void* Peek2(c_longlong maxlen)
-	{
-		return this.ptr.Peek2(maxlen);
-	}
-	public c_longlong Skip(c_longlong maxSize)
-	{
-		return this.ptr.Skip(maxSize);
-	}
-	public bool WaitForReadyRead(c_int msecs)
-	{
-		return this.ptr.WaitForReadyRead(msecs);
-	}
-	public bool WaitForBytesWritten(c_int msecs)
-	{
-		return this.ptr.WaitForBytesWritten(msecs);
-	}
-	public void UngetChar(c_char c)
-	{
-		this.ptr.UngetChar(c);
-	}
-	public bool PutChar(c_char c)
-	{
-		return this.ptr.PutChar(c);
-	}
-	public bool GetChar(c_char* c)
-	{
-		return this.ptr.GetChar(c);
-	}
-	public void ErrorString(String outStr)
-	{
-		this.ptr.ErrorString(outStr);
-	}
-	public void ReadyRead()
-	{
-		this.ptr.ReadyRead();
-	}
-	public void ChannelReadyRead(c_int channel)
-	{
-		this.ptr.ChannelReadyRead(channel);
-	}
-	public void BytesWritten(c_longlong bytes)
-	{
-		this.ptr.BytesWritten(bytes);
-	}
-	public void ChannelBytesWritten(c_int channel, c_longlong bytes)
-	{
-		this.ptr.ChannelBytesWritten(channel, bytes);
-	}
-	public void AboutToClose()
-	{
-		this.ptr.AboutToClose();
-	}
-	public void ReadChannelFinished()
-	{
-		this.ptr.ReadChannelFinished();
-	}
-	public c_longlong SkipData(c_longlong maxSize)
-	{
-		return this.ptr.SkipData(maxSize);
-	}
-	public void SetOpenMode(void* openMode)
-	{
-		this.ptr.SetOpenMode(openMode);
-	}
-	public void SetErrorString(String errorString)
-	{
-		this.ptr.SetErrorString(errorString);
-	}
-	public void* ReadLine1(c_longlong maxlen)
-	{
-		return this.ptr.ReadLine1(maxlen);
-	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1357,25 +918,20 @@ class QTemporaryFile : IQTemporaryFile, IQFile, IQFileDevice, IQIODevice, IQObje
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1417,6 +973,365 @@ class QTemporaryFile : IQTemporaryFile, IQFile, IQFileDevice, IQIODevice, IQObje
 	{
 		this.ptr.Destroyed1(param1);
 	}
+	public void* OpenMode()
+	{
+		return this.ptr.OpenMode();
+	}
+	public void SetTextModeEnabled(bool enabled)
+	{
+		this.ptr.SetTextModeEnabled(enabled);
+	}
+	public bool IsTextModeEnabled()
+	{
+		return this.ptr.IsTextModeEnabled();
+	}
+	public bool IsOpen()
+	{
+		return this.ptr.IsOpen();
+	}
+	public bool IsReadable()
+	{
+		return this.ptr.IsReadable();
+	}
+	public bool IsWritable()
+	{
+		return this.ptr.IsWritable();
+	}
+	public  virtual bool OnIsSequential()
+	{
+		return default;
+	}
+	public c_int ReadChannelCount()
+	{
+		return this.ptr.ReadChannelCount();
+	}
+	public c_int WriteChannelCount()
+	{
+		return this.ptr.WriteChannelCount();
+	}
+	public c_int CurrentReadChannel()
+	{
+		return this.ptr.CurrentReadChannel();
+	}
+	public void SetCurrentReadChannel(c_int channel)
+	{
+		this.ptr.SetCurrentReadChannel(channel);
+	}
+	public c_int CurrentWriteChannel()
+	{
+		return this.ptr.CurrentWriteChannel();
+	}
+	public void SetCurrentWriteChannel(c_int channel)
+	{
+		this.ptr.SetCurrentWriteChannel(channel);
+	}
+	public  virtual void OnClose()
+	{
+	}
+	public  virtual c_longlong OnPos()
+	{
+		return default;
+	}
+	public  virtual c_longlong OnSize()
+	{
+		return default;
+	}
+	public  virtual bool OnSeek(c_longlong pos)
+	{
+		return default;
+	}
+	public  virtual bool OnAtEnd()
+	{
+		return default;
+	}
+	public  virtual bool OnReset()
+	{
+		return default;
+	}
+	public  virtual c_longlong OnBytesAvailable()
+	{
+		return default;
+	}
+	public  virtual c_longlong OnBytesToWrite()
+	{
+		return default;
+	}
+	public c_longlong Read(c_char* data, c_longlong maxlen)
+	{
+		return this.ptr.Read(data, maxlen);
+	}
+	public void* Read2(c_longlong maxlen)
+	{
+		return this.ptr.Read2(maxlen);
+	}
+	public void* ReadAll()
+	{
+		return this.ptr.ReadAll();
+	}
+	public c_longlong ReadLine(c_char* data, c_longlong maxlen)
+	{
+		return this.ptr.ReadLine(data, maxlen);
+	}
+	public void* ReadLine2()
+	{
+		return this.ptr.ReadLine2();
+	}
+	public  virtual bool OnCanReadLine()
+	{
+		return default;
+	}
+	public void StartTransaction()
+	{
+		this.ptr.StartTransaction();
+	}
+	public void CommitTransaction()
+	{
+		this.ptr.CommitTransaction();
+	}
+	public void RollbackTransaction()
+	{
+		this.ptr.RollbackTransaction();
+	}
+	public bool IsTransactionStarted()
+	{
+		return this.ptr.IsTransactionStarted();
+	}
+	public c_longlong Write(c_char* data, c_longlong lenVal)
+	{
+		return this.ptr.Write(data, lenVal);
+	}
+	public c_longlong Write2(c_char* data)
+	{
+		return this.ptr.Write2(data);
+	}
+	public c_longlong Write3(void** data)
+	{
+		return this.ptr.Write3(data);
+	}
+	public c_longlong Peek(c_char* data, c_longlong maxlen)
+	{
+		return this.ptr.Peek(data, maxlen);
+	}
+	public void* Peek2(c_longlong maxlen)
+	{
+		return this.ptr.Peek2(maxlen);
+	}
+	public c_longlong Skip(c_longlong maxSize)
+	{
+		return this.ptr.Skip(maxSize);
+	}
+	public  virtual bool OnWaitForReadyRead(c_int msecs)
+	{
+		return default;
+	}
+	public  virtual bool OnWaitForBytesWritten(c_int msecs)
+	{
+		return default;
+	}
+	public void UngetChar(c_char c)
+	{
+		this.ptr.UngetChar(c);
+	}
+	public bool PutChar(c_char c)
+	{
+		return this.ptr.PutChar(c);
+	}
+	public bool GetChar(c_char* c)
+	{
+		return this.ptr.GetChar(c);
+	}
+	public void ErrorString(String outStr)
+	{
+		this.ptr.ErrorString(outStr);
+	}
+	public void ReadyRead()
+	{
+		this.ptr.ReadyRead();
+	}
+	public void ChannelReadyRead(c_int channel)
+	{
+		this.ptr.ChannelReadyRead(channel);
+	}
+	public void BytesWritten(c_longlong bytes)
+	{
+		this.ptr.BytesWritten(bytes);
+	}
+	public void ChannelBytesWritten(c_int channel, c_longlong bytes)
+	{
+		this.ptr.ChannelBytesWritten(channel, bytes);
+	}
+	public void AboutToClose()
+	{
+		this.ptr.AboutToClose();
+	}
+	public void ReadChannelFinished()
+	{
+		this.ptr.ReadChannelFinished();
+	}
+	public  virtual c_longlong OnReadData(c_char* data, c_longlong maxlen)
+	{
+		return default;
+	}
+	public  virtual c_longlong OnReadLineData(c_char* data, c_longlong maxlen)
+	{
+		return default;
+	}
+	public  virtual c_longlong OnSkipData(c_longlong maxSize)
+	{
+		return default;
+	}
+	public  virtual c_longlong OnWriteData(c_char* data, c_longlong lenVal)
+	{
+		return default;
+	}
+	public void SetOpenMode(void* openMode)
+	{
+		this.ptr.SetOpenMode(openMode);
+	}
+	public void SetErrorString(String errorString)
+	{
+		this.ptr.SetErrorString(errorString);
+	}
+	public void* ReadLine1(c_longlong maxlen)
+	{
+		return this.ptr.ReadLine1(maxlen);
+	}
+	public QFileDevice_FileError Error()
+	{
+		return this.ptr.Error();
+	}
+	public void UnsetError()
+	{
+		this.ptr.UnsetError();
+	}
+	public c_int Handle()
+	{
+		return this.ptr.Handle();
+	}
+	public bool Flush()
+	{
+		return this.ptr.Flush();
+	}
+	public  virtual bool OnResize(c_longlong sz)
+	{
+		return default;
+	}
+	public  virtual void* OnPermissions()
+	{
+		return default;
+	}
+	public  virtual bool OnSetPermissions(void* permissionSpec)
+	{
+		return default;
+	}
+	public c_uchar* Map(c_longlong offset, c_longlong size)
+	{
+		return this.ptr.Map(offset, size);
+	}
+	public bool Unmap(c_uchar* address)
+	{
+		return this.ptr.Unmap(address);
+	}
+	public QDateTime_Ptr FileTime(QFileDevice_FileTime time)
+	{
+		return this.ptr.FileTime(time);
+	}
+	public bool SetFileTime(IQDateTime newDate, QFileDevice_FileTime fileTime)
+	{
+		return this.ptr.SetFileTime(newDate, fileTime);
+	}
+	public c_uchar* Map3(c_longlong offset, c_longlong size, void* flags)
+	{
+		return this.ptr.Map3(offset, size, flags);
+	}
+	public void SetFileName(String name)
+	{
+		this.ptr.SetFileName(name);
+	}
+	public void* EncodeName(String fileName)
+	{
+		return this.ptr.EncodeName(fileName);
+	}
+	public void DecodeName(String outStr, void** localFileName)
+	{
+		this.ptr.DecodeName(outStr, localFileName);
+	}
+	public void DecodeName2(String outStr, c_char* localFileName)
+	{
+		this.ptr.DecodeName2(outStr, localFileName);
+	}
+	public bool Exists()
+	{
+		return this.ptr.Exists();
+	}
+	public bool Exists2(String fileName)
+	{
+		return this.ptr.Exists2(fileName);
+	}
+	public void SymLinkTarget(String outStr)
+	{
+		this.ptr.SymLinkTarget(outStr);
+	}
+	public void SymLinkTarget2(String outStr, String fileName)
+	{
+		this.ptr.SymLinkTarget2(outStr, fileName);
+	}
+	public bool Remove()
+	{
+		return this.ptr.Remove();
+	}
+	public bool Remove2(String fileName)
+	{
+		return this.ptr.Remove2(fileName);
+	}
+	public bool MoveToTrash()
+	{
+		return this.ptr.MoveToTrash();
+	}
+	public bool MoveToTrash2(String fileName)
+	{
+		return this.ptr.MoveToTrash2(fileName);
+	}
+	public bool Rename2(String oldName, String newName)
+	{
+		return this.ptr.Rename2(oldName, newName);
+	}
+	public bool Link(String newName)
+	{
+		return this.ptr.Link(newName);
+	}
+	public bool Link2(String fileName, String newName)
+	{
+		return this.ptr.Link2(fileName, newName);
+	}
+	public bool Copy(String newName)
+	{
+		return this.ptr.Copy(newName);
+	}
+	public bool Copy2(String fileName, String newName)
+	{
+		return this.ptr.Copy2(fileName, newName);
+	}
+	public bool Open4(c_int fd, void* ioFlags)
+	{
+		return this.ptr.Open4(fd, ioFlags);
+	}
+	public bool Resize2(String filename, c_longlong sz)
+	{
+		return this.ptr.Resize2(filename, sz);
+	}
+	public void* Permissions2(String filename)
+	{
+		return this.ptr.Permissions2(filename);
+	}
+	public bool SetPermissions2(String filename, void* permissionSpec)
+	{
+		return this.ptr.SetPermissions2(filename, permissionSpec);
+	}
+	public bool Open33(c_int fd, void* ioFlags, void* handleFlags)
+	{
+		return this.ptr.Open33(fd, ioFlags, handleFlags);
+	}
 }
 interface IQTemporaryFile : IQtObjectInterface
 {
@@ -1435,10 +1350,22 @@ extension CQt
 	public static extern void QTemporaryFile_Delete(QTemporaryFile_Ptr self);
 	[LinkName("QTemporaryFile_MetaObject")]
 	public static extern void** QTemporaryFile_MetaObject(void* self);
+	
+	public function void QTemporaryFile_OnMetaObject_action(void* self);
+	[LinkName("QTemporaryFile_OnMetaObject")]
+	public static extern void** QTemporaryFile_OnMetaObject(void* self, QTemporaryFile_OnMetaObject_action _action);
 	[LinkName("QTemporaryFile_Qt_Metacast")]
 	public static extern void* QTemporaryFile_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QTemporaryFile_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QTemporaryFile_OnMetacast")]
+	public static extern void* QTemporaryFile_OnMetacast(void* self, QTemporaryFile_OnMetacast_action _action);
 	[LinkName("QTemporaryFile_Qt_Metacall")]
 	public static extern c_int QTemporaryFile_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QTemporaryFile_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QTemporaryFile_OnMetacall")]
+	public static extern c_int QTemporaryFile_OnMetacall(void* self, QTemporaryFile_OnMetacall_action _action);
 	[LinkName("QTemporaryFile_Tr")]
 	public static extern libqt_string QTemporaryFile_Tr(c_char* s);
 	[LinkName("QTemporaryFile_AutoRemove")]
@@ -1449,6 +1376,10 @@ extension CQt
 	public static extern bool QTemporaryFile_Open(void* self);
 	[LinkName("QTemporaryFile_FileName")]
 	public static extern libqt_string QTemporaryFile_FileName(void* self);
+	
+	public function void QTemporaryFile_OnFileName_action(void* self);
+	[LinkName("QTemporaryFile_OnFileName")]
+	public static extern libqt_string QTemporaryFile_OnFileName(void* self, QTemporaryFile_OnFileName_action _action);
 	[LinkName("QTemporaryFile_FileTemplate")]
 	public static extern libqt_string QTemporaryFile_FileTemplate(void* self);
 	[LinkName("QTemporaryFile_SetFileTemplate")]
@@ -1461,8 +1392,168 @@ extension CQt
 	public static extern void** QTemporaryFile_CreateNativeFile2(void** file);
 	[LinkName("QTemporaryFile_Open2")]
 	public static extern bool QTemporaryFile_Open2(void* self, void* flags);
+	
+	public function void QTemporaryFile_OnOpen2_action(void* self, void* flags);
+	[LinkName("QTemporaryFile_OnOpen2")]
+	public static extern bool QTemporaryFile_OnOpen2(void* self, QTemporaryFile_OnOpen2_action _action);
 	[LinkName("QTemporaryFile_Tr2")]
 	public static extern libqt_string QTemporaryFile_Tr2(c_char* s, c_char* c);
 	[LinkName("QTemporaryFile_Tr3")]
 	public static extern libqt_string QTemporaryFile_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QTemporaryFile_Event")]
+	public static extern bool QTemporaryFile_Event(void* self, void** event);
+	
+	public function void QTemporaryFile_OnEvent_action(void* self, void** event);
+	[LinkName("QTemporaryFile_OnEvent")]
+	public static extern bool QTemporaryFile_OnEvent(void* self, QTemporaryFile_OnEvent_action _action);
+	[LinkName("QTemporaryFile_EventFilter")]
+	public static extern bool QTemporaryFile_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QTemporaryFile_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QTemporaryFile_OnEventFilter")]
+	public static extern bool QTemporaryFile_OnEventFilter(void* self, QTemporaryFile_OnEventFilter_action _action);
+	[LinkName("QTemporaryFile_TimerEvent")]
+	public static extern void QTemporaryFile_TimerEvent(void* self, void** event);
+	
+	public function void QTemporaryFile_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QTemporaryFile_OnTimerEvent")]
+	public static extern void QTemporaryFile_OnTimerEvent(void* self, QTemporaryFile_OnTimerEvent_action _action);
+	[LinkName("QTemporaryFile_ChildEvent")]
+	public static extern void QTemporaryFile_ChildEvent(void* self, void** event);
+	
+	public function void QTemporaryFile_OnChildEvent_action(void* self, void** event);
+	[LinkName("QTemporaryFile_OnChildEvent")]
+	public static extern void QTemporaryFile_OnChildEvent(void* self, QTemporaryFile_OnChildEvent_action _action);
+	[LinkName("QTemporaryFile_CustomEvent")]
+	public static extern void QTemporaryFile_CustomEvent(void* self, void** event);
+	
+	public function void QTemporaryFile_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QTemporaryFile_OnCustomEvent")]
+	public static extern void QTemporaryFile_OnCustomEvent(void* self, QTemporaryFile_OnCustomEvent_action _action);
+	[LinkName("QTemporaryFile_ConnectNotify")]
+	public static extern void QTemporaryFile_ConnectNotify(void* self, void** signal);
+	
+	public function void QTemporaryFile_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QTemporaryFile_OnConnectNotify")]
+	public static extern void QTemporaryFile_OnConnectNotify(void* self, QTemporaryFile_OnConnectNotify_action _action);
+	[LinkName("QTemporaryFile_DisconnectNotify")]
+	public static extern void QTemporaryFile_DisconnectNotify(void* self, void** signal);
+	
+	public function void QTemporaryFile_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QTemporaryFile_OnDisconnectNotify")]
+	public static extern void QTemporaryFile_OnDisconnectNotify(void* self, QTemporaryFile_OnDisconnectNotify_action _action);
+	[LinkName("QTemporaryFile_IsSequential")]
+	public static extern bool QTemporaryFile_IsSequential(void* self);
+	
+	public function void QTemporaryFile_OnIsSequential_action(void* self);
+	[LinkName("QTemporaryFile_OnIsSequential")]
+	public static extern bool QTemporaryFile_OnIsSequential(void* self, QTemporaryFile_OnIsSequential_action _action);
+	[LinkName("QTemporaryFile_Close")]
+	public static extern void QTemporaryFile_Close(void* self);
+	
+	public function void QTemporaryFile_OnClose_action(void* self);
+	[LinkName("QTemporaryFile_OnClose")]
+	public static extern void QTemporaryFile_OnClose(void* self, QTemporaryFile_OnClose_action _action);
+	[LinkName("QTemporaryFile_Pos")]
+	public static extern c_longlong QTemporaryFile_Pos(void* self);
+	
+	public function void QTemporaryFile_OnPos_action(void* self);
+	[LinkName("QTemporaryFile_OnPos")]
+	public static extern c_longlong QTemporaryFile_OnPos(void* self, QTemporaryFile_OnPos_action _action);
+	[LinkName("QTemporaryFile_Size")]
+	public static extern c_longlong QTemporaryFile_Size(void* self);
+	
+	public function void QTemporaryFile_OnSize_action(void* self);
+	[LinkName("QTemporaryFile_OnSize")]
+	public static extern c_longlong QTemporaryFile_OnSize(void* self, QTemporaryFile_OnSize_action _action);
+	[LinkName("QTemporaryFile_Seek")]
+	public static extern bool QTemporaryFile_Seek(void* self, c_longlong pos);
+	
+	public function void QTemporaryFile_OnSeek_action(void* self, c_longlong pos);
+	[LinkName("QTemporaryFile_OnSeek")]
+	public static extern bool QTemporaryFile_OnSeek(void* self, QTemporaryFile_OnSeek_action _action);
+	[LinkName("QTemporaryFile_AtEnd")]
+	public static extern bool QTemporaryFile_AtEnd(void* self);
+	
+	public function void QTemporaryFile_OnAtEnd_action(void* self);
+	[LinkName("QTemporaryFile_OnAtEnd")]
+	public static extern bool QTemporaryFile_OnAtEnd(void* self, QTemporaryFile_OnAtEnd_action _action);
+	[LinkName("QTemporaryFile_Reset")]
+	public static extern bool QTemporaryFile_Reset(void* self);
+	
+	public function void QTemporaryFile_OnReset_action(void* self);
+	[LinkName("QTemporaryFile_OnReset")]
+	public static extern bool QTemporaryFile_OnReset(void* self, QTemporaryFile_OnReset_action _action);
+	[LinkName("QTemporaryFile_BytesAvailable")]
+	public static extern c_longlong QTemporaryFile_BytesAvailable(void* self);
+	
+	public function void QTemporaryFile_OnBytesAvailable_action(void* self);
+	[LinkName("QTemporaryFile_OnBytesAvailable")]
+	public static extern c_longlong QTemporaryFile_OnBytesAvailable(void* self, QTemporaryFile_OnBytesAvailable_action _action);
+	[LinkName("QTemporaryFile_BytesToWrite")]
+	public static extern c_longlong QTemporaryFile_BytesToWrite(void* self);
+	
+	public function void QTemporaryFile_OnBytesToWrite_action(void* self);
+	[LinkName("QTemporaryFile_OnBytesToWrite")]
+	public static extern c_longlong QTemporaryFile_OnBytesToWrite(void* self, QTemporaryFile_OnBytesToWrite_action _action);
+	[LinkName("QTemporaryFile_CanReadLine")]
+	public static extern bool QTemporaryFile_CanReadLine(void* self);
+	
+	public function void QTemporaryFile_OnCanReadLine_action(void* self);
+	[LinkName("QTemporaryFile_OnCanReadLine")]
+	public static extern bool QTemporaryFile_OnCanReadLine(void* self, QTemporaryFile_OnCanReadLine_action _action);
+	[LinkName("QTemporaryFile_WaitForReadyRead")]
+	public static extern bool QTemporaryFile_WaitForReadyRead(void* self, c_int msecs);
+	
+	public function void QTemporaryFile_OnWaitForReadyRead_action(void* self, c_int msecs);
+	[LinkName("QTemporaryFile_OnWaitForReadyRead")]
+	public static extern bool QTemporaryFile_OnWaitForReadyRead(void* self, QTemporaryFile_OnWaitForReadyRead_action _action);
+	[LinkName("QTemporaryFile_WaitForBytesWritten")]
+	public static extern bool QTemporaryFile_WaitForBytesWritten(void* self, c_int msecs);
+	
+	public function void QTemporaryFile_OnWaitForBytesWritten_action(void* self, c_int msecs);
+	[LinkName("QTemporaryFile_OnWaitForBytesWritten")]
+	public static extern bool QTemporaryFile_OnWaitForBytesWritten(void* self, QTemporaryFile_OnWaitForBytesWritten_action _action);
+	[LinkName("QTemporaryFile_ReadData")]
+	public static extern c_longlong QTemporaryFile_ReadData(void* self, c_char* data, c_longlong maxlen);
+	
+	public function void QTemporaryFile_OnReadData_action(void* self, c_char* data, c_longlong maxlen);
+	[LinkName("QTemporaryFile_OnReadData")]
+	public static extern c_longlong QTemporaryFile_OnReadData(void* self, QTemporaryFile_OnReadData_action _action);
+	[LinkName("QTemporaryFile_ReadLineData")]
+	public static extern c_longlong QTemporaryFile_ReadLineData(void* self, c_char* data, c_longlong maxlen);
+	
+	public function void QTemporaryFile_OnReadLineData_action(void* self, c_char* data, c_longlong maxlen);
+	[LinkName("QTemporaryFile_OnReadLineData")]
+	public static extern c_longlong QTemporaryFile_OnReadLineData(void* self, QTemporaryFile_OnReadLineData_action _action);
+	[LinkName("QTemporaryFile_SkipData")]
+	public static extern c_longlong QTemporaryFile_SkipData(void* self, c_longlong maxSize);
+	
+	public function void QTemporaryFile_OnSkipData_action(void* self, c_longlong maxSize);
+	[LinkName("QTemporaryFile_OnSkipData")]
+	public static extern c_longlong QTemporaryFile_OnSkipData(void* self, QTemporaryFile_OnSkipData_action _action);
+	[LinkName("QTemporaryFile_WriteData")]
+	public static extern c_longlong QTemporaryFile_WriteData(void* self, c_char* data, c_longlong lenVal);
+	
+	public function void QTemporaryFile_OnWriteData_action(void* self, c_char* data, c_longlong lenVal);
+	[LinkName("QTemporaryFile_OnWriteData")]
+	public static extern c_longlong QTemporaryFile_OnWriteData(void* self, QTemporaryFile_OnWriteData_action _action);
+	[LinkName("QTemporaryFile_Resize")]
+	public static extern bool QTemporaryFile_Resize(void* self, c_longlong sz);
+	
+	public function void QTemporaryFile_OnResize_action(void* self, c_longlong sz);
+	[LinkName("QTemporaryFile_OnResize")]
+	public static extern bool QTemporaryFile_OnResize(void* self, QTemporaryFile_OnResize_action _action);
+	[LinkName("QTemporaryFile_Permissions")]
+	public static extern void* QTemporaryFile_Permissions(void* self);
+	
+	public function void QTemporaryFile_OnPermissions_action(void* self);
+	[LinkName("QTemporaryFile_OnPermissions")]
+	public static extern void* QTemporaryFile_OnPermissions(void* self, QTemporaryFile_OnPermissions_action _action);
+	[LinkName("QTemporaryFile_SetPermissions")]
+	public static extern bool QTemporaryFile_SetPermissions(void* self, void* permissionSpec);
+	
+	public function void QTemporaryFile_OnSetPermissions_action(void* self, void* permissionSpec);
+	[LinkName("QTemporaryFile_OnSetPermissions")]
+	public static extern bool QTemporaryFile_OnSetPermissions(void* self, QTemporaryFile_OnSetPermissions_action _action);
 }

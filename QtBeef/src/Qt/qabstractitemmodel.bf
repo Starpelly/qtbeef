@@ -35,29 +35,17 @@ class QModelRoleData : IQModelRoleData
 {
 	private QModelRoleData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QModelRoleData_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(c_int role)
 	{
 		this.ptr = CQt.QModelRoleData_new(role);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelRoleData param1)
 	{
 		this.ptr = CQt.QModelRoleData_new2((.)param1?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -142,39 +130,25 @@ class QModelRoleDataSpan : IQModelRoleDataSpan
 {
 	private QModelRoleDataSpan_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QModelRoleDataSpan_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelRoleDataSpan other)
 	{
 		this.ptr = CQt.QModelRoleDataSpan_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QModelRoleDataSpan_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelRoleData modelRoleData)
 	{
 		this.ptr = CQt.QModelRoleDataSpan_new4((.)modelRoleData?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelRoleData modelRoleData, void* lenVal)
 	{
 		this.ptr = CQt.QModelRoleDataSpan_new5((.)modelRoleData?.ObjectPtr, lenVal);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -315,29 +289,17 @@ class QModelIndex : IQModelIndex
 {
 	private QModelIndex_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QModelIndex_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex other)
 	{
 		this.ptr = CQt.QModelIndex_new((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QModelIndex_new3();
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -540,34 +502,21 @@ class QPersistentModelIndex : IQPersistentModelIndex
 {
 	private QPersistentModelIndex_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPersistentModelIndex_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPersistentModelIndex_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex index)
 	{
 		this.ptr = CQt.QPersistentModelIndex_new2((.)index?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQPersistentModelIndex other)
 	{
 		this.ptr = CQt.QPersistentModelIndex_new3((.)other?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -715,11 +664,11 @@ struct QAbstractItemModel_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QAbstractItemModel_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QAbstractItemModel_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QAbstractItemModel_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -1065,11 +1014,11 @@ struct QAbstractItemModel_Ptr
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+		return CQt.QAbstractItemModel_Event((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QAbstractItemModel_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1225,23 +1174,23 @@ struct QAbstractItemModel_Ptr
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QAbstractItemModel_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QAbstractItemModel_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+		CQt.QAbstractItemModel_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QAbstractItemModel_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+		CQt.QAbstractItemModel_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1288,133 +1237,33 @@ class QAbstractItemModel : IQAbstractItemModel, IQObject
 {
 	private QAbstractItemModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QAbstractItemModel_dataChanged,
-		QAbstractItemModel_headerDataChanged,
-		QAbstractItemModel_layoutChanged,
-		QAbstractItemModel_layoutAboutToBeChanged,
-		QAbstractItemModel_dataChanged3,
-		QAbstractItemModel_layoutChanged1,
-		QAbstractItemModel_layoutChanged2,
-		QAbstractItemModel_layoutAboutToBeChanged1,
-		QAbstractItemModel_layoutAboutToBeChanged2,
-		QAbstractItemModel_destroyed,
-		QAbstractItemModel_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
-		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
-		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
-		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
-		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged.Invoke(topLeft, bottomRight);
-	}
-	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QAbstractItemModel_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractItemModel_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QAbstractItemModel_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QAbstractItemModel_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -1424,105 +1273,105 @@ class QAbstractItemModel : IQAbstractItemModel, IQObject
 	{
 		return this.ptr.HasIndex(row, column);
 	}
-	public QModelIndex_Ptr Index(c_int row, c_int column, IQModelIndex parent)
+	public  virtual QModelIndex_Ptr OnIndex(c_int row, c_int column, void** parent)
 	{
-		return this.ptr.Index(row, column, parent);
+		return default;
 	}
-	public QModelIndex_Ptr Parent(IQModelIndex child)
+	public  virtual QModelIndex_Ptr OnParent(void** child)
 	{
-		return this.ptr.Parent(child);
+		return default;
 	}
-	public QModelIndex_Ptr Sibling(c_int row, c_int column, IQModelIndex idx)
+	public  virtual QModelIndex_Ptr OnSibling(c_int row, c_int column, void** idx)
 	{
-		return this.ptr.Sibling(row, column, idx);
+		return default;
 	}
-	public c_int RowCount(IQModelIndex parent)
+	public  virtual c_int OnRowCount(void** parent)
 	{
-		return this.ptr.RowCount(parent);
+		return default;
 	}
-	public c_int ColumnCount(IQModelIndex parent)
+	public  virtual c_int OnColumnCount(void** parent)
 	{
-		return this.ptr.ColumnCount(parent);
+		return default;
 	}
-	public bool HasChildren(IQModelIndex parent)
+	public  virtual bool OnHasChildren(void** parent)
 	{
-		return this.ptr.HasChildren(parent);
+		return default;
 	}
-	public QVariant_Ptr Data(IQModelIndex index, c_int role)
+	public  virtual QVariant_Ptr OnData(void** index, c_int role)
 	{
-		return this.ptr.Data(index, role);
+		return default;
 	}
-	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
+	public  virtual bool OnSetData(void** index, void** value, c_int role)
 	{
-		return this.ptr.SetData(index, value, role);
+		return default;
 	}
-	public QVariant_Ptr HeaderData(c_int section, Qt_Orientation orientation, c_int role)
+	public  virtual QVariant_Ptr OnHeaderData(c_int section, Qt_Orientation orientation, c_int role)
 	{
-		return this.ptr.HeaderData(section, orientation, role);
+		return default;
 	}
-	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
+	public  virtual bool OnSetHeaderData(c_int section, Qt_Orientation orientation, void** value, c_int role)
 	{
-		return this.ptr.SetHeaderData(section, orientation, value, role);
+		return default;
 	}
-	public void* ItemData(IQModelIndex index)
+	public  virtual void* OnItemData(void** index)
 	{
-		return this.ptr.ItemData(index);
+		return default;
 	}
-	public bool SetItemData(IQModelIndex index, void** roles)
+	public  virtual bool OnSetItemData(void** index, void** roles)
 	{
-		return this.ptr.SetItemData(index, roles);
+		return default;
 	}
-	public bool ClearItemData(IQModelIndex index)
+	public  virtual bool OnClearItemData(void** index)
 	{
-		return this.ptr.ClearItemData(index);
+		return default;
 	}
-	public void* MimeTypes()
+	public  virtual void* OnMimeTypes()
 	{
-		return this.ptr.MimeTypes();
+		return default;
 	}
-	public QMimeData_Ptr MimeData(void** indexes)
+	public  virtual QMimeData_Ptr OnMimeData(void** indexes)
 	{
-		return this.ptr.MimeData(indexes);
+		return default;
 	}
-	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	public  virtual bool OnCanDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
 	{
-		return this.ptr.CanDropMimeData(data, action, row, column, parent);
+		return default;
 	}
-	public bool DropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	public  virtual bool OnDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
 	{
-		return this.ptr.DropMimeData(data, action, row, column, parent);
+		return default;
 	}
-	public void* SupportedDropActions()
+	public  virtual void* OnSupportedDropActions()
 	{
-		return this.ptr.SupportedDropActions();
+		return default;
 	}
-	public void* SupportedDragActions()
+	public  virtual void* OnSupportedDragActions()
 	{
-		return this.ptr.SupportedDragActions();
+		return default;
 	}
-	public bool InsertRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnInsertRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.InsertRows(row, count, parent);
+		return default;
 	}
-	public bool InsertColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnInsertColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.InsertColumns(column, count, parent);
+		return default;
 	}
-	public bool RemoveRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.RemoveRows(row, count, parent);
+		return default;
 	}
-	public bool RemoveColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.RemoveColumns(column, count, parent);
+		return default;
 	}
-	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
+	public  virtual bool OnMoveRows(void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
 	{
-		return this.ptr.MoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+		return default;
 	}
-	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
+	public  virtual bool OnMoveColumns(void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
 	{
-		return this.ptr.MoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+		return default;
 	}
 	public bool InsertRow(c_int row)
 	{
@@ -1548,45 +1397,42 @@ class QAbstractItemModel : IQAbstractItemModel, IQObject
 	{
 		return this.ptr.MoveColumn(sourceParent, sourceColumn, destinationParent, destinationChild);
 	}
-	public void FetchMore(IQModelIndex parent)
+	public  virtual void OnFetchMore(void** parent)
 	{
-		this.ptr.FetchMore(parent);
 	}
-	public bool CanFetchMore(IQModelIndex parent)
+	public  virtual bool OnCanFetchMore(void** parent)
 	{
-		return this.ptr.CanFetchMore(parent);
+		return default;
 	}
-	public void* Flags(IQModelIndex index)
+	public  virtual void* OnFlags(void** index)
 	{
-		return this.ptr.Flags(index);
+		return default;
 	}
-	public void Sort(c_int column, Qt_SortOrder order)
+	public  virtual void OnSort(c_int column, Qt_SortOrder order)
 	{
-		this.ptr.Sort(column, order);
 	}
-	public QModelIndex_Ptr Buddy(IQModelIndex index)
+	public  virtual QModelIndex_Ptr OnBuddy(void** index)
 	{
-		return this.ptr.Buddy(index);
+		return default;
 	}
-	public void* Match(IQModelIndex start, c_int role, IQVariant value, c_int hits, void* flags)
+	public  virtual void* OnMatch(void** start, c_int role, void** value, c_int hits, void* flags)
 	{
-		return this.ptr.Match(start, role, value, hits, flags);
+		return default;
 	}
-	public QSize_Ptr Span(IQModelIndex index)
+	public  virtual QSize_Ptr OnSpan(void** index)
 	{
-		return this.ptr.Span(index);
+		return default;
 	}
-	public void* RoleNames()
+	public  virtual void* OnRoleNames()
 	{
-		return this.ptr.RoleNames();
+		return default;
 	}
 	public bool CheckIndex(IQModelIndex index)
 	{
 		return this.ptr.CheckIndex(index);
 	}
-	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
+	public  virtual void OnMultiData(void** index, void* roleDataSpan)
 	{
-		this.ptr.MultiData(index, roleDataSpan);
 	}
 	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
@@ -1604,17 +1450,15 @@ class QAbstractItemModel : IQAbstractItemModel, IQObject
 	{
 		this.ptr.LayoutAboutToBeChanged();
 	}
-	public bool Submit()
+	public  virtual bool OnSubmit()
 	{
-		return this.ptr.Submit();
+		return default;
 	}
-	public void Revert()
+	public  virtual void OnRevert()
 	{
-		this.ptr.Revert();
 	}
-	public void ResetInternalData()
+	public  virtual void OnResetInternalData()
 	{
-		this.ptr.ResetInternalData();
 	}
 	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
 	{
@@ -1756,13 +1600,13 @@ class QAbstractItemModel : IQAbstractItemModel, IQObject
 	{
 		return this.ptr.CreateIndex3(row, column, data);
 	}
-	public bool Event(IQEvent event)
+	public  virtual bool OnEvent(void** event)
 	{
-		return this.ptr.Event(event);
+		return default;
 	}
-	public bool EventFilter(IQObject watched, IQEvent event)
+	public  virtual bool OnEventFilter(void** watched, void** event)
 	{
-		return this.ptr.EventFilter(watched, event);
+		return default;
 	}
 	public void ObjectName(String outStr)
 	{
@@ -1916,25 +1760,20 @@ class QAbstractItemModel : IQAbstractItemModel, IQObject
 	{
 		return this.ptr.IsSignalConnected(signal);
 	}
-	public void TimerEvent(IQTimerEvent event)
+	public  virtual void OnTimerEvent(void** event)
 	{
-		this.ptr.TimerEvent(event);
 	}
-	public void ChildEvent(IQChildEvent event)
+	public  virtual void OnChildEvent(void** event)
 	{
-		this.ptr.ChildEvent(event);
 	}
-	public void CustomEvent(IQEvent event)
+	public  virtual void OnCustomEvent(void** event)
 	{
-		this.ptr.CustomEvent(event);
 	}
-	public void ConnectNotify(IQMetaMethod signal)
+	public  virtual void OnConnectNotify(void** signal)
 	{
-		this.ptr.ConnectNotify(signal);
 	}
-	public void DisconnectNotify(IQMetaMethod signal)
+	public  virtual void OnDisconnectNotify(void** signal)
 	{
-		this.ptr.DisconnectNotify(signal);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1990,64 +1829,176 @@ extension CQt
 	public static extern void QAbstractItemModel_Delete(QAbstractItemModel_Ptr self);
 	[LinkName("QAbstractItemModel_MetaObject")]
 	public static extern void** QAbstractItemModel_MetaObject(void* self);
+	
+	public function void QAbstractItemModel_OnMetaObject_action(void* self);
+	[LinkName("QAbstractItemModel_OnMetaObject")]
+	public static extern void** QAbstractItemModel_OnMetaObject(void* self, QAbstractItemModel_OnMetaObject_action _action);
 	[LinkName("QAbstractItemModel_Qt_Metacast")]
 	public static extern void* QAbstractItemModel_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QAbstractItemModel_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QAbstractItemModel_OnMetacast")]
+	public static extern void* QAbstractItemModel_OnMetacast(void* self, QAbstractItemModel_OnMetacast_action _action);
 	[LinkName("QAbstractItemModel_Qt_Metacall")]
 	public static extern c_int QAbstractItemModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QAbstractItemModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QAbstractItemModel_OnMetacall")]
+	public static extern c_int QAbstractItemModel_OnMetacall(void* self, QAbstractItemModel_OnMetacall_action _action);
 	[LinkName("QAbstractItemModel_Tr")]
 	public static extern libqt_string QAbstractItemModel_Tr(c_char* s);
 	[LinkName("QAbstractItemModel_HasIndex")]
 	public static extern bool QAbstractItemModel_HasIndex(void* self, c_int row, c_int column);
 	[LinkName("QAbstractItemModel_Index")]
 	public static extern void* QAbstractItemModel_Index(void* self, c_int row, c_int column, void** parent);
+	
+	public function void QAbstractItemModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
+	[LinkName("QAbstractItemModel_OnIndex")]
+	public static extern void* QAbstractItemModel_OnIndex(void* self, QAbstractItemModel_OnIndex_action _action);
 	[LinkName("QAbstractItemModel_Parent")]
 	public static extern void* QAbstractItemModel_Parent(void* self, void** child);
+	
+	public function void QAbstractItemModel_OnParent_action(void* self, void** child);
+	[LinkName("QAbstractItemModel_OnParent")]
+	public static extern void* QAbstractItemModel_OnParent(void* self, QAbstractItemModel_OnParent_action _action);
 	[LinkName("QAbstractItemModel_Sibling")]
 	public static extern void* QAbstractItemModel_Sibling(void* self, c_int row, c_int column, void** idx);
+	
+	public function void QAbstractItemModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
+	[LinkName("QAbstractItemModel_OnSibling")]
+	public static extern void* QAbstractItemModel_OnSibling(void* self, QAbstractItemModel_OnSibling_action _action);
 	[LinkName("QAbstractItemModel_RowCount")]
 	public static extern c_int QAbstractItemModel_RowCount(void* self, void** parent);
+	
+	public function void QAbstractItemModel_OnRowCount_action(void* self, void** parent);
+	[LinkName("QAbstractItemModel_OnRowCount")]
+	public static extern c_int QAbstractItemModel_OnRowCount(void* self, QAbstractItemModel_OnRowCount_action _action);
 	[LinkName("QAbstractItemModel_ColumnCount")]
 	public static extern c_int QAbstractItemModel_ColumnCount(void* self, void** parent);
+	
+	public function void QAbstractItemModel_OnColumnCount_action(void* self, void** parent);
+	[LinkName("QAbstractItemModel_OnColumnCount")]
+	public static extern c_int QAbstractItemModel_OnColumnCount(void* self, QAbstractItemModel_OnColumnCount_action _action);
 	[LinkName("QAbstractItemModel_HasChildren")]
 	public static extern bool QAbstractItemModel_HasChildren(void* self, void** parent);
+	
+	public function void QAbstractItemModel_OnHasChildren_action(void* self, void** parent);
+	[LinkName("QAbstractItemModel_OnHasChildren")]
+	public static extern bool QAbstractItemModel_OnHasChildren(void* self, QAbstractItemModel_OnHasChildren_action _action);
 	[LinkName("QAbstractItemModel_Data")]
 	public static extern void* QAbstractItemModel_Data(void* self, void** index, c_int role);
+	
+	public function void QAbstractItemModel_OnData_action(void* self, void** index, c_int role);
+	[LinkName("QAbstractItemModel_OnData")]
+	public static extern void* QAbstractItemModel_OnData(void* self, QAbstractItemModel_OnData_action _action);
 	[LinkName("QAbstractItemModel_SetData")]
 	public static extern bool QAbstractItemModel_SetData(void* self, void** index, void** value, c_int role);
+	
+	public function void QAbstractItemModel_OnSetData_action(void* self, void** index, void** value, c_int role);
+	[LinkName("QAbstractItemModel_OnSetData")]
+	public static extern bool QAbstractItemModel_OnSetData(void* self, QAbstractItemModel_OnSetData_action _action);
 	[LinkName("QAbstractItemModel_HeaderData")]
 	public static extern void* QAbstractItemModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	
+	public function void QAbstractItemModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	[LinkName("QAbstractItemModel_OnHeaderData")]
+	public static extern void* QAbstractItemModel_OnHeaderData(void* self, QAbstractItemModel_OnHeaderData_action _action);
 	[LinkName("QAbstractItemModel_SetHeaderData")]
 	public static extern bool QAbstractItemModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	
+	public function void QAbstractItemModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	[LinkName("QAbstractItemModel_OnSetHeaderData")]
+	public static extern bool QAbstractItemModel_OnSetHeaderData(void* self, QAbstractItemModel_OnSetHeaderData_action _action);
 	[LinkName("QAbstractItemModel_ItemData")]
 	public static extern void* QAbstractItemModel_ItemData(void* self, void** index);
+	
+	public function void QAbstractItemModel_OnItemData_action(void* self, void** index);
+	[LinkName("QAbstractItemModel_OnItemData")]
+	public static extern void* QAbstractItemModel_OnItemData(void* self, QAbstractItemModel_OnItemData_action _action);
 	[LinkName("QAbstractItemModel_SetItemData")]
 	public static extern bool QAbstractItemModel_SetItemData(void* self, void** index, void** roles);
+	
+	public function void QAbstractItemModel_OnSetItemData_action(void* self, void** index, void** roles);
+	[LinkName("QAbstractItemModel_OnSetItemData")]
+	public static extern bool QAbstractItemModel_OnSetItemData(void* self, QAbstractItemModel_OnSetItemData_action _action);
 	[LinkName("QAbstractItemModel_ClearItemData")]
 	public static extern bool QAbstractItemModel_ClearItemData(void* self, void** index);
+	
+	public function void QAbstractItemModel_OnClearItemData_action(void* self, void** index);
+	[LinkName("QAbstractItemModel_OnClearItemData")]
+	public static extern bool QAbstractItemModel_OnClearItemData(void* self, QAbstractItemModel_OnClearItemData_action _action);
 	[LinkName("QAbstractItemModel_MimeTypes")]
 	public static extern void* QAbstractItemModel_MimeTypes(void* self);
+	
+	public function void QAbstractItemModel_OnMimeTypes_action(void* self);
+	[LinkName("QAbstractItemModel_OnMimeTypes")]
+	public static extern void* QAbstractItemModel_OnMimeTypes(void* self, QAbstractItemModel_OnMimeTypes_action _action);
 	[LinkName("QAbstractItemModel_MimeData")]
 	public static extern void** QAbstractItemModel_MimeData(void* self, void** indexes);
+	
+	public function void QAbstractItemModel_OnMimeData_action(void* self, void** indexes);
+	[LinkName("QAbstractItemModel_OnMimeData")]
+	public static extern void** QAbstractItemModel_OnMimeData(void* self, QAbstractItemModel_OnMimeData_action _action);
 	[LinkName("QAbstractItemModel_CanDropMimeData")]
 	public static extern bool QAbstractItemModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QAbstractItemModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QAbstractItemModel_OnCanDropMimeData")]
+	public static extern bool QAbstractItemModel_OnCanDropMimeData(void* self, QAbstractItemModel_OnCanDropMimeData_action _action);
 	[LinkName("QAbstractItemModel_DropMimeData")]
 	public static extern bool QAbstractItemModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QAbstractItemModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QAbstractItemModel_OnDropMimeData")]
+	public static extern bool QAbstractItemModel_OnDropMimeData(void* self, QAbstractItemModel_OnDropMimeData_action _action);
 	[LinkName("QAbstractItemModel_SupportedDropActions")]
 	public static extern void* QAbstractItemModel_SupportedDropActions(void* self);
+	
+	public function void QAbstractItemModel_OnSupportedDropActions_action(void* self);
+	[LinkName("QAbstractItemModel_OnSupportedDropActions")]
+	public static extern void* QAbstractItemModel_OnSupportedDropActions(void* self, QAbstractItemModel_OnSupportedDropActions_action _action);
 	[LinkName("QAbstractItemModel_SupportedDragActions")]
 	public static extern void* QAbstractItemModel_SupportedDragActions(void* self);
+	
+	public function void QAbstractItemModel_OnSupportedDragActions_action(void* self);
+	[LinkName("QAbstractItemModel_OnSupportedDragActions")]
+	public static extern void* QAbstractItemModel_OnSupportedDragActions(void* self, QAbstractItemModel_OnSupportedDragActions_action _action);
 	[LinkName("QAbstractItemModel_InsertRows")]
 	public static extern bool QAbstractItemModel_InsertRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QAbstractItemModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QAbstractItemModel_OnInsertRows")]
+	public static extern bool QAbstractItemModel_OnInsertRows(void* self, QAbstractItemModel_OnInsertRows_action _action);
 	[LinkName("QAbstractItemModel_InsertColumns")]
 	public static extern bool QAbstractItemModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QAbstractItemModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QAbstractItemModel_OnInsertColumns")]
+	public static extern bool QAbstractItemModel_OnInsertColumns(void* self, QAbstractItemModel_OnInsertColumns_action _action);
 	[LinkName("QAbstractItemModel_RemoveRows")]
 	public static extern bool QAbstractItemModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QAbstractItemModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QAbstractItemModel_OnRemoveRows")]
+	public static extern bool QAbstractItemModel_OnRemoveRows(void* self, QAbstractItemModel_OnRemoveRows_action _action);
 	[LinkName("QAbstractItemModel_RemoveColumns")]
 	public static extern bool QAbstractItemModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QAbstractItemModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QAbstractItemModel_OnRemoveColumns")]
+	public static extern bool QAbstractItemModel_OnRemoveColumns(void* self, QAbstractItemModel_OnRemoveColumns_action _action);
 	[LinkName("QAbstractItemModel_MoveRows")]
 	public static extern bool QAbstractItemModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QAbstractItemModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QAbstractItemModel_OnMoveRows")]
+	public static extern bool QAbstractItemModel_OnMoveRows(void* self, QAbstractItemModel_OnMoveRows_action _action);
 	[LinkName("QAbstractItemModel_MoveColumns")]
 	public static extern bool QAbstractItemModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QAbstractItemModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QAbstractItemModel_OnMoveColumns")]
+	public static extern bool QAbstractItemModel_OnMoveColumns(void* self, QAbstractItemModel_OnMoveColumns_action _action);
 	[LinkName("QAbstractItemModel_InsertRow")]
 	public static extern bool QAbstractItemModel_InsertRow(void* self, c_int row);
 	[LinkName("QAbstractItemModel_InsertColumn")]
@@ -2062,54 +2013,102 @@ extension CQt
 	public static extern bool QAbstractItemModel_MoveColumn(void* self, void** sourceParent, c_int sourceColumn, void** destinationParent, c_int destinationChild);
 	[LinkName("QAbstractItemModel_FetchMore")]
 	public static extern void QAbstractItemModel_FetchMore(void* self, void** parent);
+	
+	public function void QAbstractItemModel_OnFetchMore_action(void* self, void** parent);
+	[LinkName("QAbstractItemModel_OnFetchMore")]
+	public static extern void QAbstractItemModel_OnFetchMore(void* self, QAbstractItemModel_OnFetchMore_action _action);
 	[LinkName("QAbstractItemModel_CanFetchMore")]
 	public static extern bool QAbstractItemModel_CanFetchMore(void* self, void** parent);
+	
+	public function void QAbstractItemModel_OnCanFetchMore_action(void* self, void** parent);
+	[LinkName("QAbstractItemModel_OnCanFetchMore")]
+	public static extern bool QAbstractItemModel_OnCanFetchMore(void* self, QAbstractItemModel_OnCanFetchMore_action _action);
 	[LinkName("QAbstractItemModel_Flags")]
 	public static extern void* QAbstractItemModel_Flags(void* self, void** index);
+	
+	public function void QAbstractItemModel_OnFlags_action(void* self, void** index);
+	[LinkName("QAbstractItemModel_OnFlags")]
+	public static extern void* QAbstractItemModel_OnFlags(void* self, QAbstractItemModel_OnFlags_action _action);
 	[LinkName("QAbstractItemModel_Sort")]
 	public static extern void QAbstractItemModel_Sort(void* self, c_int column, Qt_SortOrder order);
+	
+	public function void QAbstractItemModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
+	[LinkName("QAbstractItemModel_OnSort")]
+	public static extern void QAbstractItemModel_OnSort(void* self, QAbstractItemModel_OnSort_action _action);
 	[LinkName("QAbstractItemModel_Buddy")]
 	public static extern void* QAbstractItemModel_Buddy(void* self, void** index);
+	
+	public function void QAbstractItemModel_OnBuddy_action(void* self, void** index);
+	[LinkName("QAbstractItemModel_OnBuddy")]
+	public static extern void* QAbstractItemModel_OnBuddy(void* self, QAbstractItemModel_OnBuddy_action _action);
 	[LinkName("QAbstractItemModel_Match")]
 	public static extern void* QAbstractItemModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	
+	public function void QAbstractItemModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	[LinkName("QAbstractItemModel_OnMatch")]
+	public static extern void* QAbstractItemModel_OnMatch(void* self, QAbstractItemModel_OnMatch_action _action);
 	[LinkName("QAbstractItemModel_Span")]
 	public static extern void* QAbstractItemModel_Span(void* self, void** index);
+	
+	public function void QAbstractItemModel_OnSpan_action(void* self, void** index);
+	[LinkName("QAbstractItemModel_OnSpan")]
+	public static extern void* QAbstractItemModel_OnSpan(void* self, QAbstractItemModel_OnSpan_action _action);
 	[LinkName("QAbstractItemModel_RoleNames")]
 	public static extern void* QAbstractItemModel_RoleNames(void* self);
+	
+	public function void QAbstractItemModel_OnRoleNames_action(void* self);
+	[LinkName("QAbstractItemModel_OnRoleNames")]
+	public static extern void* QAbstractItemModel_OnRoleNames(void* self, QAbstractItemModel_OnRoleNames_action _action);
 	[LinkName("QAbstractItemModel_CheckIndex")]
 	public static extern bool QAbstractItemModel_CheckIndex(void* self, void** index);
 	[LinkName("QAbstractItemModel_MultiData")]
 	public static extern void QAbstractItemModel_MultiData(void* self, void** index, void* roleDataSpan);
+	
+	public function void QAbstractItemModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
+	[LinkName("QAbstractItemModel_OnMultiData")]
+	public static extern void QAbstractItemModel_OnMultiData(void* self, QAbstractItemModel_OnMultiData_action _action);
 	[LinkName("QAbstractItemModel_DataChanged")]
 	public static extern void QAbstractItemModel_DataChanged(void* self, void** topLeft, void** bottomRight);
 	
-	public function void QAbstractItemModel_dataChanged_action(void* self, void** topLeft, void** bottomRight);
+	public function void QAbstractItemModel_Connect_DataChanged_action(void* self, void** topLeft, void** bottomRight);
 	[LinkName("QAbstractItemModel_Connect_DataChanged")]
-	public static extern void QAbstractItemModel_Connect_DataChanged(void* self, QAbstractItemModel_dataChanged_action _action);
+	public static extern void QAbstractItemModel_Connect_DataChanged(void* self, QAbstractItemModel_Connect_DataChanged_action _action);
 	[LinkName("QAbstractItemModel_HeaderDataChanged")]
 	public static extern void QAbstractItemModel_HeaderDataChanged(void* self, Qt_Orientation orientation, c_int first, c_int last);
 	
-	public function void QAbstractItemModel_headerDataChanged_action(void* self, Qt_Orientation orientation, c_int first, c_int last);
+	public function void QAbstractItemModel_Connect_HeaderDataChanged_action(void* self, Qt_Orientation orientation, c_int first, c_int last);
 	[LinkName("QAbstractItemModel_Connect_HeaderDataChanged")]
-	public static extern void QAbstractItemModel_Connect_HeaderDataChanged(void* self, QAbstractItemModel_headerDataChanged_action _action);
+	public static extern void QAbstractItemModel_Connect_HeaderDataChanged(void* self, QAbstractItemModel_Connect_HeaderDataChanged_action _action);
 	[LinkName("QAbstractItemModel_LayoutChanged")]
 	public static extern void QAbstractItemModel_LayoutChanged(void* self);
 	
-	public function void QAbstractItemModel_layoutChanged_action(void* self);
+	public function void QAbstractItemModel_Connect_LayoutChanged_action(void* self);
 	[LinkName("QAbstractItemModel_Connect_LayoutChanged")]
-	public static extern void QAbstractItemModel_Connect_LayoutChanged(void* self, QAbstractItemModel_layoutChanged_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutChanged(void* self, QAbstractItemModel_Connect_LayoutChanged_action _action);
 	[LinkName("QAbstractItemModel_LayoutAboutToBeChanged")]
 	public static extern void QAbstractItemModel_LayoutAboutToBeChanged(void* self);
 	
-	public function void QAbstractItemModel_layoutAboutToBeChanged_action(void* self);
+	public function void QAbstractItemModel_Connect_LayoutAboutToBeChanged_action(void* self);
 	[LinkName("QAbstractItemModel_Connect_LayoutAboutToBeChanged")]
-	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged(void* self, QAbstractItemModel_layoutAboutToBeChanged_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged(void* self, QAbstractItemModel_Connect_LayoutAboutToBeChanged_action _action);
 	[LinkName("QAbstractItemModel_Submit")]
 	public static extern bool QAbstractItemModel_Submit(void* self);
+	
+	public function void QAbstractItemModel_OnSubmit_action(void* self);
+	[LinkName("QAbstractItemModel_OnSubmit")]
+	public static extern bool QAbstractItemModel_OnSubmit(void* self, QAbstractItemModel_OnSubmit_action _action);
 	[LinkName("QAbstractItemModel_Revert")]
 	public static extern void QAbstractItemModel_Revert(void* self);
+	
+	public function void QAbstractItemModel_OnRevert_action(void* self);
+	[LinkName("QAbstractItemModel_OnRevert")]
+	public static extern void QAbstractItemModel_OnRevert(void* self, QAbstractItemModel_OnRevert_action _action);
 	[LinkName("QAbstractItemModel_ResetInternalData")]
 	public static extern void QAbstractItemModel_ResetInternalData(void* self);
+	
+	public function void QAbstractItemModel_OnResetInternalData_action(void* self);
+	[LinkName("QAbstractItemModel_OnResetInternalData")]
+	public static extern void QAbstractItemModel_OnResetInternalData(void* self, QAbstractItemModel_OnResetInternalData_action _action);
 	[LinkName("QAbstractItemModel_CreateIndex")]
 	public static extern void* QAbstractItemModel_CreateIndex(void* self, c_int row, c_int column);
 	[LinkName("QAbstractItemModel_CreateIndex2")]
@@ -2171,35 +2170,77 @@ extension CQt
 	[LinkName("QAbstractItemModel_DataChanged3")]
 	public static extern void QAbstractItemModel_DataChanged3(void* self, void** topLeft, void** bottomRight, void** roles);
 	
-	public function void QAbstractItemModel_dataChanged3_action(void* self, void** topLeft, void** bottomRight, void** roles);
+	public function void QAbstractItemModel_Connect_DataChanged3_action(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QAbstractItemModel_Connect_DataChanged3")]
-	public static extern void QAbstractItemModel_Connect_DataChanged3(void* self, QAbstractItemModel_dataChanged3_action _action);
+	public static extern void QAbstractItemModel_Connect_DataChanged3(void* self, QAbstractItemModel_Connect_DataChanged3_action _action);
 	[LinkName("QAbstractItemModel_LayoutChanged1")]
 	public static extern void QAbstractItemModel_LayoutChanged1(void* self, void** parents);
 	
-	public function void QAbstractItemModel_layoutChanged1_action(void* self, void** parents);
+	public function void QAbstractItemModel_Connect_LayoutChanged1_action(void* self, void** parents);
 	[LinkName("QAbstractItemModel_Connect_LayoutChanged1")]
-	public static extern void QAbstractItemModel_Connect_LayoutChanged1(void* self, QAbstractItemModel_layoutChanged1_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutChanged1(void* self, QAbstractItemModel_Connect_LayoutChanged1_action _action);
 	[LinkName("QAbstractItemModel_LayoutChanged2")]
 	public static extern void QAbstractItemModel_LayoutChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
 	
-	public function void QAbstractItemModel_layoutChanged2_action(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
+	public function void QAbstractItemModel_Connect_LayoutChanged2_action(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
 	[LinkName("QAbstractItemModel_Connect_LayoutChanged2")]
-	public static extern void QAbstractItemModel_Connect_LayoutChanged2(void* self, QAbstractItemModel_layoutChanged2_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutChanged2(void* self, QAbstractItemModel_Connect_LayoutChanged2_action _action);
 	[LinkName("QAbstractItemModel_LayoutAboutToBeChanged1")]
 	public static extern void QAbstractItemModel_LayoutAboutToBeChanged1(void* self, void** parents);
 	
-	public function void QAbstractItemModel_layoutAboutToBeChanged1_action(void* self, void** parents);
+	public function void QAbstractItemModel_Connect_LayoutAboutToBeChanged1_action(void* self, void** parents);
 	[LinkName("QAbstractItemModel_Connect_LayoutAboutToBeChanged1")]
-	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged1(void* self, QAbstractItemModel_layoutAboutToBeChanged1_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged1(void* self, QAbstractItemModel_Connect_LayoutAboutToBeChanged1_action _action);
 	[LinkName("QAbstractItemModel_LayoutAboutToBeChanged2")]
 	public static extern void QAbstractItemModel_LayoutAboutToBeChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
 	
-	public function void QAbstractItemModel_layoutAboutToBeChanged2_action(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
+	public function void QAbstractItemModel_Connect_LayoutAboutToBeChanged2_action(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
 	[LinkName("QAbstractItemModel_Connect_LayoutAboutToBeChanged2")]
-	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged2(void* self, QAbstractItemModel_layoutAboutToBeChanged2_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged2(void* self, QAbstractItemModel_Connect_LayoutAboutToBeChanged2_action _action);
 	[LinkName("QAbstractItemModel_CreateIndex3")]
 	public static extern void* QAbstractItemModel_CreateIndex3(void* self, c_int row, c_int column, void* data);
+	[LinkName("QAbstractItemModel_Event")]
+	public static extern bool QAbstractItemModel_Event(void* self, void** event);
+	
+	public function void QAbstractItemModel_OnEvent_action(void* self, void** event);
+	[LinkName("QAbstractItemModel_OnEvent")]
+	public static extern bool QAbstractItemModel_OnEvent(void* self, QAbstractItemModel_OnEvent_action _action);
+	[LinkName("QAbstractItemModel_EventFilter")]
+	public static extern bool QAbstractItemModel_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QAbstractItemModel_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QAbstractItemModel_OnEventFilter")]
+	public static extern bool QAbstractItemModel_OnEventFilter(void* self, QAbstractItemModel_OnEventFilter_action _action);
+	[LinkName("QAbstractItemModel_TimerEvent")]
+	public static extern void QAbstractItemModel_TimerEvent(void* self, void** event);
+	
+	public function void QAbstractItemModel_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QAbstractItemModel_OnTimerEvent")]
+	public static extern void QAbstractItemModel_OnTimerEvent(void* self, QAbstractItemModel_OnTimerEvent_action _action);
+	[LinkName("QAbstractItemModel_ChildEvent")]
+	public static extern void QAbstractItemModel_ChildEvent(void* self, void** event);
+	
+	public function void QAbstractItemModel_OnChildEvent_action(void* self, void** event);
+	[LinkName("QAbstractItemModel_OnChildEvent")]
+	public static extern void QAbstractItemModel_OnChildEvent(void* self, QAbstractItemModel_OnChildEvent_action _action);
+	[LinkName("QAbstractItemModel_CustomEvent")]
+	public static extern void QAbstractItemModel_CustomEvent(void* self, void** event);
+	
+	public function void QAbstractItemModel_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QAbstractItemModel_OnCustomEvent")]
+	public static extern void QAbstractItemModel_OnCustomEvent(void* self, QAbstractItemModel_OnCustomEvent_action _action);
+	[LinkName("QAbstractItemModel_ConnectNotify")]
+	public static extern void QAbstractItemModel_ConnectNotify(void* self, void** signal);
+	
+	public function void QAbstractItemModel_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QAbstractItemModel_OnConnectNotify")]
+	public static extern void QAbstractItemModel_OnConnectNotify(void* self, QAbstractItemModel_OnConnectNotify_action _action);
+	[LinkName("QAbstractItemModel_DisconnectNotify")]
+	public static extern void QAbstractItemModel_DisconnectNotify(void* self, void** signal);
+	
+	public function void QAbstractItemModel_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QAbstractItemModel_OnDisconnectNotify")]
+	public static extern void QAbstractItemModel_OnDisconnectNotify(void* self, QAbstractItemModel_OnDisconnectNotify_action _action);
 }
 // --------------------------------------------------------------
 // QAbstractTableModel
@@ -2216,11 +2257,11 @@ struct QAbstractTableModel_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QAbstractTableModel_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QAbstractTableModel_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QAbstractTableModel_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -2252,97 +2293,317 @@ struct QAbstractTableModel_Ptr
 	{
 		CQt.QAbstractTableModel_Tr3(s, c, n);
 	}
+	public bool Event(IQEvent event)
+	{
+		return CQt.QAbstractTableModel_Event((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return CQt.QAbstractTableModel_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void ObjectName(String outStr)
+	{
+		CQt.QObject_ObjectName((.)this.Ptr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.Ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.Ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.Ptr);
+	}
+	public void SetParent(IQObject parent)
+	{
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QAbstractTableModel_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QAbstractTableModel_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QAbstractTableModel_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QAbstractTableModel_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QAbstractTableModel_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
 	public bool HasIndex(c_int row, c_int column)
 	{
 		return CQt.QAbstractItemModel_HasIndex((.)this.Ptr, row, column);
 	}
-	public QModelIndex_Ptr Parent(IQModelIndex child)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_Parent((.)this.Ptr, (.)child?.ObjectPtr));
-	}
 	public c_int RowCount(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RowCount((.)this.Ptr, (.)parent?.ObjectPtr);
+		return CQt.QAbstractTableModel_RowCount((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public c_int ColumnCount(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_ColumnCount((.)this.Ptr, (.)parent?.ObjectPtr);
+		return CQt.QAbstractTableModel_ColumnCount((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public bool HasChildren(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_HasChildren((.)this.Ptr, (.)parent?.ObjectPtr);
+		return CQt.QAbstractTableModel_HasChildren((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public QVariant_Ptr Data(IQModelIndex index, c_int role)
 	{
-		return QVariant_Ptr(CQt.QAbstractItemModel_Data((.)this.Ptr, (.)index?.ObjectPtr, role));
+		return QVariant_Ptr(CQt.QAbstractTableModel_Data((.)this.Ptr, (.)index?.ObjectPtr, role));
 	}
 	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
 	{
-		return CQt.QAbstractItemModel_SetData((.)this.Ptr, (.)index?.ObjectPtr, (.)value?.ObjectPtr, role);
+		return CQt.QAbstractTableModel_SetData((.)this.Ptr, (.)index?.ObjectPtr, (.)value?.ObjectPtr, role);
 	}
 	public QVariant_Ptr HeaderData(c_int section, Qt_Orientation orientation, c_int role)
 	{
-		return QVariant_Ptr(CQt.QAbstractItemModel_HeaderData((.)this.Ptr, section, orientation, role));
+		return QVariant_Ptr(CQt.QAbstractTableModel_HeaderData((.)this.Ptr, section, orientation, role));
 	}
 	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
 	{
-		return CQt.QAbstractItemModel_SetHeaderData((.)this.Ptr, section, orientation, (.)value?.ObjectPtr, role);
+		return CQt.QAbstractTableModel_SetHeaderData((.)this.Ptr, section, orientation, (.)value?.ObjectPtr, role);
 	}
 	public void* ItemData(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_ItemData((.)this.Ptr, (.)index?.ObjectPtr);
+		return CQt.QAbstractTableModel_ItemData((.)this.Ptr, (.)index?.ObjectPtr);
 	}
 	public bool SetItemData(IQModelIndex index, void** roles)
 	{
-		return CQt.QAbstractItemModel_SetItemData((.)this.Ptr, (.)index?.ObjectPtr, roles);
+		return CQt.QAbstractTableModel_SetItemData((.)this.Ptr, (.)index?.ObjectPtr, roles);
 	}
 	public bool ClearItemData(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_ClearItemData((.)this.Ptr, (.)index?.ObjectPtr);
+		return CQt.QAbstractTableModel_ClearItemData((.)this.Ptr, (.)index?.ObjectPtr);
 	}
 	public void* MimeTypes()
 	{
-		return CQt.QAbstractItemModel_MimeTypes((.)this.Ptr);
+		return CQt.QAbstractTableModel_MimeTypes((.)this.Ptr);
 	}
 	public QMimeData_Ptr MimeData(void** indexes)
 	{
-		return QMimeData_Ptr(CQt.QAbstractItemModel_MimeData((.)this.Ptr, indexes));
+		return QMimeData_Ptr(CQt.QAbstractTableModel_MimeData((.)this.Ptr, indexes));
 	}
 	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_CanDropMimeData((.)this.Ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
+		return CQt.QAbstractTableModel_CanDropMimeData((.)this.Ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
 	}
 	public void* SupportedDropActions()
 	{
-		return CQt.QAbstractItemModel_SupportedDropActions((.)this.Ptr);
+		return CQt.QAbstractTableModel_SupportedDropActions((.)this.Ptr);
 	}
 	public void* SupportedDragActions()
 	{
-		return CQt.QAbstractItemModel_SupportedDragActions((.)this.Ptr);
+		return CQt.QAbstractTableModel_SupportedDragActions((.)this.Ptr);
 	}
 	public bool InsertRows(c_int row, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertRows((.)this.Ptr, row, count, (.)parent?.ObjectPtr);
+		return CQt.QAbstractTableModel_InsertRows((.)this.Ptr, row, count, (.)parent?.ObjectPtr);
 	}
 	public bool InsertColumns(c_int column, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertColumns((.)this.Ptr, column, count, (.)parent?.ObjectPtr);
+		return CQt.QAbstractTableModel_InsertColumns((.)this.Ptr, column, count, (.)parent?.ObjectPtr);
 	}
 	public bool RemoveRows(c_int row, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveRows((.)this.Ptr, row, count, (.)parent?.ObjectPtr);
+		return CQt.QAbstractTableModel_RemoveRows((.)this.Ptr, row, count, (.)parent?.ObjectPtr);
 	}
 	public bool RemoveColumns(c_int column, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveColumns((.)this.Ptr, column, count, (.)parent?.ObjectPtr);
+		return CQt.QAbstractTableModel_RemoveColumns((.)this.Ptr, column, count, (.)parent?.ObjectPtr);
 	}
 	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, count, (.)destinationParent?.ObjectPtr, destinationChild);
+		return CQt.QAbstractTableModel_MoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, count, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
 	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, count, (.)destinationParent?.ObjectPtr, destinationChild);
+		return CQt.QAbstractTableModel_MoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, count, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
 	public bool InsertRow(c_int row)
 	{
@@ -2370,31 +2631,31 @@ struct QAbstractTableModel_Ptr
 	}
 	public void FetchMore(IQModelIndex parent)
 	{
-		CQt.QAbstractItemModel_FetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
+		CQt.QAbstractTableModel_FetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public bool CanFetchMore(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_CanFetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
+		return CQt.QAbstractTableModel_CanFetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void Sort(c_int column, Qt_SortOrder order)
 	{
-		CQt.QAbstractItemModel_Sort((.)this.Ptr, column, order);
+		CQt.QAbstractTableModel_Sort((.)this.Ptr, column, order);
 	}
 	public QModelIndex_Ptr Buddy(IQModelIndex index)
 	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_Buddy((.)this.Ptr, (.)index?.ObjectPtr));
+		return QModelIndex_Ptr(CQt.QAbstractTableModel_Buddy((.)this.Ptr, (.)index?.ObjectPtr));
 	}
 	public void* Match(IQModelIndex start, c_int role, IQVariant value, c_int hits, void* flags)
 	{
-		return CQt.QAbstractItemModel_Match((.)this.Ptr, (.)start?.ObjectPtr, role, (.)value?.ObjectPtr, hits, flags);
+		return CQt.QAbstractTableModel_Match((.)this.Ptr, (.)start?.ObjectPtr, role, (.)value?.ObjectPtr, hits, flags);
 	}
 	public QSize_Ptr Span(IQModelIndex index)
 	{
-		return QSize_Ptr(CQt.QAbstractItemModel_Span((.)this.Ptr, (.)index?.ObjectPtr));
+		return QSize_Ptr(CQt.QAbstractTableModel_Span((.)this.Ptr, (.)index?.ObjectPtr));
 	}
 	public void* RoleNames()
 	{
-		return CQt.QAbstractItemModel_RoleNames((.)this.Ptr);
+		return CQt.QAbstractTableModel_RoleNames((.)this.Ptr);
 	}
 	public bool CheckIndex(IQModelIndex index)
 	{
@@ -2402,7 +2663,7 @@ struct QAbstractTableModel_Ptr
 	}
 	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
 	{
-		CQt.QAbstractItemModel_MultiData((.)this.Ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
+		CQt.QAbstractTableModel_MultiData((.)this.Ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
 	}
 	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
@@ -2422,15 +2683,15 @@ struct QAbstractTableModel_Ptr
 	}
 	public bool Submit()
 	{
-		return CQt.QAbstractItemModel_Submit((.)this.Ptr);
+		return CQt.QAbstractTableModel_Submit((.)this.Ptr);
 	}
 	public void Revert()
 	{
-		CQt.QAbstractItemModel_Revert((.)this.Ptr);
+		CQt.QAbstractTableModel_Revert((.)this.Ptr);
 	}
 	public void ResetInternalData()
 	{
-		CQt.QAbstractItemModel_ResetInternalData((.)this.Ptr);
+		CQt.QAbstractTableModel_ResetInternalData((.)this.Ptr);
 	}
 	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
 	{
@@ -2564,378 +2825,58 @@ struct QAbstractTableModel_Ptr
 	{
 		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex3((.)this.Ptr, row, column, data));
 	}
-	public bool Event(IQEvent event)
-	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
-	}
-	public void ObjectName(String outStr)
-	{
-		CQt.QObject_ObjectName((.)this.Ptr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
-	}
-	public bool IsWidgetType()
-	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
-	}
-	public bool IsWindowType()
-	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
-	}
-	public bool IsQuickItemType()
-	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
-	}
-	public bool SignalsBlocked()
-	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
-	}
-	public bool BlockSignals(bool b)
-	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
-	}
-	public void KillTimer(c_int id)
-	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.Ptr);
-	}
-	public void SetParent(IQObject parent)
-	{
-		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.Ptr);
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
 }
 class QAbstractTableModel : IQAbstractTableModel, IQAbstractItemModel, IQObject
 {
 	private QAbstractTableModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QAbstractTableModel_dataChanged,
-		QAbstractTableModel_headerDataChanged,
-		QAbstractTableModel_layoutChanged,
-		QAbstractTableModel_layoutAboutToBeChanged,
-		QAbstractTableModel_dataChanged3,
-		QAbstractTableModel_layoutChanged1,
-		QAbstractTableModel_layoutChanged2,
-		QAbstractTableModel_layoutAboutToBeChanged1,
-		QAbstractTableModel_layoutAboutToBeChanged2,
-		QAbstractTableModel_destroyed,
-		QAbstractTableModel_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
-		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
-		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
-		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
-		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged.Invoke(topLeft, bottomRight);
-	}
-	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QAbstractTableModel_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractTableModel_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QAbstractTableModel_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QAbstractTableModel_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public QModelIndex_Ptr Index(c_int row, c_int column, IQModelIndex parent)
+	public  virtual QModelIndex_Ptr OnIndex(c_int row, c_int column, void** parent)
 	{
-		return this.ptr.Index(row, column, parent);
+		return default;
 	}
-	public QModelIndex_Ptr Sibling(c_int row, c_int column, IQModelIndex idx)
+	public  virtual QModelIndex_Ptr OnSibling(c_int row, c_int column, void** idx)
 	{
-		return this.ptr.Sibling(row, column, idx);
+		return default;
 	}
-	public bool DropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	public  virtual bool OnDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
 	{
-		return this.ptr.DropMimeData(data, action, row, column, parent);
+		return default;
 	}
-	public void* Flags(IQModelIndex index)
+	public  virtual void* OnFlags(void** index)
 	{
-		return this.ptr.Flags(index);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -2945,97 +2886,312 @@ class QAbstractTableModel : IQAbstractTableModel, IQAbstractItemModel, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
+	public  virtual bool OnEvent(void** event)
+	{
+		return default;
+	}
+	public  virtual bool OnEventFilter(void** watched, void** event)
+	{
+		return default;
+	}
+	public void ObjectName(String outStr)
+	{
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public  virtual void OnTimerEvent(void** event)
+	{
+	}
+	public  virtual void OnChildEvent(void** event)
+	{
+	}
+	public  virtual void OnCustomEvent(void** event)
+	{
+	}
+	public  virtual void OnConnectNotify(void** signal)
+	{
+	}
+	public  virtual void OnDisconnectNotify(void** signal)
+	{
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
 	public bool HasIndex(c_int row, c_int column)
 	{
 		return this.ptr.HasIndex(row, column);
 	}
-	public QModelIndex_Ptr Parent(IQModelIndex child)
+	public  virtual c_int OnRowCount(void** parent)
 	{
-		return this.ptr.Parent(child);
+		return default;
 	}
-	public c_int RowCount(IQModelIndex parent)
+	public  virtual c_int OnColumnCount(void** parent)
 	{
-		return this.ptr.RowCount(parent);
+		return default;
 	}
-	public c_int ColumnCount(IQModelIndex parent)
+	public  virtual bool OnHasChildren(void** parent)
 	{
-		return this.ptr.ColumnCount(parent);
+		return default;
 	}
-	public bool HasChildren(IQModelIndex parent)
+	public  virtual QVariant_Ptr OnData(void** index, c_int role)
 	{
-		return this.ptr.HasChildren(parent);
+		return default;
 	}
-	public QVariant_Ptr Data(IQModelIndex index, c_int role)
+	public  virtual bool OnSetData(void** index, void** value, c_int role)
 	{
-		return this.ptr.Data(index, role);
+		return default;
 	}
-	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
+	public  virtual QVariant_Ptr OnHeaderData(c_int section, Qt_Orientation orientation, c_int role)
 	{
-		return this.ptr.SetData(index, value, role);
+		return default;
 	}
-	public QVariant_Ptr HeaderData(c_int section, Qt_Orientation orientation, c_int role)
+	public  virtual bool OnSetHeaderData(c_int section, Qt_Orientation orientation, void** value, c_int role)
 	{
-		return this.ptr.HeaderData(section, orientation, role);
+		return default;
 	}
-	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
+	public  virtual void* OnItemData(void** index)
 	{
-		return this.ptr.SetHeaderData(section, orientation, value, role);
+		return default;
 	}
-	public void* ItemData(IQModelIndex index)
+	public  virtual bool OnSetItemData(void** index, void** roles)
 	{
-		return this.ptr.ItemData(index);
+		return default;
 	}
-	public bool SetItemData(IQModelIndex index, void** roles)
+	public  virtual bool OnClearItemData(void** index)
 	{
-		return this.ptr.SetItemData(index, roles);
+		return default;
 	}
-	public bool ClearItemData(IQModelIndex index)
+	public  virtual void* OnMimeTypes()
 	{
-		return this.ptr.ClearItemData(index);
+		return default;
 	}
-	public void* MimeTypes()
+	public  virtual QMimeData_Ptr OnMimeData(void** indexes)
 	{
-		return this.ptr.MimeTypes();
+		return default;
 	}
-	public QMimeData_Ptr MimeData(void** indexes)
+	public  virtual bool OnCanDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
 	{
-		return this.ptr.MimeData(indexes);
+		return default;
 	}
-	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	public  virtual void* OnSupportedDropActions()
 	{
-		return this.ptr.CanDropMimeData(data, action, row, column, parent);
+		return default;
 	}
-	public void* SupportedDropActions()
+	public  virtual void* OnSupportedDragActions()
 	{
-		return this.ptr.SupportedDropActions();
+		return default;
 	}
-	public void* SupportedDragActions()
+	public  virtual bool OnInsertRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.SupportedDragActions();
+		return default;
 	}
-	public bool InsertRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnInsertColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.InsertRows(row, count, parent);
+		return default;
 	}
-	public bool InsertColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.InsertColumns(column, count, parent);
+		return default;
 	}
-	public bool RemoveRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.RemoveRows(row, count, parent);
+		return default;
 	}
-	public bool RemoveColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnMoveRows(void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
 	{
-		return this.ptr.RemoveColumns(column, count, parent);
+		return default;
 	}
-	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
+	public  virtual bool OnMoveColumns(void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
 	{
-		return this.ptr.MoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
-	}
-	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return this.ptr.MoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+		return default;
 	}
 	public bool InsertRow(c_int row)
 	{
@@ -3061,41 +3217,38 @@ class QAbstractTableModel : IQAbstractTableModel, IQAbstractItemModel, IQObject
 	{
 		return this.ptr.MoveColumn(sourceParent, sourceColumn, destinationParent, destinationChild);
 	}
-	public void FetchMore(IQModelIndex parent)
+	public  virtual void OnFetchMore(void** parent)
 	{
-		this.ptr.FetchMore(parent);
 	}
-	public bool CanFetchMore(IQModelIndex parent)
+	public  virtual bool OnCanFetchMore(void** parent)
 	{
-		return this.ptr.CanFetchMore(parent);
+		return default;
 	}
-	public void Sort(c_int column, Qt_SortOrder order)
+	public  virtual void OnSort(c_int column, Qt_SortOrder order)
 	{
-		this.ptr.Sort(column, order);
 	}
-	public QModelIndex_Ptr Buddy(IQModelIndex index)
+	public  virtual QModelIndex_Ptr OnBuddy(void** index)
 	{
-		return this.ptr.Buddy(index);
+		return default;
 	}
-	public void* Match(IQModelIndex start, c_int role, IQVariant value, c_int hits, void* flags)
+	public  virtual void* OnMatch(void** start, c_int role, void** value, c_int hits, void* flags)
 	{
-		return this.ptr.Match(start, role, value, hits, flags);
+		return default;
 	}
-	public QSize_Ptr Span(IQModelIndex index)
+	public  virtual QSize_Ptr OnSpan(void** index)
 	{
-		return this.ptr.Span(index);
+		return default;
 	}
-	public void* RoleNames()
+	public  virtual void* OnRoleNames()
 	{
-		return this.ptr.RoleNames();
+		return default;
 	}
 	public bool CheckIndex(IQModelIndex index)
 	{
 		return this.ptr.CheckIndex(index);
 	}
-	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
+	public  virtual void OnMultiData(void** index, void* roleDataSpan)
 	{
-		this.ptr.MultiData(index, roleDataSpan);
 	}
 	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
@@ -3113,17 +3266,15 @@ class QAbstractTableModel : IQAbstractTableModel, IQAbstractItemModel, IQObject
 	{
 		this.ptr.LayoutAboutToBeChanged();
 	}
-	public bool Submit()
+	public  virtual bool OnSubmit()
 	{
-		return this.ptr.Submit();
+		return default;
 	}
-	public void Revert()
+	public  virtual void OnRevert()
 	{
-		this.ptr.Revert();
 	}
-	public void ResetInternalData()
+	public  virtual void OnResetInternalData()
 	{
-		this.ptr.ResetInternalData();
 	}
 	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
 	{
@@ -3257,226 +3408,6 @@ class QAbstractTableModel : IQAbstractTableModel, IQAbstractItemModel, IQObject
 	{
 		return this.ptr.CreateIndex3(row, column, data);
 	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
-	}
-	public void ObjectName(String outStr)
-	{
-		this.ptr.ObjectName(outStr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		this.ptr.SetObjectName(name);
-	}
-	public bool IsWidgetType()
-	{
-		return this.ptr.IsWidgetType();
-	}
-	public bool IsWindowType()
-	{
-		return this.ptr.IsWindowType();
-	}
-	public bool IsQuickItemType()
-	{
-		return this.ptr.IsQuickItemType();
-	}
-	public bool SignalsBlocked()
-	{
-		return this.ptr.SignalsBlocked();
-	}
-	public bool BlockSignals(bool b)
-	{
-		return this.ptr.BlockSignals(b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return this.ptr.Thread();
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		this.ptr.MoveToThread(thread);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return this.ptr.StartTimer(interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return this.ptr.StartTimer2(time);
-	}
-	public void KillTimer(c_int id)
-	{
-		this.ptr.KillTimer(id);
-	}
-	public void** Children()
-	{
-		return this.ptr.Children();
-	}
-	public void SetParent(IQObject parent)
-	{
-		this.ptr.SetParent(parent);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		this.ptr.InstallEventFilter(filterObj);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		this.ptr.RemoveEventFilter(obj);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Connect(sender, signal, receiver, member);
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return this.ptr.Connect3(sender, signal, member);
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
-	}
-	public bool Disconnect3()
-	{
-		return this.ptr.Disconnect3();
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return this.ptr.Disconnect4(receiver);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return this.ptr.Disconnect5(param1);
-	}
-	public void DumpObjectTree()
-	{
-		this.ptr.DumpObjectTree();
-	}
-	public void DumpObjectInfo()
-	{
-		this.ptr.DumpObjectInfo();
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return this.ptr.SetProperty(name, value);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return this.ptr.Property(name);
-	}
-	public void* DynamicPropertyNames()
-	{
-		return this.ptr.DynamicPropertyNames();
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return this.ptr.BindingStorage();
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return this.ptr.BindingStorage2();
-	}
-	public void Destroyed()
-	{
-		this.ptr.Destroyed();
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return this.ptr.Inherits(classname);
-	}
-	public void DeleteLater()
-	{
-		this.ptr.DeleteLater();
-	}
-	public QObject_Ptr Sender()
-	{
-		return this.ptr.Sender();
-	}
-	public c_int SenderSignalIndex()
-	{
-		return this.ptr.SenderSignalIndex();
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return this.ptr.Receivers(signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return this.ptr.IsSignalConnected(signal);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		this.ptr.TimerEvent(event);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		this.ptr.ChildEvent(event);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		this.ptr.CustomEvent(event);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.ConnectNotify(signal);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.DisconnectNotify(signal);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer22(interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer23(time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect4(sender, signal, member, type);
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return this.ptr.Disconnect1(signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return this.ptr.Disconnect22(signal, receiver);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect32(signal, receiver, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect23(receiver, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		this.ptr.Destroyed1(param1);
-	}
 }
 interface IQAbstractTableModel : IQtObjectInterface
 {
@@ -3491,24 +3422,286 @@ extension CQt
 	public static extern void QAbstractTableModel_Delete(QAbstractTableModel_Ptr self);
 	[LinkName("QAbstractTableModel_MetaObject")]
 	public static extern void** QAbstractTableModel_MetaObject(void* self);
+	
+	public function void QAbstractTableModel_OnMetaObject_action(void* self);
+	[LinkName("QAbstractTableModel_OnMetaObject")]
+	public static extern void** QAbstractTableModel_OnMetaObject(void* self, QAbstractTableModel_OnMetaObject_action _action);
 	[LinkName("QAbstractTableModel_Qt_Metacast")]
 	public static extern void* QAbstractTableModel_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QAbstractTableModel_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QAbstractTableModel_OnMetacast")]
+	public static extern void* QAbstractTableModel_OnMetacast(void* self, QAbstractTableModel_OnMetacast_action _action);
 	[LinkName("QAbstractTableModel_Qt_Metacall")]
 	public static extern c_int QAbstractTableModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QAbstractTableModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QAbstractTableModel_OnMetacall")]
+	public static extern c_int QAbstractTableModel_OnMetacall(void* self, QAbstractTableModel_OnMetacall_action _action);
 	[LinkName("QAbstractTableModel_Tr")]
 	public static extern libqt_string QAbstractTableModel_Tr(c_char* s);
 	[LinkName("QAbstractTableModel_Index")]
 	public static extern void* QAbstractTableModel_Index(void* self, c_int row, c_int column, void** parent);
+	
+	public function void QAbstractTableModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
+	[LinkName("QAbstractTableModel_OnIndex")]
+	public static extern void* QAbstractTableModel_OnIndex(void* self, QAbstractTableModel_OnIndex_action _action);
 	[LinkName("QAbstractTableModel_Sibling")]
 	public static extern void* QAbstractTableModel_Sibling(void* self, c_int row, c_int column, void** idx);
+	
+	public function void QAbstractTableModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
+	[LinkName("QAbstractTableModel_OnSibling")]
+	public static extern void* QAbstractTableModel_OnSibling(void* self, QAbstractTableModel_OnSibling_action _action);
 	[LinkName("QAbstractTableModel_DropMimeData")]
 	public static extern bool QAbstractTableModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QAbstractTableModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QAbstractTableModel_OnDropMimeData")]
+	public static extern bool QAbstractTableModel_OnDropMimeData(void* self, QAbstractTableModel_OnDropMimeData_action _action);
 	[LinkName("QAbstractTableModel_Flags")]
 	public static extern void* QAbstractTableModel_Flags(void* self, void** index);
+	
+	public function void QAbstractTableModel_OnFlags_action(void* self, void** index);
+	[LinkName("QAbstractTableModel_OnFlags")]
+	public static extern void* QAbstractTableModel_OnFlags(void* self, QAbstractTableModel_OnFlags_action _action);
 	[LinkName("QAbstractTableModel_Tr2")]
 	public static extern libqt_string QAbstractTableModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractTableModel_Tr3")]
 	public static extern libqt_string QAbstractTableModel_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QAbstractTableModel_Event")]
+	public static extern bool QAbstractTableModel_Event(void* self, void** event);
+	
+	public function void QAbstractTableModel_OnEvent_action(void* self, void** event);
+	[LinkName("QAbstractTableModel_OnEvent")]
+	public static extern bool QAbstractTableModel_OnEvent(void* self, QAbstractTableModel_OnEvent_action _action);
+	[LinkName("QAbstractTableModel_EventFilter")]
+	public static extern bool QAbstractTableModel_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QAbstractTableModel_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QAbstractTableModel_OnEventFilter")]
+	public static extern bool QAbstractTableModel_OnEventFilter(void* self, QAbstractTableModel_OnEventFilter_action _action);
+	[LinkName("QAbstractTableModel_TimerEvent")]
+	public static extern void QAbstractTableModel_TimerEvent(void* self, void** event);
+	
+	public function void QAbstractTableModel_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QAbstractTableModel_OnTimerEvent")]
+	public static extern void QAbstractTableModel_OnTimerEvent(void* self, QAbstractTableModel_OnTimerEvent_action _action);
+	[LinkName("QAbstractTableModel_ChildEvent")]
+	public static extern void QAbstractTableModel_ChildEvent(void* self, void** event);
+	
+	public function void QAbstractTableModel_OnChildEvent_action(void* self, void** event);
+	[LinkName("QAbstractTableModel_OnChildEvent")]
+	public static extern void QAbstractTableModel_OnChildEvent(void* self, QAbstractTableModel_OnChildEvent_action _action);
+	[LinkName("QAbstractTableModel_CustomEvent")]
+	public static extern void QAbstractTableModel_CustomEvent(void* self, void** event);
+	
+	public function void QAbstractTableModel_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QAbstractTableModel_OnCustomEvent")]
+	public static extern void QAbstractTableModel_OnCustomEvent(void* self, QAbstractTableModel_OnCustomEvent_action _action);
+	[LinkName("QAbstractTableModel_ConnectNotify")]
+	public static extern void QAbstractTableModel_ConnectNotify(void* self, void** signal);
+	
+	public function void QAbstractTableModel_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QAbstractTableModel_OnConnectNotify")]
+	public static extern void QAbstractTableModel_OnConnectNotify(void* self, QAbstractTableModel_OnConnectNotify_action _action);
+	[LinkName("QAbstractTableModel_DisconnectNotify")]
+	public static extern void QAbstractTableModel_DisconnectNotify(void* self, void** signal);
+	
+	public function void QAbstractTableModel_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QAbstractTableModel_OnDisconnectNotify")]
+	public static extern void QAbstractTableModel_OnDisconnectNotify(void* self, QAbstractTableModel_OnDisconnectNotify_action _action);
+	[LinkName("QAbstractTableModel_RowCount")]
+	public static extern c_int QAbstractTableModel_RowCount(void* self, void** parent);
+	
+	public function void QAbstractTableModel_OnRowCount_action(void* self, void** parent);
+	[LinkName("QAbstractTableModel_OnRowCount")]
+	public static extern c_int QAbstractTableModel_OnRowCount(void* self, QAbstractTableModel_OnRowCount_action _action);
+	[LinkName("QAbstractTableModel_ColumnCount")]
+	public static extern c_int QAbstractTableModel_ColumnCount(void* self, void** parent);
+	
+	public function void QAbstractTableModel_OnColumnCount_action(void* self, void** parent);
+	[LinkName("QAbstractTableModel_OnColumnCount")]
+	public static extern c_int QAbstractTableModel_OnColumnCount(void* self, QAbstractTableModel_OnColumnCount_action _action);
+	[LinkName("QAbstractTableModel_HasChildren")]
+	public static extern bool QAbstractTableModel_HasChildren(void* self, void** parent);
+	
+	public function void QAbstractTableModel_OnHasChildren_action(void* self, void** parent);
+	[LinkName("QAbstractTableModel_OnHasChildren")]
+	public static extern bool QAbstractTableModel_OnHasChildren(void* self, QAbstractTableModel_OnHasChildren_action _action);
+	[LinkName("QAbstractTableModel_Data")]
+	public static extern void* QAbstractTableModel_Data(void* self, void** index, c_int role);
+	
+	public function void QAbstractTableModel_OnData_action(void* self, void** index, c_int role);
+	[LinkName("QAbstractTableModel_OnData")]
+	public static extern void* QAbstractTableModel_OnData(void* self, QAbstractTableModel_OnData_action _action);
+	[LinkName("QAbstractTableModel_SetData")]
+	public static extern bool QAbstractTableModel_SetData(void* self, void** index, void** value, c_int role);
+	
+	public function void QAbstractTableModel_OnSetData_action(void* self, void** index, void** value, c_int role);
+	[LinkName("QAbstractTableModel_OnSetData")]
+	public static extern bool QAbstractTableModel_OnSetData(void* self, QAbstractTableModel_OnSetData_action _action);
+	[LinkName("QAbstractTableModel_HeaderData")]
+	public static extern void* QAbstractTableModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	
+	public function void QAbstractTableModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	[LinkName("QAbstractTableModel_OnHeaderData")]
+	public static extern void* QAbstractTableModel_OnHeaderData(void* self, QAbstractTableModel_OnHeaderData_action _action);
+	[LinkName("QAbstractTableModel_SetHeaderData")]
+	public static extern bool QAbstractTableModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	
+	public function void QAbstractTableModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	[LinkName("QAbstractTableModel_OnSetHeaderData")]
+	public static extern bool QAbstractTableModel_OnSetHeaderData(void* self, QAbstractTableModel_OnSetHeaderData_action _action);
+	[LinkName("QAbstractTableModel_ItemData")]
+	public static extern void* QAbstractTableModel_ItemData(void* self, void** index);
+	
+	public function void QAbstractTableModel_OnItemData_action(void* self, void** index);
+	[LinkName("QAbstractTableModel_OnItemData")]
+	public static extern void* QAbstractTableModel_OnItemData(void* self, QAbstractTableModel_OnItemData_action _action);
+	[LinkName("QAbstractTableModel_SetItemData")]
+	public static extern bool QAbstractTableModel_SetItemData(void* self, void** index, void** roles);
+	
+	public function void QAbstractTableModel_OnSetItemData_action(void* self, void** index, void** roles);
+	[LinkName("QAbstractTableModel_OnSetItemData")]
+	public static extern bool QAbstractTableModel_OnSetItemData(void* self, QAbstractTableModel_OnSetItemData_action _action);
+	[LinkName("QAbstractTableModel_ClearItemData")]
+	public static extern bool QAbstractTableModel_ClearItemData(void* self, void** index);
+	
+	public function void QAbstractTableModel_OnClearItemData_action(void* self, void** index);
+	[LinkName("QAbstractTableModel_OnClearItemData")]
+	public static extern bool QAbstractTableModel_OnClearItemData(void* self, QAbstractTableModel_OnClearItemData_action _action);
+	[LinkName("QAbstractTableModel_MimeTypes")]
+	public static extern void* QAbstractTableModel_MimeTypes(void* self);
+	
+	public function void QAbstractTableModel_OnMimeTypes_action(void* self);
+	[LinkName("QAbstractTableModel_OnMimeTypes")]
+	public static extern void* QAbstractTableModel_OnMimeTypes(void* self, QAbstractTableModel_OnMimeTypes_action _action);
+	[LinkName("QAbstractTableModel_MimeData")]
+	public static extern void** QAbstractTableModel_MimeData(void* self, void** indexes);
+	
+	public function void QAbstractTableModel_OnMimeData_action(void* self, void** indexes);
+	[LinkName("QAbstractTableModel_OnMimeData")]
+	public static extern void** QAbstractTableModel_OnMimeData(void* self, QAbstractTableModel_OnMimeData_action _action);
+	[LinkName("QAbstractTableModel_CanDropMimeData")]
+	public static extern bool QAbstractTableModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QAbstractTableModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QAbstractTableModel_OnCanDropMimeData")]
+	public static extern bool QAbstractTableModel_OnCanDropMimeData(void* self, QAbstractTableModel_OnCanDropMimeData_action _action);
+	[LinkName("QAbstractTableModel_SupportedDropActions")]
+	public static extern void* QAbstractTableModel_SupportedDropActions(void* self);
+	
+	public function void QAbstractTableModel_OnSupportedDropActions_action(void* self);
+	[LinkName("QAbstractTableModel_OnSupportedDropActions")]
+	public static extern void* QAbstractTableModel_OnSupportedDropActions(void* self, QAbstractTableModel_OnSupportedDropActions_action _action);
+	[LinkName("QAbstractTableModel_SupportedDragActions")]
+	public static extern void* QAbstractTableModel_SupportedDragActions(void* self);
+	
+	public function void QAbstractTableModel_OnSupportedDragActions_action(void* self);
+	[LinkName("QAbstractTableModel_OnSupportedDragActions")]
+	public static extern void* QAbstractTableModel_OnSupportedDragActions(void* self, QAbstractTableModel_OnSupportedDragActions_action _action);
+	[LinkName("QAbstractTableModel_InsertRows")]
+	public static extern bool QAbstractTableModel_InsertRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QAbstractTableModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QAbstractTableModel_OnInsertRows")]
+	public static extern bool QAbstractTableModel_OnInsertRows(void* self, QAbstractTableModel_OnInsertRows_action _action);
+	[LinkName("QAbstractTableModel_InsertColumns")]
+	public static extern bool QAbstractTableModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QAbstractTableModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QAbstractTableModel_OnInsertColumns")]
+	public static extern bool QAbstractTableModel_OnInsertColumns(void* self, QAbstractTableModel_OnInsertColumns_action _action);
+	[LinkName("QAbstractTableModel_RemoveRows")]
+	public static extern bool QAbstractTableModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QAbstractTableModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QAbstractTableModel_OnRemoveRows")]
+	public static extern bool QAbstractTableModel_OnRemoveRows(void* self, QAbstractTableModel_OnRemoveRows_action _action);
+	[LinkName("QAbstractTableModel_RemoveColumns")]
+	public static extern bool QAbstractTableModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QAbstractTableModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QAbstractTableModel_OnRemoveColumns")]
+	public static extern bool QAbstractTableModel_OnRemoveColumns(void* self, QAbstractTableModel_OnRemoveColumns_action _action);
+	[LinkName("QAbstractTableModel_MoveRows")]
+	public static extern bool QAbstractTableModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QAbstractTableModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QAbstractTableModel_OnMoveRows")]
+	public static extern bool QAbstractTableModel_OnMoveRows(void* self, QAbstractTableModel_OnMoveRows_action _action);
+	[LinkName("QAbstractTableModel_MoveColumns")]
+	public static extern bool QAbstractTableModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QAbstractTableModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QAbstractTableModel_OnMoveColumns")]
+	public static extern bool QAbstractTableModel_OnMoveColumns(void* self, QAbstractTableModel_OnMoveColumns_action _action);
+	[LinkName("QAbstractTableModel_FetchMore")]
+	public static extern void QAbstractTableModel_FetchMore(void* self, void** parent);
+	
+	public function void QAbstractTableModel_OnFetchMore_action(void* self, void** parent);
+	[LinkName("QAbstractTableModel_OnFetchMore")]
+	public static extern void QAbstractTableModel_OnFetchMore(void* self, QAbstractTableModel_OnFetchMore_action _action);
+	[LinkName("QAbstractTableModel_CanFetchMore")]
+	public static extern bool QAbstractTableModel_CanFetchMore(void* self, void** parent);
+	
+	public function void QAbstractTableModel_OnCanFetchMore_action(void* self, void** parent);
+	[LinkName("QAbstractTableModel_OnCanFetchMore")]
+	public static extern bool QAbstractTableModel_OnCanFetchMore(void* self, QAbstractTableModel_OnCanFetchMore_action _action);
+	[LinkName("QAbstractTableModel_Sort")]
+	public static extern void QAbstractTableModel_Sort(void* self, c_int column, Qt_SortOrder order);
+	
+	public function void QAbstractTableModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
+	[LinkName("QAbstractTableModel_OnSort")]
+	public static extern void QAbstractTableModel_OnSort(void* self, QAbstractTableModel_OnSort_action _action);
+	[LinkName("QAbstractTableModel_Buddy")]
+	public static extern void* QAbstractTableModel_Buddy(void* self, void** index);
+	
+	public function void QAbstractTableModel_OnBuddy_action(void* self, void** index);
+	[LinkName("QAbstractTableModel_OnBuddy")]
+	public static extern void* QAbstractTableModel_OnBuddy(void* self, QAbstractTableModel_OnBuddy_action _action);
+	[LinkName("QAbstractTableModel_Match")]
+	public static extern void* QAbstractTableModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	
+	public function void QAbstractTableModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	[LinkName("QAbstractTableModel_OnMatch")]
+	public static extern void* QAbstractTableModel_OnMatch(void* self, QAbstractTableModel_OnMatch_action _action);
+	[LinkName("QAbstractTableModel_Span")]
+	public static extern void* QAbstractTableModel_Span(void* self, void** index);
+	
+	public function void QAbstractTableModel_OnSpan_action(void* self, void** index);
+	[LinkName("QAbstractTableModel_OnSpan")]
+	public static extern void* QAbstractTableModel_OnSpan(void* self, QAbstractTableModel_OnSpan_action _action);
+	[LinkName("QAbstractTableModel_RoleNames")]
+	public static extern void* QAbstractTableModel_RoleNames(void* self);
+	
+	public function void QAbstractTableModel_OnRoleNames_action(void* self);
+	[LinkName("QAbstractTableModel_OnRoleNames")]
+	public static extern void* QAbstractTableModel_OnRoleNames(void* self, QAbstractTableModel_OnRoleNames_action _action);
+	[LinkName("QAbstractTableModel_MultiData")]
+	public static extern void QAbstractTableModel_MultiData(void* self, void** index, void* roleDataSpan);
+	
+	public function void QAbstractTableModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
+	[LinkName("QAbstractTableModel_OnMultiData")]
+	public static extern void QAbstractTableModel_OnMultiData(void* self, QAbstractTableModel_OnMultiData_action _action);
+	[LinkName("QAbstractTableModel_Submit")]
+	public static extern bool QAbstractTableModel_Submit(void* self);
+	
+	public function void QAbstractTableModel_OnSubmit_action(void* self);
+	[LinkName("QAbstractTableModel_OnSubmit")]
+	public static extern bool QAbstractTableModel_OnSubmit(void* self, QAbstractTableModel_OnSubmit_action _action);
+	[LinkName("QAbstractTableModel_Revert")]
+	public static extern void QAbstractTableModel_Revert(void* self);
+	
+	public function void QAbstractTableModel_OnRevert_action(void* self);
+	[LinkName("QAbstractTableModel_OnRevert")]
+	public static extern void QAbstractTableModel_OnRevert(void* self, QAbstractTableModel_OnRevert_action _action);
+	[LinkName("QAbstractTableModel_ResetInternalData")]
+	public static extern void QAbstractTableModel_ResetInternalData(void* self);
+	
+	public function void QAbstractTableModel_OnResetInternalData_action(void* self);
+	[LinkName("QAbstractTableModel_OnResetInternalData")]
+	public static extern void QAbstractTableModel_OnResetInternalData(void* self, QAbstractTableModel_OnResetInternalData_action _action);
 }
 // --------------------------------------------------------------
 // QAbstractListModel
@@ -3525,11 +3718,11 @@ struct QAbstractListModel_Ptr
 	{
 		return QMetaObject_Ptr(CQt.QAbstractListModel_MetaObject((.)this.Ptr));
 	}
-	public void* Qt_metacast(c_char* param1)
+	public void* Metacast(c_char* param1)
 	{
 		return CQt.QAbstractListModel_Qt_Metacast((.)this.Ptr, param1);
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public c_int Metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
 		return CQt.QAbstractListModel_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
@@ -3561,97 +3754,317 @@ struct QAbstractListModel_Ptr
 	{
 		CQt.QAbstractListModel_Tr3(s, c, n);
 	}
+	public bool Event(IQEvent event)
+	{
+		return CQt.QAbstractListModel_Event((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return CQt.QAbstractListModel_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void ObjectName(String outStr)
+	{
+		CQt.QObject_ObjectName((.)this.Ptr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.Ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.Ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.Ptr);
+	}
+	public void SetParent(IQObject parent)
+	{
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QAbstractListModel_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QAbstractListModel_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QAbstractListModel_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QAbstractListModel_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QAbstractListModel_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
 	public bool HasIndex(c_int row, c_int column)
 	{
 		return CQt.QAbstractItemModel_HasIndex((.)this.Ptr, row, column);
 	}
-	public QModelIndex_Ptr Parent(IQModelIndex child)
-	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_Parent((.)this.Ptr, (.)child?.ObjectPtr));
-	}
 	public c_int RowCount(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RowCount((.)this.Ptr, (.)parent?.ObjectPtr);
+		return CQt.QAbstractListModel_RowCount((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public c_int ColumnCount(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_ColumnCount((.)this.Ptr, (.)parent?.ObjectPtr);
+		return CQt.QAbstractListModel_ColumnCount((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public bool HasChildren(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_HasChildren((.)this.Ptr, (.)parent?.ObjectPtr);
+		return CQt.QAbstractListModel_HasChildren((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public QVariant_Ptr Data(IQModelIndex index, c_int role)
 	{
-		return QVariant_Ptr(CQt.QAbstractItemModel_Data((.)this.Ptr, (.)index?.ObjectPtr, role));
+		return QVariant_Ptr(CQt.QAbstractListModel_Data((.)this.Ptr, (.)index?.ObjectPtr, role));
 	}
 	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
 	{
-		return CQt.QAbstractItemModel_SetData((.)this.Ptr, (.)index?.ObjectPtr, (.)value?.ObjectPtr, role);
+		return CQt.QAbstractListModel_SetData((.)this.Ptr, (.)index?.ObjectPtr, (.)value?.ObjectPtr, role);
 	}
 	public QVariant_Ptr HeaderData(c_int section, Qt_Orientation orientation, c_int role)
 	{
-		return QVariant_Ptr(CQt.QAbstractItemModel_HeaderData((.)this.Ptr, section, orientation, role));
+		return QVariant_Ptr(CQt.QAbstractListModel_HeaderData((.)this.Ptr, section, orientation, role));
 	}
 	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
 	{
-		return CQt.QAbstractItemModel_SetHeaderData((.)this.Ptr, section, orientation, (.)value?.ObjectPtr, role);
+		return CQt.QAbstractListModel_SetHeaderData((.)this.Ptr, section, orientation, (.)value?.ObjectPtr, role);
 	}
 	public void* ItemData(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_ItemData((.)this.Ptr, (.)index?.ObjectPtr);
+		return CQt.QAbstractListModel_ItemData((.)this.Ptr, (.)index?.ObjectPtr);
 	}
 	public bool SetItemData(IQModelIndex index, void** roles)
 	{
-		return CQt.QAbstractItemModel_SetItemData((.)this.Ptr, (.)index?.ObjectPtr, roles);
+		return CQt.QAbstractListModel_SetItemData((.)this.Ptr, (.)index?.ObjectPtr, roles);
 	}
 	public bool ClearItemData(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_ClearItemData((.)this.Ptr, (.)index?.ObjectPtr);
+		return CQt.QAbstractListModel_ClearItemData((.)this.Ptr, (.)index?.ObjectPtr);
 	}
 	public void* MimeTypes()
 	{
-		return CQt.QAbstractItemModel_MimeTypes((.)this.Ptr);
+		return CQt.QAbstractListModel_MimeTypes((.)this.Ptr);
 	}
 	public QMimeData_Ptr MimeData(void** indexes)
 	{
-		return QMimeData_Ptr(CQt.QAbstractItemModel_MimeData((.)this.Ptr, indexes));
+		return QMimeData_Ptr(CQt.QAbstractListModel_MimeData((.)this.Ptr, indexes));
 	}
 	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_CanDropMimeData((.)this.Ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
+		return CQt.QAbstractListModel_CanDropMimeData((.)this.Ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
 	}
 	public void* SupportedDropActions()
 	{
-		return CQt.QAbstractItemModel_SupportedDropActions((.)this.Ptr);
+		return CQt.QAbstractListModel_SupportedDropActions((.)this.Ptr);
 	}
 	public void* SupportedDragActions()
 	{
-		return CQt.QAbstractItemModel_SupportedDragActions((.)this.Ptr);
+		return CQt.QAbstractListModel_SupportedDragActions((.)this.Ptr);
 	}
 	public bool InsertRows(c_int row, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertRows((.)this.Ptr, row, count, (.)parent?.ObjectPtr);
+		return CQt.QAbstractListModel_InsertRows((.)this.Ptr, row, count, (.)parent?.ObjectPtr);
 	}
 	public bool InsertColumns(c_int column, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertColumns((.)this.Ptr, column, count, (.)parent?.ObjectPtr);
+		return CQt.QAbstractListModel_InsertColumns((.)this.Ptr, column, count, (.)parent?.ObjectPtr);
 	}
 	public bool RemoveRows(c_int row, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveRows((.)this.Ptr, row, count, (.)parent?.ObjectPtr);
+		return CQt.QAbstractListModel_RemoveRows((.)this.Ptr, row, count, (.)parent?.ObjectPtr);
 	}
 	public bool RemoveColumns(c_int column, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveColumns((.)this.Ptr, column, count, (.)parent?.ObjectPtr);
+		return CQt.QAbstractListModel_RemoveColumns((.)this.Ptr, column, count, (.)parent?.ObjectPtr);
 	}
 	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, count, (.)destinationParent?.ObjectPtr, destinationChild);
+		return CQt.QAbstractListModel_MoveRows((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceRow, count, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
 	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, count, (.)destinationParent?.ObjectPtr, destinationChild);
+		return CQt.QAbstractListModel_MoveColumns((.)this.Ptr, (.)sourceParent?.ObjectPtr, sourceColumn, count, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
 	public bool InsertRow(c_int row)
 	{
@@ -3679,31 +4092,31 @@ struct QAbstractListModel_Ptr
 	}
 	public void FetchMore(IQModelIndex parent)
 	{
-		CQt.QAbstractItemModel_FetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
+		CQt.QAbstractListModel_FetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public bool CanFetchMore(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_CanFetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
+		return CQt.QAbstractListModel_CanFetchMore((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void Sort(c_int column, Qt_SortOrder order)
 	{
-		CQt.QAbstractItemModel_Sort((.)this.Ptr, column, order);
+		CQt.QAbstractListModel_Sort((.)this.Ptr, column, order);
 	}
 	public QModelIndex_Ptr Buddy(IQModelIndex index)
 	{
-		return QModelIndex_Ptr(CQt.QAbstractItemModel_Buddy((.)this.Ptr, (.)index?.ObjectPtr));
+		return QModelIndex_Ptr(CQt.QAbstractListModel_Buddy((.)this.Ptr, (.)index?.ObjectPtr));
 	}
 	public void* Match(IQModelIndex start, c_int role, IQVariant value, c_int hits, void* flags)
 	{
-		return CQt.QAbstractItemModel_Match((.)this.Ptr, (.)start?.ObjectPtr, role, (.)value?.ObjectPtr, hits, flags);
+		return CQt.QAbstractListModel_Match((.)this.Ptr, (.)start?.ObjectPtr, role, (.)value?.ObjectPtr, hits, flags);
 	}
 	public QSize_Ptr Span(IQModelIndex index)
 	{
-		return QSize_Ptr(CQt.QAbstractItemModel_Span((.)this.Ptr, (.)index?.ObjectPtr));
+		return QSize_Ptr(CQt.QAbstractListModel_Span((.)this.Ptr, (.)index?.ObjectPtr));
 	}
 	public void* RoleNames()
 	{
-		return CQt.QAbstractItemModel_RoleNames((.)this.Ptr);
+		return CQt.QAbstractListModel_RoleNames((.)this.Ptr);
 	}
 	public bool CheckIndex(IQModelIndex index)
 	{
@@ -3711,7 +4124,7 @@ struct QAbstractListModel_Ptr
 	}
 	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
 	{
-		CQt.QAbstractItemModel_MultiData((.)this.Ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
+		CQt.QAbstractListModel_MultiData((.)this.Ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
 	}
 	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
@@ -3731,15 +4144,15 @@ struct QAbstractListModel_Ptr
 	}
 	public bool Submit()
 	{
-		return CQt.QAbstractItemModel_Submit((.)this.Ptr);
+		return CQt.QAbstractListModel_Submit((.)this.Ptr);
 	}
 	public void Revert()
 	{
-		CQt.QAbstractItemModel_Revert((.)this.Ptr);
+		CQt.QAbstractListModel_Revert((.)this.Ptr);
 	}
 	public void ResetInternalData()
 	{
-		CQt.QAbstractItemModel_ResetInternalData((.)this.Ptr);
+		CQt.QAbstractListModel_ResetInternalData((.)this.Ptr);
 	}
 	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
 	{
@@ -3873,378 +4286,58 @@ struct QAbstractListModel_Ptr
 	{
 		return QModelIndex_Ptr(CQt.QAbstractItemModel_CreateIndex3((.)this.Ptr, row, column, data));
 	}
-	public bool Event(IQEvent event)
-	{
-		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
-	}
-	public void ObjectName(String outStr)
-	{
-		CQt.QObject_ObjectName((.)this.Ptr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
-	}
-	public bool IsWidgetType()
-	{
-		return CQt.QObject_IsWidgetType((.)this.Ptr);
-	}
-	public bool IsWindowType()
-	{
-		return CQt.QObject_IsWindowType((.)this.Ptr);
-	}
-	public bool IsQuickItemType()
-	{
-		return CQt.QObject_IsQuickItemType((.)this.Ptr);
-	}
-	public bool SignalsBlocked()
-	{
-		return CQt.QObject_SignalsBlocked((.)this.Ptr);
-	}
-	public bool BlockSignals(bool b)
-	{
-		return CQt.QObject_BlockSignals((.)this.Ptr, b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return CQt.QObject_StartTimer((.)this.Ptr, interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return CQt.QObject_StartTimer2((.)this.Ptr, time);
-	}
-	public void KillTimer(c_int id)
-	{
-		CQt.QObject_KillTimer((.)this.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.Ptr);
-	}
-	public void SetParent(IQObject parent)
-	{
-		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.Ptr);
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
-	}
 }
 class QAbstractListModel : IQAbstractListModel, IQAbstractItemModel, IQObject
 {
 	private QAbstractListModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-		QAbstractListModel_dataChanged,
-		QAbstractListModel_headerDataChanged,
-		QAbstractListModel_layoutChanged,
-		QAbstractListModel_layoutAboutToBeChanged,
-		QAbstractListModel_dataChanged3,
-		QAbstractListModel_layoutChanged1,
-		QAbstractListModel_layoutChanged2,
-		QAbstractListModel_layoutAboutToBeChanged1,
-		QAbstractListModel_layoutAboutToBeChanged2,
-		QAbstractListModel_destroyed,
-		QAbstractListModel_destroyed1,
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
-		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
-		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
-		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
-		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
-		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
-		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
-		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
-	}
-	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
-	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
-	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
-	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
-	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
-	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
-	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
-	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged.Invoke(topLeft, bottomRight);
-	}
-	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged.Invoke();
-	}
-	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
-	}
-	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
-	}
-	static void QtBeef_QObject_destroyed(void* ptr)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed.Invoke();
-	}
-	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
-	{
-		let obj = CQt.ObjectHandleMap[ptr] as Self;
-		obj.OnDestroyed1.Invoke(param1);
-	}
 	public this(QAbstractListModel_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractListModel_new();
-		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QAbstractListModel_new2((.)parent?.ObjectPtr);
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QAbstractListModel_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr MetaObject()
+	public  virtual QMetaObject_Ptr OnMetaObject()
 	{
-		return this.ptr.MetaObject();
+		return default;
 	}
-	public void* Qt_metacast(c_char* param1)
+	public  virtual void* OnMetacast(c_char* param1)
 	{
-		return this.ptr.Qt_metacast(param1);
+		return default;
 	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	public  virtual c_int OnMetacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return this.ptr.Qt_metacall(param1, param2, param3);
+		return default;
 	}
 	public void Tr(String outStr, c_char* s)
 	{
 		this.ptr.Tr(outStr, s);
 	}
-	public QModelIndex_Ptr Index(c_int row, c_int column, IQModelIndex parent)
+	public  virtual QModelIndex_Ptr OnIndex(c_int row, c_int column, void** parent)
 	{
-		return this.ptr.Index(row, column, parent);
+		return default;
 	}
-	public QModelIndex_Ptr Sibling(c_int row, c_int column, IQModelIndex idx)
+	public  virtual QModelIndex_Ptr OnSibling(c_int row, c_int column, void** idx)
 	{
-		return this.ptr.Sibling(row, column, idx);
+		return default;
 	}
-	public bool DropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	public  virtual bool OnDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
 	{
-		return this.ptr.DropMimeData(data, action, row, column, parent);
+		return default;
 	}
-	public void* Flags(IQModelIndex index)
+	public  virtual void* OnFlags(void** index)
 	{
-		return this.ptr.Flags(index);
+		return default;
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -4254,97 +4347,312 @@ class QAbstractListModel : IQAbstractListModel, IQAbstractItemModel, IQObject
 	{
 		this.ptr.Tr3(outStr, s, c, n);
 	}
+	public  virtual bool OnEvent(void** event)
+	{
+		return default;
+	}
+	public  virtual bool OnEventFilter(void** watched, void** event)
+	{
+		return default;
+	}
+	public void ObjectName(String outStr)
+	{
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public  virtual void OnTimerEvent(void** event)
+	{
+	}
+	public  virtual void OnChildEvent(void** event)
+	{
+	}
+	public  virtual void OnCustomEvent(void** event)
+	{
+	}
+	public  virtual void OnConnectNotify(void** signal)
+	{
+	}
+	public  virtual void OnDisconnectNotify(void** signal)
+	{
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
 	public bool HasIndex(c_int row, c_int column)
 	{
 		return this.ptr.HasIndex(row, column);
 	}
-	public QModelIndex_Ptr Parent(IQModelIndex child)
+	public  virtual c_int OnRowCount(void** parent)
 	{
-		return this.ptr.Parent(child);
+		return default;
 	}
-	public c_int RowCount(IQModelIndex parent)
+	public  virtual c_int OnColumnCount(void** parent)
 	{
-		return this.ptr.RowCount(parent);
+		return default;
 	}
-	public c_int ColumnCount(IQModelIndex parent)
+	public  virtual bool OnHasChildren(void** parent)
 	{
-		return this.ptr.ColumnCount(parent);
+		return default;
 	}
-	public bool HasChildren(IQModelIndex parent)
+	public  virtual QVariant_Ptr OnData(void** index, c_int role)
 	{
-		return this.ptr.HasChildren(parent);
+		return default;
 	}
-	public QVariant_Ptr Data(IQModelIndex index, c_int role)
+	public  virtual bool OnSetData(void** index, void** value, c_int role)
 	{
-		return this.ptr.Data(index, role);
+		return default;
 	}
-	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
+	public  virtual QVariant_Ptr OnHeaderData(c_int section, Qt_Orientation orientation, c_int role)
 	{
-		return this.ptr.SetData(index, value, role);
+		return default;
 	}
-	public QVariant_Ptr HeaderData(c_int section, Qt_Orientation orientation, c_int role)
+	public  virtual bool OnSetHeaderData(c_int section, Qt_Orientation orientation, void** value, c_int role)
 	{
-		return this.ptr.HeaderData(section, orientation, role);
+		return default;
 	}
-	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
+	public  virtual void* OnItemData(void** index)
 	{
-		return this.ptr.SetHeaderData(section, orientation, value, role);
+		return default;
 	}
-	public void* ItemData(IQModelIndex index)
+	public  virtual bool OnSetItemData(void** index, void** roles)
 	{
-		return this.ptr.ItemData(index);
+		return default;
 	}
-	public bool SetItemData(IQModelIndex index, void** roles)
+	public  virtual bool OnClearItemData(void** index)
 	{
-		return this.ptr.SetItemData(index, roles);
+		return default;
 	}
-	public bool ClearItemData(IQModelIndex index)
+	public  virtual void* OnMimeTypes()
 	{
-		return this.ptr.ClearItemData(index);
+		return default;
 	}
-	public void* MimeTypes()
+	public  virtual QMimeData_Ptr OnMimeData(void** indexes)
 	{
-		return this.ptr.MimeTypes();
+		return default;
 	}
-	public QMimeData_Ptr MimeData(void** indexes)
+	public  virtual bool OnCanDropMimeData(void** data, Qt_DropAction action, c_int row, c_int column, void** parent)
 	{
-		return this.ptr.MimeData(indexes);
+		return default;
 	}
-	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
+	public  virtual void* OnSupportedDropActions()
 	{
-		return this.ptr.CanDropMimeData(data, action, row, column, parent);
+		return default;
 	}
-	public void* SupportedDropActions()
+	public  virtual void* OnSupportedDragActions()
 	{
-		return this.ptr.SupportedDropActions();
+		return default;
 	}
-	public void* SupportedDragActions()
+	public  virtual bool OnInsertRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.SupportedDragActions();
+		return default;
 	}
-	public bool InsertRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnInsertColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.InsertRows(row, count, parent);
+		return default;
 	}
-	public bool InsertColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveRows(c_int row, c_int count, void** parent)
 	{
-		return this.ptr.InsertColumns(column, count, parent);
+		return default;
 	}
-	public bool RemoveRows(c_int row, c_int count, IQModelIndex parent)
+	public  virtual bool OnRemoveColumns(c_int column, c_int count, void** parent)
 	{
-		return this.ptr.RemoveRows(row, count, parent);
+		return default;
 	}
-	public bool RemoveColumns(c_int column, c_int count, IQModelIndex parent)
+	public  virtual bool OnMoveRows(void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild)
 	{
-		return this.ptr.RemoveColumns(column, count, parent);
+		return default;
 	}
-	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
+	public  virtual bool OnMoveColumns(void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild)
 	{
-		return this.ptr.MoveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
-	}
-	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
-	{
-		return this.ptr.MoveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+		return default;
 	}
 	public bool InsertRow(c_int row)
 	{
@@ -4370,41 +4678,38 @@ class QAbstractListModel : IQAbstractListModel, IQAbstractItemModel, IQObject
 	{
 		return this.ptr.MoveColumn(sourceParent, sourceColumn, destinationParent, destinationChild);
 	}
-	public void FetchMore(IQModelIndex parent)
+	public  virtual void OnFetchMore(void** parent)
 	{
-		this.ptr.FetchMore(parent);
 	}
-	public bool CanFetchMore(IQModelIndex parent)
+	public  virtual bool OnCanFetchMore(void** parent)
 	{
-		return this.ptr.CanFetchMore(parent);
+		return default;
 	}
-	public void Sort(c_int column, Qt_SortOrder order)
+	public  virtual void OnSort(c_int column, Qt_SortOrder order)
 	{
-		this.ptr.Sort(column, order);
 	}
-	public QModelIndex_Ptr Buddy(IQModelIndex index)
+	public  virtual QModelIndex_Ptr OnBuddy(void** index)
 	{
-		return this.ptr.Buddy(index);
+		return default;
 	}
-	public void* Match(IQModelIndex start, c_int role, IQVariant value, c_int hits, void* flags)
+	public  virtual void* OnMatch(void** start, c_int role, void** value, c_int hits, void* flags)
 	{
-		return this.ptr.Match(start, role, value, hits, flags);
+		return default;
 	}
-	public QSize_Ptr Span(IQModelIndex index)
+	public  virtual QSize_Ptr OnSpan(void** index)
 	{
-		return this.ptr.Span(index);
+		return default;
 	}
-	public void* RoleNames()
+	public  virtual void* OnRoleNames()
 	{
-		return this.ptr.RoleNames();
+		return default;
 	}
 	public bool CheckIndex(IQModelIndex index)
 	{
 		return this.ptr.CheckIndex(index);
 	}
-	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
+	public  virtual void OnMultiData(void** index, void* roleDataSpan)
 	{
-		this.ptr.MultiData(index, roleDataSpan);
 	}
 	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
@@ -4422,17 +4727,15 @@ class QAbstractListModel : IQAbstractListModel, IQAbstractItemModel, IQObject
 	{
 		this.ptr.LayoutAboutToBeChanged();
 	}
-	public bool Submit()
+	public  virtual bool OnSubmit()
 	{
-		return this.ptr.Submit();
+		return default;
 	}
-	public void Revert()
+	public  virtual void OnRevert()
 	{
-		this.ptr.Revert();
 	}
-	public void ResetInternalData()
+	public  virtual void OnResetInternalData()
 	{
-		this.ptr.ResetInternalData();
 	}
 	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
 	{
@@ -4566,226 +4869,6 @@ class QAbstractListModel : IQAbstractListModel, IQAbstractItemModel, IQObject
 	{
 		return this.ptr.CreateIndex3(row, column, data);
 	}
-	public bool Event(IQEvent event)
-	{
-		return this.ptr.Event(event);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return this.ptr.EventFilter(watched, event);
-	}
-	public void ObjectName(String outStr)
-	{
-		this.ptr.ObjectName(outStr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		this.ptr.SetObjectName(name);
-	}
-	public bool IsWidgetType()
-	{
-		return this.ptr.IsWidgetType();
-	}
-	public bool IsWindowType()
-	{
-		return this.ptr.IsWindowType();
-	}
-	public bool IsQuickItemType()
-	{
-		return this.ptr.IsQuickItemType();
-	}
-	public bool SignalsBlocked()
-	{
-		return this.ptr.SignalsBlocked();
-	}
-	public bool BlockSignals(bool b)
-	{
-		return this.ptr.BlockSignals(b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return this.ptr.Thread();
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		this.ptr.MoveToThread(thread);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return this.ptr.StartTimer(interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return this.ptr.StartTimer2(time);
-	}
-	public void KillTimer(c_int id)
-	{
-		this.ptr.KillTimer(id);
-	}
-	public void** Children()
-	{
-		return this.ptr.Children();
-	}
-	public void SetParent(IQObject parent)
-	{
-		this.ptr.SetParent(parent);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		this.ptr.InstallEventFilter(filterObj);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		this.ptr.RemoveEventFilter(obj);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Connect(sender, signal, receiver, member);
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return this.ptr.Connect2(sender, signal, receiver, method);
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return this.ptr.Connect3(sender, signal, member);
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect(sender, signal, receiver, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return this.ptr.Disconnect2(sender, signal, receiver, member);
-	}
-	public bool Disconnect3()
-	{
-		return this.ptr.Disconnect3();
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return this.ptr.Disconnect4(receiver);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return this.ptr.Disconnect5(param1);
-	}
-	public void DumpObjectTree()
-	{
-		this.ptr.DumpObjectTree();
-	}
-	public void DumpObjectInfo()
-	{
-		this.ptr.DumpObjectInfo();
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return this.ptr.SetProperty(name, value);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return this.ptr.Property(name);
-	}
-	public void* DynamicPropertyNames()
-	{
-		return this.ptr.DynamicPropertyNames();
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return this.ptr.BindingStorage();
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return this.ptr.BindingStorage2();
-	}
-	public void Destroyed()
-	{
-		this.ptr.Destroyed();
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return this.ptr.Inherits(classname);
-	}
-	public void DeleteLater()
-	{
-		this.ptr.DeleteLater();
-	}
-	public QObject_Ptr Sender()
-	{
-		return this.ptr.Sender();
-	}
-	public c_int SenderSignalIndex()
-	{
-		return this.ptr.SenderSignalIndex();
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return this.ptr.Receivers(signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return this.ptr.IsSignalConnected(signal);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		this.ptr.TimerEvent(event);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		this.ptr.ChildEvent(event);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		this.ptr.CustomEvent(event);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.ConnectNotify(signal);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		this.ptr.DisconnectNotify(signal);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer22(interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return this.ptr.StartTimer23(time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return this.ptr.Connect5(sender, signal, receiver, member, param5);
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect52(sender, signal, receiver, method, type);
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return this.ptr.Connect4(sender, signal, member, type);
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return this.ptr.Disconnect1(signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return this.ptr.Disconnect22(signal, receiver);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect32(signal, receiver, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return this.ptr.Disconnect23(receiver, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		this.ptr.Destroyed1(param1);
-	}
 }
 interface IQAbstractListModel : IQtObjectInterface
 {
@@ -4800,24 +4883,286 @@ extension CQt
 	public static extern void QAbstractListModel_Delete(QAbstractListModel_Ptr self);
 	[LinkName("QAbstractListModel_MetaObject")]
 	public static extern void** QAbstractListModel_MetaObject(void* self);
+	
+	public function void QAbstractListModel_OnMetaObject_action(void* self);
+	[LinkName("QAbstractListModel_OnMetaObject")]
+	public static extern void** QAbstractListModel_OnMetaObject(void* self, QAbstractListModel_OnMetaObject_action _action);
 	[LinkName("QAbstractListModel_Qt_Metacast")]
 	public static extern void* QAbstractListModel_Qt_Metacast(void* self, c_char* param1);
+	
+	public function void QAbstractListModel_OnMetacast_action(void* self, c_char* param1);
+	[LinkName("QAbstractListModel_OnMetacast")]
+	public static extern void* QAbstractListModel_OnMetacast(void* self, QAbstractListModel_OnMetacast_action _action);
 	[LinkName("QAbstractListModel_Qt_Metacall")]
 	public static extern c_int QAbstractListModel_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	
+	public function void QAbstractListModel_OnMetacall_action(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QAbstractListModel_OnMetacall")]
+	public static extern c_int QAbstractListModel_OnMetacall(void* self, QAbstractListModel_OnMetacall_action _action);
 	[LinkName("QAbstractListModel_Tr")]
 	public static extern libqt_string QAbstractListModel_Tr(c_char* s);
 	[LinkName("QAbstractListModel_Index")]
 	public static extern void* QAbstractListModel_Index(void* self, c_int row, c_int column, void** parent);
+	
+	public function void QAbstractListModel_OnIndex_action(void* self, c_int row, c_int column, void** parent);
+	[LinkName("QAbstractListModel_OnIndex")]
+	public static extern void* QAbstractListModel_OnIndex(void* self, QAbstractListModel_OnIndex_action _action);
 	[LinkName("QAbstractListModel_Sibling")]
 	public static extern void* QAbstractListModel_Sibling(void* self, c_int row, c_int column, void** idx);
+	
+	public function void QAbstractListModel_OnSibling_action(void* self, c_int row, c_int column, void** idx);
+	[LinkName("QAbstractListModel_OnSibling")]
+	public static extern void* QAbstractListModel_OnSibling(void* self, QAbstractListModel_OnSibling_action _action);
 	[LinkName("QAbstractListModel_DropMimeData")]
 	public static extern bool QAbstractListModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QAbstractListModel_OnDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QAbstractListModel_OnDropMimeData")]
+	public static extern bool QAbstractListModel_OnDropMimeData(void* self, QAbstractListModel_OnDropMimeData_action _action);
 	[LinkName("QAbstractListModel_Flags")]
 	public static extern void* QAbstractListModel_Flags(void* self, void** index);
+	
+	public function void QAbstractListModel_OnFlags_action(void* self, void** index);
+	[LinkName("QAbstractListModel_OnFlags")]
+	public static extern void* QAbstractListModel_OnFlags(void* self, QAbstractListModel_OnFlags_action _action);
 	[LinkName("QAbstractListModel_Tr2")]
 	public static extern libqt_string QAbstractListModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractListModel_Tr3")]
 	public static extern libqt_string QAbstractListModel_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QAbstractListModel_Event")]
+	public static extern bool QAbstractListModel_Event(void* self, void** event);
+	
+	public function void QAbstractListModel_OnEvent_action(void* self, void** event);
+	[LinkName("QAbstractListModel_OnEvent")]
+	public static extern bool QAbstractListModel_OnEvent(void* self, QAbstractListModel_OnEvent_action _action);
+	[LinkName("QAbstractListModel_EventFilter")]
+	public static extern bool QAbstractListModel_EventFilter(void* self, void** watched, void** event);
+	
+	public function void QAbstractListModel_OnEventFilter_action(void* self, void** watched, void** event);
+	[LinkName("QAbstractListModel_OnEventFilter")]
+	public static extern bool QAbstractListModel_OnEventFilter(void* self, QAbstractListModel_OnEventFilter_action _action);
+	[LinkName("QAbstractListModel_TimerEvent")]
+	public static extern void QAbstractListModel_TimerEvent(void* self, void** event);
+	
+	public function void QAbstractListModel_OnTimerEvent_action(void* self, void** event);
+	[LinkName("QAbstractListModel_OnTimerEvent")]
+	public static extern void QAbstractListModel_OnTimerEvent(void* self, QAbstractListModel_OnTimerEvent_action _action);
+	[LinkName("QAbstractListModel_ChildEvent")]
+	public static extern void QAbstractListModel_ChildEvent(void* self, void** event);
+	
+	public function void QAbstractListModel_OnChildEvent_action(void* self, void** event);
+	[LinkName("QAbstractListModel_OnChildEvent")]
+	public static extern void QAbstractListModel_OnChildEvent(void* self, QAbstractListModel_OnChildEvent_action _action);
+	[LinkName("QAbstractListModel_CustomEvent")]
+	public static extern void QAbstractListModel_CustomEvent(void* self, void** event);
+	
+	public function void QAbstractListModel_OnCustomEvent_action(void* self, void** event);
+	[LinkName("QAbstractListModel_OnCustomEvent")]
+	public static extern void QAbstractListModel_OnCustomEvent(void* self, QAbstractListModel_OnCustomEvent_action _action);
+	[LinkName("QAbstractListModel_ConnectNotify")]
+	public static extern void QAbstractListModel_ConnectNotify(void* self, void** signal);
+	
+	public function void QAbstractListModel_OnConnectNotify_action(void* self, void** signal);
+	[LinkName("QAbstractListModel_OnConnectNotify")]
+	public static extern void QAbstractListModel_OnConnectNotify(void* self, QAbstractListModel_OnConnectNotify_action _action);
+	[LinkName("QAbstractListModel_DisconnectNotify")]
+	public static extern void QAbstractListModel_DisconnectNotify(void* self, void** signal);
+	
+	public function void QAbstractListModel_OnDisconnectNotify_action(void* self, void** signal);
+	[LinkName("QAbstractListModel_OnDisconnectNotify")]
+	public static extern void QAbstractListModel_OnDisconnectNotify(void* self, QAbstractListModel_OnDisconnectNotify_action _action);
+	[LinkName("QAbstractListModel_RowCount")]
+	public static extern c_int QAbstractListModel_RowCount(void* self, void** parent);
+	
+	public function void QAbstractListModel_OnRowCount_action(void* self, void** parent);
+	[LinkName("QAbstractListModel_OnRowCount")]
+	public static extern c_int QAbstractListModel_OnRowCount(void* self, QAbstractListModel_OnRowCount_action _action);
+	[LinkName("QAbstractListModel_ColumnCount")]
+	public static extern c_int QAbstractListModel_ColumnCount(void* self, void** parent);
+	
+	public function void QAbstractListModel_OnColumnCount_action(void* self, void** parent);
+	[LinkName("QAbstractListModel_OnColumnCount")]
+	public static extern c_int QAbstractListModel_OnColumnCount(void* self, QAbstractListModel_OnColumnCount_action _action);
+	[LinkName("QAbstractListModel_HasChildren")]
+	public static extern bool QAbstractListModel_HasChildren(void* self, void** parent);
+	
+	public function void QAbstractListModel_OnHasChildren_action(void* self, void** parent);
+	[LinkName("QAbstractListModel_OnHasChildren")]
+	public static extern bool QAbstractListModel_OnHasChildren(void* self, QAbstractListModel_OnHasChildren_action _action);
+	[LinkName("QAbstractListModel_Data")]
+	public static extern void* QAbstractListModel_Data(void* self, void** index, c_int role);
+	
+	public function void QAbstractListModel_OnData_action(void* self, void** index, c_int role);
+	[LinkName("QAbstractListModel_OnData")]
+	public static extern void* QAbstractListModel_OnData(void* self, QAbstractListModel_OnData_action _action);
+	[LinkName("QAbstractListModel_SetData")]
+	public static extern bool QAbstractListModel_SetData(void* self, void** index, void** value, c_int role);
+	
+	public function void QAbstractListModel_OnSetData_action(void* self, void** index, void** value, c_int role);
+	[LinkName("QAbstractListModel_OnSetData")]
+	public static extern bool QAbstractListModel_OnSetData(void* self, QAbstractListModel_OnSetData_action _action);
+	[LinkName("QAbstractListModel_HeaderData")]
+	public static extern void* QAbstractListModel_HeaderData(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	
+	public function void QAbstractListModel_OnHeaderData_action(void* self, c_int section, Qt_Orientation orientation, c_int role);
+	[LinkName("QAbstractListModel_OnHeaderData")]
+	public static extern void* QAbstractListModel_OnHeaderData(void* self, QAbstractListModel_OnHeaderData_action _action);
+	[LinkName("QAbstractListModel_SetHeaderData")]
+	public static extern bool QAbstractListModel_SetHeaderData(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	
+	public function void QAbstractListModel_OnSetHeaderData_action(void* self, c_int section, Qt_Orientation orientation, void** value, c_int role);
+	[LinkName("QAbstractListModel_OnSetHeaderData")]
+	public static extern bool QAbstractListModel_OnSetHeaderData(void* self, QAbstractListModel_OnSetHeaderData_action _action);
+	[LinkName("QAbstractListModel_ItemData")]
+	public static extern void* QAbstractListModel_ItemData(void* self, void** index);
+	
+	public function void QAbstractListModel_OnItemData_action(void* self, void** index);
+	[LinkName("QAbstractListModel_OnItemData")]
+	public static extern void* QAbstractListModel_OnItemData(void* self, QAbstractListModel_OnItemData_action _action);
+	[LinkName("QAbstractListModel_SetItemData")]
+	public static extern bool QAbstractListModel_SetItemData(void* self, void** index, void** roles);
+	
+	public function void QAbstractListModel_OnSetItemData_action(void* self, void** index, void** roles);
+	[LinkName("QAbstractListModel_OnSetItemData")]
+	public static extern bool QAbstractListModel_OnSetItemData(void* self, QAbstractListModel_OnSetItemData_action _action);
+	[LinkName("QAbstractListModel_ClearItemData")]
+	public static extern bool QAbstractListModel_ClearItemData(void* self, void** index);
+	
+	public function void QAbstractListModel_OnClearItemData_action(void* self, void** index);
+	[LinkName("QAbstractListModel_OnClearItemData")]
+	public static extern bool QAbstractListModel_OnClearItemData(void* self, QAbstractListModel_OnClearItemData_action _action);
+	[LinkName("QAbstractListModel_MimeTypes")]
+	public static extern void* QAbstractListModel_MimeTypes(void* self);
+	
+	public function void QAbstractListModel_OnMimeTypes_action(void* self);
+	[LinkName("QAbstractListModel_OnMimeTypes")]
+	public static extern void* QAbstractListModel_OnMimeTypes(void* self, QAbstractListModel_OnMimeTypes_action _action);
+	[LinkName("QAbstractListModel_MimeData")]
+	public static extern void** QAbstractListModel_MimeData(void* self, void** indexes);
+	
+	public function void QAbstractListModel_OnMimeData_action(void* self, void** indexes);
+	[LinkName("QAbstractListModel_OnMimeData")]
+	public static extern void** QAbstractListModel_OnMimeData(void* self, QAbstractListModel_OnMimeData_action _action);
+	[LinkName("QAbstractListModel_CanDropMimeData")]
+	public static extern bool QAbstractListModel_CanDropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	
+	public function void QAbstractListModel_OnCanDropMimeData_action(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
+	[LinkName("QAbstractListModel_OnCanDropMimeData")]
+	public static extern bool QAbstractListModel_OnCanDropMimeData(void* self, QAbstractListModel_OnCanDropMimeData_action _action);
+	[LinkName("QAbstractListModel_SupportedDropActions")]
+	public static extern void* QAbstractListModel_SupportedDropActions(void* self);
+	
+	public function void QAbstractListModel_OnSupportedDropActions_action(void* self);
+	[LinkName("QAbstractListModel_OnSupportedDropActions")]
+	public static extern void* QAbstractListModel_OnSupportedDropActions(void* self, QAbstractListModel_OnSupportedDropActions_action _action);
+	[LinkName("QAbstractListModel_SupportedDragActions")]
+	public static extern void* QAbstractListModel_SupportedDragActions(void* self);
+	
+	public function void QAbstractListModel_OnSupportedDragActions_action(void* self);
+	[LinkName("QAbstractListModel_OnSupportedDragActions")]
+	public static extern void* QAbstractListModel_OnSupportedDragActions(void* self, QAbstractListModel_OnSupportedDragActions_action _action);
+	[LinkName("QAbstractListModel_InsertRows")]
+	public static extern bool QAbstractListModel_InsertRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QAbstractListModel_OnInsertRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QAbstractListModel_OnInsertRows")]
+	public static extern bool QAbstractListModel_OnInsertRows(void* self, QAbstractListModel_OnInsertRows_action _action);
+	[LinkName("QAbstractListModel_InsertColumns")]
+	public static extern bool QAbstractListModel_InsertColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QAbstractListModel_OnInsertColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QAbstractListModel_OnInsertColumns")]
+	public static extern bool QAbstractListModel_OnInsertColumns(void* self, QAbstractListModel_OnInsertColumns_action _action);
+	[LinkName("QAbstractListModel_RemoveRows")]
+	public static extern bool QAbstractListModel_RemoveRows(void* self, c_int row, c_int count, void** parent);
+	
+	public function void QAbstractListModel_OnRemoveRows_action(void* self, c_int row, c_int count, void** parent);
+	[LinkName("QAbstractListModel_OnRemoveRows")]
+	public static extern bool QAbstractListModel_OnRemoveRows(void* self, QAbstractListModel_OnRemoveRows_action _action);
+	[LinkName("QAbstractListModel_RemoveColumns")]
+	public static extern bool QAbstractListModel_RemoveColumns(void* self, c_int column, c_int count, void** parent);
+	
+	public function void QAbstractListModel_OnRemoveColumns_action(void* self, c_int column, c_int count, void** parent);
+	[LinkName("QAbstractListModel_OnRemoveColumns")]
+	public static extern bool QAbstractListModel_OnRemoveColumns(void* self, QAbstractListModel_OnRemoveColumns_action _action);
+	[LinkName("QAbstractListModel_MoveRows")]
+	public static extern bool QAbstractListModel_MoveRows(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QAbstractListModel_OnMoveRows_action(void* self, void** sourceParent, c_int sourceRow, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QAbstractListModel_OnMoveRows")]
+	public static extern bool QAbstractListModel_OnMoveRows(void* self, QAbstractListModel_OnMoveRows_action _action);
+	[LinkName("QAbstractListModel_MoveColumns")]
+	public static extern bool QAbstractListModel_MoveColumns(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	
+	public function void QAbstractListModel_OnMoveColumns_action(void* self, void** sourceParent, c_int sourceColumn, c_int count, void** destinationParent, c_int destinationChild);
+	[LinkName("QAbstractListModel_OnMoveColumns")]
+	public static extern bool QAbstractListModel_OnMoveColumns(void* self, QAbstractListModel_OnMoveColumns_action _action);
+	[LinkName("QAbstractListModel_FetchMore")]
+	public static extern void QAbstractListModel_FetchMore(void* self, void** parent);
+	
+	public function void QAbstractListModel_OnFetchMore_action(void* self, void** parent);
+	[LinkName("QAbstractListModel_OnFetchMore")]
+	public static extern void QAbstractListModel_OnFetchMore(void* self, QAbstractListModel_OnFetchMore_action _action);
+	[LinkName("QAbstractListModel_CanFetchMore")]
+	public static extern bool QAbstractListModel_CanFetchMore(void* self, void** parent);
+	
+	public function void QAbstractListModel_OnCanFetchMore_action(void* self, void** parent);
+	[LinkName("QAbstractListModel_OnCanFetchMore")]
+	public static extern bool QAbstractListModel_OnCanFetchMore(void* self, QAbstractListModel_OnCanFetchMore_action _action);
+	[LinkName("QAbstractListModel_Sort")]
+	public static extern void QAbstractListModel_Sort(void* self, c_int column, Qt_SortOrder order);
+	
+	public function void QAbstractListModel_OnSort_action(void* self, c_int column, Qt_SortOrder order);
+	[LinkName("QAbstractListModel_OnSort")]
+	public static extern void QAbstractListModel_OnSort(void* self, QAbstractListModel_OnSort_action _action);
+	[LinkName("QAbstractListModel_Buddy")]
+	public static extern void* QAbstractListModel_Buddy(void* self, void** index);
+	
+	public function void QAbstractListModel_OnBuddy_action(void* self, void** index);
+	[LinkName("QAbstractListModel_OnBuddy")]
+	public static extern void* QAbstractListModel_OnBuddy(void* self, QAbstractListModel_OnBuddy_action _action);
+	[LinkName("QAbstractListModel_Match")]
+	public static extern void* QAbstractListModel_Match(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	
+	public function void QAbstractListModel_OnMatch_action(void* self, void** start, c_int role, void** value, c_int hits, void* flags);
+	[LinkName("QAbstractListModel_OnMatch")]
+	public static extern void* QAbstractListModel_OnMatch(void* self, QAbstractListModel_OnMatch_action _action);
+	[LinkName("QAbstractListModel_Span")]
+	public static extern void* QAbstractListModel_Span(void* self, void** index);
+	
+	public function void QAbstractListModel_OnSpan_action(void* self, void** index);
+	[LinkName("QAbstractListModel_OnSpan")]
+	public static extern void* QAbstractListModel_OnSpan(void* self, QAbstractListModel_OnSpan_action _action);
+	[LinkName("QAbstractListModel_RoleNames")]
+	public static extern void* QAbstractListModel_RoleNames(void* self);
+	
+	public function void QAbstractListModel_OnRoleNames_action(void* self);
+	[LinkName("QAbstractListModel_OnRoleNames")]
+	public static extern void* QAbstractListModel_OnRoleNames(void* self, QAbstractListModel_OnRoleNames_action _action);
+	[LinkName("QAbstractListModel_MultiData")]
+	public static extern void QAbstractListModel_MultiData(void* self, void** index, void* roleDataSpan);
+	
+	public function void QAbstractListModel_OnMultiData_action(void* self, void** index, void* roleDataSpan);
+	[LinkName("QAbstractListModel_OnMultiData")]
+	public static extern void QAbstractListModel_OnMultiData(void* self, QAbstractListModel_OnMultiData_action _action);
+	[LinkName("QAbstractListModel_Submit")]
+	public static extern bool QAbstractListModel_Submit(void* self);
+	
+	public function void QAbstractListModel_OnSubmit_action(void* self);
+	[LinkName("QAbstractListModel_OnSubmit")]
+	public static extern bool QAbstractListModel_OnSubmit(void* self, QAbstractListModel_OnSubmit_action _action);
+	[LinkName("QAbstractListModel_Revert")]
+	public static extern void QAbstractListModel_Revert(void* self);
+	
+	public function void QAbstractListModel_OnRevert_action(void* self);
+	[LinkName("QAbstractListModel_OnRevert")]
+	public static extern void QAbstractListModel_OnRevert(void* self, QAbstractListModel_OnRevert_action _action);
+	[LinkName("QAbstractListModel_ResetInternalData")]
+	public static extern void QAbstractListModel_ResetInternalData(void* self);
+	
+	public function void QAbstractListModel_OnResetInternalData_action(void* self);
+	[LinkName("QAbstractListModel_OnResetInternalData")]
+	public static extern void QAbstractListModel_OnResetInternalData(void* self, QAbstractListModel_OnResetInternalData_action _action);
 }
 [AllowDuplicates]
 enum QAbstractItemModel_LayoutChangeHint

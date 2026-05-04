@@ -99,35 +99,25 @@ class QPaintDevice : IQPaintDevice
 {
 	private QPaintDevice_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
-	
-	enum ObjectSignalType
-	{
-	}
-	
-	static void QtBf_ConnectSignals(Self obj)
-	{
-		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
-	}
 	public this(QPaintDevice_Ptr ptr)
 	{
 		this.ptr = ptr;
-		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
 		CQt.QPaintDevice_Delete(this.ptr);
 	}
-	public c_int DevType()
+	public  virtual c_int OnDevType()
 	{
-		return this.ptr.DevType();
+		return default;
 	}
 	public bool PaintingActive()
 	{
 		return this.ptr.PaintingActive();
 	}
-	public QPaintEngine_Ptr PaintEngine()
+	public  virtual QPaintEngine_Ptr OnPaintEngine()
 	{
-		return this.ptr.PaintEngine();
+		return default;
 	}
 	public c_int Width()
 	{
@@ -181,21 +171,20 @@ class QPaintDevice : IQPaintDevice
 	{
 		return this.ptr.DevicePixelRatioFScale();
 	}
-	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	public  virtual c_int OnMetric(QPaintDevice_PaintDeviceMetric metric)
 	{
-		return this.ptr.Metric(metric);
+		return default;
 	}
-	public void InitPainter(IQPainter painter)
+	public  virtual void OnInitPainter(void** painter)
 	{
-		this.ptr.InitPainter(painter);
 	}
-	public QPaintDevice_Ptr Redirected(IQPoint offset)
+	public  virtual QPaintDevice_Ptr OnRedirected(void** offset)
 	{
-		return this.ptr.Redirected(offset);
+		return default;
 	}
-	public QPainter_Ptr SharedPainter()
+	public  virtual QPainter_Ptr OnSharedPainter()
 	{
-		return this.ptr.SharedPainter();
+		return default;
 	}
 }
 interface IQPaintDevice : IQtObjectInterface
@@ -207,10 +196,18 @@ extension CQt
 	public static extern void QPaintDevice_Delete(QPaintDevice_Ptr self);
 	[LinkName("QPaintDevice_DevType")]
 	public static extern c_int QPaintDevice_DevType(void* self);
+	
+	public function void QPaintDevice_OnDevType_action(void* self);
+	[LinkName("QPaintDevice_OnDevType")]
+	public static extern c_int QPaintDevice_OnDevType(void* self, QPaintDevice_OnDevType_action _action);
 	[LinkName("QPaintDevice_PaintingActive")]
 	public static extern bool QPaintDevice_PaintingActive(void* self);
 	[LinkName("QPaintDevice_PaintEngine")]
 	public static extern void** QPaintDevice_PaintEngine(void* self);
+	
+	public function void QPaintDevice_OnPaintEngine_action(void* self);
+	[LinkName("QPaintDevice_OnPaintEngine")]
+	public static extern void** QPaintDevice_OnPaintEngine(void* self, QPaintDevice_OnPaintEngine_action _action);
 	[LinkName("QPaintDevice_Width")]
 	public static extern c_int QPaintDevice_Width(void* self);
 	[LinkName("QPaintDevice_Height")]
@@ -239,12 +236,28 @@ extension CQt
 	public static extern double QPaintDevice_DevicePixelRatioFScale();
 	[LinkName("QPaintDevice_Metric")]
 	public static extern c_int QPaintDevice_Metric(void* self, QPaintDevice_PaintDeviceMetric metric);
+	
+	public function void QPaintDevice_OnMetric_action(void* self, QPaintDevice_PaintDeviceMetric metric);
+	[LinkName("QPaintDevice_OnMetric")]
+	public static extern c_int QPaintDevice_OnMetric(void* self, QPaintDevice_OnMetric_action _action);
 	[LinkName("QPaintDevice_InitPainter")]
 	public static extern void QPaintDevice_InitPainter(void* self, void** painter);
+	
+	public function void QPaintDevice_OnInitPainter_action(void* self, void** painter);
+	[LinkName("QPaintDevice_OnInitPainter")]
+	public static extern void QPaintDevice_OnInitPainter(void* self, QPaintDevice_OnInitPainter_action _action);
 	[LinkName("QPaintDevice_Redirected")]
 	public static extern void** QPaintDevice_Redirected(void* self, void** offset);
+	
+	public function void QPaintDevice_OnRedirected_action(void* self, void** offset);
+	[LinkName("QPaintDevice_OnRedirected")]
+	public static extern void** QPaintDevice_OnRedirected(void* self, QPaintDevice_OnRedirected_action _action);
 	[LinkName("QPaintDevice_SharedPainter")]
 	public static extern void** QPaintDevice_SharedPainter(void* self);
+	
+	public function void QPaintDevice_OnSharedPainter_action(void* self);
+	[LinkName("QPaintDevice_OnSharedPainter")]
+	public static extern void** QPaintDevice_OnSharedPainter(void* self, QPaintDevice_OnSharedPainter_action _action);
 }
 [AllowDuplicates]
 enum QPaintDevice_PaintDeviceMetric
