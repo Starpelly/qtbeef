@@ -91,17 +91,24 @@ class QInputEvent : IQInputEvent, IQEvent
 {
 	private QInputEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QInputEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQInputDevice m_dev)
 	{
 		this.ptr = CQt.QInputEvent_new(type, (.)m_dev?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQInputDevice m_dev, void* modifiers)
 	{
 		this.ptr = CQt.QInputEvent_new2(type, (.)m_dev?.ObjectPtr, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -370,21 +377,29 @@ class QPointerEvent : IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QPointerEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPointerEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointingDevice dev)
 	{
 		this.ptr = CQt.QPointerEvent_new(type, (.)dev?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointingDevice dev, void* modifiers)
 	{
 		this.ptr = CQt.QPointerEvent_new2(type, (.)dev?.ObjectPtr, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointingDevice dev, void* modifiers, void** points)
 	{
 		this.ptr = CQt.QPointerEvent_new3(type, (.)dev?.ObjectPtr, modifiers, points);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -781,9 +796,14 @@ class QSinglePointEvent : IQSinglePointEvent, IQPointerEvent, IQInputEvent, IQEv
 {
 	private QSinglePointEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QSinglePointEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1226,17 +1246,24 @@ class QEnterEvent : IQEnterEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 {
 	private QEnterEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QEnterEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF localPos, IQPointF scenePos, IQPointF globalPos)
 	{
 		this.ptr = CQt.QEnterEvent_new((.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF localPos, IQPointF scenePos, IQPointF globalPos, IQPointingDevice device)
 	{
 		this.ptr = CQt.QEnterEvent_new2((.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1731,41 +1758,54 @@ class QMouseEvent : IQMouseEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 {
 	private QMouseEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMouseEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, Qt_MouseButton button, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QMouseEvent_new(type, (.)localPos?.ObjectPtr, button, buttons, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QMouseEvent_new2(type, (.)localPos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QMouseEvent_new3(type, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers, Qt_MouseEventSource source)
 	{
 		this.ptr = CQt.QMouseEvent_new4(type, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers, source);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, Qt_MouseButton button, void* buttons, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QMouseEvent_new5(type, (.)localPos?.ObjectPtr, button, buttons, modifiers, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QMouseEvent_new6(type, (.)localPos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QMouseEvent_new7(type, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, Qt_MouseButton button, void* buttons, void* modifiers, Qt_MouseEventSource source, IQPointingDevice device)
 	{
 		this.ptr = CQt.QMouseEvent_new8(type, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, button, buttons, modifiers, source, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2256,33 +2296,44 @@ class QHoverEvent : IQHoverEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 {
 	private QHoverEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QHoverEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF scenePos, IQPointF globalPos, IQPointF oldPos)
 	{
 		this.ptr = CQt.QHoverEvent_new(type, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)oldPos?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF pos, IQPointF oldPos)
 	{
 		this.ptr = CQt.QHoverEvent_new2(type, (.)pos?.ObjectPtr, (.)oldPos?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF scenePos, IQPointF globalPos, IQPointF oldPos, void* modifiers)
 	{
 		this.ptr = CQt.QHoverEvent_new3(type, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)oldPos?.ObjectPtr, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF scenePos, IQPointF globalPos, IQPointF oldPos, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QHoverEvent_new4(type, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)oldPos?.ObjectPtr, modifiers, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF pos, IQPointF oldPos, void* modifiers)
 	{
 		this.ptr = CQt.QHoverEvent_new5(type, (.)pos?.ObjectPtr, (.)oldPos?.ObjectPtr, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPointF pos, IQPointF oldPos, void* modifiers, IQPointingDevice device)
 	{
 		this.ptr = CQt.QHoverEvent_new6(type, (.)pos?.ObjectPtr, (.)oldPos?.ObjectPtr, modifiers, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2739,21 +2790,29 @@ class QWheelEvent : IQWheelEvent, IQSinglePointEvent, IQPointerEvent, IQInputEve
 {
 	private QWheelEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QWheelEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, IQPointF globalPos, IQPoint pixelDelta, IQPoint angleDelta, void* buttons, void* modifiers, Qt_ScrollPhase phase, bool inverted)
 	{
 		this.ptr = CQt.QWheelEvent_new((.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)pixelDelta?.ObjectPtr, (.)angleDelta?.ObjectPtr, buttons, modifiers, phase, inverted);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, IQPointF globalPos, IQPoint pixelDelta, IQPoint angleDelta, void* buttons, void* modifiers, Qt_ScrollPhase phase, bool inverted, Qt_MouseEventSource source)
 	{
 		this.ptr = CQt.QWheelEvent_new2((.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)pixelDelta?.ObjectPtr, (.)angleDelta?.ObjectPtr, buttons, modifiers, phase, inverted, source);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, IQPointF globalPos, IQPoint pixelDelta, IQPoint angleDelta, void* buttons, void* modifiers, Qt_ScrollPhase phase, bool inverted, Qt_MouseEventSource source, IQPointingDevice device)
 	{
 		this.ptr = CQt.QWheelEvent_new3((.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, (.)pixelDelta?.ObjectPtr, (.)angleDelta?.ObjectPtr, buttons, modifiers, phase, inverted, source, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3262,13 +3321,19 @@ class QTabletEvent : IQTabletEvent, IQSinglePointEvent, IQPointerEvent, IQInputE
 {
 	private QTabletEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTabletEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type t, IQPointingDevice device, IQPointF pos, IQPointF globalPos, double pressure, float xTilt, float yTilt, float tangentialPressure, double rotation, float z, void* keyState, Qt_MouseButton button, void* buttons)
 	{
 		this.ptr = CQt.QTabletEvent_new(t, (.)device?.ObjectPtr, (.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, pressure, xTilt, yTilt, tangentialPressure, rotation, z, keyState, button, buttons);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3801,21 +3866,29 @@ class QNativeGestureEvent : IQNativeGestureEvent, IQSinglePointEvent, IQPointerE
 {
 	private QNativeGestureEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QNativeGestureEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_NativeGestureType type, IQPointingDevice dev, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, double value, c_ulonglong sequenceId, c_ulonglong intArgument)
 	{
 		this.ptr = CQt.QNativeGestureEvent_new(type, (.)dev?.ObjectPtr, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, value, sequenceId, intArgument);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_NativeGestureType type, IQPointingDevice dev, c_int fingerCount, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, double value, IQPointF delta)
 	{
 		this.ptr = CQt.QNativeGestureEvent_new2(type, (.)dev?.ObjectPtr, fingerCount, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, value, (.)delta?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_NativeGestureType type, IQPointingDevice dev, c_int fingerCount, IQPointF localPos, IQPointF scenePos, IQPointF globalPos, double value, IQPointF delta, c_ulonglong sequenceId)
 	{
 		this.ptr = CQt.QNativeGestureEvent_new3(type, (.)dev?.ObjectPtr, fingerCount, (.)localPos?.ObjectPtr, (.)scenePos?.ObjectPtr, (.)globalPos?.ObjectPtr, value, (.)delta?.ObjectPtr, sequenceId);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4212,45 +4285,59 @@ class QKeyEvent : IQKeyEvent, IQInputEvent, IQEvent
 {
 	private QKeyEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QKeyEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers)
 	{
 		this.ptr = CQt.QKeyEvent_new(type, key, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers)
 	{
 		this.ptr = CQt.QKeyEvent_new2(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, String text)
 	{
 		this.ptr = CQt.QKeyEvent_new3(type, key, modifiers, libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, String text, bool autorep)
 	{
 		this.ptr = CQt.QKeyEvent_new4(type, key, modifiers, libqt_string(text), autorep);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, String text, bool autorep, c_ushort count)
 	{
 		this.ptr = CQt.QKeyEvent_new5(type, key, modifiers, libqt_string(text), autorep, count);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers, String text)
 	{
 		this.ptr = CQt.QKeyEvent_new6(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers, String text, bool autorep)
 	{
 		this.ptr = CQt.QKeyEvent_new7(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, libqt_string(text), autorep);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers, String text, bool autorep, c_ushort count)
 	{
 		this.ptr = CQt.QKeyEvent_new8(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, libqt_string(text), autorep, count);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, c_int key, void* modifiers, c_uint nativeScanCode, c_uint nativeVirtualKey, c_uint nativeModifiers, String text, bool autorep, c_ushort count, IQInputDevice device)
 	{
 		this.ptr = CQt.QKeyEvent_new9(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, libqt_string(text), autorep, count, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4503,17 +4590,24 @@ class QFocusEvent : IQFocusEvent, IQEvent
 {
 	private QFocusEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QFocusEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QFocusEvent_new(type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, Qt_FocusReason reason)
 	{
 		this.ptr = CQt.QFocusEvent_new2(type, reason);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4681,17 +4775,24 @@ class QPaintEvent : IQPaintEvent, IQEvent
 {
 	private QPaintEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPaintEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegion paintRegion)
 	{
 		this.ptr = CQt.QPaintEvent_new((.)paintRegion?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRect paintRect)
 	{
 		this.ptr = CQt.QPaintEvent_new2((.)paintRect?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4853,13 +4954,19 @@ class QMoveEvent : IQMoveEvent, IQEvent
 {
 	private QMoveEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMoveEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pos, IQPoint oldPos)
 	{
 		this.ptr = CQt.QMoveEvent_new((.)pos?.ObjectPtr, (.)oldPos?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5015,13 +5122,19 @@ class QExposeEvent : IQExposeEvent, IQEvent
 {
 	private QExposeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QExposeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegion m_region)
 	{
 		this.ptr = CQt.QExposeEvent_new((.)m_region?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5171,13 +5284,19 @@ class QPlatformSurfaceEvent : IQPlatformSurfaceEvent, IQEvent
 {
 	private QPlatformSurfaceEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPlatformSurfaceEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QPlatformSurfaceEvent_SurfaceEventType surfaceEventType)
 	{
 		this.ptr = CQt.QPlatformSurfaceEvent_new(surfaceEventType);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5331,13 +5450,19 @@ class QResizeEvent : IQResizeEvent, IQEvent
 {
 	private QResizeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QResizeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize size, IQSize oldSize)
 	{
 		this.ptr = CQt.QResizeEvent_new((.)size?.ObjectPtr, (.)oldSize?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5489,13 +5614,19 @@ class QCloseEvent : IQCloseEvent, IQEvent
 {
 	private QCloseEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QCloseEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCloseEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5635,13 +5766,19 @@ class QIconDragEvent : IQIconDragEvent, IQEvent
 {
 	private QIconDragEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QIconDragEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIconDragEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5781,13 +5918,19 @@ class QShowEvent : IQShowEvent, IQEvent
 {
 	private QShowEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QShowEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QShowEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5927,13 +6070,19 @@ class QHideEvent : IQHideEvent, IQEvent
 {
 	private QHideEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QHideEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QHideEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6125,21 +6274,29 @@ class QContextMenuEvent : IQContextMenuEvent, IQInputEvent, IQEvent
 {
 	private QContextMenuEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QContextMenuEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QContextMenuEvent_Reason reason, IQPoint pos, IQPoint globalPos)
 	{
 		this.ptr = CQt.QContextMenuEvent_new(reason, (.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QContextMenuEvent_Reason reason, IQPoint pos)
 	{
 		this.ptr = CQt.QContextMenuEvent_new2(reason, (.)pos?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QContextMenuEvent_Reason reason, IQPoint pos, IQPoint globalPos, void* modifiers)
 	{
 		this.ptr = CQt.QContextMenuEvent_new3(reason, (.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6386,17 +6543,24 @@ class QInputMethodEvent : IQInputMethodEvent, IQEvent
 {
 	private QInputMethodEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QInputMethodEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QInputMethodEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String preeditText, void** attributes)
 	{
 		this.ptr = CQt.QInputMethodEvent_new2(libqt_string(preeditText), attributes);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6598,13 +6762,19 @@ class QInputMethodQueryEvent : IQInputMethodQueryEvent, IQEvent
 {
 	private QInputMethodQueryEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QInputMethodQueryEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* queries)
 	{
 		this.ptr = CQt.QInputMethodQueryEvent_new(queries);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6818,17 +6988,24 @@ class QDropEvent : IQDropEvent, IQEvent
 {
 	private QDropEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDropEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, void* actions, IQMimeData data, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QDropEvent_new((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pos, void* actions, IQMimeData data, void* buttons, void* modifiers, QEvent_Type type)
 	{
 		this.ptr = CQt.QDropEvent_new2((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers, type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7122,17 +7299,24 @@ class QDragMoveEvent : IQDragMoveEvent, IQDropEvent, IQEvent
 {
 	private QDragMoveEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDragMoveEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pos, void* actions, IQMimeData data, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QDragMoveEvent_new((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pos, void* actions, IQMimeData data, void* buttons, void* modifiers, QEvent_Type type)
 	{
 		this.ptr = CQt.QDragMoveEvent_new2((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers, type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7420,13 +7604,19 @@ class QDragEnterEvent : IQDragEnterEvent, IQDragMoveEvent, IQDropEvent, IQEvent
 {
 	private QDragEnterEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDragEnterEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pos, void* actions, IQMimeData data, void* buttons, void* modifiers)
 	{
 		this.ptr = CQt.QDragEnterEvent_new((.)pos?.ObjectPtr, actions, (.)data?.ObjectPtr, buttons, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7634,13 +7824,19 @@ class QDragLeaveEvent : IQDragLeaveEvent, IQEvent
 {
 	private QDragLeaveEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDragLeaveEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDragLeaveEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7804,13 +8000,19 @@ class QHelpEvent : IQHelpEvent, IQEvent
 {
 	private QHelpEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QHelpEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQPoint pos, IQPoint globalPos)
 	{
 		this.ptr = CQt.QHelpEvent_new(type, (.)pos?.ObjectPtr, (.)globalPos?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7990,13 +8192,19 @@ class QStatusTipEvent : IQStatusTipEvent, IQEvent
 {
 	private QStatusTipEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStatusTipEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(String tip)
 	{
 		this.ptr = CQt.QStatusTipEvent_new(libqt_string(tip));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8146,13 +8354,19 @@ class QWhatsThisClickedEvent : IQWhatsThisClickedEvent, IQEvent
 {
 	private QWhatsThisClickedEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QWhatsThisClickedEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(String href)
 	{
 		this.ptr = CQt.QWhatsThisClickedEvent_new(libqt_string(href));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8306,17 +8520,24 @@ class QActionEvent : IQActionEvent, IQEvent
 {
 	private QActionEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QActionEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int type, IQAction action)
 	{
 		this.ptr = CQt.QActionEvent_new(type, (.)action?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int type, IQAction action, IQAction before)
 	{
 		this.ptr = CQt.QActionEvent_new2(type, (.)action?.ObjectPtr, (.)before?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8482,17 +8703,24 @@ class QFileOpenEvent : IQFileOpenEvent, IQEvent
 {
 	private QFileOpenEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QFileOpenEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(String file)
 	{
 		this.ptr = CQt.QFileOpenEvent_new(libqt_string(file));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUrl url)
 	{
 		this.ptr = CQt.QFileOpenEvent_new2((.)url?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8656,13 +8884,19 @@ class QToolBarChangeEvent : IQToolBarChangeEvent, IQEvent
 {
 	private QToolBarChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QToolBarChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(bool t)
 	{
 		this.ptr = CQt.QToolBarChangeEvent_new(t);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8820,17 +9054,24 @@ class QShortcutEvent : IQShortcutEvent, IQEvent
 {
 	private QShortcutEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QShortcutEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, c_int id)
 	{
 		this.ptr = CQt.QShortcutEvent_new((.)key?.ObjectPtr, id);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, c_int id, bool ambiguous)
 	{
 		this.ptr = CQt.QShortcutEvent_new2((.)key?.ObjectPtr, id, ambiguous);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8998,17 +9239,24 @@ class QWindowStateChangeEvent : IQWindowStateChangeEvent, IQEvent
 {
 	private QWindowStateChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QWindowStateChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* oldState)
 	{
 		this.ptr = CQt.QWindowStateChangeEvent_new(oldState);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* oldState, bool isOverride)
 	{
 		this.ptr = CQt.QWindowStateChangeEvent_new2(oldState, isOverride);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -9262,33 +9510,44 @@ class QTouchEvent : IQTouchEvent, IQPointerEvent, IQInputEvent, IQEvent
 {
 	private QTouchEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTouchEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType)
 	{
 		this.ptr = CQt.QTouchEvent_new(eventType);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device, void* modifiers, void* touchPointStates)
 	{
 		this.ptr = CQt.QTouchEvent_new2(eventType, (.)device?.ObjectPtr, modifiers, touchPointStates);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device)
 	{
 		this.ptr = CQt.QTouchEvent_new3(eventType, (.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device, void* modifiers)
 	{
 		this.ptr = CQt.QTouchEvent_new4(eventType, (.)device?.ObjectPtr, modifiers);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device, void* modifiers, void** touchPoints)
 	{
 		this.ptr = CQt.QTouchEvent_new5(eventType, (.)device?.ObjectPtr, modifiers, touchPoints);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type eventType, IQPointingDevice device, void* modifiers, void* touchPointStates, void** touchPoints)
 	{
 		this.ptr = CQt.QTouchEvent_new6(eventType, (.)device?.ObjectPtr, modifiers, touchPointStates, touchPoints);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -9595,13 +9854,19 @@ class QScrollPrepareEvent : IQScrollPrepareEvent, IQEvent
 {
 	private QScrollPrepareEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QScrollPrepareEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF startPos)
 	{
 		this.ptr = CQt.QScrollPrepareEvent_new((.)startPos?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -9795,13 +10060,19 @@ class QScrollEvent : IQScrollEvent, IQEvent
 {
 	private QScrollEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QScrollEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF contentPos, IQPointF overshoot, QScrollEvent_ScrollState scrollState)
 	{
 		this.ptr = CQt.QScrollEvent_new((.)contentPos?.ObjectPtr, (.)overshoot?.ObjectPtr, scrollState);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -9967,13 +10238,19 @@ class QScreenOrientationChangeEvent : IQScreenOrientationChangeEvent, IQEvent
 {
 	private QScreenOrientationChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QScreenOrientationChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQScreen screen, Qt_ScreenOrientation orientation)
 	{
 		this.ptr = CQt.QScreenOrientationChangeEvent_new((.)screen?.ObjectPtr, orientation);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -10129,13 +10406,19 @@ class QApplicationStateChangeEvent : IQApplicationStateChangeEvent, IQEvent
 {
 	private QApplicationStateChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QApplicationStateChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_ApplicationState state)
 	{
 		this.ptr = CQt.QApplicationStateChangeEvent_new(state);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -10265,21 +10548,29 @@ class QInputMethodEvent_Attribute : IQInputMethodEvent_Attribute
 {
 	private QInputMethodEvent_Attribute_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QInputMethodEvent_Attribute_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QInputMethodEvent_AttributeType typ, c_int s, c_int l, IQVariant val)
 	{
 		this.ptr = CQt.QInputMethodEvent_Attribute_new(typ, s, l, (.)val?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QInputMethodEvent_AttributeType typ, c_int s, c_int l)
 	{
 		this.ptr = CQt.QInputMethodEvent_Attribute_new2(typ, s, l);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQInputMethodEvent_Attribute param1)
 	{
 		this.ptr = CQt.QInputMethodEvent_Attribute_new3((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

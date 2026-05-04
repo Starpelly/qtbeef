@@ -79,21 +79,29 @@ class QEasingCurve : IQEasingCurve
 {
 	private QEasingCurve_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QEasingCurve_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QEasingCurve_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQEasingCurve other)
 	{
 		this.ptr = CQt.QEasingCurve_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEasingCurve_Type type)
 	{
 		this.ptr = CQt.QEasingCurve_new3(type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

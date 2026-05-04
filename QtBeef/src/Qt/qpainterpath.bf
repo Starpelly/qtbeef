@@ -255,21 +255,29 @@ class QPainterPath : IQPainterPath
 {
 	private QPainterPath_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPainterPath_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPainterPath_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF startPoint)
 	{
 		this.ptr = CQt.QPainterPath_new2((.)startPoint?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPainterPath other)
 	{
 		this.ptr = CQt.QPainterPath_new3((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -746,17 +754,24 @@ class QPainterPathStroker : IQPainterPathStroker
 {
 	private QPainterPathStroker_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPainterPathStroker_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPainterPathStroker_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPen pen)
 	{
 		this.ptr = CQt.QPainterPathStroker_new2((.)pen?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -923,9 +938,14 @@ class QPainterPath_Element : IQPainterPath_Element
 {
 	private QPainterPath_Element_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPainterPath_Element_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

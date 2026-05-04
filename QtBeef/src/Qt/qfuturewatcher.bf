@@ -411,9 +411,112 @@ class QFutureWatcherBase : IQFutureWatcherBase, IQObject
 {
 	private QFutureWatcherBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QFutureWatcherBase_Connect_Started(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_Started);
+		CQt.QFutureWatcherBase_Connect_Finished(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_Finished);
+		CQt.QFutureWatcherBase_Connect_Canceled(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_Canceled);
+		CQt.QFutureWatcherBase_Connect_Paused(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_Paused);
+		CQt.QFutureWatcherBase_Connect_Suspending(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_Suspending);
+		CQt.QFutureWatcherBase_Connect_Suspended(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_Suspended);
+		CQt.QFutureWatcherBase_Connect_Resumed(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_Resumed);
+		CQt.QFutureWatcherBase_Connect_ResultReadyAt(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_ResultReadyAt);
+		CQt.QFutureWatcherBase_Connect_ResultsReadyAt(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_ResultsReadyAt);
+		CQt.QFutureWatcherBase_Connect_ProgressRangeChanged(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_ProgressRangeChanged);
+		CQt.QFutureWatcherBase_Connect_ProgressValueChanged(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_ProgressValueChanged);
+		CQt.QFutureWatcherBase_Connect_ProgressTextChanged(obj.ObjectPtr,  => QtBeef_QFutureWatcherBase_Connect_ProgressTextChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void()> OnStarted = .() ~ _.Dispose();
+	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
+	public Event<delegate void()> OnCanceled = .() ~ _.Dispose();
+	public Event<delegate void()> OnPaused = .() ~ _.Dispose();
+	public Event<delegate void()> OnSuspending = .() ~ _.Dispose();
+	public Event<delegate void()> OnSuspended = .() ~ _.Dispose();
+	public Event<delegate void()> OnResumed = .() ~ _.Dispose();
+	public Event<delegate void(c_int resultIndex)> OnResultReadyAt = .() ~ _.Dispose();
+	public Event<delegate void(c_int beginIndex, c_int endIndex)> OnResultsReadyAt = .() ~ _.Dispose();
+	public Event<delegate void(c_int minimum, c_int maximum)> OnProgressRangeChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int progressValue)> OnProgressValueChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string progressText)> OnProgressTextChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QFutureWatcherBase_Connect_Started(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStarted.Invoke();
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_Finished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFinished.Invoke();
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_Canceled(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanceled.Invoke();
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_Paused(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaused.Invoke();
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_Suspending(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSuspending.Invoke();
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_Suspended(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSuspended.Invoke();
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_Resumed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResumed.Invoke();
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_ResultReadyAt(void* ptr, c_int resultIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResultReadyAt.Invoke(resultIndex);
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_ResultsReadyAt(void* ptr, c_int beginIndex, c_int endIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResultsReadyAt.Invoke(beginIndex, endIndex);
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_ProgressRangeChanged(void* ptr, c_int minimum, c_int maximum)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnProgressRangeChanged.Invoke(minimum, maximum);
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_ProgressValueChanged(void* ptr, c_int progressValue)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnProgressValueChanged.Invoke(progressValue);
+	}
+	static void QtBeef_QFutureWatcherBase_Connect_ProgressTextChanged(void* ptr, libqt_string progressText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnProgressTextChanged.Invoke(progressText);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QFutureWatcherBase_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

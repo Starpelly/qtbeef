@@ -75,21 +75,29 @@ class QMargins : IQMargins
 {
 	private QMargins_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMargins_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMargins other)
 	{
 		this.ptr = CQt.QMargins_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMargins_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int left, c_int top, c_int right, c_int bottom)
 	{
 		this.ptr = CQt.QMargins_new4(left, top, right, bottom);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -270,25 +278,34 @@ class QMarginsF : IQMarginsF
 {
 	private QMarginsF_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMarginsF_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMarginsF other)
 	{
 		this.ptr = CQt.QMarginsF_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMarginsF_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(double left, double top, double right, double bottom)
 	{
 		this.ptr = CQt.QMarginsF_new4(left, top, right, bottom);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMargins margins)
 	{
 		this.ptr = CQt.QMarginsF_new5((.)margins?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

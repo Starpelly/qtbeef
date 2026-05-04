@@ -147,17 +147,24 @@ class QDebug : IQDebug, IQIODeviceBase
 {
 	private QDebug_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDebug_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device)
 	{
 		this.ptr = CQt.QDebug_new((.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDebug o)
 	{
 		this.ptr = CQt.QDebug_new2((.)o?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -388,13 +395,19 @@ class QDebugStateSaver : IQDebugStateSaver
 {
 	private QDebugStateSaver_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDebugStateSaver_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDebug dbg)
 	{
 		this.ptr = CQt.QDebugStateSaver_new((.)dbg?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -459,13 +472,19 @@ class QNoDebug : IQNoDebug
 {
 	private QNoDebug_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QNoDebug_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQNoDebug other)
 	{
 		this.ptr = CQt.QNoDebug_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

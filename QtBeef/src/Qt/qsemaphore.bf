@@ -55,17 +55,24 @@ class QSemaphore : IQSemaphore
 {
 	private QSemaphore_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QSemaphore_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSemaphore_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int n)
 	{
 		this.ptr = CQt.QSemaphore_new2(n);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -166,21 +173,29 @@ class QSemaphoreReleaser : IQSemaphoreReleaser
 {
 	private QSemaphoreReleaser_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QSemaphoreReleaser_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSemaphoreReleaser_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSemaphore sem)
 	{
 		this.ptr = CQt.QSemaphoreReleaser_new2((.)sem?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSemaphore sem, c_int n)
 	{
 		this.ptr = CQt.QSemaphoreReleaser_new4((.)sem?.ObjectPtr, n);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

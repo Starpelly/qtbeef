@@ -419,41 +419,117 @@ class QMovie : IQMovie, IQObject
 {
 	private QMovie_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QMovie_Connect_Started(obj.ObjectPtr,  => QtBeef_QMovie_Connect_Started);
+		CQt.QMovie_Connect_Resized(obj.ObjectPtr,  => QtBeef_QMovie_Connect_Resized);
+		CQt.QMovie_Connect_Updated(obj.ObjectPtr,  => QtBeef_QMovie_Connect_Updated);
+		CQt.QMovie_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QMovie_Connect_StateChanged);
+		CQt.QMovie_Connect_Error(obj.ObjectPtr,  => QtBeef_QMovie_Connect_Error);
+		CQt.QMovie_Connect_Finished(obj.ObjectPtr,  => QtBeef_QMovie_Connect_Finished);
+		CQt.QMovie_Connect_FrameChanged(obj.ObjectPtr,  => QtBeef_QMovie_Connect_FrameChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void()> OnStarted = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnResized = .() ~ _.Dispose();
+	public Event<delegate void(void** rect)> OnUpdated = .() ~ _.Dispose();
+	public Event<delegate void(QMovie_MovieState state)> OnStateChanged = .() ~ _.Dispose();
+	public Event<delegate void(QImageReader_ImageReaderError error)> OnError = .() ~ _.Dispose();
+	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
+	public Event<delegate void(c_int frameNumber)> OnFrameChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QMovie_Connect_Started(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStarted.Invoke();
+	}
+	static void QtBeef_QMovie_Connect_Resized(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResized.Invoke(size);
+	}
+	static void QtBeef_QMovie_Connect_Updated(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdated.Invoke(rect);
+	}
+	static void QtBeef_QMovie_Connect_StateChanged(void* ptr, QMovie_MovieState state)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStateChanged.Invoke(state);
+	}
+	static void QtBeef_QMovie_Connect_Error(void* ptr, QImageReader_ImageReaderError error)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnError.Invoke(error);
+	}
+	static void QtBeef_QMovie_Connect_Finished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFinished.Invoke();
+	}
+	static void QtBeef_QMovie_Connect_FrameChanged(void* ptr, c_int frameNumber)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFrameChanged.Invoke(frameNumber);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QMovie_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMovie_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device)
 	{
 		this.ptr = CQt.QMovie_new2((.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QMovie_new3(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QMovie_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device, void** format)
 	{
 		this.ptr = CQt.QMovie_new5((.)device?.ObjectPtr, format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device, void** format, IQObject parent)
 	{
 		this.ptr = CQt.QMovie_new6((.)device?.ObjectPtr, format, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void** format)
 	{
 		this.ptr = CQt.QMovie_new7(libqt_string(fileName), format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void** format, IQObject parent)
 	{
 		this.ptr = CQt.QMovie_new8(libqt_string(fileName), format, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

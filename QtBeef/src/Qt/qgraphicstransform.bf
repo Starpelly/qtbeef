@@ -275,17 +275,38 @@ class QGraphicsTransform : IQGraphicsTransform, IQObject
 {
 	private QGraphicsTransform_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsTransform_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsTransform_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsTransform_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -952,17 +973,73 @@ class QGraphicsScale : IQGraphicsScale, IQGraphicsTransform, IQObject
 {
 	private QGraphicsScale_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsScale_Connect_OriginChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScale_Connect_OriginChanged);
+		CQt.QGraphicsScale_Connect_XScaleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScale_Connect_XScaleChanged);
+		CQt.QGraphicsScale_Connect_YScaleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScale_Connect_YScaleChanged);
+		CQt.QGraphicsScale_Connect_ZScaleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScale_Connect_ZScaleChanged);
+		CQt.QGraphicsScale_Connect_ScaleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScale_Connect_ScaleChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void()> OnOriginChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnXScaleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnYScaleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnZScaleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnScaleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsScale_Connect_OriginChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOriginChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsScale_Connect_XScaleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnXScaleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsScale_Connect_YScaleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnYScaleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsScale_Connect_ZScaleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnZScaleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsScale_Connect_ScaleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScaleChanged.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsScale_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsScale_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsScale_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1713,17 +1790,59 @@ class QGraphicsRotation : IQGraphicsRotation, IQGraphicsTransform, IQObject
 {
 	private QGraphicsRotation_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsRotation_Connect_OriginChanged(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_Connect_OriginChanged);
+		CQt.QGraphicsRotation_Connect_AngleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_Connect_AngleChanged);
+		CQt.QGraphicsRotation_Connect_AxisChanged(obj.ObjectPtr,  => QtBeef_QGraphicsRotation_Connect_AxisChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void()> OnOriginChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnAngleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnAxisChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsRotation_Connect_OriginChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOriginChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsRotation_Connect_AngleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAngleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsRotation_Connect_AxisChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAxisChanged.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsRotation_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsRotation_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsRotation_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

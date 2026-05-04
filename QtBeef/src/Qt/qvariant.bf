@@ -299,165 +299,209 @@ class QVariant : IQVariant
 {
 	private QVariant_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QVariant_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QVariant_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaType type)
 	{
 		this.ptr = CQt.QVariant_new2((.)type?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVariant other)
 	{
 		this.ptr = CQt.QVariant_new3((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int i)
 	{
 		this.ptr = CQt.QVariant_new4(i);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint ui)
 	{
 		this.ptr = CQt.QVariant_new5(ui);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_longlong ll)
 	{
 		this.ptr = CQt.QVariant_new6(ll);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_ulonglong ull)
 	{
 		this.ptr = CQt.QVariant_new7(ull);
+		QtBf_ConnectSignals(this);
 	}
 	public this(bool b)
 	{
 		this.ptr = CQt.QVariant_new8(b);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double d)
 	{
 		this.ptr = CQt.QVariant_new9(d);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float f)
 	{
 		this.ptr = CQt.QVariant_new10(f);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* str)
 	{
 		this.ptr = CQt.QVariant_new11(str);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** bytearray)
 	{
 		this.ptr = CQt.QVariant_new12(bytearray);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBitArray bitarray)
 	{
 		this.ptr = CQt.QVariant_new13((.)bitarray?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String stringVal)
 	{
 		this.ptr = CQt.QVariant_new14(libqt_string(stringVal));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQChar qchar)
 	{
 		this.ptr = CQt.QVariant_new16((.)qchar?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate date)
 	{
 		this.ptr = CQt.QVariant_new17((.)date?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime time)
 	{
 		this.ptr = CQt.QVariant_new18((.)time?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDateTime datetime)
 	{
 		this.ptr = CQt.QVariant_new19((.)datetime?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize size)
 	{
 		this.ptr = CQt.QVariant_new23((.)size?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSizeF size)
 	{
 		this.ptr = CQt.QVariant_new24((.)size?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint pt)
 	{
 		this.ptr = CQt.QVariant_new25((.)pt?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF pt)
 	{
 		this.ptr = CQt.QVariant_new26((.)pt?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLine line)
 	{
 		this.ptr = CQt.QVariant_new27((.)line?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLineF line)
 	{
 		this.ptr = CQt.QVariant_new28((.)line?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRect rect)
 	{
 		this.ptr = CQt.QVariant_new29((.)rect?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF rect)
 	{
 		this.ptr = CQt.QVariant_new30((.)rect?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLocale locale)
 	{
 		this.ptr = CQt.QVariant_new31((.)locale?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpression re)
 	{
 		this.ptr = CQt.QVariant_new32((.)re?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQEasingCurve easing)
 	{
 		this.ptr = CQt.QVariant_new33((.)easing?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUuid uuid)
 	{
 		this.ptr = CQt.QVariant_new34((.)uuid?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUrl url)
 	{
 		this.ptr = CQt.QVariant_new35((.)url?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonValue jsonValue)
 	{
 		this.ptr = CQt.QVariant_new36((.)jsonValue?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonObject jsonObject)
 	{
 		this.ptr = CQt.QVariant_new37((.)jsonObject?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray jsonArray)
 	{
 		this.ptr = CQt.QVariant_new38((.)jsonArray?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonDocument jsonDocument)
 	{
 		this.ptr = CQt.QVariant_new39((.)jsonDocument?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex modelIndex)
 	{
 		this.ptr = CQt.QVariant_new40((.)modelIndex?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPersistentModelIndex modelIndex)
 	{
 		this.ptr = CQt.QVariant_new41((.)modelIndex?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QVariant_Type type)
 	{
 		this.ptr = CQt.QVariant_new42(type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaType type, void* copyVal)
 	{
 		this.ptr = CQt.QVariant_new43((.)type?.ObjectPtr, copyVal);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

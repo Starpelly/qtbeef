@@ -19,9 +19,14 @@ class QNativeInterface_QGLXContext : IQNativeInterface_QGLXContext
 {
 	private QNativeInterface_QGLXContext_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QNativeInterface_QGLXContext_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 }
 interface IQNativeInterface_QGLXContext : IQtObjectInterface
@@ -66,9 +71,14 @@ class QNativeInterface_QEGLContext : IQNativeInterface_QEGLContext
 {
 	private QNativeInterface_QEGLContext_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QNativeInterface_QEGLContext_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public QOpenGLContext_Ptr FromNative(void* context, void* display)
 	{

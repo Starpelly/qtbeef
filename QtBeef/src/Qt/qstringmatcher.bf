@@ -51,33 +51,44 @@ class QStringMatcher : IQStringMatcher
 {
 	private QStringMatcher_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStringMatcher_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStringMatcher_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String pattern)
 	{
 		this.ptr = CQt.QStringMatcher_new2(libqt_string(pattern));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQChar uc, void* lenVal)
 	{
 		this.ptr = CQt.QStringMatcher_new3((.)uc?.ObjectPtr, lenVal);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStringMatcher other)
 	{
 		this.ptr = CQt.QStringMatcher_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String pattern, Qt_CaseSensitivity cs)
 	{
 		this.ptr = CQt.QStringMatcher_new5(libqt_string(pattern), cs);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQChar uc, void* lenVal, Qt_CaseSensitivity cs)
 	{
 		this.ptr = CQt.QStringMatcher_new6((.)uc?.ObjectPtr, lenVal, cs);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

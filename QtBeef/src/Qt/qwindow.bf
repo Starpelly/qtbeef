@@ -871,21 +871,176 @@ class QWindow : IQWindow, IQObject, IQSurface
 {
 	private QWindow_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QWindow_Connect_ScreenChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_ScreenChanged);
+		CQt.QWindow_Connect_ModalityChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_ModalityChanged);
+		CQt.QWindow_Connect_WindowStateChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_WindowStateChanged);
+		CQt.QWindow_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_WindowTitleChanged);
+		CQt.QWindow_Connect_XChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_XChanged);
+		CQt.QWindow_Connect_YChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_YChanged);
+		CQt.QWindow_Connect_WidthChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_WidthChanged);
+		CQt.QWindow_Connect_HeightChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_HeightChanged);
+		CQt.QWindow_Connect_MinimumWidthChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_MinimumWidthChanged);
+		CQt.QWindow_Connect_MinimumHeightChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_MinimumHeightChanged);
+		CQt.QWindow_Connect_MaximumWidthChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_MaximumWidthChanged);
+		CQt.QWindow_Connect_MaximumHeightChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_MaximumHeightChanged);
+		CQt.QWindow_Connect_VisibleChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_VisibleChanged);
+		CQt.QWindow_Connect_VisibilityChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_VisibilityChanged);
+		CQt.QWindow_Connect_ActiveChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_ActiveChanged);
+		CQt.QWindow_Connect_ContentOrientationChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_ContentOrientationChanged);
+		CQt.QWindow_Connect_FocusObjectChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_FocusObjectChanged);
+		CQt.QWindow_Connect_OpacityChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_OpacityChanged);
+		CQt.QWindow_Connect_TransientParentChanged(obj.ObjectPtr,  => QtBeef_QWindow_Connect_TransientParentChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(void** screen)> OnScreenChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_WindowModality modality)> OnModalityChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_WindowState windowState)> OnWindowStateChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int arg)> OnXChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int arg)> OnYChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int arg)> OnWidthChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int arg)> OnHeightChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int arg)> OnMinimumWidthChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int arg)> OnMinimumHeightChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int arg)> OnMaximumWidthChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int arg)> OnMaximumHeightChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool arg)> OnVisibleChanged = .() ~ _.Dispose();
+	public Event<delegate void(QWindow_Visibility visibility)> OnVisibilityChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnActiveChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ScreenOrientation orientation)> OnContentOrientationChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** object)> OnFocusObjectChanged = .() ~ _.Dispose();
+	public Event<delegate void(double opacity)> OnOpacityChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** transientParent)> OnTransientParentChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QWindow_Connect_ScreenChanged(void* ptr, void** screen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScreenChanged.Invoke(screen);
+	}
+	static void QtBeef_QWindow_Connect_ModalityChanged(void* ptr, Qt_WindowModality modality)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnModalityChanged.Invoke(modality);
+	}
+	static void QtBeef_QWindow_Connect_WindowStateChanged(void* ptr, Qt_WindowState windowState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowStateChanged.Invoke(windowState);
+	}
+	static void QtBeef_QWindow_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWindow_Connect_XChanged(void* ptr, c_int arg)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnXChanged.Invoke(arg);
+	}
+	static void QtBeef_QWindow_Connect_YChanged(void* ptr, c_int arg)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnYChanged.Invoke(arg);
+	}
+	static void QtBeef_QWindow_Connect_WidthChanged(void* ptr, c_int arg)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidthChanged.Invoke(arg);
+	}
+	static void QtBeef_QWindow_Connect_HeightChanged(void* ptr, c_int arg)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightChanged.Invoke(arg);
+	}
+	static void QtBeef_QWindow_Connect_MinimumWidthChanged(void* ptr, c_int arg)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumWidthChanged.Invoke(arg);
+	}
+	static void QtBeef_QWindow_Connect_MinimumHeightChanged(void* ptr, c_int arg)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMinimumHeightChanged.Invoke(arg);
+	}
+	static void QtBeef_QWindow_Connect_MaximumWidthChanged(void* ptr, c_int arg)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMaximumWidthChanged.Invoke(arg);
+	}
+	static void QtBeef_QWindow_Connect_MaximumHeightChanged(void* ptr, c_int arg)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMaximumHeightChanged.Invoke(arg);
+	}
+	static void QtBeef_QWindow_Connect_VisibleChanged(void* ptr, bool arg)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibleChanged.Invoke(arg);
+	}
+	static void QtBeef_QWindow_Connect_VisibilityChanged(void* ptr, QWindow_Visibility visibility)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibilityChanged.Invoke(visibility);
+	}
+	static void QtBeef_QWindow_Connect_ActiveChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActiveChanged.Invoke();
+	}
+	static void QtBeef_QWindow_Connect_ContentOrientationChanged(void* ptr, Qt_ScreenOrientation orientation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContentOrientationChanged.Invoke(orientation);
+	}
+	static void QtBeef_QWindow_Connect_FocusObjectChanged(void* ptr, void** object)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusObjectChanged.Invoke(object);
+	}
+	static void QtBeef_QWindow_Connect_OpacityChanged(void* ptr, double opacity)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpacityChanged.Invoke(opacity);
+	}
+	static void QtBeef_QWindow_Connect_TransientParentChanged(void* ptr, void** transientParent)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTransientParentChanged.Invoke(transientParent);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QWindow_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QWindow_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWindow parent)
 	{
 		this.ptr = CQt.QWindow_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQScreen screen)
 	{
 		this.ptr = CQt.QWindow_new3((.)screen?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

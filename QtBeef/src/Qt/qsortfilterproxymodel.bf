@@ -779,17 +779,157 @@ class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAb
 {
 	private QSortFilterProxyModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QSortFilterProxyModel_Connect_DynamicSortFilterChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_Connect_DynamicSortFilterChanged);
+		CQt.QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged);
+		CQt.QSortFilterProxyModel_Connect_SortCaseSensitivityChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_Connect_SortCaseSensitivityChanged);
+		CQt.QSortFilterProxyModel_Connect_SortLocaleAwareChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_Connect_SortLocaleAwareChanged);
+		CQt.QSortFilterProxyModel_Connect_SortRoleChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_Connect_SortRoleChanged);
+		CQt.QSortFilterProxyModel_Connect_FilterRoleChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_Connect_FilterRoleChanged);
+		CQt.QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged);
+		CQt.QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_DataChanged);
+		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_HeaderDataChanged);
+		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged);
+		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_DataChanged3);
+		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutChanged2);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2);
+	}
+	public Event<delegate void(bool dynamicSortFilter)> OnDynamicSortFilterChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_CaseSensitivity filterCaseSensitivity)> OnFilterCaseSensitivityChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_CaseSensitivity sortCaseSensitivity)> OnSortCaseSensitivityChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool sortLocaleAware)> OnSortLocaleAwareChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int sortRole)> OnSortRoleChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int filterRole)> OnFilterRoleChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool recursiveFilteringEnabled)> OnRecursiveFilteringEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool autoAcceptChildRows)> OnAutoAcceptChildRowsChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
+	static void QtBeef_QSortFilterProxyModel_Connect_DynamicSortFilterChanged(void* ptr, bool dynamicSortFilter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDynamicSortFilterChanged.Invoke(dynamicSortFilter);
+	}
+	static void QtBeef_QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged(void* ptr, Qt_CaseSensitivity filterCaseSensitivity)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFilterCaseSensitivityChanged.Invoke(filterCaseSensitivity);
+	}
+	static void QtBeef_QSortFilterProxyModel_Connect_SortCaseSensitivityChanged(void* ptr, Qt_CaseSensitivity sortCaseSensitivity)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortCaseSensitivityChanged.Invoke(sortCaseSensitivity);
+	}
+	static void QtBeef_QSortFilterProxyModel_Connect_SortLocaleAwareChanged(void* ptr, bool sortLocaleAware)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortLocaleAwareChanged.Invoke(sortLocaleAware);
+	}
+	static void QtBeef_QSortFilterProxyModel_Connect_SortRoleChanged(void* ptr, c_int sortRole)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortRoleChanged.Invoke(sortRole);
+	}
+	static void QtBeef_QSortFilterProxyModel_Connect_FilterRoleChanged(void* ptr, c_int filterRole)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFilterRoleChanged.Invoke(filterRole);
+	}
+	static void QtBeef_QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged(void* ptr, bool recursiveFilteringEnabled)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRecursiveFilteringEnabledChanged.Invoke(recursiveFilteringEnabled);
+	}
+	static void QtBeef_QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged(void* ptr, bool autoAcceptChildRows)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAutoAcceptChildRowsChanged.Invoke(autoAcceptChildRows);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QAbstractItemModel_Connect_DataChanged(void* ptr, void** topLeft, void** bottomRight)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged.Invoke(topLeft, bottomRight);
+	}
+	static void QtBeef_QAbstractItemModel_Connect_HeaderDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
+	}
+	static void QtBeef_QAbstractItemModel_Connect_LayoutChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_Connect_DataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QAbstractItemModel_Connect_LayoutChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_Connect_LayoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_Connect_LayoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
 	public this(QSortFilterProxyModel_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSortFilterProxyModel_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSortFilterProxyModel_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

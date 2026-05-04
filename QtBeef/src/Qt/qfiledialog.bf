@@ -2047,33 +2047,170 @@ class QFileDialog : IQFileDialog, IQDialog, IQWidget, IQObject, IQPaintDevice
 {
 	private QFileDialog_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QFileDialog_Connect_FileSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_Connect_FileSelected);
+		CQt.QFileDialog_Connect_FilesSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_Connect_FilesSelected);
+		CQt.QFileDialog_Connect_CurrentChanged(obj.ObjectPtr,  => QtBeef_QFileDialog_Connect_CurrentChanged);
+		CQt.QFileDialog_Connect_DirectoryEntered(obj.ObjectPtr,  => QtBeef_QFileDialog_Connect_DirectoryEntered);
+		CQt.QFileDialog_Connect_UrlSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_Connect_UrlSelected);
+		CQt.QFileDialog_Connect_UrlsSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_Connect_UrlsSelected);
+		CQt.QFileDialog_Connect_CurrentUrlChanged(obj.ObjectPtr,  => QtBeef_QFileDialog_Connect_CurrentUrlChanged);
+		CQt.QFileDialog_Connect_DirectoryUrlEntered(obj.ObjectPtr,  => QtBeef_QFileDialog_Connect_DirectoryUrlEntered);
+		CQt.QFileDialog_Connect_FilterSelected(obj.ObjectPtr,  => QtBeef_QFileDialog_Connect_FilterSelected);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Finished);
+		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Accepted);
+		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_Connect_Rejected);
+	}
+	public Event<delegate void(libqt_string file)> OnFileSelected = .() ~ _.Dispose();
+	public Event<delegate void(void** files)> OnFilesSelected = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string path)> OnCurrentChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string directory)> OnDirectoryEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** url)> OnUrlSelected = .() ~ _.Dispose();
+	public Event<delegate void(void** urls)> OnUrlsSelected = .() ~ _.Dispose();
+	public Event<delegate void(void** url)> OnCurrentUrlChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** directory)> OnDirectoryUrlEntered = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string filter)> OnFilterSelected = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void(c_int result)> OnFinished = .() ~ _.Dispose();
+	public Event<delegate void()> OnAccepted = .() ~ _.Dispose();
+	public Event<delegate void()> OnRejected = .() ~ _.Dispose();
+	static void QtBeef_QFileDialog_Connect_FileSelected(void* ptr, libqt_string file)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFileSelected.Invoke(file);
+	}
+	static void QtBeef_QFileDialog_Connect_FilesSelected(void* ptr, void** files)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFilesSelected.Invoke(files);
+	}
+	static void QtBeef_QFileDialog_Connect_CurrentChanged(void* ptr, libqt_string path)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged.Invoke(path);
+	}
+	static void QtBeef_QFileDialog_Connect_DirectoryEntered(void* ptr, libqt_string directory)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDirectoryEntered.Invoke(directory);
+	}
+	static void QtBeef_QFileDialog_Connect_UrlSelected(void* ptr, void** url)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUrlSelected.Invoke(url);
+	}
+	static void QtBeef_QFileDialog_Connect_UrlsSelected(void* ptr, void** urls)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUrlsSelected.Invoke(urls);
+	}
+	static void QtBeef_QFileDialog_Connect_CurrentUrlChanged(void* ptr, void** url)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentUrlChanged.Invoke(url);
+	}
+	static void QtBeef_QFileDialog_Connect_DirectoryUrlEntered(void* ptr, void** directory)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDirectoryUrlEntered.Invoke(directory);
+	}
+	static void QtBeef_QFileDialog_Connect_FilterSelected(void* ptr, libqt_string filter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFilterSelected.Invoke(filter);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QDialog_Connect_Finished(void* ptr, c_int result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFinished.Invoke(result);
+	}
+	static void QtBeef_QDialog_Connect_Accepted(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccepted.Invoke();
+	}
+	static void QtBeef_QDialog_Connect_Rejected(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRejected.Invoke();
+	}
 	public this(QFileDialog_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QFileDialog_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* f)
 	{
 		this.ptr = CQt.QFileDialog_new2((.)parent?.ObjectPtr, f);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFileDialog_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, String caption)
 	{
 		this.ptr = CQt.QFileDialog_new4((.)parent?.ObjectPtr, libqt_string(caption));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, String caption, String directory)
 	{
 		this.ptr = CQt.QFileDialog_new5((.)parent?.ObjectPtr, libqt_string(caption), libqt_string(directory));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, String caption, String directory, String filter)
 	{
 		this.ptr = CQt.QFileDialog_new6((.)parent?.ObjectPtr, libqt_string(caption), libqt_string(directory), libqt_string(filter));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -2099,25 +2099,83 @@ class QGraphicsView : IQGraphicsView, IQAbstractScrollArea, IQFrame, IQWidget, I
 {
 	private QGraphicsView_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsView_Connect_RubberBandChanged(obj.ObjectPtr,  => QtBeef_QGraphicsView_Connect_RubberBandChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+	}
+	public Event<delegate void(void* viewportRect, void* fromScenePoint, void* toScenePoint)> OnRubberBandChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsView_Connect_RubberBandChanged(void* ptr, void* viewportRect, void* fromScenePoint, void* toScenePoint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRubberBandChanged.Invoke(viewportRect, fromScenePoint, toScenePoint);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
 	public this(QGraphicsView_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QGraphicsView_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsView_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsScene scene)
 	{
 		this.ptr = CQt.QGraphicsView_new3((.)scene?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsScene scene, IQWidget parent)
 	{
 		this.ptr = CQt.QGraphicsView_new4((.)scene?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

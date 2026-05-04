@@ -167,33 +167,44 @@ class QQuaternion : IQQuaternion
 {
 	private QQuaternion_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QQuaternion_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQQuaternion other)
 	{
 		this.ptr = CQt.QQuaternion_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QQuaternion_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Initialization param1)
 	{
 		this.ptr = CQt.QQuaternion_new4(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float scalar, float xpos, float ypos, float zpos)
 	{
 		this.ptr = CQt.QQuaternion_new5(scalar, xpos, ypos, zpos);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float scalar, IQVector3D vector)
 	{
 		this.ptr = CQt.QQuaternion_new6(scalar, (.)vector?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector4D vector)
 	{
 		this.ptr = CQt.QQuaternion_new7((.)vector?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

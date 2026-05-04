@@ -71,29 +71,39 @@ class QAnyStringView : IQAnyStringView
 {
 	private QAnyStringView_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAnyStringView_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAnyStringView other)
 	{
 		this.ptr = CQt.QAnyStringView_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAnyStringView_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** str)
 	{
 		this.ptr = CQt.QAnyStringView_new4(str);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String str)
 	{
 		this.ptr = CQt.QAnyStringView_new5(libqt_string(str));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQChar c)
 	{
 		this.ptr = CQt.QAnyStringView_new6((.)c?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

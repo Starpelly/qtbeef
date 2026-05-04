@@ -347,9 +347,42 @@ class QAbstractEventDispatcher : IQAbstractEventDispatcher, IQObject
 {
 	private QAbstractEventDispatcher_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractEventDispatcher_Connect_AboutToBlock(obj.ObjectPtr,  => QtBeef_QAbstractEventDispatcher_Connect_AboutToBlock);
+		CQt.QAbstractEventDispatcher_Connect_Awake(obj.ObjectPtr,  => QtBeef_QAbstractEventDispatcher_Connect_Awake);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void()> OnAboutToBlock = .() ~ _.Dispose();
+	public Event<delegate void()> OnAwake = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAbstractEventDispatcher_Connect_AboutToBlock(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAboutToBlock.Invoke();
+	}
+	static void QtBeef_QAbstractEventDispatcher_Connect_Awake(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAwake.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QAbstractEventDispatcher_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -882,17 +915,24 @@ class QAbstractEventDispatcher_TimerInfo : IQAbstractEventDispatcher_TimerInfo
 {
 	private QAbstractEventDispatcher_TimerInfo_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAbstractEventDispatcher_TimerInfo_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractEventDispatcher_TimerInfo other)
 	{
 		this.ptr = CQt.QAbstractEventDispatcher_TimerInfo_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int id, c_int i, Qt_TimerType t)
 	{
 		this.ptr = CQt.QAbstractEventDispatcher_TimerInfo_new3(id, i, t);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

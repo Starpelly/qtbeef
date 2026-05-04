@@ -339,17 +339,66 @@ class QStyledItemDelegate : IQStyledItemDelegate, IQAbstractItemDelegate, IQObje
 {
 	private QStyledItemDelegate_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QAbstractItemDelegate_Connect_CommitData(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_Connect_CommitData);
+		CQt.QAbstractItemDelegate_Connect_CloseEditor(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_Connect_CloseEditor);
+		CQt.QAbstractItemDelegate_Connect_SizeHintChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_Connect_SizeHintChanged);
+		CQt.QAbstractItemDelegate_Connect_CloseEditor2(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_Connect_CloseEditor2);
+	}
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(void** editor)> OnCommitData = .() ~ _.Dispose();
+	public Event<delegate void(void** editor)> OnCloseEditor = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnSizeHintChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** editor, QAbstractItemDelegate_EndEditHint hint)> OnCloseEditor2 = .() ~ _.Dispose();
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QAbstractItemDelegate_Connect_CommitData(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommitData.Invoke(editor);
+	}
+	static void QtBeef_QAbstractItemDelegate_Connect_CloseEditor(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor.Invoke(editor);
+	}
+	static void QtBeef_QAbstractItemDelegate_Connect_SizeHintChanged(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintChanged.Invoke(param1);
+	}
+	static void QtBeef_QAbstractItemDelegate_Connect_CloseEditor2(void* ptr, void** editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor2.Invoke(editor, hint);
+	}
 	public this(QStyledItemDelegate_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyledItemDelegate_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QStyledItemDelegate_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

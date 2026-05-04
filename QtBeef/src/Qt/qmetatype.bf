@@ -243,21 +243,29 @@ class QMetaType : IQMetaType
 {
 	private QMetaType_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaType_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaType other)
 	{
 		this.ptr = CQt.QMetaType_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int type)
 	{
 		this.ptr = CQt.QMetaType_new3(type);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaType_new4();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

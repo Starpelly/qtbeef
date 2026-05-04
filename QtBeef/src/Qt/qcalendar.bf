@@ -147,29 +147,39 @@ class QCalendar : IQCalendar
 {
 	private QCalendar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QCalendar_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQCalendar other)
 	{
 		this.ptr = CQt.QCalendar_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCalendar_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QCalendar_System system)
 	{
 		this.ptr = CQt.QCalendar_new4(system);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAnyStringView name)
 	{
 		this.ptr = CQt.QCalendar_new5((.)name?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQCalendar_SystemId id)
 	{
 		this.ptr = CQt.QCalendar_new6((.)id?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -432,29 +442,39 @@ class QCalendar_YearMonthDay : IQCalendar_YearMonthDay
 {
 	private QCalendar_YearMonthDay_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QCalendar_YearMonthDay_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQCalendar_YearMonthDay other)
 	{
 		this.ptr = CQt.QCalendar_YearMonthDay_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCalendar_YearMonthDay_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int y)
 	{
 		this.ptr = CQt.QCalendar_YearMonthDay_new4(y);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int y, c_int m)
 	{
 		this.ptr = CQt.QCalendar_YearMonthDay_new5(y, m);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int y, c_int m, c_int d)
 	{
 		this.ptr = CQt.QCalendar_YearMonthDay_new6(y, m, d);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -547,17 +567,24 @@ class QCalendar_SystemId : IQCalendar_SystemId
 {
 	private QCalendar_SystemId_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QCalendar_SystemId_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQCalendar_SystemId other)
 	{
 		this.ptr = CQt.QCalendar_SystemId_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCalendar_SystemId_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

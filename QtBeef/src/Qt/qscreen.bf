@@ -459,9 +459,91 @@ class QScreen : IQScreen, IQObject
 {
 	private QScreen_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QScreen_Connect_GeometryChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_GeometryChanged);
+		CQt.QScreen_Connect_AvailableGeometryChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_AvailableGeometryChanged);
+		CQt.QScreen_Connect_PhysicalSizeChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_PhysicalSizeChanged);
+		CQt.QScreen_Connect_PhysicalDotsPerInchChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_PhysicalDotsPerInchChanged);
+		CQt.QScreen_Connect_LogicalDotsPerInchChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_LogicalDotsPerInchChanged);
+		CQt.QScreen_Connect_VirtualGeometryChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_VirtualGeometryChanged);
+		CQt.QScreen_Connect_PrimaryOrientationChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_PrimaryOrientationChanged);
+		CQt.QScreen_Connect_OrientationChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_OrientationChanged);
+		CQt.QScreen_Connect_RefreshRateChanged(obj.ObjectPtr,  => QtBeef_QScreen_Connect_RefreshRateChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(void** geometry)> OnGeometryChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** geometry)> OnAvailableGeometryChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnPhysicalSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(double dpi)> OnPhysicalDotsPerInchChanged = .() ~ _.Dispose();
+	public Event<delegate void(double dpi)> OnLogicalDotsPerInchChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** rect)> OnVirtualGeometryChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ScreenOrientation orientation)> OnPrimaryOrientationChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ScreenOrientation orientation)> OnOrientationChanged = .() ~ _.Dispose();
+	public Event<delegate void(double refreshRate)> OnRefreshRateChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QScreen_Connect_GeometryChanged(void* ptr, void** geometry)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGeometryChanged.Invoke(geometry);
+	}
+	static void QtBeef_QScreen_Connect_AvailableGeometryChanged(void* ptr, void** geometry)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAvailableGeometryChanged.Invoke(geometry);
+	}
+	static void QtBeef_QScreen_Connect_PhysicalSizeChanged(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPhysicalSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QScreen_Connect_PhysicalDotsPerInchChanged(void* ptr, double dpi)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPhysicalDotsPerInchChanged.Invoke(dpi);
+	}
+	static void QtBeef_QScreen_Connect_LogicalDotsPerInchChanged(void* ptr, double dpi)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLogicalDotsPerInchChanged.Invoke(dpi);
+	}
+	static void QtBeef_QScreen_Connect_VirtualGeometryChanged(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVirtualGeometryChanged.Invoke(rect);
+	}
+	static void QtBeef_QScreen_Connect_PrimaryOrientationChanged(void* ptr, Qt_ScreenOrientation orientation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPrimaryOrientationChanged.Invoke(orientation);
+	}
+	static void QtBeef_QScreen_Connect_OrientationChanged(void* ptr, Qt_ScreenOrientation orientation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOrientationChanged.Invoke(orientation);
+	}
+	static void QtBeef_QScreen_Connect_RefreshRateChanged(void* ptr, double refreshRate)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRefreshRateChanged.Invoke(refreshRate);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QScreen_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

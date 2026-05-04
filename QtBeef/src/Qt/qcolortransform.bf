@@ -39,17 +39,24 @@ class QColorTransform : IQColorTransform
 {
 	private QColorTransform_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QColorTransform_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QColorTransform_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQColorTransform colorTransform)
 	{
 		this.ptr = CQt.QColorTransform_new2((.)colorTransform?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

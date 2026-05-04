@@ -47,41 +47,54 @@ class QDirIterator : IQDirIterator
 {
 	private QDirIterator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDirIterator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDir dir)
 	{
 		this.ptr = CQt.QDirIterator_new((.)dir?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path)
 	{
 		this.ptr = CQt.QDirIterator_new2(libqt_string(path));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path, void* filter)
 	{
 		this.ptr = CQt.QDirIterator_new3(libqt_string(path), filter);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path, void** nameFilters)
 	{
 		this.ptr = CQt.QDirIterator_new4(libqt_string(path), nameFilters);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDir dir, void* flags)
 	{
 		this.ptr = CQt.QDirIterator_new5((.)dir?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path, void* filter, void* flags)
 	{
 		this.ptr = CQt.QDirIterator_new7(libqt_string(path), filter, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path, void** nameFilters, void* filters)
 	{
 		this.ptr = CQt.QDirIterator_new8(libqt_string(path), nameFilters, filters);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path, void** nameFilters, void* filters, void* flags)
 	{
 		this.ptr = CQt.QDirIterator_new9(libqt_string(path), nameFilters, filters, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

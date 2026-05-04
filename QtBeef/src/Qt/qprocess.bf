@@ -71,21 +71,29 @@ class QProcessEnvironment : IQProcessEnvironment
 {
 	private QProcessEnvironment_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QProcessEnvironment_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QProcessEnvironment_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QProcessEnvironment_Initialization param1)
 	{
 		this.ptr = CQt.QProcessEnvironment_new2(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQProcessEnvironment other)
 	{
 		this.ptr = CQt.QProcessEnvironment_new3((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -918,17 +926,101 @@ class QProcess : IQProcess, IQIODevice, IQObject, IQIODeviceBase
 {
 	private QProcess_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QProcess_Connect_Finished(obj.ObjectPtr,  => QtBeef_QProcess_Connect_Finished);
+		CQt.QProcess_Connect_ErrorOccurred(obj.ObjectPtr,  => QtBeef_QProcess_Connect_ErrorOccurred);
+		CQt.QProcess_Connect_Finished2(obj.ObjectPtr,  => QtBeef_QProcess_Connect_Finished2);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QIODevice_Connect_ReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ReadyRead);
+		CQt.QIODevice_Connect_ChannelReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ChannelReadyRead);
+		CQt.QIODevice_Connect_BytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_BytesWritten);
+		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ChannelBytesWritten);
+		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_AboutToClose);
+		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_Connect_ReadChannelFinished);
+	}
+	public Event<delegate void(c_int exitCode)> OnFinished = .() ~ _.Dispose();
+	public Event<delegate void(QProcess_ProcessError error)> OnErrorOccurred = .() ~ _.Dispose();
+	public Event<delegate void(c_int exitCode, QProcess_ExitStatus exitStatus)> OnFinished2 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void()> OnReadyRead = .() ~ _.Dispose();
+	public Event<delegate void(c_int channel)> OnChannelReadyRead = .() ~ _.Dispose();
+	public Event<delegate void(c_longlong bytes)> OnBytesWritten = .() ~ _.Dispose();
+	public Event<delegate void(c_int channel, c_longlong bytes)> OnChannelBytesWritten = .() ~ _.Dispose();
+	public Event<delegate void()> OnAboutToClose = .() ~ _.Dispose();
+	public Event<delegate void()> OnReadChannelFinished = .() ~ _.Dispose();
+	static void QtBeef_QProcess_Connect_Finished(void* ptr, c_int exitCode)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFinished.Invoke(exitCode);
+	}
+	static void QtBeef_QProcess_Connect_ErrorOccurred(void* ptr, QProcess_ProcessError error)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnErrorOccurred.Invoke(error);
+	}
+	static void QtBeef_QProcess_Connect_Finished2(void* ptr, c_int exitCode, QProcess_ExitStatus exitStatus)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFinished2.Invoke(exitCode, exitStatus);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QIODevice_Connect_ReadyRead(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadyRead.Invoke();
+	}
+	static void QtBeef_QIODevice_Connect_ChannelReadyRead(void* ptr, c_int channel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChannelReadyRead.Invoke(channel);
+	}
+	static void QtBeef_QIODevice_Connect_BytesWritten(void* ptr, c_longlong bytes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesWritten.Invoke(bytes);
+	}
+	static void QtBeef_QIODevice_Connect_ChannelBytesWritten(void* ptr, c_int channel, c_longlong bytes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChannelBytesWritten.Invoke(channel, bytes);
+	}
+	static void QtBeef_QIODevice_Connect_AboutToClose(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAboutToClose.Invoke();
+	}
+	static void QtBeef_QIODevice_Connect_ReadChannelFinished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadChannelFinished.Invoke();
+	}
 	public this(QProcess_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QProcess_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QProcess_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

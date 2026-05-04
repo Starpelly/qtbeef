@@ -67,21 +67,29 @@ class QSystemSemaphore : IQSystemSemaphore
 {
 	private QSystemSemaphore_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QSystemSemaphore_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(String key)
 	{
 		this.ptr = CQt.QSystemSemaphore_new(libqt_string(key));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String key, c_int initialValue)
 	{
 		this.ptr = CQt.QSystemSemaphore_new2(libqt_string(key), initialValue);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String key, c_int initialValue, QSystemSemaphore_AccessMode mode)
 	{
 		this.ptr = CQt.QSystemSemaphore_new3(libqt_string(key), initialValue, mode);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

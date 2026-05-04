@@ -1815,21 +1815,92 @@ class QMainWindow : IQMainWindow, IQWidget, IQObject, IQPaintDevice
 {
 	private QMainWindow_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QMainWindow_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QMainWindow_Connect_IconSizeChanged);
+		CQt.QMainWindow_Connect_ToolButtonStyleChanged(obj.ObjectPtr,  => QtBeef_QMainWindow_Connect_ToolButtonStyleChanged);
+		CQt.QMainWindow_Connect_TabifiedDockWidgetActivated(obj.ObjectPtr,  => QtBeef_QMainWindow_Connect_TabifiedDockWidgetActivated);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+	}
+	public Event<delegate void(void** iconSize)> OnIconSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ToolButtonStyle toolButtonStyle)> OnToolButtonStyleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** dockWidget)> OnTabifiedDockWidgetActivated = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	static void QtBeef_QMainWindow_Connect_IconSizeChanged(void* ptr, void** iconSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(iconSize);
+	}
+	static void QtBeef_QMainWindow_Connect_ToolButtonStyleChanged(void* ptr, Qt_ToolButtonStyle toolButtonStyle)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnToolButtonStyleChanged.Invoke(toolButtonStyle);
+	}
+	static void QtBeef_QMainWindow_Connect_TabifiedDockWidgetActivated(void* ptr, void** dockWidget)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabifiedDockWidgetActivated.Invoke(dockWidget);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
 	public this(QMainWindow_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QMainWindow_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMainWindow_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* flags)
 	{
 		this.ptr = CQt.QMainWindow_new3((.)parent?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

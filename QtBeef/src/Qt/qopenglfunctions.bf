@@ -583,17 +583,24 @@ class QOpenGLFunctions : IQOpenGLFunctions
 {
 	private QOpenGLFunctions_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QOpenGLFunctions_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QOpenGLFunctions_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQOpenGLContext context)
 	{
 		this.ptr = CQt.QOpenGLFunctions_new2((.)context?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -75,13 +75,19 @@ class QIconEngine : IQIconEngine
 {
 	private QIconEngine_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QIconEngine_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIconEngine_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -288,13 +294,19 @@ class QIconEngine_ScaledPixmapArgument : IQIconEngine_ScaledPixmapArgument
 {
 	private QIconEngine_ScaledPixmapArgument_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QIconEngine_ScaledPixmapArgument_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIconEngine_ScaledPixmapArgument param1)
 	{
 		this.ptr = CQt.QIconEngine_ScaledPixmapArgument_new((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -63,13 +63,19 @@ class QTest_QTouchEventWidgetSequence : IQTest_QTouchEventWidgetSequence, IQTest
 {
 	private QTest_QTouchEventWidgetSequence_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTest_QTouchEventWidgetSequence_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTest_QTouchEventWidgetSequence param1)
 	{
 		this.ptr = CQt.QTest_QTouchEventWidgetSequence_new((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

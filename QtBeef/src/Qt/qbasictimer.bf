@@ -43,13 +43,19 @@ class QBasicTimer : IQBasicTimer
 {
 	private QBasicTimer_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QBasicTimer_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QBasicTimer_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

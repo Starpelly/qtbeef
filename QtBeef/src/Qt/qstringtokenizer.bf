@@ -19,13 +19,19 @@ class QStringTokenizerBaseBase : IQStringTokenizerBaseBase
 {
 	private QStringTokenizerBaseBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStringTokenizerBaseBase_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStringTokenizerBaseBase other)
 	{
 		this.ptr = CQt.QStringTokenizerBaseBase_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 }
 interface IQStringTokenizerBaseBase : IQtObjectInterface

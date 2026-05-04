@@ -315,17 +315,59 @@ class QSignalMapper : IQSignalMapper, IQObject
 {
 	private QSignalMapper_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QSignalMapper_Connect_MappedInt(obj.ObjectPtr,  => QtBeef_QSignalMapper_Connect_MappedInt);
+		CQt.QSignalMapper_Connect_MappedString(obj.ObjectPtr,  => QtBeef_QSignalMapper_Connect_MappedString);
+		CQt.QSignalMapper_Connect_MappedObject(obj.ObjectPtr,  => QtBeef_QSignalMapper_Connect_MappedObject);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(c_int param1)> OnMappedInt = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnMappedString = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnMappedObject = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QSignalMapper_Connect_MappedInt(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMappedInt.Invoke(param1);
+	}
+	static void QtBeef_QSignalMapper_Connect_MappedString(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMappedString.Invoke(param1);
+	}
+	static void QtBeef_QSignalMapper_Connect_MappedObject(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMappedObject.Invoke(param1);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QSignalMapper_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSignalMapper_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSignalMapper_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

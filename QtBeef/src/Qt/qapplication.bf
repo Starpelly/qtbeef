@@ -915,17 +915,185 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 {
 	private QApplication_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QApplication_Connect_FocusChanged(obj.ObjectPtr,  => QtBeef_QApplication_Connect_FocusChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QCoreApplication_Connect_InstallNativeEventFilter(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_InstallNativeEventFilter);
+		CQt.QCoreApplication_Connect_RemoveNativeEventFilter(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_RemoveNativeEventFilter);
+		CQt.QCoreApplication_Connect_OrganizationNameChanged(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_OrganizationNameChanged);
+		CQt.QCoreApplication_Connect_OrganizationDomainChanged(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_OrganizationDomainChanged);
+		CQt.QCoreApplication_Connect_ApplicationNameChanged(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_ApplicationNameChanged);
+		CQt.QCoreApplication_Connect_ApplicationVersionChanged(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_ApplicationVersionChanged);
+		CQt.QGuiApplication_Connect_FontDatabaseChanged(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_FontDatabaseChanged);
+		CQt.QGuiApplication_Connect_ScreenAdded(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_ScreenAdded);
+		CQt.QGuiApplication_Connect_ScreenRemoved(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_ScreenRemoved);
+		CQt.QGuiApplication_Connect_PrimaryScreenChanged(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_PrimaryScreenChanged);
+		CQt.QGuiApplication_Connect_LastWindowClosed(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_LastWindowClosed);
+		CQt.QGuiApplication_Connect_FocusObjectChanged(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_FocusObjectChanged);
+		CQt.QGuiApplication_Connect_FocusWindowChanged(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_FocusWindowChanged);
+		CQt.QGuiApplication_Connect_ApplicationStateChanged(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_ApplicationStateChanged);
+		CQt.QGuiApplication_Connect_LayoutDirectionChanged(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_LayoutDirectionChanged);
+		CQt.QGuiApplication_Connect_CommitDataRequest(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_CommitDataRequest);
+		CQt.QGuiApplication_Connect_SaveStateRequest(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_SaveStateRequest);
+		CQt.QGuiApplication_Connect_ApplicationDisplayNameChanged(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_ApplicationDisplayNameChanged);
+		CQt.QGuiApplication_Connect_PaletteChanged(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_PaletteChanged);
+		CQt.QGuiApplication_Connect_FontChanged(obj.ObjectPtr,  => QtBeef_QGuiApplication_Connect_FontChanged);
+	}
+	public Event<delegate void(void** old, void** now)> OnFocusChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(void** filterObj)> OnInstallNativeEventFilter = .() ~ _.Dispose();
+	public Event<delegate void(void** filterObj)> OnRemoveNativeEventFilter = .() ~ _.Dispose();
+	public Event<delegate void()> OnOrganizationNameChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnOrganizationDomainChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnApplicationNameChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnApplicationVersionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnFontDatabaseChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** screen)> OnScreenAdded = .() ~ _.Dispose();
+	public Event<delegate void(void** screen)> OnScreenRemoved = .() ~ _.Dispose();
+	public Event<delegate void(void** screen)> OnPrimaryScreenChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLastWindowClosed = .() ~ _.Dispose();
+	public Event<delegate void(void** focusObject)> OnFocusObjectChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** focusWindow)> OnFocusWindowChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ApplicationState state)> OnApplicationStateChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_LayoutDirection direction)> OnLayoutDirectionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** sessionManager)> OnCommitDataRequest = .() ~ _.Dispose();
+	public Event<delegate void(void** sessionManager)> OnSaveStateRequest = .() ~ _.Dispose();
+	public Event<delegate void()> OnApplicationDisplayNameChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pal)> OnPaletteChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** font)> OnFontChanged = .() ~ _.Dispose();
+	static void QtBeef_QApplication_Connect_FocusChanged(void* ptr, void** old, void** now)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusChanged.Invoke(old, now);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QCoreApplication_Connect_InstallNativeEventFilter(void* ptr, void** filterObj)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInstallNativeEventFilter.Invoke(filterObj);
+	}
+	static void QtBeef_QCoreApplication_Connect_RemoveNativeEventFilter(void* ptr, void** filterObj)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveNativeEventFilter.Invoke(filterObj);
+	}
+	static void QtBeef_QCoreApplication_Connect_OrganizationNameChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOrganizationNameChanged.Invoke();
+	}
+	static void QtBeef_QCoreApplication_Connect_OrganizationDomainChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOrganizationDomainChanged.Invoke();
+	}
+	static void QtBeef_QCoreApplication_Connect_ApplicationNameChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnApplicationNameChanged.Invoke();
+	}
+	static void QtBeef_QCoreApplication_Connect_ApplicationVersionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnApplicationVersionChanged.Invoke();
+	}
+	static void QtBeef_QGuiApplication_Connect_FontDatabaseChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFontDatabaseChanged.Invoke();
+	}
+	static void QtBeef_QGuiApplication_Connect_ScreenAdded(void* ptr, void** screen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScreenAdded.Invoke(screen);
+	}
+	static void QtBeef_QGuiApplication_Connect_ScreenRemoved(void* ptr, void** screen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScreenRemoved.Invoke(screen);
+	}
+	static void QtBeef_QGuiApplication_Connect_PrimaryScreenChanged(void* ptr, void** screen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPrimaryScreenChanged.Invoke(screen);
+	}
+	static void QtBeef_QGuiApplication_Connect_LastWindowClosed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLastWindowClosed.Invoke();
+	}
+	static void QtBeef_QGuiApplication_Connect_FocusObjectChanged(void* ptr, void** focusObject)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusObjectChanged.Invoke(focusObject);
+	}
+	static void QtBeef_QGuiApplication_Connect_FocusWindowChanged(void* ptr, void** focusWindow)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusWindowChanged.Invoke(focusWindow);
+	}
+	static void QtBeef_QGuiApplication_Connect_ApplicationStateChanged(void* ptr, Qt_ApplicationState state)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnApplicationStateChanged.Invoke(state);
+	}
+	static void QtBeef_QGuiApplication_Connect_LayoutDirectionChanged(void* ptr, Qt_LayoutDirection direction)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutDirectionChanged.Invoke(direction);
+	}
+	static void QtBeef_QGuiApplication_Connect_CommitDataRequest(void* ptr, void** sessionManager)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommitDataRequest.Invoke(sessionManager);
+	}
+	static void QtBeef_QGuiApplication_Connect_SaveStateRequest(void* ptr, void** sessionManager)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSaveStateRequest.Invoke(sessionManager);
+	}
+	static void QtBeef_QGuiApplication_Connect_ApplicationDisplayNameChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnApplicationDisplayNameChanged.Invoke();
+	}
+	static void QtBeef_QGuiApplication_Connect_PaletteChanged(void* ptr, void** pal)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPaletteChanged.Invoke(pal);
+	}
+	static void QtBeef_QGuiApplication_Connect_FontChanged(void* ptr, void** font)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFontChanged.Invoke(font);
+	}
 	public this(QApplication_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int* argc, c_char** argv)
 	{
 		this.ptr = CQt.QApplication_new(argc, argv);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int* argc, c_char** argv, c_int param3)
 	{
 		this.ptr = CQt.QApplication_new2(argc, argv, param3);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -183,21 +183,29 @@ class QSurfaceFormat : IQSurfaceFormat
 {
 	private QSurfaceFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QSurfaceFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSurfaceFormat_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* options)
 	{
 		this.ptr = CQt.QSurfaceFormat_new2(options);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSurfaceFormat other)
 	{
 		this.ptr = CQt.QSurfaceFormat_new3((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

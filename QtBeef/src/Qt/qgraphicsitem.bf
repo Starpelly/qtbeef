@@ -839,17 +839,24 @@ class QGraphicsItem : IQGraphicsItem
 {
 	private QGraphicsItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsItem_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3361,17 +3368,122 @@ class QGraphicsObject : IQGraphicsObject, IQObject, IQGraphicsItem
 {
 	private QGraphicsObject_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsObject_Connect_ParentChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_ParentChanged);
+		CQt.QGraphicsObject_Connect_OpacityChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_OpacityChanged);
+		CQt.QGraphicsObject_Connect_VisibleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_VisibleChanged);
+		CQt.QGraphicsObject_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_EnabledChanged);
+		CQt.QGraphicsObject_Connect_XChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_XChanged);
+		CQt.QGraphicsObject_Connect_YChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_YChanged);
+		CQt.QGraphicsObject_Connect_ZChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_ZChanged);
+		CQt.QGraphicsObject_Connect_RotationChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_RotationChanged);
+		CQt.QGraphicsObject_Connect_ScaleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_ScaleChanged);
+		CQt.QGraphicsObject_Connect_ChildrenChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_ChildrenChanged);
+		CQt.QGraphicsObject_Connect_WidthChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_WidthChanged);
+		CQt.QGraphicsObject_Connect_HeightChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_HeightChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void()> OnParentChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnOpacityChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnVisibleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnXChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnYChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnZChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnRotationChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnScaleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnChildrenChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnWidthChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnHeightChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsObject_Connect_ParentChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParentChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_OpacityChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpacityChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_VisibleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_EnabledChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnabledChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_XChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnXChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_YChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnYChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_ZChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnZChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_RotationChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRotationChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_ScaleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScaleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_ChildrenChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildrenChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_WidthChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidthChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_HeightChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightChanged.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsObject_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsObject_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsObject_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5700,17 +5812,24 @@ class QAbstractGraphicsShapeItem : IQAbstractGraphicsShapeItem, IQGraphicsItem
 {
 	private QAbstractGraphicsShapeItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAbstractGraphicsShapeItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractGraphicsShapeItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QAbstractGraphicsShapeItem_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7622,25 +7741,34 @@ class QGraphicsPathItem : IQGraphicsPathItem, IQAbstractGraphicsShapeItem, IQGra
 {
 	private QGraphicsPathItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsPathItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsPathItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPainterPath path)
 	{
 		this.ptr = CQt.QGraphicsPathItem_new2((.)path?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsPathItem_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPainterPath path, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsPathItem_new4((.)path?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -9564,33 +9692,44 @@ class QGraphicsRectItem : IQGraphicsRectItem, IQAbstractGraphicsShapeItem, IQGra
 {
 	private QGraphicsRectItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsRectItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsRectItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF rect)
 	{
 		this.ptr = CQt.QGraphicsRectItem_new2((.)rect?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x, double y, double w, double h)
 	{
 		this.ptr = CQt.QGraphicsRectItem_new3(x, y, w, h);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsRectItem_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF rect, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsRectItem_new5((.)rect?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x, double y, double w, double h, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsRectItem_new6(x, y, w, h, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -11540,33 +11679,44 @@ class QGraphicsEllipseItem : IQGraphicsEllipseItem, IQAbstractGraphicsShapeItem,
 {
 	private QGraphicsEllipseItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsEllipseItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsEllipseItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF rect)
 	{
 		this.ptr = CQt.QGraphicsEllipseItem_new2((.)rect?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x, double y, double w, double h)
 	{
 		this.ptr = CQt.QGraphicsEllipseItem_new3(x, y, w, h);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsEllipseItem_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF rect, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsEllipseItem_new5((.)rect?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x, double y, double w, double h, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsEllipseItem_new6(x, y, w, h, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -13520,17 +13670,24 @@ class QGraphicsPolygonItem : IQGraphicsPolygonItem, IQAbstractGraphicsShapeItem,
 {
 	private QGraphicsPolygonItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsPolygonItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsPolygonItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsPolygonItem_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -15442,33 +15599,44 @@ class QGraphicsLineItem : IQGraphicsLineItem, IQGraphicsItem
 {
 	private QGraphicsLineItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsLineItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsLineItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLineF line)
 	{
 		this.ptr = CQt.QGraphicsLineItem_new2((.)line?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x1, double y1, double x2, double y2)
 	{
 		this.ptr = CQt.QGraphicsLineItem_new3(x1, y1, x2, y2);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsLineItem_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLineF line, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsLineItem_new5((.)line?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x1, double y1, double x2, double y2, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsLineItem_new6(x1, y1, x2, y2, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -17406,25 +17574,34 @@ class QGraphicsPixmapItem : IQGraphicsPixmapItem, IQGraphicsItem
 {
 	private QGraphicsPixmapItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsPixmapItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsPixmapItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap pixmap)
 	{
 		this.ptr = CQt.QGraphicsPixmapItem_new2((.)pixmap?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsPixmapItem_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap pixmap, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsPixmapItem_new4((.)pixmap?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -19746,25 +19923,146 @@ class QGraphicsTextItem : IQGraphicsTextItem, IQGraphicsObject, IQObject, IQGrap
 {
 	private QGraphicsTextItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsTextItem_Connect_LinkActivated(obj.ObjectPtr,  => QtBeef_QGraphicsTextItem_Connect_LinkActivated);
+		CQt.QGraphicsTextItem_Connect_LinkHovered(obj.ObjectPtr,  => QtBeef_QGraphicsTextItem_Connect_LinkHovered);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QGraphicsObject_Connect_ParentChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_ParentChanged);
+		CQt.QGraphicsObject_Connect_OpacityChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_OpacityChanged);
+		CQt.QGraphicsObject_Connect_VisibleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_VisibleChanged);
+		CQt.QGraphicsObject_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_EnabledChanged);
+		CQt.QGraphicsObject_Connect_XChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_XChanged);
+		CQt.QGraphicsObject_Connect_YChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_YChanged);
+		CQt.QGraphicsObject_Connect_ZChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_ZChanged);
+		CQt.QGraphicsObject_Connect_RotationChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_RotationChanged);
+		CQt.QGraphicsObject_Connect_ScaleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_ScaleChanged);
+		CQt.QGraphicsObject_Connect_ChildrenChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_ChildrenChanged);
+		CQt.QGraphicsObject_Connect_WidthChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_WidthChanged);
+		CQt.QGraphicsObject_Connect_HeightChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_Connect_HeightChanged);
+	}
+	public Event<delegate void(libqt_string param1)> OnLinkActivated = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnLinkHovered = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void()> OnParentChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnOpacityChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnVisibleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnXChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnYChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnZChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnRotationChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnScaleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnChildrenChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnWidthChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnHeightChanged = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsTextItem_Connect_LinkActivated(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLinkActivated.Invoke(param1);
+	}
+	static void QtBeef_QGraphicsTextItem_Connect_LinkHovered(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLinkHovered.Invoke(param1);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QGraphicsObject_Connect_ParentChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParentChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_OpacityChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpacityChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_VisibleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_EnabledChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnabledChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_XChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnXChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_YChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnYChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_ZChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnZChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_RotationChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRotationChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_ScaleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScaleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_ChildrenChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildrenChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_WidthChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidthChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_Connect_HeightChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightChanged.Invoke();
+	}
 	public this(QGraphicsTextItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsTextItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QGraphicsTextItem_new2(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsTextItem_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsTextItem_new4(libqt_string(text), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -22179,25 +22477,34 @@ class QGraphicsSimpleTextItem : IQGraphicsSimpleTextItem, IQAbstractGraphicsShap
 {
 	private QGraphicsSimpleTextItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSimpleTextItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSimpleTextItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QGraphicsSimpleTextItem_new2(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsSimpleTextItem_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsSimpleTextItem_new4(libqt_string(text), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -24113,17 +24420,24 @@ class QGraphicsItemGroup : IQGraphicsItemGroup, IQGraphicsItem
 {
 	private QGraphicsItemGroup_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsItemGroup_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsItemGroup_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsItemGroup_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

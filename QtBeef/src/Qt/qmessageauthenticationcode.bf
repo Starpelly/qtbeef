@@ -47,17 +47,24 @@ class QMessageAuthenticationCode : IQMessageAuthenticationCode
 {
 	private QMessageAuthenticationCode_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMessageAuthenticationCode_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QCryptographicHash_Algorithm method)
 	{
 		this.ptr = CQt.QMessageAuthenticationCode_new(method);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QCryptographicHash_Algorithm method, void** key)
 	{
 		this.ptr = CQt.QMessageAuthenticationCode_new2(method, key);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

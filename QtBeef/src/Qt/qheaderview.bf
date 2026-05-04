@@ -2535,17 +2535,192 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 {
 	private QHeaderView_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QHeaderView_Connect_SectionMoved(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SectionMoved);
+		CQt.QHeaderView_Connect_SectionResized(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SectionResized);
+		CQt.QHeaderView_Connect_SectionPressed(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SectionPressed);
+		CQt.QHeaderView_Connect_SectionClicked(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SectionClicked);
+		CQt.QHeaderView_Connect_SectionEntered(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SectionEntered);
+		CQt.QHeaderView_Connect_SectionDoubleClicked(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SectionDoubleClicked);
+		CQt.QHeaderView_Connect_SectionCountChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SectionCountChanged);
+		CQt.QHeaderView_Connect_SectionHandleDoubleClicked(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SectionHandleDoubleClicked);
+		CQt.QHeaderView_Connect_GeometriesChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_GeometriesChanged);
+		CQt.QHeaderView_Connect_SortIndicatorChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SortIndicatorChanged);
+		CQt.QHeaderView_Connect_SortIndicatorClearableChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_Connect_SortIndicatorClearableChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QAbstractItemView_Connect_Pressed(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Pressed);
+		CQt.QAbstractItemView_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Clicked);
+		CQt.QAbstractItemView_Connect_DoubleClicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_DoubleClicked);
+		CQt.QAbstractItemView_Connect_Activated(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Activated);
+		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Entered);
+		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_ViewportEntered);
+		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_IconSizeChanged);
+	}
+	public Event<delegate void(c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex)> OnSectionMoved = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex, c_int oldSize, c_int newSize)> OnSectionResized = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionPressed = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionEntered = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int oldCount, c_int newCount)> OnSectionCountChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionHandleDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void()> OnGeometriesChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex, Qt_SortOrder order)> OnSortIndicatorChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool clearable)> OnSortIndicatorClearableChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnEntered = .() ~ _.Dispose();
+	public Event<delegate void()> OnViewportEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnIconSizeChanged = .() ~ _.Dispose();
+	static void QtBeef_QHeaderView_Connect_SectionMoved(void* ptr, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionMoved.Invoke(logicalIndex, oldVisualIndex, newVisualIndex);
+	}
+	static void QtBeef_QHeaderView_Connect_SectionResized(void* ptr, c_int logicalIndex, c_int oldSize, c_int newSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionResized.Invoke(logicalIndex, oldSize, newSize);
+	}
+	static void QtBeef_QHeaderView_Connect_SectionPressed(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionPressed.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_Connect_SectionClicked(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionClicked.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_Connect_SectionEntered(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionEntered.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_Connect_SectionDoubleClicked(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionDoubleClicked.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_Connect_SectionCountChanged(void* ptr, c_int oldCount, c_int newCount)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionCountChanged.Invoke(oldCount, newCount);
+	}
+	static void QtBeef_QHeaderView_Connect_SectionHandleDoubleClicked(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionHandleDoubleClicked.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_Connect_GeometriesChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGeometriesChanged.Invoke();
+	}
+	static void QtBeef_QHeaderView_Connect_SortIndicatorChanged(void* ptr, c_int logicalIndex, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortIndicatorChanged.Invoke(logicalIndex, order);
+	}
+	static void QtBeef_QHeaderView_Connect_SortIndicatorClearableChanged(void* ptr, bool clearable)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortIndicatorClearableChanged.Invoke(clearable);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QAbstractItemView_Connect_Pressed(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPressed.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_Clicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_DoubleClicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoubleClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_Activated(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_Entered(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEntered.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_ViewportEntered(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEntered.Invoke();
+	}
+	static void QtBeef_QAbstractItemView_Connect_IconSizeChanged(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(size);
+	}
 	public this(QHeaderView_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation)
 	{
 		this.ptr = CQt.QHeaderView_new(orientation);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation, IQWidget parent)
 	{
 		this.ptr = CQt.QHeaderView_new2(orientation, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

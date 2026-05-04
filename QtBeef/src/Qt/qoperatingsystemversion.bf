@@ -59,25 +59,34 @@ class QOperatingSystemVersionBase : IQOperatingSystemVersionBase
 {
 	private QOperatingSystemVersionBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QOperatingSystemVersionBase_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QOperatingSystemVersionBase_OSType osType, c_int vmajor)
 	{
 		this.ptr = CQt.QOperatingSystemVersionBase_new(osType, vmajor);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQOperatingSystemVersionBase param1)
 	{
 		this.ptr = CQt.QOperatingSystemVersionBase_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QOperatingSystemVersionBase_OSType osType, c_int vmajor, c_int vminor)
 	{
 		this.ptr = CQt.QOperatingSystemVersionBase_new3(osType, vmajor, vminor);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QOperatingSystemVersionBase_OSType osType, c_int vmajor, c_int vminor, c_int vmicro)
 	{
 		this.ptr = CQt.QOperatingSystemVersionBase_new4(osType, vmajor, vminor, vmicro);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -216,29 +225,39 @@ class QOperatingSystemVersion : IQOperatingSystemVersion, IQOperatingSystemVersi
 {
 	private QOperatingSystemVersion_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QOperatingSystemVersion_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQOperatingSystemVersionBase osversion)
 	{
 		this.ptr = CQt.QOperatingSystemVersion_new((.)osversion?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QOperatingSystemVersion_OSType osType, c_int vmajor)
 	{
 		this.ptr = CQt.QOperatingSystemVersion_new2(osType, vmajor);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQOperatingSystemVersion param1)
 	{
 		this.ptr = CQt.QOperatingSystemVersion_new3((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QOperatingSystemVersion_OSType osType, c_int vmajor, c_int vminor)
 	{
 		this.ptr = CQt.QOperatingSystemVersion_new4(osType, vmajor, vminor);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QOperatingSystemVersion_OSType osType, c_int vmajor, c_int vminor, c_int vmicro)
 	{
 		this.ptr = CQt.QOperatingSystemVersion_new5(osType, vmajor, vminor, vmicro);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

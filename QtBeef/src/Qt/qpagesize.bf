@@ -131,45 +131,59 @@ class QPageSize : IQPageSize
 {
 	private QPageSize_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPageSize_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPageSize_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QPageSize_PageSizeId pageSizeId)
 	{
 		this.ptr = CQt.QPageSize_new2(pageSizeId);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize pointSize)
 	{
 		this.ptr = CQt.QPageSize_new3((.)pointSize?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSizeF size, QPageSize_Unit units)
 	{
 		this.ptr = CQt.QPageSize_new4((.)size?.ObjectPtr, units);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPageSize other)
 	{
 		this.ptr = CQt.QPageSize_new5((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize pointSize, String name)
 	{
 		this.ptr = CQt.QPageSize_new6((.)pointSize?.ObjectPtr, libqt_string(name));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize pointSize, String name, QPageSize_SizeMatchPolicy matchPolicy)
 	{
 		this.ptr = CQt.QPageSize_new7((.)pointSize?.ObjectPtr, libqt_string(name), matchPolicy);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSizeF size, QPageSize_Unit units, String name)
 	{
 		this.ptr = CQt.QPageSize_new8((.)size?.ObjectPtr, units, libqt_string(name));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSizeF size, QPageSize_Unit units, String name, QPageSize_SizeMatchPolicy matchPolicy)
 	{
 		this.ptr = CQt.QPageSize_new9((.)size?.ObjectPtr, units, libqt_string(name), matchPolicy);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

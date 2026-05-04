@@ -808,32 +808,16 @@ if (masterClass.ClassName == "QGestureEvent")
                             }
                             */
 
-                            foreach (var method in allMethods)
-                            {
-                                if (method.Item2.IsSignal)
-                                {
-                                    if (signals)
-                                        allSignals.Add((method.Item1, method.Item2));
-                                    else
-                                        allVirtualMethods.Add((method.Item1, method.Item2));
-                                }
-                            }
+
                         }
 
-                        collectSignals(cppClass, true);
-                        foreach (var inherited in  inheritedClasses)
+                        foreach (var method in allMethods)
                         {
-                            collectSignals(inherited, true);
+                            if (method.Item2.IsSignal)
+                                allSignals.Add((method.Item1, method.Item2));
+                            else if (method.Item2.IsVirtual)
+                                allVirtualMethods.Add((method.Item1, method.Item2));
                         }
-
-                        created.Clear();
-
-                        collectSignals(cppClass, false);
-                        foreach (var inherited in inheritedClasses)
-                        {
-                            collectSignals(inherited, false);
-                        }
-
                     }
 
                     /*
@@ -853,7 +837,10 @@ if (masterClass.ClassName == "QGestureEvent")
                     code.AppendEmptyLine();
                     */
 
-#if false
+                    // --------------------------------------------------------------------------------------------
+                    // Connect signals
+                    // --------------------------------------------------------------------------------------------
+
                     code.AppendLine("static void QtBf_ConnectSignals(Self obj)");
                     code.AppendLine("{");
                     code.IncreaseTab();
@@ -869,6 +856,7 @@ if (masterClass.ClassName == "QGestureEvent")
                             code.AppendLine($"CQt.{signalName}({signalArguments});");
                         }
 
+                        /*
                         foreach (var signal in allVirtualMethods)
                         {
                             // @TEMP
@@ -881,6 +869,7 @@ if (masterClass.ClassName == "QGestureEvent")
 
                             code.AppendLine($"CQt.{signalName}({signalArguments});");
                         }
+                        */
 
                         /*
                         code.AppendLine("switch (signalType)");
@@ -923,6 +912,7 @@ if (masterClass.ClassName == "QGestureEvent")
                         code.AppendLine("}");
                     }
 
+                    /*
                     foreach (var method in allVirtualMethods)
                     {
                         if (method.method.MethodName.StartsWith("operator"))
@@ -942,12 +932,16 @@ if (masterClass.ClassName == "QGestureEvent")
                         code.AppendLine("}");
 
                     }
-#endif
+                    */
 
                     void emitConnectSignalsCall()
                     {
-                        // code.AppendLine("QtBf_ConnectSignals(this);");
+                        code.AppendLine("QtBf_ConnectSignals(this);");
                     }
+
+                    // --------------------------------------------------------------------------------------------
+                    // 
+                    // --------------------------------------------------------------------------------------------
 
                     // Default constructor Object(ObjectHandle ptr)
                     code.AppendLine($"public this({bfClassName}_Ptr ptr)");
@@ -1018,46 +1012,6 @@ if (masterClass.ClassName == "QGestureEvent")
                     }
 
                     var toCheck = new List<CppMethod>();
-
-                    // Normal methods
-#if false
-                    foreach (var method in cppClass.Methods)
-                    {
-                        genMethod(cppClass, method, false, Stage.BfObject, false);
-                        /*
-                        if (method.IsVirtual)
-                        {
-                            genMethod(cppClass, method, false, Stage.BfObject, true);
-                        }
-                        */
-                    }
-                    toCheck.AddRange(cppClass.Methods);
-
-                    foreach (var inheritedClass in inheritedClasses)
-                    {
-                        foreach (var method in  inheritedClass.Methods)
-                        {
-                            if (toCheck.Any(c => c.MethodName == method.MethodName))
-                                continue;
-
-                            genMethod(inheritedClass, method, false, Stage.BfObject, false);
-
-                            /*
-                            if (method.IsVirtual)
-                            {
-                                genMethod(cppClass, method, false, Stage.BfObject, true);
-                            }
-                            */
-                        }
-
-                        toCheck.AddRange(inheritedClass.Methods);
-                    }
-
-                    foreach (var method in allVirtualMethods)
-                    {
-                        genMethod(method.@class, method.method, false, Stage.BfObject, true);
-                    }
-#endif
 
                     foreach (var method in allMethods)
                     {
@@ -1156,28 +1110,6 @@ if (masterClass.ClassName == "QGestureEvent")
                     }
 
                     var toCheck = new List<CppMethod>();
-
-                    /*
-                    // Normal methods
-                    foreach (var method in cppClass.Methods)
-                    {
-                        genBinding(cppClass, method);
-                    }
-                    toCheck.AddRange(cppClass.Methods);
-
-                    foreach (var inheritedClass in inheritedClasses)
-                    {
-                        foreach (var method in inheritedClass.Methods)
-                        {
-                            if (toCheck.Any(c => c.MethodName == method.MethodName))
-                                continue;
-
-                            genBinding(cppClass, method);
-                        }
-
-                        toCheck.AddRange(inheritedClass.Methods);
-                    }
-                    */
 
                     foreach (var method in allMethods)
                     {

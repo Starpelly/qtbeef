@@ -63,25 +63,34 @@ class QUndoCommand : IQUndoCommand
 {
 	private QUndoCommand_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QUndoCommand_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUndoCommand_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QUndoCommand_new2(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoCommand parent)
 	{
 		this.ptr = CQt.QUndoCommand_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQUndoCommand parent)
 	{
 		this.ptr = CQt.QUndoCommand_new4(libqt_string(text), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -584,17 +593,80 @@ class QUndoStack : IQUndoStack, IQObject
 {
 	private QUndoStack_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QUndoStack_Connect_IndexChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_Connect_IndexChanged);
+		CQt.QUndoStack_Connect_CleanChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_Connect_CleanChanged);
+		CQt.QUndoStack_Connect_CanUndoChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_Connect_CanUndoChanged);
+		CQt.QUndoStack_Connect_CanRedoChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_Connect_CanRedoChanged);
+		CQt.QUndoStack_Connect_UndoTextChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_Connect_UndoTextChanged);
+		CQt.QUndoStack_Connect_RedoTextChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_Connect_RedoTextChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(c_int idx)> OnIndexChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool clean)> OnCleanChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool canUndo)> OnCanUndoChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool canRedo)> OnCanRedoChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string undoText)> OnUndoTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string redoText)> OnRedoTextChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QUndoStack_Connect_IndexChanged(void* ptr, c_int idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexChanged.Invoke(idx);
+	}
+	static void QtBeef_QUndoStack_Connect_CleanChanged(void* ptr, bool clean)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCleanChanged.Invoke(clean);
+	}
+	static void QtBeef_QUndoStack_Connect_CanUndoChanged(void* ptr, bool canUndo)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanUndoChanged.Invoke(canUndo);
+	}
+	static void QtBeef_QUndoStack_Connect_CanRedoChanged(void* ptr, bool canRedo)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanRedoChanged.Invoke(canRedo);
+	}
+	static void QtBeef_QUndoStack_Connect_UndoTextChanged(void* ptr, libqt_string undoText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUndoTextChanged.Invoke(undoText);
+	}
+	static void QtBeef_QUndoStack_Connect_RedoTextChanged(void* ptr, libqt_string redoText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedoTextChanged.Invoke(redoText);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QUndoStack_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUndoStack_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QUndoStack_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

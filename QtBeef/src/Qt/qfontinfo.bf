@@ -87,17 +87,24 @@ class QFontInfo : IQFontInfo
 {
 	private QFontInfo_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QFontInfo_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQFont param1)
 	{
 		this.ptr = CQt.QFontInfo_new((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQFontInfo param1)
 	{
 		this.ptr = CQt.QFontInfo_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

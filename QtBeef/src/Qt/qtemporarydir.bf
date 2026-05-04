@@ -51,17 +51,24 @@ class QTemporaryDir : IQTemporaryDir
 {
 	private QTemporaryDir_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTemporaryDir_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTemporaryDir_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String templateName)
 	{
 		this.ptr = CQt.QTemporaryDir_new2(libqt_string(templateName));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

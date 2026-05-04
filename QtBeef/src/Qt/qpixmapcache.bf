@@ -59,13 +59,19 @@ class QPixmapCache : IQPixmapCache
 {
 	private QPixmapCache_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPixmapCache_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmapCache other)
 	{
 		this.ptr = CQt.QPixmapCache_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -168,17 +174,24 @@ class QPixmapCache_Key : IQPixmapCache_Key
 {
 	private QPixmapCache_Key_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPixmapCache_Key_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPixmapCache_Key_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmapCache_Key other)
 	{
 		this.ptr = CQt.QPixmapCache_Key_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

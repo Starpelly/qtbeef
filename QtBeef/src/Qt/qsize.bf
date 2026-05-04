@@ -99,21 +99,29 @@ class QSize : IQSize
 {
 	private QSize_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QSize_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize other)
 	{
 		this.ptr = CQt.QSize_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSize_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int w, c_int h)
 	{
 		this.ptr = CQt.QSize_new4(w, h);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -362,25 +370,34 @@ class QSizeF : IQSizeF
 {
 	private QSizeF_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QSizeF_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSizeF other)
 	{
 		this.ptr = CQt.QSizeF_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSizeF_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize sz)
 	{
 		this.ptr = CQt.QSizeF_new4((.)sz?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double w, double h)
 	{
 		this.ptr = CQt.QSizeF_new5(w, h);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -491,17 +491,80 @@ class QCoreApplication : IQCoreApplication, IQObject
 {
 	private QCoreApplication_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QCoreApplication_Connect_InstallNativeEventFilter(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_InstallNativeEventFilter);
+		CQt.QCoreApplication_Connect_RemoveNativeEventFilter(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_RemoveNativeEventFilter);
+		CQt.QCoreApplication_Connect_OrganizationNameChanged(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_OrganizationNameChanged);
+		CQt.QCoreApplication_Connect_OrganizationDomainChanged(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_OrganizationDomainChanged);
+		CQt.QCoreApplication_Connect_ApplicationNameChanged(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_ApplicationNameChanged);
+		CQt.QCoreApplication_Connect_ApplicationVersionChanged(obj.ObjectPtr,  => QtBeef_QCoreApplication_Connect_ApplicationVersionChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(void** filterObj)> OnInstallNativeEventFilter = .() ~ _.Dispose();
+	public Event<delegate void(void** filterObj)> OnRemoveNativeEventFilter = .() ~ _.Dispose();
+	public Event<delegate void()> OnOrganizationNameChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnOrganizationDomainChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnApplicationNameChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnApplicationVersionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QCoreApplication_Connect_InstallNativeEventFilter(void* ptr, void** filterObj)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInstallNativeEventFilter.Invoke(filterObj);
+	}
+	static void QtBeef_QCoreApplication_Connect_RemoveNativeEventFilter(void* ptr, void** filterObj)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRemoveNativeEventFilter.Invoke(filterObj);
+	}
+	static void QtBeef_QCoreApplication_Connect_OrganizationNameChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOrganizationNameChanged.Invoke();
+	}
+	static void QtBeef_QCoreApplication_Connect_OrganizationDomainChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOrganizationDomainChanged.Invoke();
+	}
+	static void QtBeef_QCoreApplication_Connect_ApplicationNameChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnApplicationNameChanged.Invoke();
+	}
+	static void QtBeef_QCoreApplication_Connect_ApplicationVersionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnApplicationVersionChanged.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QCoreApplication_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int* argc, c_char** argv)
 	{
 		this.ptr = CQt.QCoreApplication_new(argc, argv);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int* argc, c_char** argv, c_int param3)
 	{
 		this.ptr = CQt.QCoreApplication_new2(argc, argv, param3);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

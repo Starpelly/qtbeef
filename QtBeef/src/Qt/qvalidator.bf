@@ -287,17 +287,45 @@ class QValidator : IQValidator, IQObject
 {
 	private QValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_Connect_Changed);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QValidator_Connect_Changed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QValidator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QValidator_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -978,25 +1006,69 @@ class QIntValidator : IQIntValidator, IQValidator, IQObject
 {
 	private QIntValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QIntValidator_Connect_BottomChanged(obj.ObjectPtr,  => QtBeef_QIntValidator_Connect_BottomChanged);
+		CQt.QIntValidator_Connect_TopChanged(obj.ObjectPtr,  => QtBeef_QIntValidator_Connect_TopChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_Connect_Changed);
+	}
+	public Event<delegate void(c_int bottom)> OnBottomChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int top)> OnTopChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
+	static void QtBeef_QIntValidator_Connect_BottomChanged(void* ptr, c_int bottom)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBottomChanged.Invoke(bottom);
+	}
+	static void QtBeef_QIntValidator_Connect_TopChanged(void* ptr, c_int top)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTopChanged.Invoke(top);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QValidator_Connect_Changed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke();
+	}
 	public this(QIntValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIntValidator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int bottom, c_int top)
 	{
 		this.ptr = CQt.QIntValidator_new2(bottom, top);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QIntValidator_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int bottom, c_int top, IQObject parent)
 	{
 		this.ptr = CQt.QIntValidator_new4(bottom, top, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1749,25 +1821,83 @@ class QDoubleValidator : IQDoubleValidator, IQValidator, IQObject
 {
 	private QDoubleValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDoubleValidator_Connect_BottomChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_Connect_BottomChanged);
+		CQt.QDoubleValidator_Connect_TopChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_Connect_TopChanged);
+		CQt.QDoubleValidator_Connect_DecimalsChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_Connect_DecimalsChanged);
+		CQt.QDoubleValidator_Connect_NotationChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_Connect_NotationChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_Connect_Changed);
+	}
+	public Event<delegate void(double bottom)> OnBottomChanged = .() ~ _.Dispose();
+	public Event<delegate void(double top)> OnTopChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int decimals)> OnDecimalsChanged = .() ~ _.Dispose();
+	public Event<delegate void(QDoubleValidator_Notation notation)> OnNotationChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
+	static void QtBeef_QDoubleValidator_Connect_BottomChanged(void* ptr, double bottom)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBottomChanged.Invoke(bottom);
+	}
+	static void QtBeef_QDoubleValidator_Connect_TopChanged(void* ptr, double top)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTopChanged.Invoke(top);
+	}
+	static void QtBeef_QDoubleValidator_Connect_DecimalsChanged(void* ptr, c_int decimals)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDecimalsChanged.Invoke(decimals);
+	}
+	static void QtBeef_QDoubleValidator_Connect_NotationChanged(void* ptr, QDoubleValidator_Notation notation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNotationChanged.Invoke(notation);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QValidator_Connect_Changed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke();
+	}
 	public this(QDoubleValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDoubleValidator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(double bottom, double top, c_int decimals)
 	{
 		this.ptr = CQt.QDoubleValidator_new2(bottom, top, decimals);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QDoubleValidator_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double bottom, double top, c_int decimals, IQObject parent)
 	{
 		this.ptr = CQt.QDoubleValidator_new4(bottom, top, decimals, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2526,25 +2656,62 @@ class QRegularExpressionValidator : IQRegularExpressionValidator, IQValidator, I
 {
 	private QRegularExpressionValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QRegularExpressionValidator_Connect_RegularExpressionChanged(obj.ObjectPtr,  => QtBeef_QRegularExpressionValidator_Connect_RegularExpressionChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_Connect_Changed);
+	}
+	public Event<delegate void(void** re)> OnRegularExpressionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
+	static void QtBeef_QRegularExpressionValidator_Connect_RegularExpressionChanged(void* ptr, void** re)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRegularExpressionChanged.Invoke(re);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QValidator_Connect_Changed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke();
+	}
 	public this(QRegularExpressionValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpression re)
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new2((.)re?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpression re, IQObject parent)
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new4((.)re?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

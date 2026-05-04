@@ -83,13 +83,19 @@ class QGraphicsSceneEvent : IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSceneEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneEvent_new(type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -381,17 +387,24 @@ class QGraphicsSceneMouseEvent : IQGraphicsSceneMouseEvent, IQGraphicsSceneEvent
 {
 	private QGraphicsSceneMouseEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSceneMouseEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneMouseEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneMouseEvent_new2(type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -813,17 +826,24 @@ class QGraphicsSceneWheelEvent : IQGraphicsSceneWheelEvent, IQGraphicsSceneEvent
 {
 	private QGraphicsSceneWheelEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSceneWheelEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneWheelEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneWheelEvent_new2(type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1157,17 +1177,24 @@ class QGraphicsSceneContextMenuEvent : IQGraphicsSceneContextMenuEvent, IQGraphi
 {
 	private QGraphicsSceneContextMenuEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSceneContextMenuEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneContextMenuEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneContextMenuEvent_new2(type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1457,17 +1484,24 @@ class QGraphicsSceneHoverEvent : IQGraphicsSceneHoverEvent, IQGraphicsSceneEvent
 {
 	private QGraphicsSceneHoverEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSceneHoverEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneHoverEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneHoverEvent_new2(type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1741,17 +1775,24 @@ class QGraphicsSceneHelpEvent : IQGraphicsSceneHelpEvent, IQGraphicsSceneEvent, 
 {
 	private QGraphicsSceneHelpEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSceneHelpEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneHelpEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneHelpEvent_new2(type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2033,17 +2074,24 @@ class QGraphicsSceneDragDropEvent : IQGraphicsSceneDragDropEvent, IQGraphicsScen
 {
 	private QGraphicsSceneDragDropEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSceneDragDropEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneDragDropEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneDragDropEvent_new2(type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2359,13 +2407,19 @@ class QGraphicsSceneResizeEvent : IQGraphicsSceneResizeEvent, IQGraphicsSceneEve
 {
 	private QGraphicsSceneResizeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSceneResizeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneResizeEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2577,13 +2631,19 @@ class QGraphicsSceneMoveEvent : IQGraphicsSceneMoveEvent, IQGraphicsSceneEvent, 
 {
 	private QGraphicsSceneMoveEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsSceneMoveEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneMoveEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

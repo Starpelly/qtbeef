@@ -143,25 +143,34 @@ class QImageWriter : IQImageWriter
 {
 	private QImageWriter_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QImageWriter_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QImageWriter_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device, void** format)
 	{
 		this.ptr = CQt.QImageWriter_new2((.)device?.ObjectPtr, format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QImageWriter_new3(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void** format)
 	{
 		this.ptr = CQt.QImageWriter_new4(libqt_string(fileName), format);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

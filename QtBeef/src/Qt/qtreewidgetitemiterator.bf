@@ -27,29 +27,39 @@ class QTreeWidgetItemIterator : IQTreeWidgetItemIterator
 {
 	private QTreeWidgetItemIterator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTreeWidgetItemIterator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidgetItemIterator it)
 	{
 		this.ptr = CQt.QTreeWidgetItemIterator_new((.)it?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidget widget)
 	{
 		this.ptr = CQt.QTreeWidgetItemIterator_new2((.)widget?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidgetItem item)
 	{
 		this.ptr = CQt.QTreeWidgetItemIterator_new3((.)item?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidget widget, void* flags)
 	{
 		this.ptr = CQt.QTreeWidgetItemIterator_new4((.)widget?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidgetItem item, void* flags)
 	{
 		this.ptr = CQt.QTreeWidgetItemIterator_new5((.)item?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

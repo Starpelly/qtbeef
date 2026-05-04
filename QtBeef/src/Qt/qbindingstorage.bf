@@ -19,13 +19,19 @@ class QBindingStatus : IQBindingStatus
 {
 	private QBindingStatus_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QBindingStatus_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBindingStatus other)
 	{
 		this.ptr = CQt.QBindingStatus_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -72,13 +78,19 @@ class QBindingStorage : IQBindingStorage
 {
 	private QBindingStorage_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QBindingStorage_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QBindingStorage_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

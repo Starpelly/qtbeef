@@ -339,13 +339,47 @@ class QDrag : IQDrag, IQObject
 {
 	private QDrag_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDrag_Connect_ActionChanged(obj.ObjectPtr,  => QtBeef_QDrag_Connect_ActionChanged);
+		CQt.QDrag_Connect_TargetChanged(obj.ObjectPtr,  => QtBeef_QDrag_Connect_TargetChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(Qt_DropAction action)> OnActionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** newTarget)> OnTargetChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QDrag_Connect_ActionChanged(void* ptr, Qt_DropAction action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionChanged.Invoke(action);
+	}
+	static void QtBeef_QDrag_Connect_TargetChanged(void* ptr, void** newTarget)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTargetChanged.Invoke(newTarget);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QDrag_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject dragSource)
 	{
 		this.ptr = CQt.QDrag_new((.)dragSource?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

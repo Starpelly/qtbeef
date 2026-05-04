@@ -1927,41 +1927,124 @@ class QDateTimeEdit : IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObject, IQP
 {
 	private QDateTimeEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDateTimeEdit_Connect_DateTimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateTimeChanged);
+		CQt.QDateTimeEdit_Connect_TimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_TimeChanged);
+		CQt.QDateTimeEdit_Connect_DateChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_Connect_EditingFinished);
+	}
+	public Event<delegate void(void** dateTime)> OnDateTimeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* time)> OnTimeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* date)> OnDateChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
+	static void QtBeef_QDateTimeEdit_Connect_DateTimeChanged(void* ptr, void** dateTime)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDateTimeChanged.Invoke(dateTime);
+	}
+	static void QtBeef_QDateTimeEdit_Connect_TimeChanged(void* ptr, void* time)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimeChanged.Invoke(time);
+	}
+	static void QtBeef_QDateTimeEdit_Connect_DateChanged(void* ptr, void* date)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDateChanged.Invoke(date);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QAbstractSpinBox_Connect_EditingFinished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditingFinished.Invoke();
+	}
 	public this(QDateTimeEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QDateTimeEdit_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDateTimeEdit_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDateTime dt)
 	{
 		this.ptr = CQt.QDateTimeEdit_new3((.)dt?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate d)
 	{
 		this.ptr = CQt.QDateTimeEdit_new4((.)d?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime t)
 	{
 		this.ptr = CQt.QDateTimeEdit_new5((.)t?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDateTime dt, IQWidget parent)
 	{
 		this.ptr = CQt.QDateTimeEdit_new6((.)dt?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate d, IQWidget parent)
 	{
 		this.ptr = CQt.QDateTimeEdit_new7((.)d?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime t, IQWidget parent)
 	{
 		this.ptr = CQt.QDateTimeEdit_new8((.)t?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6254,25 +6337,111 @@ class QTimeEdit : IQTimeEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 {
 	private QTimeEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTimeEdit_Connect_UserTimeChanged(obj.ObjectPtr,  => QtBeef_QTimeEdit_Connect_UserTimeChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_Connect_EditingFinished);
+		CQt.QDateTimeEdit_Connect_DateTimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateTimeChanged);
+		CQt.QDateTimeEdit_Connect_TimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_TimeChanged);
+		CQt.QDateTimeEdit_Connect_DateChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateChanged);
+	}
+	public Event<delegate void(void* time)> OnUserTimeChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
+	public Event<delegate void(void** dateTime)> OnDateTimeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* time)> OnTimeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* date)> OnDateChanged = .() ~ _.Dispose();
+	static void QtBeef_QTimeEdit_Connect_UserTimeChanged(void* ptr, void* time)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUserTimeChanged.Invoke(time);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QAbstractSpinBox_Connect_EditingFinished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditingFinished.Invoke();
+	}
+	static void QtBeef_QDateTimeEdit_Connect_DateTimeChanged(void* ptr, void** dateTime)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDateTimeChanged.Invoke(dateTime);
+	}
+	static void QtBeef_QDateTimeEdit_Connect_TimeChanged(void* ptr, void* time)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimeChanged.Invoke(time);
+	}
+	static void QtBeef_QDateTimeEdit_Connect_DateChanged(void* ptr, void* date)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDateChanged.Invoke(date);
+	}
 	public this(QTimeEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QTimeEdit_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTimeEdit_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime time)
 	{
 		this.ptr = CQt.QTimeEdit_new3((.)time?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime time, IQWidget parent)
 	{
 		this.ptr = CQt.QTimeEdit_new4((.)time?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -10457,25 +10626,111 @@ class QDateEdit : IQDateEdit, IQDateTimeEdit, IQAbstractSpinBox, IQWidget, IQObj
 {
 	private QDateEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDateEdit_Connect_UserDateChanged(obj.ObjectPtr,  => QtBeef_QDateEdit_Connect_UserDateChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_Connect_EditingFinished);
+		CQt.QDateTimeEdit_Connect_DateTimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateTimeChanged);
+		CQt.QDateTimeEdit_Connect_TimeChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_TimeChanged);
+		CQt.QDateTimeEdit_Connect_DateChanged(obj.ObjectPtr,  => QtBeef_QDateTimeEdit_Connect_DateChanged);
+	}
+	public Event<delegate void(void* date)> OnUserDateChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
+	public Event<delegate void(void** dateTime)> OnDateTimeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* time)> OnTimeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* date)> OnDateChanged = .() ~ _.Dispose();
+	static void QtBeef_QDateEdit_Connect_UserDateChanged(void* ptr, void* date)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUserDateChanged.Invoke(date);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QAbstractSpinBox_Connect_EditingFinished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditingFinished.Invoke();
+	}
+	static void QtBeef_QDateTimeEdit_Connect_DateTimeChanged(void* ptr, void** dateTime)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDateTimeChanged.Invoke(dateTime);
+	}
+	static void QtBeef_QDateTimeEdit_Connect_TimeChanged(void* ptr, void* time)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTimeChanged.Invoke(time);
+	}
+	static void QtBeef_QDateTimeEdit_Connect_DateChanged(void* ptr, void* date)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDateChanged.Invoke(date);
+	}
 	public this(QDateEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QDateEdit_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDateEdit_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate date)
 	{
 		this.ptr = CQt.QDateEdit_new3((.)date?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate date, IQWidget parent)
 	{
 		this.ptr = CQt.QDateEdit_new4((.)date?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

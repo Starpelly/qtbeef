@@ -91,25 +91,34 @@ class QItemSelectionRange : IQItemSelectionRange
 {
 	private QItemSelectionRange_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QItemSelectionRange_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QItemSelectionRange_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex topL, IQModelIndex bottomR)
 	{
 		this.ptr = CQt.QItemSelectionRange_new2((.)topL?.ObjectPtr, (.)bottomR?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex index)
 	{
 		this.ptr = CQt.QItemSelectionRange_new3((.)index?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQItemSelectionRange param1)
 	{
 		this.ptr = CQt.QItemSelectionRange_new4((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -640,21 +649,78 @@ class QItemSelectionModel : IQItemSelectionModel, IQObject
 {
 	private QItemSelectionModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QItemSelectionModel_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_Connect_SelectionChanged);
+		CQt.QItemSelectionModel_Connect_CurrentChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_Connect_CurrentChanged);
+		CQt.QItemSelectionModel_Connect_CurrentRowChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_Connect_CurrentRowChanged);
+		CQt.QItemSelectionModel_Connect_CurrentColumnChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_Connect_CurrentColumnChanged);
+		CQt.QItemSelectionModel_Connect_ModelChanged(obj.ObjectPtr,  => QtBeef_QItemSelectionModel_Connect_ModelChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(void** selected, void** deselected)> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** current, void** previous)> OnCurrentChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** current, void** previous)> OnCurrentRowChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** current, void** previous)> OnCurrentColumnChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** model)> OnModelChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QItemSelectionModel_Connect_SelectionChanged(void* ptr, void** selected, void** deselected)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke(selected, deselected);
+	}
+	static void QtBeef_QItemSelectionModel_Connect_CurrentChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged.Invoke(current, previous);
+	}
+	static void QtBeef_QItemSelectionModel_Connect_CurrentRowChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentRowChanged.Invoke(current, previous);
+	}
+	static void QtBeef_QItemSelectionModel_Connect_CurrentColumnChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentColumnChanged.Invoke(current, previous);
+	}
+	static void QtBeef_QItemSelectionModel_Connect_ModelChanged(void* ptr, void** model)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnModelChanged.Invoke(model);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QItemSelectionModel_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QItemSelectionModel_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractItemModel model, IQObject parent)
 	{
 		this.ptr = CQt.QItemSelectionModel_new2((.)model?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractItemModel model)
 	{
 		this.ptr = CQt.QItemSelectionModel_new3((.)model?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1256,21 +1322,29 @@ class QItemSelection : IQItemSelection
 {
 	private QItemSelection_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QItemSelection_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
 		this.ptr = CQt.QItemSelection_new((.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QItemSelection_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQItemSelection param1)
 	{
 		this.ptr = CQt.QItemSelection_new3((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -311,29 +311,39 @@ class QTextCursor : IQTextCursor
 {
 	private QTextCursor_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextCursor_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextCursor_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextDocument document)
 	{
 		this.ptr = CQt.QTextCursor_new2((.)document?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextFrame frame)
 	{
 		this.ptr = CQt.QTextCursor_new3((.)frame?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextBlock block)
 	{
 		this.ptr = CQt.QTextCursor_new4((.)block?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextCursor cursor)
 	{
 		this.ptr = CQt.QTextCursor_new5((.)cursor?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

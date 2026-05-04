@@ -339,13 +339,19 @@ class QStringView : IQStringView
 {
 	private QStringView_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStringView_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStringView_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

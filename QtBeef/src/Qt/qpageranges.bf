@@ -67,17 +67,24 @@ class QPageRanges : IQPageRanges
 {
 	private QPageRanges_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPageRanges_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPageRanges_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPageRanges other)
 	{
 		this.ptr = CQt.QPageRanges_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -206,17 +213,24 @@ class QPageRanges_Range : IQPageRanges_Range
 {
 	private QPageRanges_Range_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPageRanges_Range_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPageRanges_Range other)
 	{
 		this.ptr = CQt.QPageRanges_Range_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPageRanges_Range_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

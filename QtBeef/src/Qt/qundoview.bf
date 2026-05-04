@@ -75,33 +75,44 @@ class QUndoView : IQUndoView
 {
 	private QUndoView_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QUndoView_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QUndoView_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUndoView_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoStack stack)
 	{
 		this.ptr = CQt.QUndoView_new3((.)stack?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoGroup group)
 	{
 		this.ptr = CQt.QUndoView_new4((.)group?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoStack stack, IQWidget parent)
 	{
 		this.ptr = CQt.QUndoView_new5((.)stack?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoGroup group, IQWidget parent)
 	{
 		this.ptr = CQt.QUndoView_new6((.)group?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -159,17 +159,24 @@ class QJsonArray : IQJsonArray
 {
 	private QJsonArray_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QJsonArray_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QJsonArray_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray other)
 	{
 		this.ptr = CQt.QJsonArray_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -468,21 +475,29 @@ class QJsonArray_iterator : IQJsonArray_iterator
 {
 	private QJsonArray_iterator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QJsonArray_iterator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray_iterator other)
 	{
 		this.ptr = CQt.QJsonArray_iterator_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QJsonArray_iterator_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray array, void* index)
 	{
 		this.ptr = CQt.QJsonArray_iterator_new3((.)array?.ObjectPtr, index);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -625,25 +640,34 @@ class QJsonArray_const_iterator : IQJsonArray_const_iterator
 {
 	private QJsonArray_const_iterator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QJsonArray_const_iterator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray_const_iterator other)
 	{
 		this.ptr = CQt.QJsonArray_const_iterator_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QJsonArray_const_iterator_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray array, void* index)
 	{
 		this.ptr = CQt.QJsonArray_const_iterator_new3((.)array?.ObjectPtr, index);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray_iterator o)
 	{
 		this.ptr = CQt.QJsonArray_const_iterator_new4((.)o?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

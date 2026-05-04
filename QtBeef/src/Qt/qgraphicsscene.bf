@@ -819,33 +819,86 @@ class QGraphicsScene : IQGraphicsScene, IQObject
 {
 	private QGraphicsScene_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsScene_Connect_Changed(obj.ObjectPtr,  => QtBeef_QGraphicsScene_Connect_Changed);
+		CQt.QGraphicsScene_Connect_SceneRectChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScene_Connect_SceneRectChanged);
+		CQt.QGraphicsScene_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScene_Connect_SelectionChanged);
+		CQt.QGraphicsScene_Connect_FocusItemChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScene_Connect_FocusItemChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(void** region)> OnChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** rect)> OnSceneRectChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** newFocus, void** oldFocus, Qt_FocusReason reason)> OnFocusItemChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsScene_Connect_Changed(void* ptr, void** region)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke(region);
+	}
+	static void QtBeef_QGraphicsScene_Connect_SceneRectChanged(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSceneRectChanged.Invoke(rect);
+	}
+	static void QtBeef_QGraphicsScene_Connect_SelectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsScene_Connect_FocusItemChanged(void* ptr, void** newFocus, void** oldFocus, Qt_FocusReason reason)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusItemChanged.Invoke(newFocus, oldFocus, reason);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsScene_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsScene_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF sceneRect)
 	{
 		this.ptr = CQt.QGraphicsScene_new2((.)sceneRect?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x, double y, double width, double height)
 	{
 		this.ptr = CQt.QGraphicsScene_new3(x, y, width, height);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsScene_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF sceneRect, IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsScene_new5((.)sceneRect?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x, double y, double width, double height, IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsScene_new6(x, y, width, height, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

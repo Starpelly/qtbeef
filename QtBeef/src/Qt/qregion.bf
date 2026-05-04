@@ -131,37 +131,49 @@ class QRegion : IQRegion
 {
 	private QRegion_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRegion_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRegion_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int x, c_int y, c_int w, c_int h)
 	{
 		this.ptr = CQt.QRegion_new2(x, y, w, h);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRect r)
 	{
 		this.ptr = CQt.QRegion_new3((.)r?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegion region)
 	{
 		this.ptr = CQt.QRegion_new4((.)region?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBitmap bitmap)
 	{
 		this.ptr = CQt.QRegion_new5((.)bitmap?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int x, c_int y, c_int w, c_int h, QRegion_RegionType t)
 	{
 		this.ptr = CQt.QRegion_new6(x, y, w, h, t);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRect r, QRegion_RegionType t)
 	{
 		this.ptr = CQt.QRegion_new7((.)r?.ObjectPtr, t);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

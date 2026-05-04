@@ -95,41 +95,54 @@ class QVector2D : IQVector2D
 {
 	private QVector2D_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QVector2D_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector2D other)
 	{
 		this.ptr = CQt.QVector2D_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QVector2D_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Initialization param1)
 	{
 		this.ptr = CQt.QVector2D_new4(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float xpos, float ypos)
 	{
 		this.ptr = CQt.QVector2D_new5(xpos, ypos);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint point)
 	{
 		this.ptr = CQt.QVector2D_new6((.)point?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF point)
 	{
 		this.ptr = CQt.QVector2D_new7((.)point?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector3D vector)
 	{
 		this.ptr = CQt.QVector2D_new8((.)vector?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector4D vector)
 	{
 		this.ptr = CQt.QVector2D_new9((.)vector?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -418,45 +431,59 @@ class QVector3D : IQVector3D
 {
 	private QVector3D_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QVector3D_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector3D other)
 	{
 		this.ptr = CQt.QVector3D_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QVector3D_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Initialization param1)
 	{
 		this.ptr = CQt.QVector3D_new4(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float xpos, float ypos, float zpos)
 	{
 		this.ptr = CQt.QVector3D_new5(xpos, ypos, zpos);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint point)
 	{
 		this.ptr = CQt.QVector3D_new6((.)point?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF point)
 	{
 		this.ptr = CQt.QVector3D_new7((.)point?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector2D vector)
 	{
 		this.ptr = CQt.QVector3D_new8((.)vector?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector2D vector, float zpos)
 	{
 		this.ptr = CQt.QVector3D_new9((.)vector?.ObjectPtr, zpos);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector4D vector)
 	{
 		this.ptr = CQt.QVector3D_new10((.)vector?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -781,49 +808,64 @@ class QVector4D : IQVector4D
 {
 	private QVector4D_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QVector4D_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector4D other)
 	{
 		this.ptr = CQt.QVector4D_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QVector4D_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Initialization param1)
 	{
 		this.ptr = CQt.QVector4D_new4(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float xpos, float ypos, float zpos, float wpos)
 	{
 		this.ptr = CQt.QVector4D_new5(xpos, ypos, zpos, wpos);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint point)
 	{
 		this.ptr = CQt.QVector4D_new6((.)point?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF point)
 	{
 		this.ptr = CQt.QVector4D_new7((.)point?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector2D vector)
 	{
 		this.ptr = CQt.QVector4D_new8((.)vector?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector2D vector, float zpos, float wpos)
 	{
 		this.ptr = CQt.QVector4D_new9((.)vector?.ObjectPtr, zpos, wpos);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector3D vector)
 	{
 		this.ptr = CQt.QVector4D_new10((.)vector?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQVector3D vector, float wpos)
 	{
 		this.ptr = CQt.QVector4D_new11((.)vector?.ObjectPtr, wpos);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

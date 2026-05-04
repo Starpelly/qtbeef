@@ -303,33 +303,44 @@ class QDir : IQDir
 {
 	private QDir_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDir_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDir param1)
 	{
 		this.ptr = CQt.QDir_new((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDir_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path, String nameFilter)
 	{
 		this.ptr = CQt.QDir_new3(libqt_string(path), libqt_string(nameFilter));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path)
 	{
 		this.ptr = CQt.QDir_new4(libqt_string(path));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path, String nameFilter, void* sort)
 	{
 		this.ptr = CQt.QDir_new5(libqt_string(path), libqt_string(nameFilter), sort);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path, String nameFilter, void* sort, void* filter)
 	{
 		this.ptr = CQt.QDir_new6(libqt_string(path), libqt_string(nameFilter), sort, filter);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

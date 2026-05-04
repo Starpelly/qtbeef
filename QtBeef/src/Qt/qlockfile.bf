@@ -71,13 +71,19 @@ class QLockFile : IQLockFile
 {
 	private QLockFile_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QLockFile_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QLockFile_new(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

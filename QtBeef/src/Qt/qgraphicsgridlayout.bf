@@ -391,17 +391,24 @@ class QGraphicsGridLayout : IQGraphicsGridLayout, IQGraphicsLayout, IQGraphicsLa
 {
 	private QGraphicsGridLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsGridLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsGridLayout_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsLayoutItem parent)
 	{
 		this.ptr = CQt.QGraphicsGridLayout_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

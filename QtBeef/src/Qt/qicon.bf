@@ -251,29 +251,39 @@ class QIcon : IQIcon
 {
 	private QIcon_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QIcon_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIcon_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap pixmap)
 	{
 		this.ptr = CQt.QIcon_new2((.)pixmap?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon other)
 	{
 		this.ptr = CQt.QIcon_new3((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QIcon_new4(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIconEngine engine)
 	{
 		this.ptr = CQt.QIcon_new5((.)engine?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

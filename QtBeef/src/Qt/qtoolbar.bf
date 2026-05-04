@@ -1715,25 +1715,132 @@ class QToolBar : IQToolBar, IQWidget, IQObject, IQPaintDevice
 {
 	private QToolBar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QToolBar_Connect_ActionTriggered(obj.ObjectPtr,  => QtBeef_QToolBar_Connect_ActionTriggered);
+		CQt.QToolBar_Connect_MovableChanged(obj.ObjectPtr,  => QtBeef_QToolBar_Connect_MovableChanged);
+		CQt.QToolBar_Connect_AllowedAreasChanged(obj.ObjectPtr,  => QtBeef_QToolBar_Connect_AllowedAreasChanged);
+		CQt.QToolBar_Connect_OrientationChanged(obj.ObjectPtr,  => QtBeef_QToolBar_Connect_OrientationChanged);
+		CQt.QToolBar_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QToolBar_Connect_IconSizeChanged);
+		CQt.QToolBar_Connect_ToolButtonStyleChanged(obj.ObjectPtr,  => QtBeef_QToolBar_Connect_ToolButtonStyleChanged);
+		CQt.QToolBar_Connect_TopLevelChanged(obj.ObjectPtr,  => QtBeef_QToolBar_Connect_TopLevelChanged);
+		CQt.QToolBar_Connect_VisibilityChanged(obj.ObjectPtr,  => QtBeef_QToolBar_Connect_VisibilityChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+	}
+	public Event<delegate void(void** action)> OnActionTriggered = .() ~ _.Dispose();
+	public Event<delegate void(bool movable)> OnMovableChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* allowedAreas)> OnAllowedAreasChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_Orientation orientation)> OnOrientationChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** iconSize)> OnIconSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ToolButtonStyle toolButtonStyle)> OnToolButtonStyleChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool topLevel)> OnTopLevelChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool visible)> OnVisibilityChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	static void QtBeef_QToolBar_Connect_ActionTriggered(void* ptr, void** action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionTriggered.Invoke(action);
+	}
+	static void QtBeef_QToolBar_Connect_MovableChanged(void* ptr, bool movable)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMovableChanged.Invoke(movable);
+	}
+	static void QtBeef_QToolBar_Connect_AllowedAreasChanged(void* ptr, void* allowedAreas)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAllowedAreasChanged.Invoke(allowedAreas);
+	}
+	static void QtBeef_QToolBar_Connect_OrientationChanged(void* ptr, Qt_Orientation orientation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOrientationChanged.Invoke(orientation);
+	}
+	static void QtBeef_QToolBar_Connect_IconSizeChanged(void* ptr, void** iconSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(iconSize);
+	}
+	static void QtBeef_QToolBar_Connect_ToolButtonStyleChanged(void* ptr, Qt_ToolButtonStyle toolButtonStyle)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnToolButtonStyleChanged.Invoke(toolButtonStyle);
+	}
+	static void QtBeef_QToolBar_Connect_TopLevelChanged(void* ptr, bool topLevel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTopLevelChanged.Invoke(topLevel);
+	}
+	static void QtBeef_QToolBar_Connect_VisibilityChanged(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibilityChanged.Invoke(visible);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
 	public this(QToolBar_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QToolBar_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title)
 	{
 		this.ptr = CQt.QToolBar_new2(libqt_string(title));
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QToolBar_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title, IQWidget parent)
 	{
 		this.ptr = CQt.QToolBar_new4(libqt_string(title), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

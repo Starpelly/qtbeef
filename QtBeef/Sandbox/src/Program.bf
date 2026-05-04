@@ -18,7 +18,7 @@ class Program
 			button.SetText(scope $"{i++}");
 		}
 
-
+		QAction t ~ delete _;
 
 		public this(IQWidget parent) : base(parent)
 		{
@@ -42,19 +42,18 @@ class Program
 				m_menubar.AddMenu2("Window");
 
 				let help = m_menubar.AddMenu2("Help");
-				let a = new QAction("About Qt");
-				a.SetMenuRole(.AboutQtRole);
-				help.AddAction(a);
+				t = new QAction("About Qt");
+				t.SetMenuRole(.AboutQtRole);
+				help.AddAction(t);
 
-				/*
-				a.OnTriggered.Add(new () => {
+				t.OnTriggered.Add(new () => {
 					CQt.QApplication_AboutQt();
 				});
-				*/
 
 				SetMenuBar(m_menubar);
 			}
 
+			/*
 			button = new QPushButton(this);
 			button.SetText("Hello");
 			button.Move(32, 32);
@@ -70,6 +69,7 @@ class Program
 
 
 			new QLineEdit("what", this);
+			*/
 
 			// button.OnPressed.Add(new () => tt());
 			// CQt.QAbstractButton_Connect_Pressed(button.ObjectPtr, => t);
@@ -342,7 +342,7 @@ class Program
 
 		BFEXT_applyPhantomStyle();
 
-		let mainwindow = scope Funhouse();
+		let mainwindow = scope TestWindow(null);
 		mainwindow.Show();
 
 		CQt.QApplication_Exec();

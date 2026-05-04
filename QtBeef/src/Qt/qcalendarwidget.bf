@@ -1775,17 +1775,94 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 {
 	private QCalendarWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QCalendarWidget_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QCalendarWidget_Connect_SelectionChanged);
+		CQt.QCalendarWidget_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QCalendarWidget_Connect_Clicked);
+		CQt.QCalendarWidget_Connect_Activated(obj.ObjectPtr,  => QtBeef_QCalendarWidget_Connect_Activated);
+		CQt.QCalendarWidget_Connect_CurrentPageChanged(obj.ObjectPtr,  => QtBeef_QCalendarWidget_Connect_CurrentPageChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+	}
+	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* date)> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void(void* date)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(c_int year, c_int month)> OnCurrentPageChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	static void QtBeef_QCalendarWidget_Connect_SelectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke();
+	}
+	static void QtBeef_QCalendarWidget_Connect_Clicked(void* ptr, void* date)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke(date);
+	}
+	static void QtBeef_QCalendarWidget_Connect_Activated(void* ptr, void* date)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(date);
+	}
+	static void QtBeef_QCalendarWidget_Connect_CurrentPageChanged(void* ptr, c_int year, c_int month)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentPageChanged.Invoke(year, month);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
 	public this(QCalendarWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QCalendarWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCalendarWidget_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -87,21 +87,29 @@ class QLayoutItem : IQLayoutItem
 {
 	private QLayoutItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QLayoutItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLayoutItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLayoutItem param1)
 	{
 		this.ptr = CQt.QLayoutItem_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* alignment)
 	{
 		this.ptr = CQt.QLayoutItem_new3(alignment);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -384,25 +392,34 @@ class QSpacerItem : IQSpacerItem, IQLayoutItem
 {
 	private QSpacerItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QSpacerItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int w, c_int h)
 	{
 		this.ptr = CQt.QSpacerItem_new(w, h);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSpacerItem param1)
 	{
 		this.ptr = CQt.QSpacerItem_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int w, c_int h, QSizePolicy_Policy hData)
 	{
 		this.ptr = CQt.QSpacerItem_new3(w, h, hData);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int w, c_int h, QSizePolicy_Policy hData, QSizePolicy_Policy vData)
 	{
 		this.ptr = CQt.QSpacerItem_new4(w, h, hData, vData);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -689,13 +706,19 @@ class QWidgetItem : IQWidgetItem, IQLayoutItem
 {
 	private QWidgetItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QWidgetItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget w)
 	{
 		this.ptr = CQt.QWidgetItem_new((.)w?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -952,13 +975,19 @@ class QWidgetItemV2 : IQWidgetItemV2, IQWidgetItem, IQLayoutItem
 {
 	private QWidgetItemV2_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QWidgetItemV2_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget widget)
 	{
 		this.ptr = CQt.QWidgetItemV2_new((.)widget?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -79,45 +79,59 @@ class QCursor : IQCursor
 {
 	private QCursor_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QCursor_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCursor_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_CursorShape shape)
 	{
 		this.ptr = CQt.QCursor_new2(shape);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBitmap bitmap, IQBitmap mask)
 	{
 		this.ptr = CQt.QCursor_new3((.)bitmap?.ObjectPtr, (.)mask?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap pixmap)
 	{
 		this.ptr = CQt.QCursor_new4((.)pixmap?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQCursor cursor)
 	{
 		this.ptr = CQt.QCursor_new5((.)cursor?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBitmap bitmap, IQBitmap mask, c_int hotX)
 	{
 		this.ptr = CQt.QCursor_new6((.)bitmap?.ObjectPtr, (.)mask?.ObjectPtr, hotX);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBitmap bitmap, IQBitmap mask, c_int hotX, c_int hotY)
 	{
 		this.ptr = CQt.QCursor_new7((.)bitmap?.ObjectPtr, (.)mask?.ObjectPtr, hotX, hotY);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap pixmap, c_int hotX)
 	{
 		this.ptr = CQt.QCursor_new8((.)pixmap?.ObjectPtr, hotX);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap pixmap, c_int hotX, c_int hotY)
 	{
 		this.ptr = CQt.QCursor_new9((.)pixmap?.ObjectPtr, hotX, hotY);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

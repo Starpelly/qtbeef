@@ -19,13 +19,19 @@ class QPartialOrdering : IQPartialOrdering
 {
 	private QPartialOrdering_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPartialOrdering_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPartialOrdering other)
 	{
 		this.ptr = CQt.QPartialOrdering_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

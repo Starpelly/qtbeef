@@ -43,21 +43,29 @@ class QTableWidgetSelectionRange : IQTableWidgetSelectionRange
 {
 	private QTableWidgetSelectionRange_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTableWidgetSelectionRange_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTableWidgetSelectionRange other)
 	{
 		this.ptr = CQt.QTableWidgetSelectionRange_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTableWidgetSelectionRange_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int top, c_int left, c_int bottom, c_int right)
 	{
 		this.ptr = CQt.QTableWidgetSelectionRange_new4(top, left, bottom, right);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -280,37 +288,49 @@ class QTableWidgetItem : IQTableWidgetItem
 {
 	private QTableWidgetItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTableWidgetItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTableWidgetItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QTableWidgetItem_new2(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon icon, String text)
 	{
 		this.ptr = CQt.QTableWidgetItem_new3((.)icon?.ObjectPtr, libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTableWidgetItem other)
 	{
 		this.ptr = CQt.QTableWidgetItem_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int type)
 	{
 		this.ptr = CQt.QTableWidgetItem_new5(type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, c_int type)
 	{
 		this.ptr = CQt.QTableWidgetItem_new6(libqt_string(text), type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon icon, String text, c_int type)
 	{
 		this.ptr = CQt.QTableWidgetItem_new7((.)icon?.ObjectPtr, libqt_string(text), type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3246,25 +3266,230 @@ class QTableWidget : IQTableWidget, IQTableView, IQAbstractItemView, IQAbstractS
 {
 	private QTableWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTableWidget_Connect_ItemPressed(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_ItemPressed);
+		CQt.QTableWidget_Connect_ItemClicked(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_ItemClicked);
+		CQt.QTableWidget_Connect_ItemDoubleClicked(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_ItemDoubleClicked);
+		CQt.QTableWidget_Connect_ItemActivated(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_ItemActivated);
+		CQt.QTableWidget_Connect_ItemEntered(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_ItemEntered);
+		CQt.QTableWidget_Connect_ItemChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_ItemChanged);
+		CQt.QTableWidget_Connect_CurrentItemChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_CurrentItemChanged);
+		CQt.QTableWidget_Connect_ItemSelectionChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_ItemSelectionChanged);
+		CQt.QTableWidget_Connect_CellPressed(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_CellPressed);
+		CQt.QTableWidget_Connect_CellClicked(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_CellClicked);
+		CQt.QTableWidget_Connect_CellDoubleClicked(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_CellDoubleClicked);
+		CQt.QTableWidget_Connect_CellActivated(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_CellActivated);
+		CQt.QTableWidget_Connect_CellEntered(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_CellEntered);
+		CQt.QTableWidget_Connect_CellChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_CellChanged);
+		CQt.QTableWidget_Connect_CurrentCellChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_Connect_CurrentCellChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+		CQt.QAbstractItemView_Connect_Pressed(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Pressed);
+		CQt.QAbstractItemView_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Clicked);
+		CQt.QAbstractItemView_Connect_DoubleClicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_DoubleClicked);
+		CQt.QAbstractItemView_Connect_Activated(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Activated);
+		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_Entered);
+		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_ViewportEntered);
+		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_Connect_IconSizeChanged);
+	}
+	public Event<delegate void(void** item)> OnItemPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** current, void** previous)> OnCurrentItemChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnItemSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellPressed = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellActivated = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellEntered = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int currentRow, c_int currentColumn, c_int previousRow, c_int previousColumn)> OnCurrentCellChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnEntered = .() ~ _.Dispose();
+	public Event<delegate void()> OnViewportEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnIconSizeChanged = .() ~ _.Dispose();
+	static void QtBeef_QTableWidget_Connect_ItemPressed(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemPressed.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_Connect_ItemClicked(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemClicked.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_Connect_ItemDoubleClicked(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDoubleClicked.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_Connect_ItemActivated(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemActivated.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_Connect_ItemEntered(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemEntered.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_Connect_ItemChanged(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemChanged.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_Connect_CurrentItemChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentItemChanged.Invoke(current, previous);
+	}
+	static void QtBeef_QTableWidget_Connect_ItemSelectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemSelectionChanged.Invoke();
+	}
+	static void QtBeef_QTableWidget_Connect_CellPressed(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellPressed.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_Connect_CellClicked(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellClicked.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_Connect_CellDoubleClicked(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellDoubleClicked.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_Connect_CellActivated(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellActivated.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_Connect_CellEntered(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellEntered.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_Connect_CellChanged(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellChanged.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_Connect_CurrentCellChanged(void* ptr, c_int currentRow, c_int currentColumn, c_int previousRow, c_int previousColumn)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentCellChanged.Invoke(currentRow, currentColumn, previousRow, previousColumn);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QAbstractItemView_Connect_Pressed(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPressed.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_Clicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_DoubleClicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoubleClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_Activated(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_Entered(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEntered.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_Connect_ViewportEntered(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEntered.Invoke();
+	}
+	static void QtBeef_QAbstractItemView_Connect_IconSizeChanged(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(size);
+	}
 	public this(QTableWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QTableWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTableWidget_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int rows, c_int columns)
 	{
 		this.ptr = CQt.QTableWidget_new3(rows, columns);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int rows, c_int columns, IQWidget parent)
 	{
 		this.ptr = CQt.QTableWidget_new4(rows, columns, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

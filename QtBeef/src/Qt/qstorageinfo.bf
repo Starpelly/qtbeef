@@ -95,25 +95,34 @@ class QStorageInfo : IQStorageInfo
 {
 	private QStorageInfo_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStorageInfo_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStorageInfo_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String path)
 	{
 		this.ptr = CQt.QStorageInfo_new2(libqt_string(path));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDir dir)
 	{
 		this.ptr = CQt.QStorageInfo_new3((.)dir?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStorageInfo other)
 	{
 		this.ptr = CQt.QStorageInfo_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

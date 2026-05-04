@@ -447,9 +447,105 @@ class QStyleHints : IQStyleHints, IQObject
 {
 	private QStyleHints_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QStyleHints_Connect_CursorFlashTimeChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_CursorFlashTimeChanged);
+		CQt.QStyleHints_Connect_KeyboardInputIntervalChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_KeyboardInputIntervalChanged);
+		CQt.QStyleHints_Connect_MouseDoubleClickIntervalChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_MouseDoubleClickIntervalChanged);
+		CQt.QStyleHints_Connect_MousePressAndHoldIntervalChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_MousePressAndHoldIntervalChanged);
+		CQt.QStyleHints_Connect_StartDragDistanceChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_StartDragDistanceChanged);
+		CQt.QStyleHints_Connect_StartDragTimeChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_StartDragTimeChanged);
+		CQt.QStyleHints_Connect_TabFocusBehaviorChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_TabFocusBehaviorChanged);
+		CQt.QStyleHints_Connect_UseHoverEffectsChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_UseHoverEffectsChanged);
+		CQt.QStyleHints_Connect_ShowShortcutsInContextMenusChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_ShowShortcutsInContextMenusChanged);
+		CQt.QStyleHints_Connect_WheelScrollLinesChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_WheelScrollLinesChanged);
+		CQt.QStyleHints_Connect_MouseQuickSelectionThresholdChanged(obj.ObjectPtr,  => QtBeef_QStyleHints_Connect_MouseQuickSelectionThresholdChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(c_int cursorFlashTime)> OnCursorFlashTimeChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int keyboardInputInterval)> OnKeyboardInputIntervalChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int mouseDoubleClickInterval)> OnMouseDoubleClickIntervalChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int mousePressAndHoldInterval)> OnMousePressAndHoldIntervalChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int startDragDistance)> OnStartDragDistanceChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int startDragTime)> OnStartDragTimeChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_TabFocusBehavior tabFocusBehavior)> OnTabFocusBehaviorChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool useHoverEffects)> OnUseHoverEffectsChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool param1)> OnShowShortcutsInContextMenusChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int scrollLines)> OnWheelScrollLinesChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int threshold)> OnMouseQuickSelectionThresholdChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QStyleHints_Connect_CursorFlashTimeChanged(void* ptr, c_int cursorFlashTime)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCursorFlashTimeChanged.Invoke(cursorFlashTime);
+	}
+	static void QtBeef_QStyleHints_Connect_KeyboardInputIntervalChanged(void* ptr, c_int keyboardInputInterval)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyboardInputIntervalChanged.Invoke(keyboardInputInterval);
+	}
+	static void QtBeef_QStyleHints_Connect_MouseDoubleClickIntervalChanged(void* ptr, c_int mouseDoubleClickInterval)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseDoubleClickIntervalChanged.Invoke(mouseDoubleClickInterval);
+	}
+	static void QtBeef_QStyleHints_Connect_MousePressAndHoldIntervalChanged(void* ptr, c_int mousePressAndHoldInterval)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMousePressAndHoldIntervalChanged.Invoke(mousePressAndHoldInterval);
+	}
+	static void QtBeef_QStyleHints_Connect_StartDragDistanceChanged(void* ptr, c_int startDragDistance)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStartDragDistanceChanged.Invoke(startDragDistance);
+	}
+	static void QtBeef_QStyleHints_Connect_StartDragTimeChanged(void* ptr, c_int startDragTime)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStartDragTimeChanged.Invoke(startDragTime);
+	}
+	static void QtBeef_QStyleHints_Connect_TabFocusBehaviorChanged(void* ptr, Qt_TabFocusBehavior tabFocusBehavior)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabFocusBehaviorChanged.Invoke(tabFocusBehavior);
+	}
+	static void QtBeef_QStyleHints_Connect_UseHoverEffectsChanged(void* ptr, bool useHoverEffects)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUseHoverEffectsChanged.Invoke(useHoverEffects);
+	}
+	static void QtBeef_QStyleHints_Connect_ShowShortcutsInContextMenusChanged(void* ptr, bool param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnShowShortcutsInContextMenusChanged.Invoke(param1);
+	}
+	static void QtBeef_QStyleHints_Connect_WheelScrollLinesChanged(void* ptr, c_int scrollLines)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWheelScrollLinesChanged.Invoke(scrollLines);
+	}
+	static void QtBeef_QStyleHints_Connect_MouseQuickSelectionThresholdChanged(void* ptr, c_int threshold)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMouseQuickSelectionThresholdChanged.Invoke(threshold);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QStyleHints_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

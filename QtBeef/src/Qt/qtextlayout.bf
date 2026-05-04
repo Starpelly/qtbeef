@@ -71,17 +71,24 @@ class QTextInlineObject : IQTextInlineObject
 {
 	private QTextInlineObject_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextInlineObject_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextInlineObject other)
 	{
 		this.ptr = CQt.QTextInlineObject_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextInlineObject_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -376,29 +383,39 @@ class QTextLayout : IQTextLayout
 {
 	private QTextLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextLayout_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QTextLayout_new2(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQFont font)
 	{
 		this.ptr = CQt.QTextLayout_new3(libqt_string(text), (.)font?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextBlock b)
 	{
 		this.ptr = CQt.QTextLayout_new4((.)b?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQFont font, IQPaintDevice paintdevice)
 	{
 		this.ptr = CQt.QTextLayout_new5(libqt_string(text), (.)font?.ObjectPtr, (.)paintdevice?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -837,17 +854,24 @@ class QTextLine : IQTextLine
 {
 	private QTextLine_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextLine_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextLine other)
 	{
 		this.ptr = CQt.QTextLine_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextLine_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1100,13 +1124,19 @@ class QTextLayout_FormatRange : IQTextLayout_FormatRange
 {
 	private QTextLayout_FormatRange_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextLayout_FormatRange_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextLayout_FormatRange param1)
 	{
 		this.ptr = CQt.QTextLayout_FormatRange_new((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -527,21 +527,57 @@ class QStackedLayout : IQStackedLayout, IQLayout, IQObject, IQLayoutItem
 {
 	private QStackedLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QStackedLayout_Connect_WidgetRemoved(obj.ObjectPtr,  => QtBeef_QStackedLayout_Connect_WidgetRemoved);
+		CQt.QStackedLayout_Connect_CurrentChanged(obj.ObjectPtr,  => QtBeef_QStackedLayout_Connect_CurrentChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(c_int index)> OnWidgetRemoved = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnCurrentChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QStackedLayout_Connect_WidgetRemoved(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidgetRemoved.Invoke(index);
+	}
+	static void QtBeef_QStackedLayout_Connect_CurrentChanged(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged.Invoke(index);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QStackedLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QStackedLayout_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStackedLayout_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLayout parentLayout)
 	{
 		this.ptr = CQt.QStackedLayout_new3((.)parentLayout?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

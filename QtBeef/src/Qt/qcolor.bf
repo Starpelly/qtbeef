@@ -491,57 +491,74 @@ class QColor : IQColor
 {
 	private QColor_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QColor_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQColor other)
 	{
 		this.ptr = CQt.QColor_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QColor_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_GlobalColor color)
 	{
 		this.ptr = CQt.QColor_new4(color);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int r, c_int g, c_int b)
 	{
 		this.ptr = CQt.QColor_new5(r, g, b);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint rgb)
 	{
 		this.ptr = CQt.QColor_new6(rgb);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRgba64 rgba64)
 	{
 		this.ptr = CQt.QColor_new7((.)rgba64?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name)
 	{
 		this.ptr = CQt.QColor_new8(libqt_string(name));
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* aname)
 	{
 		this.ptr = CQt.QColor_new9(aname);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QColor_Spec spec)
 	{
 		this.ptr = CQt.QColor_new10(spec);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QColor_Spec spec, c_ushort a1, c_ushort a2, c_ushort a3, c_ushort a4)
 	{
 		this.ptr = CQt.QColor_new11(spec, a1, a2, a3, a4);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int r, c_int g, c_int b, c_int a)
 	{
 		this.ptr = CQt.QColor_new13(r, g, b, a);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QColor_Spec spec, c_ushort a1, c_ushort a2, c_ushort a3, c_ushort a4, c_ushort a5)
 	{
 		this.ptr = CQt.QColor_new14(spec, a1, a2, a3, a4, a5);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

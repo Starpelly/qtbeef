@@ -543,13 +543,89 @@ class QWidgetAction : IQWidgetAction, IQAction, IQObject
 {
 	private QWidgetAction_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QAction_Connect_Changed(obj.ObjectPtr,  => QtBeef_QAction_Connect_Changed);
+		CQt.QAction_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QAction_Connect_EnabledChanged);
+		CQt.QAction_Connect_CheckableChanged(obj.ObjectPtr,  => QtBeef_QAction_Connect_CheckableChanged);
+		CQt.QAction_Connect_VisibleChanged(obj.ObjectPtr,  => QtBeef_QAction_Connect_VisibleChanged);
+		CQt.QAction_Connect_Triggered(obj.ObjectPtr,  => QtBeef_QAction_Connect_Triggered);
+		CQt.QAction_Connect_Hovered(obj.ObjectPtr,  => QtBeef_QAction_Connect_Hovered);
+		CQt.QAction_Connect_Toggled(obj.ObjectPtr,  => QtBeef_QAction_Connect_Toggled);
+		CQt.QAction_Connect_Triggered1(obj.ObjectPtr,  => QtBeef_QAction_Connect_Triggered1);
+	}
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool checkable)> OnCheckableChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnVisibleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnTriggered = .() ~ _.Dispose();
+	public Event<delegate void()> OnHovered = .() ~ _.Dispose();
+	public Event<delegate void(bool param1)> OnToggled = .() ~ _.Dispose();
+	public Event<delegate void(bool _checked)> OnTriggered1 = .() ~ _.Dispose();
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QAction_Connect_Changed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke();
+	}
+	static void QtBeef_QAction_Connect_EnabledChanged(void* ptr, bool enabled)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QAction_Connect_CheckableChanged(void* ptr, bool checkable)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCheckableChanged.Invoke(checkable);
+	}
+	static void QtBeef_QAction_Connect_VisibleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibleChanged.Invoke();
+	}
+	static void QtBeef_QAction_Connect_Triggered(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTriggered.Invoke();
+	}
+	static void QtBeef_QAction_Connect_Hovered(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHovered.Invoke();
+	}
+	static void QtBeef_QAction_Connect_Toggled(void* ptr, bool param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnToggled.Invoke(param1);
+	}
+	static void QtBeef_QAction_Connect_Triggered1(void* ptr, bool _checked)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTriggered1.Invoke(_checked);
+	}
 	public this(QWidgetAction_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QWidgetAction_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

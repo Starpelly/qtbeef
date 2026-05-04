@@ -79,13 +79,19 @@ class QAccessible : IQAccessible
 {
 	private QAccessible_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessible_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessible other)
 	{
 		this.ptr = CQt.QAccessible_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -506,17 +512,24 @@ class QAccessible_State : IQAccessible_State
 {
 	private QAccessible_State_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessible_State_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessible_State other)
 	{
 		this.ptr = CQt.QAccessible_State_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAccessible_State_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1001,9 +1014,14 @@ class QAccessible_ActivationObserver : IQAccessible_ActivationObserver
 {
 	private QAccessible_ActivationObserver_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessible_ActivationObserver_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

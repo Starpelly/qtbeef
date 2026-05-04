@@ -35,13 +35,19 @@ class QBasicMutex : IQBasicMutex
 {
 	private QBasicMutex_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QBasicMutex_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QBasicMutex_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -118,13 +124,19 @@ class QMutex : IQMutex, IQBasicMutex
 {
 	private QMutex_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMutex_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMutex_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -201,13 +213,19 @@ class QRecursiveMutex : IQRecursiveMutex
 {
 	private QRecursiveMutex_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRecursiveMutex_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRecursiveMutex_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

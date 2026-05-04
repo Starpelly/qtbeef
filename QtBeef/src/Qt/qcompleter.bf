@@ -419,33 +419,86 @@ class QCompleter : IQCompleter, IQObject
 {
 	private QCompleter_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QCompleter_Connect_Activated(obj.ObjectPtr,  => QtBeef_QCompleter_Connect_Activated);
+		CQt.QCompleter_Connect_Activated2(obj.ObjectPtr,  => QtBeef_QCompleter_Connect_Activated2);
+		CQt.QCompleter_Connect_Highlighted(obj.ObjectPtr,  => QtBeef_QCompleter_Connect_Highlighted);
+		CQt.QCompleter_Connect_Highlighted2(obj.ObjectPtr,  => QtBeef_QCompleter_Connect_Highlighted2);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(libqt_string text)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnActivated2 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string text)> OnHighlighted = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnHighlighted2 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QCompleter_Connect_Activated(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(text);
+	}
+	static void QtBeef_QCompleter_Connect_Activated2(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated2.Invoke(index);
+	}
+	static void QtBeef_QCompleter_Connect_Highlighted(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHighlighted.Invoke(text);
+	}
+	static void QtBeef_QCompleter_Connect_Highlighted2(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHighlighted2.Invoke(index);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QCompleter_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCompleter_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractItemModel model)
 	{
 		this.ptr = CQt.QCompleter_new2((.)model?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** completions)
 	{
 		this.ptr = CQt.QCompleter_new3(completions);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QCompleter_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractItemModel model, IQObject parent)
 	{
 		this.ptr = CQt.QCompleter_new5((.)model?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** completions, IQObject parent)
 	{
 		this.ptr = CQt.QCompleter_new6(completions, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

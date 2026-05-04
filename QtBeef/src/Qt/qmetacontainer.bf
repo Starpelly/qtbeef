@@ -115,17 +115,24 @@ class QMetaContainer : IQMetaContainer
 {
 	private QMetaContainer_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaContainer_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaContainer other)
 	{
 		this.ptr = CQt.QMetaContainer_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaContainer_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -524,17 +531,24 @@ class QMetaSequence : IQMetaSequence, IQMetaContainer
 {
 	private QMetaSequence_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaSequence_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaSequence other)
 	{
 		this.ptr = CQt.QMetaSequence_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaSequence_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1047,17 +1061,24 @@ class QMetaAssociation : IQMetaAssociation, IQMetaContainer
 {
 	private QMetaAssociation_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaAssociation_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaAssociation other)
 	{
 		this.ptr = CQt.QMetaAssociation_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaAssociation_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -1911,17 +1911,115 @@ class QComboBox : IQComboBox, IQWidget, IQObject, IQPaintDevice
 {
 	private QComboBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QComboBox_Connect_EditTextChanged(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_EditTextChanged);
+		CQt.QComboBox_Connect_Activated(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_Activated);
+		CQt.QComboBox_Connect_TextActivated(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_TextActivated);
+		CQt.QComboBox_Connect_Highlighted(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_Highlighted);
+		CQt.QComboBox_Connect_TextHighlighted(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_TextHighlighted);
+		CQt.QComboBox_Connect_CurrentIndexChanged(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_CurrentIndexChanged);
+		CQt.QComboBox_Connect_CurrentTextChanged(obj.ObjectPtr,  => QtBeef_QComboBox_Connect_CurrentTextChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+	}
+	public Event<delegate void(libqt_string param1)> OnEditTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnTextActivated = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnHighlighted = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnTextHighlighted = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnCurrentIndexChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnCurrentTextChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	static void QtBeef_QComboBox_Connect_EditTextChanged(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditTextChanged.Invoke(param1);
+	}
+	static void QtBeef_QComboBox_Connect_Activated(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(index);
+	}
+	static void QtBeef_QComboBox_Connect_TextActivated(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextActivated.Invoke(param1);
+	}
+	static void QtBeef_QComboBox_Connect_Highlighted(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHighlighted.Invoke(index);
+	}
+	static void QtBeef_QComboBox_Connect_TextHighlighted(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextHighlighted.Invoke(param1);
+	}
+	static void QtBeef_QComboBox_Connect_CurrentIndexChanged(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentIndexChanged.Invoke(index);
+	}
+	static void QtBeef_QComboBox_Connect_CurrentTextChanged(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentTextChanged.Invoke(param1);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
 	public this(QComboBox_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QComboBox_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QComboBox_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

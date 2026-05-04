@@ -67,13 +67,19 @@ class QEvent : IQEvent
 {
 	private QEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QEvent_new(type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -237,13 +243,19 @@ class QTimerEvent : IQTimerEvent, IQEvent
 {
 	private QTimerEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTimerEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int timerId)
 	{
 		this.ptr = CQt.QTimerEvent_new(timerId);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -405,13 +417,19 @@ class QChildEvent : IQChildEvent, IQEvent
 {
 	private QChildEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QChildEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QEvent_Type type, IQObject child)
 	{
 		this.ptr = CQt.QChildEvent_new(type, (.)child?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -579,13 +597,19 @@ class QDynamicPropertyChangeEvent : IQDynamicPropertyChangeEvent, IQEvent
 {
 	private QDynamicPropertyChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDynamicPropertyChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** name)
 	{
 		this.ptr = CQt.QDynamicPropertyChangeEvent_new(name);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -735,13 +759,19 @@ class QDeferredDeleteEvent : IQDeferredDeleteEvent, IQEvent
 {
 	private QDeferredDeleteEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDeferredDeleteEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDeferredDeleteEvent_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -51,13 +51,19 @@ class QCryptographicHash : IQCryptographicHash
 {
 	private QCryptographicHash_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QCryptographicHash_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(QCryptographicHash_Algorithm method)
 	{
 		this.ptr = CQt.QCryptographicHash_new(method);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

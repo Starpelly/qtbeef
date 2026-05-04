@@ -31,9 +31,14 @@ class QVLABaseBase : IQVLABaseBase
 {
 	private QVLABaseBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QVLABaseBase_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public void* Capacity()
 	{

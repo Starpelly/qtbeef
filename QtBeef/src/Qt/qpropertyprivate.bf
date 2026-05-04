@@ -19,13 +19,19 @@ class QUntypedPropertyData : IQUntypedPropertyData
 {
 	private QUntypedPropertyData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QUntypedPropertyData_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUntypedPropertyData other)
 	{
 		this.ptr = CQt.QUntypedPropertyData_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -60,13 +66,19 @@ class QUntypedPropertyData_InheritsQUntypedPropertyData : IQUntypedPropertyData_
 {
 	private QUntypedPropertyData_InheritsQUntypedPropertyData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QUntypedPropertyData_InheritsQUntypedPropertyData_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUntypedPropertyData_InheritsQUntypedPropertyData other)
 	{
 		this.ptr = CQt.QUntypedPropertyData_InheritsQUntypedPropertyData_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

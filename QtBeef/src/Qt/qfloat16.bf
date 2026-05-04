@@ -39,21 +39,29 @@ class qfloat16 : Iqfloat16
 {
 	private qfloat16_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(qfloat16_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.qfloat16_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Initialization param1)
 	{
 		this.ptr = CQt.qfloat16_new2(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float f)
 	{
 		this.ptr = CQt.qfloat16_new3(f);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

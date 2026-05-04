@@ -175,37 +175,49 @@ class QPalette : IQPalette
 {
 	private QPalette_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPalette_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPalette_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQColor button)
 	{
 		this.ptr = CQt.QPalette_new2((.)button?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_GlobalColor button)
 	{
 		this.ptr = CQt.QPalette_new3(button);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQColor button, IQColor window)
 	{
 		this.ptr = CQt.QPalette_new4((.)button?.ObjectPtr, (.)window?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBrush windowText, IQBrush button, IQBrush light, IQBrush dark, IQBrush mid, IQBrush text, IQBrush bright_text, IQBrush _base, IQBrush window)
 	{
 		this.ptr = CQt.QPalette_new5((.)windowText?.ObjectPtr, (.)button?.ObjectPtr, (.)light?.ObjectPtr, (.)dark?.ObjectPtr, (.)mid?.ObjectPtr, (.)text?.ObjectPtr, (.)bright_text?.ObjectPtr, (.)_base?.ObjectPtr, (.)window?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQColor windowText, IQColor window, IQColor light, IQColor dark, IQColor mid, IQColor text, IQColor _base)
 	{
 		this.ptr = CQt.QPalette_new6((.)windowText?.ObjectPtr, (.)window?.ObjectPtr, (.)light?.ObjectPtr, (.)dark?.ObjectPtr, (.)mid?.ObjectPtr, (.)text?.ObjectPtr, (.)_base?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPalette palette)
 	{
 		this.ptr = CQt.QPalette_new7((.)palette?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

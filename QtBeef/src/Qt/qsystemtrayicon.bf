@@ -347,25 +347,62 @@ class QSystemTrayIcon : IQSystemTrayIcon, IQObject
 {
 	private QSystemTrayIcon_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QSystemTrayIcon_Connect_Activated(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_Connect_Activated);
+		CQt.QSystemTrayIcon_Connect_MessageClicked(obj.ObjectPtr,  => QtBeef_QSystemTrayIcon_Connect_MessageClicked);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(QSystemTrayIcon_ActivationReason reason)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void()> OnMessageClicked = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QSystemTrayIcon_Connect_Activated(void* ptr, QSystemTrayIcon_ActivationReason reason)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(reason);
+	}
+	static void QtBeef_QSystemTrayIcon_Connect_MessageClicked(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMessageClicked.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QSystemTrayIcon_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSystemTrayIcon_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon icon)
 	{
 		this.ptr = CQt.QSystemTrayIcon_new2((.)icon?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSystemTrayIcon_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon icon, IQObject parent)
 	{
 		this.ptr = CQt.QSystemTrayIcon_new4((.)icon?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

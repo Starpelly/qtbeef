@@ -79,17 +79,24 @@ class QMimeType : IQMimeType
 {
 	private QMimeType_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMimeType_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMimeType_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMimeType other)
 	{
 		this.ptr = CQt.QMimeType_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -351,41 +351,54 @@ class QPixmap : IQPixmap, IQPaintDevice
 {
 	private QPixmap_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPixmap_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPixmap_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int w, c_int h)
 	{
 		this.ptr = CQt.QPixmap_new2(w, h);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize param1)
 	{
 		this.ptr = CQt.QPixmap_new3((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QPixmap_new4(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char** xpm)
 	{
 		this.ptr = CQt.QPixmap_new5(xpm);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap param1)
 	{
 		this.ptr = CQt.QPixmap_new6((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, c_char* format)
 	{
 		this.ptr = CQt.QPixmap_new7(libqt_string(fileName), format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, c_char* format, void* flags)
 	{
 		this.ptr = CQt.QPixmap_new8(libqt_string(fileName), format, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -383,9 +383,42 @@ class QScroller : IQScroller, IQObject
 {
 	private QScroller_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QScroller_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QScroller_Connect_StateChanged);
+		CQt.QScroller_Connect_ScrollerPropertiesChanged(obj.ObjectPtr,  => QtBeef_QScroller_Connect_ScrollerPropertiesChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(QScroller_State newstate)> OnStateChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnScrollerPropertiesChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QScroller_Connect_StateChanged(void* ptr, QScroller_State newstate)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStateChanged.Invoke(newstate);
+	}
+	static void QtBeef_QScroller_Connect_ScrollerPropertiesChanged(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollerPropertiesChanged.Invoke(param1);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QScroller_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public  virtual QMetaObject_Ptr OnMetaObject()
 	{

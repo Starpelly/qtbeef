@@ -107,29 +107,39 @@ class QPixelFormat : IQPixelFormat
 {
 	private QPixelFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPixelFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixelFormat other)
 	{
 		this.ptr = CQt.QPixelFormat_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPixelFormat_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation)
 	{
 		this.ptr = CQt.QPixelFormat_new4(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder)
 	{
 		this.ptr = CQt.QPixelFormat_new6(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation, byteOrder);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder, c_uchar subEnum)
 	{
 		this.ptr = CQt.QPixelFormat_new7(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation, byteOrder, subEnum);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

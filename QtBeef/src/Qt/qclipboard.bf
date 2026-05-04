@@ -383,9 +383,56 @@ class QClipboard : IQClipboard, IQObject
 {
 	private QClipboard_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QClipboard_Connect_Changed(obj.ObjectPtr,  => QtBeef_QClipboard_Connect_Changed);
+		CQt.QClipboard_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QClipboard_Connect_SelectionChanged);
+		CQt.QClipboard_Connect_FindBufferChanged(obj.ObjectPtr,  => QtBeef_QClipboard_Connect_FindBufferChanged);
+		CQt.QClipboard_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QClipboard_Connect_DataChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(QClipboard_Mode mode)> OnChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnFindBufferChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDataChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QClipboard_Connect_Changed(void* ptr, QClipboard_Mode mode)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke(mode);
+	}
+	static void QtBeef_QClipboard_Connect_SelectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke();
+	}
+	static void QtBeef_QClipboard_Connect_FindBufferChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFindBufferChanged.Invoke();
+	}
+	static void QtBeef_QClipboard_Connect_DataChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QClipboard_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public  virtual QMetaObject_Ptr OnMetaObject()
 	{

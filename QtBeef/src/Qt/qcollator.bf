@@ -27,13 +27,19 @@ class QCollatorSortKey : IQCollatorSortKey
 {
 	private QCollatorSortKey_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QCollatorSortKey_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQCollatorSortKey other)
 	{
 		this.ptr = CQt.QCollatorSortKey_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -128,21 +134,29 @@ class QCollator : IQCollator
 {
 	private QCollator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QCollator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCollator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLocale locale)
 	{
 		this.ptr = CQt.QCollator_new2((.)locale?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQCollator param1)
 	{
 		this.ptr = CQt.QCollator_new3((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -31,17 +31,24 @@ class QPointingDeviceUniqueId : IQPointingDeviceUniqueId
 {
 	private QPointingDeviceUniqueId_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPointingDeviceUniqueId_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointingDeviceUniqueId other)
 	{
 		this.ptr = CQt.QPointingDeviceUniqueId_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPointingDeviceUniqueId_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -434,33 +441,72 @@ class QPointingDevice : IQPointingDevice, IQInputDevice, IQObject
 {
 	private QPointingDevice_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QPointingDevice_Connect_GrabChanged(obj.ObjectPtr,  => QtBeef_QPointingDevice_Connect_GrabChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QInputDevice_Connect_AvailableVirtualGeometryChanged(obj.ObjectPtr,  => QtBeef_QInputDevice_Connect_AvailableVirtualGeometryChanged);
+	}
+	public Event<delegate void(void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point)> OnGrabChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(void* area)> OnAvailableVirtualGeometryChanged = .() ~ _.Dispose();
+	static void QtBeef_QPointingDevice_Connect_GrabChanged(void* ptr, void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGrabChanged.Invoke(grabber, transition, event, point);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QInputDevice_Connect_AvailableVirtualGeometryChanged(void* ptr, void* area)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAvailableVirtualGeometryChanged.Invoke(area);
+	}
 	public this(QPointingDevice_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPointingDevice_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType devType, QPointingDevice_PointerType pType, void* caps, c_int maxPoints, c_int buttonCount)
 	{
 		this.ptr = CQt.QPointingDevice_new2(libqt_string(name), systemId, devType, pType, caps, maxPoints, buttonCount);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QPointingDevice_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType devType, QPointingDevice_PointerType pType, void* caps, c_int maxPoints, c_int buttonCount, String seatName)
 	{
 		this.ptr = CQt.QPointingDevice_new4(libqt_string(name), systemId, devType, pType, caps, maxPoints, buttonCount, libqt_string(seatName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType devType, QPointingDevice_PointerType pType, void* caps, c_int maxPoints, c_int buttonCount, String seatName, IQPointingDeviceUniqueId uniqueId)
 	{
 		this.ptr = CQt.QPointingDevice_new5(libqt_string(name), systemId, devType, pType, caps, maxPoints, buttonCount, libqt_string(seatName), (.)uniqueId?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType devType, QPointingDevice_PointerType pType, void* caps, c_int maxPoints, c_int buttonCount, String seatName, IQPointingDeviceUniqueId uniqueId, IQObject parent)
 	{
 		this.ptr = CQt.QPointingDevice_new6(libqt_string(name), systemId, devType, pType, caps, maxPoints, buttonCount, libqt_string(seatName), (.)uniqueId?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -343,17 +343,94 @@ class QButtonGroup : IQButtonGroup, IQObject
 {
 	private QButtonGroup_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QButtonGroup_Connect_ButtonClicked(obj.ObjectPtr,  => QtBeef_QButtonGroup_Connect_ButtonClicked);
+		CQt.QButtonGroup_Connect_ButtonPressed(obj.ObjectPtr,  => QtBeef_QButtonGroup_Connect_ButtonPressed);
+		CQt.QButtonGroup_Connect_ButtonReleased(obj.ObjectPtr,  => QtBeef_QButtonGroup_Connect_ButtonReleased);
+		CQt.QButtonGroup_Connect_ButtonToggled(obj.ObjectPtr,  => QtBeef_QButtonGroup_Connect_ButtonToggled);
+		CQt.QButtonGroup_Connect_IdClicked(obj.ObjectPtr,  => QtBeef_QButtonGroup_Connect_IdClicked);
+		CQt.QButtonGroup_Connect_IdPressed(obj.ObjectPtr,  => QtBeef_QButtonGroup_Connect_IdPressed);
+		CQt.QButtonGroup_Connect_IdReleased(obj.ObjectPtr,  => QtBeef_QButtonGroup_Connect_IdReleased);
+		CQt.QButtonGroup_Connect_IdToggled(obj.ObjectPtr,  => QtBeef_QButtonGroup_Connect_IdToggled);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+	}
+	public Event<delegate void(void** param1)> OnButtonClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnButtonPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnButtonReleased = .() ~ _.Dispose();
+	public Event<delegate void(void** param1, bool param2)> OnButtonToggled = .() ~ _.Dispose();
+	public Event<delegate void(c_int param1)> OnIdClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int param1)> OnIdPressed = .() ~ _.Dispose();
+	public Event<delegate void(c_int param1)> OnIdReleased = .() ~ _.Dispose();
+	public Event<delegate void(c_int param1, bool param2)> OnIdToggled = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QButtonGroup_Connect_ButtonClicked(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnButtonClicked.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_Connect_ButtonPressed(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnButtonPressed.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_Connect_ButtonReleased(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnButtonReleased.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_Connect_ButtonToggled(void* ptr, void** param1, bool param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnButtonToggled.Invoke(param1, param2);
+	}
+	static void QtBeef_QButtonGroup_Connect_IdClicked(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIdClicked.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_Connect_IdPressed(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIdPressed.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_Connect_IdReleased(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIdReleased.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_Connect_IdToggled(void* ptr, c_int param1, bool param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIdToggled.Invoke(param1, param2);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QButtonGroup_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QButtonGroup_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QButtonGroup_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

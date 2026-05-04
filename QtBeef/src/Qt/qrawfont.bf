@@ -171,33 +171,44 @@ class QRawFont : IQRawFont
 {
 	private QRawFont_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRawFont_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRawFont_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, double pixelSize)
 	{
 		this.ptr = CQt.QRawFont_new2(libqt_string(fileName), pixelSize);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** fontData, double pixelSize)
 	{
 		this.ptr = CQt.QRawFont_new3(fontData, pixelSize);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRawFont other)
 	{
 		this.ptr = CQt.QRawFont_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, double pixelSize, QFont_HintingPreference hintingPreference)
 	{
 		this.ptr = CQt.QRawFont_new5(libqt_string(fileName), pixelSize, hintingPreference);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** fontData, double pixelSize, QFont_HintingPreference hintingPreference)
 	{
 		this.ptr = CQt.QRawFont_new6(fontData, pixelSize, hintingPreference);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

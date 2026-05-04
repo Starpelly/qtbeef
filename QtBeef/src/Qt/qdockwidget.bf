@@ -1655,33 +1655,121 @@ class QDockWidget : IQDockWidget, IQWidget, IQObject, IQPaintDevice
 {
 	private QDockWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDockWidget_Connect_FeaturesChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_Connect_FeaturesChanged);
+		CQt.QDockWidget_Connect_TopLevelChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_Connect_TopLevelChanged);
+		CQt.QDockWidget_Connect_AllowedAreasChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_Connect_AllowedAreasChanged);
+		CQt.QDockWidget_Connect_VisibilityChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_Connect_VisibilityChanged);
+		CQt.QDockWidget_Connect_DockLocationChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_Connect_DockLocationChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_Connect_Destroyed1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_Connect_WindowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_Connect_CustomContextMenuRequested);
+	}
+	public Event<delegate void(void* features)> OnFeaturesChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool topLevel)> OnTopLevelChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* allowedAreas)> OnAllowedAreasChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool visible)> OnVisibilityChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_DockWidgetArea area)> OnDockLocationChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	static void QtBeef_QDockWidget_Connect_FeaturesChanged(void* ptr, void* features)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFeaturesChanged.Invoke(features);
+	}
+	static void QtBeef_QDockWidget_Connect_TopLevelChanged(void* ptr, bool topLevel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTopLevelChanged.Invoke(topLevel);
+	}
+	static void QtBeef_QDockWidget_Connect_AllowedAreasChanged(void* ptr, void* allowedAreas)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAllowedAreasChanged.Invoke(allowedAreas);
+	}
+	static void QtBeef_QDockWidget_Connect_VisibilityChanged(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibilityChanged.Invoke(visible);
+	}
+	static void QtBeef_QDockWidget_Connect_DockLocationChanged(void* ptr, Qt_DockWidgetArea area)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDockLocationChanged.Invoke(area);
+	}
+	static void QtBeef_QObject_Connect_Destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_Connect_Destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
+	static void QtBeef_QWidget_Connect_WindowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_Connect_WindowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_Connect_CustomContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
 	public this(QDockWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QDockWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title)
 	{
 		this.ptr = CQt.QDockWidget_new2(libqt_string(title));
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDockWidget_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title, IQWidget parent)
 	{
 		this.ptr = CQt.QDockWidget_new4(libqt_string(title), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title, IQWidget parent, void* flags)
 	{
 		this.ptr = CQt.QDockWidget_new5(libqt_string(title), (.)parent?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* flags)
 	{
 		this.ptr = CQt.QDockWidget_new6((.)parent?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -227,17 +227,24 @@ class QGraphicsLayout : IQGraphicsLayout, IQGraphicsLayoutItem
 {
 	private QGraphicsLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsLayout_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsLayoutItem parent)
 	{
 		this.ptr = CQt.QGraphicsLayout_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -203,21 +203,29 @@ class QDataStream : IQDataStream, IQIODeviceBase
 {
 	private QDataStream_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDataStream_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDataStream_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice param1)
 	{
 		this.ptr = CQt.QDataStream_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** param1)
 	{
 		this.ptr = CQt.QDataStream_new3(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

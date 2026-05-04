@@ -287,25 +287,34 @@ class QTextStream : IQTextStream, IQIODeviceBase
 {
 	private QTextStream_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextStream_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextStream_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device)
 	{
 		this.ptr = CQt.QTextStream_new2((.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** array)
 	{
 		this.ptr = CQt.QTextStream_new3(array);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** array, void* openMode)
 	{
 		this.ptr = CQt.QTextStream_new4(array, openMode);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

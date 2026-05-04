@@ -895,17 +895,24 @@ class QPainter : IQPainter
 {
 	private QPainter_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPainter_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPainter_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPaintDevice param1)
 	{
 		this.ptr = CQt.QPainter_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2354,9 +2361,14 @@ class QPainter_PixmapFragment : IQPainter_PixmapFragment
 {
 	private QPainter_PixmapFragment_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPainter_PixmapFragment_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
